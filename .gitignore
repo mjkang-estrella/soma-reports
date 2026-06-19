@@ -1,0 +1,50 @@
+.DS_Store
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Node / frontend
+node_modules/
+dist/
+build/
+coverage/
+.next/
+.vite/
+
+# Local runtime state
+.cache/
+tmp/
+temp/
+logs/
+*.log
+
+# Private genome and health data
+data/
+private/
+genomes/
+reports/output/
+.soma/
+*.vcf
+*.vcf.gz
+*.bam
+*.bai
+*.cram
+*.crai
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*_RawData.txt
+genome_*.txt
+ancestrydna*.txt
+23andme*.txt
