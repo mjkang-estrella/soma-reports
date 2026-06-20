@@ -1,0 +1,58 @@
+{
+  "packageSlug": "wellness-genetic-guide",
+  "packageVersion": "0.1.0",
+  "datasetId": "fixture.synthetic",
+  "inputManifest": {
+    "hash": "sha256:synthetic-only",
+    "genomeBuild": "GRCh38",
+    "rawGenomeReturned": false,
+    "source": "synthetic_derived_evidence_json"
+  },
+  "genomeEvidence": [
+    {
+      "inputId": "MTHFR-rs1801133",
+      "rsid": "rs1801133",
+      "gene": "MTHFR",
+      "observedValue": "G/A",
+      "assembly": "GRCh38",
+      "matchStatus": "sample_pdf_match"
+    },
+    {
+      "inputId": "KCNH2-rs1137617",
+      "rsid": "rs1137617",
+      "gene": "KCNH2",
+      "observedValue": "A/G",
+      "assembly": "GRCh38",
+      "matchStatus": "sample_pdf_match"
+    },
+    {
+      "inputId": "ABCB1-rs1045642",
+      "rsid": "rs1045642",
+      "gene": "ABCB1",
+      "observedValue": "G/G",
+      "assembly": "GRCh38",
+      "matchStatus": "sample_pdf_match"
+    }
+  ],
+  "referenceResources": [
+    {
+      "id": "wellness-sample-pdf",
+      "title": "Wellness Genetic Guide sample report",
+      "sourceType": "mock_report",
+      "evidenceLevel": "structure",
+      "usedFor": [
+        "output_sections",
+        "visible_fields",
+        "result_table_shape",
+        "genotype_summary_shape"
+      ]
+    }
+  ],
+  "expectedAssertions": {
+    "noRawGenomeInOutput": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "probabilitiesOnlyInAppendix": true,
+    "consumerLanguage": true
+  }
+}

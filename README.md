@@ -50,4 +50,33 @@ A report package should eventually describe:
 
 ## Current Status
 
-Fresh repository scaffold. No runtime, package format, or report execution code exists yet.
+Working Vite React + Convex app.
+
+- Convex stores report package metadata, references, prompts, output sections, sample report rows, genotype summaries, and synthetic local-run fixtures.
+- The frontend renders a marketplace catalog consistent with the original static HTML reference.
+- Authenticated marketplace browsing showed 164 total Sequencing.com marketplace items across 3 pages of 75 items; this repository currently seeds an observed subset and tracks the remaining backlog explicitly.
+- The Wellness Genetic Guide has a structured package derived from the public sample PDF and authenticated marketplace first-fold evidence.
+- Raw genome files are not uploaded to or stored in Convex. Local agent tests use derived evidence JSON fixtures.
+
+## Development
+
+```bash
+npm install
+npm run convex:dev
+npm run seed
+npm run dev
+```
+
+Useful checks:
+
+```bash
+npm run build
+npm audit --json
+npx convex dev --once
+```
+
+## Local Agent Fixture
+
+The first synthetic fixture is at `fixtures/synthetic/wellness-genetic-guide.fixture.json`.
+It is derived evidence only, not raw genome data. The matching prompt is at
+`prompts/wellness-genetic-guide.md`.
