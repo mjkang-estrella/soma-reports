@@ -27,6 +27,8 @@ tmp/
 temp/
 logs/
 *.log
+output/playwright/
+.playwright-cli/
 
 # Private genome and health data
 data/
