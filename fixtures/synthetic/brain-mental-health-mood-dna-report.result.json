@@ -1,0 +1,443 @@
+{
+  "schemaVersion": "soma-reports.local-result.v1",
+  "reportOverview": {
+    "reportTitle": "Brain Health: Mental Health & Mood",
+    "inputManifestHash": "sha256:synthetic-brain-mental-health-mood-dna-report-neurobehavioral-boundary-context-v1",
+    "sectionsUnavailable": [
+      "Validated mental-health and mood model, calibrated PRS, ancestry applicability, and sample-specific local risk calculations are unavailable in this local fixture.",
+      "Symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, family history, school or work context, and professional interpretation are unavailable.",
+      "The public sample PDF is included only as output structure and citation evidence; its result labels, percentiles, variants, and recommendations are not local results."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Validated model availability",
+      "item": "Mood & Brain DNA Report validated model",
+      "brandName": "Brain Health: Mental Health & Mood",
+      "geneticAnalysis": "No validated package-specific mental-health, mood, cognitive, addiction, treatment-response, or calibrated PRS output is present in the local fixture.",
+      "genes": [
+        "model-unavailable"
+      ],
+      "sourceLabel": "Public genetic-testing and complex-trait references",
+      "sourceIds": [
+        "cdc-genetic-testing",
+        "medlineplus-genetics",
+        "medlineplus-complex-disorders",
+        "fda-direct-to-consumer-tests"
+      ],
+      "plainEnglishMeaning": "This local run can document that model evidence is unavailable, but it cannot turn that absence into a diagnosis, current mental-state assessment, mental-health risk, cognitive result, treatment response, or health action.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Clinical and neurobehavioral context availability",
+      "item": "Symptoms, cognitive context, medication context, and professional review",
+      "brandName": "Brain Health: Mental Health & Mood",
+      "geneticAnalysis": "Symptoms, current mental state, cognitive testing, neurologic exam, medications, pediatric context, school or work context, and professional interpretation are not supplied.",
+      "genes": [
+        "clinical-context-unavailable"
+      ],
+      "sourceLabel": "Neurobehavioral limitation references",
+      "sourceIds": [
+        "medlineplus-genetics",
+        "medlineplus-complex-disorders",
+        "fda-direct-to-consumer-tests",
+        "nimh-looking-at-my-genes"
+      ],
+      "plainEnglishMeaning": "Genome-derived evidence alone is not enough to decide mood state, diagnosis, ADHD, dyslexia, addiction risk, cognitive status, therapy, medication, supplement, sleep intervention, school/work action, or all-clear questions.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Report structure",
+      "item": "How this works",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "The sample explains that reports analyze how DNA influences health, summarize results as a risk score or gauge, use percentile comparisons, and rank recommendations by impact and evidence. The introductory pages also state that reports do not diagnose health conditions and that genetics is only one part of health.",
+      "genes": [
+        "Report-level output structure"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Mood & Brain sample-report structure only. Keep this separate from local genome evidence; it is not a personal mental-health, mood, addiction, eating-disorder, ADHD, dyslexia, cognitive, therapy, sleep, medication, supplement, school/work, treatment, or medical recommendation."
+    },
+    {
+      "groupTitle": "Summary",
+      "item": "Comprehensive brain report scope",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "The sample summary says the report contains 23 genetic results and covers mental health, substance use and eating disorders, cognitive problems, and cognitive traits. The sample frames brain function as influenced by past experiences, current environment, diet, lifestyle, and DNA.",
+      "genes": [
+        "Brain and mood model cards"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Mood & Brain sample-report structure only. Keep this separate from local genome evidence; it is not a personal mental-health, mood, addiction, eating-disorder, ADHD, dyslexia, cognitive, therapy, sleep, medication, supplement, school/work, treatment, or medical recommendation."
+    },
+    {
+      "groupTitle": "Overview of results / Mental Health",
+      "item": "Nine mental-health result cards",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "Visible mental-health cards include Seasonal Low Mood typical likelihood; Stress typical likelihood; Anxiety typical likelihood; Caffeine-Related Anxiety less likely; Low Mood more likely; Mood Swings less likely; Obsessive-Compulsive Tendencies typical likelihood; Teeth Grinding less likely; Psychological Trauma typical likelihood. The sample overview uses lower/typical/higher likelihood labels and plain-English subtitles for each card.",
+      "genes": [
+        "Mental-health model cards"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Mood & Brain sample-report structure only. Keep this separate from local genome evidence; it is not a personal mental-health, mood, addiction, eating-disorder, ADHD, dyslexia, cognitive, therapy, sleep, medication, supplement, school/work, treatment, or medical recommendation."
+    },
+    {
+      "groupTitle": "Overview of results / Addictions And Eating Disorders",
+      "item": "Five addictions and eating-disorder result cards",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "Visible cards include Addictions typical likelihood; Alcohol Addiction less likely; Tobacco Addiction less likely; Cannabis Addiction less likely; Eating Disorders typical likelihood. The sample separates addiction/eating-disorder result cards from mental-health and cognitive cards.",
+      "genes": [
+        "Addiction and eating-disorder model cards"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Mood & Brain sample-report structure only. Keep this separate from local genome evidence; it is not a personal mental-health, mood, addiction, eating-disorder, ADHD, dyslexia, cognitive, therapy, sleep, medication, supplement, school/work, treatment, or medical recommendation."
+    },
+    {
+      "groupTitle": "Overview of results / Cognitive Problems and Traits",
+      "item": "Nine cognitive result cards",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "Visible cognitive cards include Cognitive Decline typical likelihood; Brain Fog typical likelihood; Attention higher risk/more likely to have ADHD; Dyslexia more likely; Creativity higher; Memory Performance typical; Short-Term Memory typical; Processing Speed typical; Executive Function typical. The second overview page groups cognitive problems separately from cognitive traits.",
+      "genes": [
+        "Cognitive problem and cognitive trait model cards"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Mood & Brain sample-report structure only. Keep this separate from local genome evidence; it is not a personal mental-health, mood, addiction, eating-disorder, ADHD, dyslexia, cognitive, therapy, sleep, medication, supplement, school/work, treatment, or medical recommendation."
+    },
+    {
+      "groupTitle": "Risk score / Seasonal Low Mood",
+      "item": "Seasonal Low Mood",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "Typical likelihood of seasonal affective disorder; 43rd percentile; based on 90 genetic variants. The sample page says genetics may account for about 30% of differences in seasonality and lists family history, higher latitude, and low vitamin D as other risk factors.",
+      "genes": [
+        "PTGER3",
+        "CAMKMT",
+        "MPHOSPH6",
+        "HLCS",
+        "TARS1",
+        "DNAJB4",
+        "PSAP",
+        "NRDE2",
+        "FGGY",
+        "GSTM3"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Mood & Brain sample-report structure only. Keep this separate from local genome evidence; it is not a personal mental-health, mood, addiction, eating-disorder, ADHD, dyslexia, cognitive, therapy, sleep, medication, supplement, school/work, treatment, or medical recommendation."
+    },
+    {
+      "groupTitle": "Risk score / Stress",
+      "item": "Stress",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "Typical likelihood of feeling stressed; 38th percentile; based on 383,309 genetic variants. The sample page says up to 45% of differences in perceived stress may be attributed to genetics and explains HPA-axis stress-hormone context.",
+      "genes": [
+        "OXTR",
+        "PDCD6IP",
+        "LMCD1",
+        "STAC",
+        "CHRM3",
+        "KCTD12",
+        "SPG7",
+        "MPPED1",
+        "MROH2A",
+        "VLDLR"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Mood & Brain sample-report structure only. Keep this separate from local genome evidence; it is not a personal mental-health, mood, addiction, eating-disorder, ADHD, dyslexia, cognitive, therapy, sleep, medication, supplement, school/work, treatment, or medical recommendation."
+    },
+    {
+      "groupTitle": "Recommendations",
+      "item": "Recommendation ranking",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "The sample says recommendations are prioritized by likely impact based on genetics plus the amount of scientific evidence supporting the recommendation. The recommendation pages show named recommendation blocks with condition-level impact and evidence ratings.",
+      "genes": [
+        "Recommendation ranking model"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Mood & Brain sample-report structure only. Keep this separate from local genome evidence; it is not a personal mental-health, mood, addiction, eating-disorder, ADHD, dyslexia, cognitive, therapy, sleep, medication, supplement, school/work, treatment, or medical recommendation."
+    },
+    {
+      "groupTitle": "Recommendation / Relaxation Techniques",
+      "item": "Condition-level ratings",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "Visible rows include Attention impact 3/5 evidence 3/5; Low Mood impact 3/5 evidence 4/5; Psychological Trauma impact 3/5 evidence 3/5; Anxiety impact 4/5 evidence 4/5; Brain Fog impact 3/5 evidence 4/5; Addictions impact 3/5 evidence 3/5; Stress impact 4/5 evidence 4/5; Eating Disorders impact 3/5 evidence 3/5; Executive Function impact 3/5 evidence 3/5; Memory Performance impact 3/5 evidence 4/5; Short-Term Memory impact 3/5 evidence 3/5; Cognitive Decline impact 3/5 evidence 3/5; Teeth Grinding impact 4/5 evidence 4/5; Mood Swings impact 3/5 evidence 3/5; Tobacco Addiction impact 4/5 evidence 4/5; Alcohol Addiction impact 3/5 evidence 3/5; Creativity impact 3/5 evidence 3/5; Cannabis Addiction impact 3/5 evidence 3/5. The sample describes yoga, meditation, mindfulness, applied relaxation, massage, tai chi, biofeedback, and related practices across different rows.",
+      "genes": [
+        "ANKK1",
+        "CELF4",
+        "OXTR",
+        "COMT",
+        "FTO",
+        "GABRA2",
+        "CRHR1",
+        "PER2",
+        "MGLL"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Mood & Brain sample-report structure only. Keep this separate from local genome evidence; it is not a personal mental-health, mood, addiction, eating-disorder, ADHD, dyslexia, cognitive, therapy, sleep, medication, supplement, school/work, treatment, or medical recommendation."
+    },
+    {
+      "groupTitle": "Recommendation / Relaxation Techniques",
+      "item": "Attention personalized row",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "The sample says mindfulness-based relaxation may improve attention more in people with your ANKK1 gene variant. The visible variant table shows ANKK1 rs1800497 GG with a two-dot evidence indicator.",
+      "genes": [
+        "ANKK1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Mood & Brain sample-report structure only. Keep this separate from local genome evidence; it is not a personal mental-health, mood, addiction, eating-disorder, ADHD, dyslexia, cognitive, therapy, sleep, medication, supplement, school/work, treatment, or medical recommendation."
+    },
+    {
+      "groupTitle": "Recommendation / Relaxation Techniques",
+      "item": "Psychological Trauma personalized row",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "The sample says people with your CELF4 gene variant may be more prone to stress and that relaxation techniques may help with PTSD by reducing stress. The visible variant table renders gene as '/', SNP rs11665070, genotype GA, with a two-dot evidence indicator.",
+      "genes": [
+        "CELF4"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Mood & Brain sample-report structure only. Keep this separate from local genome evidence; it is not a personal mental-health, mood, addiction, eating-disorder, ADHD, dyslexia, cognitive, therapy, sleep, medication, supplement, school/work, treatment, or medical recommendation."
+    },
+    {
+      "groupTitle": "Recommendation / Relaxation Techniques",
+      "item": "Anxiety personalized row",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "The sample says your OXTR gene variant is associated with anxiety and issues with emotional attachment and that massage may help by boosting oxytocin. The visible variant table shows OXTR rs53576 AG with a two-dot evidence indicator.",
+      "genes": [
+        "OXTR"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Mood & Brain sample-report structure only. Keep this separate from local genome evidence; it is not a personal mental-health, mood, addiction, eating-disorder, ADHD, dyslexia, cognitive, therapy, sleep, medication, supplement, school/work, treatment, or medical recommendation."
+    },
+    {
+      "groupTitle": "Recommendation / Relaxation Techniques",
+      "item": "Executive Function personalized row",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "The sample says stress may have a stronger impact on executive function in people with your COMT gene variant. The visible variant table shows COMT rs4680 AG with a four-dot evidence indicator.",
+      "genes": [
+        "COMT"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Mood & Brain sample-report structure only. Keep this separate from local genome evidence; it is not a personal mental-health, mood, addiction, eating-disorder, ADHD, dyslexia, cognitive, therapy, sleep, medication, supplement, school/work, treatment, or medical recommendation."
+    },
+    {
+      "groupTitle": "Recommendation / Optimize Sleep",
+      "item": "Low Mood and Attention rows",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "Visible rows include Low Mood impact 3/5 evidence 3/5 and Attention impact 4/5 evidence 3/5. The sample says poor sleep may worsen depression and short sleep duration is linked to attention problems and ADHD; it also includes a COMT rs4680 AG sample row for attention.",
+      "genes": [
+        "COMT"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Mood & Brain sample-report structure only. Keep this separate from local genome evidence; it is not a personal mental-health, mood, addiction, eating-disorder, ADHD, dyslexia, cognitive, therapy, sleep, medication, supplement, school/work, treatment, or medical recommendation."
+    }
+  ],
+  "neurobehavioralContext": {
+    "plainEnglishMeaning": "The safe output for this package is an evidence-availability report plus clearly separated public sample-report structure. It explains which model, clinical, cognitive, medication, pediatric, school/work, and professional inputs are missing and avoids mental-health or cognitive conclusions from missing evidence.",
+    "unsupportedClaims": [
+      "Diagnosis, current mental-state assessment, personal mental-health risk, mood state, ADHD, dyslexia, addiction risk, eating-disorder risk, cognitive decline, brain fog, creativity, memory, executive function, treatment response, medication need, supplement need, therapy need, sleep intervention, school/work action, pediatric action, all-clear reassurance, and clinical actionability are not supported by this fixture.",
+      "Public sample rows are included only for output-format parity and citation binding. They are not local risk estimates, diagnoses, treatment recommendations, or local genotype findings."
+    ],
+    "professionalReview": "Use this as a local-agent readiness fixture only. Mental-health symptoms, cognitive concerns, medication decisions, school/work decisions, and health actions require validated test scope, relevant clinical context, and qualified professional review."
+  },
+  "practicalNextSteps": {
+    "professionalReview": [
+      "Keep this output educational and non-diagnostic.",
+      "Do not use this fixture to start, stop, or change testing, screening, medication, supplements, therapy, sleep treatment, school/work decisions, or treatment.",
+      "Use qualified professional review for mental-health symptoms, cognitive concerns, addiction concerns, medication questions, or health decisions."
+    ]
+  },
+  "references": [
+    {
+      "id": "cdc-genetic-testing",
+      "title": "CDC Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetics",
+      "title": "MedlinePlus Genetics"
+    },
+    {
+      "id": "medlineplus-complex-disorders",
+      "title": "MedlinePlus Genetics: complex disorders"
+    },
+    {
+      "id": "fda-direct-to-consumer-tests",
+      "title": "FDA Direct-to-Consumer Tests"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    },
+    {
+      "id": "nimh-looking-at-my-genes",
+      "title": "NIMH: Looking at My Genes"
+    },
+    {
+      "id": "mood-brain-sample-pdf",
+      "title": "Mood & Brain DNA Report sample report"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "effect": "The local fixture intentionally omits mental-health, mood, cognitive, addiction, and treatment-response calculations.",
+        "gene": "Mood & Brain DNA Report model",
+        "genotype": "validated mental-health and mood model, calibrated PRS, ancestry applicability, symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, and professional review unavailable",
+        "phenotype": "Mark diagnosis, current mood, ADHD, dyslexia, addiction, cognitive status, treatment, therapy, medication, supplement, school/work action, and actionability sections unavailable instead of inferring them.",
+        "tier": "Local missing input",
+        "variantId": "brain-mental-health-mood-dna-report-model-unavailable"
+      },
+      {
+        "effect": "The sample Seasonal Low Mood page reports typical likelihood based on 90 genetic variants.",
+        "gene": "Seasonal Low Mood model",
+        "genotype": "43rd percentile; typical likelihood",
+        "phenotype": "Observed sample content only; do not infer local seasonal mood, depression, bipolar, vitamin D, or mental-health status.",
+        "tier": "Sample risk card",
+        "variantId": "90 variants"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Seasonal Low Mood table.",
+        "gene": "PTGER3",
+        "genotype": "CC",
+        "phenotype": "Observed sample row only; it is not a local seasonal mood or mental-health finding.",
+        "tier": "Seasonal Low Mood top sample variants",
+        "variantId": "rs113067418"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Seasonal Low Mood table.",
+        "gene": "CAMKMT",
+        "genotype": "AA",
+        "phenotype": "Observed sample row only; it is not a local seasonal mood or mental-health finding.",
+        "tier": "Seasonal Low Mood top sample variants",
+        "variantId": "rs17498753"
+      },
+      {
+        "effect": "The sample Stress page reports typical likelihood based on 383,309 genetic variants.",
+        "gene": "Stress model",
+        "genotype": "38th percentile; typical likelihood",
+        "phenotype": "Observed sample content only; do not infer local stress level, mental-health status, or treatment need.",
+        "tier": "Sample risk card",
+        "variantId": "383,309 variants"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Stress table.",
+        "gene": "OXTR",
+        "genotype": "AG",
+        "phenotype": "Observed sample row only; it is not a local stress, anxiety, oxytocin, or attachment finding.",
+        "tier": "Stress top sample variants",
+        "variantId": "rs2254298"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Stress table.",
+        "gene": "PDCD6IP",
+        "genotype": "AC",
+        "phenotype": "Observed sample row only; it is not a local stress or mental-health finding.",
+        "tier": "Stress top sample variants",
+        "variantId": "rs2053425"
+      },
+      {
+        "effect": "The sample Relaxation Techniques Attention subsection shows ANKK1 rs1800497 GG.",
+        "gene": "ANKK1",
+        "genotype": "GG",
+        "phenotype": "Observed sample row only; do not infer local attention, ADHD, mindfulness response, or therapy guidance.",
+        "tier": "Relaxation personalized sample row",
+        "variantId": "rs1800497"
+      },
+      {
+        "effect": "The sample Relaxation Techniques Psychological Trauma subsection names CELF4 in narrative text and shows rs11665070 GA in the visible variant table.",
+        "gene": "CELF4",
+        "genotype": "GA",
+        "phenotype": "Observed sample row only; do not infer local PTSD, stress sensitivity, trauma history, or therapy guidance.",
+        "tier": "Relaxation personalized sample row",
+        "variantId": "rs11665070"
+      },
+      {
+        "effect": "The sample Relaxation Techniques Anxiety subsection shows OXTR rs53576 AG.",
+        "gene": "OXTR",
+        "genotype": "AG",
+        "phenotype": "Observed sample row only; do not infer local anxiety, attachment, oxytocin status, or massage response.",
+        "tier": "Relaxation personalized sample row",
+        "variantId": "rs53576"
+      },
+      {
+        "effect": "The sample Relaxation Techniques Executive Function subsection and Optimize Sleep Attention subsection show COMT rs4680 AG.",
+        "gene": "COMT",
+        "genotype": "AG",
+        "phenotype": "Observed sample row only; do not infer local executive function, sleep vulnerability, ADHD, attention status, or treatment guidance.",
+        "tier": "Relaxation personalized sample row",
+        "variantId": "rs4680"
+      }
+    ],
+    "missingInputs": [
+      "Validated mental-health and mood model, calibrated PRS, ancestry applicability, and sample-specific local risk calculations are unavailable in this local fixture.",
+      "Symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, family history, school or work context, and professional interpretation are unavailable.",
+      "The public sample PDF is included only as output structure and citation evidence; its result labels, percentiles, variants, and recommendations are not local results."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated mental-health or mood model, ancestry applicability metadata, clinical context, professional review, medication response model, current mental-state assessment, cognitive testing, or local risk calculation is supplied.",
+      "The public sample PDF supports output structure and citation binding only; sample percentiles, likelihood labels, variants, and recommendation ratings must not be interpreted as local results.",
+      "Absence of evidence in this fixture must be reported as unavailable, not converted into low risk or reassurance."
+    ],
+    "limitations": [
+      "This generated result does not include raw genome data and does not emit VCF, FASTQ, BAM, or CRAM content.",
+      "Reference resources used for boundary language and sample structure: CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus Genetics: complex disorders; FDA Direct-to-Consumer Tests; NHGRI overview of polygenic risk scores; GWAS Catalog; NIMH: Looking at My Genes; Mood & Brain DNA Report sample report.",
+      "The result is a deterministic synthetic validation artifact for local-agent packaging, not a medical interpretation."
+    ]
+  }
+}

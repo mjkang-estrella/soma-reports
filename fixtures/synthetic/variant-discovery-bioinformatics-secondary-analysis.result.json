@@ -1,0 +1,191 @@
+{
+  "reportOverview": {
+    "reportTitle": "Variant Discovery",
+    "inputManifestHash": "sha256:synthetic-variant-discovery-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "Exact caller version, command line, callable-region mask, filter thresholds, ploidy handling, phasing, and pipeline checksum are not supplied.",
+      "Benchmark truth-set comparison, ClinVar per-record assertions, VEP transcript consequences, structural-variant support, and copy-number support are not supplied."
+    ],
+    "plainEnglishScope": "This report summarizes selected derived candidate variant-discovery metrics. It does not confirm variant truth, diagnose disease, estimate risk, or recommend medical action."
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Candidate callset summary",
+      "item": "Derived SNV and indel counts",
+      "brandName": "",
+      "geneticAnalysis": "The derived small-variant summary reports 3,820,000 candidate SNV records and 612,000 candidate indel records after upstream alignment, duplicate marking, and read-quality filtering. The exact caller version and command line are unavailable.",
+      "genes": [
+        "candidate variant callset summary"
+      ],
+      "sourceLabel": "GATK Germline short variant discovery; GATK HaplotypeCaller; BCFtools variant calling",
+      "sourceIds": [
+        "gatk-germline-short-variant-discovery",
+        "gatk-haplotypecaller",
+        "bcftools-variant-calling"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "These counts describe a candidate small-variant discovery output. They are not by themselves proof that every candidate record is correct or medically meaningful."
+    },
+    {
+      "groupTitle": "Quality-filter summary",
+      "item": "Passing and flagged candidate records",
+      "brandName": "",
+      "geneticAnalysis": "The derived filter summary reports 3,710,000 candidate records passing the supplied filter label, 722,000 candidate records below at least one supplied quality label, and 14,200 candidate records flagged for low depth or genotype-quality context. Exact thresholds are unavailable.",
+      "genes": [
+        "variant quality-filter summary"
+      ],
+      "sourceLabel": "SAMtools mpileup; BCFtools variant calling; GATK HaplotypeCaller",
+      "sourceIds": [
+        "samtools-mpileup",
+        "bcftools-variant-calling",
+        "gatk-haplotypecaller"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "Filter labels help explain which candidate records had stronger or weaker supporting evidence, but they cannot replace full pipeline settings, validation, or expert review."
+    },
+    {
+      "groupTitle": "Database cross-reference",
+      "item": "dbSNP identifier availability and unavailable annotation rows",
+      "brandName": "",
+      "geneticAnalysis": "The derived cross-reference summary reports dbSNP identifiers for 91.6% of candidate records. ClinVar lookup status, submitted clinical assertions, VEP transcript consequences, and Sequence Ontology terms are not supplied for individual records.",
+      "genes": [
+        "public database cross-reference summary"
+      ],
+      "sourceLabel": "NCBI dbSNP; NCBI ClinVar; Ensembl VEP; Sequence Ontology",
+      "sourceIds": [
+        "ncbi-dbsnp",
+        "ncbi-clinvar",
+        "ensembl-vep",
+        "sequence-ontology"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "A public identifier can help look up a candidate record, but database presence does not make the record clinically important and does not provide personal medical meaning."
+    },
+    {
+      "groupTitle": "Validation availability",
+      "item": "Benchmark, callable-region, and pipeline metadata unavailable",
+      "brandName": "",
+      "geneticAnalysis": "Benchmark truth-set comparison, callable-region mask, per-chromosome failure table, ploidy handling, phasing, structural-variant support, copy-number support, caller command line, pipeline checksum, and authenticated sample-report rows are unavailable.",
+      "genes": [
+        "variant discovery validation metadata"
+      ],
+      "sourceLabel": "NIST Genome in a Bottle; GATK Germline short variant discovery",
+      "sourceIds": [
+        "nist-genome-in-a-bottle",
+        "gatk-germline-short-variant-discovery"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "Without benchmark and pipeline metadata, the report can explain supplied discovery metrics but cannot validate analytical performance, clinical sensitivity, or per-record correctness."
+    }
+  ],
+  "variantDiscoveryContext": {
+    "plainEnglishMeaning": "Variant discovery is the process of identifying candidate sequence differences from a sequencing workflow. The supplied metrics describe that workflow output at a summary level, not clinical meaning for any specific candidate record.",
+    "unsupportedClaims": [
+      "observed variant truth or variant absence",
+      "pathogenicity or benign classification",
+      "clinical sensitivity or negative predictive value",
+      "disease diagnosis or disease-risk estimate",
+      "ancestry certainty or exact population assignment",
+      "sample contamination conclusion",
+      "medication response",
+      "screening, diagnostic testing, reproductive, lifestyle, or treatment recommendation"
+    ],
+    "professionalReview": "Laboratory or clinical review is needed to interpret candidate variant records against a specific assay, caller configuration, validation study, and reporting threshold."
+  },
+  "references": [
+    {
+      "id": "gatk-germline-short-variant-discovery",
+      "title": "GATK Germline short variant discovery"
+    },
+    {
+      "id": "gatk-haplotypecaller",
+      "title": "GATK HaplotypeCaller"
+    },
+    {
+      "id": "bcftools-variant-calling",
+      "title": "BCFtools variant calling"
+    },
+    {
+      "id": "samtools-mpileup",
+      "title": "SAMtools mpileup"
+    },
+    {
+      "id": "ncbi-dbsnp",
+      "title": "NCBI dbSNP"
+    },
+    {
+      "id": "ncbi-clinvar",
+      "title": "NCBI ClinVar"
+    },
+    {
+      "id": "ensembl-vep",
+      "title": "Ensembl Variant Effect Predictor"
+    },
+    {
+      "id": "sequence-ontology",
+      "title": "Sequence Ontology"
+    },
+    {
+      "id": "nist-genome-in-a-bottle",
+      "title": "NIST Genome in a Bottle"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "variant-discovery-callset-summary",
+        "gene": "candidate variant callset summary",
+        "observedValue": "3,820,000 candidate SNV records and 612,000 candidate indel records; exact caller version and command line unavailable",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "variant-discovery-quality-filter-summary",
+        "gene": "variant quality-filter summary",
+        "observedValue": "3,710,000 candidate records passing supplied filter label; 722,000 below at least one supplied quality label; 14,200 flagged for low depth or genotype-quality context",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "variant-discovery-database-cross-reference-summary",
+        "gene": "public database cross-reference summary",
+        "observedValue": "dbSNP identifiers available for 91.6% of candidate records; individual ClinVar, VEP, and Sequence Ontology annotations unavailable",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "variant-discovery-validation-context-unavailable",
+        "gene": "variant discovery validation metadata",
+        "observedValue": "benchmark, callable-region, per-chromosome failure, ploidy, phasing, structural-variant, copy-number, caller command, pipeline checksum, and authenticated sample-report metadata unavailable",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "resourceVersions": [
+      "GATK germline short variant discovery documentation accessed 2026-06-20",
+      "GATK HaplotypeCaller documentation accessed 2026-06-20",
+      "BCFtools variant calling documentation accessed 2026-06-20",
+      "SAMtools mpileup documentation accessed 2026-06-20"
+    ],
+    "missingInputs": [
+      "Authenticated Sequencing.com sample report rows",
+      "Exact caller version, command line, and pipeline checksum",
+      "Callable-region mask and per-chromosome failure table",
+      "Quality-filter thresholds and genotype-quality policy",
+      "Ploidy, phasing, structural-variant, and copy-number support",
+      "Benchmark truth-set comparison",
+      "Per-record ClinVar assertions, VEP transcript consequences, and Sequence Ontology terms"
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated model is supplied for variant correctness probability, clinical sensitivity, disease probability, pathogenicity probability, or overall discovery accuracy probability.",
+      "The selected metrics are useful QC context but cannot validate a clinical report or prove per-record correctness by themselves."
+    ],
+    "calibration": {
+      "status": "not_supplied",
+      "notes": "Benchmark truth-set comparison, per-record concordance, and calibrated quality model details were not supplied."
+    },
+    "limitations": [
+      "This validation result uses selected derived variant-discovery metrics only; raw genome data, VCF, FASTQ, BAM, and CRAM files are not included.",
+      "Candidate variant records are tool- and filter-dependent and should not be treated as confirmed variant truth without supporting validation evidence.",
+      "The package does not diagnose disease, classify pathogenicity, estimate medical risk, validate clinical sensitivity, infer ancestry certainty, or recommend medication, screening, diagnostic testing, reproductive decisions, lifestyle changes, or treatment changes."
+    ]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "reportOverview": {
+    "reportTitle": "Map My Genes",
+    "inputManifestHash": "sha256:synthetic-map-my-genes-autosomal-context-v1",
+    "evidenceTypesSupplied": [
+      "Broad autosomal reference-panel similarity summary for map-style context",
+      "Map coordinate, exact homeland, and migration-path evidence explicitly unavailable"
+    ],
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "No calibrated map-coordinate or regional ancestry percentage model is supplied.",
+      "No exact homeland, community, migration path, family matching, or relative-matching data is supplied."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Map-style ancestry context",
+      "item": "Broad reference-panel similarity",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A broad East Asian reference-panel similarity summary is available for map-style context, but no coordinate or exact-origin model is supplied.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "MedlinePlus genetic ancestry testing / 1000 Genomes",
+      "sourceIds": [
+        "medlineplus-genetic-ancestry-testing",
+        "international-genome-sample-resource"
+      ],
+      "plainEnglishMeaning": "This is broad reference-panel context only. It is not a precise map coordinate, homeland, nationality, community label, migration path, or identity statement."
+    },
+    {
+      "groupTitle": "Unavailable map detail",
+      "item": "Map coordinate or precise origin",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "Map coordinate, exact homeland, and migration-path evidence are unavailable in this fixture and are not inferred.",
+      "genes": [
+        "autosomal ancestry map model"
+      ],
+      "sourceLabel": "MedlinePlus direct-to-consumer ancestry testing caveats",
+      "sourceIds": [
+        "medlineplus-genetic-ancestry-testing",
+        "medlineplus-dtc-risks-benefits"
+      ],
+      "plainEnglishMeaning": "Missing map-model evidence means this run cannot place ancestry on a precise coordinate, homeland, community, migration route, or family-match map."
+    }
+  ],
+  "ancestryScopeSummary": {
+    "autosomal": "Autosomal ancestry can provide broad reference-panel similarity when a model is supplied; this fixture does not supply calibrated percentages.",
+    "mapContext": "A map-style label can visualize broad context, but it should not be treated as a literal coordinate or fixed identity label.",
+    "sourceIds": [
+      "medlineplus-genetic-ancestry-testing",
+      "international-genome-sample-resource",
+      "medlineplus-dtc-risks-benefits"
+    ]
+  },
+  "whatThisDoesNotMean": [
+    "This is not an exact ethnicity percentage.",
+    "This does not identify a precise map coordinate, homeland, tribe, community, nationality, migration route, or living relatives.",
+    "This is not a family-matching or genealogy-relative report.",
+    "This is not a health or disease-risk report."
+  ],
+  "references": [
+    {
+      "id": "medlineplus-genetic-ancestry-testing",
+      "title": "MedlinePlus Genetics: genetic ancestry testing"
+    },
+    {
+      "id": "medlineplus-dtc-risks-benefits",
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing"
+    },
+    {
+      "id": "international-genome-sample-resource",
+      "title": "International Genome Sample Resource / 1000 Genomes"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "gene": "autosomal genome",
+        "observedValue": "broad East Asian reference-panel similarity for map-style context; no coordinate model supplied"
+      },
+      {
+        "gene": "autosomal ancestry map model",
+        "observedValue": "map coordinate, exact homeland, and migration-path evidence unavailable in this fixture"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated sample-report sections and rows have not been extracted.",
+      "No calibrated ancestry model, reference-panel metadata, map coordinate, or regional-detail output is supplied.",
+      "No family-matching, living-relative, migration-route, or exact-homeland data is supplied."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Broad reference-panel similarity should not be treated as a precise ancestry percentage, map coordinate, or identity.",
+      "The fixture is a validation artifact, not a complete ancestry mapping pipeline."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report does not emit raw SNP tables or relative-matching data.",
+      "Authenticated Sequencing.com sample report rows are still pending."
+    ]
+  }
+}

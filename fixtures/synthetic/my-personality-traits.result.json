@@ -1,0 +1,413 @@
+{
+  "schemaVersion": "soma-reports.local-result.v1",
+  "reportOverview": {
+    "reportTitle": "My Personality Traits",
+    "inputManifestHash": "sha256:synthetic-my-personality-traits-specialized-boundary-context-v1",
+    "sectionsUnavailable": [
+      "Validated personality trait model, Big Five score scale, calibration distribution, ancestry applicability metadata, and local-user model output are unavailable in this local fixture.",
+      "Environment context, mental-health context, psychometric instrument, clinical or professional interpretation, and decision context are unavailable.",
+      "The public Personality sample PDF is present only as observed output structure; sample labels, gauges, and variants are not local-user results."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Validated model/source output availability",
+      "item": "My Personality Traits model/source output",
+      "brandName": "My Personality Traits",
+      "geneticAnalysis": "No validated package-specific personality scoring, Big Five calibration, psychometric source output, ancestry applicability metadata, or local-user model output is present in the local fixture.",
+      "genes": [
+        "model-unavailable"
+      ],
+      "sourceLabel": "Personality trait and complex-trait references",
+      "sourceIds": [
+        "medlineplus-temperament",
+        "medlineplus-genetics-traits",
+        "nhgri-polygenic-risk-scores",
+        "ebi-gwas-catalog"
+      ],
+      "plainEnglishMeaning": "This local run can document that model evidence is unavailable, but it cannot turn that absence into a personality type, Big Five score, mood state, identity label, behavior prediction, or life decision.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Clinical and professional context availability",
+      "item": "Mental-health, environment, psychometric, and decision context",
+      "brandName": "My Personality Traits",
+      "geneticAnalysis": "Environment context, mental-health context, symptoms or diagnosis, medications, psychometric instrument, professional interpretation, and school/work/relationship decision context are not supplied.",
+      "genes": [
+        "context-unavailable"
+      ],
+      "sourceLabel": "Consumer genetic-testing and mental-health limitation references",
+      "sourceIds": [
+        "medlineplus-genetics",
+        "medlineplus-genetic-testing",
+        "medlineplus-genetic-test-results",
+        "nimh-looking-at-my-genes"
+      ],
+      "plainEnglishMeaning": "Genome-derived evidence alone is not enough to decide identity, behavior, mental-health status, relationship choices, work or school actions, therapy needs, treatment, medication, supplements, or actionability.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Public sample availability",
+      "item": "Personality sample output structure",
+      "brandName": "Personality Traits sample",
+      "geneticAnalysis": "A public Personality sample PDF is available and supplies observed output structure: report identity, 11 result cards, Big Five layout, Extravert or Introvert gauge and visible top-variant table, and Neuroticism gauge page.",
+      "genes": [
+        "sample-output-structure"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "personality-traits-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The sample helps reproduce formal report structure, but its labels and variants remain sample-only and are not local-user personality results.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Report identity",
+      "item": "Personality sample report",
+      "brandName": "Personality Traits sample",
+      "geneticAnalysis": "The public PDF cover identifies SelfDecode, Personality Summary Report, category Personality, Demo Account, report date 11 September 2023, and powered by OmicsEdge. The PDF filename is personality-traits-dna-sample-report.pdf and the metadata title is Personality-Sequencing. The final page says 'sample Fitness DNA Report,' but the substantive content is Personality: Big Five personality traits, feelings, behaviors, Extravert or Introvert, and Neuroticism.",
+      "genes": [
+        "Personality sample report"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "personality-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Personality sample-report structure only. Keep this separate from local genome evidence; it is not a personal personality score, Big Five score, identity label, mood state, behavior prediction, mental-health status, therapy advice, school/work/relationship decision, treatment, medication, supplement, or actionability recommendation."
+    },
+    {
+      "groupTitle": "Report structure",
+      "item": "How this works and limitations",
+      "brandName": "Personality Traits sample",
+      "geneticAnalysis": "The sample explains that Trait Reports look at how DNA influences traits, that Summary Reports combine related Wellness and Trait Reports, and that scores or gauges compare a result with a sample population. The introductory pages also state that reports do not diagnose health conditions, genetics is not the whole story, results may be more accurate for some ethnic groups than others, and reports are not a substitute for medical advice.",
+      "genes": [
+        "Report-level output structure"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "personality-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Personality sample-report structure only. Keep this separate from local genome evidence; it is not a personal personality score, Big Five score, identity label, mood state, behavior prediction, mental-health status, therapy advice, school/work/relationship decision, treatment, medication, supplement, or actionability recommendation."
+    },
+    {
+      "groupTitle": "Summary",
+      "item": "Eleven genetic results",
+      "brandName": "Personality Traits sample",
+      "geneticAnalysis": "The summary says personality is a complex combination of genetics, life experiences, and environment, and that the report contains 11 Genetic Results. The sample describes the Big Five as broad personality traits and says other sections dive deeper into personality traits beyond the Big Five.",
+      "genes": [
+        "Personality model cards"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "personality-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Personality sample-report structure only. Keep this separate from local genome evidence; it is not a personal personality score, Big Five score, identity label, mood state, behavior prediction, mental-health status, therapy advice, school/work/relationship decision, treatment, medication, supplement, or actionability recommendation."
+    },
+    {
+      "groupTitle": "Overview of results",
+      "item": "Big Five Personality Traits cards",
+      "brandName": "Personality Traits sample",
+      "geneticAnalysis": "The overview shows Extravert or Introvert labeled Extravert and likely more extraverted; Neuroticism labeled Secure and likely more secure; Agreeableness labeled Agreeable and likely more agreeable; Conscientiousness labeled Carefree and likely more carefree; Openness to Experience labeled Cautious and likely more cautious. These are sample overview cards with gauge icons and short labels, not calibrated local trait scores.",
+      "genes": [
+        "Big Five personality model cards"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "personality-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Personality sample-report structure only. Keep this separate from local genome evidence; it is not a personal personality score, Big Five score, identity label, mood state, behavior prediction, mental-health status, therapy advice, school/work/relationship decision, treatment, medication, supplement, or actionability recommendation."
+    },
+    {
+      "groupTitle": "Overview of results",
+      "item": "Feelings and Behaviors cards",
+      "brandName": "Personality Traits sample",
+      "geneticAnalysis": "The overview shows Happiness labeled Higher and likely more happy; Nervousness labeled Higher and likely more nervous; Aggression labeled Typical and likely typical aggression; Risk Taking labeled More Likely and more likely to be a risk taker; Leadership labeled Typical and likely typical leadership skills; Impulsivity labeled Typical and likely typical impulsivity. The result cards are grouped under Feelings and Behaviors and use gauge icons with short likelihood labels.",
+      "genes": [
+        "Feelings and behavior model cards"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "personality-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Personality sample-report structure only. Keep this separate from local genome evidence; it is not a personal personality score, Big Five score, identity label, mood state, behavior prediction, mental-health status, therapy advice, school/work/relationship decision, treatment, medication, supplement, or actionability recommendation."
+    },
+    {
+      "groupTitle": "Big Five Personality Traits",
+      "item": "Section introduction",
+      "brandName": "Personality Traits sample",
+      "geneticAnalysis": "The Big Five section says the traits answer questions such as shyness versus outgoingness and agreement versus objection, while emphasizing a broad range of personality features. The sample says this section sheds light on genetics of the Big Five personality traits and gives a gene-based insight into uniqueness.",
+      "genes": [
+        "Big Five personality model cards"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "personality-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Personality sample-report structure only. Keep this separate from local genome evidence; it is not a personal personality score, Big Five score, identity label, mood state, behavior prediction, mental-health status, therapy advice, school/work/relationship decision, treatment, medication, supplement, or actionability recommendation."
+    },
+    {
+      "groupTitle": "Big Five / Extravert or Introvert",
+      "item": "Extravert or Introvert gauge",
+      "brandName": "Personality Traits sample",
+      "geneticAnalysis": "The detail page reports Likely more extraverted based on 3,535 genetic variants and says up to 50% of differences in extraversion may be due to genetics. The page also says personality is affected by both environment and DNA, and that many personality genes affect how the brain works.",
+      "genes": [
+        "DAB2IP",
+        "RASSF2",
+        "CCDC83",
+        "WSCD2",
+        "RBFOX1",
+        "PCDH15",
+        "RNF8",
+        "KCTD16",
+        "LRGUK",
+        "GBE1",
+        "MTMR9",
+        "EXOC4",
+        "AADAT",
+        "SLC29A3",
+        "PPFIA2",
+        "PIAS1",
+        "FOXP1",
+        "SNX16",
+        "CAAP1"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "personality-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Personality sample-report structure only. Keep this separate from local genome evidence; it is not a personal personality score, Big Five score, identity label, mood state, behavior prediction, mental-health status, therapy advice, school/work/relationship decision, treatment, medication, supplement, or actionability recommendation."
+    },
+    {
+      "groupTitle": "Big Five / Extravert or Introvert",
+      "item": "Extravert or Introvert top variants",
+      "brandName": "Personality Traits sample",
+      "geneticAnalysis": "Visible sample top-variant rows include DAB2IP rs1010235 AA, RASSF2 rs6084912 CC, CCDC83 rs56160063 AG, WSCD2 rs1426371 GG, RBFOX1 rs7498702 CT, PCDH15 rs6481128 AG, RNF8 rs148082170 GA, KCTD16 rs62403580 GA, LRGUK rs137925278 AA, GBE1 rs57590327 GG, MTMR9 rs2164273 AA, EXOC4 rs117910294 AA, AADAT rs114377628 TT, SLC29A3 rs556580453 GG, PPFIA2 rs142468221 TT, PIAS1 rs111650392 CC, FOXP1 rs189489530 GG, SNX16 rs117898492 CC, and CAAP1 rs149314543 GG. The sample table states that the number of risk variants in this table does not necessarily reflect the overall result.",
+      "genes": [
+        "DAB2IP",
+        "RASSF2",
+        "CCDC83",
+        "WSCD2",
+        "RBFOX1",
+        "PCDH15",
+        "RNF8",
+        "KCTD16",
+        "LRGUK",
+        "GBE1",
+        "MTMR9",
+        "EXOC4",
+        "AADAT",
+        "SLC29A3",
+        "PPFIA2",
+        "PIAS1",
+        "FOXP1",
+        "SNX16",
+        "CAAP1"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "personality-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Personality sample-report structure only. Keep this separate from local genome evidence; it is not a personal personality score, Big Five score, identity label, mood state, behavior prediction, mental-health status, therapy advice, school/work/relationship decision, treatment, medication, supplement, or actionability recommendation."
+    },
+    {
+      "groupTitle": "Big Five / Neuroticism",
+      "item": "Neuroticism gauge",
+      "brandName": "Personality Traits sample",
+      "geneticAnalysis": "The detail page reports Likely more secure based on 882,554 genetic variants and says about 50-60% of differences in neuroticism may be due to genetics. The page defines neuroticism as a tendency to focus on negative emotions, says lifestyle and environmental factors may influence neuroticism, and lists mindfulness, talk therapy, and exercise as strategies in the sample text.",
+      "genes": [
+        "Neuroticism model gauge"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "personality-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Personality sample-report structure only. Keep this separate from local genome evidence; it is not a personal personality score, Big Five score, identity label, mood state, behavior prediction, mental-health status, therapy advice, school/work/relationship decision, treatment, medication, supplement, or actionability recommendation."
+    }
+  ],
+  "personalityTraitContext": {
+    "plainEnglishMeaning": "The safe output for this package is an evidence-availability report plus exact public sample-output examples. It explains which model, professional, psychometric, environment, and decision-context inputs are missing and avoids personality conclusions from missing evidence.",
+    "unsupportedClaims": [
+      "Personality type, Big Five score, temperament score, psychiatric diagnosis, mood state, stress sensitivity, identity label, relationship prediction, work decision, school decision, behavior prediction, therapy need, treatment need, medication need, supplement need, and clinical actionability are not supported by this fixture.",
+      "Public sample PDF rows are present only as observed output examples; sample labels, gauges, genetic-variant rows, mindfulness/talk-therapy/exercise text, and final-page Fitness wording are not local-user results or guidance."
+    ],
+    "professionalReview": "Use this as a local-agent readiness fixture only. Mental-health, school, workplace, relationship, identity, therapy, or treatment decisions require appropriate professional context and review."
+  },
+  "practicalNextSteps": {
+    "professionalReview": [
+      "Keep this output educational and non-diagnostic.",
+      "Do not use this fixture to make school, work, relationship, therapy, medication, supplement, treatment, or identity decisions.",
+      "Use qualified professional review for mental-health or high-stakes personal decisions."
+    ]
+  },
+  "references": [
+    {
+      "id": "cdc-genetic-testing",
+      "title": "CDC Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetics",
+      "title": "MedlinePlus Genetics"
+    },
+    {
+      "id": "medlineplus-genetic-testing",
+      "title": "MedlinePlus: Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetic-test-results",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results"
+    },
+    {
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean"
+    },
+    {
+      "id": "fda-direct-to-consumer-tests",
+      "title": "FDA Direct-to-Consumer Tests"
+    },
+    {
+      "id": "medlineplus-complex-disorders",
+      "title": "MedlinePlus Genetics: complex disorders"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    },
+    {
+      "id": "medlineplus-temperament",
+      "title": "MedlinePlus Genetics: temperament"
+    },
+    {
+      "id": "medlineplus-genetics-traits",
+      "title": "MedlinePlus Genetics and Human Traits"
+    },
+    {
+      "id": "nimh-looking-at-my-genes",
+      "title": "NIMH: Looking at My Genes"
+    },
+    {
+      "id": "personality-traits-sample-pdf",
+      "title": "Personality Traits DNA sample report"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "effect": "The local fixture intentionally omits personality scoring and professional/psychometric context.",
+        "gene": "My Personality Traits model/source output",
+        "genotype": "validated personality trait model, score scale, calibration distribution, ancestry applicability metadata, environment context, mental-health context, psychometric instrument, professional interpretation, and local-user model output unavailable",
+        "phenotype": "Mark personality scores, Big Five scores, identity claims, psychiatric conclusions, relationship/work/school decisions, treatment, medication, supplement, and actionability unavailable instead of inferring them.",
+        "tier": "Local missing input",
+        "variantId": "my-personality-traits-model-output-unavailable"
+      },
+      {
+        "effect": "The sample overview reports 11 genetic results across Big Five traits, feelings, and behaviors.",
+        "gene": "Personality model cards",
+        "genotype": "public sample overview cards observed",
+        "phenotype": "Observed sample content only; do not infer local personality type, score, identity, mood state, behavior, or life decision.",
+        "tier": "Sample result scope",
+        "variantId": "11 genetic results"
+      },
+      {
+        "effect": "The sample Extravert or Introvert page reports likely more extraverted based on 3,535 genetic variants.",
+        "gene": "Extravert or Introvert model",
+        "genotype": "likely more extraverted",
+        "phenotype": "Observed sample content only; do not infer local extraversion, introversion, personality type, relationship, school, work, or behavioral conclusion.",
+        "tier": "Sample gauge",
+        "variantId": "3,535 variants"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Extravert or Introvert table.",
+        "gene": "DAB2IP",
+        "genotype": "AA",
+        "phenotype": "Observed sample row only; it is not a local personality finding.",
+        "tier": "Extravert top sample variants",
+        "variantId": "rs1010235"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Extravert or Introvert table.",
+        "gene": "RASSF2",
+        "genotype": "CC",
+        "phenotype": "Observed sample row only; it is not a local personality finding.",
+        "tier": "Extravert top sample variants",
+        "variantId": "rs6084912"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Extravert or Introvert table.",
+        "gene": "CCDC83",
+        "genotype": "AG",
+        "phenotype": "Observed sample row only; it is not a local personality finding.",
+        "tier": "Extravert top sample variants",
+        "variantId": "rs56160063"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Extravert or Introvert table.",
+        "gene": "WSCD2",
+        "genotype": "GG",
+        "phenotype": "Observed sample row only; it is not a local personality finding.",
+        "tier": "Extravert top sample variants",
+        "variantId": "rs1426371"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Extravert or Introvert table.",
+        "gene": "RBFOX1",
+        "genotype": "CT",
+        "phenotype": "Observed sample row only; it is not a local personality finding.",
+        "tier": "Extravert top sample variants",
+        "variantId": "rs7498702"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Extravert or Introvert table.",
+        "gene": "PCDH15",
+        "genotype": "AG",
+        "phenotype": "Observed sample row only; it is not a local personality finding.",
+        "tier": "Extravert top sample variants",
+        "variantId": "rs6481128"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Extravert or Introvert table.",
+        "gene": "LRGUK",
+        "genotype": "AA",
+        "phenotype": "Observed sample row only; it is not a local personality finding.",
+        "tier": "Extravert top sample variants",
+        "variantId": "rs137925278"
+      },
+      {
+        "effect": "The sample Neuroticism page reports likely more secure based on 882,554 genetic variants.",
+        "gene": "Neuroticism model",
+        "genotype": "likely more secure",
+        "phenotype": "Observed sample content only; do not infer local neuroticism, mood state, stress sensitivity, mental health status, therapy need, exercise need, or treatment.",
+        "tier": "Sample gauge",
+        "variantId": "882,554 variants"
+      }
+    ],
+    "missingInputs": [
+      "Validated personality trait model, Big Five score scale, calibration distribution, ancestry applicability metadata, and local-user model output are unavailable in this fixture.",
+      "Environment context, mental-health context, psychometric instrument, clinical/professional interpretation, and school/work/relationship decision context are unavailable.",
+      "Public sample rows are observed sample-output examples only and are not local-user genotype, personality, mood, behavior, identity, or mental-health results."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated personality model, ancestry applicability metadata, source-output provenance, psychometric instrument, environment context, mental-health context, or professional review is supplied.",
+      "Absence of evidence in this fixture must be reported as unavailable, not converted into low likelihood, reassurance, personality type, identity label, mood state, behavior prediction, or actionability advice.",
+      "Sample gauges and labels stay in sample-output rows and appendix context; they are not personal probabilities."
+    ],
+    "limitations": [
+      "This generated result does not include raw genome data and does not emit VCF, FASTQ, BAM, or CRAM content.",
+      "Reference resources used for boundary language: CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing; MedlinePlus Genetics: Interpreting Genetic Test Results; MedlinePlus Genetics: What DTC genetic test results mean; FDA Direct-to-Consumer Tests; MedlinePlus Genetics: complex disorders; NHGRI overview of polygenic risk scores; GWAS Catalog; MedlinePlus Genetics: temperament; MedlinePlus Genetics and Human Traits; NIMH: Looking at My Genes; Personality Traits DNA sample report.",
+      "The result is a deterministic synthetic validation artifact for local-agent packaging, not a psychological, psychiatric, employment, school, relationship, or medical interpretation."
+    ]
+  }
+}

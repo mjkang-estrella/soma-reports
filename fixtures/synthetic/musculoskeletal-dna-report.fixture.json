@@ -1,0 +1,86 @@
+{
+  "consumerTone": "plain English; educational musculoskeletal DNA context only; no diagnosis, treatment, injury-risk, pain-cause, arthritis, EDS, osteoporosis, imaging, lab, or exercise-clearance claims",
+  "datasetId": "synthetic-musculoskeletal-dna-report-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "ACTN3",
+      "inputId": "ACTN3-rs1815739",
+      "matchStatus": "observed",
+      "observedValue": "CT",
+      "rsid": "rs1815739",
+      "sourceArtifact": "synthetic-musculoskeletal-dna-report-context-v1",
+      "sourceFile": "synthetic-musculoskeletal-dna-report-context-v1.json"
+    },
+    {
+      "assembly": "derived-fitness-trait-context",
+      "gene": "ACE",
+      "haplotype": "ID",
+      "inputId": "ACE-I-D",
+      "matchStatus": "observed",
+      "observedValue": "ID",
+      "sourceArtifact": "synthetic-musculoskeletal-dna-report-context-v1",
+      "sourceFile": "synthetic-musculoskeletal-dna-report-context-v1.json"
+    },
+    {
+      "assembly": "derived-fitness-trait-context",
+      "gene": "Musculoskeletal DNA model",
+      "haplotype": "musculoskeletal-dna-report-model-unavailable",
+      "inputId": "musculoskeletal-dna-report-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "calibrated musculoskeletal DNA score, diagnostic evidence, treatment evidence, injury-risk model, pain model, arthritis model, EDS model, osteoporosis model, bone-density evidence, imaging evidence, lab evidence, exercise-clearance context, and ancestry applicability metadata unavailable in this fixture",
+      "sourceArtifact": "synthetic-musculoskeletal-dna-report-context-v1",
+      "sourceFile": "synthetic-musculoskeletal-dna-report-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "hash": "sha256:synthetic-musculoskeletal-dna-report-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived fitness-trait evidence for musculoskeletal-dna-report validation"
+  },
+  "missingInputPolicy": "Report unavailable musculoskeletal DNA sections explicitly; do not infer diagnosis, treatment need, injury risk, pain causes, arthritis, EDS, osteoporosis, bone density, imaging findings, lab findings, training response, or exercise clearance.",
+  "packageSlug": "musculoskeletal-dna-report",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-athletic-performance",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: athletic performance",
+      "usedFor": [
+        "complex_trait_context",
+        "actn3_ace_context",
+        "non_deterministic_language"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
+      "usedFor": [
+        "complex_trait_limitations",
+        "probability_appendix"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "candidate_trait_associations",
+        "model_unavailable_context"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer Musculoskeletal DNA Report context using derived ACTN3 and ACE evidence plus explicit diagnosis, treatment, injury, pain, arthritis, bone-density, imaging, lab, and model-unavailable framing."
+}

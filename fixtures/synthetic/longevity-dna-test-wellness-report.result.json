@@ -1,0 +1,164 @@
+{
+  "reportOverview": {
+    "reportTitle": "Enhanced Longevity",
+    "inputManifestHash": "sha256:synthetic-enhanced-longevity-wellness-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com marketplace detail-page extraction is still pending.",
+      "No calibrated longevity, biological-age, frailty, disease-risk, supplement, lifestyle, lab, medication, treatment, or ancestry applicability model is supplied with this fixture.",
+      "The public sample PDF is used only for observed report structure and example row shape, not as this user's personal recommendation."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Longevity wellness context",
+      "item": "ACTN3 R577X / rs1815739",
+      "brandName": "",
+      "geneticAnalysis": "A derived ACTN3 rs1815739 CT call is available. This is aging and fitness trait context only and does not predict lifespan, longevity, biological age, frailty, disease risk, supplement needs, diet needs, or treatment needs.",
+      "genes": [
+        "ACTN3"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: athletic performance",
+      "sourceIds": [
+        "medlineplus-athletic-performance"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "ACTN3 is discussed in fitness research, but longevity and healthy aging depend on many genetic and non-genetic factors."
+    },
+    {
+      "groupTitle": "Longevity wellness context",
+      "item": "ACE I/D polymorphism",
+      "brandName": "",
+      "geneticAnalysis": "A derived ACE ID context row is available. This is not enough to estimate lifespan, biological age, disease risk, frailty, supplement response, lifestyle needs, lab status, medication response, or treatment needs.",
+      "genes": [
+        "ACE"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: athletic performance",
+      "sourceIds": [
+        "medlineplus-athletic-performance"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "ACE can provide performance-trait context, but it does not determine longevity, biological age, frailty, disease risk, or clinical actionability."
+    },
+    {
+      "groupTitle": "Longevity model availability",
+      "item": "Enhanced Longevity model",
+      "brandName": "",
+      "geneticAnalysis": "No calibrated longevity model, biological-age model, frailty model, disease-risk model, supplement model, lifestyle model, lab evidence, medication context, treatment context, or ancestry applicability metadata is supplied with this fixture.",
+      "genes": [
+        "Enhanced Longevity model"
+      ],
+      "sourceLabel": "NHGRI polygenic risk scores / GWAS Catalog",
+      "sourceIds": [
+        "nhgri-polygenic-risk-scores",
+        "ebi-gwas-catalog"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The report can describe supplied marker context, but it should not quantify lifespan, longevity, biological age, frailty, disease risk, supplements, lifestyle, labs, medications, or treatment without validated evidence."
+    },
+    {
+      "groupTitle": "Observed sample report structure",
+      "item": "Risk score, gauge, and percentile explanation",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "The public sample PDF explains that results may be shown as a risk score, percentile, relative risk gauge, trait, or haplotype.",
+      "genes": [],
+      "sourceLabel": "Enhanced Longevity sample report",
+      "sourceIds": [
+        "enhanced-longevity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This row documents the report format. It is not a personal longevity score for this fixture."
+    },
+    {
+      "groupTitle": "Observed sample recommendation structure",
+      "item": "Limit Alcohol Intake",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "The public sample PDF shows this recommendation with impact 4/5, evidence 5/5, and a sample GCKR rs1260326 cc variant row.",
+      "genes": [
+        "GCKR"
+      ],
+      "sourceLabel": "Enhanced Longevity sample report",
+      "sourceIds": [
+        "enhanced-longevity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is observed sample content only. It should not be read as this user's alcohol, longevity, or behavior recommendation."
+    },
+    {
+      "groupTitle": "Observed sample recommendation structure",
+      "item": "Plant-Based Diet",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "The public sample PDF shows this recommendation with impact 3/5 and evidence 4/5.",
+      "genes": [
+        "Not shown in visible sample block"
+      ],
+      "sourceLabel": "Enhanced Longevity sample report",
+      "sourceIds": [
+        "enhanced-longevity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is observed sample content only. It should not be read as this user's diet or longevity recommendation."
+    }
+  ],
+  "practicalNextSteps": {
+    "longevityWellnessContext": [
+      "Use this report as educational longevity-wellness genetics context, not as a lifespan, biological-age, disease-risk, supplement, diet, exercise, lab, medication, or treatment plan.",
+      "Treat public sample recommendation blocks as examples of report format only unless equivalent local, validated evidence is supplied.",
+      "Combine healthy-aging goals, labs, medical history, medications, activity, nutrition, sleep, environment, and professional support when making health decisions."
+    ]
+  },
+  "references": [
+    {
+      "id": "medlineplus-athletic-performance",
+      "title": "MedlinePlus Genetics: athletic performance"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    },
+    {
+      "id": "enhanced-longevity-sample-pdf",
+      "title": "Enhanced Longevity sample report"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "gene": "GCKR",
+        "observedValue": "Sample PDF example row: rs1260326 cc"
+      },
+      {
+        "gene": "ACTN3",
+        "observedValue": "Local fixture: rs1815739 CT"
+      },
+      {
+        "gene": "ACE",
+        "observedValue": "Local fixture: I/D"
+      },
+      {
+        "gene": "Enhanced Longevity model",
+        "observedValue": "calibrated model unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated marketplace detail-page extraction is still pending.",
+      "No calibrated longevity, biological-age, frailty, disease-risk, supplement, lifestyle, lab, medication, treatment, or ancestry applicability model is supplied.",
+      "No activity history, nutrition history, sleep history, labs, medication history, medical history, functional testing, or clinician assessment is supplied.",
+      "The GCKR row is sample-only evidence from the public PDF and is not this user's local genotype evidence."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Longevity and healthy-aging outcomes are complex traits influenced by genetics, age, health, environment, activity, sleep, nutrition, medical history, and many other factors.",
+      "A small number of markers cannot explain lifespan, biological age, frailty, disease risk, supplement needs, lifestyle needs, lab status, medication response, or treatment needs.",
+      "Sample report recommendation blocks show output format and citation structure, not personal actionability for this fixture."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report is educational and does not predict longevity, estimate lifespan, estimate biological age, infer frailty, estimate disease risk, recommend supplements, prescribe diets, prescribe exercise, interpret labs, change medications, or provide treatment guidance.",
+      "The public sample PDF is source-bound as observed report structure, while authenticated marketplace detail-page extraction remains pending."
+    ]
+  }
+}

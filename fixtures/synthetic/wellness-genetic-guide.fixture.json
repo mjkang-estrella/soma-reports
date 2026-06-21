@@ -2,6 +2,9 @@
   "packageSlug": "wellness-genetic-guide",
   "packageVersion": "0.1.0",
   "datasetId": "fixture.synthetic",
+  "reportPurpose": "Generate a plain-English Wellness Genetic Guide that mirrors the public sample report structure using only local derived evidence and supplied reference resources.",
+  "missingInputPolicy": "If a required marker, allele, or reference is unavailable, mark the related row or section as limited or unavailable instead of guessing.",
+  "consumerTone": "Plain English for general customers; educational and non-diagnostic.",
   "inputManifest": {
     "hash": "sha256:synthetic-only",
     "genomeBuild": "GRCh38",
@@ -15,7 +18,9 @@
       "gene": "MTHFR",
       "observedValue": "G/A",
       "assembly": "GRCh38",
-      "matchStatus": "sample_pdf_match"
+      "matchStatus": "sample_pdf_match",
+      "sourceFile": "synthetic-derived-evidence.json",
+      "sourceArtifact": "reference/sources/wellness_sample_report.pdf"
     },
     {
       "inputId": "KCNH2-rs1137617",
@@ -23,7 +28,9 @@
       "gene": "KCNH2",
       "observedValue": "A/G",
       "assembly": "GRCh38",
-      "matchStatus": "sample_pdf_match"
+      "matchStatus": "sample_pdf_match",
+      "sourceFile": "synthetic-derived-evidence.json",
+      "sourceArtifact": "reference/sources/wellness_sample_report.pdf"
     },
     {
       "inputId": "ABCB1-rs1045642",
@@ -31,7 +38,9 @@
       "gene": "ABCB1",
       "observedValue": "G/G",
       "assembly": "GRCh38",
-      "matchStatus": "sample_pdf_match"
+      "matchStatus": "sample_pdf_match",
+      "sourceFile": "synthetic-derived-evidence.json",
+      "sourceArtifact": "reference/sources/wellness_sample_report.pdf"
     }
   ],
   "referenceResources": [

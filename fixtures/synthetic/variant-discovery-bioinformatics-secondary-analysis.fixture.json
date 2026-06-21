@@ -1,0 +1,163 @@
+{
+  "packageSlug": "variant-discovery-bioinformatics-secondary-analysis",
+  "datasetId": "synthetic-variant-discovery-context-v1",
+  "packageVersion": "0.1.0",
+  "reportPurpose": "Consumer candidate variant-discovery report using selected derived callset count, quality-filter, database-cross-reference, and validation-availability metrics while explicitly marking raw-file, benchmark, and clinical interpretation context unavailable.",
+  "missingInputPolicy": "Report unavailable caller versions, command lines, quality thresholds, callable regions, benchmark truth-set comparison, clinical classification, and medical meaning explicitly; do not infer variant truth, disease risk, clinical sensitivity, or medical action.",
+  "consumerTone": "plain English; educational variant-discovery quality-control context only; no diagnosis, pathogenicity classification, disease-risk estimate, clinical sensitivity, ancestry certainty, medication, screening, reproductive, lifestyle, or treatment guidance",
+  "inputManifest": {
+    "hash": "sha256:synthetic-variant-discovery-context-v1",
+    "genomeBuild": "GRCh38-derived",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived variant-discovery metrics for variant-discovery validation"
+  },
+  "genomeEvidence": [
+    {
+      "inputId": "variant-discovery-callset-summary",
+      "haplotype": "variant-discovery-callset-summary",
+      "gene": "candidate variant callset summary",
+      "observedValue": "derived small-variant summary reports 3,820,000 candidate SNV records and 612,000 candidate indel records after upstream alignment, duplicate marking, and read-quality filtering; exact caller version and command line are unavailable",
+      "assembly": "GRCh38-derived",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-variant-discovery-context-v1.json",
+      "sourceArtifact": "synthetic-variant-discovery-context-v1"
+    },
+    {
+      "inputId": "variant-discovery-quality-filter-summary",
+      "haplotype": "variant-discovery-quality-filter-summary",
+      "gene": "variant quality-filter summary",
+      "observedValue": "derived filter summary reports 3,710,000 candidate records passing the supplied filter label, 722,000 candidate records below at least one supplied quality label, and 14,200 candidate records flagged for low depth or genotype-quality context; exact thresholds are unavailable",
+      "assembly": "GRCh38-derived",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-variant-discovery-context-v1.json",
+      "sourceArtifact": "synthetic-variant-discovery-context-v1"
+    },
+    {
+      "inputId": "variant-discovery-database-cross-reference-summary",
+      "haplotype": "variant-discovery-database-cross-reference-summary",
+      "gene": "public database cross-reference summary",
+      "observedValue": "derived cross-reference summary reports dbSNP identifiers available for 91.6% of candidate records; ClinVar lookup status, submitted clinical assertions, VEP transcript consequences, and Sequence Ontology terms are not supplied for individual records",
+      "assembly": "GRCh38-derived",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-variant-discovery-context-v1.json",
+      "sourceArtifact": "synthetic-variant-discovery-context-v1"
+    },
+    {
+      "inputId": "variant-discovery-validation-context-unavailable",
+      "haplotype": "variant-discovery-validation-context-unavailable",
+      "gene": "variant discovery validation metadata",
+      "observedValue": "benchmark truth-set comparison, callable-region mask, per-chromosome failure table, ploidy handling, phasing, structural-variant support, copy-number support, caller command line, pipeline checksum, and authenticated sample-report rows are unavailable in this fixture",
+      "assembly": "derived-variant-discovery-context",
+      "matchStatus": "unavailable",
+      "sourceFile": "synthetic-variant-discovery-context-v1.json",
+      "sourceArtifact": "synthetic-variant-discovery-context-v1"
+    }
+  ],
+  "referenceResources": [
+    {
+      "id": "gatk-germline-short-variant-discovery",
+      "title": "GATK Germline short variant discovery",
+      "sourceType": "variant_calling_workflow_documentation",
+      "evidenceLevel": "implementation_background",
+      "usedFor": [
+        "variant_calling_workflow",
+        "candidate_callset_context",
+        "small_variant_scope"
+      ]
+    },
+    {
+      "id": "gatk-haplotypecaller",
+      "title": "GATK HaplotypeCaller",
+      "sourceType": "variant_caller_documentation",
+      "evidenceLevel": "implementation_background",
+      "usedFor": [
+        "haplotypecaller_context",
+        "snp_indel_calling",
+        "variant_caller_limitations"
+      ]
+    },
+    {
+      "id": "bcftools-variant-calling",
+      "title": "BCFtools variant calling",
+      "sourceType": "variant_calling_tool_documentation",
+      "evidenceLevel": "implementation_background",
+      "usedFor": [
+        "genotype_likelihood_context",
+        "variant_call_generation",
+        "tool_version_limitations"
+      ]
+    },
+    {
+      "id": "samtools-mpileup",
+      "title": "SAMtools mpileup",
+      "sourceType": "pileup_tool_documentation",
+      "evidenceLevel": "implementation_background",
+      "usedFor": [
+        "pileup_context",
+        "read_evidence_summary",
+        "alignment_file_omission"
+      ]
+    },
+    {
+      "id": "ncbi-dbsnp",
+      "title": "NCBI dbSNP",
+      "sourceType": "database",
+      "evidenceLevel": "database_background",
+      "usedFor": [
+        "public_variant_identifier_context",
+        "rsid_context",
+        "not_variant_truth"
+      ]
+    },
+    {
+      "id": "ncbi-clinvar",
+      "title": "NCBI ClinVar",
+      "sourceType": "database",
+      "evidenceLevel": "database_background",
+      "usedFor": [
+        "clinical_assertion_unavailable",
+        "submitted_assertion_context",
+        "not_diagnosis"
+      ]
+    },
+    {
+      "id": "ensembl-vep",
+      "title": "Ensembl Variant Effect Predictor",
+      "sourceType": "annotation_tool_documentation",
+      "evidenceLevel": "implementation_background",
+      "usedFor": [
+        "consequence_annotation_unavailable",
+        "annotation_scope",
+        "clinical_meaning_not_inferred"
+      ]
+    },
+    {
+      "id": "sequence-ontology",
+      "title": "Sequence Ontology",
+      "sourceType": "controlled_vocabulary",
+      "evidenceLevel": "terminology_background",
+      "usedFor": [
+        "variant_type_context",
+        "annotation_glossary"
+      ]
+    },
+    {
+      "id": "nist-genome-in-a-bottle",
+      "title": "NIST Genome in a Bottle",
+      "sourceType": "benchmark_resource",
+      "evidenceLevel": "benchmark_background",
+      "usedFor": [
+        "benchmark_context",
+        "truth_set_unavailable",
+        "validation_limitations"
+      ]
+    }
+  ],
+  "expectedAssertions": {
+    "noRawGenomeInOutput": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "probabilitiesOnlyInAppendix": true,
+    "consumerLanguage": true
+  }
+}

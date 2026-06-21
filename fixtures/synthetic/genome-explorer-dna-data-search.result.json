@@ -1,0 +1,160 @@
+{
+  "reportOverview": {
+    "reportTitle": "Genome Explorer v3",
+    "inputManifestHash": "sha256:synthetic-genome-explorer-search-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "Exact service outputs, complete resource versions, and full utility output tables are not supplied.",
+      "complete genome search, uploaded data browsing, full SNP lookup, disease or trait interpretation, clinical classification, and authenticated sample-report rows unavailable in this fixture"
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Public variant lookup context",
+      "item": "BDNF rs6265",
+      "brandName": "",
+      "geneticAnalysis": "A selected public variant identifier is available for lookup and annotation context. No personal trait, disease, or clinical interpretation is supplied.",
+      "genes": [
+        "BDNF"
+      ],
+      "sourceLabel": "NCBI dbSNP; Ensembl REST; Ensembl VEP",
+      "sourceIds": [
+        "ncbi-dbsnp",
+        "ensembl-rest-api",
+        "ensembl-vep"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The row can be used to explain that a public rs identifier exists and can be looked up in external resources. It does not say what the variant means for health, traits, or actions."
+    },
+    {
+      "groupTitle": "Reference build context",
+      "item": "GRCh38 coordinate context",
+      "brandName": "",
+      "geneticAnalysis": "GRCh38 reference-build context is available for the selected lookup, while alternate-build conversion and remapping outputs are not supplied.",
+      "genes": [
+        "reference genome coordinate context"
+      ],
+      "sourceLabel": "NCBI Variation Services / SPDI; Ensembl REST",
+      "sourceIds": [
+        "ncbi-variation-services-spdi",
+        "ensembl-rest-api"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The report can name the supplied build context, but coordinate conversion or remapping needs exact service results and cannot be inferred from the fixture."
+    },
+    {
+      "groupTitle": "Genome search availability",
+      "item": "Complete genome search and browsing unavailable",
+      "brandName": "",
+      "geneticAnalysis": "complete genome search, uploaded data browsing, full SNP lookup, disease or trait interpretation, clinical classification, and authenticated sample-report rows unavailable in this fixture",
+      "genes": [
+        "genome search output"
+      ],
+      "sourceLabel": "dbSNP; ClinVar; Ensembl REST",
+      "sourceIds": [
+        "ncbi-dbsnp",
+        "ncbi-clinvar",
+        "ensembl-rest-api"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This local run can describe selected lookup context, but it cannot browse an uploaded genome, prove that a variant is absent, or return a complete search table."
+    }
+  ],
+  "utilityContext": {
+    "plainEnglishMeaning": "This result is a utility-boundary report. It explains supplied public lookup context and explicitly marks missing service, pipeline, search, mapping, or interpretation outputs unavailable.",
+    "unsupportedClaims": [
+      "complete genome browsing",
+      "full SNP search",
+      "variant absence claim",
+      "disease or trait interpretation",
+      "clinical classification",
+      "uploaded data search result",
+      "pathogenicity classification",
+      "clinical significance claim",
+      "diagnosis",
+      "disease-risk estimate",
+      "medication response",
+      "screening or treatment recommendation"
+    ]
+  },
+  "references": [
+    {
+      "id": "ensembl-vep",
+      "title": "Ensembl Variant Effect Predictor"
+    },
+    {
+      "id": "ensembl-variant-consequences",
+      "title": "Ensembl Variation: calculated variant consequences"
+    },
+    {
+      "id": "ensembl-rest-api",
+      "title": "Ensembl REST API endpoints"
+    },
+    {
+      "id": "sequence-ontology",
+      "title": "Sequence Ontology"
+    },
+    {
+      "id": "ncbi-dbsnp",
+      "title": "NCBI dbSNP"
+    },
+    {
+      "id": "ncbi-clinvar",
+      "title": "NCBI ClinVar"
+    },
+    {
+      "id": "ncbi-variation-services-spdi",
+      "title": "NCBI Variation Services / SPDI"
+    },
+    {
+      "id": "ncbi-genetic-testing-registry",
+      "title": "NIH Genetic Testing Registry"
+    },
+    {
+      "id": "international-genome-sample-resource",
+      "title": "International Genome Sample Resource / 1000 Genomes"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "bioinformatics-public-variant-rs6265",
+        "gene": "BDNF",
+        "observedValue": "selected public variant identifier available for lookup and annotation context; no trait, disease, or clinical interpretation supplied",
+        "matchStatus": "summarized"
+      },
+      {
+        "inputId": "bioinformatics-reference-build-context",
+        "gene": "reference genome coordinate context",
+        "observedValue": "GRCh38 coordinate context available for selected lookup; alternate build, liftover path, remapping evidence, and service output unavailable",
+        "matchStatus": "summarized"
+      },
+      {
+        "inputId": "genome-explorer-search-output-unavailable",
+        "gene": "genome search output",
+        "observedValue": "complete genome search, uploaded data browsing, full SNP lookup, disease or trait interpretation, clinical classification, and authenticated sample-report rows unavailable in this fixture",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated Sequencing.com sample report rows",
+      "Exact service output tables and resource-version metadata",
+      "Complete utility-specific input and output provenance",
+      "complete genome search, uploaded data browsing, full SNP lookup, disease or trait interpretation, clinical classification, and authenticated sample-report rows unavailable in this fixture"
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated probability, coordinate-correctness, mapping-success, annotation-completeness, or clinical-actionability model is supplied for this local package.",
+      "The selected rows support utility context only and cannot be treated as complete service output."
+    ],
+    "limitations": [
+      "This validation result uses selected derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
+      "The package does not emit complete SNP tables, sequencing files, alignment files, or pipeline output files.",
+      "The package does not diagnose disease, estimate disease risk, classify pathogenicity, infer medication response, or recommend screening, testing, treatment, diet, supplements, or lifestyle changes."
+    ]
+  }
+}

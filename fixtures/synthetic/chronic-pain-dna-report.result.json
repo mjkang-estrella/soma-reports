@@ -1,0 +1,476 @@
+{
+  "schemaVersion": "soma-reports.local-result.v1",
+  "reportOverview": {
+    "reportTitle": "Chronic Pain DNA Report",
+    "inputManifestHash": "sha256:synthetic-chronic-pain-dna-report-organ-system-boundary-context-v1",
+    "sectionsUnavailable": [
+      "Validated Chronic Pain DNA Report model, calibrated PRS, pain-threshold model, medication-response model, and sample-specific local risk calculations are unavailable in this local fixture.",
+      "Pain diagnosis, pain location, symptom history, injury history, mental-health context, medications, opioid or analgesic response evidence, and professional interpretation are unavailable.",
+      "Neurologic exam, inflammatory labs, imaging, musculoskeletal evaluation, treatment context, prevention context, disability context, and clinical actionability context are unavailable."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Validated model availability",
+      "item": "Chronic Pain DNA Report validated model",
+      "brandName": "Chronic Pain DNA Report",
+      "geneticAnalysis": "No validated package-specific chronic-pain, pain-threshold, analgesic-response, opioid-response, or calibrated PRS output is present in the local fixture.",
+      "genes": [
+        "model-unavailable"
+      ],
+      "sourceLabel": "Public genetic-testing and complex-trait references",
+      "sourceIds": [
+        "cdc-genetic-testing",
+        "medlineplus-genetics",
+        "medlineplus-genetic-testing",
+        "medlineplus-genetic-test-results"
+      ],
+      "plainEnglishMeaning": "This local run can document that model evidence is unavailable, but it cannot turn that absence into a chronic-pain diagnosis, personal pain-risk estimate, treatment response, or health action.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Clinical and professional context availability",
+      "item": "Pain history, medication context, and professional review",
+      "brandName": "Chronic Pain DNA Report",
+      "geneticAnalysis": "Pain diagnosis, pain location, symptoms, medications, opioid or analgesic response evidence, and professional interpretation are not supplied.",
+      "genes": [
+        "clinical-context-unavailable"
+      ],
+      "sourceLabel": "Consumer genetic-testing limitation references",
+      "sourceIds": [
+        "medlineplus-genetics",
+        "medlineplus-genetic-testing",
+        "medlineplus-genetic-test-results",
+        "fda-direct-to-consumer-tests"
+      ],
+      "plainEnglishMeaning": "Genome-derived evidence alone is not enough to decide pain cause, pain severity, medication response, testing, treatment, supplements, exercise guidance, clearance, or all-clear questions.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Organ-system context availability",
+      "item": "Pain and musculoskeletal evidence context",
+      "brandName": "Chronic Pain DNA Report",
+      "geneticAnalysis": "Neurologic exam, inflammatory labs, imaging, musculoskeletal evaluation, disease-specific testing, and treatment context are not supplied.",
+      "genes": [
+        "organ-system-context-unavailable"
+      ],
+      "sourceLabel": "Pain-context and PRS limitation references",
+      "sourceIds": [
+        "nhgri-polygenic-risk-scores",
+        "ebi-gwas-catalog",
+        "medlineplus-chronic-pain",
+        "nih-chronic-pain-research-overview"
+      ],
+      "plainEnglishMeaning": "The references support education about limits and review context, not a standalone conclusion about symptoms, pain threshold, organ function, severity, prognosis, or actionability.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Report structure",
+      "item": "How this works",
+      "brandName": "Chronic Pain DNA Report sample",
+      "geneticAnalysis": "The sample explains that reports analyze how DNA influences health, summarize results as a risk score or gauge, use percentile comparisons, and rank recommendations by impact and evidence. The introductory pages define lower, typical, and higher likelihood, explain percentile language, show dietary/lifestyle/supplement/drug recommendation categories, and emphasize that genetics is not the whole story.",
+      "genes": [
+        "Report-level output structure"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-pain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Pain sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-pain, joint-pain, osteoarthritis, headache, migraine, capsaicin-sensitivity, medication-response, treatment, testing, supplement, exercise, or medical recommendation."
+    },
+    {
+      "groupTitle": "Overview of results",
+      "item": "Nine genetic result cards",
+      "brandName": "Chronic Pain DNA Report sample",
+      "geneticAnalysis": "The overview shows Chronic Pain typical likelihood; Joint Pain more likely/increased likelihood of osteoarthritis; Shoulder & Neck Pain typical; Back Pain typical; Hip Pain typical; Knee Pain typical; Headache less likely; Migraines typical; Cluster Headaches typical. The sample summary says the report helps examine pain genetics for chronic pain, headaches, and musculoskeletal pain.",
+      "genes": [
+        "Pain and headache model cards"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-pain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Pain sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-pain, joint-pain, osteoarthritis, headache, migraine, capsaicin-sensitivity, medication-response, treatment, testing, supplement, exercise, or medical recommendation."
+    },
+    {
+      "groupTitle": "Risk score / Chronic Pain",
+      "item": "Chronic Pain",
+      "brandName": "Chronic Pain DNA Report sample",
+      "geneticAnalysis": "Typical likelihood of chronic pain; 58th percentile; based on 611,315 genetic variants. The sample Chronic Pain page includes key takeaways, chronic-pain definitions, US prevalence context, risk factors, and a top-variants table.",
+      "genes": [
+        "HTR1B",
+        "HTR2A",
+        "TNF",
+        "COMT",
+        "SLC24A3",
+        "MLN",
+        "CA10",
+        "OLFM4",
+        "FOXP2",
+        "DCAKD",
+        "LRRTM1",
+        "DMRTA2",
+        "MAML3",
+        "BBX",
+        "ANAPC4",
+        "ADAMTSL4",
+        "FAM120AOS",
+        "SDCCAG8",
+        "DDX20"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-pain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Pain sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-pain, joint-pain, osteoarthritis, headache, migraine, capsaicin-sensitivity, medication-response, treatment, testing, supplement, exercise, or medical recommendation."
+    },
+    {
+      "groupTitle": "Risk score / Chronic Pain",
+      "item": "Chronic Pain top variants",
+      "brandName": "Chronic Pain DNA Report sample",
+      "geneticAnalysis": "Visible sample top-variant rows include HTR1B rs6296 GG, HTR2A rs6313 AA, TNF rs1800629 GA, COMT rs4680 AG, SLC24A3 rs2424248 GG, and other listed rows. The sample table states that the number of risk variants in the table does not necessarily reflect the overall result.",
+      "genes": [
+        "HTR1B",
+        "HTR2A",
+        "TNF",
+        "COMT",
+        "SLC24A3"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-pain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Pain sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-pain, joint-pain, osteoarthritis, headache, migraine, capsaicin-sensitivity, medication-response, treatment, testing, supplement, exercise, or medical recommendation."
+    },
+    {
+      "groupTitle": "Risk score / Joint Pain",
+      "item": "Joint Pain",
+      "brandName": "Chronic Pain DNA Report sample",
+      "geneticAnalysis": "More likely/increased likelihood of osteoarthritis; 80th percentile; based on 385,825 genetic variants. The sample Joint Pain page states that osteoarthritis commonly affects knees, hands, and hips, lists non-genetic risk factors, and explains that about 50% of differences in osteoarthritis chances may be due to genetics.",
+      "genes": [
+        "COL2A1",
+        "COL11A1",
+        "COL1A1",
+        "IL1B",
+        "IL4R",
+        "IL17A",
+        "IL17F",
+        "IL6",
+        "ESR1",
+        "FRZB",
+        "VDR"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-pain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Pain sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-pain, joint-pain, osteoarthritis, headache, migraine, capsaicin-sensitivity, medication-response, treatment, testing, supplement, exercise, or medical recommendation."
+    },
+    {
+      "groupTitle": "Risk score / Joint Pain",
+      "item": "Joint Pain top variants",
+      "brandName": "Chronic Pain DNA Report sample",
+      "geneticAnalysis": "Visible sample top-variant rows include EPHA5 rs201194999 CC, COL11A1 rs2622873 TT, SRR rs216175 AA, TGFA rs3771501 GA, CPNE1 rs2248393 CC, and other listed rows. The sample table again states that visible risk variants do not necessarily reflect the overall result.",
+      "genes": [
+        "EPHA5",
+        "COL11A1",
+        "SRR",
+        "TGFA",
+        "CPNE1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-pain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Pain sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-pain, joint-pain, osteoarthritis, headache, migraine, capsaicin-sensitivity, medication-response, treatment, testing, supplement, exercise, or medical recommendation."
+    },
+    {
+      "groupTitle": "Recommendations",
+      "item": "Recommendation ranking",
+      "brandName": "Chronic Pain DNA Report sample",
+      "geneticAnalysis": "The sample says recommendations are prioritized by likely impact based on genetics plus the amount of scientific evidence supporting the recommendation. The recommendation pages show named recommendation blocks with condition-level impact and evidence ratings.",
+      "genes": [
+        "Recommendation ranking model"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-pain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Pain sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-pain, joint-pain, osteoarthritis, headache, migraine, capsaicin-sensitivity, medication-response, treatment, testing, supplement, exercise, or medical recommendation."
+    },
+    {
+      "groupTitle": "Recommendation / Acupuncture",
+      "item": "Condition-level ratings",
+      "brandName": "Chronic Pain DNA Report sample",
+      "geneticAnalysis": "Visible condition rows include Joint Pain impact 1/5 evidence 3/5; Back Pain impact 3/5 evidence 3/5; Migraines impact 3/5 evidence 3/5; Chronic Pain impact 3/5 evidence 4/5; Shoulder & Neck Pain impact 2/5 evidence 2/5; Hip Pain impact 1/5 evidence 1/5; Knee Pain impact 2/5 evidence 3/5; Headache impact 3/5 evidence 3/5. The sample describes acupuncture as a recommendation block and includes safety language for pregnancy, pacemakers, and bleeding disorders.",
+      "genes": [
+        "No visible genotype row in acupuncture pages"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-pain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Pain sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-pain, joint-pain, osteoarthritis, headache, migraine, capsaicin-sensitivity, medication-response, treatment, testing, supplement, exercise, or medical recommendation."
+    },
+    {
+      "groupTitle": "Recommendation / Acupuncture",
+      "item": "Chronic Pain condition detail",
+      "brandName": "Chronic Pain DNA Report sample",
+      "geneticAnalysis": "Impact 3/5; evidence 4/5. The sample Chronic Pain subsection says acupuncture may help pain symptoms, mood, and stress/tension; it also says benefits may persist but require at least five weeks to maximize.",
+      "genes": [
+        "No visible genotype row in acupuncture chronic-pain subsection"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-pain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Pain sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-pain, joint-pain, osteoarthritis, headache, migraine, capsaicin-sensitivity, medication-response, treatment, testing, supplement, exercise, or medical recommendation."
+    },
+    {
+      "groupTitle": "Recommendation / Topical Capsaicin",
+      "item": "Condition-level ratings",
+      "brandName": "Chronic Pain DNA Report sample",
+      "geneticAnalysis": "Visible condition rows include Joint Pain impact 3/5 evidence 3/5; Back Pain impact 2/5 evidence 2/5; Chronic Pain impact 2/5 evidence 3/5; Shoulder & Neck Pain impact 2/5 evidence 2/5; Knee Pain impact 3/5 evidence 3/5. The sample describes topical capsaicin as a recommendation block and repeatedly includes irritation and eye-exposure safety notes.",
+      "genes": [
+        "TRPV1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-pain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Pain sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-pain, joint-pain, osteoarthritis, headache, migraine, capsaicin-sensitivity, medication-response, treatment, testing, supplement, exercise, or medical recommendation."
+    },
+    {
+      "groupTitle": "Recommendation / Topical Capsaicin",
+      "item": "Joint Pain personalized row",
+      "brandName": "Chronic Pain DNA Report sample",
+      "geneticAnalysis": "The sample says people with your TRPV1 gene variant may be more sensitive to capsaicin. The visible variant table renders gene as '/', SNP rs8065080, genotype CT, with a three-dot evidence indicator.",
+      "genes": [
+        "TRPV1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-pain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Pain sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-pain, joint-pain, osteoarthritis, headache, migraine, capsaicin-sensitivity, medication-response, treatment, testing, supplement, exercise, or medical recommendation."
+    },
+    {
+      "groupTitle": "Recommendation / Topical Capsaicin",
+      "item": "Chronic Pain personalized row",
+      "brandName": "Chronic Pain DNA Report sample",
+      "geneticAnalysis": "The sample says people with your TRPV1 gene variant may be more sensitive to capsaicin. The visible variant table renders gene as '/', SNP rs8065080, genotype CT, with a three-dot evidence indicator.",
+      "genes": [
+        "TRPV1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-pain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Pain sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-pain, joint-pain, osteoarthritis, headache, migraine, capsaicin-sensitivity, medication-response, treatment, testing, supplement, exercise, or medical recommendation."
+    },
+    {
+      "groupTitle": "Recommendation / Topical Capsaicin",
+      "item": "Shoulder & Neck Pain personalized row",
+      "brandName": "Chronic Pain DNA Report sample",
+      "geneticAnalysis": "The sample says capsaicin may have a stronger effect in people with your TRPV1 gene variant. The visible variant table renders gene as '/', SNP rs8065080, genotype CT, with a three-dot evidence indicator.",
+      "genes": [
+        "TRPV1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-pain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Pain sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-pain, joint-pain, osteoarthritis, headache, migraine, capsaicin-sensitivity, medication-response, treatment, testing, supplement, exercise, or medical recommendation."
+    }
+  ],
+  "organSystemConditionContext": {
+    "plainEnglishMeaning": "The safe output for this package is an evidence-availability report plus clearly separated public sample-report structure. It explains which model, clinical, professional, and pain-context inputs are missing and avoids medical conclusions from missing evidence.",
+    "unsupportedClaims": [
+      "Diagnosis, personal chronic-pain risk, osteoarthritis risk, headache or migraine risk, pain threshold, pain cause, pain severity, neuropathic status, inflammatory status, opioid response, analgesic response, capsaicin sensitivity, disability status, treatment need, medication need, supplement need, diet need, exercise guidance, screening need, testing need, prevention action, clearance, emergency action, all-clear reassurance, and clinical actionability are not supported by this fixture.",
+      "Public sample rows are included only for output-format parity and citation binding. They are not local risk estimates, diagnoses, treatment recommendations, or local genotype findings."
+    ],
+    "professionalReview": "Use this as a local-agent readiness fixture only. Pain symptoms, medication decisions, and health actions require validated test scope, relevant clinical context, and qualified professional review."
+  },
+  "practicalNextSteps": {
+    "professionalReview": [
+      "Keep this output educational and non-diagnostic.",
+      "Do not use this fixture to start, stop, or change testing, screening, medication, supplements, diet, exercise, or treatment.",
+      "Use qualified professional review for pain symptoms, chronic pain concerns, medication questions, or health decisions."
+    ]
+  },
+  "references": [
+    {
+      "id": "cdc-genetic-testing",
+      "title": "CDC Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetics",
+      "title": "MedlinePlus Genetics"
+    },
+    {
+      "id": "medlineplus-genetic-testing",
+      "title": "MedlinePlus: Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetic-test-results",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results"
+    },
+    {
+      "id": "fda-direct-to-consumer-tests",
+      "title": "FDA Direct-to-Consumer Tests"
+    },
+    {
+      "id": "medlineplus-complex-disorders",
+      "title": "MedlinePlus Genetics: complex disorders"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    },
+    {
+      "id": "medlineplus-chronic-pain",
+      "title": "MedlinePlus: Chronic Pain"
+    },
+    {
+      "id": "nih-chronic-pain-research-overview",
+      "title": "NIH DiscoverWHR: Chronic Pain Research Overview"
+    },
+    {
+      "id": "chronic-pain-sample-pdf",
+      "title": "Chronic Pain DNA Report sample report"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "effect": "The local fixture intentionally omits chronic-pain risk calculations and clinical context.",
+        "gene": "Chronic Pain DNA Report model",
+        "genotype": "validated chronic-pain model, pain-threshold model, analgesic-response model, opioid-response model, clinical context, labs, imaging, medication context, and professional review unavailable",
+        "phenotype": "Mark pain-risk, pain-threshold, medication-response, treatment, supplement, exercise, testing, and actionability sections unavailable instead of inferring them.",
+        "tier": "Local missing input",
+        "variantId": "chronic-pain-dna-report-model-unavailable"
+      },
+      {
+        "effect": "The sample Chronic Pain page reports typical likelihood based on 611,315 genetic variants.",
+        "gene": "Chronic Pain model",
+        "genotype": "58th percentile; typical likelihood",
+        "phenotype": "Observed sample content only; do not infer local chronic-pain risk, pain threshold, diagnosis, treatment, or medication response.",
+        "tier": "Sample risk card",
+        "variantId": "611,315 variants"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Chronic Pain table.",
+        "gene": "HTR1B",
+        "genotype": "GG",
+        "phenotype": "Observed sample row only; it is not a local serotonin-receptor or pain-risk finding.",
+        "tier": "Chronic Pain top sample variants",
+        "variantId": "rs6296"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Chronic Pain table.",
+        "gene": "HTR2A",
+        "genotype": "AA",
+        "phenotype": "Observed sample row only; it is not a local serotonin-receptor or pain-risk finding.",
+        "tier": "Chronic Pain top sample variants",
+        "variantId": "rs6313"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Chronic Pain table.",
+        "gene": "TNF",
+        "genotype": "GA",
+        "phenotype": "Observed sample row only; it is not a local inflammation or pain-risk finding.",
+        "tier": "Chronic Pain top sample variants",
+        "variantId": "rs1800629"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Chronic Pain table.",
+        "gene": "COMT",
+        "genotype": "AG",
+        "phenotype": "Observed sample row only; it is not a local COMT, pain sensitivity, or analgesic-response finding.",
+        "tier": "Chronic Pain top sample variants",
+        "variantId": "rs4680"
+      },
+      {
+        "effect": "The sample Joint Pain page reports increased likelihood of osteoarthritis based on 385,825 variants.",
+        "gene": "Joint Pain model",
+        "genotype": "80th percentile; more likely",
+        "phenotype": "Observed sample content only; do not infer local osteoarthritis risk, joint diagnosis, screening, prevention, or treatment.",
+        "tier": "Sample risk card",
+        "variantId": "385,825 variants"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Joint Pain table.",
+        "gene": "EPHA5",
+        "genotype": "CC",
+        "phenotype": "Observed sample row only; it is not a local osteoarthritis or joint-pain finding.",
+        "tier": "Joint Pain top sample variants",
+        "variantId": "rs201194999"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Joint Pain table.",
+        "gene": "COL11A1",
+        "genotype": "TT",
+        "phenotype": "Observed sample row only; it is not a local collagen or joint-pain finding.",
+        "tier": "Joint Pain top sample variants",
+        "variantId": "rs2622873"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Joint Pain table.",
+        "gene": "SRR",
+        "genotype": "AA",
+        "phenotype": "Observed sample row only; it is not a local osteoarthritis or joint-pain finding.",
+        "tier": "Joint Pain top sample variants",
+        "variantId": "rs216175"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Joint Pain table.",
+        "gene": "TGFA",
+        "genotype": "GA",
+        "phenotype": "Observed sample row only; it is not a local osteoarthritis or joint-pain finding.",
+        "tier": "Joint Pain top sample variants",
+        "variantId": "rs3771501"
+      },
+      {
+        "effect": "The sample topical-capsaicin recommendation pages name TRPV1 in narrative text and show rs8065080 CT in the visible variant table.",
+        "gene": "TRPV1",
+        "genotype": "CT",
+        "phenotype": "Observed sample row only; do not infer local capsaicin sensitivity, treatment response, topical medication need, or pain treatment guidance.",
+        "tier": "Capsaicin personalized sample row",
+        "variantId": "rs8065080"
+      }
+    ],
+    "missingInputs": [
+      "Validated Chronic Pain DNA Report model, calibrated PRS, pain-threshold model, medication-response model, and sample-specific local risk calculations are unavailable in this local fixture.",
+      "Pain diagnosis, pain location, symptom history, injury history, mental-health context, medications, opioid or analgesic response evidence, and professional interpretation are unavailable.",
+      "Neurologic exam, inflammatory labs, imaging, musculoskeletal evaluation, treatment context, prevention context, disability context, and clinical actionability context are unavailable."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated chronic-pain model, ancestry applicability metadata, clinical context, professional review, medication response model, or local risk calculation is supplied.",
+      "The public sample PDF supports output structure and citation binding only; sample percentiles, likelihood labels, variants, and recommendation ratings must not be interpreted as local results.",
+      "Absence of evidence in this fixture must be reported as unavailable, not converted into low risk or reassurance."
+    ],
+    "limitations": [
+      "This generated result does not include raw genome data and does not emit VCF, FASTQ, BAM, or CRAM content.",
+      "Reference resources used for boundary language and sample structure: CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing; MedlinePlus Genetics: Interpreting Genetic Test Results; FDA Direct-to-Consumer Tests; MedlinePlus Genetics: complex disorders; NHGRI overview of polygenic risk scores; GWAS Catalog; MedlinePlus: Chronic Pain; NIH DiscoverWHR: Chronic Pain Research Overview; Chronic Pain DNA Report sample report.",
+      "The result is a deterministic synthetic validation artifact for local-agent packaging, not a medical interpretation."
+    ]
+  }
+}

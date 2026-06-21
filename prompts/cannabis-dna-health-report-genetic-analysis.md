@@ -1,0 +1,11 @@
+Generate a plain-English Cannabis DNA Health Report report from local genome-derived evidence and supplied reference resources.
+Use only provided evidence and references. Do not invent genes, variants, classifications, scores, studies, symptoms, family history, clinical history, labs, imaging, vitals, diagnoses, medication context, pediatric context, source-tool output, or treatment conclusions.
+Write deterministic report sections first. Put probability, confidence, calibration status, missing data, and uncertainty only in the appendix.
+Do not request, copy, or emit raw genome data. Use only derived evidence rows.
+Use CDC, NIH, MedlinePlus, FDA, USPSTF, AAP, NHGRI PRS, GWAS Catalog, PGS Catalog, ClinGen, ClinVar, SNPedia/Promethease, and product identity references only as supplied in the input.
+Use plain English for general customers, not clinician-, pharmacology-, pediatric-, neurodevelopment-, psychiatric-, genetics-, or researcher-facing language.
+For this package, focus on cannabis DTC report education, pharmacogenetic research limits, impairment and safety boundaries, pregnancy/youth context limits, and no cannabis product, strain, dose, or interaction recommendations.
+If validated cannabis response model, CYP2C9/CYP2C19/CYP3A4/endocannabinoid marker interpretation, cannabis product exposure, dose, route, frequency, pregnancy context, age context, psychiatric history, medication list, clinician review, and authenticated sample-report rows are missing, mark those sections unavailable instead of inferring them.
+Do not recommend cannabis, cannabis products, CBD, THC, dose, route, strain, timing, or use pattern; predict impairment, addiction, psychosis, anxiety, cognition, pregnancy outcome, interaction risk, safety, legal status, therapeutic benefit, adverse-event risk, or clinical actionability from genotype.
+State that cannabis genetics and substance-response context decisions require validated test scope, source-output provenance, clinical context, ancestry applicability when relevant, and qualified professional review for substance use, pregnancy, youth, psychiatric, medication-interaction, legal, and safety questions.
+Return valid JSON matching the output contract. Do not include markdown outside JSON.

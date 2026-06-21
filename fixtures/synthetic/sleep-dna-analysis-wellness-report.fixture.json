@@ -1,0 +1,129 @@
+{
+  "consumerTone": "plain English; educational; sleep wellness context only; no diagnosis, treatment, or medication/supplement instructions",
+  "datasetId": "synthetic-sleep-dna-wellness-circadian-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "CLOCK/PER1/CRY1",
+      "haplotype": "circadian-clock-marker-summary",
+      "inputId": "CLOCK-PER1-CRY1-circadian-context",
+      "matchStatus": "summarized",
+      "observedValue": "derived circadian rhythm marker context available",
+      "sourceArtifact": "synthetic-sleep-dna-wellness-circadian-context-v1",
+      "sourceFile": "synthetic-sleep-dna-wellness-circadian-context-v1.json"
+    },
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "ABCC9",
+      "haplotype": "sleep-duration-marker-summary",
+      "inputId": "ABCC9-sleep-duration-context",
+      "matchStatus": "summarized",
+      "observedValue": "summary-level sleep-duration context available; no sleep-hours prediction emitted",
+      "sourceArtifact": "synthetic-sleep-dna-wellness-circadian-context-v1",
+      "sourceFile": "synthetic-sleep-dna-wellness-circadian-context-v1.json"
+    },
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "P2RY2/PAX8/VRK2",
+      "haplotype": "sleep-quality-marker-summary",
+      "inputId": "P2RY2-PAX8-VRK2-sleep-quality-context",
+      "matchStatus": "summarized",
+      "observedValue": "summary-level sleep quality and sleepiness context available; symptoms are not inferred",
+      "sourceArtifact": "synthetic-sleep-dna-wellness-circadian-context-v1",
+      "sourceFile": "synthetic-sleep-dna-wellness-circadian-context-v1.json"
+    },
+    {
+      "assembly": "public-sample-pdf",
+      "gene": "Sleep DNA public sample report",
+      "haplotype": "public-sample-output-structure-observed",
+      "inputId": "sleep-dna-public-sample-output-structure",
+      "matchStatus": "observed",
+      "observedValue": "Public sample PDF shows overview cards for sleep parameters, sleep disturbances, and sleep-related behaviors, plus Iron and Reduce Caffeine Intake recommendation pages with visible sample variant rows.",
+      "sourceArtifact": "reference/sources/sleep-wellness-dna-sample-report_0.pdf",
+      "sourceFile": "sleep-wellness-dna-sample-report_0.pdf"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "hash": "sha256:synthetic-sleep-dna-wellness-circadian-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived sleep wellness evidence for package validation"
+  },
+  "missingInputPolicy": "Use public Sleep DNA sample rows only as observed output structure; report calibrated sleep scores, personal disorder probability, symptoms, sleep-study interpretation, sleep aids, supplement instructions, device guidance, and treatment recommendations unavailable unless explicitly supplied.",
+  "packageSlug": "sleep-dna-analysis-wellness-report",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-sleep-disorders",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus: Sleep Disorders",
+      "usedFor": [
+        "sleep_disorder_context",
+        "sleep_study_limitations",
+        "non_diagnostic_language"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-healthy-sleep",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus: Healthy Sleep",
+      "usedFor": [
+        "healthy_sleep_context",
+        "sleep_duration_context",
+        "consumer_safety_language"
+      ]
+    },
+    {
+      "evidenceLevel": "basic_science_background",
+      "id": "nigms-circadian-rhythms",
+      "sourceType": "education_resource",
+      "title": "NIGMS: Circadian Rhythms",
+      "usedFor": [
+        "circadian_context",
+        "clock_gene_context",
+        "complex_trait_limitations"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
+      "usedFor": [
+        "probability_appendix",
+        "complex_trait_context"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "candidate_trait_associations"
+      ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "sleep-dna-wellness-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Sleep DNA Wellness sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer sleep wellness context using derived circadian and sleep-trait evidence plus observed Sleep DNA sample-report output structure."
+}

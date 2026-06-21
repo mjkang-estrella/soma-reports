@@ -1,0 +1,103 @@
+{
+  "reportOverview": {
+    "reportTitle": "World Ancestry Report",
+    "inputManifestHash": "sha256:synthetic-world-ancestry-reference-panel-context-v1",
+    "evidenceTypesSupplied": [
+      "Broad continental autosomal reference-panel similarity summary",
+      "Regional percentage model and panel metadata explicitly unavailable"
+    ],
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "No calibrated regional ancestry percentage model is supplied.",
+      "No exact homeland, community, migration path, family matching, or relative-matching data is supplied."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "World ancestry context",
+      "item": "Broad continental reference-panel similarity",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A broad East Asian continental reference-panel similarity summary is available, but no calibrated regional percentage model is supplied.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "MedlinePlus genetic ancestry testing / 1000 Genomes",
+      "sourceIds": [
+        "medlineplus-genetic-ancestry-testing",
+        "international-genome-sample-resource"
+      ],
+      "plainEnglishMeaning": "This is broad world-ancestry context only. It is not a precise regional percentage, homeland, nationality, community label, or identity statement."
+    },
+    {
+      "groupTitle": "Unavailable world ancestry detail",
+      "item": "Regional percentage model",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A calibrated regional percentage model and reference-panel metadata are unavailable in this fixture and are not inferred.",
+      "genes": [
+        "autosomal ancestry model"
+      ],
+      "sourceLabel": "MedlinePlus direct-to-consumer ancestry testing caveats",
+      "sourceIds": [
+        "medlineplus-genetic-ancestry-testing",
+        "medlineplus-dtc-risks-benefits"
+      ],
+      "plainEnglishMeaning": "Missing regional model evidence means this run cannot provide precise percentages, homeland, community, migration, or relative-matching information."
+    }
+  ],
+  "ancestryScopeSummary": {
+    "autosomal": "Autosomal world ancestry can summarize broad reference-panel similarity when a model is supplied; this fixture does not supply calibrated percentages.",
+    "referencePanel": "Reference panels provide comparison context, not a fixed identity label or exact origin.",
+    "sourceIds": [
+      "medlineplus-genetic-ancestry-testing",
+      "international-genome-sample-resource",
+      "medlineplus-dtc-risks-benefits"
+    ]
+  },
+  "whatThisDoesNotMean": [
+    "This is not an exact global or regional ethnicity percentage.",
+    "This does not identify a precise homeland, tribe, community, nationality, migration route, or living relatives.",
+    "This is not a family-matching or genealogy-relative report.",
+    "This is not a health or disease-risk report."
+  ],
+  "references": [
+    {
+      "id": "medlineplus-genetic-ancestry-testing",
+      "title": "MedlinePlus Genetics: genetic ancestry testing"
+    },
+    {
+      "id": "medlineplus-dtc-risks-benefits",
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing"
+    },
+    {
+      "id": "international-genome-sample-resource",
+      "title": "International Genome Sample Resource / 1000 Genomes"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "gene": "autosomal genome",
+        "observedValue": "broad East Asian continental reference-panel similarity; no regional percentage model supplied"
+      },
+      {
+        "gene": "autosomal ancestry model",
+        "observedValue": "calibrated regional percentage model and reference-panel metadata unavailable in this fixture"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated sample-report sections and rows have not been extracted.",
+      "No calibrated ancestry model, reference-panel metadata, or regional-percentage output is supplied.",
+      "No family-matching, living-relative, migration-route, or exact-homeland data is supplied."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Broad reference-panel similarity should not be treated as a precise ancestry percentage or identity.",
+      "The fixture is a validation artifact, not a complete world-ancestry inference pipeline."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report does not emit raw SNP tables or relative-matching data.",
+      "Authenticated Sequencing.com sample report rows are still pending."
+    ]
+  }
+}

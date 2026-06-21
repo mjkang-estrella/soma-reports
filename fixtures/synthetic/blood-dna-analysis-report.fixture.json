@@ -1,0 +1,175 @@
+{
+  "consumerTone": "plain English; educational organ-system and complex-condition genetics context only; no diagnosis, personal risk estimate, symptom inference, lab/imaging/vital/organ-function inference, severity, prognosis, screening, prevention, testing, treatment, medication, supplement, diet, exercise, clearance, emergency, all-clear, or clinical actionability claims",
+  "datasetId": "synthetic-blood-dna-analysis-report-organ-system-boundary-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-organ-system-boundary-context",
+      "gene": "Blood Traits and Conditions model",
+      "haplotype": "organ-system-model-unavailable",
+      "inputId": "blood-dna-analysis-report-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "validated blood trait model, CBC, hemoglobin, platelet count, white blood cell count, clotting tests, bleeding history, transfusion context, donation context, pregnancy compatibility context, clinical diagnosis, treatment context, clinician review, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-blood-dna-analysis-report-organ-system-boundary-context-v1",
+      "sourceFile": "synthetic-blood-dna-analysis-report-organ-system-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Blood Traits and Conditions clinical and professional context",
+      "haplotype": "clinical-professional-context-unavailable",
+      "inputId": "blood-dna-analysis-report-clinical-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-blood-dna-analysis-report-organ-system-boundary-context-v1",
+      "sourceFile": "synthetic-blood-dna-analysis-report-organ-system-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Blood Traits and Conditions organ-system context",
+      "haplotype": "organ-system-context-unavailable",
+      "inputId": "blood-dna-analysis-report-organ-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "labs, imaging, vitals, organ-function measures, disease-specific testing, treatment context, prevention context, and actionability context unavailable in this fixture",
+      "sourceArtifact": "synthetic-blood-dna-analysis-report-organ-system-boundary-context-v1",
+      "sourceFile": "synthetic-blood-dna-analysis-report-organ-system-boundary-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-organ-system-boundary-context",
+    "hash": "sha256:synthetic-blood-dna-analysis-report-organ-system-boundary-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-model evidence for blood-dna-analysis-report validation"
+  },
+  "missingInputPolicy": "Report unavailable blood traits and conditions evidence explicitly; do not diagnose anemia, clotting disorder, bleeding disorder, platelet disorder, hemoglobinopathy, infection, immune condition, pregnancy incompatibility, or blood disease; infer CBC, hemoglobin, platelet, WBC, clotting, bleeding, transfusion, donation, pregnancy compatibility, organ-function, treatment, medication, supplement, diet, screening, testing, prevention, or clinical actionability.",
+  "packageSlug": "blood-dna-analysis-report",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Testing",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-test-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-complex-disorders",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: complex disorders",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "nhlbi-blood-diseases-disorders",
+      "sourceType": "public_health_resource",
+      "title": "NHLBI: Blood Diseases and Disorders Education Program",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-blood",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Blood",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer blood traits and conditions boundary context using supplied references and explicit unavailable-model framing."
+}

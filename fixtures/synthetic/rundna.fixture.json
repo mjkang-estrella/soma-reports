@@ -1,0 +1,86 @@
+{
+  "consumerTone": "plain English; educational running-fitness context only; no deterministic race, training, injury, recovery, VO2 max, or talent claims",
+  "datasetId": "synthetic-rundna-running-fitness-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "ACTN3",
+      "inputId": "ACTN3-rs1815739",
+      "matchStatus": "observed",
+      "observedValue": "CT",
+      "rsid": "rs1815739",
+      "sourceArtifact": "synthetic-rundna-running-fitness-context-v1",
+      "sourceFile": "synthetic-rundna-running-fitness-context-v1.json"
+    },
+    {
+      "assembly": "derived-fitness-trait-context",
+      "gene": "ACE",
+      "haplotype": "ID",
+      "inputId": "ACE-I-D",
+      "matchStatus": "observed",
+      "observedValue": "ID",
+      "sourceArtifact": "synthetic-rundna-running-fitness-context-v1",
+      "sourceFile": "synthetic-rundna-running-fitness-context-v1.json"
+    },
+    {
+      "assembly": "derived-fitness-trait-context",
+      "gene": "Running fitness model",
+      "haplotype": "running-fitness-model-unavailable",
+      "inputId": "running-fitness-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "calibrated running performance score, training-response model, injury-risk model, recovery model, VO2 max model, race-time model, and ancestry applicability metadata unavailable in this fixture",
+      "sourceArtifact": "synthetic-rundna-running-fitness-context-v1",
+      "sourceFile": "synthetic-rundna-running-fitness-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "hash": "sha256:synthetic-rundna-running-fitness-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived fitness-trait evidence for rundna validation"
+  },
+  "missingInputPolicy": "Report unavailable running fitness markers and calibrated models explicitly; do not infer running capacity, race performance, VO2 max, injury risk, recovery, training response, talent, or sport suitability.",
+  "packageSlug": "rundna",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-athletic-performance",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: athletic performance",
+      "usedFor": [
+        "complex_trait_context",
+        "actn3_ace_context",
+        "non_deterministic_language"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
+      "usedFor": [
+        "complex_trait_limitations",
+        "probability_appendix"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "candidate_trait_associations",
+        "model_unavailable_context"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer running fitness context using derived ACTN3 and ACE evidence plus explicit complex-trait and model-unavailable framing."
+}

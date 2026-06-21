@@ -1,0 +1,2184 @@
+{
+  "generatedAt": "2026-06-20T17:47:03.700Z",
+  "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+  "count": 150,
+  "catalog": [
+    {
+      "title": "Age with Strength",
+      "slug": "age-strength",
+      "marketplaceUrl": "https://sequencing.com/marketplace/age-strength",
+      "categories": [
+        "Health",
+        "Lifestyle"
+      ],
+      "primaryCategory": "Health",
+      "provider": "GeneX",
+      "priceLabel": "$39",
+      "imageAlt": "Age with Strength",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Alzheimer’s Risk | APOE Gene Analysis",
+      "slug": "apoe4-test-brain-health-genetic-analysis",
+      "marketplaceUrl": "https://sequencing.com/marketplace/apoe4-test-brain-health-genetic-analysis",
+      "categories": [
+        "Health",
+        "Children"
+      ],
+      "primaryCategory": "Health",
+      "provider": "SelfDecode",
+      "priceLabel": "$39",
+      "imageAlt": "Alzheimer’s Risk | APOE Gene Analysis",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Am I An Einstein?",
+      "slug": "am-i-related-albert-einstein-dna",
+      "marketplaceUrl": "https://sequencing.com/marketplace/am-i-related-albert-einstein-dna",
+      "categories": [
+        "Ancestry"
+      ],
+      "primaryCategory": "Ancestry",
+      "provider": "Complete Genome Science",
+      "priceLabel": "Free",
+      "imageAlt": "Am I An Einstein?",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Ancestry Explorer",
+      "slug": "ancestry-explorer",
+      "marketplaceUrl": "https://sequencing.com/marketplace/ancestry-explorer",
+      "categories": [
+        "Ancestry"
+      ],
+      "primaryCategory": "Ancestry",
+      "provider": "SelfDecode",
+      "priceLabel": "$29",
+      "imageAlt": "Ancestry Explorer",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Anesthesiologist Summary",
+      "slug": "anesthesiologist-summary",
+      "marketplaceUrl": "https://sequencing.com/marketplace/anesthesiologist-summary",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Anesthesiologist Summary",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Arthritis Prevention",
+      "slug": "arthritis-prevention-dna-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/arthritis-prevention-dna-report",
+      "categories": [
+        "Health",
+        "Lifestyle"
+      ],
+      "primaryCategory": "Health",
+      "provider": "App MD",
+      "priceLabel": "$39",
+      "imageAlt": "Arthritis Prevention",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Athletic Performance",
+      "slug": "athletic-performance",
+      "marketplaceUrl": "https://sequencing.com/marketplace/athletic-performance",
+      "categories": [
+        "Health",
+        "Fitness"
+      ],
+      "primaryCategory": "Health",
+      "provider": "App MD",
+      "priceLabel": "Free",
+      "imageAlt": "Athletic Performance",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Autoimmune Disorders",
+      "slug": "autoimmune-disorders",
+      "marketplaceUrl": "https://sequencing.com/marketplace/autoimmune-disorders",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Autoimmune Disorders",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Blood Glucose Insight",
+      "slug": "blood-glucose-insight",
+      "marketplaceUrl": "https://sequencing.com/marketplace/blood-glucose-insight",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "GenoPalate",
+      "priceLabel": "$49",
+      "imageAlt": "Blood Glucose Insight",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Blood Traits and Conditions",
+      "slug": "blood-dna-analysis-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/blood-dna-analysis-report",
+      "categories": [
+        "Health"
+      ],
+      "primaryCategory": "Health",
+      "provider": "Complete Genome Science",
+      "priceLabel": "$19",
+      "imageAlt": "Blood Traits and Conditions",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Blood Type Analysis",
+      "slug": "blood-type-dna-analysis-genetic-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/blood-type-dna-analysis-genetic-report",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "Complete Genome Science",
+      "priceLabel": "Free",
+      "imageAlt": "Blood Type Analysis",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Brain Health",
+      "slug": "brain-health",
+      "marketplaceUrl": "https://sequencing.com/marketplace/brain-health",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Brain Health",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Brain Health: Mental Health & Mood",
+      "slug": "brain-mental-health-mood-dna-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/brain-mental-health-mood-dna-report",
+      "categories": [
+        "Health",
+        "Lifestyle",
+        "Children"
+      ],
+      "primaryCategory": "Health",
+      "provider": "SelfDecode",
+      "priceLabel": "$59",
+      "imageAlt": "Brain Health: Mental Health & Mood",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Breast Cancer Risk & Prevention",
+      "slug": "breast-cancer-risk-prevention",
+      "marketplaceUrl": "https://sequencing.com/marketplace/breast-cancer-risk-prevention",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Breast Cancer Risk & Prevention",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Cancer PRS",
+      "slug": "cancer-prs",
+      "marketplaceUrl": "https://sequencing.com/marketplace/cancer-prs",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "Galatea Bio",
+      "priceLabel": "$199",
+      "imageAlt": "Cancer PRS",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Cancer Risk",
+      "slug": "cancer-risk",
+      "marketplaceUrl": "https://sequencing.com/marketplace/cancer-risk",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Cancer Risk",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Cannabis DNA Health Report",
+      "slug": "cannabis-dna-health-report-genetic-analysis",
+      "marketplaceUrl": "https://sequencing.com/marketplace/cannabis-dna-health-report-genetic-analysis",
+      "categories": [
+        "Health",
+        "Lifestyle"
+      ],
+      "primaryCategory": "Health",
+      "provider": "Strain Genie",
+      "priceLabel": "$29.99",
+      "imageAlt": "Cannabis DNA Health Report",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Cardiometabolic Health PRS",
+      "slug": "cardiometabolic-health-prs",
+      "marketplaceUrl": "https://sequencing.com/marketplace/cardiometabolic-health-prs",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "Galatea Bio",
+      "priceLabel": "$199",
+      "imageAlt": "Cardiometabolic Health PRS",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Cardiovascular Health",
+      "slug": "cardiovascular-dna-analysis-heart-health-genetic-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/cardiovascular-dna-analysis-heart-health-genetic-report",
+      "categories": [
+        "Health"
+      ],
+      "primaryCategory": "Health",
+      "provider": "SelfDecode",
+      "priceLabel": "$59",
+      "imageAlt": "Cardiovascular Health",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Cardiovascular Health",
+      "slug": "cardiovascular-health",
+      "marketplaceUrl": "https://sequencing.com/marketplace/cardiovascular-health",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Cardiovascular Health",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Carrier Screening",
+      "slug": "carrier-screening",
+      "marketplaceUrl": "https://sequencing.com/marketplace/carrier-screening",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Carrier Screening",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Carrier Status",
+      "slug": "carrier-status-rare-disease-genetic-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/carrier-status-rare-disease-genetic-report",
+      "categories": [
+        "Health",
+        "Children"
+      ],
+      "primaryCategory": "Health",
+      "provider": "Complete Genome Science",
+      "priceLabel": "$29",
+      "imageAlt": "Carrier Status",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Charcot-Marie-Tooth",
+      "slug": "charcot-marie-tooth",
+      "marketplaceUrl": "https://sequencing.com/marketplace/charcot-marie-tooth",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Charcot-Marie-Tooth",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Chronic Fatigue DNA Health Report",
+      "slug": "chronic-fatigue-dna-health-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/chronic-fatigue-dna-health-report",
+      "categories": [
+        "Health",
+        "Nutrition",
+        "Fitness",
+        "Lifestyle"
+      ],
+      "primaryCategory": "Health",
+      "provider": "SelfDecode",
+      "priceLabel": "$59",
+      "imageAlt": "Chronic Fatigue DNA Health Report",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Chronic Pain DNA Report",
+      "slug": "chronic-pain-dna-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/chronic-pain-dna-report",
+      "categories": [
+        "Health",
+        "Fitness",
+        "Lifestyle"
+      ],
+      "primaryCategory": "Health",
+      "provider": "SelfDecode",
+      "priceLabel": "$59",
+      "imageAlt": "Chronic Pain DNA Report",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Clinical Annotator of Variants",
+      "slug": "clinical-annotator-variants",
+      "marketplaceUrl": "https://sequencing.com/marketplace/clinical-annotator-variants",
+      "categories": [
+        "Bioinformatics"
+      ],
+      "primaryCategory": "Bioinformatics",
+      "provider": "GeneX",
+      "priceLabel": "$19.99",
+      "imageAlt": "Clinical Annotator of Variants",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Cognitive Function",
+      "slug": "genetic-test-for-iq-cognitive-function",
+      "marketplaceUrl": "https://sequencing.com/marketplace/genetic-test-for-iq-cognitive-function",
+      "categories": [
+        "Health",
+        "Lifestyle",
+        "Children"
+      ],
+      "primaryCategory": "Health",
+      "provider": "SelfDecode",
+      "priceLabel": "$59",
+      "imageAlt": "Cognitive Function",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Colon Cancer",
+      "slug": "colon-cancer",
+      "marketplaceUrl": "https://sequencing.com/marketplace/colon-cancer",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Colon Cancer",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Complete Genome Analysis",
+      "slug": "complete-genome-analysis",
+      "marketplaceUrl": "https://sequencing.com/marketplace/complete-genome-analysis",
+      "categories": [
+        "Health",
+        "Children"
+      ],
+      "primaryCategory": "Health",
+      "provider": "Complete Genome Science",
+      "priceLabel": "$189",
+      "imageAlt": "Complete Genome Analysis",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Connective Tissue Disorders and EDS",
+      "slug": "connective-tissue-disorders-and-eds",
+      "marketplaceUrl": "https://sequencing.com/marketplace/connective-tissue-disorders-and-eds",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Connective Tissue Disorders and EDS",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Convert rsids to Coordinates",
+      "slug": "convert-rsids-coordinates",
+      "marketplaceUrl": "https://sequencing.com/marketplace/convert-rsids-coordinates",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "GeneX",
+      "priceLabel": "$0.99",
+      "imageAlt": "Convert rsids to Coordinates",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Detox Pathway",
+      "slug": "detox-pathway",
+      "marketplaceUrl": "https://sequencing.com/marketplace/detox-pathway",
+      "categories": [
+        "Health",
+        "Nutrition",
+        "Lifestyle"
+      ],
+      "primaryCategory": "Health",
+      "provider": "SelfDecode",
+      "priceLabel": "$89",
+      "imageAlt": "Detox Pathway",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Developmental Disorders",
+      "slug": "developmental-disorders",
+      "marketplaceUrl": "https://sequencing.com/marketplace/developmental-disorders",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Developmental Disorders",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Digestive Disorders & Gut Health",
+      "slug": "digestive-disorders-gut-health",
+      "marketplaceUrl": "https://sequencing.com/marketplace/digestive-disorders-gut-health",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Digestive Disorders & Gut Health",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Disease Risk Genetic Test Report",
+      "slug": "genetic-testing-disease-risk",
+      "marketplaceUrl": "https://sequencing.com/marketplace/genetic-testing-disease-risk",
+      "categories": [
+        "Health"
+      ],
+      "primaryCategory": "Health",
+      "provider": "Complete Genome Science",
+      "priceLabel": "$59",
+      "imageAlt": "Disease Risk Genetic Test Report",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "DNA Ancestry and Genealogy‎ Report",
+      "slug": "ancestry-genealogy-heritage",
+      "marketplaceUrl": "https://sequencing.com/marketplace/ancestry-genealogy-heritage",
+      "categories": [
+        "Ancestry"
+      ],
+      "primaryCategory": "Ancestry",
+      "provider": "Eone-Diagnomics Genome Center",
+      "priceLabel": "$39",
+      "imageAlt": "DNA Ancestry and Genealogy‎ Report",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "DNA Diet",
+      "slug": "dna-diet-personalized-weight-loss-app",
+      "marketplaceUrl": "https://sequencing.com/marketplace/dna-diet-personalized-weight-loss-app",
+      "categories": [
+        "Nutrition",
+        "Lifestyle"
+      ],
+      "primaryCategory": "Nutrition",
+      "provider": "GeneInformed",
+      "priceLabel": "$59",
+      "imageAlt": "DNA Diet",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Dysautonomia",
+      "slug": "dysautonomia",
+      "marketplaceUrl": "https://sequencing.com/marketplace/dysautonomia",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Dysautonomia",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Ehlers-Danlos Syndrome",
+      "slug": "ehlers-danlos-syndrome",
+      "marketplaceUrl": "https://sequencing.com/marketplace/ehlers-danlos-syndrome",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Ehlers-Danlos Syndrome",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Empower",
+      "slug": "empower",
+      "marketplaceUrl": "https://sequencing.com/marketplace/empower",
+      "categories": [
+        "Health",
+        "Nutrition",
+        "Fitness",
+        "Lifestyle"
+      ],
+      "primaryCategory": "Health",
+      "provider": "Toolbox Genomics",
+      "priceLabel": "$59",
+      "imageAlt": "Empower",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Endocrine Health",
+      "slug": "endocrine-health",
+      "marketplaceUrl": "https://sequencing.com/marketplace/endocrine-health",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Endocrine Health",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Endometrial Cancer Risk & Prevention",
+      "slug": "endometrial-cancer-risk-prevention",
+      "marketplaceUrl": "https://sequencing.com/marketplace/endometrial-cancer-risk-prevention",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Endometrial Cancer Risk & Prevention",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Enhanced Longevity",
+      "slug": "longevity-dna-test-wellness-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/longevity-dna-test-wellness-report",
+      "categories": [
+        "Health",
+        "Lifestyle"
+      ],
+      "primaryCategory": "Health",
+      "provider": "SelfDecode",
+      "priceLabel": "$59",
+      "imageAlt": "Enhanced Longevity",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "EvE Premium",
+      "slug": "eve-premium-dna-genome-data-bioinformatics-pipelines",
+      "marketplaceUrl": "https://sequencing.com/marketplace/eve-premium-dna-genome-data-bioinformatics-pipelines",
+      "categories": [
+        "Bioinformatics"
+      ],
+      "primaryCategory": "Bioinformatics",
+      "provider": "Sequencing.com",
+      "priceLabel": "$19.99",
+      "imageAlt": "EvE Premium",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Female Sexual & Reproductive Health",
+      "slug": "female-sexual-reproductive-health-dna-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/female-sexual-reproductive-health-dna-report",
+      "categories": [
+        "Health"
+      ],
+      "primaryCategory": "Health",
+      "provider": "SelfDecode",
+      "priceLabel": "$59",
+      "imageAlt": "Female Sexual & Reproductive Health",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Fitness DNA Test Report",
+      "slug": "fitness-dna-test-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/fitness-dna-test-report",
+      "categories": [
+        "Fitness"
+      ],
+      "primaryCategory": "Fitness",
+      "provider": "SelfDecode",
+      "priceLabel": "$59",
+      "imageAlt": "Fitness DNA Test Report",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Fitness Trainer Summary",
+      "slug": "fitness-trainer-summary",
+      "marketplaceUrl": "https://sequencing.com/marketplace/fitness-trainer-summary",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Fitness Trainer Summary",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Food Sensitivity",
+      "slug": "food-sensitivity",
+      "marketplaceUrl": "https://sequencing.com/marketplace/food-sensitivity",
+      "categories": [
+        "Nutrition"
+      ],
+      "primaryCategory": "Nutrition",
+      "provider": "GenoPalate",
+      "priceLabel": "$39",
+      "imageAlt": "Food Sensitivity",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Gene-In-Form Personalized Fitness",
+      "slug": "gene-form-dna-personalized-fitness-app",
+      "marketplaceUrl": "https://sequencing.com/marketplace/gene-form-dna-personalized-fitness-app",
+      "categories": [
+        "Fitness",
+        "Lifestyle"
+      ],
+      "primaryCategory": "Fitness",
+      "provider": "GeneInformed",
+      "priceLabel": "$39",
+      "imageAlt": "Gene-In-Form Personalized Fitness",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Genetic Ancestry with Haplogroups",
+      "slug": "dna-ancestry-genetic-genealogy-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/dna-ancestry-genetic-genealogy-report",
+      "categories": [
+        "Ancestry"
+      ],
+      "primaryCategory": "Ancestry",
+      "provider": "Complete Genome Science",
+      "priceLabel": "$59",
+      "imageAlt": "Genetic Ancestry with Haplogroups",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Genetic Counseling",
+      "slug": "genetic-counseling",
+      "marketplaceUrl": "https://sequencing.com/marketplace/genetic-counseling",
+      "categories": [
+        "Health",
+        "Nutrition",
+        "Children",
+        "Bioinformatics"
+      ],
+      "primaryCategory": "Health",
+      "provider": "DNAVisit",
+      "priceLabel": "$179",
+      "imageAlt": "Genetic Counseling",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Genetic Detoxification",
+      "slug": "genetic-detoxification-genevironment",
+      "marketplaceUrl": "https://sequencing.com/marketplace/genetic-detoxification-genevironment",
+      "categories": [
+        "Health",
+        "Beauty",
+        "Lifestyle",
+        "Children"
+      ],
+      "primaryCategory": "Health",
+      "provider": "GeneInformed",
+      "priceLabel": "$89",
+      "imageAlt": "Genetic Detoxification",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Genetic Risk of Hair Loss",
+      "slug": "hair-loss-balding-dna-test",
+      "marketplaceUrl": "https://sequencing.com/marketplace/hair-loss-balding-dna-test",
+      "categories": [
+        "Beauty"
+      ],
+      "primaryCategory": "Beauty",
+      "provider": "App MD",
+      "priceLabel": "$19.99",
+      "imageAlt": "Genetic Risk of Hair Loss",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Geneticist Summary",
+      "slug": "geneticist-summary",
+      "marketplaceUrl": "https://sequencing.com/marketplace/geneticist-summary",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Geneticist Summary",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Genome Explorer v3",
+      "slug": "genome-explorer-dna-data-search",
+      "marketplaceUrl": "https://sequencing.com/marketplace/genome-explorer-dna-data-search",
+      "categories": [
+        "Sequencing Apps",
+        "Health",
+        "Bioinformatics"
+      ],
+      "primaryCategory": "Sequencing Apps",
+      "provider": "Sequencing.com",
+      "priceLabel": "Free",
+      "imageAlt": "Genome Explorer v3",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Genome Overview",
+      "slug": "genome-overview",
+      "marketplaceUrl": "https://sequencing.com/marketplace/genome-overview",
+      "categories": [
+        "Bioinformatics"
+      ],
+      "primaryCategory": "Bioinformatics",
+      "provider": "Sequencing.com",
+      "priceLabel": "$29.99",
+      "imageAlt": "Genome Overview",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Growth & Bone Health",
+      "slug": "growth-bone-health",
+      "marketplaceUrl": "https://sequencing.com/marketplace/growth-bone-health",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Growth & Bone Health",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Gut Health",
+      "slug": "gut-health",
+      "marketplaceUrl": "https://sequencing.com/marketplace/gut-health",
+      "categories": [
+        "Health",
+        "Nutrition"
+      ],
+      "primaryCategory": "Health",
+      "provider": "SelfDecode",
+      "priceLabel": "$59",
+      "imageAlt": "Gut Health",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Health Scan",
+      "slug": "health-scan",
+      "marketplaceUrl": "https://sequencing.com/marketplace/health-scan",
+      "categories": [
+        "Sequencing Apps",
+        "Health"
+      ],
+      "primaryCategory": "Sequencing Apps",
+      "provider": "Sequencing.com",
+      "priceLabel": "Free",
+      "imageAlt": "Health Scan",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Healthcare Pro",
+      "slug": "healthcare-pro-genetic-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/healthcare-pro-genetic-report",
+      "categories": [
+        "Health",
+        "Children"
+      ],
+      "primaryCategory": "Health",
+      "provider": "App MD",
+      "priceLabel": "$199",
+      "imageAlt": "Healthcare Pro",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Healthcare Professional Summary",
+      "slug": "healthcare-professional-summary",
+      "marketplaceUrl": "https://sequencing.com/marketplace/healthcare-professional-summary",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Healthcare Professional Summary",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Healthy Heart",
+      "slug": "healthy-heart-dna-analysis-genetic-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/healthy-heart-dna-analysis-genetic-report",
+      "categories": [
+        "Health"
+      ],
+      "primaryCategory": "Health",
+      "provider": "App MD",
+      "priceLabel": "$39",
+      "imageAlt": "Healthy Heart",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Healthy Nutrition",
+      "slug": "healthy-nutrition-dna-analysis-app",
+      "marketplaceUrl": "https://sequencing.com/marketplace/healthy-nutrition-dna-analysis-app",
+      "categories": [
+        "Nutrition",
+        "Lifestyle",
+        "Children"
+      ],
+      "primaryCategory": "Nutrition",
+      "provider": "GeneInformed",
+      "priceLabel": "$49",
+      "imageAlt": "Healthy Nutrition",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Healthy Weight",
+      "slug": "healthy-weight",
+      "marketplaceUrl": "https://sequencing.com/marketplace/healthy-weight",
+      "categories": [
+        "Health",
+        "Nutrition",
+        "Fitness"
+      ],
+      "primaryCategory": "Health",
+      "provider": "GenoPalate",
+      "priceLabel": "$69",
+      "imageAlt": "Healthy Weight",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Hearing & Auditory Genetics",
+      "slug": "hearing-auditory-genetics",
+      "marketplaceUrl": "https://sequencing.com/marketplace/hearing-auditory-genetics",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Hearing & Auditory Genetics",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Heart Health Genetic Guide",
+      "slug": "heart-health-genetic-guide",
+      "marketplaceUrl": "https://sequencing.com/marketplace/heart-health-genetic-guide",
+      "categories": [
+        "Health",
+        "Lifestyle"
+      ],
+      "primaryCategory": "Health",
+      "provider": "Quantum Genomics | Golden Gate Gene",
+      "priceLabel": "$79",
+      "imageAlt": "Heart Health Genetic Guide",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Histamine",
+      "slug": "histamine",
+      "marketplaceUrl": "https://sequencing.com/marketplace/histamine",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "Seeking Health",
+      "priceLabel": "$59",
+      "imageAlt": "Default sequencing app icon",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Hormone Health",
+      "slug": "hormone-health-dna-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/hormone-health-dna-report",
+      "categories": [
+        "Health"
+      ],
+      "primaryCategory": "Health",
+      "provider": "SelfDecode",
+      "priceLabel": "$59",
+      "imageAlt": "Hormone Health",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Immune System Health",
+      "slug": "immune-system-health",
+      "marketplaceUrl": "https://sequencing.com/marketplace/immune-system-health",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Immune System Health",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Imputation Analysis",
+      "slug": "imputation-analysis",
+      "marketplaceUrl": "https://sequencing.com/marketplace/imputation-analysis",
+      "categories": [
+        "Bioinformatics"
+      ],
+      "primaryCategory": "Bioinformatics",
+      "provider": "GeneX",
+      "priceLabel": "$9.99",
+      "imageAlt": "Imputation Analysis",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Infectious Disease Specialist Summary",
+      "slug": "infectious-disease-specialist-summary",
+      "marketplaceUrl": "https://sequencing.com/marketplace/infectious-disease-specialist-summary",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Infectious Disease Specialist Summary",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Inflammation",
+      "slug": "inflammation",
+      "marketplaceUrl": "https://sequencing.com/marketplace/inflammation",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Default sequencing app icon",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Inflammation And Immunity",
+      "slug": "inflammation-dna-analysis-wellness-genetic-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/inflammation-dna-analysis-wellness-genetic-report",
+      "categories": [
+        "Health"
+      ],
+      "primaryCategory": "Health",
+      "provider": "SelfDecode",
+      "priceLabel": "$59",
+      "imageAlt": "Inflammation And Immunity",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Inherited Traits Genetic Analysis",
+      "slug": "genetic-test-traits",
+      "marketplaceUrl": "https://sequencing.com/marketplace/genetic-test-traits",
+      "categories": [
+        "Health",
+        "Children"
+      ],
+      "primaryCategory": "Health",
+      "provider": "Complete Genome Science",
+      "priceLabel": "$129",
+      "imageAlt": "Inherited Traits Genetic Analysis",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Insights for Food Response and Nutrient Sensitivity",
+      "slug": "insights-food-response-and-nutrient-sensitivity",
+      "marketplaceUrl": "https://sequencing.com/marketplace/insights-food-response-and-nutrient-sensitivity",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "Golden Gate Gene",
+      "priceLabel": "$99",
+      "imageAlt": "Default sequencing app icon",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Kidney Cancer",
+      "slug": "kidney-cancer",
+      "marketplaceUrl": "https://sequencing.com/marketplace/kidney-cancer",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Kidney Cancer",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Kidneys and Urinary Tract DNA Health Report",
+      "slug": "kidneys-and-urinary-tract-dna-health-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/kidneys-and-urinary-tract-dna-health-report",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "SelfDecode",
+      "priceLabel": "$59",
+      "imageAlt": "Default sequencing app icon",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Lupus",
+      "slug": "lupus",
+      "marketplaceUrl": "https://sequencing.com/marketplace/lupus",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Lupus",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Male Sexual and Reproductive Health DNA Report",
+      "slug": "male-sexual-and-reproductive-health-dna-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/male-sexual-and-reproductive-health-dna-report",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "SelfDecode",
+      "priceLabel": "$59",
+      "imageAlt": "Default sequencing app icon",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Malignant Hyperthermia",
+      "slug": "malignant-hyperthermia-genetic-testing",
+      "marketplaceUrl": "https://sequencing.com/marketplace/malignant-hyperthermia-genetic-testing",
+      "categories": [
+        "Health"
+      ],
+      "primaryCategory": "Health",
+      "provider": "App MD",
+      "priceLabel": "$39",
+      "imageAlt": "Malignant Hyperthermia",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Map My Genes",
+      "slug": "map-my-genes-dna-ancestry-analysis",
+      "marketplaceUrl": "https://sequencing.com/marketplace/map-my-genes-dna-ancestry-analysis",
+      "categories": [
+        "Ancestry"
+      ],
+      "primaryCategory": "Ancestry",
+      "provider": "Genealogy Researchers",
+      "priceLabel": "$19.99",
+      "imageAlt": "Map My Genes",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Map My Genes Archaeology Edition",
+      "slug": "map-my-genes-archaeology-edition",
+      "marketplaceUrl": "https://sequencing.com/marketplace/map-my-genes-archaeology-edition",
+      "categories": [
+        "Ancestry"
+      ],
+      "primaryCategory": "Ancestry",
+      "provider": "Genealogy Researchers",
+      "priceLabel": "$19.99",
+      "imageAlt": "Map My Genes Archaeology Edition",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Marfan Syndrome",
+      "slug": "marfan-syndrome",
+      "marketplaceUrl": "https://sequencing.com/marketplace/marfan-syndrome",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Marfan Syndrome",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Medication & Drug Response",
+      "slug": "medication-pharmacogenomics-dna-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/medication-pharmacogenomics-dna-report",
+      "categories": [
+        "Health",
+        "Children"
+      ],
+      "primaryCategory": "Health",
+      "provider": "Complete Genome Science",
+      "priceLabel": "$59",
+      "imageAlt": "Medication & Drug Response",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Medication & Drug Response",
+      "slug": "medication-drug-response",
+      "marketplaceUrl": "https://sequencing.com/marketplace/medication-drug-response",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Medication & Drug Response",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Medications PGx: Complete DNA Guide",
+      "slug": "medications-pgx-complete-dna-guide",
+      "marketplaceUrl": "https://sequencing.com/marketplace/medications-pgx-complete-dna-guide",
+      "categories": [
+        "Health",
+        "Children"
+      ],
+      "primaryCategory": "Health",
+      "provider": "Quantum Genomics | Golden Gate Gene",
+      "priceLabel": "$129",
+      "imageAlt": "Medications PGx: Complete DNA Guide",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Melanoma Skin Cancer Prevention",
+      "slug": "melanoma-skin-cancer-dna-test-analysis",
+      "marketplaceUrl": "https://sequencing.com/marketplace/melanoma-skin-cancer-dna-test-analysis",
+      "categories": [
+        "Health",
+        "Beauty"
+      ],
+      "primaryCategory": "Health",
+      "provider": "App MD",
+      "priceLabel": "$39",
+      "imageAlt": "Melanoma Skin Cancer Prevention",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Mental Health Genetic Guide",
+      "slug": "mental-health-genetic-guide",
+      "marketplaceUrl": "https://sequencing.com/marketplace/mental-health-genetic-guide",
+      "categories": [
+        "Health",
+        "Lifestyle"
+      ],
+      "primaryCategory": "Health",
+      "provider": "Quantum Genomics | Golden Gate Gene",
+      "priceLabel": "$79",
+      "imageAlt": "Mental Health Genetic Guide",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Metabolic Health DNA Report",
+      "slug": "metabolic-health-dna-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/metabolic-health-dna-report",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "SelfDecode",
+      "priceLabel": "$59",
+      "imageAlt": "Metabolic Health DNA Report",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Methylation Pathway",
+      "slug": "methylation-pathway",
+      "marketplaceUrl": "https://sequencing.com/marketplace/methylation-pathway",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "SelfDecode",
+      "priceLabel": "$59",
+      "imageAlt": "Default sequencing app icon",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Mitchell Syndrome",
+      "slug": "mitchell-syndrome",
+      "marketplaceUrl": "https://sequencing.com/marketplace/mitchell-syndrome",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Mitchell Syndrome",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Mitochondrial Ancestry",
+      "slug": "mitochondrial-ancestry",
+      "marketplaceUrl": "https://sequencing.com/marketplace/mitochondrial-ancestry",
+      "categories": [
+        "Ancestry"
+      ],
+      "primaryCategory": "Ancestry",
+      "provider": "SelfDecode",
+      "priceLabel": "$19",
+      "imageAlt": "Mitochondrial Ancestry",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Mosaic Biodata",
+      "slug": "mosaic-biodata",
+      "marketplaceUrl": "https://sequencing.com/marketplace/mosaic-biodata",
+      "categories": [
+        "Nutrition",
+        "Fitness",
+        "Lifestyle"
+      ],
+      "primaryCategory": "Nutrition",
+      "provider": "Mosaic Biodata",
+      "priceLabel": "$199",
+      "imageAlt": "Mosaic Biodata",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "MTHFR DNA Wellness Report",
+      "slug": "mthfr-dna-wellness-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/mthfr-dna-wellness-report",
+      "categories": [
+        "Health",
+        "Children"
+      ],
+      "primaryCategory": "Health",
+      "provider": "SelfDecode",
+      "priceLabel": "$29",
+      "imageAlt": "MTHFR DNA Wellness Report",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Musculoskeletal DNA Report",
+      "slug": "musculoskeletal-dna-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/musculoskeletal-dna-report",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "SelfDecode",
+      "priceLabel": "$59",
+      "imageAlt": "Default sequencing app icon",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Musculoskeletal Health",
+      "slug": "musculoskeletal-health",
+      "marketplaceUrl": "https://sequencing.com/marketplace/musculoskeletal-health",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Musculoskeletal Health",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "My Heart Health",
+      "slug": "my-heart-health",
+      "marketplaceUrl": "https://sequencing.com/marketplace/my-heart-health",
+      "categories": [
+        "Health",
+        "Nutrition",
+        "Lifestyle"
+      ],
+      "primaryCategory": "Health",
+      "provider": "GenoPalate",
+      "priceLabel": "$49",
+      "imageAlt": "My Heart Health",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "My Personality Traits",
+      "slug": "my-personality-traits",
+      "marketplaceUrl": "https://sequencing.com/marketplace/my-personality-traits",
+      "categories": [
+        "Health",
+        "Lifestyle"
+      ],
+      "primaryCategory": "Health",
+      "provider": "SelfDecode",
+      "priceLabel": "$59",
+      "imageAlt": "My Personality Traits",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Naturopath Summary",
+      "slug": "naturopath-summary",
+      "marketplaceUrl": "https://sequencing.com/marketplace/naturopath-summary",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Naturopath Summary",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Neurological Health",
+      "slug": "neurological-health",
+      "marketplaceUrl": "https://sequencing.com/marketplace/neurological-health",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Neurological Health",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Next-Gen Disease Screen",
+      "slug": "next-gen-disease-screen",
+      "marketplaceUrl": "https://sequencing.com/marketplace/next-gen-disease-screen",
+      "categories": [
+        "Sequencing Apps",
+        "Health"
+      ],
+      "primaryCategory": "Sequencing Apps",
+      "provider": "Sequencing.com",
+      "priceLabel": "Free",
+      "imageAlt": "Next-Gen Disease Screen",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Nourish",
+      "slug": "nourish",
+      "marketplaceUrl": "https://sequencing.com/marketplace/nourish",
+      "categories": [
+        "Nutrition"
+      ],
+      "primaryCategory": "Nutrition",
+      "provider": "Toolbox Genomics",
+      "priceLabel": "$59",
+      "imageAlt": "Nourish",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Nutrigenomics: Nutrition Analysis",
+      "slug": "nutrigenomics-dna-nutrition-guidance",
+      "marketplaceUrl": "https://sequencing.com/marketplace/nutrigenomics-dna-nutrition-guidance",
+      "categories": [
+        "Nutrition"
+      ],
+      "primaryCategory": "Nutrition",
+      "provider": "Complete Genome Science",
+      "priceLabel": "$29",
+      "imageAlt": "Nutrigenomics: Nutrition Analysis",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Nutritional & Metabolic Health",
+      "slug": "nutritional-metabolic-health",
+      "marketplaceUrl": "https://sequencing.com/marketplace/nutritional-metabolic-health",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Nutritional & Metabolic Health",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Nutritionist Summary",
+      "slug": "nutritionist-summary",
+      "marketplaceUrl": "https://sequencing.com/marketplace/nutritionist-summary",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Nutritionist Summary",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Oncology Genetic Guide",
+      "slug": "oncology-genetic-guide",
+      "marketplaceUrl": "https://sequencing.com/marketplace/oncology-genetic-guide",
+      "categories": [
+        "Health",
+        "Lifestyle"
+      ],
+      "primaryCategory": "Health",
+      "provider": "Quantum Genomics | Golden Gate Gene",
+      "priceLabel": "$79",
+      "imageAlt": "Oncology Genetic Guide",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Oral",
+      "slug": "oral",
+      "marketplaceUrl": "https://sequencing.com/marketplace/oral",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Oral",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Ovarian Cancer Risk & Prevention",
+      "slug": "ovarian-cancer-risk-prevention",
+      "marketplaceUrl": "https://sequencing.com/marketplace/ovarian-cancer-risk-prevention",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Ovarian Cancer Risk & Prevention",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Ozempic and GLP-1 Agonists",
+      "slug": "ozempic-glp-1-agonists-genetic-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/ozempic-glp-1-agonists-genetic-report",
+      "categories": [
+        "Health",
+        "Nutrition",
+        "Beauty",
+        "Lifestyle"
+      ],
+      "primaryCategory": "Health",
+      "provider": "Golden Gate Gene",
+      "priceLabel": "$99",
+      "imageAlt": "Ozempic and GLP-1 Agonists",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Pancreatic Cancer",
+      "slug": "pancreatic-cancer",
+      "marketplaceUrl": "https://sequencing.com/marketplace/pancreatic-cancer",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Pancreatic Cancer",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Parkinson's Disease",
+      "slug": "parkinsons-disease",
+      "marketplaceUrl": "https://sequencing.com/marketplace/parkinsons-disease",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Parkinson's Disease",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Pediatric Health",
+      "slug": "pediatric-health",
+      "marketplaceUrl": "https://sequencing.com/marketplace/pediatric-health",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Pediatric Health",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Personalized Vitamins and Supplements",
+      "slug": "personalized-vitamins-and-supplements",
+      "marketplaceUrl": "https://sequencing.com/marketplace/personalized-vitamins-and-supplements",
+      "categories": [
+        "Health",
+        "Nutrition",
+        "Lifestyle"
+      ],
+      "primaryCategory": "Health",
+      "provider": "GenoPalate",
+      "priceLabel": "$29",
+      "imageAlt": "Personalized Vitamins and Supplements",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Pharmacist Summary",
+      "slug": "pharmacist-summary",
+      "marketplaceUrl": "https://sequencing.com/marketplace/pharmacist-summary",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Pharmacist Summary",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Pheochromocytoma and Paraganglioma",
+      "slug": "pheochromocytoma-and-paraganglioma",
+      "marketplaceUrl": "https://sequencing.com/marketplace/pheochromocytoma-and-paraganglioma",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Pheochromocytoma and Paraganglioma",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Physical Appearance Genetic Report",
+      "slug": "genetic-test-predict-physical-appearance",
+      "marketplaceUrl": "https://sequencing.com/marketplace/genetic-test-predict-physical-appearance",
+      "categories": [
+        "Beauty",
+        "Children"
+      ],
+      "primaryCategory": "Beauty",
+      "provider": "Complete Genome Science",
+      "priceLabel": "$19",
+      "imageAlt": "Physical Appearance Genetic Report",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Preconception & Pregnancy Planning",
+      "slug": "preconception-pregnancy-planning",
+      "marketplaceUrl": "https://sequencing.com/marketplace/preconception-pregnancy-planning",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Preconception & Pregnancy Planning",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Prevent Breast Cancer",
+      "slug": "prevent-breast-cancer-dna-analysis-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/prevent-breast-cancer-dna-analysis-report",
+      "categories": [
+        "Health"
+      ],
+      "primaryCategory": "Health",
+      "provider": "App MD",
+      "priceLabel": "$39",
+      "imageAlt": "Prevent Breast Cancer",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Prevent Sudden Death",
+      "slug": "prevent-sudden-death",
+      "marketplaceUrl": "https://sequencing.com/marketplace/prevent-sudden-death",
+      "categories": [
+        "Health",
+        "Children"
+      ],
+      "primaryCategory": "Health",
+      "provider": "App MD",
+      "priceLabel": "$39",
+      "imageAlt": "Prevent Sudden Death",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Promethease",
+      "slug": "promethease",
+      "marketplaceUrl": "https://sequencing.com/marketplace/promethease",
+      "categories": [
+        "Health"
+      ],
+      "primaryCategory": "Health",
+      "provider": "River Road Bio",
+      "priceLabel": "Free",
+      "imageAlt": "Promethease",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Prostate Cancer Risk & Prevention",
+      "slug": "prostate-cancer-risk-prevention",
+      "marketplaceUrl": "https://sequencing.com/marketplace/prostate-cancer-risk-prevention",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Prostate Cancer Risk & Prevention",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Radiation & UV Sensitivity",
+      "slug": "radiation-uv-sensitivity",
+      "marketplaceUrl": "https://sequencing.com/marketplace/radiation-uv-sensitivity",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Radiation & UV Sensitivity",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Reproductive & Hormonal Health",
+      "slug": "reproductive-hormonal-health",
+      "marketplaceUrl": "https://sequencing.com/marketplace/reproductive-hormonal-health",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Reproductive & Hormonal Health",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Respiratory Health",
+      "slug": "respiratory-health",
+      "marketplaceUrl": "https://sequencing.com/marketplace/respiratory-health",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Respiratory Health",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Respiratory Health DNA Report",
+      "slug": "respiratory-health-dna-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/respiratory-health-dna-report",
+      "categories": [
+        "Health",
+        "Fitness",
+        "Children"
+      ],
+      "primaryCategory": "Health",
+      "provider": "SelfDecode",
+      "priceLabel": "$59",
+      "imageAlt": "Respiratory Health DNA Report",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Rheumatologist Summary",
+      "slug": "rheumatologist-summary",
+      "marketplaceUrl": "https://sequencing.com/marketplace/rheumatologist-summary",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Rheumatologist Summary",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "RunDNA",
+      "slug": "rundna",
+      "marketplaceUrl": "https://sequencing.com/marketplace/rundna",
+      "categories": [
+        "Fitness"
+      ],
+      "primaryCategory": "Fitness",
+      "provider": "Toolbox Genomics",
+      "priceLabel": "$59",
+      "imageAlt": "RunDNA",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Santa and Me | Compare Your DNA to St. Nick",
+      "slug": "santa-and-me-app-dna-comparison",
+      "marketplaceUrl": "https://sequencing.com/marketplace/santa-and-me-app-dna-comparison",
+      "categories": [
+        "Ancestry",
+        "Children"
+      ],
+      "primaryCategory": "Ancestry",
+      "provider": "Sequencing.com",
+      "priceLabel": "Free",
+      "imageAlt": "Santa and Me | Compare Your DNA to St. Nick",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Sequencing Depth and Coverage",
+      "slug": "sequencing-depth-and-coverage",
+      "marketplaceUrl": "https://sequencing.com/marketplace/sequencing-depth-and-coverage",
+      "categories": [
+        "Bioinformatics"
+      ],
+      "primaryCategory": "Bioinformatics",
+      "provider": "Sequencing.com",
+      "priceLabel": "$9.99",
+      "imageAlt": "Sequencing Depth and Coverage",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Short Read Mapper",
+      "slug": "genome-short-read-mapper",
+      "marketplaceUrl": "https://sequencing.com/marketplace/genome-short-read-mapper",
+      "categories": [
+        "Bioinformatics"
+      ],
+      "primaryCategory": "Bioinformatics",
+      "provider": "GeneX",
+      "priceLabel": "$249",
+      "imageAlt": "Short Read Mapper",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Skin and Beauty DNA Report",
+      "slug": "skin-and-beauty-dna-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/skin-and-beauty-dna-report",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "SelfDecode",
+      "priceLabel": "$59",
+      "imageAlt": "Default sequencing app icon",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Skin Cancer",
+      "slug": "skin-cancer",
+      "marketplaceUrl": "https://sequencing.com/marketplace/skin-cancer",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Skin Cancer",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Skin Genes",
+      "slug": "skin-genes-dna-analysis-app",
+      "marketplaceUrl": "https://sequencing.com/marketplace/skin-genes-dna-analysis-app",
+      "categories": [
+        "Beauty",
+        "Lifestyle"
+      ],
+      "primaryCategory": "Beauty",
+      "provider": "GeneInformed",
+      "priceLabel": "$39",
+      "imageAlt": "Skin Genes",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Skin Health",
+      "slug": "skin-health",
+      "marketplaceUrl": "https://sequencing.com/marketplace/skin-health",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Skin Health",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Sleep DNA Wellness",
+      "slug": "sleep-dna-analysis-wellness-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/sleep-dna-analysis-wellness-report",
+      "categories": [
+        "Health",
+        "Beauty",
+        "Lifestyle",
+        "Children"
+      ],
+      "primaryCategory": "Health",
+      "provider": "SelfDecode",
+      "priceLabel": "$59",
+      "imageAlt": "Sleep DNA Wellness",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "StrateGene",
+      "slug": "strategene",
+      "marketplaceUrl": "https://sequencing.com/marketplace/strategene",
+      "categories": [
+        "Health"
+      ],
+      "primaryCategory": "Health",
+      "provider": "Seeking Health",
+      "priceLabel": "$95",
+      "imageAlt": "StrateGene",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Surgeon Summary",
+      "slug": "surgeon-summary",
+      "marketplaceUrl": "https://sequencing.com/marketplace/surgeon-summary",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Surgeon Summary",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "TBG Total Wellness",
+      "slug": "tbg-total-wellness",
+      "marketplaceUrl": "https://sequencing.com/marketplace/tbg-total-wellness",
+      "categories": [
+        "Health",
+        "Nutrition",
+        "Fitness",
+        "Lifestyle",
+        "Children"
+      ],
+      "primaryCategory": "Health",
+      "provider": "Toolbox Genomics",
+      "priceLabel": "$119",
+      "imageAlt": "TBG Total Wellness",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Thrive",
+      "slug": "thrive",
+      "marketplaceUrl": "https://sequencing.com/marketplace/thrive",
+      "categories": [
+        "Lifestyle",
+        "Children"
+      ],
+      "primaryCategory": "Lifestyle",
+      "provider": "Toolbox Genomics",
+      "priceLabel": "$59",
+      "imageAlt": "Thrive",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Thyroid Cancer",
+      "slug": "thyroid-cancer",
+      "marketplaceUrl": "https://sequencing.com/marketplace/thyroid-cancer",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Thyroid Cancer",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Toxin Sensitivity",
+      "slug": "toxin-sensitivity",
+      "marketplaceUrl": "https://sequencing.com/marketplace/toxin-sensitivity",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Default sequencing app icon",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Variant Discovery",
+      "slug": "variant-discovery-bioinformatics-secondary-analysis",
+      "marketplaceUrl": "https://sequencing.com/marketplace/variant-discovery-bioinformatics-secondary-analysis",
+      "categories": [
+        "Bioinformatics"
+      ],
+      "primaryCategory": "Bioinformatics",
+      "provider": "GeneX",
+      "priceLabel": "$19",
+      "imageAlt": "Variant Discovery",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Variant Effect Predictor",
+      "slug": "variant-effect-predictor",
+      "marketplaceUrl": "https://sequencing.com/marketplace/variant-effect-predictor",
+      "categories": [
+        "Bioinformatics"
+      ],
+      "primaryCategory": "Bioinformatics",
+      "provider": "GeneX",
+      "priceLabel": "$19.99",
+      "imageAlt": "Variant Effect Predictor",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Vision",
+      "slug": "vision",
+      "marketplaceUrl": "https://sequencing.com/marketplace/vision",
+      "categories": [
+        "Draft"
+      ],
+      "primaryCategory": "Draft",
+      "provider": "",
+      "priceLabel": "Free",
+      "imageAlt": "Vision",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Vitamins DNA Wellness Report",
+      "slug": "vitamins-dna-analysis-genetic-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/vitamins-dna-analysis-genetic-report",
+      "categories": [
+        "Health",
+        "Nutrition",
+        "Children"
+      ],
+      "primaryCategory": "Health",
+      "provider": "SelfDecode",
+      "priceLabel": "$59",
+      "imageAlt": "Vitamins DNA Wellness Report",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Wellness and Longevity",
+      "slug": "wellness-and-longevity",
+      "marketplaceUrl": "https://sequencing.com/marketplace/wellness-and-longevity",
+      "categories": [
+        "Health",
+        "Children"
+      ],
+      "primaryCategory": "Health",
+      "provider": "App MD",
+      "priceLabel": "$199",
+      "imageAlt": "Wellness and Longevity",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Wellness Genetic Guide",
+      "slug": "wellness-genetic-guide",
+      "marketplaceUrl": "https://sequencing.com/marketplace/wellness-genetic-guide",
+      "categories": [
+        "Health",
+        "Nutrition",
+        "Lifestyle"
+      ],
+      "primaryCategory": "Health",
+      "provider": "Quantum Genomics | Golden Gate Gene",
+      "priceLabel": "$79",
+      "imageAlt": "Wellness Genetic Guide",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Whole Genome Sequencing",
+      "slug": "whole-genome-sequencing-30x",
+      "marketplaceUrl": "https://sequencing.com/marketplace/whole-genome-sequencing-30x",
+      "categories": [
+        "Test Kits"
+      ],
+      "primaryCategory": "Test Kits",
+      "provider": "Sequencing.com",
+      "priceLabel": "$549",
+      "imageAlt": "Whole Genome Sequencing",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "Will Aspirin Help?",
+      "slug": "will-aspirin-help",
+      "marketplaceUrl": "https://sequencing.com/marketplace/will-aspirin-help",
+      "categories": [
+        "Health"
+      ],
+      "primaryCategory": "Health",
+      "provider": "GeneX",
+      "priceLabel": "$1",
+      "imageAlt": "Will Aspirin Help?",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    },
+    {
+      "title": "World Ancestry Report",
+      "slug": "world-ancestry-report",
+      "marketplaceUrl": "https://sequencing.com/marketplace/world-ancestry-report",
+      "categories": [
+        "Ancestry"
+      ],
+      "primaryCategory": "Ancestry",
+      "provider": "Galatea Bio",
+      "priceLabel": "$79",
+      "imageAlt": "World Ancestry Report",
+      "sourceUrl": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "extractionStatus": "direct"
+    }
+  ]
+}

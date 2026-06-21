@@ -1,0 +1,449 @@
+{
+  "reportOverview": {
+    "reportTitle": "Healthy Nutrition",
+    "inputManifestHash": "sha256:synthetic-healthy-nutrition-context-v1",
+    "evidenceTypesSupplied": [
+      "Local derived MCM6/LCT nutrition-genetics evidence.",
+      "Public GeneInformed Healthy Nutrition sample PDF rows used as observed output-format examples.",
+      "Consumer education and public-health references for nutrition-genetics, DTC result limits, glucose, BMI, supplements, and model-limit framing."
+    ],
+    "sectionsUnavailable": [
+      "Marketplace detail-page parity is still pending.",
+      "No calibrated healthy-nutrition, food-reaction, vitamin, mineral, omega-3, meal-plan, child-specific nutrition, supplement, symptom, diet-history, lab, metabolic, or ancestry applicability model is supplied with this fixture.",
+      "No local food-reaction result, nutrient deficiency result, supplement dose, meal plan, child-specific nutrition guidance, symptom explanation, lab interpretation, metabolic diagnosis, or treatment action is reported."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Local healthy nutrition context",
+      "item": "MCM6/LCT rs4988235",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a diagnosis, symptom explanation, food-sensitivity result, diet recommendation, or supplement recommendation.",
+      "genes": [
+        "MCM6",
+        "LCT"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: lactose intolerance / MCM6",
+      "sourceIds": [
+        "medlineplus-lactose-intolerance",
+        "medlineplus-mcm6"
+      ],
+      "plainEnglishMeaning": "This marker can provide lactose-related context, but symptoms, diet history, labs, environment, medications, age, and professional review matter for nutrition decisions.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Nutrition model availability",
+      "item": "Healthy nutrition model",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "No calibrated healthy-nutrition, food-reaction, vitamin, mineral, omega-3, meal-plan, child-specific nutrition, supplement, symptom, diet-history, lab, metabolic, or ancestry applicability model is supplied with this fixture.",
+      "genes": [
+        "Healthy nutrition model"
+      ],
+      "sourceLabel": "Nutritional genomics review / MedlinePlus DTC result limits / GWAS Catalog",
+      "sourceIds": [
+        "nutritional-genomics-dtc-review",
+        "medlineplus-dtc-genetic-testing-results",
+        "ebi-gwas-catalog"
+      ],
+      "plainEnglishMeaning": "The report can describe supplied marker context and unavailable sections, but it should not make diet, supplement, food-response, nutrient, metabolic, symptom, lab, child-specific, or diagnosis conclusions without validated evidence.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Food Reactions",
+      "item": "Caffeine",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Common result AA; sample user result AA; impact: normal breakdown of caffeine.",
+      "genes": [
+        "CYP1A2"
+      ],
+      "sourceLabel": "Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public sample PDF summary table and caffeine page; this is observed sample output structure, not a local caffeine metabolism or intake recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Food Reactions",
+      "item": "Lactose Intolerance",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Common result AA; sample user result GG; impact: lactose intolerance expected.",
+      "genes": [
+        "MCM6"
+      ],
+      "sourceLabel": "Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public sample PDF summary table and lactose page; this is observed sample output structure, not a local diagnosis or dairy recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Food Reactions",
+      "item": "Gluten Sensitivity",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Common results CC and TT; sample user results CC and TT; impact: low risk for sensitivity.",
+      "genes": [
+        "HLA-DQA1",
+        "HLA-DQB1"
+      ],
+      "sourceLabel": "Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public sample PDF summary table and gluten page; this is observed sample output structure, not a local gluten, celiac, allergy, or elimination-diet conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Food Reactions",
+      "item": "Alcohol",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Common result GA; sample user result GG; impact: average contribution.",
+      "genes": [
+        "CETP"
+      ],
+      "sourceLabel": "Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public sample PDF summary table and alcohol page; this is observed sample output structure, not local alcohol advice or cardiovascular guidance.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Food Reactions",
+      "item": "Meat Carcinogens",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Common result 6AT/6AT; sample user result 7AT/7AT; impact: high genetic sensitivity.",
+      "genes": [
+        "UGT1A1"
+      ],
+      "sourceLabel": "Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public sample PDF summary table and meat-carcinogens page; this is observed sample output structure, not local cancer-risk, diet, or smoking-exposure advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Vitamins",
+      "item": "Folic acid",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Common result GG; sample user result GA; impact: added risk for deficiency.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public sample PDF summary table and folate page; this is observed sample output structure, not a local folate level, deficiency diagnosis, or supplement dose.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Vitamins",
+      "item": "Homocystaine",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Common result GG; sample user result GA; impact: elevated levels expected.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public sample PDF summary table; this is observed sample output structure, not a local homocysteine lab interpretation or treatment recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Vitamins",
+      "item": "Vitamin B12",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Common results AA, GG, and GG; sample user results AA, GG, and GG; impact: normal genetic risk.",
+      "genes": [
+        "TCN1",
+        "TCN2",
+        "CUBN"
+      ],
+      "sourceLabel": "Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public sample PDF summary table and B12 page; this is observed sample output structure, not a local B12 blood-level or deficiency conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Vitamins",
+      "item": "Vitamin B6",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Common result CT; sample user result CT; impact: normal genetic risk.",
+      "genes": [
+        "ALPL"
+      ],
+      "sourceLabel": "Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public sample PDF summary table and B6 page; this is observed sample output structure, not a local B6 blood-level or supplement conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Vitamins",
+      "item": "Vitamin B3",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Common result CC; sample user result TT; impact: added risk for deficiency.",
+      "genes": [
+        "LPL"
+      ],
+      "sourceLabel": "Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public sample PDF summary table and B3 page; this is observed sample output structure, not a local niacin level, metabolic-syndrome interpretation, or supplement conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Vitamins",
+      "item": "Vitamin D",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Common results AA, AG, GG, and GA; sample user results AA, GG, GG, and GG; impact: added risk for deficiency.",
+      "genes": [
+        "GC",
+        "CYP2R1",
+        "NADSYN1",
+        "VDR"
+      ],
+      "sourceLabel": "Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public sample PDF summary table and vitamin D page; this is observed sample output structure, not a local vitamin D level, sun-exposure recommendation, or supplement dose.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Vitamins",
+      "item": "Vitamin C",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Common results CC and GG; sample user results TT and GG; impact: added risk for deficiency.",
+      "genes": [
+        "GSTT1",
+        "SLC23A1"
+      ],
+      "sourceLabel": "Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public sample PDF summary table and vitamin C page; this is observed sample output structure, not a local vitamin C blood-level or supplement conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Minerals",
+      "item": "Iron",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Common results CC, GG, and AA/AG; sample user results CC, GG, and AA; impact: normal risk for genetic deficiency and low risk for overload.",
+      "genes": [
+        "HFE",
+        "TMPRSS6"
+      ],
+      "sourceLabel": "Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public sample PDF summary table and iron page; this is observed sample output structure, not a local iron lab interpretation, anemia diagnosis, or overload assessment.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Minerals",
+      "item": "Calcium",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Common results GA, GG, AA, and AG; sample user results GG, GG, AA, and GG; impact: added risk for deficiency.",
+      "genes": [
+        "VDR",
+        "DHCR7",
+        "GC",
+        "CYP2R1"
+      ],
+      "sourceLabel": "Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public sample PDF summary table and calcium page; this is observed sample output structure, not a local calcium lab, osteoporosis, diet, or supplement conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Essential Fatty Acids",
+      "item": "Omega-3",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Common result TT; sample user result CC; impact: high genetic risk for deficiency.",
+      "genes": [
+        "FADS1"
+      ],
+      "sourceLabel": "Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public sample PDF summary table and omega-3 page; this is observed sample output structure, not a local fatty-acid level, HDL interpretation, supplement recommendation, or cardiovascular-risk conclusion.",
+      "sourceBindingStatus": "exact"
+    }
+  ],
+  "practicalNextSteps": {
+    "healthyNutritionContext": [
+      "Use this report as educational nutrition-genetics context, not as a meal plan, supplement plan, food-restriction list, lab interpretation, or child-specific nutrition guide.",
+      "Treat GeneInformed sample food-reaction, vitamin, mineral, omega-3, genetic-risk, population-share, and advice text as observed sample-report structure unless validated local evidence supports equivalent sections.",
+      "Discuss symptoms, diet history, labs, medications, age, children, and health goals with qualified nutrition or clinical professionals.",
+      "Do not change foods, supplements, tests, or treatment based on genotype alone."
+    ]
+  },
+  "plainEnglishLimits": [
+    "Nutrition and nutrient status depend on diet, symptoms, medications, labs, medical history, environment, age, and professional review, not genotype alone.",
+    "Public sample rows show observed report format and source binding; they are not local personal findings unless the local run supplies equivalent validated evidence.",
+    "The local fixture does not include diet history, food-reaction model output, vitamin blood levels, mineral blood levels, fatty-acid labs, child-specific context, medication review, or a calibrated nutrition model."
+  ],
+  "references": [
+    {
+      "id": "medlineplus-lactose-intolerance",
+      "title": "MedlinePlus Genetics: lactose intolerance",
+      "sourceType": "education_resource"
+    },
+    {
+      "id": "medlineplus-mcm6",
+      "title": "MedlinePlus Genetics: MCM6 gene",
+      "sourceType": "education_resource"
+    },
+    {
+      "id": "nutritional-genomics-dtc-review",
+      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing",
+      "sourceType": "research_review"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog",
+      "sourceType": "database"
+    },
+    {
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean",
+      "sourceType": "education_resource"
+    },
+    {
+      "id": "medlineplus-blood-glucose-test",
+      "title": "MedlinePlus: Blood Glucose Test",
+      "sourceType": "medical_test_resource"
+    },
+    {
+      "id": "medlineplus-hba1c-test",
+      "title": "MedlinePlus: Hemoglobin A1C test",
+      "sourceType": "medical_test_resource"
+    },
+    {
+      "id": "cdc-diabetes-risk-factors",
+      "title": "CDC Diabetes Risk Factors",
+      "sourceType": "public_health_resource"
+    },
+    {
+      "id": "fda-dietary-supplements",
+      "title": "FDA Dietary Supplements",
+      "sourceType": "regulatory_resource"
+    },
+    {
+      "id": "nih-ods-dietary-supplement-fact-sheets",
+      "title": "NIH Office of Dietary Supplements Fact Sheets",
+      "sourceType": "public_health_resource"
+    },
+    {
+      "id": "cdc-bmi",
+      "title": "CDC About Body Mass Index",
+      "sourceType": "public_health_resource"
+    },
+    {
+      "id": "healthy-nutrition-sample-pdf",
+      "title": "Healthy Nutrition DNA Analysis sample report",
+      "sourceType": "mock_report"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "gene": "MCM6/LCT",
+        "observedValue": "local derived rs4988235 CT"
+      },
+      {
+        "gene": "Healthy nutrition model",
+        "observedValue": "calibrated model unavailable"
+      },
+      {
+        "gene": "CYP1A2",
+        "observedValue": "sample PDF Caffeine row: common AA; sample user AA"
+      },
+      {
+        "gene": "MCM6",
+        "observedValue": "sample PDF Lactose Intolerance row: common AA; sample user GG"
+      },
+      {
+        "gene": "HLA-DQA1/HLA-DQB1",
+        "observedValue": "sample PDF Gluten Sensitivity row: common CC/TT; sample user CC/TT"
+      },
+      {
+        "gene": "CETP",
+        "observedValue": "sample PDF Alcohol row: common GA; sample user GG"
+      },
+      {
+        "gene": "UGT1A1",
+        "observedValue": "sample PDF Meat Carcinogens row: common 6AT/6AT; sample user 7AT/7AT"
+      },
+      {
+        "gene": "MTHFR",
+        "observedValue": "sample PDF Folic acid and Homocystaine rows: common GG; sample user GA"
+      },
+      {
+        "gene": "TCN1/TCN2/CUBN",
+        "observedValue": "sample PDF Vitamin B12 row: common AA/GG/GG; sample user AA/GG/GG"
+      },
+      {
+        "gene": "ALPL",
+        "observedValue": "sample PDF Vitamin B6 row: common CT; sample user CT"
+      },
+      {
+        "gene": "LPL",
+        "observedValue": "sample PDF Vitamin B3 row: common CC; sample user TT"
+      },
+      {
+        "gene": "GC/CYP2R1/NADSYN1/VDR",
+        "observedValue": "sample PDF Vitamin D row: common AA/AG/GG/GA; sample user AA/GG/GG/GG"
+      },
+      {
+        "gene": "GSTT1/SLC23A1",
+        "observedValue": "sample PDF Vitamin C row: common CC/GG; sample user TT/GG"
+      },
+      {
+        "gene": "HFE/TMPRSS6",
+        "observedValue": "sample PDF Iron row: common CC/GG/AA-or-AG; sample user CC/GG/AA"
+      },
+      {
+        "gene": "VDR/DHCR7/GC/CYP2R1",
+        "observedValue": "sample PDF Calcium row: common GA/GG/AA/AG; sample user GG/GG/AA/GG"
+      },
+      {
+        "gene": "FADS1",
+        "observedValue": "sample PDF Omega-3 row: common TT; sample user CC"
+      }
+    ],
+    "missingInputs": [
+      "Marketplace detail-page copy, screenshots, pricing state, and authenticated purchase/run flow parity remain pending.",
+      "No calibrated healthy-nutrition, food-reaction, vitamin, mineral, omega-3, meal-plan, child-specific nutrition, supplement, symptom, diet-history, lab, metabolic, or ancestry applicability model is supplied with this fixture.",
+      "The GeneInformed Healthy Nutrition rows are public sample-report examples and are not local target recommendations.",
+      "Broader symptoms, food history, diet history, age, children, activity history, labs, medications, medical history, ancestry applicability, environment, and professional assessment are not represented in this fixture.",
+      "Visible sample gene rows do not include rsIDs or genomic coordinates, so they are preserved as sample display rows instead of resolved biological variants."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Nutrition, food response, nutrient status, symptoms, labs, glucose, weight, supplement response, and metabolic outcomes depend on genetics plus non-genetic context and professional review.",
+      "Public sample report rows are useful for output-format parity and citation binding, but they do not establish local genotype effects or individual recommendations.",
+      "A single marker should not be used to diagnose conditions, explain symptoms, prescribe diets, recommend supplements, interpret labs, create child-specific guidance, or guide treatment."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report is educational and does not create meal plans, create child-specific nutrition guidance, prescribe diet changes, recommend supplements, diagnose symptoms, infer metabolic disease, interpret labs, or provide treatment guidance.",
+      "Healthy Nutrition sample rows are source-bound to the public PDF for format parity; marketplace detail parity remains pending."
+    ]
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "reportOverview": {
+    "reportTitle": "Disease Risk Genetic Test Report",
+    "inputManifestHash": "sha256:synthetic-genetic-testing-disease-risk-organ-system-boundary-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com marketplace detail-page extraction is still pending.",
+      "No validated disease-risk model, disease-specific test scope, calibrated PRS, ancestry applicability metadata, variant classifications, family history, symptoms, clinical history, labs, imaging, clinician review, genetic counselor review, or local risk calculation is supplied with this fixture."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Disease-risk model availability",
+      "item": "Disease Risk Genetic Test Report model",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "No validated disease-risk model, disease-specific test scope, calibrated PRS, ancestry applicability metadata, variant classifications, family history, symptoms, clinical history, labs, imaging, clinician review, genetic counselor review, or local risk calculation is supplied with this fixture.",
+      "genes": [
+        "Disease risk model"
+      ],
+      "sourceLabel": "DTC genetic testing limits / PRS and complex-disease references",
+      "sourceIds": [
+        "fda-direct-to-consumer-tests",
+        "nhgri-polygenic-risk-scores",
+        "medlineplus-complex-disorders"
+      ],
+      "plainEnglishMeaning": "The local run can preserve observed sample report structure and explain limitations, but it must not estimate personal disease risk, diagnose disease, recommend screening or prevention, or provide all-clear reassurance without validated evidence and clinical context."
+    },
+    {
+      "groupTitle": "Clinical context availability",
+      "item": "Clinical and professional review context",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "Family history, symptoms, clinical history, labs, imaging, medication context, clinician review, genetic counselor review, and disease-specific interpretation are unavailable in this fixture.",
+      "genes": [
+        "Clinical context"
+      ],
+      "sourceLabel": "MedlinePlus genetic test results / NCI cancer genetic testing",
+      "sourceIds": [
+        "medlineplus-genetic-test-results",
+        "nci-cancer-genetic-testing"
+      ],
+      "plainEnglishMeaning": "Disease-risk reports require validated test scope and personal clinical context. This local validation result should keep risk, screening, prevention, treatment, and actionability unavailable."
+    },
+    {
+      "groupTitle": "Report limitation",
+      "item": "Heritable component only",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "The sample states that 'Your Risk' is only for the heritable component of the disease, and that environmental, lifestyle, and other non-heritable factors also affect overall susceptibility risk. The sample uses lung cancer as an example, saying lung cancer is only 10% heritable and most cases are associated with lifestyle factors such as smoking.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Disease Risk sample-report structure only. Keep this separate from local genome evidence; it is not a personal disease-risk estimate, diagnosis, screening recommendation, prevention plan, treatment guidance, all-clear reassurance, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Cancers",
+      "item": "Cancer category risk table",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Visible sample rows include Bladder Very Elevated; Brain Typical; Breast Typical; Breast BRCA1 Absent; Breast BRCA2 Absent; Cervical Male; Colorectal Typical; Endometrial Male; Esophageal visible with no cleanly extracted risk label; Liver Typical; Lung Very Reduced; Oral and Larynx visible with no cleanly extracted risk label; Ovarian Male; Pancreatic Reduced; Prostate Typical; Renal Typical; Skin Melanoma Reduced; Skin Non-melanoma Reduced; Testicular Typical; Thyroid Very Reduced. The sample table uses columns for Disease, Your Risk, and Description, with lifetime-risk and heritable-percentage text below many disease names.",
+      "genes": [
+        "Cancer risk model rows"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Disease Risk sample-report structure only. Keep this separate from local genome evidence; it is not a personal disease-risk estimate, diagnosis, screening recommendation, prevention plan, treatment guidance, all-clear reassurance, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Neuro-degenerative Diseases",
+      "item": "Neurodegenerative category risk table",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Visible sample rows include Alzheimer's Disease Reduced; Alzheimer's Disease Early Onset Unlikely; Amyotrophic Lateral Sclerosis Elevated; Dystonia Absent; Neuronal Ceroid Lipofuscinosis Absent; Parkinson's Disease Typical. The page includes an Alzheimer's explanation and explicitly reports sample APOE status as epsilon3/epsilon3.",
+      "genes": [
+        "APOE"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Disease Risk sample-report structure only. Keep this separate from local genome evidence; it is not a personal disease-risk estimate, diagnosis, screening recommendation, prevention plan, treatment guidance, all-clear reassurance, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Cardiovascular Diseases",
+      "item": "Cardiovascular category risk table",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Visible sample rows include Abdominal Aortic Aneurysm Reduced; Atherosclerosis Typical; Atrial Fibrillation Typical; Cardiovascular Disease Early Onset Very Reduced; COPD Typical; Coronary Artery Disease Typical; Intracranial Aneurysm Elevated; Mitral Valve Prolapse Typical; Myocardial Infarction Reduced; Stroke Elevated; Venous Thromboembolism Typical. The page explains that CAD has a genetic susceptibility component and names KL, NOS3, HSPD1, and CHD13 as example genes used across hundreds of variants.",
+      "genes": [
+        "KL",
+        "NOS3",
+        "HSPD1",
+        "CHD13"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Disease Risk sample-report structure only. Keep this separate from local genome evidence; it is not a personal disease-risk estimate, diagnosis, screening recommendation, prevention plan, treatment guidance, all-clear reassurance, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Autoimmune Diseases",
+      "item": "Autoimmune category risk table",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Visible sample rows include Allergy/Hay Fever/Eczema Elevated; Ankylosing Spondylitis Typical; Asthma Reduced; Childhood-Onset Asthma Typical; Autoimmune Diseases Typical; Celiac Disease Reduced; Crohn's Disease Typical; Type-1 Diabetes Unlikely; Type-2 Diabetes Typical; Graves' Disease Typical; IBD Reduced; Multiple Sclerosis Very Reduced; Psoriasis Reduced; Rheumatoid Arthritis Very Reduced; Sarcoidosis Reduced; Lupus Reduced; Ulcerative Colitis Reduced. The page explains Type-2 Diabetes susceptibility and names PPARG, KCNJ11, and TCF7L2 as example diabetes-related genes.",
+      "genes": [
+        "PPARG",
+        "KCNJ11",
+        "TCF7L2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Disease Risk sample-report structure only. Keep this separate from local genome evidence; it is not a personal disease-risk estimate, diagnosis, screening recommendation, prevention plan, treatment guidance, all-clear reassurance, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Eye Related Diseases",
+      "item": "Eye category risk table",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Visible sample rows include Age-Related Macular Degeneration Reduced; Exfoliation Glaucoma Elevated; Fuchs' Corneal Dystrophy Elevated; Myopia Typical; Refractive Astigmatism shown without a clear risk label in the extracted text. The page explains Exfoliation Glaucoma and says the report looks at variants in LOXL1 and several other genes known to influence risk.",
+      "genes": [
+        "LOXL1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Disease Risk sample-report structure only. Keep this separate from local genome evidence; it is not a personal disease-risk estimate, diagnosis, screening recommendation, prevention plan, treatment guidance, all-clear reassurance, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Female Specific Diseases",
+      "item": "Female-specific category risk table",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Visible sample rows label Endometriosis, Gestational Diabetes, Menarche Age, Menopause Age, Polycystic Ovary Syndrome, Pre-eclampsia, and Uterine Fibroids as Male in this sample output. The sample table preserves sex-inapplicable output labels in the Your Risk column rather than converting them into medical conclusions.",
+      "genes": [
+        "Female-specific disease model rows"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Disease Risk sample-report structure only. Keep this separate from local genome evidence; it is not a personal disease-risk estimate, diagnosis, screening recommendation, prevention plan, treatment guidance, all-clear reassurance, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Neuro-psychological Diseases",
+      "item": "Neuro-psychological category risk table",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Visible sample rows include Anxiety Related Behaviors Elevated; ADHD Typical; Autism Spectrum Disorder Reduced; Bipolar Disorder Typical; Cluster Headaches Typical; Depression Elevated; Dyslexia Typical; Epilepsy Typical; Major Depressive Disorder Elevated; Narcolepsy Typical; OCD Reduced; Schizophrenia Elevated; Tourette's Syndrome Typical. The page explains that CACNA1C and CACNB2 help regulate calcium flow in brain cells and are among genes considered for several neuro-psychological diseases.",
+      "genes": [
+        "CACNA1C",
+        "CACNB2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Disease Risk sample-report structure only. Keep this separate from local genome evidence; it is not a personal disease-risk estimate, diagnosis, screening recommendation, prevention plan, treatment guidance, all-clear reassurance, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Other Diseases",
+      "item": "Other disease category risk table",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Visible sample rows include Achilles Tendinopathy Typical; Acid Reflux Disease Typical; Severe Acne Typical; Chronic Kidney Disease Typical; Emphysema Typical; Gout Very Elevated; Hyperuracemia Typical; Lumbar Disc Disease Reduced; Meningioma Typical; Osteoarthritis Typical; Osteoporosis Typical; Otitis Typical; Restless Legs Syndrome Elevated; Sciatica Typical; Scoliosis Elevated; Vitiligo Typical. Several rows such as Hyperparathyroidism, Inguinal Hernia, Non-alcoholic Fatty Liver Disease, Peripheral Axonal Neuropathy, and Pulmonary Fibrosis are visible with descriptions or lifetime-risk text but no clear extracted Your Risk label.",
+      "genes": [
+        "Other disease model rows"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Disease Risk sample-report structure only. Keep this separate from local genome evidence; it is not a personal disease-risk estimate, diagnosis, screening recommendation, prevention plan, treatment guidance, all-clear reassurance, or actionability conclusion."
+    }
+  ],
+  "organSystemConditionContext": {
+    "boundary": "Educational disease-risk report structure and evidence-availability context only.",
+    "unavailableClaims": [
+      "personal disease-risk estimate",
+      "diagnosis",
+      "carrier status",
+      "variant classification",
+      "screening or prevention recommendation",
+      "treatment guidance",
+      "all-clear reassurance",
+      "clinical actionability"
+    ]
+  },
+  "practicalNextSteps": {
+    "diseaseRiskContext": [
+      "Use this output as sample-format replication and educational context, not as a personal disease-risk report.",
+      "Bring validated test results, family history, symptoms, clinical history, labs, imaging, and medications to a qualified clinician or genetic counselor for actual disease-risk interpretation.",
+      "Do not use sample-only risk labels to start, stop, or change screening, prevention, medication, diet, supplements, or treatment."
+    ]
+  },
+  "references": [
+    {
+      "id": "cdc-genetic-testing",
+      "title": "CDC Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetics",
+      "title": "MedlinePlus Genetics"
+    },
+    {
+      "id": "medlineplus-genetic-testing",
+      "title": "MedlinePlus: Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetic-test-results",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results"
+    },
+    {
+      "id": "fda-direct-to-consumer-tests",
+      "title": "FDA Direct-to-Consumer Tests"
+    },
+    {
+      "id": "medlineplus-complex-disorders",
+      "title": "MedlinePlus Genetics: complex disorders"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    },
+    {
+      "id": "nci-cancer-genetic-testing",
+      "title": "NCI Genetic Testing for Inherited Cancer Risk"
+    },
+    {
+      "id": "ncbi-clinvar",
+      "title": "NCBI ClinVar"
+    },
+    {
+      "id": "ncbi-genetic-testing-registry",
+      "title": "NIH Genetic Testing Registry"
+    },
+    {
+      "id": "clingen-variant-classification-guidance",
+      "title": "ClinGen Variant Classification Guidance"
+    },
+    {
+      "id": "acmg-amp-richards-2015",
+      "title": "ACMG/AMP 2015 sequence variant interpretation standards"
+    },
+    {
+      "id": "genetic-testing-disease-risk-sample-pdf",
+      "title": "Genetic Testing For Disease Risk sample genetic report"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "tier": "Local missing input",
+        "gene": "Disease risk model",
+        "variantId": "genetic-testing-disease-risk-model-unavailable",
+        "observedValue": "validated disease-risk model, calibrated PRS, ancestry applicability, variant classifications, family history, symptoms, clinical history, labs, imaging, clinician review, and genetic counselor review unavailable",
+        "effect": "The local fixture intentionally omits disease-risk calculations and clinical context.",
+        "phenotype": "Mark disease-risk, diagnosis, screening, prevention, treatment, testing, and actionability sections unavailable instead of inferring them."
+      },
+      {
+        "tier": "Sample explicit status",
+        "gene": "APOE",
+        "variantId": "APOE epsilon status",
+        "observedValue": "epsilon3/epsilon3",
+        "effect": "The sample Alzheimer's section reports APOE status as epsilon3/epsilon3.",
+        "phenotype": "Observed sample content only; do not infer local Alzheimer's disease risk, dementia status, or APOE result."
+      },
+      {
+        "tier": "Sample explanatory gene list",
+        "gene": "KL; NOS3; HSPD1; CHD13",
+        "variantId": "CAD example genes",
+        "observedValue": "not shown",
+        "effect": "The sample CAD explanation names these genes as examples across hundreds of variants.",
+        "phenotype": "Observed explanatory output only; do not infer local CAD risk, variant status, medication need, screening need, or treatment."
+      },
+      {
+        "tier": "Sample explanatory gene list",
+        "gene": "PPARG; KCNJ11; TCF7L2",
+        "variantId": "Type-2 Diabetes example genes",
+        "observedValue": "not shown",
+        "effect": "The sample Type-2 Diabetes explanation names these genes as examples among diabetes-related genes.",
+        "phenotype": "Observed explanatory output only; do not infer local diabetes risk, glucose status, medication need, diet need, or treatment."
+      },
+      {
+        "tier": "Sample explanatory gene list",
+        "gene": "LOXL1",
+        "variantId": "Exfoliation Glaucoma example gene",
+        "observedValue": "not shown",
+        "effect": "The sample Exfoliation Glaucoma explanation names LOXL1 as one of the genes known to influence risk.",
+        "phenotype": "Observed explanatory output only; do not infer local glaucoma risk, eye-disease diagnosis, screening need, or treatment."
+      },
+      {
+        "tier": "Sample explanatory gene list",
+        "gene": "CACNA1C; CACNB2",
+        "variantId": "Neuro-psychological example genes",
+        "observedValue": "not shown",
+        "effect": "The sample neuro-psychological explanation names CACNA1C and CACNB2 as genes involved in calcium flow in brain cells.",
+        "phenotype": "Observed explanatory output only; do not infer local mental-health, neurologic, behavioral, medication, therapy, or treatment conclusions."
+      }
+    ],
+    "missingInputs": [
+      "Authenticated marketplace detail-page sections have not been extracted.",
+      "No validated disease-risk model, disease-specific test scope, calibrated PRS, ancestry applicability metadata, variant classifications, family history, symptoms, clinical history, labs, imaging, clinician review, genetic counselor review, or local risk calculation is supplied with this fixture.",
+      "The public sample PDF provides observed report-format rows only; sample risk labels are not local personal evidence."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Disease susceptibility depends on genetics plus ancestry applicability, family history, environment, lifestyle, medical history, clinical testing, and professional interpretation.",
+      "A sample report table or selected gene mention should not be used to diagnose disease, estimate personal risk, recommend screening, or guide treatment."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report is educational and does not diagnose disease, estimate personal disease risk, classify variants, recommend screening, recommend treatment, or provide all-clear reassurance.",
+      "Public sample rows are preserved as observed output-format examples and are not local personal evidence."
+    ]
+  }
+}

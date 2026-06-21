@@ -1,0 +1,67 @@
+{
+  "packageSlug": "blood-type-dna-analysis-genetic-report",
+  "datasetId": "synthetic-blood-type-abo-rh-context-v1",
+  "packageVersion": "0.1.0",
+  "reportPurpose": "Consumer blood-type context using derived ABO/RHD evidence and lab-confirmation safety framing.",
+  "missingInputPolicy": "Report unavailable ABO or RhD context explicitly; do not infer transfusion, pregnancy, donation, or emergency-care compatibility from genotype alone.",
+  "consumerTone": "plain English; educational; lab-confirmation required for clinical blood typing",
+  "inputManifest": {
+    "hash": "sha256:synthetic-blood-type-abo-rh-context-v1",
+    "genomeBuild": "derived-blood-type-context",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived blood-type evidence for package validation"
+  },
+  "genomeEvidence": [
+    {
+      "inputId": "ABO-derived-haplotype",
+      "haplotype": "A1/O1-derived",
+      "gene": "ABO",
+      "observedValue": "ABO A/O-derived context",
+      "assembly": "derived-blood-type-context",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-blood-type-abo-rh-context-v1.json",
+      "sourceArtifact": "synthetic-blood-type-abo-rh-context-v1"
+    },
+    {
+      "inputId": "RHD-derived-context",
+      "haplotype": "RHD-present-derived",
+      "gene": "RHD",
+      "observedValue": "RhD-positive-derived context",
+      "assembly": "derived-blood-type-context",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-blood-type-abo-rh-context-v1.json",
+      "sourceArtifact": "synthetic-blood-type-abo-rh-context-v1"
+    }
+  ],
+  "referenceResources": [
+    {
+      "id": "medlineplus-blood-typing",
+      "title": "MedlinePlus Medical Encyclopedia: Blood typing",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "abo_rh_context",
+        "lab_confirmation_limitations",
+        "consumer_safety_language"
+      ]
+    },
+    {
+      "id": "ncbi-abo-blood-group",
+      "title": "NCBI Bookshelf: ABO Blood Group",
+      "sourceType": "genetics_summary",
+      "evidenceLevel": "genetics_background",
+      "usedFor": [
+        "abo_genotype_context",
+        "blood_type_inheritance",
+        "serology_vs_genotype_limits"
+      ]
+    }
+  ],
+  "expectedAssertions": {
+    "noRawGenomeInOutput": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "probabilitiesOnlyInAppendix": true,
+    "consumerLanguage": true
+  }
+}

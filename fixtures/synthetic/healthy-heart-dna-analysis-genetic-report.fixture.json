@@ -1,0 +1,140 @@
+{
+  "consumerTone": "plain English; educational cardiovascular genetics context only; no diagnosis, medication, testing, supplement, diet, exercise, procedure, or treatment-change guidance",
+  "datasetId": "synthetic-healthy-heart-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "LPA",
+      "inputId": "LPA-rs10455872",
+      "matchStatus": "observed",
+      "observedValue": "AG",
+      "rsid": "rs10455872",
+      "sourceArtifact": "synthetic-healthy-heart-context-v1",
+      "sourceFile": "synthetic-healthy-heart-context-v1.json"
+    },
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "CDKN2B-AS1 / 9p21 locus",
+      "inputId": "9p21-rs10757278",
+      "matchStatus": "observed",
+      "observedValue": "AG",
+      "rsid": "rs10757278",
+      "sourceArtifact": "synthetic-healthy-heart-context-v1",
+      "sourceFile": "synthetic-healthy-heart-context-v1.json"
+    },
+    {
+      "assembly": "derived-cardiovascular-context",
+      "gene": "LDLR/APOB/PCSK9 familial hypercholesterolemia screen",
+      "haplotype": "fh-pathogenic-variant-screen-unavailable",
+      "inputId": "FH-pathogenic-variant-screen-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "pathogenic-variant screen, LDL cholesterol values, family history, physical findings, and clinician diagnosis unavailable in this fixture",
+      "sourceArtifact": "synthetic-healthy-heart-context-v1",
+      "sourceFile": "synthetic-healthy-heart-context-v1.json"
+    },
+    {
+      "assembly": "derived-cardiovascular-context",
+      "gene": "cardiovascular risk model",
+      "haplotype": "cardiovascular-risk-model-unavailable",
+      "inputId": "cardiovascular-risk-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "calibrated heart-health nutrition model, food-score model, ASCVD or cardiovascular polygenic risk score, ancestry applicability metadata, lipid labs, blood pressure, diabetes, smoking, medication, age/sex, diet, exercise, supplement, and personal recommendation context unavailable in this fixture",
+      "sourceArtifact": "synthetic-healthy-heart-context-v1",
+      "sourceFile": "synthetic-healthy-heart-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "hash": "sha256:synthetic-healthy-heart-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived cardiovascular evidence for healthy-heart-dna-analysis-genetic-report validation"
+  },
+  "missingInputPolicy": "Report unavailable heart-health nutrition model, food-score model, diet history, labs, blood pressure, lipid values, medical history, medication list, supplement context, clinical review, and calibrated cardiovascular-risk model explicitly; do not infer personal diet changes, supplement dosing, heart-disease diagnosis, lipid status, blood-pressure status, food scores, treatment, or quantified cardiovascular risk from genotype alone or sample-only rows.",
+  "packageSlug": "healthy-heart-dna-analysis-genetic-report",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-familial-hypercholesterolemia",
+      "sourceType": "public_health_resource",
+      "title": "CDC About Familial Hypercholesterolemia",
+      "usedFor": [
+        "familial_hypercholesterolemia_context",
+        "clinical_review_language",
+        "missing_pathogenic_variant_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-lipoprotein-a",
+      "sourceType": "public_health_resource",
+      "title": "CDC About Lipoprotein(a)",
+      "usedFor": [
+        "lpa_context",
+        "non_diagnostic_language",
+        "lab_measurement_limitations"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-familial-hypercholesterolemia",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: familial hypercholesterolemia",
+      "usedFor": [
+        "familial_hypercholesterolemia_context",
+        "fh_gene_context",
+        "non_diagnostic_language"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-complex-disorders",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: complex disorders",
+      "usedFor": [
+        "complex_trait_context",
+        "non_deterministic_language"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
+      "usedFor": [
+        "risk_model_limitations",
+        "probability_appendix"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "candidate_trait_associations",
+        "model_unavailable_context"
+      ]
+    },
+    {
+      "evidenceLevel": "direct_sample_report",
+      "id": "my-heart-health-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "GenoPalate Heart Health sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer Healthy Heart context using derived cardiovascular evidence plus observed GenoPalate Heart Health sample-report output structure."
+}

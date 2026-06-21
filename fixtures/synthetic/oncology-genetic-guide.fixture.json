@@ -1,0 +1,265 @@
+{
+  "consumerTone": "plain English; educational oncology medication PGx guide context only; no cancer-risk, diagnosis, carrier-status, screening, prevention, prognosis, drug safety, efficacy, appropriateness, start, stop, switch, ranking, prescribing, dosing, or treatment-change claims",
+  "datasetId": "synthetic-oncology-genetic-guide-pgx-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "ABCG2",
+      "haplotype": "Reference/Reference",
+      "inputId": "ABCG2-reference-status",
+      "matchStatus": "observed",
+      "observedValue": "normal function context",
+      "sourceArtifact": "synthetic-oncology-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-oncology-genetic-guide-pgx-context-v1.json"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "CYP2B6",
+      "inputId": "CYP2B6-star-allele",
+      "matchStatus": "observed",
+      "observedValue": "rapid metabolizer context",
+      "sourceArtifact": "synthetic-oncology-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-oncology-genetic-guide-pgx-context-v1.json",
+      "starAllele": "*1/*4"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "CYP2C19",
+      "inputId": "CYP2C19-star-allele",
+      "matchStatus": "observed",
+      "observedValue": "intermediate metabolizer context",
+      "sourceArtifact": "synthetic-oncology-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-oncology-genetic-guide-pgx-context-v1.json",
+      "starAllele": "*1/*2"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "CYP2C9",
+      "inputId": "CYP2C9-star-allele",
+      "matchStatus": "observed",
+      "observedValue": "normal metabolizer context",
+      "sourceArtifact": "synthetic-oncology-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-oncology-genetic-guide-pgx-context-v1.json",
+      "starAllele": "*1/*1"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "CYP2D6",
+      "inputId": "CYP2D6-star-allele",
+      "matchStatus": "observed",
+      "observedValue": "normal metabolizer context with one decreased-function allele",
+      "sourceArtifact": "synthetic-oncology-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-oncology-genetic-guide-pgx-context-v1.json",
+      "starAllele": "*1/*41"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "CYP3A4",
+      "inputId": "CYP3A4-star-allele",
+      "matchStatus": "observed",
+      "observedValue": "normal metabolizer context",
+      "sourceArtifact": "synthetic-oncology-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-oncology-genetic-guide-pgx-context-v1.json",
+      "starAllele": "*1/*1"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "CYP3A5",
+      "inputId": "CYP3A5-star-allele",
+      "matchStatus": "observed",
+      "observedValue": "intermediate metabolizer context",
+      "sourceArtifact": "synthetic-oncology-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-oncology-genetic-guide-pgx-context-v1.json",
+      "starAllele": "*1/*3"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "DPYD",
+      "haplotype": "c.1627A>G (*5) heterozygous",
+      "inputId": "DPYD-c1627A-G",
+      "matchStatus": "observed",
+      "observedValue": "normal metabolizer context from sample appendix row",
+      "sourceArtifact": "synthetic-oncology-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-oncology-genetic-guide-pgx-context-v1.json"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "HLA-A",
+      "haplotype": "Other/Other",
+      "inputId": "HLA-A-risk-status",
+      "matchStatus": "observed",
+      "observedValue": "normal risk of ADRs context",
+      "sourceArtifact": "synthetic-oncology-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-oncology-genetic-guide-pgx-context-v1.json"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "NUDT15",
+      "inputId": "NUDT15-star-allele",
+      "matchStatus": "observed",
+      "observedValue": "normal metabolizer context",
+      "sourceArtifact": "synthetic-oncology-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-oncology-genetic-guide-pgx-context-v1.json",
+      "starAllele": "*1/*1"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "SLCO1B1",
+      "inputId": "SLCO1B1-star-allele",
+      "matchStatus": "observed",
+      "observedValue": "decreased function context",
+      "sourceArtifact": "synthetic-oncology-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-oncology-genetic-guide-pgx-context-v1.json",
+      "starAllele": "*14/*15"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "TPMT",
+      "inputId": "TPMT-star-allele",
+      "matchStatus": "observed",
+      "observedValue": "normal metabolizer context",
+      "sourceArtifact": "synthetic-oncology-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-oncology-genetic-guide-pgx-context-v1.json",
+      "starAllele": "*1/*1"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "UGT1A1",
+      "inputId": "UGT1A1-star-allele",
+      "matchStatus": "observed",
+      "observedValue": "indeterminate context",
+      "sourceArtifact": "synthetic-oncology-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-oncology-genetic-guide-pgx-context-v1.json",
+      "starAllele": "*80/*80"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "oncology medication PGx clinical context",
+      "haplotype": "oncology-medication-context-unavailable",
+      "inputId": "oncology-medication-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "cancer diagnosis, tumor type, stage, treatment regimen, medication list, dose, treatment history, renal or liver function, drug interactions, oncology clinician review, phenotype confidence, and medication-decision context unavailable in this fixture",
+      "sourceArtifact": "synthetic-oncology-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-oncology-genetic-guide-pgx-context-v1.json"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "expanded oncology medication PGx coverage",
+      "haplotype": "expanded-oncology-pgx-coverage-unavailable",
+      "inputId": "expanded-oncology-pgx-coverage-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "User-specific oncology regimen, tumor context, HLA typing depth, CYP2D6 copy number, rare variants, private variants, pseudogene/similar-sequence resolution, exploratory oncology PGx genes, cancer-risk model, and inherited-carrier assessment are unavailable unless supplied by validated local evidence",
+      "sourceArtifact": "synthetic-oncology-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-oncology-genetic-guide-pgx-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-pharmacogene-calls",
+    "hash": "sha256:synthetic-oncology-genetic-guide-pgx-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived PGx calls for oncology-genetic-guide validation"
+  },
+  "missingInputPolicy": "Report unavailable cancer diagnosis, tumor type, stage, treatment regimen, medication list, dose, treatment history, oncology clinician review, phenotype confidence, comprehensive oncology PGx genes, cancer-risk model, inherited-carrier assessment, genotyping-vs-WGS coverage, and authenticated marketplace detail-page extraction explicitly; do not infer cancer risk, diagnosis, carrier status, screening, prevention, prognosis, medication appropriateness, safety, efficacy, dose, start, stop, switch, ranking, or treatment action.",
+  "packageSlug": "oncology-genetic-guide",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "background",
+      "id": "cpic",
+      "sourceType": "guideline",
+      "title": "Clinical Pharmacogenetics Implementation Consortium",
+      "usedFor": [
+        "gene_drug_context",
+        "clinician_review_language"
+      ]
+    },
+    {
+      "evidenceLevel": "implementation_background",
+      "id": "pharmcat",
+      "sourceType": "implementation_resource",
+      "title": "PharmCAT",
+      "usedFor": [
+        "local_pgx_runner",
+        "missing_call_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "pharmvar",
+      "sourceType": "database",
+      "title": "PharmVar",
+      "usedFor": [
+        "star_allele_nomenclature"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-pgx-associations",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Table of Pharmacogenetic Associations",
+      "usedFor": [
+        "association_context",
+        "safety_language"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-pgx-biomarkers-labeling",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Table of Pharmacogenomic Biomarkers in Drug Labeling",
+      "usedFor": [
+        "labeling_context"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-pharmacogenetic-tests",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Pharmacogenetic Tests",
+      "usedFor": [
+        "plain_english_context",
+        "provider_review_language"
+      ]
+    },
+    {
+      "evidenceLevel": "observed_output_structure",
+      "id": "oncology-genetic-guide-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Oncology Genetic Guide sample report",
+      "usedFor": [
+        "sample_rows",
+        "genotype_summary",
+        "formal_fields",
+        "output_format"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-pharmacogenomics",
+      "sourceType": "public_health_resource",
+      "title": "CDC Pharmacogenomics",
+      "usedFor": [
+        "pharmacogenomics_context",
+        "medication_safety_language"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "nhgri-pharmacogenomics",
+      "sourceType": "education_resource",
+      "title": "NHGRI Pharmacogenomics Fact Sheet",
+      "usedFor": [
+        "pharmacogenomics_context",
+        "plain_english_glossary"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer oncology medication PGx guide context using derived pharmacogene calls plus the public Oncology Genetic Guide sample PDF's drug/result/gene/source table and genotype-summary structure."
+}

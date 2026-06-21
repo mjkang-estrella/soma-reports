@@ -1,0 +1,187 @@
+{
+  "consumerTone": "plain English; educational organ-system and complex-condition genetics context only; no diagnosis, personal risk estimate, symptom inference, lab/imaging/vital/organ-function inference, severity, prognosis, screening, prevention, testing, treatment, medication, supplement, diet, exercise, clearance, emergency, all-clear, or clinical actionability claims",
+  "datasetId": "synthetic-chronic-fatigue-dna-health-report-organ-system-boundary-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-organ-system-boundary-context",
+      "gene": "Chronic Fatigue DNA Health Report model",
+      "haplotype": "organ-system-model-unavailable",
+      "inputId": "chronic-fatigue-dna-health-report-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "validated chronic-fatigue, fatigue, anemia, iron, sleep, and restless-legs genetic models; calibrated PRS; ancestry applicability metadata; clinical calibration; and local risk calculations unavailable in this fixture; public sample PDF result cards, percentiles, recommendation rows, impact/evidence ratings, and visible variant tables observed for output structure",
+      "sourceArtifact": "synthetic-chronic-fatigue-dna-health-report-organ-system-boundary-context-v1",
+      "sourceFile": "synthetic-chronic-fatigue-dna-health-report-organ-system-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Chronic Fatigue DNA Health Report clinical and professional context",
+      "haplotype": "clinical-professional-context-unavailable",
+      "inputId": "chronic-fatigue-dna-health-report-clinical-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "ME/CFS diagnosis, fatigue symptoms, post-exertional malaise, sleep assessment, infection history, thyroid context, liver context, nutrient-deficiency context, medication list, exercise tolerance, professional interpretation, and personal clinical context unavailable in this fixture; public sample PDF observed separately as output-structure evidence",
+      "sourceArtifact": "synthetic-chronic-fatigue-dna-health-report-organ-system-boundary-context-v1",
+      "sourceFile": "synthetic-chronic-fatigue-dna-health-report-organ-system-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Chronic Fatigue DNA Health Report organ-system context",
+      "haplotype": "organ-system-context-unavailable",
+      "inputId": "chronic-fatigue-dna-health-report-organ-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "immune labs, endocrine labs, mitochondrial testing, iron/ferritin/CBC, hemoglobin/RBC, sleep studies, imaging, treatment context, prevention context, actionability context, and personal recommendation context unavailable in this fixture; public sample PDF observed separately as output-structure evidence",
+      "sourceArtifact": "synthetic-chronic-fatigue-dna-health-report-organ-system-boundary-context-v1",
+      "sourceFile": "synthetic-chronic-fatigue-dna-health-report-organ-system-boundary-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-organ-system-boundary-context",
+    "hash": "sha256:synthetic-chronic-fatigue-dna-health-report-organ-system-boundary-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-model evidence for chronic-fatigue-dna-health-report validation"
+  },
+  "missingInputPolicy": "Report unavailable chronic-fatigue model calibration, ME/CFS diagnosis, fatigue symptoms, post-exertional malaise, sleep assessment, immune labs, endocrine labs, mitochondrial testing, iron/ferritin/CBC, hemoglobin/RBC, medication context, exercise tolerance, clinical context, professional review, and complete local risk model explicitly; do not infer fatigue diagnosis, fatigue cause, post-exertional malaise, sleep status, iron status, anemia status, treatment need, supplement need, acupuncture need, exercise guidance, or clinical actionability from genotype alone or sample-only rows.",
+  "packageSlug": "chronic-fatigue-dna-health-report",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Testing",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-test-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-complex-disorders",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: complex disorders",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-mecfs",
+      "sourceType": "public_health_resource",
+      "title": "CDC: ME/CFS Basics",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-mecfs",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Myalgic Encephalomyelitis/Chronic Fatigue Syndrome",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "direct_sample_report",
+      "id": "chronic-fatigue-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Chronic Fatigue DNA Report sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer Chronic Fatigue DNA Health Report boundary context using unavailable-model evidence plus observed Sequencing.com sample-report output structure."
+}

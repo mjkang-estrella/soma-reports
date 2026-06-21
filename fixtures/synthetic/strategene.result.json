@@ -1,0 +1,458 @@
+{
+  "reportOverview": {
+    "reportTitle": "StrateGene",
+    "inputManifestHash": "sha256:synthetic-strategene-specialized-boundary-context-v1",
+    "sectionsUnavailable": [
+      "Local-user official StrateGene source output is not supplied in this fixture.",
+      "Full 161-page StrateGene report content beyond the six public excerpt pages is unavailable.",
+      "Proprietary pathway scoring, dirty/clean interpretation logic, supplement protocols, clinical labs, medication context, pregnancy context, and professional review are unavailable."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Validated model/source output availability",
+      "item": "StrateGene official output and proprietary logic",
+      "brandName": "StrateGene",
+      "geneticAnalysis": "The public sample excerpt is available for output-format parity, but local-user official StrateGene output, pathway scoring, methylation model, detox model, neurotransmitter model, hormone context, and supplement protocol are not supplied.",
+      "genes": [
+        "StrateGene model/source output"
+      ],
+      "sourceLabel": "Seeking Health StrateGene Report; StrateGene sample report; MedlinePlus Genetics: What DTC genetic test results mean",
+      "sourceIds": [
+        "seeking-health-strategene",
+        "strategene-sample-pdf",
+        "medlineplus-dtc-genetic-testing-results"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The report can show what the public sample looks like and which evidence is missing, but it cannot recreate StrateGene or infer local-user pathway conclusions."
+    },
+    {
+      "groupTitle": "Clinical and professional context availability",
+      "item": "Supplement, folate, medication, pregnancy, lab, and professional-review context",
+      "brandName": "StrateGene",
+      "geneticAnalysis": "Clinical history, lab values, medications, pregnancy context, supplement use, and qualified professional interpretation are not supplied unless explicitly listed in the fixture.",
+      "genes": [
+        "MTHFR",
+        "clinical context"
+      ],
+      "sourceLabel": "CDC MTHFR Gene Variant and Folic Acid Facts; MedlinePlus Genetics: MTHFR; FDA Dietary Supplements; NIH Office of Dietary Supplements Fact Sheets; MedlinePlus Pharmacogenetic Tests",
+      "sourceIds": [
+        "cdc-mthfr-folic-acid",
+        "medlineplus-mthfr",
+        "fda-dietary-supplements",
+        "nih-ods-dietary-supplement-fact-sheets",
+        "medlineplus-pharmacogenetic-tests"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The output should remain educational because folate, supplement, medication, pregnancy, and pathway decisions require validated context and professional review."
+    },
+    {
+      "groupTitle": "Report identity",
+      "item": "StrateGene Strategic Genetic Analysis sample",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "Public sample excerpt prepared for FemaleHet; six PDF pages expose internal report pages 1, 2, 76, 82, 83, and 150 of 161.",
+      "description": "The cover identifies StrateGene, Seeking Health, SAMPLE REPORT status, and a FemaleHet sample profile.",
+      "genes": [
+        "StrateGene sample excerpt"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is observed public StrateGene sample-output structure for FemaleHet only; it is not a local-user genotype, pathway score, supplement protocol, diagnosis, treatment, or clinical actionability claim."
+    },
+    {
+      "groupTitle": "The Super Seven",
+      "item": "Pathway overview map",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "Visible pathway map includes Folate, Methionine, SAM, Homocysteine, Phosphatidylcholine, Histamine, Hydrogen Peroxide, Glutathione, Water, and pathway nodes including MTHFR, MTR, PEMT, COMT, DAO, MAOA, NOS3, GST, and GPX.",
+      "description": "The page also shows the testing key and symbol/color legend for checked genes and slow, intermediate, fast, complicated, or checked-but-not-found states.",
+      "genes": [
+        "MTHFR",
+        "MTR",
+        "PEMT",
+        "COMT",
+        "DAO",
+        "MAOA",
+        "NOS3",
+        "GST",
+        "GPX"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is observed public StrateGene sample-output structure for FemaleHet only; it is not a local-user genotype, pathway score, supplement protocol, diagnosis, treatment, or clinical actionability claim."
+    },
+    {
+      "groupTitle": "Folate",
+      "item": "Folate pathway map",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "Visible Folate pathway page includes SLC19A1, DHFR, FPGS, TYMS, FTCD, ATIC, MTHFD1, MTHFD1L, MTR, SHMT, MTHFS, and MTHFR nodes with folate-cycle intermediates.",
+      "description": "Use the page to preserve output-section structure only; do not infer proprietary pathway state, methylation status, or supplement protocol.",
+      "genes": [
+        "SLC19A1",
+        "DHFR",
+        "FPGS",
+        "TYMS",
+        "FTCD",
+        "ATIC",
+        "MTHFD1",
+        "MTHFD1L",
+        "MTR",
+        "SHMT",
+        "MTHFS",
+        "MTHFR"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is observed public StrateGene sample-output structure for FemaleHet only; it is not a local-user genotype, pathway score, supplement protocol, diagnosis, treatment, or clinical actionability claim."
+    },
+    {
+      "groupTitle": "Folate / MTHFR",
+      "item": "MTHFR notable variation",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "MTHFR C677T rs1801133 (+/-, GA), MTHFR A1298C rs1801131 (+/-, TG), and an MTHFR C677T / A1298C haplotype found.",
+      "description": "The visible notable-variation panel and small table expose two MTHFR rsIDs, aliases, variant alleles, calls, and a haplotype-found label for the sample person.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is observed public StrateGene sample-output structure for FemaleHet only; it is not a local-user genotype, pathway score, supplement protocol, diagnosis, treatment, or clinical actionability claim."
+    },
+    {
+      "groupTitle": "Folate / MTHFR",
+      "item": "Dirties and cleans section headings",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "Visible sections include 'Dirties your MTHFR gene' and 'Cleans your MTHFR gene' with environment, lifestyle, food, supplements, and medications headings.",
+      "description": "These headings are preserved only as observed report structure; the scaffold does not turn them into local detox, medication, supplement, diet, or treatment recommendations.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is observed public StrateGene sample-output structure for FemaleHet only; it is not a local-user genotype, pathway score, supplement protocol, diagnosis, treatment, or clinical actionability claim."
+    },
+    {
+      "groupTitle": "Advanced Tables / Folate",
+      "item": "Visible Folate advanced-table rows",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "Visible +/- rows for SLC19A1 G80A TC, DHFR 19bp Del/Ins DI, MTHFD1 G1958A GA, MTHFD1 T105C TC, MTHFR C677T GA, MTHFR A1298C TG, FTCD C301T CT, SHMT1 C1420T GA, and TYMS Ins/Del ID.",
+      "description": "Use aliases, calls, variant alleles, and +/- results as public sample-table structure; non-MTHFR SNP rsID cells in this table are glyph-encoded and must remain unavailable unless independently sourced.",
+      "genes": [
+        "SLC19A1",
+        "DHFR",
+        "MTHFD1",
+        "MTHFR",
+        "FTCD",
+        "SHMT1",
+        "TYMS"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is observed public StrateGene sample-output structure for FemaleHet only; it is not a local-user genotype, pathway score, supplement protocol, diagnosis, treatment, or clinical actionability claim."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Report identity",
+      "item": "StrateGene Strategic Genetic Analysis sample",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "Public sample excerpt prepared for FemaleHet; six PDF pages expose internal report pages 1, 2, 76, 82, 83, and 150 of 161.",
+      "description": "The cover identifies StrateGene, Seeking Health, SAMPLE REPORT status, and a FemaleHet sample profile.",
+      "genes": [
+        "StrateGene sample excerpt"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is observed public StrateGene sample-output structure for FemaleHet only; it is not a local-user genotype, pathway score, supplement protocol, diagnosis, treatment, or clinical actionability claim."
+    },
+    {
+      "groupTitle": "The Super Seven",
+      "item": "Pathway overview map",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "Visible pathway map includes Folate, Methionine, SAM, Homocysteine, Phosphatidylcholine, Histamine, Hydrogen Peroxide, Glutathione, Water, and pathway nodes including MTHFR, MTR, PEMT, COMT, DAO, MAOA, NOS3, GST, and GPX.",
+      "description": "The page also shows the testing key and symbol/color legend for checked genes and slow, intermediate, fast, complicated, or checked-but-not-found states.",
+      "genes": [
+        "MTHFR",
+        "MTR",
+        "PEMT",
+        "COMT",
+        "DAO",
+        "MAOA",
+        "NOS3",
+        "GST",
+        "GPX"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is observed public StrateGene sample-output structure for FemaleHet only; it is not a local-user genotype, pathway score, supplement protocol, diagnosis, treatment, or clinical actionability claim."
+    },
+    {
+      "groupTitle": "Folate",
+      "item": "Folate pathway map",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "Visible Folate pathway page includes SLC19A1, DHFR, FPGS, TYMS, FTCD, ATIC, MTHFD1, MTHFD1L, MTR, SHMT, MTHFS, and MTHFR nodes with folate-cycle intermediates.",
+      "description": "Use the page to preserve output-section structure only; do not infer proprietary pathway state, methylation status, or supplement protocol.",
+      "genes": [
+        "SLC19A1",
+        "DHFR",
+        "FPGS",
+        "TYMS",
+        "FTCD",
+        "ATIC",
+        "MTHFD1",
+        "MTHFD1L",
+        "MTR",
+        "SHMT",
+        "MTHFS",
+        "MTHFR"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is observed public StrateGene sample-output structure for FemaleHet only; it is not a local-user genotype, pathway score, supplement protocol, diagnosis, treatment, or clinical actionability claim."
+    },
+    {
+      "groupTitle": "Folate / MTHFR",
+      "item": "MTHFR notable variation",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "MTHFR C677T rs1801133 (+/-, GA), MTHFR A1298C rs1801131 (+/-, TG), and an MTHFR C677T / A1298C haplotype found.",
+      "description": "The visible notable-variation panel and small table expose two MTHFR rsIDs, aliases, variant alleles, calls, and a haplotype-found label for the sample person.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is observed public StrateGene sample-output structure for FemaleHet only; it is not a local-user genotype, pathway score, supplement protocol, diagnosis, treatment, or clinical actionability claim."
+    },
+    {
+      "groupTitle": "Folate / MTHFR",
+      "item": "Dirties and cleans section headings",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "Visible sections include 'Dirties your MTHFR gene' and 'Cleans your MTHFR gene' with environment, lifestyle, food, supplements, and medications headings.",
+      "description": "These headings are preserved only as observed report structure; the scaffold does not turn them into local detox, medication, supplement, diet, or treatment recommendations.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is observed public StrateGene sample-output structure for FemaleHet only; it is not a local-user genotype, pathway score, supplement protocol, diagnosis, treatment, or clinical actionability claim."
+    },
+    {
+      "groupTitle": "Advanced Tables / Folate",
+      "item": "Visible Folate advanced-table rows",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "Visible +/- rows for SLC19A1 G80A TC, DHFR 19bp Del/Ins DI, MTHFD1 G1958A GA, MTHFD1 T105C TC, MTHFR C677T GA, MTHFR A1298C TG, FTCD C301T CT, SHMT1 C1420T GA, and TYMS Ins/Del ID.",
+      "description": "Use aliases, calls, variant alleles, and +/- results as public sample-table structure; non-MTHFR SNP rsID cells in this table are glyph-encoded and must remain unavailable unless independently sourced.",
+      "genes": [
+        "SLC19A1",
+        "DHFR",
+        "MTHFD1",
+        "MTHFR",
+        "FTCD",
+        "SHMT1",
+        "TYMS"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is observed public StrateGene sample-output structure for FemaleHet only; it is not a local-user genotype, pathway score, supplement protocol, diagnosis, treatment, or clinical actionability claim."
+    }
+  ],
+  "thirdPartyToolContext": {
+    "plainEnglishMeaning": "StrateGene is treated as a third-party report surface. This local package preserves visible public sample-output structure and marks unavailable official output, model logic, and clinical context instead of guessing them.",
+    "unsupportedClaims": [
+      "StrateGene recreation",
+      "methylation pathway score",
+      "detox pathway score",
+      "neurotransmitter or hormone status inference",
+      "supplement protocol or nutrient dosing",
+      "detox recommendation",
+      "pregnancy outcome inference",
+      "medication recommendation",
+      "diagnosis, treatment, or clinical actionability"
+    ],
+    "professionalReview": "Personal decisions about supplements, folate questions, medications, pregnancy, labs, and pathway interpretations require validated testing scope, source-output provenance, clinical context, ancestry applicability when relevant, and qualified professional review.",
+    "sourceIds": [
+      "seeking-health-strategene",
+      "strategene-sample-pdf",
+      "cdc-mthfr-folic-acid",
+      "medlineplus-mthfr",
+      "fda-dietary-supplements",
+      "nih-ods-dietary-supplement-fact-sheets"
+    ]
+  },
+  "references": [
+    {
+      "id": "cdc-genetic-testing",
+      "title": "CDC Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetics",
+      "title": "MedlinePlus Genetics"
+    },
+    {
+      "id": "medlineplus-genetic-testing",
+      "title": "MedlinePlus: Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetic-test-results",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results"
+    },
+    {
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean"
+    },
+    {
+      "id": "fda-direct-to-consumer-tests",
+      "title": "FDA Direct-to-Consumer Tests"
+    },
+    {
+      "id": "medlineplus-complex-disorders",
+      "title": "MedlinePlus Genetics: complex disorders"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    },
+    {
+      "id": "seeking-health-strategene",
+      "title": "Seeking Health StrateGene Report"
+    },
+    {
+      "id": "cdc-mthfr-folic-acid",
+      "title": "CDC MTHFR Gene Variant and Folic Acid Facts"
+    },
+    {
+      "id": "medlineplus-mthfr",
+      "title": "MedlinePlus Genetics: MTHFR"
+    },
+    {
+      "id": "fda-dietary-supplements",
+      "title": "FDA Dietary Supplements"
+    },
+    {
+      "id": "nih-ods-dietary-supplement-fact-sheets",
+      "title": "NIH Office of Dietary Supplements Fact Sheets"
+    },
+    {
+      "id": "medlineplus-pharmacogenetic-tests",
+      "title": "MedlinePlus Pharmacogenetic Tests"
+    },
+    {
+      "id": "strategene-sample-pdf",
+      "title": "StrateGene sample report"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "strategene-model-output-unavailable",
+        "gene": "StrateGene model/source output",
+        "observedValue": "official StrateGene output, pathway-score logic, methylation model, detox model, neurotransmitter model, hormone context, supplement protocol, clinical labs, medication list, professional review, and authenticated sample-report rows unavailable in this fixture",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "strategene-clinical-professional-context-unavailable",
+        "gene": "StrateGene clinical and professional context",
+        "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "strategene-public-sample-output-structure",
+        "gene": "StrateGene public sample excerpt",
+        "observedValue": "Public FemaleHet sample excerpt shows the Super Seven map, Folate pathway map, MTHFR notable-variation rows, MTHFR C677T rs1801133 GA +/-, MTHFR A1298C rs1801131 TG +/-, and Folate advanced-table structure.",
+        "matchStatus": "observed"
+      },
+      {
+        "tier": "Visible sample genotype",
+        "gene": "MTHFR",
+        "variantId": "rs1801133",
+        "genotype": "GA",
+        "effect": "Sample report marks MTHFR C677T as +/- with variant allele A.",
+        "phenotype": "Sample report states this C677T / A1298C haplotype is found; do not convert to local health, pregnancy, supplement, or treatment claims.",
+        "extractionStatus": "direct",
+        "sourceIds": [
+          "strategene-sample-pdf"
+        ]
+      },
+      {
+        "tier": "Visible sample genotype",
+        "gene": "MTHFR",
+        "variantId": "rs1801131",
+        "genotype": "TG",
+        "effect": "Sample report marks MTHFR A1298C as +/- with variant allele G.",
+        "phenotype": "Sample report states this C677T / A1298C haplotype is found; do not convert to local health, pregnancy, supplement, or treatment claims.",
+        "extractionStatus": "direct",
+        "sourceIds": [
+          "strategene-sample-pdf"
+        ]
+      },
+      {
+        "tier": "Visible sample advanced table",
+        "gene": "Folate pathway genes",
+        "variantId": "advanced-folate-table-visible-aliases",
+        "genotype": "SLC19A1 G80A TC; DHFR 19bp Del/Ins DI; MTHFD1 G1958A GA; MTHFD1 T105C TC; MTHFR C677T GA; MTHFR A1298C TG; FTCD C301T CT; SHMT1 C1420T GA; TYMS Ins/Del ID",
+        "effect": "The visible Folate advanced table marks each listed row as +/- in the sample report.",
+        "phenotype": "This preserves sample-table structure only; non-MTHFR rsID values are glyph-encoded in the sample and should remain unavailable.",
+        "extractionStatus": "direct",
+        "sourceIds": [
+          "strategene-sample-pdf"
+        ]
+      }
+    ],
+    "missingInputs": [
+      "Local-user official StrateGene report output and source-tool run metadata.",
+      "Full 161-page report content beyond the six public excerpt pages.",
+      "Proprietary pathway scoring/model logic, dirty/clean interpretation logic, methylation, detox, neurotransmitter, hormone, and supplement-protocol models.",
+      "Use public StrateGene sample rows only as observed output structure; report proprietary pathway scoring, dirty/clean interpretation logic, full 161-page content, supplement protocols, local user's official StrateGene output, clinical labs, medications, pregnancy context, and professional review unavailable."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated StrateGene model with source provenance, clinical context, and professional review is supplied for this local package.",
+      "The visible MTHFR GA/TG calls belong to the public FemaleHet sample report and must not be treated as local-user genotypes.",
+      "Non-MTHFR advanced-table SNP rsID cells are glyph-encoded in the sample excerpt and remain unavailable unless independently sourced."
+    ],
+    "limitations": [
+      "This validation result uses selected derived evidence and public sample-output structure only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
+      "The package does not recreate unavailable proprietary StrateGene scoring, dirty/clean pathway logic, supplement protocols, treatment guidance, or clinical interpretation.",
+      "The package does not support diagnosis, personal risk estimates, medication decisions, pregnancy conclusions, supplement dosing, detox recommendations, or clinical actionability claims."
+    ]
+  }
+}

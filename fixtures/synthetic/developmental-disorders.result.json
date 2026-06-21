@@ -1,0 +1,188 @@
+{
+  "schemaVersion": "soma-reports.synthetic-result.v1",
+  "reportOverview": {
+    "reportTitle": "Developmental Disorders",
+    "inputManifestHash": "sha256:synthetic-developmental-disorders-specialized-boundary-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet for Developmental Disorders.",
+      "Validated diagnostic genetic test output, clinical evaluation, developmental history, family history, professional interpretation, and authenticated sample-report rows",
+      "validated developmental model, gene panel result, variant classifications, age, developmental history, symptoms, cognitive testing, behavioral assessment, school context, therapy context, family history, clinician review, and authenticated sample-report rows unavailable in this fixture",
+      "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
+      "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture"
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Validated model/source output availability",
+      "item": "Developmental Disorders model/source output",
+      "brandName": "",
+      "geneticAnalysis": "The local fixture supplies a boundary row for developmental-disorder genetics boundary context. It does not supply the validated model, source-tool output, or authenticated Sequencing.com report content needed for personal conclusions.",
+      "genes": [
+        "Developmental Disorders model/source output"
+      ],
+      "sourceLabel": "CDC Developmental Disability Basics; NICHD Autism Spectrum Disorder Fact Sheet; MedlinePlus Genetics: autism spectrum disorder; MedlinePlus Genetics: ADHD",
+      "sourceIds": [
+        "cdc-developmental-disability-basics",
+        "nichd-autism",
+        "medlineplus-autism-spectrum-disorder",
+        "medlineplus-adhd"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This can explain what evidence is present or missing for Developmental Disorders, but it cannot fill in unavailable model output or personal conclusions."
+    },
+    {
+      "groupTitle": "Clinical and professional context availability",
+      "item": "Developmental Disorders clinical and professional context",
+      "brandName": "",
+      "geneticAnalysis": "Clinical history, symptoms, labs, medication context, family history, and qualified professional interpretation are not supplied unless explicitly listed in the fixture.",
+      "genes": [
+        "Developmental Disorders clinical and professional context"
+      ],
+      "sourceLabel": "CDC Developmental Disability Basics; NICHD Autism Spectrum Disorder Fact Sheet; MedlinePlus Genetics: autism spectrum disorder; MedlinePlus Genetics: ADHD",
+      "sourceIds": [
+        "cdc-developmental-disability-basics",
+        "nichd-autism",
+        "medlineplus-autism-spectrum-disorder",
+        "medlineplus-adhd"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The report should stay educational because developmental, pediatric, educational, diagnostic, and family-planning decisions require context that this synthetic fixture does not include."
+    },
+    {
+      "groupTitle": "Authenticated sample availability",
+      "item": "Developmental Disorders authenticated sample rows",
+      "brandName": "",
+      "geneticAnalysis": "Authenticated Sequencing.com sample report sections, row labels, model output, and source-tool output are unavailable in this local fixture.",
+      "genes": [
+        "Developmental Disorders authenticated sample rows"
+      ],
+      "sourceLabel": "CDC Developmental Disability Basics; NICHD Autism Spectrum Disorder Fact Sheet; MedlinePlus Genetics: autism spectrum disorder; MedlinePlus Genetics: ADHD",
+      "sourceIds": [
+        "cdc-developmental-disability-basics",
+        "nichd-autism",
+        "medlineplus-autism-spectrum-disorder",
+        "medlineplus-adhd"
+      ],
+      "sourceBindingStatus": "unavailable",
+      "plainEnglishMeaning": "This local package marks the sample-report gap clearly instead of recreating or guessing the missing Sequencing.com output."
+    }
+  ],
+  "neurodevelopmentalContext": {
+    "plainEnglishMeaning": "Developmental Disorders is represented as an evidence-boundary package. It can summarize supplied local evidence and references, while marking unsupported personal conclusions unavailable.",
+    "unsupportedClaims": [
+      "autism diagnosis",
+      "ADHD diagnosis",
+      "intellectual-disability diagnosis",
+      "developmental prognosis",
+      "school placement advice",
+      "family-member risk estimate"
+    ],
+    "professionalReview": "Use qualified professional review for developmental, pediatric, educational, diagnostic, and family-planning decisions; this synthetic local result is not enough for those decisions."
+  },
+  "practicalNextSteps": {
+    "professionalReview": [
+      "Use this local result as educational context for developmental-disorder genetics boundary context, not as a decision tool.",
+      "Collect validated source output, source provenance, and relevant clinical or professional context before using Developmental Disorders for personal decisions.",
+      "Discuss developmental, pediatric, educational, diagnostic, and family-planning decisions with qualified professionals when those choices matter."
+    ]
+  },
+  "references": [
+    {
+      "id": "cdc-genetic-testing",
+      "title": "CDC Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetics",
+      "title": "MedlinePlus Genetics"
+    },
+    {
+      "id": "medlineplus-genetic-testing",
+      "title": "MedlinePlus: Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetic-test-results",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results"
+    },
+    {
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean"
+    },
+    {
+      "id": "fda-direct-to-consumer-tests",
+      "title": "FDA Direct-to-Consumer Tests"
+    },
+    {
+      "id": "medlineplus-complex-disorders",
+      "title": "MedlinePlus Genetics: complex disorders"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    },
+    {
+      "id": "cdc-developmental-disability-basics",
+      "title": "CDC Developmental Disability Basics"
+    },
+    {
+      "id": "nichd-intellectual-developmental-disabilities",
+      "title": "NICHD Intellectual and Developmental Disabilities"
+    },
+    {
+      "id": "medlineplus-autism-spectrum-disorder",
+      "title": "MedlinePlus Genetics: autism spectrum disorder"
+    },
+    {
+      "id": "medlineplus-adhd",
+      "title": "MedlinePlus Genetics: ADHD"
+    },
+    {
+      "id": "nichd-autism",
+      "title": "NICHD Autism Spectrum Disorder Fact Sheet"
+    },
+    {
+      "id": "cdc-autism",
+      "title": "CDC Autism Spectrum Disorder"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "developmental-disorders-model-output-unavailable",
+        "gene": "Developmental Disorders model/source output",
+        "observedValue": "validated developmental model, gene panel result, variant classifications, age, developmental history, symptoms, cognitive testing, behavioral assessment, school context, therapy context, family history, clinician review, and authenticated sample-report rows unavailable in this fixture",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "developmental-disorders-clinical-professional-context-unavailable",
+        "gene": "Developmental Disorders clinical and professional context",
+        "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "developmental-disorders-authenticated-sample-unavailable",
+        "gene": "Developmental Disorders authenticated sample rows",
+        "observedValue": "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated Sequencing.com sample report sections and rows for Developmental Disorders.",
+      "validated diagnostic genetic test output, clinical evaluation, developmental history, family history, professional interpretation, and authenticated sample-report rows",
+      "Report unavailable developmental and neurodevelopmental genetics context evidence explicitly; do not diagnose autism, ADHD, developmental delay, intellectual disability, learning disorder, language disorder, behavioral disorder, neurologic condition, or psychiatric condition; predict child development, cognition, IQ, behavior, school needs, therapy needs, medication needs, prognosis, severity, family risk, or clinical actionability."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No validated developmental-disorder genetics boundary context model with source provenance and professional review is supplied for this local package.",
+      "The supplied rows support evidence-boundary education only and should not be treated as a personal prediction or clinical interpretation."
+    ],
+    "limitations": [
+      "This validation result uses selected derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
+      "The package does not recreate unavailable Sequencing.com authenticated report rows or proprietary third-party output for Developmental Disorders.",
+      "The package does not support: autism diagnosis; ADHD diagnosis; intellectual-disability diagnosis; developmental prognosis; school placement advice; family-member risk estimate."
+    ]
+  }
+}

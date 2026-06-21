@@ -1,0 +1,121 @@
+{
+  "consumerTone": "plain English; educational skin visible-trait context only; no dermatology, skincare, skin-cancer, medical-risk, ancestry, identity, or deterministic appearance claims",
+  "datasetId": "synthetic-skin-health-visible-trait-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "HERC2/OCA2 regulatory region",
+      "inputId": "HERC2-OCA2-rs12913832",
+      "matchStatus": "observed",
+      "observedValue": "AG",
+      "rsid": "rs12913832",
+      "sourceArtifact": "synthetic-skin-health-visible-trait-context-v1",
+      "sourceFile": "synthetic-skin-health-visible-trait-context-v1.json"
+    },
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "MC1R",
+      "inputId": "MC1R-rs1805007",
+      "matchStatus": "observed",
+      "observedValue": "CT",
+      "rsid": "rs1805007",
+      "sourceArtifact": "synthetic-skin-health-visible-trait-context-v1",
+      "sourceFile": "synthetic-skin-health-visible-trait-context-v1.json"
+    },
+    {
+      "assembly": "derived-visible-trait-context",
+      "gene": "EDAR",
+      "haplotype": "EDAR-hair-thickness-context-derived",
+      "inputId": "EDAR-hair-texture-context",
+      "matchStatus": "observed",
+      "observedValue": "derived hair-texture/thickness context available",
+      "sourceArtifact": "synthetic-skin-health-visible-trait-context-v1",
+      "sourceFile": "synthetic-skin-health-visible-trait-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "hash": "sha256:synthetic-skin-health-visible-trait-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived visible-trait evidence for skin-health validation"
+  },
+  "missingInputPolicy": "Report unavailable skin-health sections explicitly; do not infer skin type, UV sensitivity, acne, skin aging, skincare response, dermatology status, disease risk, skin-cancer risk, ancestry, identity, or exact appearance from genotype alone.",
+  "packageSlug": "skin-health",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-eye-color",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: eye color",
+      "usedFor": [
+        "eye_color_context",
+        "polygenic_trait_limitations",
+        "non_deterministic_language"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-hair-color",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: hair color",
+      "usedFor": [
+        "hair_color_context",
+        "pigmentation_context",
+        "polygenic_trait_limitations"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-hair-texture",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: hair texture",
+      "usedFor": [
+        "hair_texture_context",
+        "trait_limitations",
+        "non_deterministic_language"
+      ]
+    },
+    {
+      "evidenceLevel": "gene_background",
+      "id": "medlineplus-oca2",
+      "sourceType": "gene_summary",
+      "title": "MedlinePlus Genetics: OCA2 gene",
+      "usedFor": [
+        "oca2_context",
+        "pigmentation_context"
+      ]
+    },
+    {
+      "evidenceLevel": "gene_background",
+      "id": "medlineplus-mc1r",
+      "sourceType": "gene_summary",
+      "title": "MedlinePlus Genetics: MC1R gene",
+      "usedFor": [
+        "mc1r_context",
+        "hair_color_context",
+        "freckle_context",
+        "non_diagnostic_language"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-dtc-test-types",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Direct-to-consumer genetic test types",
+      "usedFor": [
+        "trait_test_limitations",
+        "probability_appendix",
+        "consumer_safety_language"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer Skin Health context using derived pigmentation and visible-trait evidence plus direct-to-consumer trait-test limitation framing."
+}

@@ -1,0 +1,123 @@
+{
+  "reportOverview": {
+    "reportTitle": "Digestive Disorders & Gut Health",
+    "inputManifestHash": "sha256:synthetic-digestive-disorders-gut-health-boundary-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "No calibrated digestive-disorders, gut-health, celiac, IBS, IBD, microbiome, symptom, diet-history, elimination-diet, supplement, lab, or ancestry applicability model is supplied with this fixture."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Digestive disorders and gut health boundary context",
+      "item": "MCM6/LCT rs4988235",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a digestive-disorder diagnosis, microbiome result, symptom explanation, diet recommendation, supplement recommendation, lab interpretation, or treatment result.",
+      "genes": [
+        "MCM6",
+        "LCT"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: lactose intolerance / MCM6",
+      "sourceIds": [
+        "medlineplus-lactose-intolerance",
+        "medlineplus-mcm6"
+      ],
+      "plainEnglishMeaning": "This marker can provide lactose-related context, but digestive disorders and gut-health questions require separate evidence, symptom history, diet history, labs, and professional review."
+    },
+    {
+      "groupTitle": "Nutrition model availability",
+      "item": "Digestive disorders and gut health model",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "No calibrated digestive-disorders and gut-health model, celiac model, IBS model, IBD model, microbiome context, symptom context, diet-history context, elimination-diet model, supplement model, lab context, or ancestry applicability metadata is supplied with this fixture.",
+      "genes": [
+        "Digestive disorders and gut health model"
+      ],
+      "sourceLabel": "MedlinePlus DTC result limits / Nutritional genomics review",
+      "sourceIds": [
+        "medlineplus-dtc-genetic-testing-results",
+        "nutritional-genomics-dtc-review"
+      ],
+      "plainEnglishMeaning": "The report can describe supplied marker context, but it should not make digestive diagnosis, microbiome, symptom, diet, supplement, lab, or treatment conclusions without validated evidence."
+    }
+  ],
+  "practicalNextSteps": {
+    "digestiveDisordersGutHealthContext": [
+      "Use this report as educational nutrition-genetics context, not as a digestive-disorder diagnosis or microbiome result.",
+      "Bring symptoms, food history, labs, microbiome questions, digestive diagnosis questions, and nutrition goals to qualified professionals when relevant.",
+      "Do not eliminate foods, start supplements, interpret labs, or change treatment based on genotype alone."
+    ]
+  },
+  "references": [
+    {
+      "id": "medlineplus-lactose-intolerance",
+      "title": "MedlinePlus Genetics: lactose intolerance"
+    },
+    {
+      "id": "medlineplus-mcm6",
+      "title": "MedlinePlus Genetics: MCM6 gene"
+    },
+    {
+      "id": "nutritional-genomics-dtc-review",
+      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    },
+    {
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean"
+    },
+    {
+      "id": "medlineplus-blood-glucose-test",
+      "title": "MedlinePlus: Blood Glucose Test"
+    },
+    {
+      "id": "medlineplus-hba1c-test",
+      "title": "MedlinePlus: Hemoglobin A1C test"
+    },
+    {
+      "id": "cdc-diabetes-risk-factors",
+      "title": "CDC Diabetes Risk Factors"
+    },
+    {
+      "id": "fda-dietary-supplements",
+      "title": "FDA Dietary Supplements"
+    },
+    {
+      "id": "nih-ods-dietary-supplement-fact-sheets",
+      "title": "NIH Office of Dietary Supplements Fact Sheets"
+    },
+    {
+      "id": "cdc-bmi",
+      "title": "CDC About Body Mass Index"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "gene": "MCM6/LCT",
+        "observedValue": "rs4988235 CT"
+      },
+      {
+        "gene": "Digestive disorders and gut health model",
+        "observedValue": "calibrated model unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated sample-report sections and rows have not been extracted.",
+      "calibrated digestive-disorders and gut-health model, celiac model, IBS model, IBD model, microbiome context, symptom context, diet-history context, elimination-diet model, supplement model, lab context, and ancestry applicability metadata unavailable in this fixture",
+      "Symptoms, food history, diet history, microbiome evidence, labs, supplements, medications, medical history, ancestry applicability, and professional assessment are not represented in this fixture."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Digestive disorders, microbiome status, digestive symptoms, and food response require broader clinical, dietary, laboratory, and professional context.",
+      "A single marker should not be used to diagnose digestive disorders, infer microbiome status, explain symptoms, prescribe diets or elimination diets, recommend supplements, interpret labs, or guide treatment."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report is educational and does not diagnose digestive disorders, infer microbiome status, diagnose lactose intolerance, diagnose celiac disease, infer IBS or IBD status, explain symptoms, prescribe diets or elimination diets, recommend supplements, interpret labs, or provide treatment guidance.",
+      "Authenticated Sequencing.com sample report rows are still pending."
+    ]
+  }
+}

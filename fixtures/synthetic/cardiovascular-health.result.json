@@ -1,0 +1,247 @@
+{
+  "reportOverview": {
+    "reportTitle": "Cardiovascular Health",
+    "inputManifestHash": "sha256:synthetic-cardiovascular-health-draft-sample-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated marketplace detail-page extraction is not available yet.",
+      "Clinical labs, lipid levels, blood pressure, diabetes status, smoking status, medication list, age/sex, family history, ancestry applicability, clinician review, and calibrated cardiovascular risk model are not supplied.",
+      "Personal diet, supplement, exercise, lab-test, imaging, medication, procedure, and treatment-change recommendation context is unavailable."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Healthy fats / Triglycerides",
+      "item": "Triglycerides",
+      "brandName": "",
+      "geneticAnalysis": "Impact 3/5; evidence 4/5",
+      "description": "The public sample block discusses avoiding trans fats, limiting saturated fats, and replacing them with healthier unsaturated fats for triglyceride context.",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "cardiovascular-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Triglycerides. Use this as Cardiovascular Health output-format evidence only; it is not a local diagnosis, cardiovascular risk estimate, diet recommendation, supplement recommendation, exercise plan, medication recommendation, lab interpretation, imaging recommendation, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Healthy fats / ApoB",
+      "item": "ApoB",
+      "brandName": "",
+      "geneticAnalysis": "Impact 4/5; evidence 3/5",
+      "description": "The public sample block says consuming unsaturated fats is associated with lower ApoB levels.",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "cardiovascular-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for ApoB. Use this as Cardiovascular Health output-format evidence only; it is not a local diagnosis, cardiovascular risk estimate, diet recommendation, supplement recommendation, exercise plan, medication recommendation, lab interpretation, imaging recommendation, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Healthy fats / LDL Particle Size",
+      "item": "LDL Particle Size",
+      "brandName": "",
+      "geneticAnalysis": "Impact 3/5; evidence 4/5",
+      "description": "The public sample block includes a personalized APOE rs429358 TT variant row and says healthy fats may increase LDL particle size more in people with that sample variant.",
+      "genes": [
+        "APOE"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "cardiovascular-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for LDL Particle Size. Use this as Cardiovascular Health output-format evidence only; it is not a local diagnosis, cardiovascular risk estimate, diet recommendation, supplement recommendation, exercise plan, medication recommendation, lab interpretation, imaging recommendation, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Healthy fats / Heart Rate Variability",
+      "item": "Heart Rate Variability",
+      "brandName": "",
+      "geneticAnalysis": "Impact 2/5; evidence 2/5",
+      "description": "The public sample block includes a heart-rate-variability condition row in the healthy-fats recommendation excerpt.",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "cardiovascular-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Heart Rate Variability. Use this as Cardiovascular Health output-format evidence only; it is not a local diagnosis, cardiovascular risk estimate, diet recommendation, supplement recommendation, exercise plan, medication recommendation, lab interpretation, imaging recommendation, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Fiber / High Cholesterol",
+      "item": "High Cholesterol",
+      "brandName": "",
+      "geneticAnalysis": "Impact 4/5; evidence 4/5",
+      "description": "The public sample block discusses fiber for cholesterol context and names a personalized CYP7A1 rs3808607 GT variant in the surrounding prose/table.",
+      "genes": [
+        "CYP7A1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "cardiovascular-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for High Cholesterol. Use this as Cardiovascular Health output-format evidence only; it is not a local diagnosis, cardiovascular risk estimate, diet recommendation, supplement recommendation, exercise plan, medication recommendation, lab interpretation, imaging recommendation, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Fiber / Triglycerides",
+      "item": "Triglycerides",
+      "brandName": "",
+      "geneticAnalysis": "Impact 2/5; evidence 4/5",
+      "description": "The public sample block discusses fiber for triglyceride context and names a personalized FABP2 rs1799883 cc variant in the surrounding prose/table.",
+      "genes": [
+        "FABP2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "cardiovascular-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Triglycerides. Use this as Cardiovascular Health output-format evidence only; it is not a local diagnosis, cardiovascular risk estimate, diet recommendation, supplement recommendation, exercise plan, medication recommendation, lab interpretation, imaging recommendation, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Fiber / ApoB",
+      "item": "ApoB",
+      "brandName": "",
+      "geneticAnalysis": "Impact 3/5; evidence 3/5",
+      "description": "The public sample block says a high intake of dietary fiber is associated with lower ApoB levels.",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "cardiovascular-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for ApoB. Use this as Cardiovascular Health output-format evidence only; it is not a local diagnosis, cardiovascular risk estimate, diet recommendation, supplement recommendation, exercise plan, medication recommendation, lab interpretation, imaging recommendation, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Fiber / Hemorrhoids",
+      "item": "Hemorrhoids",
+      "brandName": "",
+      "geneticAnalysis": "Impact 4/5; evidence 4/5",
+      "description": "The public sample block includes a hemorrhoids condition row inside the cardiovascular sample recommendation excerpt.",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "cardiovascular-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Hemorrhoids. Use this as Cardiovascular Health output-format evidence only; it is not a local diagnosis, cardiovascular risk estimate, diet recommendation, supplement recommendation, exercise plan, medication recommendation, lab interpretation, imaging recommendation, or treatment-change instruction."
+    }
+  ],
+  "practicalNextSteps": [
+    "Review cardiovascular questions with a clinician who can use labs, blood pressure, family history, medications, and full clinical context.",
+    "Use the appendix to see which cardiovascular model, clinical, and recommendation inputs were unavailable.",
+    "Do not use sample recommendation rows or derived genotype evidence alone to change diet, supplements, exercise, medication, testing, or treatment."
+  ],
+  "references": [
+    {
+      "id": "cdc-familial-hypercholesterolemia",
+      "title": "CDC About Familial Hypercholesterolemia",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
+    },
+    {
+      "id": "cdc-lipoprotein-a",
+      "title": "CDC About Lipoprotein(a)",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
+    },
+    {
+      "id": "medlineplus-familial-hypercholesterolemia",
+      "title": "MedlinePlus Genetics: familial hypercholesterolemia",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
+    },
+    {
+      "id": "medlineplus-complex-disorders",
+      "title": "MedlinePlus Genetics: complex disorders",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores",
+      "sourceType": "education_resource",
+      "evidenceLevel": "background"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog",
+      "sourceType": "database",
+      "evidenceLevel": "background"
+    },
+    {
+      "id": "cardiovascular-health-sample-pdf",
+      "title": "Cardiovascular Health sample DNA report",
+      "sourceType": "mock_report",
+      "evidenceLevel": "observed_output_structure"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "effect": "Sample variant row for LDL particle size recommendation context",
+        "extractionStatus": "direct",
+        "gene": "APOE",
+        "genotype": "TT",
+        "phenotype": "The sample prose says healthy fats may increase LDL particle size more in people with the sample APOE variant.",
+        "sortOrder": 1,
+        "tier": "Personalized sample recommendation variants",
+        "variantId": "rs429358"
+      },
+      {
+        "effect": "Sample variant row for fiber and cholesterol recommendation context",
+        "extractionStatus": "direct",
+        "gene": "CYP7A1",
+        "genotype": "GT",
+        "phenotype": "The sample prose says beta-glucans from oats or barley may reduce cholesterol more in people with the sample CYP7A1 variant.",
+        "sortOrder": 2,
+        "tier": "Personalized sample recommendation variants",
+        "variantId": "rs3808607"
+      },
+      {
+        "effect": "Sample variant row for fiber and triglyceride recommendation context",
+        "extractionStatus": "direct",
+        "gene": "FABP2",
+        "genotype": "cc",
+        "phenotype": "The sample prose says psyllium supplementation may reduce triglycerides more in people with the sample FABP2 variant.",
+        "sortOrder": 3,
+        "tier": "Personalized sample recommendation variants",
+        "variantId": "rs1799883"
+      }
+    ],
+    "probabilities": [
+      {
+        "label": "Calibrated personal probability",
+        "value": null,
+        "calibrationStatus": "not_calibrated_for_this_local_fixture",
+        "note": "The deterministic report body does not quantify disease risk, diagnosis probability, treatment response, recommendation benefit, or actionability probabilities."
+      }
+    ],
+    "uncertainty": [
+      "Sample-report rows are output-format evidence, not local clinical or lifestyle decisions.",
+      "Derived or unavailable-model evidence does not include the clinical, lab, environment, medication, and professional-review context needed for personal decisions.",
+      "Missing inputs are listed explicitly instead of being inferred."
+    ],
+    "missingInputs": [
+      "Authenticated marketplace detail-page extraction is not available yet.",
+      "Clinical labs, lipid levels, blood pressure, diabetes status, smoking status, medication list, age/sex, family history, ancestry applicability, clinician review, and calibrated cardiovascular risk model are not supplied.",
+      "Personal diet, supplement, exercise, lab-test, imaging, medication, procedure, and treatment-change recommendation context is unavailable."
+    ],
+    "limitations": [
+      "This local artifact uses public sample-report structure and synthetic derived evidence for validation.",
+      "It does not diagnose familial hypercholesterolemia, coronary artery disease, heart attack, stroke, high cholesterol, high lipoprotein(a), or blood-pressure conditions.",
+      "It does not include lipid labs, blood pressure, diabetes, smoking, medication list, age/sex, family history, calibrated ASCVD model, clinician interpretation, or personal recommendation evidence."
+    ]
+  }
+}

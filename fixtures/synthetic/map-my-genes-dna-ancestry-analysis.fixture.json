@@ -1,0 +1,78 @@
+{
+  "packageSlug": "map-my-genes-dna-ancestry-analysis",
+  "datasetId": "synthetic-map-my-genes-autosomal-context-v1",
+  "packageVersion": "0.1.0",
+  "reportPurpose": "Consumer map-style ancestry context from derived broad autosomal reference-panel similarity with explicit missing map-coordinate and regional-detail evidence.",
+  "missingInputPolicy": "Mark map coordinates, regional ancestry, exact homeland, relatives, family matching, migration path, and community affiliation unavailable when not explicitly supplied.",
+  "consumerTone": "plain English; map-style ancestry education only; no identity, exact-origin, ethnicity-percentage, map-coordinate, tribal/community, relative-matching, or health claims",
+  "inputManifest": {
+    "hash": "sha256:synthetic-map-my-genes-autosomal-context-v1",
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived ancestry evidence for map-my-genes-dna-ancestry-analysis validation"
+  },
+  "genomeEvidence": [
+    {
+      "inputId": "autosomal-map-reference-panel-summary",
+      "haplotype": "autosomal-map-reference-panel-summary",
+      "gene": "autosomal genome",
+      "observedValue": "broad East Asian reference-panel similarity for map-style context; no coordinate model supplied",
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "matchStatus": "summarized",
+      "sourceFile": "synthetic-map-my-genes-autosomal-context-v1.json",
+      "sourceArtifact": "synthetic-map-my-genes-autosomal-context-v1"
+    },
+    {
+      "inputId": "map-coordinate-unavailable",
+      "haplotype": "not-supplied",
+      "gene": "autosomal ancestry map model",
+      "observedValue": "map coordinate, exact homeland, and migration-path evidence unavailable in this fixture",
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "matchStatus": "unavailable",
+      "sourceFile": "synthetic-map-my-genes-autosomal-context-v1.json",
+      "sourceArtifact": "synthetic-map-my-genes-autosomal-context-v1"
+    }
+  ],
+  "referenceResources": [
+    {
+      "id": "medlineplus-genetic-ancestry-testing",
+      "title": "MedlinePlus Genetics: genetic ancestry testing",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "ancestry_context",
+        "autosomal_scope",
+        "consumer_safety_language"
+      ]
+    },
+    {
+      "id": "medlineplus-dtc-risks-benefits",
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "dtc_limitations",
+        "privacy_sensitivity",
+        "probability_appendix"
+      ]
+    },
+    {
+      "id": "international-genome-sample-resource",
+      "title": "International Genome Sample Resource / 1000 Genomes",
+      "sourceType": "database",
+      "evidenceLevel": "database_background",
+      "usedFor": [
+        "ancestry_context",
+        "population_reference",
+        "variant_frequency_context"
+      ]
+    }
+  ],
+  "expectedAssertions": {
+    "noRawGenomeInOutput": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "probabilitiesOnlyInAppendix": true,
+    "consumerLanguage": true
+  }
+}

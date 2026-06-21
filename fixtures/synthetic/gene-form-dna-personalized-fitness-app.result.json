@@ -1,0 +1,472 @@
+{
+  "reportOverview": {
+    "reportTitle": "Gene-In-Form Personalized Fitness",
+    "inputManifestHash": "sha256:synthetic-gene-in-form-fitness-context-v1",
+    "evidenceTypesSupplied": [
+      "Local derived ACTN3 and ACE personalized-fitness evidence.",
+      "Public Gene-In-Form Personalized Fitness sample PDF rows used as observed output-format examples.",
+      "Consumer education references for athletic-performance complexity, polygenic limits, and source binding."
+    ],
+    "sectionsUnavailable": [
+      "Authenticated marketplace detail-page parity is still pending.",
+      "No calibrated personalized fitness, workout-plan, nutrition-plan, supplement, training-response, injury-risk, recovery, VO2 max, or sport-suitability model is supplied with this fixture.",
+      "No personal workout, supplement, nutrition, injury-prevention, recovery, medical-clearance, VO2max, or sport-selection recommendation is reported."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Local personalized-fitness evidence",
+      "item": "ACTN3 R577X / rs1815739",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived ACTN3 rs1815739 CT call is available. This is educational trait context only and does not predict strength, speed, endurance, training response, injury risk, recovery, or athletic ability.",
+      "genes": [
+        "ACTN3"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: athletic performance",
+      "sourceIds": [
+        "medlineplus-athletic-performance"
+      ],
+      "plainEnglishMeaning": "ACTN3 is discussed in athletic-performance research, but a single marker cannot personalize a workout, nutrition plan, supplement plan, sport choice, or injury-prevention plan.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Local personalized-fitness evidence",
+      "item": "ACE I/D polymorphism",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived ACE ID context row is available. This is educational trait context only and is not enough to choose sports, prescribe workouts, estimate VO2 max, recommend supplements, or predict training response.",
+      "genes": [
+        "ACE"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: athletic performance",
+      "sourceIds": [
+        "medlineplus-athletic-performance"
+      ],
+      "plainEnglishMeaning": "ACE is discussed in athletic-performance research, but training history, health, sleep, nutrition, environment, opportunity, and many other factors remain important.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Personalization model availability",
+      "item": "Personalized fitness model",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "No calibrated personalized fitness score, workout-plan model, nutrition-plan model, supplement model, training-response model, injury-risk model, recovery model, VO2 max model, or ancestry applicability metadata is supplied.",
+      "genes": [
+        "personalized fitness model"
+      ],
+      "sourceLabel": "NHGRI polygenic risk scores / GWAS Catalog",
+      "sourceIds": [
+        "nhgri-polygenic-risk-scores",
+        "ebi-gwas-catalog"
+      ],
+      "plainEnglishMeaning": "The local output can describe supplied marker context and unavailable sections, but it must not personalize workouts, supplements, nutrition, injury risk, recovery, sport choice, or training response without a validated model.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Summary - Table of results",
+      "item": "Oxidative Stress",
+      "brandName": "Gene-In-Form sample",
+      "geneticAnalysis": "SOD2 common AG, sample AA; impact: slow recovery rate.",
+      "genes": [
+        "SOD2"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "gene-in-form-personalized-fitness-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 6 of the public Gene-In-Form sample PDF; this is observed sample output, not a local recovery prediction or training recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Summary - Table of results",
+      "item": "Respiratory Capacity - NRF2",
+      "brandName": "Gene-In-Form sample",
+      "geneticAnalysis": "NRF2 common AA, sample AC; impact: normal response to training.",
+      "genes": [
+        "NRF2"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "gene-in-form-personalized-fitness-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 6 of the public Gene-In-Form sample PDF; this is observed sample output, not a local training-response conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Summary - Table of results",
+      "item": "Respiratory Capacity - PPARGC1A",
+      "brandName": "Gene-In-Form sample",
+      "geneticAnalysis": "PPARGC1A common CC, sample CC; impact: resilient VO2max.",
+      "genes": [
+        "PPARGC1A"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "gene-in-form-personalized-fitness-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 6 of the public Gene-In-Form sample PDF; this is observed sample output, not a local VO2max estimate.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Summary - Table of results",
+      "item": "Glucose Transport",
+      "brandName": "Gene-In-Form sample",
+      "geneticAnalysis": "SLC2A4 common CT, sample TT; impact: low glucose supply.",
+      "genes": [
+        "SLC2A4"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "gene-in-form-personalized-fitness-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 6 of the public Gene-In-Form sample PDF; this is observed sample output, not a local glucose, nutrition, or training conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Summary - Table of results",
+      "item": "Lactate Profile",
+      "brandName": "Gene-In-Form sample",
+      "geneticAnalysis": "MCT1/SLC16A1 common AA, sample TT; impact: low lactate levels.",
+      "genes": [
+        "MCT1",
+        "SLC16A1"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "gene-in-form-personalized-fitness-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 6 of the public Gene-In-Form sample PDF; this is observed sample output, not a local lactate or workout conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Summary - Table of results",
+      "item": "Glycolysis",
+      "brandName": "Gene-In-Form sample",
+      "geneticAnalysis": "HIF1A common CC, sample CC; impact: average glycolysis capacity.",
+      "genes": [
+        "HIF1A"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "gene-in-form-personalized-fitness-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 6 of the public Gene-In-Form sample PDF; this is observed sample output, not a local fitness-capacity conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Summary - Table of results",
+      "item": "Muscle Fiber Type",
+      "brandName": "Gene-In-Form sample",
+      "geneticAnalysis": "ACTN3 common TC, sample TT; HIF1A common CC, sample CC; impact: high proportion of slow-twitching muscle fibers.",
+      "genes": [
+        "ACTN3",
+        "HIF1A"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "gene-in-form-personalized-fitness-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 6 of the public Gene-In-Form sample PDF; this is observed sample output, not a local sport-selection or training conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Summary - Table of results",
+      "item": "Circulation",
+      "brandName": "Gene-In-Form sample",
+      "geneticAnalysis": "ACE common DI, sample DD; impact: high ACE activity.",
+      "genes": [
+        "ACE"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "gene-in-form-personalized-fitness-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 6 of the public Gene-In-Form sample PDF; this is observed sample output, not a local circulation, cardiovascular, or training conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Summary - Table of results",
+      "item": "Running Economy",
+      "brandName": "Gene-In-Form sample",
+      "geneticAnalysis": "COL5A1 common C allele, sample CT; impact: average long-distance run efficiency.",
+      "genes": [
+        "COL5A1"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "gene-in-form-personalized-fitness-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 6 of the public Gene-In-Form sample PDF; this is observed sample output, not a local running-efficiency prediction.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Summary - Table of results",
+      "item": "ATP Knee Injury",
+      "brandName": "Gene-In-Form sample",
+      "geneticAnalysis": "GDF5 common AA, sample GG; COL5A1 common CT, sample CT; impact: reduced risk for Achilles' Tendon Pathologies.",
+      "genes": [
+        "GDF5",
+        "COL5A1"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "gene-in-form-personalized-fitness-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 6 of the public Gene-In-Form sample PDF; this is observed sample output, not a local injury-risk or prevention conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Summary - Table of results",
+      "item": "ACL Knee Injury",
+      "brandName": "Gene-In-Form sample",
+      "geneticAnalysis": "COL5A1 common CT, sample CT; impact: raw genetic data file missing results for this gene; injury summary labels ACL average risk.",
+      "genes": [
+        "COL5A1"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "gene-in-form-personalized-fitness-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 5-6 of the public Gene-In-Form sample PDF; this is observed sample output, not a local ACL injury-risk or prevention conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Summary - Table of results",
+      "item": "Osteoarthritis",
+      "brandName": "Gene-In-Form sample",
+      "geneticAnalysis": "GDF5 common TT, sample CC; impact: reduced risk for osteoarthritis.",
+      "genes": [
+        "GDF5"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "gene-in-form-personalized-fitness-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 6 of the public Gene-In-Form sample PDF; this is observed sample output, not a local osteoarthritis, injury-risk, or medical conclusion.",
+      "sourceBindingStatus": "exact"
+    }
+  ],
+  "practicalNextSteps": {
+    "personalizedFitnessContext": [
+      "Use this report as educational personalized-fitness genetics context, not as a workout, supplement, or nutrition plan.",
+      "Treat Gene-In-Form sample training, recovery, VO2max, injury, and sport-focus language as observed sample-report structure unless validated local evidence supports equivalent sections.",
+      "Plan training, nutrition, injury prevention, recovery, and performance goals with qualified coaches, clinicians, or other appropriate professionals.",
+      "Do not use genotype alone for sport selection, supplement decisions, medical exercise clearance, nutrition planning, or expectations about athletic ability."
+    ]
+  },
+  "plainEnglishLimits": [
+    "Fitness and training response depend on genetics, training history, health, sleep, nutrition, environment, opportunity, and professional review, not genotype alone.",
+    "Public sample rows show observed report format and source binding; they are not local personal findings unless the local run supplies equivalent validated evidence.",
+    "The local fixture does not include training history, injury history, clinical status, exercise testing, nutrition history, coach assessment, or a calibrated fitness model."
+  ],
+  "references": [
+    {
+      "id": "medlineplus-athletic-performance",
+      "title": "MedlinePlus Genetics: athletic performance",
+      "sourceType": "education_resource"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores",
+      "sourceType": "education_resource"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog",
+      "sourceType": "database"
+    },
+    {
+      "id": "gene-in-form-personalized-fitness-sample-pdf",
+      "title": "Gene-In-Form Personalized Fitness sample report",
+      "sourceType": "mock_report"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "_creationTime": 1782031183833.0754,
+        "_id": "jn7bs5y88cbbw45qcxpnmmbrzd893bxz",
+        "effect": "The sample summary table uses SOD2 in the Oxidative Stress row.",
+        "extractionStatus": "direct",
+        "gene": "SOD2",
+        "genotype": "common AG; sample AA",
+        "phenotype": "Observed sample content only; do not infer local recovery rate or training actions.",
+        "reportSlug": "gene-form-dna-personalized-fitness-app",
+        "sortOrder": 1,
+        "tier": "Sample summary table",
+        "variantId": "not shown in sample PDF"
+      },
+      {
+        "_creationTime": 1782031183833.0757,
+        "_id": "jn7fyvwwxj5c45ebes9e84yk2h89335y",
+        "effect": "The sample summary table uses NRF2 in a Respiratory Capacity row.",
+        "extractionStatus": "direct",
+        "gene": "NRF2",
+        "genotype": "common AA; sample AC",
+        "phenotype": "Observed sample content only; do not infer local training response.",
+        "reportSlug": "gene-form-dna-personalized-fitness-app",
+        "sortOrder": 2,
+        "tier": "Sample summary table",
+        "variantId": "not shown in sample PDF"
+      },
+      {
+        "_creationTime": 1782031183833.076,
+        "_id": "jn76kvjwjzs7b1drzj27hx67zh892r9q",
+        "effect": "The sample summary table uses PPARGC1A in a Respiratory Capacity row.",
+        "extractionStatus": "direct",
+        "gene": "PPARGC1A",
+        "genotype": "common CC; sample CC",
+        "phenotype": "Observed sample content only; do not infer local VO2max.",
+        "reportSlug": "gene-form-dna-personalized-fitness-app",
+        "sortOrder": 3,
+        "tier": "Sample summary table",
+        "variantId": "not shown in sample PDF"
+      },
+      {
+        "_creationTime": 1782031183833.0762,
+        "_id": "jn7dx3vmq00epx79vkrya4px11892kjq",
+        "effect": "The sample summary table uses SLC2A4 in the Glucose Transport row.",
+        "extractionStatus": "direct",
+        "gene": "SLC2A4",
+        "genotype": "common CT; sample TT",
+        "phenotype": "Observed sample content only; do not infer local glucose, nutrition, or training status.",
+        "reportSlug": "gene-form-dna-personalized-fitness-app",
+        "sortOrder": 4,
+        "tier": "Sample summary table",
+        "variantId": "not shown in sample PDF"
+      },
+      {
+        "_creationTime": 1782031183833.0764,
+        "_id": "jn76exxft6w0r14dcxbbphyh5d892cpe",
+        "effect": "The sample summary table uses MCT1/SLC16A1 in the Lactate Profile row.",
+        "extractionStatus": "direct",
+        "gene": "MCT1 / SLC16A1",
+        "genotype": "common AA; sample TT",
+        "phenotype": "Observed sample content only; do not infer local lactate levels or workout response.",
+        "reportSlug": "gene-form-dna-personalized-fitness-app",
+        "sortOrder": 5,
+        "tier": "Sample summary table",
+        "variantId": "not shown in sample PDF"
+      },
+      {
+        "_creationTime": 1782031183833.0767,
+        "_id": "jn77zz6fyvgwkh3h5dzvgkrv2h893gw1",
+        "effect": "The sample summary table uses HIF1A in Glycolysis and Muscle Fiber Type rows.",
+        "extractionStatus": "direct",
+        "gene": "HIF1A",
+        "genotype": "common CC; sample CC",
+        "phenotype": "Observed sample content only; do not infer local glycolysis capacity or fiber-type distribution.",
+        "reportSlug": "gene-form-dna-personalized-fitness-app",
+        "sortOrder": 6,
+        "tier": "Sample summary table",
+        "variantId": "not shown in sample PDF"
+      },
+      {
+        "_creationTime": 1782031183833.077,
+        "_id": "jn73kkzz6911mdrs0a2wr1febh892jx3",
+        "effect": "The sample summary table uses ACTN3 and HIF1A in the Muscle Fiber Type row.",
+        "extractionStatus": "direct",
+        "gene": "ACTN3 / HIF1A",
+        "genotype": "ACTN3 common TC and sample TT; HIF1A common CC and sample CC",
+        "phenotype": "Observed sample content only; keep separate from the local ACTN3 rs1815739 fixture call.",
+        "reportSlug": "gene-form-dna-personalized-fitness-app",
+        "sortOrder": 7,
+        "tier": "Sample summary table",
+        "variantId": "not shown in sample PDF"
+      },
+      {
+        "_creationTime": 1782031183833.0771,
+        "_id": "jn7e5tffvvshk28athjrfrgq05893dbs",
+        "effect": "The sample summary table uses ACE in the Circulation row.",
+        "extractionStatus": "direct",
+        "gene": "ACE",
+        "genotype": "common DI; sample DD",
+        "phenotype": "Observed sample content only; keep separate from the local ACE I/D fixture call.",
+        "reportSlug": "gene-form-dna-personalized-fitness-app",
+        "sortOrder": 8,
+        "tier": "Sample summary table",
+        "variantId": "not shown in sample PDF"
+      },
+      {
+        "_creationTime": 1782031183833.0774,
+        "_id": "jn7bnjwxbe6dgtqtce23z0s1nn893051",
+        "effect": "The sample summary table uses COL5A1 in the Running Economy row.",
+        "extractionStatus": "direct",
+        "gene": "COL5A1",
+        "genotype": "common C allele; sample CT",
+        "phenotype": "Observed sample content only; do not infer local running economy.",
+        "reportSlug": "gene-form-dna-personalized-fitness-app",
+        "sortOrder": 9,
+        "tier": "Sample summary table",
+        "variantId": "not shown in sample PDF"
+      },
+      {
+        "_creationTime": 1782031183833.0776,
+        "_id": "jn71dp8q60zzmz7nxbmd81d7yd893tfq",
+        "effect": "The sample summary table uses GDF5 and COL5A1 in the ATP Knee Injury row.",
+        "extractionStatus": "direct",
+        "gene": "GDF5 / COL5A1",
+        "genotype": "GDF5 common AA and sample GG; COL5A1 common CT and sample CT",
+        "phenotype": "Observed sample content only; do not infer local Achilles tendon pathology risk or prevention actions.",
+        "reportSlug": "gene-form-dna-personalized-fitness-app",
+        "sortOrder": 10,
+        "tier": "Sample summary table",
+        "variantId": "not shown in sample PDF"
+      },
+      {
+        "_creationTime": 1782031183833.078,
+        "_id": "jn7dv10kjcgmm45mpn37wp5789893d1m",
+        "effect": "The sample summary table uses GDF5 in the Osteoarthritis row.",
+        "extractionStatus": "direct",
+        "gene": "GDF5",
+        "genotype": "common TT; sample CC",
+        "phenotype": "Observed sample content only; do not infer local osteoarthritis risk, diagnosis, or treatment needs.",
+        "reportSlug": "gene-form-dna-personalized-fitness-app",
+        "sortOrder": 11,
+        "tier": "Sample summary table",
+        "variantId": "not shown in sample PDF"
+      },
+      {
+        "_creationTime": 1782031183833.0781,
+        "_id": "jn70r8g2cb9nm6px4wfgwvg9bh8938fv",
+        "effect": "The local fixture supplies ACTN3 context for validation.",
+        "extractionStatus": "curated",
+        "gene": "ACTN3",
+        "genotype": "CT",
+        "phenotype": "Report as educational fitness-trait context only; do not turn it into sport selection, training, injury, recovery, or VO2max advice.",
+        "reportSlug": "gene-form-dna-personalized-fitness-app",
+        "sortOrder": 12,
+        "tier": "Local derived call",
+        "variantId": "rs1815739"
+      },
+      {
+        "_creationTime": 1782031183833.0784,
+        "_id": "jn7cz14dt9fpanvsgs0skdrj0h892dyb",
+        "effect": "The local fixture supplies ACE I/D context for validation.",
+        "extractionStatus": "curated",
+        "gene": "ACE",
+        "genotype": "ID",
+        "phenotype": "Report as educational fitness-trait context only; do not turn it into sport selection, training, injury, recovery, cardiovascular, or VO2max advice.",
+        "reportSlug": "gene-form-dna-personalized-fitness-app",
+        "sortOrder": 13,
+        "tier": "Local derived call",
+        "variantId": "ACE I/D"
+      }
+    ],
+    "missingInputs": [
+      "Marketplace detail-page fields beyond the public sample PDF have not been extracted.",
+      "No calibrated personalized fitness performance, workout-plan, nutrition-plan, supplement, training-response, injury-risk, recovery, VO2 max, or sport-suitability model is supplied.",
+      "No training history, injury history, sleep, nutrition, medical history, fitness testing, coach assessment, clinician assessment, or dietitian assessment is supplied.",
+      "Sample-person genotypes differ from the local fixture and are kept as observed sample output examples only."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Fitness, training response, injury risk, recovery, and sport outcomes are complex traits influenced by genetics plus non-genetic context and professional review.",
+      "Individual sample-report markers and fitness rows should not be treated as deterministic local performance, injury, recovery, or sport-selection predictions.",
+      "Public sample rows are examples from a sample report and may not represent the local user."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report is educational and does not predict elite ability, prescribe workouts, recommend sport selection, estimate injury risk, estimate recovery, quantify VO2 max, recommend supplements, create nutrition plans, or provide medical exercise clearance.",
+      "The Gene-In-Form public sample PDF is source-bound, but authenticated marketplace detail-page parity remains pending."
+    ]
+  }
+}

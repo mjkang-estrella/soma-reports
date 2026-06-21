@@ -1,0 +1,211 @@
+{
+  "consumerTone": "plain English; educational specialized genetics context only; no diagnosis, personal risk estimate, medication or substance recommendation, pediatric action, school or work decision, supplement protocol, proprietary report recreation, variant classification, or clinical actionability claims",
+  "datasetId": "synthetic-pediatric-health-specialized-boundary-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-specialized-boundary-context",
+      "gene": "Pediatric Health model/source output",
+      "haplotype": "validated-model-or-source-output-unavailable",
+      "inputId": "pediatric-health-model-output-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "validated pediatric health model, age, growth history, developmental history, symptoms, family history, vaccination context, medications, labs, clinical diagnosis, pediatrician review, guardian consent context, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-pediatric-health-specialized-boundary-context-v1",
+      "sourceFile": "synthetic-pediatric-health-specialized-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Pediatric Health clinical and professional context",
+      "haplotype": "clinical-professional-context-unavailable",
+      "inputId": "pediatric-health-clinical-professional-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
+      "sourceArtifact": "synthetic-pediatric-health-specialized-boundary-context-v1",
+      "sourceFile": "synthetic-pediatric-health-specialized-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Pediatric Health authenticated sample rows",
+      "haplotype": "authenticated-sample-report-unavailable",
+      "inputId": "pediatric-health-authenticated-sample-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture",
+      "sourceArtifact": "synthetic-pediatric-health-specialized-boundary-context-v1",
+      "sourceFile": "synthetic-pediatric-health-specialized-boundary-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-specialized-boundary-context",
+    "hash": "sha256:synthetic-pediatric-health-specialized-boundary-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-model evidence for pediatric-health validation"
+  },
+  "missingInputPolicy": "Report unavailable pediatric health genetics context evidence explicitly; do not diagnose pediatric conditions, predict child development, growth, behavior, learning, safety risk, disease risk, medication response, supplement need, diet need, school need, therapy need, vaccine action, testing need, screening need, treatment need, parenting action, or clinical actionability from genotype.",
+  "packageSlug": "pediatric-health",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Testing",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-test-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-complex-disorders",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: complex disorders",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-child-development",
+      "sourceType": "public_health_resource",
+      "title": "CDC Child Development",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-positive-parenting",
+      "sourceType": "public_health_resource",
+      "title": "CDC Positive Parenting Tips",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "guideline_background",
+      "id": "aap-genetic-testing-children",
+      "sourceType": "guideline",
+      "title": "AAP/ACMG Ethical and Policy Issues in Genetic Testing and Screening of Children",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-testing-uses",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Uses of Genetic Testing",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer pediatric health genetics context boundary context using supplied references and explicit unavailable-model framing."
+}

@@ -1,0 +1,220 @@
+{
+  "consumerTone": "plain English; educational reproductive/endocrine genetics context only; no diagnosis, carrier-status, fertility, infertility, hormone, pregnancy, fetal, embryo, lab, testing, treatment, medication, supplement, surgery, reproductive-action, or actionability claims",
+  "datasetId": "synthetic-reproductive-hormonal-health-reproductive-endocrine-boundary-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-reproductive-endocrine-boundary-context",
+      "gene": "Reproductive & Hormonal Health model",
+      "haplotype": "reproductive-endocrine-model-unavailable",
+      "inputId": "reproductive-hormonal-health-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "validated reproductive-hormonal model, hormone labs, fertility evaluation, menstrual or reproductive history, pregnancy context, partner context, medications, symptoms, clinician review, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-reproductive-hormonal-health-reproductive-endocrine-boundary-context-v1",
+      "sourceFile": "synthetic-reproductive-hormonal-health-reproductive-endocrine-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Reproductive & Hormonal Health clinical and lab context",
+      "haplotype": "clinical-lab-professional-context-unavailable",
+      "inputId": "reproductive-hormonal-health-clinical-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "clinical diagnosis, symptoms, labs, medications, family history, professional interpretation, treatment context, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-reproductive-hormonal-health-reproductive-endocrine-boundary-context-v1",
+      "sourceFile": "synthetic-reproductive-hormonal-health-reproductive-endocrine-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Reproductive & Hormonal Health reproductive/endocrine context",
+      "haplotype": "reproductive-endocrine-context-unavailable",
+      "inputId": "reproductive-hormonal-health-reproductive-endocrine-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "partner result, carrier-screening scope, pregnancy context, embryo or fetal context, hormone-status context, fertility evaluation, and reproductive decision context unavailable in this fixture",
+      "sourceArtifact": "synthetic-reproductive-hormonal-health-reproductive-endocrine-boundary-context-v1",
+      "sourceFile": "synthetic-reproductive-hormonal-health-reproductive-endocrine-boundary-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-reproductive-endocrine-boundary-context",
+    "hash": "sha256:synthetic-reproductive-hormonal-health-reproductive-endocrine-boundary-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-model evidence for reproductive-hormonal-health validation"
+  },
+  "missingInputPolicy": "Report unavailable reproductive and hormonal health evidence explicitly; do not diagnose reproductive, sexual, endocrine, hormone, fertility, infertility, pregnancy, PCOS, endometriosis, or testosterone conditions; infer hormone or lab status; estimate fertility, pregnancy, embryo, fetal, child, or reproductive risk; recommend testing, medication, supplements, diet, treatment, lifestyle, IVF, PGT, prenatal testing, or reproductive actions.",
+  "packageSlug": "reproductive-hormonal-health",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Testing",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-testing-uses",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Uses of Genetic Testing",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-counseling",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Counseling",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-family-health-history",
+      "sourceType": "public_health_resource",
+      "title": "CDC About Family Health History",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-prenatal-genetic-counseling",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Prenatal Genetic Counseling",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-hormones",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Hormones",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-endocrine-diseases",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Endocrine Diseases",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-female-infertility",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Female Infertility",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-male-infertility",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Male Infertility",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "professional_guideline_background",
+      "id": "acog-carrier-screening",
+      "sourceType": "professional_guideline",
+      "title": "ACOG: Carrier Screening for Genetic Conditions",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer reproductive and hormonal health boundary context using supplied references and explicit unavailable-model framing."
+}

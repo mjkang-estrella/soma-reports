@@ -1,0 +1,187 @@
+{
+  "consumerTone": "plain English; educational organ-system and complex-condition genetics context only; no diagnosis, personal risk estimate, symptom inference, lab/imaging/vital/organ-function inference, severity, prognosis, screening, prevention, testing, treatment, medication, supplement, diet, exercise, clearance, emergency, all-clear, or clinical actionability claims",
+  "datasetId": "synthetic-kidneys-and-urinary-tract-dna-health-report-organ-system-boundary-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-organ-system-boundary-context",
+      "gene": "Kidneys and Urinary Tract DNA Health Report model",
+      "haplotype": "organ-system-model-unavailable",
+      "inputId": "kidneys-and-urinary-tract-dna-health-report-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "validated kidney or urinary tract model, eGFR, creatinine, cystatin C, urinalysis, albuminuria, stone history, UTI history, bladder function context, imaging, blood pressure, medication context, clinical diagnosis, clinician review, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-kidneys-and-urinary-tract-dna-health-report-organ-system-boundary-context-v1",
+      "sourceFile": "synthetic-kidneys-and-urinary-tract-dna-health-report-organ-system-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Kidneys and Urinary Tract DNA Health Report clinical and professional context",
+      "haplotype": "clinical-professional-context-unavailable",
+      "inputId": "kidneys-and-urinary-tract-dna-health-report-clinical-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-kidneys-and-urinary-tract-dna-health-report-organ-system-boundary-context-v1",
+      "sourceFile": "synthetic-kidneys-and-urinary-tract-dna-health-report-organ-system-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Kidneys and Urinary Tract DNA Health Report organ-system context",
+      "haplotype": "organ-system-context-unavailable",
+      "inputId": "kidneys-and-urinary-tract-dna-health-report-organ-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "labs, imaging, vitals, organ-function measures, disease-specific testing, treatment context, prevention context, and actionability context unavailable in this fixture",
+      "sourceArtifact": "synthetic-kidneys-and-urinary-tract-dna-health-report-organ-system-boundary-context-v1",
+      "sourceFile": "synthetic-kidneys-and-urinary-tract-dna-health-report-organ-system-boundary-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-organ-system-boundary-context",
+    "hash": "sha256:synthetic-kidneys-and-urinary-tract-dna-health-report-organ-system-boundary-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-model evidence for kidneys-and-urinary-tract-dna-health-report validation"
+  },
+  "missingInputPolicy": "Report unavailable kidney and urinary tract health context evidence explicitly; do not diagnose CKD, kidney disease, urinary tract disease, kidney stones, UTI, bladder disorder, hypertension, diabetes, or organ dysfunction; infer eGFR, creatinine, cystatin C, urinalysis, albuminuria, stone risk, UTI risk, bladder function, imaging, blood pressure, diet need, medication need, supplement need, treatment need, screening need, testing need, prevention, or clinical actionability.",
+  "packageSlug": "kidneys-and-urinary-tract-dna-health-report",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Testing",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-test-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-complex-disorders",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: complex disorders",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "niddk-kidney-disease",
+      "sourceType": "public_health_resource",
+      "title": "NIDDK: Kidney Disease",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-kidney-diseases",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Kidney Diseases",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-kidneys-urinary-system",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Kidneys and Urinary System",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer kidney and urinary tract health context boundary context using supplied references and explicit unavailable-model framing."
+}

@@ -1,0 +1,166 @@
+{
+  "consumerTone": "plain English; consumer-shareable handoff context only; no diagnosis, clearance, risk estimate, medication, procedure, treatment, supplement, diet, lab, screening, reproductive, or actionability claims",
+  "datasetId": "synthetic-anesthesiologist-summary-professional-handoff-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-professional-handoff-context",
+      "gene": "Anesthesiologist Summary",
+      "haplotype": "professional-handoff-context-unavailable",
+      "inputId": "anesthesiologist-summary-handoff-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "anesthesiologist review, planned procedure, planned anesthetic agents, current medication list, allergies, prior anesthesia history, malignant hyperthermia diagnostic status, RYR1/CACNA1S/STAC3 variant classification, anesthesia record, airway assessment, comorbidities, labs, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-anesthesiologist-summary-professional-handoff-context-v1",
+      "sourceFile": "synthetic-anesthesiologist-summary-professional-handoff-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "anesthesiologist review context",
+      "haplotype": "professional-review-unavailable",
+      "inputId": "anesthesiologist-summary-clinical-review-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-anesthesiologist-summary-professional-handoff-context-v1",
+      "sourceFile": "synthetic-anesthesiologist-summary-professional-handoff-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-professional-handoff-context",
+    "hash": "sha256:synthetic-anesthesiologist-summary-professional-handoff-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-professional-review evidence for anesthesiologist-summary validation"
+  },
+  "missingInputPolicy": "Report unavailable anesthesiologist evidence explicitly; do not clear a person for anesthesia; select anesthetic agents; diagnose malignant hyperthermia susceptibility; infer RYR1, CACNA1S, or STAC3 pathogenicity; estimate perioperative risk; recommend medication holds; recommend dosing; recommend monitoring; recommend a procedure plan; or replace anesthesiologist review.",
+  "packageSlug": "anesthesiologist-summary",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-counseling",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Counseling",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-family-health-history",
+      "sourceType": "public_health_resource",
+      "title": "CDC About Family Health History",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-pharmacogenomics",
+      "sourceType": "public_health_resource",
+      "title": "CDC Pharmacogenomics",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-pharmacogenetic-tests",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Pharmacogenetic Tests",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "nhgri-pharmacogenomics",
+      "sourceType": "education_resource",
+      "title": "NHGRI Pharmacogenomics Fact Sheet",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "implementation_background",
+      "id": "pharmcat",
+      "sourceType": "implementation_resource",
+      "title": "PharmCAT",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "pharmvar",
+      "sourceType": "database",
+      "title": "PharmVar",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "expert_background",
+      "id": "genereviews-malignant-hyperthermia",
+      "sourceType": "expert_reference",
+      "title": "GeneReviews: Nonsyndromic Malignant Hyperthermia Susceptibility",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer-shareable anesthesiologist handoff context using supplied references and explicit unavailable-review framing."
+}

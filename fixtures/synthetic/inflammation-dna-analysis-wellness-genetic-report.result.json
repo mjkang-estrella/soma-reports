@@ -1,0 +1,425 @@
+{
+  "reportOverview": {
+    "reportTitle": "Inflammation And Immunity",
+    "inputManifestHash": "sha256:synthetic-inflammation-dna-analysis-wellness-genetic-report-condition-boundary-context-v1",
+    "sectionsUnavailable": [
+      "validated inflammation and immunity model calibration and ancestry applicability metadata",
+      "personal immune or inflammatory diagnosis, symptoms, HLA inference, cytokine labs, CRP, ESR, immune-cell labs, immunoglobulin labs, infection history, medication context, diet context, environmental context, and clinician interpretation",
+      "personal supplement, diet, treatment, testing, prevention, immune-boosting, or actionability guidance"
+    ],
+    "sampleReportStructure": "Public rendered sample PDF rows are represented for output-format parity: result cards, recommendation rows, impact/evidence ratings, and visible variant tables."
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Overview / Inflammatory And Autoimmune Conditions",
+      "item": "Inflammation",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "Less likely; reduced likelihood of inflammation",
+      "genes": [
+        "Not shown on overview card"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public sample overview card lists Inflammation with a less-likely label and reduced-likelihood wording. This is an observed public sample-report row for output-format parity, not a personal immune, inflammatory, infection, lab, supplement, diet, treatment, testing, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Overview / Inflammatory And Autoimmune Conditions",
+      "item": "Joint Inflammation",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "More likely; more likely to have rheumatoid arthritis",
+      "genes": [
+        "Not shown on overview card"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public sample overview card lists Joint Inflammation with a more-likely label and rheumatoid-arthritis wording. This is an observed public sample-report row for output-format parity, not a personal immune, inflammatory, infection, lab, supplement, diet, treatment, testing, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Overview / Inflammatory And Autoimmune Conditions",
+      "item": "Gut Inflammation",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "Typical likelihood; typical likelihood of IBD",
+      "genes": [
+        "Not shown on overview card"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public sample overview card lists Gut Inflammation with a typical-likelihood label and IBD wording. This is an observed public sample-report row for output-format parity, not a personal immune, inflammatory, infection, lab, supplement, diet, treatment, testing, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Risk score / Inflammation",
+      "item": "Inflammation",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "Reduced likelihood of inflammation; 5th percentile; based on 9,023 genetic variants",
+      "genes": [
+        "LEPR",
+        "OR10J5",
+        "APOE",
+        "CRP",
+        "APCS",
+        "FCER1A",
+        "FCRL6",
+        "CLPTM1",
+        "OASL"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public sample detail page shows an Inflammation risk card with reduced-likelihood wording, a 5th percentile graphic, and a visible top-variants table. This is an observed public sample-report row for output-format parity, not a personal immune, inflammatory, infection, lab, supplement, diet, treatment, testing, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Risk score / Joint Inflammation",
+      "item": "Joint Inflammation",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "More likely to have rheumatoid arthritis; 86th percentile; based on 281 genetic variants",
+      "genes": [
+        "EPHA5",
+        "COL11A1",
+        "SRR",
+        "TGFA",
+        "CPNE1",
+        "LTBP1",
+        "RAB28",
+        "TSKU",
+        "TGFB2",
+        "SOCS2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public sample detail page shows a Joint Inflammation risk card with more-likely wording, an 86th percentile graphic, and a visible top-variants table. This is an observed public sample-report row for output-format parity, not a personal immune, inflammatory, infection, lab, supplement, diet, treatment, testing, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Risk score / Gut Inflammation",
+      "item": "Gut Inflammation",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "Typical likelihood of IBD; 63rd percentile; based on 41,199 genetic variants",
+      "genes": [
+        "ADO",
+        "ATG16L1",
+        "STAT3",
+        "TNFSF15",
+        "FCGR2A",
+        "NCR3",
+        "HLA-DQA2",
+        "IL23R"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public sample detail page shows a Gut Inflammation risk card with typical-likelihood wording, a 63rd percentile graphic, and a visible top-variants table. This is an observed public sample-report row for output-format parity, not a personal immune, inflammatory, infection, lab, supplement, diet, treatment, testing, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Relaxation Techniques / Eczema",
+      "item": "Eczema",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "Impact 3/5; evidence 3/5",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public recommendation block includes an Eczema row under Relaxation Techniques with impact/evidence ratings. This is an observed public sample-report row for output-format parity, not a personal immune, inflammatory, infection, lab, supplement, diet, treatment, testing, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Relaxation Techniques / Psoriasis",
+      "item": "Psoriasis",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "Impact 5/5; evidence 4/5",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public recommendation block includes a Psoriasis row under Relaxation Techniques with impact/evidence ratings. This is an observed public sample-report row for output-format parity, not a personal immune, inflammatory, infection, lab, supplement, diet, treatment, testing, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Relaxation Techniques / Inflammation",
+      "item": "Inflammation",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "Impact 3/5; evidence 3/5",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public recommendation block includes an Inflammation row under Relaxation Techniques with impact/evidence ratings. This is an observed public sample-report row for output-format parity, not a personal immune, inflammatory, infection, lab, supplement, diet, treatment, testing, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Zinc / Flu",
+      "item": "Flu",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "Impact 1/5; evidence 1/5",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public Zinc recommendation block includes a Flu row with impact/evidence ratings and dose-caution text. This is an observed public sample-report row for output-format parity, not a personal immune, inflammatory, infection, lab, supplement, diet, treatment, testing, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Zinc / Gastrointestinal Infection",
+      "item": "Gastrointestinal Infection",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "Impact 3/5; evidence 4/5",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public Zinc recommendation block includes a Gastrointestinal Infection row with impact/evidence ratings and dose-caution text. This is an observed public sample-report row for output-format parity, not a personal immune, inflammatory, infection, lab, supplement, diet, treatment, testing, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Inflammation and immunity evidence availability",
+      "item": "Inflammation And Immunity validated model",
+      "brandName": "Inflammation And Immunity",
+      "geneticAnalysis": "The local fixture does not include the proprietary inflammation and immunity model, calibration metadata, HLA inference, immune-lab context, or clinical context needed to reproduce personal immune or inflammatory scores.",
+      "genes": [
+        "Inflammation And Immunity model"
+      ],
+      "sourceLabel": "Public immune, autoimmune, and genetics reference context",
+      "sourceIds": [
+        "nhgri-polygenic-risk-scores",
+        "ebi-gwas-catalog",
+        "medlineplus-autoimmune-diseases",
+        "medlineplus-immune-system-disorders"
+      ],
+      "plainEnglishMeaning": "The report can show the sample report structure and state what inputs are missing, but it should not calculate personal inflammation, immune-strength, infection-risk, rheumatoid-arthritis, IBD, cytokine, CRP, ESR, immune-cell, or lab conclusions from this fixture."
+    },
+    {
+      "groupTitle": "Inflammation and immunity evidence availability",
+      "item": "Clinical, lab, and recommendation context",
+      "brandName": "Inflammation And Immunity",
+      "geneticAnalysis": "Symptoms, diagnosis, inflammatory markers, immune evaluation, medication context, environmental context, diet context, clinician interpretation, and personal recommendation context are unavailable in this fixture.",
+      "genes": [
+        "Clinical and lab context"
+      ],
+      "sourceLabel": "Public genetic testing and immune-system reference context",
+      "sourceIds": [
+        "cdc-genetic-testing",
+        "fda-direct-to-consumer-tests",
+        "niaid-autoimmunity-factors"
+      ],
+      "plainEnglishMeaning": "Consumer immune and inflammatory decisions need clinical context and qualified review. This local result is educational and does not provide diagnosis, supplement guidance, diet guidance, treatment guidance, testing guidance, prevention advice, or actionability."
+    }
+  ],
+  "conditionBoundaryContext": {
+    "plainEnglishMeaning": "This local fixture can reproduce observed sample-report structure and conservative boundary language, but it cannot infer personal inflammation level, immune strength, infection risk, disease risk, lab status, symptoms, diagnosis, or actionability.",
+    "unsupportedClaims": [
+      "personal inflammation, immune-strength, infection-risk, rheumatoid-arthritis, IBD, autoimmune, allergy, cytokine, CRP, ESR, immune-cell, immunoglobulin, HLA, lab, supplement, diet, treatment, testing, prevention, immune-boosting, reproductive, or actionability claims"
+    ],
+    "professionalReview": "Use qualified professional review for symptoms, abnormal labs, known immune or inflammatory conditions, infection concerns, medication questions, family history, pregnancy or reproductive questions, or decisions about supplements, diet, treatment, prevention, screening, or testing."
+  },
+  "references": [
+    {
+      "id": "cdc-genetic-testing",
+      "title": "CDC Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetics",
+      "title": "MedlinePlus Genetics"
+    },
+    {
+      "id": "medlineplus-complex-disorders",
+      "title": "MedlinePlus Genetics: complex disorders"
+    },
+    {
+      "id": "fda-direct-to-consumer-tests",
+      "title": "FDA Direct-to-Consumer Tests"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    },
+    {
+      "id": "medlineplus-autoimmune-diseases",
+      "title": "MedlinePlus: Autoimmune Diseases"
+    },
+    {
+      "id": "medlineplus-immune-system-disorders",
+      "title": "MedlinePlus: Immune System and Disorders"
+    },
+    {
+      "id": "niaid-autoimmunity-factors",
+      "title": "NIAID: Factors That Influence Autoimmunity"
+    },
+    {
+      "id": "niams-arthritis-rheumatic-diseases",
+      "title": "NIAMS: Arthritis and Rheumatic Diseases"
+    },
+    {
+      "id": "inflammation-and-immunity-sample-pdf",
+      "title": "Inflammation and Immunity DNA Report sample report"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "_creationTime": 1782027843692.154,
+        "_id": "jn777s5beafd3w61eeha5h7gbh8927wf",
+        "effect": "Visible top-variant row in the sample Inflammation table",
+        "extractionStatus": "direct",
+        "gene": "LEPR",
+        "genotype": "AA",
+        "phenotype": "The sample Inflammation card reports reduced inflammation likelihood and includes this visible variant row.",
+        "reportSlug": "inflammation-dna-analysis-wellness-genetic-report",
+        "sortOrder": 1,
+        "tier": "Inflammation top sample variants",
+        "variantId": "rs4394621"
+      },
+      {
+        "_creationTime": 1782027843692.1543,
+        "_id": "jn7cpqs03njd5scscb8b79m8cn892nyv",
+        "effect": "Visible top-variant row in the sample Inflammation table",
+        "extractionStatus": "direct",
+        "gene": "CRP",
+        "genotype": "CC",
+        "phenotype": "The sample Inflammation card reports reduced inflammation likelihood and includes this visible variant row.",
+        "reportSlug": "inflammation-dna-analysis-wellness-genetic-report",
+        "sortOrder": 2,
+        "tier": "Inflammation top sample variants",
+        "variantId": "rs10494326"
+      },
+      {
+        "_creationTime": 1782027843692.1545,
+        "_id": "jn72jygx0v2b01c8ahy56crpbs892ncm",
+        "effect": "Visible top-variant row in the sample Inflammation table",
+        "extractionStatus": "direct",
+        "gene": "APOE",
+        "genotype": "CC",
+        "phenotype": "The sample Inflammation card reports reduced inflammation likelihood and includes this visible variant row.",
+        "reportSlug": "inflammation-dna-analysis-wellness-genetic-report",
+        "sortOrder": 3,
+        "tier": "Inflammation top sample variants",
+        "variantId": "rs7412"
+      },
+      {
+        "_creationTime": 1782027843692.1548,
+        "_id": "jn7ftzmr7jy6a6956d5eyn6q61892ecx",
+        "effect": "Visible top-variant row in the sample Joint Inflammation table",
+        "extractionStatus": "direct",
+        "gene": "EPHA5",
+        "genotype": "CC",
+        "phenotype": "The sample Joint Inflammation card reports higher rheumatoid-arthritis likelihood and includes this visible variant row.",
+        "reportSlug": "inflammation-dna-analysis-wellness-genetic-report",
+        "sortOrder": 4,
+        "tier": "Joint Inflammation top sample variants",
+        "variantId": "rs201194999"
+      },
+      {
+        "_creationTime": 1782027843692.155,
+        "_id": "jn78223m4mv2en7941jvv6kxcn892fmy",
+        "effect": "Visible top-variant row in the sample Joint Inflammation table",
+        "extractionStatus": "direct",
+        "gene": "COL11A1",
+        "genotype": "TT",
+        "phenotype": "The sample Joint Inflammation card reports higher rheumatoid-arthritis likelihood and includes this visible variant row.",
+        "reportSlug": "inflammation-dna-analysis-wellness-genetic-report",
+        "sortOrder": 5,
+        "tier": "Joint Inflammation top sample variants",
+        "variantId": "rs2622873"
+      },
+      {
+        "_creationTime": 1782027843692.1553,
+        "_id": "jn70wkfhh0pvhzgvd9rcg72das893xr7",
+        "effect": "Visible top-variant row in the sample Joint Inflammation table",
+        "extractionStatus": "direct",
+        "gene": "SRR",
+        "genotype": "AA",
+        "phenotype": "The sample Joint Inflammation card reports higher rheumatoid-arthritis likelihood and includes this visible variant row.",
+        "reportSlug": "inflammation-dna-analysis-wellness-genetic-report",
+        "sortOrder": 6,
+        "tier": "Joint Inflammation top sample variants",
+        "variantId": "rs216175"
+      },
+      {
+        "_creationTime": 1782027843692.1555,
+        "_id": "jn7d47kw559vn9etb017vegfzn8930h7",
+        "effect": "Visible top-variant row in the sample Gut Inflammation table",
+        "extractionStatus": "direct",
+        "gene": "ADO",
+        "genotype": "GG",
+        "phenotype": "The sample Gut Inflammation card reports typical IBD likelihood and includes this visible variant row.",
+        "reportSlug": "inflammation-dna-analysis-wellness-genetic-report",
+        "sortOrder": 7,
+        "tier": "Gut Inflammation top sample variants",
+        "variantId": "rs10761659"
+      },
+      {
+        "_creationTime": 1782027843692.1558,
+        "_id": "jn75jp2nj67en1rkw2abaekvtn89280j",
+        "effect": "Visible top-variant row in the sample Gut Inflammation table",
+        "extractionStatus": "direct",
+        "gene": "ATG16L1",
+        "genotype": "GG",
+        "phenotype": "The sample Gut Inflammation card reports typical IBD likelihood and includes this visible variant row.",
+        "reportSlug": "inflammation-dna-analysis-wellness-genetic-report",
+        "sortOrder": 8,
+        "tier": "Gut Inflammation top sample variants",
+        "variantId": "rs2241880"
+      },
+      {
+        "_creationTime": 1782027843692.156,
+        "_id": "jn795zatsvtvqmtd0eyvh0we4x893yvn",
+        "effect": "Visible top-variant row in the sample Gut Inflammation table",
+        "extractionStatus": "direct",
+        "gene": "STAT3",
+        "genotype": "AA",
+        "phenotype": "The sample Gut Inflammation card reports typical IBD likelihood and includes this visible variant row.",
+        "reportSlug": "inflammation-dna-analysis-wellness-genetic-report",
+        "sortOrder": 9,
+        "tier": "Gut Inflammation top sample variants",
+        "variantId": "rs744166"
+      }
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "The public sample PDF shows example likelihood labels and percentiles, but the proprietary scoring model and calibration metadata are not supplied in this fixture.",
+      "Sample recommendation blocks are output-format examples and are not personalized advice for the local user."
+    ],
+    "missingInputs": [
+      "inflammation-dna-analysis-wellness-genetic-report-model-unavailable: validated inflammation and immunity model, calibrated PRS, HLA inference, cytokine labs, CRP, ESR, immune-cell labs, immunoglobulin labs, infection history, symptoms, medication context, environmental context, diet context, personal recommendation context, and clinical/lab interpretation unavailable in this fixture; public sample PDF risk cards, recommendation rows, impact/evidence ratings, and visible variant tables observed for output structure",
+      "inflammation-dna-analysis-wellness-genetic-report-clinical-lab-context-unavailable: clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and personal recommendation context unavailable in this fixture; public sample PDF observed separately as output-structure evidence",
+      "validated inflammation and immunity model, calibration metadata, ancestry applicability, HLA inference, cytokine labs, CRP, ESR, immune-cell labs, immunoglobulin labs, infection history, symptoms, medication context, environmental context, diet context, personal recommendation context, and professional interpretation are unavailable"
+    ],
+    "limitations": [
+      "Educational immune and inflammatory genetics context only, not diagnosis or medical advice.",
+      "No personal disease risk, immune-strength result, inflammation-level result, infection-risk result, lab interpretation, supplement recommendation, diet recommendation, treatment instruction, testing advice, prevention advice, immune-boosting instruction, or actionability is produced.",
+      "Probabilities are intentionally empty because no calibrated model output is supplied for this local fixture."
+    ]
+  }
+}

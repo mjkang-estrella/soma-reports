@@ -1,0 +1,481 @@
+{
+  "reportOverview": {
+    "reportTitle": "Heart Health Genetic Guide",
+    "inputManifestHash": "sha256:synthetic-heart-health-genetic-guide-pgx-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated marketplace detail-page extraction is not available yet.",
+      "Current medication list, indication, dose, treatment history, renal or liver function, drug interactions, cardiovascular diagnosis, clinician review, and phenotype confidence are not supplied.",
+      "Expanded user-specific heart medication PGx coverage for all sample-table genes is unavailable unless supplied by a validated local PGx caller."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Antiplatelet agents (Thins blood, treats clots)",
+      "item": "Abciximab",
+      "brandName": "ReoPro",
+      "geneticAnalysis": "No increased genetic risk detected",
+      "description": "The public Heart Health Genetic Guide sample row appears in the antiplatelet section with ITGB3 and Article source labeling.",
+      "genes": [
+        "ITGB3"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "heart-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Abciximab. Use this as Heart Health Genetic Guide output-format evidence only; it is not a local medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Antiplatelet agents (Thins blood, treats clots)",
+      "item": "Clopidogrel",
+      "brandName": "Plavix",
+      "geneticAnalysis": "CYP2C19: Reduced clopidogrel active metabolite formation; increased on-treatment platelet reactivity; increased risk for adverse cardiac and cerebrovascular events",
+      "description": "The sample row shows a CPIC-labeled CYP2C19 result for clopidogrel in the antiplatelet section.",
+      "genes": [
+        "CYP2C19"
+      ],
+      "sourceLabel": "CPIC",
+      "sourceIds": [
+        "heart-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Clopidogrel. Use this as Heart Health Genetic Guide output-format evidence only; it is not a local medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Antianginal (Treat heart pain)",
+      "item": "Hydralazine",
+      "brandName": "Apresoline",
+      "geneticAnalysis": "Predicted to have increased hydralazine plasma concentrations compared to NAT2 rapid and intermediate metabolizers, which may lead to both increased efficacy and adverse effects, including drug-induced systemic lupus erythematosus.",
+      "description": "The sample row shows a CPIC-labeled NAT2 antianginal result with a multi-line narrative result field.",
+      "genes": [
+        "NAT2"
+      ],
+      "sourceLabel": "CPIC",
+      "sourceIds": [
+        "heart-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Hydralazine. Use this as Heart Health Genetic Guide output-format evidence only; it is not a local medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Antianginal (Treat heart pain)",
+      "item": "Ranolazine",
+      "brandName": "Ranexa",
+      "geneticAnalysis": "No increased genetic risk detected",
+      "description": "The sample row shows an EMA-labeled CYP2D6 antianginal result.",
+      "genes": [
+        "CYP2D6"
+      ],
+      "sourceLabel": "EMA",
+      "sourceIds": [
+        "heart-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Ranolazine. Use this as Heart Health Genetic Guide output-format evidence only; it is not a local medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Antiarrhythmic (Treat abnormal heart beat)",
+      "item": "Metoprolol",
+      "brandName": "Lopressor",
+      "geneticAnalysis": "Normal metabolism of metoprolol",
+      "description": "The sample row shows a CPIC-labeled CYP2D6 antiarrhythmic result for metoprolol.",
+      "genes": [
+        "CYP2D6"
+      ],
+      "sourceLabel": "CPIC",
+      "sourceIds": [
+        "heart-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Metoprolol. Use this as Heart Health Genetic Guide output-format evidence only; it is not a local medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Antiarrhythmic (Treat abnormal heart beat)",
+      "item": "Flecainide",
+      "brandName": "Tambocor",
+      "geneticAnalysis": "The guideline does not provide a description of the impact of a normal metabolizer phenotype on flecainide.",
+      "description": "The sample row shows a DPWG-labeled CYP2D6 antiarrhythmic result with a guideline-description-unavailable statement.",
+      "genes": [
+        "CYP2D6"
+      ],
+      "sourceLabel": "DPWG",
+      "sourceIds": [
+        "heart-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Flecainide. Use this as Heart Health Genetic Guide output-format evidence only; it is not a local medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Antihypertensive (High blood pressure)",
+      "item": "Hydrochlorothiazide",
+      "brandName": "Hydrochlorothiazide",
+      "geneticAnalysis": "ADRB2: Increased reduction in whole day ambulatory blood pressure in people with essential hypertension",
+      "description": "The sample row shows an Article-labeled ADRB2 antihypertensive result.",
+      "genes": [
+        "ADRB2"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "heart-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Hydrochlorothiazide. Use this as Heart Health Genetic Guide output-format evidence only; it is not a local medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Antihypertensive (High blood pressure)",
+      "item": "Verapamil",
+      "brandName": "Calan",
+      "geneticAnalysis": "ADRB1: Increased risk of death in people with coronary artery disease",
+      "description": "The sample row shows an Article-labeled ADRB1 antihypertensive result.",
+      "genes": [
+        "ADRB1"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "heart-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Verapamil. Use this as Heart Health Genetic Guide output-format evidence only; it is not a local medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Anticoagulants (Blood clotting)",
+      "item": "Warfarin",
+      "brandName": "Coumadin",
+      "geneticAnalysis": "Significant Increased genetic risk of adverse reaction",
+      "description": "The sample row shows a CPIC-labeled anticoagulant result with CYP2C9 and VKORC1 gene columns.",
+      "genes": [
+        "CYP2C9",
+        "VKORC1"
+      ],
+      "sourceLabel": "CPIC",
+      "sourceIds": [
+        "heart-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Warfarin. Use this as Heart Health Genetic Guide output-format evidence only; it is not a local medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Anticoagulants (Blood clotting)",
+      "item": "Rivaroxaban",
+      "brandName": "Xarelto",
+      "geneticAnalysis": "CES1: Increased risk of hemorrhage in people with thromboembolism",
+      "description": "The sample row shows an Article-labeled CES1 anticoagulant result.",
+      "genes": [
+        "CES1"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "heart-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Rivaroxaban. Use this as Heart Health Genetic Guide output-format evidence only; it is not a local medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Hypolipidemic (Cholesterol lowering)",
+      "item": "Atorvastatin",
+      "brandName": "Lipitor",
+      "geneticAnalysis": "SLCO1B1: Increased atorvastatin exposure as compared to normal function which may translate to increased myopathy risk",
+      "description": "The sample row shows a CPIC-labeled SLCO1B1 hypolipidemic result for atorvastatin.",
+      "genes": [
+        "SLCO1B1"
+      ],
+      "sourceLabel": "CPIC",
+      "sourceIds": [
+        "heart-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Atorvastatin. Use this as Heart Health Genetic Guide output-format evidence only; it is not a local medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Hypolipidemic (Cholesterol lowering)",
+      "item": "Rosuvastatin",
+      "brandName": "Crestor",
+      "geneticAnalysis": "ABCG2: Typical myopathy risk and rosuvastatin exposure. SLCO1B1: Increased rosuvastatin exposure as compared to normal function; Typical myopathy risk with doses <=20 mg.",
+      "description": "The sample row shows a CPIC-labeled multi-gene hypolipidemic result for rosuvastatin.",
+      "genes": [
+        "ABCG2",
+        "SLCO1B1"
+      ],
+      "sourceLabel": "CPIC",
+      "sourceIds": [
+        "heart-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Rosuvastatin. Use this as Heart Health Genetic Guide output-format evidence only; it is not a local medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Local derived PGx context",
+      "item": "CYP2C19-star-allele",
+      "brandName": "",
+      "geneticAnalysis": "intermediate metabolizer context",
+      "description": "This derived local pharmacogene row is available for conservative PGx context only.",
+      "genes": [
+        "CYP2C19"
+      ],
+      "sourceLabel": "CPIC; PharmCAT; PharmVar; FDA pharmacogenetic associations",
+      "sourceIds": [
+        "cpic",
+        "pharmcat",
+        "pharmvar",
+        "fda-pgx-associations"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This row can support plain-English PGx context, but it cannot determine whether a heart medication is appropriate, safe, effective, or correctly dosed."
+    },
+    {
+      "groupTitle": "Local derived PGx context",
+      "item": "CYP2D6-star-allele",
+      "brandName": "",
+      "geneticAnalysis": "intermediate metabolizer context",
+      "description": "This derived local pharmacogene row is available for conservative PGx context only.",
+      "genes": [
+        "CYP2D6"
+      ],
+      "sourceLabel": "CPIC; PharmCAT; PharmVar; FDA pharmacogenetic associations",
+      "sourceIds": [
+        "cpic",
+        "pharmcat",
+        "pharmvar",
+        "fda-pgx-associations"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This row can support plain-English PGx context, but it cannot determine whether a heart medication is appropriate, safe, effective, or correctly dosed."
+    },
+    {
+      "groupTitle": "Local derived PGx context",
+      "item": "SLCO1B1-rs4149056",
+      "brandName": "",
+      "geneticAnalysis": "TC",
+      "description": "This derived local pharmacogene row is available for conservative PGx context only.",
+      "genes": [
+        "SLCO1B1"
+      ],
+      "sourceLabel": "CPIC; PharmCAT; PharmVar; FDA pharmacogenetic associations",
+      "sourceIds": [
+        "cpic",
+        "pharmcat",
+        "pharmvar",
+        "fda-pgx-associations"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This row can support plain-English PGx context, but it cannot determine whether a heart medication is appropriate, safe, effective, or correctly dosed."
+    },
+    {
+      "groupTitle": "Unavailable local PGx context",
+      "item": "heart-medication-context-unavailable",
+      "brandName": "",
+      "geneticAnalysis": "Current medication list, indication, dose, treatment history, renal or liver function, drug interactions, cardiovascular diagnosis, clinician review, phenotype confidence, and medication-decision context unavailable in this fixture",
+      "description": "This required clinical or expanded PGx context is unavailable in the local fixture.",
+      "genes": [
+        "heart medication PGx clinical context"
+      ],
+      "sourceLabel": "Fixture missing-input policy; MedlinePlus pharmacogenetic tests",
+      "sourceIds": [
+        "medlineplus-pharmacogenetic-tests"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The report must name this missing context instead of filling it in from the sample PDF or inferring a medication action."
+    },
+    {
+      "groupTitle": "Unavailable local PGx context",
+      "item": "expanded-heart-pgx-coverage-unavailable",
+      "brandName": "",
+      "geneticAnalysis": "User-specific ABCG2, CYP2C9, CYP3A4, CYP3A5, G6PD, HLA-B, NAT2, VKORC1, ABCB1, ACE, ADRB1/2, AGTR1, APOB, APOE, CES1, ITGB3, KCNH2, and additional sample-table genes are unavailable unless supplied by a validated local PGx caller",
+      "description": "This required clinical or expanded PGx context is unavailable in the local fixture.",
+      "genes": [
+        "expanded heart medication PGx coverage"
+      ],
+      "sourceLabel": "Fixture missing-input policy; MedlinePlus pharmacogenetic tests",
+      "sourceIds": [
+        "medlineplus-pharmacogenetic-tests"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The report must name this missing context instead of filling it in from the sample PDF or inferring a medication action."
+    }
+  ],
+  "practicalNextSteps": {
+    "clinicianReview": [
+      "Use this report as a structured discussion aid only; a clinician or pharmacist must review heart medication questions with the full medication list and clinical context.",
+      "Do not start, stop, switch, rank, or dose heart medications from this local output or from sample rows.",
+      "If a medication decision is being considered, confirm pharmacogene calls with clinically appropriate testing and professional interpretation."
+    ]
+  },
+  "references": [
+    {
+      "id": "cpic",
+      "title": "Clinical Pharmacogenetics Implementation Consortium"
+    },
+    {
+      "id": "pharmcat",
+      "title": "PharmCAT"
+    },
+    {
+      "id": "pharmvar",
+      "title": "PharmVar"
+    },
+    {
+      "id": "fda-pgx-associations",
+      "title": "FDA Table of Pharmacogenetic Associations"
+    },
+    {
+      "id": "fda-pgx-biomarkers-labeling",
+      "title": "FDA Table of Pharmacogenomic Biomarkers in Drug Labeling"
+    },
+    {
+      "id": "medlineplus-pharmacogenetic-tests",
+      "title": "MedlinePlus Pharmacogenetic Tests"
+    },
+    {
+      "id": "heart-health-genetic-guide-sample-pdf",
+      "title": "Heart Health Genetic Guide sample report"
+    },
+    {
+      "id": "cdc-pharmacogenomics",
+      "title": "CDC Pharmacogenomics"
+    },
+    {
+      "id": "nhgri-pharmacogenomics",
+      "title": "NHGRI Pharmacogenomics Fact Sheet"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "effect": "Two normal function alleles",
+        "extractionStatus": "direct",
+        "gene": "ABCG2",
+        "genotype": "Reference/Reference",
+        "phenotype": "Normal",
+        "sortOrder": 1,
+        "tier": "Genes with High-Impact Clinical Significance",
+        "variantId": "Reference/Reference"
+      },
+      {
+        "effect": "One no function allele and one normal function allele",
+        "extractionStatus": "direct",
+        "gene": "CYP2C19",
+        "genotype": "*1/*2",
+        "phenotype": "Intermediate Metabolizer",
+        "sortOrder": 2,
+        "tier": "Genes with High-Impact Clinical Significance",
+        "variantId": "star allele diplotype"
+      },
+      {
+        "effect": "Two normal function alleles",
+        "extractionStatus": "direct",
+        "gene": "CYP2C9",
+        "genotype": "*1/*1",
+        "phenotype": "Normal Metabolizer",
+        "sortOrder": 3,
+        "tier": "Genes with High-Impact Clinical Significance",
+        "variantId": "star allele diplotype"
+      },
+      {
+        "effect": "One decreased function allele and one normal function allele",
+        "extractionStatus": "direct",
+        "gene": "CYP2D6",
+        "genotype": "*1/*41",
+        "phenotype": "Normal Metabolizer",
+        "sortOrder": 4,
+        "tier": "Genes with High-Impact Clinical Significance",
+        "variantId": "star allele diplotype"
+      },
+      {
+        "effect": "Two normal function alleles",
+        "extractionStatus": "direct",
+        "gene": "CYP3A4",
+        "genotype": "*1/*1",
+        "phenotype": "Normal Metabolizer",
+        "sortOrder": 5,
+        "tier": "Genes with High-Impact Clinical Significance",
+        "variantId": "star allele diplotype"
+      },
+      {
+        "effect": "One no function allele and one normal function allele",
+        "extractionStatus": "direct",
+        "gene": "CYP3A5",
+        "genotype": "*1/*3",
+        "phenotype": "Intermediate Metabolizer",
+        "sortOrder": 6,
+        "tier": "Genes with High-Impact Clinical Significance",
+        "variantId": "star allele diplotype"
+      },
+      {
+        "effect": "*58:01 positive",
+        "extractionStatus": "direct",
+        "gene": "HLA-B",
+        "genotype": "*58:01/Other",
+        "phenotype": "High risk of SJS",
+        "sortOrder": 7,
+        "tier": "Genes with High-Impact Clinical Significance",
+        "variantId": "*58:01/Other"
+      },
+      {
+        "effect": "Two decreased function alleles",
+        "extractionStatus": "direct",
+        "gene": "NAT2",
+        "genotype": "*5/*6",
+        "phenotype": "Poor Metabolizer",
+        "sortOrder": 8,
+        "tier": "Genes with High-Impact Clinical Significance",
+        "variantId": "star allele diplotype"
+      },
+      {
+        "effect": "One increased function allele and one no function allele",
+        "extractionStatus": "direct",
+        "gene": "SLCO1B1",
+        "genotype": "*14/*15",
+        "phenotype": "Decreased Function",
+        "sortOrder": 9,
+        "tier": "Genes with High-Impact Clinical Significance",
+        "variantId": "star allele diplotype"
+      },
+      {
+        "effect": "Two normal coumarin sensitivity alleles",
+        "extractionStatus": "direct",
+        "gene": "VKORC1",
+        "genotype": "Reference/Reference",
+        "phenotype": "-1639 Gg",
+        "sortOrder": 10,
+        "tier": "Genes with High-Impact Clinical Significance",
+        "variantId": "Reference/Reference"
+      },
+      {
+        "effect": "Synonymous and missense variant rows are visible in the sample appendix.",
+        "extractionStatus": "direct",
+        "gene": "ABCB1",
+        "genotype": "rs1045642 G/G; rs1128503 G/G; rs2032582 C/C",
+        "phenotype": "Altered function",
+        "sortOrder": 11,
+        "tier": "Genes with Exploratory Functional Assessment",
+        "variantId": "rs1045642; rs1128503; rs2032582"
+      },
+      {
+        "effect": "The public sample appendix lists exploratory functional-assessment rows and normal-function no-variant rows for additional cardiovascular PGx genes.",
+        "extractionStatus": "direct",
+        "gene": "ACE/ADRB1/ADRB2/AGTR1/APOB/CES1/ITGB3/KCNH2",
+        "genotype": "ACE rs4343 A/A; ADRB1 rs1801252 A/A; ADRB2 rs1042713 G/G, rs2400707 A/G, rs275651 T/T; AGTR1 rs5186 A/C; APOB rs679899 G/G; CES1 rs2244613 T/T, rs2244614 A/A, rs8192950 G/G; ITGB3 rs5918 C/C; KCNH2 rs1137617 A/G",
+        "phenotype": "Altered function or normal function as shown in the sample appendix",
+        "sortOrder": 12,
+        "tier": "Genes with Exploratory Functional Assessment",
+        "variantId": "selected exploratory rows visible in appendix"
+      }
+    ],
+    "probabilities": [],
+    "uncertainty": {
+      "calibrationStatus": "No calibrated medication-response, adverse-event, bleeding, clotting, myopathy, cardiovascular-event, diagnosis, or dosing probability model is supplied.",
+      "probabilityPolicy": "Probability, confidence, calibration status, and missing-data limits stay in the appendix only."
+    },
+    "missingInputs": [
+      "Current medication list, indication, dose, treatment history, renal or liver function, drug interactions, cardiovascular diagnosis, clinician review, phenotype confidence, and medication-decision context unavailable in this fixture",
+      "User-specific ABCG2, CYP2C9, CYP3A4, CYP3A5, G6PD, HLA-B, NAT2, VKORC1, ABCB1, ACE, ADRB1/2, AGTR1, APOB, APOE, CES1, ITGB3, KCNH2, and additional sample-table genes are unavailable unless supplied by a validated local PGx caller"
+    ],
+    "limitations": [
+      "The public sample PDF is observed output structure, not local medication advice.",
+      "The sample PDF says the report is not FDA or EMA reviewed and is not intended for diagnosis, treatment, cure, prevention, medication appropriateness, or medical advice.",
+      "Pharmacogenomics evidence is time-bound and may change as research changes; the local output is not automatically updated.",
+      "Variant coverage can be incomplete and can be limited by DNA-test quality, private variants, pseudogenes, similar sequences, and genotyping-vs-WGS coverage.",
+      "Medication decisions require qualified clinician or pharmacist review with the full clinical and medication context."
+    ]
+  }
+}

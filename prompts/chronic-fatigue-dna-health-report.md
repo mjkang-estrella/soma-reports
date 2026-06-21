@@ -1,0 +1,15 @@
+# Chronic Fatigue DNA Health Report local-agent prompt
+
+Generate a plain-English Chronic Fatigue DNA Health Report report from local genome-derived evidence and supplied reference resources.
+Use only provided evidence and references. Do not invent genes, variants, classifications, scores, studies, symptoms, family history, clinical history, labs, imaging, vitals, organ-function measures, diagnoses, or treatment conclusions.
+Write deterministic report sections first. Put probability, confidence, calibration status, missing data, and uncertainty only in the appendix.
+Do not request, copy, or emit raw genome data. Use only derived evidence rows.
+Use CDC, NIH, MedlinePlus, FDA, GeneReviews, ClinGen, ClinVar, NHGRI PRS, GWAS Catalog, and organ-specific references only as supplied in the input.
+Use plain English for general customers, not clinician-, specialist-, genetics-, pharmacology-, dental-, audiology-, ophthalmology-, pediatric-, or researcher-facing language.
+For this package, focus on chronic fatigue and ME/CFS education, symptom and cause limits, post-exertional malaise, sleep, immune, endocrine, mitochondrial, exercise, supplement, and treatment claim boundaries.
+If validated fatigue model, ME/CFS diagnosis, symptom history, post-exertional malaise context, sleep assessment, immune labs, endocrine labs, mitochondrial testing, medication context, exercise tolerance, clinical history, clinician review, and authenticated sample-report rows are missing, mark those sections unavailable instead of inferring them.
+Do not diagnose chronic fatigue, ME/CFS, sleep disorder, immune disorder, endocrine disorder, mitochondrial disorder, depression, infection, or neurologic condition; infer fatigue cause, post-exertional malaise, sleep status, immune status, endocrine status, mitochondrial status, exercise tolerance, treatment need, supplement need, diet need, medication need, testing need, prevention, or clinical actionability.
+State that organ-system and complex-condition interpretation depends on validated test scope, clinical and family history, symptoms, labs, imaging, vitals or organ-function measures when relevant, ancestry applicability, and qualified professional review.
+Return valid JSON matching the output contract. Do not include markdown outside JSON.
+The public Chronic Fatigue DNA Report sample PDF is supplied only as observed output structure: fatigue, anemia, iron, blood, mental-fatigue, physical-fatigue, and sleep-disturbance result cards; Low Energy and Anemia risk-score pages; likelihood labels; percentiles; recommendation blocks; impact/evidence ratings; and visible variant tables.
+Do not turn sample fatigue, ME/CFS, anemia, iron, hemoglobin, red blood cells, sleep disturbance, restless legs, snoring, daytime sleepiness, caffeine-related sleep problems, acupuncture, TMPRSS6, MEIS1, treatment, supplement, exercise, lifestyle, or sleep-management wording into personal diagnosis, fatigue-risk, anemia risk, iron status, sleep diagnosis, treatment, prevention, testing, or actionability guidance unless separate validated evidence is supplied.

@@ -1,0 +1,235 @@
+{
+  "consumerTone": "plain English; educational rare inherited condition genetics context only; no diagnosis, disease-risk estimate, variant classification, carrier-status call, inheritance inference, family-member risk, cascade-testing, screening, treatment, procedure, medication, reproductive action, or clinical actionability claims",
+  "datasetId": "synthetic-prevent-sudden-death-rare-inherited-condition-boundary-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-rare-inherited-condition-boundary-context",
+      "gene": "Prevent Sudden Death model",
+      "haplotype": "rare-inherited-condition-model-unavailable",
+      "inputId": "prevent-sudden-death-condition-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "validated inherited cardiovascular condition model, cardiomyopathy or arrhythmia gene panel result, variant classifications, ECG, echocardiogram, rhythm monitoring, symptoms, personal and family history of sudden death, exercise context, medication context, cardiology review, clinical genetics review, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-prevent-sudden-death-rare-inherited-condition-boundary-context-v1",
+      "sourceFile": "synthetic-prevent-sudden-death-rare-inherited-condition-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Prevent Sudden Death clinical and professional context",
+      "haplotype": "clinical-professional-context-unavailable",
+      "inputId": "prevent-sudden-death-clinical-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "clinical diagnosis, symptoms, labs, imaging, medication or procedure context, family history, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-prevent-sudden-death-rare-inherited-condition-boundary-context-v1",
+      "sourceFile": "synthetic-prevent-sudden-death-rare-inherited-condition-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Prevent Sudden Death variant interpretation context",
+      "haplotype": "variant-interpretation-unavailable",
+      "inputId": "prevent-sudden-death-variant-interpretation-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "gene panel scope, variant classifications, zygosity, inheritance pattern, ancestry applicability, cascade-testing context, and clinical genetics review unavailable in this fixture",
+      "sourceArtifact": "synthetic-prevent-sudden-death-rare-inherited-condition-boundary-context-v1",
+      "sourceFile": "synthetic-prevent-sudden-death-rare-inherited-condition-boundary-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-rare-inherited-condition-boundary-context",
+    "hash": "sha256:synthetic-prevent-sudden-death-rare-inherited-condition-boundary-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-model evidence for prevent-sudden-death validation"
+  },
+  "missingInputPolicy": "Report unavailable inherited cardiovascular and sudden-death family-history context evidence explicitly; do not diagnose cardiomyopathy, arrhythmia, channelopathy, inherited cardiovascular disease, or sudden-death syndrome; estimate sudden-death risk, cardiac-event risk, exercise risk, family-member risk, or carrier status; classify variants; infer ECG, echocardiogram, rhythm-monitoring, symptoms, exercise clearance, ICD need, beta-blocker need, medication need, device need, activity restriction, screening need, diagnostic-test need, cascade-testing need, reproductive action, or clinical actionability.",
+  "packageSlug": "prevent-sudden-death",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Testing",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-testing-uses",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Uses of Genetic Testing",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-test-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-counseling",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Counseling",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "ncbi-clinvar",
+      "sourceType": "database",
+      "title": "NCBI ClinVar",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "ncbi-genetic-testing-registry",
+      "sourceType": "database",
+      "title": "NIH Genetic Testing Registry",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "guideline_background",
+      "id": "clingen-variant-classification-guidance",
+      "sourceType": "guidance_resource",
+      "title": "ClinGen Variant Classification Guidance",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "guideline_background",
+      "id": "acmg-amp-richards-2015",
+      "sourceType": "guideline_article",
+      "title": "ACMG/AMP 2015 sequence variant interpretation standards",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-heart-disease-family-history",
+      "sourceType": "public_health_resource",
+      "title": "CDC: About Heart Disease Family Health History",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-hcm-sudden-death-family-history",
+      "sourceType": "public_health_resource",
+      "title": "CDC: Hypertrophic Cardiomyopathy and Family Health History of Sudden Death",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "expert_background",
+      "id": "clingen-hereditary-cardiovascular-disease",
+      "sourceType": "expert_panel",
+      "title": "ClinGen Hereditary Cardiovascular Disease Expert Panel",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "clingen",
+      "sourceType": "database",
+      "title": "ClinGen",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer inherited cardiovascular and sudden-death family-history context boundary context using supplied references and explicit unavailable-model framing."
+}

@@ -6,6 +6,8 @@ Use only the provided genome evidence and reference resources. Do not invent var
 
 Write deterministic report sections first. Put probability, confidence, and uncertainty only in the appendix.
 
+Do not request, copy, or emit raw genome data. Use only derived evidence rows.
+
 Use plain English for general customers. Do not write for clinicians, pharma teams, or researchers.
 
 If a marker or allele is missing, mark that row or section as unavailable or limited instead of guessing.
@@ -15,26 +17,3 @@ Every result row must cite one of the provided reference IDs or mark the source 
 Do not diagnose disease and do not recommend starting, stopping, or changing medications or supplements.
 
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
-
-## Required Inputs
-
-- `reportPurpose`
-- `referenceResources[]`
-- `genomeEvidence[]` with gene, rsid or star allele, observed value, build, and source file
-- `missingInputPolicy`
-- `consumerTone`
-
-## Required Output
-
-- `reportOverview`
-- `keyHighlights`
-- `resultRows[]` with item, geneticAnalysis, genes, sourceIds, plainEnglishMeaning
-- `practicalNextSteps`
-- `references`
-- `appendix` with genotype summary, glossary, probabilities, uncertainty, missing inputs, limitations
-
-## Appendix Policy
-
-Probability, confidence, calibration status, and missing-data limitations must appear after the deterministic report sections.
-
-Use calibrated probabilities only when provided by the input evidence. Otherwise use directional confidence labels and say not quantified.

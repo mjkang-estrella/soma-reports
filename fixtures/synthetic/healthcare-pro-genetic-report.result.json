@@ -1,0 +1,157 @@
+{
+  "reportOverview": {
+    "reportTitle": "Healthcare Pro",
+    "inputManifestHash": "sha256:synthetic-healthcare-pro-genetic-report-professional-handoff-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "healthcare professional review, diagnosis, symptoms, family history, current medication list, labs, imaging, clinical history, exam findings, treatment plan, calibrated risk model, and authenticated sample-report rows unavailable in this fixture",
+      "Professional review, clinical context, current health information, and medical decision support are unavailable in this fixture.",
+      "This result is consumer-shareable context only and is not a diagnosis, professional clearance, disease-risk estimate, medication instruction, procedure plan, treatment guidance, supplement guidance, diet guidance, lab interpretation, screening advice, reproductive advice, or clinical actionability claim."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Professional handoff availability",
+      "item": "healthcare-pro-genetic-report-handoff-context-unavailable",
+      "brandName": "",
+      "geneticAnalysis": "Healthcare Pro can organize supplied context for a professional discussion, but the specialist review and authenticated sample rows are unavailable.",
+      "genes": [
+        "Healthcare Pro"
+      ],
+      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Counseling",
+      "sourceIds": [
+        "cdc-genetic-testing",
+        "medlineplus-genetics",
+        "medlineplus-genetic-counseling",
+        "fda-direct-to-consumer-tests",
+        "cdc-family-health-history",
+        "cdc-pharmacogenomics",
+        "medlineplus-pharmacogenetic-tests",
+        "nhgri-pharmacogenomics"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This row is an availability statement. It does not diagnose a condition, clear a person for a procedure, estimate risk, choose medication, recommend treatment, interpret labs, recommend screening, guide reproductive decisions, or provide an all-clear result."
+    },
+    {
+      "groupTitle": "Clinical review availability",
+      "item": "healthcare-pro-genetic-report-clinical-review-unavailable",
+      "brandName": "",
+      "geneticAnalysis": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+      "genes": [
+        "healthcare professional review context"
+      ],
+      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Counseling",
+      "sourceIds": [
+        "cdc-genetic-testing",
+        "medlineplus-genetics",
+        "medlineplus-genetic-counseling",
+        "fda-direct-to-consumer-tests",
+        "cdc-family-health-history",
+        "cdc-pharmacogenomics",
+        "medlineplus-pharmacogenetic-tests",
+        "nhgri-pharmacogenomics"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "A qualified professional needs validated test scope, personal and family history, symptoms, medications, labs, procedure context, environment, ancestry applicability, and current clinical information before using genetic context for health decisions."
+    }
+  ],
+  "professionalHandoffContext": {
+    "plainEnglishMeaning": "Healthcare Pro is currently a handoff-boundary package. It can document supplied evidence and missing professional context, but it cannot replace qualified review or produce medical decisions from local evidence alone.",
+    "unsupportedClaims": [
+      "Diagnosis, professional clearance, all-clear result, or personal disease-risk estimate",
+      "Medication, dosing, procedure, treatment, supplement, diet, lab, screening, reproductive, or management instruction",
+      "Variant classification, penetrance, inheritance, family-member risk, clinical actionability, or specialist-level interpretation",
+      "Replacement for a qualified clinician, pharmacist, geneticist, genetic counselor, surgeon, anesthesiologist, rheumatologist, infectious disease specialist, or other relevant professional"
+    ],
+    "professionalReview": "Use this output only as preparation for a professional conversation. Health decisions require qualified review with clinical history, medications, symptoms, labs, family history, procedure details when relevant, and validated testing scope."
+  },
+  "practicalNextSteps": {
+    "professionalReview": [
+      "Do not use this local fixture to change medication, supplements, diet, screening, procedures, reproductive decisions, prevention plans, or treatment decisions.",
+      "Bring current symptoms, personal and family history, medications, allergies, labs, prior testing, procedure context when relevant, and ancestry context to a qualified professional if discussing this topic.",
+      "Treat unavailable professional-review rows as unavailable, not as normal, abnormal, low risk, high risk, reassuring, diagnostic, actionable, or all clear."
+    ]
+  },
+  "references": [
+    {
+      "id": "cdc-genetic-testing",
+      "title": "CDC Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetics",
+      "title": "MedlinePlus Genetics"
+    },
+    {
+      "id": "medlineplus-genetic-counseling",
+      "title": "MedlinePlus: Genetic Counseling"
+    },
+    {
+      "id": "fda-direct-to-consumer-tests",
+      "title": "FDA Direct-to-Consumer Tests"
+    },
+    {
+      "id": "cdc-family-health-history",
+      "title": "CDC About Family Health History"
+    },
+    {
+      "id": "cdc-pharmacogenomics",
+      "title": "CDC Pharmacogenomics"
+    },
+    {
+      "id": "medlineplus-pharmacogenetic-tests",
+      "title": "MedlinePlus Pharmacogenetic Tests"
+    },
+    {
+      "id": "nhgri-pharmacogenomics",
+      "title": "NHGRI Pharmacogenomics Fact Sheet"
+    },
+    {
+      "id": "ncbi-clinvar",
+      "title": "NCBI ClinVar"
+    },
+    {
+      "id": "ncbi-genetic-testing-registry",
+      "title": "NIH Genetic Testing Registry"
+    },
+    {
+      "id": "medlineplus-autoimmune-diseases",
+      "title": "MedlinePlus: Autoimmune Diseases"
+    },
+    {
+      "id": "medlineplus-immune-system-disorders",
+      "title": "MedlinePlus: Immune System and Disorders"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "healthcare-pro-genetic-report-handoff-context-unavailable",
+        "gene": "Healthcare Pro",
+        "observedValue": "healthcare professional review, diagnosis, symptoms, family history, current medication list, labs, imaging, clinical history, exam findings, treatment plan, calibrated risk model, and authenticated sample-report rows unavailable in this fixture",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "healthcare-pro-genetic-report-clinical-review-unavailable",
+        "gene": "healthcare professional review context",
+        "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated Sequencing.com sample report sections and exact rows",
+      "Qualified professional review and complete clinical context",
+      "Current medications, symptoms, family history, labs, procedure details, prior testing, and validated test scope when relevant",
+      "Validated model output, applicability metadata, and professional interpretation for any health decision"
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated professional-clearance, disease-risk, medication-response, procedure-risk, treatment-response, lab-status, screening-benefit, reproductive-risk, supplement-benefit, diet-response, or actionability model is supplied for this local package.",
+      "Interpretation depends on validated test scope, clinical and family history, symptoms, medications, labs, procedures, environment, ancestry applicability, and qualified professional review."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
+      "The report is educational handoff context and does not provide diagnosis, professional clearance, disease-risk estimation, medication guidance, procedure guidance, treatment advice, supplement advice, diet advice, lab interpretation, screening advice, reproductive advice, or clinical actionability.",
+      "Unavailable professional-review rows should never be interpreted as low risk, high risk, no risk, normal, abnormal, reassuring, diagnostic, actionable, or all clear."
+    ]
+  }
+}

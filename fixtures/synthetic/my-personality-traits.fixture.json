@@ -1,0 +1,211 @@
+{
+  "consumerTone": "plain English; educational specialized genetics context only; no diagnosis, personal risk estimate, medication or substance recommendation, pediatric action, school or work decision, supplement protocol, proprietary report recreation, variant classification, or clinical actionability claims",
+  "datasetId": "synthetic-my-personality-traits-specialized-boundary-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-specialized-boundary-context",
+      "gene": "My Personality Traits model/source output",
+      "haplotype": "validated-model-or-source-output-unavailable",
+      "inputId": "my-personality-traits-model-output-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "validated personality trait model, score scale, calibration distribution, ancestry applicability metadata, environment context, mental health context, psychometric instrument, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-my-personality-traits-specialized-boundary-context-v1",
+      "sourceFile": "synthetic-my-personality-traits-specialized-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "My Personality Traits clinical and professional context",
+      "haplotype": "clinical-professional-context-unavailable",
+      "inputId": "my-personality-traits-clinical-professional-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
+      "sourceArtifact": "synthetic-my-personality-traits-specialized-boundary-context-v1",
+      "sourceFile": "synthetic-my-personality-traits-specialized-boundary-context-v1.json"
+    },
+    {
+      "assembly": "public-sample-pdf",
+      "gene": "Personality Traits public sample report",
+      "haplotype": "public-sample-output-structure-observed",
+      "inputId": "my-personality-traits-public-sample-output-structure",
+      "matchStatus": "observed",
+      "observedValue": "Public Personality sample PDF shows 11 genetic result cards across Big Five personality traits, feelings, and behaviors; Extravert or Introvert and Neuroticism detail pages; gauge labels; variant counts; and a visible Extravert or Introvert top-variants table.",
+      "sourceArtifact": "reference/sources/personality-traits-dna-sample-report.pdf",
+      "sourceFile": "personality-traits-dna-sample-report.pdf"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-specialized-boundary-context",
+    "hash": "sha256:synthetic-my-personality-traits-specialized-boundary-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-model evidence for my-personality-traits validation"
+  },
+  "missingInputPolicy": "Use public Personality sample rows only as observed output structure; report validated personality scoring, Big Five calibration, environment context, mental-health context, psychometric instrument, professional interpretation, and local-user model output unavailable.",
+  "packageSlug": "my-personality-traits",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Testing",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-test-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-complex-disorders",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: complex disorders",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-temperament",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: temperament",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics-traits",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics and Human Traits",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "nimh-looking-at-my-genes",
+      "sourceType": "public_health_resource",
+      "title": "NIMH: Looking at My Genes",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "personality-traits-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Personality Traits DNA sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer personality and temperament trait boundary context using supplied references, explicit unavailable-model framing, and observed public Personality sample-report output structure."
+}

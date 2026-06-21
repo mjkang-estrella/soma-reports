@@ -1,0 +1,122 @@
+{
+  "consumerTone": "plain English; educational immune and inflammatory genetics context only; no diagnosis, disease-risk estimate, HLA inference, inflammatory status, immune strength, infection risk, lab status, symptoms, family history, treatment, supplement, diet, prevention, screening, diagnostic-test, reproductive, or actionability claims",
+  "datasetId": "synthetic-connective-tissue-disorders-and-eds-condition-boundary-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-condition-boundary-context",
+      "gene": "Connective Tissue Disorders and EDS model",
+      "haplotype": "condition-boundary-model-unavailable",
+      "inputId": "connective-tissue-disorders-and-eds-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "validated connective-tissue disorder model, EDS gene panel, variant classifications, inheritance assessment, subtype criteria, vascular-risk assessment, Beighton score, hypermobility exam, skin findings, family history, pregnancy context, imaging, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-connective-tissue-disorders-and-eds-condition-boundary-context-v1",
+      "sourceFile": "synthetic-connective-tissue-disorders-and-eds-condition-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Connective Tissue Disorders and EDS clinical and lab context",
+      "haplotype": "clinical-lab-context-unavailable",
+      "inputId": "connective-tissue-disorders-and-eds-clinical-lab-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-connective-tissue-disorders-and-eds-condition-boundary-context-v1",
+      "sourceFile": "synthetic-connective-tissue-disorders-and-eds-condition-boundary-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-condition-boundary-context",
+    "hash": "sha256:synthetic-connective-tissue-disorders-and-eds-condition-boundary-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-model evidence for connective-tissue-disorders-and-eds validation"
+  },
+  "missingInputPolicy": "Report unavailable connective tissue disorders and EDS evidence explicitly; do not diagnose EDS, connective-tissue disorder, Marfan syndrome, Loeys-Dietz syndrome, or vascular disorder; estimate vascular risk; infer EDS subtype, collagen-gene panel result, variant classification, inheritance pattern, Beighton score, hypermobility status, skin findings, pregnancy risk, surgery risk, treatment need, screening need, diagnostic-test need, reproductive action, or actionability.",
+  "packageSlug": "connective-tissue-disorders-and-eds",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-ehlers-danlos-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Ehlers-Danlos Syndrome",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "clingen",
+      "sourceType": "database",
+      "title": "ClinGen",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "ncbi-clinvar",
+      "sourceType": "database",
+      "title": "NCBI ClinVar",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "ncbi-genetic-testing-registry",
+      "sourceType": "database",
+      "title": "NIH Genetic Testing Registry",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer connective tissue disorders and EDS boundary context using supplied references and explicit unavailable-model framing."
+}

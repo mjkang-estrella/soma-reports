@@ -1,0 +1,11 @@
+Generate a plain-English Parkinson's Disease report from local genome-derived evidence and supplied reference resources.
+Use only provided evidence and references. Do not invent genes, variants, classifications, scores, studies, symptoms, family history, clinical history, labs, imaging, vitals, diagnoses, medication context, pediatric context, source-tool output, or treatment conclusions.
+Write deterministic report sections first. Put probability, confidence, calibration status, missing data, and uncertainty only in the appendix.
+Do not request, copy, or emit raw genome data. Use only derived evidence rows.
+Use CDC, NIH, MedlinePlus, FDA, USPSTF, AAP, NHGRI PRS, GWAS Catalog, PGS Catalog, ClinGen, ClinVar, SNPedia/Promethease, and product identity references only as supplied in the input.
+Use plain English for general customers, not clinician-, pharmacology-, pediatric-, neurodevelopment-, psychiatric-, genetics-, or researcher-facing language.
+For this package, focus on Parkinson's disease genetics education, familial/sporadic context limits, LRRK2/PRKN/SNCA/PARK7/PINK1 background limits, variant-interpretation gaps, symptom/progression/treatment claim boundaries.
+If validated Parkinson's model, gene panel result, variant classifications, family history, neurologic symptoms, exam findings, age of onset context, imaging, medication response, clinician review, and authenticated sample-report rows are missing, mark those sections unavailable instead of inferring them.
+Do not diagnose Parkinson's disease or neurologic disease; estimate Parkinson's risk, penetrance, prognosis, age of onset, severity, progression, family-member risk, carrier status, symptoms, treatment response, medication need, testing need, screening need, cascade-testing need, reproductive action, variant pathogenicity, or clinical actionability.
+State that Parkinson's disease genetics context decisions require validated test scope, source-output provenance, clinical context, ancestry applicability when relevant, and qualified professional review for Parkinson's symptoms, family history, genetic testing, variant interpretation, and neurologic care.
+Return valid JSON matching the output contract. Do not include markdown outside JSON.

@@ -1,0 +1,123 @@
+{
+  "reportOverview": {
+    "reportTitle": "Map My Genes Archaeology Edition",
+    "inputManifestHash": "sha256:synthetic-map-my-genes-archaeology-context-v1",
+    "evidenceTypesSupplied": [
+      "Broad autosomal reference-panel similarity summary for archaeology-themed context",
+      "Ancient sample matching, archaeological-site, ancient-culture, and direct-descent evidence explicitly unavailable"
+    ],
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "No ancient-sample matching model, archaeological-site model, ancient-culture classifier, or direct-descent model is supplied.",
+      "No exact homeland, migration event, family matching, or relative-matching data is supplied."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Archaeology-themed ancestry context",
+      "item": "Broad reference-panel similarity",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A broad East Asian reference-panel similarity summary is available for archaeology-themed context, but no ancient-sample matching model is supplied.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "MedlinePlus genetic ancestry testing / 1000 Genomes",
+      "sourceIds": [
+        "medlineplus-genetic-ancestry-testing",
+        "international-genome-sample-resource"
+      ],
+      "plainEnglishMeaning": "This is broad reference-panel context only. It is not an ancient-sample match, cultural identity, direct-descent claim, archaeological-site label, or migration-event assignment."
+    },
+    {
+      "groupTitle": "Ancient DNA reference context",
+      "item": "Ancient DNA reference dataset",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "The Allen Ancient DNA Resource is used only as background for ancient-DNA dataset context and limitations. It is not a personal ancient-sample match.",
+      "genes": [
+        "ancient DNA comparison model"
+      ],
+      "sourceLabel": "Allen Ancient DNA Resource",
+      "sourceIds": [
+        "allen-ancient-dna-resource"
+      ],
+      "plainEnglishMeaning": "Ancient DNA datasets can provide research context, but this package does not turn that background into a personal match, culture label, or descent claim."
+    },
+    {
+      "groupTitle": "Unavailable ancient matching evidence",
+      "item": "Ancient sample matching unavailable",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "Ancient sample matching, archaeological-site, ancient-culture, and direct-descent evidence are unavailable in this fixture and are not inferred.",
+      "genes": [
+        "ancient DNA comparison model"
+      ],
+      "sourceLabel": "Allen Ancient DNA Resource / MedlinePlus DTC caveats",
+      "sourceIds": [
+        "allen-ancient-dna-resource",
+        "medlineplus-dtc-risks-benefits"
+      ],
+      "plainEnglishMeaning": "Ancient DNA datasets can support research context, but this run cannot prove descent from an ancient person, site, culture, community, or migration event."
+    }
+  ],
+  "ancestryScopeSummary": {
+    "autosomal": "Autosomal ancestry can provide broad reference-panel similarity when a model is supplied; this fixture does not supply calibrated percentages.",
+    "ancientDnaContext": "Ancient-DNA datasets provide research context; they do not automatically prove direct descent, culture membership, or archaeological-site identity for a consumer report.",
+    "sourceIds": [
+      "medlineplus-genetic-ancestry-testing",
+      "international-genome-sample-resource",
+      "medlineplus-dtc-risks-benefits",
+      "allen-ancient-dna-resource"
+    ]
+  },
+  "whatThisDoesNotMean": [
+    "This is not an exact ethnicity percentage.",
+    "This does not identify a precise homeland, tribe, community, nationality, archaeological site, ancient culture, ancient person, migration event, or living relatives.",
+    "This is not proof of descent from ancient remains or membership in an ancient population.",
+    "This is not a health or disease-risk report."
+  ],
+  "references": [
+    {
+      "id": "medlineplus-genetic-ancestry-testing",
+      "title": "MedlinePlus Genetics: genetic ancestry testing"
+    },
+    {
+      "id": "medlineplus-dtc-risks-benefits",
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing"
+    },
+    {
+      "id": "international-genome-sample-resource",
+      "title": "International Genome Sample Resource / 1000 Genomes"
+    },
+    {
+      "id": "allen-ancient-dna-resource",
+      "title": "Allen Ancient DNA Resource"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "gene": "autosomal genome",
+        "observedValue": "broad East Asian reference-panel similarity for archaeology-themed context; no ancient-sample matching model supplied"
+      },
+      {
+        "gene": "ancient DNA comparison model",
+        "observedValue": "ancient sample matching, archaeological-site, ancient-culture, and direct-descent evidence unavailable in this fixture"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated sample-report sections and rows have not been extracted.",
+      "No ancient-sample matching model, archaeological-site model, ancient-culture classifier, direct-descent model, or reference-panel metadata is supplied.",
+      "No family-matching, living-relative, migration-route, or exact-homeland data is supplied."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Broad reference-panel similarity should not be treated as a precise ancestry percentage, ancient-culture label, or identity.",
+      "Ancient-DNA context is sensitive to sampling, reference datasets, methods, geography, date ranges, and archaeological interpretation.",
+      "The fixture is a validation artifact, not a complete ancient-DNA comparison pipeline."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report does not emit raw SNP tables, ancient-sample genotype tables, or relative-matching data.",
+      "Authenticated Sequencing.com sample report rows are still pending."
+    ]
+  }
+}

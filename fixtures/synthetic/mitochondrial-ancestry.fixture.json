@@ -1,0 +1,112 @@
+{
+  "consumerTone": "plain English; educational; maternal-line ancestry context only; no health, identity, or exact-origin claims",
+  "datasetId": "synthetic-mitochondrial-ancestry-maternal-lineage-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "rCRS-or-GRCh38-chrM-derived",
+      "gene": "mitochondrial genome",
+      "haplotype": "H1a1",
+      "inputId": "MT-haplogroup-H1a1",
+      "matchStatus": "derived_call",
+      "observedValue": "derived maternal haplogroup H1a1",
+      "sourceArtifact": "synthetic-mitochondrial-ancestry-maternal-lineage-v1",
+      "sourceFile": "synthetic-mitochondrial-ancestry-maternal-lineage-v1.json"
+    },
+    {
+      "assembly": "rCRS-or-GRCh38-chrM-derived",
+      "gene": "mitochondrial genome",
+      "haplotype": "H1a1-defining-marker-set",
+      "inputId": "MT-defining-marker-summary",
+      "matchStatus": "summarized",
+      "observedValue": "summary-level defining marker match; individual mtDNA variants omitted",
+      "sourceArtifact": "synthetic-mitochondrial-ancestry-maternal-lineage-v1",
+      "sourceFile": "synthetic-mitochondrial-ancestry-maternal-lineage-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "rCRS-or-GRCh38-chrM-derived",
+    "hash": "sha256:synthetic-mitochondrial-ancestry-maternal-lineage-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived mitochondrial ancestry evidence for package validation"
+  },
+  "missingInputPolicy": "Report unavailable mtDNA or maternal-line evidence explicitly; do not infer ethnicity percentages, exact homeland, family matching, health risk, or mitochondrial disease status.",
+  "packageSlug": "mitochondrial-ancestry",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "observed_output_structure",
+      "id": "mitochondrial-ancestry-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Mitochondrial Ancestry DNA Report sample report",
+      "usedFor": [
+        "sample_rows",
+        "maternal_lineage_summary",
+        "formal_fields",
+        "output_format"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-ancestry-testing",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: genetic ancestry testing",
+      "usedFor": [
+        "ancestry_context",
+        "maternal_lineage_scope",
+        "consumer_safety_language"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-mitochondrial-dna",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: mitochondrial DNA",
+      "usedFor": [
+        "mtdna_context",
+        "maternal_lineage_scope",
+        "health_interpretation_boundaries"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-dtc-risks-benefits",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing",
+      "usedFor": [
+        "dtc_limitations",
+        "privacy_sensitivity",
+        "probability_appendix"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "mitomap",
+      "sourceType": "database",
+      "title": "MITOMAP human mitochondrial genome database",
+      "usedFor": [
+        "mtdna_variant_context",
+        "haplogroup_provenance",
+        "raw_variant_omission"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "international-genome-sample-resource",
+      "sourceType": "database",
+      "title": "International Genome Sample Resource / 1000 Genomes",
+      "usedFor": [
+        "ancestry_context",
+        "population_reference",
+        "variant_frequency_context"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer mitochondrial ancestry context using a derived maternal-line haplogroup and mtDNA reference resources."
+}

@@ -1,0 +1,103 @@
+{
+  "reportOverview": {
+    "reportTitle": "DNA Ancestry and Genealogy Report",
+    "inputManifestHash": "sha256:synthetic-ancestry-genealogy-heritage-context-v1",
+    "evidenceTypesSupplied": [
+      "Broad autosomal reference-panel similarity summary",
+      "Relative matching, surname matching, and family-tree evidence explicitly unavailable"
+    ],
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "No calibrated ancestry percentage model is supplied.",
+      "No relative matching, surname matching, family-tree placement, migration path, or exact homeland model is supplied."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Autosomal ancestry context",
+      "item": "Broad reference-panel similarity",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A broad East Asian reference-panel similarity summary is available, but no genealogical relationship model is supplied.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "MedlinePlus genetic ancestry testing / 1000 Genomes",
+      "sourceIds": [
+        "medlineplus-genetic-ancestry-testing",
+        "international-genome-sample-resource"
+      ],
+      "plainEnglishMeaning": "This is broad ancestry context only. It is not a precise ethnicity percentage, family-tree placement, surname match, or proof of relationship."
+    },
+    {
+      "groupTitle": "Unavailable genealogy evidence",
+      "item": "Relative matching and family-tree evidence",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "Relative matching, surname matching, and family-tree evidence are unavailable in this fixture and are not inferred.",
+      "genes": [
+        "genealogy matching data"
+      ],
+      "sourceLabel": "MedlinePlus direct-to-consumer ancestry testing caveats",
+      "sourceIds": [
+        "medlineplus-genetic-ancestry-testing",
+        "medlineplus-dtc-risks-benefits"
+      ],
+      "plainEnglishMeaning": "Genealogy claims require appropriate records or matching data. This run cannot identify relatives, surnames, family trees, or living people."
+    }
+  ],
+  "ancestryScopeSummary": {
+    "autosomal": "Autosomal ancestry can provide broad reference-panel similarity when a model is supplied; this fixture does not supply calibrated percentages.",
+    "genealogy": "Genealogy requires family records, relative matching, or other relationship evidence that is not supplied here.",
+    "sourceIds": [
+      "medlineplus-genetic-ancestry-testing",
+      "international-genome-sample-resource",
+      "medlineplus-dtc-risks-benefits"
+    ]
+  },
+  "whatThisDoesNotMean": [
+    "This is not an exact ethnicity percentage.",
+    "This does not identify a precise homeland, tribe, community, nationality, migration route, surname match, family tree, or living relatives.",
+    "This is not proof of descent from any person or group.",
+    "This is not a health or disease-risk report."
+  ],
+  "references": [
+    {
+      "id": "medlineplus-genetic-ancestry-testing",
+      "title": "MedlinePlus Genetics: genetic ancestry testing"
+    },
+    {
+      "id": "medlineplus-dtc-risks-benefits",
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing"
+    },
+    {
+      "id": "international-genome-sample-resource",
+      "title": "International Genome Sample Resource / 1000 Genomes"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "gene": "autosomal genome",
+        "observedValue": "broad East Asian reference-panel similarity; no genealogical relationship model supplied"
+      },
+      {
+        "gene": "genealogy matching data",
+        "observedValue": "relative matching, surname matching, and family-tree evidence unavailable in this fixture"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated sample-report sections and rows have not been extracted.",
+      "No calibrated ancestry model, reference-panel metadata, or genealogy model is supplied.",
+      "No family-matching, surname, family-tree, living-relative, migration-route, or exact-homeland data is supplied."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Broad reference-panel similarity should not be treated as a precise ancestry percentage or identity.",
+      "Genealogy and relationship claims require evidence outside this synthetic fixture."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report does not emit raw SNP tables or relative-matching data.",
+      "Authenticated Sequencing.com sample report rows are still pending."
+    ]
+  }
+}

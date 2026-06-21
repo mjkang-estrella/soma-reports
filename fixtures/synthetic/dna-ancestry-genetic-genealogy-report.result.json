@@ -1,0 +1,335 @@
+{
+  "reportOverview": {
+    "reportTitle": "Genetic Ancestry with Haplogroups",
+    "inputManifestHash": "sha256:synthetic-genetic-ancestry-haplogroups-v1",
+    "evidenceTypesSupplied": [
+      "Broad autosomal reference-panel similarity summary",
+      "Derived mtDNA maternal-line haplogroup",
+      "Y-DNA paternal-line evidence explicitly unavailable",
+      "Observed public sample-report rows for output-format parity"
+    ],
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com marketplace detail-page extraction is not available yet.",
+      "No calibrated autosomal ancestry percentage model is supplied for the local fixture.",
+      "No Y-DNA paternal-line haplogroup evidence is supplied for the local fixture.",
+      "No family matching, relative matching, migration path, or exact homeland model is supplied."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Autosomal ancestry context",
+      "item": "Broad reference-panel similarity",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A broad East Asian reference-panel similarity summary is available, but no calibrated ancestry percentage model is supplied.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "MedlinePlus genetic ancestry testing / 1000 Genomes",
+      "sourceIds": [
+        "medlineplus-genetic-ancestry-testing",
+        "international-genome-sample-resource"
+      ],
+      "plainEnglishMeaning": "This is broad reference-panel context only. It is not a precise ethnicity percentage, homeland, nationality, community label, or identity statement."
+    },
+    {
+      "groupTitle": "Haplogroup context",
+      "item": "mtDNA maternal-line haplogroup",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived maternal-line mtDNA haplogroup M7b1a1 call is available. This follows one maternal line only.",
+      "genes": [
+        "mitochondrial genome"
+      ],
+      "sourceLabel": "MedlinePlus mitochondrial DNA / MITOMAP",
+      "sourceIds": [
+        "medlineplus-mitochondrial-dna",
+        "mitomap"
+      ],
+      "plainEnglishMeaning": "An mtDNA haplogroup describes one maternal lineage. It does not represent all ancestors, overall ancestry, identity, or health status."
+    },
+    {
+      "groupTitle": "Haplogroup context",
+      "item": "Y-DNA paternal-line haplogroup",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "Y-DNA paternal-line haplogroup evidence is unavailable in this fixture and is not inferred.",
+      "genes": [
+        "Y chromosome"
+      ],
+      "sourceLabel": "MedlinePlus genetic ancestry testing",
+      "sourceIds": [
+        "medlineplus-genetic-ancestry-testing",
+        "medlineplus-dtc-risks-benefits"
+      ],
+      "plainEnglishMeaning": "A missing Y-DNA row means this report cannot provide paternal-line haplogroup context for this run."
+    },
+    {
+      "groupTitle": "Haplogroup summary",
+      "item": "Maternal mitochondrial haplogroup",
+      "brandName": "Genetic Ancestry with Haplogroups sample",
+      "geneticAnalysis": "Your Maternal Mitochondrial Haplogroup is L",
+      "description": "The sample cover-style page shows a direct maternal mitochondrial haplogroup result and explanatory examples for L subclades.",
+      "genes": [
+        "mitochondrial DNA"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "genetic-ancestry-haplogroups-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public sample PDF page labeled Genetic Ancestry with Haplogroups; this is observed sample content, not the local fixture's mtDNA result."
+    },
+    {
+      "groupTitle": "Haplogroup summary",
+      "item": "Paternal Y-Chromosome haplogroup",
+      "brandName": "Genetic Ancestry with Haplogroups sample",
+      "geneticAnalysis": "Your Paternal Y-Chromosome Haplogroup is R1b",
+      "description": "The sample page shows a direct paternal Y-chromosome haplogroup result and explanatory examples for R1b lineages.",
+      "genes": [
+        "Y chromosome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "genetic-ancestry-haplogroups-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public sample PDF page labeled Genetic Ancestry with Haplogroups; this is observed sample content, not inferred Y-DNA evidence for the local fixture."
+    },
+    {
+      "groupTitle": "Ancestry Composition",
+      "item": "Admixture summary",
+      "brandName": "Genetic Ancestry with Haplogroups sample",
+      "geneticAnalysis": "50% European; 50% Asian",
+      "description": "The sample Ancestry Composition page shows an admixture row with European and Asian percentages and a description of European, Asian, and African ancestor categories.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "genetic-ancestry-haplogroups-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public sample PDF Ancestry Composition page; exact percentages are sample output examples and must not be invented for a local run without calibrated ancestry evidence."
+    },
+    {
+      "groupTitle": "Ancestry Composition",
+      "item": "British or Irish",
+      "brandName": "Genetic Ancestry with Haplogroups sample",
+      "geneticAnalysis": "38%; European - Northwest",
+      "description": "The sample Ancestry Composition table shows British or Irish at 38% under the European Northwest description.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "genetic-ancestry-haplogroups-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public sample PDF Ancestry Composition table; this is observed sample output structure, not a local identity claim."
+    },
+    {
+      "groupTitle": "Ancestry Composition",
+      "item": "French or German",
+      "brandName": "Genetic Ancestry with Haplogroups sample",
+      "geneticAnalysis": "10%; European - Northwest",
+      "description": "The sample Ancestry Composition table shows French or German at 10% under the European Northwest description.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "genetic-ancestry-haplogroups-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public sample PDF Ancestry Composition table; this is observed sample output structure, not a local identity claim."
+    },
+    {
+      "groupTitle": "Ancestry Composition",
+      "item": "Chinese Han",
+      "brandName": "Genetic Ancestry with Haplogroups sample",
+      "geneticAnalysis": "38%; Asian - Chinese",
+      "description": "The sample Ancestry Composition table shows Chinese Han at 38% under the Asian Chinese description.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "genetic-ancestry-haplogroups-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public sample PDF Ancestry Composition table; this is observed sample output structure, not a local identity claim."
+    },
+    {
+      "groupTitle": "Ancestry Composition",
+      "item": "Chinese Dai",
+      "brandName": "Genetic Ancestry with Haplogroups sample",
+      "geneticAnalysis": "8%; Asian - Chinese",
+      "description": "The sample Ancestry Composition table shows Chinese Dai at 8% under the Asian Chinese description.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "genetic-ancestry-haplogroups-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public sample PDF Ancestry Composition table; this is observed sample output structure, not a local identity claim."
+    },
+    {
+      "groupTitle": "Maternal & Paternal Haplogroups",
+      "item": "Sample haplogroup rows",
+      "brandName": "Genetic Ancestry with Haplogroups sample",
+      "geneticAnalysis": "Mitochondrial Haplogroup M7b1a1b; Y-Chromosome Haplogroup I1b-CTS10703",
+      "description": "The sample page shows final maternal and paternal haplogroup rows paired with short explanations of mtDNA and Y-DNA haplogroup formation.",
+      "genes": [
+        "mitochondrial DNA",
+        "Y chromosome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "genetic-ancestry-haplogroups-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public sample PDF Maternal & Paternal Haplogroups table; sample IDs differ across visible pages, so this row is a format example only."
+    }
+  ],
+  "lineageScopeSummary": {
+    "autosomal": "Autosomal ancestry can summarize broad reference-panel similarity when a calibrated model is supplied; this fixture does not supply calibrated percentages.",
+    "maternalLine": "mtDNA follows one maternal line and does not represent all ancestors.",
+    "paternalLine": "Y-DNA follows one paternal line when available; this fixture marks it unavailable.",
+    "sampleRows": "The public sample rows show how Sequencing.com displayed ancestry composition and haplogroups in an example report. They are output-format examples, not local personal results.",
+    "sourceIds": [
+      "genetic-ancestry-haplogroups-sample-pdf",
+      "medlineplus-genetic-ancestry-testing",
+      "medlineplus-mitochondrial-dna",
+      "medlineplus-dtc-risks-benefits"
+    ]
+  },
+  "whatThisDoesNotMean": [
+    "This is not an exact ethnicity percentage for the local fixture.",
+    "This does not identify a precise homeland, tribe, community, nationality, or living relatives.",
+    "This is not a family-matching or genealogy-relative report.",
+    "This is not a health or disease-risk report.",
+    "This does not turn mtDNA or Y-DNA lineage evidence into overall ancestry or identity."
+  ],
+  "references": [
+    {
+      "id": "medlineplus-genetic-ancestry-testing",
+      "title": "MedlinePlus Genetics: genetic ancestry testing"
+    },
+    {
+      "id": "medlineplus-mitochondrial-dna",
+      "title": "MedlinePlus Genetics: mitochondrial DNA"
+    },
+    {
+      "id": "medlineplus-dtc-risks-benefits",
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing"
+    },
+    {
+      "id": "international-genome-sample-resource",
+      "title": "International Genome Sample Resource / 1000 Genomes"
+    },
+    {
+      "id": "mitomap",
+      "title": "MITOMAP human mitochondrial genome database"
+    },
+    {
+      "id": "genetic-ancestry-haplogroups-sample-pdf",
+      "title": "Genetic Ancestry with Haplogroups sample report"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "tier": "Local derived call",
+        "gene": "autosomal genome",
+        "variantId": "autosomal-reference-panel-summary",
+        "genotype": "broad East Asian reference-panel similarity; no percentage calibration supplied",
+        "effect": "The local fixture supplies broad autosomal context without calibrated ethnicity percentages.",
+        "phenotype": "Report as broad ancestry context only; do not convert it into exact percentages, homeland, identity, relatives, or health interpretation.",
+        "extractionStatus": "curated"
+      },
+      {
+        "tier": "Local derived call",
+        "gene": "mitochondrial genome",
+        "variantId": "MT-haplogroup-summary",
+        "genotype": "derived maternal-line haplogroup M7b1a1",
+        "effect": "The local fixture supplies a derived maternal-line haplogroup for validation.",
+        "phenotype": "Report as one maternal-line ancestry path only; do not treat it as overall ancestry, identity, or health status.",
+        "extractionStatus": "curated"
+      },
+      {
+        "tier": "Local missing input",
+        "gene": "Y chromosome",
+        "variantId": "Y-haplogroup-unavailable",
+        "genotype": "Y-DNA paternal-line haplogroup evidence unavailable",
+        "effect": "The local fixture intentionally omits Y-DNA evidence.",
+        "phenotype": "Mark paternal-line haplogroup context unavailable instead of inferring it from autosomal or mtDNA evidence.",
+        "extractionStatus": "curated"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "mitochondrial DNA",
+        "variantId": "sample maternal haplogroup",
+        "genotype": "Maternal Mitochondrial Haplogroup L",
+        "effect": "The public sample demonstrates a direct maternal haplogroup summary row.",
+        "phenotype": "Use this as observed sample output structure only; keep it separate from the local fixture's M7b1a1 derived mtDNA call.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "Y chromosome",
+        "variantId": "sample paternal haplogroup",
+        "genotype": "Paternal Y-Chromosome Haplogroup R1b",
+        "effect": "The public sample demonstrates a direct paternal Y-DNA haplogroup summary row.",
+        "phenotype": "Use this as observed sample output structure only; do not infer a paternal-line haplogroup for the local fixture.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "autosomal genome",
+        "variantId": "sample ancestry composition",
+        "genotype": "50% European; 50% Asian",
+        "effect": "The public sample demonstrates ancestry composition percentage formatting.",
+        "phenotype": "Exact percentages require calibrated ancestry evidence for a local run; sample percentages are not reused as personal output.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report marker summary",
+        "gene": "mitochondrial DNA",
+        "variantId": "M7b1a1b marker path",
+        "genotype": "visible mtDNA marker path ending in M7b1a1b",
+        "effect": "The sample marker table shows selected mitochondrial variants associated with sequential haplogroup refinement.",
+        "phenotype": "Summarize the visible marker path without emitting the full raw mtDNA variant list in consumer output.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report marker summary",
+        "gene": "Y chromosome",
+        "variantId": "I1b-CTS10703 marker path",
+        "genotype": "visible Y-DNA marker path ending in I1b1b~ / CTS10703",
+        "effect": "The sample marker table shows selected Y-chromosome variants associated with sequential haplogroup refinement.",
+        "phenotype": "Summarize the visible marker path without emitting the full raw Y-DNA variant list in consumer output.",
+        "extractionStatus": "direct"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated marketplace detail-page extraction has not been completed.",
+      "No calibrated ancestry model or reference-panel metadata is supplied for exact local percentages.",
+      "No Y-DNA paternal-line haplogroup evidence is supplied for the local fixture.",
+      "No family-matching, living-relative, migration-route, community-affiliation, or exact-homeland data is supplied.",
+      "Public sample rows are examples and must stay separate from local derived evidence."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Broad reference-panel similarity should not be treated as a precise ancestry percentage or identity.",
+      "Lineage haplogroups describe one inherited path and do not summarize all ancestors.",
+      "The fixture is a validation artifact, not a complete ancestry inference pipeline.",
+      "The public sample PDF demonstrates output structure and visible sample rows; it is not a personal result for this fixture."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report does not emit raw SNP tables, raw mtDNA variant lists, or raw Y-DNA variant lists.",
+      "Authenticated Sequencing.com marketplace detail-page extraction is still pending.",
+      "Sample ancestry percentages and sample haplogroups are not reused as local personal conclusions."
+    ]
+  }
+}

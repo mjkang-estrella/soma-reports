@@ -1,0 +1,134 @@
+{
+  "reportOverview": {
+    "reportTitle": "Genetic Risk of Hair Loss",
+    "inputManifestHash": "sha256:synthetic-hair-loss-androgenetic-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "No calibrated hair-loss risk model is supplied with this fixture.",
+      "Symptoms, scalp exam, family history, ancestry or sex applicability metadata, treatment history, and clinical diagnosis are not supplied."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Hair-loss genetics context",
+      "item": "AR androgen receptor context",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived AR androgen receptor context row is available. This supports educational androgenetic alopecia background only and is not a diagnosis or a quantified hair-loss risk result.",
+      "genes": [
+        "AR"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: Androgenetic alopecia / AR gene",
+      "sourceIds": [
+        "medlineplus-androgenetic-alopecia",
+        "medlineplus-ar"
+      ],
+      "plainEnglishMeaning": "AR is one gene associated with androgenetic alopecia, but pattern hair loss involves multiple genetic and non-genetic factors."
+    },
+    {
+      "groupTitle": "Hair-loss genetics context",
+      "item": "Pattern hair-loss polygenic context",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A summary-level pattern hair-loss genetic context row is available, but no calibrated risk model is supplied. The report therefore describes context and limitations rather than assigning a risk score.",
+      "genes": [
+        "polygenic pattern hair-loss context"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: Androgenetic alopecia / NHGRI polygenic risk score overview",
+      "sourceIds": [
+        "medlineplus-androgenetic-alopecia",
+        "nhgri-polygenic-risk-scores",
+        "ebi-gwas-catalog"
+      ],
+      "plainEnglishMeaning": "Pattern hair loss can cluster in families, but inheritance is complex and a validated model is needed before estimating personal risk."
+    },
+    {
+      "groupTitle": "Unavailable model context",
+      "item": "Calibrated hair-loss risk model",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A calibrated hair-loss risk score, sex-specific model, ancestry applicability metadata, symptoms, and clinical context are unavailable in this fixture.",
+      "genes": [
+        "hair-loss risk model"
+      ],
+      "sourceLabel": "MedlinePlus hair loss / DTC test limitations",
+      "sourceIds": [
+        "medlineplus-hair-loss",
+        "medlineplus-male-pattern-baldness",
+        "medlineplus-dtc-test-types"
+      ],
+      "plainEnglishMeaning": "Hair loss has many possible causes, so this package does not diagnose a condition, quantify risk, or recommend treatment from derived genetic context alone."
+    }
+  ],
+  "unavailableSections": [
+    "Authenticated Sequencing.com sample report rows are not available yet.",
+    "Calibrated personal hair-loss risk score and model calibration metadata are unavailable.",
+    "Symptoms, scalp exam, family history, ancestry or sex applicability metadata, and treatment history are unavailable.",
+    "Diagnosis, hormone status, PCOS context, prostate context, cancer risk, medication response, supplement advice, and transplant guidance are not inferred."
+  ],
+  "plainEnglishLimits": [
+    "Pattern hair loss is influenced by genetic, hormonal, age-related, and environmental factors.",
+    "Direct-to-consumer trait tests can provide estimates or context, not certainty about whether, when, or how much hair loss will occur.",
+    "Hair loss can have causes that are not captured by this genetic fixture, so medical symptoms or rapid/unusual hair loss require appropriate clinical evaluation.",
+    "This report must not be used to diagnose hair-loss conditions or guide medications, supplements, hormones, hair transplants, or other treatment decisions."
+  ],
+  "references": [
+    {
+      "id": "medlineplus-androgenetic-alopecia",
+      "title": "MedlinePlus Genetics: Androgenetic alopecia"
+    },
+    {
+      "id": "medlineplus-ar",
+      "title": "MedlinePlus Genetics: AR gene"
+    },
+    {
+      "id": "medlineplus-hair-loss",
+      "title": "MedlinePlus Medical Encyclopedia: Hair loss"
+    },
+    {
+      "id": "medlineplus-male-pattern-baldness",
+      "title": "MedlinePlus Medical Encyclopedia: Male pattern baldness"
+    },
+    {
+      "id": "medlineplus-dtc-test-types",
+      "title": "MedlinePlus Genetics: Direct-to-consumer genetic test types"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "gene": "AR",
+        "observedValue": "derived androgen receptor context available; no pathogenic variant or diagnosis emitted"
+      },
+      {
+        "gene": "polygenic pattern hair-loss context",
+        "observedValue": "summary-level pattern hair-loss genetic context available; no calibrated risk model supplied"
+      },
+      {
+        "gene": "hair-loss risk model",
+        "observedValue": "calibrated hair-loss risk score, sex-specific model, ancestry applicability metadata, and symptom evidence unavailable in this fixture"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated sample-report sections and rows have not been extracted.",
+      "No calibrated hair-loss risk score, model coefficients, validation population, sex-specific model, ancestry applicability metadata, symptoms, scalp exam, family history, or treatment history is supplied.",
+      "Inputs for alopecia areata, thyroid disease, medication-related hair loss, stress-related shedding, PCOS, prostate conditions, cancer treatment, or other non-pattern hair-loss causes are not supplied."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Androgenetic hair loss involves multiple genetic and non-genetic factors, and many risk factors remain unknown.",
+      "The clinical meaning of derived genetic context depends on model calibration, ancestry and sex applicability, age, symptoms, family history, and other non-genetic factors."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "This report is educational and does not diagnose androgenetic alopecia, male pattern baldness, female pattern hair loss, alopecia areata, thyroid disease, PCOS, prostate conditions, cancer risk, or hormone status.",
+      "This report does not recommend starting, stopping, or changing minoxidil, finasteride, dutasteride, supplements, hormone therapy, hair transplant, or any treatment.",
+      "Authenticated Sequencing.com sample report rows are still pending."
+    ]
+  }
+}

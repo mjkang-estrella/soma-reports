@@ -1,0 +1,121 @@
+{
+  "consumerTone": "plain English; educational WGS product-boundary context only; no order, lab-result, coverage, variant-call, health-screen, diagnosis, disease-risk, carrier-status, pathogenicity, treatment, or actionability claims",
+  "datasetId": "synthetic-whole-genome-sequencing-30x-product-boundary-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "not-applicable",
+      "gene": "marketplace WGS product boundary",
+      "haplotype": "whole-genome-sequencing-30x-catalog-product-context",
+      "inputId": "whole-genome-sequencing-30x-product-context",
+      "matchStatus": "summarized",
+      "observedValue": "marketplace product context available for Whole Genome Sequencing; order status, sample collection, lab processing, WGS output, and report results are not supplied",
+      "sourceArtifact": "synthetic-whole-genome-sequencing-30x-product-boundary-v1",
+      "sourceFile": "synthetic-whole-genome-sequencing-30x-product-boundary-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "WGS laboratory output",
+      "haplotype": "whole-genome-sequencing-30x-wgs-lab-output-unavailable",
+      "inputId": "whole-genome-sequencing-30x-wgs-lab-output-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "order status, sample collection, lab processing, sequencing platform, coverage metrics, variant calls, health-screen output, clinical validation, clinical sensitivity, or authenticated sample evidence",
+      "sourceArtifact": "synthetic-whole-genome-sequencing-30x-product-boundary-v1",
+      "sourceFile": "synthetic-whole-genome-sequencing-30x-product-boundary-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "health-screen and clinical interpretation output",
+      "haplotype": "whole-genome-sequencing-30x-clinical-output-unavailable",
+      "inputId": "whole-genome-sequencing-30x-clinical-output-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "health-screen report, disease-risk output, carrier-status output, variant interpretation, pathogenicity classification, clinical sensitivity, all-clear reassurance, treatment guidance, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-whole-genome-sequencing-30x-product-boundary-v1",
+      "sourceFile": "synthetic-whole-genome-sequencing-30x-product-boundary-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "not-applicable",
+    "hash": "sha256:synthetic-whole-genome-sequencing-30x-product-boundary-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived WGS product-boundary context for whole-genome-sequencing-30x validation"
+  },
+  "missingInputPolicy": "Mark order status, sample collection, lab processing, sequencing platform, coverage metrics, variant calls, health-screen output, clinical validation, clinical sensitivity, and authenticated sample rows unavailable when not explicitly supplied.",
+  "packageSlug": "whole-genome-sequencing-30x",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "implementation_background",
+      "id": "samtools-depth",
+      "sourceType": "tool_documentation",
+      "title": "SAMtools depth",
+      "usedFor": [
+        "depth_metric_context",
+        "per_position_depth_provenance",
+        "raw_alignment_omission"
+      ]
+    },
+    {
+      "evidenceLevel": "implementation_background",
+      "id": "samtools-coverage",
+      "sourceType": "tool_documentation",
+      "title": "SAMtools coverage",
+      "usedFor": [
+        "breadth_metric_context",
+        "regional_coverage_context",
+        "coverage_threshold_rows"
+      ]
+    },
+    {
+      "evidenceLevel": "implementation_background",
+      "id": "gatk-collect-wgs-metrics",
+      "sourceType": "tool_documentation",
+      "title": "GATK/Picard CollectWgsMetrics",
+      "usedFor": [
+        "wgs_depth_summary",
+        "quality_filter_context",
+        "coverage_threshold_rows"
+      ]
+    },
+    {
+      "evidenceLevel": "implementation_background",
+      "id": "gatk-wgs-metrics",
+      "sourceType": "metrics_reference",
+      "title": "GATK WgsMetrics",
+      "usedFor": [
+        "wgs_metric_definitions",
+        "metric_glossary",
+        "coverage_uniformity_context"
+      ]
+    },
+    {
+      "evidenceLevel": "benchmark_background",
+      "id": "nist-genome-in-a-bottle",
+      "sourceType": "benchmark_resource",
+      "title": "NIST Genome in a Bottle",
+      "usedFor": [
+        "benchmark_context",
+        "no_clinical_sensitivity_claims",
+        "validation_limitations"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "ncbi-genetic-testing-registry",
+      "sourceType": "database",
+      "title": "NIH Genetic Testing Registry",
+      "usedFor": [
+        "genetic_test_metadata_context",
+        "clinical_test_unavailable",
+        "product_boundary_context"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer WGS product-boundary context using marketplace card metadata while explicitly marking order, sample, lab, WGS output, coverage, variant-call, health-screen, and authenticated sample evidence unavailable."
+}

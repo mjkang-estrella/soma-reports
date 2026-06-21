@@ -1,0 +1,211 @@
+{
+  "consumerTone": "plain English; educational rare inherited condition genetics context only; no diagnosis, disease-risk estimate, variant classification, carrier-status call, inheritance inference, family-member risk, cascade-testing, screening, treatment, procedure, medication, reproductive action, or clinical actionability claims",
+  "datasetId": "synthetic-mitchell-syndrome-rare-inherited-condition-boundary-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-rare-inherited-condition-boundary-context",
+      "gene": "Mitchell Syndrome model",
+      "haplotype": "rare-inherited-condition-model-unavailable",
+      "inputId": "mitchell-syndrome-condition-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "validated Mitchell syndrome diagnostic model, ACOX1 result, variant classifications, zygosity and inheritance assessment, neurologic symptoms, developmental history, imaging, labs, family history, clinical diagnosis, geneticist or genetic counselor review, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-mitchell-syndrome-rare-inherited-condition-boundary-context-v1",
+      "sourceFile": "synthetic-mitchell-syndrome-rare-inherited-condition-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Mitchell Syndrome clinical and professional context",
+      "haplotype": "clinical-professional-context-unavailable",
+      "inputId": "mitchell-syndrome-clinical-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "clinical diagnosis, symptoms, labs, imaging, medication or procedure context, family history, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-mitchell-syndrome-rare-inherited-condition-boundary-context-v1",
+      "sourceFile": "synthetic-mitchell-syndrome-rare-inherited-condition-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Mitchell Syndrome variant interpretation context",
+      "haplotype": "variant-interpretation-unavailable",
+      "inputId": "mitchell-syndrome-variant-interpretation-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "gene panel scope, variant classifications, zygosity, inheritance pattern, ancestry applicability, cascade-testing context, and clinical genetics review unavailable in this fixture",
+      "sourceArtifact": "synthetic-mitchell-syndrome-rare-inherited-condition-boundary-context-v1",
+      "sourceFile": "synthetic-mitchell-syndrome-rare-inherited-condition-boundary-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-rare-inherited-condition-boundary-context",
+    "hash": "sha256:synthetic-mitchell-syndrome-rare-inherited-condition-boundary-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-model evidence for mitchell-syndrome validation"
+  },
+  "missingInputPolicy": "Report unavailable Mitchell syndrome and ACOX1 gene-disease context evidence explicitly; do not diagnose Mitchell syndrome, ACOX1-related disorder, neurologic disease, or developmental disorder; estimate disease risk, severity, progression, age of onset, family-member risk, or carrier status; classify variants; infer zygosity, inheritance pattern, symptoms, developmental history, imaging, labs, treatment need, screening need, diagnostic-test need, cascade-testing need, reproductive action, or clinical actionability.",
+  "packageSlug": "mitchell-syndrome",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Testing",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-testing-uses",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Uses of Genetic Testing",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-test-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-counseling",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Counseling",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "ncbi-clinvar",
+      "sourceType": "database",
+      "title": "NCBI ClinVar",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "ncbi-genetic-testing-registry",
+      "sourceType": "database",
+      "title": "NIH Genetic Testing Registry",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "guideline_background",
+      "id": "clingen-variant-classification-guidance",
+      "sourceType": "guidance_resource",
+      "title": "ClinGen Variant Classification Guidance",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "guideline_background",
+      "id": "acmg-amp-richards-2015",
+      "sourceType": "guideline_article",
+      "title": "ACMG/AMP 2015 sequence variant interpretation standards",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "gencc-acox1",
+      "sourceType": "database",
+      "title": "GenCC: ACOX1 Gene-Disease Validity",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "clingen",
+      "sourceType": "database",
+      "title": "ClinGen",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer Mitchell syndrome and ACOX1 gene-disease context boundary context using supplied references and explicit unavailable-model framing."
+}

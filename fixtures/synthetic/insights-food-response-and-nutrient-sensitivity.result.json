@@ -1,0 +1,95 @@
+{
+  "reportOverview": {
+    "reportTitle": "Insights for Food Response and Nutrient Sensitivity",
+    "inputManifestHash": "sha256:synthetic-food-response-nutrient-sensitivity-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "No calibrated food-response, nutrient-sensitivity, micronutrient, supplement, symptom, diet-history, lab, metabolic, or ancestry applicability model is supplied with this fixture."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Food response and nutrient sensitivity context",
+      "item": "MCM6/LCT rs4988235",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a diagnosis, symptom explanation, food-sensitivity result, diet recommendation, or supplement recommendation.",
+      "genes": [
+        "MCM6",
+        "LCT"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: lactose intolerance / MCM6",
+      "sourceIds": [
+        "medlineplus-lactose-intolerance",
+        "medlineplus-mcm6"
+      ],
+      "plainEnglishMeaning": "This marker can provide lactose-related context, but symptoms, diet history, labs, environment, and professional review matter for nutrition decisions."
+    },
+    {
+      "groupTitle": "Nutrition model availability",
+      "item": "Food response and nutrient sensitivity model",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "No calibrated food-response, nutrient-sensitivity, micronutrient, supplement, symptom, diet-history, lab, metabolic, or ancestry applicability model is supplied with this fixture.",
+      "genes": [
+        "Food response and nutrient sensitivity model"
+      ],
+      "sourceLabel": "Nutritional genomics review / GWAS Catalog",
+      "sourceIds": [
+        "nutritional-genomics-dtc-review",
+        "ebi-gwas-catalog"
+      ],
+      "plainEnglishMeaning": "The report can describe supplied marker context, but it should not make diet, supplement, food-response, nutrient, metabolic, symptom, lab, or diagnosis conclusions without validated evidence."
+    }
+  ],
+  "practicalNextSteps": {
+    "foodResponseContext": [
+      "Use this report as educational food-response and nutrient-sensitivity genetics context, not as an allergy, sensitivity, or deficiency diagnosis.",
+      "Discuss symptoms, food history, labs, allergy evaluation, nutrient questions, and health goals with qualified professionals.",
+      "Do not eliminate foods, start supplements, interpret labs, or change treatment based on genotype alone."
+    ]
+  },
+  "references": [
+    {
+      "id": "medlineplus-lactose-intolerance",
+      "title": "MedlinePlus Genetics: lactose intolerance"
+    },
+    {
+      "id": "medlineplus-mcm6",
+      "title": "MedlinePlus Genetics: MCM6 gene"
+    },
+    {
+      "id": "nutritional-genomics-dtc-review",
+      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "gene": "MCM6/LCT",
+        "observedValue": "rs4988235 CT"
+      },
+      {
+        "gene": "Food response and nutrient sensitivity model",
+        "observedValue": "calibrated model unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated sample-report sections and rows have not been extracted.",
+      "No calibrated food-response, nutrient-sensitivity, micronutrient, supplement, symptom, diet-history, lab, metabolic, or ancestry applicability model is supplied with this fixture.",
+      "Broader symptoms, food history, diet history, labs, medications, medical history, ancestry applicability, and professional assessment are not represented in this fixture."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Nutrition, food response, nutrient status, symptoms, and metabolic outcomes depend on genetics plus symptoms, diet history, labs, medical history, medications, environment, and professional review.",
+      "A single marker should not be used to diagnose food reactions, nutrient deficiency, metabolic disease, or to prescribe diet or supplement changes."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report is educational and does not diagnose food allergy, food sensitivity, celiac disease, lactose intolerance, nutrient deficiency, metabolic disease, prescribe diets, recommend supplements, interpret labs, or provide treatment guidance.",
+      "Authenticated Sequencing.com sample report rows are still pending."
+    ]
+  }
+}

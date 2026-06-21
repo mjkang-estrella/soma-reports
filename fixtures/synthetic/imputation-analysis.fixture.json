@@ -1,0 +1,133 @@
+{
+  "packageSlug": "imputation-analysis",
+  "datasetId": "synthetic-imputation-analysis-context-v1",
+  "packageVersion": "0.1.0",
+  "reportPurpose": "Consumer imputation-quality report using selected derived panel/build/QC and imputation-quality metrics while explicitly marking benchmark, ancestry-applicability, raw-file, and clinical interpretation context unavailable.",
+  "missingInputPolicy": "Report unavailable reference panel details, tool versions, allele-frequency checks, benchmark truth-set comparison, ancestry applicability, dosage calibration, and clinical meaning explicitly; do not infer variant truth, disease risk, or medical action.",
+  "consumerTone": "plain English; educational imputation quality-control context only; no diagnosis, variant truth assertion, clinical sensitivity, disease risk, ancestry certainty, medication, screening, reproductive, lifestyle, or treatment guidance",
+  "inputManifest": {
+    "hash": "sha256:synthetic-imputation-analysis-context-v1",
+    "genomeBuild": "GRCh38-derived",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived imputation QC metrics for imputation-analysis validation"
+  },
+  "genomeEvidence": [
+    {
+      "inputId": "imputation-build-panel-summary",
+      "haplotype": "imputation-build-panel-summary",
+      "gene": "imputation build and panel summary",
+      "observedValue": "derived summary reports GRCh38 target coordinates; TOPMed-like reference-panel context supplied; liftOver not required by upstream summary; imputation server, panel release, and tool build exact versions not supplied",
+      "assembly": "GRCh38-derived",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-imputation-analysis-context-v1.json",
+      "sourceArtifact": "synthetic-imputation-analysis-context-v1"
+    },
+    {
+      "inputId": "imputation-qc-counts",
+      "haplotype": "imputation-qc-counts",
+      "gene": "imputation quality counts",
+      "observedValue": "derived autosomal summary: 640,000 typed input markers passed upstream checks; 10,850,000 imputed variant records retained at r2 or rsq >= 0.30; 7,420,000 retained at r2 or rsq >= 0.80; 380,000 records below the configured threshold were excluded",
+      "assembly": "GRCh38-derived",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-imputation-analysis-context-v1.json",
+      "sourceArtifact": "synthetic-imputation-analysis-context-v1"
+    },
+    {
+      "inputId": "imputation-dosage-summary",
+      "haplotype": "imputation-dosage-summary",
+      "gene": "imputed dosage summary",
+      "observedValue": "derived dosage summary reports dosages available for retained imputed records; per-variant posterior probabilities, hard-call concordance, and per-region dosage calibration were not supplied",
+      "assembly": "GRCh38-derived",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-imputation-analysis-context-v1.json",
+      "sourceArtifact": "synthetic-imputation-analysis-context-v1"
+    },
+    {
+      "inputId": "imputation-validation-context-unavailable",
+      "haplotype": "imputation-validation-context-unavailable",
+      "gene": "imputation validation metadata",
+      "observedValue": "benchmark truth-set comparison, sample ancestry calibration, allele-frequency QC report, phasing engine version, Minimac4 version, reference panel release checksum, per-chromosome failure table, and authenticated sample-report rows are unavailable in this fixture",
+      "assembly": "derived-imputation-context",
+      "matchStatus": "unavailable",
+      "sourceFile": "synthetic-imputation-analysis-context-v1.json",
+      "sourceArtifact": "synthetic-imputation-analysis-context-v1"
+    }
+  ],
+  "referenceResources": [
+    {
+      "id": "michigan-imputation-server-2",
+      "title": "Michigan Imputation Server 2",
+      "sourceType": "imputation_server_documentation",
+      "evidenceLevel": "implementation_background",
+      "usedFor": [
+        "imputation_workflow_context",
+        "build_liftover_context",
+        "rsq_quality_filter",
+        "qc_only_mode"
+      ]
+    },
+    {
+      "id": "topmed-imputation-server",
+      "title": "TOPMed Imputation Server",
+      "sourceType": "imputation_server_documentation",
+      "evidenceLevel": "implementation_background",
+      "usedFor": [
+        "topmed_panel_context",
+        "r2_quality_filter",
+        "input_qc_checks",
+        "phasing_context"
+      ]
+    },
+    {
+      "id": "minimac4",
+      "title": "Minimac4",
+      "sourceType": "imputation_tool_documentation",
+      "evidenceLevel": "implementation_background",
+      "usedFor": [
+        "imputation_tool_context",
+        "dosage_metric_context",
+        "no_raw_file_output"
+      ]
+    },
+    {
+      "id": "thousand-genomes-imputation",
+      "title": "1000 Genomes: imputation",
+      "sourceType": "reference_panel_background",
+      "evidenceLevel": "reference_panel_background",
+      "usedFor": [
+        "haplotype_context",
+        "reference_panel_limitations",
+        "imputed_not_observed_language"
+      ]
+    },
+    {
+      "id": "ncbi-dbsnp",
+      "title": "NCBI dbSNP",
+      "sourceType": "database",
+      "evidenceLevel": "database_background",
+      "usedFor": [
+        "public_variant_identifier_context",
+        "rsid_context",
+        "not_variant_truth"
+      ]
+    },
+    {
+      "id": "nist-genome-in-a-bottle",
+      "title": "NIST Genome in a Bottle",
+      "sourceType": "benchmark_resource",
+      "evidenceLevel": "benchmark_background",
+      "usedFor": [
+        "benchmark_context",
+        "truth_set_unavailable",
+        "validation_limitations"
+      ]
+    }
+  ],
+  "expectedAssertions": {
+    "noRawGenomeInOutput": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "probabilitiesOnlyInAppendix": true,
+    "consumerLanguage": true
+  }
+}

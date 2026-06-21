@@ -1,0 +1,159 @@
+{
+  "reportOverview": {
+    "reportTitle": "Health Scan",
+    "inputManifestHash": "sha256:synthetic-health-scan-utility-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "Exact health-scan service outputs, disease-screening tables, clinical classification evidence, and complete resource versions are not supplied.",
+      "disease screening, risk scoring, carrier status, pathogenicity classification, clinical significance, screening recommendations, clinical sensitivity, all-clear reassurance, and authenticated sample-report rows unavailable in this fixture"
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Public variant lookup context",
+      "item": "BDNF rs6265",
+      "brandName": "",
+      "geneticAnalysis": "A selected public variant identifier is available for lookup and annotation context. No personal health-screening, disease-risk, or clinical interpretation is supplied.",
+      "genes": [
+        "BDNF"
+      ],
+      "sourceLabel": "NCBI dbSNP; Ensembl REST; Ensembl VEP",
+      "sourceIds": [
+        "ncbi-dbsnp",
+        "ensembl-rest-api",
+        "ensembl-vep"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The row can be used to explain that a public rs identifier exists and can be looked up in external resources. It does not say whether there is a health finding."
+    },
+    {
+      "groupTitle": "Reference build context",
+      "item": "GRCh38 coordinate context",
+      "brandName": "",
+      "geneticAnalysis": "GRCh38 reference-build context is available for the selected lookup, while alternate-build conversion and remapping outputs are not supplied.",
+      "genes": [
+        "reference genome coordinate context"
+      ],
+      "sourceLabel": "NCBI Variation Services / SPDI; Ensembl REST",
+      "sourceIds": [
+        "ncbi-variation-services-spdi",
+        "ensembl-rest-api"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The report can name the supplied build context, but health screening or clinical interpretation requires exact supplied outputs and cannot be inferred from the fixture."
+    },
+    {
+      "groupTitle": "Health-scan output availability",
+      "item": "Disease screening and health-scan output unavailable",
+      "brandName": "",
+      "geneticAnalysis": "disease screening, risk scoring, carrier status, pathogenicity classification, clinical significance, screening recommendations, clinical sensitivity, all-clear reassurance, and authenticated sample-report rows unavailable in this fixture",
+      "genes": [
+        "health-scan screening output"
+      ],
+      "sourceLabel": "ClinVar; NIH Genetic Testing Registry; GWAS Catalog; MedlinePlus Genetics",
+      "sourceIds": [
+        "ncbi-clinvar",
+        "ncbi-genetic-testing-registry",
+        "ebi-gwas-catalog",
+        "ensembl-vep"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This local run can explain the boundary of a health scan, but it cannot diagnose, estimate disease risk, screen for disease, report carrier status, classify pathogenicity, or say everything is clear."
+    }
+  ],
+  "utilityContext": {
+    "plainEnglishMeaning": "This result is a health-scan boundary report. It explains supplied public lookup context and explicitly marks missing screening, clinical, and authenticated sample outputs unavailable.",
+    "unsupportedClaims": [
+      "diagnosis",
+      "disease-risk estimate",
+      "carrier status",
+      "pathogenicity classification",
+      "clinical significance claim",
+      "screening result",
+      "all-clear reassurance",
+      "clinical sensitivity",
+      "medication response",
+      "screening or treatment recommendation"
+    ]
+  },
+  "references": [
+    {
+      "id": "ensembl-vep",
+      "title": "Ensembl Variant Effect Predictor"
+    },
+    {
+      "id": "ensembl-variant-consequences",
+      "title": "Ensembl Variation: calculated variant consequences"
+    },
+    {
+      "id": "ensembl-rest-api",
+      "title": "Ensembl REST API endpoints"
+    },
+    {
+      "id": "sequence-ontology",
+      "title": "Sequence Ontology"
+    },
+    {
+      "id": "ncbi-dbsnp",
+      "title": "NCBI dbSNP"
+    },
+    {
+      "id": "ncbi-clinvar",
+      "title": "NCBI ClinVar"
+    },
+    {
+      "id": "ncbi-variation-services-spdi",
+      "title": "NCBI Variation Services / SPDI"
+    },
+    {
+      "id": "ncbi-genetic-testing-registry",
+      "title": "NIH Genetic Testing Registry"
+    },
+    {
+      "id": "international-genome-sample-resource",
+      "title": "International Genome Sample Resource / 1000 Genomes"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "bioinformatics-public-variant-rs6265",
+        "gene": "BDNF",
+        "observedValue": "selected public variant identifier available for lookup and annotation context; no trait, disease, or clinical interpretation supplied",
+        "matchStatus": "summarized"
+      },
+      {
+        "inputId": "bioinformatics-reference-build-context",
+        "gene": "reference genome coordinate context",
+        "observedValue": "GRCh38 coordinate context available for selected lookup; alternate build, liftover path, remapping evidence, and service output unavailable",
+        "matchStatus": "summarized"
+      },
+      {
+        "inputId": "health-scan-screening-output-unavailable",
+        "gene": "health-scan screening output",
+        "observedValue": "disease screening, risk scoring, carrier status, pathogenicity classification, clinical significance, screening recommendations, clinical sensitivity, all-clear reassurance, and authenticated sample-report rows unavailable in this fixture",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated Sequencing.com sample report rows",
+      "Health-scan service output tables and resource-version metadata",
+      "Disease-screening model, clinical classification, carrier-status model, and all-clear validation evidence",
+      "disease screening, risk scoring, carrier status, pathogenicity classification, clinical significance, screening recommendations, clinical sensitivity, all-clear reassurance, and authenticated sample-report rows unavailable in this fixture"
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated disease probability, screening sensitivity, pathogenicity, carrier-status, or clinical-actionability model is supplied for this local package.",
+      "The selected rows support utility context only and cannot be treated as health-screening output."
+    ],
+    "limitations": [
+      "This validation result uses selected derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
+      "The package does not emit complete SNP tables, sequencing files, alignment files, or clinical screening output files.",
+      "The package does not diagnose disease, estimate disease risk, classify pathogenicity, report carrier status, reassure that no health findings exist, infer medication response, or recommend screening, testing, treatment, diet, supplements, or lifestyle changes."
+    ]
+  }
+}

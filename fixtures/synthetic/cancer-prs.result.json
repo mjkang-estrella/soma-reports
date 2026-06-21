@@ -1,0 +1,130 @@
+{
+  "reportOverview": {
+    "reportTitle": "Cancer PRS",
+    "inputManifestHash": "sha256:synthetic-cancer-prs-cancer-boundary-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "Validated pathogenic-variant screen, calibrated cancer PRS, ancestry applicability metadata, family history, tumor testing, clinical screening history, and prevention-plan context are unavailable.",
+      "This result is not a diagnosis, personal cancer-risk estimate, carrier-status result, screening recommendation, prevention plan, medication recommendation, surgery recommendation, treatment instruction, or actionability claim."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Condition risk model availability",
+      "item": "cancer-prs-model-unavailable",
+      "brandName": "",
+      "geneticAnalysis": "Cancer PRS cannot emit a personal risk estimate from this local fixture because the validated model inputs are unavailable.",
+      "genes": [
+        "Cancer PRS model"
+      ],
+      "sourceLabel": "NCI / NHGRI / GWAS / FDA context",
+      "sourceIds": [
+        "nci-cancer-genetic-testing",
+        "nhgri-polygenic-risk-scores",
+        "ebi-gwas-catalog",
+        "fda-direct-to-consumer-tests"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This row is an availability statement, not a diagnosis, carrier-status result, risk score, screening recommendation, prevention plan, or treatment instruction."
+    },
+    {
+      "groupTitle": "Clinical context availability",
+      "item": "cancer-prs-clinical-context-unavailable",
+      "brandName": "",
+      "geneticAnalysis": "Cancer PRS cannot interpret clinical context because symptoms, screening, family history, tumor testing, and clinician interpretation are unavailable.",
+      "genes": [
+        "cancer polygenic-risk-score clinical context"
+      ],
+      "sourceLabel": "CDC / MedlinePlus / FDA context",
+      "sourceIds": [
+        "cdc-genetic-testing",
+        "medlineplus-genetics",
+        "medlineplus-complex-disorders",
+        "fda-direct-to-consumer-tests"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "Personal interpretation needs validated testing scope, clinical history, family history, screening context, ancestry applicability, and qualified professional review."
+    }
+  ],
+  "conditionRiskContext": {
+    "plainEnglishMeaning": "Cancer PRS is currently a boundary report: it can document what evidence is available and what is missing, but it cannot estimate personal cancer risk or make health decisions.",
+    "unsupportedClaims": [
+      "Cancer diagnosis or all-clear result",
+      "Personal cancer-risk estimate or calibrated PRS result",
+      "Carrier-status or pathogenic-variant classification",
+      "Screening, prevention, medication, surgery, treatment, or lifestyle instructions",
+      "Replacement for genetic counseling or clinician review"
+    ],
+    "professionalReview": "Use a qualified clinician or genetic counselor for cancer-risk interpretation, especially when there is personal history, family history, symptoms, abnormal screening, or a known familial variant."
+  },
+  "practicalNextSteps": {
+    "professionalReview": [
+      "Do not use this local fixture to change screening, prevention, medication, surgery, or treatment decisions.",
+      "Bring family history, personal history, prior genetic testing, screening results, and ancestry context to a clinician or genetic counselor if reviewing cancer risk.",
+      "Treat missing model rows as unavailable, not as low risk or reassuring results."
+    ]
+  },
+  "references": [
+    {
+      "id": "cdc-genetic-testing",
+      "title": "CDC Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetics",
+      "title": "MedlinePlus Genetics"
+    },
+    {
+      "id": "medlineplus-complex-disorders",
+      "title": "MedlinePlus Genetics: complex disorders"
+    },
+    {
+      "id": "fda-direct-to-consumer-tests",
+      "title": "FDA Direct-to-Consumer Tests"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    },
+    {
+      "id": "nci-cancer-genetic-testing",
+      "title": "NCI Genetic Testing for Inherited Cancer Risk"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "cancer-prs-model-unavailable",
+        "gene": "Cancer PRS model",
+        "observedValue": "validated pathogenic-variant screen, calibrated cancer PRS, ancestry applicability metadata, age, sex where relevant, personal cancer history, family history, tumor testing, clinical screening history, prevention-plan context, and authenticated sample-report rows unavailable in this fixture",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "cancer-prs-clinical-context-unavailable",
+        "gene": "cancer polygenic-risk-score clinical context",
+        "observedValue": "clinical diagnosis, symptoms, screening findings, family history, tumor testing, treatment history, and clinician interpretation unavailable in this fixture",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated Sequencing.com sample report sections and exact rows",
+      "Validated pathogenic-variant screen or externally supplied classification",
+      "Calibrated cancer PRS with ancestry applicability and validation metadata",
+      "Age, sex where relevant, family history, personal cancer history, symptoms, tumor testing, screening history, and clinician interpretation",
+      "validated pathogenic-variant screen, calibrated cancer PRS, ancestry applicability metadata, age, sex where relevant, personal cancer history, family history, tumor testing, clinical screening history, prevention-plan context, and authenticated sample-report rows unavailable in this fixture; clinical diagnosis, symptoms, screening findings, family history, tumor testing, treatment history, and clinician interpretation unavailable in this fixture"
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated cancer-risk, carrier-status, screening-benefit, prevention-benefit, or treatment-response probability model is supplied for this local package.",
+      "Cancer-related interpretation depends on test scope, variant classification, family history, clinical history, ancestry applicability, screening context, and qualified review."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
+      "The report is educational and does not provide diagnosis, personal risk estimation, carrier-status classification, screening advice, prevention advice, medication advice, surgery advice, treatment advice, or actionability.",
+      "Unavailable model rows should never be interpreted as low risk, no risk, or an all-clear result."
+    ]
+  }
+}

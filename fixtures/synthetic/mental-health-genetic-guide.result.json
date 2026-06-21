@@ -1,0 +1,422 @@
+{
+  "reportOverview": {
+    "reportTitle": "Mental Health Genetic Guide",
+    "inputManifestHash": "sha256:synthetic-mental-health-genetic-guide-pgx-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated marketplace detail-page extraction is not available yet.",
+      "Medication list, indication, dose, treatment history, psychiatric diagnosis, symptoms, current mental state, suicidality assessment, clinician review, phenotype confidence, and medication-decision context are not supplied.",
+      "Expanded user-specific psychiatric medication PGx coverage for all sample-table genes is unavailable unless supplied by a validated local PGx caller."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Antidepressants",
+      "item": "Moclobemide",
+      "brandName": "Aurorix",
+      "geneticAnalysis": "Increased genetic risk of adverse reaction",
+      "description": "The public Mental Health Genetic Guide sample row appears in the antidepressants section with CYP2C19 and Swissmedic source labeling.",
+      "genes": [
+        "CYP2C19"
+      ],
+      "sourceLabel": "Swissmedic",
+      "sourceIds": [
+        "mental-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Moclobemide. Use this as Mental Health Genetic Guide output-format evidence only; it is not a local psychiatric diagnosis, current mental-state assessment, medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Antidepressants",
+      "item": "Atomoxetine",
+      "brandName": "Strattera",
+      "geneticAnalysis": "CYP2D6: Normal metabolizers of atomoxetine have a lower likelihood of response as compared to poor metabolizers. This is associated with increased discontinuation due to lack of efficacy as compared to poor metabolizers.",
+      "description": "The sample row shows a CPIC-labeled CYP2D6 antidepressant/ADHD medication result with a multi-line narrative result field.",
+      "genes": [
+        "CYP2D6"
+      ],
+      "sourceLabel": "CPIC",
+      "sourceIds": [
+        "mental-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Atomoxetine. Use this as Mental Health Genetic Guide output-format evidence only; it is not a local psychiatric diagnosis, current mental-state assessment, medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Antidepressants",
+      "item": "Paroxetine",
+      "brandName": "Paxil",
+      "geneticAnalysis": "CYP2D6: Normal metabolism of paroxetine to less active compounds. Paroxetine-associated phenoconversion of normal metabolizers to intermediate or poor metabolizers due to CYP2D6 autoinhibition may occur and is dose-dependent and greater at steady state concentrations.",
+      "description": "The sample row shows a CPIC-labeled CYP2D6 antidepressant result for paroxetine.",
+      "genes": [
+        "CYP2D6"
+      ],
+      "sourceLabel": "CPIC",
+      "sourceIds": [
+        "mental-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Paroxetine. Use this as Mental Health Genetic Guide output-format evidence only; it is not a local psychiatric diagnosis, current mental-state assessment, medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Antidepressants",
+      "item": "Sertraline",
+      "brandName": "Zoloft",
+      "geneticAnalysis": "CYP2B6: Small increase in metabolism of sertraline to less active compounds when compared to CYP2B6 normal metabolizers. CYP2C19: Reduced metabolism of sertraline to less active compounds when compared to CYP2C19 normal metabolizers.",
+      "description": "The sample row shows a CPIC-labeled multi-gene antidepressant result with CYP2B6 and CYP2C19 gene columns.",
+      "genes": [
+        "CYP2B6",
+        "CYP2C19"
+      ],
+      "sourceLabel": "CPIC",
+      "sourceIds": [
+        "mental-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Sertraline. Use this as Mental Health Genetic Guide output-format evidence only; it is not a local psychiatric diagnosis, current mental-state assessment, medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Antidepressants",
+      "item": "Citalopram",
+      "brandName": "Celexa",
+      "geneticAnalysis": "CYP2C19: Reduced metabolism when compared to CYP2C19 normal metabolizers. Higher plasma concentrations may increase the probability of side effects.",
+      "description": "The sample row shows a CPIC-labeled CYP2C19 antidepressant result with probability wording that must remain sample-row wording unless calibrated local evidence is supplied.",
+      "genes": [
+        "CYP2C19"
+      ],
+      "sourceLabel": "CPIC",
+      "sourceIds": [
+        "mental-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Citalopram. Use this as Mental Health Genetic Guide output-format evidence only; it is not a local psychiatric diagnosis, current mental-state assessment, medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Antidepressants",
+      "item": "Tianeptine",
+      "brandName": "Stablon",
+      "geneticAnalysis": "OPRM1: Increased risk of suicidal ideation in people with major depressive disorder",
+      "description": "The sample row shows an Article-labeled OPRM1 antidepressant result; local output must not infer suicidality or current mental state.",
+      "genes": [
+        "OPRM1"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "mental-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Tianeptine. Use this as Mental Health Genetic Guide output-format evidence only; it is not a local psychiatric diagnosis, current mental-state assessment, medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Antidepressants",
+      "item": "Tranylcypromine",
+      "brandName": "Parnate",
+      "geneticAnalysis": "Increased genetic risk of adverse reaction",
+      "description": "The sample row shows an Article-labeled CYP2C19 antidepressant result in a continuation antidepressants section.",
+      "genes": [
+        "CYP2C19"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "mental-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Tranylcypromine. Use this as Mental Health Genetic Guide output-format evidence only; it is not a local psychiatric diagnosis, current mental-state assessment, medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Antipsychotics",
+      "item": "Brexpiprazole",
+      "brandName": "Rexulti",
+      "geneticAnalysis": "The guideline does not provide a description of the impact of a normal metabolizer phenotype on brexpiprazole.",
+      "description": "The sample row shows a DPWG-labeled CYP2D6 antipsychotic result with a guideline-description-unavailable statement.",
+      "genes": [
+        "CYP2D6"
+      ],
+      "sourceLabel": "DPWG",
+      "sourceIds": [
+        "mental-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Brexpiprazole. Use this as Mental Health Genetic Guide output-format evidence only; it is not a local psychiatric diagnosis, current mental-state assessment, medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Antipsychotics",
+      "item": "Quetiapine",
+      "brandName": "Quetiapine",
+      "geneticAnalysis": "The guideline does not provide a description of the impact of a normal metabolizer phenotype on quetiapine.",
+      "description": "The sample row shows a DPWG-labeled CYP3A4 antipsychotic result.",
+      "genes": [
+        "CYP3A4"
+      ],
+      "sourceLabel": "DPWG",
+      "sourceIds": [
+        "mental-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Quetiapine. Use this as Mental Health Genetic Guide output-format evidence only; it is not a local psychiatric diagnosis, current mental-state assessment, medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Antipsychotics",
+      "item": "Aripiprazole Lauroxil",
+      "brandName": "Aristada",
+      "geneticAnalysis": "No increased genetic risk detected",
+      "description": "The sample row shows an FDA-labeled CYP2D6 antipsychotic result.",
+      "genes": [
+        "CYP2D6"
+      ],
+      "sourceLabel": "FDA",
+      "sourceIds": [
+        "mental-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Aripiprazole Lauroxil. Use this as Mental Health Genetic Guide output-format evidence only; it is not a local psychiatric diagnosis, current mental-state assessment, medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Drugs for the treatment of addiction",
+      "item": "Acamprosate",
+      "brandName": "Campral",
+      "geneticAnalysis": "No increased genetic risk detected",
+      "description": "The sample row shows an Article-labeled GRIN2B result for a drug used in addiction treatment.",
+      "genes": [
+        "GRIN2B"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "mental-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Acamprosate. Use this as Mental Health Genetic Guide output-format evidence only; it is not a local psychiatric diagnosis, current mental-state assessment, medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Drugs for the treatment of addiction",
+      "item": "Lofexidine",
+      "brandName": "Lucemyra",
+      "geneticAnalysis": "No increased genetic risk detected",
+      "description": "The sample row shows an FDA-labeled CYP2D6 result for a drug used in addiction treatment.",
+      "genes": [
+        "CYP2D6"
+      ],
+      "sourceLabel": "FDA",
+      "sourceIds": [
+        "mental-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Lofexidine. Use this as Mental Health Genetic Guide output-format evidence only; it is not a local psychiatric diagnosis, current mental-state assessment, medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Tranquilizers (anxiolytics)",
+      "item": "Diazepam",
+      "brandName": "Valium",
+      "geneticAnalysis": "No increased genetic risk detected",
+      "description": "The sample row shows an FDA-labeled CYP2C19 tranquilizer/anxiolytic result.",
+      "genes": [
+        "CYP2C19"
+      ],
+      "sourceLabel": "FDA",
+      "sourceIds": [
+        "mental-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Diazepam. Use this as Mental Health Genetic Guide output-format evidence only; it is not a local psychiatric diagnosis, current mental-state assessment, medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Tranquilizers (anxiolytics)",
+      "item": "Zolpidem",
+      "brandName": "Ambien",
+      "geneticAnalysis": "Increased genetic risk of adverse reaction",
+      "description": "The sample row shows an Article-labeled CYP2C19 tranquilizer/anxiolytic result.",
+      "genes": [
+        "CYP2C19"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "mental-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Zolpidem. Use this as Mental Health Genetic Guide output-format evidence only; it is not a local psychiatric diagnosis, current mental-state assessment, medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    },
+    {
+      "groupTitle": "Tranquilizers (anxiolytics)",
+      "item": "Nitrazepam",
+      "brandName": "Mogadon",
+      "geneticAnalysis": "No increased genetic risk detected",
+      "description": "The sample row shows an Article-labeled CYP3A4 tranquilizer/anxiolytic result in a continuation section.",
+      "genes": [
+        "CYP3A4"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "mental-health-genetic-guide-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report row for Nitrazepam. Use this as Mental Health Genetic Guide output-format evidence only; it is not a local psychiatric diagnosis, current mental-state assessment, medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
+    }
+  ],
+  "practicalNextSteps": [
+    "Review any medication questions with a clinician or pharmacist who knows the full medication and mental-health context.",
+    "Use the appendix to see which pharmacogene and clinical-context inputs were unavailable.",
+    "Do not use sample rows or derived PGx evidence alone to start, stop, switch, rank, or dose medication."
+  ],
+  "references": [
+    {
+      "id": "cpic",
+      "title": "Clinical Pharmacogenetics Implementation Consortium",
+      "sourceType": "guideline",
+      "evidenceLevel": "background"
+    },
+    {
+      "id": "pharmcat",
+      "title": "PharmCAT",
+      "sourceType": "implementation_resource",
+      "evidenceLevel": "implementation_background"
+    },
+    {
+      "id": "pharmvar",
+      "title": "PharmVar",
+      "sourceType": "database",
+      "evidenceLevel": "database_background"
+    },
+    {
+      "id": "fda-pgx-associations",
+      "title": "FDA Table of Pharmacogenetic Associations",
+      "sourceType": "regulatory_resource",
+      "evidenceLevel": "regulatory_background"
+    },
+    {
+      "id": "fda-pgx-biomarkers-labeling",
+      "title": "FDA Table of Pharmacogenomic Biomarkers in Drug Labeling",
+      "sourceType": "regulatory_resource",
+      "evidenceLevel": "regulatory_background"
+    },
+    {
+      "id": "medlineplus-pharmacogenetic-tests",
+      "title": "MedlinePlus Pharmacogenetic Tests",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
+    },
+    {
+      "id": "mental-health-genetic-guide-sample-pdf",
+      "title": "Mental Health Genetic Guide sample report",
+      "sourceType": "mock_report",
+      "evidenceLevel": "observed_output_structure"
+    },
+    {
+      "id": "cdc-pharmacogenomics",
+      "title": "CDC Pharmacogenomics",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
+    },
+    {
+      "id": "nhgri-pharmacogenomics",
+      "title": "NHGRI Pharmacogenomics Fact Sheet",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "effect": "One increased function allele and one normal function allele",
+        "extractionStatus": "direct",
+        "gene": "CYP2B6",
+        "genotype": "*1/*4",
+        "phenotype": "Rapid Metabolizer",
+        "sortOrder": 1,
+        "tier": "Genes with High-Impact Clinical Significance",
+        "variantId": "star allele diplotype"
+      },
+      {
+        "effect": "One no function allele and one normal function allele",
+        "extractionStatus": "direct",
+        "gene": "CYP2C19",
+        "genotype": "*1/*2",
+        "phenotype": "Intermediate Metabolizer",
+        "sortOrder": 2,
+        "tier": "Genes with High-Impact Clinical Significance",
+        "variantId": "star allele diplotype"
+      },
+      {
+        "effect": "One decreased function allele and one normal function allele",
+        "extractionStatus": "direct",
+        "gene": "CYP2D6",
+        "genotype": "*1/*41",
+        "phenotype": "Normal Metabolizer",
+        "sortOrder": 3,
+        "tier": "Genes with High-Impact Clinical Significance",
+        "variantId": "star allele diplotype"
+      },
+      {
+        "effect": "Two normal function alleles",
+        "extractionStatus": "direct",
+        "gene": "CYP3A4",
+        "genotype": "*1/*1",
+        "phenotype": "Normal Metabolizer",
+        "sortOrder": 4,
+        "tier": "Genes with High-Impact Clinical Significance",
+        "variantId": "star allele diplotype"
+      },
+      {
+        "effect": "Synonymous and missense variant rows are visible in the sample appendix.",
+        "extractionStatus": "direct",
+        "gene": "ABCB1",
+        "genotype": "rs1045642 G/G; rs1128503 G/G; rs2032582 C/C",
+        "phenotype": "Altered function",
+        "sortOrder": 5,
+        "tier": "Genes with Exploratory Functional Assessment",
+        "variantId": "rs1045642; rs1128503; rs2032582"
+      },
+      {
+        "effect": "Reference and intron variant rows are visible in the sample appendix.",
+        "extractionStatus": "direct",
+        "gene": "CYP1A2",
+        "genotype": "rs2069514 G/G; rs762551 A/A",
+        "phenotype": "Altered function",
+        "sortOrder": 6,
+        "tier": "Genes with Exploratory Functional Assessment",
+        "variantId": "rs2069514; rs762551"
+      },
+      {
+        "effect": "Reference row is visible in the sample appendix.",
+        "extractionStatus": "direct",
+        "gene": "OPRM1",
+        "genotype": "A/A",
+        "phenotype": "Altered function",
+        "sortOrder": 7,
+        "tier": "Genes with Exploratory Functional Assessment",
+        "variantId": "rs1799971"
+      },
+      {
+        "effect": "The public sample appendix lists GRIN2B and NFKB1 as no-variant rows.",
+        "extractionStatus": "direct",
+        "gene": "GRIN2B/NFKB1",
+        "genotype": "No variants found that alter gene function",
+        "phenotype": "Normal function",
+        "sortOrder": 8,
+        "tier": "Genes with Exploratory Functional Assessment",
+        "variantId": "no variants found"
+      }
+    ],
+    "probabilities": [
+      {
+        "label": "Calibrated personal probability",
+        "value": null,
+        "calibrationStatus": "not_calibrated_for_this_local_fixture",
+        "note": "The deterministic report body does not quantify medication response, adverse reaction, diagnosis, treatment response, prognosis, or dosing probabilities."
+      }
+    ],
+    "uncertainty": [
+      "Sample-report rows are output-format evidence, not local clinical decisions.",
+      "Derived pharmacogene calls do not include the full medication, diagnosis, treatment, ancestry, assay, and clinician-reviewed context needed for medication decisions.",
+      "Missing inputs are listed explicitly instead of being inferred."
+    ],
+    "missingInputs": [
+      "Authenticated marketplace detail-page extraction is not available yet.",
+      "Medication list, indication, dose, treatment history, psychiatric diagnosis, symptoms, current mental state, suicidality assessment, clinician review, phenotype confidence, and medication-decision context are not supplied.",
+      "Expanded user-specific psychiatric medication PGx coverage for all sample-table genes is unavailable unless supplied by a validated local PGx caller."
+    ],
+    "limitations": [
+      "This local artifact uses public sample-report structure and synthetic derived evidence for validation.",
+      "It does not assess diagnosis, symptoms, current mental state, suicidality, treatment response, medication suitability, safety, efficacy, or dosing.",
+      "It does not include private variants, full CYP2D6 copy-number resolution, validated clinical medication review, or clinician interpretation."
+    ]
+  }
+}

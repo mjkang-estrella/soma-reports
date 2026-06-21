@@ -1,0 +1,125 @@
+{
+  "consumerTone": "plain English; educational; pharmacist or clinician review required for medication decisions",
+  "datasetId": "synthetic-medication-drug-response-pgx-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "CYP2C19",
+      "inputId": "CYP2C19-star-allele",
+      "matchStatus": "observed",
+      "observedValue": "intermediate metabolizer context",
+      "sourceArtifact": "synthetic-medication-drug-response-pgx-context-v1",
+      "sourceFile": "synthetic-medication-drug-response-pgx-context-v1.json",
+      "starAllele": "*1/*2"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "CYP2D6",
+      "inputId": "CYP2D6-star-allele",
+      "matchStatus": "observed",
+      "observedValue": "intermediate metabolizer context",
+      "sourceArtifact": "synthetic-medication-drug-response-pgx-context-v1",
+      "sourceFile": "synthetic-medication-drug-response-pgx-context-v1.json",
+      "starAllele": "*1/*4"
+    },
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "SLCO1B1",
+      "inputId": "SLCO1B1-rs4149056",
+      "matchStatus": "observed",
+      "observedValue": "TC",
+      "rsid": "rs4149056",
+      "sourceArtifact": "synthetic-medication-drug-response-pgx-context-v1",
+      "sourceFile": "synthetic-medication-drug-response-pgx-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-pharmacogene-calls",
+    "hash": "sha256:synthetic-medication-drug-response-pgx-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived PGx calls for medication-drug-response validation"
+  },
+  "missingInputPolicy": "Report unavailable pharmacogenes explicitly; do not infer missing alleles, copy-number calls, or HLA calls.",
+  "packageSlug": "medication-drug-response",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "background",
+      "id": "cpic",
+      "sourceType": "guideline",
+      "title": "Clinical Pharmacogenetics Implementation Consortium",
+      "usedFor": [
+        "gene_drug_context",
+        "clinician_review_language"
+      ]
+    },
+    {
+      "evidenceLevel": "implementation_background",
+      "id": "pharmcat",
+      "sourceType": "implementation_resource",
+      "title": "PharmCAT",
+      "usedFor": [
+        "local_pgx_runner",
+        "missing_call_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "pharmvar",
+      "sourceType": "database",
+      "title": "PharmVar",
+      "usedFor": [
+        "star_allele_nomenclature"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-pgx-associations",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Table of Pharmacogenetic Associations",
+      "usedFor": [
+        "association_context",
+        "safety_language"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-pgx-biomarkers-labeling",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Table of Pharmacogenomic Biomarkers in Drug Labeling",
+      "usedFor": [
+        "labeling_context"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-pharmacogenetic-tests",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Pharmacogenetic Tests",
+      "usedFor": [
+        "plain_english_context",
+        "provider_review_language"
+      ]
+    },
+    {
+      "evidenceLevel": "observed_output_structure",
+      "id": "medication-drug-response-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Medication and Drug Response sample report",
+      "usedFor": [
+        "sample_rows",
+        "drug_response_summary",
+        "formal_fields",
+        "description_column"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer medication-response context using derived pharmacogene calls and supplied PGx references for the Draft marketplace entry."
+}

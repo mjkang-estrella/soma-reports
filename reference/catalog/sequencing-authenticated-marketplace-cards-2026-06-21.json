@@ -1,0 +1,1731 @@
+{
+  "schema": "soma-reports.sequencing-authenticated-marketplace-cards.v1",
+  "capturedAt": "2026-06-21T12:32:01.035Z",
+  "source": "in-app browser logged-in sequencing.com/marketplace DOM card extraction via visible pagination controls",
+  "pageCount": 3,
+  "totalCards": 164,
+  "uniqueCards": 87,
+  "pages": [
+    {
+      "cardCount": 75,
+      "cards": [
+        {
+          "buttonText": "Get App",
+          "href": "https://sequencing.com/marketplace/next-gen-disease-screen",
+          "index": 0,
+          "page": 1,
+          "priceLabel": "Free",
+          "provider": "Sequencing.com",
+          "text": "Next-Gen Disease ScreenDeveloped by Sequencing.comFreeGet App",
+          "title": "Next-Gen Disease Screen"
+        },
+        {
+          "buttonText": "Get App",
+          "href": "https://sequencing.com/marketplace/genome-explorer-dna-data-search",
+          "index": 1,
+          "page": 1,
+          "priceLabel": "Free",
+          "provider": "Sequencing.com",
+          "text": "Genome Explorer v3Developed by Sequencing.comFreeGet App",
+          "title": "Genome Explorer v3"
+        },
+        {
+          "buttonText": "Get App",
+          "href": "https://sequencing.com/marketplace/health-scan",
+          "index": 2,
+          "page": 1,
+          "priceLabel": "Included withPremium & Pro",
+          "provider": "Sequencing.com",
+          "text": "Health ScanDeveloped by Sequencing.comIncluded withPremium & ProGet App",
+          "title": "Health Scan"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/ai-reports",
+          "index": 3,
+          "page": 1,
+          "priceLabel": "Included withPremium & Pro",
+          "provider": "Sequencing.com",
+          "text": "AI ReportsDeveloped by Sequencing.comIncluded withPremium & ProGet Report",
+          "title": "AI Reports"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/wellness-genetic-guide",
+          "index": 4,
+          "page": 1,
+          "priceLabel": "$79",
+          "provider": "Quantum Genomics | Golden Gate Gene",
+          "text": "Wellness Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report",
+          "title": "Wellness Genetic Guide"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/heart-health-genetic-guide",
+          "index": 5,
+          "page": 1,
+          "priceLabel": "$79",
+          "provider": "Quantum Genomics | Golden Gate Gene",
+          "text": "Heart Health Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report",
+          "title": "Heart Health Genetic Guide"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/oncology-genetic-guide",
+          "index": 6,
+          "page": 1,
+          "priceLabel": "$79",
+          "provider": "Quantum Genomics | Golden Gate Gene",
+          "text": "Oncology Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report",
+          "title": "Oncology Genetic Guide"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/mental-health-genetic-guide",
+          "index": 7,
+          "page": 1,
+          "priceLabel": "$79",
+          "provider": "Quantum Genomics | Golden Gate Gene",
+          "text": "Mental Health Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report",
+          "title": "Mental Health Genetic Guide"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/personalized-vitamins-and-supplements",
+          "index": 8,
+          "page": 1,
+          "priceLabel": "$29",
+          "provider": "GenoPalate",
+          "text": "Personalized Vitamins and SupplementsDeveloped by GenoPalate$29Get Report",
+          "title": "Personalized Vitamins and Supplements"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/strategene",
+          "index": 9,
+          "page": 1,
+          "priceLabel": "$95",
+          "provider": "Seeking Health",
+          "text": "StrateGeneDeveloped by Seeking Health$95Get Report",
+          "title": "StrateGene"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/detox-pathway",
+          "index": 10,
+          "page": 1,
+          "priceLabel": "$89",
+          "provider": "SelfDecode",
+          "text": "Detox PathwayDeveloped by SelfDecode$89Get Report",
+          "title": "Detox Pathway"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/ozempic-glp-1-agonists-genetic-report",
+          "index": 11,
+          "page": 1,
+          "priceLabel": "$99",
+          "provider": "Golden Gate Gene",
+          "text": "Ozempic and GLP-1 AgonistsDeveloped by Golden Gate Gene$99Get Report",
+          "title": "Ozempic and GLP-1 Agonists"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/chronic-fatigue-dna-health-report",
+          "index": 12,
+          "page": 1,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Chronic Fatigue DNA Health ReportDeveloped by SelfDecode$59Get Report",
+          "title": "Chronic Fatigue DNA Health Report"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/gut-health",
+          "index": 13,
+          "page": 1,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Gut HealthDeveloped by SelfDecode$59Get Report",
+          "title": "Gut Health"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/chronic-pain-dna-report",
+          "index": 14,
+          "page": 1,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Chronic Pain DNA ReportDeveloped by SelfDecode$59Get Report",
+          "title": "Chronic Pain DNA Report"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/my-heart-health",
+          "index": 15,
+          "page": 1,
+          "priceLabel": "$49",
+          "provider": "GenoPalate",
+          "text": "My Heart HealthDeveloped by GenoPalate$49Get Report",
+          "title": "My Heart Health"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/medications-pgx-complete-dna-guide",
+          "index": 16,
+          "page": 1,
+          "priceLabel": "$129",
+          "provider": "Quantum Genomics | Golden Gate Gene",
+          "text": "Medications PGx: Complete DNA GuideDeveloped by Quantum Genomics | Golden Gate Gene$129Get Report",
+          "title": "Medications PGx: Complete DNA Guide"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/mthfr-dna-wellness-report",
+          "index": 17,
+          "page": 1,
+          "priceLabel": "$29",
+          "provider": "SelfDecode",
+          "text": "MTHFR DNA Wellness ReportDeveloped by SelfDecode$29Get Report",
+          "title": "MTHFR DNA Wellness Report"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/medication-pharmacogenomics-dna-report",
+          "index": 18,
+          "page": 1,
+          "priceLabel": "$59",
+          "provider": "Complete Genome Science",
+          "text": "Medication & Drug ResponseDeveloped by Complete Genome Science$59Get Report",
+          "title": "Medication & Drug Response"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/cannabis-dna-health-report-genetic-analysis",
+          "index": 19,
+          "page": 1,
+          "priceLabel": "$29.99",
+          "provider": "Strain Genie",
+          "text": "Cannabis DNA Health ReportDeveloped by Strain Genie$29.99Get Report",
+          "title": "Cannabis DNA Health Report"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/inflammation-dna-analysis-wellness-genetic-report",
+          "index": 20,
+          "page": 1,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Inflammation And ImmunityDeveloped by SelfDecode$59Get Report",
+          "title": "Inflammation And Immunity"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/healthy-weight",
+          "index": 21,
+          "page": 1,
+          "priceLabel": "$69",
+          "provider": "GenoPalate",
+          "text": "Healthy WeightDeveloped by GenoPalate$69Get Report",
+          "title": "Healthy Weight"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/brain-mental-health-mood-dna-report",
+          "index": 22,
+          "page": 1,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Brain Health: Mental Health & MoodDeveloped by SelfDecode$59Get Report",
+          "title": "Brain Health: Mental Health & Mood"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/cardiovascular-dna-analysis-heart-health-genetic-report",
+          "index": 23,
+          "page": 1,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Cardiovascular HealthDeveloped by SelfDecode$59Get Report",
+          "title": "Cardiovascular Health"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/hormone-health-dna-report",
+          "index": 24,
+          "page": 1,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Hormone HealthDeveloped by SelfDecode$59Get Report",
+          "title": "Hormone Health"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/wellness-and-longevity",
+          "index": 25,
+          "page": 1,
+          "priceLabel": "$199",
+          "provider": "App MD",
+          "text": "Wellness and LongevityDeveloped by App MD$199Get Report",
+          "title": "Wellness and Longevity"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/respiratory-health-dna-report",
+          "index": 26,
+          "page": 1,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Respiratory Health DNA ReportDeveloped by SelfDecode$59Get Report",
+          "title": "Respiratory Health DNA Report"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/sleep-dna-analysis-wellness-report",
+          "index": 27,
+          "page": 1,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Sleep DNA WellnessDeveloped by SelfDecode$59Get Report",
+          "title": "Sleep DNA Wellness"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/healthcare-pro-genetic-report",
+          "index": 28,
+          "page": 1,
+          "priceLabel": "$199",
+          "provider": "App MD",
+          "text": "Healthcare ProDeveloped by App MD$199Get Report",
+          "title": "Healthcare Pro"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/carrier-status-rare-disease-genetic-report",
+          "index": 29,
+          "page": 1,
+          "priceLabel": "$29",
+          "provider": "Complete Genome Science",
+          "text": "Carrier StatusDeveloped by Complete Genome Science$29Get Report",
+          "title": "Carrier Status"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/my-personality-traits",
+          "index": 30,
+          "page": 1,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "My Personality TraitsDeveloped by SelfDecode$59Get Report",
+          "title": "My Personality Traits"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/female-sexual-reproductive-health-dna-report",
+          "index": 31,
+          "page": 1,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Female Sexual & Reproductive HealthDeveloped by SelfDecode$59Get Report",
+          "title": "Female Sexual & Reproductive Health"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/prevent-breast-cancer-dna-analysis-report",
+          "index": 32,
+          "page": 1,
+          "priceLabel": "$39",
+          "provider": "App MD",
+          "text": "Prevent Breast CancerDeveloped by App MD$39Get Report",
+          "title": "Prevent Breast Cancer"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/vitamins-dna-analysis-genetic-report",
+          "index": 33,
+          "page": 1,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Vitamins DNA Wellness ReportDeveloped by SelfDecode$59Get Report",
+          "title": "Vitamins DNA Wellness Report"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/genetic-detoxification-genevironment",
+          "index": 34,
+          "page": 1,
+          "priceLabel": "$89",
+          "provider": "GeneInformed",
+          "text": "Genetic DetoxificationDeveloped by GeneInformed$89Get Report",
+          "title": "Genetic Detoxification"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/empower",
+          "index": 35,
+          "page": 1,
+          "priceLabel": "$59",
+          "provider": "Toolbox Genomics",
+          "text": "EmpowerDeveloped by Toolbox Genomics$59Get Report",
+          "title": "Empower"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/genetic-test-for-iq-cognitive-function",
+          "index": 36,
+          "page": 1,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Cognitive FunctionDeveloped by SelfDecode$59Get Report",
+          "title": "Cognitive Function"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/melanoma-skin-cancer-dna-test-analysis",
+          "index": 37,
+          "page": 1,
+          "priceLabel": "$39",
+          "provider": "App MD",
+          "text": "Melanoma Skin Cancer PreventionDeveloped by App MD$39Get Report",
+          "title": "Melanoma Skin Cancer Prevention"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/athletic-performance",
+          "index": 38,
+          "page": 1,
+          "priceLabel": "Free",
+          "provider": "App MD",
+          "text": "Athletic PerformanceDeveloped by App MDFreeGet Report",
+          "title": "Athletic Performance"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/longevity-dna-test-wellness-report",
+          "index": 39,
+          "page": 1,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Enhanced LongevityDeveloped by SelfDecode$59Get Report",
+          "title": "Enhanced Longevity"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/apoe4-test-brain-health-genetic-analysis",
+          "index": 40,
+          "page": 1,
+          "priceLabel": "$39",
+          "provider": "SelfDecode",
+          "text": "Alzheimer’s Risk | APOE Gene AnalysisDeveloped by SelfDecode$39Get Report",
+          "title": "Alzheimer’s Risk | APOE Gene Analysis"
+        },
+        {
+          "buttonText": "Get App",
+          "href": "https://sequencing.com/marketplace/genetic-counseling",
+          "index": 41,
+          "page": 1,
+          "priceLabel": "$179",
+          "provider": "DNAVisit",
+          "text": "Genetic CounselingDeveloped by DNAVisit$179Get App",
+          "title": "Genetic Counseling"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/arthritis-prevention-dna-report",
+          "index": 42,
+          "page": 1,
+          "priceLabel": "$39",
+          "provider": "App MD",
+          "text": "Arthritis PreventionDeveloped by App MD$39Get Report",
+          "title": "Arthritis Prevention"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/genetic-test-traits",
+          "index": 43,
+          "page": 1,
+          "priceLabel": "$129",
+          "provider": "Complete Genome Science",
+          "text": "Inherited Traits Genetic AnalysisDeveloped by Complete Genome Science$129Get Report",
+          "title": "Inherited Traits Genetic Analysis"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/age-strength",
+          "index": 44,
+          "page": 1,
+          "priceLabel": "$39",
+          "provider": "GeneX",
+          "text": "Age with StrengthDeveloped by GeneX$39Get Report",
+          "title": "Age with Strength"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/genetic-testing-disease-risk",
+          "index": 45,
+          "page": 1,
+          "priceLabel": "$59",
+          "provider": "Complete Genome Science",
+          "text": "Disease Risk Genetic Test ReportDeveloped by Complete Genome Science$59Get Report",
+          "title": "Disease Risk Genetic Test Report"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/tbg-total-wellness",
+          "index": 46,
+          "page": 1,
+          "priceLabel": "$119",
+          "provider": "Toolbox Genomics",
+          "text": "TBG Total WellnessDeveloped by Toolbox Genomics$119Get Report",
+          "title": "TBG Total Wellness"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/healthy-heart-dna-analysis-genetic-report",
+          "index": 47,
+          "page": 1,
+          "priceLabel": "$39",
+          "provider": "App MD",
+          "text": "Healthy HeartDeveloped by App MD$39Get Report",
+          "title": "Healthy Heart"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/complete-genome-analysis",
+          "index": 48,
+          "page": 1,
+          "priceLabel": "$189",
+          "provider": "Complete Genome Science",
+          "text": "Complete Genome AnalysisDeveloped by Complete Genome Science$189Get Report",
+          "title": "Complete Genome Analysis"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/malignant-hyperthermia-genetic-testing",
+          "index": 49,
+          "page": 1,
+          "priceLabel": "$39",
+          "provider": "App MD",
+          "text": "Malignant HyperthermiaDeveloped by App MD$39Get Report",
+          "title": "Malignant Hyperthermia"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/prevent-sudden-death",
+          "index": 50,
+          "page": 1,
+          "priceLabel": "$39",
+          "provider": "App MD",
+          "text": "Prevent Sudden DeathDeveloped by App MD$39Get Report",
+          "title": "Prevent Sudden Death"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/blood-dna-analysis-report",
+          "index": 51,
+          "page": 1,
+          "priceLabel": "$19",
+          "provider": "Complete Genome Science",
+          "text": "Blood Traits and ConditionsDeveloped by Complete Genome Science$19Get Report",
+          "title": "Blood Traits and Conditions"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/will-aspirin-help",
+          "index": 52,
+          "page": 1,
+          "priceLabel": "$1",
+          "provider": "GeneX",
+          "text": "Will Aspirin Help?Developed by GeneX$1Get Report",
+          "title": "Will Aspirin Help?"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/promethease",
+          "index": 53,
+          "page": 1,
+          "priceLabel": "Free",
+          "provider": "River Road Bio",
+          "text": "PrometheaseDeveloped by River Road BioFreeGet Report",
+          "title": "Promethease"
+        },
+        {
+          "buttonText": "Get App",
+          "href": "https://sequencing.com/marketplace/genome-explorer-dna-data-search",
+          "index": 54,
+          "page": 1,
+          "priceLabel": "Free",
+          "provider": "Sequencing.com",
+          "text": "Genome Explorer v3Developed by Sequencing.comFreeGet App",
+          "title": "Genome Explorer v3"
+        },
+        {
+          "buttonText": "Get App",
+          "href": "https://sequencing.com/marketplace/health-scan",
+          "index": 55,
+          "page": 1,
+          "priceLabel": "Included withPremium & Pro",
+          "provider": "Sequencing.com",
+          "text": "Health ScanDeveloped by Sequencing.comIncluded withPremium & ProGet App",
+          "title": "Health Scan"
+        },
+        {
+          "buttonText": "Get App",
+          "href": "https://sequencing.com/marketplace/next-gen-disease-screen",
+          "index": 56,
+          "page": 1,
+          "priceLabel": "Free",
+          "provider": "Sequencing.com",
+          "text": "Next-Gen Disease ScreenDeveloped by Sequencing.comFreeGet App",
+          "title": "Next-Gen Disease Screen"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/ai-reports",
+          "index": 57,
+          "page": 1,
+          "priceLabel": "Included withPremium & Pro",
+          "provider": "Sequencing.com",
+          "text": "AI ReportsDeveloped by Sequencing.comIncluded withPremium & ProGet Report",
+          "title": "AI Reports"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/santa-and-me-app-dna-comparison",
+          "index": 58,
+          "page": 1,
+          "priceLabel": "Free",
+          "provider": "Sequencing.com",
+          "text": "Santa and Me | Compare Your DNA to St. NickDeveloped by Sequencing.comFreeGet Report",
+          "title": "Santa and Me | Compare Your DNA to St. Nick"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/dna-ancestry-genetic-genealogy-report",
+          "index": 59,
+          "page": 1,
+          "priceLabel": "$59",
+          "provider": "Complete Genome Science",
+          "text": "Genetic Ancestry with HaplogroupsDeveloped by Complete Genome Science$59Get Report",
+          "title": "Genetic Ancestry with Haplogroups"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/world-ancestry-report",
+          "index": 60,
+          "page": 1,
+          "priceLabel": "$79",
+          "provider": "Galatea Bio",
+          "text": "World Ancestry ReportDeveloped by Galatea Bio$79Get Report",
+          "title": "World Ancestry Report"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/ancestry-explorer",
+          "index": 61,
+          "page": 1,
+          "priceLabel": "$29",
+          "provider": "SelfDecode",
+          "text": "Ancestry ExplorerDeveloped by SelfDecode$29Get Report",
+          "title": "Ancestry Explorer"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/ancestry-genealogy-heritage",
+          "index": 62,
+          "page": 1,
+          "priceLabel": "$39",
+          "provider": "Eone-Diagnomics Genome Center",
+          "text": "DNA Ancestry and Genealogy‎ ReportDeveloped by Eone-Diagnomics Genome Center$39Get Report",
+          "title": "DNA Ancestry and Genealogy‎ Report"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/mitochondrial-ancestry",
+          "index": 63,
+          "page": 1,
+          "priceLabel": "$19",
+          "provider": "SelfDecode",
+          "text": "Mitochondrial AncestryDeveloped by SelfDecode$19Get Report",
+          "title": "Mitochondrial Ancestry"
+        },
+        {
+          "buttonText": "Get App",
+          "href": "https://sequencing.com/marketplace/map-my-genes-dna-ancestry-analysis",
+          "index": 64,
+          "page": 1,
+          "priceLabel": "$19.99",
+          "provider": "Genealogy Researchers",
+          "text": "Map My GenesDeveloped by Genealogy Researchers$19.99Get App",
+          "title": "Map My Genes"
+        },
+        {
+          "buttonText": "Get App",
+          "href": "https://sequencing.com/marketplace/map-my-genes-archaeology-edition",
+          "index": 65,
+          "page": 1,
+          "priceLabel": "$19.99",
+          "provider": "Genealogy Researchers",
+          "text": "Map My Genes Archaeology EditionDeveloped by Genealogy Researchers$19.99Get App",
+          "title": "Map My Genes Archaeology Edition"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/am-i-related-albert-einstein-dna",
+          "index": 66,
+          "page": 1,
+          "priceLabel": "Free",
+          "provider": "Complete Genome Science",
+          "text": "Am I An Einstein?Developed by Complete Genome ScienceFreeGet Report",
+          "title": "Am I An Einstein?"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/wellness-genetic-guide",
+          "index": 67,
+          "page": 1,
+          "priceLabel": "$79",
+          "provider": "Quantum Genomics | Golden Gate Gene",
+          "text": "Wellness Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report",
+          "title": "Wellness Genetic Guide"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/personalized-vitamins-and-supplements",
+          "index": 68,
+          "page": 1,
+          "priceLabel": "$29",
+          "provider": "GenoPalate",
+          "text": "Personalized Vitamins and SupplementsDeveloped by GenoPalate$29Get Report",
+          "title": "Personalized Vitamins and Supplements"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/my-heart-health",
+          "index": 69,
+          "page": 1,
+          "priceLabel": "$49",
+          "provider": "GenoPalate",
+          "text": "My Heart HealthDeveloped by GenoPalate$49Get Report",
+          "title": "My Heart Health"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/detox-pathway",
+          "index": 70,
+          "page": 1,
+          "priceLabel": "$89",
+          "provider": "SelfDecode",
+          "text": "Detox PathwayDeveloped by SelfDecode$89Get Report",
+          "title": "Detox Pathway"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/chronic-fatigue-dna-health-report",
+          "index": 71,
+          "page": 1,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Chronic Fatigue DNA Health ReportDeveloped by SelfDecode$59Get Report",
+          "title": "Chronic Fatigue DNA Health Report"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/dna-diet-personalized-weight-loss-app",
+          "index": 72,
+          "page": 1,
+          "priceLabel": "$59",
+          "provider": "GeneInformed",
+          "text": "DNA DietDeveloped by GeneInformed$59Get Report",
+          "title": "DNA Diet"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/healthy-weight",
+          "index": 73,
+          "page": 1,
+          "priceLabel": "$69",
+          "provider": "GenoPalate",
+          "text": "Healthy WeightDeveloped by GenoPalate$69Get Report",
+          "title": "Healthy Weight"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/ozempic-glp-1-agonists-genetic-report",
+          "index": 74,
+          "page": 1,
+          "priceLabel": "$99",
+          "provider": "Golden Gate Gene",
+          "text": "Ozempic and GLP-1 AgonistsDeveloped by Golden Gate Gene$99Get Report",
+          "title": "Ozempic and GLP-1 Agonists"
+        }
+      ],
+      "page": 1,
+      "paginationButtons": [
+        {
+          "aria": "first page",
+          "disabled": true
+        },
+        {
+          "aria": "previous page",
+          "disabled": true
+        },
+        {
+          "aria": "next page",
+          "disabled": false
+        },
+        {
+          "aria": "last page",
+          "disabled": false
+        }
+      ],
+      "signedIn": true,
+      "title": "Sequencing Marketplace | DNA Reports, Apps & Test Kits",
+      "url": "https://sequencing.com/marketplace"
+    },
+    {
+      "cardCount": 75,
+      "cards": [
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/nutrigenomics-dna-nutrition-guidance",
+          "index": 0,
+          "page": 2,
+          "priceLabel": "$29",
+          "provider": "Complete Genome Science",
+          "text": "Nutrigenomics: Nutrition AnalysisDeveloped by Complete Genome Science$29Get Report",
+          "title": "Nutrigenomics: Nutrition Analysis"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/nourish",
+          "index": 1,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "Toolbox Genomics",
+          "text": "NourishDeveloped by Toolbox Genomics$59Get Report",
+          "title": "Nourish"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/healthy-nutrition-dna-analysis-app",
+          "index": 2,
+          "page": 2,
+          "priceLabel": "$49",
+          "provider": "GeneInformed",
+          "text": "Healthy NutritionDeveloped by GeneInformed$49Get Report",
+          "title": "Healthy Nutrition"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/food-sensitivity",
+          "index": 3,
+          "page": 2,
+          "priceLabel": "$39",
+          "provider": "GenoPalate",
+          "text": "Food SensitivityDeveloped by GenoPalate$39Get Report",
+          "title": "Food Sensitivity"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/gut-health",
+          "index": 4,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Gut HealthDeveloped by SelfDecode$59Get Report",
+          "title": "Gut Health"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/vitamins-dna-analysis-genetic-report",
+          "index": 5,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Vitamins DNA Wellness ReportDeveloped by SelfDecode$59Get Report",
+          "title": "Vitamins DNA Wellness Report"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/empower",
+          "index": 6,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "Toolbox Genomics",
+          "text": "EmpowerDeveloped by Toolbox Genomics$59Get Report",
+          "title": "Empower"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/tbg-total-wellness",
+          "index": 7,
+          "page": 2,
+          "priceLabel": "$119",
+          "provider": "Toolbox Genomics",
+          "text": "TBG Total WellnessDeveloped by Toolbox Genomics$119Get Report",
+          "title": "TBG Total Wellness"
+        },
+        {
+          "buttonText": "Get App",
+          "href": "https://sequencing.com/marketplace/genetic-counseling",
+          "index": 8,
+          "page": 2,
+          "priceLabel": "$179",
+          "provider": "DNAVisit",
+          "text": "Genetic CounselingDeveloped by DNAVisit$179Get App",
+          "title": "Genetic Counseling"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/mosaic-biodata",
+          "index": 9,
+          "page": 2,
+          "priceLabel": "$199",
+          "provider": "Mosaic Biodata",
+          "text": "Mosaic BiodataDeveloped by Mosaic Biodata$199Get Report",
+          "title": "Mosaic Biodata"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/gene-form-dna-personalized-fitness-app",
+          "index": 10,
+          "page": 2,
+          "priceLabel": "$39",
+          "provider": "GeneInformed",
+          "text": "Gene-In-Form Personalized FitnessDeveloped by GeneInformed$39Get Report",
+          "title": "Gene-In-Form Personalized Fitness"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/fitness-dna-test-report",
+          "index": 11,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Fitness DNA Test ReportDeveloped by SelfDecode$59Get Report",
+          "title": "Fitness DNA Test Report"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/chronic-fatigue-dna-health-report",
+          "index": 12,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Chronic Fatigue DNA Health ReportDeveloped by SelfDecode$59Get Report",
+          "title": "Chronic Fatigue DNA Health Report"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/athletic-performance",
+          "index": 13,
+          "page": 2,
+          "priceLabel": "Free",
+          "provider": "App MD",
+          "text": "Athletic PerformanceDeveloped by App MDFreeGet Report",
+          "title": "Athletic Performance"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/chronic-pain-dna-report",
+          "index": 14,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Chronic Pain DNA ReportDeveloped by SelfDecode$59Get Report",
+          "title": "Chronic Pain DNA Report"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/respiratory-health-dna-report",
+          "index": 15,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Respiratory Health DNA ReportDeveloped by SelfDecode$59Get Report",
+          "title": "Respiratory Health DNA Report"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/tbg-total-wellness",
+          "index": 16,
+          "page": 2,
+          "priceLabel": "$119",
+          "provider": "Toolbox Genomics",
+          "text": "TBG Total WellnessDeveloped by Toolbox Genomics$119Get Report",
+          "title": "TBG Total Wellness"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/healthy-weight",
+          "index": 17,
+          "page": 2,
+          "priceLabel": "$69",
+          "provider": "GenoPalate",
+          "text": "Healthy WeightDeveloped by GenoPalate$69Get Report",
+          "title": "Healthy Weight"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/empower",
+          "index": 18,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "Toolbox Genomics",
+          "text": "EmpowerDeveloped by Toolbox Genomics$59Get Report",
+          "title": "Empower"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/rundna",
+          "index": 19,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "Toolbox Genomics",
+          "text": "RunDNADeveloped by Toolbox Genomics$59Get Report",
+          "title": "RunDNA"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/skin-genes-dna-analysis-app",
+          "index": 20,
+          "page": 2,
+          "priceLabel": "$39",
+          "provider": "GeneInformed",
+          "text": "Skin GenesDeveloped by GeneInformed$39Get Report",
+          "title": "Skin Genes"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/sleep-dna-analysis-wellness-report",
+          "index": 21,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Sleep DNA WellnessDeveloped by SelfDecode$59Get Report",
+          "title": "Sleep DNA Wellness"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/genetic-detoxification-genevironment",
+          "index": 22,
+          "page": 2,
+          "priceLabel": "$89",
+          "provider": "GeneInformed",
+          "text": "Genetic DetoxificationDeveloped by GeneInformed$89Get Report",
+          "title": "Genetic Detoxification"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/ozempic-glp-1-agonists-genetic-report",
+          "index": 23,
+          "page": 2,
+          "priceLabel": "$99",
+          "provider": "Golden Gate Gene",
+          "text": "Ozempic and GLP-1 AgonistsDeveloped by Golden Gate Gene$99Get Report",
+          "title": "Ozempic and GLP-1 Agonists"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/hair-loss-balding-dna-test",
+          "index": 24,
+          "page": 2,
+          "priceLabel": "$19.99",
+          "provider": "App MD",
+          "text": "Genetic Risk of Hair LossDeveloped by App MD$19.99Get Report",
+          "title": "Genetic Risk of Hair Loss"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/genetic-test-predict-physical-appearance",
+          "index": 25,
+          "page": 2,
+          "priceLabel": "$19",
+          "provider": "Complete Genome Science",
+          "text": "Physical Appearance Genetic ReportDeveloped by Complete Genome Science$19Get Report",
+          "title": "Physical Appearance Genetic Report"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/melanoma-skin-cancer-dna-test-analysis",
+          "index": 26,
+          "page": 2,
+          "priceLabel": "$39",
+          "provider": "App MD",
+          "text": "Melanoma Skin Cancer PreventionDeveloped by App MD$39Get Report",
+          "title": "Melanoma Skin Cancer Prevention"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/wellness-genetic-guide",
+          "index": 27,
+          "page": 2,
+          "priceLabel": "$79",
+          "provider": "Quantum Genomics | Golden Gate Gene",
+          "text": "Wellness Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report",
+          "title": "Wellness Genetic Guide"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/heart-health-genetic-guide",
+          "index": 28,
+          "page": 2,
+          "priceLabel": "$79",
+          "provider": "Quantum Genomics | Golden Gate Gene",
+          "text": "Heart Health Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report",
+          "title": "Heart Health Genetic Guide"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/oncology-genetic-guide",
+          "index": 29,
+          "page": 2,
+          "priceLabel": "$79",
+          "provider": "Quantum Genomics | Golden Gate Gene",
+          "text": "Oncology Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report",
+          "title": "Oncology Genetic Guide"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/mental-health-genetic-guide",
+          "index": 30,
+          "page": 2,
+          "priceLabel": "$79",
+          "provider": "Quantum Genomics | Golden Gate Gene",
+          "text": "Mental Health Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report",
+          "title": "Mental Health Genetic Guide"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/personalized-vitamins-and-supplements",
+          "index": 31,
+          "page": 2,
+          "priceLabel": "$29",
+          "provider": "GenoPalate",
+          "text": "Personalized Vitamins and SupplementsDeveloped by GenoPalate$29Get Report",
+          "title": "Personalized Vitamins and Supplements"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/sleep-dna-analysis-wellness-report",
+          "index": 32,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Sleep DNA WellnessDeveloped by SelfDecode$59Get Report",
+          "title": "Sleep DNA Wellness"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/detox-pathway",
+          "index": 33,
+          "page": 2,
+          "priceLabel": "$89",
+          "provider": "SelfDecode",
+          "text": "Detox PathwayDeveloped by SelfDecode$89Get Report",
+          "title": "Detox Pathway"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/chronic-fatigue-dna-health-report",
+          "index": 34,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Chronic Fatigue DNA Health ReportDeveloped by SelfDecode$59Get Report",
+          "title": "Chronic Fatigue DNA Health Report"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/cannabis-dna-health-report-genetic-analysis",
+          "index": 35,
+          "page": 2,
+          "priceLabel": "$29.99",
+          "provider": "Strain Genie",
+          "text": "Cannabis DNA Health ReportDeveloped by Strain Genie$29.99Get Report",
+          "title": "Cannabis DNA Health Report"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/genetic-detoxification-genevironment",
+          "index": 36,
+          "page": 2,
+          "priceLabel": "$89",
+          "provider": "GeneInformed",
+          "text": "Genetic DetoxificationDeveloped by GeneInformed$89Get Report",
+          "title": "Genetic Detoxification"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/my-heart-health",
+          "index": 37,
+          "page": 2,
+          "priceLabel": "$49",
+          "provider": "GenoPalate",
+          "text": "My Heart HealthDeveloped by GenoPalate$49Get Report",
+          "title": "My Heart Health"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/chronic-pain-dna-report",
+          "index": 38,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Chronic Pain DNA ReportDeveloped by SelfDecode$59Get Report",
+          "title": "Chronic Pain DNA Report"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/ozempic-glp-1-agonists-genetic-report",
+          "index": 39,
+          "page": 2,
+          "priceLabel": "$99",
+          "provider": "Golden Gate Gene",
+          "text": "Ozempic and GLP-1 AgonistsDeveloped by Golden Gate Gene$99Get Report",
+          "title": "Ozempic and GLP-1 Agonists"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/longevity-dna-test-wellness-report",
+          "index": 40,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Enhanced LongevityDeveloped by SelfDecode$59Get Report",
+          "title": "Enhanced Longevity"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/my-personality-traits",
+          "index": 41,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "My Personality TraitsDeveloped by SelfDecode$59Get Report",
+          "title": "My Personality Traits"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/thrive",
+          "index": 42,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "Toolbox Genomics",
+          "text": "ThriveDeveloped by Toolbox Genomics$59Get Report",
+          "title": "Thrive"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/genetic-test-for-iq-cognitive-function",
+          "index": 43,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Cognitive FunctionDeveloped by SelfDecode$59Get Report",
+          "title": "Cognitive Function"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/brain-mental-health-mood-dna-report",
+          "index": 44,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Brain Health: Mental Health & MoodDeveloped by SelfDecode$59Get Report",
+          "title": "Brain Health: Mental Health & Mood"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/empower",
+          "index": 45,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "Toolbox Genomics",
+          "text": "EmpowerDeveloped by Toolbox Genomics$59Get Report",
+          "title": "Empower"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/arthritis-prevention-dna-report",
+          "index": 46,
+          "page": 2,
+          "priceLabel": "$39",
+          "provider": "App MD",
+          "text": "Arthritis PreventionDeveloped by App MD$39Get Report",
+          "title": "Arthritis Prevention"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/age-strength",
+          "index": 47,
+          "page": 2,
+          "priceLabel": "$39",
+          "provider": "GeneX",
+          "text": "Age with StrengthDeveloped by GeneX$39Get Report",
+          "title": "Age with Strength"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/tbg-total-wellness",
+          "index": 48,
+          "page": 2,
+          "priceLabel": "$119",
+          "provider": "Toolbox Genomics",
+          "text": "TBG Total WellnessDeveloped by Toolbox Genomics$119Get Report",
+          "title": "TBG Total Wellness"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/skin-genes-dna-analysis-app",
+          "index": 49,
+          "page": 2,
+          "priceLabel": "$39",
+          "provider": "GeneInformed",
+          "text": "Skin GenesDeveloped by GeneInformed$39Get Report",
+          "title": "Skin Genes"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/healthy-nutrition-dna-analysis-app",
+          "index": 50,
+          "page": 2,
+          "priceLabel": "$49",
+          "provider": "GeneInformed",
+          "text": "Healthy NutritionDeveloped by GeneInformed$49Get Report",
+          "title": "Healthy Nutrition"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/dna-diet-personalized-weight-loss-app",
+          "index": 51,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "GeneInformed",
+          "text": "DNA DietDeveloped by GeneInformed$59Get Report",
+          "title": "DNA Diet"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/gene-form-dna-personalized-fitness-app",
+          "index": 52,
+          "page": 2,
+          "priceLabel": "$39",
+          "provider": "GeneInformed",
+          "text": "Gene-In-Form Personalized FitnessDeveloped by GeneInformed$39Get Report",
+          "title": "Gene-In-Form Personalized Fitness"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/mosaic-biodata",
+          "index": 53,
+          "page": 2,
+          "priceLabel": "$199",
+          "provider": "Mosaic Biodata",
+          "text": "Mosaic BiodataDeveloped by Mosaic Biodata$199Get Report",
+          "title": "Mosaic Biodata"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/medications-pgx-complete-dna-guide",
+          "index": 54,
+          "page": 2,
+          "priceLabel": "$129",
+          "provider": "Quantum Genomics | Golden Gate Gene",
+          "text": "Medications PGx: Complete DNA GuideDeveloped by Quantum Genomics | Golden Gate Gene$129Get Report",
+          "title": "Medications PGx: Complete DNA Guide"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/brain-mental-health-mood-dna-report",
+          "index": 55,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Brain Health: Mental Health & MoodDeveloped by SelfDecode$59Get Report",
+          "title": "Brain Health: Mental Health & Mood"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/respiratory-health-dna-report",
+          "index": 56,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Respiratory Health DNA ReportDeveloped by SelfDecode$59Get Report",
+          "title": "Respiratory Health DNA Report"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/vitamins-dna-analysis-genetic-report",
+          "index": 57,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Vitamins DNA Wellness ReportDeveloped by SelfDecode$59Get Report",
+          "title": "Vitamins DNA Wellness Report"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/complete-genome-analysis",
+          "index": 58,
+          "page": 2,
+          "priceLabel": "$189",
+          "provider": "Complete Genome Science",
+          "text": "Complete Genome AnalysisDeveloped by Complete Genome Science$189Get Report",
+          "title": "Complete Genome Analysis"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/healthy-nutrition-dna-analysis-app",
+          "index": 59,
+          "page": 2,
+          "priceLabel": "$49",
+          "provider": "GeneInformed",
+          "text": "Healthy NutritionDeveloped by GeneInformed$49Get Report",
+          "title": "Healthy Nutrition"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/genetic-detoxification-genevironment",
+          "index": 60,
+          "page": 2,
+          "priceLabel": "$89",
+          "provider": "GeneInformed",
+          "text": "Genetic DetoxificationDeveloped by GeneInformed$89Get Report",
+          "title": "Genetic Detoxification"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/mthfr-dna-wellness-report",
+          "index": 61,
+          "page": 2,
+          "priceLabel": "$29",
+          "provider": "SelfDecode",
+          "text": "MTHFR DNA Wellness ReportDeveloped by SelfDecode$29Get Report",
+          "title": "MTHFR DNA Wellness Report"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/apoe4-test-brain-health-genetic-analysis",
+          "index": 62,
+          "page": 2,
+          "priceLabel": "$39",
+          "provider": "SelfDecode",
+          "text": "Alzheimer’s Risk | APOE Gene AnalysisDeveloped by SelfDecode$39Get Report",
+          "title": "Alzheimer’s Risk | APOE Gene Analysis"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/prevent-sudden-death",
+          "index": 63,
+          "page": 2,
+          "priceLabel": "$39",
+          "provider": "App MD",
+          "text": "Prevent Sudden DeathDeveloped by App MD$39Get Report",
+          "title": "Prevent Sudden Death"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/genetic-test-for-iq-cognitive-function",
+          "index": 64,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Cognitive FunctionDeveloped by SelfDecode$59Get Report",
+          "title": "Cognitive Function"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/genetic-test-predict-physical-appearance",
+          "index": 65,
+          "page": 2,
+          "priceLabel": "$19",
+          "provider": "Complete Genome Science",
+          "text": "Physical Appearance Genetic ReportDeveloped by Complete Genome Science$19Get Report",
+          "title": "Physical Appearance Genetic Report"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/wellness-and-longevity",
+          "index": 66,
+          "page": 2,
+          "priceLabel": "$199",
+          "provider": "App MD",
+          "text": "Wellness and LongevityDeveloped by App MD$199Get Report",
+          "title": "Wellness and Longevity"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/genetic-test-traits",
+          "index": 67,
+          "page": 2,
+          "priceLabel": "$129",
+          "provider": "Complete Genome Science",
+          "text": "Inherited Traits Genetic AnalysisDeveloped by Complete Genome Science$129Get Report",
+          "title": "Inherited Traits Genetic Analysis"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/sleep-dna-analysis-wellness-report",
+          "index": 68,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "SelfDecode",
+          "text": "Sleep DNA WellnessDeveloped by SelfDecode$59Get Report",
+          "title": "Sleep DNA Wellness"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/santa-and-me-app-dna-comparison",
+          "index": 69,
+          "page": 2,
+          "priceLabel": "Free",
+          "provider": "Sequencing.com",
+          "text": "Santa and Me | Compare Your DNA to St. NickDeveloped by Sequencing.comFreeGet Report",
+          "title": "Santa and Me | Compare Your DNA to St. Nick"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/thrive",
+          "index": 70,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "Toolbox Genomics",
+          "text": "ThriveDeveloped by Toolbox Genomics$59Get Report",
+          "title": "Thrive"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/medication-pharmacogenomics-dna-report",
+          "index": 71,
+          "page": 2,
+          "priceLabel": "$59",
+          "provider": "Complete Genome Science",
+          "text": "Medication & Drug ResponseDeveloped by Complete Genome Science$59Get Report",
+          "title": "Medication & Drug Response"
+        },
+        {
+          "buttonText": "Get App",
+          "href": "https://sequencing.com/marketplace/genetic-counseling",
+          "index": 72,
+          "page": 2,
+          "priceLabel": "$179",
+          "provider": "DNAVisit",
+          "text": "Genetic CounselingDeveloped by DNAVisit$179Get App",
+          "title": "Genetic Counseling"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/tbg-total-wellness",
+          "index": 73,
+          "page": 2,
+          "priceLabel": "$119",
+          "provider": "Toolbox Genomics",
+          "text": "TBG Total WellnessDeveloped by Toolbox Genomics$119Get Report",
+          "title": "TBG Total Wellness"
+        },
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/carrier-status-rare-disease-genetic-report",
+          "index": 74,
+          "page": 2,
+          "priceLabel": "$29",
+          "provider": "Complete Genome Science",
+          "text": "Carrier StatusDeveloped by Complete Genome Science$29Get Report",
+          "title": "Carrier Status"
+        }
+      ],
+      "page": 2,
+      "paginationButtons": [
+        {
+          "aria": "first page",
+          "disabled": false
+        },
+        {
+          "aria": "previous page",
+          "disabled": false
+        },
+        {
+          "aria": "next page",
+          "disabled": false
+        },
+        {
+          "aria": "last page",
+          "disabled": false
+        }
+      ],
+      "signedIn": true,
+      "title": "Sequencing Marketplace | DNA Reports, Apps & Test Kits",
+      "url": "https://sequencing.com/marketplace?page=1"
+    },
+    {
+      "cardCount": 14,
+      "cards": [
+        {
+          "buttonText": "Get Report",
+          "href": "https://sequencing.com/marketplace/healthcare-pro-genetic-report",
+          "index": 0,
+          "page": 3,
+          "priceLabel": "$199",
+          "provider": "App MD",
+          "text": "Healthcare ProDeveloped by App MD$199Get Report",
+          "title": "Healthcare Pro"
+        },
+        {
+          "buttonText": "Get App",
+          "href": "https://sequencing.com/marketplace/genome-explorer-dna-data-search",
+          "index": 1,
+          "page": 3,
+          "priceLabel": "Free",
+          "provider": "Sequencing.com",
+          "text": "Genome Explorer v3Developed by Sequencing.comFreeGet App",
+          "title": "Genome Explorer v3"
+        },
+        {
+          "buttonText": "Get App",
+          "href": "https://sequencing.com/marketplace/genome-overview",
+          "index": 2,
+          "page": 3,
+          "priceLabel": "$29.99",
+          "provider": "Sequencing.com",
+          "text": "Genome OverviewDeveloped by Sequencing.com$29.99Get App",
+          "title": "Genome Overview"
+        },
+        {
+          "buttonText": "Get App",
+          "href": "https://sequencing.com/marketplace/clinical-annotator-variants",
+          "index": 3,
+          "page": 3,
+          "priceLabel": "$19.99",
+          "provider": "GeneX",
+          "text": "Clinical Annotator of VariantsDeveloped by GeneX$19.99Get App",
+          "title": "Clinical Annotator of Variants"
+        },
+        {
+          "buttonText": "Get App",
+          "href": "https://sequencing.com/marketplace/genome-short-read-mapper",
+          "index": 4,
+          "page": 3,
+          "priceLabel": "$249",
+          "provider": "GeneX",
+          "text": "Short Read MapperDeveloped by GeneX$249Get App",
+          "title": "Short Read Mapper"
+        },
+        {
+          "buttonText": "Get App",
+          "href": "https://sequencing.com/marketplace/eve-premium-dna-genome-data-bioinformatics-pipelines",
+          "index": 5,
+          "page": 3,
+          "priceLabel": "$19.99",
+          "provider": "Sequencing.com",
+          "text": "EvE PremiumDeveloped by Sequencing.com$19.99Get App",
+          "title": "EvE Premium"
+        },
+        {
+          "buttonText": "Get App",
+          "href": "https://sequencing.com/marketplace/imputation-analysis",
+          "index": 6,
+          "page": 3,
+          "priceLabel": "$9.99",
+          "provider": "GeneX",
+          "text": "Imputation AnalysisDeveloped by GeneX$9.99Get App",
+          "title": "Imputation Analysis"
+        },
+        {
+          "buttonText": "Get App",
+          "href": "https://sequencing.com/marketplace/variant-discovery-bioinformatics-secondary-analysis",
+          "index": 7,
+          "page": 3,
+          "priceLabel": "$19",
+          "provider": "GeneX",
+          "text": "Variant DiscoveryDeveloped by GeneX$19Get App",
+          "title": "Variant Discovery"
+        },
+        {
+          "buttonText": "Get App",
+          "href": "https://sequencing.com/marketplace/variant-effect-predictor",
+          "index": 8,
+          "page": 3,
+          "priceLabel": "$19.99",
+          "provider": "GeneX",
+          "text": "Variant Effect PredictorDeveloped by GeneX$19.99Get App",
+          "title": "Variant Effect Predictor"
+        },
+        {
+          "buttonText": "Get App",
+          "href": "https://sequencing.com/marketplace/genetic-counseling",
+          "index": 9,
+          "page": 3,
+          "priceLabel": "$179",
+          "provider": "DNAVisit",
+          "text": "Genetic CounselingDeveloped by DNAVisit$179Get App",
+          "title": "Genetic Counseling"
+        },
+        {
+          "buttonText": "Get App",
+          "href": "https://sequencing.com/marketplace/sequencing-depth-and-coverage",
+          "index": 10,
+          "page": 3,
+          "priceLabel": "$9.99",
+          "provider": "Sequencing.com",
+          "text": "Sequencing Depth and CoverageDeveloped by Sequencing.com$9.99Get App",
+          "title": "Sequencing Depth and Coverage"
+        },
+        {
+          "buttonText": "View Bundle",
+          "href": "https://sequencing.com/order/comprehensive-wgs-health-screen-bundle",
+          "index": 11,
+          "page": 3,
+          "priceLabel": "$399",
+          "provider": "Sequencing.com",
+          "text": "Comprehensive Health Screen WGS BundleDeveloped by Sequencing.com$399View Bundle",
+          "title": "Comprehensive Health Screen WGS Bundle"
+        },
+        {
+          "buttonText": "View Bundle",
+          "href": "https://sequencing.com/order/expedited-advanced-wgs-health-screen-bundle",
+          "index": 12,
+          "page": 3,
+          "priceLabel": "$499",
+          "provider": "Sequencing.com",
+          "text": "Expedited Advanced Health Screen WGS BundleDeveloped by Sequencing.com$499View Bundle",
+          "title": "Expedited Advanced Health Screen WGS Bundle"
+        },
+        {
+          "buttonText": "View Bundle",
+          "href": "https://sequencing.com/order/ultra-rapid-professional-wgs-health-screen-bundle",
+          "index": 13,
+          "page": 3,
+          "priceLabel": "$799",
+          "provider": "Sequencing.com",
+          "text": "Ultra Rapid Professional Health Screen WGS Bundle Developed by Sequencing.com$799View Bundle",
+          "title": "Ultra Rapid Professional Health Screen WGS Bundle"
+        }
+      ],
+      "page": 3,
+      "paginationButtons": [
+        {
+          "aria": "first page",
+          "disabled": false
+        },
+        {
+          "aria": "previous page",
+          "disabled": false
+        },
+        {
+          "aria": "next page",
+          "disabled": true
+        },
+        {
+          "aria": "last page",
+          "disabled": true
+        }
+      ],
+      "signedIn": true,
+      "title": "Sequencing Marketplace | DNA Reports, Apps & Test Kits",
+      "url": "https://sequencing.com/marketplace?page=2"
+    }
+  ]
+}

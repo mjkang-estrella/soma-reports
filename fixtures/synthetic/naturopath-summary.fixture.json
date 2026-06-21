@@ -1,0 +1,144 @@
+{
+  "consumerTone": "plain English; consumer-shareable handoff context only; no diagnosis, clearance, risk estimate, medication, procedure, treatment, supplement, diet, lab, screening, reproductive, or actionability claims",
+  "datasetId": "synthetic-naturopath-summary-professional-handoff-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-professional-handoff-context",
+      "gene": "Naturopath Summary",
+      "haplotype": "professional-handoff-context-unavailable",
+      "inputId": "naturopath-summary-handoff-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "naturopath review, diet history, supplement list, medication list, symptoms, labs, methylation or homocysteine testing, detoxification model, nutrient status, pregnancy context, diagnosis, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-naturopath-summary-professional-handoff-context-v1",
+      "sourceFile": "synthetic-naturopath-summary-professional-handoff-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "naturopath or integrative health professional review context",
+      "haplotype": "professional-review-unavailable",
+      "inputId": "naturopath-summary-clinical-review-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-naturopath-summary-professional-handoff-context-v1",
+      "sourceFile": "synthetic-naturopath-summary-professional-handoff-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-professional-handoff-context",
+    "hash": "sha256:synthetic-naturopath-summary-professional-handoff-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-professional-review evidence for naturopath-summary validation"
+  },
+  "missingInputPolicy": "Report unavailable naturopath or integrative health professional evidence explicitly; do not diagnose conditions; infer detoxification capacity, methylation status, nutrient deficiency, supplement need, diet need, medication response, lab status, treatment need, pregnancy action, or replace licensed professional review.",
+  "packageSlug": "naturopath-summary",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-counseling",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Counseling",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-family-health-history",
+      "sourceType": "public_health_resource",
+      "title": "CDC About Family Health History",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-dietary-supplements",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Dietary Supplements",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "nih-ods-dietary-supplement-fact-sheets",
+      "sourceType": "public_health_resource",
+      "title": "NIH Office of Dietary Supplements Fact Sheets",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-pharmacogenomics",
+      "sourceType": "public_health_resource",
+      "title": "CDC Pharmacogenomics",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-pharmacogenetic-tests",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Pharmacogenetic Tests",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer-shareable naturopath or integrative health professional handoff context using supplied references and explicit unavailable-review framing."
+}

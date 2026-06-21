@@ -1,0 +1,107 @@
+{
+  "reportOverview": {
+    "reportTitle": "Growth & Bone Health",
+    "inputManifestHash": "sha256:synthetic-growth-bone-health-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "No calibrated growth, height, bone-density, osteoporosis, endocrine, pediatric growth, imaging, lab, supplement, treatment, exercise-clearance, or ancestry applicability model is supplied with this fixture."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Growth and bone trait context",
+      "item": "ACTN3 R577X / rs1815739",
+      "brandName": "",
+      "geneticAnalysis": "A derived ACTN3 rs1815739 CT call is available. This is trait context only and does not predict growth, height, bone density, osteoporosis risk, endocrine status, pediatric growth, injury risk, or exercise clearance.",
+      "genes": [
+        "ACTN3"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: athletic performance",
+      "sourceIds": [
+        "medlineplus-athletic-performance"
+      ],
+      "plainEnglishMeaning": "ACTN3 is discussed in fitness research, but growth and bone-health outcomes depend on many genetic and non-genetic factors."
+    },
+    {
+      "groupTitle": "Growth and bone trait context",
+      "item": "ACE I/D polymorphism",
+      "brandName": "",
+      "geneticAnalysis": "A derived ACE ID context row is available. This is not enough to infer growth pattern, bone health, bone density, osteoporosis, endocrine status, imaging findings, lab findings, supplement needs, treatment needs, or exercise clearance.",
+      "genes": [
+        "ACE"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: athletic performance",
+      "sourceIds": [
+        "medlineplus-athletic-performance"
+      ],
+      "plainEnglishMeaning": "ACE can provide performance-trait context, but it does not determine growth, bone density, pediatric growth status, osteoporosis, endocrine status, or clinical actionability."
+    },
+    {
+      "groupTitle": "Growth and bone model availability",
+      "item": "Growth and bone health model",
+      "brandName": "",
+      "geneticAnalysis": "No calibrated growth, height, bone-density, osteoporosis, endocrine, pediatric growth, imaging, lab, supplement, treatment, exercise-clearance, or ancestry applicability model is supplied with this fixture.",
+      "genes": [
+        "Growth and bone health model"
+      ],
+      "sourceLabel": "NHGRI polygenic risk scores / GWAS Catalog",
+      "sourceIds": [
+        "nhgri-polygenic-risk-scores",
+        "ebi-gwas-catalog"
+      ],
+      "plainEnglishMeaning": "The report can describe supplied marker context, but it should not quantify growth, height, bone density, osteoporosis, endocrine status, pediatric growth, imaging, labs, supplement needs, treatment needs, or exercise clearance without validated evidence."
+    }
+  ],
+  "practicalNextSteps": {
+    "growthBoneContext": [
+      "Use this report as educational growth-and-bone genetics context, not as a growth prediction, bone-density result, osteoporosis assessment, endocrine result, pediatric result, or treatment plan.",
+      "Bring growth, bone, endocrine, pediatric, imaging, lab, supplement, treatment, and exercise-clearance questions to qualified professionals when relevant.",
+      "Do not use genotype alone for growth, bone-density, osteoporosis, endocrine, pediatric, imaging, lab, supplement, treatment, exercise-clearance, diagnosis, or actionability decisions."
+    ]
+  },
+  "references": [
+    {
+      "id": "medlineplus-athletic-performance",
+      "title": "MedlinePlus Genetics: athletic performance"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "gene": "ACTN3",
+        "observedValue": "rs1815739 CT"
+      },
+      {
+        "gene": "ACE",
+        "observedValue": "I/D"
+      },
+      {
+        "gene": "Growth and bone health model",
+        "observedValue": "calibrated model unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated sample-report sections and rows have not been extracted.",
+      "No calibrated growth, height, bone-density, osteoporosis, endocrine, pediatric growth, imaging, lab, supplement, treatment, exercise-clearance, or ancestry applicability model is supplied.",
+      "No pediatric context, growth history, imaging, labs, symptoms, endocrine history, supplement history, activity history, medical history, or clinician assessment is supplied."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Growth and bone-health outcomes are complex and depend on genetics, development, nutrition, activity, hormones, medical history, environment, age, and professional evaluation.",
+      "A small number of markers cannot explain growth, height, bone density, osteoporosis risk, endocrine status, pediatric growth, imaging findings, lab findings, treatment needs, or exercise clearance."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report is educational and does not predict growth or height, infer pediatric growth status, diagnose bone or endocrine disease, estimate osteoporosis risk, infer bone density, interpret imaging, interpret labs, recommend supplements, recommend treatment, prescribe exercise, provide exercise clearance, or make actionability claims.",
+      "Authenticated Sequencing.com sample report rows are still pending."
+    ]
+  }
+}

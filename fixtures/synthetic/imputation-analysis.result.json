@@ -1,0 +1,175 @@
+{
+  "reportOverview": {
+    "reportTitle": "Imputation Analysis",
+    "inputManifestHash": "sha256:synthetic-imputation-analysis-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "Exact imputation server, panel release checksum, phasing engine version, and Minimac4 version are not supplied.",
+      "Benchmark truth-set comparison, ancestry applicability, allele-frequency checks, and per-variant dosage calibration are not supplied."
+    ],
+    "plainEnglishScope": "This report summarizes selected derived imputation quality-control metrics. It does not confirm observed variants, diagnose disease, estimate risk, or recommend medical action."
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Reference panel and build",
+      "item": "GRCh38 target coordinates with TOPMed-like panel context",
+      "brandName": "",
+      "geneticAnalysis": "The derived summary reports GRCh38 target coordinates and a TOPMed-like reference-panel context. The exact server, panel release, phasing engine, and tool build are not supplied.",
+      "genes": [
+        "imputation build and panel summary"
+      ],
+      "sourceLabel": "Michigan Imputation Server 2; TOPMed Imputation Server; Minimac4",
+      "sourceIds": [
+        "michigan-imputation-server-2",
+        "topmed-imputation-server",
+        "minimac4"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The supplied summary is enough to describe the intended build and panel context, but not enough to reproduce the exact imputation run or treat imputed values as directly observed variant calls."
+    },
+    {
+      "groupTitle": "Input QC and imputation-quality thresholds",
+      "item": "Retained imputed records by r2 or rsq threshold",
+      "brandName": "",
+      "geneticAnalysis": "The derived autosomal summary reports 640,000 typed input markers passing upstream checks, 10,850,000 imputed records retained at r2 or rsq >= 0.30, 7,420,000 retained at r2 or rsq >= 0.80, and 380,000 records excluded below the configured threshold.",
+      "genes": [
+        "imputation quality counts"
+      ],
+      "sourceLabel": "Michigan Imputation Server 2; TOPMed Imputation Server",
+      "sourceIds": [
+        "michigan-imputation-server-2",
+        "topmed-imputation-server"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "These counts describe how much imputed data passed selected quality filters. They do not show whether a particular disease-related variant is truly present or absent."
+    },
+    {
+      "groupTitle": "Dosage availability",
+      "item": "Derived dosage summary",
+      "brandName": "",
+      "geneticAnalysis": "The derived summary says dosages are available for retained imputed records. Per-variant posterior-probability rows, hard-call concordance, and per-region dosage calibration are not supplied.",
+      "genes": [
+        "imputed dosage summary"
+      ],
+      "sourceLabel": "Minimac4; 1000 Genomes imputation",
+      "sourceIds": [
+        "minimac4",
+        "thousand-genomes-imputation"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "Dosage fields are statistical estimates used in imputation workflows. This fixture cannot convert those estimates into medical meaning or validated genotype truth."
+    },
+    {
+      "groupTitle": "Validation availability",
+      "item": "Benchmark, calibration, and applicability metadata unavailable",
+      "brandName": "",
+      "geneticAnalysis": "Benchmark truth-set comparison, sample ancestry calibration, allele-frequency QC report, phasing engine version, Minimac4 version, reference panel release checksum, per-chromosome failure table, and authenticated sample-report rows are unavailable.",
+      "genes": [
+        "imputation validation metadata"
+      ],
+      "sourceLabel": "NIST Genome in a Bottle; 1000 Genomes imputation",
+      "sourceIds": [
+        "nist-genome-in-a-bottle",
+        "thousand-genomes-imputation"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "Without benchmark and applicability evidence, the report can explain quality-control context but cannot validate analytical performance, clinical sensitivity, or population-specific reliability."
+    }
+  ],
+  "imputationQualityContext": {
+    "plainEnglishMeaning": "Imputation fills in likely genotypes statistically by comparing typed markers with reference-panel haplotypes. The supplied metrics describe the quality-control context for that statistical process, not direct observation of every retained record.",
+    "unsupportedClaims": [
+      "observed variant truth or variant absence",
+      "clinical sensitivity or negative predictive value",
+      "disease diagnosis or disease-risk estimate",
+      "ancestry certainty or exact population assignment",
+      "sample contamination conclusion",
+      "medication response",
+      "screening, diagnostic testing, reproductive, lifestyle, or treatment recommendation"
+    ],
+    "professionalReview": "Laboratory or clinical review is needed to interpret imputation metrics against a specific assay, reference panel, validation study, and reporting threshold."
+  },
+  "references": [
+    {
+      "id": "michigan-imputation-server-2",
+      "title": "Michigan Imputation Server 2"
+    },
+    {
+      "id": "topmed-imputation-server",
+      "title": "TOPMed Imputation Server"
+    },
+    {
+      "id": "minimac4",
+      "title": "Minimac4"
+    },
+    {
+      "id": "thousand-genomes-imputation",
+      "title": "1000 Genomes: imputation"
+    },
+    {
+      "id": "ncbi-dbsnp",
+      "title": "NCBI dbSNP"
+    },
+    {
+      "id": "nist-genome-in-a-bottle",
+      "title": "NIST Genome in a Bottle"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "imputation-build-panel-summary",
+        "gene": "imputation build and panel summary",
+        "observedValue": "GRCh38 target coordinates; TOPMed-like reference-panel context; exact server, panel release, and tool versions unavailable",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "imputation-qc-counts",
+        "gene": "imputation quality counts",
+        "observedValue": "640,000 typed markers passed upstream checks; 10,850,000 retained at r2 or rsq >= 0.30; 7,420,000 retained at r2 or rsq >= 0.80; 380,000 excluded below threshold",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "imputation-dosage-summary",
+        "gene": "imputed dosage summary",
+        "observedValue": "dosages available for retained imputed records; per-variant posterior probabilities and calibration details unavailable",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "imputation-validation-context-unavailable",
+        "gene": "imputation validation metadata",
+        "observedValue": "benchmark, ancestry-applicability, allele-frequency QC, phasing version, tool version, release checksum, per-chromosome failure, and authenticated sample-report metadata unavailable",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "resourceVersions": [
+      "Michigan Imputation Server 2 documentation accessed 2026-06-20",
+      "TOPMed Imputation Server documentation accessed 2026-06-20",
+      "Minimac4 documentation accessed 2026-06-20",
+      "1000 Genomes imputation background accessed 2026-06-20"
+    ],
+    "missingInputs": [
+      "Authenticated Sequencing.com sample report rows",
+      "Exact imputation server and job settings",
+      "Reference panel release checksum and ancestry-applicability notes",
+      "Phasing engine and Minimac4 version",
+      "Allele-frequency QC report and per-chromosome failure table",
+      "Benchmark truth-set comparison",
+      "Per-variant posterior probabilities and dosage calibration"
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated model is supplied for genotype probability, imputation accuracy probability, clinical sensitivity, ancestry applicability, or overall sample quality probability.",
+      "The selected metrics are useful QC context but cannot validate a clinical report or prove variant presence by themselves."
+    ],
+    "calibration": {
+      "status": "not_supplied",
+      "notes": "Per-variant dosage calibration, hard-call concordance, and benchmark truth-set comparison were not supplied."
+    },
+    "limitations": [
+      "This validation result uses selected derived imputation QC metrics only; raw genome data, VCF, FASTQ, BAM, and CRAM files are not included.",
+      "Imputed records are statistical estimates and should not be treated as directly observed variant calls without supporting validation evidence.",
+      "The package does not diagnose disease, estimate medical risk, validate clinical sensitivity, infer ancestry certainty, or recommend medication, screening, diagnostic testing, reproductive decisions, lifestyle changes, or treatment changes."
+    ]
+  }
+}

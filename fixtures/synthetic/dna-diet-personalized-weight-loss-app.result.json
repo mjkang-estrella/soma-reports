@@ -1,0 +1,506 @@
+{
+  "reportOverview": {
+    "reportTitle": "DNA Diet",
+    "inputManifestHash": "sha256:synthetic-dna-diet-weight-management-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com marketplace detail-page parity is still pending.",
+      "No calibrated diet, weight-loss response, obesity-risk, meal-plan, supplement, metabolic, activity-history, lab, or ancestry applicability model is supplied with this fixture.",
+      "No diet history, activity history, BMI, body-composition measure, metabolic labs, medication list, medical history, or clinician/dietitian review is supplied."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Diet and weight-management context",
+      "item": "MCM6/LCT rs4988235",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a diagnosis, symptom explanation, food-sensitivity result, diet recommendation, or supplement recommendation.",
+      "genes": [
+        "MCM6",
+        "LCT"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: lactose intolerance / MCM6",
+      "sourceIds": [
+        "medlineplus-lactose-intolerance",
+        "medlineplus-mcm6"
+      ],
+      "plainEnglishMeaning": "This marker can provide lactose-related context, but symptoms, diet history, labs, environment, and professional review matter for nutrition decisions."
+    },
+    {
+      "groupTitle": "Nutrition model availability",
+      "item": "DNA diet model",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "No calibrated diet, weight-loss response, obesity-risk, meal-plan, supplement, metabolic, diet-history, activity-history, lab, or ancestry applicability model is supplied with this fixture.",
+      "genes": [
+        "DNA diet model"
+      ],
+      "sourceLabel": "Nutritional genomics review / GWAS Catalog",
+      "sourceIds": [
+        "nutritional-genomics-dtc-review",
+        "ebi-gwas-catalog"
+      ],
+      "plainEnglishMeaning": "The report can describe supplied marker context and sample-report structure, but it should not make diet, supplement, weight-loss, metabolic, lab, or diagnosis conclusions without validated evidence."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Action Points",
+      "item": "Genetic profile and high-level action point page",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "The sample action-points page labels the genetic profile as high-protein diet, shows a recommended macronutrient-ratio chart with Protein 35%, Carbs 45%, and Fat 20%, and shows high-level trans-fat, metabolic-response, food-addiction, fat-sensing, and resting-energy-expenditure action-point structure.",
+      "description": "Visible sample text includes a recommended macronutrient-ratio graphic, high-protein diet, fat and carbohydrate ratio, trans-fat limit, gradual calorie reduction, food-addiction steps, fat-taste sensitivity, and regular exercise sections.",
+      "genes": [
+        "FTO",
+        "PPARG",
+        "ADRB3",
+        "PLIN1",
+        "ANKK1",
+        "DRD3",
+        "CD36",
+        "FABP2",
+        "ADRB2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "dna-diet-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from page 4 of the public GeneInformed DNA Diet sample PDF; this is observed sample output structure, not local diet, exercise, supplement, weight-loss, metabolic, lab, or treatment advice."
+    },
+    {
+      "groupTitle": "Results Summary / Macronutrients",
+      "item": "Protein Intake",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Protein Intake: common result TT; sample user result AA; impact: Sense of hunger.",
+      "description": "The public sample summary table shows this row on page 5, and the detailed trait page labels the section High protein intake; 17% of people have the displayed tendency.",
+      "genes": [
+        "FTO"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "dna-diet-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public GeneInformed DNA Diet sample PDF results summary and detailed trait pages; this is observed sample content, not local weight-loss, diet, supplement, activity, metabolic, lab, or treatment advice."
+    },
+    {
+      "groupTitle": "Results Summary / Macronutrients",
+      "item": "Fat Storage",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Fat Storage: common result CC; sample user result CC; impact: Average fat storage.",
+      "description": "The public sample summary table shows this row on page 5, and the detailed trait page labels the section Low fat intake; 87% of people have the displayed tendency.",
+      "genes": [
+        "PPARG"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "dna-diet-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public GeneInformed DNA Diet sample PDF results summary and detailed trait pages; this is observed sample content, not local weight-loss, diet, supplement, activity, metabolic, lab, or treatment advice."
+    },
+    {
+      "groupTitle": "Results Summary / Macronutrients",
+      "item": "Fat Breakdown",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Fat Breakdown: common result TT; sample user result TC; impact: Reduced fat breakdown.",
+      "description": "The public sample summary table shows this row on page 5, and the detailed trait page labels the section Exercise more; 16% of people have the displayed tendency.",
+      "genes": [
+        "ADRB3"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "dna-diet-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public GeneInformed DNA Diet sample PDF results summary and detailed trait pages; this is observed sample content, not local weight-loss, diet, supplement, activity, metabolic, lab, or treatment advice."
+    },
+    {
+      "groupTitle": "Results Summary / Macronutrients",
+      "item": "High/Low Carb Diet",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "High/Low Carb Diet: common result GG; sample user result AA; impact: High-carb diet preferred.",
+      "description": "The public sample summary table shows this row on page 5, and the detailed trait page labels the section More carbs, less fats; 10% of people have the displayed tendency.",
+      "genes": [
+        "PLIN1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "dna-diet-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public GeneInformed DNA Diet sample PDF results summary and detailed trait pages; this is observed sample content, not local weight-loss, diet, supplement, activity, metabolic, lab, or treatment advice."
+    },
+    {
+      "groupTitle": "Results Summary / Eating Behaviors",
+      "item": "Emotional Eating",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Emotional Eating: common result TT, GG; sample user result TT, GG; impact: Average response.",
+      "description": "The public sample summary table shows this row on page 5, and the detailed trait page labels the section Low risk; 53% of people have the displayed tendency.",
+      "genes": [
+        "MC4R"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "dna-diet-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public GeneInformed DNA Diet sample PDF results summary and detailed trait pages; this is observed sample content, not local weight-loss, diet, supplement, activity, metabolic, lab, or treatment advice."
+    },
+    {
+      "groupTitle": "Results Summary / Eating Behaviors",
+      "item": "Food Addiction",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Food Addiction: common result CC; sample user result TT; impact: Tendency for addiction.",
+      "description": "The public sample summary table shows this row on page 5, and the detailed trait page labels the section High risk; 5% of people have the displayed tendency.",
+      "genes": [
+        "ANKK1",
+        "DRD3"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "dna-diet-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public GeneInformed DNA Diet sample PDF results summary and detailed trait pages; this is observed sample content, not local weight-loss, diet, supplement, activity, metabolic, lab, or treatment advice."
+    },
+    {
+      "groupTitle": "Results Summary / Eating Behaviors",
+      "item": "Sweet Tooth",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Sweet Tooth: common result TT; sample user result TC; impact: Average sense.",
+      "description": "The public sample summary table shows this row on page 5, and the detailed trait page labels the section Low risk; 54% of people have the displayed tendency.",
+      "genes": [
+        "TAS1R2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "dna-diet-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public GeneInformed DNA Diet sample PDF results summary and detailed trait pages; this is observed sample content, not local weight-loss, diet, supplement, activity, metabolic, lab, or treatment advice."
+    },
+    {
+      "groupTitle": "Results Summary / Eating Behaviors",
+      "item": "Bitter Taste",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Bitter Taste: common result TC; sample user result CC; impact: Average sense.",
+      "description": "The public sample summary table shows this row on page 5, and the detailed trait page labels the section Low risk; 66% of people have the displayed tendency.",
+      "genes": [
+        "TAS2R38"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "dna-diet-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public GeneInformed DNA Diet sample PDF results summary and detailed trait pages; this is observed sample content, not local weight-loss, diet, supplement, activity, metabolic, lab, or treatment advice."
+    },
+    {
+      "groupTitle": "Results Summary / Eating Behaviors",
+      "item": "Fat Sensing",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Fat Sensing: common result AG; sample user result GG; impact: Reduced sense.",
+      "description": "The public sample summary table shows this row on page 5, and the detailed trait page labels the section High risk; 22% of people have the displayed tendency.",
+      "genes": [
+        "CD36"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "dna-diet-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public GeneInformed DNA Diet sample PDF results summary and detailed trait pages; this is observed sample content, not local weight-loss, diet, supplement, activity, metabolic, lab, or treatment advice."
+    },
+    {
+      "groupTitle": "Results Summary / Fast Food",
+      "item": "Fast Food",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Fast Food: common result CC; sample user result CT; impact: Elevated sensitivity.",
+      "description": "The public sample summary table shows this row on page 5, and the detailed trait page labels the section Sensitivity to fast food; 51% of people have the displayed tendency.",
+      "genes": [
+        "FABP2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "dna-diet-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public GeneInformed DNA Diet sample PDF results summary and detailed trait pages; this is observed sample content, not local weight-loss, diet, supplement, activity, metabolic, lab, or treatment advice."
+    },
+    {
+      "groupTitle": "Results Summary / Metabolism",
+      "item": "Metabolism Rate",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Metabolism Rate: common result GG; sample user result AA; impact: Energy-conserving response to diet.",
+      "description": "The public sample summary table shows this row on page 5, and the detailed trait page labels the section Low REE; 12% of people have the displayed tendency.",
+      "genes": [
+        "ADRB2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "dna-diet-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public GeneInformed DNA Diet sample PDF results summary and detailed trait pages; this is observed sample content, not local weight-loss, diet, supplement, activity, metabolic, lab, or treatment advice."
+    },
+    {
+      "groupTitle": "Appendix A",
+      "item": "Sense of Satiety",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "The sample appendix contains satiety-promoting behavior structure, fullness-promoting food categories, eating behavior prompts, snacking reduction, social eating, portion-size, and activity sections.",
+      "description": "Visible appendix pages 17-20 provide generic behavior lists rather than genotype-specific variant rows.",
+      "genes": [
+        "FTO"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "dna-diet-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from Appendix A pages 17-20 of the public sample PDF as formal appendix structure only; do not convert to a local behavioral plan."
+    },
+    {
+      "groupTitle": "Appendix B",
+      "item": "Emotional Eating",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "The sample appendix includes emotional-eating education, awareness of when and why eating happens, regular meals, stress reduction, and exercise context.",
+      "description": "Visible appendix page 21 presents educational emotional-eating text and bullet points tied to the report appendix.",
+      "genes": [
+        "MC4R"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "dna-diet-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from Appendix B page 21 of the public sample PDF as formal appendix structure only; do not infer local emotional eating or prescribe behavior changes."
+    },
+    {
+      "groupTitle": "Appendix C",
+      "item": "Exercise MET table",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "The sample appendix explains METs and lists physical activities with METs per hour, including rest, walking, gardening, cleaning, cycling, swimming, running, and other activities.",
+      "description": "Visible appendix pages 22-23 cite Harvard Health Publishing, December 2009, for the physical activity table.",
+      "genes": [
+        "ADRB3",
+        "ADRB2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "dna-diet-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from Appendix C pages 22-23 of the public sample PDF as formal appendix structure only; do not convert to a local exercise prescription."
+    },
+    {
+      "groupTitle": "Disclaimer",
+      "item": "Educational-use and limitation language",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "The sample disclaimer states the report is educational, genetic information should be considered with lifestyle, family history, biomedical data, nutrition, and physical activity, and the information is not intended as a substitute for physician advice.",
+      "description": "The visible final page also includes privacy/security and Sequencing.com delivery context.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "dna-diet-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from page 24 of the public sample PDF as limitation structure; local output must preserve non-medical, non-diagnostic, non-treatment boundaries."
+    }
+  ],
+  "practicalNextSteps": {
+    "dietContext": [
+      "Use this report as educational diet-genetics context, not as a weight-loss prediction, diet prescription, exercise program, or meal plan.",
+      "Treat the GeneInformed DNA Diet sample action points, macronutrient ratios, trait rows, appendices, and disclaimer as observed output structure only unless equivalent validated local evidence is supplied.",
+      "Plan diet and weight goals using diet history, activity, labs, medical context, preferences, and professional support.",
+      "Do not use genotype alone to predict weight loss, diagnose obesity or metabolic disease, choose supplements, set macronutrient targets, prescribe exercise, or change treatment."
+    ]
+  },
+  "references": [
+    {
+      "id": "medlineplus-lactose-intolerance",
+      "title": "MedlinePlus Genetics: lactose intolerance"
+    },
+    {
+      "id": "medlineplus-mcm6",
+      "title": "MedlinePlus Genetics: MCM6 gene"
+    },
+    {
+      "id": "nutritional-genomics-dtc-review",
+      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    },
+    {
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean"
+    },
+    {
+      "id": "medlineplus-blood-glucose-test",
+      "title": "MedlinePlus: Blood Glucose Test"
+    },
+    {
+      "id": "medlineplus-hba1c-test",
+      "title": "MedlinePlus: Hemoglobin A1C test"
+    },
+    {
+      "id": "cdc-diabetes-risk-factors",
+      "title": "CDC Diabetes Risk Factors"
+    },
+    {
+      "id": "fda-dietary-supplements",
+      "title": "FDA Dietary Supplements"
+    },
+    {
+      "id": "nih-ods-dietary-supplement-fact-sheets",
+      "title": "NIH Office of Dietary Supplements Fact Sheets"
+    },
+    {
+      "id": "cdc-bmi",
+      "title": "CDC About Body Mass Index"
+    },
+    {
+      "id": "dna-diet-sample-pdf",
+      "title": "GeneInformed DNA Diet sample report"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "tier": "Local derived call",
+        "gene": "MCM6/LCT",
+        "variantId": "rs4988235",
+        "genotype": "CT",
+        "effect": "The local fixture supplies a derived MCM6/LCT rs4988235 call for lactase-persistence context.",
+        "phenotype": "Report as educational lactose-related marker context only; do not diagnose lactose intolerance or prescribe diet changes from genotype alone.",
+        "extractionStatus": "curated"
+      },
+      {
+        "tier": "Local missing input",
+        "gene": "DNA diet model",
+        "variantId": "dna-diet-model-unavailable",
+        "genotype": "calibrated diet, weight-loss response, obesity-risk, meal-plan, supplement, metabolic, activity-history, lab, and ancestry applicability models unavailable",
+        "effect": "The local fixture intentionally omits calibrated diet/weight-management models and non-genetic context.",
+        "phenotype": "Mark weight-loss, diet, supplement, metabolic, activity, lab, and treatment sections unavailable instead of inferring them.",
+        "extractionStatus": "curated"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "FTO",
+        "variantId": "not-shown-in-sample-pdf",
+        "genotype": "Protein Intake: common result TT; sample user result AA",
+        "effect": "Sense of hunger",
+        "phenotype": "Use as observed sample-report structure only; do not treat the sample genotype-like calls as local evidence or genomic-coordinate-resolved variants.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "PPARG",
+        "variantId": "not-shown-in-sample-pdf",
+        "genotype": "Fat Storage: common result CC; sample user result CC",
+        "effect": "Average fat storage",
+        "phenotype": "Use as observed sample-report structure only; do not treat the sample genotype-like calls as local evidence or genomic-coordinate-resolved variants.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "ADRB3",
+        "variantId": "not-shown-in-sample-pdf",
+        "genotype": "Fat Breakdown: common result TT; sample user result TC",
+        "effect": "Reduced fat breakdown",
+        "phenotype": "Use as observed sample-report structure only; do not treat the sample genotype-like calls as local evidence or genomic-coordinate-resolved variants.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "PLIN1",
+        "variantId": "not-shown-in-sample-pdf",
+        "genotype": "High/Low Carb Diet: common result GG; sample user result AA",
+        "effect": "High-carb diet preferred",
+        "phenotype": "Use as observed sample-report structure only; do not treat the sample genotype-like calls as local evidence or genomic-coordinate-resolved variants.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "MC4R",
+        "variantId": "not-shown-in-sample-pdf",
+        "genotype": "Emotional Eating: common result TT, GG; sample user result TT, GG",
+        "effect": "Average response",
+        "phenotype": "Use as observed sample-report structure only; do not treat the sample genotype-like calls as local evidence or genomic-coordinate-resolved variants.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "ANKK1; DRD3",
+        "variantId": "not-shown-in-sample-pdf",
+        "genotype": "Food Addiction: common result CC; sample user result TT",
+        "effect": "Tendency for addiction",
+        "phenotype": "Use as observed sample-report structure only; do not treat the sample genotype-like calls as local evidence or genomic-coordinate-resolved variants.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "TAS1R2",
+        "variantId": "not-shown-in-sample-pdf",
+        "genotype": "Sweet Tooth: common result TT; sample user result TC",
+        "effect": "Average sense",
+        "phenotype": "Use as observed sample-report structure only; do not treat the sample genotype-like calls as local evidence or genomic-coordinate-resolved variants.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "TAS2R38",
+        "variantId": "not-shown-in-sample-pdf",
+        "genotype": "Bitter Taste: common result TC; sample user result CC",
+        "effect": "Average sense",
+        "phenotype": "Use as observed sample-report structure only; do not treat the sample genotype-like calls as local evidence or genomic-coordinate-resolved variants.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "CD36",
+        "variantId": "not-shown-in-sample-pdf",
+        "genotype": "Fat Sensing: common result AG; sample user result GG",
+        "effect": "Reduced sense",
+        "phenotype": "Use as observed sample-report structure only; do not treat the sample genotype-like calls as local evidence or genomic-coordinate-resolved variants.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "FABP2",
+        "variantId": "not-shown-in-sample-pdf",
+        "genotype": "Fast Food: common result CC; sample user result CT",
+        "effect": "Elevated sensitivity",
+        "phenotype": "Use as observed sample-report structure only; do not treat the sample genotype-like calls as local evidence or genomic-coordinate-resolved variants.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "ADRB2",
+        "variantId": "not-shown-in-sample-pdf",
+        "genotype": "Metabolism Rate: common result GG; sample user result AA",
+        "effect": "Energy-conserving response to diet",
+        "phenotype": "Use as observed sample-report structure only; do not treat the sample genotype-like calls as local evidence or genomic-coordinate-resolved variants.",
+        "extractionStatus": "direct"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated marketplace detail-page parity has not been extracted.",
+      "No calibrated diet, weight-loss response, obesity-risk, meal-plan, supplement, metabolic, activity-history, lab, or ancestry applicability model is supplied.",
+      "No diet history, activity history, BMI, body-composition data, metabolic labs, medication list, medical history, or clinician/dietitian review is supplied.",
+      "The public sample PDF does not expose rsID/SNP identifiers for the results-summary gene rows, so no rsIDs are inferred from gene names and genotype-like calls."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Nutrition, weight management, food response, metabolic outcomes, satiety, taste, and eating behavior depend on genetics plus diet history, activity, labs, medical history, medications, environment, and professional review.",
+      "Public sample rows are sample-output examples, not local-user probabilities, diet targets, action points, supplement instructions, exercise programming, or treatment guidance.",
+      "A single marker should not be used to diagnose food reactions, nutrient deficiency, obesity, metabolic disease, or to prescribe diet or supplement changes."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report is educational and does not predict weight loss, diagnose obesity or metabolic disease, prescribe a diet, create meal plans, recommend supplements, prescribe exercise, interpret labs, or provide treatment guidance.",
+      "Sequencing.com marketplace detail-page parity is still pending even though the public DNA Diet sample PDF rows are extracted."
+    ]
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "consumerTone": "plain English; educational neurobehavioral genetics context only; no diagnosis, current mental-state assessment, IQ, aptitude, mood, dementia, neurologic, pediatric, medication, supplement, therapy, imaging, lab, school/work, treatment, or actionability claims",
+  "datasetId": "synthetic-brain-mental-health-mood-dna-report-neurobehavioral-boundary-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-neurobehavioral-boundary-context",
+      "gene": "Brain Health: Mental Health & Mood model",
+      "haplotype": "neurobehavioral-model-unavailable",
+      "inputId": "brain-mental-health-mood-dna-report-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "validated mental-health and mood genetic model, calibrated PRS, ancestry applicability metadata, age, sex, family history, symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, clinical calibration, and local risk calculations unavailable in this fixture; public sample PDF result cards, percentiles, recommendation rows, impact/evidence ratings, and visible variant tables observed for output structure",
+      "sourceArtifact": "synthetic-brain-mental-health-mood-dna-report-neurobehavioral-boundary-context-v1",
+      "sourceFile": "synthetic-brain-mental-health-mood-dna-report-neurobehavioral-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Brain Health: Mental Health & Mood clinical context",
+      "haplotype": "clinical-context-unavailable",
+      "inputId": "brain-mental-health-mood-dna-report-clinical-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, family history, clinician interpretation, school or work context, and personal clinical context unavailable in this fixture; public sample PDF observed separately as output-structure evidence",
+      "sourceArtifact": "synthetic-brain-mental-health-mood-dna-report-neurobehavioral-boundary-context-v1",
+      "sourceFile": "synthetic-brain-mental-health-mood-dna-report-neurobehavioral-boundary-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-neurobehavioral-boundary-context",
+    "hash": "sha256:synthetic-brain-mental-health-mood-dna-report-neurobehavioral-boundary-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-model evidence for brain-mental-health-mood-dna-report validation"
+  },
+  "missingInputPolicy": "Report unavailable mental-health and mood model calibration, PRS, ancestry applicability, symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, clinical context, professional review, and complete local risk model explicitly; do not infer diagnosis, current mood, mental-health risk, ADHD, dyslexia, addiction risk, cognitive status, treatment need, medication need, supplement need, therapy need, sleep intervention, school/work action, or clinical actionability from genotype alone or sample-only rows.",
+  "packageSlug": "brain-mental-health-mood-dna-report",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "neurobehavioral_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "neurobehavioral_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-complex-disorders",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: complex disorders",
+      "usedFor": [
+        "neurobehavioral_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "neurobehavioral_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
+      "usedFor": [
+        "neurobehavioral_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "neurobehavioral_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "nimh-looking-at-my-genes",
+      "sourceType": "public_health_resource",
+      "title": "NIMH: Looking at My Genes",
+      "usedFor": [
+        "neurobehavioral_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "direct_sample_report",
+      "id": "mood-brain-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Mood & Brain DNA Report sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer Mood & Brain DNA Report boundary context using unavailable-model evidence plus observed SelfDecode sample-report output structure."
+}

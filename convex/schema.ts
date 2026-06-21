@@ -14,15 +14,24 @@ const outputField = v.object({
   description: v.string(),
   type: v.string(),
   required: v.boolean(),
+  fieldPath: v.optional(v.string()),
+  citationRequired: v.optional(v.boolean()),
+  sourceBinding: v.optional(v.string()),
+  formalSourceField: v.optional(v.string()),
+  allowsUnavailable: v.optional(v.boolean()),
 });
 
 const genomeEvidence = v.object({
   inputId: v.string(),
-  rsid: v.string(),
+  rsid: v.optional(v.string()),
+  starAllele: v.optional(v.string()),
+  haplotype: v.optional(v.string()),
   gene: v.string(),
   observedValue: v.string(),
   assembly: v.string(),
   matchStatus: v.string(),
+  sourceFile: v.optional(v.string()),
+  sourceArtifact: v.optional(v.string()),
 });
 
 export default defineSchema({
@@ -40,6 +49,9 @@ export default defineSchema({
     claimScope: v.string(),
     sourceUrl: v.string(),
     marketplaceUrl: v.string(),
+    priceLabel: v.optional(v.string()),
+    catalogCategories: v.optional(v.array(v.string())),
+    catalogSource: v.optional(v.string()),
     curationStatus,
     sampleReportStatus: v.string(),
     sourceArtifacts: v.array(v.string()),
@@ -49,6 +61,10 @@ export default defineSchema({
       sampleReport: v.boolean(),
       references: v.boolean(),
       localFixture: v.boolean(),
+      prompt: v.optional(v.boolean()),
+      outputFormat: v.optional(v.boolean()),
+      formalFields: v.optional(v.boolean()),
+      citationBindings: v.optional(v.boolean()),
       notes: v.array(v.string()),
     }),
     tags: v.array(v.string()),
@@ -75,6 +91,8 @@ export default defineSchema({
 
   reportReferences: defineTable({
     reportSlug: v.string(),
+    resourceId: v.optional(v.string()),
+    sortOrder: v.optional(v.number()),
     title: v.string(),
     url: v.string(),
     sourceType: v.string(),
@@ -82,11 +100,19 @@ export default defineSchema({
     note: v.string(),
     evidenceLevel: v.string(),
     extractionStatus: curationStatus,
+    scope: v.optional(v.union(v.literal("report_specific"), v.literal("background"))),
+    accessedAt: v.optional(v.string()),
+    contentHash: v.optional(v.string()),
+    sourceArtifact: v.optional(v.string()),
+    usedFor: v.optional(v.array(v.string())),
   }).index("by_reportSlug", ["reportSlug"]),
 
   reportPrompts: defineTable({
     reportSlug: v.string(),
     title: v.string(),
+    promptVersion: v.optional(v.string()),
+    promptHash: v.optional(v.string()),
+    outputFormatHash: v.optional(v.string()),
     deterministicPrompt: v.string(),
     inputContract: v.array(v.string()),
     outputContract: v.array(v.string()),
@@ -104,6 +130,16 @@ export default defineSchema({
     expectedFields: v.array(outputField),
   }).index("by_reportSlug_and_sortOrder", ["reportSlug", "sortOrder"]),
 
+  reportFormalFields: defineTable({
+    reportSlug: v.string(),
+    sortOrder: v.number(),
+    sourceLabel: v.string(),
+    observedField: v.string(),
+    outputPath: v.string(),
+    status: v.union(v.literal("covered"), v.literal("pending"), v.literal("not_applicable")),
+    notes: v.string(),
+  }).index("by_reportSlug_and_sortOrder", ["reportSlug", "sortOrder"]),
+
   reportSampleRows: defineTable({
     reportSlug: v.string(),
     sortOrder: v.number(),
@@ -111,8 +147,19 @@ export default defineSchema({
     item: v.string(),
     brandName: v.string(),
     geneticAnalysis: v.string(),
+    description: v.optional(v.string()),
     genes: v.array(v.string()),
     sourceLabel: v.string(),
+    sourceResourceIds: v.optional(v.array(v.string())),
+    sourceBindingStatus: v.optional(
+      v.union(
+        v.literal("exact"),
+        v.literal("curated"),
+        v.literal("sample_label_only"),
+        v.literal("unavailable"),
+      ),
+    ),
+    sourceBindingNote: v.optional(v.string()),
     extractionStatus: curationStatus,
   }).index("by_reportSlug_and_sortOrder", ["reportSlug", "sortOrder"]),
 
@@ -130,8 +177,12 @@ export default defineSchema({
 
   reportLocalFixtures: defineTable({
     reportSlug: v.string(),
+    packageSlug: v.optional(v.string()),
     datasetId: v.string(),
     packageVersion: v.string(),
+    reportPurpose: v.optional(v.string()),
+    missingInputPolicy: v.optional(v.string()),
+    consumerTone: v.optional(v.string()),
     inputManifest: v.object({
       hash: v.string(),
       genomeBuild: v.string(),

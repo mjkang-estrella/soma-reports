@@ -1,0 +1,155 @@
+{
+  "consumerTone": "plain English; consumer-shareable handoff context only; no diagnosis, clearance, risk estimate, medication, procedure, treatment, supplement, diet, lab, screening, reproductive, or actionability claims",
+  "datasetId": "synthetic-infectious-disease-specialist-summary-professional-handoff-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-professional-handoff-context",
+      "gene": "Infectious Disease Specialist Summary",
+      "haplotype": "professional-handoff-context-unavailable",
+      "inputId": "infectious-disease-specialist-summary-handoff-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "infectious disease specialist review, infection diagnosis, exposure history, travel history, immune status, immune-cell labs, immunoglobulins, pathogen testing, culture results, vaccine history, medication list, prophylaxis context, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-infectious-disease-specialist-summary-professional-handoff-context-v1",
+      "sourceFile": "synthetic-infectious-disease-specialist-summary-professional-handoff-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "infectious disease specialist review context",
+      "haplotype": "professional-review-unavailable",
+      "inputId": "infectious-disease-specialist-summary-clinical-review-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-infectious-disease-specialist-summary-professional-handoff-context-v1",
+      "sourceFile": "synthetic-infectious-disease-specialist-summary-professional-handoff-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-professional-handoff-context",
+    "hash": "sha256:synthetic-infectious-disease-specialist-summary-professional-handoff-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-professional-review evidence for infectious-disease-specialist-summary validation"
+  },
+  "missingInputPolicy": "Report unavailable infectious disease specialist evidence explicitly; do not diagnose infection or immunodeficiency; estimate infection risk; infer immune strength, vaccine response, pathogen status, culture result, antimicrobial need, prophylaxis need, isolation need, treatment need, supplement need, or replace infectious disease specialist review.",
+  "packageSlug": "infectious-disease-specialist-summary",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-counseling",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Counseling",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-family-health-history",
+      "sourceType": "public_health_resource",
+      "title": "CDC About Family Health History",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-autoimmune-diseases",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Autoimmune Diseases",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-immune-system-disorders",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Immune System and Disorders",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "niaid-autoimmunity-factors",
+      "sourceType": "public_health_resource",
+      "title": "NIAID: Factors That Influence Autoimmunity",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "niams-rheumatoid-arthritis",
+      "sourceType": "public_health_resource",
+      "title": "NIAMS: Rheumatoid Arthritis",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "niams-lupus",
+      "sourceType": "public_health_resource",
+      "title": "NIAMS: Lupus",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer-shareable infectious disease specialist handoff context using supplied references and explicit unavailable-review framing."
+}

@@ -1,0 +1,74 @@
+{
+  "packageSlug": "nutrigenomics-dna-nutrition-guidance",
+  "datasetId": "synthetic-nutrigenomics-lactose-context-v1",
+  "packageVersion": "0.1.0",
+  "reportPurpose": "Consumer nutrigenomics context using derived MCM6/LCT evidence and nutrition-genetics limitation framing.",
+  "missingInputPolicy": "Report unavailable nutrition markers explicitly; do not infer dietary needs, symptoms, supplements, or meal plans.",
+  "consumerTone": "plain English; educational; no diet prescription or supplement recommendation",
+  "inputManifest": {
+    "hash": "sha256:synthetic-nutrigenomics-lactose-context-v1",
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived nutrigenomics evidence for package validation"
+  },
+  "genomeEvidence": [
+    {
+      "inputId": "MCM6-rs4988235",
+      "rsid": "rs4988235",
+      "gene": "MCM6/LCT",
+      "observedValue": "CT",
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-nutrigenomics-lactose-context-v1.json",
+      "sourceArtifact": "synthetic-nutrigenomics-lactose-context-v1"
+    }
+  ],
+  "referenceResources": [
+    {
+      "id": "medlineplus-lactose-intolerance",
+      "title": "MedlinePlus Genetics: lactose intolerance",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "lactose_context",
+        "non_diagnostic_language"
+      ]
+    },
+    {
+      "id": "medlineplus-mcm6",
+      "title": "MedlinePlus Genetics: MCM6 gene",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "mcm6_lct_context",
+        "lactase_persistence_context"
+      ]
+    },
+    {
+      "id": "nutritional-genomics-dtc-review",
+      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing",
+      "sourceType": "research_review",
+      "evidenceLevel": "review_background",
+      "usedFor": [
+        "nutrition_context",
+        "direct_to_consumer_limitations"
+      ]
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog",
+      "sourceType": "database",
+      "evidenceLevel": "background",
+      "usedFor": [
+        "candidate_trait_associations"
+      ]
+    }
+  ],
+  "expectedAssertions": {
+    "noRawGenomeInOutput": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "probabilitiesOnlyInAppendix": true,
+    "consumerLanguage": true
+  }
+}

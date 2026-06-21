@@ -1,0 +1,211 @@
+{
+  "consumerTone": "plain English; educational specialized genetics context only; no diagnosis, personal risk estimate, medication or substance recommendation, pediatric action, school or work decision, supplement protocol, proprietary report recreation, variant classification, or clinical actionability claims",
+  "datasetId": "synthetic-will-aspirin-help-specialized-boundary-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-specialized-boundary-context",
+      "gene": "Will Aspirin Help? model/source output",
+      "haplotype": "validated-model-or-source-output-unavailable",
+      "inputId": "will-aspirin-help-model-output-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "validated aspirin benefit model, aspirin response marker interpretation, cardiovascular history, bleeding history, age, ASCVD risk inputs, medication list, clinician review, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-will-aspirin-help-specialized-boundary-context-v1",
+      "sourceFile": "synthetic-will-aspirin-help-specialized-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Will Aspirin Help? clinical and professional context",
+      "haplotype": "clinical-professional-context-unavailable",
+      "inputId": "will-aspirin-help-clinical-professional-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
+      "sourceArtifact": "synthetic-will-aspirin-help-specialized-boundary-context-v1",
+      "sourceFile": "synthetic-will-aspirin-help-specialized-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Will Aspirin Help? authenticated sample rows",
+      "haplotype": "authenticated-sample-report-unavailable",
+      "inputId": "will-aspirin-help-authenticated-sample-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture",
+      "sourceArtifact": "synthetic-will-aspirin-help-specialized-boundary-context-v1",
+      "sourceFile": "synthetic-will-aspirin-help-specialized-boundary-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-specialized-boundary-context",
+    "hash": "sha256:synthetic-will-aspirin-help-specialized-boundary-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-model evidence for will-aspirin-help validation"
+  },
+  "missingInputPolicy": "Report unavailable aspirin decision and pharmacogenetic context evidence explicitly; do not answer whether aspirin will help; recommend starting, stopping, switching, or dosing aspirin; estimate bleeding risk, cardiovascular event risk, platelet resistance, aspirin benefit, primary-prevention value, secondary-prevention value, or clinical actionability from genotype.",
+  "packageSlug": "will-aspirin-help",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Testing",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-test-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-complex-disorders",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: complex disorders",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "guideline_background",
+      "id": "uspstf-aspirin-preventive",
+      "sourceType": "guideline",
+      "title": "USPSTF: Aspirin Use to Prevent Cardiovascular Disease",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-aspirin-facts",
+      "sourceType": "regulatory_resource",
+      "title": "FDA: Aspirin for Reducing Your Risk of Heart Attack and Stroke",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-pgx-associations",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Table of Pharmacogenetic Associations",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-pharmacogenetic-tests",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Pharmacogenetic Tests",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer aspirin decision and pharmacogenetic context boundary context using supplied references and explicit unavailable-model framing."
+}

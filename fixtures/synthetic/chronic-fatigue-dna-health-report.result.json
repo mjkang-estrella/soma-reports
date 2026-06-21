@@ -1,0 +1,498 @@
+{
+  "schemaVersion": "soma-reports.local-result.v1",
+  "reportOverview": {
+    "reportTitle": "Chronic Fatigue DNA Health Report",
+    "inputManifestHash": "sha256:synthetic-chronic-fatigue-dna-health-report-organ-system-boundary-context-v1",
+    "sectionsUnavailable": [
+      "Validated Chronic Fatigue DNA Health Report model, calibrated PRS, fatigue/anemia/iron/sleep/restless-legs models, and sample-specific local risk calculations are unavailable in this local fixture.",
+      "ME/CFS diagnosis, fatigue symptoms, post-exertional malaise, sleep assessment, infection history, thyroid/liver/nutrient context, medications, exercise tolerance, and professional interpretation are unavailable.",
+      "Immune labs, endocrine labs, mitochondrial testing, iron/ferritin/CBC, hemoglobin/RBC, sleep studies, imaging, treatment context, prevention context, and clinical actionability context are unavailable."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Validated model availability",
+      "item": "Chronic Fatigue DNA Health Report validated model",
+      "brandName": "Chronic Fatigue DNA Health Report",
+      "geneticAnalysis": "No validated package-specific chronic-fatigue, fatigue, anemia, iron, sleep, restless-legs, or calibrated PRS output is present in the local fixture.",
+      "genes": [
+        "model-unavailable"
+      ],
+      "sourceLabel": "Public genetic-testing and complex-trait references",
+      "sourceIds": [
+        "cdc-genetic-testing",
+        "medlineplus-genetics",
+        "medlineplus-genetic-testing",
+        "medlineplus-genetic-test-results"
+      ],
+      "plainEnglishMeaning": "This local run can document that model evidence is unavailable, but it cannot turn that absence into a chronic-fatigue diagnosis, personal fatigue-risk estimate, anemia or iron conclusion, sleep diagnosis, supplement need, treatment response, or health action.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Clinical and professional context availability",
+      "item": "Fatigue history, sleep context, medications, and professional review",
+      "brandName": "Chronic Fatigue DNA Health Report",
+      "geneticAnalysis": "ME/CFS diagnosis, fatigue symptoms, post-exertional malaise, sleep assessment, infection history, thyroid/liver/nutrient context, medications, exercise tolerance, and professional interpretation are not supplied.",
+      "genes": [
+        "clinical-context-unavailable"
+      ],
+      "sourceLabel": "Consumer genetic-testing limitation references",
+      "sourceIds": [
+        "medlineplus-genetics",
+        "medlineplus-genetic-testing",
+        "medlineplus-genetic-test-results",
+        "fda-direct-to-consumer-tests"
+      ],
+      "plainEnglishMeaning": "Genome-derived evidence alone is not enough to decide fatigue cause, anemia status, iron status, sleep condition, testing, treatment, supplements, exercise guidance, clearance, or all-clear questions.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Organ-system context availability",
+      "item": "Fatigue, blood, iron, immune, endocrine, and sleep evidence context",
+      "brandName": "Chronic Fatigue DNA Health Report",
+      "geneticAnalysis": "Immune labs, endocrine labs, mitochondrial testing, iron/ferritin/CBC, hemoglobin/RBC, sleep studies, imaging, disease-specific testing, and treatment context are not supplied.",
+      "genes": [
+        "organ-system-context-unavailable"
+      ],
+      "sourceLabel": "Fatigue-context and PRS limitation references",
+      "sourceIds": [
+        "nhgri-polygenic-risk-scores",
+        "ebi-gwas-catalog",
+        "cdc-mecfs",
+        "medlineplus-mecfs"
+      ],
+      "plainEnglishMeaning": "The references support education about limits and review context, not a standalone conclusion about fatigue symptoms, post-exertional malaise, anemia, iron status, sleep, organ function, severity, prognosis, or actionability.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Report structure",
+      "item": "How this works",
+      "brandName": "Chronic Fatigue DNA Report sample",
+      "geneticAnalysis": "The sample explains that reports analyze how DNA influences health, summarize results as a risk score or gauge, use percentile comparisons, and rank recommendations by impact and evidence. The introductory pages define lower, typical, and higher likelihood, explain percentile language, show dietary/lifestyle/supplement/drug recommendation categories, and emphasize that genetics is not the whole story.",
+      "genes": [
+        "Report-level output structure"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-fatigue-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Fatigue sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-fatigue, ME/CFS, anemia, iron, hemoglobin, red-blood-cell, mood, exercise, sleep, restless-legs, snoring, supplement, acupuncture, treatment, testing, or medical recommendation."
+    },
+    {
+      "groupTitle": "Overview of results",
+      "item": "Seventeen genetic result cards",
+      "brandName": "Chronic Fatigue DNA Report sample",
+      "geneticAnalysis": "The overview groups 17 result cards across Overall Fatigue, Mental Fatigue, Physical Fatigue, and Sleep Disturbances. The sample summary says the report helps examine genetics for fatigue, blood/iron traits, mental fatigue, physical fatigue, and sleep-disturbance traits.",
+      "genes": [
+        "Fatigue, blood, physical-performance, and sleep model cards"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-fatigue-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Fatigue sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-fatigue, ME/CFS, anemia, iron, hemoglobin, red-blood-cell, mood, exercise, sleep, restless-legs, snoring, supplement, acupuncture, treatment, testing, or medical recommendation."
+    },
+    {
+      "groupTitle": "Overview of results",
+      "item": "Overall Fatigue cards",
+      "brandName": "Chronic Fatigue DNA Report sample",
+      "geneticAnalysis": "Low Energy (Chronic Fatigue) typical likelihood of fatigue; Anemia typical likelihood of anemia; Iron typical need; Hemoglobin lower levels; Red Blood Cells lower count. The first overview page presents these cards under Overall Fatigue, with icon cards and short likelihood or level labels.",
+      "genes": [
+        "Fatigue, anemia, iron, hemoglobin, and red-blood-cell model cards"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-fatigue-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Fatigue sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-fatigue, ME/CFS, anemia, iron, hemoglobin, red-blood-cell, mood, exercise, sleep, restless-legs, snoring, supplement, acupuncture, treatment, testing, or medical recommendation."
+    },
+    {
+      "groupTitle": "Overview of results",
+      "item": "Mental and physical fatigue cards",
+      "brandName": "Chronic Fatigue DNA Report sample",
+      "geneticAnalysis": "Brain Fog typical likelihood; Low Mood more likely to have chronically low mood; Exercise Recovery typical; Endurance typical; Aerobic Capacity (VO2 Max) lower. The first overview page presents these cards under Mental Fatigue and Physical Fatigue.",
+      "genes": [
+        "Brain fog, mood, recovery, endurance, and VO2 max model cards"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-fatigue-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Fatigue sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-fatigue, ME/CFS, anemia, iron, hemoglobin, red-blood-cell, mood, exercise, sleep, restless-legs, snoring, supplement, acupuncture, treatment, testing, or medical recommendation."
+    },
+    {
+      "groupTitle": "Overview of results",
+      "item": "Sleep Disturbances cards",
+      "brandName": "Chronic Fatigue DNA Report sample",
+      "geneticAnalysis": "Insomnia typical likelihood; Sleep Movement more likely; Restless Legs more likely; Sleep Apnea typical likelihood; Snoring more likely; Daytime Sleepiness less likely; Caffeine-Related Sleep Problems typical likelihood. The second overview page presents seven sleep-disturbance result cards with short likelihood labels.",
+      "genes": [
+        "Sleep, restless-legs, snoring, daytime-sleepiness, and caffeine-sleep model cards"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-fatigue-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Fatigue sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-fatigue, ME/CFS, anemia, iron, hemoglobin, red-blood-cell, mood, exercise, sleep, restless-legs, snoring, supplement, acupuncture, treatment, testing, or medical recommendation."
+    },
+    {
+      "groupTitle": "Risk score / Low Energy",
+      "item": "Low Energy (Chronic Fatigue)",
+      "brandName": "Chronic Fatigue DNA Report sample",
+      "geneticAnalysis": "Typical likelihood of fatigue; 33rd percentile; based on 7,929 genetic variants. The sample Low Energy page says genetics may explain up to 40% of differences in chronic-fatigue chances and names infections, thyroid or liver problems, and nutrient deficiencies as non-genetic context.",
+      "genes": [
+        "DRD3",
+        "MAPT",
+        "TNF",
+        "ZFC3H1",
+        "SHISA4",
+        "COMT",
+        "ADRB2",
+        "NR3C1",
+        "MAOA",
+        "BLMH",
+        "MAPKAPK3",
+        "SPATA32",
+        "SLC25A15",
+        "ARSA",
+        "MEGF9",
+        "KCTD10",
+        "EXD2",
+        "HTT",
+        "IPO9"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-fatigue-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Fatigue sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-fatigue, ME/CFS, anemia, iron, hemoglobin, red-blood-cell, mood, exercise, sleep, restless-legs, snoring, supplement, acupuncture, treatment, testing, or medical recommendation."
+    },
+    {
+      "groupTitle": "Risk score / Low Energy",
+      "item": "Low Energy top variants",
+      "brandName": "Chronic Fatigue DNA Report sample",
+      "geneticAnalysis": "Visible sample top-variant rows include DRD3 rs6280 TT, MAPT rs242924 GT, TNF rs1800629 GA, ZFC3H1 rs4570625 TG, SHISA4 rs2279681 CC, COMT rs4680 AG, ADRB2 rs1042714 GC, NR3C1 rs852977 AG, MAOA rs1137070 CT, and BLMH rs2066713 GA. The sample table states that the number of risk variants in the table does not necessarily reflect the overall result.",
+      "genes": [
+        "DRD3",
+        "MAPT",
+        "TNF",
+        "ZFC3H1",
+        "SHISA4",
+        "COMT",
+        "ADRB2",
+        "NR3C1",
+        "MAOA",
+        "BLMH"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-fatigue-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Fatigue sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-fatigue, ME/CFS, anemia, iron, hemoglobin, red-blood-cell, mood, exercise, sleep, restless-legs, snoring, supplement, acupuncture, treatment, testing, or medical recommendation."
+    },
+    {
+      "groupTitle": "Risk score / Anemia",
+      "item": "Anemia",
+      "brandName": "Chronic Fatigue DNA Report sample",
+      "geneticAnalysis": "Typical likelihood of anemia; 54th percentile; based on 477,517 genetic variants. The sample Anemia page says genetics may explain up to 90% of differences in hemoglobin levels and names iron or B-vitamin deficiency, diseases, medications, infections, toxic chemicals, alcohol misuse, blood loss, pregnancy, and aging as non-genetic context.",
+      "genes": [
+        "TST",
+        "TMPRSS6",
+        "IGLV4-60",
+        "BCL11A",
+        "TRIM33",
+        "TRIB2",
+        "RNF43",
+        "VMP1",
+        "MXRA8",
+        "MAN1A2",
+        "FMO5",
+        "CD101",
+        "KAZN",
+        "SLC16A1",
+        "RHOC"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-fatigue-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Fatigue sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-fatigue, ME/CFS, anemia, iron, hemoglobin, red-blood-cell, mood, exercise, sleep, restless-legs, snoring, supplement, acupuncture, treatment, testing, or medical recommendation."
+    },
+    {
+      "groupTitle": "Risk score / Anemia",
+      "item": "Anemia top variants",
+      "brandName": "Chronic Fatigue DNA Report sample",
+      "geneticAnalysis": "Visible sample top-variant rows include TST rs4820268 GG, TMPRSS6 rs855791 AA, IGLV4-60 rs987710 AA, BCL11A rs1427407 TG, TRIM33 rs576432148 AA, TMPRSS6 rs228916 TT, TRIB2 rs118096157 TT, RNF43 rs199598395 CC, and VMP1 rs143341655 CC. Several visible rows render the gene cell as '/', preserving sample-table formatting rather than turning the row into a local interpretation.",
+      "genes": [
+        "TST",
+        "TMPRSS6",
+        "IGLV4-60",
+        "BCL11A",
+        "TRIM33",
+        "TRIB2",
+        "RNF43",
+        "VMP1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-fatigue-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Fatigue sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-fatigue, ME/CFS, anemia, iron, hemoglobin, red-blood-cell, mood, exercise, sleep, restless-legs, snoring, supplement, acupuncture, treatment, testing, or medical recommendation."
+    },
+    {
+      "groupTitle": "Recommendations",
+      "item": "Recommendation ranking",
+      "brandName": "Chronic Fatigue DNA Report sample",
+      "geneticAnalysis": "The sample says recommendations are prioritized by likely impact based on genetics plus the amount of scientific evidence supporting the recommendation. The recommendation pages show named recommendation blocks with condition-level impact and evidence ratings.",
+      "genes": [
+        "Recommendation ranking model"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-fatigue-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Fatigue sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-fatigue, ME/CFS, anemia, iron, hemoglobin, red-blood-cell, mood, exercise, sleep, restless-legs, snoring, supplement, acupuncture, treatment, testing, or medical recommendation."
+    },
+    {
+      "groupTitle": "Recommendation / Iron",
+      "item": "Condition-level ratings",
+      "brandName": "Chronic Fatigue DNA Report sample",
+      "geneticAnalysis": "Visible condition rows include Restless Legs impact 4/5 evidence 4/5; Sleep Movement impact 3/5 evidence 3/5; Aerobic Capacity (VO2 Max) impact 2/5 evidence 3/5; Low Energy (Chronic Fatigue) impact 3/5 evidence 3/5. The sample Iron recommendation block discusses iron status in relation to restless legs, sleep movement, aerobic capacity, and fatigue while repeatedly preserving medical-safety context for iron testing and clinician review.",
+      "genes": [
+        "TMPRSS6",
+        "MEIS1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-fatigue-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Fatigue sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-fatigue, ME/CFS, anemia, iron, hemoglobin, red-blood-cell, mood, exercise, sleep, restless-legs, snoring, supplement, acupuncture, treatment, testing, or medical recommendation."
+    },
+    {
+      "groupTitle": "Recommendation / Iron",
+      "item": "Restless Legs personalized row",
+      "brandName": "Chronic Fatigue DNA Report sample",
+      "geneticAnalysis": "The sample Restless Legs subsection includes personalized rows for TMPRSS6 rs855791 AA and MEIS1 rs2300478 GG. The sample explains that low iron in the brain may play a role in restless legs syndrome and says people should talk to a doctor and check iron/ferritin before iron therapy.",
+      "genes": [
+        "TMPRSS6",
+        "MEIS1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-fatigue-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Fatigue sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-fatigue, ME/CFS, anemia, iron, hemoglobin, red-blood-cell, mood, exercise, sleep, restless-legs, snoring, supplement, acupuncture, treatment, testing, or medical recommendation."
+    },
+    {
+      "groupTitle": "Recommendation / Iron",
+      "item": "Low Energy personalized row",
+      "brandName": "Chronic Fatigue DNA Report sample",
+      "geneticAnalysis": "The sample Low Energy subsection includes a personalized row for TMPRSS6 rs855791 AA. The sample says iron transports oxygen for energy production, fatigue is common in iron deficiency, high-dose iron can be toxic, and people should talk to a doctor before taking supplements.",
+      "genes": [
+        "TMPRSS6"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-fatigue-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Fatigue sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-fatigue, ME/CFS, anemia, iron, hemoglobin, red-blood-cell, mood, exercise, sleep, restless-legs, snoring, supplement, acupuncture, treatment, testing, or medical recommendation."
+    },
+    {
+      "groupTitle": "Recommendation / Acupuncture",
+      "item": "Condition-level ratings",
+      "brandName": "Chronic Fatigue DNA Report sample",
+      "geneticAnalysis": "Visible condition rows include Restless Legs impact 2/5 evidence 3/5; Low Mood impact 2/5 evidence 3/5; Insomnia impact 3/5 evidence 3/5. The sample Acupuncture recommendation block includes safety language for pregnancy, pacemakers, and bleeding disorders.",
+      "genes": [
+        "No visible genotype row in acupuncture pages"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "chronic-fatigue-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed public Chronic Fatigue sample-report structure only. Keep this separate from local genome evidence; it is not a personal chronic-fatigue, ME/CFS, anemia, iron, hemoglobin, red-blood-cell, mood, exercise, sleep, restless-legs, snoring, supplement, acupuncture, treatment, testing, or medical recommendation."
+    }
+  ],
+  "organSystemConditionContext": {
+    "plainEnglishMeaning": "The safe output for this package is an evidence-availability report plus exact public sample-output examples. It explains which model, clinical, professional, and organ-system inputs are missing and avoids medical conclusions from missing evidence.",
+    "unsupportedClaims": [
+      "Diagnosis, personal disease risk, carrier status, variant classification, fatigue cause, ME/CFS status, post-exertional malaise, anemia status, hemoglobin level, red-blood-cell count, iron or ferritin status, sleep diagnosis, restless-legs status, severity, prognosis, lab status, imaging status, organ-function status, treatment need, medication response, supplement need, acupuncture need, diet need, exercise guidance, screening need, testing need, prevention action, clearance, emergency action, all-clear reassurance, and clinical actionability are not supported by this fixture.",
+      "Public sample PDF rows are present only as observed output examples; sample likelihood labels, percentiles, recommendation ratings, TMPRSS6/MEIS1 rows, and visible variant rows are not local-user results."
+    ],
+    "professionalReview": "Use this as a local-agent readiness fixture only. Health decisions require validated test scope, relevant clinical context, labs or sleep assessment when relevant, and qualified professional review."
+  },
+  "practicalNextSteps": {
+    "professionalReview": [
+      "Keep this output educational and non-diagnostic.",
+      "Do not use this fixture to start, stop, or change testing, screening, medication, supplements, diet, exercise, acupuncture, or treatment.",
+      "Use qualified professional review for fatigue symptoms, sleep concerns, abnormal labs, anemia concerns, iron supplementation, or other health decisions."
+    ]
+  },
+  "references": [
+    {
+      "id": "cdc-genetic-testing",
+      "title": "CDC Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetics",
+      "title": "MedlinePlus Genetics"
+    },
+    {
+      "id": "medlineplus-genetic-testing",
+      "title": "MedlinePlus: Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetic-test-results",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results"
+    },
+    {
+      "id": "fda-direct-to-consumer-tests",
+      "title": "FDA Direct-to-Consumer Tests"
+    },
+    {
+      "id": "medlineplus-complex-disorders",
+      "title": "MedlinePlus Genetics: complex disorders"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    },
+    {
+      "id": "cdc-mecfs",
+      "title": "CDC: ME/CFS Basics"
+    },
+    {
+      "id": "medlineplus-mecfs",
+      "title": "MedlinePlus: Myalgic Encephalomyelitis/Chronic Fatigue Syndrome"
+    },
+    {
+      "id": "chronic-fatigue-sample-pdf",
+      "title": "Chronic Fatigue DNA Report sample report"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "effect": "The local fixture intentionally omits chronic-fatigue risk calculations and clinical context.",
+        "gene": "Chronic Fatigue DNA Report model",
+        "genotype": "validated chronic-fatigue, fatigue, anemia, iron, sleep, and restless-legs models; clinical context; labs; sleep assessment; exercise tolerance; medication context; and professional review unavailable",
+        "phenotype": "Mark fatigue-risk, ME/CFS, anemia, iron, sleep, treatment, supplement, exercise, testing, and actionability sections unavailable instead of inferring them.",
+        "tier": "Local missing input",
+        "variantId": "chronic-fatigue-dna-health-report-model-unavailable"
+      },
+      {
+        "effect": "The sample Low Energy page reports typical likelihood of fatigue based on 7,929 genetic variants.",
+        "gene": "Low Energy model",
+        "genotype": "33rd percentile; typical likelihood",
+        "phenotype": "Observed sample content only; do not infer local chronic-fatigue risk, ME/CFS diagnosis, fatigue cause, treatment, or medication response.",
+        "tier": "Sample risk card",
+        "variantId": "7,929 variants"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Low Energy table.",
+        "gene": "DRD3",
+        "genotype": "TT",
+        "phenotype": "Observed sample row only; it is not a local dopamine-receptor or fatigue-risk finding.",
+        "tier": "Low Energy top sample variants",
+        "variantId": "rs6280"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Low Energy table.",
+        "gene": "MAPT",
+        "genotype": "GT",
+        "phenotype": "Observed sample row only; it is not a local MAPT or fatigue-risk finding.",
+        "tier": "Low Energy top sample variants",
+        "variantId": "rs242924"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Low Energy table.",
+        "gene": "TNF",
+        "genotype": "GA",
+        "phenotype": "Observed sample row only; it is not a local inflammation or fatigue-risk finding.",
+        "tier": "Low Energy top sample variants",
+        "variantId": "rs1800629"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Low Energy table.",
+        "gene": "COMT",
+        "genotype": "AG",
+        "phenotype": "Observed sample row only; it is not a local COMT, energy, or fatigue-risk finding.",
+        "tier": "Low Energy top sample variants",
+        "variantId": "rs4680"
+      },
+      {
+        "effect": "The sample Anemia page reports typical likelihood of anemia based on 477,517 genetic variants.",
+        "gene": "Anemia model",
+        "genotype": "54th percentile; typical likelihood",
+        "phenotype": "Observed sample content only; do not infer local anemia risk, hemoglobin level, iron status, CBC result, diagnosis, testing need, or treatment.",
+        "tier": "Sample risk card",
+        "variantId": "477,517 variants"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Anemia table.",
+        "gene": "TST",
+        "genotype": "GG",
+        "phenotype": "Observed sample row only; it is not a local anemia, blood, or iron finding.",
+        "tier": "Anemia top sample variants",
+        "variantId": "rs4820268"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Anemia table and visible personalized row in Iron recommendation sections.",
+        "gene": "TMPRSS6",
+        "genotype": "AA",
+        "phenotype": "Observed sample row only; do not infer local iron status, ferritin, anemia risk, supplement need, or treatment.",
+        "tier": "Anemia top sample variants",
+        "variantId": "rs855791"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Anemia table.",
+        "gene": "BCL11A",
+        "genotype": "TG",
+        "phenotype": "Observed sample row only; it is not a local hemoglobin, anemia, or blood finding.",
+        "tier": "Anemia top sample variants",
+        "variantId": "rs1427407"
+      },
+      {
+        "effect": "Visible personalized row in the sample Iron / Restless Legs recommendation section.",
+        "gene": "MEIS1",
+        "genotype": "GG",
+        "phenotype": "Observed sample row only; do not infer local restless-legs risk, iron status, supplement need, sleep diagnosis, or treatment.",
+        "tier": "Iron personalized sample row",
+        "variantId": "rs2300478"
+      }
+    ],
+    "missingInputs": [
+      "Validated Chronic Fatigue DNA Health Report model, calibrated PRS, fatigue/anemia/iron/sleep/restless-legs models, and sample-specific local risk calculations are unavailable in this local fixture.",
+      "ME/CFS diagnosis, fatigue symptoms, post-exertional malaise, sleep assessment, infection history, thyroid/liver/nutrient context, medications, exercise tolerance, and qualified professional review are unavailable.",
+      "Immune labs, endocrine labs, mitochondrial testing, iron/ferritin/CBC, hemoglobin/RBC, sleep studies, imaging, treatment context, prevention context, and actionability context are unavailable.",
+      "Public sample rows are observed sample-output examples only and are not local-user genotype or health results."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated model, ancestry applicability metadata, clinical context, lab context, sleep assessment, professional review, or local sample-specific risk calculation is supplied.",
+      "Absence of evidence in this fixture must be reported as unavailable, not converted into low risk, reassurance, diagnosis, treatment guidance, supplement guidance, or sleep/actionability advice.",
+      "Sample percentiles and likelihood labels stay in sample-output rows and appendix context; they are not personal probabilities."
+    ],
+    "limitations": [
+      "This generated result does not include raw genome data and does not emit VCF, FASTQ, BAM, or CRAM content.",
+      "Reference resources used for boundary language: CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing; MedlinePlus Genetics: Interpreting Genetic Test Results; FDA Direct-to-Consumer Tests; MedlinePlus Genetics: complex disorders; NHGRI overview of polygenic risk scores; GWAS Catalog; CDC: ME/CFS Basics; MedlinePlus: Myalgic Encephalomyelitis/Chronic Fatigue Syndrome; Chronic Fatigue DNA Report sample report.",
+      "The result is a deterministic synthetic validation artifact for local-agent packaging, not a medical interpretation."
+    ]
+  }
+}

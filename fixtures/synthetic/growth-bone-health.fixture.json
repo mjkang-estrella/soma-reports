@@ -1,0 +1,86 @@
+{
+  "consumerTone": "plain English; educational growth and bone genetics context only; no growth prediction, bone-density, osteoporosis, endocrine, pediatric, imaging, lab, exercise-clearance, diagnosis, treatment, supplement, or actionability claims",
+  "datasetId": "synthetic-growth-bone-health-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "ACTN3",
+      "inputId": "ACTN3-rs1815739",
+      "matchStatus": "observed",
+      "observedValue": "CT",
+      "rsid": "rs1815739",
+      "sourceArtifact": "synthetic-growth-bone-health-context-v1",
+      "sourceFile": "synthetic-growth-bone-health-context-v1.json"
+    },
+    {
+      "assembly": "derived-fitness-trait-context",
+      "gene": "ACE",
+      "haplotype": "ID",
+      "inputId": "ACE-I-D",
+      "matchStatus": "observed",
+      "observedValue": "ID",
+      "sourceArtifact": "synthetic-growth-bone-health-context-v1",
+      "sourceFile": "synthetic-growth-bone-health-context-v1.json"
+    },
+    {
+      "assembly": "derived-fitness-trait-context",
+      "gene": "Growth and bone health model",
+      "haplotype": "growth-bone-health-model-unavailable",
+      "inputId": "growth-bone-health-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "calibrated growth model, height model, bone-density model, osteoporosis model, endocrine model, pediatric growth model, imaging evidence, lab evidence, supplement model, treatment context, exercise-clearance context, and ancestry applicability metadata unavailable in this fixture",
+      "sourceArtifact": "synthetic-growth-bone-health-context-v1",
+      "sourceFile": "synthetic-growth-bone-health-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "hash": "sha256:synthetic-growth-bone-health-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived fitness-trait evidence for growth-bone-health validation"
+  },
+  "missingInputPolicy": "Report unavailable growth and bone models explicitly; do not infer height, growth pattern, pediatric growth status, bone density, osteoporosis, endocrine status, imaging findings, lab findings, supplement needs, treatment needs, exercise clearance, diagnosis, or actionability.",
+  "packageSlug": "growth-bone-health",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-athletic-performance",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: athletic performance",
+      "usedFor": [
+        "complex_trait_context",
+        "actn3_ace_context",
+        "non_deterministic_language"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
+      "usedFor": [
+        "complex_trait_limitations",
+        "probability_appendix"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "candidate_trait_associations",
+        "model_unavailable_context"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer growth and bone health context using derived ACTN3 and ACE evidence plus explicit growth, bone-density, osteoporosis, endocrine, pediatric, imaging, lab, supplement, treatment, exercise-clearance, and model-unavailable framing."
+}

@@ -1,0 +1,75 @@
+{
+  "consumerTone": "plain English; educational; no methylation, detox, diagnosis, pregnancy, or supplement-prescribing claims",
+  "datasetId": "synthetic-mthfr-cdc-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "MTHFR",
+      "inputId": "MTHFR-rs1801133",
+      "matchStatus": "observed",
+      "observedValue": "CT",
+      "rsid": "rs1801133",
+      "sourceArtifact": "synthetic-mthfr-derived-evidence-v1",
+      "sourceFile": "synthetic-mthfr-derived-evidence-v1.json"
+    },
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "MTHFR",
+      "inputId": "MTHFR-rs1801131",
+      "matchStatus": "observed",
+      "observedValue": "AC",
+      "rsid": "rs1801131",
+      "sourceArtifact": "synthetic-mthfr-derived-evidence-v1",
+      "sourceFile": "synthetic-mthfr-derived-evidence-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "hash": "sha256:synthetic-mthfr-derived-evidence-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived calls for package validation"
+  },
+  "missingInputPolicy": "Report unavailable MTHFR markers explicitly; do not infer unobserved variants, sample-hidden genotype rows, methylation status, detox status, pregnancy outcomes, or supplement actions.",
+  "packageSlug": "mthfr-dna-wellness-report",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-mthfr-folic-acid",
+      "sourceType": "public_health_resource",
+      "title": "CDC MTHFR Gene Variant and Folic Acid Facts",
+      "usedFor": [
+        "mthfr_variant_context",
+        "folic_acid_safety_language"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "sequencing-report-marketplace-docs",
+      "sourceType": "sequencing_public_doc",
+      "title": "Sequencing.com Report Marketplace documentation",
+      "usedFor": [
+        "marketplace_flow"
+      ]
+    },
+    {
+      "evidenceLevel": "direct_sample_report",
+      "id": "mthfr-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "MTHFR DNA Wellness Report sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "output_format"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer MTHFR folate-processing context using derived variant calls, CDC safety framing, and observed sample-report output structure."
+}

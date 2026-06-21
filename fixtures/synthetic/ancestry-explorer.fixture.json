@@ -1,0 +1,90 @@
+{
+  "consumerTone": "plain English; ancestry education only; no identity, exact-origin, ethnicity-percentage, tribal/community, relative-matching, or health claims",
+  "datasetId": "synthetic-ancestry-explorer-autosomal-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "autosomal genome",
+      "haplotype": "autosomal-reference-panel-summary",
+      "inputId": "autosomal-reference-panel-summary",
+      "matchStatus": "summarized",
+      "observedValue": "broad East Asian reference-panel similarity; no percentage model supplied",
+      "sourceArtifact": "synthetic-ancestry-explorer-autosomal-context-v1",
+      "sourceFile": "synthetic-ancestry-explorer-autosomal-context-v1.json"
+    },
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "autosomal ancestry model",
+      "haplotype": "not-supplied",
+      "inputId": "regional-detail-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "country-level or subcontinental regional ancestry evidence unavailable in this fixture",
+      "sourceArtifact": "synthetic-ancestry-explorer-autosomal-context-v1",
+      "sourceFile": "synthetic-ancestry-explorer-autosomal-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "hash": "sha256:synthetic-ancestry-explorer-autosomal-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived ancestry evidence for ancestry-explorer validation"
+  },
+  "missingInputPolicy": "Mark regional ancestry, exact homeland, relatives, family matching, migration path, community affiliation, and calibrated ancestry percentages unavailable when not explicitly supplied. Use sample-report percentages and maps only as observed output-format examples.",
+  "packageSlug": "ancestry-explorer",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-ancestry-testing",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: genetic ancestry testing",
+      "usedFor": [
+        "ancestry_context",
+        "autosomal_scope",
+        "consumer_safety_language"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-dtc-risks-benefits",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing",
+      "usedFor": [
+        "dtc_limitations",
+        "privacy_sensitivity",
+        "probability_appendix"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "international-genome-sample-resource",
+      "sourceType": "database",
+      "title": "International Genome Sample Resource / 1000 Genomes",
+      "usedFor": [
+        "ancestry_context",
+        "population_reference",
+        "variant_frequency_context"
+      ]
+    },
+    {
+      "evidenceLevel": "direct_sample_report",
+      "id": "ancestry-explorer-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Ancestry Explorer DNA Report sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer autosomal ancestry exploration from derived broad reference-panel similarity plus observed Ancestry Explorer sample-report output structure."
+}

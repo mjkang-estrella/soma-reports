@@ -1,0 +1,78 @@
+{
+  "consumerTone": "plain English; novelty ancestry education only; no Santa/St. Nick relationship, similarity score, identity, child inference, exact-origin, ethnicity-percentage, family-tree, relative-matching, or health claims",
+  "datasetId": "synthetic-santa-comparison-ancestry-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "autosomal genome",
+      "haplotype": "autosomal-reference-panel-summary",
+      "inputId": "autosomal-reference-panel-summary",
+      "matchStatus": "summarized",
+      "observedValue": "broad East Asian reference-panel similarity; no Santa/St. Nick comparison model supplied",
+      "sourceArtifact": "synthetic-santa-comparison-ancestry-context-v1",
+      "sourceFile": "synthetic-santa-comparison-ancestry-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "novelty DNA comparison evidence",
+      "haplotype": "not-supplied",
+      "inputId": "santa-comparison-evidence-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "Santa/St. Nick comparison sample, relationship evidence, relative matching, family-tree placement, identity evidence, and child-specific interpretation unavailable in this fixture",
+      "sourceArtifact": "synthetic-santa-comparison-ancestry-context-v1",
+      "sourceFile": "synthetic-santa-comparison-ancestry-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "hash": "sha256:synthetic-santa-comparison-ancestry-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived ancestry evidence for santa-and-me-app-dna-comparison validation"
+  },
+  "missingInputPolicy": "Mark Santa/St. Nick comparison sample, relationship evidence, relative matching, family-tree placement, identity, child-specific interpretation, regional ancestry, exact homeland, and community affiliation unavailable when not explicitly supplied.",
+  "packageSlug": "santa-and-me-app-dna-comparison",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-ancestry-testing",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: genetic ancestry testing",
+      "usedFor": [
+        "ancestry_context",
+        "autosomal_scope",
+        "consumer_safety_language"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-dtc-risks-benefits",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing",
+      "usedFor": [
+        "dtc_limitations",
+        "privacy_sensitivity",
+        "probability_appendix"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "international-genome-sample-resource",
+      "sourceType": "database",
+      "title": "International Genome Sample Resource / 1000 Genomes",
+      "usedFor": [
+        "ancestry_context",
+        "population_reference",
+        "variant_frequency_context"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer novelty DNA comparison context from derived broad autosomal similarity while marking Santa/St. Nick comparison, relationship, identity, relative matching, family-tree, and child-specific evidence unavailable."
+}

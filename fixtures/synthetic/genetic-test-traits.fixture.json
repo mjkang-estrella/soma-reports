@@ -1,0 +1,121 @@
+{
+  "packageSlug": "genetic-test-traits",
+  "datasetId": "synthetic-inherited-traits-visible-trait-context-v1",
+  "packageVersion": "0.1.0",
+  "reportPurpose": "Consumer inherited-traits context using derived HERC2/OCA2, MC1R, and hair-texture evidence plus direct-to-consumer trait-test limitation framing.",
+  "missingInputPolicy": "Report unavailable inherited-trait sections explicitly; do not infer child phenotype, identity, ancestry, disease risk, skin-cancer risk, dermatology outcome, or exact appearance from genotype alone.",
+  "consumerTone": "plain English; educational inherited visible-trait context only; no child-prediction, identity, ancestry, disease-risk, dermatology, skincare, or deterministic appearance claims",
+  "inputManifest": {
+    "hash": "sha256:synthetic-inherited-traits-visible-trait-context-v1",
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived visible-trait evidence for genetic-test-traits validation"
+  },
+  "genomeEvidence": [
+    {
+      "inputId": "HERC2-OCA2-rs12913832",
+      "rsid": "rs12913832",
+      "gene": "HERC2/OCA2 regulatory region",
+      "observedValue": "AG",
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-inherited-traits-visible-trait-context-v1.json",
+      "sourceArtifact": "synthetic-inherited-traits-visible-trait-context-v1"
+    },
+    {
+      "inputId": "MC1R-rs1805007",
+      "rsid": "rs1805007",
+      "gene": "MC1R",
+      "observedValue": "CT",
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-inherited-traits-visible-trait-context-v1.json",
+      "sourceArtifact": "synthetic-inherited-traits-visible-trait-context-v1"
+    },
+    {
+      "inputId": "EDAR-hair-texture-context",
+      "haplotype": "EDAR-hair-thickness-context-derived",
+      "gene": "EDAR",
+      "observedValue": "derived hair-texture/thickness context available",
+      "assembly": "derived-visible-trait-context",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-inherited-traits-visible-trait-context-v1.json",
+      "sourceArtifact": "synthetic-inherited-traits-visible-trait-context-v1"
+    }
+  ],
+  "referenceResources": [
+    {
+      "id": "medlineplus-eye-color",
+      "title": "MedlinePlus Genetics: eye color",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "eye_color_context",
+        "polygenic_trait_limitations",
+        "non_deterministic_language"
+      ]
+    },
+    {
+      "id": "medlineplus-hair-color",
+      "title": "MedlinePlus Genetics: hair color",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "hair_color_context",
+        "pigmentation_context",
+        "polygenic_trait_limitations"
+      ]
+    },
+    {
+      "id": "medlineplus-hair-texture",
+      "title": "MedlinePlus Genetics: hair texture",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "hair_texture_context",
+        "trait_limitations",
+        "non_deterministic_language"
+      ]
+    },
+    {
+      "id": "medlineplus-oca2",
+      "title": "MedlinePlus Genetics: OCA2 gene",
+      "sourceType": "gene_summary",
+      "evidenceLevel": "gene_background",
+      "usedFor": [
+        "oca2_context",
+        "pigmentation_context"
+      ]
+    },
+    {
+      "id": "medlineplus-mc1r",
+      "title": "MedlinePlus Genetics: MC1R gene",
+      "sourceType": "gene_summary",
+      "evidenceLevel": "gene_background",
+      "usedFor": [
+        "mc1r_context",
+        "hair_color_context",
+        "freckle_context",
+        "non_diagnostic_language"
+      ]
+    },
+    {
+      "id": "medlineplus-dtc-test-types",
+      "title": "MedlinePlus Genetics: Direct-to-consumer genetic test types",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "trait_test_limitations",
+        "probability_appendix",
+        "consumer_safety_language"
+      ]
+    }
+  ],
+  "expectedAssertions": {
+    "noRawGenomeInOutput": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "probabilitiesOnlyInAppendix": true,
+    "consumerLanguage": true
+  }
+}

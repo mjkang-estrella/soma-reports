@@ -1,0 +1,162 @@
+{
+  "reportOverview": {
+    "reportTitle": "Complete Genome Analysis",
+    "inputManifestHash": "sha256:synthetic-complete-genome-analysis-boundary-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "Complete genome-wide inventory, coverage metrics, variant interpretation, pediatric context, clinical classification evidence, and complete resource versions are not supplied.",
+      "complete genome-wide inventory, coverage metrics, variant interpretation, pediatric context, disease risk, carrier status, pharmacogenomics, ancestry, pathogenicity classification, clinical significance, and authenticated sample-report rows unavailable in this fixture"
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Public variant lookup context",
+      "item": "BDNF rs6265",
+      "brandName": "",
+      "geneticAnalysis": "A selected public variant identifier is available for lookup and annotation context. No complete genome-wide analysis, pediatric interpretation, health finding, or clinical interpretation is supplied.",
+      "genes": [
+        "BDNF"
+      ],
+      "sourceLabel": "NCBI dbSNP; Ensembl REST; Ensembl VEP",
+      "sourceIds": [
+        "ncbi-dbsnp",
+        "ensembl-rest-api",
+        "ensembl-vep"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The row can be used to explain a selected public lookup, but it does not show complete genome analysis or a clinical finding."
+    },
+    {
+      "groupTitle": "Reference build context",
+      "item": "GRCh38 coordinate context",
+      "brandName": "",
+      "geneticAnalysis": "GRCh38 reference-build context is available for the selected lookup, while alternate-build conversion, remapping, complete coverage, and genome-wide analysis outputs are not supplied.",
+      "genes": [
+        "reference genome coordinate context"
+      ],
+      "sourceLabel": "NCBI Variation Services / SPDI; Ensembl REST",
+      "sourceIds": [
+        "ncbi-variation-services-spdi",
+        "ensembl-rest-api"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The report can name the supplied build context, but complete genome-wide analysis requires supplied analysis outputs and cannot be inferred from one selected lookup row."
+    },
+    {
+      "groupTitle": "Complete genome analysis availability",
+      "item": "Complete genome analysis output unavailable",
+      "brandName": "",
+      "geneticAnalysis": "complete genome-wide inventory, coverage metrics, variant interpretation, pediatric context, disease risk, carrier status, pharmacogenomics, ancestry, pathogenicity classification, clinical significance, and authenticated sample-report rows unavailable in this fixture",
+      "genes": [
+        "complete genome analysis output"
+      ],
+      "sourceLabel": "Ensembl VEP; ClinVar; NIH Genetic Testing Registry; 1000 Genomes; GWAS Catalog",
+      "sourceIds": [
+        "ensembl-vep",
+        "ncbi-clinvar",
+        "ncbi-genetic-testing-registry",
+        "international-genome-sample-resource",
+        "ebi-gwas-catalog"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This local run can explain what evidence is missing, but it cannot claim a complete genome-wide analysis, pediatric interpretation, disease risk, carrier status, pharmacogenomics report, ancestry report, or clinical classification."
+    }
+  ],
+  "utilityContext": {
+    "plainEnglishMeaning": "This result is a complete-genome-analysis boundary report. It explains supplied public lookup context and explicitly marks missing genome-wide, pediatric, clinical, and authenticated sample outputs unavailable.",
+    "unsupportedClaims": [
+      "complete genome-wide inventory",
+      "coverage metrics",
+      "pediatric interpretation",
+      "diagnosis",
+      "disease-risk estimate",
+      "carrier status",
+      "pharmacogenomics interpretation",
+      "ancestry report",
+      "pathogenicity classification",
+      "clinical significance claim",
+      "all-clear reassurance",
+      "screening or treatment recommendation"
+    ]
+  },
+  "references": [
+    {
+      "id": "ensembl-vep",
+      "title": "Ensembl Variant Effect Predictor"
+    },
+    {
+      "id": "ensembl-variant-consequences",
+      "title": "Ensembl Variation: calculated variant consequences"
+    },
+    {
+      "id": "ensembl-rest-api",
+      "title": "Ensembl REST API endpoints"
+    },
+    {
+      "id": "sequence-ontology",
+      "title": "Sequence Ontology"
+    },
+    {
+      "id": "ncbi-dbsnp",
+      "title": "NCBI dbSNP"
+    },
+    {
+      "id": "ncbi-clinvar",
+      "title": "NCBI ClinVar"
+    },
+    {
+      "id": "ncbi-variation-services-spdi",
+      "title": "NCBI Variation Services / SPDI"
+    },
+    {
+      "id": "ncbi-genetic-testing-registry",
+      "title": "NIH Genetic Testing Registry"
+    },
+    {
+      "id": "international-genome-sample-resource",
+      "title": "International Genome Sample Resource / 1000 Genomes"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "bioinformatics-public-variant-rs6265",
+        "gene": "BDNF",
+        "observedValue": "selected public variant identifier available for lookup and annotation context; no trait, disease, or clinical interpretation supplied",
+        "matchStatus": "summarized"
+      },
+      {
+        "inputId": "bioinformatics-reference-build-context",
+        "gene": "reference genome coordinate context",
+        "observedValue": "GRCh38 coordinate context available for selected lookup; alternate build, liftover path, remapping evidence, and service output unavailable",
+        "matchStatus": "summarized"
+      },
+      {
+        "inputId": "complete-genome-analysis-output-unavailable",
+        "gene": "complete genome analysis output",
+        "observedValue": "complete genome-wide inventory, coverage metrics, variant interpretation, pediatric context, disease risk, carrier status, pharmacogenomics, ancestry, pathogenicity classification, clinical significance, and authenticated sample-report rows unavailable in this fixture",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated Sequencing.com sample report rows",
+      "Complete genome-wide inventory, coverage metrics, and variant interpretation output",
+      "Pediatric context, disease-risk model, carrier-status model, pharmacogenomics model, ancestry model, and clinical classification evidence",
+      "complete genome-wide inventory, coverage metrics, variant interpretation, pediatric context, disease risk, carrier status, pharmacogenomics, ancestry, pathogenicity classification, clinical significance, and authenticated sample-report rows unavailable in this fixture"
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated complete-genome, coverage, disease, carrier-status, pharmacogenomics, ancestry, pathogenicity, or clinical-actionability model is supplied for this local package.",
+      "The selected rows support boundary context only and cannot be treated as complete genome-wide analysis output."
+    ],
+    "limitations": [
+      "This validation result uses selected derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
+      "The package does not emit complete SNP tables, sequencing files, alignment files, complete genome-wide analysis files, or clinical screening output files.",
+      "The package does not diagnose disease, estimate disease risk, classify pathogenicity, report carrier status, infer medication response, report ancestry, provide pediatric interpretation, or recommend screening, testing, treatment, diet, supplements, or lifestyle changes."
+    ]
+  }
+}

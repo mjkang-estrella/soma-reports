@@ -1,0 +1,164 @@
+{
+  "reportOverview": {
+    "reportTitle": "Alzheimer's Risk | APOE Gene Analysis",
+    "inputManifestHash": "sha256:synthetic-apoe-alzheimers-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "A calibrated absolute-risk model with age, sex, ancestry, family history, and validation metadata is not supplied."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "APOE allele context",
+      "item": "APOE e3/e4",
+      "brandName": "",
+      "geneticAnalysis": "The supplied derived APOE evidence reports an e3/e4 allele context. This is risk-factor context only, not a diagnosis.",
+      "genes": [
+        "APOE"
+      ],
+      "sourceLabel": "MedlinePlus APOE gene; FDA K192073",
+      "sourceIds": [
+        "medlineplus-apoe-gene",
+        "fda-helix-apoe-k192073"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "One APOE e4 copy can be associated with increased late-onset Alzheimer's disease risk, but it does not mean Alzheimer's disease is present or will definitely happen."
+    },
+    {
+      "groupTitle": "APOE marker context",
+      "item": "APOE rs429358",
+      "brandName": "",
+      "geneticAnalysis": "A derived CT call is available for rs429358, one of the APOE markers used for allele context in this package.",
+      "genes": [
+        "APOE"
+      ],
+      "sourceLabel": "FDA K192073",
+      "sourceIds": [
+        "fda-helix-apoe-k192073"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This marker is used as part of the derived APOE allele context and is not interpreted alone as a disease result."
+    },
+    {
+      "groupTitle": "APOE marker context",
+      "item": "APOE rs7412",
+      "brandName": "",
+      "geneticAnalysis": "A derived CC call is available for rs7412, one of the APOE markers used for allele context in this package.",
+      "genes": [
+        "APOE"
+      ],
+      "sourceLabel": "FDA K192073",
+      "sourceIds": [
+        "fda-helix-apoe-k192073"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This marker is used with rs429358 to describe APOE allele context and is not interpreted alone as a diagnosis."
+    },
+    {
+      "groupTitle": "Model availability",
+      "item": "Calibrated APOE absolute-risk model",
+      "brandName": "",
+      "geneticAnalysis": "The local fixture does not include a calibrated absolute-risk model, ancestry applicability metadata, age, sex, family history, biomarkers, or authenticated sample-report rows.",
+      "genes": [
+        "APOE"
+      ],
+      "sourceLabel": "FDA Direct-to-Consumer Tests; NHGRI overview of polygenic risk scores",
+      "sourceIds": [
+        "fda-direct-to-consumer-tests",
+        "nhgri-polygenic-risk-scores"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The report can describe APOE context, but it cannot estimate a personal lifetime risk or replace clinician or genetic-counselor review."
+    }
+  ],
+  "riskContext": {
+    "plainEnglishMeaning": "APOE e4 is a risk factor for late-onset Alzheimer's disease. It is not a diagnosis, and many other genetic, health, family, lifestyle, and environmental factors can matter.",
+    "unsupportedClaims": [
+      "Alzheimer's disease diagnosis",
+      "dementia diagnosis",
+      "mild cognitive impairment diagnosis",
+      "current brain-health status",
+      "amyloid or biomarker status",
+      "medication or supplement recommendation",
+      "imaging or lab-test recommendation",
+      "genetic testing decision",
+      "treatment change"
+    ],
+    "professionalReview": "A clinician or genetic counselor can help interpret APOE context alongside age, symptoms, family history, ancestry, and other health information."
+  },
+  "references": [
+    {
+      "id": "fda-helix-apoe-k192073",
+      "title": "FDA 510(k) K192073: Helix Genetic Health Risk App for Late-Onset Alzheimer's Disease"
+    },
+    {
+      "id": "fda-direct-to-consumer-tests",
+      "title": "FDA Direct-to-Consumer Tests"
+    },
+    {
+      "id": "medlineplus-apoe-gene",
+      "title": "MedlinePlus Genetics: APOE gene"
+    },
+    {
+      "id": "medlineplus-alzheimers-apoe",
+      "title": "MedlinePlus Genetics: Alzheimer's disease"
+    },
+    {
+      "id": "nia-alzheimers-genetics",
+      "title": "National Institute on Aging: Alzheimer's Disease Genetics Fact Sheet"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "APOE-haplotype",
+        "gene": "APOE",
+        "observedValue": "APOE e3/e4 derived allele context",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "APOE-rs429358",
+        "gene": "APOE",
+        "observedValue": "CT",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "APOE-rs7412",
+        "gene": "APOE",
+        "observedValue": "CC",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "apoe-risk-model-unavailable",
+        "gene": "APOE risk model",
+        "observedValue": "calibrated absolute-risk model and applicability metadata unavailable",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated Sequencing.com sample report rows",
+      "Calibrated absolute-risk model",
+      "Ancestry applicability metadata",
+      "Age, sex, family-history, symptom, biomarker, and clinician-confirmed context",
+      "Early-onset familial Alzheimer's disease gene assessment"
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated probability model is supplied for this local package.",
+      "APOE e4 status is only one part of late-onset Alzheimer's disease risk context."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The package covers APOE allele context and does not assess APP, PSEN1, PSEN2, or other early-onset familial Alzheimer's disease genes.",
+      "The report does not diagnose disease, assess current cognition, or recommend medication, supplements, imaging, lab testing, or treatment changes."
+    ],
+    "alleleMappingContext": [
+      "This fixture uses an already-derived APOE e3/e4 row plus rs429358 and rs7412 marker rows for validation.",
+      "If either APOE marker is missing or ambiguous, the local agent must mark APOE allele context unavailable instead of inferring it."
+    ]
+  }
+}

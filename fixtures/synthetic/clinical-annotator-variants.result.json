@@ -1,0 +1,211 @@
+{
+  "reportOverview": {
+    "reportTitle": "Clinical Annotator of Variants",
+    "inputManifestHash": "sha256:synthetic-clinical-annotator-variants-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com mock-report rows were not available.",
+      "Full ACMG/AMP evidence-code worksheet and submitter rationale text were not supplied.",
+      "Personal phenotype, family history, confirmatory laboratory testing, penetrance, and clinician interpretation were not supplied."
+    ],
+    "plainEnglishScope": "This report explains supplied clinical-annotation lookup rows in plain English. It reports database assertions as supplied evidence, not as a personal diagnosis or medical instruction."
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Submitted clinical-significance lookup",
+      "item": "BRCA1 rs80357914",
+      "brandName": "",
+      "geneticAnalysis": "The supplied local lookup says this BRCA1 variant has a ClinVar-submitted germline classification of pathogenic for a hereditary cancer condition, with review status reported as criteria provided by multiple submitters with no conflicts.",
+      "genes": [
+        "BRCA1"
+      ],
+      "sourceLabel": "NCBI ClinVar, ClinGen, ACMG/AMP",
+      "sourceIds": [
+        "ncbi-clinvar",
+        "clingen-variant-classification-guidance",
+        "acmg-amp-richards-2015"
+      ],
+      "plainEnglishMeaning": "This is an externally supplied database assertion about a variant-condition relationship. It does not diagnose the person, measure their overall cancer risk, or say what medical action to take without qualified review and clinical context."
+    },
+    {
+      "groupTitle": "Submitted interpretation context",
+      "item": "HFE rs1800562",
+      "brandName": "",
+      "geneticAnalysis": "The supplied lookup row identifies HFE rs1800562 and provides condition-associated interpretation context, but it does not include penetrance, iron studies, family history, diagnosis, or medical actionability.",
+      "genes": [
+        "HFE"
+      ],
+      "sourceLabel": "NCBI ClinVar and dbSNP",
+      "sourceIds": [
+        "ncbi-clinvar",
+        "ncbi-dbsnp",
+        "medlineplus-genetics"
+      ],
+      "plainEnglishMeaning": "The row can be used to explain that a public variant identifier and database context were found. It cannot say whether the person has a condition or needs care because the clinical context needed for that interpretation was not supplied."
+    },
+    {
+      "groupTitle": "Evidence-code context",
+      "item": "ACMG/AMP evidence details unavailable",
+      "brandName": "",
+      "geneticAnalysis": "The fixture does not include ACMG/AMP evidence codes, submitter rationale, expert-panel review, assertion date, condition specificity, segregation evidence, functional evidence, or population-frequency thresholds.",
+      "genes": [
+        "ACMG/AMP evidence-code context"
+      ],
+      "sourceLabel": "ClinGen and ACMG/AMP guidance",
+      "sourceIds": [
+        "clingen-variant-classification-guidance",
+        "clingen-variant-classification-working-group",
+        "acmg-amp-richards-2015"
+      ],
+      "plainEnglishMeaning": "The report should not apply classification rules on its own. Missing evidence-code details are listed so the reader can see what would be needed for a professional interpretation."
+    },
+    {
+      "groupTitle": "Personal clinical context",
+      "item": "Diagnosis and actionability not supplied",
+      "brandName": "",
+      "geneticAnalysis": "The fixture does not include symptoms, family history, ancestry calibration, age, sex, laboratory confirmation, clinician interpretation, or authenticated Sequencing.com sample rows.",
+      "genes": [
+        "personal clinical context"
+      ],
+      "sourceLabel": "CDC and ClinVar context",
+      "sourceIds": [
+        "cdc-genetic-testing",
+        "ncbi-clinvar"
+      ],
+      "plainEnglishMeaning": "Clinical annotations need personal and laboratory context before they can be used for healthcare decisions. This package therefore reports the missing context instead of filling it in."
+    }
+  ],
+  "clinicalAnnotationSummary": {
+    "plainEnglishMeaning": "Supplied ClinVar and dbSNP lookup rows can help explain what public databases say about selected variants, review status, and identifiers. They do not by themselves prove a diagnosis, personal risk level, penetrance, or medical action.",
+    "unsupportedClaims": [
+      "personal diagnosis",
+      "overall disease risk",
+      "variant penetrance for this person",
+      "clinical actionability",
+      "medication, screening, diagnostic-testing, reproductive, lifestyle, or treatment recommendations",
+      "new or upgraded ACMG/AMP classification"
+    ],
+    "professionalReview": "A qualified genetics professional or clinician should review any clinical use together with confirmatory testing, personal and family history, phenotype, ancestry, and current guideline context."
+  },
+  "references": [
+    {
+      "id": "ncbi-clinvar",
+      "title": "NCBI ClinVar",
+      "usedFor": [
+        "submitted assertions",
+        "review status",
+        "variant-condition context"
+      ]
+    },
+    {
+      "id": "clingen-variant-classification-guidance",
+      "title": "ClinGen Variant Classification Guidance",
+      "usedFor": [
+        "ACMG/AMP criteria context",
+        "classification transparency"
+      ]
+    },
+    {
+      "id": "clingen-variant-classification-working-group",
+      "title": "ClinGen Variant Classification Working Group",
+      "usedFor": [
+        "expert framework context",
+        "professional review language"
+      ]
+    },
+    {
+      "id": "acmg-amp-richards-2015",
+      "title": "ACMG/AMP 2015 sequence variant interpretation standards",
+      "usedFor": [
+        "variant interpretation framework",
+        "do-not-infer limitation"
+      ]
+    },
+    {
+      "id": "ncbi-dbsnp",
+      "title": "NCBI dbSNP",
+      "usedFor": [
+        "public variant identifiers"
+      ]
+    },
+    {
+      "id": "cdc-genetic-testing",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "consumer genetic-testing safety context"
+      ]
+    },
+    {
+      "id": "medlineplus-genetics",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "plain-English genetics context"
+      ]
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "ClinVar-rs80357914-BRCA1",
+        "gene": "BRCA1",
+        "observedValue": "selected derived lookup row with supplied ClinVar classification and review status",
+        "reportedAs": "database assertion only"
+      },
+      {
+        "inputId": "ClinVar-rs1800562-HFE",
+        "gene": "HFE",
+        "observedValue": "selected derived lookup row with condition-associated interpretation context but no personal clinical interpretation",
+        "reportedAs": "database context only"
+      },
+      {
+        "inputId": "Clinical-annotation-evidence-codes-unavailable",
+        "gene": "ACMG/AMP evidence-code context",
+        "observedValue": "classification evidence details unavailable",
+        "reportedAs": "missing input"
+      },
+      {
+        "inputId": "Clinical-context-unavailable",
+        "gene": "personal clinical context",
+        "observedValue": "personal and confirmatory context unavailable",
+        "reportedAs": "missing input"
+      }
+    ],
+    "resourceVersions": [
+      {
+        "resourceId": "ncbi-clinvar",
+        "version": "not supplied by fixture"
+      },
+      {
+        "resourceId": "clingen-variant-classification-guidance",
+        "version": "accessed 2026-06-20"
+      },
+      {
+        "resourceId": "acmg-amp-richards-2015",
+        "version": "2015 standards article"
+      }
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated personal disease probability, penetrance estimate, or actionability model was supplied.",
+      "A database classification is not the same thing as a personal diagnosis.",
+      "Review status and submitter information can change as databases receive updated submissions."
+    ],
+    "calibration": {
+      "status": "not_supplied",
+      "notes": "No calibrated model was supplied for personal disease risk, penetrance, or medical actionability."
+    },
+    "missingInputs": [
+      "Authenticated Sequencing.com mock-report rows",
+      "Full ClinVar accession/version and assertion date fields",
+      "ACMG/AMP criteria worksheet and submitter rationale",
+      "Expert-panel review status beyond the supplied row",
+      "Phenotype, symptoms, family history, ancestry calibration, age, sex, and confirmatory laboratory testing",
+      "Clinician or genetic-counselor interpretation"
+    ],
+    "limitations": [
+      "This fixture uses selected derived annotation rows only and does not include raw genome data.",
+      "The report does not create a new ACMG/AMP classification and does not upgrade any supplied database assertion.",
+      "The report does not diagnose disease, estimate personal risk, or recommend medication, screening, diagnostic testing, reproductive decisions, lifestyle changes, or treatment.",
+      "Clinical use requires qualified professional review and confirmatory evidence outside this local test fixture."
+    ]
+  }
+}

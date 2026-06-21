@@ -1,0 +1,11 @@
+Generate a plain-English Cardiometabolic Health PRS report from local genome-derived evidence and supplied reference resources.
+Use only provided evidence and references. Do not invent genes, variants, classifications, scores, studies, symptoms, family history, clinical history, labs, imaging, vitals, diagnoses, medication context, pediatric context, source-tool output, or treatment conclusions.
+Write deterministic report sections first. Put probability, confidence, calibration status, missing data, and uncertainty only in the appendix.
+Do not request, copy, or emit raw genome data. Use only derived evidence rows.
+Use CDC, NIH, MedlinePlus, FDA, USPSTF, AAP, NHGRI PRS, GWAS Catalog, PGS Catalog, ClinGen, ClinVar, SNPedia/Promethease, and product identity references only as supplied in the input.
+Use plain English for general customers, not clinician-, pharmacology-, pediatric-, neurodevelopment-, psychiatric-, genetics-, or researcher-facing language.
+For this package, focus on PRS provenance, scoring-file, build/liftover, matched-variant, missing-variant, ancestry applicability, calibration, and cardiometabolic clinical-context limits.
+If PGS Catalog score ID, score version, scoring file, genome build, liftover method, matched and missing variants, ancestry applicability metadata, calibration distribution, cardiometabolic labs, blood pressure, medication context, family history, clinician review, and authenticated sample-report rows are missing, mark those sections unavailable instead of inferring them.
+Do not estimate ASCVD, diabetes, obesity, lipid, blood pressure, cardiometabolic, absolute, relative, or percentile risk; infer labs, blood pressure, BMI, treatment need, medication need, screening need, prevention plan, risk reclassification, ancestry-insensitive score, low-risk reassurance, or clinical actionability.
+State that cardiometabolic polygenic score context decisions require validated test scope, source-output provenance, clinical context, ancestry applicability when relevant, and qualified professional review for PRS interpretation, cardiometabolic labs, blood pressure, family history, medications, and prevention decisions.
+Return valid JSON matching the output contract. Do not include markdown outside JSON.

@@ -1,0 +1,163 @@
+{
+  "consumerTone": "plain English; educational organ-system and complex-condition genetics context only; no diagnosis, personal risk estimate, symptom inference, lab/imaging/vital/organ-function inference, severity, prognosis, screening, prevention, testing, treatment, medication, supplement, diet, exercise, clearance, emergency, all-clear, or clinical actionability claims",
+  "datasetId": "synthetic-dysautonomia-organ-system-boundary-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-organ-system-boundary-context",
+      "gene": "Dysautonomia model",
+      "haplotype": "organ-system-model-unavailable",
+      "inputId": "dysautonomia-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "validated dysautonomia model, autonomic testing, tilt-table testing, heart rate, blood pressure, syncope history, symptom history, medication context, hydration and salt context, neurologic or cardiology review, clinical diagnosis, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-dysautonomia-organ-system-boundary-context-v1",
+      "sourceFile": "synthetic-dysautonomia-organ-system-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Dysautonomia clinical and professional context",
+      "haplotype": "clinical-professional-context-unavailable",
+      "inputId": "dysautonomia-clinical-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-dysautonomia-organ-system-boundary-context-v1",
+      "sourceFile": "synthetic-dysautonomia-organ-system-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Dysautonomia organ-system context",
+      "haplotype": "organ-system-context-unavailable",
+      "inputId": "dysautonomia-organ-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "labs, imaging, vitals, organ-function measures, disease-specific testing, treatment context, prevention context, and actionability context unavailable in this fixture",
+      "sourceArtifact": "synthetic-dysautonomia-organ-system-boundary-context-v1",
+      "sourceFile": "synthetic-dysautonomia-organ-system-boundary-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-organ-system-boundary-context",
+    "hash": "sha256:synthetic-dysautonomia-organ-system-boundary-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-model evidence for dysautonomia validation"
+  },
+  "missingInputPolicy": "Report unavailable dysautonomia and autonomic nervous system context evidence explicitly; do not diagnose dysautonomia, POTS, autonomic neuropathy, syncope disorder, arrhythmia, cardiovascular disease, or neurologic disease; infer heart rate, blood pressure, tilt-table status, autonomic function, syncope risk, symptom status, hydration need, salt need, medication need, exercise guidance, testing need, treatment need, prevention, clearance, emergency action, or clinical actionability.",
+  "packageSlug": "dysautonomia",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Testing",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-test-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-complex-disorders",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: complex disorders",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "brainfacts-dysautonomia",
+      "sourceType": "public_health_resource",
+      "title": "BrainFacts/NINDS: Dysautonomia",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer dysautonomia and autonomic nervous system context boundary context using supplied references and explicit unavailable-model framing."
+}

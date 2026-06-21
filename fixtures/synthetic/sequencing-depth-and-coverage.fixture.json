@@ -1,0 +1,120 @@
+{
+  "packageSlug": "sequencing-depth-and-coverage",
+  "datasetId": "synthetic-sequencing-depth-coverage-context-v1",
+  "packageVersion": "0.1.0",
+  "reportPurpose": "Consumer sequencing QC report using selected derived depth, breadth, and uniformity metrics while explicitly marking regional, platform, and clinical validation context unavailable.",
+  "missingInputPolicy": "Report unavailable per-region coverage, quality-filter settings, platform metadata, benchmark truth-set comparison, and clinical sensitivity claims explicitly; do not infer variant detection or medical meaning.",
+  "consumerTone": "plain English; educational sequencing quality-control context only; no diagnosis, variant interpretation, clinical sensitivity, screening, medication, reproductive, lifestyle, or treatment guidance",
+  "inputManifest": {
+    "hash": "sha256:synthetic-sequencing-depth-coverage-context-v1",
+    "genomeBuild": "GRCh38-derived",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived sequencing depth and coverage metrics for sequencing-depth-and-coverage validation"
+  },
+  "genomeEvidence": [
+    {
+      "inputId": "coverage-mean-autosomal-depth",
+      "haplotype": "coverage-mean-autosomal-depth",
+      "gene": "whole-genome coverage summary",
+      "observedValue": "mean autosomal depth 31.4x; median autosomal depth 30.8x; duplicate/read-quality filtering already applied by upstream summary; selected derived metric only",
+      "assembly": "GRCh38-derived",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-sequencing-depth-coverage-context-v1.json",
+      "sourceArtifact": "synthetic-sequencing-depth-coverage-context-v1"
+    },
+    {
+      "inputId": "coverage-breadth-thresholds",
+      "haplotype": "coverage-breadth-thresholds",
+      "gene": "genome-wide coverage breadth",
+      "observedValue": "98.7% of assessed autosomal positions at or above 10x; 95.2% at or above 20x; 0.8% at zero observed coverage in the derived summary",
+      "assembly": "GRCh38-derived",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-sequencing-depth-coverage-context-v1.json",
+      "sourceArtifact": "synthetic-sequencing-depth-coverage-context-v1"
+    },
+    {
+      "inputId": "coverage-uniformity-summary",
+      "haplotype": "coverage-uniformity-summary",
+      "gene": "coverage uniformity summary",
+      "observedValue": "coverage coefficient of variation 0.18; 88.6% of assessed autosomal bases between 0.5x and 1.5x the mean depth; high/low outlier intervals not supplied",
+      "assembly": "GRCh38-derived",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-sequencing-depth-coverage-context-v1.json",
+      "sourceArtifact": "synthetic-sequencing-depth-coverage-context-v1"
+    },
+    {
+      "inputId": "coverage-regional-validation-unavailable",
+      "haplotype": "coverage-regional-validation-unavailable",
+      "gene": "coverage validation metadata",
+      "observedValue": "per-gene and exon-level region table, capture target definition, platform chemistry, read length, quality-filter thresholds, ploidy handling, benchmark truth-set comparison, and authenticated sample-report rows are unavailable in this fixture",
+      "assembly": "derived-qc-context",
+      "matchStatus": "unavailable",
+      "sourceFile": "synthetic-sequencing-depth-coverage-context-v1.json",
+      "sourceArtifact": "synthetic-sequencing-depth-coverage-context-v1"
+    }
+  ],
+  "referenceResources": [
+    {
+      "id": "samtools-depth",
+      "title": "SAMtools depth",
+      "sourceType": "tool_documentation",
+      "evidenceLevel": "implementation_background",
+      "usedFor": [
+        "depth_metric_context",
+        "per_position_depth_provenance",
+        "raw_alignment_omission"
+      ]
+    },
+    {
+      "id": "samtools-coverage",
+      "title": "SAMtools coverage",
+      "sourceType": "tool_documentation",
+      "evidenceLevel": "implementation_background",
+      "usedFor": [
+        "breadth_metric_context",
+        "regional_coverage_context",
+        "coverage_threshold_rows"
+      ]
+    },
+    {
+      "id": "gatk-collect-wgs-metrics",
+      "title": "GATK/Picard CollectWgsMetrics",
+      "sourceType": "tool_documentation",
+      "evidenceLevel": "implementation_background",
+      "usedFor": [
+        "wgs_depth_summary",
+        "quality_filter_context",
+        "coverage_threshold_rows"
+      ]
+    },
+    {
+      "id": "gatk-wgs-metrics",
+      "title": "GATK WgsMetrics",
+      "sourceType": "metrics_reference",
+      "evidenceLevel": "implementation_background",
+      "usedFor": [
+        "wgs_metric_definitions",
+        "metric_glossary",
+        "coverage_uniformity_context"
+      ]
+    },
+    {
+      "id": "nist-genome-in-a-bottle",
+      "title": "NIST Genome in a Bottle",
+      "sourceType": "benchmark_resource",
+      "evidenceLevel": "benchmark_background",
+      "usedFor": [
+        "benchmark_context",
+        "no_clinical_sensitivity_claims",
+        "validation_limitations"
+      ]
+    }
+  ],
+  "expectedAssertions": {
+    "noRawGenomeInOutput": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "probabilitiesOnlyInAppendix": true,
+    "consumerLanguage": true
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "schemaVersion": "soma-reports.local-result.v1",
+  "reportOverview": {
+    "reportTitle": "Blood Traits and Conditions",
+    "inputManifestHash": "sha256:synthetic-blood-dna-analysis-report-organ-system-boundary-context-v1",
+    "sectionsUnavailable": [
+      "Validated package model and authenticated sample rows are unavailable in this local fixture.",
+      "Clinical diagnosis, symptoms, family history, medications, and qualified professional review are unavailable.",
+      "Labs, imaging, vitals, organ-function measures, treatment context, prevention context, and actionability context are unavailable."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Validated model availability",
+      "item": "Blood Traits and Conditions validated model",
+      "brandName": "Blood Traits and Conditions",
+      "geneticAnalysis": "No validated package-specific model output is present in the local fixture.",
+      "genes": [
+        "model-unavailable"
+      ],
+      "sourceLabel": "Public genetic-testing and complex-trait references",
+      "sourceIds": [
+        "cdc-genetic-testing",
+        "medlineplus-genetics",
+        "medlineplus-genetic-testing",
+        "medlineplus-genetic-test-results"
+      ],
+      "plainEnglishMeaning": "This local run can document that the model evidence is unavailable, but it cannot turn that absence into a diagnosis, personal risk estimate, or health action.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Clinical and professional context availability",
+      "item": "Clinical context and professional review",
+      "brandName": "Blood Traits and Conditions",
+      "geneticAnalysis": "Clinical history, symptoms, family history, medications, and professional interpretation are not supplied.",
+      "genes": [
+        "clinical-context-unavailable"
+      ],
+      "sourceLabel": "Consumer genetic-testing limitation references",
+      "sourceIds": [
+        "medlineplus-genetics",
+        "medlineplus-genetic-testing",
+        "medlineplus-genetic-test-results",
+        "fda-direct-to-consumer-tests"
+      ],
+      "plainEnglishMeaning": "Genome-derived evidence alone is not enough to decide diagnosis, screening, testing, prevention, treatment, medication, supplement, diet, exercise, clearance, emergency, or all-clear questions.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Organ-system context availability",
+      "item": "Organ-system evidence context",
+      "brandName": "Blood Traits and Conditions",
+      "geneticAnalysis": "Labs, imaging, vitals, organ-function measures, disease-specific testing, and treatment context are not supplied.",
+      "genes": [
+        "organ-system-context-unavailable"
+      ],
+      "sourceLabel": "Organ-specific and variant-interpretation references",
+      "sourceIds": [
+        "nhgri-polygenic-risk-scores",
+        "ebi-gwas-catalog",
+        "nhlbi-blood-diseases-disorders",
+        "medlineplus-blood"
+      ],
+      "plainEnglishMeaning": "The organ-system references support education about limits and next review context, not a standalone conclusion about symptoms, organ function, severity, prognosis, or actionability.",
+      "sourceBindingStatus": "curated"
+    }
+  ],
+  "organSystemConditionContext": {
+    "plainEnglishMeaning": "The safe output for this package is an evidence-availability report. It explains which model, clinical, professional, and organ-system inputs are missing and avoids medical conclusions from missing evidence.",
+    "unsupportedClaims": [
+      "Diagnosis, personal disease risk, carrier status, variant classification, symptom status, severity, prognosis, lab status, imaging status, vital-sign status, organ-function status, treatment need, medication response, supplement need, diet need, exercise guidance, screening need, testing need, prevention action, clearance, emergency action, all-clear reassurance, and clinical actionability are not supported by this fixture.",
+      "Authenticated Sequencing.com sample rows are not present, so sample report labels and row meanings are not reconstructed."
+    ],
+    "professionalReview": "Use this as a local-agent readiness fixture only. Health decisions require validated test scope, relevant clinical context, and qualified professional review."
+  },
+  "practicalNextSteps": {
+    "professionalReview": [
+      "Keep this output educational and non-diagnostic.",
+      "Do not use this fixture to start, stop, or change testing, screening, medication, supplements, diet, exercise, or treatment.",
+      "Use qualified professional review for health decisions or symptoms."
+    ]
+  },
+  "references": [
+    {
+      "id": "cdc-genetic-testing",
+      "title": "CDC Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetics",
+      "title": "MedlinePlus Genetics"
+    },
+    {
+      "id": "medlineplus-genetic-testing",
+      "title": "MedlinePlus: Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetic-test-results",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results"
+    },
+    {
+      "id": "fda-direct-to-consumer-tests",
+      "title": "FDA Direct-to-Consumer Tests"
+    },
+    {
+      "id": "medlineplus-complex-disorders",
+      "title": "MedlinePlus Genetics: complex disorders"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    },
+    {
+      "id": "nhlbi-blood-diseases-disorders",
+      "title": "NHLBI: Blood Diseases and Disorders Education Program"
+    },
+    {
+      "id": "medlineplus-blood",
+      "title": "MedlinePlus: Blood"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "blood-dna-analysis-report-model-unavailable",
+        "gene": "Blood Traits and Conditions model",
+        "observedValue": "validated blood trait model, CBC, hemoglobin, platelet count, white blood cell count, clotting tests, bleeding history, transfusion context, donation context, pregnancy compatibility context, clinical diagnosis, treatment context, clinician review, and authenticated sample-report rows unavailable in this fixture",
+        "matchStatus": "unavailable",
+        "sourceArtifact": "synthetic-blood-dna-analysis-report-organ-system-boundary-context-v1"
+      },
+      {
+        "inputId": "blood-dna-analysis-report-clinical-context-unavailable",
+        "gene": "Blood Traits and Conditions clinical and professional context",
+        "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
+        "matchStatus": "unavailable",
+        "sourceArtifact": "synthetic-blood-dna-analysis-report-organ-system-boundary-context-v1"
+      },
+      {
+        "inputId": "blood-dna-analysis-report-organ-context-unavailable",
+        "gene": "Blood Traits and Conditions organ-system context",
+        "observedValue": "labs, imaging, vitals, organ-function measures, disease-specific testing, treatment context, prevention context, and actionability context unavailable in this fixture",
+        "matchStatus": "unavailable",
+        "sourceArtifact": "synthetic-blood-dna-analysis-report-organ-system-boundary-context-v1"
+      }
+    ],
+    "missingInputs": [
+      "Validated package model and authenticated sample rows are unavailable in this local fixture.",
+      "Clinical diagnosis, symptoms, family history, medications, and qualified professional review are unavailable.",
+      "Labs, imaging, vitals, organ-function measures, treatment context, prevention context, and actionability context are unavailable."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated model, ancestry applicability metadata, clinical context, professional review, or authenticated sample rows are supplied.",
+      "Absence of evidence in this fixture must be reported as unavailable, not converted into low risk or reassurance."
+    ],
+    "limitations": [
+      "This generated result does not include raw genome data and does not emit VCF, FASTQ, BAM, or CRAM content.",
+      "Reference resources used for boundary language: CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing; MedlinePlus Genetics: Interpreting Genetic Test Results; FDA Direct-to-Consumer Tests; MedlinePlus Genetics: complex disorders; NHGRI overview of polygenic risk scores; GWAS Catalog; NHLBI: Blood Diseases and Disorders Education Program; MedlinePlus: Blood.",
+      "The result is a deterministic synthetic validation artifact for local-agent packaging, not a medical interpretation."
+    ]
+  }
+}

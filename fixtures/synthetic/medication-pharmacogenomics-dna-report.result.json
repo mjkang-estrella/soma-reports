@@ -1,0 +1,505 @@
+{
+  "reportOverview": {
+    "reportTitle": "Medication & Drug Response",
+    "inputManifestHash": "sha256:synthetic-medication-pharmacogenomics-dna-report-sample-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated marketplace detail-page extraction beyond the public sample PDF is not available yet.",
+      "No medication list, medication-specific question, or calibrated drug-response model is bundled with this synthetic fixture.",
+      "Sample rows show observed public sample-report structure; user-specific medication response requires local pharmacogene evidence plus clinical context."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Observed sample structure",
+      "item": "Public Medication & Drug Response sample table",
+      "brandName": "",
+      "geneticAnalysis": "The public sample PDF shows a result table with trait, result, and description columns plus a drug-response summary section.",
+      "description": "Sample-table structure is used to keep the local agent output aligned with the formal report shape; it is not a user-specific medication result.",
+      "genes": [
+        "CYP2C9",
+        "CYP2C19",
+        "CYP2D6",
+        "VKORC1"
+      ],
+      "sourceLabel": "Sequencing.com public sample PDF",
+      "sourceIds": [
+        "medication-drug-response-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This tells the agent what fields the report should contain, while local genomeEvidence determines any user-specific PGx rows."
+    },
+    {
+      "groupTitle": "HIV Treatment",
+      "item": "Abacavir Hypersensitivity",
+      "brandName": "",
+      "geneticAnalysis": "Absent",
+      "description": "Abacavir is a medication used to prevent and treat HIV/AIDS.",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "medication-drug-response-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed sample-report row for Abacavir Hypersensitivity; it preserves output structure and is not a user-specific medication recommendation."
+    },
+    {
+      "groupTitle": "Alcohol Use",
+      "item": "Alcohol Dependence",
+      "brandName": "",
+      "geneticAnalysis": "Typical",
+      "description": "A chronic disease characterised by uncontrolled drinking and preoccupation with alcohol.",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "medication-drug-response-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed sample-report row for Alcohol Dependence; it preserves output structure and is not a user-specific medication recommendation."
+    },
+    {
+      "groupTitle": "Breast Cancer Treatment",
+      "item": "Aromatase Inhibitor Side-Effects",
+      "brandName": "",
+      "geneticAnalysis": "Higher",
+      "description": "Aromatase inhibitors are a class of drugs used in the treatment of breast cancer in post-menopausal women.",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "medication-drug-response-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed sample-report row for Aromatase Inhibitor Side-Effects; it preserves output structure and is not a user-specific medication recommendation."
+    },
+    {
+      "groupTitle": "Cannabis Use",
+      "item": "Cannabis Dependence",
+      "brandName": "",
+      "geneticAnalysis": "Lower",
+      "description": "Cannabis, also known as marijuana, is a psychoactive drug.",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "medication-drug-response-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed sample-report row for Cannabis Dependence; it preserves output structure and is not a user-specific medication recommendation."
+    },
+    {
+      "groupTitle": "Neuropathic Pain, Epilepsy Treatment",
+      "item": "Carbamazepine Reaction",
+      "brandName": "Tegretol",
+      "geneticAnalysis": "Typical",
+      "description": "Carbamazepine is an anticonvulsant used in the treatment of epilepsy and neuropathic pain.",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "medication-drug-response-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed sample-report row for Carbamazepine Reaction; it preserves output structure and is not a user-specific medication recommendation."
+    },
+    {
+      "groupTitle": "Antidepressant",
+      "item": "Citalopram Response",
+      "brandName": "Celexa",
+      "geneticAnalysis": "Typical",
+      "description": "Citalopram is an antidepressant used to treat Major Depressive Disorder and Obsessive-Compulsive Disorder.",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "medication-drug-response-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed sample-report row for Citalopram Response; it preserves output structure and is not a user-specific medication recommendation."
+    },
+    {
+      "groupTitle": "Cocaine Use",
+      "item": "Cocaine Dependence",
+      "brandName": "",
+      "geneticAnalysis": "Much Higher",
+      "description": "Cocaine is a highly addictive drug associated with health issues and other problems.",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "medication-drug-response-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed sample-report row for Cocaine Dependence; it preserves output structure and is not a user-specific medication recommendation."
+    },
+    {
+      "groupTitle": "Chemotherapy",
+      "item": "Cyclophosphamide Reaction",
+      "brandName": "",
+      "geneticAnalysis": "Typical",
+      "description": "Cyclophosphamide is a medication used as chemotherapy and to suppress the immune system.",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "medication-drug-response-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed sample-report row for Cyclophosphamide Reaction; it preserves output structure and is not a user-specific medication recommendation."
+    },
+    {
+      "groupTitle": "Hepatitis C Treatment",
+      "item": "Hepatitis C Treatment Response",
+      "brandName": "",
+      "geneticAnalysis": "Lower",
+      "description": "Hepatitis C is a virus that causes liver damage and is often spread through the sharing of unclean needles.",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "medication-drug-response-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed sample-report row for Hepatitis C Treatment Response; it preserves output structure and is not a user-specific medication recommendation."
+    },
+    {
+      "groupTitle": "Heroin Use",
+      "item": "Heroin Addiction",
+      "brandName": "",
+      "geneticAnalysis": "Much Lower",
+      "description": "Physical and psychological reliance on opioids.",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "medication-drug-response-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed sample-report row for Heroin Addiction; it preserves output structure and is not a user-specific medication recommendation."
+    },
+    {
+      "groupTitle": "Asthma Treatment",
+      "item": "Inhaled Glucocorticoids Response",
+      "brandName": "",
+      "geneticAnalysis": "Typical",
+      "description": "Inhaled glucocorticoids act directly in the lungs to inhibit the inflammatory process that causes asthma.",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "medication-drug-response-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed sample-report row for Inhaled Glucocorticoids Response; it preserves output structure and is not a user-specific medication recommendation."
+    },
+    {
+      "groupTitle": "Anti-ulcer, Anti-platelet, Antidepressant",
+      "item": "Metabolism of some medicines",
+      "brandName": "Plavix, Omeprazole, Esomeprazole",
+      "geneticAnalysis": "Typical",
+      "description": "Some people are poor metabolizers of common drugs such as Plavix, Omeprazole, Esomeprazole, and related medicines.",
+      "genes": [
+        "CYP2C9",
+        "CYP2C19",
+        "CYP2D6"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "medication-drug-response-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed sample-report row for Metabolism of some medicines; it preserves output structure and is not a user-specific medication recommendation."
+    },
+    {
+      "groupTitle": "Type-2 Diabetes Treatment",
+      "item": "Metformin Response",
+      "brandName": "Glucophage",
+      "geneticAnalysis": "Not shown in extracted text",
+      "description": "Metformin is the first-line medication for the treatment of Type-2 Diabetes.",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "medication-drug-response-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed sample-report row for Metformin Response; it preserves output structure and is not a user-specific medication recommendation."
+    },
+    {
+      "groupTitle": "Nicotine Use",
+      "item": "Nicotine Response",
+      "brandName": "",
+      "geneticAnalysis": "Typical",
+      "description": "Nicotine is a highly addictive stimulant most commonly acquired through smoking cigarettes.",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "medication-drug-response-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed sample-report row for Nicotine Response; it preserves output structure and is not a user-specific medication recommendation."
+    },
+    {
+      "groupTitle": "Inflammation, Fever, Pain Treatment",
+      "item": "NSAID Response",
+      "brandName": "",
+      "geneticAnalysis": "Sensitive",
+      "description": "Non-Steroidal Anti-Inflammatory Drugs reduce pain, decrease fever, and decrease inflammation.",
+      "genes": [
+        "CYP2C9"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "medication-drug-response-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed sample-report row for NSAID Response; it preserves output structure and is not a user-specific medication recommendation."
+    },
+    {
+      "groupTitle": "Asthma Treatment",
+      "item": "Salbutamol Response",
+      "brandName": "Ventolin",
+      "geneticAnalysis": "Poorer",
+      "description": "Salbutamol is a medication that opens up the medium and large airways in the lungs.",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "medication-drug-response-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed sample-report row for Salbutamol Response; it preserves output structure and is not a user-specific medication recommendation."
+    },
+    {
+      "groupTitle": "Liver Cancer Treatment",
+      "item": "Sorafenib Response",
+      "brandName": "",
+      "geneticAnalysis": "Typical",
+      "description": "Sorafenib is for the treatment of primary kidney cancer and advanced primary liver cancer.",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "medication-drug-response-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed sample-report row for Sorafenib Response; it preserves output structure and is not a user-specific medication recommendation."
+    },
+    {
+      "groupTitle": "Cardiovascular Disease Treatment",
+      "item": "Statin Response",
+      "brandName": "",
+      "geneticAnalysis": "Typical",
+      "description": "Statins are a class of lipid-lowering medications for people at high risk of cardiovascular disease.",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "medication-drug-response-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed sample-report row for Statin Response; it preserves output structure and is not a user-specific medication recommendation."
+    },
+    {
+      "groupTitle": "Anticoagulant",
+      "item": "Warfarin Metabolism",
+      "brandName": "Coumadin",
+      "geneticAnalysis": "Slower",
+      "description": "Warfarin is a medication used as an anticoagulant; the sample notes that slower metabolism requires lower dose.",
+      "genes": [
+        "CYP2C9",
+        "VKORC1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "medication-drug-response-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed sample-report row for Warfarin Metabolism; it preserves output structure and is not a user-specific medication recommendation."
+    },
+    {
+      "groupTitle": "Anticoagulant",
+      "item": "Warfarin Sensitivity",
+      "brandName": "Coumadin",
+      "geneticAnalysis": "Elevated",
+      "description": "Warfarin is a medication used as an anticoagulant; the sample notes that elevated sensitivity requires lower dose.",
+      "genes": [
+        "CYP2C9",
+        "VKORC1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "medication-drug-response-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed sample-report row for Warfarin Sensitivity; it preserves output structure and is not a user-specific medication recommendation."
+    },
+    {
+      "groupTitle": "Local pharmacogene context",
+      "item": "CYP2C19 *1/*2",
+      "brandName": "",
+      "geneticAnalysis": "A derived CYP2C19 call is available for medication-response context. It is not a medication recommendation.",
+      "description": "CYP2C19 is one of the pharmacogenes commonly represented in medication-response workflows.",
+      "genes": [
+        "CYP2C19"
+      ],
+      "sourceLabel": "PharmCAT / PharmVar / MedlinePlus",
+      "sourceIds": [
+        "pharmcat",
+        "pharmvar",
+        "medlineplus-pharmacogenetic-tests"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This row can help organize a clinician or pharmacist discussion, but it should not be used alone to change medication."
+    },
+    {
+      "groupTitle": "Local pharmacogene context",
+      "item": "CYP2D6 *1/*4",
+      "brandName": "",
+      "geneticAnalysis": "A derived CYP2D6 call is available, but CYP2D6 can require specialized calling and confirmation.",
+      "description": "CYP2D6 interpretation can depend on allele definitions and copy-number handling that are not fully represented in this synthetic fixture.",
+      "genes": [
+        "CYP2D6"
+      ],
+      "sourceLabel": "PharmCAT / PharmVar",
+      "sourceIds": [
+        "pharmcat",
+        "pharmvar"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "Treat this as derived context only; medication decisions need professional review and appropriate confirmatory evidence."
+    },
+    {
+      "groupTitle": "Local pharmacogene context",
+      "item": "SLCO1B1 rs4149056",
+      "brandName": "",
+      "geneticAnalysis": "A derived SLCO1B1 rs4149056 TC call is available for statin-response context.",
+      "description": "This marker is included as local PGx context, not as a standalone safety or dosing instruction.",
+      "genes": [
+        "SLCO1B1"
+      ],
+      "sourceLabel": "FDA PGx associations / MedlinePlus",
+      "sourceIds": [
+        "fda-pgx-associations",
+        "medlineplus-pharmacogenetic-tests"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The result is relevant to medication-response discussions, but it is not a standalone prescribing instruction."
+    }
+  ],
+  "practicalNextSteps": {
+    "clinicianReview": [
+      "Share PGx findings with a clinician or pharmacist before making medication decisions.",
+      "Keep current prescriptions unchanged unless a licensed professional advises otherwise.",
+      "Ask whether confirmatory clinical testing is appropriate for a specific medication question.",
+      "Use the public sample PDF only as output-structure guidance, not as your personal medication-response result."
+    ]
+  },
+  "references": [
+    {
+      "id": "cpic",
+      "title": "Clinical Pharmacogenetics Implementation Consortium"
+    },
+    {
+      "id": "pharmcat",
+      "title": "PharmCAT"
+    },
+    {
+      "id": "pharmvar",
+      "title": "PharmVar"
+    },
+    {
+      "id": "fda-pgx-associations",
+      "title": "FDA Table of Pharmacogenetic Associations"
+    },
+    {
+      "id": "fda-pgx-biomarkers-labeling",
+      "title": "FDA Table of Pharmacogenomic Biomarkers in Drug Labeling"
+    },
+    {
+      "id": "medlineplus-pharmacogenetic-tests",
+      "title": "MedlinePlus Pharmacogenetic Tests"
+    },
+    {
+      "id": "medication-drug-response-sample-pdf",
+      "title": "Medication and Drug Response sample report"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "CYP2C19-star-allele",
+        "gene": "CYP2C19",
+        "observedValue": "*1/*2",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "CYP2D6-star-allele",
+        "gene": "CYP2D6",
+        "observedValue": "*1/*4",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "SLCO1B1-rs4149056",
+        "gene": "SLCO1B1",
+        "observedValue": "TC",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "CYP2C9",
+        "gene": "CYP2C9",
+        "matchStatus": "sample_pdf_structure"
+      },
+      {
+        "inputId": "CYP2C19",
+        "gene": "CYP2C19",
+        "matchStatus": "sample_pdf_structure"
+      },
+      {
+        "inputId": "CYP2D6",
+        "gene": "CYP2D6",
+        "matchStatus": "sample_pdf_structure"
+      },
+      {
+        "inputId": "VKORC1",
+        "gene": "VKORC1",
+        "matchStatus": "sample_pdf_structure"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated marketplace detail-page sections beyond the public sample PDF have not been extracted.",
+      "CYP2C9/VKORC1 sample-summary rows are public sample structure unless local user-specific evidence supplies those calls.",
+      "HLA, CYP2D6 copy-number, MT-RNR1, DPYD, TPMT/NUDT15, and other specialized calls are not included in this fixture.",
+      "No medication list, current dose, age, clinical history, or clinician-reviewed medication question is supplied."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated medication-response probability model is supplied for this package.",
+      "PGx context depends on medication, dose, ancestry, health status, interacting medicines, and clinical history."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report is educational and does not provide prescribing, dosing, start, stop, or switch instructions.",
+      "At-home or derived data should not be used alone for treatment decisions.",
+      "The public sample PDF demonstrates output shape and example rows, not this user-specific medication efficacy or safety."
+    ]
+  }
+}

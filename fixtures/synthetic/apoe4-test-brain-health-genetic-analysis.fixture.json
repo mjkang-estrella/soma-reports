@@ -1,0 +1,129 @@
+{
+  "packageSlug": "apoe4-test-brain-health-genetic-analysis",
+  "datasetId": "synthetic-apoe-alzheimers-context-v1",
+  "packageVersion": "0.1.0",
+  "reportPurpose": "Consumer APOE late-onset Alzheimer's risk-factor context using derived APOE allele evidence and public-health safety framing.",
+  "missingInputPolicy": "Report unavailable APOE markers and non-genetic context explicitly; do not infer diagnosis, symptoms, family history, ancestry applicability, or calibrated disease probability.",
+  "consumerTone": "plain English; educational risk-factor context only; no diagnosis, treatment, supplement, imaging, or genetic-testing recommendation",
+  "inputManifest": {
+    "hash": "sha256:synthetic-apoe-alzheimers-context-v1",
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived APOE evidence for apoe4-test-brain-health-genetic-analysis validation"
+  },
+  "genomeEvidence": [
+    {
+      "inputId": "APOE-haplotype",
+      "haplotype": "APOE e3/e4",
+      "gene": "APOE",
+      "observedValue": "APOE e3/e4 derived allele context",
+      "assembly": "derived-apoe-allele-context",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-apoe-alzheimers-context-v1.json",
+      "sourceArtifact": "synthetic-apoe-alzheimers-context-v1"
+    },
+    {
+      "inputId": "APOE-rs429358",
+      "rsid": "rs429358",
+      "gene": "APOE",
+      "observedValue": "CT",
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-apoe-alzheimers-context-v1.json",
+      "sourceArtifact": "synthetic-apoe-alzheimers-context-v1"
+    },
+    {
+      "inputId": "APOE-rs7412",
+      "rsid": "rs7412",
+      "gene": "APOE",
+      "observedValue": "CC",
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-apoe-alzheimers-context-v1.json",
+      "sourceArtifact": "synthetic-apoe-alzheimers-context-v1"
+    },
+    {
+      "inputId": "apoe-risk-model-unavailable",
+      "haplotype": "apoe-risk-model-unavailable",
+      "gene": "APOE risk model",
+      "observedValue": "calibrated absolute-risk model, ancestry applicability metadata, age/sex/family-history context, biomarker context, and authenticated sample-report rows unavailable in this fixture",
+      "assembly": "derived-apoe-allele-context",
+      "matchStatus": "unavailable",
+      "sourceFile": "synthetic-apoe-alzheimers-context-v1.json",
+      "sourceArtifact": "synthetic-apoe-alzheimers-context-v1"
+    }
+  ],
+  "referenceResources": [
+    {
+      "id": "fda-helix-apoe-k192073",
+      "title": "FDA 510(k) K192073: Helix Genetic Health Risk App for Late-Onset Alzheimer's Disease",
+      "sourceType": "regulatory_resource",
+      "evidenceLevel": "regulatory_background",
+      "usedFor": [
+        "apoe_allele_mapping",
+        "apoe_marker_context",
+        "late_onset_alzheimers_risk_context"
+      ]
+    },
+    {
+      "id": "fda-direct-to-consumer-tests",
+      "title": "FDA Direct-to-Consumer Tests",
+      "sourceType": "regulatory_resource",
+      "evidenceLevel": "regulatory_background",
+      "usedFor": [
+        "dtc_test_limitations",
+        "overall_risk_limitations",
+        "provider_review_language"
+      ]
+    },
+    {
+      "id": "medlineplus-apoe-gene",
+      "title": "MedlinePlus Genetics: APOE gene",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "apoe_allele_context",
+        "late_onset_alzheimers_risk_context",
+        "non_diagnostic_language"
+      ]
+    },
+    {
+      "id": "medlineplus-alzheimers-apoe",
+      "title": "MedlinePlus Genetics: Alzheimer's disease",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "alzheimers_condition_context",
+        "non_deterministic_language"
+      ]
+    },
+    {
+      "id": "nia-alzheimers-genetics",
+      "title": "National Institute on Aging: Alzheimer's Disease Genetics Fact Sheet",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background",
+      "usedFor": [
+        "genetic_testing_context",
+        "genetic_counselor_language",
+        "non_diagnostic_language"
+      ]
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores",
+      "sourceType": "education_resource",
+      "evidenceLevel": "background",
+      "usedFor": [
+        "risk_model_limitations",
+        "probability_appendix"
+      ]
+    }
+  ],
+  "expectedAssertions": {
+    "noRawGenomeInOutput": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "probabilitiesOnlyInAppendix": true,
+    "consumerLanguage": true
+  }
+}

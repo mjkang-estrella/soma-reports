@@ -1,0 +1,122 @@
+{
+  "consumerTone": "plain English; educational cancer genetics context only; no diagnosis, personal risk estimate, carrier-status, screening, prevention, medication, surgery, treatment, or actionability claims",
+  "datasetId": "synthetic-cancer-prs-cancer-boundary-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-condition-boundary-context",
+      "gene": "Cancer PRS model",
+      "haplotype": "condition-risk-model-unavailable",
+      "inputId": "cancer-prs-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "validated pathogenic-variant screen, calibrated cancer PRS, ancestry applicability metadata, age, sex where relevant, personal cancer history, family history, tumor testing, clinical screening history, prevention-plan context, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-cancer-prs-cancer-boundary-context-v1",
+      "sourceFile": "synthetic-cancer-prs-cancer-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "cancer polygenic-risk-score clinical context",
+      "haplotype": "clinical-context-unavailable",
+      "inputId": "cancer-prs-clinical-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "clinical diagnosis, symptoms, screening findings, family history, tumor testing, treatment history, and clinician interpretation unavailable in this fixture",
+      "sourceArtifact": "synthetic-cancer-prs-cancer-boundary-context-v1",
+      "sourceFile": "synthetic-cancer-prs-cancer-boundary-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-condition-boundary-context",
+    "hash": "sha256:synthetic-cancer-prs-cancer-boundary-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-model evidence for cancer-prs validation"
+  },
+  "missingInputPolicy": "Report unavailable cancer polygenic-risk-score evidence explicitly; do not diagnose cancer, estimate personal cancer risk, infer carrier status, classify variants, provide an all-clear result, recommend screening, recommend prevention steps, recommend medication, recommend surgery, recommend treatment, or replace genetic counseling.",
+  "packageSlug": "cancer-prs",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-complex-disorders",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: complex disorders",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "nci-cancer-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "NCI Genetic Testing for Inherited Cancer Risk",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer cancer polygenic-risk-score boundary context using supplied references and explicit unavailable-model framing."
+}

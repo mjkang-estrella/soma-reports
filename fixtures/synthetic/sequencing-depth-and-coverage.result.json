@@ -1,0 +1,162 @@
+{
+  "reportOverview": {
+    "reportTitle": "Sequencing Depth and Coverage",
+    "inputManifestHash": "sha256:synthetic-sequencing-depth-coverage-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "Per-gene, exon-level, target-region, platform, read-length, and quality-filter details are not supplied.",
+      "Benchmark truth-set comparison, assay validation, and clinical sensitivity evidence are not supplied."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Depth summary",
+      "item": "Mean and median autosomal depth",
+      "brandName": "",
+      "geneticAnalysis": "The derived summary reports mean autosomal depth of 31.4x and median autosomal depth of 30.8x after upstream filtering.",
+      "genes": [
+        "whole-genome coverage summary"
+      ],
+      "sourceLabel": "SAMtools depth; GATK/Picard CollectWgsMetrics; GATK WgsMetrics",
+      "sourceIds": [
+        "samtools-depth",
+        "gatk-collect-wgs-metrics",
+        "gatk-wgs-metrics"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This metric describes the typical amount of sequencing evidence in the supplied summary. It does not identify variants and does not diagnose or rule out any condition."
+    },
+    {
+      "groupTitle": "Coverage breadth",
+      "item": "Genome-wide threshold coverage",
+      "brandName": "",
+      "geneticAnalysis": "The derived summary reports 98.7% of assessed autosomal positions at or above 10x coverage, 95.2% at or above 20x coverage, and 0.8% with zero observed coverage.",
+      "genes": [
+        "genome-wide coverage breadth"
+      ],
+      "sourceLabel": "SAMtools coverage; GATK/Picard CollectWgsMetrics; GATK WgsMetrics",
+      "sourceIds": [
+        "samtools-coverage",
+        "gatk-collect-wgs-metrics",
+        "gatk-wgs-metrics"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "Breadth describes how much of the assessed genome reaches selected depth thresholds. It cannot say whether a specific gene, exon, or variant was adequately assessed unless regional data is supplied."
+    },
+    {
+      "groupTitle": "Coverage uniformity",
+      "item": "Depth spread across assessed positions",
+      "brandName": "",
+      "geneticAnalysis": "The derived summary reports a coverage coefficient of variation of 0.18 and 88.6% of assessed autosomal bases between 0.5x and 1.5x the mean depth.",
+      "genes": [
+        "coverage uniformity summary"
+      ],
+      "sourceLabel": "GATK WgsMetrics; SAMtools coverage",
+      "sourceIds": [
+        "gatk-wgs-metrics",
+        "samtools-coverage"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "Uniformity helps explain whether coverage is evenly distributed. This package cannot name high- or low-coverage intervals because those interval details are not present."
+    },
+    {
+      "groupTitle": "Validation availability",
+      "item": "Regional, platform, benchmark, and clinical validation context",
+      "brandName": "",
+      "geneticAnalysis": "Per-gene and exon-level region tables, capture target definition, platform chemistry, read length, quality-filter thresholds, ploidy handling, benchmark truth-set comparison, and authenticated sample-report rows are unavailable.",
+      "genes": [
+        "coverage validation metadata"
+      ],
+      "sourceLabel": "NIST Genome in a Bottle; GATK/Picard CollectWgsMetrics",
+      "sourceIds": [
+        "nist-genome-in-a-bottle",
+        "gatk-collect-wgs-metrics"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The report can summarize supplied QC metrics, but it cannot validate assay performance, clinical sensitivity, or variant detection from these inputs alone."
+    }
+  ],
+  "coverageContext": {
+    "plainEnglishMeaning": "Sequencing depth and coverage are quality-control metrics. They describe how much sequencing evidence is available across assessed positions, not what variants are present or what those variants mean medically.",
+    "unsupportedClaims": [
+      "variant calls or variant absence",
+      "clinical sensitivity or negative predictive value",
+      "disease diagnosis or disease-risk estimate",
+      "sample contamination conclusion",
+      "copy-number status",
+      "ancestry or sex inference",
+      "medication response",
+      "screening, diagnostic testing, reproductive, lifestyle, or treatment recommendation"
+    ],
+    "professionalReview": "Laboratory or clinical review is needed to interpret coverage against a specific assay, target region list, validation study, and reporting threshold."
+  },
+  "references": [
+    {
+      "id": "samtools-depth",
+      "title": "SAMtools depth"
+    },
+    {
+      "id": "samtools-coverage",
+      "title": "SAMtools coverage"
+    },
+    {
+      "id": "gatk-collect-wgs-metrics",
+      "title": "GATK/Picard CollectWgsMetrics"
+    },
+    {
+      "id": "gatk-wgs-metrics",
+      "title": "GATK WgsMetrics"
+    },
+    {
+      "id": "nist-genome-in-a-bottle",
+      "title": "NIST Genome in a Bottle"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "coverage-mean-autosomal-depth",
+        "gene": "whole-genome coverage summary",
+        "observedValue": "mean autosomal depth 31.4x; median autosomal depth 30.8x",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "coverage-breadth-thresholds",
+        "gene": "genome-wide coverage breadth",
+        "observedValue": "98.7% at or above 10x; 95.2% at or above 20x; 0.8% zero observed coverage",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "coverage-uniformity-summary",
+        "gene": "coverage uniformity summary",
+        "observedValue": "coefficient of variation 0.18; 88.6% between 0.5x and 1.5x the mean depth",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "coverage-regional-validation-unavailable",
+        "gene": "coverage validation metadata",
+        "observedValue": "regional, platform, quality-filter, benchmark, and clinical validation context unavailable",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated Sequencing.com sample report rows",
+      "Per-gene, exon-level, and interval-level coverage table",
+      "Capture target definition or callable region mask",
+      "Platform chemistry, read length, duplicate rate, and quality-filter thresholds",
+      "Ploidy and sex chromosome handling",
+      "Benchmark truth-set comparison",
+      "Assay validation and clinical sensitivity evidence"
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated model is supplied for variant detection probability, clinical sensitivity, or overall sample quality probability.",
+      "The selected metrics are useful QC context but cannot validate a sequencing assay or clinical report by themselves."
+    ],
+    "limitations": [
+      "This validation result uses selected derived QC metrics only; raw genome data and raw sequencing/alignment files such as FASTQ, BAM, and CRAM are not included.",
+      "Coverage metrics are not variant calls and do not prove that any specific variant is present or absent.",
+      "The package does not diagnose disease, estimate medical risk, validate clinical sensitivity, or recommend medication, screening, diagnostic testing, reproductive decisions, lifestyle changes, or treatment changes."
+    ]
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "reportOverview": {
+    "reportTitle": "Santa and Me",
+    "inputManifestHash": "sha256:synthetic-santa-comparison-ancestry-context-v1",
+    "evidenceTypesSupplied": [
+      "Broad autosomal reference-panel similarity summary",
+      "Santa/St. Nick comparison sample, relationship, identity, family-tree, relative-matching, and child-specific evidence explicitly unavailable"
+    ],
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "No Santa/St. Nick comparison sample, validated relationship model, family-tree evidence, relative matching, identity evidence, child-specific interpretation, or calibrated ancestry percentage model is supplied."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Novelty DNA comparison context",
+      "item": "Broad reference-panel similarity",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A broad East Asian reference-panel similarity summary is available, but no Santa/St. Nick comparison model is supplied.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "MedlinePlus genetic ancestry testing / 1000 Genomes",
+      "sourceIds": [
+        "medlineplus-genetic-ancestry-testing",
+        "international-genome-sample-resource"
+      ],
+      "plainEnglishMeaning": "This is broad ancestry context only. It is not a DNA comparison to Santa or St. Nick, a relationship claim, an identity claim, a child-specific inference, or a precise ethnicity percentage."
+    },
+    {
+      "groupTitle": "Novelty DNA comparison context",
+      "item": "Santa/St. Nick comparison evidence unavailable",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A Santa/St. Nick DNA comparison sample or validated comparison model is unavailable and is not inferred.",
+      "genes": [
+        "novelty DNA comparison evidence"
+      ],
+      "sourceLabel": "MedlinePlus direct-to-consumer ancestry testing caveats",
+      "sourceIds": [
+        "medlineplus-genetic-ancestry-testing",
+        "medlineplus-dtc-risks-benefits"
+      ],
+      "plainEnglishMeaning": "This novelty report can explain why the comparison is unavailable, but it cannot compare DNA to Santa/St. Nick or identify a relationship."
+    }
+  ],
+  "ancestryScopeSummary": {
+    "autosomal": "Autosomal ancestry can provide broad reference-panel context when a model is supplied; this fixture does not supply calibrated percentages or comparison matching.",
+    "noveltyComparison": "A Santa/St. Nick comparison would require a validated comparison sample and model, and neither is supplied here.",
+    "sourceIds": [
+      "medlineplus-genetic-ancestry-testing",
+      "international-genome-sample-resource",
+      "medlineplus-dtc-risks-benefits"
+    ]
+  },
+  "whatThisDoesNotMean": [
+    "This does not show a relationship to Santa or St. Nick.",
+    "This does not identify a precise homeland, ethnicity percentage, surname match, family tree, living relative, historical relative, child identity, or personal identity.",
+    "This is not a health or disease-risk report."
+  ],
+  "references": [
+    {
+      "id": "medlineplus-genetic-ancestry-testing",
+      "title": "MedlinePlus Genetics: genetic ancestry testing"
+    },
+    {
+      "id": "medlineplus-dtc-risks-benefits",
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing"
+    },
+    {
+      "id": "international-genome-sample-resource",
+      "title": "International Genome Sample Resource / 1000 Genomes"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "autosomal-reference-panel-summary",
+        "gene": "autosomal genome",
+        "observedValue": "broad East Asian reference-panel similarity; no Santa/St. Nick comparison model supplied",
+        "matchStatus": "summarized"
+      },
+      {
+        "inputId": "santa-comparison-evidence-unavailable",
+        "gene": "novelty DNA comparison evidence",
+        "observedValue": "Santa/St. Nick comparison sample, relationship evidence, relative matching, family-tree placement, identity evidence, and child-specific interpretation unavailable in this fixture",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated sample-report sections and rows have not been extracted.",
+      "No Santa/St. Nick comparison sample, validated relationship model, relative matching, family-tree placement, identity evidence, child-specific interpretation, calibrated ancestry model, or reference-panel metadata is supplied.",
+      "No family records, living-relative matching, migration route, exact-homeland data, or community-affiliation data is supplied."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Broad reference-panel similarity should not be treated as a precise ancestry percentage, identity, child inference, or genealogical relationship.",
+      "Novelty comparison claims require evidence outside this synthetic fixture."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report does not emit raw SNP tables, relationship matching data, child-specific interpretation, or family-tree data.",
+      "Authenticated Sequencing.com sample report rows are still pending."
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "reportOverview": {
+    "reportTitle": "Methylation Pathway",
+    "inputManifestHash": "sha256:synthetic-methylation-pathway-mthfr-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "No calibrated methylation score, homocysteine result, lab result, detox model, supplement model, pregnancy context, medication context, treatment context, or ancestry-applicability metadata is supplied with this fixture."
+    ]
+  },
+  "findings": [
+    {
+      "groupTitle": "MTHFR folate context",
+      "item": "MTHFR C677T / rs1801133",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived CT call is available for MTHFR C677T. This is CDC-framed folate-processing context only and is not a methylation score, detox result, diagnosis, supplement recommendation, pregnancy prediction, medication result, or treatment result.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "CDC MTHFR Gene Variant and Folic Acid Facts",
+      "sourceIds": [
+        "cdc-mthfr-folic-acid"
+      ],
+      "plainEnglishMeaning": "CDC framing is used here: common MTHFR variants can be discussed as folate-processing context, but they do not by themselves support avoiding folic acid or changing supplements."
+    },
+    {
+      "groupTitle": "MTHFR folate context",
+      "item": "MTHFR A1298C / rs1801131",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived AC call is available for MTHFR A1298C. This marker is reported as local context only and does not infer methylation capacity, homocysteine, lab status, detox status, pregnancy outcome, medication response, or treatment needs.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "CDC MTHFR Gene Variant and Folic Acid Facts",
+      "sourceIds": [
+        "cdc-mthfr-folic-acid"
+      ],
+      "plainEnglishMeaning": "This row keeps the local genotype visible while leaving methylation, lab, supplement, and medical interpretations unavailable without validated evidence."
+    }
+  ],
+  "folateContext": {
+    "plainEnglishMeaning": "The available MTHFR calls can be described as folate-processing context, not as a methylation-pathway measurement or medical conclusion.",
+    "folicAcidSafetyNote": "Under the CDC framing used by this package, common MTHFR variants are not a reason to avoid folic acid.",
+    "unsupportedClaims": [
+      "methylation score",
+      "detox status",
+      "homocysteine or lab interpretation",
+      "vitamin or supplement changes",
+      "pregnancy outcome prediction",
+      "medication or treatment guidance"
+    ]
+  },
+  "references": [
+    {
+      "id": "cdc-mthfr-folic-acid",
+      "title": "CDC MTHFR Gene Variant and Folic Acid Facts"
+    }
+  ],
+  "appendix": {
+    "missingInputs": [
+      "Authenticated sample-report sections and rows have not been extracted.",
+      "No calibrated methylation score, homocysteine result, lab result, detox model, supplement model, pregnancy context, medication context, treatment context, or ancestry-applicability metadata is supplied.",
+      "Diet history, supplement history, medications, medical history, pregnancy context, lab values, and professional assessment are not represented in this fixture."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Methylation-pathway interpretation cannot be reduced to these two MTHFR markers.",
+      "Folate, homocysteine, supplement, pregnancy, medication, and treatment decisions require broader context and qualified professional review."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The package is educational and does not report methylation capacity, detox status, diagnosis, pregnancy outcome prediction, supplement instructions, medication response, or treatment guidance.",
+      "Authenticated Sequencing.com sample report rows are still pending."
+    ]
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "consumerTone": "plain English; educational lifestyle context only; no child-specific, diet, supplement, fitness, symptom, lab, or treatment claims",
+  "datasetId": "synthetic-thrive-lifestyle-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "MCM6/LCT",
+      "inputId": "MCM6-rs4988235",
+      "matchStatus": "observed",
+      "observedValue": "CT",
+      "rsid": "rs4988235",
+      "sourceArtifact": "synthetic-thrive-lifestyle-context-v1",
+      "sourceFile": "synthetic-thrive-lifestyle-context-v1.json"
+    },
+    {
+      "assembly": "derived-nutrition-genetics-context",
+      "gene": "Thrive lifestyle model",
+      "haplotype": "thrive-model-unavailable",
+      "inputId": "thrive-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "calibrated Thrive model, lifestyle-personalization model, child-specific evidence, diet-history context, supplement model, fitness model, symptom context, lab context, and ancestry applicability metadata unavailable in this fixture",
+      "sourceArtifact": "synthetic-thrive-lifestyle-context-v1",
+      "sourceFile": "synthetic-thrive-lifestyle-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "hash": "sha256:synthetic-thrive-lifestyle-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived nutrition-genetics evidence for thrive validation"
+  },
+  "missingInputPolicy": "Report unavailable Thrive, weight-management, diet, exercise, supplement, eating-behavior, appetite, lab, child-specific, metabolic, symptom, and calibrated models explicitly; do not infer weight-loss response, obesity risk, diet prescriptions, meal plans, supplement needs, appetite regulation, exercise programming, cholesterol status, leptin status, metabolic status, child-specific guidance, lab status, or treatment from genotype alone or sample-only rows.",
+  "packageSlug": "thrive",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-lactose-intolerance",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: lactose intolerance",
+      "usedFor": [
+        "lactose_context",
+        "non_diagnostic_language"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-mcm6",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: MCM6 gene",
+      "usedFor": [
+        "mcm6_lct_context",
+        "lactase_persistence_context"
+      ]
+    },
+    {
+      "evidenceLevel": "review_background",
+      "id": "nutritional-genomics-dtc-review",
+      "sourceType": "research_review",
+      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing",
+      "usedFor": [
+        "nutrition_context",
+        "direct_to_consumer_limitations"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "candidate_trait_associations"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean",
+      "usedFor": [
+        "dtc_limitations",
+        "non_diagnostic_language",
+        "consumer_safety_language"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_health_background",
+      "id": "medlineplus-blood-glucose-test",
+      "sourceType": "medical_test_resource",
+      "title": "MedlinePlus: Blood Glucose Test",
+      "usedFor": [
+        "glucose_lab_context",
+        "diabetes_diagnosis_boundary",
+        "no_genotype_glucose_prediction"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_health_background",
+      "id": "medlineplus-hba1c-test",
+      "sourceType": "medical_test_resource",
+      "title": "MedlinePlus: Hemoglobin A1C test",
+      "usedFor": [
+        "glucose_lab_context",
+        "a1c_context",
+        "no_lab_inference_from_genotype"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-diabetes-risk-factors",
+      "sourceType": "public_health_resource",
+      "title": "CDC Diabetes Risk Factors",
+      "usedFor": [
+        "diabetes_risk_context",
+        "metabolic_limitations",
+        "professional_review_language"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-dietary-supplements",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Dietary Supplements",
+      "usedFor": [
+        "supplement_context",
+        "supplement_safety_language",
+        "no_dosing_from_genotype"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "nih-ods-dietary-supplement-fact-sheets",
+      "sourceType": "public_health_resource",
+      "title": "NIH Office of Dietary Supplements Fact Sheets",
+      "usedFor": [
+        "supplement_context",
+        "nutrient_context",
+        "professional_review_language"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-bmi",
+      "sourceType": "public_health_resource",
+      "title": "CDC About Body Mass Index",
+      "usedFor": [
+        "weight_context",
+        "bmi_limitations",
+        "no_weight_prediction_from_genotype"
+      ]
+    },
+    {
+      "evidenceLevel": "direct_sample_report",
+      "id": "thrive-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Toolbox Genomics Thrive sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer Thrive lifestyle context using derived nutrition-genetics evidence plus observed Toolbox Genomics Thrive sample-report output structure."
+}

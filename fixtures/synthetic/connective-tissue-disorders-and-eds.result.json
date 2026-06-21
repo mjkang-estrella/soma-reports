@@ -1,0 +1,133 @@
+{
+  "reportOverview": {
+    "reportTitle": "Connective Tissue Disorders and EDS",
+    "inputManifestHash": "sha256:synthetic-connective-tissue-disorders-and-eds-condition-boundary-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "validated connective-tissue disorder model, EDS gene panel, variant classifications, inheritance assessment, subtype criteria, vascular-risk assessment, Beighton score, hypermobility exam, skin findings, family history, pregnancy context, imaging, and authenticated sample-report rows unavailable in this fixture.",
+      "Clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and calibrated model outputs are unavailable.",
+      "This result is not a diagnosis, disease-risk estimate, HLA inference, inflammatory-status result, immune-strength result, infection-risk result, lab interpretation, treatment instruction, supplement instruction, diet instruction, prevention plan, screening instruction, diagnostic-test recommendation, reproductive action, or clinical actionability claim."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Condition model availability",
+      "item": "connective-tissue-disorders-and-eds-model-unavailable",
+      "brandName": "",
+      "geneticAnalysis": "Connective Tissue Disorders and EDS cannot emit a connective tissue disorders and EDS conclusion from this local fixture because the validated model, calibrated score, clinical context, labs, and authenticated sample rows are unavailable.",
+      "genes": [
+        "Connective Tissue Disorders and EDS model"
+      ],
+      "sourceLabel": "Public immune / autoimmune / genetics reference context",
+      "sourceIds": [
+        "medlineplus-ehlers-danlos-genetics",
+        "clingen",
+        "ncbi-clinvar",
+        "ncbi-genetic-testing-registry"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This row is an availability statement, not a diagnosis, risk score, HLA result, immune-strength result, inflammation-level result, lab result, prevention plan, treatment instruction, or all-clear statement."
+    },
+    {
+      "groupTitle": "Clinical and lab context availability",
+      "item": "connective-tissue-disorders-and-eds-clinical-lab-context-unavailable",
+      "brandName": "",
+      "geneticAnalysis": "Connective Tissue Disorders and EDS cannot interpret clinical or lab context because symptoms, diagnosis, family history, inflammatory markers, immune evaluation, medications, environmental context, clinician interpretation, and authenticated sample rows are unavailable.",
+      "genes": [
+        "Connective Tissue Disorders and EDS clinical and lab context"
+      ],
+      "sourceLabel": "CDC / MedlinePlus / FDA / professional-review context",
+      "sourceIds": [
+        "cdc-genetic-testing",
+        "medlineplus-genetics",
+        "fda-direct-to-consumer-tests",
+        "medlineplus-ehlers-danlos-genetics",
+        "clingen",
+        "ncbi-clinvar",
+        "ncbi-genetic-testing-registry"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "Personal interpretation needs validated testing scope, symptoms, family history, clinical history, labs, environment, ancestry applicability, and qualified professional review."
+    }
+  ],
+  "conditionBoundaryContext": {
+    "plainEnglishMeaning": "Connective Tissue Disorders and EDS is currently a boundary report: it can document what evidence is available and what is missing, but it cannot diagnose connective tissue disorders and EDS, estimate disease risk, interpret labs, or make health decisions.",
+    "unsupportedClaims": [
+      "Diagnosis, all-clear result, or disease-risk estimate",
+      "HLA status, inflammatory status, immune strength, infection risk, autoantibody status, complement status, cytokines, CRP, ESR, immune-cell labs, organ involvement, disease activity, or flare status",
+      "EDS subtype, connective-tissue subtype, collagen-gene panel result, variant classification, vascular-risk inference, Beighton score, or hypermobility score",
+      "Treatment, supplement, diet, prevention, screening, diagnostic testing, reproductive, medication, surgery, or management instruction",
+      "Replacement for qualified clinician, genetic counselor, rheumatology, immunology, or genetics review"
+    ],
+    "professionalReview": "Use qualified professional review for symptoms, abnormal labs, family history, known variants, autoimmune or inflammatory concerns, connective-tissue concerns, medication questions, pregnancy or reproductive questions, screening questions, or treatment decisions."
+  },
+  "practicalNextSteps": {
+    "professionalReview": [
+      "Do not use this local fixture to change medication, supplements, diet, screening, diagnostic testing, reproductive decisions, prevention plans, or treatment decisions.",
+      "Bring symptoms, family history, clinical history, labs, medications, environment, prior genetic testing, and ancestry context to a qualified professional if reviewing immune, inflammatory, autoimmune, rheumatologic, connective-tissue, or EDS concerns.",
+      "Treat missing model rows as unavailable, not as low risk, high risk, reassuring, abnormal, normal, or actionable results."
+    ]
+  },
+  "references": [
+    {
+      "id": "cdc-genetic-testing",
+      "title": "CDC Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetics",
+      "title": "MedlinePlus Genetics"
+    },
+    {
+      "id": "fda-direct-to-consumer-tests",
+      "title": "FDA Direct-to-Consumer Tests"
+    },
+    {
+      "id": "medlineplus-ehlers-danlos-genetics",
+      "title": "MedlinePlus Genetics: Ehlers-Danlos Syndrome"
+    },
+    {
+      "id": "clingen",
+      "title": "ClinGen"
+    },
+    {
+      "id": "ncbi-clinvar",
+      "title": "NCBI ClinVar"
+    },
+    {
+      "id": "ncbi-genetic-testing-registry",
+      "title": "NIH Genetic Testing Registry"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "connective-tissue-disorders-and-eds-model-unavailable",
+        "gene": "Connective Tissue Disorders and EDS model",
+        "observedValue": "validated connective-tissue disorder model, EDS gene panel, variant classifications, inheritance assessment, subtype criteria, vascular-risk assessment, Beighton score, hypermobility exam, skin findings, family history, pregnancy context, imaging, and authenticated sample-report rows unavailable in this fixture",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "connective-tissue-disorders-and-eds-clinical-lab-context-unavailable",
+        "gene": "Connective Tissue Disorders and EDS clinical and lab context",
+        "observedValue": "clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and authenticated sample-report rows unavailable in this fixture",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated Sequencing.com sample report sections and exact rows",
+      "Validated disease model or calibrated score with applicability and validation metadata",
+      "HLA inference, inflammatory markers, immune labs, symptoms, family history, clinical history, environment, medications, ancestry applicability, and professional interpretation",
+      "validated connective-tissue disorder model, EDS gene panel, variant classifications, inheritance assessment, subtype criteria, vascular-risk assessment, Beighton score, hypermobility exam, skin findings, family history, pregnancy context, imaging, and authenticated sample-report rows unavailable in this fixture; clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and authenticated sample-report rows unavailable in this fixture"
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated connective tissue disorders and EDS probability, disease-risk, immune-strength, inflammation-level, lab, treatment-response, prevention-benefit, screening-benefit, reproductive, or actionability model is supplied for this local package.",
+      "Immune, inflammatory, autoimmune, rheumatologic, connective-tissue, and EDS interpretation depends on validated test scope, clinical and family history, symptoms, labs, environment, ancestry applicability, and qualified professional review."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
+      "The report is educational and does not provide diagnosis, disease-risk estimation, HLA inference, inflammatory-status assessment, immune-strength assessment, infection-risk assessment, lab interpretation, prevention advice, screening advice, diagnostic-testing advice, reproductive advice, supplement advice, diet advice, medication advice, surgery advice, treatment advice, or actionability.",
+      "Unavailable model rows should never be interpreted as low risk, high risk, no risk, normal, abnormal, reassuring, diagnostic, or an all-clear result."
+    ]
+  }
+}

@@ -10,7 +10,14 @@
     "preview": "vite preview --host 127.0.0.1",
     "convex:dev": "convex dev",
     "convex:once": "convex dev --once",
-    "seed": "convex run reports:seedDefaults"
+    "seed": "node scripts/seed-defaults.mjs",
+    "catalog:extract": "node scripts/extract-sequencing-public-catalog.mjs --input tmp/sequencing-aggregate.html --json-out reference/catalog/sequencing-public-marketplace-catalog.json --ts-out convex/marketplaceCatalog.ts",
+    "catalog:assert": "node scripts/assert-catalog-coverage.mjs",
+    "readiness:audit": "convex run reports:seedReadinessAudit",
+    "agent:bundle": "node scripts/agent-bundle.mjs",
+    "agent:validate": "node scripts/agent-bundle.mjs",
+    "agent:validate:all": "node scripts/validate-local-packages.mjs",
+    "agent:assert-sync": "node scripts/assert-local-artifact-sync.mjs"
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,18 @@
 export type CurationStatus = "direct" | "inferred" | "curated" | "blocked";
 
+export type CurationCompleteness = {
+  catalog: boolean;
+  detail: boolean;
+  sampleReport: boolean;
+  references: boolean;
+  localFixture: boolean;
+  prompt?: boolean;
+  outputFormat?: boolean;
+  formalFields?: boolean;
+  citationBindings?: boolean;
+  notes: string[];
+};
+
 export type ReportSummary = {
   slug: string;
   title: string;
@@ -11,12 +24,18 @@ export type ReportSummary = {
   summary: string;
   sourceUrl: string;
   marketplaceUrl: string;
+  priceLabel?: string;
+  catalogCategories?: string[];
+  catalogSource?: string;
   curationStatus: CurationStatus;
   sampleReportStatus: string;
+  curationCompleteness: CurationCompleteness;
   tags: string[];
 };
 
 export type ReferenceResource = {
+  resourceId?: string;
+  sortOrder?: number;
   title: string;
   url: string;
   sourceType: string;
@@ -24,10 +43,18 @@ export type ReferenceResource = {
   note: string;
   evidenceLevel: string;
   extractionStatus: CurationStatus;
+  scope?: "report_specific" | "background";
+  accessedAt?: string;
+  contentHash?: string;
+  sourceArtifact?: string;
+  usedFor?: string[];
 };
 
 export type PromptSpec = {
   title: string;
+  promptVersion?: string;
+  promptHash?: string;
+  outputFormatHash?: string;
   deterministicPrompt: string;
   inputContract: string[];
   outputContract: string[];
@@ -43,6 +70,11 @@ export type OutputField = {
   description: string;
   type: string;
   required: boolean;
+  fieldPath?: string;
+  citationRequired?: boolean;
+  sourceBinding?: string;
+  formalSourceField?: string;
+  allowsUnavailable?: boolean;
 };
 
 export type OutputSection = {
@@ -67,8 +99,12 @@ export type SampleReportRow = {
   item: string;
   brandName: string;
   geneticAnalysis: string;
+  description?: string;
   genes: string[];
   sourceLabel: string;
+  sourceResourceIds?: string[];
+  sourceBindingStatus?: "exact" | "curated" | "sample_label_only" | "unavailable";
+  sourceBindingNote?: string;
   extractionStatus: CurationStatus;
 };
 
@@ -84,8 +120,12 @@ export type GenotypeSummaryRow = {
 };
 
 export type LocalTestFixture = {
+  packageSlug?: string;
   datasetId: string;
   packageVersion: string;
+  reportPurpose?: string;
+  missingInputPolicy?: string;
+  consumerTone?: string;
   inputManifest: {
     hash: string;
     genomeBuild: string;
@@ -94,11 +134,15 @@ export type LocalTestFixture = {
   };
   genomeEvidence: Array<{
     inputId: string;
-    rsid: string;
+    rsid?: string;
+    starAllele?: string;
+    haplotype?: string;
     gene: string;
     observedValue: string;
     assembly: string;
     matchStatus: string;
+    sourceFile?: string;
+    sourceArtifact?: string;
   }>;
   referenceResources: Array<{
     id: string;
@@ -110,19 +154,21 @@ export type LocalTestFixture = {
   expectedAssertions: Record<string, boolean>;
 };
 
+export type FormalFieldCoverage = {
+  sortOrder: number;
+  sourceLabel: string;
+  observedField: string;
+  outputPath: string;
+  status: "covered" | "pending" | "not_applicable";
+  notes: string;
+};
+
 export type ReportPackage = ReportSummary & {
   detail: string;
   audience: string;
   claimScope: string;
   sourceArtifacts: string[];
-  curationCompleteness: {
-    catalog: boolean;
-    detail: boolean;
-    sampleReport: boolean;
-    references: boolean;
-    localFixture: boolean;
-    notes: string[];
-  };
+  curationCompleteness: CurationCompleteness;
   visibleFields: string[];
   genomeInputs: GenomeInputSpec[];
   references: ReferenceResource[];
@@ -130,5 +176,27 @@ export type ReportPackage = ReportSummary & {
   sampleRows: SampleReportRow[];
   genotypeSummary: GenotypeSummaryRow[];
   localTestFixture: LocalTestFixture | null;
+  formalFields: FormalFieldCoverage[];
   outputSections: OutputSection[];
+};
+
+export type CatalogStats = {
+  knownMarketplaceTotal: number;
+  seeded: number;
+  identifiedMarketplaceItems: number;
+  namedAuthenticatedOnly: number;
+  unknownMarketplaceItems: number;
+  seededCoverageComplete: boolean;
+  directCatalog: number;
+  sampleExtracted: number;
+  outputFormatReady: number;
+  promptReady: number;
+  referencesReady: number;
+  localFixtureReady: number;
+  formalFieldsReady: number;
+  citationBindingsReady: number;
+  sampleBackedFormalReady: number;
+  formalEquivalentReady: number;
+  detailPageReady: number;
+  fullyReady: number;
 };

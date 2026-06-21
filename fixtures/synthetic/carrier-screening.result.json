@@ -1,0 +1,190 @@
+{
+  "reportOverview": {
+    "reportTitle": "Carrier Screening",
+    "inputManifestHash": "sha256:synthetic-carrier-screening-reproductive-endocrine-boundary-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "validated carrier-screen output, tested gene and condition panel, variant classifications, residual risk, partner result, family history, pregnancy or embryo/fetal context, genetic counselor review, and authenticated sample-report rows unavailable in this fixture",
+      "clinical diagnosis, symptoms, labs, medications, family history, professional interpretation, treatment context, and authenticated sample-report rows unavailable in this fixture",
+      "partner result, carrier-screening scope, pregnancy context, embryo or fetal context, hormone-status context, fertility evaluation, and reproductive decision context unavailable in this fixture",
+      "This result is educational boundary context only and is not a diagnosis, carrier-status call, fertility or infertility estimate, hormone-status inference, lab interpretation, pregnancy outcome, fetal or embryo status, testing recommendation, treatment guidance, reproductive decision, or clinical actionability claim."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Validated model availability",
+      "item": "carrier-screening-model-unavailable",
+      "brandName": "",
+      "geneticAnalysis": "Carrier Screening cannot emit a conclusion from this local fixture because the validated model, professional review, clinical context, and authenticated sample rows are unavailable.",
+      "genes": [
+        "Carrier Screening model"
+      ],
+      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing",
+      "sourceIds": [
+        "cdc-genetic-testing",
+        "medlineplus-genetics",
+        "medlineplus-genetic-testing",
+        "medlineplus-genetic-testing-uses",
+        "medlineplus-genetic-counseling",
+        "fda-direct-to-consumer-tests",
+        "cdc-family-health-history",
+        "acog-carrier-screening"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This row is an availability statement. It does not diagnose a condition, call carrier status, estimate fertility or pregnancy outcomes, infer hormone or lab status, recommend testing or treatment, guide reproductive decisions, or provide an all-clear result."
+    },
+    {
+      "groupTitle": "Clinical and lab context availability",
+      "item": "carrier-screening-clinical-context-unavailable",
+      "brandName": "",
+      "geneticAnalysis": "clinical diagnosis, symptoms, labs, medications, family history, professional interpretation, treatment context, and authenticated sample-report rows unavailable in this fixture",
+      "genes": [
+        "Carrier Screening clinical and lab context"
+      ],
+      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing",
+      "sourceIds": [
+        "cdc-genetic-testing",
+        "medlineplus-genetics",
+        "medlineplus-genetic-testing",
+        "medlineplus-genetic-testing-uses",
+        "medlineplus-genetic-counseling",
+        "fda-direct-to-consumer-tests",
+        "cdc-family-health-history",
+        "acog-carrier-screening"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "Personal interpretation needs validated test scope, symptoms, medical and family history, medications, labs, partner or pregnancy context when relevant, ancestry applicability, and qualified professional review."
+    },
+    {
+      "groupTitle": "Reproductive and endocrine context availability",
+      "item": "carrier-screening-reproductive-endocrine-context-unavailable",
+      "brandName": "",
+      "geneticAnalysis": "partner result, carrier-screening scope, pregnancy context, embryo or fetal context, hormone-status context, fertility evaluation, and reproductive decision context unavailable in this fixture",
+      "genes": [
+        "Carrier Screening reproductive/endocrine context"
+      ],
+      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing",
+      "sourceIds": [
+        "cdc-genetic-testing",
+        "medlineplus-genetics",
+        "medlineplus-genetic-testing",
+        "medlineplus-genetic-testing-uses",
+        "medlineplus-genetic-counseling",
+        "fda-direct-to-consumer-tests",
+        "cdc-family-health-history",
+        "acog-carrier-screening"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "Missing partner, pregnancy, carrier-screening, fertility, hormone, or endocrine context means the report must mark those topics unavailable instead of converting local genetic context into health or reproductive actions."
+    }
+  ],
+  "reproductiveEndocrineContext": {
+    "plainEnglishMeaning": "Carrier Screening is currently a reproductive/endocrine boundary package. It can document what evidence is available and what is missing, but it cannot produce carrier, fertility, hormone, pregnancy, lab, treatment, testing, or reproductive-action conclusions from local evidence alone.",
+    "unsupportedClaims": [
+      "Diagnosis, all-clear result, carrier-status call, variant classification, or personal disease-risk estimate",
+      "Fertility, infertility, pregnancy, miscarriage, embryo, fetal, child, partner, hormone, endocrine, sexual-health, or lab-status conclusion",
+      "Testing, screening, medication, supplement, diet, surgery, treatment, IVF, PGT, prenatal-testing, pregnancy-action, or reproductive-decision guidance",
+      "Replacement for qualified clinician, endocrinologist, obstetric professional, fertility specialist, geneticist, or genetic counselor review"
+    ],
+    "professionalReview": "Use this output only as preparation for a professional conversation. Health or reproductive decisions require qualified review with clinical history, symptoms, medications, labs, family history, partner context, pregnancy context when relevant, and validated testing scope."
+  },
+  "practicalNextSteps": {
+    "professionalReview": [
+      "Do not use this local fixture to change medication, supplements, diet, testing, screening, procedures, fertility treatment, pregnancy plans, or reproductive decisions.",
+      "Bring current symptoms, medical and family history, medications, labs, prior testing, partner context, pregnancy context when relevant, and ancestry context to a qualified professional if discussing this topic.",
+      "Treat unavailable model rows as unavailable, not as normal, abnormal, low risk, high risk, reassuring, diagnostic, actionable, or all clear."
+    ]
+  },
+  "references": [
+    {
+      "id": "cdc-genetic-testing",
+      "title": "CDC Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetics",
+      "title": "MedlinePlus Genetics"
+    },
+    {
+      "id": "medlineplus-genetic-testing",
+      "title": "MedlinePlus: Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetic-testing-uses",
+      "title": "MedlinePlus Genetics: Uses of Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetic-counseling",
+      "title": "MedlinePlus: Genetic Counseling"
+    },
+    {
+      "id": "fda-direct-to-consumer-tests",
+      "title": "FDA Direct-to-Consumer Tests"
+    },
+    {
+      "id": "cdc-family-health-history",
+      "title": "CDC About Family Health History"
+    },
+    {
+      "id": "acog-carrier-screening",
+      "title": "ACOG: Carrier Screening for Genetic Conditions"
+    },
+    {
+      "id": "medlineplus-prenatal-genetic-counseling",
+      "title": "MedlinePlus: Prenatal Genetic Counseling"
+    },
+    {
+      "id": "ncbi-clinvar",
+      "title": "NCBI ClinVar"
+    },
+    {
+      "id": "ncbi-genetic-testing-registry",
+      "title": "NIH Genetic Testing Registry"
+    },
+    {
+      "id": "clingen",
+      "title": "ClinGen"
+    },
+    {
+      "id": "acmg-amp-richards-2015",
+      "title": "ACMG/AMP 2015 sequence variant interpretation standards"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "carrier-screening-model-unavailable",
+        "gene": "Carrier Screening model",
+        "observedValue": "validated carrier-screen output, tested gene and condition panel, variant classifications, residual risk, partner result, family history, pregnancy or embryo/fetal context, genetic counselor review, and authenticated sample-report rows unavailable in this fixture",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "carrier-screening-clinical-context-unavailable",
+        "gene": "Carrier Screening clinical and lab context",
+        "observedValue": "clinical diagnosis, symptoms, labs, medications, family history, professional interpretation, treatment context, and authenticated sample-report rows unavailable in this fixture",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "carrier-screening-reproductive-endocrine-context-unavailable",
+        "gene": "Carrier Screening reproductive/endocrine context",
+        "observedValue": "partner result, carrier-screening scope, pregnancy context, embryo or fetal context, hormone-status context, fertility evaluation, and reproductive decision context unavailable in this fixture",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated Sequencing.com sample report sections and exact rows",
+      "Validated model output with applicability and validation metadata",
+      "Qualified professional review and complete clinical, family-history, medication, symptom, and lab context",
+      "Partner, pregnancy, embryo, fetal, fertility, hormone, endocrine, carrier-screening, and reproductive decision context when relevant"
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated carrier-status, partner-risk, fetal-risk, embryo-risk, child-risk, disease-risk, fertility, infertility, pregnancy-outcome, miscarriage, hormone-status, lab-status, testing-benefit, treatment-response, supplement-benefit, diet-response, or actionability model is supplied for this local package.",
+      "Interpretation depends on validated test scope, clinical and family history, symptoms, medications, labs, partner context, pregnancy context when relevant, ancestry applicability, and qualified professional review."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
+      "The report is educational boundary context and does not provide diagnosis, carrier-status reporting, fertility or infertility estimation, hormone-status assessment, lab interpretation, pregnancy guidance, fetal or embryo assessment, testing advice, treatment advice, supplement advice, diet advice, surgery advice, reproductive advice, or clinical actionability.",
+      "Unavailable model rows should never be interpreted as low risk, high risk, no risk, normal, abnormal, reassuring, diagnostic, actionable, or all clear."
+    ]
+  }
+}

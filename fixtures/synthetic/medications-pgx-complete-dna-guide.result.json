@@ -1,0 +1,224 @@
+{
+  "reportOverview": {
+    "reportTitle": "Medications PGx: Complete DNA Guide",
+    "inputManifestHash": "sha256:synthetic-medications-pgx-complete-guide-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated marketplace detail-page extraction beyond the public sample PDF is not available yet.",
+      "No medication list, medication-specific question, pediatric context, or calibrated drug-response model is bundled with this synthetic fixture.",
+      "Expanded user-specific PGx genes beyond the supplied derived rows are unavailable."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Observed sample structure",
+      "item": "Public Medications PGx Complete drug table",
+      "brandName": "",
+      "geneticAnalysis": "The public sample PDF shows specialty sections with drug, brand-name, result, gene, and source columns, plus an appendix genotype summary.",
+      "description": "Sample-table structure is used to keep the local agent output aligned with the formal report shape; it is not a user-specific medication result.",
+      "genes": [
+        "CYP2C19",
+        "CYP2D6",
+        "HLA-B",
+        "SLCO1B1",
+        "VKORC1"
+      ],
+      "sourceLabel": "Sequencing.com public sample PDF",
+      "sourceIds": [
+        "medications-pgx-complete-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This tells the agent what fields the report should contain, while local genomeEvidence determines any user-specific PGx rows."
+    },
+    {
+      "groupTitle": "Local pharmacogene context",
+      "item": "CYP2C19 *1/*2",
+      "brandName": "",
+      "geneticAnalysis": "A derived CYP2C19 call is available for medication-response context. It is not a medication recommendation.",
+      "description": "CYP2C19 is one of the pharmacogenes represented in the public PGx sample report and common PGx workflows.",
+      "genes": [
+        "CYP2C19"
+      ],
+      "sourceLabel": "PharmCAT / PharmVar / MedlinePlus",
+      "sourceIds": [
+        "pharmcat",
+        "pharmvar",
+        "medlineplus-pharmacogenetic-tests"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This row can help organize a clinician or pharmacist discussion, but it should not be used alone to change medication."
+    },
+    {
+      "groupTitle": "Local pharmacogene context",
+      "item": "CYP2D6 *1/*4",
+      "brandName": "",
+      "geneticAnalysis": "A derived CYP2D6 call is available, but CYP2D6 can require specialized calling and confirmation.",
+      "description": "CYP2D6 interpretation can depend on allele definitions and copy-number handling that are not fully represented in this synthetic fixture.",
+      "genes": [
+        "CYP2D6"
+      ],
+      "sourceLabel": "PharmCAT / PharmVar",
+      "sourceIds": [
+        "pharmcat",
+        "pharmvar"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "Treat this as derived context only; medication decisions need professional review and appropriate confirmatory evidence."
+    },
+    {
+      "groupTitle": "Local pharmacogene context",
+      "item": "SLCO1B1 rs4149056",
+      "brandName": "",
+      "geneticAnalysis": "A derived SLCO1B1 rs4149056 TC call is available for statin-response context.",
+      "description": "The public sample PDF includes SLCO1B1 rows, but this local row remains derived context rather than a standalone safety or dosing instruction.",
+      "genes": [
+        "SLCO1B1"
+      ],
+      "sourceLabel": "FDA PGx associations / MedlinePlus",
+      "sourceIds": [
+        "fda-pgx-associations",
+        "medlineplus-pharmacogenetic-tests"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The result is relevant to medication-response discussions, but it is not a standalone prescribing instruction."
+    },
+    {
+      "groupTitle": "Observed sample summary shape",
+      "item": "Specialty PGx sample summary fields",
+      "brandName": "Warfarin / clopidogrel / statin / antiretroviral context",
+      "geneticAnalysis": "The public sample PDF includes multi-gene rows such as CYP2C19, CYP2C9, CYP4F2, VKORC1, HLA-B, and SLCO1B1; this synthetic fixture supplies only the local rows listed above.",
+      "description": "Keep these fields available in the report shape, but mark missing genes unavailable for the user unless local evidence is supplied.",
+      "genes": [
+        "CYP2C19",
+        "CYP2C9",
+        "CYP4F2",
+        "VKORC1",
+        "HLA-B",
+        "SLCO1B1"
+      ],
+      "sourceLabel": "Sequencing.com public sample PDF",
+      "sourceIds": [
+        "medications-pgx-complete-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The report can mirror the formal sample sections without inventing user-specific medication interpretations."
+    },
+    {
+      "groupTitle": "PGx guide coverage availability",
+      "item": "Expanded user-specific PGx coverage unavailable",
+      "brandName": "",
+      "geneticAnalysis": "User-specific HLA, CYP2D6 copy number, MT-RNR1, DPYD, TPMT/NUDT15, CYP2C9/VKORC1, UGT1A1, G6PD, medication list, age or pediatric context, phenotype confidence, and authenticated marketplace detail-page extraction are unavailable in this fixture.",
+      "description": "The public sample report demonstrates output structure, not complete user-specific coverage.",
+      "genes": [
+        "expanded PGx coverage"
+      ],
+      "sourceLabel": "CDC Pharmacogenomics / NHGRI Pharmacogenomics / PharmCAT",
+      "sourceIds": [
+        "cdc-pharmacogenomics",
+        "nhgri-pharmacogenomics",
+        "pharmcat"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The catalog title does not prove complete PGx coverage. This local guide reports only the supplied rows and explicitly marks broad coverage and pediatric context unavailable."
+    }
+  ],
+  "practicalNextSteps": {
+    "clinicianReview": [
+      "Share PGx findings with a clinician or pharmacist before making medication decisions.",
+      "Keep current prescriptions unchanged unless a licensed professional advises otherwise.",
+      "Ask whether confirmatory clinical testing is appropriate for a specific medication question.",
+      "For children or pediatric medication questions, use qualified clinical review and medication-specific context rather than this limited local fixture.",
+      "Use the public sample PDF only as output-structure guidance, not as your personal medication-response result."
+    ]
+  },
+  "references": [
+    {
+      "id": "medications-pgx-complete-sample-pdf",
+      "title": "Medications PGx: Complete DNA Guide sample report"
+    },
+    {
+      "id": "cpic",
+      "title": "Clinical Pharmacogenetics Implementation Consortium"
+    },
+    {
+      "id": "pharmcat",
+      "title": "PharmCAT"
+    },
+    {
+      "id": "pharmvar",
+      "title": "PharmVar"
+    },
+    {
+      "id": "fda-pgx-associations",
+      "title": "FDA Table of Pharmacogenetic Associations"
+    },
+    {
+      "id": "fda-pgx-biomarkers-labeling",
+      "title": "FDA Table of Pharmacogenomic Biomarkers in Drug Labeling"
+    },
+    {
+      "id": "medlineplus-pharmacogenetic-tests",
+      "title": "MedlinePlus Pharmacogenetic Tests"
+    },
+    {
+      "id": "cdc-pharmacogenomics",
+      "title": "CDC Pharmacogenomics"
+    },
+    {
+      "id": "nhgri-pharmacogenomics",
+      "title": "NHGRI Pharmacogenomics Fact Sheet"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "CYP2C19-star-allele",
+        "gene": "CYP2C19",
+        "observedValue": "*1/*2",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "CYP2D6-star-allele",
+        "gene": "CYP2D6",
+        "observedValue": "*1/*4",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "SLCO1B1-rs4149056",
+        "gene": "SLCO1B1",
+        "observedValue": "TC",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "sample-pdf-genotype-summary-shape",
+        "gene": "CYP2C19/CYP2D6/HLA-B/SLCO1B1/VKORC1/MT-RNR1",
+        "observedValue": "public sample genotype-summary shape only; no local user call supplied for most listed genes",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "expanded-pgx-coverage-unavailable",
+        "gene": "expanded PGx coverage",
+        "observedValue": "User-specific HLA, CYP2D6 copy number, MT-RNR1, DPYD, TPMT/NUDT15, CYP2C9/VKORC1, UGT1A1, G6PD, medication list, age or pediatric context, phenotype confidence, and authenticated marketplace detail-page extraction unavailable in this fixture",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated marketplace detail-page sections beyond the public sample PDF have not been extracted.",
+      "User-specific HLA, CYP2D6 copy-number, MT-RNR1, DPYD, TPMT/NUDT15, CYP2C9/VKORC1, UGT1A1, G6PD, and other specialized calls are not included in this fixture.",
+      "No current frozen PharmCAT/CPIC gene-drug coverage snapshot is bundled.",
+      "No medication list, current dose, age, clinical history, pediatric context, or clinician-reviewed medication question is supplied."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated medication-response probability model is supplied for this package.",
+      "PGx context depends on medication, dose, ancestry, health status, interacting medicines, and clinical history.",
+      "The local fixture is not a complete pharmacogenomic coverage model and cannot estimate medication safety, efficacy, or pediatric dose suitability."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report is educational and does not provide prescribing, dosing, start, stop, or switch instructions.",
+      "At-home or derived data should not be used alone for treatment decisions.",
+      "The public sample PDF demonstrates output shape and example rows, not this user-specific medication efficacy or safety.",
+      "The package does not provide complete PGx coverage, pediatric dosing, medication safety, medication efficacy, drug ranking, or drug-specific action claims."
+    ]
+  }
+}

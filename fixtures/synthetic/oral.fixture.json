@@ -1,0 +1,175 @@
+{
+  "consumerTone": "plain English; educational organ-system and complex-condition genetics context only; no diagnosis, personal risk estimate, symptom inference, lab/imaging/vital/organ-function inference, severity, prognosis, screening, prevention, testing, treatment, medication, supplement, diet, exercise, clearance, emergency, all-clear, or clinical actionability claims",
+  "datasetId": "synthetic-oral-organ-system-boundary-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-organ-system-boundary-context",
+      "gene": "Oral model",
+      "haplotype": "organ-system-model-unavailable",
+      "inputId": "oral-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "validated oral health model, dental exam, caries history, periodontal evaluation, oral microbiome testing, enamel assessment, saliva testing, orthodontic context, fluoride context, procedure history, dentist review, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-oral-organ-system-boundary-context-v1",
+      "sourceFile": "synthetic-oral-organ-system-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Oral clinical and professional context",
+      "haplotype": "clinical-professional-context-unavailable",
+      "inputId": "oral-clinical-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-oral-organ-system-boundary-context-v1",
+      "sourceFile": "synthetic-oral-organ-system-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Oral organ-system context",
+      "haplotype": "organ-system-context-unavailable",
+      "inputId": "oral-organ-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "labs, imaging, vitals, organ-function measures, disease-specific testing, treatment context, prevention context, and actionability context unavailable in this fixture",
+      "sourceArtifact": "synthetic-oral-organ-system-boundary-context-v1",
+      "sourceFile": "synthetic-oral-organ-system-boundary-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-organ-system-boundary-context",
+    "hash": "sha256:synthetic-oral-organ-system-boundary-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-model evidence for oral validation"
+  },
+  "missingInputPolicy": "Report unavailable oral and dental health context evidence explicitly; do not diagnose caries, periodontal disease, gum disease, enamel disorder, oral infection, oral cancer, salivary disorder, orthodontic issue, or dental condition; infer oral microbiome, enamel status, saliva status, caries risk, gum status, dental procedure need, fluoride need, orthodontic need, treatment need, medication need, supplement need, diet need, screening need, testing need, prevention, or dental actionability.",
+  "packageSlug": "oral",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Testing",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-test-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-complex-disorders",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: complex disorders",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "nidcr-health-info",
+      "sourceType": "public_health_resource",
+      "title": "NIDCR: Health Info",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "nidcr-oral-hygiene",
+      "sourceType": "public_health_resource",
+      "title": "NIDCR: Oral Hygiene",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer oral and dental health context boundary context using supplied references and explicit unavailable-model framing."
+}

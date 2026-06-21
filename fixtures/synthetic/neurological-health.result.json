@@ -1,0 +1,140 @@
+{
+  "reportOverview": {
+    "reportTitle": "Neurological Health",
+    "inputManifestHash": "sha256:synthetic-neurological-health-neurobehavioral-boundary-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "Validated neurobehavioral model, calibrated PRS, ancestry applicability metadata, symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, and professional interpretation are unavailable.",
+      "This result is not a diagnosis, current mental-state assessment, IQ score, aptitude result, mood prediction, dementia prediction, neurologic disease prediction, pediatric decision, school/work decision, medication recommendation, supplement recommendation, therapy recommendation, imaging recommendation, lab recommendation, treatment instruction, or actionability claim."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Neurobehavioral model availability",
+      "item": "neurological-health-model-unavailable",
+      "brandName": "",
+      "geneticAnalysis": "Neurological Health cannot emit a brain, mental health, mood, neurologic, cognitive, IQ, aptitude, dementia, or treatment-response conclusion from this local fixture because validated model inputs are unavailable.",
+      "genes": [
+        "Neurological Health model"
+      ],
+      "sourceLabel": "NIMH / MedlinePlus / NHGRI / GWAS / FDA context",
+      "sourceIds": [
+        "nimh-looking-at-my-genes",
+        "medlineplus-intelligence-genetics",
+        "nhgri-polygenic-risk-scores",
+        "ebi-gwas-catalog",
+        "fda-direct-to-consumer-tests"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This row is an availability statement, not a diagnosis, current mental-state assessment, IQ score, aptitude result, neurologic prediction, treatment-response result, or all-clear statement."
+    },
+    {
+      "groupTitle": "Clinical context availability",
+      "item": "neurological-health-clinical-context-unavailable",
+      "brandName": "",
+      "geneticAnalysis": "Neurological Health cannot interpret personal clinical context because symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, and clinician interpretation are unavailable.",
+      "genes": [
+        "Neurological Health clinical context"
+      ],
+      "sourceLabel": "CDC / MedlinePlus / NIMH / FDA context",
+      "sourceIds": [
+        "cdc-genetic-testing",
+        "medlineplus-genetics",
+        "medlineplus-complex-disorders",
+        "nimh-looking-at-my-genes",
+        "medlineplus-intelligence-genetics",
+        "fda-direct-to-consumer-tests"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "Personal interpretation needs symptoms, family history, clinical history, age, environment, ancestry applicability, validated testing scope, and qualified professional review."
+    }
+  ],
+  "neurobehavioralContext": {
+    "plainEnglishMeaning": "Neurological Health is currently a boundary report: it can document what evidence is available and what is missing, but it cannot assess mental state, cognitive ability, neurologic status, or future health outcomes.",
+    "unsupportedClaims": [
+      "Mental, neurologic, cognitive, developmental, or neurodegenerative diagnosis",
+      "Current mental-state, mood, cognition, IQ, aptitude, school, work, or pediatric assessment",
+      "Dementia, Parkinson's disease, seizure, migraine, ADHD, autism, depression, anxiety, or treatment-response prediction",
+      "Medication, supplement, nootropic, therapy, imaging, lab, education, workplace, or treatment instruction",
+      "Replacement for clinician, psychologist, psychiatrist, neurologist, genetic counselor, or other qualified professional review"
+    ],
+    "professionalReview": "Use qualified professional review for mental health, cognition, neurologic symptoms, school/work decisions, pediatric questions, medication questions, or treatment decisions."
+  },
+  "practicalNextSteps": {
+    "professionalReview": [
+      "Do not use this local fixture to change medication, supplements, therapy, imaging, labs, school, work, pediatric, or treatment decisions.",
+      "Bring symptoms, family history, clinical history, medications, age, environment, cognitive or neurologic evaluations, and prior testing to a qualified professional if reviewing neurobehavioral concerns.",
+      "Treat missing model rows as unavailable, not as low risk, high ability, low ability, or reassuring results."
+    ]
+  },
+  "references": [
+    {
+      "id": "cdc-genetic-testing",
+      "title": "CDC Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetics",
+      "title": "MedlinePlus Genetics"
+    },
+    {
+      "id": "medlineplus-complex-disorders",
+      "title": "MedlinePlus Genetics: complex disorders"
+    },
+    {
+      "id": "fda-direct-to-consumer-tests",
+      "title": "FDA Direct-to-Consumer Tests"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    },
+    {
+      "id": "nimh-looking-at-my-genes",
+      "title": "NIMH: Looking at My Genes"
+    },
+    {
+      "id": "medlineplus-intelligence-genetics",
+      "title": "MedlinePlus Genetics: Is intelligence determined by genetics?"
+    },
+    {
+      "id": "nia-alzheimers-genetics",
+      "title": "National Institute on Aging: Alzheimer's Disease Genetics Fact Sheet"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "neurological-health-model-unavailable",
+        "gene": "Neurological Health model",
+        "observedValue": "validated neurobehavioral model, calibrated PRS, ancestry applicability metadata, age, sex, family history, symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, and authenticated sample-report rows unavailable in this fixture",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "neurological-health-clinical-context-unavailable",
+        "gene": "Neurological Health clinical context",
+        "observedValue": "symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, family history, and clinician interpretation unavailable in this fixture",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated Sequencing.com sample report sections and exact rows",
+      "Validated neurobehavioral model or calibrated PRS with applicability and validation metadata",
+      "Symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, family history, clinical history, age, environment, and professional interpretation",
+      "validated neurobehavioral model, calibrated PRS, ancestry applicability metadata, age, sex, family history, symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, and authenticated sample-report rows unavailable in this fixture; symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, family history, and clinician interpretation unavailable in this fixture"
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated mental health, brain health, neurologic, cognitive, IQ, aptitude, dementia, treatment-response, or actionability model is supplied for this local package.",
+      "Neurobehavioral interpretation depends on validated test scope, clinical and family history, symptoms, age, environment, ancestry applicability, and qualified professional review."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
+      "The report is educational and does not provide diagnosis, current mental-state assessment, IQ scoring, aptitude assessment, mood prediction, neurologic prediction, pediatric guidance, school/work guidance, medication advice, supplement advice, therapy advice, imaging advice, lab advice, treatment advice, or actionability.",
+      "Unavailable model rows should never be interpreted as low risk, high ability, low ability, diagnosis, reassurance, or an all-clear result."
+    ]
+  }
+}

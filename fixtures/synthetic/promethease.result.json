@@ -1,0 +1,184 @@
+{
+  "schemaVersion": "soma-reports.synthetic-result.v1",
+  "reportOverview": {
+    "reportTitle": "Promethease",
+    "inputManifestHash": "sha256:synthetic-promethease-specialized-boundary-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet for Promethease.",
+      "Promethease report output, SNPedia row interpretation, source version, variant classification, professional review, and authenticated sample-report rows",
+      "official Promethease output, SNPedia matched rows, genotype-file import log, report version, source row metadata, variant classifications, clinical confirmation, professional review, and authenticated sample-report rows unavailable in this fixture",
+      "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
+      "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture"
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Validated model/source output availability",
+      "item": "Promethease model/source output",
+      "brandName": "",
+      "geneticAnalysis": "The local fixture supplies a boundary row for Promethease and SNPedia third-party interpretation context. It does not supply the validated model, source-tool output, or authenticated Sequencing.com report content needed for personal conclusions.",
+      "genes": [
+        "Promethease model/source output"
+      ],
+      "sourceLabel": "Promethease; SNPedia: Promethease; MedlinePlus Genetics: What DTC genetic test results mean; NCBI ClinVar",
+      "sourceIds": [
+        "promethease-home",
+        "snpedia-promethease",
+        "medlineplus-dtc-genetic-testing-results",
+        "ncbi-clinvar"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This can explain what evidence is present or missing for Promethease, but it cannot fill in unavailable model output or personal conclusions."
+    },
+    {
+      "groupTitle": "Clinical and professional context availability",
+      "item": "Promethease clinical and professional context",
+      "brandName": "",
+      "geneticAnalysis": "Clinical history, symptoms, labs, medication context, family history, and qualified professional interpretation are not supplied unless explicitly listed in the fixture.",
+      "genes": [
+        "Promethease clinical and professional context"
+      ],
+      "sourceLabel": "Promethease; SNPedia: Promethease; MedlinePlus Genetics: What DTC genetic test results mean; NCBI ClinVar",
+      "sourceIds": [
+        "promethease-home",
+        "snpedia-promethease",
+        "medlineplus-dtc-genetic-testing-results",
+        "ncbi-clinvar"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The report should stay educational because clinical interpretation, variant follow-up, testing, screening, and treatment decisions require context that this synthetic fixture does not include."
+    },
+    {
+      "groupTitle": "Authenticated sample availability",
+      "item": "Promethease authenticated sample rows",
+      "brandName": "",
+      "geneticAnalysis": "Authenticated Sequencing.com sample report sections, row labels, model output, and source-tool output are unavailable in this local fixture.",
+      "genes": [
+        "Promethease authenticated sample rows"
+      ],
+      "sourceLabel": "Promethease; SNPedia: Promethease; MedlinePlus Genetics: What DTC genetic test results mean; NCBI ClinVar",
+      "sourceIds": [
+        "promethease-home",
+        "snpedia-promethease",
+        "medlineplus-dtc-genetic-testing-results",
+        "ncbi-clinvar"
+      ],
+      "sourceBindingStatus": "unavailable",
+      "plainEnglishMeaning": "This local package marks the sample-report gap clearly instead of recreating or guessing the missing Sequencing.com output."
+    }
+  ],
+  "thirdPartyToolContext": {
+    "plainEnglishMeaning": "Promethease is represented as an evidence-boundary package. It can summarize supplied local evidence and references, while marking unsupported personal conclusions unavailable.",
+    "unsupportedClaims": [
+      "Promethease report recreation",
+      "SNPedia row imitation",
+      "pathogenicity classification",
+      "diagnosis",
+      "medical actionability",
+      "testing or treatment recommendation"
+    ],
+    "professionalReview": "Use qualified professional review for clinical interpretation, variant follow-up, testing, screening, and treatment decisions; this synthetic local result is not enough for those decisions."
+  },
+  "practicalNextSteps": {
+    "professionalReview": [
+      "Use this local result as educational context for Promethease and SNPedia third-party interpretation context, not as a decision tool.",
+      "Collect validated source output, source provenance, and relevant clinical or professional context before using Promethease for personal decisions.",
+      "Discuss clinical interpretation, variant follow-up, testing, screening, and treatment decisions with qualified professionals when those choices matter."
+    ]
+  },
+  "references": [
+    {
+      "id": "cdc-genetic-testing",
+      "title": "CDC Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetics",
+      "title": "MedlinePlus Genetics"
+    },
+    {
+      "id": "medlineplus-genetic-testing",
+      "title": "MedlinePlus: Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetic-test-results",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results"
+    },
+    {
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean"
+    },
+    {
+      "id": "fda-direct-to-consumer-tests",
+      "title": "FDA Direct-to-Consumer Tests"
+    },
+    {
+      "id": "medlineplus-complex-disorders",
+      "title": "MedlinePlus Genetics: complex disorders"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    },
+    {
+      "id": "promethease-home",
+      "title": "Promethease"
+    },
+    {
+      "id": "snpedia-promethease",
+      "title": "SNPedia: Promethease"
+    },
+    {
+      "id": "ncbi-dbsnp",
+      "title": "NCBI dbSNP"
+    },
+    {
+      "id": "ncbi-clinvar",
+      "title": "NCBI ClinVar"
+    },
+    {
+      "id": "clingen-variant-classification-guidance",
+      "title": "ClinGen Variant Classification Guidance"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "promethease-model-output-unavailable",
+        "gene": "Promethease model/source output",
+        "observedValue": "official Promethease output, SNPedia matched rows, genotype-file import log, report version, source row metadata, variant classifications, clinical confirmation, professional review, and authenticated sample-report rows unavailable in this fixture",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "promethease-clinical-professional-context-unavailable",
+        "gene": "Promethease clinical and professional context",
+        "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "promethease-authenticated-sample-unavailable",
+        "gene": "Promethease authenticated sample rows",
+        "observedValue": "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated Sequencing.com sample report sections and rows for Promethease.",
+      "Promethease report output, SNPedia row interpretation, source version, variant classification, professional review, and authenticated sample-report rows",
+      "Report unavailable Promethease and SNPedia lookup context evidence explicitly; do not recreate Promethease, copy proprietary ranking or magnitude logic, convert SNPedia literature matches into diagnosis, pathogenicity classification, medical triage, disease risk, treatment action, all-clear reassurance, or clinical actionability."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No validated Promethease and SNPedia third-party interpretation context model with source provenance and professional review is supplied for this local package.",
+      "The supplied rows support evidence-boundary education only and should not be treated as a personal prediction or clinical interpretation."
+    ],
+    "limitations": [
+      "This validation result uses selected derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
+      "The package does not recreate unavailable Sequencing.com authenticated report rows or proprietary third-party output for Promethease.",
+      "The package does not support: Promethease report recreation; SNPedia row imitation; pathogenicity classification; diagnosis; medical actionability; testing or treatment recommendation."
+    ]
+  }
+}

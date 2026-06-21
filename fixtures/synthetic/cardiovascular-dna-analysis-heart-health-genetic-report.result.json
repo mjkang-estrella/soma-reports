@@ -1,0 +1,202 @@
+{
+  "reportOverview": {
+    "reportTitle": "Cardiovascular Health",
+    "inputManifestHash": "sha256:synthetic-cardiovascular-health-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated marketplace detail-page extraction beyond the public sample PDF is not available yet.",
+      "A calibrated ASCVD or cardiovascular polygenic risk model with clinical and ancestry applicability metadata is not supplied.",
+      "LDL cholesterol, ApoB, lipoprotein(a) level, blood pressure, diabetes, smoking, medication, age, sex, family-history context, and personal diet/exercise recommendation context are not supplied."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Observed sample structure",
+      "item": "Public Cardiovascular Health sample recommendation blocks",
+      "brandName": "",
+      "geneticAnalysis": "The public sample PDF shows recommendation-style condition blocks with impact and evidence ratings plus personalized variant tables.",
+      "description": "Sample structure is used to keep the local agent output aligned with the formal report shape; it is not a user-specific diet, supplement, exercise, or treatment recommendation.",
+      "genes": [
+        "APOE",
+        "CYP7A1",
+        "FABP2"
+      ],
+      "sourceLabel": "Sequencing.com public sample PDF",
+      "sourceIds": [
+        "cardiovascular-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This tells the agent what fields the report can contain, while local genomeEvidence and clinical context determine any user-specific interpretation."
+    },
+    {
+      "groupTitle": "Lipoprotein(a) context",
+      "item": "LPA rs10455872",
+      "brandName": "",
+      "geneticAnalysis": "A derived AG call is available for LPA rs10455872. This is cardiovascular genetics context only and does not measure lipoprotein(a) level.",
+      "description": "Lipoprotein(a) interpretation requires clinical and laboratory context that is not supplied in this fixture.",
+      "genes": [
+        "LPA"
+      ],
+      "sourceLabel": "CDC About Lipoprotein(a); GWAS Catalog",
+      "sourceIds": [
+        "cdc-lipoprotein-a",
+        "ebi-gwas-catalog"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This marker can be reported as LPA context, but the report cannot say whether lipoprotein(a) is high without a blood test and clinical review."
+    },
+    {
+      "groupTitle": "Coronary artery disease context",
+      "item": "9p21 / CDKN2B-AS1 rs10757278",
+      "brandName": "",
+      "geneticAnalysis": "A derived AG call is available for a 9p21 cardiovascular association marker. This marker is not used alone to diagnose heart disease or estimate personal risk.",
+      "description": "The public sample PDF includes impact/evidence style formatting, but this local fixture does not include a calibrated cardiovascular risk model.",
+      "genes": [
+        "CDKN2B-AS1 / 9p21 locus"
+      ],
+      "sourceLabel": "MedlinePlus complex disorders; GWAS Catalog",
+      "sourceIds": [
+        "medlineplus-complex-disorders",
+        "ebi-gwas-catalog"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "Common heart-disease risk is multifactorial, so a single marker cannot determine whether someone has or will develop cardiovascular disease."
+    },
+    {
+      "groupTitle": "Familial hypercholesterolemia context",
+      "item": "FH pathogenic-variant screen",
+      "brandName": "",
+      "geneticAnalysis": "A comprehensive familial hypercholesterolemia pathogenic-variant screen, LDL cholesterol values, family history, physical findings, and clinician diagnosis are unavailable in this fixture.",
+      "description": "The report must mark this unavailable instead of inferring familial hypercholesterolemia from the supplied rows.",
+      "genes": [
+        "LDLR",
+        "APOB",
+        "PCSK9",
+        "LDLRAP1"
+      ],
+      "sourceLabel": "CDC About Familial Hypercholesterolemia; MedlinePlus familial hypercholesterolemia",
+      "sourceIds": [
+        "cdc-familial-hypercholesterolemia",
+        "medlineplus-familial-hypercholesterolemia"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This local package cannot diagnose familial hypercholesterolemia or rule it out because the required clinical and variant-screening evidence is not present."
+    },
+    {
+      "groupTitle": "Model and recommendation availability",
+      "item": "Calibrated cardiovascular risk or recommendation model",
+      "brandName": "",
+      "geneticAnalysis": "The fixture does not include a calibrated ASCVD or cardiovascular polygenic risk model, ancestry applicability metadata, clinical risk factors, or personal diet/exercise/supplement recommendation context.",
+      "description": "Public sample recommendation blocks can be mirrored as format only; they do not authorize personal recommendations from this fixture.",
+      "genes": [
+        "cardiovascular risk model"
+      ],
+      "sourceLabel": "NHGRI overview of polygenic risk scores; MedlinePlus complex disorders",
+      "sourceIds": [
+        "nhgri-polygenic-risk-scores",
+        "medlineplus-complex-disorders"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The report can summarize supplied genetic context, but it cannot estimate personal heart attack, stroke, cholesterol, ApoB, or ASCVD risk or recommend a diet/exercise plan from this fixture."
+    }
+  ],
+  "riskContext": {
+    "plainEnglishMeaning": "Cardiovascular health depends on genetics plus LDL cholesterol, ApoB, lipoprotein(a) levels, blood pressure, diabetes, smoking, age, sex, family history, ancestry, medications, lifestyle, environment, and clinical care.",
+    "unsupportedClaims": [
+      "familial hypercholesterolemia diagnosis",
+      "coronary artery disease diagnosis",
+      "heart attack or stroke prediction",
+      "aortic valve disease diagnosis",
+      "high cholesterol, high ApoB, or high lipoprotein(a) diagnosis",
+      "medication or supplement recommendation",
+      "lab-test or imaging recommendation",
+      "diet or exercise prescription",
+      "procedure or treatment change"
+    ],
+    "professionalReview": "A clinician can interpret cardiovascular genetics together with lipid labs, blood pressure, family history, symptoms, medications, age, sex, ancestry, and other health information."
+  },
+  "references": [
+    {
+      "id": "cardiovascular-health-sample-pdf",
+      "title": "Cardiovascular Health sample DNA report"
+    },
+    {
+      "id": "cdc-familial-hypercholesterolemia",
+      "title": "CDC About Familial Hypercholesterolemia"
+    },
+    {
+      "id": "cdc-lipoprotein-a",
+      "title": "CDC About Lipoprotein(a)"
+    },
+    {
+      "id": "medlineplus-familial-hypercholesterolemia",
+      "title": "MedlinePlus Genetics: familial hypercholesterolemia"
+    },
+    {
+      "id": "medlineplus-complex-disorders",
+      "title": "MedlinePlus Genetics: complex disorders"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "LPA-rs10455872",
+        "gene": "LPA",
+        "observedValue": "AG",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "9p21-rs10757278",
+        "gene": "CDKN2B-AS1 / 9p21 locus",
+        "observedValue": "AG",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "sample-pdf-personalized-variant-table",
+        "gene": "APOE/CYP7A1/FABP2",
+        "observedValue": "public sample variant-table shape only; no local user call supplied for these sample recommendation rows",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "FH-pathogenic-variant-screen-unavailable",
+        "gene": "LDLR/APOB/PCSK9 familial hypercholesterolemia screen",
+        "observedValue": "pathogenic-variant screen, LDL cholesterol values, family history, physical findings, and clinician diagnosis unavailable",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "cardiovascular-risk-model-unavailable",
+        "gene": "cardiovascular risk model",
+        "observedValue": "calibrated ASCVD or cardiovascular polygenic risk model, clinical applicability metadata, and personal recommendation context unavailable",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated marketplace detail-page sections beyond the public sample PDF have not been extracted.",
+      "Comprehensive familial hypercholesterolemia pathogenic-variant screen",
+      "LDL cholesterol, ApoB, and lipoprotein(a) laboratory values",
+      "Blood pressure, diabetes, smoking, medication, age, sex, family-history, symptom, and clinician-confirmed context",
+      "Calibrated ASCVD or cardiovascular polygenic risk model",
+      "Ancestry applicability and validation metadata",
+      "Personal diet, exercise, supplement, and treatment-recommendation context"
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated probability model is supplied for this local package.",
+      "The observed marker rows are context only and cannot estimate a personal cardiovascular event risk.",
+      "The public sample PDF demonstrates output shape and example recommendation rows, not this user's personalized cardiovascular recommendations."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The package cannot diagnose familial hypercholesterolemia, coronary artery disease, high cholesterol, high ApoB, high lipoprotein(a), heart attack, stroke, or aortic valve disease.",
+      "The package does not recommend medication, supplements, procedures, lab tests, imaging, genetic testing decisions, diet changes, exercise plans, or treatment changes.",
+      "Sample impact/evidence ratings and recommendation blocks are observed report structure only unless separate calibrated recommendation evidence is supplied."
+    ]
+  }
+}

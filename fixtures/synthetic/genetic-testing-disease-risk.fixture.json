@@ -1,0 +1,223 @@
+{
+  "consumerTone": "plain English; educational organ-system and complex-condition genetics context only; no diagnosis, personal risk estimate, symptom inference, lab/imaging/vital/organ-function inference, severity, prognosis, screening, prevention, testing, treatment, medication, supplement, diet, exercise, clearance, emergency, all-clear, or clinical actionability claims",
+  "datasetId": "synthetic-genetic-testing-disease-risk-organ-system-boundary-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-organ-system-boundary-context",
+      "gene": "Disease Risk Genetic Test Report model",
+      "haplotype": "organ-system-model-unavailable",
+      "inputId": "genetic-testing-disease-risk-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "validated disease-risk model, calibrated PRS, ancestry applicability metadata, variant classifications, disease-specific test scope, and local risk calculations unavailable in this fixture; public sample PDF category tables, risk labels, lifetime/heritable text, and explanatory notes observed for output structure",
+      "sourceArtifact": "synthetic-genetic-testing-disease-risk-organ-system-boundary-context-v1",
+      "sourceFile": "synthetic-genetic-testing-disease-risk-organ-system-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Disease Risk Genetic Test Report clinical and professional context",
+      "haplotype": "clinical-professional-context-unavailable",
+      "inputId": "genetic-testing-disease-risk-clinical-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "family history, symptoms, clinical history, labs, imaging, clinician review, genetic counselor review, and personal clinical context unavailable in this fixture; public sample PDF observed separately as output-structure evidence",
+      "sourceArtifact": "synthetic-genetic-testing-disease-risk-organ-system-boundary-context-v1",
+      "sourceFile": "synthetic-genetic-testing-disease-risk-organ-system-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Disease Risk Genetic Test Report organ-system context",
+      "haplotype": "organ-system-context-unavailable",
+      "inputId": "genetic-testing-disease-risk-organ-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "disease-specific organ context, screening context, prevention context, treatment context, actionability context, and personal recommendation context unavailable in this fixture; public sample PDF observed separately as output-structure evidence",
+      "sourceArtifact": "synthetic-genetic-testing-disease-risk-organ-system-boundary-context-v1",
+      "sourceFile": "synthetic-genetic-testing-disease-risk-organ-system-boundary-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-organ-system-boundary-context",
+    "hash": "sha256:synthetic-genetic-testing-disease-risk-organ-system-boundary-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-model evidence for genetic-testing-disease-risk validation"
+  },
+  "missingInputPolicy": "Report unavailable disease-risk model, disease-specific test scope, calibrated PRS, ancestry applicability metadata, variant classifications, family history, symptoms, clinical history, labs, imaging, clinician review, genetic counselor review, and complete local risk model explicitly; do not infer personal disease risk, diagnosis, screening, prevention, treatment, all-clear reassurance, or actionability from genotype alone or sample-only rows.",
+  "packageSlug": "genetic-testing-disease-risk",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Testing",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-test-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-complex-disorders",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: complex disorders",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "nci-cancer-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "NCI Genetic Testing for Inherited Cancer Risk",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "ncbi-clinvar",
+      "sourceType": "database",
+      "title": "NCBI ClinVar",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "ncbi-genetic-testing-registry",
+      "sourceType": "database",
+      "title": "NIH Genetic Testing Registry",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "guideline_background",
+      "id": "clingen-variant-classification-guidance",
+      "sourceType": "guidance_resource",
+      "title": "ClinGen Variant Classification Guidance",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "guideline_background",
+      "id": "acmg-amp-richards-2015",
+      "sourceType": "guideline_article",
+      "title": "ACMG/AMP 2015 sequence variant interpretation standards",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "direct_sample_report",
+      "id": "genetic-testing-disease-risk-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Genetic Testing For Disease Risk sample genetic report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "risk_label_table",
+        "output_format"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer Disease Risk Genetic Test Report boundary context using unavailable-model evidence plus observed Complete Genome Science sample-report output structure."
+}

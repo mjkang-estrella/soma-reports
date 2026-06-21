@@ -1,0 +1,187 @@
+{
+  "consumerTone": "plain English; educational organ-system and complex-condition genetics context only; no diagnosis, personal risk estimate, symptom inference, lab/imaging/vital/organ-function inference, severity, prognosis, screening, prevention, testing, treatment, medication, supplement, diet, exercise, clearance, emergency, all-clear, or clinical actionability claims",
+  "datasetId": "synthetic-chronic-pain-dna-report-organ-system-boundary-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-organ-system-boundary-context",
+      "gene": "Chronic Pain DNA Report model",
+      "haplotype": "organ-system-model-unavailable",
+      "inputId": "chronic-pain-dna-report-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "validated chronic-pain genetic model, calibrated PRS, ancestry applicability metadata, pain-threshold model, analgesic-response model, opioid-response model, clinical calibration, and local risk calculations unavailable in this fixture; public sample PDF risk cards, percentiles, recommendation rows, impact/evidence ratings, and visible variant tables observed for output structure",
+      "sourceArtifact": "synthetic-chronic-pain-dna-report-organ-system-boundary-context-v1",
+      "sourceFile": "synthetic-chronic-pain-dna-report-organ-system-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Chronic Pain DNA Report clinical and professional context",
+      "haplotype": "clinical-professional-context-unavailable",
+      "inputId": "chronic-pain-dna-report-clinical-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "pain diagnosis, pain location, symptom history, injury history, mental-health context, medication list, opioid or analgesic response evidence, professional interpretation, and personal clinical context unavailable in this fixture; public sample PDF observed separately as output-structure evidence",
+      "sourceArtifact": "synthetic-chronic-pain-dna-report-organ-system-boundary-context-v1",
+      "sourceFile": "synthetic-chronic-pain-dna-report-organ-system-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Chronic Pain DNA Report organ-system context",
+      "haplotype": "organ-system-context-unavailable",
+      "inputId": "chronic-pain-dna-report-organ-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "neurologic exam, inflammatory labs, imaging, musculoskeletal evaluation, disease-specific testing, treatment context, prevention context, disability context, and actionability context unavailable in this fixture; public sample PDF observed separately as output-structure evidence",
+      "sourceArtifact": "synthetic-chronic-pain-dna-report-organ-system-boundary-context-v1",
+      "sourceFile": "synthetic-chronic-pain-dna-report-organ-system-boundary-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-organ-system-boundary-context",
+    "hash": "sha256:synthetic-chronic-pain-dna-report-organ-system-boundary-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-model evidence for chronic-pain-dna-report validation"
+  },
+  "missingInputPolicy": "Report unavailable chronic-pain model calibration, pain history, pain location, symptoms, medication response, opioid or analgesic response, labs, imaging, clinical context, professional review, and complete local risk model explicitly; do not infer pain diagnosis, pain threshold, pain cause, pain severity, treatment need, medication need, supplement need, exercise guidance, or clinical actionability from genotype alone or sample-only rows.",
+  "packageSlug": "chronic-pain-dna-report",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Testing",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-test-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-complex-disorders",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: complex disorders",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-chronic-pain",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Chronic Pain",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "nih-chronic-pain-research-overview",
+      "sourceType": "public_health_resource",
+      "title": "NIH DiscoverWHR: Chronic Pain Research Overview",
+      "usedFor": [
+        "organ_system_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "direct_sample_report",
+      "id": "chronic-pain-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Chronic Pain DNA Report sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer Chronic Pain DNA Report boundary context using unavailable-model evidence plus observed OmicsEdge sample-report output structure."
+}

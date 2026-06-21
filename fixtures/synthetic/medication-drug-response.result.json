@@ -1,0 +1,184 @@
+{
+  "reportOverview": {
+    "reportTitle": "Medication & Drug Response",
+    "inputManifestHash": "sha256:synthetic-medication-drug-response-pgx-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated marketplace detail-page extraction beyond the public sample PDF is not available yet.",
+      "No medication list, medication-specific question, or calibrated drug-response model is bundled with this synthetic fixture.",
+      "CYP2C9/VKORC1 sample-summary fields are represented as public sample structure only because this local fixture does not include those user-specific calls."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Observed sample structure",
+      "item": "Public Medication & Drug Response sample table",
+      "brandName": "",
+      "geneticAnalysis": "The public sample PDF shows a result table with trait, result, and description columns plus a drug-response summary section.",
+      "description": "Sample-table structure is used to keep the local agent output aligned with the formal report shape; it is not a user-specific medication result.",
+      "genes": [
+        "CYP2C9",
+        "CYP2C19",
+        "CYP2D6",
+        "VKORC1"
+      ],
+      "sourceLabel": "Sequencing.com public sample PDF",
+      "sourceIds": [
+        "medication-drug-response-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This tells the agent what fields the report should contain, while local genomeEvidence determines any user-specific PGx rows."
+    },
+    {
+      "groupTitle": "Local pharmacogene context",
+      "item": "CYP2C19 *1/*2",
+      "brandName": "",
+      "geneticAnalysis": "A derived CYP2C19 call is available for medication-response context. It is not a medication recommendation.",
+      "description": "CYP2C19 is one of the pharmacogenes commonly represented in medication-response workflows.",
+      "genes": [
+        "CYP2C19"
+      ],
+      "sourceLabel": "PharmCAT / PharmVar / MedlinePlus",
+      "sourceIds": [
+        "pharmcat",
+        "pharmvar",
+        "medlineplus-pharmacogenetic-tests"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This row can help organize a clinician or pharmacist discussion, but it should not be used alone to change medication."
+    },
+    {
+      "groupTitle": "Local pharmacogene context",
+      "item": "CYP2D6 *1/*4",
+      "brandName": "",
+      "geneticAnalysis": "A derived CYP2D6 call is available, but CYP2D6 can require specialized calling and confirmation.",
+      "description": "CYP2D6 interpretation can depend on allele definitions and copy-number handling that are not fully represented in this synthetic fixture.",
+      "genes": [
+        "CYP2D6"
+      ],
+      "sourceLabel": "PharmCAT / PharmVar",
+      "sourceIds": [
+        "pharmcat",
+        "pharmvar"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "Treat this as derived context only; medication decisions need professional review and appropriate confirmatory evidence."
+    },
+    {
+      "groupTitle": "Local pharmacogene context",
+      "item": "SLCO1B1 rs4149056",
+      "brandName": "",
+      "geneticAnalysis": "A derived SLCO1B1 rs4149056 TC call is available for statin-response context.",
+      "description": "This marker is included as local PGx context, not as a standalone safety or dosing instruction.",
+      "genes": [
+        "SLCO1B1"
+      ],
+      "sourceLabel": "FDA PGx associations / MedlinePlus",
+      "sourceIds": [
+        "fda-pgx-associations",
+        "medlineplus-pharmacogenetic-tests"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The result is relevant to medication-response discussions, but it is not a standalone prescribing instruction."
+    },
+    {
+      "groupTitle": "Observed sample summary shape",
+      "item": "CYP2C9 and VKORC1 drug-response summary fields",
+      "brandName": "Warfarin / NSAID context",
+      "geneticAnalysis": "The public sample PDF includes CYP2C9 and VKORC1 summary fields; this synthetic local fixture does not include those user-specific calls.",
+      "description": "Keep these fields available in the report shape, but mark them unavailable for the user unless local CYP2C9/VKORC1 evidence is supplied.",
+      "genes": [
+        "CYP2C9",
+        "VKORC1"
+      ],
+      "sourceLabel": "Sequencing.com public sample PDF",
+      "sourceIds": [
+        "medication-drug-response-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The report can mirror the formal summary section without inventing a user-specific warfarin or NSAID interpretation."
+    }
+  ],
+  "practicalNextSteps": {
+    "clinicianReview": [
+      "Share PGx findings with a clinician or pharmacist before making medication decisions.",
+      "Keep current prescriptions unchanged unless a licensed professional advises otherwise.",
+      "Ask whether confirmatory clinical testing is appropriate for a specific medication question.",
+      "Use the public sample PDF only as output-structure guidance, not as your personal medication-response result."
+    ]
+  },
+  "references": [
+    {
+      "id": "medication-drug-response-sample-pdf",
+      "title": "Medication and Drug Response sample report"
+    },
+    {
+      "id": "cpic",
+      "title": "Clinical Pharmacogenetics Implementation Consortium"
+    },
+    {
+      "id": "pharmcat",
+      "title": "PharmCAT"
+    },
+    {
+      "id": "pharmvar",
+      "title": "PharmVar"
+    },
+    {
+      "id": "fda-pgx-associations",
+      "title": "FDA Table of Pharmacogenetic Associations"
+    },
+    {
+      "id": "fda-pgx-biomarkers-labeling",
+      "title": "FDA Table of Pharmacogenomic Biomarkers in Drug Labeling"
+    },
+    {
+      "id": "medlineplus-pharmacogenetic-tests",
+      "title": "MedlinePlus Pharmacogenetic Tests"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "CYP2C19-star-allele",
+        "gene": "CYP2C19",
+        "observedValue": "*1/*2",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "CYP2D6-star-allele",
+        "gene": "CYP2D6",
+        "observedValue": "*1/*4",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "SLCO1B1-rs4149056",
+        "gene": "SLCO1B1",
+        "observedValue": "TC",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "sample-pdf-CYP2C9-VKORC1-summary",
+        "gene": "CYP2C9/VKORC1",
+        "observedValue": "public sample summary shape only; no local user call supplied",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated marketplace detail-page sections beyond the public sample PDF have not been extracted.",
+      "CYP2C9/VKORC1 user-specific calls are not included in this local fixture.",
+      "HLA, CYP2D6 copy-number, MT-RNR1, DPYD, TPMT/NUDT15, and other specialized calls are not included in this fixture.",
+      "No medication list, current dose, age, clinical history, or clinician-reviewed medication question is supplied."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated medication-response probability model is supplied for this package.",
+      "PGx context depends on medication, dose, ancestry, health status, interacting medicines, and clinical history."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report is educational and does not provide prescribing, dosing, start, stop, or switch instructions.",
+      "At-home or derived data should not be used alone for treatment decisions.",
+      "The public sample PDF demonstrates output shape and example rows, not this user-specific medication efficacy or safety."
+    ]
+  }
+}

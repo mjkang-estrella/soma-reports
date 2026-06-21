@@ -1,0 +1,186 @@
+{
+  "reportOverview": {
+    "reportTitle": "Charcot-Marie-Tooth",
+    "inputManifestHash": "sha256:synthetic-charcot-marie-tooth-rare-inherited-condition-boundary-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "validated Charcot-Marie-Tooth diagnostic or risk model, CMT gene panel result, copy-number analysis, variant classifications, inheritance assessment, symptoms, neurologic exam, nerve conduction studies, family history, clinical diagnosis, genetic counselor review, and authenticated sample-report rows unavailable in this fixture",
+      "clinical diagnosis, symptoms, labs, imaging, medication or procedure context, family history, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "gene panel scope, variant classifications, zygosity, inheritance pattern, ancestry applicability, cascade-testing context, and clinical genetics review unavailable in this fixture",
+      "This result is educational boundary context only and is not a diagnosis, disease-risk estimate, variant classification, carrier-status call, inheritance inference, family-member risk estimate, testing recommendation, treatment guidance, procedure guidance, reproductive decision, or clinical actionability claim."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Validated condition model availability",
+      "item": "charcot-marie-tooth-condition-model-unavailable",
+      "brandName": "",
+      "geneticAnalysis": "Charcot-Marie-Tooth cannot emit a conclusion from this local fixture because the validated model, variant interpretation, clinical context, professional review, and authenticated sample rows are unavailable.",
+      "genes": [
+        "Charcot-Marie-Tooth model"
+      ],
+      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing",
+      "sourceIds": [
+        "cdc-genetic-testing",
+        "medlineplus-genetics",
+        "medlineplus-genetic-testing",
+        "medlineplus-genetic-testing-uses",
+        "medlineplus-genetic-test-results",
+        "medlineplus-genetic-counseling",
+        "fda-direct-to-consumer-tests",
+        "ncbi-clinvar"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This row is an availability statement. It does not diagnose a rare inherited condition, classify a variant, estimate personal or family risk, recommend testing or treatment, or provide an all-clear result."
+    },
+    {
+      "groupTitle": "Clinical and professional context availability",
+      "item": "charcot-marie-tooth-clinical-context-unavailable",
+      "brandName": "",
+      "geneticAnalysis": "clinical diagnosis, symptoms, labs, imaging, medication or procedure context, family history, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "genes": [
+        "Charcot-Marie-Tooth clinical and professional context"
+      ],
+      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing",
+      "sourceIds": [
+        "cdc-genetic-testing",
+        "medlineplus-genetics",
+        "medlineplus-genetic-testing",
+        "medlineplus-genetic-testing-uses",
+        "medlineplus-genetic-test-results",
+        "medlineplus-genetic-counseling",
+        "fda-direct-to-consumer-tests",
+        "ncbi-clinvar"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "Personal interpretation needs validated testing scope, symptoms, medical and family history, labs or imaging when relevant, medication or procedure context when relevant, ancestry applicability, and qualified professional review."
+    },
+    {
+      "groupTitle": "Variant interpretation availability",
+      "item": "charcot-marie-tooth-variant-interpretation-unavailable",
+      "brandName": "",
+      "geneticAnalysis": "gene panel scope, variant classifications, zygosity, inheritance pattern, ancestry applicability, cascade-testing context, and clinical genetics review unavailable in this fixture",
+      "genes": [
+        "Charcot-Marie-Tooth variant interpretation context"
+      ],
+      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing",
+      "sourceIds": [
+        "cdc-genetic-testing",
+        "medlineplus-genetics",
+        "medlineplus-genetic-testing",
+        "medlineplus-genetic-testing-uses",
+        "medlineplus-genetic-test-results",
+        "medlineplus-genetic-counseling",
+        "fda-direct-to-consumer-tests",
+        "ncbi-clinvar"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "Missing gene-panel scope, zygosity, inheritance, variant-classification, ancestry-applicability, and clinical genetics review means the report must mark variant interpretation unavailable instead of converting local context into a health action."
+    }
+  ],
+  "rareInheritedConditionContext": {
+    "plainEnglishMeaning": "Charcot-Marie-Tooth is currently a rare inherited condition boundary package. It can document what evidence is available and what is missing, but it cannot produce diagnosis, disease-risk, variant-classification, carrier-status, inheritance, family-member, treatment, testing, procedure, reproductive, or actionability conclusions from local evidence alone.",
+    "unsupportedClaims": [
+      "Diagnosis, all-clear result, variant classification, carrier-status call, inheritance inference, or personal disease-risk estimate",
+      "Penetrance, prognosis, severity, age-of-onset, symptom, lab, imaging, procedure, medication, treatment, or family-member conclusion",
+      "Testing, screening, cascade-testing, medication, procedure, surgery, device, treatment, supplement, diet, activity, reproductive, or management guidance",
+      "Replacement for qualified clinician, specialist, geneticist, genetic counselor, anesthesiologist, cardiologist, neurologist, or other professional review"
+    ],
+    "professionalReview": "Use this output only as preparation for a professional conversation. Health or reproductive decisions require qualified review with validated test scope, variant interpretation, symptoms, medical and family history, labs or imaging when relevant, medication or procedure context when relevant, ancestry applicability, and professional interpretation."
+  },
+  "practicalNextSteps": {
+    "professionalReview": [
+      "Do not use this local fixture to change medication, supplements, diet, testing, screening, procedures, activity, reproductive decisions, or treatment plans.",
+      "Bring symptoms, medical and family history, prior testing, labs or imaging when relevant, medication or procedure context when relevant, and ancestry context to a qualified professional if discussing this topic.",
+      "Treat unavailable model rows as unavailable, not as normal, abnormal, low risk, high risk, reassuring, diagnostic, actionable, or all clear."
+    ]
+  },
+  "references": [
+    {
+      "id": "cdc-genetic-testing",
+      "title": "CDC Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetics",
+      "title": "MedlinePlus Genetics"
+    },
+    {
+      "id": "medlineplus-genetic-testing",
+      "title": "MedlinePlus: Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetic-testing-uses",
+      "title": "MedlinePlus Genetics: Uses of Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetic-test-results",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results"
+    },
+    {
+      "id": "medlineplus-genetic-counseling",
+      "title": "MedlinePlus: Genetic Counseling"
+    },
+    {
+      "id": "fda-direct-to-consumer-tests",
+      "title": "FDA Direct-to-Consumer Tests"
+    },
+    {
+      "id": "ncbi-clinvar",
+      "title": "NCBI ClinVar"
+    },
+    {
+      "id": "ncbi-genetic-testing-registry",
+      "title": "NIH Genetic Testing Registry"
+    },
+    {
+      "id": "clingen-variant-classification-guidance",
+      "title": "ClinGen Variant Classification Guidance"
+    },
+    {
+      "id": "acmg-amp-richards-2015",
+      "title": "ACMG/AMP 2015 sequence variant interpretation standards"
+    },
+    {
+      "id": "genereviews-charcot-marie-tooth",
+      "title": "GeneReviews: Charcot-Marie-Tooth Hereditary Neuropathy Overview"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "charcot-marie-tooth-condition-model-unavailable",
+        "gene": "Charcot-Marie-Tooth model",
+        "observedValue": "validated Charcot-Marie-Tooth diagnostic or risk model, CMT gene panel result, copy-number analysis, variant classifications, inheritance assessment, symptoms, neurologic exam, nerve conduction studies, family history, clinical diagnosis, genetic counselor review, and authenticated sample-report rows unavailable in this fixture",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "charcot-marie-tooth-clinical-context-unavailable",
+        "gene": "Charcot-Marie-Tooth clinical and professional context",
+        "observedValue": "clinical diagnosis, symptoms, labs, imaging, medication or procedure context, family history, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "charcot-marie-tooth-variant-interpretation-unavailable",
+        "gene": "Charcot-Marie-Tooth variant interpretation context",
+        "observedValue": "gene panel scope, variant classifications, zygosity, inheritance pattern, ancestry applicability, cascade-testing context, and clinical genetics review unavailable in this fixture",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated Sequencing.com sample report sections and exact rows",
+      "Validated condition model output with applicability and validation metadata",
+      "Qualified professional review and complete clinical, family-history, symptom, medication, procedure, lab, and imaging context when relevant",
+      "Gene-panel scope, zygosity, inheritance pattern, variant classifications, ancestry applicability, and clinical genetics review"
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated rare inherited condition, penetrance, prognosis, severity, age-of-onset, family-member, carrier-status, procedure-risk, treatment-response, screening-benefit, reproductive-risk, or actionability model is supplied for this local package.",
+      "Interpretation depends on validated test scope, variant interpretation, clinical and family history, symptoms, labs or imaging when relevant, ancestry applicability, and qualified professional review."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
+      "The report is educational boundary context and does not provide diagnosis, disease-risk estimation, variant classification, carrier-status reporting, inheritance inference, family-member risk estimation, testing advice, screening advice, treatment advice, procedure advice, medication advice, reproductive advice, or clinical actionability.",
+      "Unavailable model rows should never be interpreted as low risk, high risk, no risk, normal, abnormal, reassuring, diagnostic, actionable, or all clear."
+    ]
+  }
+}

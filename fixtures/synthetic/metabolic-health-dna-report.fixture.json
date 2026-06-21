@@ -1,0 +1,161 @@
+{
+  "consumerTone": "plain English; educational metabolic-health DNA context only; no metabolic diagnosis, glucose prediction, diabetes prediction, insulin-resistance, lab, weight, diet, supplement, medication, or treatment claims",
+  "datasetId": "synthetic-metabolic-health-dna-report-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "MCM6/LCT",
+      "inputId": "MCM6-rs4988235",
+      "matchStatus": "observed",
+      "observedValue": "CT",
+      "rsid": "rs4988235",
+      "sourceArtifact": "synthetic-metabolic-health-dna-report-context-v1",
+      "sourceFile": "synthetic-metabolic-health-dna-report-context-v1.json"
+    },
+    {
+      "assembly": "derived-nutrition-genetics-context",
+      "gene": "Metabolic health DNA model",
+      "haplotype": "metabolic-health-dna-report-model-unavailable",
+      "inputId": "metabolic-health-dna-report-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "calibrated metabolic score, glucose model, diabetes model, insulin-resistance model, weight model, food-response model, micronutrient model, supplement model, diet-history context, symptom context, lab context, medication context, and ancestry applicability metadata unavailable in this fixture",
+      "sourceArtifact": "synthetic-metabolic-health-dna-report-context-v1",
+      "sourceFile": "synthetic-metabolic-health-dna-report-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "hash": "sha256:synthetic-metabolic-health-dna-report-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived nutrition-genetics evidence for metabolic-health-dna-report validation"
+  },
+  "missingInputPolicy": "Report unavailable metabolic, glucose, diabetes, insulin-resistance, lab, diet, supplement, medication, weight, and calibrated models explicitly; do not infer metabolic disease, diabetes risk, insulin resistance, nutrient deficiency, supplement needs, meal plans, medication actions, weight outcomes, or treatment.",
+  "packageSlug": "metabolic-health-dna-report",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-lactose-intolerance",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: lactose intolerance",
+      "usedFor": [
+        "lactose_context",
+        "non_diagnostic_language"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-mcm6",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: MCM6 gene",
+      "usedFor": [
+        "mcm6_lct_context",
+        "lactase_persistence_context"
+      ]
+    },
+    {
+      "evidenceLevel": "review_background",
+      "id": "nutritional-genomics-dtc-review",
+      "sourceType": "research_review",
+      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing",
+      "usedFor": [
+        "nutrition_context",
+        "direct_to_consumer_limitations"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "candidate_trait_associations"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean",
+      "usedFor": [
+        "dtc_limitations",
+        "non_diagnostic_language",
+        "consumer_safety_language"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_health_background",
+      "id": "medlineplus-blood-glucose-test",
+      "sourceType": "medical_test_resource",
+      "title": "MedlinePlus: Blood Glucose Test",
+      "usedFor": [
+        "glucose_lab_context",
+        "diabetes_diagnosis_boundary",
+        "no_genotype_glucose_prediction"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_health_background",
+      "id": "medlineplus-hba1c-test",
+      "sourceType": "medical_test_resource",
+      "title": "MedlinePlus: Hemoglobin A1C test",
+      "usedFor": [
+        "glucose_lab_context",
+        "a1c_context",
+        "no_lab_inference_from_genotype"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-diabetes-risk-factors",
+      "sourceType": "public_health_resource",
+      "title": "CDC Diabetes Risk Factors",
+      "usedFor": [
+        "diabetes_risk_context",
+        "metabolic_limitations",
+        "professional_review_language"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-dietary-supplements",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Dietary Supplements",
+      "usedFor": [
+        "supplement_context",
+        "supplement_safety_language",
+        "no_dosing_from_genotype"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "nih-ods-dietary-supplement-fact-sheets",
+      "sourceType": "public_health_resource",
+      "title": "NIH Office of Dietary Supplements Fact Sheets",
+      "usedFor": [
+        "supplement_context",
+        "nutrient_context",
+        "professional_review_language"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-bmi",
+      "sourceType": "public_health_resource",
+      "title": "CDC About Body Mass Index",
+      "usedFor": [
+        "weight_context",
+        "bmi_limitations",
+        "no_weight_prediction_from_genotype"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer Metabolic Health DNA Report context using derived MCM6/LCT evidence plus explicit metabolic, glucose, diabetes, insulin-resistance, lab, diet, supplement, medication, and model-unavailable framing."
+}

@@ -5,19 +5,28 @@ import { api } from "../convex/_generated/api";
 import { Filters } from "./components/Filters";
 import { ReportCard } from "./components/ReportCard";
 import { ReportDetail } from "./components/ReportDetail";
-import type { ReportPackage, ReportSummary } from "./lib/types";
+import { readinessScore } from "./lib/readiness";
+import type { CatalogStats, ReportPackage, ReportSummary } from "./lib/types";
 
 const DEFAULT_SLUG = "wellness-genetic-guide";
 const SEQUENCING_MARKETPLACE_TOTAL = 164;
-const AUTHENTICATED_PAGE_SIZE = 75;
 const AUTHENTICATED_PAGE_COUNT = 3;
+type SortMode = "readiness" | "title" | "category";
+
+const formatReadinessStat = (value: number | undefined, total: number) => {
+  if (value === undefined) {
+    return "...";
+  }
+  return `${value}/${total}`;
+};
 
 export default function App() {
   const reports = useQuery(api.reports.list, {}) as ReportSummary[] | undefined;
+  const catalogStats = useQuery(api.reports.catalogStats, {}) as CatalogStats | undefined;
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
   const [selectedSlug, setSelectedSlug] = useState(DEFAULT_SLUG);
-  const [sortBy, setSortBy] = useState<"title" | "category">("title");
+  const [sortBy, setSortBy] = useState<SortMode>("readiness");
   const selectedReport = useQuery(api.reports.get, { slug: selectedSlug }) as
     | ReportPackage
     | null
@@ -44,6 +53,9 @@ export default function App() {
     });
 
     return matches.sort((a, b) => {
+      if (sortBy === "readiness") {
+        return readinessScore(b) - readinessScore(a) || a.title.localeCompare(b.title);
+      }
       if (sortBy === "category") {
         return `${a.category} ${a.title}`.localeCompare(`${b.category} ${b.title}`);
       }
@@ -51,8 +63,13 @@ export default function App() {
     });
   }, [category, reports, search, sortBy]);
 
-  const seededCount = reports?.length ?? 0;
-  const backlogCount = Math.max(SEQUENCING_MARKETPLACE_TOTAL - seededCount, 0);
+  const seededCount = catalogStats?.seeded ?? reports?.length ?? 0;
+  const targetTotal = catalogStats?.knownMarketplaceTotal ?? SEQUENCING_MARKETPLACE_TOTAL;
+  const statsLoaded = Boolean(catalogStats || reports);
+  const identifiedCount = catalogStats?.identifiedMarketplaceItems ?? Math.max(seededCount - 10, 0);
+  const backlogCount =
+    catalogStats?.unknownMarketplaceItems ??
+    (reports ? Math.max(SEQUENCING_MARKETPLACE_TOTAL - seededCount, 0) : 10);
 
   return (
     <>
@@ -118,32 +135,53 @@ export default function App() {
             <span className="eyebrow">Curation status</span>
             <p>
               Sequencing.com marketplace pages are account-gated in public browsing. Authenticated
-              browsing showed 164 total marketplace items across 3 pages of 75 items. This app stores
-              the observed subset, public sample structure, curated references, and explicit
-              extraction status so the remaining backlog can be completed from authenticated
-              mock-report evidence.
+              browsing showed 164 visible marketplace card positions across {AUTHENTICATED_PAGE_COUNT} pages of 75, 75,
+              and 14 cards. A public
+              aggregate marketplace page currently grounds 150 URLs, plus {catalogStats?.namedAuthenticatedOnly ?? 4} named
+              authenticated-only cards. The remaining {backlogCount || 10} authenticated slots are
+              shown as placeholders until their names and mock reports can be extracted.
             </p>
           </div>
           <div className="catalog-stats" aria-label="Catalog coverage">
             <div>
-              <strong>{SEQUENCING_MARKETPLACE_TOTAL}</strong>
-              <span>Sequencing.com total</span>
+              <strong>{formatReadinessStat(statsLoaded ? identifiedCount : undefined, targetTotal)}</strong>
+              <span>Catalog identity</span>
             </div>
             <div>
-              <strong>{reports ? seededCount : "..."}</strong>
-              <span>Seeded subset</span>
+              <strong>{formatReadinessStat(catalogStats?.referencesReady, targetTotal)}</strong>
+              <span>Background refs</span>
             </div>
             <div>
-              <strong>{reports ? backlogCount : "..."}</strong>
-              <span>Remaining backlog</span>
+              <strong>{formatReadinessStat(catalogStats?.sampleExtracted, targetTotal)}</strong>
+              <span>Sample report</span>
             </div>
             <div>
-              <strong>{AUTHENTICATED_PAGE_SIZE}</strong>
-              <span>Items per page</span>
+              <strong>{formatReadinessStat(catalogStats?.promptReady, targetTotal)}</strong>
+              <span>Agent prompt</span>
             </div>
             <div>
-              <strong>{AUTHENTICATED_PAGE_COUNT}</strong>
-              <span>Pages observed</span>
+              <strong>{formatReadinessStat(catalogStats?.outputFormatReady, targetTotal)}</strong>
+              <span>Output schema</span>
+            </div>
+            <div>
+              <strong>{formatReadinessStat(catalogStats?.formalFieldsReady, targetTotal)}</strong>
+              <span>Formal map</span>
+            </div>
+            <div>
+              <strong>{formatReadinessStat(catalogStats?.localFixtureReady, targetTotal)}</strong>
+              <span>Local fixture</span>
+            </div>
+            <div>
+              <strong>{formatReadinessStat(catalogStats?.citationBindingsReady, targetTotal)}</strong>
+              <span>Row citations</span>
+            </div>
+            <div>
+              <strong>{formatReadinessStat(catalogStats?.sampleBackedFormalReady, targetTotal)}</strong>
+              <span>Formal report</span>
+            </div>
+            <div>
+              <strong>{formatReadinessStat(catalogStats?.formalEquivalentReady, targetTotal)}</strong>
+              <span>Full parity</span>
             </div>
           </div>
         </div>
@@ -162,8 +200,9 @@ export default function App() {
                 <select
                   aria-label="Sort reports"
                   value={sortBy}
-                  onChange={(event) => setSortBy(event.target.value as "title" | "category")}
+                  onChange={(event) => setSortBy(event.target.value as SortMode)}
                 >
+                  <option value="readiness">Readiness</option>
                   <option value="title">Title</option>
                   <option value="category">Category</option>
                 </select>

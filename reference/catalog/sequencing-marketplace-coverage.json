@@ -1,0 +1,70 @@
+{
+  "source": "Sequencing.com marketplace curation coverage",
+  "targetTotal": 164,
+  "lastVerified": "2026-06-21",
+  "evidence": [
+    {
+      "kind": "authenticated_marketplace_ui",
+      "description": "Logged-in Sequencing.com marketplace showed 164 visible marketplace card positions across 3 pages of 75, 75, and 14 cards. The captured cards include repeated slugs, so this evidence confirms the observed marketplace slot count, not 164 unique recovered names.",
+      "url": "https://sequencing.com/marketplace?page=2",
+      "artifact": "reference/catalog/sequencing-authenticated-marketplace-cards-2026-06-21.json",
+      "status": "direct_count_observed"
+    },
+    {
+      "kind": "public_aggregate_html",
+      "description": "Public aggregate marketplace HTML exposed 150 unique /marketplace/ URLs.",
+      "url": "https://sequencing.com/apps/app-market/page_view_event/aggregate",
+      "artifact": "reference/catalog/sequencing-public-marketplace-catalog.json",
+      "status": "direct_url_extraction"
+    },
+    {
+      "kind": "authenticated_screenshot_cards",
+      "description": "Authenticated screenshots identified four additional cards not represented as public aggregate URLs.",
+      "artifacts": [
+        "output/browser/sequencing-marketplace-auth.png",
+        "output/browser/sequencing-marketplace-page2.png"
+      ],
+      "status": "direct_card_observation"
+    }
+  ],
+  "counts": {
+    "publicUrlDistinct": 150,
+    "authenticatedOnlyNamed": 4,
+    "identifiedNamedTotal": 154,
+    "unidentifiedAuthenticatedSlots": 10,
+    "seededRecordsExpected": 164
+  },
+  "authenticatedBrowserCapture": {
+    "capturedAt": "2026-06-21",
+    "sourceArtifact": "reference/catalog/sequencing-authenticated-marketplace-cards-2026-06-21.json",
+    "method": "Logged-in in-app browser DOM card extraction through visible pagination controls.",
+    "visibleCardTotal": 164,
+    "pageCounts": [
+      75,
+      75,
+      14
+    ],
+    "uniqueCardIdentities": 87,
+    "uniqueMarketplaceSlugs": 84,
+    "uniqueOrderSlugs": 3,
+    "finding": "The authenticated UI confirms 164 visible marketplace card positions. This capture confirms the four named authenticated-only entries already modeled, but does not identify the ten placeholder slots."
+  },
+  "unidentifiedSlots": [
+    "authenticated-marketplace-slot-01",
+    "authenticated-marketplace-slot-02",
+    "authenticated-marketplace-slot-03",
+    "authenticated-marketplace-slot-04",
+    "authenticated-marketplace-slot-05",
+    "authenticated-marketplace-slot-06",
+    "authenticated-marketplace-slot-07",
+    "authenticated-marketplace-slot-08",
+    "authenticated-marketplace-slot-09",
+    "authenticated-marketplace-slot-10"
+  ],
+  "policy": {
+    "placeholderLabel": "Authenticated marketplace item NN",
+    "doNotInferNames": true,
+    "replacementRule": "Replace a placeholder only after authenticated page, SSR JSON, screenshot, or detail-page evidence identifies the actual report name and metadata.",
+    "rawGenomeBoundary": "Coverage tracking contains no raw genome data."
+  }
+}

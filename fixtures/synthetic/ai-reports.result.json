@@ -1,0 +1,159 @@
+{
+  "reportOverview": {
+    "reportTitle": "AI Reports",
+    "inputManifestHash": "sha256:synthetic-ai-reports-boundary-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "Generated AI report output, model prompt, model version, service provenance, and calibrated quality evidence are not supplied.",
+      "generated AI report output, model prompt, model version, service provenance, authenticated sample-report rows, disease or trait interpretation, and calibrated quality evidence unavailable in this fixture"
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Public variant lookup context",
+      "item": "BDNF rs6265",
+      "brandName": "",
+      "geneticAnalysis": "A selected public variant identifier is available for lookup and annotation context. No Sequencing.com generated AI report, personal trait interpretation, disease interpretation, or model output is supplied.",
+      "genes": [
+        "BDNF"
+      ],
+      "sourceLabel": "NCBI dbSNP; Ensembl REST; Ensembl VEP",
+      "sourceIds": [
+        "ncbi-dbsnp",
+        "ensembl-rest-api",
+        "ensembl-vep"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The row can explain what local evidence was supplied, but it does not imitate or recreate unavailable generated AI report content."
+    },
+    {
+      "groupTitle": "Reference build context",
+      "item": "GRCh38 coordinate context",
+      "brandName": "",
+      "geneticAnalysis": "GRCh38 reference-build context is available for the selected lookup, while alternate-build conversion, remapping, and generated service output are not supplied.",
+      "genes": [
+        "reference genome coordinate context"
+      ],
+      "sourceLabel": "NCBI Variation Services / SPDI; Ensembl REST",
+      "sourceIds": [
+        "ncbi-variation-services-spdi",
+        "ensembl-rest-api"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The report can describe the supplied build context, but it cannot claim a generated AI report was produced by Sequencing.com or any other model."
+    },
+    {
+      "groupTitle": "AI report output availability",
+      "item": "Generated AI report and service provenance unavailable",
+      "brandName": "",
+      "geneticAnalysis": "generated AI report output, model prompt, model version, service provenance, authenticated sample-report rows, disease or trait interpretation, and calibrated quality evidence unavailable in this fixture",
+      "genes": [
+        "AI report service output"
+      ],
+      "sourceLabel": "Ensembl VEP; ClinVar; GWAS Catalog; NIH Genetic Testing Registry",
+      "sourceIds": [
+        "ensembl-vep",
+        "ncbi-clinvar",
+        "ebi-gwas-catalog",
+        "ncbi-genetic-testing-registry"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This local run can document the boundary for AI report generation, but it cannot report unavailable generated content, model behavior, model quality, disease findings, or trait findings."
+    }
+  ],
+  "utilityContext": {
+    "plainEnglishMeaning": "This result is an AI-report boundary package. It explains supplied local evidence and explicitly marks generated report output, service provenance, and authenticated sample output unavailable.",
+    "unsupportedClaims": [
+      "Sequencing.com generated-report imitation",
+      "model prompt or model version",
+      "model accuracy",
+      "trait interpretation",
+      "disease interpretation",
+      "clinical classification",
+      "diagnosis",
+      "disease-risk estimate",
+      "medication response",
+      "screening or treatment recommendation"
+    ]
+  },
+  "references": [
+    {
+      "id": "ensembl-vep",
+      "title": "Ensembl Variant Effect Predictor"
+    },
+    {
+      "id": "ensembl-variant-consequences",
+      "title": "Ensembl Variation: calculated variant consequences"
+    },
+    {
+      "id": "ensembl-rest-api",
+      "title": "Ensembl REST API endpoints"
+    },
+    {
+      "id": "sequence-ontology",
+      "title": "Sequence Ontology"
+    },
+    {
+      "id": "ncbi-dbsnp",
+      "title": "NCBI dbSNP"
+    },
+    {
+      "id": "ncbi-clinvar",
+      "title": "NCBI ClinVar"
+    },
+    {
+      "id": "ncbi-variation-services-spdi",
+      "title": "NCBI Variation Services / SPDI"
+    },
+    {
+      "id": "ncbi-genetic-testing-registry",
+      "title": "NIH Genetic Testing Registry"
+    },
+    {
+      "id": "international-genome-sample-resource",
+      "title": "International Genome Sample Resource / 1000 Genomes"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "bioinformatics-public-variant-rs6265",
+        "gene": "BDNF",
+        "observedValue": "selected public variant identifier available for lookup and annotation context; no trait, disease, or clinical interpretation supplied",
+        "matchStatus": "summarized"
+      },
+      {
+        "inputId": "bioinformatics-reference-build-context",
+        "gene": "reference genome coordinate context",
+        "observedValue": "GRCh38 coordinate context available for selected lookup; alternate build, liftover path, remapping evidence, and service output unavailable",
+        "matchStatus": "summarized"
+      },
+      {
+        "inputId": "ai-report-service-output-unavailable",
+        "gene": "AI report service output",
+        "observedValue": "generated AI report output, model prompt, model version, service provenance, authenticated sample-report rows, disease or trait interpretation, and calibrated quality evidence unavailable in this fixture",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated Sequencing.com sample report rows",
+      "Generated AI report output, model prompt, model version, and service provenance",
+      "Calibrated quality evidence for generated content",
+      "Disease or trait interpretation output from the service"
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated model-quality, generated-report, disease, trait, or clinical-actionability model is supplied for this local package.",
+      "The selected rows support boundary context only and cannot be treated as generated AI report output."
+    ],
+    "limitations": [
+      "This validation result uses selected derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
+      "The package does not emit complete SNP tables, sequencing files, alignment files, generated report output files, or unavailable model metadata.",
+      "The package does not diagnose disease, estimate disease risk, classify pathogenicity, infer medication response, or recommend screening, testing, treatment, diet, supplements, or lifestyle changes."
+    ]
+  }
+}

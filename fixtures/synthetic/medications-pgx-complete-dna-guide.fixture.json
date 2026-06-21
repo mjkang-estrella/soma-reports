@@ -1,0 +1,155 @@
+{
+  "consumerTone": "plain English; educational PGx guide context only; no complete-coverage, pediatric dosing, drug-specific action, medication safety, efficacy, prescribing, or treatment-change claims",
+  "datasetId": "synthetic-medications-pgx-complete-guide-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "CYP2C19",
+      "inputId": "CYP2C19-star-allele",
+      "matchStatus": "observed",
+      "observedValue": "intermediate metabolizer context",
+      "sourceArtifact": "synthetic-medications-pgx-complete-guide-context-v1",
+      "sourceFile": "synthetic-medications-pgx-complete-guide-context-v1.json",
+      "starAllele": "*1/*2"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "CYP2D6",
+      "inputId": "CYP2D6-star-allele",
+      "matchStatus": "observed",
+      "observedValue": "intermediate metabolizer context",
+      "sourceArtifact": "synthetic-medications-pgx-complete-guide-context-v1",
+      "sourceFile": "synthetic-medications-pgx-complete-guide-context-v1.json",
+      "starAllele": "*1/*4"
+    },
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "SLCO1B1",
+      "inputId": "SLCO1B1-rs4149056",
+      "matchStatus": "observed",
+      "observedValue": "TC",
+      "rsid": "rs4149056",
+      "sourceArtifact": "synthetic-medications-pgx-complete-guide-context-v1",
+      "sourceFile": "synthetic-medications-pgx-complete-guide-context-v1.json"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "expanded PGx coverage",
+      "haplotype": "expanded-pgx-coverage-unavailable",
+      "inputId": "expanded-pgx-coverage-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "User-specific HLA, CYP2D6 copy number, MT-RNR1, DPYD, TPMT/NUDT15, CYP2C9/VKORC1, UGT1A1, G6PD, medication list, age or pediatric context, phenotype confidence, and authenticated marketplace detail-page extraction unavailable in this fixture",
+      "sourceArtifact": "synthetic-medications-pgx-complete-guide-context-v1",
+      "sourceFile": "synthetic-medications-pgx-complete-guide-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-pharmacogene-calls",
+    "hash": "sha256:synthetic-medications-pgx-complete-guide-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived PGx calls for medications-pgx-complete-dna-guide validation"
+  },
+  "missingInputPolicy": "Report unavailable specialized user-specific pharmacogene calls, medication list, pediatric context, phenotype confidence, and authenticated marketplace detail-page extraction explicitly; do not infer complete coverage, dosing, safety, efficacy, or medication action.",
+  "packageSlug": "medications-pgx-complete-dna-guide",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "background",
+      "id": "cpic",
+      "sourceType": "guideline",
+      "title": "Clinical Pharmacogenetics Implementation Consortium",
+      "usedFor": [
+        "gene_drug_context",
+        "clinician_review_language"
+      ]
+    },
+    {
+      "evidenceLevel": "implementation_background",
+      "id": "pharmcat",
+      "sourceType": "implementation_resource",
+      "title": "PharmCAT",
+      "usedFor": [
+        "local_pgx_runner",
+        "missing_call_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "pharmvar",
+      "sourceType": "database",
+      "title": "PharmVar",
+      "usedFor": [
+        "star_allele_nomenclature"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-pgx-associations",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Table of Pharmacogenetic Associations",
+      "usedFor": [
+        "association_context",
+        "safety_language"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-pgx-biomarkers-labeling",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Table of Pharmacogenomic Biomarkers in Drug Labeling",
+      "usedFor": [
+        "labeling_context"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-pharmacogenetic-tests",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Pharmacogenetic Tests",
+      "usedFor": [
+        "plain_english_context",
+        "provider_review_language"
+      ]
+    },
+    {
+      "evidenceLevel": "observed_output_structure",
+      "id": "medications-pgx-complete-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Medications PGx: Complete DNA Guide sample report",
+      "usedFor": [
+        "sample_rows",
+        "genotype_summary",
+        "formal_fields",
+        "output_format"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-pharmacogenomics",
+      "sourceType": "public_health_resource",
+      "title": "CDC Pharmacogenomics",
+      "usedFor": [
+        "pharmacogenomics_context",
+        "medication_safety_language"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "nhgri-pharmacogenomics",
+      "sourceType": "education_resource",
+      "title": "NHGRI Pharmacogenomics Fact Sheet",
+      "usedFor": [
+        "pharmacogenomics_context",
+        "plain_english_glossary"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer PGx guide context using derived CYP2C19, CYP2D6, and SLCO1B1 calls plus the public sample PDF's output structure while explicitly marking broad user-specific PGx coverage, pediatric context, medication-list review, and authenticated detail-page extraction unavailable."
+}

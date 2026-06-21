@@ -1,0 +1,405 @@
+{
+  "reportOverview": {
+    "reportTitle": "My Heart Health",
+    "inputManifestHash": "sha256:synthetic-my-heart-health-context-v1",
+    "sectionsUnavailable": [
+      "Personal heart-health nutrition model output, food-score model output, clinical labs, blood pressure, diet history, medication list, and clinician review are not supplied.",
+      "A calibrated ASCVD or cardiovascular polygenic risk model with clinical and ancestry applicability metadata is not supplied.",
+      "The GenoPalate sample rows are observed sample-report structure only and are not local personal recommendations."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Lipoprotein(a) context",
+      "item": "LPA rs10455872",
+      "brandName": "",
+      "geneticAnalysis": "A derived AG call is available for LPA rs10455872. This is cardiovascular genetics context only and does not measure lipoprotein(a) level.",
+      "genes": [
+        "LPA"
+      ],
+      "sourceLabel": "CDC About Lipoprotein(a); GWAS Catalog",
+      "sourceIds": [
+        "cdc-lipoprotein-a",
+        "ebi-gwas-catalog"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This marker can be reported as LPA context, but the report cannot say whether lipoprotein(a) is high without a blood test and clinical review."
+    },
+    {
+      "groupTitle": "Coronary artery disease context",
+      "item": "9p21 / CDKN2B-AS1 rs10757278",
+      "brandName": "",
+      "geneticAnalysis": "A derived AG call is available for a 9p21 cardiovascular association marker. This marker is not used alone to diagnose heart disease or estimate personal risk.",
+      "genes": [
+        "CDKN2B-AS1 / 9p21 locus"
+      ],
+      "sourceLabel": "MedlinePlus complex disorders; GWAS Catalog",
+      "sourceIds": [
+        "medlineplus-complex-disorders",
+        "ebi-gwas-catalog"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "Common heart-disease risk is multifactorial, so a single marker cannot determine whether someone has or will develop cardiovascular disease."
+    },
+    {
+      "groupTitle": "Familial hypercholesterolemia context",
+      "item": "FH pathogenic-variant screen",
+      "brandName": "",
+      "geneticAnalysis": "A comprehensive familial hypercholesterolemia pathogenic-variant screen, LDL cholesterol values, family history, physical findings, and clinician diagnosis are unavailable in this fixture.",
+      "genes": [
+        "LDLR",
+        "APOB",
+        "PCSK9",
+        "LDLRAP1"
+      ],
+      "sourceLabel": "CDC About Familial Hypercholesterolemia; MedlinePlus familial hypercholesterolemia",
+      "sourceIds": [
+        "cdc-familial-hypercholesterolemia",
+        "medlineplus-familial-hypercholesterolemia"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This local package cannot diagnose familial hypercholesterolemia or rule it out because the required clinical and variant-screening evidence is not present."
+    },
+    {
+      "groupTitle": "Model availability",
+      "item": "Calibrated cardiovascular and heart-health nutrition models",
+      "brandName": "",
+      "geneticAnalysis": "The fixture does not include calibrated ASCVD, cardiovascular PRS, heart-health nutrition, or food-score models, and it omits clinical risk factors and personal recommendation context.",
+      "genes": [
+        "cardiovascular risk model"
+      ],
+      "sourceLabel": "NHGRI overview of polygenic risk scores; MedlinePlus complex disorders",
+      "sourceIds": [
+        "nhgri-polygenic-risk-scores",
+        "medlineplus-complex-disorders"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The report can summarize supplied genetic context and observed sample-report structure, but it cannot estimate personal heart, cholesterol, blood-pressure, nutrition, or food-score results from this fixture."
+    },
+    {
+      "groupTitle": "Heart Health Results Summary",
+      "item": "Nutrient intake summary",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Sample summary lists total fat 29-37% of daily calories, omega-3 1,100 mg/day, omega-6 7-9% of daily calories, saturated fat below 10% of daily calories, carbohydrates 57-65% of daily calories, folate 400 micrograms/day, potassium above 4,100 mg/day, and sodium 1,500-2,300 mg/day.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "my-heart-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The public sample summary page color-codes heart-health nutrition recommendations and ties them to HDL cholesterol and triglyceride levels."
+    },
+    {
+      "groupTitle": "Our Science",
+      "item": "Nutrition recommendations and food scoring",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample explains that GenoPalate starts with NIH nutrition guidelines, refines ranges with DNA plus personal factors, and scores foods from 0 to 100 using nutrient content, nutrient density, and DNA personalization.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "my-heart-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The public sample includes method pages describing nutrition recommendation calculation and food scoring before nutrient-specific result pages."
+    },
+    {
+      "groupTitle": "Fats",
+      "item": "Total Fat Intake",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Sample result: more likely to increase HDL cholesterol and decrease triglyceride levels when consuming a moderately high-total fat intake; recommendation 29-37% of daily calories and 50-61 grams per day.",
+      "genes": [
+        "CETP",
+        "FAAH",
+        "ACE",
+        "LIPC",
+        "APOA5"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "my-heart-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample gene table shows CETP GP000024 CC, FAAH GP000013 CC, ACE GP000019 AG, LIPC GP000015 CC, and APOA5 GP000049 with no detected genotype."
+    },
+    {
+      "groupTitle": "Fats",
+      "item": "Omega-3 Intake",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Sample result: normal omega-3 needs; recommendation 1,100 milligrams per day.",
+      "genes": [
+        "FADS1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "my-heart-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample gene table shows FADS1 GP000032 CC and says the genotype aligns with typical dietary guidelines."
+    },
+    {
+      "groupTitle": "Fats",
+      "item": "Omega-6 Intake",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Sample result: more likely to increase HDL cholesterol when consuming a high-omega-6 fatty-acid intake; recommendation 7-9% of daily calories and 11-14 grams per day.",
+      "genes": [
+        "FADS1",
+        "TCF7L2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "my-heart-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample gene table shows FADS1 GP000032 CC for high-omega-6 HDL context and TCF7L2 GP000005 CC aligned with typical dietary guidelines."
+    },
+    {
+      "groupTitle": "Fats",
+      "item": "Saturated Fat Intake",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Sample result: normal saturated fat needs; recommendation below 10% of daily calories and below 17 grams per day.",
+      "genes": [
+        "ACE"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "my-heart-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample gene table shows ACE GP000019 AG and says the genotype aligns with typical dietary guidelines."
+    },
+    {
+      "groupTitle": "Carbohydrates",
+      "item": "Carb Intake",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Sample result: high-total carbohydrate intake; recommendation 57-65% of daily calories and 215-241 grams per day.",
+      "genes": [
+        "MMAB"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "my-heart-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample gene table shows MMAB GP000004 with no detected genotype and recommends nutrient-dense carbohydrate sources."
+    },
+    {
+      "groupTitle": "Other Nutrients",
+      "item": "Folate Intake",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Sample result: normal folate needs; recommendation 400 micrograms per day.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "my-heart-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample gene table shows MTHFR GP000052 GG and says the genotype aligns with typical dietary guidelines."
+    },
+    {
+      "groupTitle": "Other Nutrients",
+      "item": "Potassium Intake",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Sample result: moderately high-potassium intake; recommendation above 4,100 milligrams per day.",
+      "genes": [
+        "ADIPOQ"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "my-heart-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample gene table shows ADIPOQ GP000062 with no detected genotype and names high-potassium food examples."
+    },
+    {
+      "groupTitle": "Other Nutrients",
+      "item": "Sodium Intake",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Sample result: normal sodium needs; recommendation 1,500-2,300 milligrams per day.",
+      "genes": [
+        "ADIPOQ",
+        "AGT"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "my-heart-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample names ADIPOQ and AGT as sodium-related genes, shows one typical-guideline row with OCR-noisy marker text, and shows AGT GP000056 with no detected genotype."
+    }
+  ],
+  "riskContext": {
+    "plainEnglishMeaning": "Cardiovascular and heart-health nutrition context depends on genetics plus lipid labs, lipoprotein(a), blood pressure, diabetes, smoking, age, sex, family history, diet, medications, lifestyle, environment, and clinical care.",
+    "unsupportedClaims": [
+      "familial hypercholesterolemia diagnosis",
+      "coronary artery disease diagnosis",
+      "heart attack or stroke prediction",
+      "high cholesterol or high lipoprotein(a) diagnosis",
+      "blood-pressure or nutrient-status conclusion",
+      "personal GenoPalate food score",
+      "diet, supplement, medication, lab-test, imaging, exercise, procedure, or treatment recommendation"
+    ],
+    "professionalReview": "A clinician or qualified nutrition professional can interpret cardiovascular genetics together with labs, blood pressure, medical history, diet, medications, age, sex, ancestry, and other health information."
+  },
+  "references": [
+    {
+      "id": "cdc-familial-hypercholesterolemia",
+      "title": "CDC About Familial Hypercholesterolemia"
+    },
+    {
+      "id": "cdc-lipoprotein-a",
+      "title": "CDC About Lipoprotein(a)"
+    },
+    {
+      "id": "medlineplus-familial-hypercholesterolemia",
+      "title": "MedlinePlus Genetics: familial hypercholesterolemia"
+    },
+    {
+      "id": "medlineplus-complex-disorders",
+      "title": "MedlinePlus Genetics: complex disorders"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    },
+    {
+      "id": "my-heart-health-sample-pdf",
+      "title": "GenoPalate My Heart Health sample report"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "LPA-rs10455872",
+        "gene": "LPA",
+        "observedValue": "AG",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "9p21-rs10757278",
+        "gene": "CDKN2B-AS1 / 9p21 locus",
+        "observedValue": "AG",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "FH-pathogenic-variant-screen-unavailable",
+        "gene": "LDLR/APOB/PCSK9 familial hypercholesterolemia screen",
+        "observedValue": "pathogenic-variant screen, LDL cholesterol values, family history, physical findings, and clinician diagnosis unavailable in this fixture",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "cardiovascular-risk-model-unavailable",
+        "gene": "cardiovascular risk model",
+        "observedValue": "calibrated heart-health nutrition model, food-score model, ASCVD or cardiovascular polygenic risk score, ancestry applicability metadata, lipid labs, blood pressure, diabetes, smoking, medication, age/sex, diet, exercise, supplement, and personal recommendation context unavailable in this fixture",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "CETP-GP000024",
+        "gene": "CETP",
+        "observedValue": "GP000024: CC",
+        "matchStatus": "sample_observed",
+        "effect": "Sample total-fat row says this genotype is linked to increased HDL cholesterol and decreased triglycerides on a high-fat intake."
+      },
+      {
+        "inputId": "FAAH-GP000013",
+        "gene": "FAAH",
+        "observedValue": "GP000013: CC",
+        "matchStatus": "sample_observed",
+        "effect": "Sample total-fat row says this genotype is linked to decreased triglyceride levels on a low-fat intake."
+      },
+      {
+        "inputId": "ACE-GP000019",
+        "gene": "ACE",
+        "observedValue": "GP000019: AG",
+        "matchStatus": "sample_observed",
+        "effect": "Sample total-fat and saturated-fat rows say this genotype aligns with typical dietary guidelines."
+      },
+      {
+        "inputId": "LIPC-GP000015",
+        "gene": "LIPC",
+        "observedValue": "GP000015: CC",
+        "matchStatus": "sample_observed",
+        "effect": "Sample total-fat row says this genotype aligns with typical dietary guidelines."
+      },
+      {
+        "inputId": "APOA5-GP000049",
+        "gene": "APOA5",
+        "observedValue": "GP000049: --",
+        "matchStatus": "sample_missing",
+        "effect": "Sample total-fat row says the genotype could not be detected from the provided sample file."
+      },
+      {
+        "inputId": "FADS1-GP000032",
+        "gene": "FADS1",
+        "observedValue": "GP000032: CC",
+        "matchStatus": "sample_observed",
+        "effect": "Sample omega-3 row says this genotype aligns with typical dietary guidelines; sample omega-6 row links it to increased HDL cholesterol on high-omega-6 fatty-acid intake."
+      },
+      {
+        "inputId": "TCF7L2-GP000005",
+        "gene": "TCF7L2",
+        "observedValue": "GP000005: CC",
+        "matchStatus": "sample_observed",
+        "effect": "Sample omega-6 row says this genotype aligns with typical dietary guidelines."
+      },
+      {
+        "inputId": "MMAB-GP000004",
+        "gene": "MMAB",
+        "observedValue": "GP000004: --",
+        "matchStatus": "sample_missing",
+        "effect": "Sample carbohydrate row says the genotype could not be detected from the provided sample file."
+      },
+      {
+        "inputId": "MTHFR-GP000052",
+        "gene": "MTHFR",
+        "observedValue": "GP000052: GG",
+        "matchStatus": "sample_observed",
+        "effect": "Sample folate row says this genotype aligns with typical dietary guidelines."
+      },
+      {
+        "inputId": "ADIPOQ-GP000062",
+        "gene": "ADIPOQ",
+        "observedValue": "GP000062: --",
+        "matchStatus": "sample_missing",
+        "effect": "Sample potassium row says the genotype could not be detected from the provided sample file."
+      },
+      {
+        "inputId": "ADIPOQ-not-readable-in-ocr-sample",
+        "gene": "ADIPOQ",
+        "observedValue": "not-readable-in-ocr-sample: CC",
+        "matchStatus": "sample_observed",
+        "effect": "Sample sodium row appears to show a typical-guideline genotype row, but the marker ID text is not reliably readable in OCR."
+      },
+      {
+        "inputId": "AGT-GP000056",
+        "gene": "AGT",
+        "observedValue": "GP000056: --",
+        "matchStatus": "sample_missing",
+        "effect": "Sample sodium row says the genotype could not be detected from the provided sample file."
+      }
+    ],
+    "missingInputs": [
+      "Personal GenoPalate heart-health nutrition model output",
+      "Personal food-score model output",
+      "Comprehensive familial hypercholesterolemia pathogenic-variant screen",
+      "LDL cholesterol, ApoB, lipoprotein(a), blood pressure, diabetes, smoking, medication, diet, age, sex, family-history, symptom, and clinician-confirmed context",
+      "Calibrated ASCVD or cardiovascular polygenic risk model",
+      "Ancestry applicability and validation metadata"
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated probability model is supplied for this local package.",
+      "The observed sample rows are examples of report format and must not be interpreted as the user's nutrient targets or food scores."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The package cannot diagnose familial hypercholesterolemia, coronary artery disease, high cholesterol, high lipoprotein(a), hypertension, nutrient deficiency, heart attack, or stroke.",
+      "The package does not recommend medication, supplements, procedures, lab tests, imaging, genetic testing decisions, diet changes, exercise plans, food purchases, or treatment changes."
+    ]
+  }
+}

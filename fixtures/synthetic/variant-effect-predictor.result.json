@@ -1,0 +1,165 @@
+{
+  "reportOverview": {
+    "reportTitle": "Variant Effect Predictor",
+    "inputManifestHash": "sha256:synthetic-vep-annotation-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "Exact Ensembl release, VEP cache version, transcript-set checksum, plugin list, population-frequency table, and quality flags are not supplied.",
+      "ClinVar assertions, ACMG/AMP classifications, pathogenicity model scores, disease relationships, and clinical actionability are not supplied."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Transcript consequence annotation",
+      "item": "BDNF rs6265",
+      "brandName": "",
+      "geneticAnalysis": "A selected derived annotation row is available for BDNF rs6265 with transcript ENST00000525528 and consequence term missense_variant.",
+      "genes": [
+        "BDNF"
+      ],
+      "sourceLabel": "Ensembl VEP; Ensembl calculated consequences; Sequence Ontology; dbSNP",
+      "sourceIds": [
+        "ensembl-vep",
+        "ensembl-variant-consequences",
+        "sequence-ontology",
+        "ncbi-dbsnp"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The row says this selected variant is annotated as changing an amino-acid sequence on a supplied transcript. That is an annotation term, not a diagnosis or clinical classification."
+    },
+    {
+      "groupTitle": "Transcript consequence annotation",
+      "item": "AGT rs699",
+      "brandName": "",
+      "geneticAnalysis": "A selected derived annotation row is available for AGT rs699 with transcript ENST00000366667 and consequence term missense_variant.",
+      "genes": [
+        "AGT"
+      ],
+      "sourceLabel": "Ensembl VEP; Ensembl calculated consequences; Sequence Ontology; dbSNP",
+      "sourceIds": [
+        "ensembl-vep",
+        "ensembl-variant-consequences",
+        "sequence-ontology",
+        "ncbi-dbsnp"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The row can be used to explain the supplied consequence term and public rs identifier, but it cannot say whether the variant affects health without additional validated evidence."
+    },
+    {
+      "groupTitle": "Annotation metadata availability",
+      "item": "VEP release, cache, transcript-set, plugin, frequency, and quality metadata",
+      "brandName": "",
+      "geneticAnalysis": "The exact VEP release, cache version, transcript-set checksum, plugin list, population-frequency table, and variant-quality flags are unavailable in this fixture.",
+      "genes": [
+        "VEP annotation metadata"
+      ],
+      "sourceLabel": "Ensembl VEP",
+      "sourceIds": [
+        "ensembl-vep"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The report can summarize selected rows, but reproducible annotation runs need explicit resource versions and quality metadata."
+    },
+    {
+      "groupTitle": "Clinical interpretation availability",
+      "item": "ClinVar assertion and ACMG/AMP classification",
+      "brandName": "",
+      "geneticAnalysis": "ClinVar assertion, ACMG/AMP classification, review status, disease relationship, pathogenicity model score, and clinical actionability are unavailable in this fixture.",
+      "genes": [
+        "external clinical assertion lookup"
+      ],
+      "sourceLabel": "NCBI ClinVar",
+      "sourceIds": [
+        "ncbi-clinvar"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The package does not convert annotation terms into pathogenicity, diagnosis, risk, treatment, screening, or actionability conclusions."
+    }
+  ],
+  "annotationSummary": {
+    "plainEnglishMeaning": "This report explains selected variant annotation rows and their reference sources. Consequence terms describe predicted transcript or protein effects and should not be treated as medical conclusions.",
+    "unsupportedClaims": [
+      "pathogenicity classification",
+      "ACMG/AMP classification",
+      "ClinVar assertion",
+      "disease diagnosis",
+      "disease-risk estimate",
+      "clinical actionability",
+      "screening recommendation",
+      "medication recommendation",
+      "reproductive decision guidance",
+      "lifestyle or treatment change"
+    ],
+    "professionalReview": "A qualified professional can interpret variant annotations together with validated clinical evidence, family history, phenotype, laboratory context, and current clinical guidelines."
+  },
+  "references": [
+    {
+      "id": "ensembl-vep",
+      "title": "Ensembl Variant Effect Predictor"
+    },
+    {
+      "id": "ensembl-variant-consequences",
+      "title": "Ensembl Variation: calculated variant consequences"
+    },
+    {
+      "id": "sequence-ontology",
+      "title": "Sequence Ontology"
+    },
+    {
+      "id": "ncbi-dbsnp",
+      "title": "NCBI dbSNP"
+    },
+    {
+      "id": "ncbi-clinvar",
+      "title": "NCBI ClinVar"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "VEP-rs6265-BDNF",
+        "gene": "BDNF",
+        "observedValue": "selected derived annotation row; transcript ENST00000525528; consequence missense_variant; HGVSp p.Val66Met",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "VEP-rs699-AGT",
+        "gene": "AGT",
+        "observedValue": "selected derived annotation row; transcript ENST00000366667; consequence missense_variant; HGVSp p.Met268Thr",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "VEP-transcript-cache-version-unavailable",
+        "gene": "VEP annotation metadata",
+        "observedValue": "exact release, cache, transcript-set, plugin, frequency, and quality metadata unavailable",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "VEP-clinical-classification-unavailable",
+        "gene": "external clinical assertion lookup",
+        "observedValue": "ClinVar assertion, ACMG/AMP classification, disease relationship, pathogenicity score, and clinical actionability unavailable",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated Sequencing.com sample report rows",
+      "Exact Ensembl release and VEP cache version",
+      "Transcript-set checksum and plugin list",
+      "Population-frequency table and variant-quality flags",
+      "ClinVar assertion, review status, and disease relationship",
+      "ACMG/AMP classification",
+      "Validated pathogenicity model score",
+      "Clinical actionability evidence"
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated disease, pathogenicity, or actionability model is supplied for this local package.",
+      "Selected annotation rows explain consequence terms only and cannot estimate personal medical risk."
+    ],
+    "limitations": [
+      "This validation result uses selected derived annotation evidence only; raw genome data is not included.",
+      "Consequence terms are not diagnoses and are not the same as pathogenicity classifications.",
+      "The package does not recommend medication, screening, genetic testing decisions, reproductive decisions, lifestyle changes, or treatment changes."
+    ]
+  }
+}

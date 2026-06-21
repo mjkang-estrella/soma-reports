@@ -1,0 +1,107 @@
+{
+  "reportOverview": {
+    "reportTitle": "RunDNA",
+    "inputManifestHash": "sha256:synthetic-rundna-running-fitness-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "No calibrated running performance, race-time, training-response, injury-risk, recovery, VO2 max, or sport-suitability model is supplied with this fixture."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Running fitness context",
+      "item": "ACTN3 R577X / rs1815739",
+      "brandName": "",
+      "geneticAnalysis": "A derived ACTN3 rs1815739 CT call is available. This is trait context only and does not predict performance, strength, endurance, recovery, injury risk, or ability.",
+      "genes": [
+        "ACTN3"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: athletic performance",
+      "sourceIds": [
+        "medlineplus-athletic-performance"
+      ],
+      "plainEnglishMeaning": "ACTN3 is one of the best-studied genes in athletic-performance research, but running outcomes are shaped by many genetic and non-genetic factors."
+    },
+    {
+      "groupTitle": "Running fitness context",
+      "item": "ACE I/D polymorphism",
+      "brandName": "",
+      "geneticAnalysis": "A derived ACE ID context row is available. This is not enough to choose sports, prescribe workouts, estimate VO2 max, predict training response, or infer health outcomes.",
+      "genes": [
+        "ACE"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: athletic performance",
+      "sourceIds": [
+        "medlineplus-athletic-performance"
+      ],
+      "plainEnglishMeaning": "ACE has been discussed in performance research, but training history, health, environment, opportunity, and many other factors remain important."
+    },
+    {
+      "groupTitle": "Fitness model availability",
+      "item": "Running fitness model",
+      "brandName": "",
+      "geneticAnalysis": "No calibrated running performance score, training-response model, injury-risk model, recovery model, VO2 max model, race-time model, and ancestry applicability metadata unavailable.",
+      "genes": [
+        "Running fitness model"
+      ],
+      "sourceLabel": "NHGRI polygenic risk scores / GWAS Catalog",
+      "sourceIds": [
+        "nhgri-polygenic-risk-scores",
+        "ebi-gwas-catalog"
+      ],
+      "plainEnglishMeaning": "The report can describe supplied marker context, but it should not quantify running performance, race time, injury, recovery, or training probabilities without a validated model."
+    }
+  ],
+  "practicalNextSteps": {
+    "runningContext": [
+      "Use the report as educational running-fitness genetics context, not as a training plan.",
+      "Plan training, injury prevention, recovery, and performance goals with qualified coaches or health professionals.",
+      "Do not use genotype alone for race expectations, sport selection, supplement decisions, medical exercise clearance, or expectations about running ability."
+    ]
+  },
+  "references": [
+    {
+      "id": "medlineplus-athletic-performance",
+      "title": "MedlinePlus Genetics: athletic performance"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "gene": "ACTN3",
+        "observedValue": "rs1815739 CT"
+      },
+      {
+        "gene": "ACE",
+        "observedValue": "I/D"
+      },
+      {
+        "gene": "Running fitness model",
+        "observedValue": "calibrated model unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated sample-report sections and rows have not been extracted.",
+      "No calibrated running performance, race-time, training-response, injury-risk, recovery, VO2 max, or sport-suitability model is supplied.",
+      "No training history, injury history, sleep, nutrition, medical history, fitness testing, or coach assessment is supplied."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Running fitness is a complex trait influenced by genetics, training, health, sleep, nutrition, environment, opportunity, and many other factors.",
+      "A small number of markers cannot explain running ability, race performance, injury risk, recovery, or training response."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report is educational and does not predict running ability, estimate race time, prescribe training, recommend sport selection, estimate injury risk, estimate recovery, quantify VO2 max, recommend supplements, or provide medical exercise clearance.",
+      "Authenticated Sequencing.com sample report rows are still pending."
+    ]
+  }
+}

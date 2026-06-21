@@ -1,0 +1,421 @@
+{
+  "reportOverview": {
+    "reportTitle": "Respiratory Health DNA Report",
+    "inputManifestHash": "sha256:synthetic-respiratory-health-dna-report-organ-system-boundary-context-v1",
+    "sectionsUnavailable": [
+      "validated respiratory risk model calibration and ancestry applicability metadata",
+      "personal respiratory diagnosis, symptoms, spirometry, oxygen saturation, imaging, medication context, infection history, exercise tolerance, and clinician interpretation",
+      "personal environmental, supplement, medication, testing, exercise, treatment, prevention, or emergency guidance"
+    ],
+    "sampleReportStructure": "Public sample PDF rows are represented for output-format parity: risk cards, recommendation rows, impact/evidence ratings, and visible variant tables."
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Risk score / Lung Health",
+      "item": "Lung Health",
+      "brandName": "Respiratory Health DNA Report sample",
+      "geneticAnalysis": "Low risk; less likely to have COPD; 18th percentile; based on 892,416 genetic variants",
+      "genes": [
+        "Risk model variants shown in sample table"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "respiratory-health-dna-report-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public sample page shows a Lung Health card with a low-risk label, COPD wording, percentile graphic, and a visible top-variants table. This is an observed public sample-report row for output-format parity, not a personal respiratory conclusion or recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Risk score / Asthma",
+      "item": "Asthma",
+      "brandName": "Respiratory Health DNA Report sample",
+      "geneticAnalysis": "More likely to have asthma; 94th percentile; based on 1,865 genetic variants",
+      "genes": [
+        "Risk model variants shown in sample table"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "respiratory-health-dna-report-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public sample page shows an Asthma card with a more-likely label, percentile graphic, and a visible top-variants table. This is an observed public sample-report row for output-format parity, not a personal respiratory conclusion or recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Risk score / Bronchitis",
+      "item": "Bronchitis",
+      "brandName": "Respiratory Health DNA Report sample",
+      "geneticAnalysis": "Typical likelihood of chronic bronchitis",
+      "genes": [
+        "Not shown on overview card"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "respiratory-health-dna-report-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public sample overview card lists Bronchitis as a typical-likelihood respiratory condition. This is an observed public sample-report row for output-format parity, not a personal respiratory conclusion or recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Risk score / Sinus Congestion",
+      "item": "Sinus Congestion",
+      "brandName": "Respiratory Health DNA Report sample",
+      "geneticAnalysis": "Typical likelihood of chronic sinusitis",
+      "genes": [
+        "Not shown on overview card"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "respiratory-health-dna-report-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public sample overview card lists Sinus Congestion as a typical-likelihood respiratory condition. This is an observed public sample-report row for output-format parity, not a personal respiratory conclusion or recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Avoid Air Pollution / Asthma",
+      "item": "Asthma",
+      "brandName": "Respiratory Health DNA Report sample",
+      "geneticAnalysis": "Impact 3/5; evidence 3/5",
+      "genes": [
+        "NQO1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "respiratory-health-dna-report-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public recommendation block says air pollution may contribute to asthma development and may trigger or worsen attacks, and includes a personalized NQO1 variant row. This is an observed public sample-report row for output-format parity, not a personal respiratory conclusion or recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Avoid Air Pollution / Flu",
+      "item": "Flu",
+      "brandName": "Respiratory Health DNA Report sample",
+      "geneticAnalysis": "Impact 1/5; evidence 2/5",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "respiratory-health-dna-report-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public recommendation block includes a Flu row under Avoid Air Pollution with impact/evidence ratings. This is an observed public sample-report row for output-format parity, not a personal respiratory conclusion or recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Avoid Air Pollution / Pneumonia",
+      "item": "Pneumonia",
+      "brandName": "Respiratory Health DNA Report sample",
+      "geneticAnalysis": "Impact 3/5; evidence 4/5",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "respiratory-health-dna-report-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public recommendation block includes a Pneumonia row under Avoid Air Pollution with impact/evidence ratings. This is an observed public sample-report row for output-format parity, not a personal respiratory conclusion or recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Avoid Air Pollution / Bronchitis",
+      "item": "Bronchitis",
+      "brandName": "Respiratory Health DNA Report sample",
+      "geneticAnalysis": "Impact 4/5; evidence 5/5",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "respiratory-health-dna-report-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public recommendation block includes a Bronchitis row under Avoid Air Pollution with impact/evidence ratings. This is an observed public sample-report row for output-format parity, not a personal respiratory conclusion or recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Avoid Air Pollution / Acute Bronchitis",
+      "item": "Acute Bronchitis",
+      "brandName": "Respiratory Health DNA Report sample",
+      "geneticAnalysis": "Impact 2/5; evidence 3/5",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "respiratory-health-dna-report-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public recommendation block includes an Acute Bronchitis row under Avoid Air Pollution with impact/evidence ratings. This is an observed public sample-report row for output-format parity, not a personal respiratory conclusion or recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Avoid Air Pollution / Lung Health",
+      "item": "Lung Health",
+      "brandName": "Respiratory Health DNA Report sample",
+      "geneticAnalysis": "Impact 4/5; evidence 5/5",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "respiratory-health-dna-report-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public recommendation block includes a Lung Health row under Avoid Air Pollution with impact/evidence ratings. This is an observed public sample-report row for output-format parity, not a personal respiratory conclusion or recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Vitamin D / Asthma",
+      "item": "Asthma",
+      "brandName": "Respiratory Health DNA Report sample",
+      "geneticAnalysis": "Impact 2/5; evidence 2/5",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "respiratory-health-dna-report-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public Vitamin D recommendation block includes an Asthma row with impact/evidence ratings and dosage caution text. This is an observed public sample-report row for output-format parity, not a personal respiratory conclusion or recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Vitamin D / Flu",
+      "item": "Flu",
+      "brandName": "Respiratory Health DNA Report sample",
+      "geneticAnalysis": "Impact 2/5; evidence 3/5",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "respiratory-health-dna-report-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public Vitamin D recommendation block includes a Flu row with impact/evidence ratings. This is an observed public sample-report row for output-format parity, not a personal respiratory conclusion or recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Vitamin D / Pneumonia",
+      "item": "Pneumonia",
+      "brandName": "Respiratory Health DNA Report sample",
+      "geneticAnalysis": "Impact 2/5; evidence 2/5",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "respiratory-health-dna-report-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public Vitamin D recommendation block includes a Pneumonia row with impact/evidence ratings. This is an observed public sample-report row for output-format parity, not a personal respiratory conclusion or recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Vitamin D / Lung Health",
+      "item": "Lung Health",
+      "brandName": "Respiratory Health DNA Report sample",
+      "geneticAnalysis": "Impact 2/5; evidence 3/5",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "respiratory-health-dna-report-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The public Vitamin D recommendation block includes a Lung Health row with impact/evidence ratings. This is an observed public sample-report row for output-format parity, not a personal respiratory conclusion or recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Respiratory evidence availability",
+      "item": "Respiratory Health DNA Report validated model",
+      "brandName": "Respiratory Health DNA Report",
+      "geneticAnalysis": "The local fixture does not include the proprietary respiratory genetic model, calibration metadata, ancestry applicability metadata, or clinical respiratory context needed to reproduce personal risk scores.",
+      "genes": [
+        "Respiratory Health DNA Report model"
+      ],
+      "sourceLabel": "Public genetics and lung-health reference context",
+      "sourceIds": [
+        "nhgri-polygenic-risk-scores",
+        "ebi-gwas-catalog",
+        "nhlbi-lung-diseases",
+        "medlineplus-lung-diseases"
+      ],
+      "plainEnglishMeaning": "The report can show the sample report structure and state what inputs are missing, but it should not calculate personal asthma, COPD, bronchitis, pneumonia, flu, sinusitis, lung-function, infection, or organ-function conclusions from this fixture."
+    },
+    {
+      "groupTitle": "Respiratory evidence availability",
+      "item": "Clinical and organ-system context",
+      "brandName": "Respiratory Health DNA Report",
+      "geneticAnalysis": "Symptoms, diagnosis, spirometry, oxygen saturation, imaging, medication context, infection history, exercise tolerance, and professional interpretation are unavailable in this fixture.",
+      "genes": [
+        "Clinical and organ-system context"
+      ],
+      "sourceLabel": "Public genetics and lung-health reference context",
+      "sourceIds": [
+        "cdc-genetic-testing",
+        "medlineplus-genetic-testing",
+        "fda-direct-to-consumer-tests"
+      ],
+      "plainEnglishMeaning": "Consumer respiratory decisions need clinical context and qualified review. This local result is educational and does not provide diagnosis, treatment, supplement, testing, exercise, environmental, or emergency guidance."
+    }
+  ],
+  "organSystemConditionContext": {
+    "plainEnglishMeaning": "This local fixture can reproduce observed sample-report structure and conservative boundary language, but it cannot infer personal respiratory disease risk, lung function, infection risk, symptoms, diagnosis, or actionability.",
+    "unsupportedClaims": [
+      "personal asthma, COPD, bronchitis, pneumonia, flu, sinusitis, lung-health, infection, spirometry, oxygen, imaging, medication, supplement, testing, exercise, environmental, treatment, prevention, emergency, all-clear, or clinical actionability claims"
+    ],
+    "professionalReview": "Use qualified professional review for respiratory symptoms, abnormal lung tests, medication questions, infection concerns, known family history, or decisions about supplements, treatment, prevention, testing, exercise, or environmental changes."
+  },
+  "references": [
+    {
+      "id": "cdc-genetic-testing",
+      "title": "CDC Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetics",
+      "title": "MedlinePlus Genetics"
+    },
+    {
+      "id": "medlineplus-genetic-testing",
+      "title": "MedlinePlus: Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetic-test-results",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results"
+    },
+    {
+      "id": "fda-direct-to-consumer-tests",
+      "title": "FDA Direct-to-Consumer Tests"
+    },
+    {
+      "id": "medlineplus-complex-disorders",
+      "title": "MedlinePlus Genetics: complex disorders"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    },
+    {
+      "id": "nhlbi-lung-diseases",
+      "title": "NHLBI: Lung Diseases"
+    },
+    {
+      "id": "medlineplus-lung-diseases",
+      "title": "MedlinePlus: Lung Diseases"
+    },
+    {
+      "id": "respiratory-health-dna-report-sample-pdf",
+      "title": "Respiratory Health DNA Report sample report"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "_creationTime": 1782027097691.7913,
+        "_id": "jn71jh1g6h8t9yr3xd0j9jmv0s892cyh",
+        "effect": "Visible top-variant row in the sample Lung Health table",
+        "extractionStatus": "direct",
+        "gene": "ADGRG6",
+        "genotype": "CC",
+        "phenotype": "The sample Lung Health card reports lower COPD likelihood and includes this visible variant row.",
+        "reportSlug": "respiratory-health-dna-report",
+        "sortOrder": 1,
+        "tier": "Lung Health top sample variants",
+        "variantId": "rs9403391"
+      },
+      {
+        "_creationTime": 1782027097691.7915,
+        "_id": "jn7bfv1w8p918b1zzsd9y3tv25892twk",
+        "effect": "Visible top-variant row in the sample Lung Health table",
+        "extractionStatus": "direct",
+        "gene": "AGER",
+        "genotype": "CC",
+        "phenotype": "The sample Lung Health card reports lower COPD likelihood and includes this visible variant row.",
+        "reportSlug": "respiratory-health-dna-report",
+        "sortOrder": 2,
+        "tier": "Lung Health top sample variants",
+        "variantId": "rs2070600"
+      },
+      {
+        "_creationTime": 1782027097691.7917,
+        "_id": "jn762ffbnh7pt1sw9v76t2s2xn8936zx",
+        "effect": "Visible top-variant row in the sample Lung Health table",
+        "extractionStatus": "direct",
+        "gene": "HHIP",
+        "genotype": "AA",
+        "phenotype": "The sample Lung Health card reports lower COPD likelihood and includes this visible variant row.",
+        "reportSlug": "respiratory-health-dna-report",
+        "sortOrder": 3,
+        "tier": "Lung Health top sample variants",
+        "variantId": "rs13140176"
+      },
+      {
+        "_creationTime": 1782027097691.792,
+        "_id": "jn76snfj8mfyvv83r6hyxqxf1d8928rt",
+        "effect": "Visible top-variant row in the sample Asthma table",
+        "extractionStatus": "direct",
+        "gene": "KIAA1109",
+        "genotype": "GG",
+        "phenotype": "The sample Asthma card reports higher asthma likelihood and includes this visible variant row.",
+        "reportSlug": "respiratory-health-dna-report",
+        "sortOrder": 4,
+        "tier": "Asthma top sample variants",
+        "variantId": "rs17454584"
+      },
+      {
+        "_creationTime": 1782027097691.7922,
+        "_id": "jn70teae5jzyc4s5wdbfp3enj589227x",
+        "effect": "Visible top-variant row in the sample Asthma table",
+        "extractionStatus": "direct",
+        "gene": "STAT6",
+        "genotype": "TT",
+        "phenotype": "The sample Asthma card reports higher asthma likelihood and includes this visible variant row.",
+        "reportSlug": "respiratory-health-dna-report",
+        "sortOrder": 5,
+        "tier": "Asthma top sample variants",
+        "variantId": "rs3024971"
+      },
+      {
+        "_creationTime": 1782027097691.7925,
+        "_id": "jn72nhh42r85jfvry4m3emszp98938g5",
+        "effect": "Visible top-variant row in the sample Asthma table",
+        "extractionStatus": "direct",
+        "gene": "TLR1",
+        "genotype": "TT",
+        "phenotype": "The sample Asthma card reports higher asthma likelihood and includes this visible variant row.",
+        "reportSlug": "respiratory-health-dna-report",
+        "sortOrder": 6,
+        "tier": "Asthma top sample variants",
+        "variantId": "rs17616434"
+      },
+      {
+        "_creationTime": 1782027097691.7927,
+        "_id": "jn78df40mwb5pgb24qwxk5g2758922ak",
+        "effect": "Visible personalized-variant row under Avoid Air Pollution / Asthma",
+        "extractionStatus": "direct",
+        "gene": "NQO1",
+        "genotype": "GG",
+        "phenotype": "The sample prose says people with the sample NQO1 variant may be more prone to asthma when exposed to air pollution.",
+        "reportSlug": "respiratory-health-dna-report",
+        "sortOrder": 7,
+        "tier": "Personalized sample recommendation variants",
+        "variantId": "rs2917666"
+      }
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "The public sample PDF shows example risk labels and percentiles, but the proprietary scoring model and calibration metadata are not supplied in this fixture.",
+      "Sample recommendation blocks are output-format examples and are not personalized advice for the local user."
+    ],
+    "missingInputs": [
+      "respiratory-health-dna-report-model-unavailable: validated respiratory genetic model, original calibration details, ancestry applicability metadata, spirometry, oxygen saturation, pulmonary diagnosis, asthma or COPD context, cystic fibrosis context, infection history, symptoms, imaging, medication list, exercise tolerance, pediatric context, and clinician review unavailable in this fixture; public sample PDF risk cards, recommendation rows, impact/evidence ratings, and visible variant tables observed for output structure",
+      "respiratory-health-dna-report-clinical-context-unavailable: clinical diagnosis, symptoms, family history, medications, professional interpretation, and personal clinical context unavailable in this fixture; public sample PDF observed separately as output-structure evidence",
+      "respiratory-health-dna-report-organ-context-unavailable: labs, imaging, vitals, organ-function measures, disease-specific testing, treatment context, prevention context, actionability context, and personal recommendation context unavailable in this fixture; public sample PDF observed separately as output-structure evidence",
+      "validated respiratory model, calibration metadata, ancestry applicability, clinical respiratory context, symptoms, spirometry, oxygen saturation, imaging, medication context, infection history, exercise tolerance, and professional interpretation are unavailable"
+    ],
+    "limitations": [
+      "Educational respiratory genetics context only, not diagnosis or medical advice.",
+      "No personal risk score, disease likelihood, lung-function result, infection-risk result, supplement recommendation, environmental recommendation, medication advice, testing advice, exercise clearance, treatment instruction, or emergency guidance is produced.",
+      "Probabilities are intentionally empty because no calibrated model output is supplied for this local fixture."
+    ]
+  }
+}

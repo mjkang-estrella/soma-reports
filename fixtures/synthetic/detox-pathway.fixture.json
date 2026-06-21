@@ -1,0 +1,64 @@
+{
+  "consumerTone": "plain English; educational detox-pathway boundary context only; no detoxification capacity, toxin sensitivity, diagnosis, diet, supplement, medication, or treatment claims",
+  "datasetId": "synthetic-detox-pathway-mthfr-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "MTHFR",
+      "inputId": "MTHFR-rs1801133",
+      "matchStatus": "observed",
+      "observedValue": "CT",
+      "rsid": "rs1801133",
+      "sourceArtifact": "synthetic-detox-pathway-mthfr-context-v1",
+      "sourceFile": "synthetic-detox-pathway-mthfr-context-v1.json"
+    },
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "MTHFR",
+      "inputId": "MTHFR-rs1801131",
+      "matchStatus": "observed",
+      "observedValue": "AC",
+      "rsid": "rs1801131",
+      "sourceArtifact": "synthetic-detox-pathway-mthfr-context-v1",
+      "sourceFile": "synthetic-detox-pathway-mthfr-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "hash": "sha256:synthetic-detox-pathway-mthfr-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived MTHFR calls for detox-pathway validation"
+  },
+  "missingInputPolicy": "Report unavailable detox pathway, toxin sensitivity, methylation score, homocysteine, labs, diet history, supplement context, medication context, and authenticated sample rows explicitly; do not infer detox status or action.",
+  "packageSlug": "detox-pathway",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-mthfr-folic-acid",
+      "sourceType": "public_health_resource",
+      "title": "CDC MTHFR Gene Variant and Folic Acid Facts",
+      "usedFor": [
+        "mthfr_variant_context",
+        "folic_acid_safety_language"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "sequencing-report-marketplace-docs",
+      "sourceType": "sequencing_public_doc",
+      "title": "Sequencing.com Report Marketplace documentation",
+      "usedFor": [
+        "marketplace_flow"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer detox-pathway boundary context using derived MTHFR calls and CDC folic-acid safety framing while marking detoxification capacity, toxin sensitivity, supplement, diet, lab, and treatment sections unavailable."
+}

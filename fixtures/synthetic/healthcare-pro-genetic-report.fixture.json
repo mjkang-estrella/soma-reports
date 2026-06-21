@@ -1,0 +1,177 @@
+{
+  "consumerTone": "plain English; consumer-shareable handoff context only; no diagnosis, clearance, risk estimate, medication, procedure, treatment, supplement, diet, lab, screening, reproductive, or actionability claims",
+  "datasetId": "synthetic-healthcare-pro-genetic-report-professional-handoff-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-professional-handoff-context",
+      "gene": "Healthcare Pro",
+      "haplotype": "professional-handoff-context-unavailable",
+      "inputId": "healthcare-pro-genetic-report-handoff-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "healthcare professional review, diagnosis, symptoms, family history, current medication list, labs, imaging, clinical history, exam findings, treatment plan, calibrated risk model, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-healthcare-pro-genetic-report-professional-handoff-context-v1",
+      "sourceFile": "synthetic-healthcare-pro-genetic-report-professional-handoff-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "healthcare professional review context",
+      "haplotype": "professional-review-unavailable",
+      "inputId": "healthcare-pro-genetic-report-clinical-review-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-healthcare-pro-genetic-report-professional-handoff-context-v1",
+      "sourceFile": "synthetic-healthcare-pro-genetic-report-professional-handoff-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-professional-handoff-context",
+    "hash": "sha256:synthetic-healthcare-pro-genetic-report-professional-handoff-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-professional-review evidence for healthcare-pro-genetic-report validation"
+  },
+  "missingInputPolicy": "Report unavailable healthcare professional evidence explicitly; do not diagnose disease; estimate disease risk; interpret labs or imaging; recommend medication, screening, diagnostic testing, procedures, supplements, diet, reproductive actions, lifestyle changes, or treatment; provide all-clear reassurance; or replace healthcare professional review.",
+  "packageSlug": "healthcare-pro-genetic-report",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-counseling",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Counseling",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-family-health-history",
+      "sourceType": "public_health_resource",
+      "title": "CDC About Family Health History",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-pharmacogenomics",
+      "sourceType": "public_health_resource",
+      "title": "CDC Pharmacogenomics",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-pharmacogenetic-tests",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Pharmacogenetic Tests",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "nhgri-pharmacogenomics",
+      "sourceType": "education_resource",
+      "title": "NHGRI Pharmacogenomics Fact Sheet",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "ncbi-clinvar",
+      "sourceType": "database",
+      "title": "NCBI ClinVar",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "ncbi-genetic-testing-registry",
+      "sourceType": "database",
+      "title": "NIH Genetic Testing Registry",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-autoimmune-diseases",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Autoimmune Diseases",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-immune-system-disorders",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Immune System and Disorders",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer-shareable healthcare professional handoff context using supplied references and explicit unavailable-review framing."
+}

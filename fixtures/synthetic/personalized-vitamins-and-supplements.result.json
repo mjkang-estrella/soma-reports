@@ -1,0 +1,518 @@
+{
+  "reportOverview": {
+    "reportTitle": "Personalized Vitamins and Supplements",
+    "inputManifestHash": "sha256:synthetic-personalized-vitamins-supplements-context-v1",
+    "evidenceTypesSupplied": [
+      "Local derived MCM6/LCT nutrition-genetics evidence.",
+      "Public GenoPalate Vitamin & Supplement sample PDF rows used as observed output-format examples.",
+      "Consumer education and regulatory references for nutrient, supplement, DTC result, glucose, BMI, and model-limit framing."
+    ],
+    "sectionsUnavailable": [
+      "Authenticated marketplace detail-page parity is still pending.",
+      "No calibrated vitamin, supplement, dosing, micronutrient, symptom, diet-history, lab, medication, or ancestry applicability model is supplied with this fixture.",
+      "No local vitamin blood levels, nutrient deficiency diagnosis, supplement need, dose, formula order, diet plan, glucose status, or treatment action is reported."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Local nutrition-genetics evidence",
+      "item": "MCM6/LCT rs4988235",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a diagnosis, symptom explanation, diet recommendation, supplement recommendation, dosing result, or model-derived health result.",
+      "genes": [
+        "MCM6",
+        "LCT"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: lactose intolerance / MCM6",
+      "sourceIds": [
+        "medlineplus-lactose-intolerance",
+        "medlineplus-mcm6"
+      ],
+      "plainEnglishMeaning": "This marker can provide lactose-related context, but symptoms, diet history, labs, environment, medications, and professional review matter for nutrition decisions.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Nutrition model availability",
+      "item": "Personalized vitamin and supplement model",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "No calibrated vitamin, supplement, dosing, micronutrient, symptom, diet-history, lab, medication, or ancestry applicability model is supplied with this fixture.",
+      "genes": [
+        "Personalized vitamin and supplement model"
+      ],
+      "sourceLabel": "FDA dietary supplements / NIH ODS / MedlinePlus DTC result limits",
+      "sourceIds": [
+        "fda-dietary-supplements",
+        "nih-ods-dietary-supplement-fact-sheets",
+        "medlineplus-dtc-genetic-testing-results"
+      ],
+      "plainEnglishMeaning": "The local output can describe supplied marker context and unavailable sections, but it must not create a supplement plan, set doses, interpret labs, diagnose deficiencies, or recommend treatment without validated evidence and professional review.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Your personalized nutrition recommendations",
+      "item": "Daily Calories",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Daily Calories: 2,000.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "personalized-vitamins-supplements-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 3 of the public GenoPalate Vitamin & Supplement sample PDF; this is observed sample output structure, not a local calorie target.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your nutrients to focus on",
+      "item": "Protein",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Your recommendation: 94-119 g/day; high genetic need; genes shown in appendix include FTO.",
+      "genes": [
+        "FTO"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "personalized-vitamins-supplements-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 3-4 and the gene appendix of the public sample PDF; this is observed sample output, not a local protein recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your nutrients to focus on",
+      "item": "Fiber",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Your recommendation: 48-53 g/day; high genetic need; genes shown in appendix include FTO and TCF7L2.",
+      "genes": [
+        "FTO",
+        "TCF7L2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "personalized-vitamins-supplements-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 3-4 and the gene appendix of the public sample PDF; this is observed sample output, not local fiber, glucose, BMI, diet, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your nutrients to focus on",
+      "item": "Selenium",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Your recommendation: 68-91 mcg/day; high genetic need; gene shown in appendix is GPX1.",
+      "genes": [
+        "GPX1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "personalized-vitamins-supplements-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 3-4 and the gene appendix of the public sample PDF; this is observed sample output, not a local selenium target or supplement recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your nutrients to focus on",
+      "item": "Vitamin A",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Your recommendation: 900 mcg/day; high genetic need; gene shown in appendix is BCO1.",
+      "genes": [
+        "BCO1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "personalized-vitamins-supplements-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 3, 5, and the gene appendix of the public sample PDF; this is observed sample output, not a local vitamin A blood-level or dosing conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your nutrients to focus on",
+      "item": "Vitamin B6",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Your recommendation: >1.3 mg/day; high genetic need; gene shown in appendix is ALPL.",
+      "genes": [
+        "ALPL"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "personalized-vitamins-supplements-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 3, 5, and the gene appendix of the public sample PDF; this is observed sample output, not a local vitamin B6 blood-level or dosing conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your nutrients to focus on",
+      "item": "Vitamin D",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Your recommendation: 15-60 mcg/day; high genetic need; genes shown in appendix include CYP2R1 and LCT.",
+      "genes": [
+        "CYP2R1",
+        "LCT"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "personalized-vitamins-supplements-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 3, 5, and the gene appendix of the public sample PDF; this is observed sample output, not a local vitamin D blood-level or dosing conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your nutrients to focus on",
+      "item": "Vitamin E",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Your recommendation: >15 mg/day; high genetic need; genes shown in appendix include SCARB1 and ZPR1.",
+      "genes": [
+        "SCARB1",
+        "ZPR1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "personalized-vitamins-supplements-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 3, 5, and the gene appendix of the public sample PDF; this is observed sample output, not a local vitamin E blood-level or dosing conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your nutrients to focus on",
+      "item": "Zinc",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Your recommendation: 9-17 mg/day; high genetic need; gene shown in appendix is SLC30A8.",
+      "genes": [
+        "SLC30A8"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "personalized-vitamins-supplements-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 3, 6, and the gene appendix of the public sample PDF; this is observed sample output, not local zinc, glucose, supplement, diet, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your personalized supplement plan",
+      "item": "GenoVit formula",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Observed sample formula table lists adjusted ingredients including Vitamin A 900 mcg, Vitamin D3 50 mcg, Vitamin E 20.1 mg, Selenium 100 mcg, and Zinc 20 mg.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "personalized-vitamins-supplements-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 8 of the public sample PDF; this is observed sample output and must not be turned into a local formula order, supplement recommendation, or dose.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your personalized supplement plan",
+      "item": "GenoBlend supplement facts",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Observed sample supplement facts list serving size 1 3/4 scoops, 130 calories, 11 g fiber, and 21 g protein.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "personalized-vitamins-supplements-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 9 of the public sample PDF; this is observed sample output and must not be turned into a local formula order, supplement recommendation, or dose.",
+      "sourceBindingStatus": "exact"
+    }
+  ],
+  "practicalNextSteps": {
+    "supplementContext": [
+      "Use this report as educational vitamin and supplement genetics context, not as a supplement plan.",
+      "Treat GenoPalate sample nutrient targets, formula tables, and supplement facts as observed sample-report structure unless validated local evidence supports equivalent sections.",
+      "Discuss diet history, symptoms, lab testing, medications, and supplement questions with qualified professionals.",
+      "Do not start, stop, order, or dose supplements based on genotype alone."
+    ]
+  },
+  "plainEnglishLimits": [
+    "Nutrition and supplement needs depend on diet, symptoms, medications, labs, medical history, environment, and professional review, not genotype alone.",
+    "Public sample rows show observed report format and source binding; they are not local personal findings unless the local run supplies equivalent validated evidence.",
+    "The local fixture does not include blood vitamin levels, clinical deficiency diagnosis, diet history, medication review, or a calibrated supplement model."
+  ],
+  "references": [
+    {
+      "id": "medlineplus-lactose-intolerance",
+      "title": "MedlinePlus Genetics: lactose intolerance",
+      "sourceType": "education_resource"
+    },
+    {
+      "id": "medlineplus-mcm6",
+      "title": "MedlinePlus Genetics: MCM6 gene",
+      "sourceType": "education_resource"
+    },
+    {
+      "id": "nutritional-genomics-dtc-review",
+      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing",
+      "sourceType": "research_review"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog",
+      "sourceType": "database"
+    },
+    {
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean",
+      "sourceType": "education_resource"
+    },
+    {
+      "id": "medlineplus-blood-glucose-test",
+      "title": "MedlinePlus: Blood Glucose Test",
+      "sourceType": "medical_test_resource"
+    },
+    {
+      "id": "medlineplus-hba1c-test",
+      "title": "MedlinePlus: Hemoglobin A1C test",
+      "sourceType": "medical_test_resource"
+    },
+    {
+      "id": "cdc-diabetes-risk-factors",
+      "title": "CDC Diabetes Risk Factors",
+      "sourceType": "public_health_resource"
+    },
+    {
+      "id": "fda-dietary-supplements",
+      "title": "FDA Dietary Supplements",
+      "sourceType": "regulatory_resource"
+    },
+    {
+      "id": "nih-ods-dietary-supplement-fact-sheets",
+      "title": "NIH Office of Dietary Supplements Fact Sheets",
+      "sourceType": "public_health_resource"
+    },
+    {
+      "id": "cdc-bmi",
+      "title": "CDC About Body Mass Index",
+      "sourceType": "public_health_resource"
+    },
+    {
+      "id": "personalized-vitamins-supplements-sample-pdf",
+      "title": "GenoPalate Vitamin & Supplement sample report",
+      "sourceType": "mock_report"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "_creationTime": 1782030827035.987,
+        "_id": "jn797q3grv9g84pem78frsyp31893rk0",
+        "effect": "The sample gene appendix links this marker to moderately high-protein intake and waist-circumference context.",
+        "extractionStatus": "direct",
+        "gene": "FTO",
+        "genotype": "AT",
+        "phenotype": "Observed sample content only; do not infer local protein targets, waist-circumference change, diet needs, or treatment actionability.",
+        "reportSlug": "personalized-vitamins-and-supplements",
+        "sortOrder": 1,
+        "tier": "Sample gene appendix",
+        "variantId": "GP000011"
+      },
+      {
+        "_creationTime": 1782030827035.9873,
+        "_id": "jn7dkd912h4pa4wz8wkg1rexjh8939yc",
+        "effect": "The sample gene appendix links this marker to high-fiber intake and BMI context.",
+        "extractionStatus": "direct",
+        "gene": "FTO",
+        "genotype": "AC",
+        "phenotype": "Observed sample content only; do not infer local fiber targets, BMI change, diet needs, or treatment actionability.",
+        "reportSlug": "personalized-vitamins-and-supplements",
+        "sortOrder": 2,
+        "tier": "Sample gene appendix",
+        "variantId": "GP00008"
+      },
+      {
+        "_creationTime": 1782030827035.9875,
+        "_id": "jn797xmhv91esrns2hqhbyafd5893jkz",
+        "effect": "The sample gene appendix links this marker to high-fiber intake and blood-sugar context.",
+        "extractionStatus": "direct",
+        "gene": "TCF7L2",
+        "genotype": "CC",
+        "phenotype": "Observed sample content only; do not infer local glucose status, diet needs, or treatment actionability.",
+        "reportSlug": "personalized-vitamins-and-supplements",
+        "sortOrder": 3,
+        "tier": "Sample gene appendix",
+        "variantId": "GP00005"
+      },
+      {
+        "_creationTime": 1782030827035.9878,
+        "_id": "jn7djh8bpxszyqc1ewh6teza9n892v67",
+        "effect": "The sample gene appendix reports typical dietary guideline alignment for this fiber-related marker.",
+        "extractionStatus": "direct",
+        "gene": "NOTCH2",
+        "genotype": "GG",
+        "phenotype": "Observed sample content only; keep separate from local nutrition model evidence.",
+        "reportSlug": "personalized-vitamins-and-supplements",
+        "sortOrder": 4,
+        "tier": "Sample gene appendix",
+        "variantId": "GP00007"
+      },
+      {
+        "_creationTime": 1782030827035.988,
+        "_id": "jn7atkhgxa2hvm23g5jv4wr8t9892wvz",
+        "effect": "The sample gene appendix reports typical dietary guideline alignment for folate.",
+        "extractionStatus": "direct",
+        "gene": "MTHFR",
+        "genotype": "GG",
+        "phenotype": "Observed sample content only; do not infer local folate status, pregnancy context, supplement need, or treatment actionability.",
+        "reportSlug": "personalized-vitamins-and-supplements",
+        "sortOrder": 5,
+        "tier": "Sample gene appendix",
+        "variantId": "GP000052"
+      },
+      {
+        "_creationTime": 1782030827035.9883,
+        "_id": "jn77xgwe20hgjk0zazngsby7t9893m1t",
+        "effect": "The sample gene appendix links this marker to low vitamin A blood-level context.",
+        "extractionStatus": "direct",
+        "gene": "BCO1",
+        "genotype": "GT",
+        "phenotype": "Observed sample content only; do not infer local vitamin A blood levels, deficiency, supplement need, or dosing.",
+        "reportSlug": "personalized-vitamins-and-supplements",
+        "sortOrder": 6,
+        "tier": "Sample gene appendix",
+        "variantId": "GP000041"
+      },
+      {
+        "_creationTime": 1782030827035.9885,
+        "_id": "jn759n30v3f9s6et1prszr289n893ryx",
+        "effect": "The sample gene appendix links this marker to low vitamin B6 blood-level context.",
+        "extractionStatus": "direct",
+        "gene": "ALPL",
+        "genotype": "CT",
+        "phenotype": "Observed sample content only; do not infer local vitamin B6 blood levels, deficiency, supplement need, or dosing.",
+        "reportSlug": "personalized-vitamins-and-supplements",
+        "sortOrder": 7,
+        "tier": "Sample gene appendix",
+        "variantId": "GP000042"
+      },
+      {
+        "_creationTime": 1782030827035.9888,
+        "_id": "jn74fb6kcvdnrjt3e1kvqp87f589380d",
+        "effect": "The sample gene appendix reports typical dietary guideline alignment for vitamin B12.",
+        "extractionStatus": "direct",
+        "gene": "FUT2",
+        "genotype": "AG",
+        "phenotype": "Observed sample content only; do not infer local vitamin B12 blood levels, deficiency, supplement need, or dosing.",
+        "reportSlug": "personalized-vitamins-and-supplements",
+        "sortOrder": 8,
+        "tier": "Sample gene appendix",
+        "variantId": "GP000043"
+      },
+      {
+        "_creationTime": 1782030827035.989,
+        "_id": "jn70qyqnk7kxqax3ejyt4htwa1892bat",
+        "effect": "The sample gene appendix links this marker to low vitamin D blood-level context.",
+        "extractionStatus": "direct",
+        "gene": "CYP2R1",
+        "genotype": "AG",
+        "phenotype": "Observed sample content only; do not infer local vitamin D blood levels, deficiency, supplement need, or dosing.",
+        "reportSlug": "personalized-vitamins-and-supplements",
+        "sortOrder": 9,
+        "tier": "Sample gene appendix",
+        "variantId": "GP000046"
+      },
+      {
+        "_creationTime": 1782030827035.9893,
+        "_id": "jn77c7dy75arajseytqe1tzx69892ft7",
+        "effect": "The sample gene appendix links this marker to low vitamin D blood-level context.",
+        "extractionStatus": "direct",
+        "gene": "LCT",
+        "genotype": "GG",
+        "phenotype": "Observed sample content only; keep separate from local MCM6/LCT lactose-context evidence and do not infer vitamin D status.",
+        "reportSlug": "personalized-vitamins-and-supplements",
+        "sortOrder": 10,
+        "tier": "Sample gene appendix",
+        "variantId": "GP000048"
+      },
+      {
+        "_creationTime": 1782030827035.9895,
+        "_id": "jn75n2kfcm04bgm2zce20ft30d893gcb",
+        "effect": "The sample gene appendix reports typical dietary guideline alignment for vitamin D.",
+        "extractionStatus": "direct",
+        "gene": "GC",
+        "genotype": "TT",
+        "phenotype": "Observed sample content only; do not infer local vitamin D status or dosing.",
+        "reportSlug": "personalized-vitamins-and-supplements",
+        "sortOrder": 11,
+        "tier": "Sample gene appendix",
+        "variantId": "GP000045"
+      },
+      {
+        "_creationTime": 1782030827035.9897,
+        "_id": "jn78mrwpap1rgm56vks4jcxdsd892qr5",
+        "effect": "The sample gene appendix links this marker to low vitamin E blood-level context.",
+        "extractionStatus": "direct",
+        "gene": "SCARB1",
+        "genotype": "AG",
+        "phenotype": "Observed sample content only; do not infer local vitamin E blood levels, deficiency, supplement need, or dosing.",
+        "reportSlug": "personalized-vitamins-and-supplements",
+        "sortOrder": 12,
+        "tier": "Sample gene appendix",
+        "variantId": "GP000050"
+      },
+      {
+        "_creationTime": 1782030827035.99,
+        "_id": "jn7b9a360gkxadp6z10geyhb3h8930ys",
+        "effect": "The sample gene appendix links this marker to low vitamin E blood-level context.",
+        "extractionStatus": "direct",
+        "gene": "ZPR1",
+        "genotype": "CG",
+        "phenotype": "Observed sample content only; do not infer local vitamin E blood levels, deficiency, supplement need, or dosing.",
+        "reportSlug": "personalized-vitamins-and-supplements",
+        "sortOrder": 13,
+        "tier": "Sample gene appendix",
+        "variantId": "GP000049"
+      },
+      {
+        "_creationTime": 1782030827035.9902,
+        "_id": "jn76n49r5tev13zgk5vm6ptdes892rj8",
+        "effect": "The sample gene appendix reports typical dietary guideline alignment for magnesium.",
+        "extractionStatus": "direct",
+        "gene": "TRPM6",
+        "genotype": "CC",
+        "phenotype": "Observed sample content only; do not infer local magnesium status, supplement need, or dosing.",
+        "reportSlug": "personalized-vitamins-and-supplements",
+        "sortOrder": 14,
+        "tier": "Sample gene appendix",
+        "variantId": "GP000061"
+      },
+      {
+        "_creationTime": 1782030827035.9905,
+        "_id": "jn7bdabcpjy0dqb9j7rbx854wn893cvw",
+        "effect": "The sample gene appendix links this marker to high-selenium intake and antioxidant activity context.",
+        "extractionStatus": "direct",
+        "gene": "GPX1",
+        "genotype": "GG",
+        "phenotype": "Observed sample content only; do not infer local selenium target, antioxidant status, supplement need, or dosing.",
+        "reportSlug": "personalized-vitamins-and-supplements",
+        "sortOrder": 15,
+        "tier": "Sample gene appendix",
+        "variantId": "GP000063"
+      },
+      {
+        "_creationTime": 1782030827035.9907,
+        "_id": "jn74qw1m675j5dxd3t528x7w7x892c52",
+        "effect": "The sample gene appendix links this marker to high-zinc intake and fasting-glucose context.",
+        "extractionStatus": "direct",
+        "gene": "SLC30A8",
+        "genotype": "AA",
+        "phenotype": "Observed sample content only; do not infer local zinc target, fasting-glucose status, supplement need, or dosing.",
+        "reportSlug": "personalized-vitamins-and-supplements",
+        "sortOrder": 16,
+        "tier": "Sample gene appendix",
+        "variantId": "GP000059"
+      }
+    ],
+    "missingInputs": [
+      "Marketplace detail-page fields beyond the public sample PDF have not been extracted.",
+      "No calibrated vitamin, supplement, dosing, micronutrient, symptom, diet-history, lab, medication, or ancestry applicability model is supplied with this fixture.",
+      "No local vitamin A, B6, D, E, selenium, zinc, protein, fiber, or calorie target model is supplied.",
+      "No diet history, activity history, symptoms, food preferences, medications, lab evidence, child-specific context, ancestry applicability, or clinician/dietitian assessment is represented in this fixture."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Nutrition, supplement response, glucose, weight, symptoms, and wellness outcomes depend on genetics plus non-genetic context and professional review.",
+      "Individual sample-report markers and formula rows should not be treated as deterministic local dosing or health predictions.",
+      "Public sample rows are examples from a sample report and may not represent the local user."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report is educational and does not diagnose vitamin or nutrient deficiency, recommend supplements, prescribe dosing, create diet plans, interpret labs, order formulas, or provide treatment guidance.",
+      "The GenoPalate public sample PDF is source-bound, but authenticated marketplace detail-page parity remains pending."
+    ]
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "reportOverview": {
+    "reportTitle": "Wellness Genetic Guide",
+    "inputManifestHash": "sha256:synthetic-only",
+    "plainEnglishSummary": "This test report uses three derived evidence rows to demonstrate the Wellness Genetic Guide output shape. It is educational and does not diagnose disease or recommend medication changes.",
+    "sectionsUnavailable": [
+      "Full authenticated sample-report citation bindings are not available in this synthetic fixture."
+    ]
+  },
+  "keyHighlights": [
+    "Three sample markers were matched to the synthetic derived evidence.",
+    "Every row cites the supplied Wellness Genetic Guide sample report resource.",
+    "Missing or unverified evidence is called out instead of guessed."
+  ],
+  "resultRows": [
+    {
+      "groupTitle": "Vitamins",
+      "item": "Folate and methylation support",
+      "brandName": "Deplin",
+      "geneticAnalysis": "The synthetic MTHFR marker is present, so this row can be reported with a limited educational interpretation.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This marker may be relevant to folate-related wellness discussions, but it is not enough by itself to make a medical decision."
+    },
+    {
+      "groupTitle": "Medication sensitivity context",
+      "item": "Medication sensitivity context",
+      "brandName": "",
+      "geneticAnalysis": "The synthetic KCNH2 marker is present. The report should keep any interpretation conservative unless stronger evidence is supplied.",
+      "genes": [
+        "KCNH2"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This result is best treated as a prompt for a clinician conversation if medication questions are relevant."
+    },
+    {
+      "groupTitle": "Histamine H1 receptor blockers",
+      "item": "Transporter gene context",
+      "brandName": "",
+      "geneticAnalysis": "The synthetic ABCB1 marker is present and can be listed in the report table with the supplied source.",
+      "genes": [
+        "ABCB1"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This marker can be included as background information, not as a stand-alone prediction."
+    }
+  ],
+  "practicalNextSteps": [
+    "Use this report as an educational summary of the supplied evidence.",
+    "Do not start, stop, or change medicines or supplements based only on this report.",
+    "Review any medication or health questions with a qualified professional."
+  ],
+  "references": [
+    {
+      "id": "wellness-sample-pdf",
+      "title": "Wellness Genetic Guide sample report",
+      "usedFor": [
+        "output_sections",
+        "visible_fields",
+        "result_table_shape",
+        "genotype_summary_shape"
+      ]
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "gene": "MTHFR",
+        "variantId": "rs1801133",
+        "observedValue": "G/A",
+        "matchStatus": "sample_pdf_match"
+      },
+      {
+        "gene": "KCNH2",
+        "variantId": "rs1137617",
+        "observedValue": "A/G",
+        "matchStatus": "sample_pdf_match"
+      },
+      {
+        "gene": "ABCB1",
+        "variantId": "rs1045642",
+        "observedValue": "G/G",
+        "matchStatus": "sample_pdf_match"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "Derived evidence",
+        "definition": "Small structured facts extracted from a genome file, without including the original genome file."
+      }
+    ],
+    "probabilities": [
+      {
+        "label": "Quantified probability",
+        "value": "not quantified",
+        "calibrationStatus": "No calibrated probability model was supplied in this fixture."
+      }
+    ],
+    "uncertainty": [
+      "This fixture is synthetic and only tests output structure.",
+      "Exact report-specific citation bindings are still pending."
+    ],
+    "missingInputs": [
+      "Authenticated full mock report citations",
+      "Report-specific calibrated probability model"
+    ],
+    "limitations": [
+      "Raw genome data was not used or emitted.",
+      "This report is educational and non-diagnostic."
+    ]
+  }
+}

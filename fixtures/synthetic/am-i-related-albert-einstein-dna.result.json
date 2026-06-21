@@ -1,0 +1,101 @@
+{
+  "reportOverview": {
+    "reportTitle": "Am I An Einstein?",
+    "inputManifestHash": "sha256:synthetic-einstein-relation-ancestry-context-v1",
+    "evidenceTypesSupplied": [
+      "Broad autosomal reference-panel similarity summary",
+      "Albert Einstein relationship, relative matching, surname matching, identity, and family-tree evidence explicitly unavailable"
+    ],
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "No direct Albert Einstein relationship evidence, family-tree evidence, relative-matching model, surname evidence, identity evidence, or calibrated ancestry percentage model is supplied."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Historical-figure relationship context",
+      "item": "Broad reference-panel similarity",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A broad East Asian reference-panel similarity summary is available, but no direct relationship or genealogy model is supplied.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "MedlinePlus genetic ancestry testing / 1000 Genomes",
+      "sourceIds": [
+        "medlineplus-genetic-ancestry-testing",
+        "international-genome-sample-resource"
+      ],
+      "plainEnglishMeaning": "This is broad ancestry context only. It is not proof of relationship to Albert Einstein, a family-tree placement, an identity claim, or a precise ethnicity percentage."
+    },
+    {
+      "groupTitle": "Unavailable relationship evidence",
+      "item": "Albert Einstein relationship evidence",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "Albert Einstein relationship evidence, relative matching, family-tree placement, surname matching, and identity evidence are unavailable in this fixture and are not inferred.",
+      "genes": [
+        "historical-figure relationship evidence"
+      ],
+      "sourceLabel": "MedlinePlus direct-to-consumer ancestry testing caveats",
+      "sourceIds": [
+        "medlineplus-genetic-ancestry-testing",
+        "medlineplus-dtc-risks-benefits"
+      ],
+      "plainEnglishMeaning": "Answering this novelty relationship question would require validated genealogy or relative-matching evidence. This local run cannot identify relatives, surnames, family trees, or historical-figure descent."
+    }
+  ],
+  "ancestryScopeSummary": {
+    "autosomal": "Autosomal ancestry can provide broad reference-panel context when a model is supplied; this fixture does not supply calibrated percentages or relationship matching.",
+    "historicalFigureRelationship": "A relationship to Albert Einstein would require evidence outside this synthetic fixture, such as documented family-tree or validated relative-matching data.",
+    "sourceIds": [
+      "medlineplus-genetic-ancestry-testing",
+      "international-genome-sample-resource",
+      "medlineplus-dtc-risks-benefits"
+    ]
+  },
+  "whatThisDoesNotMean": [
+    "This does not show a relationship to Albert Einstein.",
+    "This does not identify a precise homeland, ethnicity percentage, surname match, family tree, living relative, historical relative, or identity.",
+    "This is not a health or disease-risk report."
+  ],
+  "references": [
+    {
+      "id": "medlineplus-genetic-ancestry-testing",
+      "title": "MedlinePlus Genetics: genetic ancestry testing"
+    },
+    {
+      "id": "medlineplus-dtc-risks-benefits",
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing"
+    },
+    {
+      "id": "international-genome-sample-resource",
+      "title": "International Genome Sample Resource / 1000 Genomes"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "gene": "autosomal genome",
+        "observedValue": "broad East Asian reference-panel similarity; no direct relationship model supplied"
+      },
+      {
+        "gene": "historical-figure relationship evidence",
+        "observedValue": "Albert Einstein relationship evidence unavailable in this fixture"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated sample-report sections and rows have not been extracted.",
+      "No direct Einstein relationship evidence, validated relative matching, family-tree placement, surname matching, identity evidence, calibrated ancestry model, or reference-panel metadata is supplied.",
+      "No family records, living-relative matching, migration route, exact-homeland data, or community-affiliation data is supplied."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Broad reference-panel similarity should not be treated as a precise ancestry percentage, identity, or genealogical relationship.",
+      "Historical-figure relationship claims require evidence outside this synthetic fixture."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report does not emit raw SNP tables, relationship matching data, or family-tree data.",
+      "Authenticated Sequencing.com sample report rows are still pending."
+    ]
+  }
+}

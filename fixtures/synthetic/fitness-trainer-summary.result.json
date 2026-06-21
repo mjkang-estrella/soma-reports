@@ -1,0 +1,107 @@
+{
+  "reportOverview": {
+    "reportTitle": "Fitness Trainer Summary",
+    "inputManifestHash": "sha256:synthetic-fitness-trainer-summary-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "No calibrated fitness summary, workout-plan, training-response, injury-risk, recovery, VO2 max, supplement, sport-selection, medical-clearance, or ancestry applicability model is supplied with this fixture."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Trainer-shareable fitness context",
+      "item": "ACTN3 R577X / rs1815739",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived ACTN3 rs1815739 CT call is available. This is educational trait context only and does not predict talent, strength, speed, endurance, training response, or athletic ability.",
+      "genes": [
+        "ACTN3"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: athletic performance",
+      "sourceIds": [
+        "medlineplus-athletic-performance"
+      ],
+      "plainEnglishMeaning": "ACTN3 is one of the best-studied genes in athletic-performance research, but a single marker cannot define a training plan or performance outcome."
+    },
+    {
+      "groupTitle": "Trainer-shareable fitness context",
+      "item": "ACE I/D polymorphism",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived ACE ID context row is available. This is not enough to choose sports, prescribe workouts, estimate VO2 max, recommend supplements, or predict training response.",
+      "genes": [
+        "ACE"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: athletic performance",
+      "sourceIds": [
+        "medlineplus-athletic-performance"
+      ],
+      "plainEnglishMeaning": "ACE is discussed in athletic-performance research, but training history, health, sleep, nutrition, environment, opportunity, and many other factors remain important."
+    },
+    {
+      "groupTitle": "Fitness model availability",
+      "item": "Fitness trainer summary model",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "No calibrated fitness summary, workout-plan, training-response, injury-risk, recovery, VO2 max, supplement, sport-selection, medical-clearance, or ancestry applicability model is supplied with this fixture.",
+      "genes": [
+        "Fitness trainer summary model"
+      ],
+      "sourceLabel": "NHGRI polygenic risk scores / GWAS Catalog",
+      "sourceIds": [
+        "nhgri-polygenic-risk-scores",
+        "ebi-gwas-catalog"
+      ],
+      "plainEnglishMeaning": "The report can summarize supplied marker context, but it should not personalize workouts, sport choices, supplements, injury risk, recovery, or performance expectations without a validated model."
+    }
+  ],
+  "practicalNextSteps": {
+    "trainerContext": [
+      "Use this report as educational fitness genetics context to discuss with qualified trainers or health professionals, not as a workout plan.",
+      "Base exercise programming on goals, current fitness, health status, training history, recovery, and professional assessment.",
+      "Do not use genotype alone for sport selection, supplement decisions, injury-risk estimates, recovery estimates, VO2 max estimates, or medical exercise clearance."
+    ]
+  },
+  "references": [
+    {
+      "id": "medlineplus-athletic-performance",
+      "title": "MedlinePlus Genetics: athletic performance"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "gene": "ACTN3",
+        "observedValue": "rs1815739 CT"
+      },
+      {
+        "gene": "ACE",
+        "observedValue": "I/D"
+      },
+      {
+        "gene": "Fitness trainer summary model",
+        "observedValue": "calibrated model unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated sample-report sections and rows have not been extracted.",
+      "No calibrated fitness summary, workout-plan, training-response, injury-risk, recovery, VO2 max, supplement, sport-selection, medical-clearance, or ancestry applicability model is supplied with this fixture.",
+      "No training history, injury history, sleep, nutrition, medical history, fitness testing, coach assessment, or clinician assessment is supplied."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Fitness and training outcomes are complex traits influenced by genetics, training history, health, sleep, nutrition, environment, opportunity, age, and many other factors.",
+      "A small number of markers cannot explain talent, injury risk, recovery, supplement response, training response, or sport suitability."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report is educational and does not create workouts, prescribe training, recommend sport selection, estimate injury risk, estimate recovery, quantify VO2 max, recommend supplements, or provide medical exercise clearance.",
+      "Authenticated Sequencing.com sample report rows are still pending."
+    ]
+  }
+}

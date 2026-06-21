@@ -1,0 +1,86 @@
+{
+  "packageSlug": "fitness-dna-test-report",
+  "datasetId": "synthetic-fitness-dna-test-context-v1",
+  "packageVersion": "0.1.0",
+  "reportPurpose": "Consumer fitness DNA context using derived ACTN3 and ACE evidence plus explicit complex-trait and model-unavailable framing.",
+  "missingInputPolicy": "Report unavailable fitness markers and calibrated models explicitly; do not infer training capacity, VO2 max, injury risk, recovery, talent, or sport suitability.",
+  "consumerTone": "plain English; educational fitness-trait context only; no deterministic talent, injury, recovery, or training claims",
+  "inputManifest": {
+    "hash": "sha256:synthetic-fitness-dna-test-context-v1",
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived fitness-trait evidence for fitness-dna-test-report validation"
+  },
+  "genomeEvidence": [
+    {
+      "inputId": "ACTN3-rs1815739",
+      "rsid": "rs1815739",
+      "gene": "ACTN3",
+      "observedValue": "CC",
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-fitness-dna-test-context-v1.json",
+      "sourceArtifact": "synthetic-fitness-dna-test-context-v1"
+    },
+    {
+      "inputId": "ACE-I-D",
+      "haplotype": "DD",
+      "gene": "ACE",
+      "observedValue": "DD",
+      "assembly": "derived-fitness-trait-context",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-fitness-dna-test-context-v1.json",
+      "sourceArtifact": "synthetic-fitness-dna-test-context-v1"
+    },
+    {
+      "inputId": "fitness-trait-model-unavailable",
+      "haplotype": "fitness-trait-model-unavailable",
+      "gene": "fitness trait model",
+      "observedValue": "calibrated fitness trait score, training-response model, injury-risk model, VO2 max model, recovery model, and ancestry applicability metadata unavailable in this fixture",
+      "assembly": "derived-fitness-trait-context",
+      "matchStatus": "unavailable",
+      "sourceFile": "synthetic-fitness-dna-test-context-v1.json",
+      "sourceArtifact": "synthetic-fitness-dna-test-context-v1"
+    }
+  ],
+  "referenceResources": [
+    {
+      "id": "medlineplus-athletic-performance",
+      "title": "MedlinePlus Genetics: athletic performance",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "complex_trait_context",
+        "actn3_ace_context",
+        "non_deterministic_language"
+      ]
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores",
+      "sourceType": "education_resource",
+      "evidenceLevel": "background",
+      "usedFor": [
+        "complex_trait_limitations",
+        "probability_appendix"
+      ]
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog",
+      "sourceType": "database",
+      "evidenceLevel": "background",
+      "usedFor": [
+        "candidate_trait_associations",
+        "model_unavailable_context"
+      ]
+    }
+  ],
+  "expectedAssertions": {
+    "noRawGenomeInOutput": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "probabilitiesOnlyInAppendix": true,
+    "consumerLanguage": true
+  }
+}

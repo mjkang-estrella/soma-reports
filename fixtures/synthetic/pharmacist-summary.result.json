@@ -1,0 +1,164 @@
+{
+  "reportOverview": {
+    "reportTitle": "Pharmacist Summary",
+    "inputManifestHash": "sha256:synthetic-pharmacist-summary-pgx-handoff-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "Current medication list, medication-specific question, pharmacy review, phenotype confidence, and expanded PGx coverage are not supplied.",
+      "This result is not prescribing, dispensing, medication safety, efficacy, start, stop, switch, or dosing guidance."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Pharmacogene context",
+      "item": "CYP2C19 *1/*2",
+      "brandName": "",
+      "geneticAnalysis": "A derived CYP2C19 call is available for pharmacist-discussion context. It is not a medication recommendation.",
+      "genes": [
+        "CYP2C19"
+      ],
+      "sourceLabel": "CPIC; PharmCAT; PharmVar",
+      "sourceIds": [
+        "cpic",
+        "pharmcat",
+        "pharmvar"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This row can help organize a pharmacist conversation, but it should not be used alone to start, stop, switch, or dose medication."
+    },
+    {
+      "groupTitle": "Pharmacogene context",
+      "item": "CYP2D6 *1/*4",
+      "brandName": "",
+      "geneticAnalysis": "A derived CYP2D6 call is available, but CYP2D6 can require specialized calling and professional interpretation.",
+      "genes": [
+        "CYP2D6"
+      ],
+      "sourceLabel": "PharmCAT; PharmVar",
+      "sourceIds": [
+        "pharmcat",
+        "pharmvar"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "Treat this as shareable context only. A pharmacist or clinician needs the medication list and clinical context before using PGx information."
+    },
+    {
+      "groupTitle": "Pharmacogene context",
+      "item": "SLCO1B1 rs4149056",
+      "brandName": "",
+      "geneticAnalysis": "A derived SLCO1B1 rs4149056 TC call is available for medication-response context.",
+      "genes": [
+        "SLCO1B1"
+      ],
+      "sourceLabel": "FDA PGx associations; MedlinePlus",
+      "sourceIds": [
+        "fda-pgx-associations",
+        "medlineplus-pharmacogenetic-tests"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The result may be relevant to a professional medication discussion, but it does not confirm that any medication is safe, unsafe, effective, or ineffective."
+    },
+    {
+      "groupTitle": "Pharmacist review availability",
+      "item": "Pharmacist review context unavailable",
+      "brandName": "",
+      "geneticAnalysis": "current medication list, medication-specific question, pharmacy review, phenotype confidence, expanded PGx coverage, and authenticated sample-report rows unavailable in this fixture",
+      "genes": [
+        "pharmacist review context"
+      ],
+      "sourceLabel": "CDC Pharmacogenomics; NHGRI Pharmacogenomics; FDA PGx labeling",
+      "sourceIds": [
+        "cdc-pharmacogenomics",
+        "nhgri-pharmacogenomics",
+        "fda-pgx-biomarkers-labeling"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This local run can prepare a pharmacist-discussion summary, but it cannot perform a pharmacist review or make medication decisions."
+    }
+  ],
+  "practicalNextSteps": {
+    "clinicianReview": [
+      "Share the PGx summary with a pharmacist or clinician before making medication decisions.",
+      "Keep current prescriptions unchanged unless a licensed professional advises otherwise.",
+      "Bring the current medication list, doses, health conditions, allergies, and other clinical context to any PGx discussion."
+    ]
+  },
+  "references": [
+    {
+      "id": "cpic",
+      "title": "Clinical Pharmacogenetics Implementation Consortium"
+    },
+    {
+      "id": "pharmcat",
+      "title": "PharmCAT"
+    },
+    {
+      "id": "pharmvar",
+      "title": "PharmVar"
+    },
+    {
+      "id": "fda-pgx-associations",
+      "title": "FDA Table of Pharmacogenetic Associations"
+    },
+    {
+      "id": "fda-pgx-biomarkers-labeling",
+      "title": "FDA Table of Pharmacogenomic Biomarkers in Drug Labeling"
+    },
+    {
+      "id": "medlineplus-pharmacogenetic-tests",
+      "title": "MedlinePlus Pharmacogenetic Tests"
+    },
+    {
+      "id": "cdc-pharmacogenomics",
+      "title": "CDC Pharmacogenomics"
+    },
+    {
+      "id": "nhgri-pharmacogenomics",
+      "title": "NHGRI Pharmacogenomics Fact Sheet"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "CYP2C19-star-allele",
+        "gene": "CYP2C19",
+        "observedValue": "intermediate metabolizer context",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "CYP2D6-star-allele",
+        "gene": "CYP2D6",
+        "observedValue": "intermediate metabolizer context",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "SLCO1B1-rs4149056",
+        "gene": "SLCO1B1",
+        "observedValue": "TC",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "pharmacist-review-context-unavailable",
+        "gene": "pharmacist review context",
+        "observedValue": "current medication list, medication-specific question, pharmacy review, phenotype confidence, expanded PGx coverage, and authenticated sample-report rows unavailable in this fixture",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated Sequencing.com sample report rows",
+      "Current medication list and medication-specific question",
+      "Pharmacist review, phenotype confidence, and expanded pharmacogene coverage",
+      "Clinical context such as age, other medicines, health conditions, allergies, renal or liver status, and pregnancy status when relevant"
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated medication-response, efficacy, safety, adverse-event, dispensing, or dose model is supplied for this local package.",
+      "PGx context depends on medication, dose, ancestry, health status, interacting medicines, clinical history, and professional review."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
+      "The report is educational and does not provide prescribing, dispensing, safety, efficacy, start, stop, switch, or dosing instructions.",
+      "At-home or derived data should not be used alone for treatment decisions."
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "consumerTone": "plain English; educational personalized-fitness context only; no deterministic talent, workout, supplement, injury, recovery, or nutrition-plan claims",
+  "datasetId": "synthetic-gene-in-form-fitness-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "ACTN3",
+      "inputId": "ACTN3-rs1815739",
+      "matchStatus": "observed",
+      "observedValue": "CT",
+      "rsid": "rs1815739",
+      "sourceArtifact": "synthetic-gene-in-form-fitness-context-v1",
+      "sourceFile": "synthetic-gene-in-form-fitness-context-v1.json"
+    },
+    {
+      "assembly": "derived-personalized-fitness-context",
+      "gene": "ACE",
+      "haplotype": "ID",
+      "inputId": "ACE-I-D",
+      "matchStatus": "observed",
+      "observedValue": "ID",
+      "sourceArtifact": "synthetic-gene-in-form-fitness-context-v1",
+      "sourceFile": "synthetic-gene-in-form-fitness-context-v1.json"
+    },
+    {
+      "assembly": "derived-personalized-fitness-context",
+      "gene": "personalized fitness model",
+      "haplotype": "personalized-fitness-model-unavailable",
+      "inputId": "personalized-fitness-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "calibrated personalized fitness score, workout-plan model, training-response model, injury-risk model, recovery model, VO2 max model, nutrition/supplement model, and ancestry applicability metadata unavailable in this fixture",
+      "sourceArtifact": "synthetic-gene-in-form-fitness-context-v1",
+      "sourceFile": "synthetic-gene-in-form-fitness-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "hash": "sha256:synthetic-gene-in-form-fitness-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived fitness-trait evidence for gene-form-dna-personalized-fitness-app validation"
+  },
+  "missingInputPolicy": "Report unavailable fitness markers and personalization models explicitly; do not infer workout plans, nutrition plans, supplements, injury risk, recovery, VO2 max, talent, sport suitability, or sample-only training actions from genotype alone.",
+  "packageSlug": "gene-form-dna-personalized-fitness-app",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-athletic-performance",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: athletic performance",
+      "usedFor": [
+        "complex_trait_context",
+        "actn3_ace_context",
+        "non_deterministic_language"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
+      "usedFor": [
+        "complex_trait_limitations",
+        "probability_appendix"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "candidate_trait_associations",
+        "model_unavailable_context"
+      ]
+    },
+    {
+      "evidenceLevel": "direct_sample_report",
+      "id": "gene-in-form-personalized-fitness-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Gene-In-Form Personalized Fitness sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer personalized-fitness context using derived ACTN3 and ACE evidence plus observed Gene-In-Form sample-report output structure."
+}

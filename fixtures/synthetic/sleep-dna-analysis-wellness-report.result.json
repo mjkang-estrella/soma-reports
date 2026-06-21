@@ -1,0 +1,329 @@
+{
+  "reportOverview": {
+    "reportTitle": "Sleep DNA Wellness",
+    "inputManifestHash": "sha256:synthetic-sleep-dna-wellness-circadian-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com marketplace detail-page parity is still pending.",
+      "No calibrated sleep-duration, chronotype, sleep-quality, or sleep-disorder probability model is supplied with this fixture.",
+      "No sleep diary, wearable data, medical history, medication list, sleep study, ferritin or iron lab result, caffeine history, or symptom history is supplied."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Sleep wellness context",
+      "item": "Circadian marker context",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived CLOCK/PER1/CRY1 circadian marker summary is available. This is biological-clock context, not a chronotype diagnosis.",
+      "genes": [
+        "CLOCK",
+        "PER1",
+        "CRY1"
+      ],
+      "sourceLabel": "NIGMS circadian rhythms / MedlinePlus healthy sleep",
+      "sourceIds": [
+        "nigms-circadian-rhythms",
+        "medlineplus-healthy-sleep"
+      ],
+      "plainEnglishMeaning": "Circadian rhythms help shape sleep timing, but light exposure, schedule, stress, activity, food timing, social environment, and health context also matter."
+    },
+    {
+      "groupTitle": "Sleep wellness context",
+      "item": "Sleep-duration context",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A summary-level ABCC9 sleep-duration context row is available. This does not predict how many hours of sleep are needed.",
+      "genes": [
+        "ABCC9"
+      ],
+      "sourceLabel": "MedlinePlus healthy sleep / NHGRI polygenic risk scores",
+      "sourceIds": [
+        "medlineplus-healthy-sleep",
+        "nhgri-polygenic-risk-scores"
+      ],
+      "plainEnglishMeaning": "Sleep duration is a complex trait. This row supports educational context only, not a personalized sleep-hours target."
+    },
+    {
+      "groupTitle": "Sleep wellness context",
+      "item": "Sleep-quality and sleepiness context",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A summary-level P2RY2/PAX8/VRK2 sleep-quality context row is available. Symptoms and sleep disorders are not inferred.",
+      "genes": [
+        "P2RY2",
+        "PAX8",
+        "VRK2"
+      ],
+      "sourceLabel": "MedlinePlus sleep disorders / GWAS Catalog",
+      "sourceIds": [
+        "medlineplus-sleep-disorders",
+        "ebi-gwas-catalog"
+      ],
+      "plainEnglishMeaning": "Sleep problems can have many causes, including health conditions, medications, genetics, schedules, caffeine, alcohol, aging, and environment."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Overview of Your Results",
+      "item": "Sleep Parameters card group",
+      "brandName": "Sleep DNA sample",
+      "geneticAnalysis": "The sample overview shows Sleep Duration as Typical, Sleep Quality as Typical, and Deep Sleep as Typical.",
+      "description": "The visible card descriptions say likely typical sleep duration, likely typical sleep quality, and likely a typical sleeper.",
+      "genes": [
+        "sleep parameter score model"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "sleep-dna-wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the rendered public Sleep DNA sample PDF overview page; this is observed sample output, not local-user sleep scoring."
+    },
+    {
+      "groupTitle": "Overview of Your Results",
+      "item": "Insomnia",
+      "brandName": "Sleep DNA sample",
+      "geneticAnalysis": "Sample result: typical likelihood of insomnia.",
+      "description": "The overview page displays the Insomnia card under Sleep Disturbances with a Typical Likelihood label.",
+      "genes": [
+        "sleep disturbance score model"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "sleep-dna-wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample risk-score card only; do not convert this into a local diagnosis, symptom inference, sleep-study decision, or treatment guidance."
+    },
+    {
+      "groupTitle": "Overview of Your Results",
+      "item": "Sleep Movement",
+      "brandName": "Sleep DNA sample",
+      "geneticAnalysis": "Sample result: more likely to move during sleep.",
+      "description": "The overview page displays the Sleep Movement card under Sleep Disturbances with a More Likely label.",
+      "genes": [
+        "sleep movement score model"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "sleep-dna-wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample risk-score card only; do not infer local symptoms or recommend iron, supplements, devices, or clinical actions from genotype alone."
+    },
+    {
+      "groupTitle": "Overview of Your Results",
+      "item": "Restless Legs",
+      "brandName": "Sleep DNA sample",
+      "geneticAnalysis": "Sample result: more likely to have restless legs syndrome.",
+      "description": "The overview page displays the Restless Legs card under Sleep Disturbances with a More Likely label.",
+      "genes": [
+        "restless legs score model"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "sleep-dna-wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample card wording only; the local report must not diagnose restless legs syndrome or prescribe iron therapy."
+    },
+    {
+      "groupTitle": "Overview of Your Results",
+      "item": "Sleep Apnea",
+      "brandName": "Sleep DNA sample",
+      "geneticAnalysis": "Sample result: typical likelihood of sleep apnea.",
+      "description": "The overview page displays the Sleep Apnea card under Sleep Disturbances with a Typical Likelihood label.",
+      "genes": [
+        "sleep apnea score model"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "sleep-dna-wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample risk-score card only; do not use genotype to replace sleep apnea screening, testing, or clinician evaluation."
+    },
+    {
+      "groupTitle": "Overview of Your Results",
+      "item": "Snoring",
+      "brandName": "Sleep DNA sample",
+      "geneticAnalysis": "Sample result: more likely to snore.",
+      "description": "The overview page displays the Snoring card under Sleep Disturbances with a More Likely label.",
+      "genes": [
+        "snoring score model"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "sleep-dna-wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample risk-score card only; do not infer local snoring symptoms, sleep apnea status, or treatment need."
+    },
+    {
+      "groupTitle": "Overview of Your Results",
+      "item": "Daytime Sleepiness",
+      "brandName": "Sleep DNA sample",
+      "geneticAnalysis": "Sample result: less likely to experience daytime sleepiness.",
+      "description": "The overview page displays the Daytime Sleepiness card under Sleep Disturbances with a Less Likely label.",
+      "genes": [
+        "daytime sleepiness score model"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "sleep-dna-wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample risk-score card only; do not infer local alertness, fatigue, occupational safety, or clinical status."
+    },
+    {
+      "groupTitle": "Overview of Your Results",
+      "item": "Sleep-related behaviors",
+      "brandName": "Sleep DNA sample",
+      "geneticAnalysis": "The sample overview shows Early Bird or Night Owl as Early Bird and Napping as Less Likely.",
+      "description": "The visible card descriptions say more likely to be an early bird and less likely to take naps.",
+      "genes": [
+        "chronotype and napping score models"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "sleep-dna-wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample behavior-card structure only; do not quantify local chronotype, napping probability, work schedule advice, or medical conclusions."
+    },
+    {
+      "groupTitle": "Your Recommendations",
+      "item": "Iron",
+      "brandName": "Sleep DNA sample",
+      "geneticAnalysis": "The sample recommendation says Iron helps with Restless Legs and Sleep Movement, shows impact/evidence ratings, and includes personalized-to-your-genes variant panels.",
+      "description": "Visible sample variant tables include GLO1 rs3923809 AA, MEIS1 rs2300478 GG, and an unlabeled rs855791 AA row while recommendation text refers to BTBD9, MEIS1, and TMPRSS6-linked iron context.",
+      "genes": [
+        "BTBD9",
+        "GLO1",
+        "MEIS1",
+        "TMPRSS6"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "sleep-dna-wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed recommendation and sample variant-table structure only; do not convert it into local iron supplementation, ferritin testing, restless-legs diagnosis, or treatment advice."
+    },
+    {
+      "groupTitle": "Your Recommendations",
+      "item": "Reduce Caffeine Intake",
+      "brandName": "Sleep DNA sample",
+      "geneticAnalysis": "The sample recommendation says Reduce Caffeine Intake helps with Sleep Movement and Insomnia, with additional Sleep Quality and Sleep Duration pages using the same MTNR1B sample variant row.",
+      "description": "Visible sample variant panels show MTNR1B rs10830964 CC and recommendation text about caffeine, adenosine, melatonin, and timing before bedtime.",
+      "genes": [
+        "MTNR1B"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "sleep-dna-wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed recommendation and sample variant-table structure only; do not convert it into local caffeine restriction, insomnia treatment, safety advice, or medical guidance."
+    }
+  ],
+  "plainEnglishLimits": [
+    "This report provides educational sleep wellness context only.",
+    "Public sample rows show the shape of the Sleep DNA report and are not local-user sleep findings.",
+    "Genetic context does not diagnose insomnia, narcolepsy, sleep apnea, restless legs, bruxism, bedwetting, depression, anxiety, or another sleep or mental-health condition.",
+    "Sleep is influenced by genetics, health, age, schedule, light exposure, environment, stress, activity, medications, caffeine, alcohol, and habits."
+  ],
+  "sleepStudyAndCareBoundaries": [
+    "This report does not replace a sleep study or clinician evaluation.",
+    "This report does not recommend CPAP, medications, supplements, melatonin, devices, caffeine changes, iron therapy, ferritin testing, or treatment changes.",
+    "Persistent sleep problems, severe daytime sleepiness, breathing problems during sleep, or safety concerns require medical evaluation."
+  ],
+  "references": [
+    {
+      "id": "medlineplus-sleep-disorders",
+      "title": "MedlinePlus: Sleep Disorders"
+    },
+    {
+      "id": "medlineplus-healthy-sleep",
+      "title": "MedlinePlus: Healthy Sleep"
+    },
+    {
+      "id": "nigms-circadian-rhythms",
+      "title": "NIGMS: Circadian Rhythms"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    },
+    {
+      "id": "sleep-dna-wellness-sample-pdf",
+      "title": "Sleep DNA Wellness sample report"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "tier": "Local derived context",
+        "gene": "CLOCK/PER1/CRY1",
+        "variantId": "circadian-clock-marker-summary",
+        "genotype": "derived circadian rhythm marker context available",
+        "effect": "The local fixture supplies summary-level circadian context without a calibrated chronotype score.",
+        "phenotype": "Report as sleep wellness context only; do not diagnose a sleep disorder, infer symptoms, or recommend treatment.",
+        "extractionStatus": "curated"
+      },
+      {
+        "tier": "Local derived context",
+        "gene": "ABCC9",
+        "variantId": "sleep-duration-marker-summary",
+        "genotype": "summary-level sleep-duration context available",
+        "effect": "The local fixture supplies summary-level sleep-duration context but no sleep-hours prediction.",
+        "phenotype": "Report as context only; keep probabilities, calibration status, and uncertainty in the appendix.",
+        "extractionStatus": "curated"
+      },
+      {
+        "tier": "Sample recommendation variant table",
+        "gene": "GLO1/BTBD9, MEIS1, TMPRSS6",
+        "variantId": "rs3923809; rs2300478; rs855791",
+        "genotype": "GLO1 rs3923809 AA; MEIS1 rs2300478 GG; unlabeled rs855791 AA",
+        "effect": "The public Sleep DNA sample displays these rows in Iron recommendation variant tables tied to restless legs and sleep movement content.",
+        "phenotype": "Use as observed sample-output structure only; do not infer local iron status, supplement need, restless legs syndrome, or treatment action.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample recommendation variant table",
+        "gene": "MTNR1B",
+        "variantId": "rs10830964",
+        "genotype": "CC",
+        "effect": "The public Sleep DNA sample displays MTNR1B rs10830964 CC in Reduce Caffeine Intake recommendation pages.",
+        "phenotype": "Use as observed sample-output structure only; do not infer local caffeine sensitivity, insomnia, sleep duration, sleep quality, or medical advice.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample overview cards",
+        "gene": "Sleep DNA score models",
+        "variantId": "overview-card-risk-score-structure",
+        "genotype": "Typical sleep duration; typical sleep quality; typical deep sleep; typical insomnia; more likely sleep movement; more likely restless legs; typical sleep apnea; more likely snoring; less likely daytime sleepiness; typical caffeine-related sleep problems; early bird; less likely napping",
+        "effect": "The public sample demonstrates risk-score card categories, labels, and short result sentences across sleep parameters, disturbances, and behaviors.",
+        "phenotype": "Use as sample report structure only; do not emit calibrated local risk scores unless a validated model with calibration and provenance is supplied.",
+        "extractionStatus": "direct"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated marketplace detail-page parity has not been extracted.",
+      "No calibrated sleep-duration, chronotype, sleep-quality, sleepiness, sleep apnea, insomnia, or restless-legs model is supplied.",
+      "No sleep diary, wearable data, medication list, clinical sleep history, caffeine intake history, iron or ferritin labs, or sleep-study result is supplied."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "The fixture uses summary-level marker evidence for validation and is not a complete sleep-genetics model.",
+      "Public sample cards and recommendation blocks are sample-output examples, not local-user probabilities or instructions.",
+      "The effect of individual markers may vary across populations and should not be used as a diagnosis or treatment guide."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report is educational and does not diagnose sleep disorders, infer symptoms, prescribe sleep aids, recommend caffeine changes, recommend iron therapy, or replace a sleep study.",
+      "Sequencing.com marketplace detail-page parity is still pending even though the public sample PDF rows are extracted."
+    ]
+  }
+}

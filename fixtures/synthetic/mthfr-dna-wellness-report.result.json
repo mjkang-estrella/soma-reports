@@ -1,0 +1,242 @@
+{
+  "reportOverview": {
+    "reportTitle": "MTHFR DNA Wellness Report",
+    "inputManifestHash": "sha256:synthetic-mthfr-derived-evidence-v1",
+    "sectionsUnavailable": [
+      "exact sample-person genotypes are not visible in the public sample excerpt",
+      "validated methylation score, detox model, homocysteine labs, pregnancy context, diet history, supplement list, medication context, and clinician interpretation are unavailable",
+      "personal supplement, diet, treatment, pregnancy, medication, blood-pressure, diagnosis, or actionability guidance is unavailable"
+    ],
+    "sampleReportStructure": "The sample PDF structure is represented with an MTHFR activity score row, two recommendation rows, impact/evidence ratings, and appendix genotype-visibility notes."
+  },
+  "findings": [
+    {
+      "groupTitle": "MTHFR Genetics",
+      "item": "MTHFR activity",
+      "brandName": "MTHFR Gene Report sample",
+      "geneticAnalysis": "Typical; likely typical MTHFR activity based on 2 genetic variants we looked at; 88% of users share the same score",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mthfr-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Rendered sample page 8 shows a Typical gauge, likely-typical MTHFR activity wording, and an 88% same-score comparison card. This is an observed sample-report row for output-format parity, not a personal MTHFR activity, folate, riboflavin, diet, supplement, pregnancy, blood-pressure, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your Recommendations",
+      "item": "Dietary Folate",
+      "brandName": "MTHFR Gene Report sample",
+      "geneticAnalysis": "Impact 5/5; evidence 5/5",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mthfr-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Rendered sample page 10 shows the Dietary Folate recommendation card with impact/evidence ratings and the heading 'How Dietary Folate Helps Support MTHFR Activity'. This is an observed sample-report row for output-format parity, not a personal MTHFR activity, folate, riboflavin, diet, supplement, pregnancy, blood-pressure, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your Recommendations",
+      "item": "Riboflavin (Vitamin B2)",
+      "brandName": "MTHFR Gene Report sample",
+      "geneticAnalysis": "Impact 2/5; evidence 3/5",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mthfr-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Rendered sample page 12 shows the Riboflavin (Vitamin B2) recommendation card with impact/evidence ratings and the heading 'How Riboflavin Helps Support MTHFR Activity'. This is an observed sample-report row for output-format parity, not a personal MTHFR activity, folate, riboflavin, diet, supplement, pregnancy, blood-pressure, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Local MTHFR calls",
+      "item": "MTHFR C677T / rs1801133",
+      "brandName": "MTHFR DNA Wellness Report",
+      "geneticAnalysis": "A derived CT call is available for rs1801133. This is folate-processing context only and is not a diagnosis, methylation score, detox result, supplement instruction, pregnancy prediction, or treatment recommendation.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "CDC MTHFR Gene Variant and Folic Acid Facts",
+      "sourceIds": [
+        "cdc-mthfr-folic-acid"
+      ],
+      "plainEnglishMeaning": "CDC-framed MTHFR context should be handled conservatively: common MTHFR variants are not a standalone reason to avoid folic acid or change supplements."
+    },
+    {
+      "groupTitle": "Local MTHFR calls",
+      "item": "MTHFR A1298C / rs1801131",
+      "brandName": "MTHFR DNA Wellness Report",
+      "geneticAnalysis": "A derived AC call is available for rs1801131. This is folate-processing context only and is not a diagnosis, methylation score, detox result, supplement instruction, pregnancy prediction, or treatment recommendation.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "CDC MTHFR Gene Variant and Folic Acid Facts",
+      "sourceIds": [
+        "cdc-mthfr-folic-acid"
+      ],
+      "plainEnglishMeaning": "CDC-framed MTHFR context should be handled conservatively: common MTHFR variants are not a standalone reason to avoid folic acid or change supplements."
+    },
+    {
+      "groupTitle": "MTHFR evidence availability",
+      "item": "Exact sample genotype rows",
+      "brandName": "MTHFR DNA Wellness Report",
+      "geneticAnalysis": "The public sample PDF discusses rs1801133 and rs1801131, but it does not visibly show exact sample-person genotype calls for those variants.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "MTHFR sample report and CDC MTHFR context",
+      "sourceIds": [
+        "mthfr-sample-pdf",
+        "cdc-mthfr-folic-acid"
+      ],
+      "plainEnglishMeaning": "The report can show the sample format and local derived calls, but it should not infer hidden sample genotypes, methylation capacity, detox status, pregnancy outcome, supplement need, diet need, treatment need, or actionability."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "MTHFR Genetics",
+      "item": "MTHFR activity",
+      "brandName": "MTHFR Gene Report sample",
+      "geneticAnalysis": "Typical; likely typical MTHFR activity based on 2 genetic variants we looked at; 88% of users share the same score",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mthfr-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Rendered sample page 8 shows a Typical gauge, likely-typical MTHFR activity wording, and an 88% same-score comparison card. This is an observed sample-report row for output-format parity, not a personal MTHFR activity, folate, riboflavin, diet, supplement, pregnancy, blood-pressure, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your Recommendations",
+      "item": "Dietary Folate",
+      "brandName": "MTHFR Gene Report sample",
+      "geneticAnalysis": "Impact 5/5; evidence 5/5",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mthfr-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Rendered sample page 10 shows the Dietary Folate recommendation card with impact/evidence ratings and the heading 'How Dietary Folate Helps Support MTHFR Activity'. This is an observed sample-report row for output-format parity, not a personal MTHFR activity, folate, riboflavin, diet, supplement, pregnancy, blood-pressure, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your Recommendations",
+      "item": "Riboflavin (Vitamin B2)",
+      "brandName": "MTHFR Gene Report sample",
+      "geneticAnalysis": "Impact 2/5; evidence 3/5",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mthfr-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Rendered sample page 12 shows the Riboflavin (Vitamin B2) recommendation card with impact/evidence ratings and the heading 'How Riboflavin Helps Support MTHFR Activity'. This is an observed sample-report row for output-format parity, not a personal MTHFR activity, folate, riboflavin, diet, supplement, pregnancy, blood-pressure, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    }
+  ],
+  "mthfrCalls": [
+    {
+      "rsid": "rs1801133",
+      "variantName": "MTHFR C677T",
+      "observedValue": "CT",
+      "matchStatus": "observed",
+      "sourceIds": [
+        "cdc-mthfr-folic-acid"
+      ]
+    },
+    {
+      "rsid": "rs1801131",
+      "variantName": "MTHFR A1298C",
+      "observedValue": "AC",
+      "matchStatus": "observed",
+      "sourceIds": [
+        "cdc-mthfr-folic-acid"
+      ]
+    }
+  ],
+  "folateContext": {
+    "plainEnglishMeaning": "The available local MTHFR calls can be described as folate-processing context, not as a disease prediction, methylation score, detox result, pregnancy prediction, or supplement instruction.",
+    "folicAcidSafetyNote": "Common MTHFR variants are not a reason to avoid folic acid under the CDC framing used by this package.",
+    "unsupportedClaims": [
+      "detox status",
+      "methylation score",
+      "diagnosis",
+      "vitamin or supplement changes",
+      "pregnancy outcome prediction",
+      "diet prescription",
+      "medication or treatment guidance"
+    ]
+  },
+  "references": [
+    {
+      "id": "cdc-mthfr-folic-acid",
+      "title": "CDC MTHFR Gene Variant and Folic Acid Facts"
+    },
+    {
+      "id": "sequencing-report-marketplace-docs",
+      "title": "Sequencing.com Report Marketplace documentation"
+    },
+    {
+      "id": "mthfr-sample-pdf",
+      "title": "MTHFR DNA Wellness Report sample report"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "_creationTime": 1782028807933.0369,
+        "_id": "jn72dwkb5bpjvkh2q50b7zek5589280y",
+        "effect": "The sample MTHFR Genetics page discusses rs1801133 / C677T and lower-activity A-variant context.",
+        "extractionStatus": "direct",
+        "gene": "MTHFR",
+        "genotype": "not shown in sample PDF",
+        "phenotype": "The sample reports likely typical MTHFR activity based on two genetic variants, but it does not expose the sample person's exact rs1801133 genotype.",
+        "reportSlug": "mthfr-dna-wellness-report",
+        "sortOrder": 1,
+        "tier": "Sample-report note",
+        "variantId": "rs1801133"
+      },
+      {
+        "_creationTime": 1782028807933.037,
+        "_id": "jn78aanp79xqnrqn3yffc9312n892z3x",
+        "effect": "The sample MTHFR Genetics page discusses rs1801131 / A1298C and G-variant context.",
+        "extractionStatus": "direct",
+        "gene": "MTHFR",
+        "genotype": "not shown in sample PDF",
+        "phenotype": "The sample reports likely typical MTHFR activity based on two genetic variants, but it does not expose the sample person's exact rs1801131 genotype.",
+        "reportSlug": "mthfr-dna-wellness-report",
+        "sortOrder": 2,
+        "tier": "Sample-report note",
+        "variantId": "rs1801131"
+      }
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "The public sample PDF shows a typical MTHFR activity example and recommendation cards, but it does not expose exact sample-person genotype calls.",
+      "The local fixture contains derived rs1801133 and rs1801131 calls for validation, but no calibrated probability model is supplied.",
+      "Sample recommendation blocks are output-format examples and are not personalized advice for the local user."
+    ],
+    "missingInputs": [
+      "MTHFR-rs1801133: CT",
+      "MTHFR-rs1801131: AC",
+      "exact sample-person genotype rows, methylation score, detoxification model, homocysteine labs, folate labs, pregnancy context, diet history, supplement list, medication context, blood-pressure context, clinician interpretation, and actionability model are unavailable"
+    ],
+    "limitations": [
+      "Educational MTHFR and folate-processing context only, not diagnosis or medical advice.",
+      "No methylation score, detox status, pregnancy prediction, supplement recommendation, diet prescription, medication guidance, treatment instruction, blood-pressure conclusion, or actionability is produced.",
+      "Probabilities are intentionally empty because no calibrated model output is supplied for this local fixture."
+    ]
+  }
+}

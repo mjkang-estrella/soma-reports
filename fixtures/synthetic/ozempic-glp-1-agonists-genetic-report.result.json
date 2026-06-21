@@ -1,0 +1,181 @@
+{
+  "schemaVersion": "soma-reports.synthetic-result.v1",
+  "reportOverview": {
+    "reportTitle": "Ozempic & GLP-1 Agonists Genetic Report",
+    "inputManifestHash": "sha256:synthetic-ozempic-glp-1-agonists-genetic-report-specialized-boundary-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet for Ozempic & GLP-1 Agonists Genetic Report.",
+      "Validated GLP-1 response model, diagnosis, indication, medication history, adverse-event history, labs, clinician review, and authenticated sample-report rows",
+      "validated GLP-1 response model, GLP1R/GIPR or related marker interpretation, diabetes diagnosis, A1c, BMI, kidney/liver context, contraindications, medication list, pregnancy context, side-effect history, clinician review, and authenticated sample-report rows unavailable in this fixture",
+      "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
+      "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture"
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Validated model/source output availability",
+      "item": "Ozempic & GLP-1 Agonists Genetic Report model/source output",
+      "brandName": "",
+      "geneticAnalysis": "The local fixture supplies a boundary row for GLP-1 agonist and Ozempic medication context. It does not supply the validated model, source-tool output, or authenticated Sequencing.com report content needed for personal conclusions.",
+      "genes": [
+        "Ozempic & GLP-1 Agonists Genetic Report model/source output"
+      ],
+      "sourceLabel": "FDA Ozempic Prescribing Information; FDA Table of Pharmacogenetic Associations; MedlinePlus Pharmacogenetic Tests",
+      "sourceIds": [
+        "fda-ozempic-label",
+        "fda-pgx-associations",
+        "medlineplus-pharmacogenetic-tests"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This can explain what evidence is present or missing for Ozempic & GLP-1 Agonists Genetic Report, but it cannot fill in unavailable model output or personal conclusions."
+    },
+    {
+      "groupTitle": "Clinical and professional context availability",
+      "item": "Ozempic & GLP-1 Agonists Genetic Report clinical and professional context",
+      "brandName": "",
+      "geneticAnalysis": "Clinical history, symptoms, labs, medication context, family history, and qualified professional interpretation are not supplied unless explicitly listed in the fixture.",
+      "genes": [
+        "Ozempic & GLP-1 Agonists Genetic Report clinical and professional context"
+      ],
+      "sourceLabel": "FDA Ozempic Prescribing Information; FDA Table of Pharmacogenetic Associations; MedlinePlus Pharmacogenetic Tests",
+      "sourceIds": [
+        "fda-ozempic-label",
+        "fda-pgx-associations",
+        "medlineplus-pharmacogenetic-tests"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The report should stay educational because diabetes, weight-management, medication, side-effect, and clinician-guided decisions require context that this synthetic fixture does not include."
+    },
+    {
+      "groupTitle": "Authenticated sample availability",
+      "item": "Ozempic & GLP-1 Agonists Genetic Report authenticated sample rows",
+      "brandName": "",
+      "geneticAnalysis": "Authenticated Sequencing.com sample report sections, row labels, model output, and source-tool output are unavailable in this local fixture.",
+      "genes": [
+        "Ozempic & GLP-1 Agonists Genetic Report authenticated sample rows"
+      ],
+      "sourceLabel": "FDA Ozempic Prescribing Information; FDA Table of Pharmacogenetic Associations; MedlinePlus Pharmacogenetic Tests",
+      "sourceIds": [
+        "fda-ozempic-label",
+        "fda-pgx-associations",
+        "medlineplus-pharmacogenetic-tests"
+      ],
+      "sourceBindingStatus": "unavailable",
+      "plainEnglishMeaning": "This local package marks the sample-report gap clearly instead of recreating or guessing the missing Sequencing.com output."
+    }
+  ],
+  "drugDecisionContext": {
+    "plainEnglishMeaning": "Ozempic & GLP-1 Agonists Genetic Report is represented as an evidence-boundary package. It can summarize supplied local evidence and references, while marking unsupported personal conclusions unavailable.",
+    "unsupportedClaims": [
+      "Ozempic eligibility",
+      "GLP-1 response prediction",
+      "dose guidance",
+      "starting, stopping, or switching medication",
+      "weight-loss prediction",
+      "side-effect risk estimate"
+    ],
+    "professionalReview": "Use qualified professional review for diabetes, weight-management, medication, side-effect, and clinician-guided decisions; this synthetic local result is not enough for those decisions."
+  },
+  "practicalNextSteps": {
+    "professionalReview": [
+      "Use this local result as educational context for GLP-1 agonist and Ozempic medication context, not as a decision tool.",
+      "Collect validated source output, source provenance, and relevant clinical or professional context before using Ozempic & GLP-1 Agonists Genetic Report for personal decisions.",
+      "Discuss diabetes, weight-management, medication, side-effect, and clinician-guided decisions with qualified professionals when those choices matter."
+    ]
+  },
+  "references": [
+    {
+      "id": "cdc-genetic-testing",
+      "title": "CDC Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetics",
+      "title": "MedlinePlus Genetics"
+    },
+    {
+      "id": "medlineplus-genetic-testing",
+      "title": "MedlinePlus: Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetic-test-results",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results"
+    },
+    {
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean"
+    },
+    {
+      "id": "fda-direct-to-consumer-tests",
+      "title": "FDA Direct-to-Consumer Tests"
+    },
+    {
+      "id": "medlineplus-complex-disorders",
+      "title": "MedlinePlus Genetics: complex disorders"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    },
+    {
+      "id": "fda-ozempic-label",
+      "title": "FDA Ozempic Prescribing Information"
+    },
+    {
+      "id": "fda-pgx-associations",
+      "title": "FDA Table of Pharmacogenetic Associations"
+    },
+    {
+      "id": "fda-pgx-biomarkers-labeling",
+      "title": "FDA Table of Pharmacogenomic Biomarkers in Drug Labeling"
+    },
+    {
+      "id": "medlineplus-pharmacogenetic-tests",
+      "title": "MedlinePlus Pharmacogenetic Tests"
+    },
+    {
+      "id": "cdc-diabetes-risk-factors",
+      "title": "CDC Diabetes Risk Factors"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "ozempic-glp-1-agonists-genetic-report-model-output-unavailable",
+        "gene": "Ozempic & GLP-1 Agonists Genetic Report model/source output",
+        "observedValue": "validated GLP-1 response model, GLP1R/GIPR or related marker interpretation, diabetes diagnosis, A1c, BMI, kidney/liver context, contraindications, medication list, pregnancy context, side-effect history, clinician review, and authenticated sample-report rows unavailable in this fixture",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "ozempic-glp-1-agonists-genetic-report-clinical-professional-context-unavailable",
+        "gene": "Ozempic & GLP-1 Agonists Genetic Report clinical and professional context",
+        "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "ozempic-glp-1-agonists-genetic-report-authenticated-sample-unavailable",
+        "gene": "Ozempic & GLP-1 Agonists Genetic Report authenticated sample rows",
+        "observedValue": "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated Sequencing.com sample report sections and rows for Ozempic & GLP-1 Agonists Genetic Report.",
+      "validated GLP-1 response model, diagnosis, indication, medication history, adverse-event history, labs, clinician review, and authenticated sample-report rows",
+      "Report unavailable GLP-1 agonist medication-response context evidence explicitly; do not determine Ozempic, Wegovy, Mounjaro, Zepbound, semaglutide, tirzepatide, GLP-1 eligibility, dose, drug choice, treatment response, weight loss, diabetes outcome, side-effect certainty, contraindication, medication start/stop/switch, or clinical actionability from genotype."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No validated GLP-1 agonist and Ozempic medication context model with source provenance and professional review is supplied for this local package.",
+      "The supplied rows support evidence-boundary education only and should not be treated as a personal prediction or clinical interpretation."
+    ],
+    "limitations": [
+      "This validation result uses selected derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
+      "The package does not recreate unavailable Sequencing.com authenticated report rows or proprietary third-party output for Ozempic & GLP-1 Agonists Genetic Report.",
+      "The package does not support: Ozempic eligibility; GLP-1 response prediction; dose guidance; starting, stopping, or switching medication; weight-loss prediction; side-effect risk estimate."
+    ]
+  }
+}

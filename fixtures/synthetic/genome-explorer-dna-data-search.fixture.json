@@ -1,0 +1,158 @@
+{
+  "consumerTone": "plain English; educational genome search context only; no complete search, disease, trait, clinical classification, diagnosis, medication, screening, treatment, or actionability claims",
+  "datasetId": "synthetic-genome-explorer-search-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "GRCh38-derived",
+      "gene": "BDNF",
+      "inputId": "bioinformatics-public-variant-rs6265",
+      "matchStatus": "summarized",
+      "observedValue": "selected public variant identifier available for lookup and annotation context; no trait, disease, or clinical interpretation supplied",
+      "rsid": "rs6265",
+      "sourceArtifact": "synthetic-genome-explorer-search-context-v1",
+      "sourceFile": "synthetic-genome-explorer-search-context-v1.json"
+    },
+    {
+      "assembly": "GRCh38-derived",
+      "gene": "reference genome coordinate context",
+      "haplotype": "grch38-reference-build-context",
+      "inputId": "bioinformatics-reference-build-context",
+      "matchStatus": "summarized",
+      "observedValue": "GRCh38 coordinate context available for selected lookup; alternate build, liftover path, remapping evidence, and service output unavailable",
+      "sourceArtifact": "synthetic-genome-explorer-search-context-v1",
+      "sourceFile": "synthetic-genome-explorer-search-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "genome search output",
+      "haplotype": "not-supplied",
+      "inputId": "genome-explorer-search-output-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "complete genome search, uploaded data browsing, full SNP lookup, disease or trait interpretation, clinical classification, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-genome-explorer-search-context-v1",
+      "sourceFile": "synthetic-genome-explorer-search-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "GRCh38-derived",
+    "hash": "sha256:synthetic-genome-explorer-search-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived bioinformatics utility context for genome-explorer-dna-data-search validation"
+  },
+  "missingInputPolicy": "Mark complete genome search, uploaded data browsing, full SNP lookup, disease or trait interpretation, clinical classification, and authenticated sample evidence unavailable when not explicitly supplied.",
+  "packageSlug": "genome-explorer-dna-data-search",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "implementation_background",
+      "id": "ensembl-vep",
+      "sourceType": "annotation_tool_documentation",
+      "title": "Ensembl Variant Effect Predictor",
+      "usedFor": [
+        "annotation_context",
+        "consequence_scope",
+        "tool_output_unavailable"
+      ]
+    },
+    {
+      "evidenceLevel": "implementation_background",
+      "id": "ensembl-variant-consequences",
+      "sourceType": "annotation_method_documentation",
+      "title": "Ensembl Variation: calculated variant consequences",
+      "usedFor": [
+        "sequence_ontology_terms",
+        "annotation_limitations"
+      ]
+    },
+    {
+      "evidenceLevel": "implementation_background",
+      "id": "ensembl-rest-api",
+      "sourceType": "api_documentation",
+      "title": "Ensembl REST API endpoints",
+      "usedFor": [
+        "variant_lookup_context",
+        "coordinate_mapping_context",
+        "service_output_unavailable"
+      ]
+    },
+    {
+      "evidenceLevel": "terminology_background",
+      "id": "sequence-ontology",
+      "sourceType": "controlled_vocabulary",
+      "title": "Sequence Ontology",
+      "usedFor": [
+        "variant_term_context",
+        "plain_english_glossary"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "ncbi-dbsnp",
+      "sourceType": "database",
+      "title": "NCBI dbSNP",
+      "usedFor": [
+        "rsid_context",
+        "public_variant_identifier_context"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "ncbi-clinvar",
+      "sourceType": "database",
+      "title": "NCBI ClinVar",
+      "usedFor": [
+        "clinical_classification_unavailable",
+        "database_cross_reference_context"
+      ]
+    },
+    {
+      "evidenceLevel": "implementation_background",
+      "id": "ncbi-variation-services-spdi",
+      "sourceType": "api_documentation",
+      "title": "NCBI Variation Services / SPDI",
+      "usedFor": [
+        "spdi_context",
+        "variant_normalization_context",
+        "coordinate_conversion_unavailable"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "ncbi-genetic-testing-registry",
+      "sourceType": "database",
+      "title": "NIH Genetic Testing Registry",
+      "usedFor": [
+        "genetic_test_metadata_context",
+        "clinical_test_unavailable"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "international-genome-sample-resource",
+      "sourceType": "database",
+      "title": "International Genome Sample Resource / 1000 Genomes",
+      "usedFor": [
+        "population_variation_context",
+        "reference_panel_limitations"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "trait_association_context",
+        "model_unavailable_context"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer genome search utility context using selected public variant and reference-build rows while marking complete search and browsing outputs unavailable."
+}

@@ -8,6 +8,7 @@
  * @module
  */
 
+import type * as marketplaceCatalog from "../marketplaceCatalog.js";
 import type * as reportPackages from "../reportPackages.js";
 import type * as reports from "../reports.js";
 
@@ -18,6 +19,7 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  marketplaceCatalog: typeof marketplaceCatalog;
   reportPackages: typeof reportPackages;
   reports: typeof reports;
 }>;

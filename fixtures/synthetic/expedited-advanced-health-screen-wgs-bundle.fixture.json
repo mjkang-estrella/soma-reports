@@ -1,0 +1,121 @@
+{
+  "consumerTone": "plain English; educational WGS bundle boundary context only; no order, lab-result, health-screen, diagnosis, disease-risk, carrier-status, pathogenicity, clinical sensitivity, treatment, or actionability claims",
+  "datasetId": "synthetic-expedited-advanced-health-screen-wgs-bundle-boundary-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "not-applicable",
+      "gene": "marketplace WGS product boundary",
+      "haplotype": "expedited-advanced-health-screen-wgs-bundle-catalog-product-context",
+      "inputId": "expedited-advanced-health-screen-wgs-bundle-product-context",
+      "matchStatus": "summarized",
+      "observedValue": "marketplace bundle context available for Expedited Advanced Health Screen WGS Bundle; expedited fulfillment, order status, sample collection, lab processing, WGS output, health-screen results, and clinical outputs are not supplied",
+      "sourceArtifact": "synthetic-expedited-advanced-health-screen-wgs-bundle-boundary-v1",
+      "sourceFile": "synthetic-expedited-advanced-health-screen-wgs-bundle-boundary-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "WGS laboratory output",
+      "haplotype": "expedited-advanced-health-screen-wgs-bundle-wgs-lab-output-unavailable",
+      "inputId": "expedited-advanced-health-screen-wgs-bundle-wgs-lab-output-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "order status, sample collection, lab processing, sequencing platform, coverage metrics, variant calls, health-screen output, clinical validation, clinical sensitivity, turnaround completion, or authenticated sample evidence",
+      "sourceArtifact": "synthetic-expedited-advanced-health-screen-wgs-bundle-boundary-v1",
+      "sourceFile": "synthetic-expedited-advanced-health-screen-wgs-bundle-boundary-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "health-screen and clinical interpretation output",
+      "haplotype": "expedited-advanced-health-screen-wgs-bundle-clinical-output-unavailable",
+      "inputId": "expedited-advanced-health-screen-wgs-bundle-clinical-output-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "health-screen report, disease-risk output, carrier-status output, variant interpretation, pathogenicity classification, clinical sensitivity, all-clear reassurance, treatment guidance, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-expedited-advanced-health-screen-wgs-bundle-boundary-v1",
+      "sourceFile": "synthetic-expedited-advanced-health-screen-wgs-bundle-boundary-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "not-applicable",
+    "hash": "sha256:synthetic-expedited-advanced-health-screen-wgs-bundle-boundary-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived WGS product-boundary context for expedited-advanced-health-screen-wgs-bundle validation"
+  },
+  "missingInputPolicy": "Mark order status, sample collection, lab processing, sequencing platform, coverage metrics, variant calls, health-screen output, clinical validation, clinical sensitivity, turnaround completion, and authenticated sample rows unavailable when not explicitly supplied.",
+  "packageSlug": "expedited-advanced-health-screen-wgs-bundle",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "implementation_background",
+      "id": "samtools-depth",
+      "sourceType": "tool_documentation",
+      "title": "SAMtools depth",
+      "usedFor": [
+        "depth_metric_context",
+        "per_position_depth_provenance",
+        "raw_alignment_omission"
+      ]
+    },
+    {
+      "evidenceLevel": "implementation_background",
+      "id": "samtools-coverage",
+      "sourceType": "tool_documentation",
+      "title": "SAMtools coverage",
+      "usedFor": [
+        "breadth_metric_context",
+        "regional_coverage_context",
+        "coverage_threshold_rows"
+      ]
+    },
+    {
+      "evidenceLevel": "implementation_background",
+      "id": "gatk-collect-wgs-metrics",
+      "sourceType": "tool_documentation",
+      "title": "GATK/Picard CollectWgsMetrics",
+      "usedFor": [
+        "wgs_depth_summary",
+        "quality_filter_context",
+        "coverage_threshold_rows"
+      ]
+    },
+    {
+      "evidenceLevel": "implementation_background",
+      "id": "gatk-wgs-metrics",
+      "sourceType": "metrics_reference",
+      "title": "GATK WgsMetrics",
+      "usedFor": [
+        "wgs_metric_definitions",
+        "metric_glossary",
+        "coverage_uniformity_context"
+      ]
+    },
+    {
+      "evidenceLevel": "benchmark_background",
+      "id": "nist-genome-in-a-bottle",
+      "sourceType": "benchmark_resource",
+      "title": "NIST Genome in a Bottle",
+      "usedFor": [
+        "benchmark_context",
+        "no_clinical_sensitivity_claims",
+        "validation_limitations"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "ncbi-genetic-testing-registry",
+      "sourceType": "database",
+      "title": "NIH Genetic Testing Registry",
+      "usedFor": [
+        "genetic_test_metadata_context",
+        "clinical_test_unavailable",
+        "product_boundary_context"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer expedited WGS bundle boundary context using marketplace card metadata while explicitly marking order, turnaround completion, lab, WGS output, health-screen, clinical validation, and authenticated sample evidence unavailable."
+}

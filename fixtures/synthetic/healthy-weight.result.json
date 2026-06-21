@@ -1,0 +1,371 @@
+{
+  "reportOverview": {
+    "reportTitle": "Healthy Weight",
+    "inputManifestHash": "sha256:synthetic-healthy-weight-context-v1",
+    "evidenceTypesSupplied": [
+      "Local derived MCM6/LCT nutrition-genetics evidence.",
+      "Public GenoPalate Healthy Weight sample PDF rows used as observed output-format examples.",
+      "Consumer education and public-health references for nutrient, supplement, DTC result, glucose, BMI, and model-limit framing."
+    ],
+    "sectionsUnavailable": [
+      "Authenticated marketplace detail-page parity is still pending.",
+      "No calibrated healthy-weight, weight-loss response, obesity-risk, meal-plan, supplement, activity, metabolic, diet-history, lab, sleep, stress, cortisol, or ancestry applicability model is supplied with this fixture.",
+      "No local diet target, nutrient target, BMI category, body-fat estimate, waist-to-hip ratio, supplement need, activity plan, stress finding, sleep finding, cortisol finding, lab interpretation, or treatment action is reported."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Local nutrition-genetics evidence",
+      "item": "MCM6/LCT rs4988235",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a diagnosis, symptom explanation, diet recommendation, supplement recommendation, weight-loss prediction, or model-derived health result.",
+      "genes": [
+        "MCM6",
+        "LCT"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: lactose intolerance / MCM6",
+      "sourceIds": [
+        "medlineplus-lactose-intolerance",
+        "medlineplus-mcm6"
+      ],
+      "plainEnglishMeaning": "This marker can provide lactose-related context, but symptoms, diet history, activity, labs, environment, medications, and professional review matter for health and nutrition decisions.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Nutrition model availability",
+      "item": "Healthy weight model",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "No calibrated healthy-weight, weight-loss response, obesity-risk, meal-plan, supplement, activity, metabolic, diet-history, lab, sleep, stress, cortisol, or ancestry applicability model is supplied with this fixture.",
+      "genes": [
+        "Healthy weight model"
+      ],
+      "sourceLabel": "CDC BMI / MedlinePlus DTC result limits / GWAS Catalog",
+      "sourceIds": [
+        "cdc-bmi",
+        "medlineplus-dtc-genetic-testing-results",
+        "ebi-gwas-catalog"
+      ],
+      "plainEnglishMeaning": "The local output can describe supplied marker context and unavailable sections, but it must not create diet, supplement, activity, glucose, gut, weight, stress, sleep, cortisol, wellness, symptom, lab, metabolic, or treatment conclusions without validated evidence.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Macronutrient distribution",
+      "item": "Total Fat Intake",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Observed sample row reports a low-total-fat pattern, with a displayed target of 23-31% of daily calories and 84-109 g/day. The visible gene table lists APOA5, LEPR, PPARG, and FTO markers.",
+      "genes": [
+        "APOA5",
+        "LEPR",
+        "PPARG",
+        "FTO"
+      ],
+      "sourceLabel": "GenoPalate Healthy Weight sample report",
+      "sourceIds": [
+        "healthy-weight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Healthy Weight sample PDF; this is observed sample output structure, not a local fat-intake target or weight-loss recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Macronutrient distribution",
+      "item": "Monounsaturated Fat Intake",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Observed sample row reports a high-monounsaturated-fat pattern, with a displayed target of 12-17% of daily calories and 45-63 g/day. The visible gene table lists ADIPOQ and PPARG markers.",
+      "genes": [
+        "ADIPOQ",
+        "PPARG"
+      ],
+      "sourceLabel": "GenoPalate Healthy Weight sample report",
+      "sourceIds": [
+        "healthy-weight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Healthy Weight sample PDF; this is observed sample output structure, not a local MUFA target or diet prescription.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Fatty acid targets",
+      "item": "Omega-3 Intake",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Observed sample row reports normal omega-3 needs, with a displayed target of 1,100 mg/day. The visible gene table lists ADIPOQ GP000031.",
+      "genes": [
+        "ADIPOQ"
+      ],
+      "sourceLabel": "GenoPalate Healthy Weight sample report",
+      "sourceIds": [
+        "healthy-weight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Healthy Weight sample PDF; this is observed sample output structure, not a local omega-3 recommendation or supplement instruction.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Fatty acid targets",
+      "item": "Omega-6 Intake",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Observed sample row reports a low-omega-6 pattern, with a displayed target of 5-7% of daily calories and 18-26 g/day. The visible gene table lists TNF GP000032.",
+      "genes": [
+        "TNF"
+      ],
+      "sourceLabel": "GenoPalate Healthy Weight sample report",
+      "sourceIds": [
+        "healthy-weight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Healthy Weight sample PDF; this is observed sample output structure, not a local omega-6 target.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Fatty acid targets",
+      "item": "Saturated Fat Intake",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Observed sample row reports a moderately-low saturated-fat pattern, with a displayed target of less than 8% of daily calories and less than 30 g/day. The visible gene table lists APOA2 and LEPR markers.",
+      "genes": [
+        "APOA2",
+        "LEPR"
+      ],
+      "sourceLabel": "GenoPalate Healthy Weight sample report",
+      "sourceIds": [
+        "healthy-weight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Healthy Weight sample PDF; this is observed sample output structure, not a local saturated-fat target or cardiometabolic recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Macronutrient distribution",
+      "item": "Carbohydrate Intake",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Observed sample row reports a moderately-high-carbohydrate pattern, with a displayed target of 50-58% of daily calories and 414-471 g/day. The visible gene table lists FTO GP000003.",
+      "genes": [
+        "FTO"
+      ],
+      "sourceLabel": "GenoPalate Healthy Weight sample report",
+      "sourceIds": [
+        "healthy-weight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Healthy Weight sample PDF; this is observed sample output structure, not a local carbohydrate target, glucose interpretation, or meal plan.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Nutrient focus",
+      "item": "Fiber Intake",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Observed sample row reports a moderately-high-fiber pattern, with a displayed target of 14-19 g/day. The visible gene table lists FTO GP000008.",
+      "genes": [
+        "FTO"
+      ],
+      "sourceLabel": "GenoPalate Healthy Weight sample report",
+      "sourceIds": [
+        "healthy-weight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Healthy Weight sample PDF; this is observed sample output structure, not local fiber, glucose, gut-health, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Macronutrient distribution",
+      "item": "Protein Intake",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Observed sample row reports normal protein needs, with a displayed target of 15-20% of daily calories and 122-163 g/day. The visible gene table lists FTO GP000011.",
+      "genes": [
+        "FTO"
+      ],
+      "sourceLabel": "GenoPalate Healthy Weight sample report",
+      "sourceIds": [
+        "healthy-weight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Healthy Weight sample PDF; this is observed sample output structure, not a local protein target or activity recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Nutrient focus",
+      "item": "Vitamin E Intake",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Observed sample row reports high vitamin E intake, with a displayed target greater than 15 mg/day. The visible gene table lists COMT GP000051 and indicates the sample genotype could not be detected.",
+      "genes": [
+        "COMT"
+      ],
+      "sourceLabel": "GenoPalate Healthy Weight sample report",
+      "sourceIds": [
+        "healthy-weight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Healthy Weight sample PDF; this is observed sample output structure, not a local vitamin E target, blood-level interpretation, or supplement dose.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Lifestyle preview",
+      "item": "Stress Insights",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Observed sample sidebar includes stress-related rows for sleep-quality and cortisol context. The visible gene table lists ADA GP000121 and FKBP5 GP000136.",
+      "genes": [
+        "ADA",
+        "FKBP5"
+      ],
+      "sourceLabel": "GenoPalate Healthy Weight sample report",
+      "sourceIds": [
+        "healthy-weight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Healthy Weight sample PDF; this is observed sample sidebar structure, not a local sleep, stress, cortisol, mental-health, or treatment finding.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Measurement appendix",
+      "item": "BMI, waist-to-hip ratio, and body fat percentage glossary",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Observed sample appendix explains body mass index, waist-to-hip ratio, and body fat percentage as measurement concepts used in weight-related context.",
+      "genes": [],
+      "sourceLabel": "GenoPalate Healthy Weight sample report",
+      "sourceIds": [
+        "healthy-weight-sample-pdf",
+        "cdc-bmi"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Healthy Weight sample PDF and paired with CDC BMI background; this is education about measurement concepts, not a local BMI category, body-fat estimate, or waist-to-hip result.",
+      "sourceBindingStatus": "exact"
+    }
+  ],
+  "practicalNextSteps": {
+    "healthyWeightContext": [
+      "Use this report as educational healthy-weight genetics context, not as a weight-loss prediction, obesity-risk score, meal plan, supplement plan, or activity prescription.",
+      "Treat GenoPalate sample nutrient targets, food examples, recipes, lifestyle rows, stress rows, and body-measurement descriptions as observed sample-report structure unless validated local evidence supports equivalent sections.",
+      "Plan diet, activity, weight, supplement, sleep, and stress decisions using diet history, symptoms, activity, labs, medical context, preferences, and professional support.",
+      "Do not use genotype alone to predict weight loss, diagnose obesity or metabolic disease, choose supplements, interpret labs, or change treatment."
+    ]
+  },
+  "plainEnglishLimits": [
+    "Nutrition and weight outcomes depend on diet, activity, symptoms, medications, labs, medical history, environment, and professional review, not genotype alone.",
+    "Public sample rows show observed report format and source binding; they are not local personal findings unless the local run supplies equivalent validated evidence.",
+    "The local fixture does not include body measurements, diet history, activity history, glucose or A1C labs, supplement use, sleep measures, stress measures, cortisol labs, or a calibrated weight model."
+  ],
+  "references": [
+    {
+      "id": "medlineplus-lactose-intolerance",
+      "title": "MedlinePlus Genetics: lactose intolerance",
+      "sourceType": "education_resource"
+    },
+    {
+      "id": "medlineplus-mcm6",
+      "title": "MedlinePlus Genetics: MCM6 gene",
+      "sourceType": "education_resource"
+    },
+    {
+      "id": "nutritional-genomics-dtc-review",
+      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing",
+      "sourceType": "research_review"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog",
+      "sourceType": "database"
+    },
+    {
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean",
+      "sourceType": "education_resource"
+    },
+    {
+      "id": "medlineplus-blood-glucose-test",
+      "title": "MedlinePlus: Blood Glucose Test",
+      "sourceType": "medical_test_resource"
+    },
+    {
+      "id": "medlineplus-hba1c-test",
+      "title": "MedlinePlus: Hemoglobin A1C test",
+      "sourceType": "medical_test_resource"
+    },
+    {
+      "id": "cdc-diabetes-risk-factors",
+      "title": "CDC Diabetes Risk Factors",
+      "sourceType": "public_health_resource"
+    },
+    {
+      "id": "fda-dietary-supplements",
+      "title": "FDA Dietary Supplements",
+      "sourceType": "regulatory_resource"
+    },
+    {
+      "id": "nih-ods-dietary-supplement-fact-sheets",
+      "title": "NIH Office of Dietary Supplements Fact Sheets",
+      "sourceType": "public_health_resource"
+    },
+    {
+      "id": "cdc-bmi",
+      "title": "CDC About Body Mass Index",
+      "sourceType": "public_health_resource"
+    },
+    {
+      "id": "healthy-weight-sample-pdf",
+      "title": "GenoPalate Healthy Weight sample report",
+      "sourceType": "mock_report"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "gene": "MCM6/LCT",
+        "observedValue": "local derived rs4988235 CT"
+      },
+      {
+        "gene": "Healthy weight model",
+        "observedValue": "calibrated model unavailable"
+      },
+      {
+        "gene": "APOA5",
+        "observedValue": "sample PDF GP000023 AA; sample-only row for total-fat intake"
+      },
+      {
+        "gene": "LEPR",
+        "observedValue": "sample PDF GP000025 AG; sample-only row for total-fat and saturated-fat intake"
+      },
+      {
+        "gene": "PPARG",
+        "observedValue": "sample PDF GP000018 CC; sample-only row for total-fat and MUFA intake"
+      },
+      {
+        "gene": "FTO",
+        "observedValue": "sample PDF GP000003 AA on total-fat page and GP000003 TT on carbohydrate page; preserve as displayed sample rows, not validated local calls"
+      },
+      {
+        "gene": "ADIPOQ",
+        "observedValue": "sample PDF GP000033 GG, GP000034 GG, and GP000031 TT; sample-only rows for MUFA and omega-3 intake"
+      },
+      {
+        "gene": "TNF",
+        "observedValue": "sample PDF GP000032 AG; sample-only row for omega-6 intake"
+      },
+      {
+        "gene": "APOA2",
+        "observedValue": "sample PDF GP000027 GG; sample-only row for saturated-fat intake"
+      },
+      {
+        "gene": "FTO",
+        "observedValue": "sample PDF GP000008 CC and GP000011 TT; sample-only rows for fiber and protein intake"
+      },
+      {
+        "gene": "COMT",
+        "observedValue": "sample PDF GP000051 genotype not detected; sample-only row for vitamin E intake"
+      },
+      {
+        "gene": "ADA",
+        "observedValue": "sample PDF GP000121 CC; sample-only stress/sleep sidebar row"
+      },
+      {
+        "gene": "FKBP5",
+        "observedValue": "sample PDF GP000136 TT; sample-only stress/cortisol sidebar row"
+      }
+    ],
+    "missingInputs": [
+      "Marketplace detail-page copy, screenshots, pricing state, and authenticated purchase/run flow parity remain pending.",
+      "No calibrated healthy-weight, weight-loss response, obesity-risk, meal-plan, supplement, activity, metabolic, diet-history, lab, sleep, stress, cortisol, or ancestry applicability model is supplied with this fixture.",
+      "The GenoPalate Healthy Weight rows are public sample-report examples and are not local target recommendations.",
+      "Broader symptoms, food history, diet history, activity history, body measurements, labs, medications, medical history, child-specific context, ancestry applicability, environment, and professional assessment are not represented in this fixture.",
+      "Displayed sample marker IDs have not been resolved to genomic coordinates; repeated marker labels such as FTO GP000003 are preserved as sample display rows instead of merged biological variants."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Nutrition, lifestyle, symptoms, labs, weight, glucose, gut health, supplement response, stress, sleep, cortisol, and wellness outcomes depend on genetics plus non-genetic context and professional review.",
+      "Public sample report rows are useful for output-format parity and citation binding, but they do not establish local genotype effects or individual recommendations.",
+      "A single marker should not be used to diagnose conditions, explain symptoms, prescribe diets, recommend supplements, interpret labs, estimate BMI or body fat, or guide treatment."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report is educational and does not predict weight loss, diagnose obesity or metabolic disease, prescribe diets, create meal plans, recommend supplements, interpret labs, or provide treatment guidance.",
+      "Healthy Weight sample rows are source-bound to the public PDF for format parity; marketplace detail parity remains pending."
+    ]
+  }
+}

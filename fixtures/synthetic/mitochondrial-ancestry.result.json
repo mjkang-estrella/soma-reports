@@ -1,0 +1,150 @@
+{
+  "reportOverview": {
+    "reportTitle": "Mitochondrial Ancestry",
+    "inputManifestHash": "sha256:synthetic-mitochondrial-ancestry-maternal-lineage-v1",
+    "referenceContext": "rCRS-or-GRCh38-chrM-derived synthetic fixture with a public Sequencing.com sample PDF plus MedlinePlus, MITOMAP, and 1000 Genomes background references",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com marketplace detail-page extraction is not available yet.",
+      "No calibrated haplogroup probability model is supplied with this fixture.",
+      "No exact migration path, homeland, family match, or autosomal ancestry model is supplied."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Maternal-line ancestry context",
+      "item": "Derived mtDNA haplogroup",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived maternal haplogroup H1a1 call is available. This describes one maternal line only.",
+      "genes": [
+        "mitochondrial genome"
+      ],
+      "sourceLabel": "MedlinePlus genetic ancestry testing / mitochondrial DNA",
+      "sourceIds": [
+        "medlineplus-genetic-ancestry-testing",
+        "medlineplus-mitochondrial-dna"
+      ],
+      "plainEnglishMeaning": "Mitochondrial DNA ancestry follows the maternal line and does not represent all ancestors, ethnicity percentage, or identity."
+    },
+    {
+      "groupTitle": "Sample report structure",
+      "item": "Observed sample sections",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "The public sample PDF shows a report flow with How this works, Your Maternal Ancestry, and Details sections.",
+      "description": "The sample-backed output structure is used as a formatting target, not as the local fixture's haplogroup result.",
+      "genes": [
+        "mitochondrial DNA"
+      ],
+      "sourceLabel": "Mitochondrial Ancestry sample report",
+      "sourceIds": [
+        "mitochondrial-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The report should explain the result first, then give maternal-line context and limitations in plain English."
+    },
+    {
+      "groupTitle": "Sample report structure",
+      "item": "Visible sample haplogroup narrative",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "The public sample PDF visibly demonstrates a Haplogroup L deep-time maternal-line narrative.",
+      "description": "This sample row is documented separately from the local derived H1a1 call.",
+      "genes": [
+        "mitochondrial DNA"
+      ],
+      "sourceLabel": "Mitochondrial Ancestry sample report",
+      "sourceIds": [
+        "mitochondrial-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The Haplogroup L content is an observed sample-report example, not a claim about the local fixture's maternal haplogroup."
+    },
+    {
+      "groupTitle": "Maternal-line ancestry context",
+      "item": "mtDNA reference context",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A summary-level H1a1 defining-marker context row is available; individual mtDNA variants are not emitted.",
+      "genes": [
+        "mitochondrial genome"
+      ],
+      "sourceLabel": "MITOMAP / 1000 Genomes",
+      "sourceIds": [
+        "mitomap",
+        "international-genome-sample-resource"
+      ],
+      "plainEnglishMeaning": "Reference databases support context and provenance, but they do not turn this local fixture into exact migration or homeland certainty."
+    }
+  ],
+  "maternalLineageSummary": {
+    "scope": "This result is limited to mtDNA maternal-line ancestry context.",
+    "plainEnglishMeaning": "The maternal line is one inherited path through your family tree. It is not a summary of all ancestors, overall ethnicity, nationality, community identity, or family relationships.",
+    "sourceIds": [
+      "mitochondrial-ancestry-sample-pdf",
+      "medlineplus-genetic-ancestry-testing",
+      "medlineplus-mitochondrial-dna",
+      "medlineplus-dtc-risks-benefits"
+    ]
+  },
+  "whatThisDoesNotMean": [
+    "This is not an autosomal ethnicity percentage.",
+    "This does not identify a precise homeland, tribe, community, or living relatives.",
+    "This is not a health or mitochondrial disease report.",
+    "This does not provide paternal-line ancestry or family matching."
+  ],
+  "references": [
+    {
+      "id": "mitochondrial-ancestry-sample-pdf",
+      "title": "Mitochondrial Ancestry DNA Report sample report"
+    },
+    {
+      "id": "medlineplus-genetic-ancestry-testing",
+      "title": "MedlinePlus Genetics: genetic ancestry testing"
+    },
+    {
+      "id": "medlineplus-mitochondrial-dna",
+      "title": "MedlinePlus Genetics: mitochondrial DNA"
+    },
+    {
+      "id": "medlineplus-dtc-risks-benefits",
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing"
+    },
+    {
+      "id": "mitomap",
+      "title": "MITOMAP human mitochondrial genome database"
+    },
+    {
+      "id": "international-genome-sample-resource",
+      "title": "International Genome Sample Resource / 1000 Genomes"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "gene": "mitochondrial genome",
+        "observedValue": "derived maternal haplogroup H1a1"
+      },
+      {
+        "gene": "mitochondrial genome",
+        "observedValue": "summary-level defining marker match; individual mtDNA variants omitted"
+      },
+      {
+        "gene": "mitochondrial DNA",
+        "observedValue": "public sample report demonstrates Haplogroup L output structure separately from the local H1a1 fixture"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated marketplace detail-page extraction has not been completed.",
+      "No calibrated haplogroup caller output, tree version, or call-quality metric is supplied.",
+      "No autosomal ancestry model, Y-DNA paternal-line model, exact homeland model, or family-matching data is supplied."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "A derived mtDNA haplogroup provides maternal-line context only and should not be used as an exact population, ethnicity, or identity label.",
+      "The local fixture uses summary-level evidence for validation; it is not a complete haplogroup-calling pipeline.",
+      "The public sample PDF demonstrates output structure and visible sample narrative; it is not a personal result for this fixture."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report does not emit raw mtDNA variant lists.",
+      "Authenticated Sequencing.com marketplace detail-page extraction is still pending."
+    ]
+  }
+}

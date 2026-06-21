@@ -1,0 +1,149 @@
+{
+  "reportOverview": {
+    "reportTitle": "Ultra Rapid Professional Health Screen WGS Bundle",
+    "inputManifestHash": "sha256:synthetic-ultra-rapid-professional-health-screen-wgs-bundle-boundary-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "Order status, sample collection, lab processing, sequencing output, coverage metrics, variant calls, health-screen output, and clinical validation evidence are not supplied.",
+      "order status, sample collection, lab processing, sequencing platform, coverage metrics, variant calls, professional review, health-screen output, clinical validation, clinical sensitivity, turnaround completion, or authenticated sample evidence",
+      "health-screen report, disease-risk output, carrier-status output, variant interpretation, pathogenicity classification, clinical sensitivity, all-clear reassurance, treatment guidance, and authenticated sample-report rows unavailable in this fixture"
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Marketplace WGS product context",
+      "item": "Ultra Rapid Professional Health Screen WGS Bundle",
+      "brandName": "",
+      "geneticAnalysis": "marketplace bundle context available for Ultra Rapid Professional Health Screen WGS Bundle; ultra-rapid fulfillment, professional review, order status, sample collection, lab processing, WGS output, health-screen results, and clinical outputs are not supplied",
+      "genes": [
+        "marketplace WGS product boundary"
+      ],
+      "sourceLabel": "NIH Genetic Testing Registry; NIST Genome in a Bottle",
+      "sourceIds": [
+        "ncbi-genetic-testing-registry",
+        "nist-genome-in-a-bottle"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This row documents the ultra-rapid professional marketplace bundle boundary. It does not show purchase, turnaround completion, professional review, completed sequencing, WGS outputs, or health-screen findings."
+    },
+    {
+      "groupTitle": "WGS laboratory output availability",
+      "item": "WGS laboratory output unavailable",
+      "brandName": "",
+      "geneticAnalysis": "order status, sample collection, lab processing, sequencing platform, coverage metrics, variant calls, professional review, health-screen output, clinical validation, clinical sensitivity, turnaround completion, or authenticated sample evidence",
+      "genes": [
+        "WGS laboratory output"
+      ],
+      "sourceLabel": "SAMtools depth; SAMtools coverage; GATK/Picard WGS metrics; NIST Genome in a Bottle",
+      "sourceIds": [
+        "samtools-depth",
+        "samtools-coverage",
+        "gatk-collect-wgs-metrics",
+        "gatk-wgs-metrics",
+        "nist-genome-in-a-bottle"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The local run can explain what WGS lab outputs would be needed, but it cannot report coverage, variant calls, sequencing quality, or lab completion without supplied lab artifacts."
+    },
+    {
+      "groupTitle": "Health-screen output availability",
+      "item": "Health-screen and clinical interpretation output unavailable",
+      "brandName": "",
+      "geneticAnalysis": "health-screen report, disease-risk output, carrier-status output, variant interpretation, pathogenicity classification, clinical sensitivity, all-clear reassurance, treatment guidance, and authenticated sample-report rows unavailable in this fixture",
+      "genes": [
+        "health-screen and clinical interpretation output"
+      ],
+      "sourceLabel": "NIH Genetic Testing Registry; NIST Genome in a Bottle; GATK/Picard WGS metrics",
+      "sourceIds": [
+        "ncbi-genetic-testing-registry",
+        "nist-genome-in-a-bottle",
+        "gatk-collect-wgs-metrics"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This package cannot diagnose, estimate disease risk, classify pathogenicity, report carrier status, provide clinical sensitivity, reassure that no findings exist, or recommend medical actions from product context."
+    }
+  ],
+  "wgsProductContext": {
+    "plainEnglishMeaning": "This result is a WGS product-boundary report. It records marketplace context and explicitly marks missing order, lab, WGS output, health-screen, clinical validation, and authenticated sample outputs unavailable.",
+    "unsupportedClaims": [
+      "order or purchase completion",
+      "sample collection or lab processing completion",
+      "sequencing coverage metrics",
+      "variant calls or variant absence",
+      "health-screen result",
+      "clinical sensitivity or negative predictive value",
+      "disease diagnosis or disease-risk estimate",
+      "carrier status",
+      "pathogenicity classification",
+      "all-clear reassurance",
+      "medication response",
+      "screening, diagnostic testing, reproductive, lifestyle, or treatment recommendation"
+    ],
+    "professionalReview": "Laboratory or clinical review is needed to interpret any actual WGS output against a validated assay, target region list, reporting threshold, and clinical context."
+  },
+  "references": [
+    {
+      "id": "samtools-depth",
+      "title": "SAMtools depth"
+    },
+    {
+      "id": "samtools-coverage",
+      "title": "SAMtools coverage"
+    },
+    {
+      "id": "gatk-collect-wgs-metrics",
+      "title": "GATK/Picard CollectWgsMetrics"
+    },
+    {
+      "id": "gatk-wgs-metrics",
+      "title": "GATK WgsMetrics"
+    },
+    {
+      "id": "nist-genome-in-a-bottle",
+      "title": "NIST Genome in a Bottle"
+    },
+    {
+      "id": "ncbi-genetic-testing-registry",
+      "title": "NIH Genetic Testing Registry"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "ultra-rapid-professional-health-screen-wgs-bundle-product-context",
+        "gene": "marketplace WGS product boundary",
+        "observedValue": "marketplace bundle context available for Ultra Rapid Professional Health Screen WGS Bundle; ultra-rapid fulfillment, professional review, order status, sample collection, lab processing, WGS output, health-screen results, and clinical outputs are not supplied",
+        "matchStatus": "summarized"
+      },
+      {
+        "inputId": "ultra-rapid-professional-health-screen-wgs-bundle-wgs-lab-output-unavailable",
+        "gene": "WGS laboratory output",
+        "observedValue": "order status, sample collection, lab processing, sequencing platform, coverage metrics, variant calls, professional review, health-screen output, clinical validation, clinical sensitivity, turnaround completion, or authenticated sample evidence",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "ultra-rapid-professional-health-screen-wgs-bundle-clinical-output-unavailable",
+        "gene": "health-screen and clinical interpretation output",
+        "observedValue": "health-screen report, disease-risk output, carrier-status output, variant interpretation, pathogenicity classification, clinical sensitivity, all-clear reassurance, treatment guidance, and authenticated sample-report rows unavailable in this fixture",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated Sequencing.com sample report rows",
+      "Order status, sample collection, lab processing, sequencing platform, and turnaround completion evidence",
+      "Coverage metrics, variant calls, health-screen output, clinical validation, and clinical sensitivity evidence",
+      "order status, sample collection, lab processing, sequencing platform, coverage metrics, variant calls, professional review, health-screen output, clinical validation, clinical sensitivity, turnaround completion, or authenticated sample evidence",
+      "health-screen report, disease-risk output, carrier-status output, variant interpretation, pathogenicity classification, clinical sensitivity, all-clear reassurance, treatment guidance, and authenticated sample-report rows unavailable in this fixture"
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No calibrated order-completion, turnaround, sample-quality, variant-detection, disease, carrier-status, clinical-sensitivity, or WGS-quality model is supplied for this local package.",
+      "The selected rows support product-boundary context only and cannot be treated as completed sequencing or health-screen output."
+    ],
+    "limitations": [
+      "This validation result uses product-boundary evidence only; raw genome data, FASTQ, BAM, CRAM, VCF, and complete callset files are not included.",
+      "The package does not emit sequencing files, alignment files, complete SNP tables, complete genome-wide analysis files, coverage tables, variant calls, or clinical screening output files.",
+      "The package does not diagnose disease, estimate disease risk, classify pathogenicity, report carrier status, infer medication response, report ancestry, validate clinical sensitivity, or recommend screening, testing, treatment, diet, supplements, or lifestyle changes."
+    ]
+  }
+}

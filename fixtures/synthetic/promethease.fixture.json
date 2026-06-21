@@ -1,0 +1,223 @@
+{
+  "consumerTone": "plain English; educational specialized genetics context only; no diagnosis, personal risk estimate, medication or substance recommendation, pediatric action, school or work decision, supplement protocol, proprietary report recreation, variant classification, or clinical actionability claims",
+  "datasetId": "synthetic-promethease-specialized-boundary-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-specialized-boundary-context",
+      "gene": "Promethease model/source output",
+      "haplotype": "validated-model-or-source-output-unavailable",
+      "inputId": "promethease-model-output-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "official Promethease output, SNPedia matched rows, genotype-file import log, report version, source row metadata, variant classifications, clinical confirmation, professional review, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-promethease-specialized-boundary-context-v1",
+      "sourceFile": "synthetic-promethease-specialized-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Promethease clinical and professional context",
+      "haplotype": "clinical-professional-context-unavailable",
+      "inputId": "promethease-clinical-professional-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
+      "sourceArtifact": "synthetic-promethease-specialized-boundary-context-v1",
+      "sourceFile": "synthetic-promethease-specialized-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Promethease authenticated sample rows",
+      "haplotype": "authenticated-sample-report-unavailable",
+      "inputId": "promethease-authenticated-sample-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture",
+      "sourceArtifact": "synthetic-promethease-specialized-boundary-context-v1",
+      "sourceFile": "synthetic-promethease-specialized-boundary-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-specialized-boundary-context",
+    "hash": "sha256:synthetic-promethease-specialized-boundary-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-model evidence for promethease validation"
+  },
+  "missingInputPolicy": "Report unavailable Promethease and SNPedia lookup context evidence explicitly; do not recreate Promethease, copy proprietary ranking or magnitude logic, convert SNPedia literature matches into diagnosis, pathogenicity classification, medical triage, disease risk, treatment action, all-clear reassurance, or clinical actionability.",
+  "packageSlug": "promethease",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Testing",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-test-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-complex-disorders",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: complex disorders",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "tool_background",
+      "id": "promethease-home",
+      "sourceType": "third_party_tool",
+      "title": "Promethease",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "tool_background",
+      "id": "snpedia-promethease",
+      "sourceType": "third_party_tool",
+      "title": "SNPedia: Promethease",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "ncbi-dbsnp",
+      "sourceType": "database",
+      "title": "NCBI dbSNP",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "ncbi-clinvar",
+      "sourceType": "database",
+      "title": "NCBI ClinVar",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "guideline_background",
+      "id": "clingen-variant-classification-guidance",
+      "sourceType": "guidance_resource",
+      "title": "ClinGen Variant Classification Guidance",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer Promethease and SNPedia lookup context boundary context using supplied references and explicit unavailable-model framing."
+}

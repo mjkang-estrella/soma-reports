@@ -1,0 +1,78 @@
+{
+  "consumerTone": "plain English; novelty ancestry education only; no direct relationship, identity, exact-origin, ethnicity-percentage, family-tree, relative-matching, or health claims",
+  "datasetId": "synthetic-einstein-relation-ancestry-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "autosomal genome",
+      "haplotype": "autosomal-reference-panel-summary",
+      "inputId": "autosomal-reference-panel-summary",
+      "matchStatus": "summarized",
+      "observedValue": "broad East Asian reference-panel similarity; no direct relationship model supplied",
+      "sourceArtifact": "synthetic-einstein-relation-ancestry-context-v1",
+      "sourceFile": "synthetic-einstein-relation-ancestry-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "historical-figure relationship evidence",
+      "haplotype": "not-supplied",
+      "inputId": "einstein-relationship-evidence-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "Albert Einstein relationship evidence, relative matching, family-tree placement, surname matching, and identity evidence unavailable in this fixture",
+      "sourceArtifact": "synthetic-einstein-relation-ancestry-context-v1",
+      "sourceFile": "synthetic-einstein-relation-ancestry-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "hash": "sha256:synthetic-einstein-relation-ancestry-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived ancestry evidence for am-i-related-albert-einstein-dna validation"
+  },
+  "missingInputPolicy": "Mark direct Einstein relationship, relative matching, family-tree placement, surname matching, identity, regional ancestry, exact homeland, and community affiliation unavailable when not explicitly supplied.",
+  "packageSlug": "am-i-related-albert-einstein-dna",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-ancestry-testing",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: genetic ancestry testing",
+      "usedFor": [
+        "ancestry_context",
+        "autosomal_scope",
+        "consumer_safety_language"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-dtc-risks-benefits",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing",
+      "usedFor": [
+        "dtc_limitations",
+        "privacy_sensitivity",
+        "probability_appendix"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "international-genome-sample-resource",
+      "sourceType": "database",
+      "title": "International Genome Sample Resource / 1000 Genomes",
+      "usedFor": [
+        "ancestry_context",
+        "population_reference",
+        "variant_frequency_context"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer historical-figure relationship context from derived broad autosomal similarity while marking Albert Einstein relationship, relative matching, and family-tree evidence unavailable."
+}

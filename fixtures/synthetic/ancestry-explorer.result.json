@@ -1,0 +1,249 @@
+{
+  "reportOverview": {
+    "reportTitle": "Ancestry Explorer",
+    "inputManifestHash": "sha256:synthetic-ancestry-explorer-autosomal-context-v1",
+    "evidenceTypesSupplied": [
+      "Broad autosomal reference-panel similarity summary",
+      "Regional ancestry detail explicitly unavailable",
+      "Public Ancestry Explorer sample PDF rows used as observed output-format examples"
+    ],
+    "sectionsUnavailable": [
+      "Marketplace detail-page parity is still pending.",
+      "No calibrated regional ancestry percentage model is supplied for the local run.",
+      "No exact homeland, community, migration path, family matching, or relative-matching data is supplied."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Local autosomal ancestry context",
+      "item": "Broad reference-panel similarity",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A broad East Asian reference-panel similarity summary is available, but no calibrated ancestry percentage model is supplied.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "MedlinePlus genetic ancestry testing / 1000 Genomes",
+      "sourceIds": [
+        "medlineplus-genetic-ancestry-testing",
+        "international-genome-sample-resource"
+      ],
+      "plainEnglishMeaning": "This is broad reference-panel context only. It is not a precise ethnicity percentage, homeland, nationality, community label, relative match, or identity statement.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Unavailable ancestry detail",
+      "item": "Regional ancestry detail",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "Country-level or subcontinental regional ancestry evidence is unavailable in this fixture and is not inferred.",
+      "genes": [
+        "autosomal ancestry model"
+      ],
+      "sourceLabel": "MedlinePlus direct-to-consumer ancestry testing caveats",
+      "sourceIds": [
+        "medlineplus-genetic-ancestry-testing",
+        "medlineplus-dtc-risks-benefits"
+      ],
+      "plainEnglishMeaning": "Missing regional-detail evidence means this run cannot provide precise homeland, community, migration, or relative-matching information.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "How this works",
+      "item": "Reference population comparison",
+      "brandName": "Ancestry Explorer sample",
+      "geneticAnalysis": "The sample explains that the algorithm compares each DNA segment against 32 different reference populations and organizes ancestry into three levels from broad continental ancestry to specific country or region.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Ancestry Explorer sample report",
+      "sourceIds": [
+        "ancestry-explorer-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted visually from the public sample PDF; this describes observed report structure and should not be treated as validation of the local broad reference-panel summary.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Ancestry Composition",
+      "item": "Composition overview",
+      "brandName": "Ancestry Explorer sample",
+      "geneticAnalysis": "The sample overview says the personalized map is built by analyzing over 83 million genetic variants and shows countries of origin plus an in-depth ethnicity percentage breakdown.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Ancestry Explorer sample report",
+      "sourceIds": [
+        "ancestry-explorer-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted visually from the public sample PDF; this is sample output-format evidence, not a local map, local percentage model, or local country-of-origin finding.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Ancestry Composition",
+      "item": "European",
+      "brandName": "Ancestry Explorer sample",
+      "geneticAnalysis": "European 100%.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Ancestry Explorer sample report",
+      "sourceIds": [
+        "ancestry-explorer-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted visually from the public sample PDF; this is an observed sample row and must not be reused as the local run's ancestry percentage or identity claim.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Ancestry Composition",
+      "item": "Northwest European",
+      "brandName": "Ancestry Explorer sample",
+      "geneticAnalysis": "Northwest European 93.2%.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Ancestry Explorer sample report",
+      "sourceIds": [
+        "ancestry-explorer-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted visually from the public sample PDF; this is an observed sample row and must not be turned into a local regional ancestry result without calibrated evidence.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Ancestry Composition",
+      "item": "French & German",
+      "brandName": "Ancestry Explorer sample",
+      "geneticAnalysis": "French & German 88.9%.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Ancestry Explorer sample report",
+      "sourceIds": [
+        "ancestry-explorer-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted visually from the public sample PDF; this is an observed sample row and not a local homeland, nationality, community, or identity conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Ancestry Composition",
+      "item": "British & Irish",
+      "brandName": "Ancestry Explorer sample",
+      "geneticAnalysis": "British & Irish 4.3%.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Ancestry Explorer sample report",
+      "sourceIds": [
+        "ancestry-explorer-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted visually from the public sample PDF; this is observed sample output structure only.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Ancestry Composition",
+      "item": "East European",
+      "brandName": "Ancestry Explorer sample",
+      "geneticAnalysis": "East European 6.8%.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Ancestry Explorer sample report",
+      "sourceIds": [
+        "ancestry-explorer-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted visually from the public sample PDF; this is observed sample output structure only.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Sample boundary",
+      "item": "Small sample excerpt",
+      "brandName": "Ancestry Explorer sample",
+      "geneticAnalysis": "The final page states this is only a small sample of the Ancestry Explorer DNA Report available at Sequencing.com.",
+      "genes": [],
+      "sourceLabel": "Ancestry Explorer sample report",
+      "sourceIds": [
+        "ancestry-explorer-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The source itself marks this artifact as a sample excerpt. It supports output-format parity but does not prove full detail-page parity.",
+      "sourceBindingStatus": "exact"
+    }
+  ],
+  "ancestryScopeSummary": {
+    "autosomal": "Autosomal ancestry can provide broad reference-panel similarity when a model is supplied; this fixture does not supply calibrated percentages for the local run.",
+    "referencePanel": "Reference panels provide comparison context, not a fixed identity label.",
+    "sampleRows": "The public Ancestry Explorer sample percentages are output-format examples only and are not local findings.",
+    "sourceIds": [
+      "medlineplus-genetic-ancestry-testing",
+      "international-genome-sample-resource",
+      "medlineplus-dtc-risks-benefits",
+      "ancestry-explorer-sample-pdf"
+    ]
+  },
+  "whatThisDoesNotMean": [
+    "This is not an exact local ethnicity percentage.",
+    "This does not identify a precise homeland, tribe, community, nationality, migration route, or living relatives.",
+    "This is not a family-matching or genealogy-relative report.",
+    "This is not a health or disease-risk report.",
+    "The European sample percentages are not local results."
+  ],
+  "references": [
+    {
+      "id": "medlineplus-genetic-ancestry-testing",
+      "title": "MedlinePlus Genetics: genetic ancestry testing",
+      "sourceType": "education_resource"
+    },
+    {
+      "id": "medlineplus-dtc-risks-benefits",
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing",
+      "sourceType": "education_resource"
+    },
+    {
+      "id": "international-genome-sample-resource",
+      "title": "International Genome Sample Resource / 1000 Genomes",
+      "sourceType": "database"
+    },
+    {
+      "id": "ancestry-explorer-sample-pdf",
+      "title": "Ancestry Explorer DNA Report sample report",
+      "sourceType": "mock_report"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "gene": "autosomal genome",
+        "observedValue": "local derived broad East Asian reference-panel similarity; no percentage model supplied"
+      },
+      {
+        "gene": "autosomal ancestry model",
+        "observedValue": "country-level or subcontinental regional ancestry evidence unavailable in this fixture"
+      },
+      {
+        "gene": "autosomal genome",
+        "observedValue": "sample PDF method row: 83 million variants and 32 reference populations"
+      },
+      {
+        "gene": "autosomal genome",
+        "observedValue": "sample PDF visible rows: European 100%; Northwest European 93.2%"
+      },
+      {
+        "gene": "autosomal genome",
+        "observedValue": "sample PDF visible rows: French & German 88.9%; British & Irish 4.3%; East European 6.8%"
+      }
+    ],
+    "missingInputs": [
+      "Marketplace detail-page copy, screenshots, pricing state, and authenticated purchase/run flow parity remain pending.",
+      "No calibrated ancestry model, reference-panel metadata, or regional-detail output is supplied for the local run.",
+      "No family-matching, living-relative, migration-route, exact-homeland, community-affiliation, or identity evidence is supplied.",
+      "The public sample PDF uses European ancestry percentages as a demo account example; those percentages are not local findings."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Broad reference-panel similarity should not be treated as a precise ancestry percentage or identity.",
+      "Reference-panel ancestry estimates depend on panel composition, model calibration, geography, and comparison populations.",
+      "Public sample report rows are useful for output-format parity and citation binding, but they do not establish local ancestry percentages."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report does not emit raw SNP tables or relative-matching data.",
+      "Ancestry Explorer sample rows are source-bound to the public PDF for format parity; marketplace detail-page parity remains pending."
+    ]
+  }
+}

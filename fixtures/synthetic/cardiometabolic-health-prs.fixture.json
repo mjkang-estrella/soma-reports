@@ -1,0 +1,211 @@
+{
+  "consumerTone": "plain English; educational specialized genetics context only; no diagnosis, personal risk estimate, medication or substance recommendation, pediatric action, school or work decision, supplement protocol, proprietary report recreation, variant classification, or clinical actionability claims",
+  "datasetId": "synthetic-cardiometabolic-health-prs-specialized-boundary-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-specialized-boundary-context",
+      "gene": "Cardiometabolic Health PRS model/source output",
+      "haplotype": "validated-model-or-source-output-unavailable",
+      "inputId": "cardiometabolic-health-prs-model-output-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "PGS Catalog score ID, score version, scoring file, genome build, liftover method, matched and missing variants, ancestry applicability metadata, calibration distribution, cardiometabolic labs, blood pressure, medication context, family history, clinician review, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-cardiometabolic-health-prs-specialized-boundary-context-v1",
+      "sourceFile": "synthetic-cardiometabolic-health-prs-specialized-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Cardiometabolic Health PRS clinical and professional context",
+      "haplotype": "clinical-professional-context-unavailable",
+      "inputId": "cardiometabolic-health-prs-clinical-professional-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
+      "sourceArtifact": "synthetic-cardiometabolic-health-prs-specialized-boundary-context-v1",
+      "sourceFile": "synthetic-cardiometabolic-health-prs-specialized-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Cardiometabolic Health PRS authenticated sample rows",
+      "haplotype": "authenticated-sample-report-unavailable",
+      "inputId": "cardiometabolic-health-prs-authenticated-sample-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture",
+      "sourceArtifact": "synthetic-cardiometabolic-health-prs-specialized-boundary-context-v1",
+      "sourceFile": "synthetic-cardiometabolic-health-prs-specialized-boundary-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-specialized-boundary-context",
+    "hash": "sha256:synthetic-cardiometabolic-health-prs-specialized-boundary-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-model evidence for cardiometabolic-health-prs validation"
+  },
+  "missingInputPolicy": "Report unavailable cardiometabolic polygenic score context evidence explicitly; do not estimate ASCVD, diabetes, obesity, lipid, blood pressure, cardiometabolic, absolute, relative, or percentile risk; infer labs, blood pressure, BMI, treatment need, medication need, screening need, prevention plan, risk reclassification, ancestry-insensitive score, low-risk reassurance, or clinical actionability.",
+  "packageSlug": "cardiometabolic-health-prs",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Testing",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-test-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-complex-disorders",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: complex disorders",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "pgs-catalog",
+      "sourceType": "database",
+      "title": "Polygenic Score Catalog",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-diabetes-risk-factors",
+      "sourceType": "public_health_resource",
+      "title": "CDC Diabetes Risk Factors",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-bmi",
+      "sourceType": "public_health_resource",
+      "title": "CDC About Body Mass Index",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-lipoprotein-a",
+      "sourceType": "public_health_resource",
+      "title": "CDC About Lipoprotein(a)",
+      "usedFor": [
+        "specialized_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy",
+        "clinical_actionability_limits"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer cardiometabolic polygenic score context boundary context using supplied references and explicit unavailable-model framing."
+}

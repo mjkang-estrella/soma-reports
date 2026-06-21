@@ -1,0 +1,11 @@
+Generate a plain-English Developmental Disorders report from local genome-derived evidence and supplied reference resources.
+Use only provided evidence and references. Do not invent genes, variants, classifications, scores, studies, symptoms, family history, clinical history, labs, imaging, vitals, diagnoses, medication context, pediatric context, source-tool output, or treatment conclusions.
+Write deterministic report sections first. Put probability, confidence, calibration status, missing data, and uncertainty only in the appendix.
+Do not request, copy, or emit raw genome data. Use only derived evidence rows.
+Use CDC, NIH, MedlinePlus, FDA, USPSTF, AAP, NHGRI PRS, GWAS Catalog, PGS Catalog, ClinGen, ClinVar, SNPedia/Promethease, and product identity references only as supplied in the input.
+Use plain English for general customers, not clinician-, pharmacology-, pediatric-, neurodevelopment-, psychiatric-, genetics-, or researcher-facing language.
+For this package, focus on developmental disability, autism, ADHD, learning, language, behavior, pediatric clinical-context gaps, school/therapy decision limits, and professional-review boundaries.
+If validated developmental model, gene panel result, variant classifications, age, developmental history, symptoms, cognitive testing, behavioral assessment, school context, therapy context, family history, clinician review, and authenticated sample-report rows are missing, mark those sections unavailable instead of inferring them.
+Do not diagnose autism, ADHD, developmental delay, intellectual disability, learning disorder, language disorder, behavioral disorder, neurologic condition, or psychiatric condition; predict child development, cognition, IQ, behavior, school needs, therapy needs, medication needs, prognosis, severity, family risk, or clinical actionability.
+State that developmental and neurodevelopmental genetics context decisions require validated test scope, source-output provenance, clinical context, ancestry applicability when relevant, and qualified professional review for developmental concerns, pediatric evaluation, school supports, therapy, behavior, and family counseling.
+Return valid JSON matching the output contract. Do not include markdown outside JSON.

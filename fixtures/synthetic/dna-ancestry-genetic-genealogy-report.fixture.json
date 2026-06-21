@@ -1,0 +1,122 @@
+{
+  "consumerTone": "plain English; ancestry education only; no identity, exact-origin, ethnicity-percentage, tribal/community, relative-matching, or health claims",
+  "datasetId": "synthetic-genetic-ancestry-haplogroups-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "autosomal genome",
+      "haplotype": "autosomal-reference-panel-summary",
+      "inputId": "autosomal-continental-similarity-summary",
+      "matchStatus": "summarized",
+      "observedValue": "broad East Asian reference-panel similarity; no percentage calibration supplied",
+      "sourceArtifact": "synthetic-genetic-ancestry-haplogroups-v1",
+      "sourceFile": "synthetic-genetic-ancestry-haplogroups-v1.json"
+    },
+    {
+      "assembly": "rCRS-or-GRCh38-chrM-derived",
+      "gene": "mitochondrial genome",
+      "haplotype": "M7b1a1",
+      "inputId": "MT-haplogroup-summary",
+      "matchStatus": "derived_call",
+      "observedValue": "derived maternal-line haplogroup M7b1a1",
+      "sourceArtifact": "synthetic-genetic-ancestry-haplogroups-v1",
+      "sourceFile": "synthetic-genetic-ancestry-haplogroups-v1.json"
+    },
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "Y chromosome",
+      "haplotype": "not-supplied",
+      "inputId": "Y-haplogroup-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "Y-DNA paternal-line haplogroup evidence unavailable in this fixture",
+      "sourceArtifact": "synthetic-genetic-ancestry-haplogroups-v1",
+      "sourceFile": "synthetic-genetic-ancestry-haplogroups-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "hash": "sha256:synthetic-genetic-ancestry-haplogroups-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived ancestry evidence for package validation"
+  },
+  "missingInputPolicy": "Mark autosomal ancestry, mtDNA, Y-DNA, relatives, exact homeland, migration path, and community affiliation unavailable when not explicitly supplied. Use sample-report rows only as output-format examples unless the local run supplies equivalent calibrated evidence.",
+  "packageSlug": "dna-ancestry-genetic-genealogy-report",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-ancestry-testing",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: genetic ancestry testing",
+      "usedFor": [
+        "ancestry_context",
+        "maternal_lineage_scope",
+        "consumer_safety_language"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-mitochondrial-dna",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: mitochondrial DNA",
+      "usedFor": [
+        "mtdna_context",
+        "maternal_lineage_scope",
+        "health_interpretation_boundaries"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-dtc-risks-benefits",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing",
+      "usedFor": [
+        "dtc_limitations",
+        "privacy_sensitivity",
+        "probability_appendix"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "international-genome-sample-resource",
+      "sourceType": "database",
+      "title": "International Genome Sample Resource / 1000 Genomes",
+      "usedFor": [
+        "ancestry_context",
+        "population_reference",
+        "variant_frequency_context"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "mitomap",
+      "sourceType": "database",
+      "title": "MITOMAP human mitochondrial genome database",
+      "usedFor": [
+        "mtdna_variant_context",
+        "haplogroup_provenance",
+        "raw_variant_omission"
+      ]
+    },
+    {
+      "evidenceLevel": "direct_sample_report",
+      "id": "genetic-ancestry-haplogroups-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Genetic Ancestry with Haplogroups sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer ancestry and haplogroup context from derived autosomal reference-panel and uniparental-line evidence, with observed Genetic Ancestry with Haplogroups sample-report output structure."
+}

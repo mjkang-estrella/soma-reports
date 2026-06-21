@@ -1,0 +1,198 @@
+{
+  "consumerTone": "plain English; educational reproductive/endocrine genetics context only; no diagnosis, carrier-status, fertility, infertility, hormone, pregnancy, fetal, embryo, lab, testing, treatment, medication, supplement, surgery, reproductive-action, or actionability claims",
+  "datasetId": "synthetic-carrier-status-rare-disease-genetic-report-reproductive-endocrine-boundary-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-reproductive-endocrine-boundary-context",
+      "gene": "Carrier Status model",
+      "haplotype": "reproductive-endocrine-model-unavailable",
+      "inputId": "carrier-status-rare-disease-genetic-report-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "validated carrier-status report, tested gene and condition panel, variant classifications, zygosity confirmation, residual risk, partner result, family history, reproductive context, genetic counselor review, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-carrier-status-rare-disease-genetic-report-reproductive-endocrine-boundary-context-v1",
+      "sourceFile": "synthetic-carrier-status-rare-disease-genetic-report-reproductive-endocrine-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Carrier Status clinical and lab context",
+      "haplotype": "clinical-lab-professional-context-unavailable",
+      "inputId": "carrier-status-rare-disease-genetic-report-clinical-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "clinical diagnosis, symptoms, labs, medications, family history, professional interpretation, treatment context, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-carrier-status-rare-disease-genetic-report-reproductive-endocrine-boundary-context-v1",
+      "sourceFile": "synthetic-carrier-status-rare-disease-genetic-report-reproductive-endocrine-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Carrier Status reproductive/endocrine context",
+      "haplotype": "reproductive-endocrine-context-unavailable",
+      "inputId": "carrier-status-rare-disease-genetic-report-reproductive-endocrine-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "partner result, carrier-screening scope, pregnancy context, embryo or fetal context, hormone-status context, fertility evaluation, and reproductive decision context unavailable in this fixture",
+      "sourceArtifact": "synthetic-carrier-status-rare-disease-genetic-report-reproductive-endocrine-boundary-context-v1",
+      "sourceFile": "synthetic-carrier-status-rare-disease-genetic-report-reproductive-endocrine-boundary-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-reproductive-endocrine-boundary-context",
+    "hash": "sha256:synthetic-carrier-status-rare-disease-genetic-report-reproductive-endocrine-boundary-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-model evidence for carrier-status-rare-disease-genetic-report validation"
+  },
+  "missingInputPolicy": "Report unavailable rare-disease carrier status evidence explicitly; do not call carrier status; diagnose a rare disease; classify variants; estimate partner, fetal, embryo, child, family-member, or reproductive risk; recommend reproductive action, cascade testing, diagnostic testing, screening, treatment, or replace genetic counseling.",
+  "packageSlug": "carrier-status-rare-disease-genetic-report",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Testing",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-testing-uses",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Uses of Genetic Testing",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-counseling",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Counseling",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-family-health-history",
+      "sourceType": "public_health_resource",
+      "title": "CDC About Family Health History",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "professional_guideline_background",
+      "id": "acog-carrier-screening",
+      "sourceType": "professional_guideline",
+      "title": "ACOG: Carrier Screening for Genetic Conditions",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-prenatal-genetic-counseling",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Prenatal Genetic Counseling",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "ncbi-clinvar",
+      "sourceType": "database",
+      "title": "NCBI ClinVar",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "ncbi-genetic-testing-registry",
+      "sourceType": "database",
+      "title": "NIH Genetic Testing Registry",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "clingen",
+      "sourceType": "database",
+      "title": "ClinGen",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "guideline_background",
+      "id": "acmg-amp-richards-2015",
+      "sourceType": "guideline_article",
+      "title": "ACMG/AMP 2015 sequence variant interpretation standards",
+      "usedFor": [
+        "reproductive_endocrine_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer rare-disease carrier status boundary context using supplied references and explicit unavailable-model framing."
+}

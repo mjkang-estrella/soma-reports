@@ -1,0 +1,180 @@
+{
+  "schemaVersion": "soma-reports.synthetic-result.v1",
+  "reportOverview": {
+    "reportTitle": "Pediatric Health",
+    "inputManifestHash": "sha256:synthetic-pediatric-health-specialized-boundary-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet for Pediatric Health.",
+      "Validated pediatric screening model, child clinical history, growth and developmental history, clinician review, consent context, and authenticated sample-report rows",
+      "validated pediatric health model, age, growth history, developmental history, symptoms, family history, vaccination context, medications, labs, clinical diagnosis, pediatrician review, guardian consent context, and authenticated sample-report rows unavailable in this fixture",
+      "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
+      "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture"
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Validated model/source output availability",
+      "item": "Pediatric Health model/source output",
+      "brandName": "",
+      "geneticAnalysis": "The local fixture supplies a boundary row for pediatric health genetics boundary context. It does not supply the validated model, source-tool output, or authenticated Sequencing.com report content needed for personal conclusions.",
+      "genes": [
+        "Pediatric Health model/source output"
+      ],
+      "sourceLabel": "CDC Child Development; CDC Positive Parenting Tips; AAP/ACMG Ethical and Policy Issues in Genetic Testing and Screening of Children; MedlinePlus: Genetic Testing",
+      "sourceIds": [
+        "cdc-child-development",
+        "cdc-positive-parenting",
+        "aap-genetic-testing-children",
+        "medlineplus-genetic-testing"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This can explain what evidence is present or missing for Pediatric Health, but it cannot fill in unavailable model output or personal conclusions."
+    },
+    {
+      "groupTitle": "Clinical and professional context availability",
+      "item": "Pediatric Health clinical and professional context",
+      "brandName": "",
+      "geneticAnalysis": "Clinical history, symptoms, labs, medication context, family history, and qualified professional interpretation are not supplied unless explicitly listed in the fixture.",
+      "genes": [
+        "Pediatric Health clinical and professional context"
+      ],
+      "sourceLabel": "CDC Child Development; CDC Positive Parenting Tips; AAP/ACMG Ethical and Policy Issues in Genetic Testing and Screening of Children; MedlinePlus: Genetic Testing",
+      "sourceIds": [
+        "cdc-child-development",
+        "cdc-positive-parenting",
+        "aap-genetic-testing-children",
+        "medlineplus-genetic-testing"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The report should stay educational because pediatric, developmental, school, screening, medication, and family decisions require context that this synthetic fixture does not include."
+    },
+    {
+      "groupTitle": "Authenticated sample availability",
+      "item": "Pediatric Health authenticated sample rows",
+      "brandName": "",
+      "geneticAnalysis": "Authenticated Sequencing.com sample report sections, row labels, model output, and source-tool output are unavailable in this local fixture.",
+      "genes": [
+        "Pediatric Health authenticated sample rows"
+      ],
+      "sourceLabel": "CDC Child Development; CDC Positive Parenting Tips; AAP/ACMG Ethical and Policy Issues in Genetic Testing and Screening of Children; MedlinePlus: Genetic Testing",
+      "sourceIds": [
+        "cdc-child-development",
+        "cdc-positive-parenting",
+        "aap-genetic-testing-children",
+        "medlineplus-genetic-testing"
+      ],
+      "sourceBindingStatus": "unavailable",
+      "plainEnglishMeaning": "This local package marks the sample-report gap clearly instead of recreating or guessing the missing Sequencing.com output."
+    }
+  ],
+  "pediatricHealthContext": {
+    "plainEnglishMeaning": "Pediatric Health is represented as an evidence-boundary package. It can summarize supplied local evidence and references, while marking unsupported personal conclusions unavailable.",
+    "unsupportedClaims": [
+      "child diagnosis",
+      "developmental prognosis",
+      "pediatric screening recommendation",
+      "school or activity restriction",
+      "medication advice",
+      "family-member risk conclusion"
+    ],
+    "professionalReview": "Use qualified professional review for pediatric, developmental, school, screening, medication, and family decisions; this synthetic local result is not enough for those decisions."
+  },
+  "practicalNextSteps": {
+    "professionalReview": [
+      "Use this local result as educational context for pediatric health genetics boundary context, not as a decision tool.",
+      "Collect validated source output, source provenance, and relevant clinical or professional context before using Pediatric Health for personal decisions.",
+      "Discuss pediatric, developmental, school, screening, medication, and family decisions with qualified professionals when those choices matter."
+    ]
+  },
+  "references": [
+    {
+      "id": "cdc-genetic-testing",
+      "title": "CDC Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetics",
+      "title": "MedlinePlus Genetics"
+    },
+    {
+      "id": "medlineplus-genetic-testing",
+      "title": "MedlinePlus: Genetic Testing"
+    },
+    {
+      "id": "medlineplus-genetic-test-results",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results"
+    },
+    {
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean"
+    },
+    {
+      "id": "fda-direct-to-consumer-tests",
+      "title": "FDA Direct-to-Consumer Tests"
+    },
+    {
+      "id": "medlineplus-complex-disorders",
+      "title": "MedlinePlus Genetics: complex disorders"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    },
+    {
+      "id": "cdc-child-development",
+      "title": "CDC Child Development"
+    },
+    {
+      "id": "cdc-positive-parenting",
+      "title": "CDC Positive Parenting Tips"
+    },
+    {
+      "id": "aap-genetic-testing-children",
+      "title": "AAP/ACMG Ethical and Policy Issues in Genetic Testing and Screening of Children"
+    },
+    {
+      "id": "medlineplus-genetic-testing-uses",
+      "title": "MedlinePlus Genetics: Uses of Genetic Testing"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "inputId": "pediatric-health-model-output-unavailable",
+        "gene": "Pediatric Health model/source output",
+        "observedValue": "validated pediatric health model, age, growth history, developmental history, symptoms, family history, vaccination context, medications, labs, clinical diagnosis, pediatrician review, guardian consent context, and authenticated sample-report rows unavailable in this fixture",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "pediatric-health-clinical-professional-context-unavailable",
+        "gene": "Pediatric Health clinical and professional context",
+        "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
+        "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "pediatric-health-authenticated-sample-unavailable",
+        "gene": "Pediatric Health authenticated sample rows",
+        "observedValue": "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture",
+        "matchStatus": "unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated Sequencing.com sample report sections and rows for Pediatric Health.",
+      "validated pediatric screening model, child clinical history, growth and developmental history, clinician review, consent context, and authenticated sample-report rows",
+      "Report unavailable pediatric health genetics context evidence explicitly; do not diagnose pediatric conditions, predict child development, growth, behavior, learning, safety risk, disease risk, medication response, supplement need, diet need, school need, therapy need, vaccine action, testing need, screening need, treatment need, parenting action, or clinical actionability from genotype."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "No validated pediatric health genetics boundary context model with source provenance and professional review is supplied for this local package.",
+      "The supplied rows support evidence-boundary education only and should not be treated as a personal prediction or clinical interpretation."
+    ],
+    "limitations": [
+      "This validation result uses selected derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
+      "The package does not recreate unavailable Sequencing.com authenticated report rows or proprietary third-party output for Pediatric Health.",
+      "The package does not support: child diagnosis; developmental prognosis; pediatric screening recommendation; school or activity restriction; medication advice; family-member risk conclusion."
+    ]
+  }
+}

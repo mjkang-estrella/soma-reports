@@ -1,0 +1,160 @@
+{
+  "reportOverview": {
+    "reportTitle": "Physical Appearance Genetic Report",
+    "inputManifestHash": "sha256:synthetic-physical-appearance-visible-trait-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated marketplace detail-page extraction beyond the public sample PDF is not available yet.",
+      "No calibrated visible-trait prediction model is supplied with this fixture.",
+      "Some public sample rows are represented as output structure only because this local fixture does not include every underlying trait model."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Observed sample structure",
+      "item": "Public Physical Appearance sample table",
+      "brandName": "",
+      "geneticAnalysis": "The public sample PDF shows trait, result, and description columns across eyes, hair, skin, and weight.",
+      "description": "The sample report table provides the formal row shape that the local agent should preserve.",
+      "genes": [
+        "HERC2",
+        "OCA2",
+        "MC1R"
+      ],
+      "sourceLabel": "Sequencing.com public sample PDF",
+      "sourceIds": [
+        "physical-appearance-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This anchors report structure and wording fields without treating the sample person as the current user."
+    },
+    {
+      "groupTitle": "Visible trait context",
+      "item": "Eye color context",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived HERC2/OCA2 rs12913832 AG call is available for eye-color context. This does not determine exact eye color.",
+      "description": "The public sample PDF includes blue-vs-brown and blue-vs-green eye-color rows, while MedlinePlus frames eye color as a multi-gene trait.",
+      "genes": [
+        "HERC2",
+        "OCA2"
+      ],
+      "sourceLabel": "Sequencing.com sample PDF / MedlinePlus Genetics",
+      "sourceIds": [
+        "physical-appearance-sample-pdf",
+        "medlineplus-eye-color",
+        "medlineplus-oca2"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "OCA2 and HERC2 are important in eye-color genetics, but eye color is polygenic and cannot be reduced to one marker."
+    },
+    {
+      "groupTitle": "Visible trait context",
+      "item": "Hair color and freckle context",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived MC1R rs1805007 CT call is available for pigmentation context. This is not a diagnosis or a skin-cancer risk result.",
+      "description": "The public sample PDF links MC1R with pheomelanin, red hair, and freckles; local interpretation still depends on supplied evidence.",
+      "genes": [
+        "MC1R"
+      ],
+      "sourceLabel": "Sequencing.com sample PDF / MedlinePlus Genetics",
+      "sourceIds": [
+        "physical-appearance-sample-pdf",
+        "medlineplus-hair-color",
+        "medlineplus-mc1r"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "MC1R is a well-studied pigmentation gene, but many genes and non-genetic factors contribute to hair color and freckles."
+    },
+    {
+      "groupTitle": "Visible trait context",
+      "item": "Hair texture and thickness context",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived EDAR hair-texture/thickness context row is available. This is context only and does not predict exact hair texture.",
+      "description": "The public sample PDF includes hair curliness and thickness rows, but exact hair texture should not be inferred from one fixture row.",
+      "genes": [
+        "EDAR"
+      ],
+      "sourceLabel": "Sequencing.com sample PDF / MedlinePlus Genetics",
+      "sourceIds": [
+        "physical-appearance-sample-pdf",
+        "medlineplus-hair-texture"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "Hair texture and thickness have genetic contributions, but many genes and non-genetic factors can influence the trait."
+    }
+  ],
+  "unavailableTraits": [
+    "Iris crypts, iris furrows, and iris rings are present in the public sample structure, but no local trait model is supplied for this fixture.",
+    "Male pattern baldness and body-mass-index rows are present in the public sample structure, but they are not inferred from this visible-trait fixture.",
+    "Skin pigmentation, sun sensitivity, and freckles are limited to educational pigmentation context, not exact appearance or health-risk prediction."
+  ],
+  "plainEnglishLimits": [
+    "Visible traits are influenced by multiple genes and non-genetic factors.",
+    "Direct-to-consumer trait tests provide estimates or context, not certainty about exact appearance.",
+    "This report must not be used to identify a person, infer race or ancestry, predict a child's appearance, or report disease risk."
+  ],
+  "references": [
+    {
+      "id": "physical-appearance-sample-pdf",
+      "title": "Physical Appearance DNA Report sample report"
+    },
+    {
+      "id": "medlineplus-eye-color",
+      "title": "MedlinePlus Genetics: eye color"
+    },
+    {
+      "id": "medlineplus-hair-color",
+      "title": "MedlinePlus Genetics: hair color"
+    },
+    {
+      "id": "medlineplus-hair-texture",
+      "title": "MedlinePlus Genetics: hair texture"
+    },
+    {
+      "id": "medlineplus-oca2",
+      "title": "MedlinePlus Genetics: OCA2 gene"
+    },
+    {
+      "id": "medlineplus-mc1r",
+      "title": "MedlinePlus Genetics: MC1R gene"
+    },
+    {
+      "id": "medlineplus-dtc-test-types",
+      "title": "MedlinePlus Genetics: Direct-to-consumer genetic test types"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "gene": "HERC2/OCA2 regulatory region",
+        "observedValue": "rs12913832 AG"
+      },
+      {
+        "gene": "MC1R",
+        "observedValue": "rs1805007 CT"
+      },
+      {
+        "gene": "EDAR",
+        "observedValue": "derived hair-texture/thickness context available"
+      },
+      {
+        "gene": "sample PDF notes",
+        "observedValue": "OCA2/HERC2 and MC1R notes observed in public sample PDF; underlying sample genotypes are not shown"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated marketplace detail-page sections beyond the public sample PDF have not been extracted.",
+      "No calibrated visible-trait probability model is supplied.",
+      "Many known and unknown contributors to eye color, hair color, hair texture, skin pigmentation, freckles, baldness, and BMI are not represented in this fixture."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Visible traits can be influenced by multiple genes, development, age, environment, and other non-genetic factors.",
+      "The significance of individual visible-trait markers may vary across populations and should not be treated as a deterministic appearance prediction."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report is educational and does not identify a person, infer race or ancestry, predict a child's appearance, diagnose albinism, or report melanoma risk.",
+      "The public sample PDF demonstrates output shape and example rows, not this user's exact final appearance."
+    ]
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "consumerTone": "plain English; educational psychiatric medication PGx guide context only; no diagnosis, current mental-state assessment, suicidality assessment, drug safety, efficacy, appropriateness, start, stop, switch, ranking, prescribing, dosing, or treatment-change claims",
+  "datasetId": "synthetic-mental-health-genetic-guide-pgx-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "CYP2B6",
+      "inputId": "CYP2B6-star-allele",
+      "matchStatus": "observed",
+      "observedValue": "rapid metabolizer context",
+      "sourceArtifact": "synthetic-mental-health-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-mental-health-genetic-guide-pgx-context-v1.json",
+      "starAllele": "*1/*4"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "CYP2C19",
+      "inputId": "CYP2C19-star-allele",
+      "matchStatus": "observed",
+      "observedValue": "intermediate metabolizer context",
+      "sourceArtifact": "synthetic-mental-health-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-mental-health-genetic-guide-pgx-context-v1.json",
+      "starAllele": "*1/*2"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "CYP2D6",
+      "inputId": "CYP2D6-star-allele",
+      "matchStatus": "observed",
+      "observedValue": "normal metabolizer context with one decreased-function allele",
+      "sourceArtifact": "synthetic-mental-health-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-mental-health-genetic-guide-pgx-context-v1.json",
+      "starAllele": "*1/*41"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "CYP3A4",
+      "inputId": "CYP3A4-star-allele",
+      "matchStatus": "observed",
+      "observedValue": "normal metabolizer context",
+      "sourceArtifact": "synthetic-mental-health-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-mental-health-genetic-guide-pgx-context-v1.json",
+      "starAllele": "*1/*1"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "ABCB1",
+      "haplotype": "rs1045642-GG;rs1128503-GG;rs2032582-CC",
+      "inputId": "ABCB1-exploratory-variant-set",
+      "matchStatus": "observed",
+      "observedValue": "exploratory altered-function context from sample appendix rows",
+      "sourceArtifact": "synthetic-mental-health-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-mental-health-genetic-guide-pgx-context-v1.json"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "CYP1A2",
+      "haplotype": "rs2069514-GG;rs762551-AA",
+      "inputId": "CYP1A2-exploratory-variant-set",
+      "matchStatus": "observed",
+      "observedValue": "exploratory altered-function context from sample appendix rows",
+      "sourceArtifact": "synthetic-mental-health-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-mental-health-genetic-guide-pgx-context-v1.json"
+    },
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "OPRM1",
+      "inputId": "OPRM1-rs1799971",
+      "matchStatus": "observed",
+      "observedValue": "A/A exploratory context from sample appendix row",
+      "rsid": "rs1799971",
+      "sourceArtifact": "synthetic-mental-health-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-mental-health-genetic-guide-pgx-context-v1.json"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "GRIN2B/NFKB1",
+      "haplotype": "no-function-altering-variants-found",
+      "inputId": "GRIN2B-NFKB1-variant-status",
+      "matchStatus": "observed",
+      "observedValue": "no variants found that alter gene function in the sample appendix context",
+      "sourceArtifact": "synthetic-mental-health-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-mental-health-genetic-guide-pgx-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "psychiatric medication PGx clinical context",
+      "haplotype": "mental-medication-context-unavailable",
+      "inputId": "mental-medication-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "current medication list, indication, dose, treatment history, diagnosis, symptoms, current mental state, suicidality assessment, drug interactions, clinician review, phenotype confidence, and medication-decision context unavailable in this fixture",
+      "sourceArtifact": "synthetic-mental-health-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-mental-health-genetic-guide-pgx-context-v1.json"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "expanded psychiatric medication PGx coverage",
+      "haplotype": "expanded-mental-pgx-coverage-unavailable",
+      "inputId": "expanded-mental-pgx-coverage-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "User-specific medication list, psychiatric indication, phenotype confidence, CYP2D6 copy number, HLA calls, rare variants, private variants, pseudogene/similar-sequence resolution, and additional sample-table genes are unavailable unless supplied by a validated local PGx caller",
+      "sourceArtifact": "synthetic-mental-health-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-mental-health-genetic-guide-pgx-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-pharmacogene-calls",
+    "hash": "sha256:synthetic-mental-health-genetic-guide-pgx-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived PGx calls for mental-health-genetic-guide validation"
+  },
+  "missingInputPolicy": "Report unavailable medication list, indication, dose, treatment history, psychiatric diagnosis, symptoms, current mental state, clinician review, phenotype confidence, comprehensive psychiatric PGx genes, genotyping-vs-WGS coverage, and authenticated marketplace detail-page extraction explicitly; do not infer medication appropriateness, safety, efficacy, dose, start, stop, switch, ranking, diagnosis, suicidality, current mental state, treatment response, or treatment action.",
+  "packageSlug": "mental-health-genetic-guide",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "background",
+      "id": "cpic",
+      "sourceType": "guideline",
+      "title": "Clinical Pharmacogenetics Implementation Consortium",
+      "usedFor": [
+        "gene_drug_context",
+        "clinician_review_language"
+      ]
+    },
+    {
+      "evidenceLevel": "implementation_background",
+      "id": "pharmcat",
+      "sourceType": "implementation_resource",
+      "title": "PharmCAT",
+      "usedFor": [
+        "local_pgx_runner",
+        "missing_call_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "pharmvar",
+      "sourceType": "database",
+      "title": "PharmVar",
+      "usedFor": [
+        "star_allele_nomenclature"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-pgx-associations",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Table of Pharmacogenetic Associations",
+      "usedFor": [
+        "association_context",
+        "safety_language"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-pgx-biomarkers-labeling",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Table of Pharmacogenomic Biomarkers in Drug Labeling",
+      "usedFor": [
+        "labeling_context"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-pharmacogenetic-tests",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Pharmacogenetic Tests",
+      "usedFor": [
+        "plain_english_context",
+        "provider_review_language"
+      ]
+    },
+    {
+      "evidenceLevel": "observed_output_structure",
+      "id": "mental-health-genetic-guide-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Mental Health Genetic Guide sample report",
+      "usedFor": [
+        "sample_rows",
+        "genotype_summary",
+        "formal_fields",
+        "output_format"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-pharmacogenomics",
+      "sourceType": "public_health_resource",
+      "title": "CDC Pharmacogenomics",
+      "usedFor": [
+        "pharmacogenomics_context",
+        "medication_safety_language"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "nhgri-pharmacogenomics",
+      "sourceType": "education_resource",
+      "title": "NHGRI Pharmacogenomics Fact Sheet",
+      "usedFor": [
+        "pharmacogenomics_context",
+        "plain_english_glossary"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer psychiatric medication PGx guide context using derived pharmacogene calls plus the public Mental Health Genetic Guide sample PDF's drug/result/gene/source table and genotype-summary structure."
+}

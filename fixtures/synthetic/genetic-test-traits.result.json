@@ -1,0 +1,126 @@
+{
+  "reportOverview": {
+    "reportTitle": "Inherited Traits Genetic Analysis",
+    "inputManifestHash": "sha256:synthetic-inherited-traits-visible-trait-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "No calibrated inherited-trait or child-prediction model is supplied with this fixture.",
+      "Child phenotype prediction, family inheritance certainty, exact appearance, rare-trait prediction, dermatology outcomes, and medical-risk interpretation are not reported."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Inherited visible-trait context",
+      "item": "Eye-color context",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived HERC2/OCA2 rs12913832 AG call is available for inherited eye-color context. This does not determine exact eye color and cannot predict a child's eye color.",
+      "genes": [
+        "HERC2",
+        "OCA2"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: eye color / OCA2",
+      "sourceIds": [
+        "medlineplus-eye-color",
+        "medlineplus-oca2"
+      ],
+      "plainEnglishMeaning": "OCA2 and HERC2 are important in eye-color genetics, but eye color is influenced by multiple genes and inheritance is not a simple one-marker result."
+    },
+    {
+      "groupTitle": "Inherited visible-trait context",
+      "item": "Hair-color and freckle context",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived MC1R rs1805007 CT call is available for inherited hair-color and freckle context. This is not a diagnosis, dermatology result, skin-cancer risk result, or exact appearance prediction.",
+      "genes": [
+        "MC1R"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: hair color / MC1R",
+      "sourceIds": [
+        "medlineplus-hair-color",
+        "medlineplus-mc1r"
+      ],
+      "plainEnglishMeaning": "MC1R is a well-studied pigmentation gene, but many genes and non-genetic factors contribute to hair color, freckles, and related visible traits."
+    },
+    {
+      "groupTitle": "Inherited visible-trait context",
+      "item": "Hair texture and thickness context",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived EDAR hair-texture/thickness context row is available. This is educational context only and does not predict exact hair texture or a child's trait outcome.",
+      "genes": [
+        "EDAR"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: hair texture",
+      "sourceIds": [
+        "medlineplus-hair-texture"
+      ],
+      "plainEnglishMeaning": "Hair texture and thickness have genetic contributions, but the final trait can reflect multiple genes, development, and non-genetic factors."
+    }
+  ],
+  "unavailableTraits": [
+    "Authenticated Sequencing.com sample report rows are not available yet.",
+    "Child phenotype prediction, family inheritance certainty, exact appearance, rare-trait prediction, dermatology outcomes, and medical-risk sections are unavailable and not inferred.",
+    "Eye-color, hair-color/freckle, and hair-texture rows are limited to educational inherited-trait context, not identity, ancestry, diagnosis, or medical-risk interpretation."
+  ],
+  "plainEnglishLimits": [
+    "Visible traits are influenced by multiple genes and non-genetic factors.",
+    "Direct-to-consumer trait tests provide estimates or context, not certainty about exact appearance.",
+    "This report must not be used to identify a person, infer race or ancestry, predict a child's appearance, guide skincare, or report disease risk."
+  ],
+  "references": [
+    {
+      "id": "medlineplus-eye-color",
+      "title": "MedlinePlus Genetics: eye color"
+    },
+    {
+      "id": "medlineplus-hair-color",
+      "title": "MedlinePlus Genetics: hair color"
+    },
+    {
+      "id": "medlineplus-hair-texture",
+      "title": "MedlinePlus Genetics: hair texture"
+    },
+    {
+      "id": "medlineplus-oca2",
+      "title": "MedlinePlus Genetics: OCA2 gene"
+    },
+    {
+      "id": "medlineplus-mc1r",
+      "title": "MedlinePlus Genetics: MC1R gene"
+    },
+    {
+      "id": "medlineplus-dtc-test-types",
+      "title": "MedlinePlus Genetics: Direct-to-consumer genetic test types"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "gene": "HERC2/OCA2 regulatory region",
+        "observedValue": "rs12913832 AG"
+      },
+      {
+        "gene": "MC1R",
+        "observedValue": "rs1805007 CT"
+      },
+      {
+        "gene": "EDAR",
+        "observedValue": "derived hair-texture/thickness context available"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated sample-report sections and rows have not been extracted.",
+      "No calibrated inherited-trait probability model or child-prediction model is supplied.",
+      "Family phenotype information, parental genotype context, rare-trait evidence, dermatology outcomes, and medical-risk context require separate validated evidence and are not inferred.",
+      "Many known and unknown contributors to eye color, hair color, freckles, hair texture, and other inherited visible traits are not represented in this fixture."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Visible traits can be influenced by multiple genes, development, age, environment, and other non-genetic factors.",
+      "The significance of individual visible-trait markers may vary across populations and should not be treated as a deterministic appearance or child-phenotype prediction."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report is educational and does not identify a person, infer race or ancestry, predict a child's appearance, give skincare guidance, diagnose skin conditions, or report melanoma or other skin-cancer risk.",
+      "Authenticated Sequencing.com sample report rows are still pending."
+    ]
+  }
+}

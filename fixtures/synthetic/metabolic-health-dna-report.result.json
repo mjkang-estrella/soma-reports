@@ -1,0 +1,95 @@
+{
+  "reportOverview": {
+    "reportTitle": "Metabolic Health DNA Report",
+    "inputManifestHash": "sha256:synthetic-metabolic-health-dna-report-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "No calibrated metabolic, glucose, diabetes, insulin-resistance, weight, food-response, micronutrient, supplement, diet-history, symptom, lab, medication, or ancestry-applicability model is supplied with this fixture."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Metabolic health DNA context",
+      "item": "MCM6/LCT rs4988235",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a metabolic diagnosis, glucose prediction, diabetes prediction, insulin-resistance result, weight result, lab interpretation, diet recommendation, supplement recommendation, medication result, or treatment result.",
+      "genes": [
+        "MCM6",
+        "LCT"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: lactose intolerance / MCM6",
+      "sourceIds": [
+        "medlineplus-lactose-intolerance",
+        "medlineplus-mcm6"
+      ],
+      "plainEnglishMeaning": "This marker can provide lactose-related context, but symptoms, diet history, labs, medications, environment, and professional review matter for metabolic-health decisions."
+    },
+    {
+      "groupTitle": "Nutrition model availability",
+      "item": "Metabolic health DNA model",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "No calibrated metabolic score, glucose model, diabetes model, insulin-resistance model, weight model, food-response model, micronutrient model, supplement model, diet-history context, symptom context, lab context, medication context, or ancestry applicability metadata is supplied with this fixture.",
+      "genes": [
+        "Metabolic health DNA model"
+      ],
+      "sourceLabel": "Nutritional genomics review / GWAS Catalog",
+      "sourceIds": [
+        "nutritional-genomics-dtc-review",
+        "ebi-gwas-catalog"
+      ],
+      "plainEnglishMeaning": "The report can describe supplied marker context, but it should not make metabolic, glucose, diabetes, insulin-resistance, weight, lab, diet, supplement, medication, or treatment conclusions without validated evidence."
+    }
+  ],
+  "practicalNextSteps": {
+    "metabolicDnaContext": [
+      "Use this report as educational nutrition-genetics context, not as a metabolic diagnosis or treatment guide.",
+      "Bring symptoms, diet history, labs, medications, weight questions, and health goals to qualified professionals for metabolic-health decisions.",
+      "Do not change foods, supplements, medications, or treatment based on genotype alone."
+    ]
+  },
+  "references": [
+    {
+      "id": "medlineplus-lactose-intolerance",
+      "title": "MedlinePlus Genetics: lactose intolerance"
+    },
+    {
+      "id": "medlineplus-mcm6",
+      "title": "MedlinePlus Genetics: MCM6 gene"
+    },
+    {
+      "id": "nutritional-genomics-dtc-review",
+      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "gene": "MCM6/LCT",
+        "observedValue": "rs4988235 CT"
+      },
+      {
+        "gene": "Metabolic health DNA model",
+        "observedValue": "calibrated model unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated sample-report sections and rows have not been extracted.",
+      "No calibrated metabolic, glucose, diabetes, insulin-resistance, weight, food-response, micronutrient, supplement, diet-history, symptom, lab, medication, or ancestry-applicability model is supplied with this fixture.",
+      "Symptoms, food history, diet history, labs, medications, medical history, weight history, ancestry applicability, and professional assessment are not represented in this fixture."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Metabolic health, glucose, weight, nutrient status, symptoms, and food response depend on genetics plus diet history, labs, medical history, medications, environment, and professional review.",
+      "A single marker should not be used to diagnose metabolic disease, predict diabetes, infer insulin resistance, interpret labs, prescribe diet or supplement changes, change medications, or guide treatment."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report is educational and does not diagnose metabolic disease, diagnose diabetes, predict diabetes risk, infer insulin resistance, predict glucose, interpret labs, prescribe diets, recommend supplements, change medications, predict weight outcomes, or provide treatment guidance.",
+      "Authenticated Sequencing.com sample report rows are still pending."
+    ]
+  }
+}

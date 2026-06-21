@@ -1,0 +1,166 @@
+{
+  "consumerTone": "plain English; educational immune and inflammatory genetics context only; no diagnosis, disease-risk estimate, HLA inference, inflammatory status, immune strength, infection risk, lab status, symptoms, family history, treatment, supplement, diet, prevention, screening, diagnostic-test, reproductive, or actionability claims",
+  "datasetId": "synthetic-lupus-condition-boundary-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-condition-boundary-context",
+      "gene": "Lupus model",
+      "haplotype": "condition-boundary-model-unavailable",
+      "inputId": "lupus-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "validated lupus model, calibrated lupus PRS, HLA inference, ANA, anti-dsDNA, complement, kidney labs, urinalysis, organ involvement, symptoms, disease activity, flare context, medication context, family history, ancestry applicability, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-lupus-condition-boundary-context-v1",
+      "sourceFile": "synthetic-lupus-condition-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Lupus clinical and lab context",
+      "haplotype": "clinical-lab-context-unavailable",
+      "inputId": "lupus-clinical-lab-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-lupus-condition-boundary-context-v1",
+      "sourceFile": "synthetic-lupus-condition-boundary-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-condition-boundary-context",
+    "hash": "sha256:synthetic-lupus-condition-boundary-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-model evidence for lupus validation"
+  },
+  "missingInputPolicy": "Report unavailable lupus evidence explicitly; do not diagnose lupus or SLE; estimate lupus risk; infer HLA status, ANA, anti-dsDNA, complement, kidney involvement, organ involvement, disease activity, flare status, immunosuppression need, treatment need, supplement need, diet need, screening need, diagnostic-test need, reproductive action, or actionability.",
+  "packageSlug": "lupus",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-complex-disorders",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: complex disorders",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-autoimmune-diseases",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Autoimmune Diseases",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-immune-system-disorders",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Immune System and Disorders",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "niaid-autoimmunity-factors",
+      "sourceType": "public_health_resource",
+      "title": "NIAID: Factors That Influence Autoimmunity",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "niams-lupus",
+      "sourceType": "public_health_resource",
+      "title": "NIAMS: Lupus",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-systemic-lupus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Systemic Lupus Erythematosus",
+      "usedFor": [
+        "condition_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer lupus boundary context using supplied references and explicit unavailable-model framing."
+}

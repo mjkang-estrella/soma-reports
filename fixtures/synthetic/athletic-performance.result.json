@@ -1,0 +1,84 @@
+{
+  "reportOverview": {
+    "reportTitle": "Athletic Performance",
+    "inputManifestHash": "sha256:synthetic-athletic-performance-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "No calibrated athletic-performance model is supplied with this fixture."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Fitness trait context",
+      "item": "ACTN3 R577X / rs1815739",
+      "brandName": "",
+      "geneticAnalysis": "A derived ACTN3 rs1815739 CT call is available. This is trait context only and does not predict athletic ability.",
+      "genes": [
+        "ACTN3"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: athletic performance",
+      "sourceIds": [
+        "medlineplus-athletic-performance"
+      ],
+      "plainEnglishMeaning": "ACTN3 is one of the best-studied genes in athletic-performance research, but performance is shaped by many genetic and non-genetic factors."
+    },
+    {
+      "groupTitle": "Fitness trait context",
+      "item": "ACE I/D polymorphism",
+      "brandName": "",
+      "geneticAnalysis": "A derived ACE ID context row is available. This is not enough to choose sports, predict talent, or prescribe training.",
+      "genes": [
+        "ACE"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: athletic performance",
+      "sourceIds": [
+        "medlineplus-athletic-performance"
+      ],
+      "plainEnglishMeaning": "ACE is discussed in athletic-performance research, but environment, training, and many other factors remain important."
+    }
+  ],
+  "practicalNextSteps": {
+    "trainingContext": [
+      "Use the report as educational context, not as a training plan.",
+      "Discuss training, injury prevention, and performance goals with qualified coaches or health professionals.",
+      "Do not use genotype alone for sport selection or expectations about athletic ability."
+    ]
+  },
+  "references": [
+    {
+      "id": "medlineplus-athletic-performance",
+      "title": "MedlinePlus Genetics: athletic performance"
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "gene": "ACTN3",
+        "observedValue": "rs1815739 CT"
+      },
+      {
+        "gene": "ACE",
+        "observedValue": "I/D"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated sample-report sections and rows have not been extracted.",
+      "No calibrated athletic-performance probability model is supplied.",
+      "Most known and unknown genetic contributors to athletic performance are not represented in this fixture."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Athletic performance is a complex trait influenced by genetics, training, environment, opportunity, and many other factors.",
+      "The significance of many performance-associated variants is limited or uncertain."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report is educational and does not predict elite ability, prescribe training, or recommend sport selection.",
+      "A single or small number of markers cannot explain athletic performance."
+    ]
+  }
+}

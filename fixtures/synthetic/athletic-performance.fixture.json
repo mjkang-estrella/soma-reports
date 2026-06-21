@@ -1,0 +1,75 @@
+{
+  "packageSlug": "athletic-performance",
+  "datasetId": "synthetic-athletic-performance-context-v1",
+  "packageVersion": "0.1.0",
+  "reportPurpose": "Consumer athletic-performance context using derived ACTN3 and ACE evidence plus complex-trait safety framing.",
+  "missingInputPolicy": "Report unavailable markers explicitly; do not infer training capacity, talent, injury risk, or sport suitability.",
+  "consumerTone": "plain English; educational; no deterministic talent prediction or training prescription",
+  "inputManifest": {
+    "hash": "sha256:synthetic-athletic-performance-context-v1",
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived athletic-performance evidence for package validation"
+  },
+  "genomeEvidence": [
+    {
+      "inputId": "ACTN3-rs1815739",
+      "rsid": "rs1815739",
+      "gene": "ACTN3",
+      "observedValue": "CT",
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-athletic-performance-context-v1.json",
+      "sourceArtifact": "synthetic-athletic-performance-context-v1"
+    },
+    {
+      "inputId": "ACE-I-D",
+      "haplotype": "ID",
+      "gene": "ACE",
+      "observedValue": "ID",
+      "assembly": "derived-athletic-performance-context",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-athletic-performance-context-v1.json",
+      "sourceArtifact": "synthetic-athletic-performance-context-v1"
+    }
+  ],
+  "referenceResources": [
+    {
+      "id": "medlineplus-athletic-performance",
+      "title": "MedlinePlus Genetics: athletic performance",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "complex_trait_context",
+        "actn3_ace_context",
+        "non_deterministic_language"
+      ]
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores",
+      "sourceType": "education_resource",
+      "evidenceLevel": "background",
+      "usedFor": [
+        "complex_trait_limitations",
+        "probability_appendix"
+      ]
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog",
+      "sourceType": "database",
+      "evidenceLevel": "background",
+      "usedFor": [
+        "candidate_trait_associations"
+      ]
+    }
+  ],
+  "expectedAssertions": {
+    "noRawGenomeInOutput": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "probabilitiesOnlyInAppendix": true,
+    "consumerLanguage": true
+  }
+}

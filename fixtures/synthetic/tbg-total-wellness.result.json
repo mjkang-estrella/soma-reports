@@ -1,0 +1,123 @@
+{
+  "reportOverview": {
+    "reportTitle": "TBG Total Wellness",
+    "inputManifestHash": "sha256:synthetic-tbg-total-wellness-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "No calibrated wellness, nutrition, fitness, lifestyle, supplement, child-specific, symptom, lab, metabolic, or ancestry applicability model is supplied with this fixture."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Total wellness context",
+      "item": "MCM6/LCT rs4988235",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a diagnosis, symptom explanation, diet recommendation, supplement recommendation, or model-derived health result.",
+      "genes": [
+        "MCM6",
+        "LCT"
+      ],
+      "sourceLabel": "MedlinePlus Genetics: lactose intolerance / MCM6",
+      "sourceIds": [
+        "medlineplus-lactose-intolerance",
+        "medlineplus-mcm6"
+      ],
+      "plainEnglishMeaning": "This marker can provide lactose-related context, but symptoms, diet history, labs, environment, medications, and professional review matter for health and nutrition decisions."
+    },
+    {
+      "groupTitle": "Nutrition model availability",
+      "item": "TBG Total Wellness model",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "No calibrated wellness, nutrition, fitness, lifestyle, supplement, child-specific, symptom, lab, metabolic, or ancestry applicability model is supplied with this fixture.",
+      "genes": [
+        "TBG Total Wellness model"
+      ],
+      "sourceLabel": "MedlinePlus DTC result limits / FDA dietary supplements / CDC BMI",
+      "sourceIds": [
+        "medlineplus-dtc-genetic-testing-results",
+        "fda-dietary-supplements",
+        "cdc-bmi"
+      ],
+      "plainEnglishMeaning": "The report can describe supplied marker context, but it should not make diet, supplement, glucose, gut, weight, wellness, child-specific, symptom, lab, metabolic, or treatment conclusions without validated evidence."
+    }
+  ],
+  "practicalNextSteps": {
+    "totalWellnessContext": [
+      "Use this report as educational total-wellness genetics context, not as a diet, workout, supplement, or child-specific plan.",
+      "Combine diet history, activity, symptoms, labs, age, children, goals, and professional support when making wellness decisions.",
+      "Do not use genotype alone for child-specific guidance, supplements, workouts, lab interpretation, diagnosis, or treatment."
+    ]
+  },
+  "references": [
+    {
+      "id": "medlineplus-lactose-intolerance",
+      "title": "MedlinePlus Genetics: lactose intolerance"
+    },
+    {
+      "id": "medlineplus-mcm6",
+      "title": "MedlinePlus Genetics: MCM6 gene"
+    },
+    {
+      "id": "nutritional-genomics-dtc-review",
+      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing"
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog"
+    },
+    {
+      "id": "cdc-bmi",
+      "title": "CDC About Body Mass Index",
+      "usedFor": [
+        "weight_context",
+        "bmi_limitations",
+        "no_weight_prediction_from_genotype"
+      ]
+    },
+    {
+      "id": "fda-dietary-supplements",
+      "title": "FDA Dietary Supplements",
+      "usedFor": [
+        "supplement_context",
+        "supplement_safety_language",
+        "no_dosing_from_genotype"
+      ]
+    },
+    {
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean",
+      "usedFor": [
+        "dtc_limitations",
+        "non_diagnostic_language",
+        "consumer_safety_language"
+      ]
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "gene": "MCM6/LCT",
+        "observedValue": "rs4988235 CT"
+      },
+      {
+        "gene": "TBG Total Wellness model",
+        "observedValue": "calibrated model unavailable"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated sample-report sections and rows have not been extracted.",
+      "No calibrated wellness, nutrition, fitness, lifestyle, supplement, child-specific, symptom, lab, metabolic, or ancestry applicability model is supplied with this fixture.",
+      "Broader symptoms, food history, diet history, activity history, labs, medications, medical history, child-specific context, ancestry applicability, environment, and professional assessment are not represented in this fixture."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Nutrition, lifestyle, symptoms, labs, weight, glucose, gut health, supplement response, and wellness outcomes depend on genetics plus non-genetic context and professional review.",
+      "A single marker should not be used to diagnose conditions, explain symptoms, prescribe diets, recommend supplements, interpret labs, or guide treatment."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report is educational and does not prescribe diets, create workouts, recommend supplements, create child-specific guidance, diagnose symptoms, infer metabolic disease, interpret labs, or provide treatment guidance.",
+      "Authenticated Sequencing.com sample report rows are still pending."
+    ]
+  }
+}

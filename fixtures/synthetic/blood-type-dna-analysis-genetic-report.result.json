@@ -1,0 +1,85 @@
+{
+  "reportOverview": {
+    "reportTitle": "Blood Type Analysis",
+    "inputManifestHash": "sha256:synthetic-blood-type-abo-rh-context-v1",
+    "sectionsUnavailable": [
+      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "No calibrated blood-type caller confidence model is supplied with this fixture."
+    ]
+  },
+  "resultRows": [
+    {
+      "groupTitle": "Blood type context",
+      "item": "ABO blood group context",
+      "brandName": "",
+      "geneticAnalysis": "A derived ABO A/O context row is available. This is educational genotype-derived context, not an official laboratory blood type.",
+      "genes": [
+        "ABO"
+      ],
+      "sourceLabel": "NCBI Bookshelf: ABO Blood Group / MedlinePlus blood typing",
+      "sourceIds": [
+        "ncbi-abo-blood-group",
+        "medlineplus-blood-typing"
+      ],
+      "plainEnglishMeaning": "The ABO system is related to inherited A, B, AB, and O blood groups, but compatibility decisions require laboratory blood typing."
+    },
+    {
+      "groupTitle": "Blood type context",
+      "item": "RhD context",
+      "brandName": "",
+      "geneticAnalysis": "A derived RHD-present context row is available. This is not a clinical Rh result and cannot be used for pregnancy or transfusion decisions.",
+      "genes": [
+        "RHD"
+      ],
+      "sourceLabel": "MedlinePlus Medical Encyclopedia: Blood typing",
+      "sourceIds": [
+        "medlineplus-blood-typing"
+      ],
+      "plainEnglishMeaning": "Rh factor is part of standard blood typing, but official Rh status should come from a laboratory blood type test."
+    }
+  ],
+  "labConfirmation": {
+    "safetyContext": [
+      "Use this report as educational blood-type context only.",
+      "Laboratory blood typing is required before transfusion, donation, pregnancy, transplant, or emergency-care decisions.",
+      "If blood type matters for care, use the result from a healthcare or blood-bank laboratory system."
+    ]
+  },
+  "references": [
+    {
+      "id": "medlineplus-blood-typing",
+      "title": "MedlinePlus Medical Encyclopedia: Blood typing"
+    },
+    {
+      "id": "ncbi-abo-blood-group",
+      "title": "NCBI Bookshelf: ABO Blood Group"
+    }
+  ],
+  "appendix": {
+    "genotypeSummary": [
+      {
+        "gene": "ABO",
+        "observedValue": "A/O-derived context"
+      },
+      {
+        "gene": "RHD",
+        "observedValue": "RHD-present-derived context"
+      }
+    ],
+    "missingInputs": [
+      "Authenticated sample-report sections and rows have not been extracted.",
+      "No calibrated blood-type caller confidence model is supplied.",
+      "Laboratory serology, reverse typing, cross-matching, and rare blood-group antigen checks are not represented in this fixture."
+    ],
+    "probabilities": [],
+    "uncertainty": [
+      "Genotype-derived blood-type context may be incomplete for rare alleles, structural variation, sample quality, or clinical compatibility workflows.",
+      "ABO and RhD context are not enough to establish safe compatibility for transfusion, donation, pregnancy, transplant, or emergency care."
+    ],
+    "limitations": [
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report is educational and is not an official blood type, compatibility table, or blood-bank result.",
+      "Authenticated Sequencing.com sample report rows are still pending."
+    ]
+  }
+}

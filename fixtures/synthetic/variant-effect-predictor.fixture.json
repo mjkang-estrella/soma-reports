@@ -1,0 +1,119 @@
+{
+  "packageSlug": "variant-effect-predictor",
+  "datasetId": "synthetic-vep-annotation-context-v1",
+  "packageVersion": "0.1.0",
+  "reportPurpose": "Consumer annotation-only Variant Effect Predictor report using selected derived consequence rows, public variant identifiers, and explicit clinical-classification-unavailable framing.",
+  "missingInputPolicy": "Report unavailable transcripts, cache versions, frequencies, quality flags, ClinVar assertions, ACMG/AMP classifications, pathogenicity scores, and authenticated sample rows explicitly; do not infer medical meaning.",
+  "consumerTone": "plain English; educational genome annotation context only; no diagnosis, pathogenicity classification, disease-risk estimate, screening, medication, reproductive, lifestyle, or treatment guidance",
+  "inputManifest": {
+    "hash": "sha256:synthetic-vep-annotation-context-v1",
+    "genomeBuild": "GRCh38-derived",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived variant annotation evidence for variant-effect-predictor validation"
+  },
+  "genomeEvidence": [
+    {
+      "inputId": "VEP-rs6265-BDNF",
+      "rsid": "rs6265",
+      "gene": "BDNF",
+      "observedValue": "selected derived annotation row; heterozygous; transcript ENST00000525528; consequence missense_variant; HGVSp p.Val66Met; existing variation rs6265; no clinical classification supplied",
+      "assembly": "GRCh38-derived",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-vep-annotation-context-v1.json",
+      "sourceArtifact": "synthetic-vep-annotation-context-v1"
+    },
+    {
+      "inputId": "VEP-rs699-AGT",
+      "rsid": "rs699",
+      "gene": "AGT",
+      "observedValue": "selected derived annotation row; heterozygous; transcript ENST00000366667; consequence missense_variant; HGVSp p.Met268Thr; existing variation rs699; no clinical classification supplied",
+      "assembly": "GRCh38-derived",
+      "matchStatus": "observed",
+      "sourceFile": "synthetic-vep-annotation-context-v1.json",
+      "sourceArtifact": "synthetic-vep-annotation-context-v1"
+    },
+    {
+      "inputId": "VEP-transcript-cache-version-unavailable",
+      "haplotype": "vep-transcript-cache-version-unavailable",
+      "gene": "VEP annotation metadata",
+      "observedValue": "exact Ensembl release, cache version, transcript-set checksum, plugin list, population-frequency table, and variant-quality flags are unavailable in this fixture",
+      "assembly": "GRCh38-derived",
+      "matchStatus": "unavailable",
+      "sourceFile": "synthetic-vep-annotation-context-v1.json",
+      "sourceArtifact": "synthetic-vep-annotation-context-v1"
+    },
+    {
+      "inputId": "VEP-clinical-classification-unavailable",
+      "haplotype": "vep-clinical-classification-unavailable",
+      "gene": "external clinical assertion lookup",
+      "observedValue": "ClinVar assertion, ACMG/AMP classification, review status, disease relationship, pathogenicity model score, and clinical actionability are unavailable in this fixture",
+      "assembly": "derived-annotation-context",
+      "matchStatus": "unavailable",
+      "sourceFile": "synthetic-vep-annotation-context-v1.json",
+      "sourceArtifact": "synthetic-vep-annotation-context-v1"
+    }
+  ],
+  "referenceResources": [
+    {
+      "id": "ensembl-vep",
+      "title": "Ensembl Variant Effect Predictor",
+      "sourceType": "annotation_tool_documentation",
+      "evidenceLevel": "implementation_background",
+      "usedFor": [
+        "vep_annotation_scope",
+        "transcript_consequence_rows",
+        "raw_variant_omission"
+      ]
+    },
+    {
+      "id": "ensembl-variant-consequences",
+      "title": "Ensembl Variation: calculated variant consequences",
+      "sourceType": "annotation_method_documentation",
+      "evidenceLevel": "implementation_background",
+      "usedFor": [
+        "sequence_ontology_terms",
+        "transcript_consequence_rows",
+        "annotation_limitations"
+      ]
+    },
+    {
+      "id": "sequence-ontology",
+      "title": "Sequence Ontology",
+      "sourceType": "controlled_vocabulary",
+      "evidenceLevel": "terminology_background",
+      "usedFor": [
+        "consequence_term_definitions",
+        "plain_english_annotation_glossary"
+      ]
+    },
+    {
+      "id": "ncbi-dbsnp",
+      "title": "NCBI dbSNP",
+      "sourceType": "database",
+      "evidenceLevel": "database_background",
+      "usedFor": [
+        "existing_variation_ids",
+        "variant_cross_reference",
+        "rsid_context"
+      ]
+    },
+    {
+      "id": "ncbi-clinvar",
+      "title": "NCBI ClinVar",
+      "sourceType": "database",
+      "evidenceLevel": "database_background",
+      "usedFor": [
+        "database_cross_reference",
+        "clinical_classification_unavailable",
+        "professional_review_language"
+      ]
+    }
+  ],
+  "expectedAssertions": {
+    "noRawGenomeInOutput": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "probabilitiesOnlyInAppendix": true,
+    "consumerLanguage": true
+  }
+}

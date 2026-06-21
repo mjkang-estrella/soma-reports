@@ -1,0 +1,165 @@
+{
+  "consumerTone": "plain English; educational heart medication PGx guide context only; no drug safety, efficacy, appropriateness, start, stop, switch, ranking, prescribing, dosing, diagnosis, or treatment-change claims",
+  "datasetId": "synthetic-heart-health-genetic-guide-pgx-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "CYP2C19",
+      "inputId": "CYP2C19-star-allele",
+      "matchStatus": "observed",
+      "observedValue": "intermediate metabolizer context",
+      "sourceArtifact": "synthetic-heart-health-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-heart-health-genetic-guide-pgx-context-v1.json",
+      "starAllele": "*1/*2"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "CYP2D6",
+      "inputId": "CYP2D6-star-allele",
+      "matchStatus": "observed",
+      "observedValue": "intermediate metabolizer context",
+      "sourceArtifact": "synthetic-heart-health-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-heart-health-genetic-guide-pgx-context-v1.json",
+      "starAllele": "*1/*4"
+    },
+    {
+      "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "SLCO1B1",
+      "inputId": "SLCO1B1-rs4149056",
+      "matchStatus": "observed",
+      "observedValue": "TC",
+      "rsid": "rs4149056",
+      "sourceArtifact": "synthetic-heart-health-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-heart-health-genetic-guide-pgx-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "heart medication PGx clinical context",
+      "haplotype": "heart-medication-context-unavailable",
+      "inputId": "heart-medication-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "Current medication list, indication, dose, treatment history, renal or liver function, drug interactions, cardiovascular diagnosis, clinician review, phenotype confidence, and medication-decision context unavailable in this fixture",
+      "sourceArtifact": "synthetic-heart-health-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-heart-health-genetic-guide-pgx-context-v1.json"
+    },
+    {
+      "assembly": "derived-pharmacogene-calls",
+      "gene": "expanded heart medication PGx coverage",
+      "haplotype": "expanded-heart-pgx-coverage-unavailable",
+      "inputId": "expanded-heart-pgx-coverage-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "User-specific ABCG2, CYP2C9, CYP3A4, CYP3A5, G6PD, HLA-B, NAT2, VKORC1, ABCB1, ACE, ADRB1/2, AGTR1, APOB, APOE, CES1, ITGB3, KCNH2, and additional sample-table genes are unavailable unless supplied by a validated local PGx caller",
+      "sourceArtifact": "synthetic-heart-health-genetic-guide-pgx-context-v1",
+      "sourceFile": "synthetic-heart-health-genetic-guide-pgx-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-pharmacogene-calls",
+    "hash": "sha256:synthetic-heart-health-genetic-guide-pgx-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived PGx calls for heart-health-genetic-guide validation"
+  },
+  "missingInputPolicy": "Report unavailable heart-medication list, indication, dose, current treatment plan, clinician review, phenotype confidence, comprehensive cardiovascular PGx genes, genotyping-vs-WGS coverage, and authenticated marketplace detail-page extraction explicitly; do not infer medication appropriateness, safety, efficacy, dose, start, stop, switch, ranking, diagnosis, or treatment action.",
+  "packageSlug": "heart-health-genetic-guide",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "background",
+      "id": "cpic",
+      "sourceType": "guideline",
+      "title": "Clinical Pharmacogenetics Implementation Consortium",
+      "usedFor": [
+        "gene_drug_context",
+        "clinician_review_language"
+      ]
+    },
+    {
+      "evidenceLevel": "implementation_background",
+      "id": "pharmcat",
+      "sourceType": "implementation_resource",
+      "title": "PharmCAT",
+      "usedFor": [
+        "local_pgx_runner",
+        "missing_call_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "pharmvar",
+      "sourceType": "database",
+      "title": "PharmVar",
+      "usedFor": [
+        "star_allele_nomenclature"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-pgx-associations",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Table of Pharmacogenetic Associations",
+      "usedFor": [
+        "association_context",
+        "safety_language"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-pgx-biomarkers-labeling",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Table of Pharmacogenomic Biomarkers in Drug Labeling",
+      "usedFor": [
+        "labeling_context"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-pharmacogenetic-tests",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Pharmacogenetic Tests",
+      "usedFor": [
+        "plain_english_context",
+        "provider_review_language"
+      ]
+    },
+    {
+      "evidenceLevel": "observed_output_structure",
+      "id": "heart-health-genetic-guide-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Heart Health Genetic Guide sample report",
+      "usedFor": [
+        "sample_rows",
+        "genotype_summary",
+        "formal_fields",
+        "output_format"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-pharmacogenomics",
+      "sourceType": "public_health_resource",
+      "title": "CDC Pharmacogenomics",
+      "usedFor": [
+        "pharmacogenomics_context",
+        "medication_safety_language"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "nhgri-pharmacogenomics",
+      "sourceType": "education_resource",
+      "title": "NHGRI Pharmacogenomics Fact Sheet",
+      "usedFor": [
+        "pharmacogenomics_context",
+        "plain_english_glossary"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer heart medication PGx guide context using derived pharmacogene calls plus the public Heart Health Genetic Guide sample PDF's drug/result/gene/source table and genotype-summary structure."
+}

@@ -1,0 +1,199 @@
+{
+  "consumerTone": "plain English; educational rare inherited condition genetics context only; no diagnosis, disease-risk estimate, variant classification, carrier-status call, inheritance inference, family-member risk, cascade-testing, screening, treatment, procedure, medication, reproductive action, or clinical actionability claims",
+  "datasetId": "synthetic-pheochromocytoma-and-paraganglioma-rare-inherited-condition-boundary-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
+  },
+  "genomeEvidence": [
+    {
+      "assembly": "derived-rare-inherited-condition-boundary-context",
+      "gene": "Pheochromocytoma and Paraganglioma model",
+      "haplotype": "rare-inherited-condition-model-unavailable",
+      "inputId": "pheochromocytoma-and-paraganglioma-condition-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "validated hereditary pheochromocytoma/paraganglioma model, SDHx or related gene panel result, variant classifications, tumor diagnosis, tumor location, biochemical testing, imaging, symptoms, family history, surveillance context, clinical genetics review, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-pheochromocytoma-and-paraganglioma-rare-inherited-condition-boundary-context-v1",
+      "sourceFile": "synthetic-pheochromocytoma-and-paraganglioma-rare-inherited-condition-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Pheochromocytoma and Paraganglioma clinical and professional context",
+      "haplotype": "clinical-professional-context-unavailable",
+      "inputId": "pheochromocytoma-and-paraganglioma-clinical-context-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "clinical diagnosis, symptoms, labs, imaging, medication or procedure context, family history, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "sourceArtifact": "synthetic-pheochromocytoma-and-paraganglioma-rare-inherited-condition-boundary-context-v1",
+      "sourceFile": "synthetic-pheochromocytoma-and-paraganglioma-rare-inherited-condition-boundary-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "Pheochromocytoma and Paraganglioma variant interpretation context",
+      "haplotype": "variant-interpretation-unavailable",
+      "inputId": "pheochromocytoma-and-paraganglioma-variant-interpretation-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "gene panel scope, variant classifications, zygosity, inheritance pattern, ancestry applicability, cascade-testing context, and clinical genetics review unavailable in this fixture",
+      "sourceArtifact": "synthetic-pheochromocytoma-and-paraganglioma-rare-inherited-condition-boundary-context-v1",
+      "sourceFile": "synthetic-pheochromocytoma-and-paraganglioma-rare-inherited-condition-boundary-context-v1.json"
+    }
+  ],
+  "inputManifest": {
+    "genomeBuild": "derived-rare-inherited-condition-boundary-context",
+    "hash": "sha256:synthetic-pheochromocytoma-and-paraganglioma-rare-inherited-condition-boundary-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic unavailable-model evidence for pheochromocytoma-and-paraganglioma validation"
+  },
+  "missingInputPolicy": "Report unavailable hereditary pheochromocytoma and paraganglioma syndrome context evidence explicitly; do not diagnose pheochromocytoma, paraganglioma, cancer, or hereditary tumor syndrome; estimate tumor risk, malignancy risk, recurrence risk, family-member risk, or carrier status; classify variants; infer catecholamine labs, imaging findings, tumor location, symptoms, inheritance pattern, surveillance need, screening need, imaging need, surgery need, medication need, diagnostic-test need, cascade-testing need, reproductive action, or clinical actionability.",
+  "packageSlug": "pheochromocytoma-and-paraganglioma",
+  "packageVersion": "0.1.0",
+  "referenceResources": [
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Testing",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-testing-uses",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Uses of Genetic Testing",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-test-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-counseling",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Counseling",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-direct-to-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "ncbi-clinvar",
+      "sourceType": "database",
+      "title": "NCBI ClinVar",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "database_background",
+      "id": "ncbi-genetic-testing-registry",
+      "sourceType": "database",
+      "title": "NIH Genetic Testing Registry",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "guideline_background",
+      "id": "clingen-variant-classification-guidance",
+      "sourceType": "guidance_resource",
+      "title": "ClinGen Variant Classification Guidance",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "guideline_background",
+      "id": "acmg-amp-richards-2015",
+      "sourceType": "guideline_article",
+      "title": "ACMG/AMP 2015 sequence variant interpretation standards",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "expert_background",
+      "id": "genereviews-pheochromocytoma-paraganglioma",
+      "sourceType": "expert_reference",
+      "title": "GeneReviews: Hereditary Paraganglioma-Pheochromocytoma Syndromes",
+      "usedFor": [
+        "rare_inherited_condition_boundary_context",
+        "variant_interpretation_limits",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    }
+  ],
+  "reportPurpose": "Consumer hereditary pheochromocytoma and paraganglioma syndrome context boundary context using supplied references and explicit unavailable-model framing."
+}
