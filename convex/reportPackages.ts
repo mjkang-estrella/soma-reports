@@ -164,6 +164,7 @@ export type ReportPackageSeed = {
     sortOrder: number;
     title: string;
     purpose: string;
+    formalOutputBlueprint?: FormalOutputBlueprintSeed;
     expectedFields: Array<{
       key: string;
       label: string;
@@ -175,9 +176,97 @@ export type ReportPackageSeed = {
       sourceBinding?: string;
       formalSourceField?: string;
       allowsUnavailable?: boolean;
+      formalOutputBlueprint?: FormalOutputBlueprintSeed;
+      officialFieldPath?: string;
+      formalDisplayRole?: string;
+      availability?: OutputAvailability;
+      unavailableReason?: string;
     }>;
   }>;
 };
+
+type OutputFormatEvidenceKind =
+  | "official_sample_rows"
+  | "official_completed_output"
+  | "official_boundary_only"
+  | "official_metadata_only"
+  | "sibling_sample"
+  | "local_scaffold";
+
+type OutputAvailability = "captured" | "not_captured" | "unavailable" | "not_applicable";
+
+type FormalOutputBlueprintSeed = {
+  sectionKey: string;
+  sectionRole: string;
+  evidenceKind: OutputFormatEvidenceKind;
+  availability: OutputAvailability;
+  sourceArtifact?: string;
+  nonPromotionBoundary: string;
+  promotesFormalReadiness: false;
+};
+
+const slugKey = (value: string) =>
+  value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "_")
+    .replace(/^_+|_+$/g, "");
+
+const formalSectionRoleFor = (title: string) => {
+  const normalized = title.toLowerCase();
+  if (normalized.includes("appendix")) return "appendix";
+  if (normalized.includes("overview")) return "header";
+  if (normalized.includes("row")) return "findings";
+  if (normalized.includes("context")) return "interpretation_context";
+  return "section";
+};
+
+const formalDisplayRoleFor = (field: { fieldPath?: string; citationRequired?: boolean; allowsUnavailable?: boolean }) => {
+  if (field.fieldPath?.startsWith("appendix.")) return "appendix_disclosure";
+  if (field.citationRequired) return "source_bound_field";
+  if (field.allowsUnavailable) return "official_value_unavailable";
+  return "required_output_field";
+};
+
+const withFormalOutputBlueprint = <T extends ReportPackageSeed["outputSections"]>(
+  sections: T,
+  options: {
+    evidenceKind?: OutputFormatEvidenceKind;
+    availability?: OutputAvailability;
+    sourceArtifact?: string;
+    sectionKeyPrefix: string;
+    nonPromotionBoundary?: string;
+    unavailableReason?: string;
+  },
+): T =>
+  sections.map((section) => {
+    const blueprint: FormalOutputBlueprintSeed = {
+      sectionKey: `${slugKey(options.sectionKeyPrefix)}.${slugKey(section.title)}`,
+      sectionRole: formalSectionRoleFor(section.title),
+      evidenceKind: options.evidenceKind ?? "local_scaffold",
+      availability: options.availability ?? "not_captured",
+      sourceArtifact: options.sourceArtifact,
+      nonPromotionBoundary:
+        options.nonPromotionBoundary ??
+        "Blueprint describes expected formal layout only; it does not promote readiness without official non-private rows and source-backed citation bindings.",
+      promotesFormalReadiness: false,
+    };
+
+    return {
+      ...section,
+      formalOutputBlueprint: section.formalOutputBlueprint ?? blueprint,
+      expectedFields: section.expectedFields.map((field) => ({
+        ...field,
+        formalOutputBlueprint: field.formalOutputBlueprint ?? blueprint,
+        officialFieldPath: field.officialFieldPath ?? field.fieldPath,
+        formalDisplayRole: field.formalDisplayRole ?? formalDisplayRoleFor(field),
+        availability: field.availability ?? (field.allowsUnavailable ? "unavailable" : blueprint.availability),
+        unavailableReason:
+          field.unavailableReason ??
+          options.unavailableReason ??
+          "Official Sequencing.com values are not captured for this field; emit unavailable or missing-evidence language instead of inventing rows.",
+      })),
+    };
+  }) as T;
 
 const sourceUrls = {
   marketplace: "https://sequencing.com/marketplace",
@@ -9101,7 +9190,7 @@ const makeConditionRiskBoundaryFormalFields = (config: ConditionRiskBoundaryPack
   },
 ];
 
-const makeConditionRiskBoundaryOutputSections = (config: ConditionRiskBoundaryPackageConfig): ReportPackageSeed["outputSections"] => [
+const makeConditionRiskBoundaryOutputSections = (config: ConditionRiskBoundaryPackageConfig): ReportPackageSeed["outputSections"] => withFormalOutputBlueprint([
   {
     sortOrder: 1,
     title: "Report overview",
@@ -9244,7 +9333,13 @@ const makeConditionRiskBoundaryOutputSections = (config: ConditionRiskBoundaryPa
       },
     ],
   },
-];
+], {
+  sectionKeyPrefix: config.conditionLabel,
+  evidenceKind: "local_scaffold",
+  availability: "not_captured",
+  nonPromotionBoundary:
+    "Condition-risk blueprint preserves section layout only; it does not promote readiness without official sample/report rows and citation bindings.",
+});
 
 const makeMelanomaPreventionSiblingOutputSections = (
   config: ConditionRiskBoundaryPackageConfig,
@@ -11228,7 +11323,7 @@ const makeImmuneInflammatoryConditionBoundaryFormalFields = (
 
 const makeImmuneInflammatoryConditionBoundaryOutputSections = (
   config: ImmuneInflammatoryConditionBoundaryPackageConfig,
-): ReportPackageSeed["outputSections"] => [
+): ReportPackageSeed["outputSections"] => withFormalOutputBlueprint([
   {
     sortOrder: 1,
     title: "Report overview",
@@ -11371,7 +11466,13 @@ const makeImmuneInflammatoryConditionBoundaryOutputSections = (
       },
     ],
   },
-];
+], {
+  sectionKeyPrefix: config.focusLabel,
+  evidenceKind: "local_scaffold",
+  availability: "not_captured",
+  nonPromotionBoundary:
+    "Immune/inflammatory condition blueprint preserves section layout only; it does not promote readiness without official sample/report rows and citation bindings.",
+});
 
 type ProfessionalHandoffPackageConfig = {
   slug: string;
@@ -15699,7 +15800,7 @@ const makeRareInheritedConditionBoundaryFormalFields = (
 
 const makeRareInheritedConditionBoundaryOutputSections = (
   config: RareInheritedConditionBoundaryPackageConfig,
-): ReportPackageSeed["outputSections"] => [
+): ReportPackageSeed["outputSections"] => withFormalOutputBlueprint([
   {
     sortOrder: 1,
     title: "Report overview",
@@ -15842,7 +15943,13 @@ const makeRareInheritedConditionBoundaryOutputSections = (
       },
     ],
   },
-];
+], {
+  sectionKeyPrefix: config.conditionLabel,
+  evidenceKind: "local_scaffold",
+  availability: "not_captured",
+  nonPromotionBoundary:
+    "Rare-condition blueprint preserves section layout only; it does not promote readiness without official sample/report rows and citation bindings.",
+});
 
 const makeMalignantHyperthermiaSiblingWellnessOutputSections = (
   config: RareInheritedConditionBoundaryPackageConfig,
@@ -19496,7 +19603,7 @@ const makeSpecializedBoundaryFormalFields = (
 
 const makeSpecializedBoundaryOutputSections = (
   config: SpecializedBoundaryPackageConfig,
-): ReportPackageSeed["outputSections"] => [
+): ReportPackageSeed["outputSections"] => withFormalOutputBlueprint([
   {
     sortOrder: 1,
     title: "Report overview",
@@ -19655,7 +19762,13 @@ const makeSpecializedBoundaryOutputSections = (
       },
     ],
   },
-];
+], {
+  sectionKeyPrefix: config.focusLabel,
+  evidenceKind: "local_scaffold",
+  availability: "not_captured",
+  nonPromotionBoundary:
+    "Specialized boundary blueprint preserves section layout only; it does not promote readiness without official sample/report rows and citation bindings.",
+});
 
 const makeSpecializedDiseaseRiskSiblingLocalTestFixture = (
   config: SpecializedBoundaryPackageConfig,
@@ -24828,7 +24941,7 @@ const makeWgsProductBoundaryFormalFields = (config: WgsProductBoundaryPackageCon
   },
 ];
 
-const makeWgsProductBoundaryOutputSections = (): ReportPackageSeed["outputSections"] => [
+const makeWgsProductBoundaryOutputSections = (): ReportPackageSeed["outputSections"] => withFormalOutputBlueprint([
   {
     sortOrder: 1,
     title: "Report overview",
@@ -24971,7 +25084,13 @@ const makeWgsProductBoundaryOutputSections = (): ReportPackageSeed["outputSectio
       },
     ],
   },
-];
+], {
+  sectionKeyPrefix: "wgs_product_boundary",
+  evidenceKind: "local_scaffold",
+  availability: "not_captured",
+  nonPromotionBoundary:
+    "WGS product blueprint preserves section layout only; it does not promote readiness without official sample/report rows, lab output, and citation bindings.",
+});
 
 const wholeGenomeSequencingProductConfig: WgsProductBoundaryPackageConfig = {
   slug: "whole-genome-sequencing-30x",
@@ -46002,7 +46121,7 @@ const enhanceCatalogReport = (report: ReportPackageSeed): ReportPackageSeed => {
           notes: "Authenticated mock-report rows have not been extracted and are not invented.",
         },
       ],
-      outputSections: [
+      outputSections: withFormalOutputBlueprint([
         {
           sortOrder: 1,
           title: "Report overview",
@@ -46151,7 +46270,13 @@ const enhanceCatalogReport = (report: ReportPackageSeed): ReportPackageSeed => {
             },
           ],
         },
-      ],
+      ], {
+        sectionKeyPrefix: "sequencing_depth_and_coverage",
+        evidenceKind: "official_boundary_only",
+        availability: "not_captured",
+        nonPromotionBoundary:
+          "Sequencing depth/coverage blueprint preserves official boundary and local QC layout only; it does not promote readiness without official non-private rows and citation bindings.",
+      }),
     };
   }
 

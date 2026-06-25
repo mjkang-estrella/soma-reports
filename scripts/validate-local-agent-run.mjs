@@ -25,6 +25,15 @@ const args = parseArgs();
 const inputPath = args.get("--input");
 const resultPath = args.get("--result");
 const outPath = args.get("--out");
+const outputFormatEvidenceKinds = new Set([
+  "official_sample_rows",
+  "official_completed_output",
+  "official_boundary_only",
+  "official_metadata_only",
+  "sibling_sample",
+  "local_scaffold",
+]);
+const outputAvailabilities = new Set(["captured", "not_captured", "unavailable", "not_applicable"]);
 
 if (!inputPath || !resultPath) {
   throw new Error(
@@ -249,6 +258,120 @@ const stableEmittedFieldPathsFrom = (artifacts) => {
   return fields;
 };
 
+const validateFormalOutputBlueprint = (blueprint, path) => {
+  if (!blueprint) {
+    return false;
+  }
+
+  check(isPlainObject(blueprint), "INPUT.FORMAL_OUTPUT_BLUEPRINT_OBJECT", path, "formal output blueprint must be an object");
+  if (!isPlainObject(blueprint)) {
+    return true;
+  }
+
+  check(
+    isNonEmptyString(blueprint.sectionKey),
+    "INPUT.FORMAL_OUTPUT_BLUEPRINT_SECTION_KEY",
+    `${path}.sectionKey`,
+    "formal output blueprint must include sectionKey",
+  );
+  check(
+    isNonEmptyString(blueprint.sectionRole),
+    "INPUT.FORMAL_OUTPUT_BLUEPRINT_SECTION_ROLE",
+    `${path}.sectionRole`,
+    "formal output blueprint must include sectionRole",
+  );
+  check(
+    outputFormatEvidenceKinds.has(blueprint.evidenceKind),
+    "INPUT.FORMAL_OUTPUT_BLUEPRINT_EVIDENCE_KIND",
+    `${path}.evidenceKind`,
+    "formal output blueprint evidenceKind must be recognized",
+  );
+  check(
+    outputAvailabilities.has(blueprint.availability),
+    "INPUT.FORMAL_OUTPUT_BLUEPRINT_AVAILABILITY",
+    `${path}.availability`,
+    "formal output blueprint availability must be recognized",
+  );
+  check(
+    isNonEmptyString(blueprint.nonPromotionBoundary),
+    "INPUT.FORMAL_OUTPUT_BLUEPRINT_BOUNDARY",
+    `${path}.nonPromotionBoundary`,
+    "formal output blueprint must explain its non-promotion boundary",
+  );
+  check(
+    blueprint.promotesFormalReadiness === false,
+    "INPUT.FORMAL_OUTPUT_BLUEPRINT_NON_PROMOTING",
+    `${path}.promotesFormalReadiness`,
+    "formal output blueprint must never promote formal readiness",
+  );
+  if ("sourceArtifact" in blueprint) {
+    check(
+      isNonEmptyString(blueprint.sourceArtifact),
+      "INPUT.FORMAL_OUTPUT_BLUEPRINT_SOURCE_ARTIFACT",
+      `${path}.sourceArtifact`,
+      "formal output blueprint sourceArtifact must be non-empty when present",
+    );
+  }
+  return true;
+};
+
+const validateFormalOutputBlueprints = (artifacts) => {
+  let blueprintCount = 0;
+  for (const [sectionIndex, section] of (artifacts?.outputSections ?? []).entries()) {
+    const sectionPath = `$.formalArtifacts.outputSections[${sectionIndex}]`;
+    if (validateFormalOutputBlueprint(section.formalOutputBlueprint, `${sectionPath}.formalOutputBlueprint`)) {
+      blueprintCount += 1;
+    }
+
+    for (const [fieldIndex, field] of (section.expectedFields ?? []).entries()) {
+      const fieldPath = `${sectionPath}.expectedFields[${fieldIndex}]`;
+      if (validateFormalOutputBlueprint(field.formalOutputBlueprint, `${fieldPath}.formalOutputBlueprint`)) {
+        blueprintCount += 1;
+      }
+      if ("availability" in field) {
+        check(
+          outputAvailabilities.has(field.availability),
+          "INPUT.FORMAL_OUTPUT_FIELD_AVAILABILITY",
+          `${fieldPath}.availability`,
+          "formal output field availability must be recognized",
+        );
+      }
+      if ("officialFieldPath" in field) {
+        check(
+          isNonEmptyString(field.officialFieldPath),
+          "INPUT.FORMAL_OUTPUT_FIELD_OFFICIAL_PATH",
+          `${fieldPath}.officialFieldPath`,
+          "formal output field officialFieldPath must be non-empty when present",
+        );
+      }
+      if ("formalDisplayRole" in field) {
+        check(
+          isNonEmptyString(field.formalDisplayRole),
+          "INPUT.FORMAL_OUTPUT_FIELD_DISPLAY_ROLE",
+          `${fieldPath}.formalDisplayRole`,
+          "formal output field formalDisplayRole must be non-empty when present",
+        );
+      }
+      if ("unavailableReason" in field) {
+        check(
+          isNonEmptyString(field.unavailableReason),
+          "INPUT.FORMAL_OUTPUT_FIELD_UNAVAILABLE_REASON",
+          `${fieldPath}.unavailableReason`,
+          "formal output field unavailableReason must be non-empty when present",
+        );
+      }
+    }
+  }
+
+  if (blueprintCount > 0) {
+    pass(
+      "INPUT.FORMAL_OUTPUT_BLUEPRINT_METADATA_PRESENT",
+      "$.formalArtifacts.outputSections",
+      `validated ${blueprintCount} non-promoting formal output blueprint metadata entries`,
+    );
+  }
+};
+
 const collectReferenceIds = (preparedInput) => {
   const ids = new Set(["source-unavailable"]);
   const add = (value) => {
@@ -420,6 +543,7 @@ if (isLocalScaffoldOnlyRun) {
     "local-scaffold-only prepared input must not claim sample-backed formal readiness",
   );
 }
+validateFormalOutputBlueprints(prepared.formalArtifacts);
 
 const genomeEvidence = prepared.agentRunInput?.genomeEvidence ?? [];
 check(

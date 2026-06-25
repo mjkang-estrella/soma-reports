@@ -8,6 +8,32 @@ const curationStatus = v.union(
   v.literal("blocked"),
 );
 
+const outputFormatEvidenceKind = v.union(
+  v.literal("official_sample_rows"),
+  v.literal("official_completed_output"),
+  v.literal("official_boundary_only"),
+  v.literal("official_metadata_only"),
+  v.literal("sibling_sample"),
+  v.literal("local_scaffold"),
+);
+
+const outputAvailability = v.union(
+  v.literal("captured"),
+  v.literal("not_captured"),
+  v.literal("unavailable"),
+  v.literal("not_applicable"),
+);
+
+const formalOutputBlueprint = v.object({
+  sectionKey: v.string(),
+  sectionRole: v.string(),
+  evidenceKind: outputFormatEvidenceKind,
+  availability: outputAvailability,
+  sourceArtifact: v.optional(v.string()),
+  nonPromotionBoundary: v.string(),
+  promotesFormalReadiness: v.literal(false),
+});
+
 const outputField = v.object({
   key: v.string(),
   label: v.string(),
@@ -19,6 +45,11 @@ const outputField = v.object({
   sourceBinding: v.optional(v.string()),
   formalSourceField: v.optional(v.string()),
   allowsUnavailable: v.optional(v.boolean()),
+  formalOutputBlueprint: v.optional(formalOutputBlueprint),
+  officialFieldPath: v.optional(v.string()),
+  formalDisplayRole: v.optional(v.string()),
+  availability: v.optional(outputAvailability),
+  unavailableReason: v.optional(v.string()),
 });
 
 const genomeEvidence = v.object({
@@ -141,6 +172,7 @@ export default defineSchema({
     sortOrder: v.number(),
     title: v.string(),
     purpose: v.string(),
+    formalOutputBlueprint: v.optional(formalOutputBlueprint),
     expectedFields: v.array(outputField),
   }).index("by_reportSlug_and_sortOrder", ["reportSlug", "sortOrder"]),
 

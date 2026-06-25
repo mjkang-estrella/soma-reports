@@ -202,6 +202,16 @@ const buildDeterministicExampleOutput = (report: ReportPackage, localFixture: Lo
       sections: report.outputSections.map((section) => ({
         title: section.title,
         purpose: section.purpose,
+        formalOutputBlueprint: section.formalOutputBlueprint
+          ? {
+              sectionKey: section.formalOutputBlueprint.sectionKey,
+              sectionRole: section.formalOutputBlueprint.sectionRole,
+              evidenceKind: section.formalOutputBlueprint.evidenceKind,
+              availability: section.formalOutputBlueprint.availability,
+              promotesFormalReadiness: section.formalOutputBlueprint.promotesFormalReadiness,
+              nonPromotionBoundary: section.formalOutputBlueprint.nonPromotionBoundary,
+            }
+          : null,
         requiredFields: section.expectedFields.filter((field) => field.required).map((field) => field.key),
       })),
     },
@@ -444,6 +454,7 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
             checks: [
               "Every main finding is linked to a reference resource or marked unavailable.",
               "Every result row preserves covered resultRows[] fields from the formal map, including description when mapped.",
+              "Formal output blueprint metadata is format guidance only and never formal-readiness evidence.",
               "Raw genome records are excluded from the final output.",
               "appendix.probabilities[], appendix.uncertainty[], appendix.missingInputs[], and appendix.limitations[] are present.",
               "Probabilities, confidence values, and uncertainty text are kept out of main findings.",
@@ -2737,6 +2748,12 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                     <h3>{section.title}</h3>
                   </div>
                   <p>{section.purpose}</p>
+                  {section.formalOutputBlueprint ? (
+                    <small className="schema-blueprint">
+                      Official layout blueprint: {formatGapLabel(section.formalOutputBlueprint.evidenceKind)}; availability{" "}
+                      {formatGapLabel(section.formalOutputBlueprint.availability)}; does not promote formal readiness.
+                    </small>
+                  ) : null}
                   <ul>
                     {section.expectedFields.map((field) => (
                       <li key={`${field.key}-${field.fieldPath ?? field.label}`}>
@@ -2750,13 +2767,27 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                         field.citationRequired ||
                         field.formalSourceField ||
                         field.sourceBinding ||
-                        field.allowsUnavailable ? (
+                        field.allowsUnavailable ||
+                        field.officialFieldPath ||
+                        field.formalDisplayRole ||
+                        field.availability ||
+                        field.unavailableReason ||
+                        field.formalOutputBlueprint ? (
                           <small>
                             {field.fieldPath ? `Path: ${field.fieldPath}. ` : ""}
+                            {field.officialFieldPath ? `Expected official path: ${field.officialFieldPath}. ` : ""}
+                            {field.formalDisplayRole ? `Role: ${formatGapLabel(field.formalDisplayRole)}. ` : ""}
+                            {field.availability ? `Availability: ${formatGapLabel(field.availability)}. ` : ""}
                             {field.citationRequired ? "Citation required. " : ""}
                             {field.formalSourceField ? `Source: ${field.formalSourceField}. ` : ""}
                             {field.sourceBinding ? `Binding: ${field.sourceBinding}. ` : ""}
-                            {field.allowsUnavailable ? "Unavailable value allowed." : ""}
+                            {field.allowsUnavailable ? "Unavailable value allowed. " : ""}
+                            {field.formalOutputBlueprint
+                              ? `Blueprint: ${formatGapLabel(
+                                  field.formalOutputBlueprint.evidenceKind,
+                                )}; no readiness promotion. `
+                              : ""}
+                            {field.unavailableReason ?? ""}
                           </small>
                         ) : null}
                       </li>

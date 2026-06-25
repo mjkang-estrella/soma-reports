@@ -30,6 +30,15 @@ const resultPath = args.get("--result");
 const seedArtifactsPath = args.get("--seed-artifacts");
 const validationMode = args.get("--validation-mode") ?? "local";
 const validationModes = new Set(["local", "sample-parity", "formal-ready"]);
+const outputFormatEvidenceKinds = new Set([
+  "official_sample_rows",
+  "official_completed_output",
+  "official_boundary_only",
+  "official_metadata_only",
+  "sibling_sample",
+  "local_scaffold",
+]);
+const outputAvailabilities = new Set(["captured", "not_captured", "unavailable", "not_applicable"]);
 const formalEvidenceLedgerPath = "reference/catalog/sample-promotion-rejections-2026-06-23.json";
 
 if (!validationModes.has(validationMode)) {
@@ -414,6 +423,126 @@ const stableEmittedFieldPathsFrom = (artifacts) => {
     }
   }
   return fields;
+};
+
+const validateFormalOutputBlueprint = (blueprint, path) => {
+  if (!blueprint) {
+    return false;
+  }
+
+  check(isPlainObject(blueprint), "BUNDLE.FORMAL_OUTPUT_BLUEPRINT_OBJECT", path, "formal output blueprint must be an object");
+  if (!isPlainObject(blueprint)) {
+    return true;
+  }
+
+  check(
+    isNonEmptyString(blueprint.sectionKey),
+    "BUNDLE.FORMAL_OUTPUT_BLUEPRINT_SECTION_KEY",
+    `${path}.sectionKey`,
+    "formal output blueprint must include sectionKey",
+  );
+  check(
+    isNonEmptyString(blueprint.sectionRole),
+    "BUNDLE.FORMAL_OUTPUT_BLUEPRINT_SECTION_ROLE",
+    `${path}.sectionRole`,
+    "formal output blueprint must include sectionRole",
+  );
+  check(
+    outputFormatEvidenceKinds.has(blueprint.evidenceKind),
+    "BUNDLE.FORMAL_OUTPUT_BLUEPRINT_EVIDENCE_KIND",
+    `${path}.evidenceKind`,
+    "formal output blueprint evidenceKind must be recognized",
+  );
+  check(
+    outputAvailabilities.has(blueprint.availability),
+    "BUNDLE.FORMAL_OUTPUT_BLUEPRINT_AVAILABILITY",
+    `${path}.availability`,
+    "formal output blueprint availability must be recognized",
+  );
+  check(
+    isNonEmptyString(blueprint.nonPromotionBoundary),
+    "BUNDLE.FORMAL_OUTPUT_BLUEPRINT_BOUNDARY",
+    `${path}.nonPromotionBoundary`,
+    "formal output blueprint must explain its non-promotion boundary",
+  );
+  check(
+    blueprint.promotesFormalReadiness === false,
+    "BUNDLE.FORMAL_OUTPUT_BLUEPRINT_NON_PROMOTING",
+    `${path}.promotesFormalReadiness`,
+    "formal output blueprint must never promote formal readiness",
+  );
+  if ("sourceArtifact" in blueprint) {
+    check(
+      isNonEmptyString(blueprint.sourceArtifact),
+      "BUNDLE.FORMAL_OUTPUT_BLUEPRINT_SOURCE_ARTIFACT",
+      `${path}.sourceArtifact`,
+      "formal output blueprint sourceArtifact must be non-empty when present",
+    );
+  }
+  return true;
+};
+
+const validateFormalOutputBlueprints = (artifacts) => {
+  let blueprintCount = 0;
+  for (const [sectionIndex, section] of (artifacts?.outputSections ?? []).entries()) {
+    const sectionPath = `formalArtifacts.outputSections[${sectionIndex}]`;
+    if (validateFormalOutputBlueprint(section.formalOutputBlueprint, `${sectionPath}.formalOutputBlueprint`)) {
+      blueprintCount += 1;
+    }
+
+    for (const [fieldIndex, field] of (section.expectedFields ?? []).entries()) {
+      const fieldPath = `${sectionPath}.expectedFields[${fieldIndex}]`;
+      if (validateFormalOutputBlueprint(field.formalOutputBlueprint, `${fieldPath}.formalOutputBlueprint`)) {
+        blueprintCount += 1;
+      }
+      if ("availability" in field) {
+        check(
+          outputAvailabilities.has(field.availability),
+          "BUNDLE.FORMAL_OUTPUT_FIELD_AVAILABILITY",
+          `${fieldPath}.availability`,
+          "formal output field availability must be recognized",
+        );
+      }
+      if ("officialFieldPath" in field) {
+        check(
+          isNonEmptyString(field.officialFieldPath),
+          "BUNDLE.FORMAL_OUTPUT_FIELD_OFFICIAL_PATH",
+          `${fieldPath}.officialFieldPath`,
+          "formal output field officialFieldPath must be non-empty when present",
+        );
+      }
+      if ("formalDisplayRole" in field) {
+        check(
+          isNonEmptyString(field.formalDisplayRole),
+          "BUNDLE.FORMAL_OUTPUT_FIELD_DISPLAY_ROLE",
+          `${fieldPath}.formalDisplayRole`,
+          "formal output field formalDisplayRole must be non-empty when present",
+        );
+      }
+      if ("unavailableReason" in field) {
+        check(
+          isNonEmptyString(field.unavailableReason),
+          "BUNDLE.FORMAL_OUTPUT_FIELD_UNAVAILABLE_REASON",
+          `${fieldPath}.unavailableReason`,
+          "formal output field unavailableReason must be non-empty when present",
+        );
+      }
+    }
+  }
+
+  if (blueprintCount > 0) {
+    pass(
+      "BUNDLE.FORMAL_OUTPUT_BLUEPRINT_METADATA_PRESENT",
+      "formalArtifacts.outputSections",
+      `validated ${blueprintCount} non-promoting formal output blueprint metadata entries`,
+    );
+  } else {
+    notRun(
+      "BUNDLE.FORMAL_OUTPUT_BLUEPRINT_METADATA_PRESENT",
+      "formalArtifacts.outputSections",
+      "formal artifacts do not expose optional formal output blueprint metadata",
+    );
+  }
 };
 
 const seedSampleSourceIdsFrom = (artifacts) =>
@@ -871,6 +1000,7 @@ if (formalArtifacts) {
   for (const [key, value] of Object.entries(formalArtifacts)) {
     check(Array.isArray(value), "BUNDLE.FORMAL_ARTIFACT_ARRAY", `formalArtifacts.${key}`, `${key} must be an array`);
   }
+  validateFormalOutputBlueprints(formalArtifacts);
   if (validationMode === "formal-ready") {
     check(
       formalArtifacts.sampleRows.length > 0,

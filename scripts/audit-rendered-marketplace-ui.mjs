@@ -284,6 +284,8 @@ const evaluateRenderedPage = `async () => {
     selectedDetailShowsSampleBackedPending: /Sample-backed formal\\s+Pending/i.test(selectedDetailText),
     selectedDetailShowsRowReadyZero: /Row-ready captures\\s+0/i.test(selectedDetailText),
     selectedDetailShowsMissingOfficialRows: /official non-private sampleRows\\[\\], resultRows\\[\\], reportFile, or export rows/i.test(selectedDetailText),
+    selectedDetailShowsFormalBlueprint: /Official layout blueprint/i.test(selectedDetailText),
+    selectedDetailShowsBlueprintNonPromotion: /does not promote formal readiness/i.test(selectedDetailText),
     selectedDetailHasLiteralReportSlugPlaceholder: /\\{report\\.slug\\}/i.test(selectedDetailText),
     selectedDetailHasSelectedTemplateAuditCommand: selectedDetailText.includes(
       \`npm run scaffold:template-audit -- --report \${selectedCaptureReport}\`,
@@ -612,6 +614,17 @@ try {
   );
   addCheck(
     checks,
+    "selected_output_schema_blueprint",
+    rendered.selectedDetailShowsFormalBlueprint && rendered.selectedDetailShowsBlueprintNonPromotion,
+    "selected report output schema shows non-promoting formal blueprint metadata",
+    {
+      selectedReportTitle: rendered.selectedReportTitle,
+      selectedDetailShowsFormalBlueprint: rendered.selectedDetailShowsFormalBlueprint,
+      selectedDetailShowsBlueprintNonPromotion: rendered.selectedDetailShowsBlueprintNonPromotion,
+    },
+  );
+  addCheck(
+    checks,
     "selected_capture_commands_bind_report_slug",
     !rendered.selectedDetailHasLiteralReportSlugPlaceholder &&
       rendered.selectedDetailHasSelectedTemplateAuditCommand,
@@ -783,6 +796,8 @@ try {
       selectedDetailShowsSampleBackedPending: rendered.selectedDetailShowsSampleBackedPending,
       selectedDetailShowsRowReadyZero: rendered.selectedDetailShowsRowReadyZero,
       selectedDetailShowsMissingOfficialRows: rendered.selectedDetailShowsMissingOfficialRows,
+      selectedDetailShowsFormalBlueprint: rendered.selectedDetailShowsFormalBlueprint,
+      selectedDetailShowsBlueprintNonPromotion: rendered.selectedDetailShowsBlueprintNonPromotion,
       selectedDetailHasLiteralReportSlugPlaceholder: rendered.selectedDetailHasLiteralReportSlugPlaceholder,
       selectedDetailHasSelectedTemplateAuditCommand: rendered.selectedDetailHasSelectedTemplateAuditCommand,
       selectedDetailShowsPublicEndpointProbe: rendered.selectedDetailShowsPublicEndpointProbe,

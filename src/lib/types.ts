@@ -65,6 +65,26 @@ export type PromptSpec = {
   extractionStatus: CurationStatus;
 };
 
+export type OutputFormatEvidenceKind =
+  | "official_sample_rows"
+  | "official_completed_output"
+  | "official_boundary_only"
+  | "official_metadata_only"
+  | "sibling_sample"
+  | "local_scaffold";
+
+export type OutputAvailability = "captured" | "not_captured" | "unavailable" | "not_applicable";
+
+export type FormalOutputBlueprint = {
+  sectionKey: string;
+  sectionRole: string;
+  evidenceKind: OutputFormatEvidenceKind;
+  availability: OutputAvailability;
+  sourceArtifact?: string;
+  nonPromotionBoundary: string;
+  promotesFormalReadiness: false;
+};
+
 export type OutputField = {
   key: string;
   label: string;
@@ -76,12 +96,18 @@ export type OutputField = {
   sourceBinding?: string;
   formalSourceField?: string;
   allowsUnavailable?: boolean;
+  formalOutputBlueprint?: FormalOutputBlueprint;
+  officialFieldPath?: string;
+  formalDisplayRole?: string;
+  availability?: OutputAvailability;
+  unavailableReason?: string;
 };
 
 export type OutputSection = {
   sortOrder: number;
   title: string;
   purpose: string;
+  formalOutputBlueprint?: FormalOutputBlueprint;
   expectedFields: OutputField[];
 };
 
