@@ -155,6 +155,18 @@ const summarizeRun = (run) => {
       },
     };
   }
+  if (run.name.startsWith("scaffold:capture-session") && run.parsed) {
+    return {
+      ...run,
+      parsed: {
+        schemaVersion: run.parsed.schemaVersion,
+        filters: run.parsed.filters,
+        totals: run.parsed.totals,
+        officialEvidenceTierCounts: run.parsed.officialEvidenceTierCounts,
+        slugs: Array.isArray(run.parsed.rows) ? run.parsed.rows.map((row) => row.slug) : [],
+      },
+    };
+  }
   if (run.name === "agent:assert-sync" && run.parsed) {
     return {
       ...run,
@@ -241,6 +253,19 @@ const runResults = [
     "--sort",
     "public-opportunity",
   ]),
+  runJsonCommand("scaffold:capture-session:missing-artifacts", [
+    "npm",
+    "run",
+    "--silent",
+    "scaffold:capture-session",
+    "--",
+    "--artifact-gap",
+    "missing-committed",
+    "--source",
+    "both",
+    "--format",
+    "compact",
+  ]),
   runJsonCommand("scaffold:validate-captures", ["npm", "run", "--silent", "scaffold:validate-captures"]),
   runJsonCommand("scaffold:privacy-canary", ["npm", "run", "--silent", "scaffold:privacy-canary"]),
   runJsonCommand("objective:audit", ["npm", "run", "--silent", "objective:audit", "--", "--format", "compact"]),
@@ -270,6 +295,7 @@ const captureStatus = runsByName.get("scaffold:capture-status")?.parsed;
 const blueprintAudit = runsByName.get("scaffold:blueprint-audit")?.parsed;
 const nextActions = runsByName.get("scaffold:next-actions")?.parsed;
 const publicCaptureSession = runsByName.get("scaffold:capture-session:public")?.parsed;
+const missingArtifactCaptureSession = runsByName.get("scaffold:capture-session:missing-artifacts")?.parsed;
 const captureValidation = runsByName.get("scaffold:validate-captures")?.parsed;
 const privacyCanary = runsByName.get("scaffold:privacy-canary")?.parsed;
 const objectiveAudit = runsByName.get("objective:audit")?.parsed;
@@ -283,6 +309,7 @@ const blockerLedger = existsSync("reference/catalog/sample-promotion-rejections-
   ? JSON.parse(readFileSync("reference/catalog/sample-promotion-rejections-2026-06-23.json", "utf8"))
   : { decisions: [] };
 const blockerSlugs = new Set((blockerLedger.decisions ?? []).map((decision) => decision.slug));
+const officialOutputBlockerCount = blockerLedger.decisions?.length ?? captureStatus?.rows?.length ?? 0;
 const promotionReview = loadOfficialOutputPromotionReview();
 const capturePromotionReviewFor = (row) =>
   promotionReview.entriesByPath.get(row.path) ??
@@ -366,6 +393,15 @@ const publicEndpointProbeStoresHashOnlyText = publicEndpointProbeRows.every(
     publicEndpointTextSummaryIsHashOnly(row.summary ?? null) &&
     (row.infoTabs ?? []).every((tab) => publicEndpointTextSummaryIsHashOnly(tab.content ?? null)),
 );
+const sortedStrings = (values) => (Array.isArray(values) ? values.filter(Boolean).map(String).sort() : []);
+const sameStrings = (left, right) => left.length === right.length && left.every((value, index) => value === right[index]);
+const missingArtifactCaptureRows = Array.isArray(missingArtifactCaptureSession?.rows)
+  ? missingArtifactCaptureSession.rows
+  : [];
+const missingArtifactCaptureSessionSlugs = sortedStrings(missingArtifactCaptureRows.map((row) => row.slug));
+const expectedMissingCommittedArtifactSlugs = sortedStrings(
+  captureStatus?.captureArtifactGaps?.metadataOnlyMissingCommittedCaptureSlugs,
+);
 
 const appSource = existsSync("src/App.tsx") ? readFileSync("src/App.tsx", "utf8") : "";
 const reportCardSource = existsSync("src/components/ReportCard.tsx")
@@ -381,6 +417,13 @@ const formalEvidenceBacklogSource = existsSync("src/lib/formalEvidenceBacklog.ts
 const uiSourceChecks = {
   appGapQueue:
     appSource.includes("Evidence gap queue"),
+  missingCommittedArtifactQueue:
+    appSource.includes("MISSING_COMMITTED_CAPTURE_SESSION_COMMAND") &&
+    appSource.includes("MISSING_COMMITTED_CAPTURE_SESSION_COMPACT_COMMAND") &&
+    appSource.includes("--artifact-gap missing-committed") &&
+    appSource.includes("--source both") &&
+    appSource.includes("--format compact") &&
+    appSource.includes("Copy missing artifacts"),
   reportCapturePanel:
     reportDetailSource.includes("official-output-capture"),
   reportCardLocalRunSurface:
@@ -827,6 +870,72 @@ const checks = [
             officialBoundaryModeledTargets: captureStatus.totals?.officialBoundaryModeledTargets,
           },
           captureArtifactGaps: captureStatus.captureArtifactGaps ?? null,
+        }
+      : null,
+  },
+  {
+    key: "official_output_missing_artifact_capture_session",
+    ok:
+      runsByName.get("scaffold:capture-session:missing-artifacts")?.exitCode === 0 &&
+      missingArtifactCaptureSession?.schemaVersion === "soma-reports.official-output-capture-session.v1" &&
+      missingArtifactCaptureSession?.filters?.artifactGap === "missing-committed" &&
+      missingArtifactCaptureSession?.filters?.source === "both" &&
+      missingArtifactCaptureSession?.totals?.selected === 12 &&
+      missingArtifactCaptureSession?.totals?.availableBlockers === officialOutputBlockerCount &&
+      missingArtifactCaptureSession?.totals?.availableMissingCommittedCaptureArtifacts === 12 &&
+      missingArtifactCaptureSession?.totals?.allStatusRows === officialOutputBlockerCount &&
+      missingArtifactCaptureSession?.totals?.rowEvidenceReadyRows === 0 &&
+      missingArtifactCaptureSession?.totals?.officialBoundaryModeled === 0 &&
+      missingArtifactCaptureSession?.totals?.officialMetadataOnly === 12 &&
+      missingArtifactCaptureSession?.totals?.missingCommittedCaptureArtifactRows === 12 &&
+      missingArtifactCaptureSession?.totals?.metadataOnlyMissingCommittedCaptureArtifacts === 12 &&
+      missingArtifactCaptureSession?.totals?.boundaryModeledMissingCommittedCaptureArtifacts === 0 &&
+      missingArtifactCaptureRows.length === 12 &&
+      sameStrings(missingArtifactCaptureSessionSlugs, expectedMissingCommittedArtifactSlugs) &&
+      missingArtifactCaptureRows.every(
+        (row) =>
+          row.sourceMode === "both" &&
+          row.artifactGap?.kind === "missing-committed" &&
+          row.artifactGap?.expectedSanitizedArtifactPath?.startsWith("reference/catalog/") &&
+          row.artifactGap?.expectedSanitizedArtifactPath?.includes("-official-output-capture-") &&
+          row.officialEvidenceTier === "official-metadata-only" &&
+          row.stage === "reviewed-metadata-only" &&
+          row.publicCaptureTemplatePath?.startsWith("tmp/capture-templates/") &&
+          row.redactionInputPath?.startsWith(".soma/private/official-output-redactions/") &&
+          row.committedCapturePath?.startsWith("reference/catalog/") &&
+          row.publicTemplateCommand?.includes("scaffold:capture-template") &&
+          row.privateRedactionCommand?.includes("scaffold:redaction-template") &&
+          row.dryRunCommand?.includes("--dry-run true") &&
+          row.publicCaptureOpportunity?.boundary?.includes("rowEvidenceReady") &&
+          row.formalGateMissing?.includes("a rowEvidenceReady official-output capture validator pass"),
+      ),
+    expected:
+      "missing-artifact capture-session compact output selects the 12 metadata-only committed-artifact gaps with source=both and no rowEvidenceReady promotion",
+    actual: missingArtifactCaptureSession
+      ? {
+          filters: missingArtifactCaptureSession.filters,
+          totals: missingArtifactCaptureSession.totals,
+          slugs: missingArtifactCaptureSessionSlugs,
+          expectedSlugs: expectedMissingCommittedArtifactSlugs,
+          firstTargets: missingArtifactCaptureRows.slice(0, 5).map((row) => ({
+            slug: row.slug,
+            sourceMode: row.sourceMode,
+            artifactGap: row.artifactGap,
+            officialEvidenceTier: row.officialEvidenceTier,
+            stage: row.stage,
+            publicCaptureTemplatePath: row.publicCaptureTemplatePath,
+            redactionInputPath: row.redactionInputPath,
+            committedCapturePath: row.committedCapturePath,
+            publicTemplateCommand: row.publicTemplateCommand,
+            privateRedactionCommand: row.privateRedactionCommand,
+            dryRunCommand: row.dryRunCommand,
+            publicCaptureOpportunity: row.publicCaptureOpportunity
+              ? {
+                  level: row.publicCaptureOpportunity.level,
+                  boundary: row.publicCaptureOpportunity.boundary,
+                }
+              : null,
+          })),
         }
       : null,
   },

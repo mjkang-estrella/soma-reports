@@ -51,6 +51,10 @@ const AUTHENTICATED_DUPLICATE_POSITION_TOTAL = 77;
 const AUTHENTICATED_PAGE_COUNT = 3;
 const OFFICIAL_OUTPUT_BLOCKERS_STATE = "Official output blockers";
 const OFFICIAL_BOUNDARY_MODELED_STATE = "Official boundary modeled";
+const MISSING_COMMITTED_CAPTURE_SESSION_COMMAND =
+  "npm run scaffold:capture-session -- --artifact-gap missing-committed --source both --format md --out tmp/official-output-capture-session-missing-committed.md";
+const MISSING_COMMITTED_CAPTURE_SESSION_COMPACT_COMMAND =
+  "npm run scaffold:capture-session -- --artifact-gap missing-committed --source both --format compact";
 const DEFAULT_MARKETPLACE_ROUTE_ALIASES: Record<string, string> = {
   "clinical-annotator-of-variants": "clinical-annotator-variants",
   "eve-premium": "eve-premium-dna-genome-data-bioinformatics-pipelines",
@@ -392,8 +396,24 @@ export default function App() {
       "npm run scaffold:capture-session -- --source public --format md --out tmp/official-output-capture-session-public.md",
       "npm run scaffold:capture-session -- --source private --format md --out tmp/official-output-capture-session-private.md",
       "npm run scaffold:capture-session -- --source both --format md --out tmp/official-output-capture-session.md",
+      MISSING_COMMITTED_CAPTURE_SESSION_COMMAND,
       "npm run scaffold:validate-captures",
       "npm run scaffold:evidence-audit",
+      "npm run completion:audit -- --format compact",
+    ];
+
+    await navigator.clipboard.writeText(commands.join("\n"));
+  };
+
+  const copyMissingCommittedCaptureQueueCommands = async () => {
+    const commands = [
+      "# Missing committed official-output capture artifact queue",
+      "# This queue contains metadata-only blockers that still need public official output or sanitized private completed output.",
+      "npm run scaffold:capture-status:snapshot",
+      MISSING_COMMITTED_CAPTURE_SESSION_COMPACT_COMMAND,
+      MISSING_COMMITTED_CAPTURE_SESSION_COMMAND,
+      "npm run scaffold:validate-captures",
+      "npm run ui:audit -- --format compact",
       "npm run completion:audit -- --format compact",
     ];
 
@@ -1156,6 +1176,7 @@ export default function App() {
                   {officialPublicEndpointProbe.totals.unavailable} expected unavailable,{" "}
                   {officialPublicEndpointProbe.totals.exactReportFiles} exact report files,{" "}
                   {officialPublicEndpointProbe.totals.exactOutputKeySignalTargets} exact output-row signal targets.
+                  Missing artifact queue: `{MISSING_COMMITTED_CAPTURE_SESSION_COMMAND}`.
                   Export source-specific packets with `npm run scaffold:capture-session -- --source public --format md --out tmp/official-output-capture-session-public.md`,
                   `npm run scaffold:capture-session -- --source private --format md --out tmp/official-output-capture-session-private.md`,
                   or `npm run scaffold:capture-session -- --source both --format md --out tmp/official-output-capture-session.md`.
@@ -1180,6 +1201,9 @@ export default function App() {
                   </span>
                   <button className="btn btn-outline" type="button" onClick={() => void copyOfficialCaptureBoardCommands()}>
                     Copy queue commands
+                  </button>
+                  <button className="btn btn-outline" type="button" onClick={() => void copyMissingCommittedCaptureQueueCommands()}>
+                    Copy missing artifacts
                   </button>
                 </div>
               </div>

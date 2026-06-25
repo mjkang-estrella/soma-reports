@@ -34,6 +34,7 @@ const outPath = args.get("--out") ?? null;
 const tierFilter = args.get("--tier") ?? "all";
 const stageFilter = args.get("--stage") ?? "all";
 const classFilter = args.get("--class") ?? "all";
+const artifactGapFilter = args.get("--artifact-gap") ?? "all";
 const limit = args.has("--limit") ? Number(args.get("--limit")) : null;
 const dateStamp = args.get("--date") ?? todayStamp();
 const sourceMode = args.get("--source") ?? "public";
@@ -43,6 +44,7 @@ const reportFilter = args.get("--report") ?? args.get("--slug") ?? null;
 const allowedFormats = new Set(["json", "md", "compact"]);
 const allowedSourceModes = new Set(["public", "private", "both"]);
 const allowedSortModes = new Set(["priority", "public-opportunity"]);
+const allowedArtifactGapFilters = new Set(["all", "missing-committed"]);
 const allowedTierFilters = new Set([
   "all",
   "official-boundary-modeled",
@@ -61,6 +63,9 @@ if (!allowedSourceModes.has(sourceMode)) {
 }
 if (!allowedSortModes.has(sortMode)) {
   throw new Error(`Unsupported --sort ${sortMode}; expected ${[...allowedSortModes].join(", ")}`);
+}
+if (!allowedArtifactGapFilters.has(artifactGapFilter)) {
+  throw new Error(`Unsupported --artifact-gap ${artifactGapFilter}; expected ${[...allowedArtifactGapFilters].join(", ")}`);
 }
 if (!allowedTierFilters.has(tierFilter)) {
   throw new Error(`Unsupported --tier ${tierFilter}; expected ${[...allowedTierFilters].join(", ")}`);
@@ -86,6 +91,13 @@ const latestCatalogPathFor = (prefix) => {
 };
 const status = readJson(statusPath);
 const rows = asArray(status.rows);
+const captureArtifactGaps = status.captureArtifactGaps ?? null;
+if (artifactGapFilter !== "all" && !captureArtifactGaps) {
+  throw new Error(`--artifact-gap ${artifactGapFilter} requires captureArtifactGaps in ${statusPath}`);
+}
+const missingCommittedArtifactSlugs = new Set(
+  asArray(captureArtifactGaps?.missingCommittedOfficialCaptureSlugs).filter(Boolean),
+);
 const publicEndpointProbePath = latestCatalogPathFor(publicReportEndpointProbePrefix);
 const publicEndpointProbe = publicEndpointProbePath ? readJson(publicEndpointProbePath) : null;
 const publicEndpointProbeBySlug = new Map(
@@ -327,6 +339,7 @@ const publicCaptureOpportunityFor = (row, tier, signals, endpointProbeRow) => {
 const selectedRows = rows
   .filter((row) => !rowEvidenceReady(row))
   .filter((row) => !reportFilter || row.slug === reportFilter)
+  .filter((row) => artifactGapFilter === "all" || missingCommittedArtifactSlugs.has(row.slug))
   .filter((row) => tierFilter === "all" || officialEvidenceTierFor(row) === tierFilter)
   .filter((row) => stageFilter === "all" || row.stage === stageFilter)
   .filter((row) => classFilter === "all" || row.evidenceClass === classFilter)
@@ -372,6 +385,15 @@ const selectedRows = rows
       officialEvidenceTier: tier,
       officialBoundaryModeled: Boolean(row.officialBoundaryModeled),
       officialBoundaryModeledFields: row.officialBoundaryModeledFields ?? 0,
+      artifactGap: missingCommittedArtifactSlugs.has(row.slug)
+        ? {
+            kind: "missing-committed",
+            expectedSanitizedArtifactPath: row.expectedSanitizedArtifactPath ?? committedCapturePath,
+            boundary:
+              captureArtifactGaps?.rows?.find((gapRow) => gapRow.slug === row.slug)?.boundary ??
+              "Committed official-output capture artifact is missing for this blocker.",
+          }
+        : null,
       captureUrl: row.captureUrl,
       publicEndpointProbe: publicEndpointProbeSummary,
       liveRoute: row.liveDetailInspection
@@ -431,6 +453,7 @@ const summary = {
     tier: tierFilter,
     stage: stageFilter,
     class: classFilter,
+    artifactGap: artifactGapFilter,
     report: reportFilter,
     limit,
     date: dateStamp,
@@ -440,6 +463,9 @@ const summary = {
   totals: {
     selected: selectedRows.length,
     availableBlockers: rows.filter((row) => !rowEvidenceReady(row)).length,
+    availableMissingCommittedCaptureArtifacts: rows.filter(
+      (row) => !rowEvidenceReady(row) && missingCommittedArtifactSlugs.has(row.slug),
+    ).length,
     allStatusRows: rows.length,
     rowEvidenceReadyRows: rows.filter(rowEvidenceReady).length,
     officialBoundaryModeled: selectedRows.filter((row) => row.officialEvidenceTier === "official-boundary-modeled").length,
@@ -461,6 +487,13 @@ const summary = {
     ).length,
     publicEndpointFormalFieldSignalRows: selectedRows.filter(
       (row) => (row.publicEndpointProbe?.formalFieldTerms?.length ?? 0) > 0,
+    ).length,
+    missingCommittedCaptureArtifactRows: selectedRows.filter((row) => row.artifactGap?.kind === "missing-committed").length,
+    metadataOnlyMissingCommittedCaptureArtifacts: selectedRows.filter(
+      (row) => row.artifactGap?.kind === "missing-committed" && row.officialEvidenceTier === "official-metadata-only",
+    ).length,
+    boundaryModeledMissingCommittedCaptureArtifacts: selectedRows.filter(
+      (row) => row.artifactGap?.kind === "missing-committed" && row.officialEvidenceTier === "official-boundary-modeled",
     ).length,
   },
   officialEvidenceTierCounts: countBy(selectedRows, "officialEvidenceTier"),
@@ -486,6 +519,7 @@ const renderMarkdown = () => {
     "## Scope",
     "",
     `- Selected blockers: ${summary.totals.selected}/${summary.totals.availableBlockers}`,
+    `- Artifact gap filter: \`${artifactGapFilter}\` (${summary.totals.missingCommittedCaptureArtifactRows} missing committed artifacts selected)`,
     `- Source mode: \`${sourceMode}\``,
     `- Sort: \`${sortMode}\``,
     `- Official-boundary modeled: ${summary.totals.officialBoundaryModeled}`,
@@ -514,6 +548,11 @@ const renderMarkdown = () => {
       `- Slug: \`${row.slug}\``,
       `- Tier: \`${row.officialEvidenceTier}\``,
       `- Stage: \`${row.stage}\``,
+      `- Artifact gap: ${
+        row.artifactGap
+          ? `${row.artifactGap.kind}; expected ${row.artifactGap.expectedSanitizedArtifactPath}`
+          : "not selected by artifact-gap filter"
+      }`,
       `- Capture URL: ${row.captureUrl ?? "not available"}`,
       `- Public endpoint probe: ${
         row.publicEndpointProbe
@@ -568,6 +607,7 @@ const renderCompact = () =>
         slug: row.slug,
         priority: row.priority,
         sourceMode: row.sourceMode,
+        artifactGap: row.artifactGap,
         officialEvidenceTier: row.officialEvidenceTier,
         stage: row.stage,
         publicCaptureTemplatePath: row.publicCaptureTemplatePath,

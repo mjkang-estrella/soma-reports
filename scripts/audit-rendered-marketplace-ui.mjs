@@ -356,6 +356,8 @@ const evaluateRenderedPage = `async () => {
     copyReadOnlyChecksButtons: buttonTexts.filter((text) => text === "Copy read-only checks").length,
     copyLocalRunWritesTmpButtons: buttonTexts.filter((text) => text === "Copy local run commands (writes tmp)").length,
     copyBundleValidatorWritesTmpButtons: buttonTexts.filter((text) => text === "Copy bundle validator (writes tmp)").length,
+    copyQueueCommandsButtons: buttonTexts.filter((text) => text === "Copy queue commands").length,
+    copyMissingArtifactsButtons: buttonTexts.filter((text) => text === "Copy missing artifacts").length,
     createConvexDraftButtons: buttonTexts.filter((text) => text === "Create Convex draft").length,
     saveConvexResultSummaryButtons: buttonTexts.filter((text) => text === "Save Convex result summary").length,
     readOnlyLocalRunText: readOnlyLocalRunText.slice(0, 2500),
@@ -392,6 +394,10 @@ const evaluateRenderedPage = `async () => {
       ),
     containsCombinedCaptureSessionCommand:
       /npm run scaffold:capture-session -- --source both --format md --out tmp\\/official-output-capture-session\\.md/i.test(
+        bodyText,
+      ),
+    containsMissingArtifactCaptureSessionCommand:
+      /npm run scaffold:capture-session -- --artifact-gap missing-committed --source both --format md --out tmp\\/official-output-capture-session-missing-committed\\.md/i.test(
         bodyText,
       ),
     containsPublicEndpointProbeSummary:
@@ -643,14 +649,20 @@ try {
       rendered.missingCaptureArtifactPanelMetadataOnlyRows === 12 &&
       rendered.missingCaptureArtifactPanelBoundaryModeledRows === 0 &&
       rendered.missingCaptureArtifactPanelExpectedPaths === 12 &&
-      rendered.completionWorkbenchMissingCommittedArtifactRows === 12,
-    "missing committed capture artifact panel renders 12 metadata-only rows, 12 expected artifact paths, 12 workbench warnings, and no boundary-modeled missing rows",
+      rendered.completionWorkbenchMissingCommittedArtifactRows === 12 &&
+      rendered.copyQueueCommandsButtons === 1 &&
+      rendered.copyMissingArtifactsButtons === 1 &&
+      rendered.containsMissingArtifactCaptureSessionCommand,
+    "missing committed capture artifact panel renders 12 metadata-only rows, 12 expected artifact paths, the filtered queue command/action, and no boundary-modeled missing rows",
     {
       missingCaptureArtifactPanelRendered: rendered.missingCaptureArtifactPanelRendered,
       missingCaptureArtifactPanelMetadataOnlyRows: rendered.missingCaptureArtifactPanelMetadataOnlyRows,
       missingCaptureArtifactPanelBoundaryModeledRows: rendered.missingCaptureArtifactPanelBoundaryModeledRows,
       missingCaptureArtifactPanelExpectedPaths: rendered.missingCaptureArtifactPanelExpectedPaths,
       completionWorkbenchMissingCommittedArtifactRows: rendered.completionWorkbenchMissingCommittedArtifactRows,
+      copyQueueCommandsButtons: rendered.copyQueueCommandsButtons,
+      copyMissingArtifactsButtons: rendered.copyMissingArtifactsButtons,
+      containsMissingArtifactCaptureSessionCommand: rendered.containsMissingArtifactCaptureSessionCommand,
     },
   );
   addCheck(
@@ -818,7 +830,8 @@ try {
       rendered.containsReferencesNav &&
       rendered.containsPublicCaptureSessionCommand &&
       rendered.containsPrivateCaptureSessionCommand &&
-      rendered.containsCombinedCaptureSessionCommand,
+      rendered.containsCombinedCaptureSessionCommand &&
+      rendered.containsMissingArtifactCaptureSessionCommand,
     "Evidence queue, source-specific capture-session commands, plus Agent Prompt, Output Schema, and References navigation are present",
     {
       containsEvidenceQueue: rendered.containsEvidenceQueue,
@@ -828,6 +841,7 @@ try {
       containsPublicCaptureSessionCommand: rendered.containsPublicCaptureSessionCommand,
       containsPrivateCaptureSessionCommand: rendered.containsPrivateCaptureSessionCommand,
       containsCombinedCaptureSessionCommand: rendered.containsCombinedCaptureSessionCommand,
+      containsMissingArtifactCaptureSessionCommand: rendered.containsMissingArtifactCaptureSessionCommand,
     },
   );
 
@@ -878,6 +892,9 @@ try {
       missingCaptureArtifactPanelExpectedPaths: rendered.missingCaptureArtifactPanelExpectedPaths,
       completionWorkbenchMissingCommittedArtifactRows:
         rendered.completionWorkbenchMissingCommittedArtifactRows,
+      copyQueueCommandsButtons: rendered.copyQueueCommandsButtons,
+      copyMissingArtifactsButtons: rendered.copyMissingArtifactsButtons,
+      containsMissingArtifactCaptureSessionCommand: rendered.containsMissingArtifactCaptureSessionCommand,
       selectedReportTitle: rendered.selectedReportTitle,
       selectedCaptureTemplateHasPlaceholderStatus: rendered.selectedCaptureTemplateHasPlaceholderStatus,
       selectedCaptureTemplateHasConfirmationFields: rendered.selectedCaptureTemplateHasConfirmationFields,

@@ -114,6 +114,7 @@ npm run scaffold:next-actions -- --format md --out tmp/official-output-next-acti
 npm run scaffold:capture-session -- --source public --format md --out tmp/official-output-capture-session-public.md
 npm run scaffold:capture-session -- --source private --format md --out tmp/official-output-capture-session-private.md
 npm run scaffold:capture-session -- --source both --format md --out tmp/official-output-capture-session.md
+npm run scaffold:capture-session -- --artifact-gap missing-committed --source both --format md --out tmp/official-output-capture-session-missing-committed.md
 npm run scaffold:capture-template -- --report sequencing-depth-and-coverage --out tmp/capture-templates/sequencing-depth-and-coverage-official-output-capture-template.json
 npm run scaffold:redaction-next
 npm run scaffold:redaction-template -- --report <slug>
@@ -281,16 +282,20 @@ packet:
 npm run scaffold:capture-session -- --source public --format md --out tmp/official-output-capture-session-public.md
 npm run scaffold:capture-session -- --source private --format md --out tmp/official-output-capture-session-private.md
 npm run scaffold:capture-session -- --source both --format md --out tmp/official-output-capture-session.md
+npm run scaffold:capture-session -- --artifact-gap missing-committed --source both --format md --out tmp/official-output-capture-session-missing-committed.md
+npm run scaffold:capture-session -- --artifact-gap missing-committed --source both --format compact
 npm run scaffold:capture-session -- --source public --report sequencing-depth-and-coverage --format compact
 npm run scaffold:capture-session -- --tier official-boundary-modeled --limit 3 --format compact
 ```
 
-The session manifest keeps the 21 blockers ordered by capture priority, repeats
-the public capture-template path, local-only redaction input path, sanitized
-draft path, commit-safe capture path, public template audit, dry-run sanitizer,
-validation commands, and stop conditions for each target. It is a planning
-artifact only: fill public templates from public/non-private official sources, or
-fill ignored
+The `--artifact-gap missing-committed` filter narrows the session to the
+`captureArtifactGaps` rows whose committed official-output capture artifact is
+still missing. The session manifest keeps the selected blockers ordered by
+capture priority, repeats the public capture-template path, local-only redaction
+input path, sanitized draft path, commit-safe capture path, public template
+audit, dry-run sanitizer, validation commands, and stop conditions for each
+target. It is a planning artifact only: fill public templates from
+public/non-private official sources, or fill ignored
 `.soma/private/official-output-redactions/*-redaction-input.json` files from
 manually redacted completed Sequencing.com outputs, and keep raw genome data,
 private reports, private finding values, account identifiers, and private result
