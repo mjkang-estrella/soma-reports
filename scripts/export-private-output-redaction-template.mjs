@@ -129,13 +129,17 @@ if (existsSync(outPath) && !overwrite) {
 }
 
 const sourceResourceId = `${reportSlug}-redacted-official-output`;
+const sourceBindingStatusPlaceholder = "replace-with-exact-direct-or-official";
+const sourceBindingConfirmationNotePlaceholder = "replace-with-visible-row-or-export-binding-note";
 const starterSampleRows =
   Array.isArray(captureTemplate?.sampleRows) && captureTemplate.sampleRows.length > 0
     ? captureTemplate.sampleRows.map((row, index) => ({
         ...row,
         rowId: row.rowId?.startsWith("replace-") ? `${reportSlug}-official-row-${index + 1}` : row.rowId,
         sourceResourceIds: [sourceResourceId],
-        sourceBindingStatus: "exact",
+        sourceBindingStatus: sourceBindingStatusPlaceholder,
+        sourceBindingConfirmed: false,
+        sourceBindingConfirmationNote: sourceBindingConfirmationNotePlaceholder,
       }))
     : [
         {
@@ -145,8 +149,11 @@ const starterSampleRows =
           geneticAnalysis: "replace-with-redacted-or-non-private-official-row-value",
           observedField: "replace-with-official-output-field",
           sourceResourceIds: [sourceResourceId],
-          sourceBindingStatus: "exact",
-          sourceBindingNote: "Bound to a local private completed-output file after manual redaction.",
+          sourceBindingStatus: sourceBindingStatusPlaceholder,
+          sourceBindingConfirmed: false,
+          sourceBindingConfirmationNote: sourceBindingConfirmationNotePlaceholder,
+          sourceBindingNote:
+            "Choose exact, direct, or official only after binding this row to a visible redacted official output row/export.",
         },
       ];
 
@@ -155,7 +162,9 @@ const starterFormalFields =
     ? captureTemplate.formalFields.map((field) => ({
         ...field,
         sourceResourceIds: [sourceResourceId],
-        sourceBindingStatus: "exact",
+        sourceBindingStatus: sourceBindingStatusPlaceholder,
+        sourceBindingConfirmed: false,
+        sourceBindingConfirmationNote: sourceBindingConfirmationNotePlaceholder,
         sourceLabel: sourceResourceId,
       }))
     : [
@@ -166,7 +175,9 @@ const starterFormalFields =
           outputPath: "replace-with-output-path",
           status: "covered",
           sourceResourceIds: [sourceResourceId],
-          sourceBindingStatus: "exact",
+          sourceBindingStatus: sourceBindingStatusPlaceholder,
+          sourceBindingConfirmed: false,
+          sourceBindingConfirmationNote: sourceBindingConfirmationNotePlaceholder,
           sourceLabel: sourceResourceId,
         },
       ];
@@ -183,9 +194,11 @@ const starterResultRows = [
       ]),
     ),
     sourceResourceIds: [sourceResourceId],
-    sourceBindingStatus: "exact",
+    sourceBindingStatus: sourceBindingStatusPlaceholder,
+    sourceBindingConfirmed: false,
+    sourceBindingConfirmationNote: sourceBindingConfirmationNotePlaceholder,
     sourceBindingNote:
-      "Populate from one real official completed-output row/export after removing private values. Keep the matching sampleRows[] entry source-bound so rowEvidenceReady can be evaluated.",
+      "Populate from one real official completed-output row/export after removing private values. Replace sourceBindingStatus with exact, direct, or official only after confirming the row binding.",
   },
 ];
 
@@ -280,7 +293,9 @@ const redactionTemplate = {
   citationBindings: starterSampleRows.map((row) => ({
     rowId: row.rowId,
     sourceResourceIds: [sourceResourceId],
-    sourceBindingStatus: "exact",
+    sourceBindingStatus: sourceBindingStatusPlaceholder,
+    sourceBindingConfirmed: false,
+    sourceBindingConfirmationNote: sourceBindingConfirmationNotePlaceholder,
   })),
   redactionChecklist,
   promotionReadinessReview,

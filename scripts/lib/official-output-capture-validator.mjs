@@ -2,6 +2,7 @@ export const officialOutputCaptureSchema = "soma-reports.official-output-capture
 
 const sequencingUrlPattern = /^https:\/\/(?:www\.)?sequencing\.com\//i;
 const sourceBindingStatuses = new Set(["exact", "direct", "official", "derived", "curated"]);
+const rowEvidenceReadySourceBindingStatuses = new Set(["exact", "direct", "official"]);
 const disallowedStringPatterns = [
   { pattern: /\breplace-(?:me|with)\b/i, message: "placeholder text must be replaced before validation" },
   { pattern: /fixtures\/synthetic\//i, message: "synthetic fixture paths cannot be promotion evidence" },
@@ -108,7 +109,9 @@ const rowHasOfficialOutputBinding = (row, officialOutputSourceIds) =>
   sourceIdsForRow(row).some((sourceId) => officialOutputSourceIds.has(sourceId));
 
 const rowHasReadyOfficialOutputBinding = (row, officialOutputSourceIds) =>
-  rowHasSourceBinding(row) && rowHasOfficialOutputBinding(row, officialOutputSourceIds);
+  rowHasSourceBinding(row) &&
+  rowEvidenceReadySourceBindingStatuses.has(row?.sourceBindingStatus) &&
+  rowHasOfficialOutputBinding(row, officialOutputSourceIds);
 
 const validateOutputRowSourceBinding = (row, jsonPath, officialOutputSourceIds, addProblem, addWarning) => {
   if (!isPlainObject(row)) {
@@ -146,7 +149,9 @@ const bindingHasOfficialOutputSource = (binding, officialOutputSourceIds) =>
   sourceIdsForRow(binding).some((sourceId) => officialOutputSourceIds.has(sourceId));
 
 const bindingHasReadyOfficialOutputSource = (binding, officialOutputSourceIds) =>
-  bindingIsReady(binding) && bindingHasOfficialOutputSource(binding, officialOutputSourceIds);
+  bindingIsReady(binding) &&
+  rowEvidenceReadySourceBindingStatuses.has(binding?.sourceBindingStatus) &&
+  bindingHasOfficialOutputSource(binding, officialOutputSourceIds);
 
 const scanStrings = (value, visit, path = "$") => {
   if (typeof value === "string") {
@@ -269,7 +274,7 @@ export const validateOfficialOutputCaptureArtifact = (artifact, options = {}) =>
   const fieldHasOfficialOutputBinding = (field) =>
     sourceIdsForField(field).some((sourceId) => officialOutputSourceIds.has(sourceId));
   const fieldHasReadyOfficialOutputBinding = (field) =>
-    sourceBindingStatuses.has(field?.sourceBindingStatus) && fieldHasOfficialOutputBinding(field);
+    rowEvidenceReadySourceBindingStatuses.has(field?.sourceBindingStatus) && fieldHasOfficialOutputBinding(field);
 
   if (
     !outputSignals.reportFile &&

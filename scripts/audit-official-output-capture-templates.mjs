@@ -86,8 +86,24 @@ const parseJson = (path) => {
   }
 };
 
+const sourceBindingStatusPlaceholder = "replace-with-exact-direct-or-official";
+
+const rowAtValidationPath = (artifact, path) => {
+  const match = /^\$\.(sampleRows|resultRows|formalFields|citationBindings)\[(\d+)\](?:\.sourceBindingStatus)?$/.exec(path);
+  if (!match) {
+    return null;
+  }
+  return artifact?.[match[1]]?.[Number.parseInt(match[2], 10)] ?? null;
+};
+
 const allowedTemplateValidationProblem = (artifact, problem) => {
   if (problem.message === "placeholder text must be replaced before validation") {
+    return true;
+  }
+  if (
+    /sourceBindingStatus|available binding status/i.test(problem.message) &&
+    rowAtValidationPath(artifact, problem.path)?.sourceBindingStatus === sourceBindingStatusPlaceholder
+  ) {
     return true;
   }
   if (
@@ -152,6 +168,21 @@ const templateShapeProblems = (artifact, target) => {
   return problems;
 };
 
+const placeholderBindingStatusProblems = (artifact) => {
+  const problems = [];
+  for (const key of ["sampleRows", "resultRows", "formalFields", "citationBindings"]) {
+    const rows = Array.isArray(artifact?.[key]) ? artifact[key] : [];
+    rows.forEach((row, index) => {
+      if (row?.sourceBindingStatus !== sourceBindingStatusPlaceholder) {
+        problems.push(
+          `${key}[${index}].sourceBindingStatus must be ${sourceBindingStatusPlaceholder} until official row/source binding is confirmed`,
+        );
+      }
+    });
+  }
+  return problems;
+};
+
 const rows = allTargets.map((target) => {
   const path = pathBySlug.get(target.slug) ?? null;
   if (!path) {
@@ -208,6 +239,7 @@ const rows = allTargets.map((target) => {
   );
   const expectedPlaceholderOnly =
     !validation.ok && expectedPlaceholderProblems.length > 0 && unexpectedValidationProblems.length === 0;
+  const bindingStatusProblems = expectedPlaceholderOnly ? placeholderBindingStatusProblems(parsed.value) : [];
   const status = validation.ok
     ? validation.rowEvidenceReady
       ? "filled-row-evidence-ready"
@@ -234,6 +266,7 @@ const rows = allTargets.map((target) => {
     validationProblems: validation.problems,
     problems: [
       ...shapeProblems,
+      ...bindingStatusProblems,
       ...unexpectedValidationProblems.map((problem) => `${problem.path}: ${problem.message}`),
     ],
     warnings: validation.warnings,

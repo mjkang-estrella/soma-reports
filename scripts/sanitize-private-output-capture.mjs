@@ -45,6 +45,8 @@ const readJson = (path) => JSON.parse(readFileSync(path, "utf8"));
 const isPlainObject = (value) => value !== null && typeof value === "object" && !Array.isArray(value);
 const isNonEmptyString = (value) => typeof value === "string" && value.trim().length > 0;
 const asArray = (value) => (Array.isArray(value) ? value : []);
+const rowEvidenceReadySourceBindingStatuses = new Set(["exact", "direct", "official"]);
+const boundaryOnlySourceBindingStatuses = new Set(["derived", "curated"]);
 const localDateStamp = (date = new Date()) =>
   `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
 const today = localDateStamp();
@@ -186,28 +188,44 @@ if (sourceResources.length === 0) {
 
 const sourceResourceIds = new Set(sourceResources.map((resource) => resource.id).filter(isNonEmptyString));
 const rowSourceIds = (row) => asArray(row?.sourceResourceIds ?? row?.sourceIds ?? row?.sourceArtifactIds);
-for (const [index, row] of asArray(input.sampleRows).entries()) {
-  if (!isPlainObject(row)) {
-    addProblem(`sampleRows[${index}] must be an object`);
-    continue;
-  }
-  for (const sourceId of rowSourceIds(row)) {
-    if (!sourceResourceIds.has(sourceId)) {
-      addProblem(`sampleRows[${index}] cites source id ${sourceId} that is not listed in sourceResources`);
+const validateSourceBoundEntries = (collectionName, entries) => {
+  for (const [index, entry] of asArray(entries).entries()) {
+    if (!isPlainObject(entry)) {
+      addProblem(`${collectionName}[${index}] must be an object`);
+      continue;
+    }
+    for (const sourceId of rowSourceIds(entry)) {
+      if (!sourceResourceIds.has(sourceId)) {
+        addProblem(`${collectionName}[${index}] cites source id ${sourceId} that is not listed in sourceResources`);
+      }
+    }
+    if (rowEvidenceReadySourceBindingStatuses.has(entry.sourceBindingStatus)) {
+      if (entry.sourceBindingConfirmed !== true) {
+        addProblem(
+          `${collectionName}[${index}].sourceBindingConfirmed must be true when sourceBindingStatus is ${entry.sourceBindingStatus}`,
+        );
+      }
+      if (
+        !isNonEmptyString(entry.sourceBindingConfirmationNote) ||
+        placeholderPattern.test(entry.sourceBindingConfirmationNote)
+      ) {
+        addProblem(
+          `${collectionName}[${index}].sourceBindingConfirmationNote must describe the visible official row/export binding`,
+        );
+      }
+    }
+    if (!allowBoundaryOnly && boundaryOnlySourceBindingStatuses.has(entry.sourceBindingStatus)) {
+      addProblem(
+        `${collectionName}[${index}].sourceBindingStatus ${entry.sourceBindingStatus} is boundary-only; use exact, direct, or official for row-evidence-ready captures`,
+      );
     }
   }
-}
-for (const [index, binding] of asArray(input.citationBindings).entries()) {
-  if (!isPlainObject(binding)) {
-    addProblem(`citationBindings[${index}] must be an object`);
-    continue;
-  }
-  for (const sourceId of rowSourceIds(binding)) {
-    if (!sourceResourceIds.has(sourceId)) {
-      addProblem(`citationBindings[${index}] cites source id ${sourceId} that is not listed in sourceResources`);
-    }
-  }
-}
+};
+
+validateSourceBoundEntries("sampleRows", input.sampleRows);
+validateSourceBoundEntries("resultRows", input.resultRows);
+validateSourceBoundEntries("formalFields", input.formalFields);
+validateSourceBoundEntries("citationBindings", input.citationBindings);
 
 const sanitizedCapture = {
   schema: officialOutputCaptureSchema,

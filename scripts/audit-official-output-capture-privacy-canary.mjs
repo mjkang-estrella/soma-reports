@@ -257,6 +257,32 @@ const canaries = [
     expectOk: true,
     expectRowEvidenceReady: false,
   },
+  {
+    name: "derived-official-bindings-boundary-only",
+    capture: {
+      ...baseCapture,
+      sampleRows: [
+        {
+          ...baseCapture.sampleRows[0],
+          sourceBindingStatus: "derived",
+        },
+      ],
+      formalFields: [
+        {
+          ...baseCapture.formalFields[0],
+          sourceBindingStatus: "derived",
+        },
+      ],
+      citationBindings: [
+        {
+          ...baseCapture.citationBindings[0],
+          sourceBindingStatus: "derived",
+        },
+      ],
+    },
+    expectOk: true,
+    expectRowEvidenceReady: false,
+  },
 ];
 
 const results = canaries.map((canary) => {

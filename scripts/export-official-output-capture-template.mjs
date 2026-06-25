@@ -230,6 +230,7 @@ const validationCommand = `npm run scaffold:validate-captures -- --path ${expect
 const promotionPreviewCommand = `npm run scaffold:promotion-preview -- --path ${expectedRepositoryPath}`;
 const sampleObservedField = describedOutputFields[0] ?? "replace-with-official-output-field";
 const liveDetailInspection = liveDetailInspectionFor(reportSlug);
+const sourceBindingStatusPlaceholder = "replace-with-exact-direct-or-official";
 
 const template = {
   schema: officialOutputCaptureSchema,
@@ -254,7 +255,7 @@ const template = {
       item: "replace-with-official-row-label",
       observedField: sampleObservedField,
       sourceResourceIds: ["replace-with-official-source-id"],
-      sourceBindingStatus: "exact",
+      sourceBindingStatus: sourceBindingStatusPlaceholder,
     },
   ],
   formalFields:
@@ -266,6 +267,7 @@ const template = {
           outputPath: `replace-with-output-path-${index + 1}`,
           status: "covered",
           sourceLabel: "replace-with-official-source-label",
+          sourceBindingStatus: sourceBindingStatusPlaceholder,
         }))
       : [
           {
@@ -275,13 +277,14 @@ const template = {
             outputPath: "replace-with-output-path",
             status: "covered",
             sourceLabel: "replace-with-official-source-label",
+            sourceBindingStatus: sourceBindingStatusPlaceholder,
           },
         ],
   citationBindings: [
     {
       rowId: "replace-with-official-row-id",
       sourceResourceIds: ["replace-with-official-source-id"],
-      sourceBindingStatus: "exact",
+      sourceBindingStatus: sourceBindingStatusPlaceholder,
     },
   ],
   validationCommands: [
