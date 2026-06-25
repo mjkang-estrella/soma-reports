@@ -6,7 +6,9 @@ import { Filters } from "./components/Filters";
 import { ReportCard } from "./components/ReportCard";
 import { ReportDetail } from "./components/ReportDetail";
 import {
+  type FormalEvidenceTarget,
   formalEvidenceBacklogSummary,
+  officialEvidencePacketFor,
   officialEvidenceTierFor,
   officialEvidenceTierLabelFor,
   officialOutputActionBoundaryFor,
@@ -328,6 +330,14 @@ export default function App() {
     await navigator.clipboard.writeText(commands.join("\n"));
   };
 
+  const copyOfficialEvidencePacket = async (target: FormalEvidenceTarget) => {
+    const packet = officialEvidencePacketFor(target);
+    if (!packet) {
+      return;
+    }
+    await navigator.clipboard.writeText(JSON.stringify(packet, null, 2));
+  };
+
   const copyOfficialCaptureBoardCommands = async () => {
     const commands = [
       "# Official-output capture board refresh",
@@ -335,6 +345,7 @@ export default function App() {
       "npm run scaffold:capture-plan -- --format compact",
       "npm run scaffold:next-actions -- --format compact",
       "npm run scaffold:next-actions -- --format md --out tmp/official-output-next-actions.md",
+      "npm run scaffold:capture-session -- --format md --out tmp/official-output-capture-session.md",
       "npm run scaffold:validate-captures",
       "npm run scaffold:evidence-audit",
       "npm run completion:audit -- --format compact",
@@ -1057,6 +1068,7 @@ export default function App() {
                   {officialCaptureCatalogSnapshot.authenticatedMarketplacePositions} authenticated marketplace positions.
                   Evidence tiers: {officialBoundaryModeledTargetCount} official-boundary modeled,{" "}
                   {officialMetadataOnlyTargetCount} metadata-only, {officialCaptureTotals.rowEvidenceReadyTargets} row-ready.
+                  Export the local capture-session packet with `npm run scaffold:capture-session -- --format md --out tmp/official-output-capture-session.md`.
                 </p>
               </div>
               <span className="meta-text">snapshot {officialCaptureStatus.generatedAt}</span>
@@ -1206,6 +1218,13 @@ export default function App() {
                           onClick={() => void copyOfficialCaptureCommands(target)}
                         >
                           Copy
+                        </button>
+                        <button
+                          className="btn btn-outline"
+                          type="button"
+                          onClick={() => void copyOfficialEvidencePacket(target)}
+                        >
+                          Copy packet
                         </button>
                         {target.captureUrl ? (
                           <a href={target.captureUrl} target="_blank" rel="noreferrer">

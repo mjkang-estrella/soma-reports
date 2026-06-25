@@ -161,9 +161,19 @@ const evaluateRenderedPage = `async () => {
   const inspectButtons = [...document.querySelectorAll("#position-ledger .position-row button")];
   const officialCaptureCards = [...document.querySelectorAll(".official-capture-card")];
   const officialCaptureCardTexts = officialCaptureCards.map((card) => normalize(card.innerText));
+  const officialCapturePacketButtons = [...document.querySelectorAll(".completion-workbench-actions button")].filter(
+    (button) => /copy packet/i.test(button.innerText || ""),
+  );
   const selectedReportTitle = normalize(document.querySelector(".detail-sidebar h2")?.innerText);
   const selectedDetailText = normalize(document.querySelector("#report-detail")?.innerText);
-  const selectedCaptureTemplateText = normalize(document.querySelector("#official-output-capture .capture-template-panel pre")?.innerText);
+  const selectedEvidencePacketPanel = [...document.querySelectorAll("#official-output-capture .capture-template-panel")].find((panel) =>
+    /Official evidence packet/i.test(panel.innerText || ""),
+  );
+  const selectedEvidencePacketText = normalize(selectedEvidencePacketPanel?.querySelector("pre")?.innerText);
+  const selectedCaptureTemplatePanel = [...document.querySelectorAll("#official-output-capture .capture-template-panel")].find((panel) =>
+    /Sanitized artifact template/i.test(panel.innerText || ""),
+  );
+  const selectedCaptureTemplateText = normalize(selectedCaptureTemplatePanel?.querySelector("pre")?.innerText);
   const runLedgerText = normalize(document.querySelector(".run-ledger-panel")?.innerText);
 
   return {
@@ -192,6 +202,7 @@ const evaluateRenderedPage = `async () => {
     officialBoundaryModeledReportCards: cardTexts.filter((text) => /Official boundary modeled/i.test(text)).length,
     metadataOnlyReportCards: cardTexts.filter((text) => /Metadata only/i.test(text)).length,
     officialCaptureCards: officialCaptureCards.length,
+    officialCapturePacketButtons: officialCapturePacketButtons.length,
     officialBoundaryModeledCaptureCards: officialCaptureCardTexts.filter((text) =>
       /Boundary tier\\s+Official boundary modeled/i.test(text),
     ).length,
@@ -219,6 +230,23 @@ const evaluateRenderedPage = `async () => {
     officialCaptureBoardText: normalize(document.querySelector(".official-capture-board")?.innerText).slice(0, 3000),
     selectedReportTitle,
     selectedDetailText: selectedDetailText.slice(0, 4000),
+    selectedEvidencePacketText: selectedEvidencePacketText.slice(0, 5000),
+    selectedEvidencePacketRendered: /Official evidence packet/i.test(selectedEvidencePacketPanel?.innerText || ""),
+    selectedEvidencePacketHasProvenance:
+      selectedEvidencePacketText.includes('"captureUrl": "https://sequencing.com/marketplace/sequencing-depth-and-coverage"') &&
+      selectedEvidencePacketText.includes('"routeProbe"') &&
+      selectedEvidencePacketText.includes('"publicBundleEvidence"') &&
+      selectedEvidencePacketText.includes('"sanitizedDraftPath"') &&
+      selectedEvidencePacketText.includes('"committedCapturePath"'),
+    selectedEvidencePacketHasPrivacyBoundary:
+      selectedEvidencePacketText.includes('"rawGenomeIncluded": false') &&
+      selectedEvidencePacketText.includes('"privateValuesRedacted": true') &&
+      selectedEvidencePacketText.includes('"commitSafe": true'),
+    selectedEvidencePacketHasPromotionGate:
+      selectedEvidencePacketText.includes('"rowEvidenceReadyCaptures": 0') &&
+      selectedEvidencePacketText.includes('"promotesSampleBackedFormalReady": false') &&
+      selectedEvidencePacketText.includes('"validateCommittedCapture"') &&
+      selectedEvidencePacketText.includes('"nextEvidenceNeeded"'),
     selectedCaptureTemplateText: selectedCaptureTemplateText.slice(0, 3000),
     selectedDetailShowsBoundaryModeled: /Official boundary\\s+Official boundary modeled/i.test(selectedDetailText),
     selectedDetailShowsSampleBackedPending: /Sample-backed formal\\s+Pending/i.test(selectedDetailText),
@@ -238,6 +266,7 @@ const evaluateRenderedPage = `async () => {
     containsAgentPromptNav: /Agent Prompt/i.test(bodyText),
     containsOutputSchemaNav: /Output Schema/i.test(bodyText),
     containsReferencesNav: /References/i.test(bodyText),
+    containsCaptureSessionCommand: /npm run scaffold:capture-session -- --format md --out tmp\\/official-output-capture-session\\.md/i.test(bodyText),
     bodySample: bodyText.slice(0, 1000)
   };
 }`;
@@ -359,6 +388,13 @@ try {
   );
   addCheck(
     checks,
+    "official_capture_board_packet_actions",
+    rendered.officialCapturePacketButtons === 21,
+    "all 21 completion workbench rows expose Copy packet",
+    rendered.officialCapturePacketButtons,
+  );
+  addCheck(
+    checks,
     "official_capture_boundary_tier_cards",
     rendered.officialBoundaryModeledCaptureCards === 9 && rendered.metadataOnlyCaptureCards === 12,
     "9 capture cards show Boundary tier Official boundary modeled and 12 show Boundary tier Metadata only",
@@ -433,6 +469,22 @@ try {
   );
   addCheck(
     checks,
+    "selected_official_evidence_packet_rendered",
+    rendered.selectedEvidencePacketRendered &&
+      rendered.selectedEvidencePacketHasProvenance &&
+      rendered.selectedEvidencePacketHasPrivacyBoundary &&
+      rendered.selectedEvidencePacketHasPromotionGate,
+    "selected detail renders an official evidence packet with provenance, privacy boundary, and non-promotion gate",
+    {
+      selectedEvidencePacketRendered: rendered.selectedEvidencePacketRendered,
+      selectedEvidencePacketHasProvenance: rendered.selectedEvidencePacketHasProvenance,
+      selectedEvidencePacketHasPrivacyBoundary: rendered.selectedEvidencePacketHasPrivacyBoundary,
+      selectedEvidencePacketHasPromotionGate: rendered.selectedEvidencePacketHasPromotionGate,
+      selectedEvidencePacketText: rendered.selectedEvidencePacketText,
+    },
+  );
+  addCheck(
+    checks,
     "selected_capture_template_binding_contract",
     rendered.selectedCaptureTemplateHasPlaceholderStatus &&
       rendered.selectedCaptureTemplateHasConfirmationFields &&
@@ -466,13 +518,15 @@ try {
     rendered.containsEvidenceQueue &&
       rendered.containsAgentPromptNav &&
       rendered.containsOutputSchemaNav &&
-      rendered.containsReferencesNav,
-    "Evidence queue plus Agent Prompt, Output Schema, and References navigation are present",
+      rendered.containsReferencesNav &&
+      rendered.containsCaptureSessionCommand,
+    "Evidence queue, capture-session command, plus Agent Prompt, Output Schema, and References navigation are present",
     {
       containsEvidenceQueue: rendered.containsEvidenceQueue,
       containsAgentPromptNav: rendered.containsAgentPromptNav,
       containsOutputSchemaNav: rendered.containsOutputSchemaNav,
       containsReferencesNav: rendered.containsReferencesNav,
+      containsCaptureSessionCommand: rendered.containsCaptureSessionCommand,
     },
   );
 
@@ -506,6 +560,7 @@ try {
       officialBoundaryModeledReportCards: rendered.officialBoundaryModeledReportCards,
       metadataOnlyReportCards: rendered.metadataOnlyReportCards,
       officialCaptureCards: rendered.officialCaptureCards,
+      officialCapturePacketButtons: rendered.officialCapturePacketButtons,
       officialBoundaryModeledCaptureCards: rendered.officialBoundaryModeledCaptureCards,
       metadataOnlyCaptureCards: rendered.metadataOnlyCaptureCards,
       officialCaptureCardsWithRouteArtifact: rendered.officialCaptureCardsWithRouteArtifact,
@@ -523,8 +578,13 @@ try {
       selectedDetailShowsSampleBackedPending: rendered.selectedDetailShowsSampleBackedPending,
       selectedDetailShowsRowReadyZero: rendered.selectedDetailShowsRowReadyZero,
       selectedDetailShowsMissingOfficialRows: rendered.selectedDetailShowsMissingOfficialRows,
+      selectedEvidencePacketRendered: rendered.selectedEvidencePacketRendered,
+      selectedEvidencePacketHasProvenance: rendered.selectedEvidencePacketHasProvenance,
+      selectedEvidencePacketHasPrivacyBoundary: rendered.selectedEvidencePacketHasPrivacyBoundary,
+      selectedEvidencePacketHasPromotionGate: rendered.selectedEvidencePacketHasPromotionGate,
       runLedgerResolved: rendered.runLedgerResolved,
       runLedgerShowsRawGenomeBoundary: rendered.runLedgerShowsRawGenomeBoundary,
+      containsCaptureSessionCommand: rendered.containsCaptureSessionCommand,
       localRunReadyCards: rendered.localRunReadyCards,
       localRunScaffoldCards: rendered.localRunScaffoldCards,
       firstPositionText: rendered.firstPositionText,

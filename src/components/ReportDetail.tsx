@@ -5,6 +5,7 @@ import { api } from "../../convex/_generated/api";
 import {
   formalEvidenceDecisionFor,
   formalEvidenceTargetFor,
+  officialEvidencePacketFor,
   officialEvidenceTierBoundaryFor,
   officialEvidenceTierFor,
   officialEvidenceTierLabelFor,
@@ -492,6 +493,7 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
     : null;
   const officialOutputCaptureStatus = formalEvidenceTarget?.captureStatus ?? null;
   const officialOutputPromotionReview = officialOutputCaptureStatus?.officialOutputPromotionReview ?? null;
+  const officialEvidencePacket = officialEvidencePacketFor(formalEvidenceTarget);
   const officialEvidenceTier = officialEvidenceTierFor(officialOutputCaptureStatus);
   const officialEvidenceTierLabel = officialEvidenceTierLabelFor(officialOutputCaptureStatus);
   const officialEvidenceTierBoundary = officialEvidenceTierBoundaryFor(officialOutputCaptureStatus);
@@ -832,6 +834,13 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
       return;
     }
     await navigator.clipboard.writeText(JSON.stringify(officialOutputCaptureArtifactTemplate, null, 2));
+  };
+
+  const copyOfficialEvidencePacket = async () => {
+    if (!officialEvidencePacket) {
+      return;
+    }
+    await navigator.clipboard.writeText(JSON.stringify(officialEvidencePacket, null, 2));
   };
 
   const copyOfficialOutputRedactionWorkflow = async () => {
@@ -1296,6 +1305,14 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                   <button className="btn btn-outline" type="button" onClick={copyOfficialOutputCaptureTemplate}>
                     Copy artifact template
                   </button>
+                  <button
+                    className="btn btn-outline"
+                    type="button"
+                    onClick={copyOfficialEvidencePacket}
+                    disabled={!officialEvidencePacket}
+                  >
+                    Copy evidence packet
+                  </button>
                   <button className="btn btn-outline" type="button" onClick={copyOfficialOutputRedactionWorkflow}>
                     Copy redaction workflow
                   </button>
@@ -1722,6 +1739,12 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                       <li key={field}>{field}</li>
                     ))}
                   </ul>
+                </div>
+              ) : null}
+              {officialEvidencePacket ? (
+                <div className="capture-template-panel">
+                  <strong>Official evidence packet</strong>
+                  <pre>{JSON.stringify(officialEvidencePacket, null, 2)}</pre>
                 </div>
               ) : null}
               {officialOutputCaptureArtifactTemplate ? (

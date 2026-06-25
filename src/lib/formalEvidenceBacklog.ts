@@ -490,6 +490,104 @@ export const officialOutputNextEvidenceFor = (row: OfficialOutputCaptureStatusRo
     ? row.officialOutputReviewNextEvidenceNeeded
     : (row?.formalReadinessGate?.requiredEvidenceForPromotion ?? []);
 
+export const officialEvidencePacketFor = (target: FormalEvidenceTarget | null | undefined) => {
+  if (!target) {
+    return null;
+  }
+
+  const row = target.captureStatus;
+  const tier = officialEvidenceTierFor(row);
+  const redactionInputPath = row?.redactionInputPath ?? target.redactionInputPath;
+  const sanitizedDraftPath = row?.sanitizedDraftArtifactPath ?? target.sanitizedDraftArtifactPath;
+  const committedCapturePath = row?.committedCapturePath ?? target.expectedSanitizedArtifactPath;
+  const validateCommittedCaptureCommand =
+    row?.validateCommittedCaptureCommand ??
+    row?.validationCommandForExpectedCapture ??
+    `npm run scaffold:validate-captures -- --path ${target.expectedSanitizedArtifactPath}`;
+
+  return {
+    schemaVersion: "soma-reports.official-evidence-packet.v1",
+    slug: target.slug,
+    title: target.title,
+    captureUrl: target.captureUrl,
+    evidenceClass: target.evidenceClass,
+    officialEvidenceTier: tier,
+    officialEvidenceTierLabel: officialEvidenceTierLabelFor(row),
+    stage: row?.stage ?? "unknown",
+    rowEvidenceReadyCaptures: row?.rowEvidenceReadyCaptures ?? 0,
+    rowEvidencePromotionReadyCaptures: row?.rowEvidencePromotionReadyCaptures ?? row?.promotionCandidates ?? 0,
+    officialCaptures: row?.officialCaptures ?? 0,
+    boundaryModel: row?.officialBoundaryModel ?? null,
+    currentOutputSignals: row?.formalReadinessGate?.currentOutputSignals ?? row?.officialOutputReviewOutputSignals ?? null,
+    routeProbe: row?.latestRouteProbe
+      ? {
+          artifactPath: row.latestRouteProbe.artifactPath,
+          finalUrl: row.latestRouteProbe.finalUrl,
+          requestedUrl: row.latestRouteProbe.requestedUrl,
+          finalUrlKind: row.latestRouteProbe.finalUrlKind,
+          pagePropsReportData: row.latestRouteProbe.pagePropsReportData,
+          notFound: row.latestRouteProbe.notFound,
+        }
+      : null,
+    publicBundleEvidence: row?.publicBundleEvidence
+      ? {
+          artifactPath: row.publicBundleEvidence.artifactPath,
+          evidenceUse: row.publicBundleEvidence.evidenceUse,
+          evidencePresent: row.publicBundleEvidence.evidencePresent,
+          evidenceMissingForPromotion: row.publicBundleEvidence.evidenceMissingForPromotion,
+        }
+      : null,
+    liveDetailInspection: target.liveDetailInspection ?? row?.liveDetailInspection ?? null,
+    paths: {
+      redactionInputPath,
+      sanitizedDraftPath,
+      committedCapturePath,
+      captureTemplatePath: row?.captureTemplatePath ?? target.expectedSanitizedArtifactPath,
+    },
+    commands: {
+      redactionTemplate: row?.redactionTemplateCommand ?? target.redactionTemplateCommand,
+      dryRunSanitize: row?.dryRunSanitizeCommand ?? target.dryRunSanitizeCommand,
+      sanitizeDraft: row?.sanitizeDraftCommand ?? row?.sanitizeRedactionCommand ?? target.sanitizeRedactionCommand,
+      commitSanitizedCapture: row?.commitSanitizedCaptureCommand ?? target.commitSanitizedCaptureCommand,
+      validateCommittedCapture: validateCommittedCaptureCommand,
+      snapshot: "npm run scaffold:capture-status:snapshot",
+      promotionPreview:
+        (row?.rowEvidencePromotionReadyCaptures ?? row?.promotionCandidates ?? 0) > 0
+          ? row?.promotionPreviewCommittedCommand ?? target.promotionPreviewCommand
+          : null,
+    },
+    nextEvidenceNeeded: officialOutputNextEvidenceFor(row).length
+      ? officialOutputNextEvidenceFor(row)
+      : target.requiredEvidenceForPromotion,
+    formalGateMissing: row?.formalReadinessGate?.missing ?? target.requiredEvidenceForPromotion,
+    reviewEvidencePresent: row?.officialOutputReviewEvidencePresent ?? [],
+    reviewEvidenceMissing: row?.officialOutputReviewEvidenceMissing ?? [],
+    privacyBoundary: {
+      rawGenomeIncluded: false,
+      privateValuesRedacted: true,
+      commitSafe: true,
+      privateCompletedOutputStaysLocal: true,
+      note:
+        "Use this packet to capture and sanitize official output structure only. Keep raw genome data, private reports, private findings, account identifiers, and private result URLs outside the repository.",
+    },
+    promotionBoundary: {
+      promotesSampleBackedFormalReady: false,
+      promotesFormalEquivalentReady: false,
+      promotesSampleRows: false,
+      promotesResultRows: false,
+      promotesCitationBindings: false,
+      removesFormalBlocker: false,
+      requiredBeforePromotion: [
+        "validate-captures rowEvidenceReady: true",
+        "official non-private sampleRows[] or resultRows[]",
+        "covered formalFields[] bound to official-output source resources",
+        "citationBindings[] with exact/direct/official sourceBindingStatus and sourceResourceIds",
+      ],
+    },
+    nonPromotionBoundary: target.nonPromotionBoundary,
+  };
+};
+
 const formalEvidenceDecisionBySlug = new Map(
   formalEvidenceDecisions.map((decision) => [decision.slug, decision] as const),
 );
