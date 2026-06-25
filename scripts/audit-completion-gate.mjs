@@ -95,7 +95,7 @@ const compactFormalValidation = (validation) => {
 };
 
 const summarizeRun = (run) => {
-  if (run.name === "agent:validate:formal") {
+  if (run.name === "agent:validate:all" || run.name === "agent:validate:formal") {
     return {
       ...run,
       parsed: compactFormalValidation(run.parsed),
@@ -271,6 +271,7 @@ const runResults = [
   runJsonCommand("objective:audit", ["npm", "run", "--silent", "objective:audit", "--", "--format", "compact"]),
   runJsonCommand("ui:audit", ["npm", "run", "--silent", "ui:audit"]),
   runJsonCommand("readiness:audit:summary", ["npm", "run", "--silent", "readiness:audit:summary"]),
+  runJsonCommand("agent:validate:all", ["npm", "run", "--silent", "agent:validate:all"]),
   runJsonCommand("agent:validate:formal", ["npm", "run", "--silent", "agent:validate:formal"]),
   runJsonCommand("agent:assert-sync", ["npm", "run", "--silent", "agent:assert-sync"]),
   runJsonCommand("agent:workflow-check", [
@@ -301,6 +302,7 @@ const privacyCanary = runsByName.get("scaffold:privacy-canary")?.parsed;
 const objectiveAudit = runsByName.get("objective:audit")?.parsed;
 const uiAudit = runsByName.get("ui:audit")?.parsed;
 const readiness = runsByName.get("readiness:audit:summary")?.parsed;
+const allPackages = runsByName.get("agent:validate:all")?.parsed;
 const formal = runsByName.get("agent:validate:formal")?.parsed;
 const sync = runsByName.get("agent:assert-sync")?.parsed;
 const localAgentSmoke = runsByName.get("agent:smoke")?.parsed;
@@ -593,17 +595,18 @@ const checks = [
   {
     key: "consumer_plain_english_output",
     ok:
-      formal?.checked === expected.namedPackages &&
-      formal?.consumerLanguageChecked === expected.namedPackages &&
-      formal?.consumerLanguageFailures === 0,
+      runsByName.get("agent:validate:all")?.exitCode === 0 &&
+      allPackages?.checked === expected.namedPackages &&
+      allPackages?.consumerLanguageChecked === expected.namedPackages &&
+      allPackages?.consumerLanguageFailures === 0,
     expected:
       "all 154 deterministic report outputs contain substantive plain-English customer explanations in resultRows[].plainEnglishMeaning",
-    actual: formal
+    actual: allPackages
       ? {
-          checked: formal.checked,
-          consumerLanguageChecked: formal.consumerLanguageChecked,
-          consumerLanguageFailures: formal.consumerLanguageFailures,
-          consumerLanguageWarnings: formal.consumerLanguageWarnings,
+          checked: allPackages.checked,
+          consumerLanguageChecked: allPackages.consumerLanguageChecked,
+          consumerLanguageFailures: allPackages.consumerLanguageFailures,
+          consumerLanguageWarnings: allPackages.consumerLanguageWarnings,
         }
       : null,
   },

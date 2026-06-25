@@ -39,6 +39,7 @@
     "readiness:audit": "convex run reports:seedReadinessAudit",
     "readiness:audit:summary": "node scripts/summarize-readiness-audit.mjs",
     "agent:bundle": "node scripts/agent-bundle.mjs",
+    "agent:result-readiness-manifest": "node scripts/generate-local-result-readiness-manifest.mjs",
     "agent:seed-cache": "node scripts/export-local-artifact-seeds.mjs",
     "agent:evidence-template": "node scripts/export-local-evidence-template.mjs",
     "agent:derive-evidence": "node scripts/derive-local-evidence-from-genome.mjs",

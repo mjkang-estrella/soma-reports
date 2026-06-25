@@ -6,6 +6,10 @@ import { Filters } from "./components/Filters";
 import { ReportCard } from "./components/ReportCard";
 import { ReportDetail } from "./components/ReportDetail";
 import {
+  type LocalResultReadiness,
+  localResultReadinessBySlug,
+} from "./lib/localResultReadiness.generated";
+import {
   type FormalEvidenceTarget,
   formalEvidenceBacklogSummary,
   officialEvidencePacketFor,
@@ -18,6 +22,7 @@ import {
 import {
   ALL_PACKAGE_STATES,
   deriveAgentReadinessState,
+  type LocalAgentResultReadiness,
   localAgentEvidenceChipsFor,
   readinessScore,
 } from "./lib/readiness";
@@ -31,20 +36,21 @@ import type {
 
 const DEFAULT_SLUG = "wellness-genetic-guide";
 const REPORT_QUERY_PARAM = "report";
-const deterministicResultFixtureModules = import.meta.glob("/fixtures/synthetic/*.result.json");
-const slugsFromGlob = (modulePaths: string[], suffix: string) =>
-  new Set(
-    modulePaths
-      .map((path) => {
-        const fileName = path.split("/").pop();
-        return fileName?.endsWith(suffix) ? fileName.slice(0, -suffix.length) : null;
-      })
-      .filter((slug): slug is string => Boolean(slug)),
-  );
-const deterministicResultFixtureSlugs = slugsFromGlob(
-  Object.keys(deterministicResultFixtureModules),
-  ".result.json",
-);
+const EMPTY_LOCAL_RESULT_READINESS: LocalAgentResultReadiness = {
+  deterministicResult: false,
+  plainEnglishReady: false,
+  appendixProbabilityReady: false,
+};
+const localResultReadinessFor = (slug: string): LocalAgentResultReadiness => {
+  const resultReadiness: LocalResultReadiness | undefined = localResultReadinessBySlug[slug];
+  return resultReadiness
+    ? {
+        deterministicResult: true,
+        plainEnglishReady: resultReadiness.plainEnglishReady,
+        appendixProbabilityReady: resultReadiness.appendixProbabilityReady,
+      }
+    : EMPTY_LOCAL_RESULT_READINESS;
+};
 const SEQUENCING_CARD_POSITION_TOTAL = 164;
 const SEQUENCING_NAMED_IDENTITY_TOTAL = 154;
 const AUTHENTICATED_DUPLICATE_POSITION_TOTAL = 77;
@@ -854,7 +860,7 @@ export default function App() {
                       positionReadiness && positionReadinessState
                         ? localAgentEvidenceChipsFor(
                             positionReadiness,
-                            deterministicResultFixtureSlugs.has(packageSlug),
+                            localResultReadinessFor(packageSlug),
                             positionReadinessState,
                           )
                         : [];
@@ -1956,7 +1962,7 @@ export default function App() {
                       : undefined
                   }
                   officialOutputCaptureTarget={officialOutputCaptureTargetBySlug.get(report.slug) ?? null}
-                  hasDeterministicResult={deterministicResultFixtureSlugs.has(report.slug)}
+                  resultReadiness={localResultReadinessFor(report.slug)}
                   isSelected={selectedSlug === report.slug}
                   onSelect={() => handleSelectReport(report.slug)}
                 />

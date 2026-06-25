@@ -2,6 +2,7 @@ import {
   CARD_READINESS_KEYS,
   deriveAgentReadinessState,
   getCurationReadinessItem,
+  type LocalAgentResultReadiness,
   localAgentEvidenceChipsFor,
 } from "../lib/readiness";
 import {
@@ -19,7 +20,7 @@ type ReportCardProps = {
   readiness?: ReadinessAuditRow | null;
   officialOutputCaptureStage?: OfficialOutputCaptureStage | null;
   officialOutputCaptureTarget?: FormalEvidenceTarget | null;
-  hasDeterministicResult: boolean;
+  resultReadiness: LocalAgentResultReadiness;
   isSelected: boolean;
   onSelect: () => void;
 };
@@ -34,7 +35,7 @@ export function ReportCard({
   readiness,
   officialOutputCaptureStage,
   officialOutputCaptureTarget,
-  hasDeterministicResult,
+  resultReadiness,
   isSelected,
   onSelect,
 }: ReportCardProps) {
@@ -68,7 +69,7 @@ export function ReportCard({
   const gapCount = combinedGaps.length;
   const gapLabels = combinedGaps.map((gap) => gap.replaceAll("_", " ").replaceAll("-", " "));
   const localAgentEvidenceChips = readiness
-    ? localAgentEvidenceChipsFor(readiness, hasDeterministicResult, readinessState)
+    ? localAgentEvidenceChipsFor(readiness, resultReadiness, readinessState)
     : [];
   const localRunAction = readinessState.sampleBackedFormalReady
     ? {

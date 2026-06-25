@@ -126,6 +126,7 @@ npm run scaffold:promotion-preview -- --path reference/catalog/sequencing-depth-
 npm run scaffold:promotion-verify -- --path reference/catalog/sequencing-depth-and-coverage-official-output-capture-YYYY-MM-DD.json
 npm run readiness:audit
 npm run readiness:audit:summary
+npm run agent:result-readiness-manifest
 npm run agent:validate:all
 npm run agent:validate:formal
 npm run agent:assert-sync

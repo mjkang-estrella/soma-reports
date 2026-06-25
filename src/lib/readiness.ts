@@ -80,6 +80,12 @@ export type LocalAgentEvidenceChip = {
   status: "ready" | "pending" | "neutral";
 };
 
+export type LocalAgentResultReadiness = {
+  deterministicResult: boolean;
+  plainEnglishReady: boolean;
+  appendixProbabilityReady: boolean;
+};
+
 export const ALL_PACKAGE_STATES = "All";
 
 const hasLocalScaffoldEvidence = (readiness: ReadinessAuditRow) =>
@@ -188,15 +194,15 @@ export const deriveAgentReadinessState = (
 
 export const localAgentEvidenceChipsFor = (
   readiness: ReadinessAuditRow | null | undefined,
-  hasDeterministicResult: boolean,
+  resultReadiness: LocalAgentResultReadiness,
   readinessState: AgentReadinessState,
 ): LocalAgentEvidenceChip[] => {
   const references = readiness?.evidence.references ?? 0;
   const promptReady = Boolean(readiness?.evidence.prompt);
   const fixtureReady = Boolean(readiness?.evidence.localFixture);
-  const schemaReady = (readiness?.evidence.outputSections ?? 0) > 0;
-  const plainEnglishGuardReady = promptReady && schemaReady;
-  const appendixProbabilityGuardReady = promptReady && hasDeterministicResult;
+  const plainEnglishGuardReady = resultReadiness.deterministicResult && resultReadiness.plainEnglishReady;
+  const appendixProbabilityGuardReady =
+    resultReadiness.deterministicResult && resultReadiness.appendixProbabilityReady;
 
   return [
     {
@@ -216,12 +222,12 @@ export const localAgentEvidenceChipsFor = (
     },
     {
       key: "result",
-      label: hasDeterministicResult ? "Deterministic result JSON" : "Result JSON pending",
-      status: hasDeterministicResult ? "ready" : "pending",
+      label: resultReadiness.deterministicResult ? "Deterministic result JSON" : "Result JSON pending",
+      status: resultReadiness.deterministicResult ? "ready" : "pending",
     },
     {
       key: "plainEnglish",
-      label: plainEnglishGuardReady ? "Plain-English guard" : "Plain-English pending",
+      label: plainEnglishGuardReady ? "Plain-English rows" : "Plain-English pending",
       status: plainEnglishGuardReady ? "ready" : "pending",
     },
     {

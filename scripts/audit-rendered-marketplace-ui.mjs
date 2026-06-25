@@ -215,13 +215,13 @@ const evaluateRenderedPage = `async () => {
     localAgentPromptArtifactCards: cardTexts.filter((text) => /Prompt artifact/i.test(text)).length,
     localAgentFixtureArtifactCards: cardTexts.filter((text) => /Fixture artifact/i.test(text)).length,
     localAgentDeterministicResultCards: cardTexts.filter((text) => /Deterministic result JSON/i.test(text)).length,
-    localAgentPlainEnglishGuardCards: cardTexts.filter((text) => /Plain-English guard/i.test(text)).length,
+    localAgentPlainEnglishGuardCards: cardTexts.filter((text) => /Plain-English rows/i.test(text)).length,
     localAgentAppendixProbabilityGuardCards: cardTexts.filter((text) => /Appendix probability guard/i.test(text)).length,
     localAgentScaffoldOnlyCards: cardTexts.filter((text) => /Scaffold-only local/i.test(text)).length,
     positionRowsWithPromptArtifact: rowTexts.filter((text) => /Prompt artifact/i.test(text)).length,
     positionRowsWithFixtureArtifact: rowTexts.filter((text) => /Fixture artifact/i.test(text)).length,
     positionRowsWithDeterministicResultJson: rowTexts.filter((text) => /Deterministic result JSON/i.test(text)).length,
-    positionRowsWithPlainEnglishGuard: rowTexts.filter((text) => /Plain-English guard/i.test(text)).length,
+    positionRowsWithPlainEnglishGuard: rowTexts.filter((text) => /Plain-English rows/i.test(text)).length,
     positionRowsWithAppendixProbabilityGuard: rowTexts.filter((text) => /Appendix probability guard/i.test(text)).length,
     officialOutputBlockerCards: document.querySelectorAll(".card-official-action").length,
     officialBoundaryModeledReportCards: cardTexts.filter((text) => /Official boundary modeled/i.test(text)).length,
@@ -512,7 +512,7 @@ try {
       rendered.localAgentPlainEnglishGuardCards === expected.namedPackages &&
       rendered.localAgentAppendixProbabilityGuardCards === expected.namedPackages &&
       rendered.localAgentScaffoldOnlyCards === 21,
-    "all 154 report cards show local prompt, fixture, deterministic result, plain-English guard, and appendix probability guard chips; 21 remain scaffold-only",
+    "all 154 report cards show local prompt, fixture, deterministic result, result-backed plain-English rows, and appendix probability guard chips; 21 remain scaffold-only",
     {
       promptArtifactCards: rendered.localAgentPromptArtifactCards,
       fixtureArtifactCards: rendered.localAgentFixtureArtifactCards,
@@ -530,7 +530,7 @@ try {
       rendered.positionRowsWithDeterministicResultJson === expected.marketplacePositions &&
       rendered.positionRowsWithPlainEnglishGuard === expected.marketplacePositions &&
       rendered.positionRowsWithAppendixProbabilityGuard === expected.marketplacePositions,
-    "all 164 authenticated marketplace positions show local prompt, fixture, deterministic result, plain-English guard, and appendix probability guard chips",
+    "all 164 authenticated marketplace positions show local prompt, fixture, deterministic result, result-backed plain-English rows, and appendix probability guard chips",
     {
       promptArtifactRows: rendered.positionRowsWithPromptArtifact,
       fixtureArtifactRows: rendered.positionRowsWithFixtureArtifact,
