@@ -165,8 +165,13 @@ const evaluateRenderedPage = `async () => {
   const officialCapturePacketButtons = [...document.querySelectorAll(".completion-workbench-actions button")].filter(
     (button) => /copy packet/i.test(button.innerText || ""),
   );
+  const buttonTexts = [...document.querySelectorAll("button")].map((button) =>
+    normalize(button.textContent || button.innerText),
+  );
   const selectedReportTitle = normalize(document.querySelector(".detail-sidebar h2")?.innerText);
   const selectedDetailText = normalize(document.querySelector("#report-detail")?.innerText);
+  const readOnlyLocalRunText = normalize(document.querySelector('[aria-label="Read-only local-run checks"]')?.innerText);
+  const writePrivateLocalRunText = normalize(document.querySelector('[aria-label="Local run commands that write tmp"]')?.innerText);
   const selectedEvidencePacketPanel = [...document.querySelectorAll("#official-output-capture .capture-template-panel")].find((panel) =>
     /Official evidence packet/i.test(panel.innerText || ""),
   );
@@ -296,6 +301,31 @@ const evaluateRenderedPage = `async () => {
     runLedgerResolved: /\\d+ recent runs/i.test(runLedgerText),
     runLedgerShowsRawGenomeBoundary: /Raw genome stored\\s+no/i.test(runLedgerText),
     runLedgerShowsConvexBoundary: /Stored in Convex\\s+hashes, counts, status, artifact paths/i.test(runLedgerText),
+    copyReadOnlyChecksButtons: buttonTexts.filter((text) => text === "Copy read-only checks").length,
+    copyLocalRunWritesTmpButtons: buttonTexts.filter((text) => text === "Copy local run commands (writes tmp)").length,
+    copyBundleValidatorWritesTmpButtons: buttonTexts.filter((text) => text === "Copy bundle validator (writes tmp)").length,
+    createConvexDraftButtons: buttonTexts.filter((text) => text === "Create Convex draft").length,
+    saveConvexResultSummaryButtons: buttonTexts.filter((text) => text === "Save Convex result summary").length,
+    readOnlyLocalRunText: readOnlyLocalRunText.slice(0, 2500),
+    writePrivateLocalRunText: writePrivateLocalRunText.slice(0, 3500),
+    readOnlyLocalRunIncludesChecks:
+      /agent:workflow-check/i.test(readOnlyLocalRunText) &&
+      /--strict true/i.test(readOnlyLocalRunText) &&
+      /agent:validate-run/i.test(readOnlyLocalRunText),
+    readOnlyLocalRunExcludesWrites:
+      !/SOMA_LOCAL_GENOME|agent:prepare-local|agent:derive-evidence|agent:seed-cache|agent:bundle|agent:update-rsid-coordinate-map|--out tmp\\//i.test(
+        readOnlyLocalRunText,
+      ),
+    writePrivateLocalRunIncludesWrites:
+      /SOMA_LOCAL_GENOME/i.test(writePrivateLocalRunText) &&
+      /agent:prepare-local/i.test(writePrivateLocalRunText) &&
+      /agent:derive-evidence/i.test(writePrivateLocalRunText) &&
+      /agent:generate-local-result/i.test(writePrivateLocalRunText) &&
+      /--out tmp\\//i.test(writePrivateLocalRunText) &&
+      /SOMA_LOCAL_RUNNER/i.test(writePrivateLocalRunText),
+    selectedDetailShowsSplitWorkflow:
+      /Read-only checks\\s+no tmp writes; no raw genome input/i.test(selectedDetailText) &&
+      /Local run commands\\s+writes ignored tmp artifacts; may read private genome input/i.test(selectedDetailText),
     containsEvidenceQueue: /Evidence queue/i.test(bodyText),
     containsAgentPromptNav: /Agent Prompt/i.test(bodyText),
     containsOutputSchemaNav: /Output Schema/i.test(bodyText),
@@ -631,6 +661,33 @@ try {
   );
   addCheck(
     checks,
+    "local_run_command_split_rendered",
+    rendered.copyReadOnlyChecksButtons >= 2 &&
+      rendered.copyLocalRunWritesTmpButtons >= 1 &&
+      rendered.copyBundleValidatorWritesTmpButtons >= 1 &&
+      rendered.createConvexDraftButtons >= 1 &&
+      rendered.saveConvexResultSummaryButtons >= 1 &&
+      rendered.selectedDetailShowsSplitWorkflow &&
+      rendered.readOnlyLocalRunIncludesChecks &&
+      rendered.readOnlyLocalRunExcludesWrites &&
+      rendered.writePrivateLocalRunIncludesWrites,
+    "selected report renders separate read-only checks, write/private local-run commands, and explicit Convex write actions",
+    {
+      copyReadOnlyChecksButtons: rendered.copyReadOnlyChecksButtons,
+      copyLocalRunWritesTmpButtons: rendered.copyLocalRunWritesTmpButtons,
+      copyBundleValidatorWritesTmpButtons: rendered.copyBundleValidatorWritesTmpButtons,
+      createConvexDraftButtons: rendered.createConvexDraftButtons,
+      saveConvexResultSummaryButtons: rendered.saveConvexResultSummaryButtons,
+      selectedDetailShowsSplitWorkflow: rendered.selectedDetailShowsSplitWorkflow,
+      readOnlyLocalRunIncludesChecks: rendered.readOnlyLocalRunIncludesChecks,
+      readOnlyLocalRunExcludesWrites: rendered.readOnlyLocalRunExcludesWrites,
+      writePrivateLocalRunIncludesWrites: rendered.writePrivateLocalRunIncludesWrites,
+      readOnlyLocalRunText: rendered.readOnlyLocalRunText,
+      writePrivateLocalRunText: rendered.writePrivateLocalRunText,
+    },
+  );
+  addCheck(
+    checks,
     "primary_objective_nav_and_queue",
     rendered.containsEvidenceQueue &&
       rendered.containsAgentPromptNav &&
@@ -711,6 +768,15 @@ try {
       selectedEvidencePacketHasSourceWorkflows: rendered.selectedEvidencePacketHasSourceWorkflows,
       runLedgerResolved: rendered.runLedgerResolved,
       runLedgerShowsRawGenomeBoundary: rendered.runLedgerShowsRawGenomeBoundary,
+      copyReadOnlyChecksButtons: rendered.copyReadOnlyChecksButtons,
+      copyLocalRunWritesTmpButtons: rendered.copyLocalRunWritesTmpButtons,
+      copyBundleValidatorWritesTmpButtons: rendered.copyBundleValidatorWritesTmpButtons,
+      createConvexDraftButtons: rendered.createConvexDraftButtons,
+      saveConvexResultSummaryButtons: rendered.saveConvexResultSummaryButtons,
+      selectedDetailShowsSplitWorkflow: rendered.selectedDetailShowsSplitWorkflow,
+      readOnlyLocalRunIncludesChecks: rendered.readOnlyLocalRunIncludesChecks,
+      readOnlyLocalRunExcludesWrites: rendered.readOnlyLocalRunExcludesWrites,
+      writePrivateLocalRunIncludesWrites: rendered.writePrivateLocalRunIncludesWrites,
       containsPublicCaptureSessionCommand: rendered.containsPublicCaptureSessionCommand,
       containsPrivateCaptureSessionCommand: rendered.containsPrivateCaptureSessionCommand,
       containsCombinedCaptureSessionCommand: rendered.containsCombinedCaptureSessionCommand,

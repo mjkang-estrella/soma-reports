@@ -336,32 +336,44 @@ const publicEndpointProbeStoresHashOnlyText = publicEndpointProbeRows.every(
     (row.infoTabs ?? []).every((tab) => publicEndpointTextSummaryIsHashOnly(tab.content ?? null)),
 );
 
+const appSource = existsSync("src/App.tsx") ? readFileSync("src/App.tsx", "utf8") : "";
+const reportCardSource = existsSync("src/components/ReportCard.tsx")
+  ? readFileSync("src/components/ReportCard.tsx", "utf8")
+  : "";
+const reportDetailSource = existsSync("src/components/ReportDetail.tsx")
+  ? readFileSync("src/components/ReportDetail.tsx", "utf8")
+  : "";
+const formalEvidenceBacklogSource = existsSync("src/lib/formalEvidenceBacklog.ts")
+  ? readFileSync("src/lib/formalEvidenceBacklog.ts", "utf8")
+  : "";
+
 const uiSourceChecks = {
   appGapQueue:
-    existsSync("src/App.tsx") && readFileSync("src/App.tsx", "utf8").includes("Evidence gap queue"),
+    appSource.includes("Evidence gap queue"),
   reportCapturePanel:
-    existsSync("src/components/ReportDetail.tsx") &&
-    readFileSync("src/components/ReportDetail.tsx", "utf8").includes("official-output-capture"),
+    reportDetailSource.includes("official-output-capture"),
   reportCardLocalRunSurface:
-    existsSync("src/components/ReportCard.tsx") &&
-    readFileSync("src/components/ReportCard.tsx", "utf8").includes("Run locally") &&
-    readFileSync("src/components/ReportCard.tsx", "utf8").includes("Scaffold run only"),
+    reportCardSource.includes("Run locally") &&
+    reportCardSource.includes("Scaffold run only"),
   reportDetailLocalRunCoordinateMap:
-    existsSync("src/components/ReportDetail.tsx") &&
-    readFileSync("src/components/ReportDetail.tsx", "utf8").includes("agent:update-rsid-coordinate-map"),
+    reportDetailSource.includes("agent:update-rsid-coordinate-map"),
   reportDetailLocalRunWorkflowCheck:
-    existsSync("src/components/ReportDetail.tsx") &&
-    readFileSync("src/components/ReportDetail.tsx", "utf8").includes("agent:workflow-check"),
+    reportDetailSource.includes("agent:workflow-check"),
   reportDetailLocalRunWrapper:
-    existsSync("src/components/ReportDetail.tsx") &&
-    readFileSync("src/components/ReportDetail.tsx", "utf8").includes("agent:prepare-local"),
+    reportDetailSource.includes("agent:prepare-local"),
+  reportDetailLocalRunCommandSplit:
+    reportDetailSource.includes("localRunReadOnlyWorkflow") &&
+    reportDetailSource.includes("localRunWritableWorkflow") &&
+    reportDetailSource.includes("Copy read-only checks") &&
+    reportDetailSource.includes("Copy local run commands (writes tmp)") &&
+    reportDetailSource.includes("Copy bundle validator (writes tmp)") &&
+    reportDetailSource.includes("Create Convex draft") &&
+    reportDetailSource.includes("Save Convex result summary"),
   reportDetailLocalDeterministicResult:
-    existsSync("src/components/ReportDetail.tsx") &&
-    readFileSync("src/components/ReportDetail.tsx", "utf8").includes("agent:generate-local-result") &&
+    reportDetailSource.includes("agent:generate-local-result") &&
     existsSync("scripts/generate-local-agent-result.mjs"),
   formalEvidenceBacklog:
-    existsSync("src/lib/formalEvidenceBacklog.ts") &&
-    readFileSync("src/lib/formalEvidenceBacklog.ts", "utf8").includes("formalEvidenceBacklogSummary"),
+    formalEvidenceBacklogSource.includes("formalEvidenceBacklogSummary"),
 };
 
 const checks = [

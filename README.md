@@ -381,28 +381,46 @@ stdout. Manifest paths are repo-root relative. Local-mode exports also keep
 be mistaken for source-backed formal packages merely because local validation
 passed.
 
-Prepare a package for a local agent run against user-derived genome evidence:
+Prepare a package for a local agent run against user-derived genome evidence. Keep
+the command side effects separate:
+
+| Group | Commands | Side effect boundary |
+| --- | --- | --- |
+| Read-only checks | `agent:workflow-check`, `agent:workflow-check --strict true`, `agent:validate-run` without `--out` | Reads repo artifacts and existing generated files only; writes nothing and does not read raw genome input. |
+| Local run commands | `agent:prepare-local`, `agent:seed-cache`, `agent:bundle --out`, `agent:update-rsid-coordinate-map`, `agent:evidence-template --out`, `agent:derive-evidence`, `agent:prepare --out`, `agent:generate-local-result --out`, `agent:validate-run --out` | Writes ignored `tmp/` artifacts and may read a private local VCF/gVCF or QC summary. Raw records stay out of app storage. |
+| Convex run ledger | `Create Convex draft`, `Save Convex result summary` in the app | Stores hashes, counts, status, and artifact paths only; no raw genome records. |
+
+Read-only preflight and post-run checks:
 
 ```bash
-npm run agent:export
-npm run agent:update-rsid-coordinate-map
+npm run agent:workflow-check -- --report wellness-genetic-guide --bundle tmp/agent-bundles/wellness-genetic-guide.validated.json --evidence tmp/evidence-templates/wellness-genetic-guide.filled-derived-evidence.json --input tmp/agent-runs/wellness-genetic-guide.agent-input.json --result tmp/agent-runs/wellness-genetic-guide.agent-result.json
+npm run agent:workflow-check -- --report wellness-genetic-guide --bundle tmp/agent-bundles/wellness-genetic-guide.validated.json --evidence tmp/evidence-templates/wellness-genetic-guide.filled-derived-evidence.json --input tmp/agent-runs/wellness-genetic-guide.agent-input.json --result tmp/agent-runs/wellness-genetic-guide.agent-result.json --strict true
+npm run agent:validate-run -- --input tmp/agent-runs/wellness-genetic-guide.agent-input.json --result tmp/agent-runs/wellness-genetic-guide.agent-result.json
+```
+
+Commands that write ignored `tmp/` artifacts or read private local genome input:
+
+```bash
 SOMA_LOCAL_GENOME=/absolute/path/to/local-genome.vcf.gz
 npm run agent:prepare-local -- --report wellness-genetic-guide --vcf "$SOMA_LOCAL_GENOME" --assembly GRCh38 --out-dir tmp/local-runs/wellness-genetic-guide --format compact
-npm run agent:generate-local-result -- --input tmp/local-runs/wellness-genetic-guide/wellness-genetic-guide.agent-input.json --out tmp/local-runs/wellness-genetic-guide/wellness-genetic-guide.agent-result.json --format compact
-npm run agent:validate-run -- --input tmp/local-runs/wellness-genetic-guide/wellness-genetic-guide.agent-input.json --result tmp/local-runs/wellness-genetic-guide/wellness-genetic-guide.agent-result.json
-npm run agent:evidence-template -- --report wellness-genetic-guide --bundle tmp/agent-bundles/wellness-genetic-guide.validated.json
-npm run agent:workflow-check -- --report wellness-genetic-guide --bundle tmp/agent-bundles/wellness-genetic-guide.validated.json --evidence tmp/evidence-templates/wellness-genetic-guide.filled-derived-evidence.json --input tmp/agent-runs/wellness-genetic-guide.agent-input.json --result tmp/agent-runs/wellness-genetic-guide.agent-result.json
+
+npm run agent:seed-cache
+npm run agent:bundle -- --report wellness-genetic-guide --fixture fixtures/synthetic/wellness-genetic-guide.fixture.json --result fixtures/synthetic/wellness-genetic-guide.result.json --out tmp/agent-bundles/wellness-genetic-guide.validated.json
+npm run agent:update-rsid-coordinate-map
+npm run agent:evidence-template -- --report wellness-genetic-guide --bundle tmp/agent-bundles/wellness-genetic-guide.validated.json --out tmp/evidence-templates/wellness-genetic-guide.derived-evidence-template.json
 npm run agent:derive-evidence -- --template tmp/evidence-templates/wellness-genetic-guide.derived-evidence-template.json --vcf "$SOMA_LOCAL_GENOME" --out tmp/evidence-templates/wellness-genetic-guide.filled-derived-evidence.json
 # If the VCF build differs from the exported template, add --assembly GRCh37 or --assembly GRCh38.
 # Strict default: fails if required template rows are missing or all expected rows are unavailable.
 # Intentional partial run only: add --allow-partial true. Intentional all-unavailable run only: add --allow-empty true.
 # Scaffold-only packages additionally require --allow-local-scaffold true because their formal sample rows are pending.
 npm run agent:prepare -- --report wellness-genetic-guide --bundle tmp/agent-bundles/wellness-genetic-guide.validated.json --evidence tmp/evidence-templates/wellness-genetic-guide.filled-derived-evidence.json --out tmp/agent-runs/wellness-genetic-guide.agent-input.json
+npm run agent:generate-local-result -- --input tmp/agent-runs/wellness-genetic-guide.agent-input.json --out tmp/agent-runs/wellness-genetic-guide.agent-result.json --format compact
 # Give tmp/agent-runs/wellness-genetic-guide.agent-input.json only to a trusted runner/model.
 # It excludes raw VCF data but still contains sensitive derived genome evidence.
 SOMA_LOCAL_RUNNER=/absolute/path/to/local-json-runner
 "$SOMA_LOCAL_RUNNER" < tmp/agent-runs/wellness-genetic-guide.agent-input.json > tmp/agent-runs/wellness-genetic-guide.agent-result.json
 # Save the JSON-only response as tmp/agent-runs/wellness-genetic-guide.agent-result.json.
+npm run agent:validate-run -- --input tmp/agent-runs/wellness-genetic-guide.agent-input.json --result tmp/agent-runs/wellness-genetic-guide.agent-result.json --out tmp/agent-runs/wellness-genetic-guide.validation.json
 ```
 
 `agent:prepare-local` is the one-command path to a prepared local-agent input.
@@ -562,6 +580,8 @@ both derivation and prepare. It also verifies that scaffold-only packages fail
 unless `--allow-local-scaffold true` is explicit and still reject copied synthetic
 fixture rows, and that a static sample-style report body fails even when its
 appendix genotype summary is edited to mirror local evidence.
+It is a synthetic tmp-writing smoke workflow under ignored local artifacts, not a
+read-only audit.
 
 Run stricter parity diagnostics when closing readiness gaps:
 

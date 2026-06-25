@@ -702,7 +702,9 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
     `"$SOMA_LOCAL_RUNNER" < ${localAgentInputPath} > ${localAgentResultPath}`,
   ].join("\n");
   const deterministicLocalResultCommand = `npm run agent:generate-local-result -- --input ${localAgentInputPath} --out ${localAgentResultPath} --format compact`;
-  const localRunWorkflow = uiAgentManifest
+  const localValidateRunCheckCommand = `npm run agent:validate-run -- --input ${localAgentInputPath} --result ${localAgentResultPath}`;
+  const localValidateRunLedgerCommand = `${localValidateRunCheckCommand} --out ${localAgentValidationPath}`;
+  const localRunReadOnlyWorkflow = uiAgentManifest
     ? [
         {
           label: "Check workflow plan",
@@ -710,6 +712,22 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
           purpose:
             "Read-only preflight: verify source artifacts, show missing generated files as warnings, and print the exact local-run command plan without writing tmp outputs.",
         },
+        {
+          label: "Check completed artifacts",
+          command: localWorkflowStrictCheckCommand,
+          purpose:
+            "Read-only strict check after the runner returns JSON. Missing bundle, derived evidence, prepared input, or result files fail here before validation.",
+        },
+        {
+          label: "Validate returned report",
+          command: localValidateRunCheckCommand,
+          purpose:
+            "Check-only validation prints the full ledger without writing. Save the ledger only from the write/private command group.",
+        },
+      ]
+    : [];
+  const localRunWritableWorkflow = uiAgentManifest
+    ? [
         {
           label: "One-command VCF run",
           command: localOneCommandRun,
@@ -774,24 +792,16 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
             "This app does not call a model; your chosen runner/model receives the prepared JSON and produces the result that validation checks.",
         },
         {
-          label: "Check completed artifacts",
-          command: localWorkflowStrictCheckCommand,
+          label: "Save validation ledger",
+          command: localValidateRunLedgerCommand,
           purpose:
-            "Read-only strict check after the runner returns JSON. Missing bundle, derived evidence, prepared input, or result files fail here before validation.",
-        },
-        {
-          label: "Validate returned report",
-          command: [
-            `npm run agent:validate-run -- --input ${localAgentInputPath} --result ${localAgentResultPath}`,
-            "# Optional saved ledger:",
-            `npm run agent:validate-run -- --input ${localAgentInputPath} --result ${localAgentResultPath} --out ${localAgentValidationPath}`,
-          ].join("\n"),
-          purpose:
-            "Check-only validation prints the full ledger without writing. Add --out only when you want to save the validation artifact.",
+            "Validate the returned JSON and write the optional validation artifact under ignored tmp/ for later review.",
         },
       ]
     : [];
-  const localRunWorkflowCommandText = localRunWorkflow.map((step) => step.command).join("\n");
+  const localRunReadOnlyWorkflowCommandText = localRunReadOnlyWorkflow.map((step) => step.command).join("\n");
+  const localRunWritableWorkflowCommandText = localRunWritableWorkflow.map((step) => step.command).join("\n\n");
+  const localRunWorkflow = [...localRunReadOnlyWorkflow, ...localRunWritableWorkflow];
   const localAgentInputReady = Boolean(localAgentInput && deterministicExampleOutput);
   const localAgentInputBlockers = [
     !report.prompt ? "prompt package missing" : null,
@@ -961,11 +971,18 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
     await navigator.clipboard.writeText(localValidationCommand);
   };
 
-  const copyLocalRunWorkflow = async () => {
-    if (!localRunWorkflowCommandText) {
+  const copyLocalRunReadOnlyWorkflow = async () => {
+    if (!localRunReadOnlyWorkflowCommandText) {
       return;
     }
-    await navigator.clipboard.writeText(localRunWorkflowCommandText);
+    await navigator.clipboard.writeText(localRunReadOnlyWorkflowCommandText);
+  };
+
+  const copyLocalRunWritableWorkflow = async () => {
+    if (!localRunWritableWorkflowCommandText) {
+      return;
+    }
+    await navigator.clipboard.writeText(localRunWritableWorkflowCommandText);
   };
 
   const copyExampleOutput = async () => {
@@ -1204,10 +1221,10 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                 <button
                   className="btn btn-outline"
                   type="button"
-                  onClick={copyLocalRunWorkflow}
-                  disabled={localRunWorkflow.length === 0}
+                  onClick={copyLocalRunReadOnlyWorkflow}
+                  disabled={localRunReadOnlyWorkflow.length === 0}
                 >
-                  Copy run commands
+                  Copy read-only checks
                 </button>
               </div>
             </div>
@@ -2277,7 +2294,7 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
               <span className="eyebrow">Agent bundle manifest</span>
               <div className="detail-actions">
                 <button className="btn btn-outline" type="button" onClick={copyLocalValidationCommand} disabled={!localValidationCommand}>
-                  Copy validate command
+                  Copy bundle validator (writes tmp)
                 </button>
                 <button className="btn btn-outline" type="button" onClick={copyManifest} disabled={!uiAgentManifest}>
                   Copy manifest
@@ -2350,14 +2367,24 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
           <section id="local-run" className="detail-section">
             <div className="detail-section-header">
               <span className="eyebrow">Local genome run workflow</span>
-              <button
-                className="btn btn-outline"
-                type="button"
-                onClick={copyLocalRunWorkflow}
-                disabled={localRunWorkflow.length === 0}
-              >
-                Copy run commands
-              </button>
+              <div className="detail-actions">
+                <button
+                  className="btn btn-outline"
+                  type="button"
+                  onClick={copyLocalRunReadOnlyWorkflow}
+                  disabled={localRunReadOnlyWorkflow.length === 0}
+                >
+                  Copy read-only checks
+                </button>
+                <button
+                  className="btn btn-outline"
+                  type="button"
+                  onClick={copyLocalRunWritableWorkflow}
+                  disabled={localRunWritableWorkflow.length === 0}
+                >
+                  Copy local run commands (writes tmp)
+                </button>
+              </div>
             </div>
             {localRunWorkflow.length > 0 ? (
               <>
@@ -2403,7 +2430,7 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                         onClick={createLocalRunDraft}
                         disabled={isCreatingRunDraft || !localFixture}
                       >
-                        {isCreatingRunDraft ? "Saving..." : "Create draft"}
+                        {isCreatingRunDraft ? "Saving..." : "Create Convex draft"}
                       </button>
                       <button
                         className="btn btn-outline"
@@ -2411,7 +2438,7 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                         onClick={saveDeterministicPreviewSummary}
                         disabled={isSavingRunResult || !deterministicExampleOutput}
                       >
-                        {isSavingRunResult ? "Saving..." : "Save result summary"}
+                        {isSavingRunResult ? "Saving..." : "Save Convex result summary"}
                       </button>
                     </div>
                   </div>
@@ -2462,8 +2489,26 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                     <p className="body-text">No local run drafts have been saved for this report yet.</p>
                   )}
                 </div>
-                <div className="local-run-steps">
-                  {localRunWorkflow.map((step, index) => (
+                <div className="detail-section-header">
+                  <span className="eyebrow">Read-only checks</span>
+                  <span className="meta-text">no tmp writes; no raw genome input</span>
+                </div>
+                <div className="local-run-steps" aria-label="Read-only local-run checks">
+                  {localRunReadOnlyWorkflow.map((step, index) => (
+                    <div key={step.label}>
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                      <strong>{step.label}</strong>
+                      <p>{step.purpose}</p>
+                      <pre className="command-block">{step.command}</pre>
+                    </div>
+                  ))}
+                </div>
+                <div className="detail-section-header">
+                  <span className="eyebrow">Local run commands</span>
+                  <span className="meta-text">writes ignored tmp artifacts; may read private genome input</span>
+                </div>
+                <div className="local-run-steps" aria-label="Local run commands that write tmp">
+                  {localRunWritableWorkflow.map((step, index) => (
                     <div key={step.label}>
                       <span>{String(index + 1).padStart(2, "0")}</span>
                       <strong>{step.label}</strong>
