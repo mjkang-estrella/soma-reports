@@ -34,6 +34,20 @@ const genomeEvidence = v.object({
   sourceArtifact: v.optional(v.string()),
 });
 
+const reportRunStatus = v.union(
+  v.literal("draft"),
+  v.literal("input_prepared"),
+  v.literal("result_saved"),
+  v.literal("validated"),
+);
+
+const reportRunValidationStatus = v.union(
+  v.literal("not_run"),
+  v.literal("pending"),
+  v.literal("passed"),
+  v.literal("failed"),
+);
+
 export default defineSchema({
   reports: defineTable({
     slug: v.string(),
@@ -207,4 +221,56 @@ export default defineSchema({
       consumerLanguage: v.boolean(),
     }),
   }).index("by_reportSlug", ["reportSlug"]),
+
+  reportRuns: defineTable({
+    runId: v.string(),
+    reportSlug: v.string(),
+    reportTitle: v.string(),
+    status: reportRunStatus,
+    packageVersion: v.optional(v.string()),
+    promptHash: v.optional(v.string()),
+    outputFormatHash: v.optional(v.string()),
+    inputManifestHash: v.optional(v.string()),
+    genomeBuild: v.optional(v.string()),
+    derivedEvidenceCount: v.optional(v.number()),
+    sampleBackedFormalReady: v.boolean(),
+    localScaffoldOnly: v.boolean(),
+    rawGenomeIncluded: v.boolean(),
+    storageBoundary: v.string(),
+    createdAt: v.number(),
+    updatedAt: v.number(),
+  })
+    .index("by_runId", ["runId"])
+    .index("by_reportSlug_and_createdAt", ["reportSlug", "createdAt"]),
+
+  reportRunInputs: defineTable({
+    runId: v.string(),
+    reportSlug: v.string(),
+    inputManifestHash: v.optional(v.string()),
+    genomeBuild: v.optional(v.string()),
+    derivedEvidenceCount: v.optional(v.number()),
+    missingInputCount: v.optional(v.number()),
+    preparedInputPath: v.optional(v.string()),
+    derivedEvidencePath: v.optional(v.string()),
+    privacyBoundary: v.string(),
+    createdAt: v.number(),
+  }).index("by_runId", ["runId"]),
+
+  reportRunResults: defineTable({
+    runId: v.string(),
+    reportSlug: v.string(),
+    resultArtifactPath: v.optional(v.string()),
+    schemaVersion: v.optional(v.string()),
+    resultRows: v.number(),
+    referenceCount: v.number(),
+    appendixProbabilityCount: v.number(),
+    appendixUncertaintyCount: v.number(),
+    appendixMissingInputCount: v.number(),
+    appendixLimitationCount: v.number(),
+    validationStatus: reportRunValidationStatus,
+    validationProblemCount: v.number(),
+    validationWarningCount: v.number(),
+    rawGenomeIncluded: v.boolean(),
+    savedAt: v.number(),
+  }).index("by_runId", ["runId"]),
 });

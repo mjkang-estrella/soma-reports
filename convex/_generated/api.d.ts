@@ -12,6 +12,7 @@ import type * as authenticatedMarketplaceLedger from "../authenticatedMarketplac
 import type * as marketplaceCatalog from "../marketplaceCatalog.js";
 import type * as marketplacePositionLedger from "../marketplacePositionLedger.js";
 import type * as reportPackages from "../reportPackages.js";
+import type * as reportRuns from "../reportRuns.js";
 import type * as reports from "../reports.js";
 
 import type {
@@ -25,6 +26,7 @@ declare const fullApi: ApiFromModules<{
   marketplaceCatalog: typeof marketplaceCatalog;
   marketplacePositionLedger: typeof marketplacePositionLedger;
   reportPackages: typeof reportPackages;
+  reportRuns: typeof reportRuns;
   reports: typeof reports;
 }>;
 

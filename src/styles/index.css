@@ -1868,6 +1868,69 @@ header {
   white-space: pre-wrap;
 }
 
+.run-ledger-panel {
+  border: 1px solid var(--border-light);
+  display: grid;
+  gap: var(--space-sm);
+  margin: var(--space-sm) 0;
+  padding: var(--space-sm);
+}
+
+.run-ledger-header {
+  align-items: start;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: space-between;
+  padding-bottom: var(--space-xs);
+}
+
+.run-ledger-header strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.run-ledger-status {
+  background: rgba(7, 31, 22, 0.04);
+  border: 1px solid var(--border-light);
+  color: rgba(7, 31, 22, 0.72);
+  font-size: 0.84rem;
+  margin: 0;
+  overflow-wrap: anywhere;
+  padding: 8px;
+}
+
+.run-history-list {
+  display: grid;
+  gap: 1px;
+}
+
+.run-history-list > div {
+  border: 1px solid var(--border-light);
+  display: grid;
+  gap: 3px;
+  padding: 10px;
+}
+
+.run-history-list strong,
+.run-history-list span,
+.run-history-list small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.run-history-list strong {
+  font-weight: 600;
+}
+
+.run-history-list span,
+.run-history-list small {
+  color: rgba(7, 31, 22, 0.68);
+  font-size: 0.78rem;
+}
+
 .local-run-steps {
   display: grid;
   gap: 1px;

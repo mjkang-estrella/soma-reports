@@ -53,6 +53,7 @@ A report package should eventually describe:
 Working Vite React + Convex app.
 
 - Convex stores report package metadata, references, prompts, output sections, formal-field coverage, sample report rows, genotype summaries, and synthetic local-run fixtures.
+- Convex also stores local run ledger metadata for user-controlled runs: draft run IDs, input/result artifact paths, hashes, counts, validation status, and raw-genome exclusion flags. Raw genome records and full private completed-report payloads remain outside Convex.
 - The frontend renders a marketplace catalog consistent with the original static HTML reference.
 - Authenticated marketplace browsing showed 164 visible Sequencing.com marketplace report/card positions across 3 pages of 75, 75, and 14 cards. The logged-in DOM capture is saved at `reference/catalog/sequencing-authenticated-marketplace-cards-2026-06-21.json`, and the stronger logged-in Next.js page-props extraction is saved at `reference/catalog/sequencing-authenticated-marketplace-pageprops-2026-06-21.json`.
 - The current seed contains 154 identified names: 150 URL-distinct entries extracted from Sequencing.com's public aggregate marketplace page plus 4 authenticated-only cards.

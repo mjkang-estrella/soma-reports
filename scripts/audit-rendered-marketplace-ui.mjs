@@ -38,6 +38,15 @@ const timeoutMs = Number(args.get("--timeout-ms") ?? 30000);
 if (!Number.isFinite(timeoutMs) || timeoutMs <= 0) {
   throw new Error("--timeout-ms must be a positive number");
 }
+const selectedCaptureReport = args.get("--report") ?? "sequencing-depth-and-coverage";
+
+const withSelectedReport = (value) => {
+  const parsed = new URL(value);
+  if (!parsed.searchParams.has("report")) {
+    parsed.searchParams.set("report", selectedCaptureReport);
+  }
+  return parsed.toString();
+};
 
 const getOpenPort = () =>
   new Promise((resolve, reject) => {
@@ -133,6 +142,7 @@ const evaluateRenderedPage = `async () => {
   };
 
   await waitFor(() => document.querySelectorAll("#position-ledger .position-row:not(.header)").length === 164);
+  await waitFor(() => /\\d+ recent runs/i.test(document.querySelector(".run-ledger-panel")?.innerText || ""));
 
   const ledger = document.getElementById("position-ledger");
   if (ledger) {
@@ -150,6 +160,9 @@ const evaluateRenderedPage = `async () => {
   const inspectButtons = [...document.querySelectorAll("#position-ledger .position-row button")];
   const officialCaptureCards = [...document.querySelectorAll(".official-capture-card")];
   const officialCaptureCardTexts = officialCaptureCards.map((card) => normalize(card.innerText));
+  const selectedReportTitle = normalize(document.querySelector(".detail-sidebar h2")?.innerText);
+  const selectedCaptureTemplateText = normalize(document.querySelector("#official-output-capture .capture-template-panel pre")?.innerText);
+  const runLedgerText = normalize(document.querySelector(".run-ledger-panel")?.innerText);
 
   return {
     url: window.location.href,
@@ -194,6 +207,18 @@ const evaluateRenderedPage = `async () => {
       /Missing for promotion:/i.test(text),
     ).length,
     officialCaptureBoardText: normalize(document.querySelector(".official-capture-board")?.innerText).slice(0, 3000),
+    selectedReportTitle,
+    selectedCaptureTemplateText: selectedCaptureTemplateText.slice(0, 3000),
+    selectedCaptureTemplateHasPlaceholderStatus:
+      selectedCaptureTemplateText.includes('"sourceBindingStatus": "replace-with-exact-direct-or-official"'),
+    selectedCaptureTemplateHasConfirmationFields:
+      selectedCaptureTemplateText.includes('"sourceBindingConfirmed": false') &&
+      selectedCaptureTemplateText.includes('"sourceBindingConfirmationNote": "replace-with-visible-row-or-export-binding-note"'),
+    selectedCaptureTemplateHasEagerExactStatus: selectedCaptureTemplateText.includes('"sourceBindingStatus": "exact"'),
+    runLedgerText,
+    runLedgerResolved: /\\d+ recent runs/i.test(runLedgerText),
+    runLedgerShowsRawGenomeBoundary: /Raw genome stored\\s+no/i.test(runLedgerText),
+    runLedgerShowsConvexBoundary: /Stored in Convex\\s+hashes, counts, status, artifact paths/i.test(runLedgerText),
     containsEvidenceQueue: /Evidence queue/i.test(bodyText),
     containsAgentPromptNav: /Agent Prompt/i.test(bodyText),
     containsOutputSchemaNav: /Output Schema/i.test(bodyText),
@@ -218,6 +243,7 @@ try {
     });
     await waitForUrl(url, timeoutMs);
   }
+  url = withSelectedReport(url);
 
   const playwright = playwrightCliPath();
   runPlaywright({ ...playwright, session }, ["open", url]);
@@ -352,6 +378,35 @@ try {
   );
   addCheck(
     checks,
+    "selected_capture_template_binding_contract",
+    rendered.selectedCaptureTemplateHasPlaceholderStatus &&
+      rendered.selectedCaptureTemplateHasConfirmationFields &&
+      !rendered.selectedCaptureTemplateHasEagerExactStatus,
+    "selected official-output artifact template uses placeholder sourceBindingStatus, confirmation fields, and no eager exact status",
+    {
+      selectedReportTitle: rendered.selectedReportTitle,
+      hasPlaceholderStatus: rendered.selectedCaptureTemplateHasPlaceholderStatus,
+      hasConfirmationFields: rendered.selectedCaptureTemplateHasConfirmationFields,
+      hasEagerExactStatus: rendered.selectedCaptureTemplateHasEagerExactStatus,
+      selectedCaptureTemplateText: rendered.selectedCaptureTemplateText,
+    },
+  );
+  addCheck(
+    checks,
+    "convex_run_ledger_rendered",
+    rendered.runLedgerResolved &&
+      rendered.runLedgerShowsRawGenomeBoundary &&
+      rendered.runLedgerShowsConvexBoundary,
+    "selected report renders a resolved Convex run ledger with raw-genome storage boundary",
+    {
+      runLedgerResolved: rendered.runLedgerResolved,
+      runLedgerShowsRawGenomeBoundary: rendered.runLedgerShowsRawGenomeBoundary,
+      runLedgerShowsConvexBoundary: rendered.runLedgerShowsConvexBoundary,
+      runLedgerText: rendered.runLedgerText,
+    },
+  );
+  addCheck(
+    checks,
     "primary_objective_nav_and_queue",
     rendered.containsEvidenceQueue &&
       rendered.containsAgentPromptNav &&
@@ -401,6 +456,12 @@ try {
         rendered.officialCaptureCardsWithCaptureStatusSnapshotCommand,
       officialCaptureCardsWithRouteProbeBoundary: rendered.officialCaptureCardsWithRouteProbeBoundary,
       officialCaptureCardsWithPublicPromotionGaps: rendered.officialCaptureCardsWithPublicPromotionGaps,
+      selectedReportTitle: rendered.selectedReportTitle,
+      selectedCaptureTemplateHasPlaceholderStatus: rendered.selectedCaptureTemplateHasPlaceholderStatus,
+      selectedCaptureTemplateHasConfirmationFields: rendered.selectedCaptureTemplateHasConfirmationFields,
+      selectedCaptureTemplateHasEagerExactStatus: rendered.selectedCaptureTemplateHasEagerExactStatus,
+      runLedgerResolved: rendered.runLedgerResolved,
+      runLedgerShowsRawGenomeBoundary: rendered.runLedgerShowsRawGenomeBoundary,
       localRunReadyCards: rendered.localRunReadyCards,
       localRunScaffoldCards: rendered.localRunScaffoldCards,
       firstPositionText: rendered.firstPositionText,

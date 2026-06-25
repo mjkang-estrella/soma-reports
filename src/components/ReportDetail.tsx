@@ -1,5 +1,7 @@
+import { useMutation, useQuery } from "convex/react";
 import { useEffect, useState } from "react";
 
+import { api } from "../../convex/_generated/api";
 import {
   formalEvidenceDecisionFor,
   formalEvidenceTargetFor,
@@ -27,6 +29,39 @@ const FORMAL_FIELD_STATUS_META: Record<
 
 type LocalFixture = NonNullable<ReportPackage["localTestFixture"]>;
 type ExampleOutputPreview = Record<string, unknown>;
+type ReportRunSummary = {
+  runId: string;
+  status: string;
+  createdAt: number;
+  updatedAt: number;
+  inputManifestHash?: string;
+  genomeBuild?: string;
+  derivedEvidenceCount?: number;
+  sampleBackedFormalReady: boolean;
+  localScaffoldOnly: boolean;
+  rawGenomeIncluded: boolean;
+  storageBoundary: string;
+  inputSummary?: {
+    preparedInputPath?: string;
+    derivedEvidencePath?: string;
+    privacyBoundary: string;
+  } | null;
+  resultSummary?: {
+    schemaVersion?: string;
+    resultArtifactPath?: string;
+    resultRows: number;
+    referenceCount: number;
+    appendixProbabilityCount: number;
+    appendixUncertaintyCount: number;
+    appendixMissingInputCount: number;
+    appendixLimitationCount: number;
+    validationStatus: string;
+    validationProblemCount: number;
+    validationWarningCount: number;
+    rawGenomeIncluded: boolean;
+    savedAt: number;
+  } | null;
+};
 
 const resultFixtureLoaders = import.meta.glob<ExampleOutputPreview>("/fixtures/synthetic/*.result.json", { import: "default" });
 
@@ -70,6 +105,17 @@ const previewItemLabel = (value: unknown) => {
 };
 
 const formatGapLabel = (gap: string) => gap.replace(/[-_]/g, " ");
+const sourceBindingStatusPlaceholder = "replace-with-exact-direct-or-official";
+const sourceBindingConfirmationNotePlaceholder = "replace-with-visible-row-or-export-binding-note";
+const formatRunTimestamp = (value: number | undefined) => {
+  if (!value) {
+    return "pending";
+  }
+  return new Intl.DateTimeFormat(undefined, {
+    dateStyle: "medium",
+    timeStyle: "short",
+  }).format(new Date(value));
+};
 const formatBoundaryReason = (boundary: Record<string, unknown> | null | undefined) => {
   const reason = boundary?.reason;
   return typeof reason === "string" && reason.trim() ? reason : null;
@@ -185,6 +231,14 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
   const reportSlug = report?.slug ?? null;
   const [resultFixturePreview, setResultFixturePreview] = useState<ExampleOutputPreview | null>(null);
   const [isResultFixtureLoading, setIsResultFixtureLoading] = useState(false);
+  const [runLedgerStatus, setRunLedgerStatus] = useState<string | null>(null);
+  const [isCreatingRunDraft, setIsCreatingRunDraft] = useState(false);
+  const [isSavingRunResult, setIsSavingRunResult] = useState(false);
+  const reportRuns = useQuery(api.reportRuns.listForReport, reportSlug ? { reportSlug, limit: 5 } : "skip") as
+    | ReportRunSummary[]
+    | undefined;
+  const createRunDraft = useMutation(api.reportRuns.createDraft);
+  const saveRunResultSummary = useMutation(api.reportRuns.saveResultSummary);
 
   useEffect(() => {
     if (!reportSlug) {
@@ -533,7 +587,9 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
             item: "replace-with-official-row-label",
             observedField: "replace-with-official-output-field",
             sourceResourceIds: [officialOutputTemplateSourceId],
-            sourceBindingStatus: "exact",
+            sourceBindingStatus: sourceBindingStatusPlaceholder,
+            sourceBindingConfirmed: false,
+            sourceBindingConfirmationNote: sourceBindingConfirmationNotePlaceholder,
           },
         ],
         formalFields:
@@ -545,7 +601,9 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                 outputPath: `replace-with-output-path-${index + 1}`,
                 status: "covered",
                 sourceResourceIds: [officialOutputTemplateSourceId],
-                sourceBindingStatus: "exact",
+                sourceBindingStatus: sourceBindingStatusPlaceholder,
+                sourceBindingConfirmed: false,
+                sourceBindingConfirmationNote: sourceBindingConfirmationNotePlaceholder,
                 sourceLabel: officialOutputTemplateSourceId,
               }))
             : [
@@ -556,7 +614,9 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                   outputPath: "replace-with-output-path",
                   status: "covered",
                   sourceResourceIds: [officialOutputTemplateSourceId],
-                  sourceBindingStatus: "exact",
+                  sourceBindingStatus: sourceBindingStatusPlaceholder,
+                  sourceBindingConfirmed: false,
+                  sourceBindingConfirmationNote: sourceBindingConfirmationNotePlaceholder,
                   sourceLabel: officialOutputTemplateSourceId,
                 },
               ],
@@ -564,7 +624,9 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
           {
             rowId: "replace-with-official-row-id",
             sourceResourceIds: [officialOutputTemplateSourceId],
-            sourceBindingStatus: "exact",
+            sourceBindingStatus: sourceBindingStatusPlaceholder,
+            sourceBindingConfirmed: false,
+            sourceBindingConfirmationNote: sourceBindingConfirmationNotePlaceholder,
           },
         ],
         validationCommands: [
@@ -844,6 +906,77 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
       return;
     }
     await navigator.clipboard.writeText(JSON.stringify(deterministicExampleOutput, null, 2));
+  };
+
+  const buildRunDraftPayload = () => ({
+    reportSlug: report.slug,
+    reportTitle: report.title,
+    packageVersion: report.version,
+    ...(report.prompt?.promptHash ? { promptHash: report.prompt.promptHash } : {}),
+    ...(report.prompt?.outputFormatHash ? { outputFormatHash: report.prompt.outputFormatHash } : {}),
+    ...(localFixture?.inputManifest.hash ? { inputManifestHash: localFixture.inputManifest.hash } : {}),
+    ...(localFixture?.inputManifest.genomeBuild ? { genomeBuild: localFixture.inputManifest.genomeBuild } : {}),
+    ...(localFixture ? { derivedEvidenceCount: localFixture.genomeEvidence.length } : {}),
+    ...(appendixMissingInputs.length > 0 ? { missingInputCount: appendixMissingInputs.length } : {}),
+    preparedInputPath: localAgentInputPath,
+    derivedEvidencePath: localFilledEvidencePath,
+    sampleBackedFormalReady: readinessState.sampleBackedFormalReady,
+    localScaffoldOnly: readinessState.localScaffoldOnly,
+  });
+
+  const createLocalRunDraft = async () => {
+    setIsCreatingRunDraft(true);
+    setRunLedgerStatus(null);
+    try {
+      const created = await createRunDraft(buildRunDraftPayload());
+      setRunLedgerStatus(`Draft run ${created.runId} saved to Convex.`);
+      return created.runId;
+    } catch (error) {
+      setRunLedgerStatus(error instanceof Error ? error.message : "Could not save run draft.");
+      return null;
+    } finally {
+      setIsCreatingRunDraft(false);
+    }
+  };
+
+  const saveDeterministicPreviewSummary = async () => {
+    if (!deterministicExampleOutput) {
+      return;
+    }
+
+    setIsSavingRunResult(true);
+    setRunLedgerStatus(null);
+    try {
+      const runId = reportRuns?.[0]?.runId ?? (await createLocalRunDraft());
+      if (!runId) {
+        return;
+      }
+      await saveRunResultSummary({
+        runId,
+        reportSlug: report.slug,
+        resultArtifactPath: resultFixturePreview
+          ? `fixtures/synthetic/${report.slug}.result.json`
+          : `tmp/agent-runs/${report.slug}.agent-result.json`,
+        schemaVersion:
+          typeof deterministicExampleOutput.schemaVersion === "string"
+            ? deterministicExampleOutput.schemaVersion
+            : "report-specific result JSON",
+        resultRows: deterministicExampleRows,
+        referenceCount: localFixture?.referenceResources.length ?? report.references.length,
+        appendixProbabilityCount: appendixProbabilities.length,
+        appendixUncertaintyCount: appendixUncertainty.length,
+        appendixMissingInputCount: appendixMissingInputs.length,
+        appendixLimitationCount: appendixLimitations.length,
+        validationStatus: "pending",
+        validationProblemCount: 0,
+        validationWarningCount: 0,
+      });
+      setRunLedgerStatus(`Result summary saved for ${runId}.`);
+    } catch (error) {
+      setRunLedgerStatus(error instanceof Error ? error.message : "Could not save result summary.");
+    } finally {
+      setIsSavingRunResult(false);
+    }
   };
 
   return (
@@ -2038,6 +2171,78 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                     does not promote the package to source-backed formal readiness.
                   </p>
                 ) : null}
+                <div className="run-ledger-panel">
+                  <div className="run-ledger-header">
+                    <div>
+                      <span className="eyebrow">Convex run ledger</span>
+                      <strong>{reportRuns ? `${reportRuns.length} recent runs` : "Loading runs"}</strong>
+                    </div>
+                    <div className="detail-actions">
+                      <button
+                        className="btn btn-outline"
+                        type="button"
+                        onClick={createLocalRunDraft}
+                        disabled={isCreatingRunDraft || !localFixture}
+                      >
+                        {isCreatingRunDraft ? "Saving..." : "Create draft"}
+                      </button>
+                      <button
+                        className="btn btn-outline"
+                        type="button"
+                        onClick={saveDeterministicPreviewSummary}
+                        disabled={isSavingRunResult || !deterministicExampleOutput}
+                      >
+                        {isSavingRunResult ? "Saving..." : "Save result summary"}
+                      </button>
+                    </div>
+                  </div>
+                  <dl className="inline-meta-list">
+                    <div>
+                      <dt>Stored in Convex</dt>
+                      <dd>hashes, counts, status, artifact paths</dd>
+                    </div>
+                    <div>
+                      <dt>Raw genome stored</dt>
+                      <dd>no</dd>
+                    </div>
+                    <div>
+                      <dt>Prepared input path</dt>
+                      <dd>{localAgentInputPath}</dd>
+                    </div>
+                    <div>
+                      <dt>Result path</dt>
+                      <dd>{localAgentResultPath}</dd>
+                    </div>
+                  </dl>
+                  {runLedgerStatus ? <p className="run-ledger-status">{runLedgerStatus}</p> : null}
+                  {reportRuns && reportRuns.length > 0 ? (
+                    <div className="run-history-list">
+                      {reportRuns.map((run) => (
+                        <div key={run.runId}>
+                          <strong>{run.runId}</strong>
+                          <span>{run.status} / {formatRunTimestamp(run.updatedAt)}</span>
+                          <small>
+                            {run.genomeBuild ?? "genome build pending"}; derived evidence{" "}
+                            {run.derivedEvidenceCount ?? "pending"}; raw genome{" "}
+                            {run.rawGenomeIncluded ? "stored" : "not stored"}
+                          </small>
+                          {run.inputSummary ? <small>{run.inputSummary.preparedInputPath ?? localAgentInputPath}</small> : null}
+                          {run.resultSummary ? (
+                            <small>
+                              result rows {run.resultSummary.resultRows}; references {run.resultSummary.referenceCount};
+                              validation {run.resultSummary.validationStatus}; saved{" "}
+                              {formatRunTimestamp(run.resultSummary.savedAt)}
+                            </small>
+                          ) : (
+                            <small>result summary pending</small>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="body-text">No local run drafts have been saved for this report yet.</p>
+                  )}
+                </div>
                 <div className="local-run-steps">
                   {localRunWorkflow.map((step, index) => (
                     <div key={step.label}>
