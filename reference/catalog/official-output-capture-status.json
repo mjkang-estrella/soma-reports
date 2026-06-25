@@ -1,6 +1,6 @@
 {
   "schemaVersion": "soma-reports.official-output-capture-status.v1",
-  "generatedAt": "2026-06-25T08:23:12.188Z",
+  "generatedAt": "2026-06-25T08:34:01.852Z",
   "ok": true,
   "targetClass": "all",
   "allowEmptyCaptures": true,
@@ -73,6 +73,30 @@
   "officialEvidenceTierCounts": {
     "official-boundary-modeled": 9,
     "official-metadata-only": 12
+  },
+  "officialBoundaryNonPromotionAudit": {
+    "ok": true,
+    "checked": 9,
+    "failed": 0,
+    "invariant": "Official-boundary-modeled blockers stay non-promotional until rowEvidenceReady validation exists.",
+    "rowEvidenceReadyTargets": 0,
+    "rowEvidencePromotionReadyTargets": 0,
+    "allowedReviewDecisions": [
+      "no-promote",
+      "keep-boundary-only"
+    ],
+    "passingSlugs": [
+      "sequencing-depth-and-coverage",
+      "genome-explorer-dna-data-search",
+      "imputation-analysis",
+      "variant-effect-predictor",
+      "variant-discovery-bioinformatics-secondary-analysis",
+      "genome-short-read-mapper",
+      "promethease",
+      "connective-tissue-disorders-and-eds",
+      "eve-premium-dna-genome-data-bioinformatics-pipelines"
+    ],
+    "failures": []
   },
   "rows": [
     {
@@ -4861,7 +4885,7 @@
   ],
   "privacyCanary": {
     "schemaVersion": "soma-reports.official-output-capture-privacy-canary.v1",
-    "generatedAt": "2026-06-25T08:23:12.181Z",
+    "generatedAt": "2026-06-25T08:34:01.841Z",
     "ok": true,
     "results": [
       {

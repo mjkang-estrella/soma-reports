@@ -507,11 +507,16 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
     formalEvidenceTarget?.liveDetailInspection ?? officialOutputCaptureStatus?.liveDetailInspection ?? null;
   const officialOutputLatestRouteProbe = officialOutputCaptureStatus?.latestRouteProbe ?? null;
   const officialOutputPublicBundleEvidence = officialOutputCaptureStatus?.publicBundleEvidence ?? null;
+  const officialOutputPublicCaptureOpportunity =
+    officialOutputCaptureStatus?.publicCapturePriorityOpportunitySummary ?? null;
   const officialOutputRedactionInputPath =
     officialOutputCaptureStatus?.redactionInputPath ?? formalEvidenceTarget?.redactionInputPath ?? null;
-  const officialOutputCaptureTemplateCommand = formalEvidenceTarget?.templateCommand ?? null;
+  const officialOutputCaptureTemplateCommand =
+    officialOutputCaptureStatus?.publicCaptureTemplateCommand ?? formalEvidenceTarget?.templateCommand ?? null;
   const officialOutputPublicCaptureSessionCommand = formalEvidenceTarget
-    ? `npm run scaffold:capture-session -- --source public --report ${report.slug} --format md --out tmp/official-output-capture-session-${report.slug}.md`
+    ? officialOutputPublicCaptureOpportunity?.publicNextCommand ??
+      officialOutputCaptureStatus?.publicCaptureSessionCommand ??
+      `npm run scaffold:capture-session -- --source public --report ${report.slug} --format md --out tmp/official-output-capture-session-${report.slug}.md`
     : null;
   const officialOutputPrivateCaptureSessionCommand = formalEvidenceTarget
     ? `npm run scaffold:capture-session -- --source private --report ${report.slug} --format md --out tmp/official-output-capture-session-${report.slug}-private.md`
@@ -850,6 +855,7 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
           reportSlug: report.slug,
           reportTitle: report.title,
           liveDetailInspection: officialOutputDetailInspection,
+          publicCaptureOpportunity: officialOutputPublicCaptureOpportunity,
           captureTask: formalEvidenceTarget,
         },
         null,
@@ -1308,6 +1314,17 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                   <strong>Why it stays scaffold-only</strong>
                   <p>{formalEvidenceDecision.reason}</p>
                 </div>
+                {officialOutputPublicCaptureOpportunity ? (
+                  <div>
+                    <strong>Public capture opportunity</strong>
+                    <p>
+                      {officialOutputPublicCaptureOpportunity.priorityLabel} /{" "}
+                      {formatGapLabel(officialOutputPublicCaptureOpportunity.opportunityClass)}.{" "}
+                      {officialOutputPublicCaptureOpportunity.summary}
+                    </p>
+                    <p className="capture-path">{officialOutputPublicCaptureOpportunity.publicNextCommand}</p>
+                  </div>
+                ) : null}
               </div>
               <div className="blocker-grid">
                 <div>
@@ -1492,6 +1509,16 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                   </strong>
                 </div>
                 <div>
+                  <span>Public opportunity</span>
+                  <strong>
+                    {officialOutputPublicCaptureOpportunity
+                      ? `${officialOutputPublicCaptureOpportunity.priorityLabel} / ${formatGapLabel(
+                          officialOutputPublicCaptureOpportunity.opportunityClass,
+                        )}`
+                      : "none"}
+                  </strong>
+                </div>
+                <div>
                   <span>Public evidence artifact</span>
                   <strong>{officialOutputPublicBundleEvidence?.artifactPath ?? "none"}</strong>
                 </div>
@@ -1541,6 +1568,22 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                   <strong>Next command</strong>
                   <p className="capture-path">{officialOutputCaptureNextCommand}</p>
                 </div>
+                {officialOutputPublicCaptureOpportunity ? (
+                  <div>
+                    <strong>Public capture opportunity</strong>
+                    <p>
+                      {officialOutputPublicCaptureOpportunity.summary}{" "}
+                      {officialOutputPublicCaptureOpportunity.publicNextStep}
+                    </p>
+                    <ul>
+                      {officialOutputPublicCaptureOpportunity.blockers.slice(0, 6).map((blocker) => (
+                        <li key={blocker}>{blocker}</li>
+                      ))}
+                    </ul>
+                    <p className="capture-path">{officialOutputPublicCaptureOpportunity.publicNextCommand}</p>
+                    <p>{officialOutputPublicCaptureOpportunity.readinessBoundary}</p>
+                  </div>
+                ) : null}
                 {officialOutputReviewEvidencePresent.length > 0 || officialOutputReviewEvidenceMissing.length > 0 ? (
                   <div>
                     <strong>Review evidence ledger</strong>

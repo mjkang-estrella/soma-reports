@@ -309,12 +309,21 @@ export default function App() {
 
   const copyOfficialCaptureCommands = async (target: (typeof officialOutputCaptureTargets)[number]) => {
     const captureStatus = target.captureStatus;
+    const publicCaptureOpportunity = captureStatus?.publicCapturePriorityOpportunitySummary ?? null;
     const committedPath = captureStatus?.committedCapturePath ?? target.expectedSanitizedArtifactPath;
+    const publicCaptureSessionCommand =
+      publicCaptureOpportunity?.publicNextCommand ??
+      captureStatus?.publicCaptureSessionCommand ??
+      `npm run scaffold:capture-session -- --source public --report ${target.slug} --format md --out tmp/official-output-capture-session-${target.slug}.md`;
     const commands = [
       "# Official-output capture workflow",
       "# Public/non-private official sample, reportFile, or export path",
-      `npm run scaffold:capture-session -- --source public --report ${target.slug} --format md --out tmp/official-output-capture-session-${target.slug}.md`,
-      target.templateCommand,
+      publicCaptureOpportunity
+        ? `# Public capture opportunity: ${publicCaptureOpportunity.opportunityClass} - ${publicCaptureOpportunity.summary}`
+        : null,
+      publicCaptureOpportunity?.publicNextStep ? `# ${publicCaptureOpportunity.publicNextStep}` : null,
+      publicCaptureSessionCommand,
+      captureStatus?.publicCaptureTemplateCommand ?? target.templateCommand,
       `npm run scaffold:template-audit -- --report ${target.slug}`,
       "# Private completed-output path; keep the filled input ignored under .soma/private",
       `npm run scaffold:capture-session -- --source private --report ${target.slug} --format md --out tmp/official-output-capture-session-${target.slug}-private.md`,
@@ -1119,6 +1128,11 @@ export default function App() {
 	                  const liveDetailInspection = target.liveDetailInspection ?? captureStatus?.liveDetailInspection ?? null;
 	                  const latestRouteProbe = captureStatus?.latestRouteProbe ?? null;
 	                  const publicBundleEvidence = captureStatus?.publicBundleEvidence ?? null;
+	                  const publicCaptureOpportunity = captureStatus?.publicCapturePriorityOpportunitySummary ?? null;
+	                  const publicCaptureSessionCommand =
+	                    publicCaptureOpportunity?.publicNextCommand ??
+	                    captureStatus?.publicCaptureSessionCommand ??
+	                    `npm run scaffold:capture-session -- --source public --report ${target.slug} --format md --out tmp/official-output-capture-session-${target.slug}.md`;
 	                  const actionClass = target.actionClass;
                   const officialEvidenceTier = officialEvidenceTierFor(captureStatus);
                   const officialEvidenceTierLabel = officialEvidenceTierLabelFor(captureStatus);
@@ -1139,9 +1153,9 @@ export default function App() {
                     captureStatus?.commitSanitizedCaptureCommand ??
                     target.commitSanitizedCaptureCommand;
                   const commandChain = compactCommandChain([
-                    target.templateCommand,
+                    captureStatus?.publicCaptureTemplateCommand ?? target.templateCommand,
                     `npm run scaffold:template-audit -- --report ${target.slug}`,
-                    `npm run scaffold:capture-session -- --source public --report ${target.slug} --format md --out tmp/official-output-capture-session-${target.slug}.md`,
+                    publicCaptureSessionCommand,
                     `npm run scaffold:capture-session -- --source private --report ${target.slug} --format md --out tmp/official-output-capture-session-${target.slug}-private.md`,
                     nextCommand,
                     target.redactionTemplateCommand,
@@ -1175,6 +1189,12 @@ export default function App() {
                         <span className={`evidence-status evidence-status-${officialEvidenceTier}`}>
                           {officialEvidenceTierLabel}
                         </span>
+                        {publicCaptureOpportunity ? (
+                          <small>
+                            Public opportunity {publicCaptureOpportunity.priorityLabel}:{" "}
+                            {formatGapLabel(publicCaptureOpportunity.opportunityClass)}
+                          </small>
+                        ) : null}
                         <small>{actionBoundary}</small>
                       </span>
                       <span>
@@ -1213,6 +1233,10 @@ export default function App() {
 	                        {publicBundleEvidence ? (
 	                          <small>public evidence: {publicBundleEvidence.evidencePresent.length} boundary facts</small>
 	                        ) : null}
+	                        {publicCaptureOpportunity ? (
+	                          <small>public capture: {publicCaptureOpportunity.summary}</small>
+	                        ) : null}
+	                        {publicCaptureOpportunity ? <small>{publicCaptureOpportunity.publicNextStep}</small> : null}
 	                        {publicBundleEvidence ? (
 	                          <small>
 	                            still missing: {publicBundleEvidence.evidenceMissingForPromotion.slice(0, 2).join("; ")}
@@ -1277,6 +1301,11 @@ export default function App() {
                   visibleFields.length > 0
                     ? `${visibleFields.join(", ")}${hiddenFieldCount > 0 ? `, +${hiddenFieldCount} more` : ""}`
                     : "Needs direct official output rows";
+                const publicCaptureOpportunity = captureStatus?.publicCapturePriorityOpportunitySummary ?? null;
+                const publicCaptureSessionCommand =
+                  publicCaptureOpportunity?.publicNextCommand ??
+                  captureStatus?.publicCaptureSessionCommand ??
+                  `npm run scaffold:capture-session -- --source public --report ${target.slug} --format md --out tmp/official-output-capture-session-${target.slug}.md`;
                 const nextCommand =
                   captureStatus?.nextCommand ??
                   target.templateCommand ??
@@ -1284,9 +1313,9 @@ export default function App() {
                   captureStatus?.dryRunSanitizeCommand ??
                   target.dryRunSanitizeCommand;
                 const commandChain = compactCommandChain([
-                  target.templateCommand,
+                  captureStatus?.publicCaptureTemplateCommand ?? target.templateCommand,
                   `npm run scaffold:template-audit -- --report ${target.slug}`,
-                  `npm run scaffold:capture-session -- --source public --report ${target.slug} --format md --out tmp/official-output-capture-session-${target.slug}.md`,
+                  publicCaptureSessionCommand,
                   `npm run scaffold:capture-session -- --source private --report ${target.slug} --format md --out tmp/official-output-capture-session-${target.slug}-private.md`,
                   nextCommand,
                   target.redactionTemplateCommand,
@@ -1397,6 +1426,16 @@ export default function App() {
 	                            : "none"}
 	                        </dd>
 	                      </div>
+                      <div>
+                        <dt>Public opportunity</dt>
+                        <dd>
+                          {publicCaptureOpportunity
+                            ? `${publicCaptureOpportunity.priorityLabel} / ${formatGapLabel(
+                                publicCaptureOpportunity.opportunityClass,
+                              )}`
+                            : "none"}
+                        </dd>
+                      </div>
 	                      <div>
 	                        <dt>Public evidence artifact</dt>
 	                        <dd>{publicBundleEvidence?.artifactPath ?? "none"}</dd>
@@ -1445,6 +1484,21 @@ export default function App() {
 	                        </p>
 	                      </div>
 	                    ) : null}
+                    {publicCaptureOpportunity ? (
+                      <div className="official-capture-review">
+                        <strong>Public capture opportunity</strong>
+                        <p>
+                          {publicCaptureOpportunity.summary} {publicCaptureOpportunity.publicNextStep}
+                        </p>
+                        <ul>
+                          {publicCaptureOpportunity.blockers.slice(0, 4).map((blocker) => (
+                            <li key={blocker}>{blocker}</li>
+                          ))}
+                        </ul>
+                        <p className="official-capture-boundary">{publicCaptureOpportunity.readinessBoundary}</p>
+                        <p className="official-capture-boundary">{publicCaptureOpportunity.publicNextCommand}</p>
+                      </div>
+                    ) : null}
 	                    {latestRouteProbe ? (
 	                      <div className="official-capture-review">
 	                        <strong>Latest authenticated route probe</strong>

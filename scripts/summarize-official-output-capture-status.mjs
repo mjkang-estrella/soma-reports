@@ -506,6 +506,97 @@ const nonTargetOfficialOutputCaptureSummaries = (captureValidation?.results ?? [
     status: "outside-current-blocker-ledger",
   }));
 const officialBoundaryModeledRows = rows.filter((row) => row.officialBoundaryModeled);
+const nonPromotionalBoundaryDecisions = new Set(["no-promote", "keep-boundary-only"]);
+const officialBoundaryPromotionFlagKeys = [
+  "promotesSampleBackedFormalReady",
+  "promotesFormalEquivalentReady",
+  "promotesSampleRows",
+  "promotesResultRows",
+  "promotesCitationBindings",
+  "removesFormalBlocker",
+];
+const officialBoundaryNonPromotionFailures = officialBoundaryModeledRows
+  .map((row) => {
+    const failures = [];
+    const reviewDecision = row.officialOutputPromotionReview?.decision ?? null;
+    const missingFormalGateItems = asArray(row.formalReadinessGate?.missing);
+    const promotionBoundary = row.officialBoundaryModel?.promotionBoundary ?? {};
+    const promotionBoundaryFailures = officialBoundaryPromotionFlagKeys.filter(
+      (key) => promotionBoundary[key] !== false,
+    );
+
+    if (row.officialEvidenceTier !== "official-boundary-modeled") {
+      failures.push(`officialEvidenceTier must be official-boundary-modeled, got ${row.officialEvidenceTier}`);
+    }
+    if (!nonPromotionalBoundaryDecisions.has(reviewDecision)) {
+      failures.push(`manual review decision must remain non-promotional, got ${reviewDecision ?? "none"}`);
+    }
+    if ((row.rowEvidenceReadyCaptures ?? 0) > 0 || asArray(row.rowEvidenceReadyCapturePaths).length > 0) {
+      failures.push("boundary-modeled blockers must not have rowEvidenceReady captures");
+    }
+    if (
+      (row.rowEvidencePromotionReadyCaptures ?? 0) > 0 ||
+      asArray(row.rowEvidencePromotionReadyCapturePaths).length > 0
+    ) {
+      failures.push("boundary-modeled blockers must not have rowEvidencePromotionReady captures");
+    }
+    if (row.formalReadinessGate?.readyForPromotion === true) {
+      failures.push("formal readiness gate must not be ready for promotion");
+    }
+    if (!missingFormalGateItems.some((item) => /rowEvidenceReady/i.test(item))) {
+      failures.push("formal readiness gate must still require a rowEvidenceReady validator pass");
+    }
+    if (row.promotionPreviewCommittedCommand !== null) {
+      failures.push("promotion preview command must stay hidden until rowEvidenceReady validation exists");
+    }
+    if (row.publicCapturePriorityOpportunitySummary?.opportunityClass === "promotion-review-ready") {
+      failures.push("public opportunity class must not switch to promotion-review-ready for boundary-only evidence");
+    }
+    if (!row.publicCapturePriorityOpportunitySummary?.readinessBoundary?.includes("rowEvidenceReady validation")) {
+      failures.push("public readiness boundary must explicitly require rowEvidenceReady validation");
+    }
+    if (promotionBoundaryFailures.length > 0) {
+      failures.push(`promotion boundary flags must be false: ${promotionBoundaryFailures.join(", ")}`);
+    }
+
+    return {
+      slug: row.slug,
+      title: row.title,
+      stage: row.stage,
+      officialEvidenceTier: row.officialEvidenceTier,
+      officialCapturePaths: row.officialCapturePaths,
+      reviewDecision,
+      failures,
+    };
+  })
+  .filter((row) => row.failures.length > 0);
+const officialBoundaryNonPromotionAudit = {
+  ok: officialBoundaryNonPromotionFailures.length === 0,
+  checked: officialBoundaryModeledRows.length,
+  failed: officialBoundaryNonPromotionFailures.length,
+  invariant:
+    "Official-boundary-modeled blockers stay non-promotional until rowEvidenceReady validation exists.",
+  rowEvidenceReadyTargets,
+  rowEvidencePromotionReadyTargets:
+    planTotals.rowEvidencePromotionReadyTargets ??
+    captureValidation?.rowEvidencePromotionReady ??
+    planTotals.promotionCandidateTargets ??
+    captureValidation?.promotionCandidates ??
+    0,
+  allowedReviewDecisions: [...nonPromotionalBoundaryDecisions],
+  passingSlugs: officialBoundaryModeledRows
+    .filter((row) => !officialBoundaryNonPromotionFailures.some((failure) => failure.slug === row.slug))
+    .map((row) => row.slug),
+  failures: officialBoundaryNonPromotionFailures,
+};
+
+if (!officialBoundaryNonPromotionAudit.ok) {
+  problems.push(
+    ...officialBoundaryNonPromotionFailures.map(
+      (row) => `${row.slug}: official-boundary non-promotion invariant failed: ${row.failures.join("; ")}`,
+    ),
+  );
+}
 
 const summary = {
   schemaVersion: "soma-reports.official-output-capture-status.v1",
@@ -602,6 +693,7 @@ const summary = {
       new Map(),
     ),
   ),
+  officialBoundaryNonPromotionAudit,
   rows,
   nonTargetOfficialOutputCaptures: nonTargetOfficialOutputCaptureSummaries,
   privacyCanary: privacyCanaryRun.data ?? null,
@@ -652,6 +744,9 @@ const renderMarkdown = () => {
     `- Reviewed metadata-only: ${summary.totals.reviewedMetadataOnlyTargets}`,
     `- Official-boundary modeled: ${summary.totals.officialBoundaryModeledTargets}`,
     `- Official-boundary modeled formal fields: ${summary.totals.officialBoundaryModeledFormalFields}`,
+    `- Official-boundary non-promotion audit: ${
+      summary.officialBoundaryNonPromotionAudit.ok ? "pass" : "fail"
+    } (${summary.officialBoundaryNonPromotionAudit.checked} checked)`,
     `- Unreviewed output-signal reviews: ${summary.totals.unreviewedOutputSignalReviewTargets}`,
     "",
     "## Problems",
@@ -747,6 +842,7 @@ const renderCompact = () =>
       totals: summary.totals,
       statusCounts: summary.statusCounts,
       officialEvidenceTierCounts: summary.officialEvidenceTierCounts,
+      officialBoundaryNonPromotionAudit: summary.officialBoundaryNonPromotionAudit,
       problems: summary.problems,
       nextQueue: summary.rows.map((row) => ({
         slug: row.slug,

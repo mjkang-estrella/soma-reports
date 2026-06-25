@@ -113,6 +113,32 @@ export type OfficialEvidenceTier =
   | "official-capture-needs-rework"
   | "official-unknown";
 
+export type OfficialOutputCaptureStage =
+  | "row-evidence-ready"
+  | "promotion-candidate-review"
+  | "output-signal-review"
+  | "reviewed-no-promote"
+  | "reviewed-boundary-only"
+  | "reviewed-metadata-only"
+  | "capture-needs-rework"
+  | "template-ready"
+  | "template-needed"
+  | "blocked"
+  | "unknown";
+
+export type PublicCapturePriorityOpportunitySummary = {
+  priority: number;
+  priorityLabel: string;
+  stage: OfficialOutputCaptureStage;
+  officialEvidenceTier: OfficialEvidenceTier;
+  opportunityClass: string;
+  summary: string;
+  publicNextStep: string;
+  publicNextCommand: string;
+  blockers: string[];
+  readinessBoundary: string;
+};
+
 export type OfficialBoundaryModel = {
   reviewClass: string | null;
   decision: string | null;
@@ -171,18 +197,7 @@ export type OfficialOutputCaptureStatusRow = {
   slug: string;
   title: string;
   evidenceClass: "missing-exact-detail" | "metadata-only";
-  stage:
-    | "row-evidence-ready"
-    | "promotion-candidate-review"
-    | "output-signal-review"
-    | "reviewed-no-promote"
-    | "reviewed-boundary-only"
-    | "reviewed-metadata-only"
-    | "capture-needs-rework"
-    | "template-ready"
-    | "template-needed"
-    | "blocked"
-    | "unknown";
+  stage: OfficialOutputCaptureStage;
   templateExists: boolean;
   officialCaptures: number;
   validOfficialCaptures: number;
@@ -231,6 +246,10 @@ export type OfficialOutputCaptureStatusRow = {
   liveDetailInspection?: LiveDetailInspection | null;
   nextAction: string | null;
   nextCommand: string | null;
+  publicCaptureTemplatePath?: string | null;
+  publicCaptureTemplateCommand?: string | null;
+  publicCaptureSessionCommand?: string | null;
+  publicCapturePriorityOpportunitySummary?: PublicCapturePriorityOpportunitySummary | null;
   redactionInputPath?: string | null;
   redactionTemplateCommand?: string | null;
   dryRunSanitizeCommand?: string | null;
@@ -501,6 +520,10 @@ export const officialEvidencePacketFor = (target: FormalEvidenceTarget | null | 
   const redactionInputPath = row?.redactionInputPath ?? target.redactionInputPath;
   const sanitizedDraftPath = row?.sanitizedDraftArtifactPath ?? target.sanitizedDraftArtifactPath;
   const committedCapturePath = row?.committedCapturePath ?? target.expectedSanitizedArtifactPath;
+  const publicCaptureSessionCommand =
+    row?.publicCapturePriorityOpportunitySummary?.publicNextCommand ??
+    row?.publicCaptureSessionCommand ??
+    `npm run scaffold:capture-session -- --source public --report ${target.slug} --format md --out tmp/official-output-capture-session-${target.slug}.md`;
   const validateCommittedCaptureCommand =
     row?.validateCommittedCaptureCommand ??
     row?.validationCommandForExpectedCapture ??
@@ -515,6 +538,7 @@ export const officialEvidencePacketFor = (target: FormalEvidenceTarget | null | 
     officialEvidenceTier: tier,
     officialEvidenceTierLabel: officialEvidenceTierLabelFor(row),
     stage: row?.stage ?? "unknown",
+    publicCaptureOpportunity: row?.publicCapturePriorityOpportunitySummary ?? null,
     rowEvidenceReadyCaptures: row?.rowEvidenceReadyCaptures ?? 0,
     rowEvidencePromotionReadyCaptures: row?.rowEvidencePromotionReadyCaptures ?? row?.promotionCandidates ?? 0,
     officialCaptures: row?.officialCaptures ?? 0,
@@ -540,16 +564,16 @@ export const officialEvidencePacketFor = (target: FormalEvidenceTarget | null | 
       : null,
     liveDetailInspection: target.liveDetailInspection ?? row?.liveDetailInspection ?? null,
     paths: {
-      publicCaptureTemplatePath: row?.captureTemplatePath ?? target.captureTemplatePath,
+      publicCaptureTemplatePath: row?.publicCaptureTemplatePath ?? row?.captureTemplatePath ?? target.captureTemplatePath,
       redactionInputPath,
       sanitizedDraftPath,
       committedCapturePath,
       captureTemplatePath: row?.captureTemplatePath ?? target.captureTemplatePath,
     },
     commands: {
-      publicCaptureTemplate: target.templateCommand,
+      publicCaptureTemplate: row?.publicCaptureTemplateCommand ?? target.templateCommand,
       publicTemplateAudit: `npm run scaffold:template-audit -- --report ${target.slug}`,
-      publicCaptureSession: `npm run scaffold:capture-session -- --source public --report ${target.slug} --format md --out tmp/official-output-capture-session-${target.slug}.md`,
+      publicCaptureSession: publicCaptureSessionCommand,
       privateCaptureSession: `npm run scaffold:capture-session -- --source private --report ${target.slug} --format md --out tmp/official-output-capture-session-${target.slug}-private.md`,
       combinedCaptureSession: `npm run scaffold:capture-session -- --source both --report ${target.slug} --format md --out tmp/official-output-capture-session-${target.slug}.md`,
       redactionTemplate: row?.redactionTemplateCommand ?? target.redactionTemplateCommand,

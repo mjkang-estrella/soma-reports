@@ -101,6 +101,39 @@ const summarizeRun = (run) => {
       parsed: compactFormalValidation(run.parsed),
     };
   }
+  if (run.name === "scaffold:capture-status" && run.parsed) {
+    return {
+      ...run,
+      parsed: {
+        ok: run.parsed.ok,
+        totals: run.parsed.totals
+          ? {
+              targets: run.parsed.totals.targets,
+              officialOutputCaptureArtifacts: run.parsed.totals.officialOutputCaptureArtifacts,
+              rowEvidenceReadyTargets: run.parsed.totals.rowEvidenceReadyTargets,
+              rowEvidencePromotionReadyTargets: run.parsed.totals.rowEvidencePromotionReadyTargets,
+              officialBoundaryModeledTargets: run.parsed.totals.officialBoundaryModeledTargets,
+              officialBoundaryModeledFormalFields: run.parsed.totals.officialBoundaryModeledFormalFields,
+              committedRowEvidenceReadyCaptures: run.parsed.totals.committedRowEvidenceReadyCaptures,
+              outsideCurrentBlockerLedgerCaptures: run.parsed.totals.outsideCurrentBlockerLedgerCaptures,
+            }
+          : null,
+        officialEvidenceTierCounts: run.parsed.officialEvidenceTierCounts,
+        officialBoundaryNonPromotionAudit: run.parsed.officialBoundaryNonPromotionAudit
+          ? {
+              ok: run.parsed.officialBoundaryNonPromotionAudit.ok,
+              checked: run.parsed.officialBoundaryNonPromotionAudit.checked,
+              failed: run.parsed.officialBoundaryNonPromotionAudit.failed,
+              rowEvidenceReadyTargets: run.parsed.officialBoundaryNonPromotionAudit.rowEvidenceReadyTargets,
+              rowEvidencePromotionReadyTargets:
+                run.parsed.officialBoundaryNonPromotionAudit.rowEvidencePromotionReadyTargets,
+              failures: run.parsed.officialBoundaryNonPromotionAudit.failures ?? [],
+            }
+          : null,
+        problems: run.parsed.problems?.slice(0, 10) ?? [],
+      },
+    };
+  }
   if (run.name === "agent:assert-sync" && run.parsed) {
     return {
       ...run,
@@ -151,6 +184,17 @@ const runResults = [
   runJsonCommand("catalog:assert", ["npm", "run", "--silent", "catalog:assert"]),
   runJsonCommand("scaffold:evidence-audit", ["npm", "run", "--silent", "scaffold:evidence-audit"]),
   runJsonCommand("scaffold:capture-plan", ["npm", "run", "--silent", "scaffold:capture-plan", "--", "--format", "compact"]),
+  runJsonCommand("scaffold:capture-status", [
+    "npm",
+    "run",
+    "--silent",
+    "scaffold:capture-status",
+    "--",
+    "--format",
+    "compact",
+    "--allow-empty-captures",
+    "true",
+  ]),
   runJsonCommand("scaffold:next-actions", ["npm", "run", "--silent", "scaffold:next-actions", "--", "--format", "compact"]),
   runJsonCommand("scaffold:capture-session:public", [
     "npm",
@@ -192,6 +236,7 @@ const runsByName = new Map(runResults.map((run) => [run.name, run]));
 const catalog = runsByName.get("catalog:assert")?.parsed;
 const scaffold = runsByName.get("scaffold:evidence-audit")?.parsed;
 const capturePlan = runsByName.get("scaffold:capture-plan")?.parsed;
+const captureStatus = runsByName.get("scaffold:capture-status")?.parsed;
 const nextActions = runsByName.get("scaffold:next-actions")?.parsed;
 const publicCaptureSession = runsByName.get("scaffold:capture-session:public")?.parsed;
 const captureValidation = runsByName.get("scaffold:validate-captures")?.parsed;
@@ -605,6 +650,35 @@ const checks = [
             stage: target.captureWorkflow?.stage,
             nextCommand: target.captureWorkflow?.nextCommand,
           })),
+        }
+      : null,
+  },
+  {
+    key: "official_boundary_modeled_non_promotional",
+    ok:
+      runsByName.get("scaffold:capture-status")?.exitCode === 0 &&
+      captureStatus?.ok === true &&
+      captureStatus?.totals?.targets === (scaffold?.scaffoldPackages ?? blockerLedger.decisions?.length ?? 0) &&
+      captureStatus?.totals?.officialBoundaryModeledTargets ===
+        (captureStatus?.officialBoundaryNonPromotionAudit?.checked ?? -1) &&
+      captureStatus?.officialBoundaryNonPromotionAudit?.ok === true &&
+      captureStatus?.officialBoundaryNonPromotionAudit?.failed === 0,
+    expected:
+      "every official-boundary-modeled blocker stays non-promotional until rowEvidenceReady validation exists",
+    actual: captureStatus
+      ? {
+          totals: {
+            targets: captureStatus.totals?.targets,
+            officialBoundaryModeledTargets: captureStatus.totals?.officialBoundaryModeledTargets,
+            officialBoundaryModeledFormalFields: captureStatus.totals?.officialBoundaryModeledFormalFields,
+            rowEvidenceReadyTargets: captureStatus.totals?.rowEvidenceReadyTargets,
+            rowEvidencePromotionReadyTargets: captureStatus.totals?.rowEvidencePromotionReadyTargets,
+            committedRowEvidenceReadyCaptures: captureStatus.totals?.committedRowEvidenceReadyCaptures,
+            outsideCurrentBlockerLedgerCaptures: captureStatus.totals?.outsideCurrentBlockerLedgerCaptures,
+          },
+          officialEvidenceTierCounts: captureStatus.officialEvidenceTierCounts,
+          officialBoundaryNonPromotionAudit: captureStatus.officialBoundaryNonPromotionAudit,
+          problems: captureStatus.problems?.slice(0, 10) ?? [],
         }
       : null,
   },
