@@ -62,6 +62,39 @@ const uniqueStrings = (values) => [
 ];
 const readinessBoundary =
   "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation.";
+const nonPromotionalEvidenceClasses = [
+  "synthetic fixtures",
+  "local deterministic results",
+  "metadata-only detail captures",
+  "order-route boundary evidence",
+  "public education/background pages",
+];
+const operatorEvidenceChecklistFor = (row, currentOutputSignals, missingFormalGateEvidence) => {
+  if (row.operatorEvidenceChecklist) {
+    return row.operatorEvidenceChecklist;
+  }
+  const signals = currentOutputSignals ?? {};
+  const rowEvidenceReadyCapturePresent = Boolean(
+    (row.rowEvidencePromotionReadyCaptures ?? 0) > 0 ||
+      (row.rowEvidenceReadyCaptures ?? 0) > 0 ||
+      asArray(row.rowEvidenceReadyCapturePaths).length > 0,
+  );
+  return {
+    promotionalOfficialRowsPresent: Boolean(signals.reportFile || signals.sampleRows > 0 || signals.resultRows > 0),
+    coveredFormalFieldsPresent: Boolean(signals.formalFields > 0),
+    citationBindingsPresent: Boolean(signals.citationBindings > 0),
+    rowEvidenceReadyCapturePresent,
+    missingOfficialRowEvidence: missingFormalGateEvidence,
+    nonPromotionalEvidenceClasses,
+    promotionBoundary: {
+      syntheticFixturesPromote: false,
+      localDeterministicResultsPromote: false,
+      metadataOnlyDetailCapturesPromote: false,
+      orderRouteBoundaryEvidencePromote: false,
+      publicEducationBackgroundPagesPromote: false,
+    },
+  };
+};
 const publicCapturePriorityOpportunitySummaryFor = (row) => {
   const priority = row.priority ?? null;
   const rowEvidenceReadyCaptures = Math.max(
@@ -244,6 +277,9 @@ const rowsForExport = rows
     const publicTemplateAuditCommand = row.publicTemplateAuditCommand ?? publicTemplateAuditCommandFor(row.slug);
     const publicCaptureSessionCommand =
       row.publicCaptureSessionCommand ?? publicCaptureSessionCommandFor(row.slug);
+    const currentOutputSignals = row.formalReadinessGate?.currentOutputSignals ?? null;
+    const missingFormalGateEvidence = row.formalReadinessGate?.missing ?? [];
+    const operatorEvidenceChecklist = operatorEvidenceChecklistFor(row, currentOutputSignals, missingFormalGateEvidence);
 
     const exportRow = {
       slug: row.slug,
@@ -268,9 +304,10 @@ const rowsForExport = rows
             finalUrl: row.liveDetailInspection.finalUrl ?? row.liveDetailInspection.requestedUrl ?? null,
           }
         : null,
-      currentOutputSignals: row.formalReadinessGate?.currentOutputSignals ?? null,
+      currentOutputSignals,
       officialBoundaryModel: row.officialBoundaryModel ?? null,
-      missingFormalGateEvidence: row.formalReadinessGate?.missing ?? [],
+      operatorEvidenceChecklist,
+      missingFormalGateEvidence,
       reviewedEvidencePresent: row.officialOutputReviewEvidencePresent ?? [],
       reviewedEvidenceMissing: row.officialOutputReviewEvidenceMissing ?? [],
       nextEvidenceNeeded: row.officialOutputReviewNextEvidenceNeeded?.length
@@ -419,6 +456,15 @@ const renderMarkdown = () => {
           : "not inspected"
       }`,
       `- Boundary: ${row.boundaryUse}`,
+      `- Operator checklist: ${
+        row.operatorEvidenceChecklist
+          ? `official rows ${
+              row.operatorEvidenceChecklist.promotionalOfficialRowsPresent ? "present" : "missing"
+            }; covered formal fields ${row.operatorEvidenceChecklist.coveredFormalFieldsPresent ? "present" : "missing"}; citation bindings ${
+              row.operatorEvidenceChecklist.citationBindingsPresent ? "present" : "missing"
+            }; rowEvidenceReady capture ${row.operatorEvidenceChecklist.rowEvidenceReadyCapturePresent ? "present" : "missing"}`
+          : "not available"
+      }`,
       `- Missing formal gate evidence: ${
         row.missingFormalGateEvidence.length > 0 ? row.missingFormalGateEvidence.join("; ") : "none"
       }`,
@@ -475,6 +521,7 @@ const renderCompact = () =>
         nextCommand: row.nextCommand,
         actionClass: row.actionClass,
         publicCapturePriorityOpportunitySummary: row.publicCapturePriorityOpportunitySummary,
+        operatorEvidenceChecklist: row.operatorEvidenceChecklist,
         missingFormalGateEvidence: row.missingFormalGateEvidence,
         nextEvidenceNeeded: row.nextEvidenceNeeded,
         publicCaptureTemplatePath: row.publicCaptureTemplatePath,

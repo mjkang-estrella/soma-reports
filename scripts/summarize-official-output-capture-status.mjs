@@ -158,6 +158,29 @@ const uniqueStrings = (values) => [
 ];
 const readinessBoundary =
   "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation.";
+const nonPromotionalEvidenceClasses = [
+  "synthetic fixtures",
+  "local deterministic results",
+  "metadata-only detail captures",
+  "order-route boundary evidence",
+  "public education/background pages",
+];
+const validationMessageSamples = (messages) =>
+  asArray(messages)
+    .slice(0, 3)
+    .map((entry) => {
+      if (typeof entry === "string") {
+        return entry;
+      }
+      const path = typeof entry?.path === "string" && entry.path ? `${entry.path}: ` : "";
+      const message =
+        typeof entry?.message === "string" && entry.message
+          ? entry.message
+          : entry === null || entry === undefined
+            ? "unknown validation message"
+            : JSON.stringify(entry);
+      return `${path}${message}`;
+    });
 const publicCapturePriorityOpportunitySummaryFor = (row) => {
   const priority = row.priority ?? null;
   const rowEvidenceReadyCaptures = Math.max(
@@ -261,6 +284,10 @@ const rows = (plan?.targets ?? []).map((target) => {
     path: validation.path,
     ok: Boolean(validation.ok),
     gitTracked: gitTrackedOfficialCapturePaths.has(validation.path),
+    problemCount: asArray(validation.problems).length,
+    warningCount: asArray(validation.warnings).length,
+    problemSamples: validationMessageSamples(validation.problems),
+    warningSamples: validationMessageSamples(validation.warnings),
     rowEvidenceReady: Boolean(validation.rowEvidenceReady),
     promotionSafeProvenance: Boolean(validation.promotionSafeProvenance),
     outputSignalReview: Boolean(validation.outputSignalReview ?? validation.promotionCandidate),
@@ -319,6 +346,21 @@ const rows = (plan?.targets ?? []).map((target) => {
     !hasCitationBindings ? "citationBindings[] and source IDs for row-level evidence" : null,
     !hasRowEvidenceReadyCapture ? "a rowEvidenceReady official-output capture validator pass" : null,
   ].filter(Boolean);
+  const operatorEvidenceChecklist = {
+    promotionalOfficialRowsPresent: hasOfficialOutputRows,
+    coveredFormalFieldsPresent: hasCoveredFormalFields,
+    citationBindingsPresent: hasCitationBindings,
+    rowEvidenceReadyCapturePresent: hasRowEvidenceReadyCapture,
+    missingOfficialRowEvidence: formalReadinessMissing,
+    nonPromotionalEvidenceClasses,
+    promotionBoundary: {
+      syntheticFixturesPromote: false,
+      localDeterministicResultsPromote: false,
+      metadataOnlyDetailCapturesPromote: false,
+      orderRouteBoundaryEvidencePromote: false,
+      publicEducationBackgroundPagesPromote: false,
+    },
+  };
   const stage = target.captureWorkflow?.stage ?? "unknown";
   const reviewedOfficialBoundary =
     officialOutputPromotionReview?.reviewClass === "reviewed-boundary-only" ||
@@ -456,6 +498,7 @@ const rows = (plan?.targets ?? []).map((target) => {
       missing: formalReadinessMissing,
       readyForPromotion: formalReadinessMissing.length === 0,
     },
+    operatorEvidenceChecklist,
     liveDetailInspection: target.liveDetailInspection ?? null,
     nextAction: target.captureWorkflow?.nextAction ?? null,
     nextCommand: target.captureWorkflow?.nextCommand ?? dryRunSanitizeCommand,
@@ -623,6 +666,82 @@ if (!officialBoundaryNonPromotionAudit.ok) {
   );
 }
 
+const operatorEvidenceChecklistFailures = rows
+  .map((row) => {
+    const failures = [];
+    const checklist = row.operatorEvidenceChecklist ?? null;
+    const signals = row.formalReadinessGate?.currentOutputSignals ?? {};
+    const missingOfficialRowEvidence = asArray(checklist?.missingOfficialRowEvidence);
+    const nonPromotionalClasses = asArray(checklist?.nonPromotionalEvidenceClasses);
+    const rowEvidenceReadyCapturePresent = Boolean(
+      (row.rowEvidencePromotionReadyCaptures ?? 0) > 0 ||
+        (row.rowEvidenceReadyCaptures ?? 0) > 0 ||
+        asArray(row.rowEvidenceReadyCapturePaths).length > 0,
+    );
+
+    if (!checklist || typeof checklist !== "object") {
+      failures.push("operatorEvidenceChecklist must be present");
+    } else {
+      if (checklist.promotionalOfficialRowsPresent !== Boolean(signals.reportFile || signals.sampleRows > 0 || signals.resultRows > 0)) {
+        failures.push("promotionalOfficialRowsPresent must match official output row/report-file signals");
+      }
+      if (checklist.coveredFormalFieldsPresent !== Boolean(signals.formalFields > 0)) {
+        failures.push("coveredFormalFieldsPresent must match covered formalFields signals");
+      }
+      if (checklist.citationBindingsPresent !== Boolean(signals.citationBindings > 0)) {
+        failures.push("citationBindingsPresent must match citation binding signals");
+      }
+      if (checklist.rowEvidenceReadyCapturePresent !== rowEvidenceReadyCapturePresent) {
+        failures.push("rowEvidenceReadyCapturePresent must match rowEvidenceReady capture paths/counts");
+      }
+      if (!checklist.rowEvidenceReadyCapturePresent && row.promotionPreviewCommittedCommand !== null) {
+        failures.push("promotion preview command must remain hidden until rowEvidenceReady evidence exists");
+      }
+      for (const expectedClass of nonPromotionalEvidenceClasses) {
+        if (!nonPromotionalClasses.includes(expectedClass)) {
+          failures.push(`nonPromotionalEvidenceClasses missing ${expectedClass}`);
+        }
+      }
+      if ((signals.formalFields ?? 0) > 0 && (signals.citationBindings ?? 0) === 0) {
+        if (!missingOfficialRowEvidence.some((item) => /citationBindings/i.test(item))) {
+          failures.push("formal fields without citation bindings must list citationBindings as missing");
+        }
+        if (!missingOfficialRowEvidence.some((item) => /rowEvidenceReady/i.test(item))) {
+          failures.push("formal fields without citation bindings must list rowEvidenceReady as missing");
+        }
+      }
+      const promotionBoundary = checklist.promotionBoundary ?? {};
+      for (const [key, value] of Object.entries(promotionBoundary)) {
+        if (value !== false) {
+          failures.push(`operator promotion boundary flag must be false: ${key}`);
+        }
+      }
+    }
+
+    return {
+      slug: row.slug,
+      title: row.title,
+      failures,
+    };
+  })
+  .filter((row) => row.failures.length > 0);
+const operatorEvidenceChecklistAudit = {
+  ok: operatorEvidenceChecklistFailures.length === 0,
+  checked: rows.length,
+  failed: operatorEvidenceChecklistFailures.length,
+  invariant:
+    "Each blocker exposes a non-promotional operator evidence checklist aligned with formal readiness gates.",
+  failures: operatorEvidenceChecklistFailures,
+};
+
+if (!operatorEvidenceChecklistAudit.ok) {
+  problems.push(
+    ...operatorEvidenceChecklistFailures.map(
+      (row) => `${row.slug}: operator evidence checklist invariant failed: ${row.failures.join("; ")}`,
+    ),
+  );
+}
+
 const summary = {
   schemaVersion: "soma-reports.official-output-capture-status.v1",
   generatedAt: new Date().toISOString(),
@@ -724,6 +843,7 @@ const summary = {
     ),
   ),
   officialBoundaryNonPromotionAudit,
+  operatorEvidenceChecklistAudit,
   rows,
   nonTargetOfficialOutputCaptures: nonTargetOfficialOutputCaptureSummaries,
   privacyCanary: privacyCanaryRun.data ?? null,
@@ -778,6 +898,9 @@ const renderMarkdown = () => {
     `- Official-boundary non-promotion audit: ${
       summary.officialBoundaryNonPromotionAudit.ok ? "pass" : "fail"
     } (${summary.officialBoundaryNonPromotionAudit.checked} checked)`,
+    `- Operator evidence checklist audit: ${
+      summary.operatorEvidenceChecklistAudit.ok ? "pass" : "fail"
+    } (${summary.operatorEvidenceChecklistAudit.checked} checked)`,
     `- Unreviewed output-signal reviews: ${summary.totals.unreviewedOutputSignalReviewTargets}`,
     "",
     "## Problems",
@@ -835,6 +958,12 @@ const renderMarkdown = () => {
       `- Formal gate missing: ${
         row.formalReadinessGate.missing.length > 0 ? row.formalReadinessGate.missing.join("; ") : "none"
       }`,
+      `- Operator checklist: official rows ${
+        row.operatorEvidenceChecklist.promotionalOfficialRowsPresent ? "present" : "missing"
+      }; covered formal fields ${row.operatorEvidenceChecklist.coveredFormalFieldsPresent ? "present" : "missing"}; citation bindings ${
+        row.operatorEvidenceChecklist.citationBindingsPresent ? "present" : "missing"
+      }; rowEvidenceReady capture ${row.operatorEvidenceChecklist.rowEvidenceReadyCapturePresent ? "present" : "missing"}`,
+      `- Non-promotional evidence classes: ${row.operatorEvidenceChecklist.nonPromotionalEvidenceClasses.join("; ")}`,
       `- Formal validator: \`${row.formalReadinessGate.validatorCommand}\``,
       `- Official-output review: ${
         row.officialOutputPromotionReview
@@ -879,6 +1008,7 @@ const renderCompact = () =>
       statusCounts: summary.statusCounts,
       officialEvidenceTierCounts: summary.officialEvidenceTierCounts,
       officialBoundaryNonPromotionAudit: summary.officialBoundaryNonPromotionAudit,
+      operatorEvidenceChecklistAudit: summary.operatorEvidenceChecklistAudit,
       problems: summary.problems,
       nextQueue: summary.rows.map((row) => ({
         slug: row.slug,
@@ -890,7 +1020,9 @@ const renderCompact = () =>
         evidenceClass: row.evidenceClass,
         sourceCoverage: row.sourceCoverage,
         publicCapturePriorityOpportunitySummary: row.publicCapturePriorityOpportunitySummary,
+        operatorEvidenceChecklist: row.operatorEvidenceChecklist,
         missing: row.formalReadinessGate.missing,
+        officialCaptureArtifactSummaries: row.officialCaptureArtifactSummaries,
         officialOutputReview: row.officialOutputPromotionReview
           ? {
               decision: row.officialOutputPromotionReview.decision,
