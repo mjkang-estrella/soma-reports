@@ -230,7 +230,9 @@ const validationCommand = `npm run scaffold:validate-captures -- --path ${expect
 const promotionPreviewCommand = `npm run scaffold:promotion-preview -- --path ${expectedRepositoryPath}`;
 const sampleObservedField = describedOutputFields[0] ?? "replace-with-official-output-field";
 const liveDetailInspection = liveDetailInspectionFor(reportSlug);
+const officialOutputSourceResourceId = `${reportSlug}-official-output-source`;
 const sourceBindingStatusPlaceholder = "replace-with-exact-direct-or-official";
+const sourceBindingConfirmationNotePlaceholder = "replace-with-visible-row-or-export-binding-note";
 
 const template = {
   schema: officialOutputCaptureSchema,
@@ -248,14 +250,44 @@ const template = {
   },
   reportFile: "",
   sourceArtifacts: [captureUrl],
+  sourceResources: [
+    {
+      id: officialOutputSourceResourceId,
+      title: `${decision.title} official output source`,
+      sourceType: "official_output",
+      url: captureUrl,
+      privacy:
+        "Use a public/non-private official sample, reportFile, export, or sanitized completed-output artifact. Keep private completed reports outside this repository.",
+      evidenceLevel: "official-output",
+      extractionStatus: "replace-with-direct-public-or-sanitized-official-output",
+      scope: "report_specific",
+      usedFor: ["sampleRows", "resultRows", "formalFields", "citationBindings"],
+    },
+  ],
   sampleRows: [
     {
       rowId: "replace-with-official-row-id",
       section: "replace-with-official-section",
       item: "replace-with-official-row-label",
       observedField: sampleObservedField,
-      sourceResourceIds: ["replace-with-official-source-id"],
+      sourceResourceIds: [officialOutputSourceResourceId],
       sourceBindingStatus: sourceBindingStatusPlaceholder,
+      sourceBindingConfirmed: false,
+      sourceBindingConfirmationNote: sourceBindingConfirmationNotePlaceholder,
+    },
+  ],
+  resultRows: [
+    {
+      rowId: "replace-with-official-result-row-id",
+      section: "replace-with-official-result-section",
+      item: "replace-with-official-result-label",
+      values: {
+        [fieldKey(sampleObservedField, 0)]: "replace-with-official-output-value-or-redacted-structure",
+      },
+      sourceResourceIds: [officialOutputSourceResourceId],
+      sourceBindingStatus: sourceBindingStatusPlaceholder,
+      sourceBindingConfirmed: false,
+      sourceBindingConfirmationNote: sourceBindingConfirmationNotePlaceholder,
     },
   ],
   formalFields:
@@ -266,8 +298,11 @@ const template = {
           observedField: field,
           outputPath: `replace-with-output-path-${index + 1}`,
           status: "covered",
-          sourceLabel: "replace-with-official-source-label",
+          sourceResourceIds: [officialOutputSourceResourceId],
+          sourceLabel: officialOutputSourceResourceId,
           sourceBindingStatus: sourceBindingStatusPlaceholder,
+          sourceBindingConfirmed: false,
+          sourceBindingConfirmationNote: sourceBindingConfirmationNotePlaceholder,
         }))
       : [
           {
@@ -276,15 +311,27 @@ const template = {
             observedField: "replace-with-observed-field",
             outputPath: "replace-with-output-path",
             status: "covered",
-            sourceLabel: "replace-with-official-source-label",
+            sourceResourceIds: [officialOutputSourceResourceId],
+            sourceLabel: officialOutputSourceResourceId,
             sourceBindingStatus: sourceBindingStatusPlaceholder,
+            sourceBindingConfirmed: false,
+            sourceBindingConfirmationNote: sourceBindingConfirmationNotePlaceholder,
           },
         ],
   citationBindings: [
     {
       rowId: "replace-with-official-row-id",
-      sourceResourceIds: ["replace-with-official-source-id"],
+      sourceResourceIds: [officialOutputSourceResourceId],
       sourceBindingStatus: sourceBindingStatusPlaceholder,
+      sourceBindingConfirmed: false,
+      sourceBindingConfirmationNote: sourceBindingConfirmationNotePlaceholder,
+    },
+    {
+      rowId: "replace-with-official-result-row-id",
+      sourceResourceIds: [officialOutputSourceResourceId],
+      sourceBindingStatus: sourceBindingStatusPlaceholder,
+      sourceBindingConfirmed: false,
+      sourceBindingConfirmationNote: sourceBindingConfirmationNotePlaceholder,
     },
   ],
   validationCommands: [

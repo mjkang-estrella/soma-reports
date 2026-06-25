@@ -22,6 +22,7 @@ export type FormalEvidenceTarget = FormalEvidenceDecision & {
   priority: number;
   expectedSanitizedArtifactPath: string;
   sanitizedDraftArtifactPath: string;
+  captureTemplatePath: string;
   redactionInputPath: string;
   templateCommand: string;
   redactionTemplateCommand: string;
@@ -539,12 +540,18 @@ export const officialEvidencePacketFor = (target: FormalEvidenceTarget | null | 
       : null,
     liveDetailInspection: target.liveDetailInspection ?? row?.liveDetailInspection ?? null,
     paths: {
+      publicCaptureTemplatePath: row?.captureTemplatePath ?? target.captureTemplatePath,
       redactionInputPath,
       sanitizedDraftPath,
       committedCapturePath,
-      captureTemplatePath: row?.captureTemplatePath ?? target.expectedSanitizedArtifactPath,
+      captureTemplatePath: row?.captureTemplatePath ?? target.captureTemplatePath,
     },
     commands: {
+      publicCaptureTemplate: target.templateCommand,
+      publicTemplateAudit: `npm run scaffold:template-audit -- --report ${target.slug}`,
+      publicCaptureSession: `npm run scaffold:capture-session -- --source public --report ${target.slug} --format md --out tmp/official-output-capture-session-${target.slug}.md`,
+      privateCaptureSession: `npm run scaffold:capture-session -- --source private --report ${target.slug} --format md --out tmp/official-output-capture-session-${target.slug}-private.md`,
+      combinedCaptureSession: `npm run scaffold:capture-session -- --source both --report ${target.slug} --format md --out tmp/official-output-capture-session-${target.slug}.md`,
       redactionTemplate: row?.redactionTemplateCommand ?? target.redactionTemplateCommand,
       dryRunSanitize: row?.dryRunSanitizeCommand ?? target.dryRunSanitizeCommand,
       sanitizeDraft: row?.sanitizeDraftCommand ?? row?.sanitizeRedactionCommand ?? target.sanitizeRedactionCommand,
@@ -647,8 +654,10 @@ const sanitizedDraftArtifactPathFor = (slug: string) =>
   `tmp/sanitized-captures/${slug}-official-output-capture-YYYY-MM-DD.json`;
 const redactionInputPathFor = (slug: string) =>
   `.soma/private/official-output-redactions/${slug}-redaction-input.json`;
+const captureTemplatePathFor = (slug: string) =>
+  `tmp/capture-templates/${slug}-official-output-capture-template.json`;
 const templateCommandFor = (slug: string) =>
-  `npm run scaffold:capture-template -- --report ${slug} --out tmp/capture-templates/${slug}-official-output-capture-template.json`;
+  `npm run scaffold:capture-template -- --report ${slug} --out ${captureTemplatePathFor(slug)}`;
 const redactionTemplateCommandFor = (slug: string) => `npm run scaffold:redaction-template -- --report ${slug}`;
 const sanitizeRedactionCommandFor = (slug: string) =>
   `npm run scaffold:sanitize-output -- --input ${redactionInputPathFor(slug)}`;
@@ -734,6 +743,7 @@ const toFormalEvidenceTarget = (
     priority: priorityFor(decision),
     expectedSanitizedArtifactPath: captureStatus?.committedCapturePath ?? artifactPathFor(decision.slug),
     sanitizedDraftArtifactPath: captureStatus?.sanitizedDraftArtifactPath ?? sanitizedDraftArtifactPathFor(decision.slug),
+    captureTemplatePath: captureStatus?.captureTemplatePath ?? captureTemplatePathFor(decision.slug),
     redactionInputPath: redactionInputPathFor(decision.slug),
     templateCommand: templateCommandFor(decision.slug),
     redactionTemplateCommand: redactionTemplateCommandFor(decision.slug),

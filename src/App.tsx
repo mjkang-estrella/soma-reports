@@ -312,6 +312,12 @@ export default function App() {
     const committedPath = captureStatus?.committedCapturePath ?? target.expectedSanitizedArtifactPath;
     const commands = [
       "# Official-output capture workflow",
+      "# Public/non-private official sample, reportFile, or export path",
+      `npm run scaffold:capture-session -- --source public --report ${target.slug} --format md --out tmp/official-output-capture-session-${target.slug}.md`,
+      target.templateCommand,
+      `npm run scaffold:template-audit -- --report ${target.slug}`,
+      "# Private completed-output path; keep the filled input ignored under .soma/private",
+      `npm run scaffold:capture-session -- --source private --report ${target.slug} --format md --out tmp/official-output-capture-session-${target.slug}-private.md`,
       target.redactionTemplateCommand,
       captureStatus?.dryRunSanitizeCommand ?? target.dryRunSanitizeCommand,
       captureStatus?.sanitizeDraftCommand ?? target.sanitizeRedactionCommand,
@@ -345,7 +351,9 @@ export default function App() {
       "npm run scaffold:capture-plan -- --format compact",
       "npm run scaffold:next-actions -- --format compact",
       "npm run scaffold:next-actions -- --format md --out tmp/official-output-next-actions.md",
-      "npm run scaffold:capture-session -- --format md --out tmp/official-output-capture-session.md",
+      "npm run scaffold:capture-session -- --source public --format md --out tmp/official-output-capture-session-public.md",
+      "npm run scaffold:capture-session -- --source private --format md --out tmp/official-output-capture-session-private.md",
+      "npm run scaffold:capture-session -- --source both --format md --out tmp/official-output-capture-session.md",
       "npm run scaffold:validate-captures",
       "npm run scaffold:evidence-audit",
       "npm run completion:audit -- --format compact",
@@ -1068,7 +1076,9 @@ export default function App() {
                   {officialCaptureCatalogSnapshot.authenticatedMarketplacePositions} authenticated marketplace positions.
                   Evidence tiers: {officialBoundaryModeledTargetCount} official-boundary modeled,{" "}
                   {officialMetadataOnlyTargetCount} metadata-only, {officialCaptureTotals.rowEvidenceReadyTargets} row-ready.
-                  Export the local capture-session packet with `npm run scaffold:capture-session -- --format md --out tmp/official-output-capture-session.md`.
+                  Export source-specific packets with `npm run scaffold:capture-session -- --source public --format md --out tmp/official-output-capture-session-public.md`,
+                  `npm run scaffold:capture-session -- --source private --format md --out tmp/official-output-capture-session-private.md`,
+                  or `npm run scaffold:capture-session -- --source both --format md --out tmp/official-output-capture-session.md`.
                 </p>
               </div>
               <span className="meta-text">snapshot {officialCaptureStatus.generatedAt}</span>
@@ -1120,6 +1130,7 @@ export default function App() {
                   const outputSignalSummary = formatOutputSignals(captureStatus?.formalReadinessGate?.currentOutputSignals);
                   const nextCommand =
                     captureStatus?.nextCommand ??
+                    target.templateCommand ??
                     target.redactionTemplateCommand ??
                     captureStatus?.dryRunSanitizeCommand ??
                     target.dryRunSanitizeCommand ??
@@ -1128,6 +1139,10 @@ export default function App() {
                     captureStatus?.commitSanitizedCaptureCommand ??
                     target.commitSanitizedCaptureCommand;
                   const commandChain = compactCommandChain([
+                    target.templateCommand,
+                    `npm run scaffold:template-audit -- --report ${target.slug}`,
+                    `npm run scaffold:capture-session -- --source public --report ${target.slug} --format md --out tmp/official-output-capture-session-${target.slug}.md`,
+                    `npm run scaffold:capture-session -- --source private --report ${target.slug} --format md --out tmp/official-output-capture-session-${target.slug}-private.md`,
                     nextCommand,
                     target.redactionTemplateCommand,
                     captureStatus?.dryRunSanitizeCommand,
@@ -1264,10 +1279,15 @@ export default function App() {
                     : "Needs direct official output rows";
                 const nextCommand =
                   captureStatus?.nextCommand ??
+                  target.templateCommand ??
                   target.redactionTemplateCommand ??
                   captureStatus?.dryRunSanitizeCommand ??
                   target.dryRunSanitizeCommand;
                 const commandChain = compactCommandChain([
+                  target.templateCommand,
+                  `npm run scaffold:template-audit -- --report ${target.slug}`,
+                  `npm run scaffold:capture-session -- --source public --report ${target.slug} --format md --out tmp/official-output-capture-session-${target.slug}.md`,
+                  `npm run scaffold:capture-session -- --source private --report ${target.slug} --format md --out tmp/official-output-capture-session-${target.slug}-private.md`,
                   nextCommand,
                   target.redactionTemplateCommand,
                   captureStatus?.dryRunSanitizeCommand,

@@ -509,6 +509,16 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
   const officialOutputPublicBundleEvidence = officialOutputCaptureStatus?.publicBundleEvidence ?? null;
   const officialOutputRedactionInputPath =
     officialOutputCaptureStatus?.redactionInputPath ?? formalEvidenceTarget?.redactionInputPath ?? null;
+  const officialOutputCaptureTemplateCommand = formalEvidenceTarget?.templateCommand ?? null;
+  const officialOutputPublicCaptureSessionCommand = formalEvidenceTarget
+    ? `npm run scaffold:capture-session -- --source public --report ${report.slug} --format md --out tmp/official-output-capture-session-${report.slug}.md`
+    : null;
+  const officialOutputPrivateCaptureSessionCommand = formalEvidenceTarget
+    ? `npm run scaffold:capture-session -- --source private --report ${report.slug} --format md --out tmp/official-output-capture-session-${report.slug}-private.md`
+    : null;
+  const officialOutputCombinedCaptureSessionCommand = formalEvidenceTarget
+    ? `npm run scaffold:capture-session -- --source both --report ${report.slug} --format md --out tmp/official-output-capture-session-${report.slug}.md`
+    : null;
   const officialOutputRedactionTemplateCommand =
     officialOutputCaptureStatus?.redactionTemplateCommand ?? formalEvidenceTarget?.redactionTemplateCommand ?? null;
   const officialOutputDryRunSanitizeCommand =
@@ -546,6 +556,7 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
     : null;
   const officialOutputCaptureNextCommand =
     officialOutputCaptureStatus?.nextCommand ??
+    officialOutputCaptureTemplateCommand ??
     officialOutputRedactionTemplateCommand ??
     officialOutputDryRunSanitizeCommand ??
     officialOutputSanitizeRedactionCommand ??
@@ -557,7 +568,7 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
     officialOutputCaptureStatus?.outputSignalReviewCapturePaths?.[0] ??
     officialOutputCaptureStatus?.promotionCandidateCapturePaths?.[0] ??
     null;
-  const officialOutputTemplateSourceId = `${report.slug}-redacted-official-output`;
+  const officialOutputTemplateSourceId = `${report.slug}-official-output-source`;
   const officialOutputCaptureArtifactTemplate = formalEvidenceTarget
     ? {
         schema: formalEvidenceTarget.expectedCaptureSchema,
@@ -578,15 +589,15 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
         sourceResources: [
           {
             id: officialOutputTemplateSourceId,
-            title: `${report.title} redacted official completed output`,
-            sourceType: "redacted_official_completed_output",
+            title: `${report.title} official output source`,
+            sourceType: "official_output",
             url: formalEvidenceTarget.captureUrl ?? `https://sequencing.com/marketplace/${report.slug}`,
             privacy:
-              "Private completed output stayed local; committed artifact contains only redacted structure and source bindings.",
+              "Use a public/non-private official sample, reportFile, export, or sanitized completed-output artifact. Keep private completed reports outside this repository.",
             evidenceLevel: "official-output",
-            extractionStatus: "direct",
+            extractionStatus: "replace-with-direct-public-or-sanitized-official-output",
             scope: "report_specific",
-            usedFor: ["sampleRows", "formalFields", "citationBindings"],
+            usedFor: ["sampleRows", "resultRows", "formalFields", "citationBindings"],
           },
         ],
         sampleRows: [
@@ -595,6 +606,20 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
             section: "replace-with-official-section",
             item: "replace-with-official-row-label",
             observedField: "replace-with-official-output-field",
+            sourceResourceIds: [officialOutputTemplateSourceId],
+            sourceBindingStatus: sourceBindingStatusPlaceholder,
+            sourceBindingConfirmed: false,
+            sourceBindingConfirmationNote: sourceBindingConfirmationNotePlaceholder,
+          },
+        ],
+        resultRows: [
+          {
+            rowId: "replace-with-official-result-row-id",
+            section: "replace-with-official-result-section",
+            item: "replace-with-official-result-label",
+            values: {
+              official_output_field: "replace-with-official-output-value-or-redacted-structure",
+            },
             sourceResourceIds: [officialOutputTemplateSourceId],
             sourceBindingStatus: sourceBindingStatusPlaceholder,
             sourceBindingConfirmed: false,
@@ -637,8 +662,19 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
             sourceBindingConfirmed: false,
             sourceBindingConfirmationNote: sourceBindingConfirmationNotePlaceholder,
           },
+          {
+            rowId: "replace-with-official-result-row-id",
+            sourceResourceIds: [officialOutputTemplateSourceId],
+            sourceBindingStatus: sourceBindingStatusPlaceholder,
+            sourceBindingConfirmed: false,
+            sourceBindingConfirmationNote: sourceBindingConfirmationNotePlaceholder,
+          },
         ],
         validationCommands: [
+          officialOutputPublicCaptureSessionCommand,
+          officialOutputCaptureTemplateCommand,
+          formalEvidenceTarget ? `npm run scaffold:template-audit -- --report ${report.slug}` : null,
+          officialOutputPrivateCaptureSessionCommand,
           officialOutputCaptureNextCommand,
           officialOutputCaptureValidationCommand,
           ...formalEvidenceTarget.validationCommands.filter((command) => command !== officialOutputCaptureValidationCommand),
@@ -850,7 +886,7 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
     const committedCapturePath = officialOutputCommittedCapturePath ?? formalEvidenceTarget.expectedSanitizedArtifactPath;
     await navigator.clipboard.writeText(
       [
-        "# Private completed output -> sanitized capture -> seed promotion checklist",
+        "# Official output capture -> seed promotion checklist",
         "# Stop before editing seed files unless validate-captures reports rowEvidenceReady: true.",
         officialOutputDetailInspection?.apiAppId
           ? `# Sequencing app ID: ${officialOutputDetailInspection.apiAppId}`
@@ -859,23 +895,31 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
           ? `# Marketplace action: ${officialOutputDetailInspection.startButtonText}`
           : "# Marketplace action: not exposed in the latest safe detail inspection",
         "",
-        "# 1. Create the ignored private redaction input.",
+        "# 1. Public/non-private official sample, reportFile, or export path.",
+        officialOutputPublicCaptureSessionCommand,
+        officialOutputCaptureTemplateCommand,
+        formalEvidenceTarget ? `npm run scaffold:template-audit -- --report ${report.slug}` : null,
+        `# Fill ${formalEvidenceTarget.captureTemplatePath} only from a public/non-private official source or already sanitized completed-output structure.`,
+        "",
+        "# 2. Private completed-output path; create the ignored private redaction input.",
+        officialOutputPrivateCaptureSessionCommand,
         officialOutputRedactionTemplateCommand,
         `# Fill ${officialOutputRedactionInputPath} from a private completed Sequencing.com output after manual redaction.`,
         "",
-        "# 2. Sanitize to ignored tmp output first.",
+        "# 3. Sanitize private captures to ignored tmp output first.",
         officialOutputDryRunSanitizeCommand,
         officialOutputSanitizeRedactionCommand,
         officialOutputDraftCaptureValidationCommand,
         "",
-        "# 3. Commit only a capture that validates with rowEvidenceReady: true.",
+        "# 4. Commit only a capture that validates with rowEvidenceReady: true.",
+        officialOutputCombinedCaptureSessionCommand,
         officialOutputCommitCaptureCommand,
         officialOutputCaptureValidationCommand,
         "npm run scaffold:capture-status:snapshot",
         "",
         ...(officialOutputCanPreviewPromotion
           ? [
-              "# 4. Generate the promotion brief, then apply its seedFragment manually.",
+              "# 5. Generate the promotion brief, then apply its seedFragment manually.",
               officialOutputPromotionPreviewCommand,
               `npm run scaffold:promotion-preview -- --path ${committedCapturePath} --format md --out tmp/promotion-previews/${report.slug}.md`,
               "# Apply the reviewed seedFragment to convex/reportPackages.ts.",
@@ -1696,11 +1740,20 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                   </div>
                 ) : null}
                 <div>
-                  <strong>Public/template CLI</strong>
+                  <strong>Public capture session</strong>
+                  <p className="capture-path">{officialOutputPublicCaptureSessionCommand}</p>
                   <p className="capture-path">{formalEvidenceTarget.templateCommand}</p>
+                  <p className="capture-path">npm run scaffold:template-audit -- --report {report.slug}</p>
+                </div>
+                <div>
+                  <strong>Private capture session</strong>
+                  <p className="capture-path">{officialOutputPrivateCaptureSessionCommand}</p>
+                  <p className="capture-path">{officialOutputRedactionTemplateCommand}</p>
+                  <p className="capture-path">{officialOutputDryRunSanitizeCommand}</p>
                 </div>
                 <div>
                   <strong>Commit-safe export</strong>
+                  <p className="capture-path">{officialOutputCombinedCaptureSessionCommand}</p>
                   <p className="capture-path">{officialOutputCommitCaptureCommand}</p>
                 </div>
                 {officialOutputPromotionPreviewCommand ? (

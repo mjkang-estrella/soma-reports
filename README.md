@@ -111,7 +111,9 @@ npm run scaffold:template-audit
 npm run scaffold:capture-status
 npm run scaffold:capture-status:snapshot
 npm run scaffold:next-actions -- --format md --out tmp/official-output-next-actions.md
-npm run scaffold:capture-session -- --format md --out tmp/official-output-capture-session.md
+npm run scaffold:capture-session -- --source public --format md --out tmp/official-output-capture-session-public.md
+npm run scaffold:capture-session -- --source private --format md --out tmp/official-output-capture-session-private.md
+npm run scaffold:capture-session -- --source both --format md --out tmp/official-output-capture-session.md
 npm run scaffold:capture-template -- --report sequencing-depth-and-coverage --out tmp/capture-templates/sequencing-depth-and-coverage-official-output-capture-template.json
 npm run scaffold:redaction-next
 npm run scaffold:redaction-template -- --report <slug>
@@ -262,23 +264,34 @@ citation bindings. Its compact output compares the status snapshot against the
 21-row blocker ledger; `coverage.ok` must be true and rows must show `21/21`
 before using the queue for a capture session.
 `scaffold:capture-session` exports a batch operator packet for the same blocker
-queue. Use it when you are about to work through multiple completed-output
-captures locally:
+queue. Use `-- --source public` when you have a public/non-private official
+sample, reportFile, export, or already sanitized completed-output structure. Use
+`-- --source private` for ignored local redaction inputs created from private
+completed outputs. Use `-- --source both` when you want the combined operator
+packet:
 
 ```bash
-npm run scaffold:capture-session -- --format md --out tmp/official-output-capture-session.md
+npm run scaffold:capture-session -- --source public --format md --out tmp/official-output-capture-session-public.md
+npm run scaffold:capture-session -- --source private --format md --out tmp/official-output-capture-session-private.md
+npm run scaffold:capture-session -- --source both --format md --out tmp/official-output-capture-session.md
+npm run scaffold:capture-session -- --source public --report sequencing-depth-and-coverage --format compact
 npm run scaffold:capture-session -- --tier official-boundary-modeled --limit 3 --format compact
 ```
 
 The session manifest keeps the 21 blockers ordered by capture priority, repeats
-the local-only redaction input path, sanitized draft path, commit-safe capture
-path, dry-run sanitizer, validation commands, and stop conditions for each
-target. It is a planning artifact only: fill ignored
+the public capture-template path, local-only redaction input path, sanitized
+draft path, commit-safe capture path, public template audit, dry-run sanitizer,
+validation commands, and stop conditions for each target. It is a planning
+artifact only: fill public templates from public/non-private official sources, or
+fill ignored
 `.soma/private/official-output-redactions/*-redaction-input.json` files from
 manually redacted completed Sequencing.com outputs, and keep raw genome data,
 private reports, private finding values, account identifiers, and private result
 URLs outside the repository. A target still cannot promote until the committed
-sanitized capture validates with `rowEvidenceReady: true`.
+sanitized capture validates with `rowEvidenceReady: true`. Draft templates stay
+under `tmp/capture-templates/` until placeholders are replaced, `sourceResources`
+and `sourceResourceIds` are exact/direct/official, and `validate-captures`
+passes.
 `scaffold:validate-captures` validates sanitized
 `*-official-output-capture-YYYY-MM-DD.json` files before they can be considered
 promotion evidence. A capture must use the official-output schema, point back to

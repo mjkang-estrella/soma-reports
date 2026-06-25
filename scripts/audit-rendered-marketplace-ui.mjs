@@ -236,8 +236,17 @@ const evaluateRenderedPage = `async () => {
       selectedEvidencePacketText.includes('"captureUrl": "https://sequencing.com/marketplace/sequencing-depth-and-coverage"') &&
       selectedEvidencePacketText.includes('"routeProbe"') &&
       selectedEvidencePacketText.includes('"publicBundleEvidence"') &&
+      selectedEvidencePacketText.includes('"publicCaptureTemplatePath"') &&
       selectedEvidencePacketText.includes('"sanitizedDraftPath"') &&
       selectedEvidencePacketText.includes('"committedCapturePath"'),
+    selectedEvidencePacketHasSourceWorkflows:
+      selectedEvidencePacketText.includes('"publicCaptureTemplate"') &&
+      selectedEvidencePacketText.includes("npm run scaffold:capture-template") &&
+      selectedEvidencePacketText.includes("npm run scaffold:capture-session -- --source public") &&
+      selectedEvidencePacketText.includes("npm run scaffold:capture-session -- --source private") &&
+      selectedEvidencePacketText.includes("npm run scaffold:capture-session -- --source both") &&
+      selectedEvidencePacketText.includes("npm run scaffold:redaction-template") &&
+      selectedEvidencePacketText.includes("npm run scaffold:sanitize-output"),
     selectedEvidencePacketHasPrivacyBoundary:
       selectedEvidencePacketText.includes('"rawGenomeIncluded": false') &&
       selectedEvidencePacketText.includes('"privateValuesRedacted": true') &&
@@ -266,7 +275,18 @@ const evaluateRenderedPage = `async () => {
     containsAgentPromptNav: /Agent Prompt/i.test(bodyText),
     containsOutputSchemaNav: /Output Schema/i.test(bodyText),
     containsReferencesNav: /References/i.test(bodyText),
-    containsCaptureSessionCommand: /npm run scaffold:capture-session -- --format md --out tmp\\/official-output-capture-session\\.md/i.test(bodyText),
+    containsPublicCaptureSessionCommand:
+      /npm run scaffold:capture-session -- --source public --format md --out tmp\\/official-output-capture-session-public\\.md/i.test(
+        bodyText,
+      ),
+    containsPrivateCaptureSessionCommand:
+      /npm run scaffold:capture-session -- --source private --format md --out tmp\\/official-output-capture-session-private\\.md/i.test(
+        bodyText,
+      ),
+    containsCombinedCaptureSessionCommand:
+      /npm run scaffold:capture-session -- --source both --format md --out tmp\\/official-output-capture-session\\.md/i.test(
+        bodyText,
+      ),
     bodySample: bodyText.slice(0, 1000)
   };
 }`;
@@ -473,13 +493,15 @@ try {
     rendered.selectedEvidencePacketRendered &&
       rendered.selectedEvidencePacketHasProvenance &&
       rendered.selectedEvidencePacketHasPrivacyBoundary &&
-      rendered.selectedEvidencePacketHasPromotionGate,
-    "selected detail renders an official evidence packet with provenance, privacy boundary, and non-promotion gate",
+      rendered.selectedEvidencePacketHasPromotionGate &&
+      rendered.selectedEvidencePacketHasSourceWorkflows,
+    "selected detail renders an official evidence packet with provenance, privacy boundary, non-promotion gate, and source workflows",
     {
       selectedEvidencePacketRendered: rendered.selectedEvidencePacketRendered,
       selectedEvidencePacketHasProvenance: rendered.selectedEvidencePacketHasProvenance,
       selectedEvidencePacketHasPrivacyBoundary: rendered.selectedEvidencePacketHasPrivacyBoundary,
       selectedEvidencePacketHasPromotionGate: rendered.selectedEvidencePacketHasPromotionGate,
+      selectedEvidencePacketHasSourceWorkflows: rendered.selectedEvidencePacketHasSourceWorkflows,
       selectedEvidencePacketText: rendered.selectedEvidencePacketText,
     },
   );
@@ -519,14 +541,18 @@ try {
       rendered.containsAgentPromptNav &&
       rendered.containsOutputSchemaNav &&
       rendered.containsReferencesNav &&
-      rendered.containsCaptureSessionCommand,
-    "Evidence queue, capture-session command, plus Agent Prompt, Output Schema, and References navigation are present",
+      rendered.containsPublicCaptureSessionCommand &&
+      rendered.containsPrivateCaptureSessionCommand &&
+      rendered.containsCombinedCaptureSessionCommand,
+    "Evidence queue, source-specific capture-session commands, plus Agent Prompt, Output Schema, and References navigation are present",
     {
       containsEvidenceQueue: rendered.containsEvidenceQueue,
       containsAgentPromptNav: rendered.containsAgentPromptNav,
       containsOutputSchemaNav: rendered.containsOutputSchemaNav,
       containsReferencesNav: rendered.containsReferencesNav,
-      containsCaptureSessionCommand: rendered.containsCaptureSessionCommand,
+      containsPublicCaptureSessionCommand: rendered.containsPublicCaptureSessionCommand,
+      containsPrivateCaptureSessionCommand: rendered.containsPrivateCaptureSessionCommand,
+      containsCombinedCaptureSessionCommand: rendered.containsCombinedCaptureSessionCommand,
     },
   );
 
@@ -582,9 +608,12 @@ try {
       selectedEvidencePacketHasProvenance: rendered.selectedEvidencePacketHasProvenance,
       selectedEvidencePacketHasPrivacyBoundary: rendered.selectedEvidencePacketHasPrivacyBoundary,
       selectedEvidencePacketHasPromotionGate: rendered.selectedEvidencePacketHasPromotionGate,
+      selectedEvidencePacketHasSourceWorkflows: rendered.selectedEvidencePacketHasSourceWorkflows,
       runLedgerResolved: rendered.runLedgerResolved,
       runLedgerShowsRawGenomeBoundary: rendered.runLedgerShowsRawGenomeBoundary,
-      containsCaptureSessionCommand: rendered.containsCaptureSessionCommand,
+      containsPublicCaptureSessionCommand: rendered.containsPublicCaptureSessionCommand,
+      containsPrivateCaptureSessionCommand: rendered.containsPrivateCaptureSessionCommand,
+      containsCombinedCaptureSessionCommand: rendered.containsCombinedCaptureSessionCommand,
       localRunReadyCards: rendered.localRunReadyCards,
       localRunScaffoldCards: rendered.localRunScaffoldCards,
       firstPositionText: rendered.firstPositionText,

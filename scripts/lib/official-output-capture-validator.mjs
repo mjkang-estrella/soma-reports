@@ -127,6 +127,14 @@ const validateOutputRowSourceBinding = (row, jsonPath, officialOutputSourceIds, 
   }
 };
 
+const validateListedSourceIds = (sourceIds, jsonPath, listedSourceIds, addProblem) => {
+  for (const sourceId of sourceIds) {
+    if (!listedSourceIds.has(sourceId)) {
+      addProblem(jsonPath, `must reference a listed source resource id (${sourceId} was not found)`);
+    }
+  }
+};
+
 const fieldIsCovered = (field) => {
   const hasFieldIdentity =
     isNonEmptyString(field?.key) ||
@@ -291,6 +299,12 @@ export const validateOfficialOutputCaptureArtifact = (artifact, options = {}) =>
   }
 
   for (const [index, row] of sampleRows.entries()) {
+    validateListedSourceIds(
+      sourceIdsForRow(row),
+      `$.sampleRows[${index}].sourceResourceIds`,
+      listedSourceIds,
+      addProblem,
+    );
     validateOutputRowSourceBinding(
       row,
       `$.sampleRows[${index}]`,
@@ -301,6 +315,12 @@ export const validateOfficialOutputCaptureArtifact = (artifact, options = {}) =>
   }
 
   for (const [index, row] of resultRows.entries()) {
+    validateListedSourceIds(
+      sourceIdsForRow(row),
+      `$.resultRows[${index}].sourceResourceIds`,
+      listedSourceIds,
+      addProblem,
+    );
     validateOutputRowSourceBinding(
       row,
       `$.resultRows[${index}]`,
@@ -315,14 +335,12 @@ export const validateOfficialOutputCaptureArtifact = (artifact, options = {}) =>
       addProblem(`$.formalFields[${index}]`, "must be an object");
       continue;
     }
-    for (const sourceId of explicitSourceIdsForField(field)) {
-      if (!listedSourceIds.has(sourceId)) {
-        addProblem(
-          `$.formalFields[${index}].sourceResourceIds`,
-          `must reference a listed source resource id (${sourceId} was not found)`,
-        );
-      }
-    }
+    validateListedSourceIds(
+      explicitSourceIdsForField(field),
+      `$.formalFields[${index}].sourceResourceIds`,
+      listedSourceIds,
+      addProblem,
+    );
     if (!fieldIsCovered(field)) {
       addProblem(
         `$.formalFields[${index}]`,
@@ -363,6 +381,12 @@ export const validateOfficialOutputCaptureArtifact = (artifact, options = {}) =>
         `must reference an existing sampleRows[] or resultRows[] rowId (${binding.rowId} was not found)`,
       );
     }
+    validateListedSourceIds(
+      sourceIdsForRow(binding),
+      `$.citationBindings[${index}].sourceResourceIds`,
+      listedSourceIds,
+      addProblem,
+    );
     if (!bindingIsReady(binding)) {
       addProblem(`$.citationBindings[${index}]`, "must carry non-empty source ids and an available binding status");
     } else if (!bindingHasOfficialOutputSource(binding, officialOutputSourceIds)) {
