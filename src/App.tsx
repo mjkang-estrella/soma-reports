@@ -524,7 +524,7 @@ export default function App() {
             </div>
             <div>
               <strong>{formatReadinessStat(catalogStats?.sampleExtracted, namedPackageTotal)}</strong>
-              <span>Sample rows</span>
+              <span>Sample-backed pkgs</span>
             </div>
             <div>
               <strong>{formatReadinessStat(catalogStats?.promptReady, namedPackageTotal)}</strong>

@@ -117,6 +117,36 @@ const extractFormalFieldTerms = (text) => {
   return [...new Set(terms)];
 };
 
+const fieldLabelAliases = new Map([
+  ["reference", "ref"],
+  ["alternate allele", "alt"],
+  ["user data", "your data"],
+  ["status", "your status"],
+]);
+
+const normalizedFieldLabel = (label) => {
+  const normalized = label.replace(/\W+/g, " ").trim().toLowerCase();
+  return fieldLabelAliases.get(normalized) ?? normalized;
+};
+
+const uniqueFieldLabels = (labels) => {
+  const seen = new Set();
+  const unique = [];
+  for (const label of labels) {
+    const compact = compactText(label);
+    if (!compact) {
+      continue;
+    }
+    const key = normalizedFieldLabel(compact);
+    if (seen.has(key)) {
+      continue;
+    }
+    seen.add(key);
+    unique.push(compact);
+  }
+  return unique;
+};
+
 const scanOutputSignals = (value, path = "$", signals = []) => {
   if (Array.isArray(value)) {
     if (value.length > 0 && outputKeyPattern.test(path.split(".").pop()?.replace(/\[\d+\]$/, "") ?? "")) {
@@ -207,6 +237,18 @@ const detailAuditFor = (path) => {
       : []),
   ];
 
+  const fieldDefinitionLabels = Array.isArray(artifact.fieldDefinitions)
+    ? artifact.fieldDefinitions.map((field) => compactText(field?.label)).filter(Boolean)
+    : [];
+  if (fieldDefinitionLabels.length > 0) {
+    formalFieldNearMissSignals.push({
+      path: "$.fieldDefinitions[]",
+      kind: "formal-field-definitions",
+      fields: uniqueFieldLabels(fieldDefinitionLabels),
+      preview: uniqueFieldLabels(fieldDefinitionLabels).join(", "),
+    });
+  }
+
   for (const [pathLabel, text] of weakTextFields) {
     const compact = compactText(text);
     if (compact && weakOutputTextPattern.test(compact)) {
@@ -216,7 +258,7 @@ const detailAuditFor = (path) => {
       formalFieldNearMissSignals.push({
         path: pathLabel,
         kind: "formal-field-language",
-        fields: extractFormalFieldTerms(compact),
+        fields: uniqueFieldLabels(extractFormalFieldTerms(compact)),
         preview: compact.slice(0, 220),
       });
     }

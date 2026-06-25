@@ -40,17 +40,17 @@
     {
       "kind": "officialGeneticReportsKnowledgeCenter",
       "url": "https://sequencing.com/knowledge-center/healthcare-professionals/genetic-reports",
-      "use": "General context that marketplace reports can generate patient or clinician reports; not package-specific evidence for these 22."
+      "use": "General context that marketplace reports can generate patient or clinician reports; not package-specific evidence for the current blocker targets."
     },
     {
       "kind": "officialViewingResultsKnowledgeCenter",
       "url": "https://sequencing.com/knowledge-center/dna-analysis-apps-reports/app-results/viewing",
-      "use": "General context that generated results live in Sequencing.com accounts; not package-specific sample rows, schemas, or output fields for these 22."
+      "use": "General context that generated results live in Sequencing.com accounts; not package-specific sample rows, schemas, or output fields for the current blocker targets."
     },
     {
       "kind": "officialProcessingTimesKnowledgeCenter",
       "url": "https://sequencing.com/knowledge-center/dna-analysis-apps-reports/app-processing-times",
-      "use": "General context about app/report processing behavior; not package-specific formal output evidence for these 22."
+      "use": "General context about app/report processing behavior; not package-specific formal output evidence for the current blocker targets."
     }
   ],
   "decisions": [

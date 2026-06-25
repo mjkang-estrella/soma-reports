@@ -1,6 +1,6 @@
 {
   "schemaVersion": "soma-reports.official-output-capture-status.v1",
-  "generatedAt": "2026-06-25T04:39:10.961Z",
+  "generatedAt": "2026-06-25T06:43:39.228Z",
   "ok": true,
   "targetClass": "all",
   "allowEmptyCaptures": true,
@@ -50,10 +50,10 @@
     "committedRowEvidencePromotionReadyCaptures": 1,
     "committedPromotionCandidates": 0,
     "manualPromotionBlockedCaptures": 1,
-    "gitTrackedOfficialOutputCaptureArtifacts": 0,
-    "gitUntrackedOfficialOutputCaptureArtifacts": 10,
-    "gitTrackedRowEvidenceReadyCaptures": 0,
-    "gitTrackedOutputSignalReviews": 0,
+    "gitTrackedOfficialOutputCaptureArtifacts": 10,
+    "gitUntrackedOfficialOutputCaptureArtifacts": 0,
+    "gitTrackedRowEvidenceReadyCaptures": 1,
+    "gitTrackedOutputSignalReviews": 4,
     "outsideCurrentBlockerLedgerCaptures": 1
   },
   "officialOutputPromotionReview": {
@@ -86,14 +86,16 @@
       "officialCapturePaths": [
         "reference/catalog/sequencing-depth-and-coverage-official-output-capture-2026-06-24.json"
       ],
-      "gitTrackedOfficialCapturePaths": [],
-      "gitUntrackedOfficialCapturePaths": [
+      "gitTrackedOfficialCapturePaths": [
         "reference/catalog/sequencing-depth-and-coverage-official-output-capture-2026-06-24.json"
       ],
+      "gitUntrackedOfficialCapturePaths": [],
       "validOfficialCapturePaths": [
         "reference/catalog/sequencing-depth-and-coverage-official-output-capture-2026-06-24.json"
       ],
-      "gitTrackedValidOfficialCapturePaths": [],
+      "gitTrackedValidOfficialCapturePaths": [
+        "reference/catalog/sequencing-depth-and-coverage-official-output-capture-2026-06-24.json"
+      ],
       "rowEvidenceReadyCapturePaths": [],
       "outputSignalReviewCapturePaths": [
         "reference/catalog/sequencing-depth-and-coverage-official-output-capture-2026-06-24.json"
@@ -164,7 +166,7 @@
         {
           "path": "reference/catalog/sequencing-depth-and-coverage-official-output-capture-2026-06-24.json",
           "ok": true,
-          "gitTracked": false,
+          "gitTracked": true,
           "rowEvidenceReady": false,
           "promotionSafeProvenance": true,
           "outputSignalReview": true,
@@ -270,14 +272,16 @@
       "officialCapturePaths": [
         "reference/catalog/genome-explorer-dna-data-search-official-output-capture-2026-06-24.json"
       ],
-      "gitTrackedOfficialCapturePaths": [],
-      "gitUntrackedOfficialCapturePaths": [
+      "gitTrackedOfficialCapturePaths": [
         "reference/catalog/genome-explorer-dna-data-search-official-output-capture-2026-06-24.json"
       ],
+      "gitUntrackedOfficialCapturePaths": [],
       "validOfficialCapturePaths": [
         "reference/catalog/genome-explorer-dna-data-search-official-output-capture-2026-06-24.json"
       ],
-      "gitTrackedValidOfficialCapturePaths": [],
+      "gitTrackedValidOfficialCapturePaths": [
+        "reference/catalog/genome-explorer-dna-data-search-official-output-capture-2026-06-24.json"
+      ],
       "rowEvidenceReadyCapturePaths": [],
       "outputSignalReviewCapturePaths": [
         "reference/catalog/genome-explorer-dna-data-search-official-output-capture-2026-06-24.json"
@@ -348,7 +352,7 @@
         {
           "path": "reference/catalog/genome-explorer-dna-data-search-official-output-capture-2026-06-24.json",
           "ok": true,
-          "gitTracked": false,
+          "gitTracked": true,
           "rowEvidenceReady": false,
           "promotionSafeProvenance": true,
           "outputSignalReview": true,
@@ -611,14 +615,16 @@
       "officialCapturePaths": [
         "reference/catalog/imputation-analysis-official-output-capture-2026-06-24.json"
       ],
-      "gitTrackedOfficialCapturePaths": [],
-      "gitUntrackedOfficialCapturePaths": [
+      "gitTrackedOfficialCapturePaths": [
         "reference/catalog/imputation-analysis-official-output-capture-2026-06-24.json"
       ],
+      "gitUntrackedOfficialCapturePaths": [],
       "validOfficialCapturePaths": [
         "reference/catalog/imputation-analysis-official-output-capture-2026-06-24.json"
       ],
-      "gitTrackedValidOfficialCapturePaths": [],
+      "gitTrackedValidOfficialCapturePaths": [
+        "reference/catalog/imputation-analysis-official-output-capture-2026-06-24.json"
+      ],
       "rowEvidenceReadyCapturePaths": [],
       "outputSignalReviewCapturePaths": [],
       "promotionCandidateCapturePaths": [],
@@ -663,7 +669,7 @@
         {
           "path": "reference/catalog/imputation-analysis-official-output-capture-2026-06-24.json",
           "ok": true,
-          "gitTracked": false,
+          "gitTracked": true,
           "rowEvidenceReady": false,
           "promotionSafeProvenance": true,
           "outputSignalReview": false,
@@ -769,14 +775,16 @@
       "officialCapturePaths": [
         "reference/catalog/variant-effect-predictor-official-output-capture-2026-06-24.json"
       ],
-      "gitTrackedOfficialCapturePaths": [],
-      "gitUntrackedOfficialCapturePaths": [
+      "gitTrackedOfficialCapturePaths": [
         "reference/catalog/variant-effect-predictor-official-output-capture-2026-06-24.json"
       ],
+      "gitUntrackedOfficialCapturePaths": [],
       "validOfficialCapturePaths": [
         "reference/catalog/variant-effect-predictor-official-output-capture-2026-06-24.json"
       ],
-      "gitTrackedValidOfficialCapturePaths": [],
+      "gitTrackedValidOfficialCapturePaths": [
+        "reference/catalog/variant-effect-predictor-official-output-capture-2026-06-24.json"
+      ],
       "rowEvidenceReadyCapturePaths": [],
       "outputSignalReviewCapturePaths": [],
       "promotionCandidateCapturePaths": [],
@@ -821,7 +829,7 @@
         {
           "path": "reference/catalog/variant-effect-predictor-official-output-capture-2026-06-24.json",
           "ok": true,
-          "gitTracked": false,
+          "gitTracked": true,
           "rowEvidenceReady": false,
           "promotionSafeProvenance": true,
           "outputSignalReview": false,
@@ -927,14 +935,16 @@
       "officialCapturePaths": [
         "reference/catalog/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-24.json"
       ],
-      "gitTrackedOfficialCapturePaths": [],
-      "gitUntrackedOfficialCapturePaths": [
+      "gitTrackedOfficialCapturePaths": [
         "reference/catalog/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-24.json"
       ],
+      "gitUntrackedOfficialCapturePaths": [],
       "validOfficialCapturePaths": [
         "reference/catalog/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-24.json"
       ],
-      "gitTrackedValidOfficialCapturePaths": [],
+      "gitTrackedValidOfficialCapturePaths": [
+        "reference/catalog/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-24.json"
+      ],
       "rowEvidenceReadyCapturePaths": [],
       "outputSignalReviewCapturePaths": [],
       "promotionCandidateCapturePaths": [],
@@ -979,7 +989,7 @@
         {
           "path": "reference/catalog/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-24.json",
           "ok": true,
-          "gitTracked": false,
+          "gitTracked": true,
           "rowEvidenceReady": false,
           "promotionSafeProvenance": true,
           "outputSignalReview": false,
@@ -1085,14 +1095,16 @@
       "officialCapturePaths": [
         "reference/catalog/genome-short-read-mapper-official-output-capture-2026-06-24.json"
       ],
-      "gitTrackedOfficialCapturePaths": [],
-      "gitUntrackedOfficialCapturePaths": [
+      "gitTrackedOfficialCapturePaths": [
         "reference/catalog/genome-short-read-mapper-official-output-capture-2026-06-24.json"
       ],
+      "gitUntrackedOfficialCapturePaths": [],
       "validOfficialCapturePaths": [
         "reference/catalog/genome-short-read-mapper-official-output-capture-2026-06-24.json"
       ],
-      "gitTrackedValidOfficialCapturePaths": [],
+      "gitTrackedValidOfficialCapturePaths": [
+        "reference/catalog/genome-short-read-mapper-official-output-capture-2026-06-24.json"
+      ],
       "rowEvidenceReadyCapturePaths": [],
       "outputSignalReviewCapturePaths": [],
       "promotionCandidateCapturePaths": [],
@@ -1137,7 +1149,7 @@
         {
           "path": "reference/catalog/genome-short-read-mapper-official-output-capture-2026-06-24.json",
           "ok": true,
-          "gitTracked": false,
+          "gitTracked": true,
           "rowEvidenceReady": false,
           "promotionSafeProvenance": true,
           "outputSignalReview": false,
@@ -1243,14 +1255,16 @@
       "officialCapturePaths": [
         "reference/catalog/promethease-official-output-capture-2026-06-24.json"
       ],
-      "gitTrackedOfficialCapturePaths": [],
-      "gitUntrackedOfficialCapturePaths": [
+      "gitTrackedOfficialCapturePaths": [
         "reference/catalog/promethease-official-output-capture-2026-06-24.json"
       ],
+      "gitUntrackedOfficialCapturePaths": [],
       "validOfficialCapturePaths": [
         "reference/catalog/promethease-official-output-capture-2026-06-24.json"
       ],
-      "gitTrackedValidOfficialCapturePaths": [],
+      "gitTrackedValidOfficialCapturePaths": [
+        "reference/catalog/promethease-official-output-capture-2026-06-24.json"
+      ],
       "rowEvidenceReadyCapturePaths": [],
       "outputSignalReviewCapturePaths": [],
       "promotionCandidateCapturePaths": [],
@@ -1295,7 +1309,7 @@
         {
           "path": "reference/catalog/promethease-official-output-capture-2026-06-24.json",
           "ok": true,
-          "gitTracked": false,
+          "gitTracked": true,
           "rowEvidenceReady": false,
           "promotionSafeProvenance": true,
           "outputSignalReview": false,
@@ -2204,14 +2218,16 @@
       "officialCapturePaths": [
         "reference/catalog/connective-tissue-disorders-and-eds-official-output-capture-2026-06-23.json"
       ],
-      "gitTrackedOfficialCapturePaths": [],
-      "gitUntrackedOfficialCapturePaths": [
+      "gitTrackedOfficialCapturePaths": [
         "reference/catalog/connective-tissue-disorders-and-eds-official-output-capture-2026-06-23.json"
       ],
+      "gitUntrackedOfficialCapturePaths": [],
       "validOfficialCapturePaths": [
         "reference/catalog/connective-tissue-disorders-and-eds-official-output-capture-2026-06-23.json"
       ],
-      "gitTrackedValidOfficialCapturePaths": [],
+      "gitTrackedValidOfficialCapturePaths": [
+        "reference/catalog/connective-tissue-disorders-and-eds-official-output-capture-2026-06-23.json"
+      ],
       "rowEvidenceReadyCapturePaths": [],
       "outputSignalReviewCapturePaths": [
         "reference/catalog/connective-tissue-disorders-and-eds-official-output-capture-2026-06-23.json"
@@ -2310,7 +2326,7 @@
         {
           "path": "reference/catalog/connective-tissue-disorders-and-eds-official-output-capture-2026-06-23.json",
           "ok": true,
-          "gitTracked": false,
+          "gitTracked": true,
           "rowEvidenceReady": false,
           "promotionSafeProvenance": true,
           "outputSignalReview": true,
@@ -2630,14 +2646,16 @@
       "officialCapturePaths": [
         "reference/catalog/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-24.json"
       ],
-      "gitTrackedOfficialCapturePaths": [],
-      "gitUntrackedOfficialCapturePaths": [
+      "gitTrackedOfficialCapturePaths": [
         "reference/catalog/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-24.json"
       ],
+      "gitUntrackedOfficialCapturePaths": [],
       "validOfficialCapturePaths": [
         "reference/catalog/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-24.json"
       ],
-      "gitTrackedValidOfficialCapturePaths": [],
+      "gitTrackedValidOfficialCapturePaths": [
+        "reference/catalog/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-24.json"
+      ],
       "rowEvidenceReadyCapturePaths": [],
       "outputSignalReviewCapturePaths": [],
       "promotionCandidateCapturePaths": [],
@@ -2682,7 +2700,7 @@
         {
           "path": "reference/catalog/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-24.json",
           "ok": true,
-          "gitTracked": false,
+          "gitTracked": true,
           "rowEvidenceReady": false,
           "promotionSafeProvenance": true,
           "outputSignalReview": false,
@@ -3812,7 +3830,7 @@
       "title": "Dysautonomia",
       "path": "reference/catalog/dysautonomia-official-output-capture-2026-06-24.json",
       "ok": true,
-      "gitTracked": false,
+      "gitTracked": true,
       "rowEvidenceReady": true,
       "promotionSafeProvenance": true,
       "outputSignalReview": true,
@@ -3869,7 +3887,7 @@
   ],
   "privacyCanary": {
     "schemaVersion": "soma-reports.official-output-capture-privacy-canary.v1",
-    "generatedAt": "2026-06-25T04:39:10.954Z",
+    "generatedAt": "2026-06-25T06:43:39.222Z",
     "ok": true,
     "results": [
       {

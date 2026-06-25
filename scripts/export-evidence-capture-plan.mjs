@@ -168,6 +168,36 @@ const extractFormalFieldTerms = (text) => {
   return [...new Set(terms)];
 };
 
+const fieldLabelAliases = new Map([
+  ["reference", "ref"],
+  ["alternate allele", "alt"],
+  ["user data", "your data"],
+  ["status", "your status"],
+]);
+
+const normalizedFieldLabel = (label) => {
+  const normalized = label.replace(/\W+/g, " ").trim().toLowerCase();
+  return fieldLabelAliases.get(normalized) ?? normalized;
+};
+
+const uniqueFieldLabels = (labels) => {
+  const seen = new Set();
+  const unique = [];
+  for (const label of labels) {
+    const compact = compactText(label);
+    if (!compact) {
+      continue;
+    }
+    const key = normalizedFieldLabel(compact);
+    if (seen.has(key)) {
+      continue;
+    }
+    seen.add(key);
+    unique.push(compact);
+  }
+  return unique;
+};
+
 const currentDetailArtifactsFor = (slug) =>
   catalogFiles
     .filter(
@@ -297,6 +327,20 @@ const captureWorkflowFor = ({
 
 const describedOutputFieldSignalsFor = (artifactPath) => {
   const artifact = JSON.parse(readFileSync(artifactPath, "utf8"));
+  const fieldDefinitionLabels = Array.isArray(artifact.fieldDefinitions)
+    ? artifact.fieldDefinitions.map((field) => compactText(field?.label)).filter(Boolean)
+    : [];
+  const fieldDefinitionSignals =
+    fieldDefinitionLabels.length > 0
+      ? [
+          {
+            artifact: artifactPath,
+            path: "$.fieldDefinitions[]",
+            fields: uniqueFieldLabels(fieldDefinitionLabels),
+            preview: uniqueFieldLabels(fieldDefinitionLabels).join(", "),
+          },
+        ]
+      : [];
   const fields = [
     ["$.bodyPreview", artifact.bodyPreview],
     ["$.summaryPreview", artifact.summaryPreview],
@@ -308,7 +352,7 @@ const describedOutputFieldSignalsFor = (artifactPath) => {
       : []),
   ];
 
-  return fields.flatMap(([path, text]) => {
+  const textSignals = fields.flatMap(([path, text]) => {
     const compact = compactText(text);
     if (!compact || !formalFieldTextPattern.test(compact)) {
       return [];
@@ -322,6 +366,8 @@ const describedOutputFieldSignalsFor = (artifactPath) => {
       },
     ];
   });
+
+  return [...fieldDefinitionSignals, ...textSignals];
 };
 
 const acceptanceCriteriaFor = (decision) => [
@@ -492,12 +538,19 @@ const targets = decisions
   })
   .map((target) => {
     const describedOutputFieldSignals = target.currentDetailArtifacts.flatMap(describedOutputFieldSignalsFor);
+    const structuredOutputFieldSignals = describedOutputFieldSignals.filter(
+      (signal) => signal.path === "$.fieldDefinitions[]",
+    );
+    const textOutputFieldSignals = describedOutputFieldSignals.filter(
+      (signal) => signal.path !== "$.fieldDefinitions[]",
+    );
     return {
       ...target,
       describedOutputFieldSignals,
-      describedOutputFields: [
-        ...new Set(describedOutputFieldSignals.flatMap((signal) => signal.fields)),
-      ],
+      describedOutputFields: uniqueFieldLabels([
+        ...structuredOutputFieldSignals.flatMap((signal) => signal.fields),
+        ...textOutputFieldSignals.flatMap((signal) => signal.fields),
+      ]),
       describedOutputFieldBoundary:
         describedOutputFieldSignals.length > 0
           ? "Official detail text describes possible columns/fields, but these remain output-shape hints until official sample/export rows and row-level bindings are captured."

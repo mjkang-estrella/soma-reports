@@ -75,6 +75,36 @@ const extractFormalFieldTerms = (text) => {
   return [...new Set(terms)];
 };
 
+const fieldLabelAliases = new Map([
+  ["reference", "ref"],
+  ["alternate allele", "alt"],
+  ["user data", "your data"],
+  ["status", "your status"],
+]);
+
+const normalizedFieldLabel = (label) => {
+  const normalized = label.replace(/\W+/g, " ").trim().toLowerCase();
+  return fieldLabelAliases.get(normalized) ?? normalized;
+};
+
+const uniqueFieldLabels = (labels) => {
+  const seen = new Set();
+  const unique = [];
+  for (const label of labels) {
+    const compact = compactText(label);
+    if (!compact) {
+      continue;
+    }
+    const key = normalizedFieldLabel(compact);
+    if (seen.has(key)) {
+      continue;
+    }
+    seen.add(key);
+    unique.push(compact);
+  }
+  return unique;
+};
+
 const readJson = (path) => JSON.parse(readFileSync(path, "utf8"));
 const publicSequencingUrlPattern =
   /^https:\/\/(?:www\.)?sequencing\.com\/(?:marketplace|knowledge-center|education-center|order|apps\/app-market)\b/i;
@@ -159,23 +189,38 @@ const currentDetailArtifacts = catalogFiles
   .map((file) => `${detailArtifactDirectory}/${file}`)
   .sort();
 
-const describedFieldSignals = currentDetailArtifacts.flatMap((artifactPath) => {
-  const artifact = readJson(artifactPath);
-  const fields = [
+const fieldDefinitionLabelsFor = (artifact) =>
+  Array.isArray(artifact.fieldDefinitions)
+    ? artifact.fieldDefinitions.map((field) => compactText(field?.label)).filter(Boolean)
+    : [];
+
+const describedFieldSignalsFor = (artifact) => {
+  const textFields = [
     artifact.bodyPreview,
     artifact.summaryPreview,
     ...(Array.isArray(artifact.visibleParagraphs) ? artifact.visibleParagraphs : []),
     ...(Array.isArray(artifact.evidenceNotes) ? artifact.evidenceNotes : []),
   ];
-  return fields.flatMap((text) => {
+  const textSignals = textFields.flatMap((text) => {
     const compact = compactText(text);
     if (!compact || !formalFieldTextPattern.test(compact)) {
       return [];
     }
     return extractFormalFieldTerms(compact);
   });
-});
-const describedOutputFields = [...new Set(describedFieldSignals)];
+  return {
+    fieldDefinitionLabels: fieldDefinitionLabelsFor(artifact),
+    textSignals,
+  };
+};
+
+const describedFieldSignalGroups = currentDetailArtifacts.map((artifactPath) =>
+  describedFieldSignalsFor(readJson(artifactPath)),
+);
+const describedOutputFields = uniqueFieldLabels([
+  ...describedFieldSignalGroups.flatMap((group) => group.fieldDefinitionLabels),
+  ...describedFieldSignalGroups.flatMap((group) => group.textSignals),
+]);
 const captureUrl =
   decision.sources?.find((source) => /^https?:\/\//i.test(source)) ?? `https://sequencing.com/marketplace/${reportSlug}`;
 const reviewedSources = (decision.sources ?? []).filter(isCommitSafeContextSource);
