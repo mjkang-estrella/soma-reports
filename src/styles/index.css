@@ -1054,6 +1054,27 @@ header {
   padding: 3px 6px;
 }
 
+.position-evidence-strip span.ready,
+.card-evidence-strip span.ready {
+  background: rgba(7, 31, 22, 0.08);
+  border-color: rgba(7, 31, 22, 0.16);
+  color: var(--color-dark);
+}
+
+.position-evidence-strip span.pending,
+.card-evidence-strip span.pending {
+  background: rgba(229, 77, 42, 0.08);
+  border-color: rgba(229, 77, 42, 0.18);
+  color: #8a2c18;
+}
+
+.position-evidence-strip span.neutral,
+.card-evidence-strip span.neutral {
+  background: rgba(7, 31, 22, 0.04);
+  border-color: rgba(7, 31, 22, 0.1);
+  color: rgba(7, 31, 22, 0.72);
+}
+
 .position-action {
   align-items: flex-start;
   display: flex;

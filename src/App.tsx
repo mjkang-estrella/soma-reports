@@ -15,7 +15,12 @@ import {
   officialOutputCaptureCaveats,
   officialOutputNextEvidenceFor,
 } from "./lib/formalEvidenceBacklog";
-import { ALL_PACKAGE_STATES, deriveAgentReadinessState, readinessScore } from "./lib/readiness";
+import {
+  ALL_PACKAGE_STATES,
+  deriveAgentReadinessState,
+  localAgentEvidenceChipsFor,
+  readinessScore,
+} from "./lib/readiness";
 import type {
   CatalogStats,
   MarketplacePositionLedger,
@@ -26,6 +31,20 @@ import type {
 
 const DEFAULT_SLUG = "wellness-genetic-guide";
 const REPORT_QUERY_PARAM = "report";
+const deterministicResultFixtureModules = import.meta.glob("/fixtures/synthetic/*.result.json");
+const slugsFromGlob = (modulePaths: string[], suffix: string) =>
+  new Set(
+    modulePaths
+      .map((path) => {
+        const fileName = path.split("/").pop();
+        return fileName?.endsWith(suffix) ? fileName.slice(0, -suffix.length) : null;
+      })
+      .filter((slug): slug is string => Boolean(slug)),
+  );
+const deterministicResultFixtureSlugs = slugsFromGlob(
+  Object.keys(deterministicResultFixtureModules),
+  ".result.json",
+);
 const SEQUENCING_CARD_POSITION_TOTAL = 164;
 const SEQUENCING_NAMED_IDENTITY_TOTAL = 154;
 const AUTHENTICATED_DUPLICATE_POSITION_TOTAL = 77;
@@ -790,20 +809,13 @@ export default function App() {
                     const positionReadinessState = positionReport
                       ? deriveAgentReadinessState(positionReport, positionReadiness)
                       : null;
-                    const evidenceItems = positionReadiness
-                      ? [
-                          `Refs ${positionReadiness.evidence.references}`,
-                          positionReadiness.evidence.prompt ? "Prompt" : "Prompt pending",
-                          `Schema ${positionReadiness.evidence.outputSections}`,
-                          positionReadiness.sampleBackedFormalReady ? "Sample rows" : "Sample rows pending",
-                        ]
-                      : positionReport
-                        ? [
-                            positionReport.curationCompleteness.references ? "Refs" : "Refs pending",
-                            positionReport.curationCompleteness.prompt ? "Prompt" : "Prompt pending",
-                            positionReport.curationCompleteness.outputFormat ? "Schema" : "Schema pending",
-                            positionReport.curationCompleteness.sampleReport ? "Sample rows" : "Sample rows pending",
-                          ]
+                    const positionEvidenceChips =
+                      positionReadiness && positionReadinessState
+                        ? localAgentEvidenceChipsFor(
+                            positionReadiness,
+                            deterministicResultFixtureSlugs.has(packageSlug),
+                            positionReadinessState,
+                          )
                         : [];
 
                     return (
@@ -824,10 +836,12 @@ export default function App() {
                           ) : (
                             <em>Package identity pending</em>
                           )}
-                          {evidenceItems.length > 0 ? (
+                          {positionEvidenceChips.length > 0 ? (
                             <span className="position-evidence-strip">
-                              {evidenceItems.map((item) => (
-                                <span key={`${packageSlug}-${item}`}>{item}</span>
+                              {positionEvidenceChips.map((chip) => (
+                                <span className={chip.status} key={`${packageSlug}-${chip.key}`}>
+                                  {chip.label}
+                                </span>
                               ))}
                             </span>
                           ) : null}
@@ -1832,6 +1846,7 @@ export default function App() {
                       : undefined
                   }
                   officialOutputCaptureTarget={officialOutputCaptureTargetBySlug.get(report.slug) ?? null}
+                  hasDeterministicResult={deterministicResultFixtureSlugs.has(report.slug)}
                   isSelected={selectedSlug === report.slug}
                   onSelect={() => handleSelectReport(report.slug)}
                 />

@@ -67,6 +67,19 @@ export type AgentReadinessState = {
   usageBoundary: string;
 };
 
+export type LocalAgentEvidenceChip = {
+  key:
+    | "references"
+    | "prompt"
+    | "fixture"
+    | "result"
+    | "plainEnglish"
+    | "appendixProbability"
+    | "scaffoldBoundary";
+  label: string;
+  status: "ready" | "pending" | "neutral";
+};
+
 export const ALL_PACKAGE_STATES = "All";
 
 const hasLocalScaffoldEvidence = (readiness: ReadinessAuditRow) =>
@@ -171,4 +184,55 @@ export const deriveAgentReadinessState = (
     loading: kind === "loading",
     usageBoundary: usageBoundaryForKind(kind),
   };
+};
+
+export const localAgentEvidenceChipsFor = (
+  readiness: ReadinessAuditRow | null | undefined,
+  hasDeterministicResult: boolean,
+  readinessState: AgentReadinessState,
+): LocalAgentEvidenceChip[] => {
+  const references = readiness?.evidence.references ?? 0;
+  const promptReady = Boolean(readiness?.evidence.prompt);
+  const fixtureReady = Boolean(readiness?.evidence.localFixture);
+  const schemaReady = (readiness?.evidence.outputSections ?? 0) > 0;
+  const plainEnglishGuardReady = promptReady && schemaReady;
+  const appendixProbabilityGuardReady = promptReady && hasDeterministicResult;
+
+  return [
+    {
+      key: "references",
+      label: references > 0 ? `Refs ${references}` : "Refs pending",
+      status: references > 0 ? "ready" : "pending",
+    },
+    {
+      key: "prompt",
+      label: promptReady ? "Prompt artifact" : "Prompt pending",
+      status: promptReady ? "ready" : "pending",
+    },
+    {
+      key: "fixture",
+      label: fixtureReady ? "Fixture artifact" : "Fixture pending",
+      status: fixtureReady ? "ready" : "pending",
+    },
+    {
+      key: "result",
+      label: hasDeterministicResult ? "Deterministic result JSON" : "Result JSON pending",
+      status: hasDeterministicResult ? "ready" : "pending",
+    },
+    {
+      key: "plainEnglish",
+      label: plainEnglishGuardReady ? "Plain-English guard" : "Plain-English pending",
+      status: plainEnglishGuardReady ? "ready" : "pending",
+    },
+    {
+      key: "appendixProbability",
+      label: appendixProbabilityGuardReady ? "Appendix probability guard" : "Appendix guard pending",
+      status: appendixProbabilityGuardReady ? "ready" : "pending",
+    },
+    {
+      key: "scaffoldBoundary",
+      label: readinessState.localScaffoldOnly ? "Scaffold-only local" : "Source-backed local",
+      status: readinessState.localScaffoldOnly ? "neutral" : readinessState.sampleBackedFormalReady ? "ready" : "pending",
+    },
+  ];
 };

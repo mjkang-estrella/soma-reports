@@ -199,6 +199,17 @@ const evaluateRenderedPage = `async () => {
     selectedCards: cards.filter((card) => card.classList.contains("selected")).length,
     localRunReadyCards: document.querySelectorAll(".local-run-strip.local-run-ready").length,
     localRunScaffoldCards: document.querySelectorAll(".local-run-strip.local-run-scaffold").length,
+    localAgentPromptArtifactCards: cardTexts.filter((text) => /Prompt artifact/i.test(text)).length,
+    localAgentFixtureArtifactCards: cardTexts.filter((text) => /Fixture artifact/i.test(text)).length,
+    localAgentDeterministicResultCards: cardTexts.filter((text) => /Deterministic result JSON/i.test(text)).length,
+    localAgentPlainEnglishGuardCards: cardTexts.filter((text) => /Plain-English guard/i.test(text)).length,
+    localAgentAppendixProbabilityGuardCards: cardTexts.filter((text) => /Appendix probability guard/i.test(text)).length,
+    localAgentScaffoldOnlyCards: cardTexts.filter((text) => /Scaffold-only local/i.test(text)).length,
+    positionRowsWithPromptArtifact: rowTexts.filter((text) => /Prompt artifact/i.test(text)).length,
+    positionRowsWithFixtureArtifact: rowTexts.filter((text) => /Fixture artifact/i.test(text)).length,
+    positionRowsWithDeterministicResultJson: rowTexts.filter((text) => /Deterministic result JSON/i.test(text)).length,
+    positionRowsWithPlainEnglishGuard: rowTexts.filter((text) => /Plain-English guard/i.test(text)).length,
+    positionRowsWithAppendixProbabilityGuard: rowTexts.filter((text) => /Appendix probability guard/i.test(text)).length,
     officialOutputBlockerCards: document.querySelectorAll(".card-official-action").length,
     officialBoundaryModeledReportCards: cardTexts.filter((text) => /Official boundary modeled/i.test(text)).length,
     metadataOnlyReportCards: cardTexts.filter((text) => /Metadata only/i.test(text)).length,
@@ -398,6 +409,42 @@ try {
     {
       localRunReadyCards: rendered.localRunReadyCards,
       localRunScaffoldCards: rendered.localRunScaffoldCards,
+    },
+  );
+  addCheck(
+    checks,
+    "local_agent_artifact_chips_on_report_cards",
+    rendered.localAgentPromptArtifactCards === expected.namedPackages &&
+      rendered.localAgentFixtureArtifactCards === expected.namedPackages &&
+      rendered.localAgentDeterministicResultCards === expected.namedPackages &&
+      rendered.localAgentPlainEnglishGuardCards === expected.namedPackages &&
+      rendered.localAgentAppendixProbabilityGuardCards === expected.namedPackages &&
+      rendered.localAgentScaffoldOnlyCards === 21,
+    "all 154 report cards show local prompt, fixture, deterministic result, plain-English guard, and appendix probability guard chips; 21 remain scaffold-only",
+    {
+      promptArtifactCards: rendered.localAgentPromptArtifactCards,
+      fixtureArtifactCards: rendered.localAgentFixtureArtifactCards,
+      deterministicResultCards: rendered.localAgentDeterministicResultCards,
+      plainEnglishGuardCards: rendered.localAgentPlainEnglishGuardCards,
+      appendixProbabilityGuardCards: rendered.localAgentAppendixProbabilityGuardCards,
+      scaffoldOnlyCards: rendered.localAgentScaffoldOnlyCards,
+    },
+  );
+  addCheck(
+    checks,
+    "local_agent_artifact_chips_on_position_rows",
+    rendered.positionRowsWithPromptArtifact === expected.marketplacePositions &&
+      rendered.positionRowsWithFixtureArtifact === expected.marketplacePositions &&
+      rendered.positionRowsWithDeterministicResultJson === expected.marketplacePositions &&
+      rendered.positionRowsWithPlainEnglishGuard === expected.marketplacePositions &&
+      rendered.positionRowsWithAppendixProbabilityGuard === expected.marketplacePositions,
+    "all 164 authenticated marketplace positions show local prompt, fixture, deterministic result, plain-English guard, and appendix probability guard chips",
+    {
+      promptArtifactRows: rendered.positionRowsWithPromptArtifact,
+      fixtureArtifactRows: rendered.positionRowsWithFixtureArtifact,
+      deterministicResultRows: rendered.positionRowsWithDeterministicResultJson,
+      plainEnglishGuardRows: rendered.positionRowsWithPlainEnglishGuard,
+      appendixProbabilityGuardRows: rendered.positionRowsWithAppendixProbabilityGuard,
     },
   );
   addCheck(
@@ -670,6 +717,17 @@ try {
       containsPublicEndpointProbeSummary: rendered.containsPublicEndpointProbeSummary,
       localRunReadyCards: rendered.localRunReadyCards,
       localRunScaffoldCards: rendered.localRunScaffoldCards,
+      localAgentPromptArtifactCards: rendered.localAgentPromptArtifactCards,
+      localAgentFixtureArtifactCards: rendered.localAgentFixtureArtifactCards,
+      localAgentDeterministicResultCards: rendered.localAgentDeterministicResultCards,
+      localAgentPlainEnglishGuardCards: rendered.localAgentPlainEnglishGuardCards,
+      localAgentAppendixProbabilityGuardCards: rendered.localAgentAppendixProbabilityGuardCards,
+      localAgentScaffoldOnlyCards: rendered.localAgentScaffoldOnlyCards,
+      positionRowsWithPromptArtifact: rendered.positionRowsWithPromptArtifact,
+      positionRowsWithFixtureArtifact: rendered.positionRowsWithFixtureArtifact,
+      positionRowsWithDeterministicResultJson: rendered.positionRowsWithDeterministicResultJson,
+      positionRowsWithPlainEnglishGuard: rendered.positionRowsWithPlainEnglishGuard,
+      positionRowsWithAppendixProbabilityGuard: rendered.positionRowsWithAppendixProbabilityGuard,
       firstPositionText: rendered.firstPositionText,
       lastPositionText: rendered.lastPositionText,
     },

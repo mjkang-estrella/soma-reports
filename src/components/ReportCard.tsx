@@ -1,4 +1,9 @@
-import { CARD_READINESS_KEYS, deriveAgentReadinessState, getCurationReadinessItem } from "../lib/readiness";
+import {
+  CARD_READINESS_KEYS,
+  deriveAgentReadinessState,
+  getCurationReadinessItem,
+  localAgentEvidenceChipsFor,
+} from "../lib/readiness";
 import {
   officialEvidenceTierFor,
   officialEvidenceTierLabelFor,
@@ -14,6 +19,7 @@ type ReportCardProps = {
   readiness?: ReadinessAuditRow | null;
   officialOutputCaptureStage?: OfficialOutputCaptureStage | null;
   officialOutputCaptureTarget?: FormalEvidenceTarget | null;
+  hasDeterministicResult: boolean;
   isSelected: boolean;
   onSelect: () => void;
 };
@@ -28,6 +34,7 @@ export function ReportCard({
   readiness,
   officialOutputCaptureStage,
   officialOutputCaptureTarget,
+  hasDeterministicResult,
   isSelected,
   onSelect,
 }: ReportCardProps) {
@@ -60,15 +67,8 @@ export function ReportCard({
     : [];
   const gapCount = combinedGaps.length;
   const gapLabels = combinedGaps.map((gap) => gap.replaceAll("_", " ").replaceAll("-", " "));
-  const evidenceItems = readiness
-    ? [
-        `Refs ${readiness.evidence.references}`,
-        readiness.evidence.prompt ? "Prompt ready" : "Prompt pending",
-        `Schema ${readiness.evidence.outputSections}`,
-        `Sample rows ${readiness.evidence.sampleRows}`,
-        `Formal fields ${readiness.evidence.formalFields}`,
-        `Citations ${readiness.evidence.exactCitationRows}`,
-      ]
+  const localAgentEvidenceChips = readiness
+    ? localAgentEvidenceChipsFor(readiness, hasDeterministicResult, readinessState)
     : [];
   const localRunAction = readinessState.sampleBackedFormalReady
     ? {
@@ -125,9 +125,11 @@ export function ReportCard({
         </div>
       ) : null}
       {readiness ? (
-        <div className="card-evidence-strip" aria-label="Evidence coverage">
-          {evidenceItems.map((item) => (
-            <span key={item}>{item}</span>
+        <div className="card-evidence-strip" aria-label="Local agent artifacts">
+          {localAgentEvidenceChips.map((chip) => (
+            <span className={chip.status} key={chip.key}>
+              {chip.label}
+            </span>
           ))}
         </div>
       ) : null}
