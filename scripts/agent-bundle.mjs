@@ -103,6 +103,39 @@ const validationLedger = () => ({
   checks,
 });
 
+const requiredOutputShape = {
+  reportOverview: {
+    required: true,
+    fields: ["reportTitle", "inputManifestHash", "sectionsUnavailable"],
+    note: "Summarize the report purpose, reproducible input hash, and unavailable sections before result rows.",
+  },
+  resultRows: {
+    required: true,
+    aliases: ["findings"],
+    rowFields: [
+      "groupTitle",
+      "item",
+      "brandName",
+      "geneticAnalysis",
+      "genes",
+      "sourceLabel",
+      "plainEnglishMeaning",
+      "sourceIds",
+    ],
+    note: "Emit deterministic, plain-English report rows first. Preserve any covered formal resultRows[] fields from formalArtifacts.formalFields.",
+  },
+  references: {
+    requiredWhenSourcesAreCited: true,
+    source: "agentRunInput.referenceResources",
+    note: "Every sourceIds[] value other than source-unavailable must resolve to a supplied reference resource.",
+  },
+  appendix: {
+    required: true,
+    fields: ["probabilities", "uncertainty", "missingInputs", "limitations", "genotypeSummary"],
+    note: "Keep probability, confidence, calibration status, missing-input, and limitation disclosures here, after deterministic rows.",
+  },
+};
+
 const requireString = (value, path, id) => {
   check(typeof value === "string" && value.trim().length > 0, id, path, `${path} must be a non-empty string`);
 };
@@ -914,6 +947,7 @@ if (errors.length > 0) {
     "Use the prompt exactly as supplied unless the user explicitly asks for edits.",
     "Use fixture.genomeEvidence, fixture.referenceResources, and formalArtifacts as evidence.",
     "When formalArtifacts.sampleRows are present, preserve their report structure and source bindings.",
+    "Return JSON with outputValidation.requiredOutputShape: reportOverview, resultRows or findings, references when sources are cited, and appendix.",
     "Return deterministic report JSON first.",
     "Put probability, confidence, uncertainty, missing-input, and limitation disclosures in the appendix only.",
     "Do not include raw genome data in output.",
@@ -921,6 +955,7 @@ if (errors.length > 0) {
   outputValidation: {
     validationMode,
     resultPath: resultPath ?? null,
+    requiredOutputShape,
     checks: [
       "raw genome data is absent",
       "resultRows[] or findings[] exist",

@@ -3,6 +3,7 @@
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { basename, join } from "node:path";
 import { createHash } from "node:crypto";
+import { spawnSync } from "node:child_process";
 
 const expected = {
   marketplacePositions: 164,
@@ -82,6 +83,72 @@ const sourceIdsFromRow = (row) => {
 };
 
 const sha256Text = (value) => `sha256:${createHash("sha256").update(value).digest("hex")}`;
+const representativeBundleContractSlug = "wellness-genetic-guide";
+
+const runBundleContractProbe = () => {
+  const fixturePath = join("fixtures/synthetic", `${representativeBundleContractSlug}.fixture.json`);
+  const resultPath = join("fixtures/synthetic", `${representativeBundleContractSlug}.result.json`);
+  const run = spawnSync(
+    process.execPath,
+    [
+      "scripts/agent-bundle.mjs",
+      "--report",
+      representativeBundleContractSlug,
+      "--fixture",
+      fixturePath,
+      "--result",
+      resultPath,
+    ],
+    {
+      encoding: "utf8",
+      maxBuffer: 1024 * 1024 * 20,
+    },
+  );
+  if (run.status !== 0) {
+    return {
+      ok: false,
+      slug: representativeBundleContractSlug,
+      error: run.stderr.trim() || run.stdout.trim() || `agent-bundle exited with ${run.status}`,
+    };
+  }
+
+  let bundle;
+  try {
+    bundle = JSON.parse(run.stdout);
+  } catch (error) {
+    return {
+      ok: false,
+      slug: representativeBundleContractSlug,
+      error: `agent-bundle stdout was not JSON: ${error instanceof Error ? error.message : String(error)}`,
+    };
+  }
+
+  const requiredOutputShape = bundle.outputValidation?.requiredOutputShape;
+  const appendixFields = requiredOutputShape?.appendix?.fields ?? [];
+  const resultRowFields = requiredOutputShape?.resultRows?.rowFields ?? [];
+  const requiredTopLevel = ["reportOverview", "resultRows", "references", "appendix"];
+  const missingTopLevel = requiredTopLevel.filter((key) => !isPlainObject(requiredOutputShape?.[key]));
+  const missingAppendixFields = ["probabilities", "uncertainty", "missingInputs", "limitations", "genotypeSummary"].filter(
+    (field) => !appendixFields.includes(field),
+  );
+  const missingRowFields = ["plainEnglishMeaning", "sourceIds"].filter((field) => !resultRowFields.includes(field));
+  const instructionMentionsContract = (bundle.agentInstructions ?? []).some(
+    (instruction) => typeof instruction === "string" && instruction.includes("outputValidation.requiredOutputShape"),
+  );
+
+  return {
+    ok:
+      missingTopLevel.length === 0 &&
+      missingAppendixFields.length === 0 &&
+      missingRowFields.length === 0 &&
+      instructionMentionsContract,
+    slug: representativeBundleContractSlug,
+    missingTopLevel,
+    missingAppendixFields,
+    missingRowFields,
+    instructionMentionsContract,
+  };
+};
 
 const probabilityKeyFragments = ["probability", "probabilities", "confidence", "uncertainty", "calibration"];
 const forbiddenRawKeys = new Set(["rawgenome", "rawgenomedata", "vcf", "fastq", "bam", "cram"]);
@@ -487,6 +554,8 @@ totals.bodyProbabilityLanguageReviewed = bodyProbabilityLanguageReviewed;
 totals.bodyProbabilityLanguageRewriteNeeded = bodyProbabilityLanguageRewriteNeeded;
 totals.bodyProbabilityLanguageReviewProblems = bodyProbabilityLanguageReviewProblems.length;
 
+const bundleContractProbe = runBundleContractProbe();
+
 const checks = [
   {
     key: "marketplace_position_count",
@@ -545,6 +614,13 @@ const checks = [
     },
   },
   {
+    key: "agent_bundle_required_output_shape",
+    ok: bundleContractProbe.ok,
+    expected:
+      "representative local-agent bundle exposes outputValidation.requiredOutputShape and an instruction to use it",
+    actual: bundleContractProbe,
+  },
+  {
     key: "body_probability_language_review",
     ok:
       bodyProbabilityLanguageReview.schemaVersion === "soma-reports.body-probability-language-review.v1" &&
@@ -585,6 +661,7 @@ const summary = {
     rewriteNeeded: bodyProbabilityLanguageRewriteNeeded,
     problems: bodyProbabilityLanguageReviewProblems,
   },
+  bundleContractProbe,
   packageRows,
   privacyBoundary:
     "This audit reads prompts, synthetic derived fixtures, deterministic result JSON, and catalog metadata only. It does not read raw genome files or private completed-report payloads.",
@@ -602,6 +679,7 @@ const compactSummary = {
   warningCount: warnings.length,
   warningSample: warnings.slice(0, 10),
   bodyProbabilityLanguageReview: summary.bodyProbabilityLanguageReview,
+  bundleContractProbe: summary.bundleContractProbe,
 };
 
 console.log(JSON.stringify(format === "compact" ? compactSummary : summary, null, 2));

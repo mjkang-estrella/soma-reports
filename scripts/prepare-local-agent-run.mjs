@@ -329,6 +329,7 @@ const payload = {
   agentInstructions: [
     ...localRunAgentInstructions(bundle.agentInstructions),
     "Use agentRunInput.genomeEvidence as the user's local derived evidence; do not use fixture.genomeEvidence as user evidence.",
+    "Return JSON with outputValidation.requiredOutputShape; deterministic report rows come first, and probability, confidence, calibration, uncertainty, missing inputs, and limitations stay in the appendix.",
     ...localRunCustomerFacingEvidenceInstructions,
     "If a required variant, model output, clinical context, or formal sample row is absent from agentRunInput.genomeEvidence, mark that result unavailable.",
     ...(bundle.readiness.localScaffoldOnly

@@ -23464,21 +23464,23 @@ const makeBioinformaticsUtilityFormalFields = (config: BioinformaticsUtilityPack
 
 const genomeExplorerObservedSearchColumns = [
   ["rcvId", "RCV ID"],
-  ["chromosome", "chromosome"],
-  ["position", "position"],
-  ["variantId", "variant ID"],
-  ["gene", "gene"],
-  ["impact", "impact"],
-  ["variantType", "variant type"],
-  ["referenceAllele", "reference"],
-  ["alternateAllele", "alternate allele"],
-  ["userData", "user data"],
-  ["condition", "condition"],
-  ["status", "status"],
-  ["classification", "classification"],
-  ["confidence", "confidence"],
-  ["references", "references"],
-  ["links", "links"],
+  ["chromosome", "Chromosome"],
+  ["position", "Position"],
+  ["variantId", "Variant ID"],
+  ["gene", "Gene"],
+  ["impact", "Impact"],
+  ["riskFrequency", "Risk Frequency"],
+  ["variantType", "Variant Type"],
+  ["ref", "Ref"],
+  ["alt", "Alt"],
+  ["yourData", "Your Data"],
+  ["riskVersion", "Risk Version"],
+  ["condition", "Condition"],
+  ["yourStatus", "Your Status"],
+  ["classification", "Classification"],
+  ["confidence", "Confidence"],
+  ["references", "References"],
+  ["links", "Links"],
 ] as const;
 
 const makeGenomeExplorerDetailFormalFields = (sourceArtifact: string): FormalFieldSeed[] =>
@@ -23751,7 +23753,7 @@ const genomeExplorerUtilityConfig: BioinformaticsUtilityPackageConfig = {
   promptFocus:
     "State that a genome explorer requires supplied search results and should not imply complete browsing from the selected context rows.",
   extraPromptLines: [
-    "Include a `genomeExplorer` official-boundary section with search input metadata and an empty `results` array unless exact service rows are supplied. When rows are unavailable, list the official result columns as unavailable: RCV ID, chromosome, position, variant ID, gene, impact, variant type, reference allele, alternate allele, user data, condition, status, classification, confidence label, references, and links. Do not convert those column names into findings without official rows.",
+    "Include a `genomeExplorer` official-boundary section with search input metadata and an empty `results` array unless exact service rows are supplied. When rows are unavailable, list the official result columns as unavailable: RCV ID, Chromosome, Position, Variant ID, Gene, Impact, Risk Frequency, Variant Type, Ref, Alt, Your Data, Risk Version, Condition, Your Status, Classification, Confidence, References, and Links. Do not convert those column names into findings without official rows.",
   ],
   modelInputId: "genome-explorer-search-output-unavailable",
   modelLabel: "Genome explorer search output",

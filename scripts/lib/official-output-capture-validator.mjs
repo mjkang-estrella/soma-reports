@@ -89,6 +89,11 @@ const sourceIdsForField = (field) => {
   ].filter((sourceId, index, all) => isNonEmptyString(sourceId) && all.indexOf(sourceId) === index);
 };
 
+const explicitSourceIdsForField = (field) => {
+  const explicitSourceIds = field?.sourceResourceIds ?? field?.sourceIds ?? field?.sourceArtifactIds ?? [];
+  return Array.isArray(explicitSourceIds) ? explicitSourceIds.filter(isNonEmptyString) : [];
+};
+
 const rowHasSourceBinding = (row) => {
   const sourceIds = sourceIdsForRow(row);
   const bindingStatus = row?.sourceBindingStatus;
@@ -260,6 +265,7 @@ export const validateOfficialOutputCaptureArtifact = (artifact, options = {}) =>
       .map(sourceResourceId)
       .filter(isNonEmptyString),
   );
+  const listedSourceIds = new Set(sourceResources.map(sourceResourceId).filter(isNonEmptyString));
   const fieldHasOfficialOutputBinding = (field) =>
     sourceIdsForField(field).some((sourceId) => officialOutputSourceIds.has(sourceId));
   const fieldHasReadyOfficialOutputBinding = (field) =>
@@ -304,6 +310,14 @@ export const validateOfficialOutputCaptureArtifact = (artifact, options = {}) =>
       addProblem(`$.formalFields[${index}]`, "must be an object");
       continue;
     }
+    for (const sourceId of explicitSourceIdsForField(field)) {
+      if (!listedSourceIds.has(sourceId)) {
+        addProblem(
+          `$.formalFields[${index}].sourceResourceIds`,
+          `must reference a listed source resource id (${sourceId} was not found)`,
+        );
+      }
+    }
     if (!fieldIsCovered(field)) {
       addProblem(
         `$.formalFields[${index}]`,
@@ -325,10 +339,24 @@ export const validateOfficialOutputCaptureArtifact = (artifact, options = {}) =>
     }
   }
 
+  const outputRowIds = new Set(
+    [...sampleRows, ...resultRows]
+      .map((row) => (isPlainObject(row) ? row.rowId : null))
+      .filter(isNonEmptyString),
+  );
+
   for (const [index, binding] of citationBindings.entries()) {
     if (!isPlainObject(binding)) {
       addProblem(`$.citationBindings[${index}]`, "must be an object");
       continue;
+    }
+    if (!isNonEmptyString(binding.rowId)) {
+      addProblem(`$.citationBindings[${index}].rowId`, "must reference a source-backed sampleRows[] or resultRows[] rowId");
+    } else if (!outputRowIds.has(binding.rowId)) {
+      addProblem(
+        `$.citationBindings[${index}].rowId`,
+        `must reference an existing sampleRows[] or resultRows[] rowId (${binding.rowId} was not found)`,
+      );
     }
     if (!bindingIsReady(binding)) {
       addProblem(`$.citationBindings[${index}]`, "must carry non-empty source ids and an available binding status");

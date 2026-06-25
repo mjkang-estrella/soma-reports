@@ -105,6 +105,35 @@ const canaries = [
     expectRowEvidenceReady: false,
   },
   {
+    name: "citation-binding-missing-row",
+    capture: {
+      ...baseCapture,
+      citationBindings: [
+        {
+          ...baseCapture.citationBindings[0],
+          rowId: "missing-output-row",
+        },
+      ],
+    },
+    expectOk: false,
+    expectRowEvidenceReady: false,
+  },
+  {
+    name: "formal-field-unknown-source-id",
+    capture: {
+      ...baseCapture,
+      formalFields: [
+        {
+          ...baseCapture.formalFields[0],
+          sourceResourceIds: ["missing-source-resource"],
+          sourceLabel: sourceId,
+        },
+      ],
+    },
+    expectOk: false,
+    expectRowEvidenceReady: false,
+  },
+  {
     name: "result-rows-only-source-bound",
     capture: {
       ...baseCapture,
