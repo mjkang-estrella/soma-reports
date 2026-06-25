@@ -290,6 +290,51 @@ const promotionVerificationRuns = rowEvidencePromotionReadyCapturePaths.map((pat
 const officialOutputCaptureArtifacts = readdirSync("reference/catalog").filter(
   (file) => file.includes("-official-output-capture-") && file.endsWith(".json"),
 );
+const latestCatalogJsonPathFor = (prefix) => {
+  const latestFile = readdirSync("reference/catalog")
+    .filter((file) => file.startsWith(prefix) && file.endsWith(".json"))
+    .sort()
+    .at(-1);
+  return latestFile ? `reference/catalog/${latestFile}` : null;
+};
+const publicEndpointProbePath = latestCatalogJsonPathFor("public-report-endpoint-probe-");
+const publicEndpointProbe = publicEndpointProbePath ? JSON.parse(readFileSync(publicEndpointProbePath, "utf8")) : null;
+const knownUnavailablePublicEndpointSlugs = new Set([
+  "comprehensive-health-screen-wgs-bundle",
+  "expedited-advanced-health-screen-wgs-bundle",
+  "ultra-rapid-professional-health-screen-wgs-bundle",
+]);
+const publicEndpointProbeRows = Array.isArray(publicEndpointProbe?.rows) ? publicEndpointProbe.rows : [];
+const publicEndpointProbeSlugSet = new Set(publicEndpointProbeRows.map((row) => row.slug));
+const publicEndpointProbeMissingSlugs = [...blockerSlugs].filter((slug) => !publicEndpointProbeSlugSet.has(slug));
+const publicEndpointProbeExtraSlugs = publicEndpointProbeRows
+  .map((row) => row.slug)
+  .filter((slug) => !blockerSlugs.has(slug));
+const publicEndpointProbeUnexpectedUnavailableSlugs = publicEndpointProbeRows
+  .filter((row) => row.ok === false || (row.httpStatus ?? 200) >= 400)
+  .map((row) => row.slug)
+  .filter((slug) => !knownUnavailablePublicEndpointSlugs.has(slug));
+const publicEndpointBase = "https://sequencing.com/api/sequencing/public/reports";
+const publicEndpointProbeRowsUsePublicReportEndpoint = publicEndpointProbeRows.every(
+  (row) => typeof row.endpointUrl === "string" && row.endpointUrl.startsWith(`${publicEndpointBase}/`),
+);
+const publicEndpointParsedRowsHaveAppProductMetadata = publicEndpointProbeRows.every(
+  (row) => row.parsed !== true || (row.endpointIdentity && row.appMetadata && row.productData),
+);
+const publicEndpointTextSummaryIsHashOnly = (summary) =>
+  summary === null ||
+  (typeof summary?.hash === "string" &&
+    summary.hash.startsWith("sha256:") &&
+    typeof summary.length === "number" &&
+    !("text" in summary) &&
+    !("html" in summary) &&
+    !("content" in summary));
+const publicEndpointProbeStoresHashOnlyText = publicEndpointProbeRows.every(
+  (row) =>
+    publicEndpointTextSummaryIsHashOnly(row.body ?? null) &&
+    publicEndpointTextSummaryIsHashOnly(row.summary ?? null) &&
+    (row.infoTabs ?? []).every((tab) => publicEndpointTextSummaryIsHashOnly(tab.content ?? null)),
+);
 
 const uiSourceChecks = {
   appGapQueue:
@@ -761,6 +806,43 @@ const checks = [
           })),
         }
       : null,
+  },
+  {
+    key: "official_output_public_endpoint_probe",
+    ok:
+      publicEndpointProbe?.schemaVersion === "soma-reports.public-report-endpoint-probe.v1" &&
+      publicEndpointProbe?.endpointBase === publicEndpointBase &&
+      publicEndpointProbe?.totals?.targets === (scaffold?.scaffoldPackages ?? blockerLedger.decisions?.length ?? 0) &&
+      publicEndpointProbe?.totals?.fetched === (scaffold?.scaffoldPackages ?? blockerLedger.decisions?.length ?? 0) &&
+      publicEndpointProbe?.totals?.exactReportFiles === 0 &&
+      publicEndpointProbe?.totals?.exactOutputKeySignalTargets === 0 &&
+      publicEndpointProbeMissingSlugs.length === 0 &&
+      publicEndpointProbeExtraSlugs.length === 0 &&
+      publicEndpointProbeUnexpectedUnavailableSlugs.length === 0 &&
+      publicEndpointProbeRowsUsePublicReportEndpoint &&
+      publicEndpointParsedRowsHaveAppProductMetadata &&
+      publicEndpointProbeStoresHashOnlyText &&
+      publicEndpointProbeRows.every((row) => row.promotionBoundary?.includes("rowEvidenceReady validation")) &&
+      (publicEndpointProbe.relatedReportFileRows ?? []).every((row) =>
+        (row.relatedReportFiles ?? []).every((related) => related.boundary?.includes("exact-package official output")),
+      ),
+    expected:
+      "latest public endpoint probe covers all official-output blockers, uses only public report endpoints, stores hash-only text summaries plus app/product metadata, finds no exact report files/output rows, and keeps related report files non-promotional",
+    actual: publicEndpointProbe
+      ? {
+          path: publicEndpointProbePath,
+          totals: publicEndpointProbe.totals,
+          missingSlugs: publicEndpointProbeMissingSlugs,
+          extraSlugs: publicEndpointProbeExtraSlugs,
+          unexpectedUnavailableSlugs: publicEndpointProbeUnexpectedUnavailableSlugs,
+          rowsUsePublicReportEndpoint: publicEndpointProbeRowsUsePublicReportEndpoint,
+          parsedRowsHaveAppProductMetadata: publicEndpointParsedRowsHaveAppProductMetadata,
+          storesHashOnlyText: publicEndpointProbeStoresHashOnlyText,
+          exactReportFileRows: publicEndpointProbe.exactReportFileRows,
+          exactOutputKeySignalRows: publicEndpointProbe.exactOutputKeySignalRows,
+          relatedReportFileRows: publicEndpointProbe.relatedReportFileRows,
+        }
+      : { path: publicEndpointProbePath },
   },
 ];
 

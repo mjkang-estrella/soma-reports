@@ -1786,7 +1786,7 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                   <strong>Public capture session</strong>
                   <p className="capture-path">{officialOutputPublicCaptureSessionCommand}</p>
                   <p className="capture-path">{formalEvidenceTarget.templateCommand}</p>
-                  <p className="capture-path">npm run scaffold:template-audit -- --report {report.slug}</p>
+                  <p className="capture-path">{`npm run scaffold:template-audit -- --report ${report.slug}`}</p>
                 </div>
                 <div>
                   <strong>Private capture session</strong>

@@ -131,6 +131,7 @@ const addCheck = (checks, key, ok, expectedValue, actualValue) => {
 };
 
 const evaluateRenderedPage = `async () => {
+  const selectedCaptureReport = ${JSON.stringify(selectedCaptureReport)};
   const normalize = (value) => (value || "").replace(/\\s+/g, " ").trim();
   const waitFor = async (predicate, timeout = 20000) => {
     const startedAt = Date.now();
@@ -233,7 +234,7 @@ const evaluateRenderedPage = `async () => {
     selectedEvidencePacketText: selectedEvidencePacketText.slice(0, 5000),
     selectedEvidencePacketRendered: /Official evidence packet/i.test(selectedEvidencePacketPanel?.innerText || ""),
     selectedEvidencePacketHasProvenance:
-      selectedEvidencePacketText.includes('"captureUrl": "https://sequencing.com/marketplace/sequencing-depth-and-coverage"') &&
+      selectedEvidencePacketText.includes(\`"captureUrl": "https://sequencing.com/marketplace/\${selectedCaptureReport}"\`) &&
       selectedEvidencePacketText.includes('"routeProbe"') &&
       selectedEvidencePacketText.includes('"publicBundleEvidence"') &&
       selectedEvidencePacketText.includes('"publicCaptureTemplatePath"') &&
@@ -258,9 +259,14 @@ const evaluateRenderedPage = `async () => {
       selectedEvidencePacketText.includes('"nextEvidenceNeeded"'),
     selectedCaptureTemplateText: selectedCaptureTemplateText.slice(0, 3000),
     selectedDetailShowsBoundaryModeled: /Official boundary\\s+Official boundary modeled/i.test(selectedDetailText),
+    selectedDetailShowsMetadataOnly: /Official boundary\\s+Metadata only/i.test(selectedDetailText),
     selectedDetailShowsSampleBackedPending: /Sample-backed formal\\s+Pending/i.test(selectedDetailText),
     selectedDetailShowsRowReadyZero: /Row-ready captures\\s+0/i.test(selectedDetailText),
     selectedDetailShowsMissingOfficialRows: /official non-private sampleRows\\[\\], resultRows\\[\\], reportFile, or export rows/i.test(selectedDetailText),
+    selectedDetailHasLiteralReportSlugPlaceholder: /\\{report\\.slug\\}/i.test(selectedDetailText),
+    selectedDetailHasSelectedTemplateAuditCommand: selectedDetailText.includes(
+      \`npm run scaffold:template-audit -- --report \${selectedCaptureReport}\`,
+    ),
     selectedCaptureTemplateHasPlaceholderStatus:
       selectedCaptureTemplateText.includes('"sourceBindingStatus": "replace-with-exact-direct-or-official"'),
     selectedCaptureTemplateHasConfirmationFields:
@@ -473,18 +479,32 @@ try {
   addCheck(
     checks,
     "selected_capture_boundary_detail",
-    rendered.selectedDetailShowsBoundaryModeled &&
+    (rendered.selectedDetailShowsBoundaryModeled || rendered.selectedDetailShowsMetadataOnly) &&
       rendered.selectedDetailShowsSampleBackedPending &&
       rendered.selectedDetailShowsRowReadyZero &&
       rendered.selectedDetailShowsMissingOfficialRows,
-    "selected report detail shows official boundary modeled, sample-backed formal pending, row-ready captures 0, and missing official row evidence",
+    "selected report detail shows an official boundary tier, sample-backed formal pending, row-ready captures 0, and missing official row evidence",
     {
       selectedReportTitle: rendered.selectedReportTitle,
       selectedDetailShowsBoundaryModeled: rendered.selectedDetailShowsBoundaryModeled,
+      selectedDetailShowsMetadataOnly: rendered.selectedDetailShowsMetadataOnly,
       selectedDetailShowsSampleBackedPending: rendered.selectedDetailShowsSampleBackedPending,
       selectedDetailShowsRowReadyZero: rendered.selectedDetailShowsRowReadyZero,
       selectedDetailShowsMissingOfficialRows: rendered.selectedDetailShowsMissingOfficialRows,
       selectedDetailText: rendered.selectedDetailText,
+    },
+  );
+  addCheck(
+    checks,
+    "selected_capture_commands_bind_report_slug",
+    !rendered.selectedDetailHasLiteralReportSlugPlaceholder &&
+      rendered.selectedDetailHasSelectedTemplateAuditCommand,
+    "selected report detail renders the concrete template-audit command for the selected slug and no literal {report.slug} placeholder",
+    {
+      selectedReport: selectedCaptureReport,
+      selectedReportTitle: rendered.selectedReportTitle,
+      selectedDetailHasLiteralReportSlugPlaceholder: rendered.selectedDetailHasLiteralReportSlugPlaceholder,
+      selectedDetailHasSelectedTemplateAuditCommand: rendered.selectedDetailHasSelectedTemplateAuditCommand,
     },
   );
   addCheck(
@@ -601,9 +621,12 @@ try {
       selectedCaptureTemplateHasConfirmationFields: rendered.selectedCaptureTemplateHasConfirmationFields,
       selectedCaptureTemplateHasEagerExactStatus: rendered.selectedCaptureTemplateHasEagerExactStatus,
       selectedDetailShowsBoundaryModeled: rendered.selectedDetailShowsBoundaryModeled,
+      selectedDetailShowsMetadataOnly: rendered.selectedDetailShowsMetadataOnly,
       selectedDetailShowsSampleBackedPending: rendered.selectedDetailShowsSampleBackedPending,
       selectedDetailShowsRowReadyZero: rendered.selectedDetailShowsRowReadyZero,
       selectedDetailShowsMissingOfficialRows: rendered.selectedDetailShowsMissingOfficialRows,
+      selectedDetailHasLiteralReportSlugPlaceholder: rendered.selectedDetailHasLiteralReportSlugPlaceholder,
+      selectedDetailHasSelectedTemplateAuditCommand: rendered.selectedDetailHasSelectedTemplateAuditCommand,
       selectedEvidencePacketRendered: rendered.selectedEvidencePacketRendered,
       selectedEvidencePacketHasProvenance: rendered.selectedEvidencePacketHasProvenance,
       selectedEvidencePacketHasPrivacyBoundary: rendered.selectedEvidencePacketHasPrivacyBoundary,

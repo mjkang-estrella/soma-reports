@@ -24,6 +24,7 @@
     "scaffold:capture-status:snapshot": "node scripts/summarize-official-output-capture-status.mjs --allow-empty-captures true --out reference/catalog/official-output-capture-status.json",
     "scaffold:next-actions": "node scripts/export-official-output-next-actions.mjs",
     "scaffold:capture-session": "node scripts/export-official-output-capture-session.mjs",
+    "scaffold:public-endpoint-probe": "node scripts/probe-public-report-endpoints.mjs",
     "scaffold:validate-captures": "node scripts/validate-official-output-captures.mjs",
     "scaffold:privacy-canary": "node scripts/audit-official-output-capture-privacy-canary.mjs",
     "scaffold:promotion-preview": "node scripts/preview-official-output-promotion.mjs",

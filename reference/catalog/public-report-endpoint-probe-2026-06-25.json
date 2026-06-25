@@ -1,0 +1,1707 @@
+{
+  "schemaVersion": "soma-reports.public-report-endpoint-probe.v1",
+  "generatedAt": "2026-06-25T08:49:09.411Z",
+  "statusPath": "reference/catalog/official-output-capture-status.json",
+  "endpointBase": "https://sequencing.com/api/sequencing/public/reports",
+  "filters": {
+    "report": null,
+    "timeoutMs": 20000
+  },
+  "totals": {
+    "targets": 21,
+    "fetched": 21,
+    "ok": 18,
+    "failed": 3,
+    "unavailable": 3,
+    "parsed": 18,
+    "exactReportFiles": 0,
+    "exactOutputKeySignalTargets": 0,
+    "relatedReportFileTargets": 1,
+    "formalFieldSignalTargets": 1,
+    "infoTabTargets": 8
+  },
+  "exactReportFileRows": [],
+  "exactOutputKeySignalRows": [],
+  "relatedReportFileRows": [
+    {
+      "slug": "genome-explorer-dna-data-search",
+      "relatedReportFiles": [
+        {
+          "title": "Healthcare Pro",
+          "uri": "/marketplace/healthcare-pro-genetic-report",
+          "reportFile": "https://sequencing.com/sites/default/files/healthcare-pro-dna-analysis-app-sample-genetic-report2-sequencing.com-genome-app-store_0.pdf",
+          "boundary": "Related report files are sibling context only. They do not count as exact-package official output for the target slug."
+        }
+      ]
+    }
+  ],
+  "formalFieldSignalRows": [
+    {
+      "slug": "sequencing-depth-and-coverage",
+      "formalFieldTerms": [
+        "scope",
+        "chromosome",
+        "averageDepth",
+        "maximumDepth",
+        "minimumDepth",
+        "thirtyXDepthCheck"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "slug": "sequencing-depth-and-coverage",
+      "title": "Sequencing Depth and Coverage",
+      "priority": 1,
+      "stage": "reviewed-no-promote",
+      "officialEvidenceTier": "official-boundary-modeled",
+      "endpointUrl": "https://sequencing.com/api/sequencing/public/reports/sequencing-depth-and-coverage",
+      "httpStatus": 200,
+      "ok": true,
+      "contentType": "application/json",
+      "bytes": 26863,
+      "parsed": true,
+      "endpointTitle": "Sequencing Depth and Coverage",
+      "endpointUri": "marketplace/sequencing-depth-and-coverage",
+      "endpointIdentity": {
+        "id": "15966",
+        "nid": "15966",
+        "type": null,
+        "category": null,
+        "publisher": "Sequencing.com",
+        "productId": "4796"
+      },
+      "appMetadata": {
+        "appid": "15078",
+        "label": "Sequencing Depth and Coverage",
+        "backend": "ApiAppBackend",
+        "backendApiAppId": "depth"
+      },
+      "productData": {
+        "productId": "4796",
+        "sku": "Sequencing Depth and Coverage",
+        "type": "app_billed_after_usage",
+        "fieldAppTargets": [
+          {
+            "targetId": "15078",
+            "targetRevisionId": null
+          }
+        ]
+      },
+      "appId": "depth",
+      "price": "$9.99",
+      "reportFile": "",
+      "exactPackageOutputSignals": {
+        "reportFile": false,
+        "nonEmptyOutputKeySignals": [],
+        "bodyOutputLanguageSignals": [
+          "table",
+          "graph"
+        ],
+        "summaryOutputLanguageSignals": [],
+        "infoTabOutputLanguageSignals": []
+      },
+      "body": {
+        "hash": "sha256:6d2a61cd0955fc878f5f75aabf09d668316043592fbbe19f5dcc0e8f5bbb1843",
+        "length": 312,
+        "outputLanguageSignals": [
+          "table",
+          "graph"
+        ],
+        "formalFieldTerms": [
+          "scope",
+          "chromosome",
+          "averageDepth",
+          "maximumDepth",
+          "minimumDepth",
+          "thirtyXDepthCheck"
+        ]
+      },
+      "summary": {
+        "hash": "sha256:4e0fd5e1108f06ea9311427968db524c7925f057f9f55bd8b79c8456b0cff428",
+        "length": 63,
+        "outputLanguageSignals": [],
+        "formalFieldTerms": []
+      },
+      "infoTabs": [],
+      "formalFieldTerms": [
+        "scope",
+        "chromosome",
+        "averageDepth",
+        "maximumDepth",
+        "minimumDepth",
+        "thirtyXDepthCheck"
+      ],
+      "relatedReportFiles": [],
+      "promotionBoundary": "Public endpoint probes are planning evidence only. Do not promote readiness without exact-package non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
+    },
+    {
+      "slug": "genome-explorer-dna-data-search",
+      "title": "Genome Explorer DNA Data Search",
+      "priority": 2,
+      "stage": "reviewed-no-promote",
+      "officialEvidenceTier": "official-boundary-modeled",
+      "endpointUrl": "https://sequencing.com/api/sequencing/public/reports/genome-explorer-dna-data-search",
+      "httpStatus": 200,
+      "ok": true,
+      "contentType": "application/json",
+      "bytes": 1607286,
+      "parsed": true,
+      "endpointTitle": "Genome Explorer v3",
+      "endpointUri": "marketplace/genome-explorer-dna-data-search",
+      "endpointIdentity": {
+        "id": "13225",
+        "nid": "13225",
+        "type": null,
+        "category": null,
+        "publisher": "Sequencing.com",
+        "productId": "4639"
+      },
+      "appMetadata": {
+        "appid": "14950",
+        "label": "Genome Explorer",
+        "backend": "ApiAppBackend",
+        "backendApiAppId": "dataviewerapp"
+      },
+      "productData": {
+        "productId": "4639",
+        "sku": "Genome Explorer",
+        "type": "single_payment_app",
+        "fieldAppTargets": [
+          {
+            "targetId": "14950",
+            "targetRevisionId": null
+          }
+        ]
+      },
+      "appId": "dataviewerapp",
+      "price": "$0",
+      "reportFile": "",
+      "exactPackageOutputSignals": {
+        "reportFile": false,
+        "nonEmptyOutputKeySignals": [],
+        "bodyOutputLanguageSignals": [
+          "result"
+        ],
+        "summaryOutputLanguageSignals": [],
+        "infoTabOutputLanguageSignals": [
+          "result",
+          "report",
+          "table",
+          "download",
+          "citation"
+        ]
+      },
+      "body": {
+        "hash": "sha256:8df0a2ee9981f901d284cb4e4b73939bf15ed62dd571ebae5821e46efc592fd1",
+        "length": 7396,
+        "outputLanguageSignals": [
+          "result"
+        ],
+        "formalFieldTerms": []
+      },
+      "summary": {
+        "hash": "sha256:0bc103735c0fa6321e2eda80ae8559137b18afc421461c02f416e0d7d1f6c5ee",
+        "length": 135,
+        "outputLanguageSignals": [],
+        "formalFieldTerms": []
+      },
+      "infoTabs": [
+        {
+          "label": "Guide & FAQs",
+          "content": {
+            "hash": "sha256:423f264d5b347af70e0854e0321b3042b7ae3eda66cb636108c08b416468c5f6",
+            "length": 22854,
+            "outputLanguageSignals": [
+              "result",
+              "report",
+              "table",
+              "download"
+            ],
+            "formalFieldTerms": []
+          }
+        },
+        {
+          "label": "Getting Started",
+          "content": {
+            "hash": "sha256:ff3866b3756cb0d48b033990508294195929433868305c7be49bb8d1895c0c8f",
+            "length": 1555129,
+            "outputLanguageSignals": [
+              "report"
+            ],
+            "formalFieldTerms": []
+          }
+        },
+        {
+          "label": "Plus, Premium, and Professional Versions",
+          "content": {
+            "hash": "sha256:1795fd891a1c17a89be26a77a04f80a1c7e4578699f587ae28574346b01bb034",
+            "length": 4092,
+            "outputLanguageSignals": [
+              "report"
+            ],
+            "formalFieldTerms": []
+          }
+        },
+        {
+          "label": "Citations",
+          "content": {
+            "hash": "sha256:e223d59acb8bcbd99c16373af6e8cd52bb8a1bcf535007eb2b9683530d7355e0",
+            "length": 460,
+            "outputLanguageSignals": [
+              "citation"
+            ],
+            "formalFieldTerms": []
+          }
+        },
+        {
+          "label": "Disclaimer",
+          "content": {
+            "hash": "sha256:a34fe404f0986384e72883eb344f01960b7b34e0df443efa1d03711329ecc61f",
+            "length": 891,
+            "outputLanguageSignals": [
+              "result"
+            ],
+            "formalFieldTerms": []
+          }
+        }
+      ],
+      "formalFieldTerms": [],
+      "relatedReportFiles": [
+        {
+          "title": "Healthcare Pro",
+          "uri": "/marketplace/healthcare-pro-genetic-report",
+          "reportFile": "https://sequencing.com/sites/default/files/healthcare-pro-dna-analysis-app-sample-genetic-report2-sequencing.com-genome-app-store_0.pdf",
+          "boundary": "Related report files are sibling context only. They do not count as exact-package official output for the target slug."
+        }
+      ],
+      "promotionBoundary": "Public endpoint probes are planning evidence only. Do not promote readiness without exact-package non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
+    },
+    {
+      "slug": "convert-rsids-coordinates",
+      "title": "Convert rsids to Coordinates",
+      "priority": 3,
+      "stage": "reviewed-metadata-only",
+      "officialEvidenceTier": "official-metadata-only",
+      "endpointUrl": "https://sequencing.com/api/sequencing/public/reports/convert-rsids-coordinates",
+      "httpStatus": 200,
+      "ok": true,
+      "contentType": "application/json",
+      "bytes": 14035,
+      "parsed": true,
+      "endpointTitle": "Convert rsids to Coordinates",
+      "endpointUri": "marketplace/convert-rsids-coordinates",
+      "endpointIdentity": {
+        "id": "3332",
+        "nid": "3332",
+        "type": null,
+        "category": null,
+        "publisher": "GeneX",
+        "productId": "4522"
+      },
+      "appMetadata": {
+        "appid": "14817",
+        "label": "Convert rsids to coordinates",
+        "backend": "ApiAppBackend",
+        "backendApiAppId": "SnpLocator"
+      },
+      "productData": {
+        "productId": "4522",
+        "sku": "Convert rsids to coordinates",
+        "type": "app_billed_after_usage",
+        "fieldAppTargets": [
+          {
+            "targetId": "14817",
+            "targetRevisionId": null
+          }
+        ]
+      },
+      "appId": "SnpLocator",
+      "price": "$0.99",
+      "reportFile": "",
+      "exactPackageOutputSignals": {
+        "reportFile": false,
+        "nonEmptyOutputKeySignals": [],
+        "bodyOutputLanguageSignals": [],
+        "summaryOutputLanguageSignals": [],
+        "infoTabOutputLanguageSignals": [
+          "result",
+          "output"
+        ]
+      },
+      "body": {
+        "hash": "sha256:50450454561bbc6c11b222fc36faf418f52abb43e334053b672d6ad20b1db058",
+        "length": 869,
+        "outputLanguageSignals": [],
+        "formalFieldTerms": []
+      },
+      "summary": {
+        "hash": "sha256:ab0eee3355e3f6fb8d177304b33757d096468e8bd651c127cef7571d30564060",
+        "length": 65,
+        "outputLanguageSignals": [],
+        "formalFieldTerms": []
+      },
+      "infoTabs": [
+        {
+          "label": "Instructions",
+          "content": {
+            "hash": "sha256:90a85fd3648d399683b0b687efd33956a3d8b73cd44691d6a9f88f04256d4a37",
+            "length": 1337,
+            "outputLanguageSignals": [
+              "result"
+            ],
+            "formalFieldTerms": []
+          }
+        },
+        {
+          "label": "Technical info",
+          "content": {
+            "hash": "sha256:a3581185672e6eca72026a87c0825115a5c4935889b68e70ec8f570096c89f76",
+            "length": 125,
+            "outputLanguageSignals": [
+              "output"
+            ],
+            "formalFieldTerms": []
+          }
+        }
+      ],
+      "formalFieldTerms": [],
+      "relatedReportFiles": [],
+      "promotionBoundary": "Public endpoint probes are planning evidence only. Do not promote readiness without exact-package non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
+    },
+    {
+      "slug": "imputation-analysis",
+      "title": "Imputation Analysis",
+      "priority": 4,
+      "stage": "reviewed-boundary-only",
+      "officialEvidenceTier": "official-boundary-modeled",
+      "endpointUrl": "https://sequencing.com/api/sequencing/public/reports/imputation-analysis",
+      "httpStatus": 200,
+      "ok": true,
+      "contentType": "application/json",
+      "bytes": 14147,
+      "parsed": true,
+      "endpointTitle": "Imputation Analysis",
+      "endpointUri": "marketplace/imputation-analysis",
+      "endpointIdentity": {
+        "id": "10915",
+        "nid": "10915",
+        "type": null,
+        "category": null,
+        "publisher": "GeneX",
+        "productId": "4567"
+      },
+      "appMetadata": {
+        "appid": "14854",
+        "label": "Imputation Analysis",
+        "backend": "ApiAppBackend",
+        "backendApiAppId": "BeagleImputeApp"
+      },
+      "productData": {
+        "productId": "4567",
+        "sku": "Imputation Analysis",
+        "type": "app_billed_after_usage",
+        "fieldAppTargets": [
+          {
+            "targetId": "14854",
+            "targetRevisionId": null
+          }
+        ]
+      },
+      "appId": "BeagleImputeApp",
+      "price": "$9.99",
+      "reportFile": "",
+      "exactPackageOutputSignals": {
+        "reportFile": false,
+        "nonEmptyOutputKeySignals": [],
+        "bodyOutputLanguageSignals": [
+          "result",
+          "report"
+        ],
+        "summaryOutputLanguageSignals": [],
+        "infoTabOutputLanguageSignals": [
+          "result",
+          "download",
+          "sample"
+        ]
+      },
+      "body": {
+        "hash": "sha256:693d8fad2a891c0efefd07cc90542bd6f20435148484ef5645f1662832baa391",
+        "length": 972,
+        "outputLanguageSignals": [
+          "result",
+          "report"
+        ],
+        "formalFieldTerms": []
+      },
+      "summary": {
+        "hash": "sha256:fb325fe3f806abfedea16ff07de25fbadcca336126193b732016dde3e6b5878f",
+        "length": 55,
+        "outputLanguageSignals": [],
+        "formalFieldTerms": []
+      },
+      "infoTabs": [
+        {
+          "label": "Results",
+          "content": {
+            "hash": "sha256:3fecf217dc8c0145afc7049d7138131538b2b4aabea9cc321c85f7321dcb6a13",
+            "length": 941,
+            "outputLanguageSignals": [
+              "result",
+              "download"
+            ],
+            "formalFieldTerms": []
+          }
+        },
+        {
+          "label": "What is Imputation?",
+          "content": {
+            "hash": "sha256:e47b53e604cd741a2f37bf986ce92ddafed2e5744a1a9b3fb68c7295aad305fc",
+            "length": 993,
+            "outputLanguageSignals": [
+              "result"
+            ],
+            "formalFieldTerms": []
+          }
+        },
+        {
+          "label": "Citation",
+          "content": {
+            "hash": "sha256:bcfea491f468b107bf6688c8155a95d9688488171159c68ffb112a0d82436ccd",
+            "length": 222,
+            "outputLanguageSignals": [
+              "sample"
+            ],
+            "formalFieldTerms": []
+          }
+        },
+        {
+          "label": "Disclaimer",
+          "content": {
+            "hash": "sha256:27de4265417b7f704b9c79e18b6977d8476840fb59a2ff7aef0ff02c8f2b2387",
+            "length": 424,
+            "outputLanguageSignals": [],
+            "formalFieldTerms": []
+          }
+        }
+      ],
+      "formalFieldTerms": [],
+      "relatedReportFiles": [],
+      "promotionBoundary": "Public endpoint probes are planning evidence only. Do not promote readiness without exact-package non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
+    },
+    {
+      "slug": "variant-effect-predictor",
+      "title": "Variant Effect Predictor",
+      "priority": 5,
+      "stage": "reviewed-boundary-only",
+      "officialEvidenceTier": "official-boundary-modeled",
+      "endpointUrl": "https://sequencing.com/api/sequencing/public/reports/variant-effect-predictor",
+      "httpStatus": 200,
+      "ok": true,
+      "contentType": "application/json",
+      "bytes": 15023,
+      "parsed": true,
+      "endpointTitle": "Variant Effect Predictor",
+      "endpointUri": "marketplace/variant-effect-predictor",
+      "endpointIdentity": {
+        "id": "157",
+        "nid": "157",
+        "type": null,
+        "category": null,
+        "publisher": "GeneX",
+        "productId": "81"
+      },
+      "appMetadata": {
+        "appid": "38",
+        "label": "Variant Effect Predictor",
+        "backend": "ApiAppBackend",
+        "backendApiAppId": "VepAppMpcProvider"
+      },
+      "productData": {
+        "productId": "81",
+        "sku": "Variant Effect Predictor",
+        "type": "single_payment_app",
+        "fieldAppTargets": [
+          {
+            "targetId": "38",
+            "targetRevisionId": null
+          }
+        ]
+      },
+      "appId": "VepAppMpcProvider",
+      "price": "$19.99",
+      "reportFile": "",
+      "exactPackageOutputSignals": {
+        "reportFile": false,
+        "nonEmptyOutputKeySignals": [],
+        "bodyOutputLanguageSignals": [],
+        "summaryOutputLanguageSignals": [],
+        "infoTabOutputLanguageSignals": [
+          "result",
+          "report",
+          "table",
+          "download"
+        ]
+      },
+      "body": {
+        "hash": "sha256:eaaf9f7e47c804eda05385b28e0c052b1e56490adbce9bbde444121299d1a725",
+        "length": 314,
+        "outputLanguageSignals": [],
+        "formalFieldTerms": []
+      },
+      "summary": {
+        "hash": "sha256:34ba4a7624c1584d036b366cd9b812667066fd81e0058880c7734c8bacb1389a",
+        "length": 41,
+        "outputLanguageSignals": [],
+        "formalFieldTerms": []
+      },
+      "infoTabs": [
+        {
+          "label": "FAQs",
+          "content": {
+            "hash": "sha256:8e1e63b6f099cd031a556ab4552028aa98bcd94c832cd331975446d7330e289c",
+            "length": 3186,
+            "outputLanguageSignals": [
+              "result",
+              "report",
+              "table",
+              "download"
+            ],
+            "formalFieldTerms": []
+          }
+        },
+        {
+          "label": "Citations",
+          "content": {
+            "hash": "sha256:930631f7a209b535b9b40742418e4b271ec5eade41395192f76f9b8664910b18",
+            "length": 338,
+            "outputLanguageSignals": [],
+            "formalFieldTerms": []
+          }
+        }
+      ],
+      "formalFieldTerms": [],
+      "relatedReportFiles": [],
+      "promotionBoundary": "Public endpoint probes are planning evidence only. Do not promote readiness without exact-package non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
+    },
+    {
+      "slug": "variant-discovery-bioinformatics-secondary-analysis",
+      "title": "Variant Discovery",
+      "priority": 6,
+      "stage": "reviewed-boundary-only",
+      "officialEvidenceTier": "official-boundary-modeled",
+      "endpointUrl": "https://sequencing.com/api/sequencing/public/reports/variant-discovery-bioinformatics-secondary-analysis",
+      "httpStatus": 200,
+      "ok": true,
+      "contentType": "application/json",
+      "bytes": 14496,
+      "parsed": true,
+      "endpointTitle": "Variant Discovery",
+      "endpointUri": "marketplace/variant-discovery-bioinformatics-secondary-analysis",
+      "endpointIdentity": {
+        "id": "144",
+        "nid": "144",
+        "type": null,
+        "category": null,
+        "publisher": "GeneX",
+        "productId": "74"
+      },
+      "appMetadata": {
+        "appid": "8",
+        "label": "Variant Discovery",
+        "backend": "ApiAppBackend",
+        "backendApiAppId": "Bam2VcfPlatypus"
+      },
+      "productData": {
+        "productId": "74",
+        "sku": "Variant Discovery",
+        "type": "single_payment_app",
+        "fieldAppTargets": [
+          {
+            "targetId": "8",
+            "targetRevisionId": null
+          }
+        ]
+      },
+      "appId": "Bam2VcfPlatypus",
+      "price": "$19",
+      "reportFile": "",
+      "exactPackageOutputSignals": {
+        "reportFile": false,
+        "nonEmptyOutputKeySignals": [],
+        "bodyOutputLanguageSignals": [],
+        "summaryOutputLanguageSignals": [],
+        "infoTabOutputLanguageSignals": [
+          "result",
+          "pdf"
+        ]
+      },
+      "body": {
+        "hash": "sha256:9fbad343f85d0aad025b8e289d5c7e4b601b6db312f8e7be43491c2eccf641ee",
+        "length": 892,
+        "outputLanguageSignals": [],
+        "formalFieldTerms": []
+      },
+      "summary": {
+        "hash": "sha256:4cd4668e7ff4c6de836c6c0b51f6a53d1dfdf6d42706e23ed0609207485ccbca",
+        "length": 110,
+        "outputLanguageSignals": [],
+        "formalFieldTerms": []
+      },
+      "infoTabs": [
+        {
+          "label": "Instructions",
+          "content": {
+            "hash": "sha256:c4b5377b1e6a86ca436fd40255ae3c36cebd6a5b8b5d8beb9c914a8d575442ff",
+            "length": 668,
+            "outputLanguageSignals": [
+              "result"
+            ],
+            "formalFieldTerms": []
+          }
+        },
+        {
+          "label": "Citations",
+          "content": {
+            "hash": "sha256:7cbf86a6fac95ccb96831dd307feeb6faccf3cb36f8ec0f269687a7a41a3ae62",
+            "length": 2221,
+            "outputLanguageSignals": [
+              "pdf"
+            ],
+            "formalFieldTerms": []
+          }
+        }
+      ],
+      "formalFieldTerms": [],
+      "relatedReportFiles": [],
+      "promotionBoundary": "Public endpoint probes are planning evidence only. Do not promote readiness without exact-package non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
+    },
+    {
+      "slug": "genome-short-read-mapper",
+      "title": "Short Read Mapper",
+      "priority": 7,
+      "stage": "reviewed-boundary-only",
+      "officialEvidenceTier": "official-boundary-modeled",
+      "endpointUrl": "https://sequencing.com/api/sequencing/public/reports/genome-short-read-mapper",
+      "httpStatus": 200,
+      "ok": true,
+      "contentType": "application/json",
+      "bytes": 12818,
+      "parsed": true,
+      "endpointTitle": "Short Read Mapper",
+      "endpointUri": "marketplace/genome-short-read-mapper",
+      "endpointIdentity": {
+        "id": "143",
+        "nid": "143",
+        "type": null,
+        "category": null,
+        "publisher": "GeneX",
+        "productId": "78"
+      },
+      "appMetadata": {
+        "appid": "7",
+        "label": "Short Read Mapper",
+        "backend": "ApiAppBackend",
+        "backendApiAppId": "Stampy"
+      },
+      "productData": {
+        "productId": "78",
+        "sku": "Short Read Mapper",
+        "type": "single_payment_app",
+        "fieldAppTargets": [
+          {
+            "targetId": "7",
+            "targetRevisionId": null
+          }
+        ]
+      },
+      "appId": "Stampy",
+      "price": "$249",
+      "reportFile": "",
+      "exactPackageOutputSignals": {
+        "reportFile": false,
+        "nonEmptyOutputKeySignals": [],
+        "bodyOutputLanguageSignals": [
+          "report",
+          "download"
+        ],
+        "summaryOutputLanguageSignals": [],
+        "infoTabOutputLanguageSignals": [
+          "output"
+        ]
+      },
+      "body": {
+        "hash": "sha256:2d950312cb72512629fdd97401d697194341b489d78796cd7f54a77092422d04",
+        "length": 1159,
+        "outputLanguageSignals": [
+          "report",
+          "download"
+        ],
+        "formalFieldTerms": []
+      },
+      "summary": {
+        "hash": "sha256:a5c98a2bcb1ad53a5b71b812864efda7d43932af11cfc163a501bb940c78f2c6",
+        "length": 27,
+        "outputLanguageSignals": [],
+        "formalFieldTerms": []
+      },
+      "infoTabs": [
+        {
+          "label": "Inputs & Outputs",
+          "content": {
+            "hash": "sha256:52262acb1ea5d52aabd7a1627939bfc5b6d6b33371e47581a492fbe3c7f0c59e",
+            "length": 491,
+            "outputLanguageSignals": [
+              "output"
+            ],
+            "formalFieldTerms": []
+          }
+        },
+        {
+          "label": "Citations",
+          "content": {
+            "hash": "sha256:de590e82687c1a421f428825566b9c718ca816d0bbf7bb137a6e6503794eb949",
+            "length": 202,
+            "outputLanguageSignals": [],
+            "formalFieldTerms": []
+          }
+        }
+      ],
+      "formalFieldTerms": [],
+      "relatedReportFiles": [],
+      "promotionBoundary": "Public endpoint probes are planning evidence only. Do not promote readiness without exact-package non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
+    },
+    {
+      "slug": "promethease",
+      "title": "Promethease",
+      "priority": 8,
+      "stage": "reviewed-boundary-only",
+      "officialEvidenceTier": "official-boundary-modeled",
+      "endpointUrl": "https://sequencing.com/api/sequencing/public/reports/promethease",
+      "httpStatus": 200,
+      "ok": true,
+      "contentType": "application/json",
+      "bytes": 114991,
+      "parsed": true,
+      "endpointTitle": "Promethease",
+      "endpointUri": "marketplace/promethease",
+      "endpointIdentity": {
+        "id": "11165",
+        "nid": "11165",
+        "type": null,
+        "category": null,
+        "publisher": "River Road Bio",
+        "productId": "4586"
+      },
+      "appMetadata": {
+        "appid": "14880",
+        "label": "Promethease",
+        "backend": "ApiAppBackend",
+        "backendApiAppId": "promethease"
+      },
+      "productData": {
+        "productId": "4586",
+        "sku": "Promethease",
+        "type": "app_billed_after_usage",
+        "fieldAppTargets": [
+          {
+            "targetId": "14880",
+            "targetRevisionId": null
+          }
+        ]
+      },
+      "appId": "promethease",
+      "price": "$0",
+      "reportFile": "",
+      "exactPackageOutputSignals": {
+        "reportFile": false,
+        "nonEmptyOutputKeySignals": [],
+        "bodyOutputLanguageSignals": [
+          "report"
+        ],
+        "summaryOutputLanguageSignals": [
+          "report"
+        ],
+        "infoTabOutputLanguageSignals": [
+          "report"
+        ]
+      },
+      "body": {
+        "hash": "sha256:9a93e1baf2b134e09dd7267a55ea7e28b069dae32e1e26be6f6f858e93a2dc21",
+        "length": 2372,
+        "outputLanguageSignals": [
+          "report"
+        ],
+        "formalFieldTerms": []
+      },
+      "summary": {
+        "hash": "sha256:0b822551b41c149920aef961bab62d62b7856ba7a1a97e959ffadfc502f2472f",
+        "length": 150,
+        "outputLanguageSignals": [
+          "report"
+        ],
+        "formalFieldTerms": []
+      },
+      "infoTabs": [
+        {
+          "label": "Related DNA Analysis",
+          "content": {
+            "hash": "sha256:77986cffd3c8b1e74522b1b16baa9663cae640763ee89ffc831da756f86b20f3",
+            "length": 2728,
+            "outputLanguageSignals": [
+              "report"
+            ],
+            "formalFieldTerms": []
+          }
+        },
+        {
+          "label": "Disclaimer",
+          "content": {
+            "hash": "sha256:c5b56551d5c05e916da77e977b0a74072d5c0481945e4753c90020ff5b7ddf01",
+            "length": 381,
+            "outputLanguageSignals": [],
+            "formalFieldTerms": []
+          }
+        }
+      ],
+      "formalFieldTerms": [],
+      "relatedReportFiles": [],
+      "promotionBoundary": "Public endpoint probes are planning evidence only. Do not promote readiness without exact-package non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
+    },
+    {
+      "slug": "whole-genome-sequencing-30x",
+      "title": "Whole Genome Sequencing",
+      "priority": 9,
+      "stage": "reviewed-metadata-only",
+      "officialEvidenceTier": "official-metadata-only",
+      "endpointUrl": "https://sequencing.com/api/sequencing/public/reports/whole-genome-sequencing-30x",
+      "httpStatus": 200,
+      "ok": true,
+      "contentType": "application/json",
+      "bytes": 11283,
+      "parsed": true,
+      "endpointTitle": "Whole Genome Sequencing",
+      "endpointUri": "marketplace/whole-genome-sequencing-30x",
+      "endpointIdentity": {
+        "id": "13391",
+        "nid": "13391",
+        "type": null,
+        "category": null,
+        "publisher": "Sequencing.com",
+        "productId": "4668"
+      },
+      "appMetadata": {
+        "appid": "14982",
+        "label": "Whole Genome Sequencing",
+        "backend": "RedirectAppBackend",
+        "backendApiAppId": null
+      },
+      "productData": {
+        "productId": "4668",
+        "sku": "Whole Genome Sequencing",
+        "type": "single_payment_app",
+        "fieldAppTargets": [
+          {
+            "targetId": "14982",
+            "targetRevisionId": null
+          }
+        ]
+      },
+      "appId": "14982",
+      "price": "$549",
+      "reportFile": "",
+      "exactPackageOutputSignals": {
+        "reportFile": false,
+        "nonEmptyOutputKeySignals": [],
+        "bodyOutputLanguageSignals": [
+          "report"
+        ],
+        "summaryOutputLanguageSignals": [],
+        "infoTabOutputLanguageSignals": []
+      },
+      "body": {
+        "hash": "sha256:d019bf71a0014f32de84f4f841add0126dea9771b14eab16c60c7caa6eb07656",
+        "length": 651,
+        "outputLanguageSignals": [
+          "report"
+        ],
+        "formalFieldTerms": []
+      },
+      "summary": {
+        "hash": "sha256:0bd43316e4a32cb01f897c9acf2ed1150c7c42adc9f4d767d3928da2796e4105",
+        "length": 104,
+        "outputLanguageSignals": [],
+        "formalFieldTerms": []
+      },
+      "infoTabs": [],
+      "formalFieldTerms": [],
+      "relatedReportFiles": [],
+      "promotionBoundary": "Public endpoint probes are planning evidence only. Do not promote readiness without exact-package non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
+    },
+    {
+      "slug": "comprehensive-health-screen-wgs-bundle",
+      "title": "Comprehensive Health Screen WGS Bundle",
+      "priority": 10,
+      "stage": "reviewed-metadata-only",
+      "officialEvidenceTier": "official-metadata-only",
+      "endpointUrl": "https://sequencing.com/api/sequencing/public/reports/comprehensive-health-screen-wgs-bundle",
+      "httpStatus": 404,
+      "ok": false,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 6267,
+      "parsed": false,
+      "endpointTitle": "",
+      "endpointUri": "",
+      "endpointIdentity": null,
+      "appMetadata": null,
+      "productData": null,
+      "appId": null,
+      "price": "",
+      "reportFile": "",
+      "exactPackageOutputSignals": {
+        "reportFile": false,
+        "nonEmptyOutputKeySignals": [],
+        "bodyOutputLanguageSignals": [],
+        "summaryOutputLanguageSignals": [],
+        "infoTabOutputLanguageSignals": []
+      },
+      "body": null,
+      "summary": null,
+      "infoTabs": [],
+      "formalFieldTerms": [],
+      "relatedReportFiles": [],
+      "promotionBoundary": "Public endpoint probes are planning evidence only. Do not promote readiness without exact-package non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
+    },
+    {
+      "slug": "expedited-advanced-health-screen-wgs-bundle",
+      "title": "Expedited Advanced Health Screen WGS Bundle",
+      "priority": 11,
+      "stage": "reviewed-metadata-only",
+      "officialEvidenceTier": "official-metadata-only",
+      "endpointUrl": "https://sequencing.com/api/sequencing/public/reports/expedited-advanced-health-screen-wgs-bundle",
+      "httpStatus": 404,
+      "ok": false,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 6267,
+      "parsed": false,
+      "endpointTitle": "",
+      "endpointUri": "",
+      "endpointIdentity": null,
+      "appMetadata": null,
+      "productData": null,
+      "appId": null,
+      "price": "",
+      "reportFile": "",
+      "exactPackageOutputSignals": {
+        "reportFile": false,
+        "nonEmptyOutputKeySignals": [],
+        "bodyOutputLanguageSignals": [],
+        "summaryOutputLanguageSignals": [],
+        "infoTabOutputLanguageSignals": []
+      },
+      "body": null,
+      "summary": null,
+      "infoTabs": [],
+      "formalFieldTerms": [],
+      "relatedReportFiles": [],
+      "promotionBoundary": "Public endpoint probes are planning evidence only. Do not promote readiness without exact-package non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
+    },
+    {
+      "slug": "ultra-rapid-professional-health-screen-wgs-bundle",
+      "title": "Ultra Rapid Professional Health Screen WGS Bundle",
+      "priority": 12,
+      "stage": "reviewed-metadata-only",
+      "officialEvidenceTier": "official-metadata-only",
+      "endpointUrl": "https://sequencing.com/api/sequencing/public/reports/ultra-rapid-professional-health-screen-wgs-bundle",
+      "httpStatus": 404,
+      "ok": false,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 6267,
+      "parsed": false,
+      "endpointTitle": "",
+      "endpointUri": "",
+      "endpointIdentity": null,
+      "appMetadata": null,
+      "productData": null,
+      "appId": null,
+      "price": "",
+      "reportFile": "",
+      "exactPackageOutputSignals": {
+        "reportFile": false,
+        "nonEmptyOutputKeySignals": [],
+        "bodyOutputLanguageSignals": [],
+        "summaryOutputLanguageSignals": [],
+        "infoTabOutputLanguageSignals": []
+      },
+      "body": null,
+      "summary": null,
+      "infoTabs": [],
+      "formalFieldTerms": [],
+      "relatedReportFiles": [],
+      "promotionBoundary": "Public endpoint probes are planning evidence only. Do not promote readiness without exact-package non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
+    },
+    {
+      "slug": "connective-tissue-disorders-and-eds",
+      "title": "Connective Tissue Disorders and EDS",
+      "priority": 101,
+      "stage": "reviewed-no-promote",
+      "officialEvidenceTier": "official-boundary-modeled",
+      "endpointUrl": "https://sequencing.com/api/sequencing/public/reports/connective-tissue-disorders-and-eds",
+      "httpStatus": 200,
+      "ok": true,
+      "contentType": "application/json",
+      "bytes": 10262,
+      "parsed": true,
+      "endpointTitle": "Connective Tissue Disorders and EDS",
+      "endpointUri": "marketplace/connective-tissue-disorders-and-eds",
+      "endpointIdentity": {
+        "id": "19364",
+        "nid": "19364",
+        "type": null,
+        "category": null,
+        "publisher": null,
+        "productId": "5100"
+      },
+      "appMetadata": {
+        "appid": "15138",
+        "label": "AI Connective Tissue Disorders",
+        "backend": "ApiAppBackend",
+        "backendApiAppId": "ai_hc_connective"
+      },
+      "productData": {
+        "productId": "5100",
+        "sku": "Connective Tissue Disorders and EDS",
+        "type": "single_payment_app",
+        "fieldAppTargets": [
+          {
+            "targetId": "15138",
+            "targetRevisionId": null
+          }
+        ]
+      },
+      "appId": "ai_hc_connective",
+      "price": "$0",
+      "reportFile": "",
+      "exactPackageOutputSignals": {
+        "reportFile": false,
+        "nonEmptyOutputKeySignals": [],
+        "bodyOutputLanguageSignals": [],
+        "summaryOutputLanguageSignals": [],
+        "infoTabOutputLanguageSignals": []
+      },
+      "body": {
+        "hash": "sha256:560b4662898751be4a06a4ef54cc0df1362f2cd744c566f78d0159c799752650",
+        "length": 34,
+        "outputLanguageSignals": [],
+        "formalFieldTerms": []
+      },
+      "summary": null,
+      "infoTabs": [],
+      "formalFieldTerms": [],
+      "relatedReportFiles": [],
+      "promotionBoundary": "Public endpoint probes are planning evidence only. Do not promote readiness without exact-package non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
+    },
+    {
+      "slug": "ehlers-danlos-syndrome",
+      "title": "Ehlers-Danlos Syndrome",
+      "priority": 103,
+      "stage": "reviewed-metadata-only",
+      "officialEvidenceTier": "official-metadata-only",
+      "endpointUrl": "https://sequencing.com/api/sequencing/public/reports/ehlers-danlos-syndrome",
+      "httpStatus": 200,
+      "ok": true,
+      "contentType": "application/json",
+      "bytes": 10131,
+      "parsed": true,
+      "endpointTitle": "Ehlers-Danlos Syndrome",
+      "endpointUri": "marketplace/ehlers-danlos-syndrome",
+      "endpointIdentity": {
+        "id": "20765",
+        "nid": "20765",
+        "type": null,
+        "category": null,
+        "publisher": null,
+        "productId": "5209"
+      },
+      "appMetadata": {
+        "appid": "15188",
+        "label": "Ehlers-Danlos Syndrome",
+        "backend": "ApiAppBackend",
+        "backendApiAppId": "ai_cs_eds"
+      },
+      "productData": {
+        "productId": "5209",
+        "sku": "Ehlers-Danlos Syndrome",
+        "type": "single_payment_app",
+        "fieldAppTargets": [
+          {
+            "targetId": "15188",
+            "targetRevisionId": null
+          }
+        ]
+      },
+      "appId": "ai_cs_eds",
+      "price": "$0",
+      "reportFile": "",
+      "exactPackageOutputSignals": {
+        "reportFile": false,
+        "nonEmptyOutputKeySignals": [],
+        "bodyOutputLanguageSignals": [],
+        "summaryOutputLanguageSignals": [],
+        "infoTabOutputLanguageSignals": []
+      },
+      "body": {
+        "hash": "sha256:217aa7b597331e69738d38c2ff49c6f52a977a1bc865df6cd2e66c5b93622b25",
+        "length": 29,
+        "outputLanguageSignals": [],
+        "formalFieldTerms": []
+      },
+      "summary": null,
+      "infoTabs": [],
+      "formalFieldTerms": [],
+      "relatedReportFiles": [],
+      "promotionBoundary": "Public endpoint probes are planning evidence only. Do not promote readiness without exact-package non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
+    },
+    {
+      "slug": "eve-premium-dna-genome-data-bioinformatics-pipelines",
+      "title": "EvE Premium DNA Genome Data Bioinformatics Pipelines",
+      "priority": 104,
+      "stage": "reviewed-boundary-only",
+      "officialEvidenceTier": "official-boundary-modeled",
+      "endpointUrl": "https://sequencing.com/api/sequencing/public/reports/eve-premium-dna-genome-data-bioinformatics-pipelines",
+      "httpStatus": 200,
+      "ok": true,
+      "contentType": "application/json",
+      "bytes": 37442,
+      "parsed": true,
+      "endpointTitle": "EvE Premium",
+      "endpointUri": "marketplace/eve-premium-dna-genome-data-bioinformatics-pipelines",
+      "endpointIdentity": {
+        "id": "3341",
+        "nid": "3341",
+        "type": null,
+        "category": null,
+        "publisher": "Sequencing.com",
+        "productId": "4524"
+      },
+      "appMetadata": {
+        "appid": "14819",
+        "label": "EvE Premium",
+        "backend": "ApiAppBackend",
+        "backendApiAppId": "EvePremium"
+      },
+      "productData": {
+        "productId": "4524",
+        "sku": "EvE Premium",
+        "type": "app_billed_after_usage",
+        "fieldAppTargets": [
+          {
+            "targetId": "14819",
+            "targetRevisionId": null
+          }
+        ]
+      },
+      "appId": "EvePremium",
+      "price": "$19.99",
+      "reportFile": "",
+      "exactPackageOutputSignals": {
+        "reportFile": false,
+        "nonEmptyOutputKeySignals": [],
+        "bodyOutputLanguageSignals": [
+          "output"
+        ],
+        "summaryOutputLanguageSignals": [],
+        "infoTabOutputLanguageSignals": [
+          "result",
+          "output",
+          "pdf",
+          "sample",
+          "download"
+        ]
+      },
+      "body": {
+        "hash": "sha256:914ec025312ba2e09056523512c49e309591a48317d576a4d500fd86f73c995f",
+        "length": 1926,
+        "outputLanguageSignals": [
+          "output"
+        ],
+        "formalFieldTerms": []
+      },
+      "summary": {
+        "hash": "sha256:768a1c1c8e8dd6d1c2cbd5f11a21391c0716d0b30aa538c618fa9480e581bdb8",
+        "length": 137,
+        "outputLanguageSignals": [],
+        "formalFieldTerms": []
+      },
+      "infoTabs": [
+        {
+          "label": "Editions",
+          "content": {
+            "hash": "sha256:21a369c782565666f930005f1b7d889617252e002482df254e6abff1fdd8d27e",
+            "length": 1053,
+            "outputLanguageSignals": [
+              "result"
+            ],
+            "formalFieldTerms": []
+          }
+        },
+        {
+          "label": "Capabilities",
+          "content": {
+            "hash": "sha256:0bb6d10d97037dc821f6f4ffeb9cd291cebb7e63225683f42e3095f0a6281927",
+            "length": 1631,
+            "outputLanguageSignals": [
+              "output"
+            ],
+            "formalFieldTerms": []
+          }
+        },
+        {
+          "label": "Inputs & Outputs",
+          "content": {
+            "hash": "sha256:348349c4b768930d4fdf4c701193e169ccc26ac09a46613fb9c1a91560b5ce50",
+            "length": 2331,
+            "outputLanguageSignals": [
+              "output"
+            ],
+            "formalFieldTerms": []
+          }
+        },
+        {
+          "label": "Integrated Tools",
+          "content": {
+            "hash": "sha256:6b94527a51a9acf9bc8b239bb7c369d38d0508f563b8a40c78ee256834bb4489",
+            "length": 3010,
+            "outputLanguageSignals": [
+              "pdf"
+            ],
+            "formalFieldTerms": []
+          }
+        },
+        {
+          "label": "Adjustable Parameters",
+          "content": {
+            "hash": "sha256:d983094cab36776307acd06cf187917622a4f4e93bbfe769d6e0b69c792bae64",
+            "length": 8865,
+            "outputLanguageSignals": [
+              "sample",
+              "output"
+            ],
+            "formalFieldTerms": []
+          }
+        },
+        {
+          "label": "Additional Info",
+          "content": {
+            "hash": "sha256:0aad1f5e5f6af595e0e6df7a0dc503b73c992301bd93a5863bcb3d4ec58d7f64",
+            "length": 3932,
+            "outputLanguageSignals": [
+              "result",
+              "sample",
+              "download"
+            ],
+            "formalFieldTerms": []
+          }
+        },
+        {
+          "label": "Citations",
+          "content": {
+            "hash": "sha256:16bc36106ff07b946beee46d90db58fa119c73cee65c5ae588d4f6fd71102669",
+            "length": 3488,
+            "outputLanguageSignals": [
+              "pdf"
+            ],
+            "formalFieldTerms": []
+          }
+        },
+        {
+          "label": "Disclaimer",
+          "content": {
+            "hash": "sha256:efb7f6ecf1abc0e0cc16dc4b2e77fed6f2335a0858a1441fdecf77c2ff1d398e",
+            "length": 513,
+            "outputLanguageSignals": [],
+            "formalFieldTerms": []
+          }
+        }
+      ],
+      "formalFieldTerms": [],
+      "relatedReportFiles": [],
+      "promotionBoundary": "Public endpoint probes are planning evidence only. Do not promote readiness without exact-package non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
+    },
+    {
+      "slug": "hearing-auditory-genetics",
+      "title": "Hearing & Auditory Genetics",
+      "priority": 107,
+      "stage": "reviewed-metadata-only",
+      "officialEvidenceTier": "official-metadata-only",
+      "endpointUrl": "https://sequencing.com/api/sequencing/public/reports/hearing-auditory-genetics",
+      "httpStatus": 200,
+      "ok": true,
+      "contentType": "application/json",
+      "bytes": 10005,
+      "parsed": true,
+      "endpointTitle": "Hearing & Auditory Genetics",
+      "endpointUri": "marketplace/hearing-auditory-genetics",
+      "endpointIdentity": {
+        "id": "21076",
+        "nid": "21076",
+        "type": null,
+        "category": null,
+        "publisher": null,
+        "productId": "5231"
+      },
+      "appMetadata": {
+        "appid": "15196",
+        "label": "Hearing & Auditory Genetics",
+        "backend": "ApiAppBackend",
+        "backendApiAppId": "ai_hc_hearing"
+      },
+      "productData": {
+        "productId": "5231",
+        "sku": "Hearing & Auditory Genetics",
+        "type": "single_payment_app",
+        "fieldAppTargets": [
+          {
+            "targetId": "15196",
+            "targetRevisionId": null
+          }
+        ]
+      },
+      "appId": "ai_hc_hearing",
+      "price": "$0",
+      "reportFile": "",
+      "exactPackageOutputSignals": {
+        "reportFile": false,
+        "nonEmptyOutputKeySignals": [],
+        "bodyOutputLanguageSignals": [
+          "report"
+        ],
+        "summaryOutputLanguageSignals": [],
+        "infoTabOutputLanguageSignals": []
+      },
+      "body": {
+        "hash": "sha256:8e5fcc8d1a217057bc6c4dbe071639919df29fea2e285db176549a61c7aecbd9",
+        "length": 16,
+        "outputLanguageSignals": [
+          "report"
+        ],
+        "formalFieldTerms": []
+      },
+      "summary": null,
+      "infoTabs": [],
+      "formalFieldTerms": [],
+      "relatedReportFiles": [],
+      "promotionBoundary": "Public endpoint probes are planning evidence only. Do not promote readiness without exact-package non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
+    },
+    {
+      "slug": "marfan-syndrome",
+      "title": "Marfan Syndrome",
+      "priority": 109,
+      "stage": "reviewed-metadata-only",
+      "officialEvidenceTier": "official-metadata-only",
+      "endpointUrl": "https://sequencing.com/api/sequencing/public/reports/marfan-syndrome",
+      "httpStatus": 200,
+      "ok": true,
+      "contentType": "application/json",
+      "bytes": 10005,
+      "parsed": true,
+      "endpointTitle": "Marfan Syndrome",
+      "endpointUri": "marketplace/marfan-syndrome",
+      "endpointIdentity": {
+        "id": "20766",
+        "nid": "20766",
+        "type": null,
+        "category": null,
+        "publisher": null,
+        "productId": "5210"
+      },
+      "appMetadata": {
+        "appid": "15189",
+        "label": "Marfan Syndrome",
+        "backend": "ApiAppBackend",
+        "backendApiAppId": "ai_cs_marfan"
+      },
+      "productData": {
+        "productId": "5210",
+        "sku": "Marfan Syndrome",
+        "type": "single_payment_app",
+        "fieldAppTargets": [
+          {
+            "targetId": "15189",
+            "targetRevisionId": null
+          }
+        ]
+      },
+      "appId": "ai_cs_marfan",
+      "price": "$0",
+      "reportFile": "",
+      "exactPackageOutputSignals": {
+        "reportFile": false,
+        "nonEmptyOutputKeySignals": [],
+        "bodyOutputLanguageSignals": [],
+        "summaryOutputLanguageSignals": [],
+        "infoTabOutputLanguageSignals": []
+      },
+      "body": {
+        "hash": "sha256:1d3a7b77d356f04574b3920791cdd77a6c35ab23d4b9b26f392840772ca72e90",
+        "length": 22,
+        "outputLanguageSignals": [],
+        "formalFieldTerms": []
+      },
+      "summary": null,
+      "infoTabs": [],
+      "formalFieldTerms": [],
+      "relatedReportFiles": [],
+      "promotionBoundary": "Public endpoint probes are planning evidence only. Do not promote readiness without exact-package non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
+    },
+    {
+      "slug": "mitchell-syndrome",
+      "title": "Mitchell Syndrome",
+      "priority": 110,
+      "stage": "reviewed-metadata-only",
+      "officialEvidenceTier": "official-metadata-only",
+      "endpointUrl": "https://sequencing.com/api/sequencing/public/reports/mitchell-syndrome",
+      "httpStatus": 200,
+      "ok": true,
+      "contentType": "application/json",
+      "bytes": 10047,
+      "parsed": true,
+      "endpointTitle": "Mitchell Syndrome",
+      "endpointUri": "marketplace/mitchell-syndrome",
+      "endpointIdentity": {
+        "id": "20767",
+        "nid": "20767",
+        "type": null,
+        "category": null,
+        "publisher": null,
+        "productId": "5211"
+      },
+      "appMetadata": {
+        "appid": "15190",
+        "label": "Mitchell Syndrome",
+        "backend": "ApiAppBackend",
+        "backendApiAppId": "ai_cs_mitchell"
+      },
+      "productData": {
+        "productId": "5211",
+        "sku": "Mitchell Syndrome",
+        "type": "single_payment_app",
+        "fieldAppTargets": [
+          {
+            "targetId": "15190",
+            "targetRevisionId": null
+          }
+        ]
+      },
+      "appId": "ai_cs_mitchell",
+      "price": "$0",
+      "reportFile": "",
+      "exactPackageOutputSignals": {
+        "reportFile": false,
+        "nonEmptyOutputKeySignals": [],
+        "bodyOutputLanguageSignals": [],
+        "summaryOutputLanguageSignals": [],
+        "infoTabOutputLanguageSignals": []
+      },
+      "body": {
+        "hash": "sha256:482ccec274553b92ae96dfad90d486b09be8d8456b20eeef37301717e4d7dc46",
+        "length": 24,
+        "outputLanguageSignals": [],
+        "formalFieldTerms": []
+      },
+      "summary": null,
+      "infoTabs": [],
+      "formalFieldTerms": [],
+      "relatedReportFiles": [],
+      "promotionBoundary": "Public endpoint probes are planning evidence only. Do not promote readiness without exact-package non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
+    },
+    {
+      "slug": "oral",
+      "title": "Oral",
+      "priority": 111,
+      "stage": "reviewed-metadata-only",
+      "officialEvidenceTier": "official-metadata-only",
+      "endpointUrl": "https://sequencing.com/api/sequencing/public/reports/oral",
+      "httpStatus": 200,
+      "ok": true,
+      "contentType": "application/json",
+      "bytes": 9665,
+      "parsed": true,
+      "endpointTitle": "Oral",
+      "endpointUri": "marketplace/oral",
+      "endpointIdentity": {
+        "id": "21078",
+        "nid": "21078",
+        "type": null,
+        "category": null,
+        "publisher": null,
+        "productId": "5233"
+      },
+      "appMetadata": {
+        "appid": "15198",
+        "label": "Oral",
+        "backend": "ApiAppBackend",
+        "backendApiAppId": "ai_hc_oral"
+      },
+      "productData": {
+        "productId": "5233",
+        "sku": "Oral",
+        "type": "single_payment_app",
+        "fieldAppTargets": [
+          {
+            "targetId": "15198",
+            "targetRevisionId": null
+          }
+        ]
+      },
+      "appId": "ai_hc_oral",
+      "price": "$0",
+      "reportFile": "",
+      "exactPackageOutputSignals": {
+        "reportFile": false,
+        "nonEmptyOutputKeySignals": [],
+        "bodyOutputLanguageSignals": [
+          "report"
+        ],
+        "summaryOutputLanguageSignals": [],
+        "infoTabOutputLanguageSignals": []
+      },
+      "body": {
+        "hash": "sha256:7093b5bc718820caad18cb7fa61ea8aaf669bba49eb2b9fcd6789abd403a45a3",
+        "length": 17,
+        "outputLanguageSignals": [
+          "report"
+        ],
+        "formalFieldTerms": []
+      },
+      "summary": null,
+      "infoTabs": [],
+      "formalFieldTerms": [],
+      "relatedReportFiles": [],
+      "promotionBoundary": "Public endpoint probes are planning evidence only. Do not promote readiness without exact-package non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
+    },
+    {
+      "slug": "pediatric-health",
+      "title": "Pediatric Health",
+      "priority": 112,
+      "stage": "reviewed-metadata-only",
+      "officialEvidenceTier": "official-metadata-only",
+      "endpointUrl": "https://sequencing.com/api/sequencing/public/reports/pediatric-health",
+      "httpStatus": 200,
+      "ok": true,
+      "contentType": "application/json",
+      "bytes": 9955,
+      "parsed": true,
+      "endpointTitle": "Pediatric Health",
+      "endpointUri": "marketplace/pediatric-health",
+      "endpointIdentity": {
+        "id": "19378",
+        "nid": "19378",
+        "type": null,
+        "category": null,
+        "publisher": null,
+        "productId": "5115"
+      },
+      "appMetadata": {
+        "appid": "15153",
+        "label": "Pediatric Health",
+        "backend": "ApiAppBackend",
+        "backendApiAppId": "ai_hc_pediatric"
+      },
+      "productData": {
+        "productId": "5115",
+        "sku": "Pediatric Health",
+        "type": "single_payment_app",
+        "fieldAppTargets": [
+          {
+            "targetId": "15153",
+            "targetRevisionId": null
+          }
+        ]
+      },
+      "appId": "ai_hc_pediatric",
+      "price": "$0",
+      "reportFile": "",
+      "exactPackageOutputSignals": {
+        "reportFile": false,
+        "nonEmptyOutputKeySignals": [],
+        "bodyOutputLanguageSignals": [],
+        "summaryOutputLanguageSignals": [],
+        "infoTabOutputLanguageSignals": []
+      },
+      "body": {
+        "hash": "sha256:6695c3507f84ad2ba141dcc3916e868a8df375edb04c53b77198e62e1ccb105c",
+        "length": 23,
+        "outputLanguageSignals": [],
+        "formalFieldTerms": []
+      },
+      "summary": null,
+      "infoTabs": [],
+      "formalFieldTerms": [],
+      "relatedReportFiles": [],
+      "promotionBoundary": "Public endpoint probes are planning evidence only. Do not promote readiness without exact-package non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
+    },
+    {
+      "slug": "pheochromocytoma-and-paraganglioma",
+      "title": "Pheochromocytoma and Paraganglioma",
+      "priority": 113,
+      "stage": "reviewed-metadata-only",
+      "officialEvidenceTier": "official-metadata-only",
+      "endpointUrl": "https://sequencing.com/api/sequencing/public/reports/pheochromocytoma-and-paraganglioma",
+      "httpStatus": 200,
+      "ok": true,
+      "contentType": "application/json",
+      "bytes": 10146,
+      "parsed": true,
+      "endpointTitle": "Pheochromocytoma and Paraganglioma",
+      "endpointUri": "marketplace/pheochromocytoma-and-paraganglioma",
+      "endpointIdentity": {
+        "id": "21253",
+        "nid": "21253",
+        "type": null,
+        "category": null,
+        "publisher": null,
+        "productId": "5284"
+      },
+      "appMetadata": {
+        "appid": "15206",
+        "label": "Pheochromocytoma and Paraganglioma",
+        "backend": "ApiAppBackend",
+        "backendApiAppId": "ai_cs_ppgl"
+      },
+      "productData": {
+        "productId": "5284",
+        "sku": "Pheochromocytoma and Paraganglioma",
+        "type": "single_payment_app",
+        "fieldAppTargets": [
+          {
+            "targetId": "15206",
+            "targetRevisionId": null
+          }
+        ]
+      },
+      "appId": "ai_cs_ppgl",
+      "price": "$0",
+      "reportFile": "",
+      "exactPackageOutputSignals": {
+        "reportFile": false,
+        "nonEmptyOutputKeySignals": [],
+        "bodyOutputLanguageSignals": [],
+        "summaryOutputLanguageSignals": [],
+        "infoTabOutputLanguageSignals": []
+      },
+      "body": {
+        "hash": "sha256:5d73919f44fc2d8ff6c61bcb8663894746370d0d1a26c2c14aa3ac1c7ba52bdc",
+        "length": 41,
+        "outputLanguageSignals": [],
+        "formalFieldTerms": []
+      },
+      "summary": null,
+      "infoTabs": [],
+      "formalFieldTerms": [],
+      "relatedReportFiles": [],
+      "promotionBoundary": "Public endpoint probes are planning evidence only. Do not promote readiness without exact-package non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
+    }
+  ],
+  "privacyBoundary": "This probe reads public Sequencing.com report metadata endpoints only. It stores hashes and small structural metadata, not raw genome data, private completed reports, account URLs, or private result rows."
+}
