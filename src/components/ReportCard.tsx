@@ -1,5 +1,9 @@
 import { CARD_READINESS_KEYS, deriveAgentReadinessState, getCurationReadinessItem } from "../lib/readiness";
-import { officialOutputNextEvidenceFor } from "../lib/formalEvidenceBacklog";
+import {
+  officialEvidenceTierFor,
+  officialEvidenceTierLabelFor,
+  officialOutputNextEvidenceFor,
+} from "../lib/formalEvidenceBacklog";
 import type { FormalEvidenceTarget, OfficialOutputCaptureStatusRow } from "../lib/formalEvidenceBacklog";
 import type { ReadinessAuditRow, ReportSummary } from "../lib/types";
 
@@ -43,6 +47,14 @@ export function ReportCard({
     officialOutputCaptureTarget?.captureStatus?.nextCommand ??
     officialOutputCaptureTarget?.redactionTemplateCommand ??
     null;
+  const officialEvidenceTier = officialEvidenceTierFor(officialOutputCaptureTarget?.captureStatus);
+  const officialEvidenceTierLabel = officialEvidenceTierLabelFor(officialOutputCaptureTarget?.captureStatus);
+  const officialEvidenceTierDetail =
+    officialEvidenceTier === "official-boundary-modeled"
+      ? `${officialOutputCaptureTarget?.captureStatus?.officialBoundaryModeledFields ?? 0} official fields/scope signals; no source rows.`
+      : officialEvidenceTier === "official-metadata-only"
+        ? "Product and route metadata only; no official output fields or rows."
+        : "Official output rows still pending.";
   const combinedGaps = readiness
     ? [...new Set([...readiness.declaredGaps, ...readiness.formalReportDeclaredGaps, ...readiness.derivedGaps])]
     : [];
@@ -137,6 +149,10 @@ export function ReportCard({
       {officialOutputCaptureTarget ? (
         <div className="card-official-action" aria-label="Official output blocker action">
           <strong>Official output blocker</strong>
+          <span className={`evidence-status evidence-status-${officialEvidenceTier}`}>
+            {officialEvidenceTierLabel}
+          </span>
+          <span>{officialEvidenceTierDetail}</span>
           {officialOutputEvidenceNeeded[0] ? <span>Evidence needed: {officialOutputEvidenceNeeded[0]}</span> : null}
           <span>{officialOutputAction}</span>
           {officialOutputCommand ? <code>{officialOutputCommand}</code> : null}

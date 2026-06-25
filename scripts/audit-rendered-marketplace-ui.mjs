@@ -157,10 +157,12 @@ const evaluateRenderedPage = `async () => {
   const showingText = normalize(document.querySelector(".results-header .eyebrow")?.innerText);
   const bodyText = normalize(document.body.innerText);
   const cards = [...document.querySelectorAll(".report-card")];
+  const cardTexts = cards.map((card) => normalize(card.innerText));
   const inspectButtons = [...document.querySelectorAll("#position-ledger .position-row button")];
   const officialCaptureCards = [...document.querySelectorAll(".official-capture-card")];
   const officialCaptureCardTexts = officialCaptureCards.map((card) => normalize(card.innerText));
   const selectedReportTitle = normalize(document.querySelector(".detail-sidebar h2")?.innerText);
+  const selectedDetailText = normalize(document.querySelector("#report-detail")?.innerText);
   const selectedCaptureTemplateText = normalize(document.querySelector("#official-output-capture .capture-template-panel pre")?.innerText);
   const runLedgerText = normalize(document.querySelector(".run-ledger-panel")?.innerText);
 
@@ -187,7 +189,15 @@ const evaluateRenderedPage = `async () => {
     localRunReadyCards: document.querySelectorAll(".local-run-strip.local-run-ready").length,
     localRunScaffoldCards: document.querySelectorAll(".local-run-strip.local-run-scaffold").length,
     officialOutputBlockerCards: document.querySelectorAll(".card-official-action").length,
+    officialBoundaryModeledReportCards: cardTexts.filter((text) => /Official boundary modeled/i.test(text)).length,
+    metadataOnlyReportCards: cardTexts.filter((text) => /Metadata only/i.test(text)).length,
     officialCaptureCards: officialCaptureCards.length,
+    officialBoundaryModeledCaptureCards: officialCaptureCardTexts.filter((text) =>
+      /Boundary tier\\s+Official boundary modeled/i.test(text),
+    ).length,
+    metadataOnlyCaptureCards: officialCaptureCardTexts.filter((text) =>
+      /Boundary tier\\s+Metadata only/i.test(text),
+    ).length,
     officialCaptureCardsWithRouteArtifact: officialCaptureCardTexts.filter((text) =>
       /Route probe artifact/i.test(text),
     ).length,
@@ -208,7 +218,12 @@ const evaluateRenderedPage = `async () => {
     ).length,
     officialCaptureBoardText: normalize(document.querySelector(".official-capture-board")?.innerText).slice(0, 3000),
     selectedReportTitle,
+    selectedDetailText: selectedDetailText.slice(0, 4000),
     selectedCaptureTemplateText: selectedCaptureTemplateText.slice(0, 3000),
+    selectedDetailShowsBoundaryModeled: /Official boundary\\s+Official boundary modeled/i.test(selectedDetailText),
+    selectedDetailShowsSampleBackedPending: /Sample-backed formal\\s+Pending/i.test(selectedDetailText),
+    selectedDetailShowsRowReadyZero: /Row-ready captures\\s+0/i.test(selectedDetailText),
+    selectedDetailShowsMissingOfficialRows: /official non-private sampleRows\\[\\], resultRows\\[\\], reportFile, or export rows/i.test(selectedDetailText),
     selectedCaptureTemplateHasPlaceholderStatus:
       selectedCaptureTemplateText.includes('"sourceBindingStatus": "replace-with-exact-direct-or-official"'),
     selectedCaptureTemplateHasConfirmationFields:
@@ -327,10 +342,30 @@ try {
   );
   addCheck(
     checks,
+    "official_boundary_tier_report_cards",
+    rendered.officialBoundaryModeledReportCards === 9 && rendered.metadataOnlyReportCards === 12,
+    "9 report cards show official-boundary modeled and 12 show metadata only",
+    {
+      officialBoundaryModeledReportCards: rendered.officialBoundaryModeledReportCards,
+      metadataOnlyReportCards: rendered.metadataOnlyReportCards,
+    },
+  );
+  addCheck(
+    checks,
     "official_capture_board_cards",
     rendered.officialCaptureCards === 21,
     21,
     rendered.officialCaptureCards,
+  );
+  addCheck(
+    checks,
+    "official_capture_boundary_tier_cards",
+    rendered.officialBoundaryModeledCaptureCards === 9 && rendered.metadataOnlyCaptureCards === 12,
+    "9 capture cards show Boundary tier Official boundary modeled and 12 show Boundary tier Metadata only",
+    {
+      officialBoundaryModeledCaptureCards: rendered.officialBoundaryModeledCaptureCards,
+      metadataOnlyCaptureCards: rendered.metadataOnlyCaptureCards,
+    },
   );
   addCheck(
     checks,
@@ -372,9 +407,29 @@ try {
     checks,
     "official_capture_board_nonpromotion_wording",
     /row-evidence promotable/i.test(rendered.officialCaptureBoardText) &&
+      /9 official-boundary modeled/i.test(rendered.officialCaptureBoardText) &&
+      /12 metadata-only/i.test(rendered.officialCaptureBoardText) &&
+      /0 row-ready/i.test(rendered.officialCaptureBoardText) &&
       !/unblocked promotion candidates/i.test(rendered.officialCaptureBoardText),
-    "board uses row-evidence promotable wording and avoids ambiguous promotion-candidate copy",
+    "board uses row-evidence promotable wording, exposes 9/12/0 tier counts, and avoids ambiguous promotion-candidate copy",
     rendered.officialCaptureBoardText,
+  );
+  addCheck(
+    checks,
+    "selected_capture_boundary_detail",
+    rendered.selectedDetailShowsBoundaryModeled &&
+      rendered.selectedDetailShowsSampleBackedPending &&
+      rendered.selectedDetailShowsRowReadyZero &&
+      rendered.selectedDetailShowsMissingOfficialRows,
+    "selected report detail shows official boundary modeled, sample-backed formal pending, row-ready captures 0, and missing official row evidence",
+    {
+      selectedReportTitle: rendered.selectedReportTitle,
+      selectedDetailShowsBoundaryModeled: rendered.selectedDetailShowsBoundaryModeled,
+      selectedDetailShowsSampleBackedPending: rendered.selectedDetailShowsSampleBackedPending,
+      selectedDetailShowsRowReadyZero: rendered.selectedDetailShowsRowReadyZero,
+      selectedDetailShowsMissingOfficialRows: rendered.selectedDetailShowsMissingOfficialRows,
+      selectedDetailText: rendered.selectedDetailText,
+    },
   );
   addCheck(
     checks,
@@ -448,7 +503,11 @@ try {
       aliasRows: rendered.aliasRows,
       routeAliasRows: rendered.routeAliasRows,
       officialOutputBlockerCards: rendered.officialOutputBlockerCards,
+      officialBoundaryModeledReportCards: rendered.officialBoundaryModeledReportCards,
+      metadataOnlyReportCards: rendered.metadataOnlyReportCards,
       officialCaptureCards: rendered.officialCaptureCards,
+      officialBoundaryModeledCaptureCards: rendered.officialBoundaryModeledCaptureCards,
+      metadataOnlyCaptureCards: rendered.metadataOnlyCaptureCards,
       officialCaptureCardsWithRouteArtifact: rendered.officialCaptureCardsWithRouteArtifact,
       officialCaptureCardsWithPublicArtifact: rendered.officialCaptureCardsWithPublicArtifact,
       officialCaptureCardsWithFormalGate: rendered.officialCaptureCardsWithFormalGate,
@@ -460,6 +519,10 @@ try {
       selectedCaptureTemplateHasPlaceholderStatus: rendered.selectedCaptureTemplateHasPlaceholderStatus,
       selectedCaptureTemplateHasConfirmationFields: rendered.selectedCaptureTemplateHasConfirmationFields,
       selectedCaptureTemplateHasEagerExactStatus: rendered.selectedCaptureTemplateHasEagerExactStatus,
+      selectedDetailShowsBoundaryModeled: rendered.selectedDetailShowsBoundaryModeled,
+      selectedDetailShowsSampleBackedPending: rendered.selectedDetailShowsSampleBackedPending,
+      selectedDetailShowsRowReadyZero: rendered.selectedDetailShowsRowReadyZero,
+      selectedDetailShowsMissingOfficialRows: rendered.selectedDetailShowsMissingOfficialRows,
       runLedgerResolved: rendered.runLedgerResolved,
       runLedgerShowsRawGenomeBoundary: rendered.runLedgerShowsRawGenomeBoundary,
       localRunReadyCards: rendered.localRunReadyCards,

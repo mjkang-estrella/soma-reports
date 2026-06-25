@@ -308,11 +308,21 @@ const rows = decisions.map((decision) => {
       verdict = "output-signal-review";
     }
   }
+  const officialOutputSignals = officialOutputReview?.outputSignals ?? {};
+  const officialBoundaryModeled =
+    (officialOutputReview?.reviewClass === "reviewed-boundary-only" ||
+      officialOutputReview?.reviewClass === "reviewed-promotion-candidate") &&
+    (officialOutputSignals.formalFields ?? 0) > 0 &&
+    (officialOutputSignals.sampleRows ?? 0) === 0 &&
+    (officialOutputSignals.resultRows ?? 0) === 0 &&
+    (officialOutputSignals.citationBindings ?? 0) === 0;
 
   return {
     slug: decision.slug,
     title: decision.title,
     verdict,
+    officialBoundaryModeled,
+    officialBoundaryModeledFields: officialBoundaryModeled ? officialOutputSignals.formalFields ?? 0 : 0,
     officialOutputReview,
     blockerDecision: decision.decision,
     blockerReason: decision.reason,
@@ -331,6 +341,7 @@ const rows = decisions.map((decision) => {
 const candidateRows = rows.filter((row) => row.verdict === "output-signal-review" || row.verdict === "candidate-review");
 const reviewedNoPromoteRows = rows.filter((row) => row.verdict === "reviewed-no-promote");
 const reviewedBoundaryOnlyRows = rows.filter((row) => row.verdict === "reviewed-boundary-only");
+const officialBoundaryModeledRows = rows.filter((row) => row.officialBoundaryModeled);
 const reviewedMetadataOnlyRows = rows.filter(
   (row) => row.officialOutputReview?.reviewClass === "reviewed-metadata-only",
 );
@@ -346,6 +357,16 @@ const problems = rows.flatMap((row) =>
   row.detailAudits.flatMap((audit) => audit.problems.map((problem) => `${row.slug}: ${problem}`)),
 );
 problems.push(...officialOutputPromotionReview.problems);
+const officialBoundaryModeledCandidateLeaks = officialBoundaryModeledRows.filter(
+  (row) => row.verdict === "output-signal-review" || row.verdict === "candidate-review",
+);
+if (officialBoundaryModeledCandidateLeaks.length > 0) {
+  problems.push(
+    `official-boundary modeled rows must stay non-promotional candidates: ${officialBoundaryModeledCandidateLeaks
+      .map((row) => row.slug)
+      .join(", ")}`,
+  );
+}
 
 const validateWgsOrderBoundaryLedger = () => {
   const ledgerProblems = [];
@@ -500,6 +521,7 @@ const summary = {
   candidatePromotions: candidateRows.length,
   rawCandidatePromotions: rawCandidateRows.length,
   reviewedNoPromoteCandidates: reviewedNoPromoteRows.length,
+  officialBoundaryModeledRows: officialBoundaryModeledRows.length,
   reviewedBoundaryOnlyCaptures: reviewedBoundaryOnlyRows.length,
   reviewedMetadataOnlyTargets: reviewedMetadataOnlyRows.length,
   unreviewedPromotionCandidatePromotions: candidateRows.length,
@@ -513,6 +535,8 @@ const summary = {
   describedFieldBoundarySlugs: describedFieldBoundaryRows.map((row) => row.slug),
   describedFieldBoundaryRule:
     "Described fields come from marketplace overview/body text or rendered detail text only. They are not promoted to source-backed formal fields without official sample/generated output rows and row-level bindings.",
+  officialBoundaryModeledRule:
+    "Official-boundary modeled rows may preserve official field/scope shape, but they do not promote sample-backed formal readiness, sample rows, result rows, citation bindings, or formal blocker removal.",
   weakSignalRows: rows.filter((row) => row.weakSignals.length > 0).length,
   formalFieldNearMissRows: rows.filter((row) => row.formalFieldNearMissSignals.length > 0).length,
   promotionStandard: ledger.promotionStandard ?? [],
@@ -533,6 +557,7 @@ const summary = {
   },
   candidateSlugs: candidateRows.map((row) => row.slug),
   reviewedNoPromoteSlugs: reviewedNoPromoteRows.map((row) => row.slug),
+  officialBoundaryModeledSlugs: officialBoundaryModeledRows.map((row) => row.slug),
   reviewedBoundaryOnlySlugs: reviewedBoundaryOnlyRows.map((row) => row.slug),
   reviewedMetadataOnlySlugs: reviewedMetadataOnlyRows.map((row) => row.slug),
   rawCandidateSlugs: rawCandidateRows.map((row) => row.slug),

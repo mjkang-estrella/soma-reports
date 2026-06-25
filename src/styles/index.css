@@ -1302,6 +1302,7 @@ header {
 }
 
 .evidence-status-row-evidence-ready,
+.evidence-status-official-row-evidence-ready,
 .evidence-status-output-signal-review,
 .evidence-status-promotion-candidate-review,
 .evidence-status-row-ready-promote-after-review {
@@ -1310,6 +1311,7 @@ header {
 }
 
 .evidence-status-template-ready,
+.evidence-status-official-template-only,
 .evidence-status-prepare-private-redaction-input,
 .evidence-status-inspect-manually {
   border-color: rgba(132, 91, 37, 0.34);
@@ -1319,6 +1321,9 @@ header {
 .evidence-status-reviewed-no-promote,
 .evidence-status-reviewed-boundary-only,
 .evidence-status-reviewed-metadata-only,
+.evidence-status-official-boundary-modeled,
+.evidence-status-official-metadata-only,
+.evidence-status-official-output-signal-unreviewed,
 .evidence-status-completed-output-required,
 .evidence-status-completed-output-required-metadata-only,
 .evidence-status-completed-output-required-boundary-capture {
@@ -1327,6 +1332,7 @@ header {
 }
 
 .evidence-status-capture-needs-rework,
+.evidence-status-official-capture-needs-rework,
 .evidence-status-fix-invalid-capture,
 .evidence-status-template-needed,
 .evidence-status-blocked {
@@ -1336,6 +1342,7 @@ header {
 
 .evidence-status-identity-gap,
 .evidence-status-evidence-pending,
+.evidence-status-official-unknown,
 .evidence-status-loading {
   color: rgba(7, 31, 22, 0.55);
 }

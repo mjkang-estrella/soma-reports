@@ -7,6 +7,8 @@ import { ReportCard } from "./components/ReportCard";
 import { ReportDetail } from "./components/ReportDetail";
 import {
   formalEvidenceBacklogSummary,
+  officialEvidenceTierFor,
+  officialEvidenceTierLabelFor,
   officialOutputActionBoundaryFor,
   officialOutputCaptureCaveats,
   officialOutputNextEvidenceFor,
@@ -27,6 +29,7 @@ const SEQUENCING_NAMED_IDENTITY_TOTAL = 154;
 const AUTHENTICATED_DUPLICATE_POSITION_TOTAL = 77;
 const AUTHENTICATED_PAGE_COUNT = 3;
 const OFFICIAL_OUTPUT_BLOCKERS_STATE = "Official output blockers";
+const OFFICIAL_BOUNDARY_MODELED_STATE = "Official boundary modeled";
 const DEFAULT_MARKETPLACE_ROUTE_ALIASES: Record<string, string> = {
   "clinical-annotator-of-variants": "clinical-annotator-variants",
   "eve-premium": "eve-premium-dna-genome-data-bioinformatics-pipelines",
@@ -161,14 +164,19 @@ export default function App() {
       for (const state of deriveAgentReadinessState(report, readiness).packageStateLabels) {
         counts.set(state, (counts.get(state) ?? 0) + 1);
       }
-      if (officialOutputCaptureTargetBySlug.has(report.slug)) {
+      const officialOutputTarget = officialOutputCaptureTargetBySlug.get(report.slug);
+      if (officialOutputTarget) {
         counts.set(OFFICIAL_OUTPUT_BLOCKERS_STATE, (counts.get(OFFICIAL_OUTPUT_BLOCKERS_STATE) ?? 0) + 1);
+        if (officialEvidenceTierFor(officialOutputTarget.captureStatus) === "official-boundary-modeled") {
+          counts.set(OFFICIAL_BOUNDARY_MODELED_STATE, (counts.get(OFFICIAL_BOUNDARY_MODELED_STATE) ?? 0) + 1);
+        }
       }
     }
 
     const orderedStates = [
       ALL_PACKAGE_STATES,
       OFFICIAL_OUTPUT_BLOCKERS_STATE,
+      OFFICIAL_BOUNDARY_MODELED_STATE,
       "Full parity",
       "Sample-backed formal",
       "Detail gap",
@@ -189,11 +197,15 @@ export default function App() {
     const matches = (reports ?? []).filter((report) => {
       const catalogCategories = reportCategoryFacets(report);
       const readiness = readinessAudit ? readinessBySlug.get(report.slug) ?? null : undefined;
-      const isOfficialOutputBlocker = officialOutputCaptureTargetBySlug.has(report.slug);
+      const officialOutputTarget = officialOutputCaptureTargetBySlug.get(report.slug);
+      const isOfficialOutputBlocker = Boolean(officialOutputTarget);
+      const isOfficialBoundaryModeled =
+        officialEvidenceTierFor(officialOutputTarget?.captureStatus) === "official-boundary-modeled";
       const matchesCategory = category === "All" || catalogCategories.includes(category);
       const matchesPackageState =
         packageState === ALL_PACKAGE_STATES ||
         (packageState === OFFICIAL_OUTPUT_BLOCKERS_STATE && isOfficialOutputBlocker) ||
+        (packageState === OFFICIAL_BOUNDARY_MODELED_STATE && isOfficialBoundaryModeled) ||
         deriveAgentReadinessState(report, readiness).packageStateLabels.includes(packageState);
       const matchesSearch =
         normalizedSearch.length === 0 ||
@@ -206,7 +218,7 @@ export default function App() {
     });
 
     return matches.sort((a, b) => {
-      if (packageState === OFFICIAL_OUTPUT_BLOCKERS_STATE) {
+      if (packageState === OFFICIAL_OUTPUT_BLOCKERS_STATE || packageState === OFFICIAL_BOUNDARY_MODELED_STATE) {
         return (
           (officialOutputCaptureTargetBySlug.get(a.slug)?.priority ?? 999) -
             (officialOutputCaptureTargetBySlug.get(b.slug)?.priority ?? 999) ||
@@ -398,6 +410,22 @@ export default function App() {
   const gitUntrackedOfficialCaptureCount = officialCaptureTotals.gitUntrackedOfficialOutputCaptureArtifacts ?? 0;
   const gitTrackedRowEvidenceReadyCaptureCount = officialCaptureTotals.gitTrackedRowEvidenceReadyCaptures ?? 0;
   const outsideCurrentBlockerLedgerCaptureCount = officialCaptureTotals.outsideCurrentBlockerLedgerCaptures ?? 0;
+  const officialBoundaryModeledTargetCount =
+    officialCaptureTotals.officialBoundaryModeledTargets ??
+    officialOutputCaptureTargets.filter(
+      (target) => officialEvidenceTierFor(target.captureStatus) === "official-boundary-modeled",
+    ).length;
+  const officialBoundaryModeledFormalFieldCount =
+    officialCaptureTotals.officialBoundaryModeledFormalFields ??
+    officialOutputCaptureTargets.reduce(
+      (total, target) => total + (target.captureStatus?.officialBoundaryModeledFields ?? 0),
+      0,
+    );
+  const officialMetadataOnlyTargetCount =
+    officialCaptureTotals.reviewedMetadataOnlyTargets ??
+    officialOutputCaptureTargets.filter(
+      (target) => officialEvidenceTierFor(target.captureStatus) === "official-metadata-only",
+    ).length;
   const nonTargetOfficialOutputCaptures = officialCaptureStatus.nonTargetOfficialOutputCaptures;
   const officialCaptureStageCounts = Object.entries(officialCaptureStatus.statusCounts);
   const officialOutputActionCounts = formalEvidenceBacklogSummary.officialOutputActionCounts;
@@ -950,6 +978,18 @@ export default function App() {
                   reviewed metadata-only
                 </span>
                 <span>
+                  <strong>{officialBoundaryModeledTargetCount}</strong>
+                  official-boundary modeled
+                </span>
+                <span>
+                  <strong>{officialBoundaryModeledFormalFieldCount}</strong>
+                  boundary-modeled fields
+                </span>
+                <span>
+                  <strong>{officialMetadataOnlyTargetCount}</strong>
+                  metadata-only
+                </span>
+                <span>
                   <strong>{completedOutputRequiredCount}</strong>
                   completed-output required
                 </span>
@@ -1015,6 +1055,8 @@ export default function App() {
                   Current ledger: {officialCaptureCatalogSnapshot.formalPendingPackages} formal blockers across{" "}
                   {officialCaptureCatalogSnapshot.identifiedNamedPackages} named packages /{" "}
                   {officialCaptureCatalogSnapshot.authenticatedMarketplacePositions} authenticated marketplace positions.
+                  Evidence tiers: {officialBoundaryModeledTargetCount} official-boundary modeled,{" "}
+                  {officialMetadataOnlyTargetCount} metadata-only, {officialCaptureTotals.rowEvidenceReadyTargets} row-ready.
                 </p>
               </div>
               <span className="meta-text">snapshot {officialCaptureStatus.generatedAt}</span>
@@ -1056,6 +1098,8 @@ export default function App() {
 	                  const latestRouteProbe = captureStatus?.latestRouteProbe ?? null;
 	                  const publicBundleEvidence = captureStatus?.publicBundleEvidence ?? null;
 	                  const actionClass = target.actionClass;
+                  const officialEvidenceTier = officialEvidenceTierFor(captureStatus);
+                  const officialEvidenceTierLabel = officialEvidenceTierLabelFor(captureStatus);
                   const actionBoundary = officialOutputActionBoundaryFor(captureStatus);
                   const nextEvidence = officialOutputNextEvidenceFor(captureStatus);
                   const reviewMissing = captureStatus?.officialOutputReviewEvidenceMissing ?? [];
@@ -1100,6 +1144,9 @@ export default function App() {
                         </span>
                         <span className={captureStageClass(captureStatus?.stage)}>
                           {captureStatus ? formatGapLabel(captureStatus.stage) : "status missing"}
+                        </span>
+                        <span className={`evidence-status evidence-status-${officialEvidenceTier}`}>
+                          {officialEvidenceTierLabel}
                         </span>
                         <small>{actionBoundary}</small>
                       </span>
@@ -1186,6 +1233,8 @@ export default function App() {
                   null;
                 const promotionReview = captureStatus?.officialOutputPromotionReview ?? null;
                 const actionClass = target.actionClass;
+                const officialEvidenceTier = officialEvidenceTierFor(captureStatus);
+                const officialEvidenceTierLabel = officialEvidenceTierLabelFor(captureStatus);
                 const actionBoundary = officialOutputActionBoundaryFor(captureStatus);
                 const nextEvidence = officialOutputNextEvidenceFor(captureStatus);
                 const visibleFields = target.describedOutputFields.slice(0, 6);
@@ -1248,6 +1297,14 @@ export default function App() {
                         <dd>
                           <span className={`evidence-status evidence-status-${actionClass}`}>
                             {formatGapLabel(actionClass)}
+                          </span>
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>Boundary tier</dt>
+                        <dd>
+                          <span className={`evidence-status evidence-status-${officialEvidenceTier}`}>
+                            {officialEvidenceTierLabel}
                           </span>
                         </dd>
                       </div>

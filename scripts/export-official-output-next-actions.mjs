@@ -101,8 +101,39 @@ const boundaryUseFor = (row) => {
   return "No reviewed no-promotion boundary was recorded; inspect the capture artifacts before promotion.";
 };
 
+const officialEvidenceTierFor = (row) => {
+  if (row.officialEvidenceTier) {
+    return row.officialEvidenceTier;
+  }
+  if ((row.rowEvidencePromotionReadyCaptures ?? row.rowEvidenceReadyCaptures ?? 0) > 0 || row.stage === "row-evidence-ready") {
+    return "official-row-evidence-ready";
+  }
+  if (row.officialBoundaryModeled || row.stage === "reviewed-boundary-only" || row.stage === "reviewed-no-promote") {
+    return "official-boundary-modeled";
+  }
+  if (row.stage === "reviewed-metadata-only") {
+    return "official-metadata-only";
+  }
+  if ((row.outputSignalReviews ?? row.promotionCandidates ?? 0) > 0 || row.stage === "output-signal-review") {
+    return "official-output-signal-unreviewed";
+  }
+  if (row.stage === "capture-needs-rework") {
+    return "official-capture-needs-rework";
+  }
+  if (row.stage === "template-ready" || row.stage === "template-needed") {
+    return "official-template-only";
+  }
+  return "official-unknown";
+};
+
 const rowsForExport = rows
-  .filter((row) => stageFilter === "all" || row.stage === stageFilter || actionClassFor(row) === stageFilter)
+  .filter(
+    (row) =>
+      stageFilter === "all" ||
+      row.stage === stageFilter ||
+      actionClassFor(row) === stageFilter ||
+      officialEvidenceTierFor(row) === stageFilter,
+  )
   .sort((a, b) => {
     const rowReadyDelta =
       Number((b.rowEvidenceReadyCaptures ?? 0) > 0 || b.stage === "row-evidence-ready") -
@@ -122,6 +153,10 @@ const rowsForExport = rows
     title: row.title,
     priority: row.priority ?? null,
     stage: row.stage,
+    officialEvidenceTier: officialEvidenceTierFor(row),
+    officialBoundaryModeled: Boolean(row.officialBoundaryModeled),
+    officialBoundaryModeledFields: row.officialBoundaryModeledFields ?? 0,
+    officialBoundaryModeledBoundary: row.officialBoundaryModeledBoundary ?? null,
     nextAction: row.nextAction ?? null,
     nextCommand: row.nextCommand ?? null,
     actionClass: actionClassFor(row),
@@ -136,6 +171,7 @@ const rowsForExport = rows
         }
       : null,
     currentOutputSignals: row.formalReadinessGate?.currentOutputSignals ?? null,
+    officialBoundaryModel: row.officialBoundaryModel ?? null,
     missingFormalGateEvidence: row.formalReadinessGate?.missing ?? [],
     reviewedEvidencePresent: row.officialOutputReviewEvidencePresent ?? [],
     reviewedEvidenceMissing: row.officialOutputReviewEvidenceMissing ?? [],
@@ -154,6 +190,10 @@ const rowsForExport = rows
 
 const actionCounts = rowsForExport.reduce((counts, row) => {
   counts[row.actionClass] = (counts[row.actionClass] ?? 0) + 1;
+  return counts;
+}, {});
+const officialEvidenceTierCounts = rowsForExport.reduce((counts, row) => {
+  counts[row.officialEvidenceTier] = (counts[row.officialEvidenceTier] ?? 0) + 1;
   return counts;
 }, {});
 
@@ -179,8 +219,15 @@ const summary = {
     completedOutputRequired: rowsForExport.filter((row) => row.actionClass.startsWith("completed-output-required")).length,
     metadataOnly: rowsForExport.filter((row) => row.actionClass === "completed-output-required-metadata-only").length,
     boundaryCapture: rowsForExport.filter((row) => row.actionClass === "completed-output-required-boundary-capture").length,
+    officialBoundaryModeled: rowsForExport.filter((row) => row.officialEvidenceTier === "official-boundary-modeled").length,
+    officialMetadataOnly: rowsForExport.filter((row) => row.officialEvidenceTier === "official-metadata-only").length,
+    officialBoundaryModeledFormalFields: rowsForExport.reduce(
+      (total, row) => total + (row.officialBoundaryModeledFields ?? 0),
+      0,
+    ),
   },
   actionCounts,
+  officialEvidenceTierCounts,
   privacyBoundary:
     "Use this queue for planning only. Do not commit raw genome data, private completed report payloads, account identifiers, or private Sequencing.com result URLs. Do not run Start Report/Get Report/Get App/Order actions without explicit user approval.",
   caveats: [
@@ -213,6 +260,8 @@ const renderMarkdown = () => {
     `- Completed-output required: ${summary.totals.completedOutputRequired}`,
     `- Metadata-only blockers: ${summary.totals.metadataOnly}`,
     `- Boundary-capture blockers: ${summary.totals.boundaryCapture}`,
+    `- Official-boundary modeled: ${summary.totals.officialBoundaryModeled}`,
+    `- Official-boundary modeled formal fields: ${summary.totals.officialBoundaryModeledFormalFields}`,
     `- Row-ready promotion reviews: ${summary.totals.rowEvidenceReady}`,
     "",
     "## Privacy Boundary",
@@ -234,6 +283,7 @@ const renderMarkdown = () => {
       `- Slug: \`${row.slug}\``,
       `- Priority: ${row.priority ?? "not set"}`,
       `- Stage: \`${row.stage}\``,
+      `- Official evidence tier: \`${row.officialEvidenceTier}\``,
       `- Action class: \`${row.actionClass}\``,
       `- Next action: ${row.nextAction ?? "not available"}`,
       `- Source: ${row.captureUrl ?? "not available"}`,
@@ -275,6 +325,7 @@ const renderCompact = () =>
       sourceLedgerPath: summary.sourceLedgerPath,
       totals: summary.totals,
       actionCounts: summary.actionCounts,
+      officialEvidenceTierCounts: summary.officialEvidenceTierCounts,
       coverage: {
         ok: statusCoverageOk,
         ledgerTargets: ledgerSlugs.size,
@@ -287,6 +338,9 @@ const renderCompact = () =>
         slug: row.slug,
         priority: row.priority,
         stage: row.stage,
+        officialEvidenceTier: row.officialEvidenceTier,
+        officialBoundaryModeled: row.officialBoundaryModeled,
+        officialBoundaryModeledFields: row.officialBoundaryModeledFields,
         captureUrl: row.captureUrl,
         nextAction: row.nextAction,
         nextCommand: row.nextCommand,

@@ -103,6 +103,33 @@ export type OfficialOutputPromotionReviewEntry = {
   boundaryUse: string | null;
 };
 
+export type OfficialEvidenceTier =
+  | "official-row-evidence-ready"
+  | "official-boundary-modeled"
+  | "official-metadata-only"
+  | "official-output-signal-unreviewed"
+  | "official-template-only"
+  | "official-capture-needs-rework"
+  | "official-unknown";
+
+export type OfficialBoundaryModel = {
+  reviewClass: string | null;
+  decision: string | null;
+  outputSignals: FormalReadinessGate["currentOutputSignals"];
+  evidencePresent: string[];
+  evidenceMissing: string[];
+  nextEvidenceNeeded: string[];
+  boundaryUse: string | null;
+  promotionBoundary: {
+    promotesSampleBackedFormalReady: false;
+    promotesFormalEquivalentReady: false;
+    promotesSampleRows: false;
+    promotesResultRows: false;
+    promotesCitationBindings: false;
+    removesFormalBlocker: false;
+  };
+};
+
 export type LatestRouteProbe = {
   slug: string;
   capturedAt: string | null;
@@ -178,6 +205,13 @@ export type OfficialOutputCaptureStatusRow = {
   officialOutputReviewEvidenceMissing?: string[];
   officialOutputReviewNextEvidenceNeeded?: string[];
   officialOutputReviewOutputSignals?: Record<string, boolean | number> | null;
+  officialEvidenceTier?: OfficialEvidenceTier;
+  officialBoundaryModeled?: boolean;
+  officialBoundaryModeledReason?: string | null;
+  officialBoundaryModeledFields?: number;
+  officialBoundaryModeledEvidence?: string[];
+  officialBoundaryModel?: OfficialBoundaryModel | null;
+  officialBoundaryModeledBoundary?: string | null;
   latestRouteProbe?: LatestRouteProbe | null;
   publicBundleEvidence?: PublicBundleEvidence | null;
   officialCaptureArtifactSummaries?: Array<{
@@ -288,6 +322,8 @@ export type OfficialOutputCaptureStatusSummary = {
     reviewedNoPromoteTargets?: number;
     reviewedBoundaryOnlyTargets?: number;
     reviewedMetadataOnlyTargets?: number;
+    officialBoundaryModeledTargets?: number;
+    officialBoundaryModeledFormalFields?: number;
     unreviewedOutputSignalReviewTargets?: number;
     unreviewedPromotionCandidateTargets?: number;
     latestRouteProbeTargets?: number;
@@ -320,6 +356,7 @@ export type OfficialOutputCaptureStatusSummary = {
   } | null;
   problems: string[];
   statusCounts: Record<string, number>;
+  officialEvidenceTierCounts?: Partial<Record<OfficialEvidenceTier, number>>;
   nonTargetOfficialOutputCaptures: NonTargetOfficialOutputCapture[];
   commands: {
     generateTemplates: string;
@@ -366,9 +403,72 @@ export const officialOutputActionClassFor = (
   return "inspect-manually";
 };
 
+export const officialEvidenceTierFor = (
+  row: OfficialOutputCaptureStatusRow | null | undefined,
+): OfficialEvidenceTier => {
+  if (!row) {
+    return "official-unknown";
+  }
+  if (row.officialEvidenceTier) {
+    return row.officialEvidenceTier;
+  }
+  if ((row.rowEvidencePromotionReadyCaptures ?? row.rowEvidenceReadyCaptures ?? 0) > 0 || row.stage === "row-evidence-ready") {
+    return "official-row-evidence-ready";
+  }
+  if (row.officialBoundaryModeled || row.stage === "reviewed-boundary-only" || row.stage === "reviewed-no-promote") {
+    return "official-boundary-modeled";
+  }
+  if (row.stage === "reviewed-metadata-only") {
+    return "official-metadata-only";
+  }
+  if ((row.outputSignalReviews ?? row.promotionCandidates ?? 0) > 0 || row.stage === "output-signal-review") {
+    return "official-output-signal-unreviewed";
+  }
+  if (row.stage === "capture-needs-rework") {
+    return "official-capture-needs-rework";
+  }
+  if (row.stage === "template-ready" || row.stage === "template-needed") {
+    return "official-template-only";
+  }
+  return "official-unknown";
+};
+
+export const officialEvidenceTierLabelFor = (row: OfficialOutputCaptureStatusRow | null | undefined) => {
+  const labels: Record<OfficialEvidenceTier, string> = {
+    "official-row-evidence-ready": "Official row evidence ready",
+    "official-boundary-modeled": "Official boundary modeled",
+    "official-metadata-only": "Metadata only",
+    "official-output-signal-unreviewed": "Output signal unreviewed",
+    "official-template-only": "Template only",
+    "official-capture-needs-rework": "Capture needs rework",
+    "official-unknown": "Official output unknown",
+  };
+  return labels[officialEvidenceTierFor(row)];
+};
+
+export const officialEvidenceTierBoundaryFor = (row: OfficialOutputCaptureStatusRow | null | undefined) => {
+  const tier = officialEvidenceTierFor(row);
+  if (tier === "official-boundary-modeled") {
+    return (
+      row?.officialBoundaryModeledBoundary ??
+      "Official field/scope boundary only; completed output rows, row-level citations, and rowEvidenceReady capture are still missing."
+    );
+  }
+  if (tier === "official-metadata-only") {
+    return "Metadata-only evidence does not model official output rows, generated values, formal fields, or row-level citations.";
+  }
+  if (tier === "official-row-evidence-ready") {
+    return "A rowEvidenceReady capture exists, but promotion still requires manual review and sync verification.";
+  }
+  return "Official output evidence is still incomplete and does not promote readiness.";
+};
+
 export const officialOutputActionBoundaryFor = (row: OfficialOutputCaptureStatusRow | null | undefined) => {
   if (!row) {
     return "Inspect the capture artifacts before promotion.";
+  }
+  if (row.officialBoundaryModeledBoundary) {
+    return row.officialBoundaryModeledBoundary;
   }
   if (row.officialOutputReviewBoundaryUse) {
     return row.officialOutputReviewBoundaryUse;
@@ -600,6 +700,7 @@ export const formalEvidenceBacklogSummary: FormalEvidenceBacklogSummary = {
     totals: officialOutputCaptureStatus.totals,
     problems: officialOutputCaptureStatus.problems,
     statusCounts: officialOutputCaptureStatus.statusCounts,
+    officialEvidenceTierCounts: officialOutputCaptureStatus.officialEvidenceTierCounts,
     nonTargetOfficialOutputCaptures: officialOutputCaptureStatus.nonTargetOfficialOutputCaptures ?? [],
     commands: officialOutputCaptureStatus.commands,
     privacyBoundary: officialOutputCaptureStatus.privacyBoundary,

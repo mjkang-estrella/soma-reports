@@ -218,13 +218,77 @@ const rows = (plan?.targets ?? []).map((target) => {
     !hasCitationBindings ? "citationBindings[] and source IDs for row-level evidence" : null,
     !hasRowEvidenceReadyCapture ? "a rowEvidenceReady official-output capture validator pass" : null,
   ].filter(Boolean);
+  const stage = target.captureWorkflow?.stage ?? "unknown";
+  const reviewedOfficialBoundary =
+    officialOutputPromotionReview?.reviewClass === "reviewed-boundary-only" ||
+    officialOutputPromotionReview?.reviewClass === "reviewed-promotion-candidate" ||
+    stage === "reviewed-boundary-only" ||
+    stage === "reviewed-no-promote";
+  const officialBoundaryModeled =
+    reviewedOfficialBoundary &&
+    !hasRowEvidenceReadyCapture &&
+    outputSignalTotals.formalFields > 0 &&
+    outputSignalTotals.sampleRows === 0 &&
+    outputSignalTotals.resultRows === 0 &&
+    outputSignalTotals.citationBindings === 0;
+  const officialBoundaryModeledEvidence = [
+    outputSignalTotals.generatedOutput ? "official generated-output or output-shape signal present" : null,
+    outputSignalTotals.formalFields > 0 ? `${outputSignalTotals.formalFields} official field/scope signals` : null,
+    officialOutputPromotionReview?.reviewClass
+      ? `manual review: ${officialOutputPromotionReview.reviewClass}`
+      : null,
+    officialOutputPromotionReview?.officialCapturePath
+      ? `capture: ${officialOutputPromotionReview.officialCapturePath}`
+      : null,
+    ...artifactSummaries
+      .filter((artifact) => artifact.outputSignalReview)
+      .map((artifact) => `validated output-signal capture: ${artifact.path}`),
+  ].filter(Boolean);
+  const officialEvidenceTier = hasRowEvidenceReadyCapture
+    ? "official-row-evidence-ready"
+    : officialBoundaryModeled
+      ? "official-boundary-modeled"
+      : stage === "reviewed-metadata-only"
+        ? "official-metadata-only"
+        : artifactSummaries.some((artifact) => artifact.outputSignalReview)
+          ? "official-output-signal-unreviewed"
+          : stage === "capture-needs-rework"
+            ? "official-capture-needs-rework"
+            : stage === "template-ready" || stage === "template-needed"
+              ? "official-template-only"
+              : "official-unknown";
+  const officialBoundaryModeledReason = officialBoundaryModeled
+    ? `${outputSignalTotals.formalFields} official field/scope signals reviewed as non-promotional boundary evidence.`
+    : null;
+  const officialBoundaryPromotionBoundary = {
+    promotesSampleBackedFormalReady: false,
+    promotesFormalEquivalentReady: false,
+    promotesSampleRows: false,
+    promotesResultRows: false,
+    promotesCitationBindings: false,
+    removesFormalBlocker: false,
+  };
+  const officialBoundaryModel = officialBoundaryModeled
+    ? {
+        reviewClass: officialOutputPromotionReview?.reviewClass ?? null,
+        decision: officialOutputPromotionReview?.decision ?? null,
+        outputSignals: outputSignalTotals,
+        evidencePresent: officialOutputPromotionReview?.evidencePresent ?? officialBoundaryModeledEvidence,
+        evidenceMissing: officialOutputPromotionReview?.evidenceMissing ?? formalReadinessMissing,
+        nextEvidenceNeeded: officialOutputPromotionReview?.nextEvidenceNeeded ?? target.requiredEvidenceForPromotion ?? [],
+        boundaryUse:
+          officialOutputPromotionReview?.boundaryUse ??
+          "Use only as official field/scope boundary evidence; do not infer rows, values, citations, or readiness.",
+        promotionBoundary: officialBoundaryPromotionBoundary,
+      }
+    : null;
 
   return {
     slug: target.slug,
     title: target.title,
     priority: target.priority,
     evidenceClass: target.evidenceClass,
-    stage: target.captureWorkflow?.stage ?? "unknown",
+    stage,
     templateExists: Boolean(target.captureTemplateExists),
     officialCaptures: target.officialOutputCaptureStatus?.captures ?? 0,
     validOfficialCaptures: target.officialOutputCaptureStatus?.valid ?? 0,
@@ -267,6 +331,15 @@ const rows = (plan?.targets ?? []).map((target) => {
     officialOutputReviewEvidenceMissing: officialOutputPromotionReview?.evidenceMissing ?? [],
     officialOutputReviewNextEvidenceNeeded: officialOutputPromotionReview?.nextEvidenceNeeded ?? [],
     officialOutputReviewOutputSignals: officialOutputPromotionReview?.outputSignals ?? null,
+    officialEvidenceTier,
+    officialBoundaryModeled,
+    officialBoundaryModeledReason,
+    officialBoundaryModeledFields: officialBoundaryModeled ? outputSignalTotals.formalFields : 0,
+    officialBoundaryModeledEvidence,
+    officialBoundaryModel,
+    officialBoundaryModeledBoundary: officialBoundaryModeled
+      ? "Official field/scope boundary only; still missing official non-private rows, row-level citation bindings, and rowEvidenceReady capture."
+      : null,
     latestRouteProbe: target.latestRouteProbe ?? null,
     publicBundleEvidence: target.publicBundleEvidence ?? null,
     officialCaptureArtifactSummaries: artifactSummaries,
@@ -335,6 +408,7 @@ const nonTargetOfficialOutputCaptureSummaries = (captureValidation?.results ?? [
     outputSignals: result.outputSignals ?? {},
     status: "outside-current-blocker-ledger",
   }));
+const officialBoundaryModeledRows = rows.filter((row) => row.officialBoundaryModeled);
 
 const summary = {
   schemaVersion: "soma-reports.official-output-capture-status.v1",
@@ -370,6 +444,11 @@ const summary = {
     reviewedNoPromoteTargets: planTotals.reviewedNoPromoteTargets ?? 0,
     reviewedBoundaryOnlyTargets: planTotals.reviewedBoundaryOnlyTargets ?? 0,
     reviewedMetadataOnlyTargets: planTotals.reviewedMetadataOnlyTargets ?? 0,
+    officialBoundaryModeledTargets: officialBoundaryModeledRows.length,
+    officialBoundaryModeledFormalFields: officialBoundaryModeledRows.reduce(
+      (total, row) => total + (row.officialBoundaryModeledFields ?? 0),
+      0,
+    ),
     unreviewedOutputSignalReviewTargets:
       planTotals.unreviewedOutputSignalReviewTargets ?? planTotals.unreviewedPromotionCandidateTargets ?? 0,
     unreviewedPromotionCandidateTargets: planTotals.unreviewedPromotionCandidateTargets ?? 0,
@@ -420,6 +499,12 @@ const summary = {
   statusCounts: Object.fromEntries(
     rows.reduce((counts, row) => counts.set(row.stage, (counts.get(row.stage) ?? 0) + 1), new Map()),
   ),
+  officialEvidenceTierCounts: Object.fromEntries(
+    rows.reduce(
+      (counts, row) => counts.set(row.officialEvidenceTier, (counts.get(row.officialEvidenceTier) ?? 0) + 1),
+      new Map(),
+    ),
+  ),
   rows,
   nonTargetOfficialOutputCaptures: nonTargetOfficialOutputCaptureSummaries,
   privacyCanary: privacyCanaryRun.data ?? null,
@@ -468,6 +553,8 @@ const renderMarkdown = () => {
     `- Reviewed no-promote: ${summary.totals.reviewedNoPromoteTargets}`,
     `- Reviewed boundary-only: ${summary.totals.reviewedBoundaryOnlyTargets}`,
     `- Reviewed metadata-only: ${summary.totals.reviewedMetadataOnlyTargets}`,
+    `- Official-boundary modeled: ${summary.totals.officialBoundaryModeledTargets}`,
+    `- Official-boundary modeled formal fields: ${summary.totals.officialBoundaryModeledFormalFields}`,
     `- Unreviewed output-signal reviews: ${summary.totals.unreviewedOutputSignalReviewTargets}`,
     "",
     "## Problems",
@@ -507,6 +594,10 @@ const renderMarkdown = () => {
       `- Commit-safe export: \`${row.commitSanitizedCaptureCommand ?? "not available"}\``,
       `- Committed capture validation: \`${row.validateCommittedCaptureCommand ?? row.validationCommandForExpectedCapture ?? "not available"}\``,
       `- Official captures: ${row.officialCaptures}`,
+      `- Official-boundary modeled: ${row.officialBoundaryModeled ? "yes" : "no"}${
+        row.officialBoundaryModeled ? ` (${row.officialBoundaryModeledFields} fields)` : ""
+      }`,
+      `- Boundary model limit: ${row.officialBoundaryModeledBoundary ?? "not available"}`,
       `- Formal gate missing: ${
         row.formalReadinessGate.missing.length > 0 ? row.formalReadinessGate.missing.join("; ") : "none"
       }`,
@@ -551,14 +642,19 @@ const renderCompact = () =>
       ok: summary.ok,
       catalogSnapshot: summary.catalogSnapshot,
       totals: summary.totals,
+      statusCounts: summary.statusCounts,
+      officialEvidenceTierCounts: summary.officialEvidenceTierCounts,
       problems: summary.problems,
       nextQueue: summary.rows.map((row) => ({
         slug: row.slug,
         title: row.title,
         stage: row.stage,
+        officialEvidenceTier: row.officialEvidenceTier,
+        officialBoundaryModeled: row.officialBoundaryModeled,
+        officialBoundaryModeledFields: row.officialBoundaryModeledFields,
         evidenceClass: row.evidenceClass,
         missing: row.formalReadinessGate.missing,
-          officialOutputReview: row.officialOutputPromotionReview
+        officialOutputReview: row.officialOutputPromotionReview
           ? {
               decision: row.officialOutputPromotionReview.decision,
               reviewClass: row.officialOutputPromotionReview.reviewClass,

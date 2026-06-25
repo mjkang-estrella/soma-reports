@@ -1,6 +1,6 @@
 {
   "schemaVersion": "soma-reports.official-output-capture-status.v1",
-  "generatedAt": "2026-06-25T06:43:39.228Z",
+  "generatedAt": "2026-06-25T07:34:19.361Z",
   "ok": true,
   "targetClass": "all",
   "allowEmptyCaptures": true,
@@ -32,6 +32,8 @@
     "reviewedNoPromoteTargets": 3,
     "reviewedBoundaryOnlyTargets": 6,
     "reviewedMetadataOnlyTargets": 12,
+    "officialBoundaryModeledTargets": 9,
+    "officialBoundaryModeledFormalFields": 73,
     "unreviewedOutputSignalReviewTargets": 0,
     "unreviewedPromotionCandidateTargets": 0,
     "latestRouteProbeTargets": 7,
@@ -67,6 +69,10 @@
     "reviewed-no-promote": 3,
     "reviewed-metadata-only": 12,
     "reviewed-boundary-only": 6
+  },
+  "officialEvidenceTierCounts": {
+    "official-boundary-modeled": 9,
+    "official-metadata-only": 12
   },
   "rows": [
     {
@@ -160,6 +166,54 @@
         "citationBindings": 0,
         "generatedOutput": true
       },
+      "officialEvidenceTier": "official-boundary-modeled",
+      "officialBoundaryModeled": true,
+      "officialBoundaryModeledReason": "8 official field/scope signals reviewed as non-promotional boundary evidence.",
+      "officialBoundaryModeledFields": 8,
+      "officialBoundaryModeledEvidence": [
+        "official generated-output or output-shape signal present",
+        "8 official field/scope signals",
+        "manual review: reviewed-promotion-candidate",
+        "capture: reference/catalog/sequencing-depth-and-coverage-official-output-capture-2026-06-24.json",
+        "validated output-signal capture: reference/catalog/sequencing-depth-and-coverage-official-output-capture-2026-06-24.json"
+      ],
+      "officialBoundaryModel": {
+        "reviewClass": "reviewed-promotion-candidate",
+        "decision": "no-promote",
+        "outputSignals": {
+          "reportFile": false,
+          "sampleRows": 0,
+          "resultRows": 0,
+          "formalFields": 8,
+          "citationBindings": 0,
+          "generatedOutput": true
+        },
+        "evidencePresent": [
+          "Authenticated detail-page boundaries for graph/table structure",
+          "Formal boundaries for genome, chromosome, depth, graph, table, and 30x check fields"
+        ],
+        "evidenceMissing": [
+          "Non-private depth/coverage table rows",
+          "Chromosome-level numeric depth values",
+          "Graph datapoints",
+          "Generated QC result rows",
+          "Source bindings for rows"
+        ],
+        "nextEvidenceNeeded": [
+          "Official generated sample output or export",
+          "Sanitized coverage table or graph data with non-private rows and source IDs"
+        ],
+        "boundaryUse": "Use only as official field/scope boundary evidence; do not infer rows, values, citations, or readiness.",
+        "promotionBoundary": {
+          "promotesSampleBackedFormalReady": false,
+          "promotesFormalEquivalentReady": false,
+          "promotesSampleRows": false,
+          "promotesResultRows": false,
+          "promotesCitationBindings": false,
+          "removesFormalBlocker": false
+        }
+      },
+      "officialBoundaryModeledBoundary": "Official field/scope boundary only; still missing official non-private rows, row-level citation bindings, and rowEvidenceReady capture.",
       "latestRouteProbe": null,
       "publicBundleEvidence": null,
       "officialCaptureArtifactSummaries": [
@@ -242,17 +296,17 @@
       "redactionInputPath": ".soma/private/official-output-redactions/sequencing-depth-and-coverage-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report sequencing-depth-and-coverage",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/sequencing-depth-and-coverage-redaction-input.json",
-      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/sequencing-depth-and-coverage-redaction-input.json --out tmp/sanitized-captures/sequencing-depth-and-coverage-official-output-capture-2026-06-24.json --dry-run true",
-      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/sequencing-depth-and-coverage-redaction-input.json --out tmp/sanitized-captures/sequencing-depth-and-coverage-official-output-capture-2026-06-24.json",
-      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/sequencing-depth-and-coverage-redaction-input.json --out reference/catalog/sequencing-depth-and-coverage-official-output-capture-2026-06-24.json --confirm-commit-safe true",
-      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/sequencing-depth-and-coverage-official-output-capture-2026-06-24.json",
-      "committedCapturePath": "reference/catalog/sequencing-depth-and-coverage-official-output-capture-2026-06-24.json",
-      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/sequencing-depth-and-coverage-official-output-capture-2026-06-24.json",
-      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/sequencing-depth-and-coverage-official-output-capture-2026-06-24.json",
+      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/sequencing-depth-and-coverage-redaction-input.json --out tmp/sanitized-captures/sequencing-depth-and-coverage-official-output-capture-2026-06-25.json --dry-run true",
+      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/sequencing-depth-and-coverage-redaction-input.json --out tmp/sanitized-captures/sequencing-depth-and-coverage-official-output-capture-2026-06-25.json",
+      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/sequencing-depth-and-coverage-redaction-input.json --out reference/catalog/sequencing-depth-and-coverage-official-output-capture-2026-06-25.json --confirm-commit-safe true",
+      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/sequencing-depth-and-coverage-official-output-capture-2026-06-25.json",
+      "committedCapturePath": "reference/catalog/sequencing-depth-and-coverage-official-output-capture-2026-06-25.json",
+      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/sequencing-depth-and-coverage-official-output-capture-2026-06-25.json",
+      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/sequencing-depth-and-coverage-official-output-capture-2026-06-25.json",
       "promotionPreviewCommittedCommand": null,
       "captureUrl": "https://sequencing.com/marketplace/sequencing-depth-and-coverage",
-      "expectedSanitizedArtifactPath": "reference/catalog/sequencing-depth-and-coverage-official-output-capture-2026-06-24.json",
-      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/sequencing-depth-and-coverage-official-output-capture-2026-06-24.json",
+      "expectedSanitizedArtifactPath": "reference/catalog/sequencing-depth-and-coverage-official-output-capture-2026-06-25.json",
+      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/sequencing-depth-and-coverage-official-output-capture-2026-06-25.json",
       "captureTemplatePath": "tmp/capture-templates/sequencing-depth-and-coverage-official-output-capture-template.json"
     },
     {
@@ -346,6 +400,54 @@
         "citationBindings": 0,
         "generatedOutput": true
       },
+      "officialEvidenceTier": "official-boundary-modeled",
+      "officialBoundaryModeled": true,
+      "officialBoundaryModeledReason": "17 official field/scope signals reviewed as non-promotional boundary evidence.",
+      "officialBoundaryModeledFields": 17,
+      "officialBoundaryModeledEvidence": [
+        "official generated-output or output-shape signal present",
+        "17 official field/scope signals",
+        "manual review: reviewed-promotion-candidate",
+        "capture: reference/catalog/genome-explorer-dna-data-search-official-output-capture-2026-06-24.json",
+        "validated output-signal capture: reference/catalog/genome-explorer-dna-data-search-official-output-capture-2026-06-24.json"
+      ],
+      "officialBoundaryModel": {
+        "reviewClass": "reviewed-promotion-candidate",
+        "decision": "no-promote",
+        "outputSignals": {
+          "reportFile": false,
+          "sampleRows": 0,
+          "resultRows": 0,
+          "formalFields": 17,
+          "citationBindings": 0,
+          "generatedOutput": true
+        },
+        "evidencePresent": [
+          "Authenticated field boundaries for search/result columns",
+          "Rendered detail-page output descriptions",
+          "Formal output paths for expected search-result fields"
+        ],
+        "evidenceMissing": [
+          "Actual non-private Genome Explorer result rows",
+          "Example search inputs with outputs",
+          "Per-row source bindings",
+          "Official sample/export with populated rows"
+        ],
+        "nextEvidenceNeeded": [
+          "Official sample or demo result set",
+          "Sanitized export containing populated non-private rows and source IDs"
+        ],
+        "boundaryUse": "Use only as official field/scope boundary evidence; do not infer rows, values, citations, or readiness.",
+        "promotionBoundary": {
+          "promotesSampleBackedFormalReady": false,
+          "promotesFormalEquivalentReady": false,
+          "promotesSampleRows": false,
+          "promotesResultRows": false,
+          "promotesCitationBindings": false,
+          "removesFormalBlocker": false
+        }
+      },
+      "officialBoundaryModeledBoundary": "Official field/scope boundary only; still missing official non-private rows, row-level citation bindings, and rowEvidenceReady capture.",
       "latestRouteProbe": null,
       "publicBundleEvidence": null,
       "officialCaptureArtifactSummaries": [
@@ -428,17 +530,17 @@
       "redactionInputPath": ".soma/private/official-output-redactions/genome-explorer-dna-data-search-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report genome-explorer-dna-data-search",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/genome-explorer-dna-data-search-redaction-input.json",
-      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/genome-explorer-dna-data-search-redaction-input.json --out tmp/sanitized-captures/genome-explorer-dna-data-search-official-output-capture-2026-06-24.json --dry-run true",
-      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/genome-explorer-dna-data-search-redaction-input.json --out tmp/sanitized-captures/genome-explorer-dna-data-search-official-output-capture-2026-06-24.json",
-      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/genome-explorer-dna-data-search-redaction-input.json --out reference/catalog/genome-explorer-dna-data-search-official-output-capture-2026-06-24.json --confirm-commit-safe true",
-      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/genome-explorer-dna-data-search-official-output-capture-2026-06-24.json",
-      "committedCapturePath": "reference/catalog/genome-explorer-dna-data-search-official-output-capture-2026-06-24.json",
-      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/genome-explorer-dna-data-search-official-output-capture-2026-06-24.json",
-      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/genome-explorer-dna-data-search-official-output-capture-2026-06-24.json",
+      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/genome-explorer-dna-data-search-redaction-input.json --out tmp/sanitized-captures/genome-explorer-dna-data-search-official-output-capture-2026-06-25.json --dry-run true",
+      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/genome-explorer-dna-data-search-redaction-input.json --out tmp/sanitized-captures/genome-explorer-dna-data-search-official-output-capture-2026-06-25.json",
+      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/genome-explorer-dna-data-search-redaction-input.json --out reference/catalog/genome-explorer-dna-data-search-official-output-capture-2026-06-25.json --confirm-commit-safe true",
+      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/genome-explorer-dna-data-search-official-output-capture-2026-06-25.json",
+      "committedCapturePath": "reference/catalog/genome-explorer-dna-data-search-official-output-capture-2026-06-25.json",
+      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/genome-explorer-dna-data-search-official-output-capture-2026-06-25.json",
+      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/genome-explorer-dna-data-search-official-output-capture-2026-06-25.json",
       "promotionPreviewCommittedCommand": null,
       "captureUrl": "https://sequencing.com/marketplace/genome-explorer-dna-data-search",
-      "expectedSanitizedArtifactPath": "reference/catalog/genome-explorer-dna-data-search-official-output-capture-2026-06-24.json",
-      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/genome-explorer-dna-data-search-official-output-capture-2026-06-24.json",
+      "expectedSanitizedArtifactPath": "reference/catalog/genome-explorer-dna-data-search-official-output-capture-2026-06-25.json",
+      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/genome-explorer-dna-data-search-official-output-capture-2026-06-25.json",
       "captureTemplatePath": "tmp/capture-templates/genome-explorer-dna-data-search-official-output-capture-template.json"
     },
     {
@@ -522,6 +624,15 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "officialEvidenceTier": "official-metadata-only",
+      "officialBoundaryModeled": false,
+      "officialBoundaryModeledReason": null,
+      "officialBoundaryModeledFields": 0,
+      "officialBoundaryModeledEvidence": [
+        "manual review: reviewed-metadata-only"
+      ],
+      "officialBoundaryModel": null,
+      "officialBoundaryModeledBoundary": null,
       "latestRouteProbe": null,
       "publicBundleEvidence": null,
       "officialCaptureArtifactSummaries": [],
@@ -585,17 +696,17 @@
       "redactionInputPath": ".soma/private/official-output-redactions/convert-rsids-coordinates-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report convert-rsids-coordinates",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/convert-rsids-coordinates-redaction-input.json",
-      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/convert-rsids-coordinates-redaction-input.json --out tmp/sanitized-captures/convert-rsids-coordinates-official-output-capture-2026-06-24.json --dry-run true",
-      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/convert-rsids-coordinates-redaction-input.json --out tmp/sanitized-captures/convert-rsids-coordinates-official-output-capture-2026-06-24.json",
-      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/convert-rsids-coordinates-redaction-input.json --out reference/catalog/convert-rsids-coordinates-official-output-capture-2026-06-24.json --confirm-commit-safe true",
-      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/convert-rsids-coordinates-official-output-capture-2026-06-24.json",
-      "committedCapturePath": "reference/catalog/convert-rsids-coordinates-official-output-capture-2026-06-24.json",
-      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/convert-rsids-coordinates-official-output-capture-2026-06-24.json",
-      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/convert-rsids-coordinates-official-output-capture-2026-06-24.json",
+      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/convert-rsids-coordinates-redaction-input.json --out tmp/sanitized-captures/convert-rsids-coordinates-official-output-capture-2026-06-25.json --dry-run true",
+      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/convert-rsids-coordinates-redaction-input.json --out tmp/sanitized-captures/convert-rsids-coordinates-official-output-capture-2026-06-25.json",
+      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/convert-rsids-coordinates-redaction-input.json --out reference/catalog/convert-rsids-coordinates-official-output-capture-2026-06-25.json --confirm-commit-safe true",
+      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/convert-rsids-coordinates-official-output-capture-2026-06-25.json",
+      "committedCapturePath": "reference/catalog/convert-rsids-coordinates-official-output-capture-2026-06-25.json",
+      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/convert-rsids-coordinates-official-output-capture-2026-06-25.json",
+      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/convert-rsids-coordinates-official-output-capture-2026-06-25.json",
       "promotionPreviewCommittedCommand": null,
       "captureUrl": "https://sequencing.com/marketplace/convert-rsids-coordinates",
-      "expectedSanitizedArtifactPath": "reference/catalog/convert-rsids-coordinates-official-output-capture-2026-06-24.json",
-      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/convert-rsids-coordinates-official-output-capture-2026-06-24.json",
+      "expectedSanitizedArtifactPath": "reference/catalog/convert-rsids-coordinates-official-output-capture-2026-06-25.json",
+      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/convert-rsids-coordinates-official-output-capture-2026-06-25.json",
       "captureTemplatePath": "tmp/capture-templates/convert-rsids-coordinates-official-output-capture-template.json"
     },
     {
@@ -663,6 +774,40 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "officialEvidenceTier": "official-boundary-modeled",
+      "officialBoundaryModeled": true,
+      "officialBoundaryModeledReason": "1 official field/scope signals reviewed as non-promotional boundary evidence.",
+      "officialBoundaryModeledFields": 1,
+      "officialBoundaryModeledEvidence": [
+        "1 official field/scope signals",
+        "manual review: reviewed-boundary-only",
+        "capture: reference/catalog/imputation-analysis-official-output-capture-2026-06-24.json"
+      ],
+      "officialBoundaryModel": {
+        "reviewClass": "reviewed-boundary-only",
+        "decision": "keep-boundary-only",
+        "outputSignals": {
+          "reportFile": false,
+          "sampleRows": 0,
+          "resultRows": 0,
+          "formalFields": 1,
+          "citationBindings": 0,
+          "generatedOutput": false
+        },
+        "evidencePresent": [],
+        "evidenceMissing": [],
+        "nextEvidenceNeeded": [],
+        "boundaryUse": "Purpose and scope guidance only; do not treat the purpose sentence as sampleRows, resultRows, generatedOutput, or citationBindings.",
+        "promotionBoundary": {
+          "promotesSampleBackedFormalReady": false,
+          "promotesFormalEquivalentReady": false,
+          "promotesSampleRows": false,
+          "promotesResultRows": false,
+          "promotesCitationBindings": false,
+          "removesFormalBlocker": false
+        }
+      },
+      "officialBoundaryModeledBoundary": "Official field/scope boundary only; still missing official non-private rows, row-level citation bindings, and rowEvidenceReady capture.",
       "latestRouteProbe": null,
       "publicBundleEvidence": null,
       "officialCaptureArtifactSummaries": [
@@ -745,17 +890,17 @@
       "redactionInputPath": ".soma/private/official-output-redactions/imputation-analysis-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report imputation-analysis",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/imputation-analysis-redaction-input.json",
-      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/imputation-analysis-redaction-input.json --out tmp/sanitized-captures/imputation-analysis-official-output-capture-2026-06-24.json --dry-run true",
-      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/imputation-analysis-redaction-input.json --out tmp/sanitized-captures/imputation-analysis-official-output-capture-2026-06-24.json",
-      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/imputation-analysis-redaction-input.json --out reference/catalog/imputation-analysis-official-output-capture-2026-06-24.json --confirm-commit-safe true",
-      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/imputation-analysis-official-output-capture-2026-06-24.json",
-      "committedCapturePath": "reference/catalog/imputation-analysis-official-output-capture-2026-06-24.json",
-      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/imputation-analysis-official-output-capture-2026-06-24.json",
-      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/imputation-analysis-official-output-capture-2026-06-24.json",
+      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/imputation-analysis-redaction-input.json --out tmp/sanitized-captures/imputation-analysis-official-output-capture-2026-06-25.json --dry-run true",
+      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/imputation-analysis-redaction-input.json --out tmp/sanitized-captures/imputation-analysis-official-output-capture-2026-06-25.json",
+      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/imputation-analysis-redaction-input.json --out reference/catalog/imputation-analysis-official-output-capture-2026-06-25.json --confirm-commit-safe true",
+      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/imputation-analysis-official-output-capture-2026-06-25.json",
+      "committedCapturePath": "reference/catalog/imputation-analysis-official-output-capture-2026-06-25.json",
+      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/imputation-analysis-official-output-capture-2026-06-25.json",
+      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/imputation-analysis-official-output-capture-2026-06-25.json",
       "promotionPreviewCommittedCommand": null,
       "captureUrl": "https://sequencing.com/marketplace/imputation-analysis",
-      "expectedSanitizedArtifactPath": "reference/catalog/imputation-analysis-official-output-capture-2026-06-24.json",
-      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/imputation-analysis-official-output-capture-2026-06-24.json",
+      "expectedSanitizedArtifactPath": "reference/catalog/imputation-analysis-official-output-capture-2026-06-25.json",
+      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/imputation-analysis-official-output-capture-2026-06-25.json",
       "captureTemplatePath": "tmp/capture-templates/imputation-analysis-official-output-capture-template.json"
     },
     {
@@ -823,6 +968,40 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "officialEvidenceTier": "official-boundary-modeled",
+      "officialBoundaryModeled": true,
+      "officialBoundaryModeledReason": "6 official field/scope signals reviewed as non-promotional boundary evidence.",
+      "officialBoundaryModeledFields": 6,
+      "officialBoundaryModeledEvidence": [
+        "6 official field/scope signals",
+        "manual review: reviewed-boundary-only",
+        "capture: reference/catalog/variant-effect-predictor-official-output-capture-2026-06-24.json"
+      ],
+      "officialBoundaryModel": {
+        "reviewClass": "reviewed-boundary-only",
+        "decision": "keep-boundary-only",
+        "outputSignals": {
+          "reportFile": false,
+          "sampleRows": 0,
+          "resultRows": 0,
+          "formalFields": 6,
+          "citationBindings": 0,
+          "generatedOutput": false
+        },
+        "evidencePresent": [],
+        "evidenceMissing": [],
+        "nextEvidenceNeeded": [],
+        "boundaryUse": "Prompt and field-boundary guidance only; do not infer variant rows, impact classifications, or citation bindings.",
+        "promotionBoundary": {
+          "promotesSampleBackedFormalReady": false,
+          "promotesFormalEquivalentReady": false,
+          "promotesSampleRows": false,
+          "promotesResultRows": false,
+          "promotesCitationBindings": false,
+          "removesFormalBlocker": false
+        }
+      },
+      "officialBoundaryModeledBoundary": "Official field/scope boundary only; still missing official non-private rows, row-level citation bindings, and rowEvidenceReady capture.",
       "latestRouteProbe": null,
       "publicBundleEvidence": null,
       "officialCaptureArtifactSummaries": [
@@ -905,17 +1084,17 @@
       "redactionInputPath": ".soma/private/official-output-redactions/variant-effect-predictor-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report variant-effect-predictor",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/variant-effect-predictor-redaction-input.json",
-      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/variant-effect-predictor-redaction-input.json --out tmp/sanitized-captures/variant-effect-predictor-official-output-capture-2026-06-24.json --dry-run true",
-      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/variant-effect-predictor-redaction-input.json --out tmp/sanitized-captures/variant-effect-predictor-official-output-capture-2026-06-24.json",
-      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/variant-effect-predictor-redaction-input.json --out reference/catalog/variant-effect-predictor-official-output-capture-2026-06-24.json --confirm-commit-safe true",
-      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/variant-effect-predictor-official-output-capture-2026-06-24.json",
-      "committedCapturePath": "reference/catalog/variant-effect-predictor-official-output-capture-2026-06-24.json",
-      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/variant-effect-predictor-official-output-capture-2026-06-24.json",
-      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/variant-effect-predictor-official-output-capture-2026-06-24.json",
+      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/variant-effect-predictor-redaction-input.json --out tmp/sanitized-captures/variant-effect-predictor-official-output-capture-2026-06-25.json --dry-run true",
+      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/variant-effect-predictor-redaction-input.json --out tmp/sanitized-captures/variant-effect-predictor-official-output-capture-2026-06-25.json",
+      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/variant-effect-predictor-redaction-input.json --out reference/catalog/variant-effect-predictor-official-output-capture-2026-06-25.json --confirm-commit-safe true",
+      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/variant-effect-predictor-official-output-capture-2026-06-25.json",
+      "committedCapturePath": "reference/catalog/variant-effect-predictor-official-output-capture-2026-06-25.json",
+      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/variant-effect-predictor-official-output-capture-2026-06-25.json",
+      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/variant-effect-predictor-official-output-capture-2026-06-25.json",
       "promotionPreviewCommittedCommand": null,
       "captureUrl": "https://sequencing.com/marketplace/variant-effect-predictor",
-      "expectedSanitizedArtifactPath": "reference/catalog/variant-effect-predictor-official-output-capture-2026-06-24.json",
-      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/variant-effect-predictor-official-output-capture-2026-06-24.json",
+      "expectedSanitizedArtifactPath": "reference/catalog/variant-effect-predictor-official-output-capture-2026-06-25.json",
+      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/variant-effect-predictor-official-output-capture-2026-06-25.json",
       "captureTemplatePath": "tmp/capture-templates/variant-effect-predictor-official-output-capture-template.json"
     },
     {
@@ -983,6 +1162,40 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "officialEvidenceTier": "official-boundary-modeled",
+      "officialBoundaryModeled": true,
+      "officialBoundaryModeledReason": "6 official field/scope signals reviewed as non-promotional boundary evidence.",
+      "officialBoundaryModeledFields": 6,
+      "officialBoundaryModeledEvidence": [
+        "6 official field/scope signals",
+        "manual review: reviewed-boundary-only",
+        "capture: reference/catalog/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-24.json"
+      ],
+      "officialBoundaryModel": {
+        "reviewClass": "reviewed-boundary-only",
+        "decision": "keep-boundary-only",
+        "outputSignals": {
+          "reportFile": false,
+          "sampleRows": 0,
+          "resultRows": 0,
+          "formalFields": 6,
+          "citationBindings": 0,
+          "generatedOutput": false
+        },
+        "evidencePresent": [],
+        "evidenceMissing": [],
+        "nextEvidenceNeeded": [],
+        "boundaryUse": "Marketplace summary and keyword scope guidance only; do not infer variant rows, haplotypes, SNP/MNP/DIP calls, classifications, command output, or citation bindings.",
+        "promotionBoundary": {
+          "promotesSampleBackedFormalReady": false,
+          "promotesFormalEquivalentReady": false,
+          "promotesSampleRows": false,
+          "promotesResultRows": false,
+          "promotesCitationBindings": false,
+          "removesFormalBlocker": false
+        }
+      },
+      "officialBoundaryModeledBoundary": "Official field/scope boundary only; still missing official non-private rows, row-level citation bindings, and rowEvidenceReady capture.",
       "latestRouteProbe": null,
       "publicBundleEvidence": null,
       "officialCaptureArtifactSummaries": [
@@ -1065,17 +1278,17 @@
       "redactionInputPath": ".soma/private/official-output-redactions/variant-discovery-bioinformatics-secondary-analysis-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report variant-discovery-bioinformatics-secondary-analysis",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/variant-discovery-bioinformatics-secondary-analysis-redaction-input.json",
-      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/variant-discovery-bioinformatics-secondary-analysis-redaction-input.json --out tmp/sanitized-captures/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-24.json --dry-run true",
-      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/variant-discovery-bioinformatics-secondary-analysis-redaction-input.json --out tmp/sanitized-captures/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-24.json",
-      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/variant-discovery-bioinformatics-secondary-analysis-redaction-input.json --out reference/catalog/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-24.json --confirm-commit-safe true",
-      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-24.json",
-      "committedCapturePath": "reference/catalog/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-24.json",
-      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-24.json",
-      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-24.json",
+      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/variant-discovery-bioinformatics-secondary-analysis-redaction-input.json --out tmp/sanitized-captures/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-25.json --dry-run true",
+      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/variant-discovery-bioinformatics-secondary-analysis-redaction-input.json --out tmp/sanitized-captures/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-25.json",
+      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/variant-discovery-bioinformatics-secondary-analysis-redaction-input.json --out reference/catalog/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-25.json --confirm-commit-safe true",
+      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-25.json",
+      "committedCapturePath": "reference/catalog/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-25.json",
+      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-25.json",
+      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-25.json",
       "promotionPreviewCommittedCommand": null,
       "captureUrl": "https://sequencing.com/marketplace/variant-discovery-bioinformatics-secondary-analysis",
-      "expectedSanitizedArtifactPath": "reference/catalog/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-24.json",
-      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-24.json",
+      "expectedSanitizedArtifactPath": "reference/catalog/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-25.json",
+      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-25.json",
       "captureTemplatePath": "tmp/capture-templates/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-template.json"
     },
     {
@@ -1143,6 +1356,40 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "officialEvidenceTier": "official-boundary-modeled",
+      "officialBoundaryModeled": true,
+      "officialBoundaryModeledReason": "6 official field/scope signals reviewed as non-promotional boundary evidence.",
+      "officialBoundaryModeledFields": 6,
+      "officialBoundaryModeledEvidence": [
+        "6 official field/scope signals",
+        "manual review: reviewed-boundary-only",
+        "capture: reference/catalog/genome-short-read-mapper-official-output-capture-2026-06-24.json"
+      ],
+      "officialBoundaryModel": {
+        "reviewClass": "reviewed-boundary-only",
+        "decision": "keep-boundary-only",
+        "outputSignals": {
+          "reportFile": false,
+          "sampleRows": 0,
+          "resultRows": 0,
+          "formalFields": 6,
+          "citationBindings": 0,
+          "generatedOutput": false
+        },
+        "evidencePresent": [],
+        "evidenceMissing": [],
+        "nextEvidenceNeeded": [],
+        "boundaryUse": "Marketplace summary and keyword scope guidance only; do not infer mapped reads, alignment metrics, coverage, command output, variant calls, or citation bindings.",
+        "promotionBoundary": {
+          "promotesSampleBackedFormalReady": false,
+          "promotesFormalEquivalentReady": false,
+          "promotesSampleRows": false,
+          "promotesResultRows": false,
+          "promotesCitationBindings": false,
+          "removesFormalBlocker": false
+        }
+      },
+      "officialBoundaryModeledBoundary": "Official field/scope boundary only; still missing official non-private rows, row-level citation bindings, and rowEvidenceReady capture.",
       "latestRouteProbe": null,
       "publicBundleEvidence": null,
       "officialCaptureArtifactSummaries": [
@@ -1225,17 +1472,17 @@
       "redactionInputPath": ".soma/private/official-output-redactions/genome-short-read-mapper-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report genome-short-read-mapper",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/genome-short-read-mapper-redaction-input.json",
-      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/genome-short-read-mapper-redaction-input.json --out tmp/sanitized-captures/genome-short-read-mapper-official-output-capture-2026-06-24.json --dry-run true",
-      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/genome-short-read-mapper-redaction-input.json --out tmp/sanitized-captures/genome-short-read-mapper-official-output-capture-2026-06-24.json",
-      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/genome-short-read-mapper-redaction-input.json --out reference/catalog/genome-short-read-mapper-official-output-capture-2026-06-24.json --confirm-commit-safe true",
-      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/genome-short-read-mapper-official-output-capture-2026-06-24.json",
-      "committedCapturePath": "reference/catalog/genome-short-read-mapper-official-output-capture-2026-06-24.json",
-      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/genome-short-read-mapper-official-output-capture-2026-06-24.json",
-      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/genome-short-read-mapper-official-output-capture-2026-06-24.json",
+      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/genome-short-read-mapper-redaction-input.json --out tmp/sanitized-captures/genome-short-read-mapper-official-output-capture-2026-06-25.json --dry-run true",
+      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/genome-short-read-mapper-redaction-input.json --out tmp/sanitized-captures/genome-short-read-mapper-official-output-capture-2026-06-25.json",
+      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/genome-short-read-mapper-redaction-input.json --out reference/catalog/genome-short-read-mapper-official-output-capture-2026-06-25.json --confirm-commit-safe true",
+      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/genome-short-read-mapper-official-output-capture-2026-06-25.json",
+      "committedCapturePath": "reference/catalog/genome-short-read-mapper-official-output-capture-2026-06-25.json",
+      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/genome-short-read-mapper-official-output-capture-2026-06-25.json",
+      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/genome-short-read-mapper-official-output-capture-2026-06-25.json",
       "promotionPreviewCommittedCommand": null,
       "captureUrl": "https://sequencing.com/marketplace/genome-short-read-mapper",
-      "expectedSanitizedArtifactPath": "reference/catalog/genome-short-read-mapper-official-output-capture-2026-06-24.json",
-      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/genome-short-read-mapper-official-output-capture-2026-06-24.json",
+      "expectedSanitizedArtifactPath": "reference/catalog/genome-short-read-mapper-official-output-capture-2026-06-25.json",
+      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/genome-short-read-mapper-official-output-capture-2026-06-25.json",
       "captureTemplatePath": "tmp/capture-templates/genome-short-read-mapper-official-output-capture-template.json"
     },
     {
@@ -1303,6 +1550,40 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "officialEvidenceTier": "official-boundary-modeled",
+      "officialBoundaryModeled": true,
+      "officialBoundaryModeledReason": "5 official field/scope signals reviewed as non-promotional boundary evidence.",
+      "officialBoundaryModeledFields": 5,
+      "officialBoundaryModeledEvidence": [
+        "5 official field/scope signals",
+        "manual review: reviewed-boundary-only",
+        "capture: reference/catalog/promethease-official-output-capture-2026-06-24.json"
+      ],
+      "officialBoundaryModel": {
+        "reviewClass": "reviewed-boundary-only",
+        "decision": "keep-boundary-only",
+        "outputSignals": {
+          "reportFile": false,
+          "sampleRows": 0,
+          "resultRows": 0,
+          "formalFields": 5,
+          "citationBindings": 0,
+          "generatedOutput": false
+        },
+        "evidencePresent": [],
+        "evidenceMissing": [],
+        "nextEvidenceNeeded": [],
+        "boundaryUse": "Prompt and scope guidance only; third-party Promethease examples are not Sequencing.com package-specific sample rows.",
+        "promotionBoundary": {
+          "promotesSampleBackedFormalReady": false,
+          "promotesFormalEquivalentReady": false,
+          "promotesSampleRows": false,
+          "promotesResultRows": false,
+          "promotesCitationBindings": false,
+          "removesFormalBlocker": false
+        }
+      },
+      "officialBoundaryModeledBoundary": "Official field/scope boundary only; still missing official non-private rows, row-level citation bindings, and rowEvidenceReady capture.",
       "latestRouteProbe": null,
       "publicBundleEvidence": null,
       "officialCaptureArtifactSummaries": [
@@ -1385,17 +1666,17 @@
       "redactionInputPath": ".soma/private/official-output-redactions/promethease-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report promethease",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/promethease-redaction-input.json",
-      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/promethease-redaction-input.json --out tmp/sanitized-captures/promethease-official-output-capture-2026-06-24.json --dry-run true",
-      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/promethease-redaction-input.json --out tmp/sanitized-captures/promethease-official-output-capture-2026-06-24.json",
-      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/promethease-redaction-input.json --out reference/catalog/promethease-official-output-capture-2026-06-24.json --confirm-commit-safe true",
-      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/promethease-official-output-capture-2026-06-24.json",
-      "committedCapturePath": "reference/catalog/promethease-official-output-capture-2026-06-24.json",
-      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/promethease-official-output-capture-2026-06-24.json",
-      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/promethease-official-output-capture-2026-06-24.json",
+      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/promethease-redaction-input.json --out tmp/sanitized-captures/promethease-official-output-capture-2026-06-25.json --dry-run true",
+      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/promethease-redaction-input.json --out tmp/sanitized-captures/promethease-official-output-capture-2026-06-25.json",
+      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/promethease-redaction-input.json --out reference/catalog/promethease-official-output-capture-2026-06-25.json --confirm-commit-safe true",
+      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/promethease-official-output-capture-2026-06-25.json",
+      "committedCapturePath": "reference/catalog/promethease-official-output-capture-2026-06-25.json",
+      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/promethease-official-output-capture-2026-06-25.json",
+      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/promethease-official-output-capture-2026-06-25.json",
       "promotionPreviewCommittedCommand": null,
       "captureUrl": "https://sequencing.com/marketplace/promethease",
-      "expectedSanitizedArtifactPath": "reference/catalog/promethease-official-output-capture-2026-06-24.json",
-      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/promethease-official-output-capture-2026-06-24.json",
+      "expectedSanitizedArtifactPath": "reference/catalog/promethease-official-output-capture-2026-06-25.json",
+      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/promethease-official-output-capture-2026-06-25.json",
       "captureTemplatePath": "tmp/capture-templates/promethease-official-output-capture-template.json"
     },
     {
@@ -1479,6 +1760,15 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "officialEvidenceTier": "official-metadata-only",
+      "officialBoundaryModeled": false,
+      "officialBoundaryModeledReason": null,
+      "officialBoundaryModeledFields": 0,
+      "officialBoundaryModeledEvidence": [
+        "manual review: reviewed-metadata-only"
+      ],
+      "officialBoundaryModel": null,
+      "officialBoundaryModeledBoundary": null,
       "latestRouteProbe": null,
       "publicBundleEvidence": null,
       "officialCaptureArtifactSummaries": [],
@@ -1542,17 +1832,17 @@
       "redactionInputPath": ".soma/private/official-output-redactions/whole-genome-sequencing-30x-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report whole-genome-sequencing-30x",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/whole-genome-sequencing-30x-redaction-input.json",
-      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/whole-genome-sequencing-30x-redaction-input.json --out tmp/sanitized-captures/whole-genome-sequencing-30x-official-output-capture-2026-06-24.json --dry-run true",
-      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/whole-genome-sequencing-30x-redaction-input.json --out tmp/sanitized-captures/whole-genome-sequencing-30x-official-output-capture-2026-06-24.json",
-      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/whole-genome-sequencing-30x-redaction-input.json --out reference/catalog/whole-genome-sequencing-30x-official-output-capture-2026-06-24.json --confirm-commit-safe true",
-      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/whole-genome-sequencing-30x-official-output-capture-2026-06-24.json",
-      "committedCapturePath": "reference/catalog/whole-genome-sequencing-30x-official-output-capture-2026-06-24.json",
-      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/whole-genome-sequencing-30x-official-output-capture-2026-06-24.json",
-      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/whole-genome-sequencing-30x-official-output-capture-2026-06-24.json",
+      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/whole-genome-sequencing-30x-redaction-input.json --out tmp/sanitized-captures/whole-genome-sequencing-30x-official-output-capture-2026-06-25.json --dry-run true",
+      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/whole-genome-sequencing-30x-redaction-input.json --out tmp/sanitized-captures/whole-genome-sequencing-30x-official-output-capture-2026-06-25.json",
+      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/whole-genome-sequencing-30x-redaction-input.json --out reference/catalog/whole-genome-sequencing-30x-official-output-capture-2026-06-25.json --confirm-commit-safe true",
+      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/whole-genome-sequencing-30x-official-output-capture-2026-06-25.json",
+      "committedCapturePath": "reference/catalog/whole-genome-sequencing-30x-official-output-capture-2026-06-25.json",
+      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/whole-genome-sequencing-30x-official-output-capture-2026-06-25.json",
+      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/whole-genome-sequencing-30x-official-output-capture-2026-06-25.json",
       "promotionPreviewCommittedCommand": null,
       "captureUrl": "https://sequencing.com/marketplace/whole-genome-sequencing-30x",
-      "expectedSanitizedArtifactPath": "reference/catalog/whole-genome-sequencing-30x-official-output-capture-2026-06-24.json",
-      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/whole-genome-sequencing-30x-official-output-capture-2026-06-24.json",
+      "expectedSanitizedArtifactPath": "reference/catalog/whole-genome-sequencing-30x-official-output-capture-2026-06-25.json",
+      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/whole-genome-sequencing-30x-official-output-capture-2026-06-25.json",
       "captureTemplatePath": "tmp/capture-templates/whole-genome-sequencing-30x-official-output-capture-template.json"
     },
     {
@@ -1640,6 +1930,15 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "officialEvidenceTier": "official-metadata-only",
+      "officialBoundaryModeled": false,
+      "officialBoundaryModeledReason": null,
+      "officialBoundaryModeledFields": 0,
+      "officialBoundaryModeledEvidence": [
+        "manual review: reviewed-metadata-only"
+      ],
+      "officialBoundaryModel": null,
+      "officialBoundaryModeledBoundary": null,
       "latestRouteProbe": {
         "slug": "comprehensive-health-screen-wgs-bundle",
         "capturedAt": "2026-06-25T04:22:00Z",
@@ -1758,17 +2057,17 @@
       "redactionInputPath": ".soma/private/official-output-redactions/comprehensive-health-screen-wgs-bundle-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report comprehensive-health-screen-wgs-bundle",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/comprehensive-health-screen-wgs-bundle-redaction-input.json",
-      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/comprehensive-health-screen-wgs-bundle-redaction-input.json --out tmp/sanitized-captures/comprehensive-health-screen-wgs-bundle-official-output-capture-2026-06-24.json --dry-run true",
-      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/comprehensive-health-screen-wgs-bundle-redaction-input.json --out tmp/sanitized-captures/comprehensive-health-screen-wgs-bundle-official-output-capture-2026-06-24.json",
-      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/comprehensive-health-screen-wgs-bundle-redaction-input.json --out reference/catalog/comprehensive-health-screen-wgs-bundle-official-output-capture-2026-06-24.json --confirm-commit-safe true",
-      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/comprehensive-health-screen-wgs-bundle-official-output-capture-2026-06-24.json",
-      "committedCapturePath": "reference/catalog/comprehensive-health-screen-wgs-bundle-official-output-capture-2026-06-24.json",
-      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/comprehensive-health-screen-wgs-bundle-official-output-capture-2026-06-24.json",
-      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/comprehensive-health-screen-wgs-bundle-official-output-capture-2026-06-24.json",
+      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/comprehensive-health-screen-wgs-bundle-redaction-input.json --out tmp/sanitized-captures/comprehensive-health-screen-wgs-bundle-official-output-capture-2026-06-25.json --dry-run true",
+      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/comprehensive-health-screen-wgs-bundle-redaction-input.json --out tmp/sanitized-captures/comprehensive-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
+      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/comprehensive-health-screen-wgs-bundle-redaction-input.json --out reference/catalog/comprehensive-health-screen-wgs-bundle-official-output-capture-2026-06-25.json --confirm-commit-safe true",
+      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/comprehensive-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
+      "committedCapturePath": "reference/catalog/comprehensive-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
+      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/comprehensive-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
+      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/comprehensive-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
       "promotionPreviewCommittedCommand": null,
       "captureUrl": "https://sequencing.com/order/comprehensive-wgs-health-screen-bundle",
-      "expectedSanitizedArtifactPath": "reference/catalog/comprehensive-health-screen-wgs-bundle-official-output-capture-2026-06-24.json",
-      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/comprehensive-health-screen-wgs-bundle-official-output-capture-2026-06-24.json",
+      "expectedSanitizedArtifactPath": "reference/catalog/comprehensive-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
+      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/comprehensive-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
       "captureTemplatePath": "tmp/capture-templates/comprehensive-health-screen-wgs-bundle-official-output-capture-template.json"
     },
     {
@@ -1856,6 +2155,15 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "officialEvidenceTier": "official-metadata-only",
+      "officialBoundaryModeled": false,
+      "officialBoundaryModeledReason": null,
+      "officialBoundaryModeledFields": 0,
+      "officialBoundaryModeledEvidence": [
+        "manual review: reviewed-metadata-only"
+      ],
+      "officialBoundaryModel": null,
+      "officialBoundaryModeledBoundary": null,
       "latestRouteProbe": {
         "slug": "expedited-advanced-health-screen-wgs-bundle",
         "capturedAt": "2026-06-25T04:22:00Z",
@@ -1973,17 +2281,17 @@
       "redactionInputPath": ".soma/private/official-output-redactions/expedited-advanced-health-screen-wgs-bundle-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report expedited-advanced-health-screen-wgs-bundle",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/expedited-advanced-health-screen-wgs-bundle-redaction-input.json",
-      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/expedited-advanced-health-screen-wgs-bundle-redaction-input.json --out tmp/sanitized-captures/expedited-advanced-health-screen-wgs-bundle-official-output-capture-2026-06-24.json --dry-run true",
-      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/expedited-advanced-health-screen-wgs-bundle-redaction-input.json --out tmp/sanitized-captures/expedited-advanced-health-screen-wgs-bundle-official-output-capture-2026-06-24.json",
-      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/expedited-advanced-health-screen-wgs-bundle-redaction-input.json --out reference/catalog/expedited-advanced-health-screen-wgs-bundle-official-output-capture-2026-06-24.json --confirm-commit-safe true",
-      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/expedited-advanced-health-screen-wgs-bundle-official-output-capture-2026-06-24.json",
-      "committedCapturePath": "reference/catalog/expedited-advanced-health-screen-wgs-bundle-official-output-capture-2026-06-24.json",
-      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/expedited-advanced-health-screen-wgs-bundle-official-output-capture-2026-06-24.json",
-      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/expedited-advanced-health-screen-wgs-bundle-official-output-capture-2026-06-24.json",
+      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/expedited-advanced-health-screen-wgs-bundle-redaction-input.json --out tmp/sanitized-captures/expedited-advanced-health-screen-wgs-bundle-official-output-capture-2026-06-25.json --dry-run true",
+      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/expedited-advanced-health-screen-wgs-bundle-redaction-input.json --out tmp/sanitized-captures/expedited-advanced-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
+      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/expedited-advanced-health-screen-wgs-bundle-redaction-input.json --out reference/catalog/expedited-advanced-health-screen-wgs-bundle-official-output-capture-2026-06-25.json --confirm-commit-safe true",
+      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/expedited-advanced-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
+      "committedCapturePath": "reference/catalog/expedited-advanced-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
+      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/expedited-advanced-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
+      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/expedited-advanced-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
       "promotionPreviewCommittedCommand": null,
       "captureUrl": "https://sequencing.com/order/expedited-advanced-wgs-health-screen-bundle",
-      "expectedSanitizedArtifactPath": "reference/catalog/expedited-advanced-health-screen-wgs-bundle-official-output-capture-2026-06-24.json",
-      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/expedited-advanced-health-screen-wgs-bundle-official-output-capture-2026-06-24.json",
+      "expectedSanitizedArtifactPath": "reference/catalog/expedited-advanced-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
+      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/expedited-advanced-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
       "captureTemplatePath": "tmp/capture-templates/expedited-advanced-health-screen-wgs-bundle-official-output-capture-template.json"
     },
     {
@@ -2071,6 +2379,15 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "officialEvidenceTier": "official-metadata-only",
+      "officialBoundaryModeled": false,
+      "officialBoundaryModeledReason": null,
+      "officialBoundaryModeledFields": 0,
+      "officialBoundaryModeledEvidence": [
+        "manual review: reviewed-metadata-only"
+      ],
+      "officialBoundaryModel": null,
+      "officialBoundaryModeledBoundary": null,
       "latestRouteProbe": {
         "slug": "ultra-rapid-professional-health-screen-wgs-bundle",
         "capturedAt": "2026-06-25T04:22:00Z",
@@ -2188,17 +2505,17 @@
       "redactionInputPath": ".soma/private/official-output-redactions/ultra-rapid-professional-health-screen-wgs-bundle-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report ultra-rapid-professional-health-screen-wgs-bundle",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/ultra-rapid-professional-health-screen-wgs-bundle-redaction-input.json",
-      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/ultra-rapid-professional-health-screen-wgs-bundle-redaction-input.json --out tmp/sanitized-captures/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-2026-06-24.json --dry-run true",
-      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/ultra-rapid-professional-health-screen-wgs-bundle-redaction-input.json --out tmp/sanitized-captures/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-2026-06-24.json",
-      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/ultra-rapid-professional-health-screen-wgs-bundle-redaction-input.json --out reference/catalog/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-2026-06-24.json --confirm-commit-safe true",
-      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-2026-06-24.json",
-      "committedCapturePath": "reference/catalog/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-2026-06-24.json",
-      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-2026-06-24.json",
-      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-2026-06-24.json",
+      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/ultra-rapid-professional-health-screen-wgs-bundle-redaction-input.json --out tmp/sanitized-captures/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-2026-06-25.json --dry-run true",
+      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/ultra-rapid-professional-health-screen-wgs-bundle-redaction-input.json --out tmp/sanitized-captures/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
+      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/ultra-rapid-professional-health-screen-wgs-bundle-redaction-input.json --out reference/catalog/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-2026-06-25.json --confirm-commit-safe true",
+      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
+      "committedCapturePath": "reference/catalog/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
+      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
+      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
       "promotionPreviewCommittedCommand": null,
       "captureUrl": "https://sequencing.com/order/ultra-rapid-professional-wgs-health-screen-bundle",
-      "expectedSanitizedArtifactPath": "reference/catalog/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-2026-06-24.json",
-      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-2026-06-24.json",
+      "expectedSanitizedArtifactPath": "reference/catalog/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
+      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
       "captureTemplatePath": "tmp/capture-templates/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-template.json"
     },
     {
@@ -2294,6 +2611,55 @@
         "citationBindings": 0,
         "generatedOutput": true
       },
+      "officialEvidenceTier": "official-boundary-modeled",
+      "officialBoundaryModeled": true,
+      "officialBoundaryModeledReason": "17 official field/scope signals reviewed as non-promotional boundary evidence.",
+      "officialBoundaryModeledFields": 17,
+      "officialBoundaryModeledEvidence": [
+        "official generated-output or output-shape signal present",
+        "17 official field/scope signals",
+        "manual review: reviewed-promotion-candidate",
+        "capture: reference/catalog/connective-tissue-disorders-and-eds-official-output-capture-2026-06-23.json",
+        "validated output-signal capture: reference/catalog/connective-tissue-disorders-and-eds-official-output-capture-2026-06-23.json"
+      ],
+      "officialBoundaryModel": {
+        "reviewClass": "reviewed-promotion-candidate",
+        "decision": "no-promote",
+        "outputSignals": {
+          "reportFile": false,
+          "sampleRows": 0,
+          "resultRows": 0,
+          "formalFields": 17,
+          "citationBindings": 0,
+          "generatedOutput": true
+        },
+        "evidencePresent": [
+          "Authenticated completed-output section structure",
+          "Formal field boundaries",
+          "Public reference domains",
+          "Sanitized generated-output layout"
+        ],
+        "evidenceMissing": [
+          "Non-private row-level finding examples",
+          "Variant or result rows",
+          "Finding labels and interpretation text",
+          "Source-bound row citation bindings"
+        ],
+        "nextEvidenceNeeded": [
+          "Official non-private sample report or export for this exact package",
+          "Sanitized completed-output artifact preserving non-private rows and source IDs"
+        ],
+        "boundaryUse": "Use only as official field/scope boundary evidence; do not infer rows, values, citations, or readiness.",
+        "promotionBoundary": {
+          "promotesSampleBackedFormalReady": false,
+          "promotesFormalEquivalentReady": false,
+          "promotesSampleRows": false,
+          "promotesResultRows": false,
+          "promotesCitationBindings": false,
+          "removesFormalBlocker": false
+        }
+      },
+      "officialBoundaryModeledBoundary": "Official field/scope boundary only; still missing official non-private rows, row-level citation bindings, and rowEvidenceReady capture.",
       "latestRouteProbe": null,
       "publicBundleEvidence": {
         "slug": "connective-tissue-disorders-and-eds",
@@ -2402,17 +2768,17 @@
       "redactionInputPath": ".soma/private/official-output-redactions/connective-tissue-disorders-and-eds-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report connective-tissue-disorders-and-eds",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/connective-tissue-disorders-and-eds-redaction-input.json",
-      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/connective-tissue-disorders-and-eds-redaction-input.json --out tmp/sanitized-captures/connective-tissue-disorders-and-eds-official-output-capture-2026-06-24.json --dry-run true",
-      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/connective-tissue-disorders-and-eds-redaction-input.json --out tmp/sanitized-captures/connective-tissue-disorders-and-eds-official-output-capture-2026-06-24.json",
-      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/connective-tissue-disorders-and-eds-redaction-input.json --out reference/catalog/connective-tissue-disorders-and-eds-official-output-capture-2026-06-24.json --confirm-commit-safe true",
-      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/connective-tissue-disorders-and-eds-official-output-capture-2026-06-24.json",
-      "committedCapturePath": "reference/catalog/connective-tissue-disorders-and-eds-official-output-capture-2026-06-24.json",
-      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/connective-tissue-disorders-and-eds-official-output-capture-2026-06-24.json",
-      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/connective-tissue-disorders-and-eds-official-output-capture-2026-06-24.json",
+      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/connective-tissue-disorders-and-eds-redaction-input.json --out tmp/sanitized-captures/connective-tissue-disorders-and-eds-official-output-capture-2026-06-25.json --dry-run true",
+      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/connective-tissue-disorders-and-eds-redaction-input.json --out tmp/sanitized-captures/connective-tissue-disorders-and-eds-official-output-capture-2026-06-25.json",
+      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/connective-tissue-disorders-and-eds-redaction-input.json --out reference/catalog/connective-tissue-disorders-and-eds-official-output-capture-2026-06-25.json --confirm-commit-safe true",
+      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/connective-tissue-disorders-and-eds-official-output-capture-2026-06-25.json",
+      "committedCapturePath": "reference/catalog/connective-tissue-disorders-and-eds-official-output-capture-2026-06-25.json",
+      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/connective-tissue-disorders-and-eds-official-output-capture-2026-06-25.json",
+      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/connective-tissue-disorders-and-eds-official-output-capture-2026-06-25.json",
       "promotionPreviewCommittedCommand": null,
       "captureUrl": "https://sequencing.com/marketplace/connective-tissue-disorders-and-eds",
-      "expectedSanitizedArtifactPath": "reference/catalog/connective-tissue-disorders-and-eds-official-output-capture-2026-06-24.json",
-      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/connective-tissue-disorders-and-eds-official-output-capture-2026-06-24.json",
+      "expectedSanitizedArtifactPath": "reference/catalog/connective-tissue-disorders-and-eds-official-output-capture-2026-06-25.json",
+      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/connective-tissue-disorders-and-eds-official-output-capture-2026-06-25.json",
       "captureTemplatePath": "tmp/capture-templates/connective-tissue-disorders-and-eds-official-output-capture-template.json"
     },
     {
@@ -2498,6 +2864,15 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "officialEvidenceTier": "official-metadata-only",
+      "officialBoundaryModeled": false,
+      "officialBoundaryModeledReason": null,
+      "officialBoundaryModeledFields": 0,
+      "officialBoundaryModeledEvidence": [
+        "manual review: reviewed-metadata-only"
+      ],
+      "officialBoundaryModel": null,
+      "officialBoundaryModeledBoundary": null,
       "latestRouteProbe": {
         "slug": "ehlers-danlos-syndrome",
         "capturedAt": "2026-06-25T04:22:00Z",
@@ -2616,17 +2991,17 @@
       "redactionInputPath": ".soma/private/official-output-redactions/ehlers-danlos-syndrome-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report ehlers-danlos-syndrome",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/ehlers-danlos-syndrome-redaction-input.json",
-      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/ehlers-danlos-syndrome-redaction-input.json --out tmp/sanitized-captures/ehlers-danlos-syndrome-official-output-capture-2026-06-24.json --dry-run true",
-      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/ehlers-danlos-syndrome-redaction-input.json --out tmp/sanitized-captures/ehlers-danlos-syndrome-official-output-capture-2026-06-24.json",
-      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/ehlers-danlos-syndrome-redaction-input.json --out reference/catalog/ehlers-danlos-syndrome-official-output-capture-2026-06-24.json --confirm-commit-safe true",
-      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/ehlers-danlos-syndrome-official-output-capture-2026-06-24.json",
-      "committedCapturePath": "reference/catalog/ehlers-danlos-syndrome-official-output-capture-2026-06-24.json",
-      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/ehlers-danlos-syndrome-official-output-capture-2026-06-24.json",
-      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/ehlers-danlos-syndrome-official-output-capture-2026-06-24.json",
+      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/ehlers-danlos-syndrome-redaction-input.json --out tmp/sanitized-captures/ehlers-danlos-syndrome-official-output-capture-2026-06-25.json --dry-run true",
+      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/ehlers-danlos-syndrome-redaction-input.json --out tmp/sanitized-captures/ehlers-danlos-syndrome-official-output-capture-2026-06-25.json",
+      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/ehlers-danlos-syndrome-redaction-input.json --out reference/catalog/ehlers-danlos-syndrome-official-output-capture-2026-06-25.json --confirm-commit-safe true",
+      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/ehlers-danlos-syndrome-official-output-capture-2026-06-25.json",
+      "committedCapturePath": "reference/catalog/ehlers-danlos-syndrome-official-output-capture-2026-06-25.json",
+      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/ehlers-danlos-syndrome-official-output-capture-2026-06-25.json",
+      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/ehlers-danlos-syndrome-official-output-capture-2026-06-25.json",
       "promotionPreviewCommittedCommand": null,
       "captureUrl": "https://sequencing.com/marketplace/ehlers-danlos-syndrome",
-      "expectedSanitizedArtifactPath": "reference/catalog/ehlers-danlos-syndrome-official-output-capture-2026-06-24.json",
-      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/ehlers-danlos-syndrome-official-output-capture-2026-06-24.json",
+      "expectedSanitizedArtifactPath": "reference/catalog/ehlers-danlos-syndrome-official-output-capture-2026-06-25.json",
+      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/ehlers-danlos-syndrome-official-output-capture-2026-06-25.json",
       "captureTemplatePath": "tmp/capture-templates/ehlers-danlos-syndrome-official-output-capture-template.json"
     },
     {
@@ -2694,6 +3069,40 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "officialEvidenceTier": "official-boundary-modeled",
+      "officialBoundaryModeled": true,
+      "officialBoundaryModeledReason": "7 official field/scope signals reviewed as non-promotional boundary evidence.",
+      "officialBoundaryModeledFields": 7,
+      "officialBoundaryModeledEvidence": [
+        "7 official field/scope signals",
+        "manual review: reviewed-boundary-only",
+        "capture: reference/catalog/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-24.json"
+      ],
+      "officialBoundaryModel": {
+        "reviewClass": "reviewed-boundary-only",
+        "decision": "keep-boundary-only",
+        "outputSignals": {
+          "reportFile": false,
+          "sampleRows": 0,
+          "resultRows": 0,
+          "formalFields": 7,
+          "citationBindings": 0,
+          "generatedOutput": false
+        },
+        "evidencePresent": [],
+        "evidenceMissing": [],
+        "nextEvidenceNeeded": [],
+        "boundaryUse": "Marketplace summary and keyword scope guidance only; do not infer pipeline execution, command output, QC metrics, variant calls, reports, or citation bindings.",
+        "promotionBoundary": {
+          "promotesSampleBackedFormalReady": false,
+          "promotesFormalEquivalentReady": false,
+          "promotesSampleRows": false,
+          "promotesResultRows": false,
+          "promotesCitationBindings": false,
+          "removesFormalBlocker": false
+        }
+      },
+      "officialBoundaryModeledBoundary": "Official field/scope boundary only; still missing official non-private rows, row-level citation bindings, and rowEvidenceReady capture.",
       "latestRouteProbe": null,
       "publicBundleEvidence": null,
       "officialCaptureArtifactSummaries": [
@@ -2776,17 +3185,17 @@
       "redactionInputPath": ".soma/private/official-output-redactions/eve-premium-dna-genome-data-bioinformatics-pipelines-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report eve-premium-dna-genome-data-bioinformatics-pipelines",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/eve-premium-dna-genome-data-bioinformatics-pipelines-redaction-input.json",
-      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/eve-premium-dna-genome-data-bioinformatics-pipelines-redaction-input.json --out tmp/sanitized-captures/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-24.json --dry-run true",
-      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/eve-premium-dna-genome-data-bioinformatics-pipelines-redaction-input.json --out tmp/sanitized-captures/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-24.json",
-      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/eve-premium-dna-genome-data-bioinformatics-pipelines-redaction-input.json --out reference/catalog/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-24.json --confirm-commit-safe true",
-      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-24.json",
-      "committedCapturePath": "reference/catalog/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-24.json",
-      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-24.json",
-      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-24.json",
+      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/eve-premium-dna-genome-data-bioinformatics-pipelines-redaction-input.json --out tmp/sanitized-captures/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-25.json --dry-run true",
+      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/eve-premium-dna-genome-data-bioinformatics-pipelines-redaction-input.json --out tmp/sanitized-captures/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-25.json",
+      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/eve-premium-dna-genome-data-bioinformatics-pipelines-redaction-input.json --out reference/catalog/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-25.json --confirm-commit-safe true",
+      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-25.json",
+      "committedCapturePath": "reference/catalog/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-25.json",
+      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-25.json",
+      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-25.json",
       "promotionPreviewCommittedCommand": null,
       "captureUrl": "https://sequencing.com/marketplace/eve-premium-dna-genome-data-bioinformatics-pipelines",
-      "expectedSanitizedArtifactPath": "reference/catalog/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-24.json",
-      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-24.json",
+      "expectedSanitizedArtifactPath": "reference/catalog/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-25.json",
+      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-25.json",
       "captureTemplatePath": "tmp/capture-templates/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-template.json"
     },
     {
@@ -2870,6 +3279,15 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "officialEvidenceTier": "official-metadata-only",
+      "officialBoundaryModeled": false,
+      "officialBoundaryModeledReason": null,
+      "officialBoundaryModeledFields": 0,
+      "officialBoundaryModeledEvidence": [
+        "manual review: reviewed-metadata-only"
+      ],
+      "officialBoundaryModel": null,
+      "officialBoundaryModeledBoundary": null,
       "latestRouteProbe": null,
       "publicBundleEvidence": null,
       "officialCaptureArtifactSummaries": [],
@@ -2933,17 +3351,17 @@
       "redactionInputPath": ".soma/private/official-output-redactions/hearing-auditory-genetics-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report hearing-auditory-genetics",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/hearing-auditory-genetics-redaction-input.json",
-      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/hearing-auditory-genetics-redaction-input.json --out tmp/sanitized-captures/hearing-auditory-genetics-official-output-capture-2026-06-24.json --dry-run true",
-      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/hearing-auditory-genetics-redaction-input.json --out tmp/sanitized-captures/hearing-auditory-genetics-official-output-capture-2026-06-24.json",
-      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/hearing-auditory-genetics-redaction-input.json --out reference/catalog/hearing-auditory-genetics-official-output-capture-2026-06-24.json --confirm-commit-safe true",
-      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/hearing-auditory-genetics-official-output-capture-2026-06-24.json",
-      "committedCapturePath": "reference/catalog/hearing-auditory-genetics-official-output-capture-2026-06-24.json",
-      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/hearing-auditory-genetics-official-output-capture-2026-06-24.json",
-      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/hearing-auditory-genetics-official-output-capture-2026-06-24.json",
+      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/hearing-auditory-genetics-redaction-input.json --out tmp/sanitized-captures/hearing-auditory-genetics-official-output-capture-2026-06-25.json --dry-run true",
+      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/hearing-auditory-genetics-redaction-input.json --out tmp/sanitized-captures/hearing-auditory-genetics-official-output-capture-2026-06-25.json",
+      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/hearing-auditory-genetics-redaction-input.json --out reference/catalog/hearing-auditory-genetics-official-output-capture-2026-06-25.json --confirm-commit-safe true",
+      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/hearing-auditory-genetics-official-output-capture-2026-06-25.json",
+      "committedCapturePath": "reference/catalog/hearing-auditory-genetics-official-output-capture-2026-06-25.json",
+      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/hearing-auditory-genetics-official-output-capture-2026-06-25.json",
+      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/hearing-auditory-genetics-official-output-capture-2026-06-25.json",
       "promotionPreviewCommittedCommand": null,
       "captureUrl": "https://sequencing.com/marketplace/hearing-auditory-genetics",
-      "expectedSanitizedArtifactPath": "reference/catalog/hearing-auditory-genetics-official-output-capture-2026-06-24.json",
-      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/hearing-auditory-genetics-official-output-capture-2026-06-24.json",
+      "expectedSanitizedArtifactPath": "reference/catalog/hearing-auditory-genetics-official-output-capture-2026-06-25.json",
+      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/hearing-auditory-genetics-official-output-capture-2026-06-25.json",
       "captureTemplatePath": "tmp/capture-templates/hearing-auditory-genetics-official-output-capture-template.json"
     },
     {
@@ -3029,6 +3447,15 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "officialEvidenceTier": "official-metadata-only",
+      "officialBoundaryModeled": false,
+      "officialBoundaryModeledReason": null,
+      "officialBoundaryModeledFields": 0,
+      "officialBoundaryModeledEvidence": [
+        "manual review: reviewed-metadata-only"
+      ],
+      "officialBoundaryModel": null,
+      "officialBoundaryModeledBoundary": null,
       "latestRouteProbe": {
         "slug": "marfan-syndrome",
         "capturedAt": "2026-06-25T04:22:00Z",
@@ -3121,17 +3548,17 @@
       "redactionInputPath": ".soma/private/official-output-redactions/marfan-syndrome-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report marfan-syndrome",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/marfan-syndrome-redaction-input.json",
-      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/marfan-syndrome-redaction-input.json --out tmp/sanitized-captures/marfan-syndrome-official-output-capture-2026-06-24.json --dry-run true",
-      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/marfan-syndrome-redaction-input.json --out tmp/sanitized-captures/marfan-syndrome-official-output-capture-2026-06-24.json",
-      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/marfan-syndrome-redaction-input.json --out reference/catalog/marfan-syndrome-official-output-capture-2026-06-24.json --confirm-commit-safe true",
-      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/marfan-syndrome-official-output-capture-2026-06-24.json",
-      "committedCapturePath": "reference/catalog/marfan-syndrome-official-output-capture-2026-06-24.json",
-      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/marfan-syndrome-official-output-capture-2026-06-24.json",
-      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/marfan-syndrome-official-output-capture-2026-06-24.json",
+      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/marfan-syndrome-redaction-input.json --out tmp/sanitized-captures/marfan-syndrome-official-output-capture-2026-06-25.json --dry-run true",
+      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/marfan-syndrome-redaction-input.json --out tmp/sanitized-captures/marfan-syndrome-official-output-capture-2026-06-25.json",
+      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/marfan-syndrome-redaction-input.json --out reference/catalog/marfan-syndrome-official-output-capture-2026-06-25.json --confirm-commit-safe true",
+      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/marfan-syndrome-official-output-capture-2026-06-25.json",
+      "committedCapturePath": "reference/catalog/marfan-syndrome-official-output-capture-2026-06-25.json",
+      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/marfan-syndrome-official-output-capture-2026-06-25.json",
+      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/marfan-syndrome-official-output-capture-2026-06-25.json",
       "promotionPreviewCommittedCommand": null,
       "captureUrl": "https://sequencing.com/marketplace/marfan-syndrome",
-      "expectedSanitizedArtifactPath": "reference/catalog/marfan-syndrome-official-output-capture-2026-06-24.json",
-      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/marfan-syndrome-official-output-capture-2026-06-24.json",
+      "expectedSanitizedArtifactPath": "reference/catalog/marfan-syndrome-official-output-capture-2026-06-25.json",
+      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/marfan-syndrome-official-output-capture-2026-06-25.json",
       "captureTemplatePath": "tmp/capture-templates/marfan-syndrome-official-output-capture-template.json"
     },
     {
@@ -3216,6 +3643,15 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "officialEvidenceTier": "official-metadata-only",
+      "officialBoundaryModeled": false,
+      "officialBoundaryModeledReason": null,
+      "officialBoundaryModeledFields": 0,
+      "officialBoundaryModeledEvidence": [
+        "manual review: reviewed-metadata-only"
+      ],
+      "officialBoundaryModel": null,
+      "officialBoundaryModeledBoundary": null,
       "latestRouteProbe": {
         "slug": "mitchell-syndrome",
         "capturedAt": "2026-06-25T04:22:00Z",
@@ -3308,17 +3744,17 @@
       "redactionInputPath": ".soma/private/official-output-redactions/mitchell-syndrome-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report mitchell-syndrome",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/mitchell-syndrome-redaction-input.json",
-      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/mitchell-syndrome-redaction-input.json --out tmp/sanitized-captures/mitchell-syndrome-official-output-capture-2026-06-24.json --dry-run true",
-      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/mitchell-syndrome-redaction-input.json --out tmp/sanitized-captures/mitchell-syndrome-official-output-capture-2026-06-24.json",
-      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/mitchell-syndrome-redaction-input.json --out reference/catalog/mitchell-syndrome-official-output-capture-2026-06-24.json --confirm-commit-safe true",
-      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/mitchell-syndrome-official-output-capture-2026-06-24.json",
-      "committedCapturePath": "reference/catalog/mitchell-syndrome-official-output-capture-2026-06-24.json",
-      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/mitchell-syndrome-official-output-capture-2026-06-24.json",
-      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/mitchell-syndrome-official-output-capture-2026-06-24.json",
+      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/mitchell-syndrome-redaction-input.json --out tmp/sanitized-captures/mitchell-syndrome-official-output-capture-2026-06-25.json --dry-run true",
+      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/mitchell-syndrome-redaction-input.json --out tmp/sanitized-captures/mitchell-syndrome-official-output-capture-2026-06-25.json",
+      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/mitchell-syndrome-redaction-input.json --out reference/catalog/mitchell-syndrome-official-output-capture-2026-06-25.json --confirm-commit-safe true",
+      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/mitchell-syndrome-official-output-capture-2026-06-25.json",
+      "committedCapturePath": "reference/catalog/mitchell-syndrome-official-output-capture-2026-06-25.json",
+      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/mitchell-syndrome-official-output-capture-2026-06-25.json",
+      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/mitchell-syndrome-official-output-capture-2026-06-25.json",
       "promotionPreviewCommittedCommand": null,
       "captureUrl": "https://sequencing.com/marketplace/mitchell-syndrome",
-      "expectedSanitizedArtifactPath": "reference/catalog/mitchell-syndrome-official-output-capture-2026-06-24.json",
-      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/mitchell-syndrome-official-output-capture-2026-06-24.json",
+      "expectedSanitizedArtifactPath": "reference/catalog/mitchell-syndrome-official-output-capture-2026-06-25.json",
+      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/mitchell-syndrome-official-output-capture-2026-06-25.json",
       "captureTemplatePath": "tmp/capture-templates/mitchell-syndrome-official-output-capture-template.json"
     },
     {
@@ -3402,6 +3838,15 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "officialEvidenceTier": "official-metadata-only",
+      "officialBoundaryModeled": false,
+      "officialBoundaryModeledReason": null,
+      "officialBoundaryModeledFields": 0,
+      "officialBoundaryModeledEvidence": [
+        "manual review: reviewed-metadata-only"
+      ],
+      "officialBoundaryModel": null,
+      "officialBoundaryModeledBoundary": null,
       "latestRouteProbe": null,
       "publicBundleEvidence": null,
       "officialCaptureArtifactSummaries": [],
@@ -3465,17 +3910,17 @@
       "redactionInputPath": ".soma/private/official-output-redactions/oral-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report oral",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/oral-redaction-input.json",
-      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/oral-redaction-input.json --out tmp/sanitized-captures/oral-official-output-capture-2026-06-24.json --dry-run true",
-      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/oral-redaction-input.json --out tmp/sanitized-captures/oral-official-output-capture-2026-06-24.json",
-      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/oral-redaction-input.json --out reference/catalog/oral-official-output-capture-2026-06-24.json --confirm-commit-safe true",
-      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/oral-official-output-capture-2026-06-24.json",
-      "committedCapturePath": "reference/catalog/oral-official-output-capture-2026-06-24.json",
-      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/oral-official-output-capture-2026-06-24.json",
-      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/oral-official-output-capture-2026-06-24.json",
+      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/oral-redaction-input.json --out tmp/sanitized-captures/oral-official-output-capture-2026-06-25.json --dry-run true",
+      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/oral-redaction-input.json --out tmp/sanitized-captures/oral-official-output-capture-2026-06-25.json",
+      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/oral-redaction-input.json --out reference/catalog/oral-official-output-capture-2026-06-25.json --confirm-commit-safe true",
+      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/oral-official-output-capture-2026-06-25.json",
+      "committedCapturePath": "reference/catalog/oral-official-output-capture-2026-06-25.json",
+      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/oral-official-output-capture-2026-06-25.json",
+      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/oral-official-output-capture-2026-06-25.json",
       "promotionPreviewCommittedCommand": null,
       "captureUrl": "https://sequencing.com/marketplace/oral",
-      "expectedSanitizedArtifactPath": "reference/catalog/oral-official-output-capture-2026-06-24.json",
-      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/oral-official-output-capture-2026-06-24.json",
+      "expectedSanitizedArtifactPath": "reference/catalog/oral-official-output-capture-2026-06-25.json",
+      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/oral-official-output-capture-2026-06-25.json",
       "captureTemplatePath": "tmp/capture-templates/oral-official-output-capture-template.json"
     },
     {
@@ -3561,6 +4006,15 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "officialEvidenceTier": "official-metadata-only",
+      "officialBoundaryModeled": false,
+      "officialBoundaryModeledReason": null,
+      "officialBoundaryModeledFields": 0,
+      "officialBoundaryModeledEvidence": [
+        "manual review: reviewed-metadata-only"
+      ],
+      "officialBoundaryModel": null,
+      "officialBoundaryModeledBoundary": null,
       "latestRouteProbe": {
         "slug": "pediatric-health",
         "capturedAt": "2026-06-25T04:22:00Z",
@@ -3653,17 +4107,17 @@
       "redactionInputPath": ".soma/private/official-output-redactions/pediatric-health-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report pediatric-health",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/pediatric-health-redaction-input.json",
-      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/pediatric-health-redaction-input.json --out tmp/sanitized-captures/pediatric-health-official-output-capture-2026-06-24.json --dry-run true",
-      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/pediatric-health-redaction-input.json --out tmp/sanitized-captures/pediatric-health-official-output-capture-2026-06-24.json",
-      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/pediatric-health-redaction-input.json --out reference/catalog/pediatric-health-official-output-capture-2026-06-24.json --confirm-commit-safe true",
-      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/pediatric-health-official-output-capture-2026-06-24.json",
-      "committedCapturePath": "reference/catalog/pediatric-health-official-output-capture-2026-06-24.json",
-      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/pediatric-health-official-output-capture-2026-06-24.json",
-      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/pediatric-health-official-output-capture-2026-06-24.json",
+      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/pediatric-health-redaction-input.json --out tmp/sanitized-captures/pediatric-health-official-output-capture-2026-06-25.json --dry-run true",
+      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/pediatric-health-redaction-input.json --out tmp/sanitized-captures/pediatric-health-official-output-capture-2026-06-25.json",
+      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/pediatric-health-redaction-input.json --out reference/catalog/pediatric-health-official-output-capture-2026-06-25.json --confirm-commit-safe true",
+      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/pediatric-health-official-output-capture-2026-06-25.json",
+      "committedCapturePath": "reference/catalog/pediatric-health-official-output-capture-2026-06-25.json",
+      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/pediatric-health-official-output-capture-2026-06-25.json",
+      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/pediatric-health-official-output-capture-2026-06-25.json",
       "promotionPreviewCommittedCommand": null,
       "captureUrl": "https://sequencing.com/marketplace/pediatric-health",
-      "expectedSanitizedArtifactPath": "reference/catalog/pediatric-health-official-output-capture-2026-06-24.json",
-      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/pediatric-health-official-output-capture-2026-06-24.json",
+      "expectedSanitizedArtifactPath": "reference/catalog/pediatric-health-official-output-capture-2026-06-25.json",
+      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/pediatric-health-official-output-capture-2026-06-25.json",
       "captureTemplatePath": "tmp/capture-templates/pediatric-health-official-output-capture-template.json"
     },
     {
@@ -3747,6 +4201,15 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "officialEvidenceTier": "official-metadata-only",
+      "officialBoundaryModeled": false,
+      "officialBoundaryModeledReason": null,
+      "officialBoundaryModeledFields": 0,
+      "officialBoundaryModeledEvidence": [
+        "manual review: reviewed-metadata-only"
+      ],
+      "officialBoundaryModel": null,
+      "officialBoundaryModeledBoundary": null,
       "latestRouteProbe": null,
       "publicBundleEvidence": null,
       "officialCaptureArtifactSummaries": [],
@@ -3810,17 +4273,17 @@
       "redactionInputPath": ".soma/private/official-output-redactions/pheochromocytoma-and-paraganglioma-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report pheochromocytoma-and-paraganglioma",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/pheochromocytoma-and-paraganglioma-redaction-input.json",
-      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/pheochromocytoma-and-paraganglioma-redaction-input.json --out tmp/sanitized-captures/pheochromocytoma-and-paraganglioma-official-output-capture-2026-06-24.json --dry-run true",
-      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/pheochromocytoma-and-paraganglioma-redaction-input.json --out tmp/sanitized-captures/pheochromocytoma-and-paraganglioma-official-output-capture-2026-06-24.json",
-      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/pheochromocytoma-and-paraganglioma-redaction-input.json --out reference/catalog/pheochromocytoma-and-paraganglioma-official-output-capture-2026-06-24.json --confirm-commit-safe true",
-      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/pheochromocytoma-and-paraganglioma-official-output-capture-2026-06-24.json",
-      "committedCapturePath": "reference/catalog/pheochromocytoma-and-paraganglioma-official-output-capture-2026-06-24.json",
-      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/pheochromocytoma-and-paraganglioma-official-output-capture-2026-06-24.json",
-      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/pheochromocytoma-and-paraganglioma-official-output-capture-2026-06-24.json",
+      "dryRunSanitizeCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/pheochromocytoma-and-paraganglioma-redaction-input.json --out tmp/sanitized-captures/pheochromocytoma-and-paraganglioma-official-output-capture-2026-06-25.json --dry-run true",
+      "sanitizeDraftCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/pheochromocytoma-and-paraganglioma-redaction-input.json --out tmp/sanitized-captures/pheochromocytoma-and-paraganglioma-official-output-capture-2026-06-25.json",
+      "commitSanitizedCaptureCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/pheochromocytoma-and-paraganglioma-redaction-input.json --out reference/catalog/pheochromocytoma-and-paraganglioma-official-output-capture-2026-06-25.json --confirm-commit-safe true",
+      "sanitizedDraftArtifactPath": "tmp/sanitized-captures/pheochromocytoma-and-paraganglioma-official-output-capture-2026-06-25.json",
+      "committedCapturePath": "reference/catalog/pheochromocytoma-and-paraganglioma-official-output-capture-2026-06-25.json",
+      "validateDraftCaptureCommand": "npm run scaffold:validate-captures -- --path tmp/sanitized-captures/pheochromocytoma-and-paraganglioma-official-output-capture-2026-06-25.json",
+      "validateCommittedCaptureCommand": "npm run scaffold:validate-captures -- --path reference/catalog/pheochromocytoma-and-paraganglioma-official-output-capture-2026-06-25.json",
       "promotionPreviewCommittedCommand": null,
       "captureUrl": "https://sequencing.com/marketplace/pheochromocytoma-and-paraganglioma",
-      "expectedSanitizedArtifactPath": "reference/catalog/pheochromocytoma-and-paraganglioma-official-output-capture-2026-06-24.json",
-      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/pheochromocytoma-and-paraganglioma-official-output-capture-2026-06-24.json",
+      "expectedSanitizedArtifactPath": "reference/catalog/pheochromocytoma-and-paraganglioma-official-output-capture-2026-06-25.json",
+      "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/pheochromocytoma-and-paraganglioma-official-output-capture-2026-06-25.json",
       "captureTemplatePath": "tmp/capture-templates/pheochromocytoma-and-paraganglioma-official-output-capture-template.json"
     }
   ],
@@ -3887,7 +4350,7 @@
   ],
   "privacyCanary": {
     "schemaVersion": "soma-reports.official-output-capture-privacy-canary.v1",
-    "generatedAt": "2026-06-25T06:43:39.222Z",
+    "generatedAt": "2026-06-25T07:34:19.355Z",
     "ok": true,
     "results": [
       {
@@ -3948,6 +4411,48 @@
         }
       },
       {
+        "name": "citation-binding-missing-row",
+        "passed": true,
+        "expected": {
+          "ok": false,
+          "rowEvidenceReady": false
+        },
+        "actual": {
+          "ok": false,
+          "rowEvidenceReady": false,
+          "promotionSafeProvenance": false,
+          "outputSignalReview": false,
+          "promotionCandidate": false,
+          "problems": [
+            {
+              "path": "$.citationBindings[0].rowId",
+              "message": "must reference an existing sampleRows[] or resultRows[] rowId (missing-output-row was not found)"
+            }
+          ]
+        }
+      },
+      {
+        "name": "formal-field-unknown-source-id",
+        "passed": true,
+        "expected": {
+          "ok": false,
+          "rowEvidenceReady": false
+        },
+        "actual": {
+          "ok": false,
+          "rowEvidenceReady": false,
+          "promotionSafeProvenance": false,
+          "outputSignalReview": false,
+          "promotionCandidate": false,
+          "problems": [
+            {
+              "path": "$.formalFields[0].sourceResourceIds",
+              "message": "must reference a listed source resource id (missing-source-resource was not found)"
+            }
+          ]
+        }
+      },
+      {
         "name": "result-rows-only-source-bound",
         "passed": true,
         "expected": {
@@ -4002,6 +4507,22 @@
       },
       {
         "name": "metadata-only-formal-field-binding",
+        "passed": true,
+        "expected": {
+          "ok": true,
+          "rowEvidenceReady": false
+        },
+        "actual": {
+          "ok": true,
+          "rowEvidenceReady": false,
+          "promotionSafeProvenance": false,
+          "outputSignalReview": true,
+          "promotionCandidate": false,
+          "problems": []
+        }
+      },
+      {
+        "name": "derived-official-bindings-boundary-only",
         "passed": true,
         "expected": {
           "ok": true,

@@ -5,6 +5,9 @@ import { api } from "../../convex/_generated/api";
 import {
   formalEvidenceDecisionFor,
   formalEvidenceTargetFor,
+  officialEvidenceTierBoundaryFor,
+  officialEvidenceTierFor,
+  officialEvidenceTierLabelFor,
   officialOutputActionBoundaryFor,
   officialOutputActionClassFor,
   officialOutputCaptureCaveats,
@@ -489,6 +492,10 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
     : null;
   const officialOutputCaptureStatus = formalEvidenceTarget?.captureStatus ?? null;
   const officialOutputPromotionReview = officialOutputCaptureStatus?.officialOutputPromotionReview ?? null;
+  const officialEvidenceTier = officialEvidenceTierFor(officialOutputCaptureStatus);
+  const officialEvidenceTierLabel = officialEvidenceTierLabelFor(officialOutputCaptureStatus);
+  const officialEvidenceTierBoundary = officialEvidenceTierBoundaryFor(officialOutputCaptureStatus);
+  const officialBoundaryModel = officialOutputCaptureStatus?.officialBoundaryModel ?? null;
   const officialOutputReviewEvidencePresent = officialOutputCaptureStatus?.officialOutputReviewEvidencePresent ?? [];
   const officialOutputReviewEvidenceMissing = officialOutputCaptureStatus?.officialOutputReviewEvidenceMissing ?? [];
   const officialOutputActionClass = officialOutputActionClassFor(officialOutputCaptureStatus);
@@ -1167,6 +1174,10 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                 <strong>{readinessState.sampleBackedFormalReady ? "Ready" : "Pending"}</strong>
               </div>
               <div>
+                <span>Official boundary</span>
+                <strong>{formalEvidenceTarget ? officialEvidenceTierLabel : "Not a blocker"}</strong>
+              </div>
+              <div>
                 <span>Scaffold-only</span>
                 <strong>{readinessState.localScaffoldOnly ? "Yes; not source-backed" : "No"}</strong>
               </div>
@@ -1324,6 +1335,22 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                   </strong>
                 </div>
                 <div>
+                  <span>Boundary tier</span>
+                  <strong>
+                    <span className={`evidence-status evidence-status-${officialEvidenceTier}`}>
+                      {officialEvidenceTierLabel}
+                    </span>
+                  </strong>
+                </div>
+                <div>
+                  <span>Boundary fields</span>
+                  <strong>{officialOutputCaptureStatus?.officialBoundaryModeledFields ?? 0}</strong>
+                </div>
+                <div>
+                  <span>Promotes readiness</span>
+                  <strong>{officialBoundaryModel ? "No" : "No row evidence"}</strong>
+                </div>
+                <div>
                   <span>Template</span>
                   <strong>{officialOutputCaptureStatus?.templateExists ? "present" : "missing"}</strong>
                 </div>
@@ -1424,6 +1451,16 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                 <div>
                   <strong>Completed-output gate</strong>
                   <p>{officialOutputActionBoundary}</p>
+                </div>
+                <div>
+                  <strong>{officialEvidenceTierLabel}</strong>
+                  <p>{officialEvidenceTierBoundary}</p>
+                  {officialBoundaryModel ? (
+                    <p>
+                      Does not promote sample-backed formal readiness, formal parity, sample rows, result rows,
+                      citation bindings, or formal blocker removal.
+                    </p>
+                  ) : null}
                 </div>
                 {officialOutputNextEvidence.length > 0 ? (
                   <div>
