@@ -114,6 +114,11 @@ const summarizeRun = (run) => {
               rowEvidencePromotionReadyTargets: run.parsed.totals.rowEvidencePromotionReadyTargets,
               officialBoundaryModeledTargets: run.parsed.totals.officialBoundaryModeledTargets,
               officialBoundaryModeledFormalFields: run.parsed.totals.officialBoundaryModeledFormalFields,
+              missingCommittedOfficialCaptureTargets: run.parsed.totals.missingCommittedOfficialCaptureTargets,
+              metadataOnlyMissingCommittedCaptureTargets:
+                run.parsed.totals.metadataOnlyMissingCommittedCaptureTargets,
+              boundaryModeledMissingCommittedCaptureTargets:
+                run.parsed.totals.boundaryModeledMissingCommittedCaptureTargets,
               committedRowEvidenceReadyCaptures: run.parsed.totals.committedRowEvidenceReadyCaptures,
               outsideCurrentBlockerLedgerCaptures: run.parsed.totals.outsideCurrentBlockerLedgerCaptures,
             }
@@ -128,6 +133,22 @@ const summarizeRun = (run) => {
               rowEvidencePromotionReadyTargets:
                 run.parsed.officialBoundaryNonPromotionAudit.rowEvidencePromotionReadyTargets,
               failures: run.parsed.officialBoundaryNonPromotionAudit.failures ?? [],
+            }
+          : null,
+        captureArtifactGaps: run.parsed.captureArtifactGaps
+          ? {
+              missingCommittedOfficialCaptureTargets:
+                run.parsed.captureArtifactGaps.missingCommittedOfficialCaptureTargets,
+              metadataOnlyMissingCommittedCaptureTargets:
+                run.parsed.captureArtifactGaps.metadataOnlyMissingCommittedCaptureTargets,
+              boundaryModeledMissingCommittedCaptureTargets:
+                run.parsed.captureArtifactGaps.boundaryModeledMissingCommittedCaptureTargets,
+              missingCommittedOfficialCaptureSlugs:
+                run.parsed.captureArtifactGaps.missingCommittedOfficialCaptureSlugs ?? [],
+              metadataOnlyMissingCommittedCaptureSlugs:
+                run.parsed.captureArtifactGaps.metadataOnlyMissingCommittedCaptureSlugs ?? [],
+              boundaryModeledMissingCommittedCaptureSlugs:
+                run.parsed.captureArtifactGaps.boundaryModeledMissingCommittedCaptureSlugs ?? [],
             }
           : null,
         problems: run.parsed.problems?.slice(0, 10) ?? [],
@@ -762,6 +783,50 @@ const checks = [
           officialEvidenceTierCounts: captureStatus.officialEvidenceTierCounts,
           officialBoundaryNonPromotionAudit: captureStatus.officialBoundaryNonPromotionAudit,
           problems: captureStatus.problems?.slice(0, 10) ?? [],
+        }
+      : null,
+  },
+  {
+    key: "official_capture_artifact_gap_contract",
+    ok:
+      runsByName.get("scaffold:capture-status")?.exitCode === 0 &&
+      captureStatus?.ok === true &&
+      captureStatus?.captureArtifactGaps &&
+      captureStatus.captureArtifactGaps.missingCommittedOfficialCaptureTargets ===
+        captureStatus.captureArtifactGaps.rows?.length &&
+      captureStatus.captureArtifactGaps.missingCommittedOfficialCaptureTargets ===
+        captureStatus.totals?.missingCommittedOfficialCaptureTargets &&
+      captureStatus.captureArtifactGaps.metadataOnlyMissingCommittedCaptureTargets ===
+        captureStatus.totals?.metadataOnlyMissingCommittedCaptureTargets &&
+      captureStatus.captureArtifactGaps.boundaryModeledMissingCommittedCaptureTargets ===
+        captureStatus.totals?.boundaryModeledMissingCommittedCaptureTargets &&
+      captureStatus.captureArtifactGaps.metadataOnlyMissingCommittedCaptureTargets ===
+        captureStatus.captureArtifactGaps.missingCommittedOfficialCaptureTargets &&
+      captureStatus.captureArtifactGaps.boundaryModeledMissingCommittedCaptureTargets === 0 &&
+      captureStatus.captureArtifactGaps.boundaryModeledMissingCommittedCaptureSlugs?.length === 0 &&
+      captureStatus.captureArtifactGaps.rows.every(
+        (row) =>
+          row.officialEvidenceTier === "official-metadata-only" &&
+          row.officialCaptures === 0 &&
+          row.boundary?.includes("Metadata-only source state") &&
+          row.expectedSanitizedArtifactPath?.includes("-official-output-capture-") &&
+          row.publicCaptureSessionCommand?.includes("scaffold:capture-session -- --source public"),
+      ),
+    expected:
+      "missing committed official-output capture artifacts remain explicit, all current missing rows are metadata-only, and no boundary-modeled blocker is reported as missing a committed capture",
+    actual: captureStatus
+      ? {
+          totals: {
+            missingCommittedOfficialCaptureTargets:
+              captureStatus.totals?.missingCommittedOfficialCaptureTargets,
+            metadataOnlyMissingCommittedCaptureTargets:
+              captureStatus.totals?.metadataOnlyMissingCommittedCaptureTargets,
+            boundaryModeledMissingCommittedCaptureTargets:
+              captureStatus.totals?.boundaryModeledMissingCommittedCaptureTargets,
+            reviewedMetadataOnlyTargets: captureStatus.totals?.reviewedMetadataOnlyTargets,
+            officialBoundaryModeledTargets: captureStatus.totals?.officialBoundaryModeledTargets,
+          },
+          captureArtifactGaps: captureStatus.captureArtifactGaps ?? null,
         }
       : null,
   },

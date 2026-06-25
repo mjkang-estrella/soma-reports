@@ -452,6 +452,8 @@ export default function App() {
     DETAIL_TARGET_LIMIT,
   );
   const officialCaptureTotals = officialCaptureStatus.totals;
+  const captureArtifactGaps = officialCaptureStatus.captureArtifactGaps;
+  const captureArtifactGapBySlug = new Map(captureArtifactGaps.rows.map((gap) => [gap.slug, gap] as const));
   const committedOfficialCaptureCount =
     officialCaptureTotals.committedOfficialOutputCaptureArtifacts ??
     officialCaptureTotals.officialOutputCaptureArtifacts;
@@ -468,6 +470,15 @@ export default function App() {
   const gitUntrackedOfficialCaptureCount = officialCaptureTotals.gitUntrackedOfficialOutputCaptureArtifacts ?? 0;
   const gitTrackedRowEvidenceReadyCaptureCount = officialCaptureTotals.gitTrackedRowEvidenceReadyCaptures ?? 0;
   const outsideCurrentBlockerLedgerCaptureCount = officialCaptureTotals.outsideCurrentBlockerLedgerCaptures ?? 0;
+  const missingCommittedOfficialCaptureCount =
+    officialCaptureTotals.missingCommittedOfficialCaptureTargets ??
+    captureArtifactGaps.missingCommittedOfficialCaptureTargets;
+  const metadataOnlyMissingCommittedCaptureCount =
+    officialCaptureTotals.metadataOnlyMissingCommittedCaptureTargets ??
+    captureArtifactGaps.metadataOnlyMissingCommittedCaptureTargets;
+  const boundaryModeledMissingCommittedCaptureCount =
+    officialCaptureTotals.boundaryModeledMissingCommittedCaptureTargets ??
+    captureArtifactGaps.boundaryModeledMissingCommittedCaptureTargets;
   const officialBoundaryModeledTargetCount =
     officialCaptureTotals.officialBoundaryModeledTargets ??
     officialOutputCaptureTargets.filter(
@@ -974,6 +985,18 @@ export default function App() {
                   git-tracked captures
                 </span>
                 <span>
+                  <strong>{missingCommittedOfficialCaptureCount}</strong>
+                  missing capture artifacts
+                </span>
+                <span>
+                  <strong>{metadataOnlyMissingCommittedCaptureCount}</strong>
+                  metadata-only artifact gaps
+                </span>
+                <span>
+                  <strong>{boundaryModeledMissingCommittedCaptureCount}</strong>
+                  boundary artifact gaps
+                </span>
+                <span>
                   <strong>{gitUntrackedOfficialCaptureCount}</strong>
                   untracked captures
                 </span>
@@ -1073,6 +1096,18 @@ export default function App() {
                   ))}
                 </div>
               ) : null}
+              {captureArtifactGaps.rows.length > 0 ? (
+                <div className="official-capture-non-target-list">
+                  <strong>Missing committed official-output capture artifacts</strong>
+                  {captureArtifactGaps.rows.slice(0, 12).map((gap) => (
+                    <span key={gap.slug}>
+                      {gap.title}: {formatGapLabel(gap.officialEvidenceTier)}, expected{" "}
+                      {gap.expectedSanitizedArtifactPath}
+                    </span>
+                  ))}
+                  <span>{captureArtifactGaps.boundary}</span>
+                </div>
+              ) : null}
               <div className="official-capture-non-target-list">
                 <strong>Non-promotion caveats</strong>
                 {officialOutputCaptureCaveats.map((caveat) => (
@@ -1113,6 +1148,9 @@ export default function App() {
                   {officialCaptureTotals.publicOnlyTargets ?? 0} public-catalog-only targets.
                   Evidence tiers: {officialBoundaryModeledTargetCount} official-boundary modeled,{" "}
                   {officialMetadataOnlyTargetCount} metadata-only, {officialCaptureTotals.rowEvidenceReadyTargets} row-ready.
+                  Missing committed artifacts: {missingCommittedOfficialCaptureCount} total,{" "}
+                  {metadataOnlyMissingCommittedCaptureCount} metadata-only and{" "}
+                  {boundaryModeledMissingCommittedCaptureCount} boundary-modeled.
                   Public endpoint probe: {officialPublicEndpointProbe.totals.fetched}/
                   {officialPublicEndpointProbe.totals.targets} fetched, {officialPublicEndpointProbe.totals.parsed} parsed,{" "}
                   {officialPublicEndpointProbe.totals.unavailable} expected unavailable,{" "}
@@ -1177,6 +1215,7 @@ export default function App() {
                   const gateMissing = captureStatus?.formalReadinessGate?.missing ?? [];
                   const missingEvidence = reviewMissing.length > 0 ? reviewMissing : gateMissing;
                   const outputSignalSummary = formatOutputSignals(captureStatus?.formalReadinessGate?.currentOutputSignals);
+                  const captureArtifactGap = captureArtifactGapBySlug.get(target.slug) ?? null;
                   const nextCommand =
                     captureStatus?.nextCommand ??
                     target.templateCommand ??
@@ -1283,6 +1322,9 @@ export default function App() {
                           {captureStatus?.rowEvidencePromotionReadyCaptures ?? captureStatus?.promotionCandidates ?? 0}{" "}
                           row-evidence promotable; {outputSignalSummary}
                         </small>
+                        {captureArtifactGap ? (
+                          <small>missing committed artifact: {captureArtifactGap.expectedSanitizedArtifactPath}</small>
+                        ) : null}
                       </span>
 	                      <span>
 	                        {nextEvidence[0] ?? target.firstRequiredEvidence}
@@ -1394,6 +1436,7 @@ export default function App() {
 	                const publicBundleEvidence = captureStatus?.publicBundleEvidence ?? null;
                   const sourceCoverage = target.sourceCoverage ?? captureStatus?.sourceCoverage ?? null;
 	                const formalGate = captureStatus?.formalReadinessGate ?? null;
+                  const captureArtifactGap = captureArtifactGapBySlug.get(target.slug) ?? null;
 
                 return (
                   <article key={target.slug} className="official-capture-card">
@@ -1444,6 +1487,15 @@ export default function App() {
                           {captureStatus?.rowEvidencePromotionReadyCaptures ?? captureStatus?.promotionCandidates ?? 0}{" "}
                           row-evidence promotable /{" "}
                           {captureStatus?.gitTrackedOfficialCapturePaths?.length ?? 0} git-tracked
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>Committed artifact</dt>
+                        <dd>
+                          {captureArtifactGap ? "missing" : "present"} /{" "}
+                          {captureArtifactGap?.expectedSanitizedArtifactPath ??
+                            captureStatus?.committedCapturePath ??
+                            target.expectedSanitizedArtifactPath}
                         </dd>
                       </div>
                       <div>

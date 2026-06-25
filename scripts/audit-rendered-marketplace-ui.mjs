@@ -162,6 +162,11 @@ const evaluateRenderedPage = `async () => {
   const inspectButtons = [...document.querySelectorAll("#position-ledger .position-row button")];
   const officialCaptureCards = [...document.querySelectorAll(".official-capture-card")];
   const officialCaptureCardTexts = officialCaptureCards.map((card) => normalize(card.innerText));
+  const missingCaptureArtifactPanel = [...document.querySelectorAll(".official-capture-non-target-list")].find((panel) =>
+    /Missing committed official-output capture artifacts/i.test(panel.innerText || ""),
+  );
+  const missingCaptureArtifactPanelText = normalize(missingCaptureArtifactPanel?.innerText);
+  const completionWorkbenchText = normalize(document.querySelector(".completion-workbench")?.innerText);
   const officialCapturePacketButtons = [...document.querySelectorAll(".completion-workbench-actions button")].filter(
     (button) => /copy packet/i.test(button.innerText || ""),
   );
@@ -250,6 +255,17 @@ const evaluateRenderedPage = `async () => {
     officialCaptureCardsWithPublicPromotionGaps: officialCaptureCardTexts.filter((text) =>
       /Missing for promotion:/i.test(text),
     ).length,
+    missingCaptureArtifactPanelRendered: missingCaptureArtifactPanelText.length > 0,
+    missingCaptureArtifactPanelMetadataOnlyRows:
+      (missingCaptureArtifactPanelText.match(/official metadata only/gi) || []).length,
+    missingCaptureArtifactPanelBoundaryModeledRows:
+      (missingCaptureArtifactPanelText.match(/official boundary modeled/gi) || []).length,
+    missingCaptureArtifactPanelExpectedPaths:
+      (missingCaptureArtifactPanelText.match(
+        /reference\\/catalog\\/[\\w-]+-official-output-capture-\\d{4}-\\d{2}-\\d{2}\\.json/gi,
+      ) || []).length,
+    completionWorkbenchMissingCommittedArtifactRows:
+      (completionWorkbenchText.match(/missing committed artifact:/gi) || []).length,
     officialCaptureBoardText: normalize(document.querySelector(".official-capture-board")?.innerText).slice(0, 3000),
     selectedReportTitle,
     selectedDetailText: selectedDetailText.slice(0, 4000),
@@ -622,6 +638,23 @@ try {
   );
   addCheck(
     checks,
+    "official_capture_missing_artifact_panel",
+    rendered.missingCaptureArtifactPanelRendered &&
+      rendered.missingCaptureArtifactPanelMetadataOnlyRows === 12 &&
+      rendered.missingCaptureArtifactPanelBoundaryModeledRows === 0 &&
+      rendered.missingCaptureArtifactPanelExpectedPaths === 12 &&
+      rendered.completionWorkbenchMissingCommittedArtifactRows === 12,
+    "missing committed capture artifact panel renders 12 metadata-only rows, 12 expected artifact paths, 12 workbench warnings, and no boundary-modeled missing rows",
+    {
+      missingCaptureArtifactPanelRendered: rendered.missingCaptureArtifactPanelRendered,
+      missingCaptureArtifactPanelMetadataOnlyRows: rendered.missingCaptureArtifactPanelMetadataOnlyRows,
+      missingCaptureArtifactPanelBoundaryModeledRows: rendered.missingCaptureArtifactPanelBoundaryModeledRows,
+      missingCaptureArtifactPanelExpectedPaths: rendered.missingCaptureArtifactPanelExpectedPaths,
+      completionWorkbenchMissingCommittedArtifactRows: rendered.completionWorkbenchMissingCommittedArtifactRows,
+    },
+  );
+  addCheck(
+    checks,
     "selected_capture_boundary_detail",
     (rendered.selectedDetailShowsBoundaryModeled || rendered.selectedDetailShowsMetadataOnly) &&
       rendered.selectedDetailShowsSampleBackedPending &&
@@ -839,6 +872,12 @@ try {
         rendered.officialCaptureCardsWithCaptureStatusSnapshotCommand,
       officialCaptureCardsWithRouteProbeBoundary: rendered.officialCaptureCardsWithRouteProbeBoundary,
       officialCaptureCardsWithPublicPromotionGaps: rendered.officialCaptureCardsWithPublicPromotionGaps,
+      missingCaptureArtifactPanelRendered: rendered.missingCaptureArtifactPanelRendered,
+      missingCaptureArtifactPanelMetadataOnlyRows: rendered.missingCaptureArtifactPanelMetadataOnlyRows,
+      missingCaptureArtifactPanelBoundaryModeledRows: rendered.missingCaptureArtifactPanelBoundaryModeledRows,
+      missingCaptureArtifactPanelExpectedPaths: rendered.missingCaptureArtifactPanelExpectedPaths,
+      completionWorkbenchMissingCommittedArtifactRows:
+        rendered.completionWorkbenchMissingCommittedArtifactRows,
       selectedReportTitle: rendered.selectedReportTitle,
       selectedCaptureTemplateHasPlaceholderStatus: rendered.selectedCaptureTemplateHasPlaceholderStatus,
       selectedCaptureTemplateHasConfirmationFields: rendered.selectedCaptureTemplateHasConfirmationFields,

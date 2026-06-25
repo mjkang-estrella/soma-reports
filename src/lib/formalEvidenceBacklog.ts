@@ -413,6 +413,36 @@ export type NonTargetOfficialOutputCapture = {
   status: string;
 };
 
+export type CaptureArtifactGapRow = {
+  slug: string;
+  title: string;
+  stage: OfficialOutputCaptureStage;
+  officialEvidenceTier: OfficialEvidenceTier;
+  evidenceClass: "missing-exact-detail" | "metadata-only";
+  sourceCoverage?: OfficialOutputSourceCoverage | null;
+  officialCaptures: number;
+  expectedSanitizedArtifactPath: string;
+  publicCaptureSessionCommand?: string | null;
+  redactionTemplateCommand?: string | null;
+  dryRunSanitizeCommand?: string | null;
+  commitSanitizedCaptureCommand?: string | null;
+  validationCommandForExpectedCapture?: string | null;
+  requiredEvidenceForPromotion: string[];
+  missingOfficialRowEvidence: string[];
+  boundary: string;
+};
+
+export type CaptureArtifactGapsSummary = {
+  missingCommittedOfficialCaptureTargets: number;
+  metadataOnlyMissingCommittedCaptureTargets: number;
+  boundaryModeledMissingCommittedCaptureTargets: number;
+  missingCommittedOfficialCaptureSlugs: string[];
+  metadataOnlyMissingCommittedCaptureSlugs: string[];
+  boundaryModeledMissingCommittedCaptureSlugs: string[];
+  rows: CaptureArtifactGapRow[];
+  boundary: string;
+};
+
 export type FormalReadinessGate = {
   validatorCommand: string;
   requirements: string[];
@@ -491,6 +521,9 @@ export type OfficialOutputCaptureStatusSummary = {
     reviewedMetadataOnlyTargets?: number;
     officialBoundaryModeledTargets?: number;
     officialBoundaryModeledFormalFields?: number;
+    missingCommittedOfficialCaptureTargets?: number;
+    metadataOnlyMissingCommittedCaptureTargets?: number;
+    boundaryModeledMissingCommittedCaptureTargets?: number;
     unreviewedOutputSignalReviewTargets?: number;
     unreviewedPromotionCandidateTargets?: number;
     latestRouteProbeTargets?: number;
@@ -524,6 +557,7 @@ export type OfficialOutputCaptureStatusSummary = {
   problems: string[];
   statusCounts: Record<string, number>;
   officialEvidenceTierCounts?: Partial<Record<OfficialEvidenceTier, number>>;
+  captureArtifactGaps: CaptureArtifactGapsSummary;
   nonTargetOfficialOutputCaptures: NonTargetOfficialOutputCapture[];
   commands: {
     generateTemplates: string;
@@ -1006,6 +1040,16 @@ export const formalEvidenceBacklogSummary: FormalEvidenceBacklogSummary = {
     problems: officialOutputCaptureStatus.problems,
     statusCounts: officialOutputCaptureStatus.statusCounts,
     officialEvidenceTierCounts: officialOutputCaptureStatus.officialEvidenceTierCounts,
+    captureArtifactGaps: (officialOutputCaptureStatus.captureArtifactGaps ?? {
+      missingCommittedOfficialCaptureTargets: 0,
+      metadataOnlyMissingCommittedCaptureTargets: 0,
+      boundaryModeledMissingCommittedCaptureTargets: 0,
+      missingCommittedOfficialCaptureSlugs: [],
+      metadataOnlyMissingCommittedCaptureSlugs: [],
+      boundaryModeledMissingCommittedCaptureSlugs: [],
+      rows: [],
+      boundary: "No capture artifact gap summary is present in this status snapshot.",
+    }) as CaptureArtifactGapsSummary,
     nonTargetOfficialOutputCaptures: officialOutputCaptureStatus.nonTargetOfficialOutputCaptures ?? [],
     commands: officialOutputCaptureStatus.commands,
     privacyBoundary: officialOutputCaptureStatus.privacyBoundary,
