@@ -1,10 +1,19 @@
 {
+  "schemaVersion": "soma-reports.synthetic-result.v1",
   "reportOverview": {
     "reportTitle": "Metabolic Health DNA Report",
     "inputManifestHash": "sha256:synthetic-metabolic-health-dna-report-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "No calibrated metabolic, glucose, diabetes, insulin-resistance, weight, food-response, micronutrient, supplement, diet-history, symptom, lab, medication, or ancestry-applicability model is supplied with this fixture."
+      "No direct Metabolic Health DNA Report sample report has been captured.",
+      "Sibling Food Sensitivity and Healthy Nutrition sample rows are used only as observed metabolic-health DNA output-structure evidence.",
+      "No calibrated metabolic, glucose, diabetes, insulin-resistance, weight, food-response, micronutrient, supplement, diet-history, symptom, lab, medication, or ancestry applicability model is supplied with this fixture."
+    ],
+    "plainEnglishMeaning": "This run can describe supplied lactose-related marker context and reproduce sibling nutrition sample output structure, but it cannot diagnose metabolic disease, predict diabetes, infer insulin resistance, predict glucose, interpret labs, model BMI or weight, set nutrient targets, recommend diet or supplements, change medications, or guide treatment.",
+    "sourceIds": [
+      "medlineplus-lactose-intolerance",
+      "medlineplus-mcm6",
+      "food-sensitivity-sample-pdf",
+      "healthy-nutrition-sample-pdf"
     ]
   },
   "resultRows": [
@@ -12,7 +21,8 @@
       "groupTitle": "Metabolic health DNA context",
       "item": "MCM6/LCT rs4988235",
       "brandName": "Not applicable",
-      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a metabolic diagnosis, glucose prediction, diabetes prediction, insulin-resistance result, weight result, lab interpretation, diet recommendation, supplement recommendation, medication result, or treatment result.",
+      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a metabolic diagnosis, glucose prediction, diabetes prediction, insulin-resistance result, BMI or weight result, lab interpretation, diet recommendation, supplement recommendation, medication result, or treatment result.",
+      "description": "Local synthetic fixture row for conservative lactose-related marker context.",
       "genes": [
         "MCM6",
         "LCT"
@@ -22,13 +32,15 @@
         "medlineplus-lactose-intolerance",
         "medlineplus-mcm6"
       ],
-      "plainEnglishMeaning": "This marker can provide lactose-related context, but symptoms, diet history, labs, medications, environment, and professional review matter for metabolic-health decisions."
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This marker can provide lactose-related context, but symptoms, diet history, labs, medications, environment, ancestry, and professional review matter for metabolic-health decisions."
     },
     {
-      "groupTitle": "Nutrition model availability",
+      "groupTitle": "Metabolic model availability",
       "item": "Metabolic health DNA model",
       "brandName": "Not applicable",
       "geneticAnalysis": "No calibrated metabolic score, glucose model, diabetes model, insulin-resistance model, weight model, food-response model, micronutrient model, supplement model, diet-history context, symptom context, lab context, medication context, or ancestry applicability metadata is supplied with this fixture.",
+      "description": "Local synthetic fixture row marking the package-specific calibrated model and non-genetic context unavailable.",
       "genes": [
         "Metabolic health DNA model"
       ],
@@ -37,59 +49,1032 @@
         "nutritional-genomics-dtc-review",
         "ebi-gwas-catalog"
       ],
-      "plainEnglishMeaning": "The report can describe supplied marker context, but it should not make metabolic, glucose, diabetes, insulin-resistance, weight, lab, diet, supplement, medication, or treatment conclusions without validated evidence."
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The report can describe supplied marker context, but it should not make metabolic, glucose, diabetes, insulin-resistance, BMI/weight, lab, diet, supplement, medication, diagnosis, or treatment conclusions without validated evidence."
+    },
+    {
+      "groupTitle": "Sibling sample report: Sensitivity results summary",
+      "item": "Alcohol, caffeine, lactose, and gluten summary cards",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample summary cards show Alcohol: Slow Metabolism; Caffeine: Fast Metabolism; Lactose: Likely Sensitive; Gluten: Not Likely Sensitive, with a legend separating likely-sensitive from not-likely-sensitive labels.",
+      "description": "The sample summary page presents the four result cards before detailed substance and sensitivity sections.",
+      "genes": [
+        "ADH1C",
+        "CYP1A2",
+        "LCT",
+        "MCM6-LCT",
+        "HLA-DQA1",
+        "HLA-DQ8"
+      ],
+      "sourceLabel": "Sibling Food Sensitivity sample report",
+      "sourceIds": [
+        "food-sensitivity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample summary page presents the four result cards before detailed substance and sensitivity sections. Observed sibling sample-report structure only for Metabolic Health DNA Report formatting. Keep this separate from local genome evidence; it is not a direct Metabolic Health DNA Report sample, metabolic disease finding, diabetes-risk estimate, insulin-resistance inference, glucose prediction, HbA1c or lab interpretation, BMI/weight result, nutrient target, diet plan, supplement recommendation, medication action, diagnosis, or treatment guidance."
+    },
+    {
+      "groupTitle": "Sibling sample report: Substances",
+      "item": "Alcohol and caffeine metabolism overview",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample introduces alcohol and caffeine as substances whose metabolism can vary with genetic markers, then notes that slower metabolism markers may mean the body takes longer to clear alcohol or caffeine.",
+      "description": "The substances section precedes the detailed Alcohol Metabolism and Caffeine Metabolism pages.",
+      "genes": [
+        "ADH1C",
+        "CYP1A2"
+      ],
+      "sourceLabel": "Sibling Food Sensitivity sample report",
+      "sourceIds": [
+        "food-sensitivity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The substances section precedes the detailed Alcohol Metabolism and Caffeine Metabolism pages. Observed sibling sample-report structure only for Metabolic Health DNA Report formatting. Keep this separate from local genome evidence; it is not a direct Metabolic Health DNA Report sample, metabolic disease finding, diabetes-risk estimate, insulin-resistance inference, glucose prediction, HbA1c or lab interpretation, BMI/weight result, nutrient target, diet plan, supplement recommendation, medication action, diagnosis, or treatment guidance."
+    },
+    {
+      "groupTitle": "Sibling sample report: Alcohol Metabolism",
+      "item": "ADH1C gene table and slow-metabolism result",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample Alcohol Metabolism page says the sample genome is more likely to have slow alcohol metabolism. The visible gene table lists ADH1C marker GP000071 genotype TT with slow alcohol metabolism impact, plus ADH1C GP000072 genotype CC and ADH1C GP000073 genotype TT with normal alcohol metabolism impact.",
+      "description": "The page also lists common alcohol sources and a what-can-you-do block about tracking drinks, spacing them out, and drinking water.",
+      "genes": [
+        "ADH1C"
+      ],
+      "sourceLabel": "Sibling Food Sensitivity sample report",
+      "sourceIds": [
+        "food-sensitivity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The page also lists common alcohol sources and a what-can-you-do block about tracking drinks, spacing them out, and drinking water. Observed sibling sample-report structure only for Metabolic Health DNA Report formatting. Keep this separate from local genome evidence; it is not a direct Metabolic Health DNA Report sample, metabolic disease finding, diabetes-risk estimate, insulin-resistance inference, glucose prediction, HbA1c or lab interpretation, BMI/weight result, nutrient target, diet plan, supplement recommendation, medication action, diagnosis, or treatment guidance."
+    },
+    {
+      "groupTitle": "Sibling sample report: Caffeine Metabolism",
+      "item": "CYP1A2 gene table and fast-metabolism result",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample Caffeine Metabolism page says the sample genome is more likely to have fast caffeine metabolism. The visible gene table lists CYP1A2 marker GP000071 genotype TT with fast caffeine metabolism impact.",
+      "description": "The page lists common caffeine sources such as coffee, tea, soft drinks, energy drinks, chocolate, certain medications, and yerba mate, plus a sleep-timing action block.",
+      "genes": [
+        "CYP1A2"
+      ],
+      "sourceLabel": "Sibling Food Sensitivity sample report",
+      "sourceIds": [
+        "food-sensitivity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The page lists common caffeine sources such as coffee, tea, soft drinks, energy drinks, chocolate, certain medications, and yerba mate, plus a sleep-timing action block. Observed sibling sample-report structure only for Metabolic Health DNA Report formatting. Keep this separate from local genome evidence; it is not a direct Metabolic Health DNA Report sample, metabolic disease finding, diabetes-risk estimate, insulin-resistance inference, glucose prediction, HbA1c or lab interpretation, BMI/weight result, nutrient target, diet plan, supplement recommendation, medication action, diagnosis, or treatment guidance."
+    },
+    {
+      "groupTitle": "Sibling sample report: Sensitivities",
+      "item": "Food sensitivity versus food allergy explanation",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample Sensitivities section distinguishes food sensitivity from food allergy, explains that sensitivities can involve difficulty digesting components such as lactose or gluten, and names non-genetic contributors such as gut microbiome imbalance, gastrointestinal disease, stress, age, additives, sleep, and physical inactivity.",
+      "description": "The section explicitly says genetics can play a role but do not work in isolation.",
+      "genes": [],
+      "sourceLabel": "Sibling Food Sensitivity sample report",
+      "sourceIds": [
+        "food-sensitivity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The section explicitly says genetics can play a role but do not work in isolation. Observed sibling sample-report structure only for Metabolic Health DNA Report formatting. Keep this separate from local genome evidence; it is not a direct Metabolic Health DNA Report sample, metabolic disease finding, diabetes-risk estimate, insulin-resistance inference, glucose prediction, HbA1c or lab interpretation, BMI/weight result, nutrient target, diet plan, supplement recommendation, medication action, diagnosis, or treatment guidance."
+    },
+    {
+      "groupTitle": "Sibling sample report: Gluten Sensitivity",
+      "item": "HLA-DQA1 and HLA-DQ8 gene table with not-likely-sensitive result",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample Gluten Sensitivity page says the sample genome is not likely sensitive to gluten. The visible gene table lists HLA-DQA1 marker GP000071 genotype TT and HLA-DQ8 marker GP000072 genotype CC, both with not-likely-sensitive-to-gluten impact.",
+      "description": "The page lists common gluten sources and includes a what-can-you-do block about a temporary gluten-removal trial.",
+      "genes": [
+        "HLA-DQA1",
+        "HLA-DQ8"
+      ],
+      "sourceLabel": "Sibling Food Sensitivity sample report",
+      "sourceIds": [
+        "food-sensitivity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The page lists common gluten sources and includes a what-can-you-do block about a temporary gluten-removal trial. Observed sibling sample-report structure only for Metabolic Health DNA Report formatting. Keep this separate from local genome evidence; it is not a direct Metabolic Health DNA Report sample, metabolic disease finding, diabetes-risk estimate, insulin-resistance inference, glucose prediction, HbA1c or lab interpretation, BMI/weight result, nutrient target, diet plan, supplement recommendation, medication action, diagnosis, or treatment guidance."
+    },
+    {
+      "groupTitle": "Sibling sample report: Lactose Sensitivity",
+      "item": "LCT and MCM6-LCT gene table with likely-sensitive result",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample Lactose Sensitivity page says the sample genome is more likely to be sensitive to lactose. The visible gene table lists LCT marker GP000071 genotype TT with more-likely-sensitive-to-lactose impact and MCM6-LCT marker GP000072 genotype CC with less-likely-sensitive-to-lactose impact.",
+      "description": "The page lists common lactose sources and a what-can-you-do block about tracking dairy reactions, considering lower-lactose foods, and discussing dairy reduction or lactose enzymes with a healthcare practitioner.",
+      "genes": [
+        "LCT",
+        "MCM6-LCT"
+      ],
+      "sourceLabel": "Sibling Food Sensitivity sample report",
+      "sourceIds": [
+        "food-sensitivity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The page lists common lactose sources and a what-can-you-do block about tracking dairy reactions, considering lower-lactose foods, and discussing dairy reduction or lactose enzymes with a healthcare practitioner. Observed sibling sample-report structure only for Metabolic Health DNA Report formatting. Keep this separate from local genome evidence; it is not a direct Metabolic Health DNA Report sample, metabolic disease finding, diabetes-risk estimate, insulin-resistance inference, glucose prediction, HbA1c or lab interpretation, BMI/weight result, nutrient target, diet plan, supplement recommendation, medication action, diagnosis, or treatment guidance."
+    },
+    {
+      "groupTitle": "Sibling sample report: Food Reactions",
+      "item": "Caffeine",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Caffeine: common result AA; sample user result AA; impact: Normal breakdown of caffeine.",
+      "description": "The public sample page 6 labels this trait NORMAL; 53% of the population shares this displayed genetic risk or set-up.",
+      "genes": [
+        "CYP1A2"
+      ],
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The public sample page 6 labels this trait NORMAL; 53% of the population shares this displayed genetic risk or set-up. Observed sibling sample-report structure only for Metabolic Health DNA Report formatting. Keep this separate from local genome evidence; it is not a direct Metabolic Health DNA Report sample, metabolic disease finding, diabetes-risk estimate, insulin-resistance inference, glucose prediction, HbA1c or lab interpretation, BMI/weight result, nutrient target, diet plan, supplement recommendation, medication action, diagnosis, or treatment guidance."
+    },
+    {
+      "groupTitle": "Sibling sample report: Food Reactions",
+      "item": "Lactose Intolerance",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Lactose Intolerance: common result AA; sample user result GG; impact: Lactose intolerance expected.",
+      "description": "The public sample page 7 labels this trait HIGH RISK; 9% of the population shares this displayed genetic risk or set-up.",
+      "genes": [
+        "MCM6"
+      ],
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The public sample page 7 labels this trait HIGH RISK; 9% of the population shares this displayed genetic risk or set-up. Observed sibling sample-report structure only for Metabolic Health DNA Report formatting. Keep this separate from local genome evidence; it is not a direct Metabolic Health DNA Report sample, metabolic disease finding, diabetes-risk estimate, insulin-resistance inference, glucose prediction, HbA1c or lab interpretation, BMI/weight result, nutrient target, diet plan, supplement recommendation, medication action, diagnosis, or treatment guidance."
+    },
+    {
+      "groupTitle": "Sibling sample report: Food Reactions",
+      "item": "Gluten Sensitivity",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Gluten Sensitivity: common result CC; TT; sample user result CC; TT; impact: Low risk for sensitivity.",
+      "description": "The public sample page 8 labels this trait LOW; 56% of the population shares this displayed genetic risk or set-up.",
+      "genes": [
+        "HLA-DQA1",
+        "HLA-DQB1"
+      ],
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The public sample page 8 labels this trait LOW; 56% of the population shares this displayed genetic risk or set-up. Observed sibling sample-report structure only for Metabolic Health DNA Report formatting. Keep this separate from local genome evidence; it is not a direct Metabolic Health DNA Report sample, metabolic disease finding, diabetes-risk estimate, insulin-resistance inference, glucose prediction, HbA1c or lab interpretation, BMI/weight result, nutrient target, diet plan, supplement recommendation, medication action, diagnosis, or treatment guidance."
+    },
+    {
+      "groupTitle": "Sibling sample report: Food Reactions",
+      "item": "Alcohol",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Alcohol: common result GA; sample user result GG; impact: Average contribution.",
+      "description": "The public sample page 9 labels this trait AVERAGE; 87% of the population shares this displayed genetic risk or set-up.",
+      "genes": [
+        "CETP"
+      ],
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The public sample page 9 labels this trait AVERAGE; 87% of the population shares this displayed genetic risk or set-up. Observed sibling sample-report structure only for Metabolic Health DNA Report formatting. Keep this separate from local genome evidence; it is not a direct Metabolic Health DNA Report sample, metabolic disease finding, diabetes-risk estimate, insulin-resistance inference, glucose prediction, HbA1c or lab interpretation, BMI/weight result, nutrient target, diet plan, supplement recommendation, medication action, diagnosis, or treatment guidance."
+    },
+    {
+      "groupTitle": "Sibling sample report: Food Reactions",
+      "item": "Meat Carcinogens",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Meat Carcinogens: common result 6AT/6AT; sample user result 7AT/7AT; impact: High genetic sensitivity.",
+      "description": "The public sample page 10 labels this trait HIGH; 8% of the population shares this displayed genetic risk or set-up.",
+      "genes": [
+        "UGT1A1"
+      ],
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The public sample page 10 labels this trait HIGH; 8% of the population shares this displayed genetic risk or set-up. Observed sibling sample-report structure only for Metabolic Health DNA Report formatting. Keep this separate from local genome evidence; it is not a direct Metabolic Health DNA Report sample, metabolic disease finding, diabetes-risk estimate, insulin-resistance inference, glucose prediction, HbA1c or lab interpretation, BMI/weight result, nutrient target, diet plan, supplement recommendation, medication action, diagnosis, or treatment guidance."
+    },
+    {
+      "groupTitle": "Sibling sample report: Vitamins",
+      "item": "Folic acid",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Folic acid: common result GG; sample user result GA; impact: Added risk for deficiency.",
+      "description": "The public sample page 11 labels this trait ELEVATED; 44% of the population shares this displayed genetic risk or set-up.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The public sample page 11 labels this trait ELEVATED; 44% of the population shares this displayed genetic risk or set-up. Observed sibling sample-report structure only for Metabolic Health DNA Report formatting. Keep this separate from local genome evidence; it is not a direct Metabolic Health DNA Report sample, metabolic disease finding, diabetes-risk estimate, insulin-resistance inference, glucose prediction, HbA1c or lab interpretation, BMI/weight result, nutrient target, diet plan, supplement recommendation, medication action, diagnosis, or treatment guidance."
+    },
+    {
+      "groupTitle": "Sibling sample report: Vitamins",
+      "item": "Homocystaine",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Homocystaine: common result GG; sample user result GA; impact: Elevated levels expected.",
+      "description": "The public sample page 11 labels this trait ELEVATED; 44% of the population shares this displayed genetic risk or set-up.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The public sample page 11 labels this trait ELEVATED; 44% of the population shares this displayed genetic risk or set-up. Observed sibling sample-report structure only for Metabolic Health DNA Report formatting. Keep this separate from local genome evidence; it is not a direct Metabolic Health DNA Report sample, metabolic disease finding, diabetes-risk estimate, insulin-resistance inference, glucose prediction, HbA1c or lab interpretation, BMI/weight result, nutrient target, diet plan, supplement recommendation, medication action, diagnosis, or treatment guidance."
+    },
+    {
+      "groupTitle": "Sibling sample report: Vitamins",
+      "item": "Vitamin B12",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Vitamin B12: common result AA; GG; GG; sample user result AA; GG; GG; impact: Normal genetic risk.",
+      "description": "The public sample page 12 labels this trait NORMAL; 74% of the population shares this displayed genetic risk or set-up.",
+      "genes": [
+        "TCN1",
+        "TCN2",
+        "CUBN"
+      ],
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The public sample page 12 labels this trait NORMAL; 74% of the population shares this displayed genetic risk or set-up. Observed sibling sample-report structure only for Metabolic Health DNA Report formatting. Keep this separate from local genome evidence; it is not a direct Metabolic Health DNA Report sample, metabolic disease finding, diabetes-risk estimate, insulin-resistance inference, glucose prediction, HbA1c or lab interpretation, BMI/weight result, nutrient target, diet plan, supplement recommendation, medication action, diagnosis, or treatment guidance."
+    },
+    {
+      "groupTitle": "Sibling sample report: Vitamins",
+      "item": "Vitamin B6",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Vitamin B6: common result CT; sample user result CT; impact: Normal genetic risk.",
+      "description": "The public sample page 13 labels this trait NORMAL; 80% of the population shares this displayed genetic risk or set-up.",
+      "genes": [
+        "ALPL"
+      ],
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The public sample page 13 labels this trait NORMAL; 80% of the population shares this displayed genetic risk or set-up. Observed sibling sample-report structure only for Metabolic Health DNA Report formatting. Keep this separate from local genome evidence; it is not a direct Metabolic Health DNA Report sample, metabolic disease finding, diabetes-risk estimate, insulin-resistance inference, glucose prediction, HbA1c or lab interpretation, BMI/weight result, nutrient target, diet plan, supplement recommendation, medication action, diagnosis, or treatment guidance."
+    },
+    {
+      "groupTitle": "Sibling sample report: Vitamins",
+      "item": "Vitamin B3",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Vitamin B3: common result CC; sample user result TT; impact: Added risk for deficiency.",
+      "description": "The public sample page 14 labels this trait ELEVATED; 33% of the population shares this displayed genetic risk or set-up.",
+      "genes": [
+        "LPL"
+      ],
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The public sample page 14 labels this trait ELEVATED; 33% of the population shares this displayed genetic risk or set-up. Observed sibling sample-report structure only for Metabolic Health DNA Report formatting. Keep this separate from local genome evidence; it is not a direct Metabolic Health DNA Report sample, metabolic disease finding, diabetes-risk estimate, insulin-resistance inference, glucose prediction, HbA1c or lab interpretation, BMI/weight result, nutrient target, diet plan, supplement recommendation, medication action, diagnosis, or treatment guidance."
+    },
+    {
+      "groupTitle": "Sibling sample report: Vitamins",
+      "item": "Vitamin D",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Vitamin D: common result AA; AG; GG; GA; sample user result AA; GG; GG; GG; impact: Added risk for deficiency.",
+      "description": "The public sample page 15 labels this trait ELEVATED; 45% of the population shares this displayed genetic risk or set-up.",
+      "genes": [
+        "GC",
+        "CYP2R1",
+        "NADSYN1",
+        "VDR"
+      ],
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The public sample page 15 labels this trait ELEVATED; 45% of the population shares this displayed genetic risk or set-up. Observed sibling sample-report structure only for Metabolic Health DNA Report formatting. Keep this separate from local genome evidence; it is not a direct Metabolic Health DNA Report sample, metabolic disease finding, diabetes-risk estimate, insulin-resistance inference, glucose prediction, HbA1c or lab interpretation, BMI/weight result, nutrient target, diet plan, supplement recommendation, medication action, diagnosis, or treatment guidance."
+    },
+    {
+      "groupTitle": "Sibling sample report: Vitamins",
+      "item": "Vitamin C",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Vitamin C: common result CC; GG; sample user result TT; GG; impact: Added risk for deficiency.",
+      "description": "The public sample page 16 labels this trait ELEVATED; 14% of the population shares this displayed genetic risk or set-up.",
+      "genes": [
+        "GSTT1",
+        "SLC23A1"
+      ],
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The public sample page 16 labels this trait ELEVATED; 14% of the population shares this displayed genetic risk or set-up. Observed sibling sample-report structure only for Metabolic Health DNA Report formatting. Keep this separate from local genome evidence; it is not a direct Metabolic Health DNA Report sample, metabolic disease finding, diabetes-risk estimate, insulin-resistance inference, glucose prediction, HbA1c or lab interpretation, BMI/weight result, nutrient target, diet plan, supplement recommendation, medication action, diagnosis, or treatment guidance."
+    },
+    {
+      "groupTitle": "Sibling sample report: Minerals",
+      "item": "Iron",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Iron: common result CC; GG; AA/AG; sample user result CC; GG; AA; impact: Normal risk for genetic deficiency. Low risk for overload.",
+      "description": "The public sample page 17 labels this trait NORMAL; 93% of the population shares this displayed genetic risk or set-up.",
+      "genes": [
+        "HFE",
+        "TMPRSS6"
+      ],
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The public sample page 17 labels this trait NORMAL; 93% of the population shares this displayed genetic risk or set-up. Observed sibling sample-report structure only for Metabolic Health DNA Report formatting. Keep this separate from local genome evidence; it is not a direct Metabolic Health DNA Report sample, metabolic disease finding, diabetes-risk estimate, insulin-resistance inference, glucose prediction, HbA1c or lab interpretation, BMI/weight result, nutrient target, diet plan, supplement recommendation, medication action, diagnosis, or treatment guidance."
+    },
+    {
+      "groupTitle": "Sibling sample report: Minerals",
+      "item": "Calcium",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Calcium: common result GA; GG; AA; AG; sample user result GG; GG; AA; GG; impact: Added risk for deficiency.",
+      "description": "The public sample page 18 labels this trait ELEVATED; 45% of the population shares this displayed genetic risk or set-up.",
+      "genes": [
+        "VDR",
+        "DHCR7",
+        "GC",
+        "CYP2R1"
+      ],
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The public sample page 18 labels this trait ELEVATED; 45% of the population shares this displayed genetic risk or set-up. Observed sibling sample-report structure only for Metabolic Health DNA Report formatting. Keep this separate from local genome evidence; it is not a direct Metabolic Health DNA Report sample, metabolic disease finding, diabetes-risk estimate, insulin-resistance inference, glucose prediction, HbA1c or lab interpretation, BMI/weight result, nutrient target, diet plan, supplement recommendation, medication action, diagnosis, or treatment guidance."
+    },
+    {
+      "groupTitle": "Sibling sample report: Essential Fatty Acids",
+      "item": "Omega-3",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "Omega-3: common result TT; sample user result CC; impact: High genetic risk for deficiency.",
+      "description": "The public sample page 19 labels this trait HIGH; 16% of the population shares this displayed genetic risk or set-up.",
+      "genes": [
+        "FADS1"
+      ],
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The public sample page 19 labels this trait HIGH; 16% of the population shares this displayed genetic risk or set-up. Observed sibling sample-report structure only for Metabolic Health DNA Report formatting. Keep this separate from local genome evidence; it is not a direct Metabolic Health DNA Report sample, metabolic disease finding, diabetes-risk estimate, insulin-resistance inference, glucose prediction, HbA1c or lab interpretation, BMI/weight result, nutrient target, diet plan, supplement recommendation, medication action, diagnosis, or treatment guidance."
+    }
+  ],
+  "sampleRows": [
+    {
+      "brandName": "GenoPalate sample",
+      "description": "The sample summary page presents the four result cards before detailed substance and sensitivity sections.",
+      "extractionStatus": "direct",
+      "genes": [
+        "ADH1C",
+        "CYP1A2",
+        "LCT",
+        "MCM6-LCT",
+        "HLA-DQA1",
+        "HLA-DQ8"
+      ],
+      "geneticAnalysis": "The sample summary cards show Alcohol: Slow Metabolism; Caffeine: Fast Metabolism; Lactose: Likely Sensitive; Gluten: Not Likely Sensitive, with a legend separating likely-sensitive from not-likely-sensitive labels.",
+      "groupTitle": "Sensitivity results summary",
+      "item": "Alcohol, caffeine, lactose, and gluten summary cards",
+      "sortOrder": 1,
+      "sourceBindingNote": "Extracted from the public GenoPalate Food Sensitivity sample PDF; used here as sibling metabolic-health DNA output-structure evidence for Metabolic Health DNA Report, not as a direct Metabolic Health DNA Report sample or local allergy, celiac, symptom, glucose, diabetes, insulin-resistance, BMI/weight, diet, supplement, medication, diagnosis, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Food Sensitivity sample report",
+      "sourceResourceIds": [
+        "food-sensitivity-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "GenoPalate sample",
+      "description": "The substances section precedes the detailed Alcohol Metabolism and Caffeine Metabolism pages.",
+      "extractionStatus": "direct",
+      "genes": [
+        "ADH1C",
+        "CYP1A2"
+      ],
+      "geneticAnalysis": "The sample introduces alcohol and caffeine as substances whose metabolism can vary with genetic markers, then notes that slower metabolism markers may mean the body takes longer to clear alcohol or caffeine.",
+      "groupTitle": "Substances",
+      "item": "Alcohol and caffeine metabolism overview",
+      "sortOrder": 2,
+      "sourceBindingNote": "Extracted from the public GenoPalate Food Sensitivity sample PDF; used here as sibling metabolic-health DNA output-structure evidence for Metabolic Health DNA Report, not as a direct Metabolic Health DNA Report sample or local allergy, celiac, symptom, glucose, diabetes, insulin-resistance, BMI/weight, diet, supplement, medication, diagnosis, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Food Sensitivity sample report",
+      "sourceResourceIds": [
+        "food-sensitivity-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "GenoPalate sample",
+      "description": "The page also lists common alcohol sources and a what-can-you-do block about tracking drinks, spacing them out, and drinking water.",
+      "extractionStatus": "direct",
+      "genes": [
+        "ADH1C"
+      ],
+      "geneticAnalysis": "The sample Alcohol Metabolism page says the sample genome is more likely to have slow alcohol metabolism. The visible gene table lists ADH1C marker GP000071 genotype TT with slow alcohol metabolism impact, plus ADH1C GP000072 genotype CC and ADH1C GP000073 genotype TT with normal alcohol metabolism impact.",
+      "groupTitle": "Alcohol Metabolism",
+      "item": "ADH1C gene table and slow-metabolism result",
+      "sortOrder": 3,
+      "sourceBindingNote": "Extracted from the public GenoPalate Food Sensitivity sample PDF; used here as sibling metabolic-health DNA output-structure evidence for Metabolic Health DNA Report, not as a direct Metabolic Health DNA Report sample or local allergy, celiac, symptom, glucose, diabetes, insulin-resistance, BMI/weight, diet, supplement, medication, diagnosis, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Food Sensitivity sample report",
+      "sourceResourceIds": [
+        "food-sensitivity-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "GenoPalate sample",
+      "description": "The page lists common caffeine sources such as coffee, tea, soft drinks, energy drinks, chocolate, certain medications, and yerba mate, plus a sleep-timing action block.",
+      "extractionStatus": "direct",
+      "genes": [
+        "CYP1A2"
+      ],
+      "geneticAnalysis": "The sample Caffeine Metabolism page says the sample genome is more likely to have fast caffeine metabolism. The visible gene table lists CYP1A2 marker GP000071 genotype TT with fast caffeine metabolism impact.",
+      "groupTitle": "Caffeine Metabolism",
+      "item": "CYP1A2 gene table and fast-metabolism result",
+      "sortOrder": 4,
+      "sourceBindingNote": "Extracted from the public GenoPalate Food Sensitivity sample PDF; used here as sibling metabolic-health DNA output-structure evidence for Metabolic Health DNA Report, not as a direct Metabolic Health DNA Report sample or local allergy, celiac, symptom, glucose, diabetes, insulin-resistance, BMI/weight, diet, supplement, medication, diagnosis, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Food Sensitivity sample report",
+      "sourceResourceIds": [
+        "food-sensitivity-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "GenoPalate sample",
+      "description": "The section explicitly says genetics can play a role but do not work in isolation.",
+      "extractionStatus": "direct",
+      "genes": [],
+      "geneticAnalysis": "The sample Sensitivities section distinguishes food sensitivity from food allergy, explains that sensitivities can involve difficulty digesting components such as lactose or gluten, and names non-genetic contributors such as gut microbiome imbalance, gastrointestinal disease, stress, age, additives, sleep, and physical inactivity.",
+      "groupTitle": "Sensitivities",
+      "item": "Food sensitivity versus food allergy explanation",
+      "sortOrder": 5,
+      "sourceBindingNote": "Extracted from the public GenoPalate Food Sensitivity sample PDF; used here as sibling metabolic-health DNA output-structure evidence for Metabolic Health DNA Report, not as a direct Metabolic Health DNA Report sample or local allergy, celiac, symptom, glucose, diabetes, insulin-resistance, BMI/weight, diet, supplement, medication, diagnosis, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Food Sensitivity sample report",
+      "sourceResourceIds": [
+        "food-sensitivity-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "GenoPalate sample",
+      "description": "The page lists common gluten sources and includes a what-can-you-do block about a temporary gluten-removal trial.",
+      "extractionStatus": "direct",
+      "genes": [
+        "HLA-DQA1",
+        "HLA-DQ8"
+      ],
+      "geneticAnalysis": "The sample Gluten Sensitivity page says the sample genome is not likely sensitive to gluten. The visible gene table lists HLA-DQA1 marker GP000071 genotype TT and HLA-DQ8 marker GP000072 genotype CC, both with not-likely-sensitive-to-gluten impact.",
+      "groupTitle": "Gluten Sensitivity",
+      "item": "HLA-DQA1 and HLA-DQ8 gene table with not-likely-sensitive result",
+      "sortOrder": 6,
+      "sourceBindingNote": "Extracted from the public GenoPalate Food Sensitivity sample PDF; used here as sibling metabolic-health DNA output-structure evidence for Metabolic Health DNA Report, not as a direct Metabolic Health DNA Report sample or local allergy, celiac, symptom, glucose, diabetes, insulin-resistance, BMI/weight, diet, supplement, medication, diagnosis, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Food Sensitivity sample report",
+      "sourceResourceIds": [
+        "food-sensitivity-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "GenoPalate sample",
+      "description": "The page lists common lactose sources and a what-can-you-do block about tracking dairy reactions, considering lower-lactose foods, and discussing dairy reduction or lactose enzymes with a healthcare practitioner.",
+      "extractionStatus": "direct",
+      "genes": [
+        "LCT",
+        "MCM6-LCT"
+      ],
+      "geneticAnalysis": "The sample Lactose Sensitivity page says the sample genome is more likely to be sensitive to lactose. The visible gene table lists LCT marker GP000071 genotype TT with more-likely-sensitive-to-lactose impact and MCM6-LCT marker GP000072 genotype CC with less-likely-sensitive-to-lactose impact.",
+      "groupTitle": "Lactose Sensitivity",
+      "item": "LCT and MCM6-LCT gene table with likely-sensitive result",
+      "sortOrder": 7,
+      "sourceBindingNote": "Extracted from the public GenoPalate Food Sensitivity sample PDF; used here as sibling metabolic-health DNA output-structure evidence for Metabolic Health DNA Report, not as a direct Metabolic Health DNA Report sample or local allergy, celiac, symptom, glucose, diabetes, insulin-resistance, BMI/weight, diet, supplement, medication, diagnosis, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Food Sensitivity sample report",
+      "sourceResourceIds": [
+        "food-sensitivity-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "GeneInformed sample",
+      "description": "The public sample page 6 labels this trait NORMAL; 53% of the population shares this displayed genetic risk or set-up.",
+      "extractionStatus": "direct",
+      "genes": [
+        "CYP1A2"
+      ],
+      "geneticAnalysis": "Caffeine: common result AA; sample user result AA; impact: Normal breakdown of caffeine.",
+      "groupTitle": "Food Reactions",
+      "item": "Caffeine",
+      "sortOrder": 8,
+      "sourceBindingNote": "Extracted from the public Healthy Nutrition DNA Analysis sample PDF; used here as sibling metabolic-health DNA output-structure evidence for Metabolic Health DNA Report, not as a direct Metabolic Health DNA Report sample or local diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceResourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "GeneInformed sample",
+      "description": "The public sample page 7 labels this trait HIGH RISK; 9% of the population shares this displayed genetic risk or set-up.",
+      "extractionStatus": "direct",
+      "genes": [
+        "MCM6"
+      ],
+      "geneticAnalysis": "Lactose Intolerance: common result AA; sample user result GG; impact: Lactose intolerance expected.",
+      "groupTitle": "Food Reactions",
+      "item": "Lactose Intolerance",
+      "sortOrder": 9,
+      "sourceBindingNote": "Extracted from the public Healthy Nutrition DNA Analysis sample PDF; used here as sibling metabolic-health DNA output-structure evidence for Metabolic Health DNA Report, not as a direct Metabolic Health DNA Report sample or local diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceResourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "GeneInformed sample",
+      "description": "The public sample page 8 labels this trait LOW; 56% of the population shares this displayed genetic risk or set-up.",
+      "extractionStatus": "direct",
+      "genes": [
+        "HLA-DQA1",
+        "HLA-DQB1"
+      ],
+      "geneticAnalysis": "Gluten Sensitivity: common result CC; TT; sample user result CC; TT; impact: Low risk for sensitivity.",
+      "groupTitle": "Food Reactions",
+      "item": "Gluten Sensitivity",
+      "sortOrder": 10,
+      "sourceBindingNote": "Extracted from the public Healthy Nutrition DNA Analysis sample PDF; used here as sibling metabolic-health DNA output-structure evidence for Metabolic Health DNA Report, not as a direct Metabolic Health DNA Report sample or local diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceResourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "GeneInformed sample",
+      "description": "The public sample page 9 labels this trait AVERAGE; 87% of the population shares this displayed genetic risk or set-up.",
+      "extractionStatus": "direct",
+      "genes": [
+        "CETP"
+      ],
+      "geneticAnalysis": "Alcohol: common result GA; sample user result GG; impact: Average contribution.",
+      "groupTitle": "Food Reactions",
+      "item": "Alcohol",
+      "sortOrder": 11,
+      "sourceBindingNote": "Extracted from the public Healthy Nutrition DNA Analysis sample PDF; used here as sibling metabolic-health DNA output-structure evidence for Metabolic Health DNA Report, not as a direct Metabolic Health DNA Report sample or local diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceResourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "GeneInformed sample",
+      "description": "The public sample page 10 labels this trait HIGH; 8% of the population shares this displayed genetic risk or set-up.",
+      "extractionStatus": "direct",
+      "genes": [
+        "UGT1A1"
+      ],
+      "geneticAnalysis": "Meat Carcinogens: common result 6AT/6AT; sample user result 7AT/7AT; impact: High genetic sensitivity.",
+      "groupTitle": "Food Reactions",
+      "item": "Meat Carcinogens",
+      "sortOrder": 12,
+      "sourceBindingNote": "Extracted from the public Healthy Nutrition DNA Analysis sample PDF; used here as sibling metabolic-health DNA output-structure evidence for Metabolic Health DNA Report, not as a direct Metabolic Health DNA Report sample or local diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceResourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "GeneInformed sample",
+      "description": "The public sample page 11 labels this trait ELEVATED; 44% of the population shares this displayed genetic risk or set-up.",
+      "extractionStatus": "direct",
+      "genes": [
+        "MTHFR"
+      ],
+      "geneticAnalysis": "Folic acid: common result GG; sample user result GA; impact: Added risk for deficiency.",
+      "groupTitle": "Vitamins",
+      "item": "Folic acid",
+      "sortOrder": 13,
+      "sourceBindingNote": "Extracted from the public Healthy Nutrition DNA Analysis sample PDF; used here as sibling metabolic-health DNA output-structure evidence for Metabolic Health DNA Report, not as a direct Metabolic Health DNA Report sample or local diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceResourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "GeneInformed sample",
+      "description": "The public sample page 11 labels this trait ELEVATED; 44% of the population shares this displayed genetic risk or set-up.",
+      "extractionStatus": "direct",
+      "genes": [
+        "MTHFR"
+      ],
+      "geneticAnalysis": "Homocystaine: common result GG; sample user result GA; impact: Elevated levels expected.",
+      "groupTitle": "Vitamins",
+      "item": "Homocystaine",
+      "sortOrder": 14,
+      "sourceBindingNote": "Extracted from the public Healthy Nutrition DNA Analysis sample PDF; used here as sibling metabolic-health DNA output-structure evidence for Metabolic Health DNA Report, not as a direct Metabolic Health DNA Report sample or local diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceResourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "GeneInformed sample",
+      "description": "The public sample page 12 labels this trait NORMAL; 74% of the population shares this displayed genetic risk or set-up.",
+      "extractionStatus": "direct",
+      "genes": [
+        "TCN1",
+        "TCN2",
+        "CUBN"
+      ],
+      "geneticAnalysis": "Vitamin B12: common result AA; GG; GG; sample user result AA; GG; GG; impact: Normal genetic risk.",
+      "groupTitle": "Vitamins",
+      "item": "Vitamin B12",
+      "sortOrder": 15,
+      "sourceBindingNote": "Extracted from the public Healthy Nutrition DNA Analysis sample PDF; used here as sibling metabolic-health DNA output-structure evidence for Metabolic Health DNA Report, not as a direct Metabolic Health DNA Report sample or local diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceResourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "GeneInformed sample",
+      "description": "The public sample page 13 labels this trait NORMAL; 80% of the population shares this displayed genetic risk or set-up.",
+      "extractionStatus": "direct",
+      "genes": [
+        "ALPL"
+      ],
+      "geneticAnalysis": "Vitamin B6: common result CT; sample user result CT; impact: Normal genetic risk.",
+      "groupTitle": "Vitamins",
+      "item": "Vitamin B6",
+      "sortOrder": 16,
+      "sourceBindingNote": "Extracted from the public Healthy Nutrition DNA Analysis sample PDF; used here as sibling metabolic-health DNA output-structure evidence for Metabolic Health DNA Report, not as a direct Metabolic Health DNA Report sample or local diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceResourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "GeneInformed sample",
+      "description": "The public sample page 14 labels this trait ELEVATED; 33% of the population shares this displayed genetic risk or set-up.",
+      "extractionStatus": "direct",
+      "genes": [
+        "LPL"
+      ],
+      "geneticAnalysis": "Vitamin B3: common result CC; sample user result TT; impact: Added risk for deficiency.",
+      "groupTitle": "Vitamins",
+      "item": "Vitamin B3",
+      "sortOrder": 17,
+      "sourceBindingNote": "Extracted from the public Healthy Nutrition DNA Analysis sample PDF; used here as sibling metabolic-health DNA output-structure evidence for Metabolic Health DNA Report, not as a direct Metabolic Health DNA Report sample or local diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceResourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "GeneInformed sample",
+      "description": "The public sample page 15 labels this trait ELEVATED; 45% of the population shares this displayed genetic risk or set-up.",
+      "extractionStatus": "direct",
+      "genes": [
+        "GC",
+        "CYP2R1",
+        "NADSYN1",
+        "VDR"
+      ],
+      "geneticAnalysis": "Vitamin D: common result AA; AG; GG; GA; sample user result AA; GG; GG; GG; impact: Added risk for deficiency.",
+      "groupTitle": "Vitamins",
+      "item": "Vitamin D",
+      "sortOrder": 18,
+      "sourceBindingNote": "Extracted from the public Healthy Nutrition DNA Analysis sample PDF; used here as sibling metabolic-health DNA output-structure evidence for Metabolic Health DNA Report, not as a direct Metabolic Health DNA Report sample or local diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceResourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "GeneInformed sample",
+      "description": "The public sample page 16 labels this trait ELEVATED; 14% of the population shares this displayed genetic risk or set-up.",
+      "extractionStatus": "direct",
+      "genes": [
+        "GSTT1",
+        "SLC23A1"
+      ],
+      "geneticAnalysis": "Vitamin C: common result CC; GG; sample user result TT; GG; impact: Added risk for deficiency.",
+      "groupTitle": "Vitamins",
+      "item": "Vitamin C",
+      "sortOrder": 19,
+      "sourceBindingNote": "Extracted from the public Healthy Nutrition DNA Analysis sample PDF; used here as sibling metabolic-health DNA output-structure evidence for Metabolic Health DNA Report, not as a direct Metabolic Health DNA Report sample or local diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceResourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "GeneInformed sample",
+      "description": "The public sample page 17 labels this trait NORMAL; 93% of the population shares this displayed genetic risk or set-up.",
+      "extractionStatus": "direct",
+      "genes": [
+        "HFE",
+        "TMPRSS6"
+      ],
+      "geneticAnalysis": "Iron: common result CC; GG; AA/AG; sample user result CC; GG; AA; impact: Normal risk for genetic deficiency. Low risk for overload.",
+      "groupTitle": "Minerals",
+      "item": "Iron",
+      "sortOrder": 20,
+      "sourceBindingNote": "Extracted from the public Healthy Nutrition DNA Analysis sample PDF; used here as sibling metabolic-health DNA output-structure evidence for Metabolic Health DNA Report, not as a direct Metabolic Health DNA Report sample or local diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceResourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "GeneInformed sample",
+      "description": "The public sample page 18 labels this trait ELEVATED; 45% of the population shares this displayed genetic risk or set-up.",
+      "extractionStatus": "direct",
+      "genes": [
+        "VDR",
+        "DHCR7",
+        "GC",
+        "CYP2R1"
+      ],
+      "geneticAnalysis": "Calcium: common result GA; GG; AA; AG; sample user result GG; GG; AA; GG; impact: Added risk for deficiency.",
+      "groupTitle": "Minerals",
+      "item": "Calcium",
+      "sortOrder": 21,
+      "sourceBindingNote": "Extracted from the public Healthy Nutrition DNA Analysis sample PDF; used here as sibling metabolic-health DNA output-structure evidence for Metabolic Health DNA Report, not as a direct Metabolic Health DNA Report sample or local diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceResourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "GeneInformed sample",
+      "description": "The public sample page 19 labels this trait HIGH; 16% of the population shares this displayed genetic risk or set-up.",
+      "extractionStatus": "direct",
+      "genes": [
+        "FADS1"
+      ],
+      "geneticAnalysis": "Omega-3: common result TT; sample user result CC; impact: High genetic risk for deficiency.",
+      "groupTitle": "Essential Fatty Acids",
+      "item": "Omega-3",
+      "sortOrder": 22,
+      "sourceBindingNote": "Extracted from the public Healthy Nutrition DNA Analysis sample PDF; used here as sibling metabolic-health DNA output-structure evidence for Metabolic Health DNA Report, not as a direct Metabolic Health DNA Report sample or local diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Healthy Nutrition sample report",
+      "sourceResourceIds": [
+        "healthy-nutrition-sample-pdf"
+      ]
     }
   ],
   "practicalNextSteps": {
     "metabolicDnaContext": [
       "Use this report as educational nutrition-genetics context, not as a metabolic diagnosis or treatment guide.",
       "Bring symptoms, diet history, labs, medications, weight questions, and health goals to qualified professionals for metabolic-health decisions.",
-      "Do not change foods, supplements, medications, or treatment based on genotype alone."
+      "Do not change foods, supplements, medications, or treatment based on genotype or sibling sample rows alone."
     ]
   },
   "references": [
     {
+      "id": "food-sensitivity-sample-pdf",
+      "title": "GenoPalate Food Sensitivity sample report",
+      "sourceType": "mock_report"
+    },
+    {
+      "id": "healthy-nutrition-sample-pdf",
+      "title": "Healthy Nutrition DNA Analysis sample report",
+      "sourceType": "mock_report"
+    },
+    {
       "id": "medlineplus-lactose-intolerance",
-      "title": "MedlinePlus Genetics: lactose intolerance"
+      "title": "MedlinePlus Genetics: lactose intolerance",
+      "sourceType": "education_resource"
     },
     {
       "id": "medlineplus-mcm6",
-      "title": "MedlinePlus Genetics: MCM6 gene"
+      "title": "MedlinePlus Genetics: MCM6 gene",
+      "sourceType": "education_resource"
     },
     {
       "id": "nutritional-genomics-dtc-review",
-      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing"
+      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing",
+      "sourceType": "research_review"
     },
     {
       "id": "ebi-gwas-catalog",
-      "title": "GWAS Catalog"
+      "title": "GWAS Catalog",
+      "sourceType": "database"
+    },
+    {
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean",
+      "sourceType": "education_resource"
+    },
+    {
+      "id": "medlineplus-blood-glucose-test",
+      "title": "MedlinePlus: Blood Glucose Test",
+      "sourceType": "medical_test_resource"
+    },
+    {
+      "id": "medlineplus-hba1c-test",
+      "title": "MedlinePlus: Hemoglobin A1C test",
+      "sourceType": "medical_test_resource"
+    },
+    {
+      "id": "cdc-diabetes-risk-factors",
+      "title": "CDC Diabetes Risk Factors",
+      "sourceType": "public_health_resource"
+    },
+    {
+      "id": "fda-dietary-supplements",
+      "title": "FDA Dietary Supplements",
+      "sourceType": "regulatory_resource"
+    },
+    {
+      "id": "nih-ods-dietary-supplement-fact-sheets",
+      "title": "NIH Office of Dietary Supplements Fact Sheets",
+      "sourceType": "public_health_resource"
+    },
+    {
+      "id": "cdc-bmi",
+      "title": "CDC About Body Mass Index",
+      "sourceType": "public_health_resource"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
         "gene": "MCM6/LCT",
-        "observedValue": "rs4988235 CT"
+        "variantId": "rs4988235",
+        "observedValue": "CT",
+        "meaning": "Report as educational lactose-related marker context only; do not diagnose lactose intolerance, infer metabolic disease, predict diabetes risk, infer insulin resistance, predict glucose, interpret labs, prescribe diets, recommend supplements, set nutrient targets, change medications, predict weight outcomes, or provide treatment guidance from genotype alone.",
+        "sourceBindingStatus": "curated"
       },
       {
         "gene": "Metabolic health DNA model",
-        "observedValue": "calibrated model unavailable"
+        "variantId": "metabolic-health-dna-report-model-unavailable",
+        "observedValue": "calibrated metabolic score, glucose model, diabetes model, insulin-resistance model, weight model, food-response model, micronutrient model, supplement model, diet-history context, symptom context, lab context, medication context, and ancestry applicability metadata unavailable",
+        "meaning": "Mark metabolic, glucose, diabetes, insulin-resistance, BMI/weight, lab, diet, supplement, medication, diagnosis, and treatment sections unavailable instead of inferring them.",
+        "sourceBindingStatus": "curated"
+      },
+      {
+        "gene": "ADH1C",
+        "variantId": "GP000071; GP000072; GP000073",
+        "observedValue": "TT; CC; TT",
+        "meaning": "Use as observed sibling sample-report structure only; do not treat the sample markers as local food-sensitivity, allergy, celiac, symptom, glucose, diabetes, insulin-resistance, BMI/weight, diet, supplement, medical, medication, diagnosis, or treatment evidence.",
+        "sourceBindingStatus": "exact"
+      },
+      {
+        "gene": "CYP1A2",
+        "variantId": "GP000071",
+        "observedValue": "TT",
+        "meaning": "Use as observed sibling sample-report structure only; do not treat the sample markers as local food-sensitivity, allergy, celiac, symptom, glucose, diabetes, insulin-resistance, BMI/weight, diet, supplement, medical, medication, diagnosis, or treatment evidence.",
+        "sourceBindingStatus": "exact"
+      },
+      {
+        "gene": "HLA-DQA1; HLA-DQ8",
+        "variantId": "GP000071; GP000072",
+        "observedValue": "TT; CC",
+        "meaning": "Use as observed sibling sample-report structure only; do not treat the sample markers as local food-sensitivity, allergy, celiac, symptom, glucose, diabetes, insulin-resistance, BMI/weight, diet, supplement, medical, medication, diagnosis, or treatment evidence.",
+        "sourceBindingStatus": "exact"
+      },
+      {
+        "gene": "LCT; MCM6-LCT",
+        "variantId": "GP000071; GP000072",
+        "observedValue": "TT; CC",
+        "meaning": "Use as observed sibling sample-report structure only; do not treat the sample markers as local food-sensitivity, allergy, celiac, symptom, glucose, diabetes, insulin-resistance, BMI/weight, diet, supplement, medical, medication, diagnosis, or treatment evidence.",
+        "sourceBindingStatus": "exact"
+      },
+      {
+        "gene": "CYP1A2",
+        "variantId": "not-shown-in-sample-pdf",
+        "observedValue": "Caffeine: common result AA; sample user result AA",
+        "meaning": "Use as observed sibling sample-report structure only; do not treat the sample genotype-like calls as local nutrition, diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment evidence.",
+        "sourceBindingStatus": "exact"
+      },
+      {
+        "gene": "MCM6",
+        "variantId": "not-shown-in-sample-pdf",
+        "observedValue": "Lactose Intolerance: common result AA; sample user result GG",
+        "meaning": "Use as observed sibling sample-report structure only; do not treat the sample genotype-like calls as local nutrition, diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment evidence.",
+        "sourceBindingStatus": "exact"
+      },
+      {
+        "gene": "HLA-DQA1; HLA-DQB1",
+        "variantId": "not-shown-in-sample-pdf",
+        "observedValue": "Gluten Sensitivity: common result CC; TT; sample user result CC; TT",
+        "meaning": "Use as observed sibling sample-report structure only; do not treat the sample genotype-like calls as local nutrition, diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment evidence.",
+        "sourceBindingStatus": "exact"
+      },
+      {
+        "gene": "CETP",
+        "variantId": "not-shown-in-sample-pdf",
+        "observedValue": "Alcohol: common result GA; sample user result GG",
+        "meaning": "Use as observed sibling sample-report structure only; do not treat the sample genotype-like calls as local nutrition, diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment evidence.",
+        "sourceBindingStatus": "exact"
+      },
+      {
+        "gene": "UGT1A1",
+        "variantId": "not-shown-in-sample-pdf",
+        "observedValue": "Meat Carcinogens: common result 6AT/6AT; sample user result 7AT/7AT",
+        "meaning": "Use as observed sibling sample-report structure only; do not treat the sample genotype-like calls as local nutrition, diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment evidence.",
+        "sourceBindingStatus": "exact"
+      },
+      {
+        "gene": "MTHFR",
+        "variantId": "not-shown-in-sample-pdf",
+        "observedValue": "Folic acid: common result GG; sample user result GA",
+        "meaning": "Use as observed sibling sample-report structure only; do not treat the sample genotype-like calls as local nutrition, diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment evidence.",
+        "sourceBindingStatus": "exact"
+      },
+      {
+        "gene": "MTHFR",
+        "variantId": "not-shown-in-sample-pdf",
+        "observedValue": "Homocystaine: common result GG; sample user result GA",
+        "meaning": "Use as observed sibling sample-report structure only; do not treat the sample genotype-like calls as local nutrition, diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment evidence.",
+        "sourceBindingStatus": "exact"
+      },
+      {
+        "gene": "TCN1; TCN2; CUBN",
+        "variantId": "not-shown-in-sample-pdf",
+        "observedValue": "Vitamin B12: common result AA; GG; GG; sample user result AA; GG; GG",
+        "meaning": "Use as observed sibling sample-report structure only; do not treat the sample genotype-like calls as local nutrition, diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment evidence.",
+        "sourceBindingStatus": "exact"
+      },
+      {
+        "gene": "ALPL",
+        "variantId": "not-shown-in-sample-pdf",
+        "observedValue": "Vitamin B6: common result CT; sample user result CT",
+        "meaning": "Use as observed sibling sample-report structure only; do not treat the sample genotype-like calls as local nutrition, diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment evidence.",
+        "sourceBindingStatus": "exact"
+      },
+      {
+        "gene": "LPL",
+        "variantId": "not-shown-in-sample-pdf",
+        "observedValue": "Vitamin B3: common result CC; sample user result TT",
+        "meaning": "Use as observed sibling sample-report structure only; do not treat the sample genotype-like calls as local nutrition, diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment evidence.",
+        "sourceBindingStatus": "exact"
+      },
+      {
+        "gene": "GC; CYP2R1; NADSYN1; VDR",
+        "variantId": "not-shown-in-sample-pdf",
+        "observedValue": "Vitamin D: common result AA; AG; GG; GA; sample user result AA; GG; GG; GG",
+        "meaning": "Use as observed sibling sample-report structure only; do not treat the sample genotype-like calls as local nutrition, diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment evidence.",
+        "sourceBindingStatus": "exact"
+      },
+      {
+        "gene": "GSTT1; SLC23A1",
+        "variantId": "not-shown-in-sample-pdf",
+        "observedValue": "Vitamin C: common result CC; GG; sample user result TT; GG",
+        "meaning": "Use as observed sibling sample-report structure only; do not treat the sample genotype-like calls as local nutrition, diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment evidence.",
+        "sourceBindingStatus": "exact"
+      },
+      {
+        "gene": "HFE; TMPRSS6",
+        "variantId": "not-shown-in-sample-pdf",
+        "observedValue": "Iron: common result CC; GG; AA/AG; sample user result CC; GG; AA",
+        "meaning": "Use as observed sibling sample-report structure only; do not treat the sample genotype-like calls as local nutrition, diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment evidence.",
+        "sourceBindingStatus": "exact"
+      },
+      {
+        "gene": "VDR; DHCR7; GC; CYP2R1",
+        "variantId": "not-shown-in-sample-pdf",
+        "observedValue": "Calcium: common result GA; GG; AA; AG; sample user result GG; GG; AA; GG",
+        "meaning": "Use as observed sibling sample-report structure only; do not treat the sample genotype-like calls as local nutrition, diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment evidence.",
+        "sourceBindingStatus": "exact"
+      },
+      {
+        "gene": "FADS1",
+        "variantId": "not-shown-in-sample-pdf",
+        "observedValue": "Omega-3: common result TT; sample user result CC",
+        "meaning": "Use as observed sibling sample-report structure only; do not treat the sample genotype-like calls as local nutrition, diet, supplement, deficiency, symptom, lab, metabolic, glucose, diabetes, insulin-resistance, medication, diagnosis, or treatment evidence.",
+        "sourceBindingStatus": "exact"
       }
     ],
     "missingInputs": [
-      "Authenticated sample-report sections and rows have not been extracted.",
+      "No direct Metabolic Health DNA Report sample report has been captured.",
       "No calibrated metabolic, glucose, diabetes, insulin-resistance, weight, food-response, micronutrient, supplement, diet-history, symptom, lab, medication, or ancestry-applicability model is supplied with this fixture.",
       "Symptoms, food history, diet history, labs, medications, medical history, weight history, ancestry applicability, and professional assessment are not represented in this fixture."
     ],
     "probabilities": [],
     "uncertainty": [
-      "Metabolic health, glucose, weight, nutrient status, symptoms, and food response depend on genetics plus diet history, labs, medical history, medications, environment, and professional review.",
-      "A single marker should not be used to diagnose metabolic disease, predict diabetes, infer insulin resistance, interpret labs, prescribe diet or supplement changes, change medications, or guide treatment."
+      "Metabolic health, glucose, weight, nutrient status, symptoms, and food response depend on genetics plus diet history, labs, medical history, medications, environment, ancestry, and professional review.",
+      "A single marker and sibling sample rows should not be used to diagnose metabolic disease, predict diabetes, infer insulin resistance, interpret labs, prescribe diet or supplement changes, change medications, or guide treatment."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data is not included.",
       "The report is educational and does not diagnose metabolic disease, diagnose diabetes, predict diabetes risk, infer insulin resistance, predict glucose, interpret labs, prescribe diets, recommend supplements, change medications, predict weight outcomes, or provide treatment guidance.",
-      "Authenticated Sequencing.com sample report rows are still pending."
+      "Sibling sample rows are output-structure examples only and do not claim full detail-page parity."
     ]
   }
 }

@@ -1,0 +1,130 @@
+{
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "capturedAt": "2026-06-21T15:22:14.150Z",
+  "source": "in-app browser sequencing.com marketplace detail page __NEXT_DATA__.props.pageProps.reportData extraction",
+  "url": "https://sequencing.com/marketplace/nourish",
+  "finalUrl": "https://sequencing.com/marketplace/nourish",
+  "title": "Nourish",
+  "nid": "12928",
+  "productId": "4622",
+  "app": {
+    "appid": "14930",
+    "label": "Nourish",
+    "backend": "ApiAppBackend",
+    "apiAppId": null
+  },
+  "publisher": "Toolbox Genomics",
+  "price": "$59",
+  "currencyCode": "USD",
+  "categories": [
+    "Nutrition"
+  ],
+  "uri": "marketplace/nourish",
+  "reportFile": "https://sequencing.com/sites/default/files/tbg-total-wellness-nourish-sample-report-toolbox-genomics-sequencing.com-app-market_0.pdf",
+  "headerImage": "https://sequencing.com/sites/default/files/nourish-icon1.png",
+  "headerImageAlt": null,
+  "meta": {
+    "canonical": "https://sequencing.com/marketplace/nourish",
+    "publishedTime": null,
+    "modifiedTime": null,
+    "ogDescriptionHash": "sha256:dcea14acb0f5c355aebf2870f59ac4b265a7df21c7ef072f1b2eed9ef865266d",
+    "ogDescriptionPreview": "Eat well and feel your best! This plan tests 26 traits, 50 genes, and 68 SNPs to provide health recommendations backed by research and results.",
+    "productPriceAmount": null,
+    "productPriceCurrency": "USD",
+    "productRetailerItemId": "4622"
+  },
+  "summaryPreview": "Eat well and feel your best! This plan tests 26 traits, 50 genes, and 68 SNPs to provide health recommendations backed by research and results.",
+  "bodyPreview": "DNA Nutrition Optimization Plan The Nourish plan was designed to eliminate any confusion about what to eat for optimal health once and for all. This plan tests 26 traits, 50 genes, and 68 SNPs to provide health recommendations backed by research and results. This app provides everything you need to eat well and finally feel your best. The Nourish DNA Report includes: Key Insights. Learn about your taste preferences and how these can influence your health goals. Unique evaluation. Find out your predispositions to nutrient deficiencies that are essential to your health. Customized Report. See how your body processes certain foods as we test for specific sensitivities that can slow down your results. Science-backed recommendations. Learn what diet may be best for your body. Flexibility. We provide a digital experience and the option of printing out full and summary reports. This will allow you to view your report on a desktop or mobile device or share your results with your friends and fa",
+  "visibleParagraphs": [
+    "Marketplace",
+    "Nourish",
+    "Developed by Toolbox Genomics",
+    "Eat well and feel your best! This plan tests 26 traits, 50 genes, and 68 SNPs to provide health recommendations backed by research and results.",
+    "$59 per genome",
+    "Get 100% of your DNA data with Whole Genome Sequencing.",
+    "Already have data from a DNA test? Upload your data for free.",
+    "The Nourish plan was designed to eliminate any confusion about what to eat for optimal health once and for all. This plan tests 26 traits, 50 genes, and 68 SNPs to provide health recommendations backed by research and results."
+  ],
+  "infoTabs": [
+    {
+      "label": "Overview",
+      "textPreview": "DNA Nutrition Optimization Plan The Nourish plan was designed to eliminate any confusion about what to eat for optimal health once and for all. This plan tests 26 traits, 50 genes, and 68 SNPs to provide health recommendations backed by research and results. This app provides everything you need to eat well and finally feel your best. The Nourish DNA Report includes: Key Insights. Learn about your taste preferences and how these can influence your health goals. Unique evaluation. Find out your predispositions to nutrient deficiencies that are essential to your health. Customized Report. See how your body processes certain foods as we test for specific sensitivities that can slow down your results. Science-backed recommendations. Learn what diet may be best for your body. Flexibility. We provide a digital experience and the option of printing out full and summary reports. This will allow you to view your report on a desktop or mobile device or share your results with your friends and family. Your Nutrition Optimization Plan will provide a personalized strategy to help you better fuel your body for a healthy lifestyle."
+    },
+    {
+      "label": "Nutrient Deficiencies",
+      "textPreview": "Learn about micronutrient deficiencies that could be slowing down your progress and get simple food choices and supplement recommendations to help improve your health and well-being. Feel confident that all nutritional recommendations are backed by peer-reviewed scientific research."
+    },
+    {
+      "label": "Metabolism",
+      "textPreview": "Find out if your optimal diet should include more carbs or fats, so you know which foods may best fuel your body for health and happiness. Learn how your body metabolizes caffeine and alcohol, so you can make appropriate dietary changes for long-term health. Gain an in-depth understanding of your predisposition to lactose intolerance and gluten sensitivity. If you have food sensitivities, this assessment can be life-changing. Making selective dietary changes can mean the difference between feeling light and energized vs. feeling bloated and tired."
+    },
+    {
+      "label": "Taste Preference",
+      "textPreview": "Get a breakdown of important traits, which assess how taste buds affect your food choices. View key insights into how you likely experience the taste sensations of sweet, salty, bitter, creamy, carbonation, cilantro, and artificial sweetener. Learn how your taste preferences potentially influence your food choices and get specific action steps to stay on track with your health goals."
+    },
+    {
+      "label": "Lifestyle Tips",
+      "textPreview": "Lifestyle recommendations to overcome genetic predispositions and live your healthiest life, including stress management and sleep techniques, oral health, and other important lifestyle strategies."
+    },
+    {
+      "label": "Diet Tips",
+      "textPreview": "Nutrition: Diet and nutrition strategies, including specific foods, to help you overcome genetic predispositions and live your healthiest life."
+    },
+    {
+      "label": "Supplement Tips",
+      "textPreview": "Supplements: Dietary vitamins and supplements, including type and amount, to help you overcome genetic predispositions and live your healthiest life."
+    },
+    {
+      "label": "Further Testing Tips",
+      "textPreview": "Further Testing: additional testing recommendations to see how exactly your genetic predisposition is affecting you, so that you are equipped with the knowledge needed to take control of your health."
+    },
+    {
+      "label": "Why We Are Different",
+      "textPreview": "We BELIEVE good health lies at the crossroads of your genes, your environment, and your nutrition and fitness regimen. We save you time by cutting down on trial and error, so you see results and optimize your health faster. The expansive number of traits, genes, and SNPs used in each of our products provides extensive insight into your genetic predispositions and their potential impact on your overall health. We go one step further than any other company in the industry to provide you with practical, easy-to-follow strategies, so you can take action. These strategies are proven clinically in human trials and will help you overcome your genetic predispositions. The range of our recommendations within five essential domains of health and wellness is second to none. Our products provide an unparalleled genetic experience that offers great value at a reasonable price. We PRIDE ourselves on the fact that all of our recommendations are based entirely on solid, scientific evidence that has demonstrated effective and specific methods to reduce the risk for the onset of various health conditions associated with diet, exercise, weight management, and other lifestyle factors. We've physically"
+    },
+    {
+      "label": "Disclaimer",
+      "textPreview": "The information and recommendations in this report are based on your genetic profile combined with research studies that have attempted to draw associations between certain genes and how they affect individuals. The information and recommendations in your report should not be considered as a diagnosis or a substitute for expert medical advice. It is not possible, based on the information available, for us to make specific predictions about your own personal health and well-being. Genes are not the only factors in predicting any individual’s health. Environmental factors (lifestyle, medical history) and potentially other genes will affect the risk, or lack of risk, for a condition. The information in this report is best understood in the context of a full medical evaluation. The United States Food and Drug Administration has not evaluated statements in this app. The Sequencing.com website and its software applications (Apps) including but not limited to Sequencing.com's Application Programming Interface (API), are not intended to diagnose, treat, cure, or prevent any disease. Toolbox Genomics policies: Terms and Conditions Privacy Policy"
+    }
+  ],
+  "reportDataKeys": [
+    "app_id",
+    "avatar",
+    "avatarAlt",
+    "body",
+    "category",
+    "currency_code",
+    "headerImg",
+    "headerImgAlt",
+    "id",
+    "included_with_membership",
+    "included_with_premium",
+    "info_tab",
+    "listEnableFiles",
+    "meta",
+    "nid",
+    "non_genetic_fields",
+    "pre_order",
+    "price",
+    "product_data",
+    "product_id",
+    "publisher",
+    "purchasedBy",
+    "relatedReports",
+    "reportFile",
+    "report_premium",
+    "search_keywords",
+    "start_button_text",
+    "sub_title",
+    "summary",
+    "title",
+    "type",
+    "uri",
+    "wgsCompatible"
+  ],
+  "evidenceNotes": [
+    "Marketplace detail reportData confirms title, publisher/provider when available, price/product metadata when available, categories, sample report link when available, and overview/disclaimer tab boundaries when present.",
+    "Use overview/marketing text only for report purpose and marketplace positioning, not for local genetic, medical, diet, supplement, medication, or performance conclusions.",
+    "No raw genome data, uploaded genome data, or account navigation text is included in this artifact."
+  ]
+}

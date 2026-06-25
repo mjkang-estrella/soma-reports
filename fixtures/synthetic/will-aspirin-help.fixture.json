@@ -15,7 +15,7 @@
       "haplotype": "validated-model-or-source-output-unavailable",
       "inputId": "will-aspirin-help-model-output-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "validated aspirin benefit model, aspirin response marker interpretation, cardiovascular history, bleeding history, age, ASCVD risk inputs, medication list, clinician review, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "validated aspirin benefit model, aspirin response marker interpretation, cardiovascular history, bleeding history, age, ASCVD risk inputs, medication list, clinician review, and authenticated sample-report rows unavailable in this fixture; public Wellness and Longevity Medication Assessment sample row observed separately as sibling aspirin medication-response output-structure evidence",
       "sourceArtifact": "synthetic-will-aspirin-help-specialized-boundary-context-v1",
       "sourceFile": "synthetic-will-aspirin-help-specialized-boundary-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "clinical-professional-context-unavailable",
       "inputId": "will-aspirin-help-clinical-professional-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
+      "observedValue": "clinical diagnosis, cardiovascular history, bleeding history, age, ASCVD risk inputs, medication list, medication interactions, and clinician decision context unavailable in this fixture; public Wellness and Longevity sample medication-response row observed separately as sibling output-structure evidence",
       "sourceArtifact": "synthetic-will-aspirin-help-specialized-boundary-context-v1",
       "sourceFile": "synthetic-will-aspirin-help-specialized-boundary-context-v1.json"
     },
@@ -35,7 +35,7 @@
       "haplotype": "authenticated-sample-report-unavailable",
       "inputId": "will-aspirin-help-authenticated-sample-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture",
+      "observedValue": "direct Will Aspirin Help authenticated sample rows unavailable in this fixture; public Wellness and Longevity sample medication-response row observed separately as sibling output-structure evidence",
       "sourceArtifact": "synthetic-will-aspirin-help-specialized-boundary-context-v1",
       "sourceFile": "synthetic-will-aspirin-help-specialized-boundary-context-v1.json"
     }
@@ -46,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for will-aspirin-help validation"
   },
-  "missingInputPolicy": "Report unavailable aspirin decision and pharmacogenetic context evidence explicitly; do not answer whether aspirin will help; recommend starting, stopping, switching, or dosing aspirin; estimate bleeding risk, cardiovascular event risk, platelet resistance, aspirin benefit, primary-prevention value, secondary-prevention value, or clinical actionability from genotype.",
+  "missingInputPolicy": "Report unavailable aspirin benefit, aspirin response, bleeding-risk, cardiovascular-risk, platelet-resistance, medication-list, clinical-history, clinician-review, and direct Will Aspirin Help sample evidence explicitly; use the sibling Wellness and Longevity medication-response sample row only as observed output structure and do not infer local aspirin benefit, aspirin recommendation, aspirin dose, start/stop/switch guidance, bleeding risk, cardiovascular event risk, medication safety, treatment, or clinical actionability.",
   "packageSlug": "will-aspirin-help",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -205,7 +205,19 @@
         "missing_model_policy",
         "clinical_actionability_limits"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "wellness-and-longevity-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Wellness and Longevity DNA Analysis sample report",
+      "usedFor": [
+        "sibling_formal_fields",
+        "sample_rows",
+        "medication_response_table",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer aspirin decision and pharmacogenetic context boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer aspirin decision and pharmacogenetic boundary context using supplied references plus observed sibling Wellness and Longevity medication-response sample-report output structure."
 }

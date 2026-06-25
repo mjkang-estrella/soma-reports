@@ -1,151 +1,228 @@
 {
+  "schemaVersion": "soma-reports.synthetic-result.v1",
   "reportOverview": {
     "reportTitle": "Lupus",
     "inputManifestHash": "sha256:synthetic-lupus-condition-boundary-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "validated lupus model, calibrated lupus PRS, HLA inference, ANA, anti-dsDNA, complement, kidney labs, urinalysis, organ involvement, symptoms, disease activity, flare context, medication context, family history, ancestry applicability, and authenticated sample-report rows unavailable in this fixture.",
-      "Clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and calibrated model outputs are unavailable.",
-      "This result is not a diagnosis, disease-risk estimate, HLA inference, inflammatory-status result, immune-strength result, infection-risk result, lab interpretation, treatment instruction, supplement instruction, diet instruction, prevention plan, screening instruction, diagnostic-test recommendation, reproductive action, or clinical actionability claim."
+      "Direct Lupus authenticated sample report rows remain unavailable.",
+      "Validated model output, calibrated personal estimates, clinical context, family history, professional review, and local actionability evidence are unavailable in this fixture.",
+      "Sibling sample rows are included only as exact-cited output-structure examples, not as personal findings."
     ]
   },
   "resultRows": [
     {
-      "groupTitle": "Condition model availability",
+      "groupTitle": "Validated model availability",
       "item": "lupus-model-unavailable",
-      "brandName": "",
-      "geneticAnalysis": "Lupus cannot emit a lupus conclusion from this local fixture because the validated model, calibrated score, clinical context, labs, and authenticated sample rows are unavailable.",
+      "brandName": "lupus",
+      "geneticAnalysis": "validated lupus model, calibrated lupus PRS, HLA inference, ANA, anti-dsDNA, complement, kidney labs, urinalysis, organ involvement, symptoms, disease activity, flare context, medication context, family history, ancestry applicability, and authenticated sample-report rows unavailable in this fixture; Public Disease Risk sample PDF Autoimmune Diseases table, Lupus Reduced row, and heritable-component limitation are extracted as sibling output-structure evidence.",
       "genes": [
         "Lupus model"
       ],
-      "sourceLabel": "Public immune / autoimmune / genetics reference context",
-      "sourceIds": [
-        "medlineplus-autoimmune-diseases",
-        "medlineplus-immune-system-disorders",
-        "niaid-autoimmunity-factors",
-        "niams-lupus",
-        "medlineplus-systemic-lupus-genetics"
-      ],
-      "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This row is an availability statement, not a diagnosis, risk score, HLA result, immune-strength result, inflammation-level result, lab result, prevention plan, treatment instruction, or all-clear statement."
-    },
-    {
-      "groupTitle": "Clinical and lab context availability",
-      "item": "lupus-clinical-lab-context-unavailable",
-      "brandName": "",
-      "geneticAnalysis": "Lupus cannot interpret clinical or lab context because symptoms, diagnosis, family history, inflammatory markers, immune evaluation, medications, environmental context, clinician interpretation, and authenticated sample rows are unavailable.",
-      "genes": [
-        "Lupus clinical and lab context"
-      ],
-      "sourceLabel": "CDC / MedlinePlus / FDA / professional-review context",
+      "sourceLabel": "Public genetics and report-boundary references",
       "sourceIds": [
         "cdc-genetic-testing",
         "medlineplus-genetics",
         "medlineplus-complex-disorders",
-        "fda-direct-to-consumer-tests",
-        "nhgri-polygenic-risk-scores",
-        "ebi-gwas-catalog",
-        "medlineplus-autoimmune-diseases",
-        "medlineplus-immune-system-disorders"
+        "fda-direct-to-consumer-tests"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "Personal interpretation needs validated testing scope, symptoms, family history, clinical history, labs, environment, ancestry applicability, and qualified professional review."
+      "plainEnglishMeaning": "The local fixture does not contain the validated report model or calibrated result needed for a personal conclusion."
+    },
+    {
+      "groupTitle": "Clinical and context availability",
+      "item": "lupus-clinical-lab-context-unavailable",
+      "brandName": "lupus",
+      "geneticAnalysis": "clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, disease activity, flare context, and personal treatment context unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Lupus",
+      "genes": [
+        "Lupus clinical and lab context"
+      ],
+      "sourceLabel": "Fixture context and public references",
+      "sourceIds": [
+        "medlineplus-genetics",
+        "medlineplus-complex-disorders",
+        "fda-direct-to-consumer-tests",
+        "nhgri-polygenic-risk-scores"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The local fixture does not contain the clinical, family-history, lab, imaging, or professional-review context needed for medical conclusions."
+    },
+    {
+      "groupTitle": "Observed sibling sample structure",
+      "item": "Disease Risk Genetic Test Report sample rows",
+      "brandName": "Sibling Disease Risk Genetic Test Report sample report",
+      "geneticAnalysis": "The public sample rows are preserved as observed output structure only. They are not local-user disease risk, diagnosis, carrier status, screening, prevention, treatment, or actionability findings.",
+      "genes": [
+        "PPARG",
+        "KCNJ11",
+        "TCF7L2"
+      ],
+      "sourceLabel": "Sibling Disease Risk sample PDF",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Use these rows to match the shape and source binding of the sample report, while keeping them separate from personal genome interpretation."
     }
   ],
   "conditionBoundaryContext": {
-    "plainEnglishMeaning": "Lupus is currently a boundary report: it can document what evidence is available and what is missing, but it cannot diagnose lupus, estimate disease risk, interpret labs, or make health decisions.",
+    "plainEnglishMeaning": "Condition Boundary Context is reported as an evidence-availability boundary. The local fixture can preserve source-bound sample structure and limitations, but it cannot make personal medical conclusions.",
     "unsupportedClaims": [
-      "Diagnosis, all-clear result, or disease-risk estimate",
-      "HLA status, inflammatory status, immune strength, infection risk, autoantibody status, complement status, cytokines, CRP, ESR, immune-cell labs, organ involvement, disease activity, or flare status",
-      "EDS subtype, connective-tissue subtype, collagen-gene panel result, variant classification, vascular-risk inference, Beighton score, or hypermobility score",
-      "Treatment, supplement, diet, prevention, screening, diagnostic testing, reproductive, medication, surgery, or management instruction",
-      "Replacement for qualified clinician, genetic counselor, rheumatology, immunology, or genetics review"
+      "diagnosis",
+      "personal disease risk estimate",
+      "carrier or pathogenic-variant status",
+      "screening, prevention, medication, surgery, treatment, reproductive, or actionability guidance"
     ],
-    "professionalReview": "Use qualified professional review for symptoms, abnormal labs, family history, known variants, autoimmune or inflammatory concerns, connective-tissue concerns, medication questions, pregnancy or reproductive questions, screening questions, or treatment decisions."
+    "professionalReview": "Use validated test scope, clinical context, family history, ancestry applicability, and qualified professional review for health decisions."
   },
-  "practicalNextSteps": {
-    "professionalReview": [
-      "Do not use this local fixture to change medication, supplements, diet, screening, diagnostic testing, reproductive decisions, prevention plans, or treatment decisions.",
-      "Bring symptoms, family history, clinical history, labs, medications, environment, prior genetic testing, and ancestry context to a qualified professional if reviewing immune, inflammatory, autoimmune, rheumatologic, connective-tissue, or EDS concerns.",
-      "Treat missing model rows as unavailable, not as low risk, high risk, reassuring, abnormal, normal, or actionable results."
-    ]
-  },
+  "sampleRows": [
+    {
+      "groupTitle": "Report limitation",
+      "item": "Heritable component only",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "The sample states that 'Your Risk' is only for the heritable component of the disease, and that environmental, lifestyle, and other non-heritable factors also affect overall susceptibility risk.",
+      "description": "The sample uses lung cancer as an example, saying lung cancer is only 10% heritable and most cases are associated with lifestyle factors such as smoking.",
+      "genes": [],
+      "sourceLabel": "Sibling Disease Risk Genetic Test Report sample report",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public Sequencing.com Disease Risk Genetic Test Report sample PDF; used here as sibling output-structure evidence for Lupus, not as a direct Lupus sample report or local lupus and autoimmune output structure, lupus diagnosis, personal lupus risk, HLA status, ANA, anti-dsDNA, complement, kidney or organ involvement, disease activity, flare status, immunosuppression need, treatment, supplement, diet, screening, testing, reproductive action, or actionability guidance."
+    },
+    {
+      "groupTitle": "Autoimmune Diseases",
+      "item": "Autoimmune category risk table",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Visible sample rows include Allergy/Hay Fever/Eczema Elevated; Ankylosing Spondylitis Typical; Asthma Reduced; Childhood-Onset Asthma Typical; Autoimmune Diseases Typical; Celiac Disease Reduced; Crohn's Disease Typical; Type-1 Diabetes Unlikely; Type-2 Diabetes Typical; Graves' Disease Typical; IBD Reduced; Multiple Sclerosis Very Reduced; Psoriasis Reduced; Rheumatoid Arthritis Very Reduced; Sarcoidosis Reduced; Lupus Reduced; Ulcerative Colitis Reduced.",
+      "description": "The page explains Type-2 Diabetes susceptibility and names PPARG, KCNJ11, and TCF7L2 as example diabetes-related genes.",
+      "genes": [
+        "PPARG",
+        "KCNJ11",
+        "TCF7L2"
+      ],
+      "sourceLabel": "Sibling Disease Risk Genetic Test Report sample report",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public Sequencing.com Disease Risk Genetic Test Report sample PDF; used here as sibling output-structure evidence for Lupus, not as a direct Lupus sample report or local lupus and autoimmune output structure, lupus diagnosis, personal lupus risk, HLA status, ANA, anti-dsDNA, complement, kidney or organ involvement, disease activity, flare status, immunosuppression need, treatment, supplement, diet, screening, testing, reproductive action, or actionability guidance."
+    }
+  ],
+  "practicalNextSteps": [
+    "Keep this as a local reproducibility fixture, not a clinical report.",
+    "Review the cited source IDs before using the prompt with a local agent.",
+    "Do not use sibling sample labels as personal results."
+  ],
   "references": [
     {
       "id": "cdc-genetic-testing",
-      "title": "CDC Genetic Testing"
+      "title": "CDC Genetic Testing",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
     },
     {
       "id": "medlineplus-genetics",
-      "title": "MedlinePlus Genetics"
+      "title": "MedlinePlus Genetics",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "medlineplus-complex-disorders",
-      "title": "MedlinePlus Genetics: complex disorders"
+      "title": "MedlinePlus Genetics: complex disorders",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "fda-direct-to-consumer-tests",
-      "title": "FDA Direct-to-Consumer Tests"
+      "title": "FDA Direct-to-Consumer Tests",
+      "sourceType": "regulatory_resource",
+      "evidenceLevel": "regulatory_background"
     },
     {
       "id": "nhgri-polygenic-risk-scores",
-      "title": "NHGRI overview of polygenic risk scores"
+      "title": "NHGRI overview of polygenic risk scores",
+      "sourceType": "education_resource",
+      "evidenceLevel": "background"
     },
     {
       "id": "ebi-gwas-catalog",
-      "title": "GWAS Catalog"
+      "title": "GWAS Catalog",
+      "sourceType": "database",
+      "evidenceLevel": "background"
     },
     {
       "id": "medlineplus-autoimmune-diseases",
-      "title": "MedlinePlus: Autoimmune Diseases"
+      "title": "MedlinePlus: Autoimmune Diseases",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
     },
     {
       "id": "medlineplus-immune-system-disorders",
-      "title": "MedlinePlus: Immune System and Disorders"
+      "title": "MedlinePlus: Immune System and Disorders",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
     },
     {
       "id": "niaid-autoimmunity-factors",
-      "title": "NIAID: Factors That Influence Autoimmunity"
+      "title": "NIAID: Factors That Influence Autoimmunity",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
     },
     {
       "id": "niams-lupus",
-      "title": "NIAMS: Lupus"
+      "title": "NIAMS: Lupus",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
     },
     {
       "id": "medlineplus-systemic-lupus-genetics",
-      "title": "MedlinePlus Genetics: Systemic Lupus Erythematosus"
+      "title": "MedlinePlus Genetics: Systemic Lupus Erythematosus",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
+    },
+    {
+      "id": "genetic-testing-disease-risk-sample-pdf",
+      "title": "Genetic Testing For Disease Risk sample genetic report",
+      "sourceType": "mock_report",
+      "evidenceLevel": "high"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "lupus-model-unavailable",
+        "effect": "The local fixture intentionally omits calibrated Lupus calculations and clinical context.",
+        "extractionStatus": "curated",
         "gene": "Lupus model",
-        "observedValue": "validated lupus model, calibrated lupus PRS, HLA inference, ANA, anti-dsDNA, complement, kidney labs, urinalysis, organ involvement, symptoms, disease activity, flare context, medication context, family history, ancestry applicability, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "genotype": "validated lupus model, calibrated lupus PRS, HLA inference, ANA, anti-dsDNA, complement, kidney labs, urinalysis, organ involvement, symptoms, disease activity, flare context, medication context, family history, ancestry applicability, clinician review, and genetic counselor review unavailable",
+        "phenotype": "Mark local findings for lupus and autoimmune output structure, lupus diagnosis, personal lupus risk, HLA status, ANA, anti-dsDNA, complement, kidney or organ involvement, disease activity, flare status, immunosuppression need, treatment, supplement, diet, screening, testing, reproductive action, or actionability guidance unavailable instead of inferring them.",
+        "sortOrder": 1,
+        "tier": "Local missing input",
+        "variantId": "lupus-model-unavailable"
       },
       {
-        "inputId": "lupus-clinical-lab-context-unavailable",
-        "gene": "Lupus clinical and lab context",
-        "observedValue": "clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "effect": "The public Disease Risk Genetic Test Report sample shows Disease, Your Risk, and Description columns in the Autoimmune Diseases category, including a Lupus Reduced sample row.",
+        "extractionStatus": "direct",
+        "gene": "Autoimmune disease category table",
+        "genotype": "sample Autoimmune Diseases category table observed with Allergy/Hay Fever/Eczema Elevated, Ankylosing Spondylitis Typical, Asthma Reduced, Childhood-Onset Asthma Typical, Autoimmune Diseases Typical, Celiac Disease Reduced, Crohn's Disease Typical, Type-1 Diabetes Unlikely, Type-2 Diabetes Typical, Graves' Disease Typical, IBD Reduced, Multiple Sclerosis Very Reduced, Psoriasis Reduced, Rheumatoid Arthritis Very Reduced, Sarcoidosis Reduced, Lupus Reduced, and Ulcerative Colitis Reduced rows",
+        "phenotype": "Observed sibling sample output structure only; do not infer local lupus risk, diagnosis, HLA status, autoantibody/complement status, organ involvement, disease activity, flare status, treatment, testing, reproductive action, or clinical action.",
+        "sortOrder": 2,
+        "tier": "Sibling sample-report section",
+        "variantId": "disease-risk-sample-autoimmune-lupus"
       }
-    ],
-    "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and exact rows",
-      "Validated disease model or calibrated score with applicability and validation metadata",
-      "HLA inference, inflammatory markers, immune labs, symptoms, family history, clinical history, environment, medications, ancestry applicability, and professional interpretation",
-      "validated lupus model, calibrated lupus PRS, HLA inference, ANA, anti-dsDNA, complement, kidney labs, urinalysis, organ involvement, symptoms, disease activity, flare context, medication context, family history, ancestry applicability, and authenticated sample-report rows unavailable in this fixture; clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and authenticated sample-report rows unavailable in this fixture"
     ],
     "probabilities": [],
     "uncertainty": [
-      "No calibrated lupus probability, disease-risk, immune-strength, inflammation-level, lab, treatment-response, prevention-benefit, screening-benefit, reproductive, or actionability model is supplied for this local package.",
-      "Immune, inflammatory, autoimmune, rheumatologic, connective-tissue, and EDS interpretation depends on validated test scope, clinical and family history, symptoms, labs, environment, ancestry applicability, and qualified professional review."
+      "No calibrated model, applicability distribution, clinical context, or professional review is supplied for this fixture.",
+      "Sibling sample rows show report structure only and do not quantify local probability."
+    ],
+    "missingInputs": [
+      "validated lupus model, calibrated lupus PRS, HLA inference, ANA, anti-dsDNA, complement, kidney labs, urinalysis, organ involvement, symptoms, disease activity, flare context, medication context, family history, ancestry applicability, and authenticated sample-report rows unavailable in this fixture; Public Disease Risk sample PDF Autoimmune Diseases table, Lupus Reduced row, and heritable-component limitation are extracted as sibling output-structure evidence.",
+      "clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, disease activity, flare context, and personal treatment context unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Lupus"
     ],
     "limitations": [
-      "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
-      "The report is educational and does not provide diagnosis, disease-risk estimation, HLA inference, inflammatory-status assessment, immune-strength assessment, infection-risk assessment, lab interpretation, prevention advice, screening advice, diagnostic-testing advice, reproductive advice, supplement advice, diet advice, medication advice, surgery advice, treatment advice, or actionability.",
-      "Unavailable model rows should never be interpreted as low risk, high risk, no risk, normal, abnormal, reassuring, diagnostic, or an all-clear result."
+      "No raw genome data is included or returned.",
+      "No personal disease risk, diagnosis, screening, prevention, treatment, or actionability conclusion is produced.",
+      "Direct report detail/body parity remains pending; the sample rows are sibling output-structure evidence only."
     ]
   }
 }

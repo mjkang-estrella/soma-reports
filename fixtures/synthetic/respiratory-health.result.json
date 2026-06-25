@@ -403,5 +403,15 @@
       "It does not diagnose asthma, COPD, cystic fibrosis, infection, allergy, sleep apnea, pulmonary disease, or respiratory conditions.",
       "It does not include spirometry, oxygen saturation, imaging, symptoms, infection history, medication list, exercise tolerance, pediatric context, calibrated respiratory model, or clinician interpretation."
     ]
+  },
+  "organSystemConditionContext": {
+    "plainEnglishMeaning": "Respiratory health context depends on genetics plus symptoms, spirometry, oxygen saturation, imaging, infection history, medication list, age, environment, and clinician review.",
+    "unsupportedClaims": [
+      "respiratory diagnosis",
+      "asthma, COPD, infection, or lung-function prediction",
+      "personal respiratory risk estimate",
+      "supplement, medication, testing, emergency, exposure, exercise, or treatment recommendation"
+    ],
+    "professionalReview": "A clinician can interpret respiratory genetics together with symptoms, spirometry, imaging, oxygen saturation, medications, environmental exposures, and full clinical context."
   }
 }

@@ -15,7 +15,7 @@
       "haplotype": "validated-model-or-source-output-unavailable",
       "inputId": "developmental-disorders-model-output-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "validated developmental model, gene panel result, variant classifications, age, developmental history, symptoms, cognitive testing, behavioral assessment, school context, therapy context, family history, clinician review, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "validated developmental model, gene panel result, variant classifications, age, developmental history, symptoms, cognitive testing, behavioral assessment, school context, therapy context, family history, clinician review, and authenticated sample-report rows unavailable in this fixture; Public Disease Risk sample PDF Neuro-psychological Diseases table, ADHD and Autism Spectrum Disorder rows, CACNA1C/CACNB2 explanatory note, and heritable-component limitation are extracted as sibling developmental/neuro-psychological output-structure evidence.",
       "sourceArtifact": "synthetic-developmental-disorders-specialized-boundary-context-v1",
       "sourceFile": "synthetic-developmental-disorders-specialized-boundary-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "clinical-professional-context-unavailable",
       "inputId": "developmental-disorders-clinical-professional-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
+      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Developmental Disorders",
       "sourceArtifact": "synthetic-developmental-disorders-specialized-boundary-context-v1",
       "sourceFile": "synthetic-developmental-disorders-specialized-boundary-context-v1.json"
     },
@@ -35,7 +35,7 @@
       "haplotype": "authenticated-sample-report-unavailable",
       "inputId": "developmental-disorders-authenticated-sample-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture",
+      "observedValue": "direct Developmental Disorders authenticated sample rows unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence",
       "sourceArtifact": "synthetic-developmental-disorders-specialized-boundary-context-v1",
       "sourceFile": "synthetic-developmental-disorders-specialized-boundary-context-v1.json"
     }
@@ -46,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for developmental-disorders validation"
   },
-  "missingInputPolicy": "Report unavailable developmental and neurodevelopmental genetics context evidence explicitly; do not diagnose autism, ADHD, developmental delay, intellectual disability, learning disorder, language disorder, behavioral disorder, neurologic condition, or psychiatric condition; predict child development, cognition, IQ, behavior, school needs, therapy needs, medication needs, prognosis, severity, family risk, or clinical actionability.",
+  "missingInputPolicy": "Report unavailable developmental and neurodevelopmental genetics context evidence explicitly; use the public sibling Disease Risk sample rows only as observed output structure and do not infer autism, ADHD, developmental-delay, intellectual-disability, learning, language, behavior, neurologic, psychiatric, school, therapy, medication, prognosis, severity, family-risk, testing, or actionability guidance from local unavailable evidence or sample-only rows.",
   "packageSlug": "developmental-disorders",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -229,7 +229,19 @@
         "missing_model_policy",
         "clinical_actionability_limits"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "genetic-testing-disease-risk-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Genetic Testing For Disease Risk sample genetic report",
+      "usedFor": [
+        "sibling_formal_fields",
+        "sample_rows",
+        "risk_label_table",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer developmental and neurodevelopmental genetics context boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer developmental and neurodevelopmental genetics context using supplied references plus observed sibling Disease Risk Genetic Test Report developmental and neurodevelopmental output structure while explicitly marking personal model, source output, clinical context, and professional review unavailable."
 }

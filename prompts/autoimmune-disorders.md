@@ -1,4 +1,4 @@
-# Autoimmune Disorders local-agent prompt
+# Autoimmune Disorders Local-Agent Prompt
 
 Generate a plain-English Autoimmune Disorders report from local genome-derived evidence and supplied reference resources.
 Use only provided evidence and references. Do not invent genes, variants, classifications, scores, studies, symptoms, family history, clinical history, labs, inflammatory markers, immune evaluations, diagnoses, or treatment conclusions.
@@ -10,4 +10,8 @@ For this package, focus on autoimmune disease education, immune-system and compl
 If validated autoimmune disease model, calibrated autoimmune PRS, HLA inference, autoantibodies, complements, inflammatory labs, organ involvement, symptoms, family history, environmental context, medication context, disease activity, flare context, and authenticated sample-report rows are missing, mark those sections unavailable instead of inferring them.
 Do not diagnose autoimmune disease; estimate autoimmune disease risk; infer HLA status, autoantibody status, complement status, organ involvement, disease activity, flare status, immune suppression need, treatment need, supplement need, diet need, screening need, diagnostic-test need, reproductive action, or actionability.
 State that immune, inflammatory, autoimmune, rheumatologic, connective-tissue, and EDS interpretation depends on validated test scope, clinical and family history, symptoms, labs, environment, ancestry applicability, and qualified professional review.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
+The public Immunity & Inflammation sample PDF is supplied only as sibling observed output structure for Autoimmune Disorders: joint inflammation/rheumatoid arthritis, gut inflammation/IBD, eczema, psoriasis, likelihood labels, percentiles, impact/evidence ratings, and visible variant tables.
+Do not turn the sample's rheumatoid arthritis, IBD, eczema, psoriasis, likelihood, percentile, impact/evidence rating, recommendation, or variant-table text into personal autoimmune diagnosis, disease-risk estimate, HLA status, autoantibody status, complement status, organ involvement, disease activity, flare status, treatment, supplement, diet, screening, testing, reproductive, or actionability guidance unless separate validated evidence is supplied.

@@ -1,5 +1,5 @@
 {
-  "consumerTone": "plain English; educational complete-genome-analysis boundary context only; no pediatric, diagnosis, disease risk, carrier status, pathogenicity, pharmacogenomics, ancestry, screening, treatment, or actionability claims",
+  "consumerTone": "plain English; educational complete-genome-analysis boundary context only; public sample rows are not local inherited-trait or health findings; no pediatric, diagnosis, disease risk, carrier status, pathogenicity, pharmacogenomics, ancestry, screening, treatment, lifestyle, or actionability claims",
   "datasetId": "synthetic-complete-genome-analysis-boundary-context-v1",
   "expectedAssertions": {
     "consumerLanguage": true,
@@ -35,7 +35,7 @@
       "haplotype": "not-supplied",
       "inputId": "complete-genome-analysis-output-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "complete genome-wide inventory, coverage metrics, variant interpretation, pediatric context, disease risk, carrier status, pharmacogenomics, ancestry, pathogenicity classification, clinical significance, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "complete genome-wide inventory, coverage metrics, variant interpretation, pediatric context, disease risk, carrier status, pharmacogenomics, ancestry, pathogenicity classification, and clinical significance unavailable in this fixture",
       "sourceArtifact": "synthetic-complete-genome-analysis-boundary-context-v1",
       "sourceFile": "synthetic-complete-genome-analysis-boundary-context-v1.json"
     }
@@ -46,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived bioinformatics utility context for complete-genome-analysis validation"
   },
-  "missingInputPolicy": "Mark complete genome-wide inventory, coverage metrics, variant interpretation, pediatric context, disease risk, carrier status, pharmacogenomics, ancestry, pathogenicity classification, clinical significance, and authenticated sample evidence unavailable when not explicitly supplied.",
+  "missingInputPolicy": "Report complete genome-wide inventory, coverage metrics, variant interpretation, pediatric context, disease risk, carrier status, pharmacogenomics, ancestry, pathogenicity classification, clinical significance, and clinical actionability unavailable unless explicitly supplied; use public inherited-traits sample rows only as observed output structure.",
   "packageSlug": "complete-genome-analysis",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -152,7 +152,20 @@
         "trait_association_context",
         "model_unavailable_context"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "complete-genome-analysis-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Complete Genome Analysis sample report",
+      "usedFor": [
+        "sample_rows",
+        "formal_fields",
+        "genotype_summary",
+        "output_format",
+        "inherited_traits_sample_structure"
+      ]
     }
   ],
-  "reportPurpose": "Consumer complete-genome-analysis boundary context using selected public variant and reference-build rows while marking genome-wide inventory and clinical interpretation outputs unavailable."
+  "reportPurpose": "Consumer Complete Genome Analysis boundary context using local derived utility rows plus observed Sequencing.com inherited-traits sample-output structure."
 }

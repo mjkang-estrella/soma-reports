@@ -10,4 +10,9 @@ For this package, focus on hormone-health limits, endocrine-gland context, missi
 If validated hormone-health model, hormone labs, endocrine diagnosis, symptoms, medications, menstrual or reproductive context, age/sex context, clinical history, clinician review, and authenticated sample-report rows are missing, mark those sections unavailable instead of inferring them.
 Do not infer hormone status; diagnose endocrine, reproductive, thyroid, adrenal, fertility, or sexual-health conditions; interpret labs; recommend hormone testing, medication, supplements, diet, treatment, lifestyle, reproductive actions, or replace clinician review.
 State that reproductive, endocrine, hormone, carrier, pregnancy, and fertility interpretation depends on validated test scope, clinical history, family history, symptoms, medications, labs, partner context, pregnancy context when relevant, ancestry applicability, and qualified professional review.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
+The local Hormone Health sample PDF is supplied only as observed output structure: overview cards, thyroid detail pages, top-variant tables, recommendation impact/evidence scores, and sample-only explanatory text.
+Use visible Hormone Health sample rows exactly as sampleRows[] examples and cite hormone-health-sample-pdf for every sample-derived row.
+Do not turn sample likelihood labels, hormone-level labels, percentile text, variant counts, genotype table rows, recommendation impact/evidence scores, iodine wording, selenium wording, or condition descriptions into local hormone status, thyroid status, endocrine diagnosis, lab interpretation, fertility or pregnancy inference, treatment, supplement, diet, lifestyle, medication, or clinical actionability guidance.

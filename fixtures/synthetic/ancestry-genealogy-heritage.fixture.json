@@ -1,44 +1,50 @@
 {
-  "packageSlug": "ancestry-genealogy-heritage",
-  "datasetId": "synthetic-ancestry-genealogy-heritage-context-v1",
-  "packageVersion": "0.1.0",
-  "reportPurpose": "Consumer ancestry and genealogy context from derived broad autosomal similarity while marking relative matching and family-tree evidence unavailable.",
-  "missingInputPolicy": "Mark regional ancestry, relatives, family matching, surname matching, family-tree placement, migration path, exact homeland, and community affiliation unavailable when not explicitly supplied.",
   "consumerTone": "plain English; ancestry and genealogy education only; no identity, exact-origin, ethnicity-percentage, tribal/community, relative-matching, or health claims",
-  "inputManifest": {
-    "hash": "sha256:synthetic-ancestry-genealogy-heritage-context-v1",
-    "genomeBuild": "GRCh37-or-GRCh38-derived",
-    "rawGenomeReturned": false,
-    "source": "synthetic derived ancestry evidence for ancestry-genealogy-heritage validation"
+  "datasetId": "synthetic-ancestry-genealogy-heritage-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
   },
   "genomeEvidence": [
     {
-      "inputId": "autosomal-reference-panel-summary",
-      "haplotype": "autosomal-reference-panel-summary",
-      "gene": "autosomal genome",
-      "observedValue": "broad East Asian reference-panel similarity; no genealogical relationship model supplied",
       "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "autosomal genome",
+      "haplotype": "autosomal-reference-panel-summary",
+      "inputId": "autosomal-reference-panel-summary",
       "matchStatus": "summarized",
-      "sourceFile": "synthetic-ancestry-genealogy-heritage-context-v1.json",
-      "sourceArtifact": "synthetic-ancestry-genealogy-heritage-context-v1"
+      "observedValue": "broad East Asian reference-panel similarity; no genealogical relationship model supplied",
+      "sourceArtifact": "synthetic-ancestry-genealogy-heritage-context-v1",
+      "sourceFile": "synthetic-ancestry-genealogy-heritage-context-v1.json"
     },
     {
-      "inputId": "genealogy-relative-matching-unavailable",
-      "haplotype": "not-supplied",
-      "gene": "genealogy matching data",
-      "observedValue": "relative matching, surname matching, and family-tree evidence unavailable in this fixture",
       "assembly": "not-applicable",
+      "gene": "genealogy matching data",
+      "haplotype": "not-supplied",
+      "inputId": "genealogy-relative-matching-unavailable",
       "matchStatus": "unavailable",
-      "sourceFile": "synthetic-ancestry-genealogy-heritage-context-v1.json",
-      "sourceArtifact": "synthetic-ancestry-genealogy-heritage-context-v1"
+      "observedValue": "relative matching, surname matching, and family-tree evidence unavailable in this fixture",
+      "sourceArtifact": "synthetic-ancestry-genealogy-heritage-context-v1",
+      "sourceFile": "synthetic-ancestry-genealogy-heritage-context-v1.json"
     }
   ],
+  "inputManifest": {
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "hash": "sha256:synthetic-ancestry-genealogy-heritage-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived ancestry evidence for ancestry-genealogy-heritage validation"
+  },
+  "missingInputPolicy": "Mark calibrated regional ancestry, relatives, family matching, surname matching, family-tree placement, migration path, exact homeland, community affiliation, and health interpretation unavailable when not explicitly supplied. Use sample admixture percentages, maps, region narratives, and country/subregion table structure only as observed output-format examples.",
+  "packageSlug": "ancestry-genealogy-heritage",
+  "packageVersion": "0.1.0",
   "referenceResources": [
     {
-      "id": "medlineplus-genetic-ancestry-testing",
-      "title": "MedlinePlus Genetics: genetic ancestry testing",
-      "sourceType": "education_resource",
       "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-ancestry-testing",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: genetic ancestry testing",
       "usedFor": [
         "ancestry_context",
         "autosomal_scope",
@@ -46,10 +52,10 @@
       ]
     },
     {
-      "id": "medlineplus-dtc-risks-benefits",
-      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing",
-      "sourceType": "education_resource",
       "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-dtc-risks-benefits",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing",
       "usedFor": [
         "dtc_limitations",
         "privacy_sensitivity",
@@ -57,22 +63,28 @@
       ]
     },
     {
-      "id": "international-genome-sample-resource",
-      "title": "International Genome Sample Resource / 1000 Genomes",
-      "sourceType": "database",
       "evidenceLevel": "database_background",
+      "id": "international-genome-sample-resource",
+      "sourceType": "database",
+      "title": "International Genome Sample Resource / 1000 Genomes",
       "usedFor": [
         "ancestry_context",
         "population_reference",
         "variant_frequency_context"
       ]
+    },
+    {
+      "evidenceLevel": "direct_sample_report",
+      "id": "ancestry-genealogy-heritage-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "DNA Ancestry and Genealogy Report sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "expectedAssertions": {
-    "noRawGenomeInOutput": true,
-    "everyFindingHasReference": true,
-    "missingInputsAreExplicit": true,
-    "probabilitiesOnlyInAppendix": true,
-    "consumerLanguage": true
-  }
+  "reportPurpose": "Consumer ancestry and genealogy context from derived broad autosomal similarity plus observed Gene2me DNA Ancestry and Genealogy sample-report output structure."
 }

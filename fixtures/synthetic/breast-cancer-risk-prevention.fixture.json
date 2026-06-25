@@ -15,7 +15,7 @@
       "haplotype": "condition-risk-model-unavailable",
       "inputId": "breast-cancer-risk-prevention-model-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "validated pathogenic-variant screen, calibrated cancer PRS, ancestry applicability metadata, age, sex where relevant, personal cancer history, family history, tumor testing, clinical screening history, prevention-plan context, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "validated breast cancer risk and prevention model, calibrated cancer PRS, pathogenic variant interpretation, inherited-cancer panel scope, ancestry applicability, family history, tumor testing, screening context, prevention context, and clinician or genetic-counselor review unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF Cancers category table and heritable-component limitation observed as sibling output structure",
       "sourceArtifact": "synthetic-breast-cancer-risk-prevention-cancer-boundary-context-v1",
       "sourceFile": "synthetic-breast-cancer-risk-prevention-cancer-boundary-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "clinical-context-unavailable",
       "inputId": "breast-cancer-risk-prevention-clinical-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "clinical diagnosis, symptoms, screening findings, family history, tumor testing, treatment history, and clinician interpretation unavailable in this fixture",
+      "observedValue": "clinical diagnosis, symptoms, screening findings, family history, tumor testing, treatment history, prevention context, and clinician interpretation unavailable in this fixture; public Disease Risk Genetic Test Report Cancers category table observed separately as output-structure evidence for Breast Cancer Risk & Prevention",
       "sourceArtifact": "synthetic-breast-cancer-risk-prevention-cancer-boundary-context-v1",
       "sourceFile": "synthetic-breast-cancer-risk-prevention-cancer-boundary-context-v1.json"
     }
@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for breast-cancer-risk-prevention validation"
   },
-  "missingInputPolicy": "Report unavailable breast cancer risk and prevention evidence explicitly; do not diagnose cancer, estimate personal cancer risk, infer carrier status, classify variants, provide an all-clear result, recommend screening, recommend prevention steps, recommend medication, recommend surgery, recommend treatment, or replace genetic counseling.",
+  "missingInputPolicy": "Report unavailable breast cancer risk and prevention evidence explicitly; use the public sibling Disease Risk sample rows only as observed output structure and do not diagnose cancer, estimate personal cancer risk, infer carrier or pathogenic-variant status, recommend screening, recommend prevention steps, recommend medication, recommend surgery, recommend treatment, or provide actionability from local unavailable evidence or sample-only rows.",
   "packageSlug": "breast-cancer-risk-prevention",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -116,7 +116,19 @@
         "non_diagnostic_language",
         "missing_model_policy"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "genetic-testing-disease-risk-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Genetic Testing For Disease Risk sample genetic report",
+      "usedFor": [
+        "sibling_formal_fields",
+        "sample_rows",
+        "risk_label_table",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer breast cancer risk and prevention boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer breast cancer risk and prevention boundary context using supplied references plus observed sibling Disease Risk Genetic Test Report cancer-category output structure."
 }

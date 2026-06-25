@@ -1,0 +1,100 @@
+{
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "capturedAt": "2026-06-21T15:38:40.529Z",
+  "source": "in-app browser logged-in sequencing.com marketplace detail page __NEXT_DATA__.props.pageProps.reportData extraction",
+  "url": "https://sequencing.com/marketplace/am-i-related-albert-einstein-dna",
+  "finalUrl": "https://sequencing.com/marketplace/am-i-related-albert-einstein-dna",
+  "title": "Am I An Einstein?",
+  "nid": "16096",
+  "productId": "4843",
+  "app": {
+    "apiAppId": "einstein-robb",
+    "appid": "15117",
+    "backend": "ApiAppBackend",
+    "label": "Am I An Einstein"
+  },
+  "publisher": "Complete Genome Science",
+  "price": "$0",
+  "currencyCode": "USD",
+  "categories": [
+    "Ancestry"
+  ],
+  "uri": "marketplace/am-i-related-albert-einstein-dna",
+  "reportFile": "",
+  "headerImage": "https://sequencing.com/sites/default/files/am-i-an-einstein-icon1.png",
+  "headerImageAlt": "",
+  "meta": {
+    "canonical": "https://sequencing.com/marketplace/am-i-related-albert-einstein-dna",
+    "publishedTime": null,
+    "modifiedTime": null,
+    "ogDescriptionHash": "sha256:f84bab4356cb5c54c7151b31b1ed22d87acebb2f20c59080ea4020ec2ae9ac69",
+    "ogDescriptionPreview": "Are you an Einstein? Find out for free if share the same genes as Albert Einstein!",
+    "productPriceAmount": null,
+    "productPriceCurrency": "USD",
+    "productRetailerItemId": "4843"
+  },
+  "summaryPreview": "Are you an Einstein? Find out for free if share the same genes as Albert Einstein!",
+  "bodyPreview": "Are you an Einstein? Do you and Einstein share the same genes? Find out for free! Albert Einstein's genes played a large role in who he was, just as they do for all of us. Now you can find out if you have genes in common with one of the most intelligent people to have ever lived. The answer may surprise you! This DNA analysis app compares your genes to Albert Einstein's genes and determines if you're likely related. The Einstein family tree has a lot of branches and there are many distant relatives who are related to Einstein but don't know it. Could you possibly share the same genes as Einstein? Find out now with this free app. Private and Confidential Your data is not shared with anyone. Your data is protected by our Privacy First policy. You own your data. We never share or share your data, including your DNA data, with anyone. You also always have the option within your account to permanently delete your data at any time and for any reason. Our only allegiance is to you. We are not",
+  "visibleParagraphs": [
+    "Prime Day Sale | Up to 60% off + free worldwide shippingOrder Now",
+    "Order Now",
+    "Dashboard",
+    "My Apps",
+    "AI Reports",
+    "Next-Gen Disease Screen",
+    "Health Scan",
+    "Genome Explorer",
+    "Results",
+    "Files"
+  ],
+  "infoTabs": [
+    {
+      "label": "Overview",
+      "textPreview": "Are you an Einstein? Do you and Einstein share the same genes? Find out for free! Albert Einstein's genes played a large role in who he was, just as they do for all of us. Now you can find out if you have genes in common with one of the most intelligent people to have ever lived. The answer may surprise you! This DNA analysis app compares your genes to Albert Einstein's genes and determines if you're likely related. The Einstein family tree has a lot of branches and there are many distant relatives who are related to Einstein but don't know it. Could you possibly share the same genes as Einstein? Find out now with this free app. Private and Confidential Your data is not shared with anyone. Your data is protected by our Privacy First policy. You own your data. We never share or share your data, including your DNA data, with anyone. You also always have the option within your account to permanently delete your data at any time and for any reason. Our only allegiance is to you. We are not"
+    },
+    {
+      "label": "DNA App Store",
+      "textPreview": "Sequencing.com is the world's largest DNA App Store. We have an app for almost everything that can be determined from your genes. Browse the Reports Marketplace Additional DNA Reports by Complete Genome Science The Complete Genome Analysis Genetic Ancestry + Haplogroups Medication & Drug Response Disease Susceptibility Carrier Status Nutrigenomics Traits Physical Appearance Immune System Blood Traits & Conditions"
+    }
+  ],
+  "reportDataKeys": [
+    "app_id",
+    "avatar",
+    "avatarAlt",
+    "body",
+    "category",
+    "currency_code",
+    "headerImg",
+    "headerImgAlt",
+    "id",
+    "included_with_membership",
+    "included_with_premium",
+    "info_tab",
+    "listEnableFiles",
+    "meta",
+    "nid",
+    "non_genetic_fields",
+    "pre_order",
+    "price",
+    "product_data",
+    "product_id",
+    "publisher",
+    "purchasedBy",
+    "relatedReports",
+    "reportFile",
+    "report_premium",
+    "search_keywords",
+    "start_button_text",
+    "sub_title",
+    "summary",
+    "title",
+    "type",
+    "uri",
+    "wgsCompatible"
+  ],
+  "evidenceNotes": [
+    "Marketplace detail reportData confirms title, publisher/provider when available, price/product metadata when available, categories, sample report link when available, and overview/disclaimer tab boundaries when present.",
+    "Use overview/marketing text only for report purpose and marketplace positioning, not for local genetic, medical, diet, supplement, medication, or performance conclusions.",
+    "No raw genome data, uploaded genome data, or account navigation text is included in this artifact."
+  ]
+}

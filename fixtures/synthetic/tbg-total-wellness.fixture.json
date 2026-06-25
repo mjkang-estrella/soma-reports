@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived nutrition-genetics evidence for tbg-total-wellness validation"
   },
-  "missingInputPolicy": "Report unavailable wellness, nutrition, fitness, lifestyle, supplement, child-specific, lab, symptom, metabolic, and calibrated models explicitly; do not infer diet needs, workouts, supplement needs, child guidance, symptom causes, metabolic status, or treatment.",
+  "missingInputPolicy": "Report unavailable local wellness, nutrition, fitness, lifestyle, supplement, child-specific, symptom, lab, metabolic, and calibrated models explicitly; use the public sample rows only as observed output structure and do not infer local vitamin status, supplement needs, dosing, food changes, workouts, child-specific guidance, symptoms, labs, metabolic status, diagnosis, or treatment.",
   "packageSlug": "tbg-total-wellness",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -155,7 +155,19 @@
         "bmi_limitations",
         "no_weight_prediction_from_genotype"
       ]
+    },
+    {
+      "evidenceLevel": "direct_sample_report",
+      "id": "nourish-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Toolbox Genomics Nourish sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer TBG Total Wellness context using derived MCM6/LCT evidence plus explicit nutrition, fitness, lifestyle, supplement, child-specific, lab, symptom, and model-unavailable framing."
+  "reportPurpose": "Consumer TBG Total Wellness context using derived MCM6/LCT evidence plus observed Toolbox Genomics Nourish sample-report output structure from the TBG Total Wellness sample PDF."
 }

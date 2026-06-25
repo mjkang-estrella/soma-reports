@@ -46,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived fitness-trait evidence for fitness-trainer-summary validation"
   },
-  "missingInputPolicy": "Report unavailable trainer-summary sections and calibrated models explicitly; do not infer workouts, training response, sport suitability, injury risk, recovery, VO2 max, supplements, or medical clearance.",
+  "missingInputPolicy": "Report unavailable workout-plan, trainer-instruction, training-response, sport-selection, injury-risk, recovery, VO2 max, supplement, exercise-clearance, and calibrated models explicitly. Use sibling Gene-In-Form sample rows only as observed output-format examples; do not infer workouts, trainer instructions, sport selection, injury risk, recovery, VO2 max, supplement needs, medical clearance, or sample-only training actions from genotype alone.",
   "packageSlug": "fitness-trainer-summary",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -80,7 +80,20 @@
         "candidate_trait_associations",
         "model_unavailable_context"
       ]
+    },
+    {
+      "evidenceLevel": "sibling_sample_report",
+      "id": "gene-in-form-personalized-fitness-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Gene-In-Form Personalized Fitness sibling sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format",
+        "trainer_summary_boundary"
+      ]
     }
   ],
-  "reportPurpose": "Consumer-shareable fitness trainer summary using derived ACTN3 and ACE evidence plus explicit training-plan, injury-risk, recovery, VO2 max, supplement, and model-unavailable framing."
+  "reportPurpose": "Consumer-shareable fitness trainer summary using derived ACTN3 and ACE evidence plus sibling Gene-In-Form fitness output-structure evidence."
 }

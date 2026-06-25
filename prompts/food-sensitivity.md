@@ -13,6 +13,8 @@ Do not diagnose lactose intolerance, food allergy, food sensitivity, celiac dise
 Do not diagnose food sensitivity, diagnose food allergy, diagnose celiac disease, diagnose lactose intolerance, prescribe elimination diets, recommend supplements, or claim foods are safe or unsafe from genotype.
 State that symptoms, ancestry, diet history, environment, labs, medications, medical history, and clinician or dietitian guidance matter for nutrition decisions.
 For this package, focus on educational lactose-related marker context and explicitly unavailable broad food-sensitivity, allergy, celiac, immune-response, symptom, and elimination-diet sections.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
 Use GenoPalate Food Sensitivity sample-report summary cards, ADH1C/CYP1A2/HLA/LCT/MCM6-LCT gene tables, common-source lists, what-can-you-do blocks, and dietitian consultation page only as observed output-format examples unless the local run supplies equivalent validated evidence.
 Do not turn sample alcohol, caffeine, lactose, gluten, sensitivity, metabolism, source-list, dietitian, or sample genotype text into personal allergy, celiac, symptom, substance tolerance, elimination-diet, supplement, medical, or treatment advice.

@@ -99,6 +99,152 @@
       "plainEnglishMeaning": "The report can summarize supplied genetic context, but it cannot estimate personal heart attack, stroke, cholesterol, ApoB, or ASCVD risk or recommend a diet/exercise plan from this fixture."
     }
   ],
+  "sampleRows": [
+    {
+      "brandName": "",
+      "description": "The public sample block discusses avoiding trans fats, limiting saturated fats, and replacing them with healthier unsaturated fats for triglyceride context.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "geneticAnalysis": "Impact 3/5; evidence 4/5",
+      "groupTitle": "Healthy fats / Triglycerides",
+      "item": "Triglycerides",
+      "sortOrder": 1,
+      "sourceBindingNote": "Extracted from the public Cardiovascular Health sample PDF recommendation block; this is observed output structure, not personal advice.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "cardiovascular-health-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "",
+      "description": "The public sample block says consuming unsaturated fats is associated with lower ApoB levels.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "geneticAnalysis": "Impact 4/5; evidence 3/5",
+      "groupTitle": "Healthy fats / ApoB",
+      "item": "ApoB",
+      "sortOrder": 2,
+      "sourceBindingNote": "Extracted from the public Cardiovascular Health sample PDF recommendation block; this is observed output structure, not personal advice.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "cardiovascular-health-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "",
+      "description": "The public sample block includes a personalized APOE rs429358 TT variant row and says healthy fats may increase LDL particle size more in people with that sample variant.",
+      "extractionStatus": "direct",
+      "genes": [
+        "APOE"
+      ],
+      "geneticAnalysis": "Impact 3/5; evidence 4/5",
+      "groupTitle": "Healthy fats / LDL Particle Size",
+      "item": "LDL Particle Size",
+      "sortOrder": 3,
+      "sourceBindingNote": "Extracted from the public Cardiovascular Health sample PDF recommendation and personalized-variant block.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "cardiovascular-health-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "",
+      "description": "The public sample block includes a heart-rate-variability condition row in the healthy-fats recommendation excerpt.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "geneticAnalysis": "Impact 2/5; evidence 2/5",
+      "groupTitle": "Healthy fats / Heart Rate Variability",
+      "item": "Heart Rate Variability",
+      "sortOrder": 4,
+      "sourceBindingNote": "Extracted from the public Cardiovascular Health sample PDF recommendation block; this is observed output structure, not personal advice.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "cardiovascular-health-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "",
+      "description": "The public sample block discusses fiber for cholesterol context and names a personalized CYP7A1 rs3808607 GT variant in the surrounding prose/table.",
+      "extractionStatus": "direct",
+      "genes": [
+        "CYP7A1"
+      ],
+      "geneticAnalysis": "Impact 4/5; evidence 4/5",
+      "groupTitle": "Fiber / High Cholesterol",
+      "item": "High Cholesterol",
+      "sortOrder": 5,
+      "sourceBindingNote": "Extracted from the public Cardiovascular Health sample PDF; the table gene cell OCR is noisy, but the sample prose names CYP7A1.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "cardiovascular-health-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "",
+      "description": "The public sample block discusses fiber for triglyceride context and names a personalized FABP2 rs1799883 cc variant in the surrounding prose/table.",
+      "extractionStatus": "direct",
+      "genes": [
+        "FABP2"
+      ],
+      "geneticAnalysis": "Impact 2/5; evidence 4/5",
+      "groupTitle": "Fiber / Triglycerides",
+      "item": "Triglycerides",
+      "sortOrder": 6,
+      "sourceBindingNote": "Extracted from the public Cardiovascular Health sample PDF; the table gene cell OCR is noisy, but the sample prose names FABP2.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "cardiovascular-health-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "",
+      "description": "The public sample block says a high intake of dietary fiber is associated with lower ApoB levels.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "geneticAnalysis": "Impact 3/5; evidence 3/5",
+      "groupTitle": "Fiber / ApoB",
+      "item": "ApoB",
+      "sortOrder": 7,
+      "sourceBindingNote": "Extracted from the public Cardiovascular Health sample PDF recommendation block; this is observed output structure, not personal advice.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "cardiovascular-health-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "",
+      "description": "The public sample block includes a hemorrhoids condition row inside the cardiovascular sample recommendation excerpt.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "geneticAnalysis": "Impact 4/5; evidence 4/5",
+      "groupTitle": "Fiber / Hemorrhoids",
+      "item": "Hemorrhoids",
+      "sortOrder": 8,
+      "sourceBindingNote": "Extracted from the public Cardiovascular Health sample PDF recommendation block; this is observed output structure, not personal advice.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "cardiovascular-health-sample-pdf"
+      ]
+    }
+  ],
   "riskContext": {
     "plainEnglishMeaning": "Cardiovascular health depends on genetics plus LDL cholesterol, ApoB, lipoprotein(a) levels, blood pressure, diabetes, smoking, age, sex, family history, ancestry, medications, lifestyle, environment, and clinical care.",
     "unsupportedClaims": [

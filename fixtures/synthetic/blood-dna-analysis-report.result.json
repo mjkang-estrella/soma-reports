@@ -4,9 +4,9 @@
     "reportTitle": "Blood Traits and Conditions",
     "inputManifestHash": "sha256:synthetic-blood-dna-analysis-report-organ-system-boundary-context-v1",
     "sectionsUnavailable": [
-      "Validated package model and authenticated sample rows are unavailable in this local fixture.",
+      "Validated blood-trait model calibration and personal lab values are unavailable in this local fixture.",
       "Clinical diagnosis, symptoms, family history, medications, and qualified professional review are unavailable.",
-      "Labs, imaging, vitals, organ-function measures, treatment context, prevention context, and actionability context are unavailable."
+      "Blood group confirmation, transfusion context, donation context, pregnancy compatibility context, treatment context, prevention context, and actionability context are unavailable."
     ]
   },
   "resultRows": [
@@ -14,7 +14,7 @@
       "groupTitle": "Validated model availability",
       "item": "Blood Traits and Conditions validated model",
       "brandName": "Blood Traits and Conditions",
-      "geneticAnalysis": "No validated package-specific model output is present in the local fixture.",
+      "geneticAnalysis": "No validated package-specific blood-trait model output is present in the local fixture.",
       "genes": [
         "model-unavailable"
       ],
@@ -25,14 +25,14 @@
         "medlineplus-genetic-testing",
         "medlineplus-genetic-test-results"
       ],
-      "plainEnglishMeaning": "This local run can document that the model evidence is unavailable, but it cannot turn that absence into a diagnosis, personal risk estimate, or health action.",
+      "plainEnglishMeaning": "This local run can document that the model evidence is unavailable, but it cannot turn that absence into a diagnosis, personal risk estimate, lab value, blood type, or health action.",
       "sourceBindingStatus": "curated"
     },
     {
       "groupTitle": "Clinical and professional context availability",
       "item": "Clinical context and professional review",
       "brandName": "Blood Traits and Conditions",
-      "geneticAnalysis": "Clinical history, symptoms, family history, medications, and professional interpretation are not supplied.",
+      "geneticAnalysis": "Clinical history, symptoms, family history, medications, blood-test values, and professional interpretation are not supplied.",
       "genes": [
         "clinical-context-unavailable"
       ],
@@ -43,41 +43,362 @@
         "medlineplus-genetic-test-results",
         "fda-direct-to-consumer-tests"
       ],
-      "plainEnglishMeaning": "Genome-derived evidence alone is not enough to decide diagnosis, screening, testing, prevention, treatment, medication, supplement, diet, exercise, clearance, emergency, or all-clear questions.",
+      "plainEnglishMeaning": "Genome-derived evidence alone is not enough to decide diagnosis, screening, testing, prevention, treatment, medication, supplement, diet, compatibility, emergency, or all-clear questions.",
       "sourceBindingStatus": "curated"
     },
     {
       "groupTitle": "Organ-system context availability",
-      "item": "Organ-system evidence context",
+      "item": "Blood and lab context",
       "brandName": "Blood Traits and Conditions",
-      "geneticAnalysis": "Labs, imaging, vitals, organ-function measures, disease-specific testing, and treatment context are not supplied.",
+      "geneticAnalysis": "CBC, hemoglobin, platelet count, white blood cell count, clotting tests, blood glucose, cholesterol labs, transfusion context, donation context, pregnancy compatibility context, and treatment context are not supplied.",
       "genes": [
         "organ-system-context-unavailable"
       ],
-      "sourceLabel": "Organ-specific and variant-interpretation references",
+      "sourceLabel": "Blood and complex-trait limitation references",
       "sourceIds": [
         "nhgri-polygenic-risk-scores",
         "ebi-gwas-catalog",
         "nhlbi-blood-diseases-disorders",
         "medlineplus-blood"
       ],
-      "plainEnglishMeaning": "The organ-system references support education about limits and next review context, not a standalone conclusion about symptoms, organ function, severity, prognosis, or actionability.",
+      "plainEnglishMeaning": "The blood references support education about limits and review context, not a standalone conclusion about lab values, symptoms, blood group compatibility, disease risk, severity, prognosis, or actionability.",
       "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Sample report structure",
+      "item": "Public Blood Related trait table",
+      "brandName": "Blood Related sample",
+      "geneticAnalysis": "The public sample PDF shows a one-page Blood Related table with Trait, Your Result, and Description columns. It includes sample labels such as Higher, Typical, Type B, Positive, Secretor, and Lower.",
+      "genes": [
+        "sample-output-structure"
+      ],
+      "sourceLabel": "Public Blood Related sample PDF",
+      "sourceIds": [
+        "blood-traits-sample-pdf"
+      ],
+      "plainEnglishMeaning": "The sample PDF preserves the formal report structure, but its sample labels are not local lab values, blood types, disease risks, compatibility conclusions, or medical advice.",
+      "sourceBindingStatus": "exact"
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Blood Related table",
+      "item": "Bilirubin Level",
+      "brandName": "Blood Related sample",
+      "geneticAnalysis": "Higher",
+      "description": "The sample describes bilirubin as a yellow compound involved in clearance of waste products.",
+      "genes": [
+        "Blood trait model row"
+      ],
+      "sourceLabel": "Public Blood Related sample PDF",
+      "sourceIds": [
+        "blood-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample output only; not a local bilirubin result or diagnosis."
+    },
+    {
+      "groupTitle": "Blood Related table",
+      "item": "Blood Glucose Level",
+      "brandName": "Blood Related sample",
+      "geneticAnalysis": "Higher",
+      "description": "The sample describes blood glucose as the concentration of glucose present in blood.",
+      "genes": [
+        "Blood glucose trait model row"
+      ],
+      "sourceLabel": "Public Blood Related sample PDF",
+      "sourceIds": [
+        "blood-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample output only; not a local glucose value, diabetes diagnosis, diet guidance, or treatment recommendation."
+    },
+    {
+      "groupTitle": "Blood Related table",
+      "item": "Blood Metabolite Level",
+      "brandName": "Blood Related sample",
+      "geneticAnalysis": "Higher",
+      "description": "The sample describes metabolites as intermediate products of metabolic reactions that naturally occur within cells.",
+      "genes": [
+        "Blood metabolite trait model row"
+      ],
+      "sourceLabel": "Public Blood Related sample PDF",
+      "sourceIds": [
+        "blood-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample output only; not a local metabolite or lab result."
+    },
+    {
+      "groupTitle": "Blood Related table",
+      "item": "Blood Pressure",
+      "brandName": "Blood Related sample",
+      "geneticAnalysis": "Typical",
+      "description": "The sample includes a 40% heritable note and describes high blood pressure as force against artery walls that is too high.",
+      "genes": [
+        "Blood pressure trait model row"
+      ],
+      "sourceLabel": "Public Blood Related sample PDF",
+      "sourceIds": [
+        "blood-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample output only; not a local blood-pressure reading, diagnosis, or treatment recommendation."
+    },
+    {
+      "groupTitle": "Blood group rows",
+      "item": "Blood Type - ABO",
+      "brandName": "Blood Related sample",
+      "geneticAnalysis": "Type B",
+      "description": "The sample describes ABO as determined by presence or absence of A and B antigens on red-cell surfaces.",
+      "genes": [
+        "ABO sample row"
+      ],
+      "sourceLabel": "Public Blood Related sample PDF",
+      "sourceIds": [
+        "blood-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample output only; not the local user's blood type or compatibility result."
+    },
+    {
+      "groupTitle": "Blood group rows",
+      "item": "Blood Type - Diego",
+      "brandName": "Blood Related sample",
+      "geneticAnalysis": "Di(a-/b+)",
+      "description": "The sample describes the Diego system as composed of 21 blood factors or antigens.",
+      "genes": [
+        "Diego blood group sample row"
+      ],
+      "sourceLabel": "Public Blood Related sample PDF",
+      "sourceIds": [
+        "blood-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample output only; not local transfusion, pregnancy, or compatibility guidance."
+    },
+    {
+      "groupTitle": "Blood group rows",
+      "item": "Blood Type - Duffy",
+      "brandName": "Blood Related sample",
+      "geneticAnalysis": "Fy(a+/b-)",
+      "description": "The sample describes the Duffy glycoprotein as secreted by blood cells during inflammation and as a receptor for malaria parasite.",
+      "genes": [
+        "Duffy blood group sample row"
+      ],
+      "sourceLabel": "Public Blood Related sample PDF",
+      "sourceIds": [
+        "blood-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample output only; not local malaria susceptibility, inflammation status, or compatibility guidance."
+    },
+    {
+      "groupTitle": "Blood group rows",
+      "item": "Blood Type - Kell",
+      "brandName": "Blood Related sample",
+      "geneticAnalysis": "k-/k-",
+      "description": "The sample describes the Kell antigen system as a target for autoimmune diseases that destroy red blood cells.",
+      "genes": [
+        "Kell blood group sample row"
+      ],
+      "sourceLabel": "Public Blood Related sample PDF",
+      "sourceIds": [
+        "blood-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample output only; not local autoimmune, transfusion, pregnancy, or compatibility guidance."
+    },
+    {
+      "groupTitle": "Blood group rows",
+      "item": "Blood Type - Kidd",
+      "brandName": "Blood Related sample",
+      "geneticAnalysis": "Jk(a-/b+)",
+      "description": "The sample describes the Kidd glycoprotein as helping the kidney build up high urea concentration to produce urine.",
+      "genes": [
+        "Kidd blood group sample row"
+      ],
+      "sourceLabel": "Public Blood Related sample PDF",
+      "sourceIds": [
+        "blood-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample output only; not kidney-function, transfusion, or compatibility guidance."
+    },
+    {
+      "groupTitle": "Blood group rows",
+      "item": "Blood Type - MNS",
+      "brandName": "Blood Related sample",
+      "geneticAnalysis": "s+/s+",
+      "description": "The sample describes the MNS antigen system as composed of 46 antigens.",
+      "genes": [
+        "MNS blood group sample row"
+      ],
+      "sourceLabel": "Public Blood Related sample PDF",
+      "sourceIds": [
+        "blood-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample output only; not a local blood-group or compatibility result."
+    },
+    {
+      "groupTitle": "Blood group rows",
+      "item": "Blood Type - Rhesus Rh(D)",
+      "brandName": "Blood Related sample",
+      "geneticAnalysis": "Positive",
+      "description": "The sample describes Rh(D) as the second most important blood group system after ABO.",
+      "genes": [
+        "Rhesus Rh(D) sample row"
+      ],
+      "sourceLabel": "Public Blood Related sample PDF",
+      "sourceIds": [
+        "blood-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample output only; not local RhD status, pregnancy compatibility, or transfusion compatibility guidance."
+    },
+    {
+      "groupTitle": "Blood group rows",
+      "item": "Blood Type - Secretor Status (FUT2)",
+      "brandName": "Blood Related sample",
+      "geneticAnalysis": "Secretor",
+      "description": "The sample describes Lewis-system glycoproteins on red cells or in body fluids.",
+      "genes": [
+        "FUT2 sample row"
+      ],
+      "sourceLabel": "Public Blood Related sample PDF",
+      "sourceIds": [
+        "blood-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample output only; not local secretor status or medical guidance."
+    },
+    {
+      "groupTitle": "Blood Related table",
+      "item": "Cholesterol - HDL (Good) Level",
+      "brandName": "Blood Related sample",
+      "geneticAnalysis": "Typical",
+      "description": "The sample describes HDL cholesterol as a fatty substance essential to many metabolic processes.",
+      "genes": [
+        "HDL cholesterol trait model row"
+      ],
+      "sourceLabel": "Public Blood Related sample PDF",
+      "sourceIds": [
+        "blood-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample output only; not a local lipid result, diet guidance, medication guidance, or treatment recommendation."
+    },
+    {
+      "groupTitle": "Blood Related table",
+      "item": "Cholesterol - LDL (Bad) Level",
+      "brandName": "Blood Related sample",
+      "geneticAnalysis": "Typical",
+      "description": "The sample says high LDL cholesterol levels in blood have been linked to heart disease.",
+      "genes": [
+        "LDL cholesterol trait model row"
+      ],
+      "sourceLabel": "Public Blood Related sample PDF",
+      "sourceIds": [
+        "blood-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample output only; not a local lipid result, cardiovascular risk estimate, medication guidance, or treatment recommendation."
+    },
+    {
+      "groupTitle": "Blood Related table",
+      "item": "GHB Level",
+      "brandName": "Blood Related sample",
+      "geneticAnalysis": "Higher",
+      "description": "The sample describes GHB as a depressant that slows down messages between the brain and body.",
+      "genes": [
+        "GHB trait model row"
+      ],
+      "sourceLabel": "Public Blood Related sample PDF",
+      "sourceIds": [
+        "blood-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample output only; not a local neurotransmitter, safety, diagnosis, or treatment result."
+    },
+    {
+      "groupTitle": "Blood Related table",
+      "item": "Insulin-like Growth Factor (IGFBP3) Level",
+      "brandName": "Blood Related sample",
+      "geneticAnalysis": "Higher",
+      "description": "The sample describes IGFBP3 as a hormone that primarily stimulates growth and may decrease blood glucose levels.",
+      "genes": [
+        "IGFBP3 sample row"
+      ],
+      "sourceLabel": "Public Blood Related sample PDF",
+      "sourceIds": [
+        "blood-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample output only; not local growth, endocrine, glucose, lab, diagnosis, or treatment guidance."
+    },
+    {
+      "groupTitle": "Blood Related table",
+      "item": "Interleukin 6 (IL-6) Level",
+      "brandName": "Blood Related sample",
+      "geneticAnalysis": "Typical",
+      "description": "The sample describes IL-6 as both a pro-inflammatory cytokine and an anti-inflammatory myokine.",
+      "genes": [
+        "IL6 sample row"
+      ],
+      "sourceLabel": "Public Blood Related sample PDF",
+      "sourceIds": [
+        "blood-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample output only; not local inflammation, immune, lab, diagnosis, or treatment guidance."
+    },
+    {
+      "groupTitle": "Blood Related table",
+      "item": "Transferrin Level",
+      "brandName": "Blood Related sample",
+      "geneticAnalysis": "Higher",
+      "description": "The sample describes transferrins as iron-binding glycoproteins that control free iron in biological fluids.",
+      "genes": [
+        "Transferrin trait model row"
+      ],
+      "sourceLabel": "Public Blood Related sample PDF",
+      "sourceIds": [
+        "blood-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample output only; not local iron status, anemia risk, supplement guidance, lab interpretation, or treatment."
+    },
+    {
+      "groupTitle": "Blood Related table",
+      "item": "Von Willebrand Factor (VWF) Level",
+      "brandName": "Blood Related sample",
+      "geneticAnalysis": "Lower",
+      "description": "The sample describes VWF as a blood glycoprotein involved in hemostasis to prevent and stop bleeding.",
+      "genes": [
+        "VWF sample row"
+      ],
+      "sourceLabel": "Public Blood Related sample PDF",
+      "sourceIds": [
+        "blood-traits-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample output only; not local bleeding risk, clotting status, diagnosis, testing, medication, or treatment guidance."
     }
   ],
   "organSystemConditionContext": {
-    "plainEnglishMeaning": "The safe output for this package is an evidence-availability report. It explains which model, clinical, professional, and organ-system inputs are missing and avoids medical conclusions from missing evidence.",
+    "plainEnglishMeaning": "The safe output for this package is an evidence-availability report with observed sample-table structure. It explains which model, clinical, professional, lab, and compatibility inputs are missing and avoids medical conclusions from missing evidence or sample labels.",
     "unsupportedClaims": [
-      "Diagnosis, personal disease risk, carrier status, variant classification, symptom status, severity, prognosis, lab status, imaging status, vital-sign status, organ-function status, treatment need, medication response, supplement need, diet need, exercise guidance, screening need, testing need, prevention action, clearance, emergency action, all-clear reassurance, and clinical actionability are not supported by this fixture.",
-      "Authenticated Sequencing.com sample rows are not present, so sample report labels and row meanings are not reconstructed."
+      "Diagnosis, personal disease risk, blood type, transfusion compatibility, donation suitability, pregnancy compatibility, lab values, glucose status, cholesterol status, clotting status, bleeding risk, carrier status, variant classification, symptom status, severity, prognosis, treatment need, medication response, supplement need, diet need, screening need, testing need, prevention action, emergency action, all-clear reassurance, and clinical actionability are not supported by this fixture.",
+      "Public sample labels such as Higher, Typical, Type B, Positive, Secretor, and Lower are not local findings."
     ],
-    "professionalReview": "Use this as a local-agent readiness fixture only. Health decisions require validated test scope, relevant clinical context, and qualified professional review."
+    "professionalReview": "Use this as a local-agent readiness fixture only. Health, lab, blood-type, compatibility, or symptom decisions require validated test scope, relevant clinical context, laboratory confirmation when applicable, and qualified professional review."
   },
   "practicalNextSteps": {
     "professionalReview": [
       "Keep this output educational and non-diagnostic.",
-      "Do not use this fixture to start, stop, or change testing, screening, medication, supplements, diet, exercise, or treatment.",
-      "Use qualified professional review for health decisions or symptoms."
+      "Do not use this fixture to start, stop, or change testing, screening, medication, supplements, diet, exercise, transfusion, donation, pregnancy, or treatment decisions.",
+      "Use qualified professional review and laboratory testing for health decisions, symptoms, and blood-type compatibility questions."
     ]
   },
   "references": [
@@ -120,6 +441,10 @@
     {
       "id": "medlineplus-blood",
       "title": "MedlinePlus: Blood"
+    },
+    {
+      "id": "blood-traits-sample-pdf",
+      "title": "Blood Related sample report"
     }
   ],
   "appendix": {
@@ -127,38 +452,59 @@
       {
         "inputId": "blood-dna-analysis-report-model-unavailable",
         "gene": "Blood Traits and Conditions model",
-        "observedValue": "validated blood trait model, CBC, hemoglobin, platelet count, white blood cell count, clotting tests, bleeding history, transfusion context, donation context, pregnancy compatibility context, clinical diagnosis, treatment context, clinician review, and authenticated sample-report rows unavailable in this fixture",
+        "observedValue": "validated blood trait model, CBC, hemoglobin, platelet count, white blood cell count, clotting tests, bleeding history, transfusion context, donation context, pregnancy compatibility context, clinical diagnosis, treatment context, clinician review, and calibrated blood-trait interpretation unavailable",
         "matchStatus": "unavailable",
         "sourceArtifact": "synthetic-blood-dna-analysis-report-organ-system-boundary-context-v1"
       },
       {
         "inputId": "blood-dna-analysis-report-clinical-context-unavailable",
         "gene": "Blood Traits and Conditions clinical and professional context",
-        "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
+        "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and personal blood-trait clinical context unavailable",
         "matchStatus": "unavailable",
         "sourceArtifact": "synthetic-blood-dna-analysis-report-organ-system-boundary-context-v1"
       },
       {
         "inputId": "blood-dna-analysis-report-organ-context-unavailable",
         "gene": "Blood Traits and Conditions organ-system context",
-        "observedValue": "labs, imaging, vitals, organ-function measures, disease-specific testing, treatment context, prevention context, and actionability context unavailable in this fixture",
+        "observedValue": "labs, imaging, vitals, organ-function measures, disease-specific testing, treatment context, prevention context, actionability context, blood group confirmation, and compatibility context unavailable",
         "matchStatus": "unavailable",
         "sourceArtifact": "synthetic-blood-dna-analysis-report-organ-system-boundary-context-v1"
+      },
+      {
+        "inputId": "sample-table-structure",
+        "gene": "Blood Related sample table",
+        "observedValue": "The sample PDF exposes trait/result/description rows only; no variant IDs, genotype table, calibration metadata, or lab measurements are visible.",
+        "matchStatus": "sample_output_only"
+      },
+      {
+        "inputId": "sample-blood-group-rows",
+        "gene": "ABO; Diego; Duffy; Kell; Kidd; MNS; Rhesus Rh(D); FUT2",
+        "observedValue": "Sample blood-group outputs include Type B, Di(a-/b+), Fy(a+/b-), k-/k-, Jk(a-/b+), s+/s+, Positive, and Secretor.",
+        "matchStatus": "sample_output_only"
+      },
+      {
+        "inputId": "sample-biomarker-like-rows",
+        "gene": "Blood trait model rows",
+        "observedValue": "Sample biomarker-like outputs include Higher, Typical, and Lower labels for blood chemistry, cholesterol, inflammatory, iron, endocrine, and hemostasis rows without lab values.",
+        "matchStatus": "sample_output_only"
       }
     ],
     "missingInputs": [
-      "Validated package model and authenticated sample rows are unavailable in this local fixture.",
-      "Clinical diagnosis, symptoms, family history, medications, and qualified professional review are unavailable.",
-      "Labs, imaging, vitals, organ-function measures, treatment context, prevention context, and actionability context are unavailable."
+      "Validated blood-trait model calibration",
+      "CBC, hemoglobin, platelet count, white blood cell count, clotting tests, blood glucose, cholesterol labs, and other personal lab values",
+      "Blood group laboratory confirmation and compatibility context",
+      "Bleeding history, clotting history, transfusion context, donation context, pregnancy compatibility context, clinical diagnosis, treatment context, and clinician review"
     ],
     "probabilities": [],
     "uncertainty": [
-      "No calibrated model, ancestry applicability metadata, clinical context, professional review, or authenticated sample rows are supplied.",
+      "No calibrated model, ancestry applicability metadata, clinical context, professional review, or personal lab values are supplied.",
+      "Public sample report rows preserve output structure and citations but are not local findings.",
       "Absence of evidence in this fixture must be reported as unavailable, not converted into low risk or reassurance."
     ],
     "limitations": [
       "This generated result does not include raw genome data and does not emit VCF, FASTQ, BAM, or CRAM content.",
-      "Reference resources used for boundary language: CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing; MedlinePlus Genetics: Interpreting Genetic Test Results; FDA Direct-to-Consumer Tests; MedlinePlus Genetics: complex disorders; NHGRI overview of polygenic risk scores; GWAS Catalog; NHLBI: Blood Diseases and Disorders Education Program; MedlinePlus: Blood.",
+      "The public sample PDF's result labels are output-format evidence only and are not the local user's blood traits, blood type, lab values, compatibility status, or disease risk.",
+      "Reference resources used for boundary language: CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing; MedlinePlus Genetics: Interpreting Genetic Test Results; FDA Direct-to-Consumer Tests; MedlinePlus Genetics: complex disorders; NHGRI overview of polygenic risk scores; GWAS Catalog; NHLBI Blood Diseases and Disorders Education Program; MedlinePlus Blood; Blood Related sample report.",
       "The result is a deterministic synthetic validation artifact for local-agent packaging, not a medical interpretation."
     ]
   }

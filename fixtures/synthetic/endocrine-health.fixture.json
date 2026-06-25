@@ -38,6 +38,16 @@
       "observedValue": "partner result, carrier-screening scope, pregnancy context, embryo or fetal context, hormone-status context, fertility evaluation, and reproductive decision context unavailable in this fixture",
       "sourceArtifact": "synthetic-endocrine-health-reproductive-endocrine-boundary-context-v1",
       "sourceFile": "synthetic-endocrine-health-reproductive-endocrine-boundary-context-v1.json"
+    },
+    {
+      "assembly": "public-sample-pdf",
+      "gene": "Hormone Health public sample",
+      "haplotype": "public-sibling-sample-output-structure-observed",
+      "inputId": "endocrine-health-public-sibling-sample-output-structure",
+      "matchStatus": "observed",
+      "observedValue": "Local SelfDecode Hormone Health sample PDF shows thyroid, reproductive-hormone, metabolic-hormone, and stress-hormone overview cards; Overactive Thyroid, T3, T4, and Free T4 detail pages with variant-count and top-variant tables; and iodine plus selenium recommendation blocks with impact/evidence scores. These rows are reused as Endocrine Health sibling output structure only.",
+      "sourceArtifact": "reference/sources/hormone-health-dna-report.pdf",
+      "sourceFile": "hormone-health-dna-report.pdf"
     }
   ],
   "inputManifest": {
@@ -46,7 +56,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for endocrine-health validation"
   },
-  "missingInputPolicy": "Report unavailable endocrine health evidence explicitly; do not diagnose endocrine disease; infer hormone, thyroid, adrenal, glucose, insulin, fertility, or lab status; estimate disease risk; recommend labs, medication, supplements, diet, treatment, screening, reproductive actions, or replace clinician review.",
+  "missingInputPolicy": "Use the local Hormone Health sample rows only as observed sibling output structure for Endocrine Health; report validated endocrine output, hormone labs, thyroid labs, adrenal labs, glucose or insulin labs, symptoms, diagnosis, medications, clinical history, family history, clinician review, and local-user hormone, gland, lab, treatment, supplement, diet, lifestyle, medication, and actionability conclusions unavailable.",
   "packageSlug": "endocrine-health",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -170,7 +180,19 @@
         "non_diagnostic_language",
         "missing_model_policy"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "hormone-health-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Hormone Health DNA Report sample report",
+      "usedFor": [
+        "sibling_formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer endocrine health boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer Endocrine Health boundary context using supplied references, explicit unavailable-model framing, and observed SelfDecode Hormone Health sibling sample-report output structure."
 }

@@ -1,54 +1,60 @@
 {
-  "packageSlug": "genetic-test-traits",
-  "datasetId": "synthetic-inherited-traits-visible-trait-context-v1",
-  "packageVersion": "0.1.0",
-  "reportPurpose": "Consumer inherited-traits context using derived HERC2/OCA2, MC1R, and hair-texture evidence plus direct-to-consumer trait-test limitation framing.",
-  "missingInputPolicy": "Report unavailable inherited-trait sections explicitly; do not infer child phenotype, identity, ancestry, disease risk, skin-cancer risk, dermatology outcome, or exact appearance from genotype alone.",
   "consumerTone": "plain English; educational inherited visible-trait context only; no child-prediction, identity, ancestry, disease-risk, dermatology, skincare, or deterministic appearance claims",
-  "inputManifest": {
-    "hash": "sha256:synthetic-inherited-traits-visible-trait-context-v1",
-    "genomeBuild": "GRCh37-or-GRCh38-derived",
-    "rawGenomeReturned": false,
-    "source": "synthetic derived visible-trait evidence for genetic-test-traits validation"
+  "datasetId": "synthetic-inherited-traits-visible-trait-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
   },
   "genomeEvidence": [
     {
-      "inputId": "HERC2-OCA2-rs12913832",
-      "rsid": "rs12913832",
+      "assembly": "GRCh37-or-GRCh38-derived",
       "gene": "HERC2/OCA2 regulatory region",
+      "inputId": "HERC2-OCA2-rs12913832",
+      "matchStatus": "observed",
       "observedValue": "AG",
-      "assembly": "GRCh37-or-GRCh38-derived",
-      "matchStatus": "observed",
-      "sourceFile": "synthetic-inherited-traits-visible-trait-context-v1.json",
-      "sourceArtifact": "synthetic-inherited-traits-visible-trait-context-v1"
+      "rsid": "rs12913832",
+      "sourceArtifact": "synthetic-inherited-traits-visible-trait-context-v1",
+      "sourceFile": "synthetic-inherited-traits-visible-trait-context-v1.json"
     },
     {
-      "inputId": "MC1R-rs1805007",
-      "rsid": "rs1805007",
+      "assembly": "GRCh37-or-GRCh38-derived",
       "gene": "MC1R",
-      "observedValue": "CT",
-      "assembly": "GRCh37-or-GRCh38-derived",
+      "inputId": "MC1R-rs1805007",
       "matchStatus": "observed",
-      "sourceFile": "synthetic-inherited-traits-visible-trait-context-v1.json",
-      "sourceArtifact": "synthetic-inherited-traits-visible-trait-context-v1"
+      "observedValue": "CT",
+      "rsid": "rs1805007",
+      "sourceArtifact": "synthetic-inherited-traits-visible-trait-context-v1",
+      "sourceFile": "synthetic-inherited-traits-visible-trait-context-v1.json"
     },
     {
-      "inputId": "EDAR-hair-texture-context",
-      "haplotype": "EDAR-hair-thickness-context-derived",
-      "gene": "EDAR",
-      "observedValue": "derived hair-texture/thickness context available",
       "assembly": "derived-visible-trait-context",
+      "gene": "EDAR",
+      "haplotype": "EDAR-hair-thickness-context-derived",
+      "inputId": "EDAR-hair-texture-context",
       "matchStatus": "observed",
-      "sourceFile": "synthetic-inherited-traits-visible-trait-context-v1.json",
-      "sourceArtifact": "synthetic-inherited-traits-visible-trait-context-v1"
+      "observedValue": "derived hair-texture/thickness context available",
+      "sourceArtifact": "synthetic-inherited-traits-visible-trait-context-v1",
+      "sourceFile": "synthetic-inherited-traits-visible-trait-context-v1.json"
     }
   ],
+  "inputManifest": {
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "hash": "sha256:synthetic-inherited-traits-visible-trait-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived visible-trait evidence for genetic-test-traits validation"
+  },
+  "missingInputPolicy": "Report unavailable inherited-trait sections explicitly; use public sample rows only as observed output structure. Do not infer local child phenotype, exact appearance, identity, ancestry, disease risk, infection risk, blood status, medication response, vitamin status, fitness potential, biological age, diet or supplement need, dermatology, diagnosis, or treatment.",
+  "packageSlug": "genetic-test-traits",
+  "packageVersion": "0.1.0",
   "referenceResources": [
     {
-      "id": "medlineplus-eye-color",
-      "title": "MedlinePlus Genetics: eye color",
-      "sourceType": "education_resource",
       "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-eye-color",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: eye color",
       "usedFor": [
         "eye_color_context",
         "polygenic_trait_limitations",
@@ -56,10 +62,10 @@
       ]
     },
     {
-      "id": "medlineplus-hair-color",
-      "title": "MedlinePlus Genetics: hair color",
-      "sourceType": "education_resource",
       "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-hair-color",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: hair color",
       "usedFor": [
         "hair_color_context",
         "pigmentation_context",
@@ -67,10 +73,10 @@
       ]
     },
     {
-      "id": "medlineplus-hair-texture",
-      "title": "MedlinePlus Genetics: hair texture",
-      "sourceType": "education_resource",
       "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-hair-texture",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: hair texture",
       "usedFor": [
         "hair_texture_context",
         "trait_limitations",
@@ -78,20 +84,20 @@
       ]
     },
     {
-      "id": "medlineplus-oca2",
-      "title": "MedlinePlus Genetics: OCA2 gene",
-      "sourceType": "gene_summary",
       "evidenceLevel": "gene_background",
+      "id": "medlineplus-oca2",
+      "sourceType": "gene_summary",
+      "title": "MedlinePlus Genetics: OCA2 gene",
       "usedFor": [
         "oca2_context",
         "pigmentation_context"
       ]
     },
     {
-      "id": "medlineplus-mc1r",
-      "title": "MedlinePlus Genetics: MC1R gene",
-      "sourceType": "gene_summary",
       "evidenceLevel": "gene_background",
+      "id": "medlineplus-mc1r",
+      "sourceType": "gene_summary",
+      "title": "MedlinePlus Genetics: MC1R gene",
       "usedFor": [
         "mc1r_context",
         "hair_color_context",
@@ -100,22 +106,28 @@
       ]
     },
     {
-      "id": "medlineplus-dtc-test-types",
-      "title": "MedlinePlus Genetics: Direct-to-consumer genetic test types",
-      "sourceType": "education_resource",
       "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-dtc-test-types",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Direct-to-consumer genetic test types",
       "usedFor": [
         "trait_test_limitations",
         "probability_appendix",
         "consumer_safety_language"
       ]
+    },
+    {
+      "evidenceLevel": "direct_sample_report",
+      "id": "inherited-traits-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Inherited Traits Genetic Test Report sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "expectedAssertions": {
-    "noRawGenomeInOutput": true,
-    "everyFindingHasReference": true,
-    "missingInputsAreExplicit": true,
-    "probabilitiesOnlyInAppendix": true,
-    "consumerLanguage": true
-  }
+  "reportPurpose": "Consumer inherited-traits context using derived visible-trait evidence plus observed Inherited Traits Genetic Test sample-report output structure."
 }

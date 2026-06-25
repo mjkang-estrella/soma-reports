@@ -1,54 +1,60 @@
 {
-  "packageSlug": "hair-loss-balding-dna-test",
-  "datasetId": "synthetic-hair-loss-androgenetic-context-v1",
-  "packageVersion": "0.1.0",
-  "reportPurpose": "Consumer genetic hair-loss context using derived AR and pattern-hair-loss evidence plus official hair-loss references.",
-  "missingInputPolicy": "Report unavailable hair-loss model sections explicitly; do not diagnose androgenetic alopecia, infer symptoms, quantify risk, recommend treatment, or report hormone, PCOS, prostate, cancer, transplant, supplement, or medication guidance from genotype alone.",
   "consumerTone": "plain English; educational hair-loss genetics context only; no diagnosis, treatment, quantified risk, hormone, PCOS, prostate, cancer, medication, supplement, or transplant claims",
-  "inputManifest": {
-    "hash": "sha256:synthetic-hair-loss-androgenetic-context-v1",
-    "genomeBuild": "GRCh37-or-GRCh38-derived",
-    "rawGenomeReturned": false,
-    "source": "synthetic derived hair-loss evidence for hair-loss-balding-dna-test validation"
+  "datasetId": "synthetic-hair-loss-androgenetic-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
   },
   "genomeEvidence": [
     {
-      "inputId": "AR-androgen-receptor-context",
-      "haplotype": "AR-androgen-receptor-context-derived",
+      "assembly": "GRCh37-or-GRCh38-derived",
       "gene": "AR",
+      "haplotype": "AR-androgen-receptor-context-derived",
+      "inputId": "AR-androgen-receptor-context",
+      "matchStatus": "summarized",
       "observedValue": "derived androgen receptor context available; no pathogenic variant or diagnosis emitted",
-      "assembly": "GRCh37-or-GRCh38-derived",
-      "matchStatus": "summarized",
-      "sourceFile": "synthetic-hair-loss-androgenetic-context-v1.json",
-      "sourceArtifact": "synthetic-hair-loss-androgenetic-context-v1"
+      "sourceArtifact": "synthetic-hair-loss-androgenetic-context-v1",
+      "sourceFile": "synthetic-hair-loss-androgenetic-context-v1.json"
     },
     {
-      "inputId": "pattern-hair-loss-polygenic-context",
-      "haplotype": "pattern-hair-loss-polygenic-context",
+      "assembly": "GRCh37-or-GRCh38-derived",
       "gene": "polygenic pattern hair-loss context",
-      "observedValue": "summary-level pattern hair-loss genetic context available; no calibrated risk model supplied",
-      "assembly": "GRCh37-or-GRCh38-derived",
+      "haplotype": "pattern-hair-loss-polygenic-context",
+      "inputId": "pattern-hair-loss-polygenic-context",
       "matchStatus": "summarized",
-      "sourceFile": "synthetic-hair-loss-androgenetic-context-v1.json",
-      "sourceArtifact": "synthetic-hair-loss-androgenetic-context-v1"
+      "observedValue": "summary-level pattern hair-loss genetic context available; no calibrated risk model supplied",
+      "sourceArtifact": "synthetic-hair-loss-androgenetic-context-v1",
+      "sourceFile": "synthetic-hair-loss-androgenetic-context-v1.json"
     },
     {
-      "inputId": "hair-loss-risk-model-unavailable",
-      "haplotype": "not-supplied",
-      "gene": "hair-loss risk model",
-      "observedValue": "calibrated hair-loss risk score, sex-specific model, ancestry applicability metadata, and symptom evidence unavailable in this fixture",
       "assembly": "not-applicable",
+      "gene": "hair-loss risk model",
+      "haplotype": "not-supplied",
+      "inputId": "hair-loss-risk-model-unavailable",
       "matchStatus": "unavailable",
-      "sourceFile": "synthetic-hair-loss-androgenetic-context-v1.json",
-      "sourceArtifact": "synthetic-hair-loss-androgenetic-context-v1"
+      "observedValue": "calibrated hair-loss risk score, sex-specific model, ancestry applicability metadata, and symptom evidence unavailable in this fixture",
+      "sourceArtifact": "synthetic-hair-loss-androgenetic-context-v1",
+      "sourceFile": "synthetic-hair-loss-androgenetic-context-v1.json"
     }
   ],
+  "inputManifest": {
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "hash": "sha256:synthetic-hair-loss-androgenetic-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived hair-loss evidence for hair-loss-balding-dna-test validation"
+  },
+  "missingInputPolicy": "Report unavailable hair-loss model sections explicitly; use the public sibling sample row only as observed output structure and do not diagnose androgenetic alopecia, infer symptoms, quantify risk, recommend treatment, or report hormone, PCOS, prostate, cancer, transplant, supplement, or medication guidance from genotype alone or sample-only rows.",
+  "packageSlug": "hair-loss-balding-dna-test",
+  "packageVersion": "0.1.0",
   "referenceResources": [
     {
-      "id": "medlineplus-androgenetic-alopecia",
-      "title": "MedlinePlus Genetics: Androgenetic alopecia",
-      "sourceType": "genetics_condition_summary",
       "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-androgenetic-alopecia",
+      "sourceType": "genetics_condition_summary",
+      "title": "MedlinePlus Genetics: Androgenetic alopecia",
       "usedFor": [
         "androgenetic_alopecia_context",
         "hair_loss_polygenic_limits",
@@ -56,10 +62,10 @@
       ]
     },
     {
-      "id": "medlineplus-ar",
-      "title": "MedlinePlus Genetics: AR gene",
-      "sourceType": "gene_summary",
       "evidenceLevel": "gene_background",
+      "id": "medlineplus-ar",
+      "sourceType": "gene_summary",
+      "title": "MedlinePlus Genetics: AR gene",
       "usedFor": [
         "ar_context",
         "androgen_receptor_context",
@@ -67,10 +73,10 @@
       ]
     },
     {
-      "id": "medlineplus-hair-loss",
-      "title": "MedlinePlus Medical Encyclopedia: Hair loss",
-      "sourceType": "medical_encyclopedia",
       "evidenceLevel": "consumer_health_background",
+      "id": "medlineplus-hair-loss",
+      "sourceType": "medical_encyclopedia",
+      "title": "MedlinePlus Medical Encyclopedia: Hair loss",
       "usedFor": [
         "hair_loss_differential_context",
         "medical_review_boundaries",
@@ -78,10 +84,10 @@
       ]
     },
     {
-      "id": "medlineplus-male-pattern-baldness",
-      "title": "MedlinePlus Medical Encyclopedia: Male pattern baldness",
-      "sourceType": "medical_encyclopedia",
       "evidenceLevel": "consumer_health_background",
+      "id": "medlineplus-male-pattern-baldness",
+      "sourceType": "medical_encyclopedia",
+      "title": "MedlinePlus Medical Encyclopedia: Male pattern baldness",
       "usedFor": [
         "male_pattern_baldness_context",
         "medical_review_boundaries",
@@ -89,10 +95,10 @@
       ]
     },
     {
-      "id": "medlineplus-dtc-test-types",
-      "title": "MedlinePlus Genetics: Direct-to-consumer genetic test types",
-      "sourceType": "education_resource",
       "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-dtc-test-types",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Direct-to-consumer genetic test types",
       "usedFor": [
         "trait_test_limitations",
         "probability_appendix",
@@ -100,31 +106,37 @@
       ]
     },
     {
-      "id": "nhgri-polygenic-risk-scores",
-      "title": "NHGRI overview of polygenic risk scores",
-      "sourceType": "education_resource",
       "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
       "usedFor": [
         "probability_appendix",
         "complex_trait_context"
       ]
     },
     {
-      "id": "ebi-gwas-catalog",
-      "title": "GWAS Catalog",
-      "sourceType": "database",
       "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
       "usedFor": [
         "candidate_trait_associations",
         "model_provenance_limitations"
       ]
+    },
+    {
+      "evidenceLevel": "direct_sample_report",
+      "id": "wellness-and-longevity-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Wellness and Longevity DNA Analysis sample report",
+      "usedFor": [
+        "sibling_formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "expectedAssertions": {
-    "noRawGenomeInOutput": true,
-    "everyFindingHasReference": true,
-    "missingInputsAreExplicit": true,
-    "probabilitiesOnlyInAppendix": true,
-    "consumerLanguage": true
-  }
+  "reportPurpose": "Consumer genetic hair-loss context using derived AR and pattern-hair-loss evidence plus observed sibling Wellness & Longevity sample-report output structure."
 }

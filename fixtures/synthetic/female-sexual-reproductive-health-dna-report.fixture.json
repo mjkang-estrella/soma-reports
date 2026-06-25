@@ -38,6 +38,16 @@
       "observedValue": "partner result, carrier-screening scope, pregnancy context, embryo or fetal context, hormone-status context, fertility evaluation, and reproductive decision context unavailable in this fixture",
       "sourceArtifact": "synthetic-female-sexual-reproductive-health-dna-report-reproductive-endocrine-boundary-context-v1",
       "sourceFile": "synthetic-female-sexual-reproductive-health-dna-report-reproductive-endocrine-boundary-context-v1.json"
+    },
+    {
+      "assembly": "public-sample-pdf",
+      "gene": "Female Sexual & Reproductive Health public sample",
+      "haplotype": "public-sample-output-structure-observed",
+      "inputId": "female-sexual-reproductive-health-public-sample-output-structure",
+      "matchStatus": "observed",
+      "observedValue": "Local SelfDecode Female Sexual & Reproductive Health sample PDF shows 19 genetic results; sexual and reproductive health issue cards; reproductive hormone cards; STI cards; Sexual Dysfunction, Female Infertility, and PCOS detail pages with variant-count and top-variant tables; and Vitamin D plus Relaxation Techniques recommendation blocks with impact/evidence scores.",
+      "sourceArtifact": "reference/sources/female-sexual-reproductive-health-dna-report.pdf",
+      "sourceFile": "female-sexual-reproductive-health-dna-report.pdf"
     }
   ],
   "inputManifest": {
@@ -46,7 +56,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for female-sexual-reproductive-health-dna-report validation"
   },
-  "missingInputPolicy": "Report unavailable female sexual and reproductive health evidence explicitly; do not diagnose reproductive, sexual, endocrine, PCOS, endometriosis, fertility, infertility, or pregnancy conditions; infer hormone or lab status; estimate fertility, pregnancy, miscarriage, embryo, fetal, or child risk; recommend contraception, IVF, PGT, prenatal testing, medication, supplements, treatment, surgery, lifestyle, or reproductive actions.",
+  "missingInputPolicy": "Use the local Female Sexual & Reproductive Health sample rows only as observed output structure; report validated reproductive-health output, fertility evaluation, hormone labs, menstrual history, pregnancy context, PCOS or endometriosis evaluation, medications, symptoms, partner context, clinician review, and local-user sexual-health, fertility, hormone, STI, treatment, supplement, lifestyle, medication, and reproductive-action conclusions unavailable.",
   "packageSlug": "female-sexual-reproductive-health-dna-report",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -214,7 +224,19 @@
         "non_diagnostic_language",
         "missing_model_policy"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "female-sexual-reproductive-health-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Female Sexual & Reproductive Health DNA Report sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer female sexual and reproductive health boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer Female Sexual & Reproductive Health boundary context using supplied references, explicit unavailable-model framing, and observed SelfDecode Female Sexual & Reproductive Health sample-report output structure."
 }

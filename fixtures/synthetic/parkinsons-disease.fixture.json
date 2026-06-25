@@ -15,7 +15,7 @@
       "haplotype": "validated-model-or-source-output-unavailable",
       "inputId": "parkinsons-disease-model-output-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "validated Parkinson's model, gene panel result, variant classifications, family history, neurologic symptoms, exam findings, age of onset context, imaging, medication response, clinician review, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "validated Parkinson's model, gene panel result, variant classifications, family history, neurologic symptoms, exam findings, age of onset context, imaging, medication response, clinician review, and authenticated sample-report rows unavailable in this fixture; Public Disease Risk sample PDF Neuro-degenerative Diseases table, Parkinson's Disease row, and heritable-component limitation are extracted as sibling output-structure evidence.",
       "sourceArtifact": "synthetic-parkinsons-disease-specialized-boundary-context-v1",
       "sourceFile": "synthetic-parkinsons-disease-specialized-boundary-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "clinical-professional-context-unavailable",
       "inputId": "parkinsons-disease-clinical-professional-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
+      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Parkinson's Disease",
       "sourceArtifact": "synthetic-parkinsons-disease-specialized-boundary-context-v1",
       "sourceFile": "synthetic-parkinsons-disease-specialized-boundary-context-v1.json"
     },
@@ -35,7 +35,7 @@
       "haplotype": "authenticated-sample-report-unavailable",
       "inputId": "parkinsons-disease-authenticated-sample-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture",
+      "observedValue": "direct Parkinson's Disease authenticated sample rows unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence",
       "sourceArtifact": "synthetic-parkinsons-disease-specialized-boundary-context-v1",
       "sourceFile": "synthetic-parkinsons-disease-specialized-boundary-context-v1.json"
     }
@@ -46,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for parkinsons-disease validation"
   },
-  "missingInputPolicy": "Report unavailable Parkinson's disease genetics context evidence explicitly; do not diagnose Parkinson's disease or neurologic disease; estimate Parkinson's risk, penetrance, prognosis, age of onset, severity, progression, family-member risk, carrier status, symptoms, treatment response, medication need, testing need, screening need, cascade-testing need, reproductive action, variant pathogenicity, or clinical actionability.",
+  "missingInputPolicy": "Report unavailable Parkinson's disease genetics context evidence explicitly; use the public sibling Disease Risk sample rows only as observed output structure and do not infer Parkinson's diagnosis, personal risk, penetrance, prognosis, age of onset, progression, symptoms, medication response, treatment, testing, family-member risk, reproductive action, variant pathogenicity, or actionability guidance from local unavailable evidence or sample-only rows.",
   "packageSlug": "parkinsons-disease",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -217,7 +217,19 @@
         "missing_model_policy",
         "clinical_actionability_limits"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "genetic-testing-disease-risk-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Genetic Testing For Disease Risk sample genetic report",
+      "usedFor": [
+        "sibling_formal_fields",
+        "sample_rows",
+        "risk_label_table",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer Parkinson's disease genetics context boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer Parkinson's disease genetics context using supplied references plus observed sibling Disease Risk Genetic Test Report Parkinson's disease output structure while explicitly marking personal model, source output, clinical context, and professional review unavailable."
 }

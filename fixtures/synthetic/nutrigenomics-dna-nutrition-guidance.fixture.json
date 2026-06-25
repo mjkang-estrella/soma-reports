@@ -1,74 +1,86 @@
 {
-  "packageSlug": "nutrigenomics-dna-nutrition-guidance",
-  "datasetId": "synthetic-nutrigenomics-lactose-context-v1",
-  "packageVersion": "0.1.0",
-  "reportPurpose": "Consumer nutrigenomics context using derived MCM6/LCT evidence and nutrition-genetics limitation framing.",
-  "missingInputPolicy": "Report unavailable nutrition markers explicitly; do not infer dietary needs, symptoms, supplements, or meal plans.",
   "consumerTone": "plain English; educational; no diet prescription or supplement recommendation",
-  "inputManifest": {
-    "hash": "sha256:synthetic-nutrigenomics-lactose-context-v1",
-    "genomeBuild": "GRCh37-or-GRCh38-derived",
-    "rawGenomeReturned": false,
-    "source": "synthetic derived nutrigenomics evidence for package validation"
+  "datasetId": "synthetic-nutrigenomics-lactose-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
   },
   "genomeEvidence": [
     {
-      "inputId": "MCM6-rs4988235",
-      "rsid": "rs4988235",
-      "gene": "MCM6/LCT",
-      "observedValue": "CT",
       "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "MCM6/LCT",
+      "inputId": "MCM6-rs4988235",
       "matchStatus": "observed",
-      "sourceFile": "synthetic-nutrigenomics-lactose-context-v1.json",
-      "sourceArtifact": "synthetic-nutrigenomics-lactose-context-v1"
+      "observedValue": "CT",
+      "rsid": "rs4988235",
+      "sourceArtifact": "synthetic-nutrigenomics-lactose-context-v1",
+      "sourceFile": "synthetic-nutrigenomics-lactose-context-v1.json"
     }
   ],
+  "inputManifest": {
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "hash": "sha256:synthetic-nutrigenomics-lactose-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived nutrigenomics evidence for package validation"
+  },
+  "missingInputPolicy": "Report unavailable nutrition markers explicitly; use sample rows only as observed output structure and do not infer dietary needs, symptoms, supplements, allergy status, vitamin status, or meal plans.",
+  "packageSlug": "nutrigenomics-dna-nutrition-guidance",
+  "packageVersion": "0.1.0",
   "referenceResources": [
     {
-      "id": "medlineplus-lactose-intolerance",
-      "title": "MedlinePlus Genetics: lactose intolerance",
-      "sourceType": "education_resource",
       "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-lactose-intolerance",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: lactose intolerance",
       "usedFor": [
         "lactose_context",
         "non_diagnostic_language"
       ]
     },
     {
-      "id": "medlineplus-mcm6",
-      "title": "MedlinePlus Genetics: MCM6 gene",
-      "sourceType": "education_resource",
       "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-mcm6",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: MCM6 gene",
       "usedFor": [
         "mcm6_lct_context",
         "lactase_persistence_context"
       ]
     },
     {
-      "id": "nutritional-genomics-dtc-review",
-      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing",
-      "sourceType": "research_review",
       "evidenceLevel": "review_background",
+      "id": "nutritional-genomics-dtc-review",
+      "sourceType": "research_review",
+      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing",
       "usedFor": [
         "nutrition_context",
         "direct_to_consumer_limitations"
       ]
     },
     {
-      "id": "ebi-gwas-catalog",
-      "title": "GWAS Catalog",
-      "sourceType": "database",
       "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
       "usedFor": [
         "candidate_trait_associations"
       ]
+    },
+    {
+      "evidenceLevel": "direct_sample_report",
+      "id": "nutrigenomics-nutrition-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Nutrigenomics: Nutrition Analysis sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "expectedAssertions": {
-    "noRawGenomeInOutput": true,
-    "everyFindingHasReference": true,
-    "missingInputsAreExplicit": true,
-    "probabilitiesOnlyInAppendix": true,
-    "consumerLanguage": true
-  }
+  "reportPurpose": "Consumer nutrigenomics context using derived MCM6/LCT evidence and the observed Nutrition Related sample-report output structure."
 }

@@ -28,6 +28,16 @@
       "observedValue": "Santa/St. Nick comparison sample, relationship evidence, relative matching, family-tree placement, identity evidence, and child-specific interpretation unavailable in this fixture",
       "sourceArtifact": "synthetic-santa-comparison-ancestry-context-v1",
       "sourceFile": "synthetic-santa-comparison-ancestry-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "autosomal genome",
+      "haplotype": "not-user-genotype",
+      "inputId": "sibling-gene2me-output-structure",
+      "matchStatus": "observed_sample_only",
+      "observedValue": "Gene2me DNA Ancestry and Genealogy sample rows observed separately as sibling output structure only; no Santa/St. Nick comparison sample or model supplied",
+      "sourceArtifact": "ancestry-genealogy-heritage-sample-pdf",
+      "sourceFile": "ancestry-genealogy-heritage.pdf"
     }
   ],
   "inputManifest": {
@@ -36,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived ancestry evidence for santa-and-me-app-dna-comparison validation"
   },
-  "missingInputPolicy": "Mark Santa/St. Nick comparison sample, relationship evidence, relative matching, family-tree placement, identity, child-specific interpretation, regional ancestry, exact homeland, and community affiliation unavailable when not explicitly supplied.",
+  "missingInputPolicy": "Mark Santa/St. Nick comparison sample, relationship model, similarity score, relative matching, family-tree placement, identity, child-specific interpretation, exact percentage, exact homeland, community affiliation, and health interpretation unavailable when not explicitly supplied. Use sibling Gene2me sample admixture percentages, maps, region narratives, and country/subregion table structure only as observed output-format examples.",
   "packageSlug": "santa-and-me-app-dna-comparison",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -72,7 +82,20 @@
         "population_reference",
         "variant_frequency_context"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "ancestry-genealogy-heritage-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "DNA Ancestry and Genealogy Report sample report",
+      "usedFor": [
+        "sibling_sample_rows",
+        "formal_fields",
+        "genotype_summary",
+        "output_format",
+        "novelty_relationship_boundary"
+      ]
     }
   ],
-  "reportPurpose": "Consumer novelty DNA comparison context from derived broad autosomal similarity while marking Santa/St. Nick comparison, relationship, identity, relative matching, family-tree, and child-specific evidence unavailable."
+  "reportPurpose": "Consumer novelty Santa/St. Nick comparison context from derived broad autosomal similarity plus sibling Gene2me ancestry/genealogy output-structure evidence."
 }

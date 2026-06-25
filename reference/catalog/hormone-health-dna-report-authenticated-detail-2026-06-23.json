@@ -1,0 +1,53 @@
+{
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "source": "in-app browser exact route DOM and meta capture",
+  "capturedAt": "2026-06-23T06:10:32.948Z",
+  "url": "https://sequencing.com/marketplace/hormone-health-dna-report",
+  "finalUrl": "https://sequencing.com/marketplace/hormone-health-dna-report",
+  "uri": "marketplace/hormone-health-dna-report",
+  "title": "Hormone Health",
+  "publisher": "SelfDecode",
+  "price": "$59",
+  "currencyCode": "USD",
+  "productId": "4803",
+  "headerImage": "https://sequencing.com/sites/default/files/thyroid-icon-512.jpg",
+  "headerImageAlt": "genetic testing thyroid disease",
+  "summaryPreview": "Marketplace Hormone Health Developed by SelfDecode This innovative genetic report explains the role your genes play in influencing your hormone levels and includes insights for both protecting your hormone health and improving hormone function. $59 per genome",
+  "bodyPreview": "Marketplace Hormone Health Developed by SelfDecode This innovative genetic report explains the role your genes play in influencing your hormone levels and includes insights for both protecting your hormone health and improving hormone function. $59 per genome Start Report View Sample Report Get 100% of your DNA data with Whole Genome Sequencing. Already have data from a DNA test? Upload your data for free. This report analyzes 1M+ genetic variants to help you understand your genetic predispositions to suboptimal hormone levels. It also provides personalized diet, lifestyle and supplement recommendations to improve your hormone levels. The key health areas related to hormone health that are covered in this report include thyroid hormones, reproductive hormones, metabolic hormones, stress hormones, and related recommendations.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Hormone Health"
+    },
+    {
+      "level": "h2",
+      "text": "Optimize your hormone levels!"
+    },
+    {
+      "level": "h2",
+      "text": "Sample Report"
+    }
+  ],
+  "meta": {
+    "article:modified_time": "2025-05-23T03:28:12-07:00",
+    "article:published_time": "2020-09-09T02:10:11-07:00",
+    "author": "Sequencing",
+    "canonical": "https://sequencing.com/marketplace/hormone-health-dna-report",
+    "description": "This innovative genetic report explains the role your genes play in influencing your hormone levels and includes insights for both protecting your hormone health and improving hormone function.",
+    "og:title": "Thyroid DNA Wellness Report | Genetic Testing for Thyroid Disease",
+    "og:type": "product",
+    "og:url": "https://sequencing.com/marketplace/hormone-health-dna-report",
+    "product:availability": "in stock",
+    "product:brand": "Sequencing",
+    "product:category": "505293",
+    "product:price:amount": "59.00",
+    "product:price:currency": "USD",
+    "product:retailer_item_id": "4803",
+    "twitter:title": "Thyroid DNA Wellness Report | Genetic Testing for Thyroid Disease"
+  },
+  "evidenceNotes": [
+    "Captured only because finalUrl exactly matched the requested marketplace detail route.",
+    "The page exposed DOM and meta product evidence; no rich reportData object or reportFile URL was present in this capture.",
+    "Page overview text is used only for marketplace positioning, not local hormone, lab, treatment, supplement, diet, lifestyle, fertility, pregnancy, medication, or actionability claims."
+  ]
+}

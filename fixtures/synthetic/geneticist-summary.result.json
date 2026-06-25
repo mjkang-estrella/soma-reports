@@ -1,24 +1,30 @@
 {
+  "schemaVersion": "soma-reports.synthetic-result.v1",
   "reportOverview": {
     "reportTitle": "Geneticist Summary",
     "inputManifestHash": "sha256:synthetic-geneticist-summary-professional-handoff-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "geneticist review, phenotype fit, inheritance assessment, family history, segregation, confirmatory testing, ACMG/AMP evidence codes, expert-panel classification, penetrance, clinical actionability, and authenticated sample-report rows unavailable in this fixture",
-      "Professional review, clinical context, current health information, and medical decision support are unavailable in this fixture.",
-      "This result is consumer-shareable context only and is not a diagnosis, professional clearance, disease-risk estimate, medication instruction, procedure plan, treatment guidance, supplement guidance, diet guidance, lab interpretation, screening advice, reproductive advice, or clinical actionability claim."
+      "Direct Geneticist Summary sample-report sections and exact rows have not been extracted.",
+      "The Healthcare Pro sample PDF is included only as sibling clinical-genetics output-structure evidence.",
+      "Geneticist review, phenotype fit, inheritance assessment, family history, segregation, confirmatory testing, ACMG/AMP evidence codes, expert-panel classification, penetrance, and clinical actionability are unavailable in this fixture.",
+      "This result is consumer-shareable handoff context only and is not a diagnosis, variant classification, penetrance estimate, inheritance conclusion, family-risk estimate, reproductive guidance, diagnostic-testing recommendation, screening advice, treatment guidance, or actionability claim."
+    ],
+    "evidenceTypes": [
+      "Synthetic unavailable-professional-review evidence",
+      "Public clinical genetics and genetic testing background references",
+      "Sibling Healthcare Pro sample rows used only for output structure"
     ]
   },
   "resultRows": [
     {
       "groupTitle": "Professional handoff availability",
-      "item": "geneticist-summary-handoff-context-unavailable",
+      "item": "Geneticist review context",
       "brandName": "",
-      "geneticAnalysis": "Geneticist Summary can organize supplied context for a professional discussion, but the specialist review and authenticated sample rows are unavailable.",
+      "geneticAnalysis": "The local fixture can organize supplied context for a geneticist discussion, but specialist review, phenotype fit, inheritance assessment, family history, segregation, confirmatory testing, expert classification, penetrance assessment, and clinical actionability are unavailable.",
       "genes": [
         "Geneticist Summary"
       ],
-      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Counseling",
+      "sourceLabel": "Clinical genetics background references",
       "sourceIds": [
         "cdc-genetic-testing",
         "medlineplus-genetics",
@@ -30,17 +36,41 @@
         "ncbi-genetic-testing-registry"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This row is an availability statement. It does not diagnose a condition, clear a person for a procedure, estimate risk, choose medication, recommend treatment, interpret labs, recommend screening, guide reproductive decisions, or provide an all-clear result."
+      "plainEnglishMeaning": "This is an availability statement. It does not diagnose a genetic disorder, classify a variant, estimate penetrance or inheritance, estimate family risk, recommend reproductive action, recommend testing, recommend screening, recommend treatment, or replace a geneticist."
     },
     {
-      "groupTitle": "Clinical review availability",
-      "item": "geneticist-summary-clinical-review-unavailable",
-      "brandName": "",
-      "geneticAnalysis": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+      "groupTitle": "Sibling sample output structure",
+      "item": "Healthcare Pro clinical-genetics row format",
+      "brandName": "Sibling Healthcare Pro sample report",
+      "geneticAnalysis": "The sibling Healthcare Pro sample shows formal report rows for STAT alerts, increased-risk rows, carrier rows, PGx rows, rare-disease rows, and analysis alerts. These rows are used only to preserve output shape for Geneticist Summary.",
       "genes": [
-        "geneticist review context"
+        "MTHFR",
+        "cardiovascular-risk markers",
+        "colorectal-cancer-risk markers",
+        "osteoarthritis-risk markers",
+        "RET",
+        "F5",
+        "warfarin-response markers",
+        "DPYD",
+        "HFE2"
       ],
-      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Counseling",
+      "sourceLabel": "Sibling Healthcare Pro sample PDF",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample rows show what the report format can contain. They are not local findings and must not be read as a personal diagnosis, risk estimate, carrier result, medication result, variant classification, data-completeness claim, testing advice, treatment advice, or actionability."
+    },
+    {
+      "groupTitle": "Clinical genetics boundary",
+      "item": "Unsupported interpretation types",
+      "brandName": "",
+      "geneticAnalysis": "The local fixture intentionally does not include the clinical and family context required for geneticist-level interpretation, so the output marks those areas unavailable instead of inferring them.",
+      "genes": [
+        "ClinGen/ClinVar context",
+        "ACMG/AMP context"
+      ],
+      "sourceLabel": "Variant-classification and public-health references",
       "sourceIds": [
         "cdc-genetic-testing",
         "medlineplus-genetics",
@@ -52,24 +82,215 @@
         "ncbi-genetic-testing-registry"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "A qualified professional needs validated test scope, personal and family history, symptoms, medications, labs, procedure context, environment, ancestry applicability, and current clinical information before using genetic context for health decisions."
+      "plainEnglishMeaning": "A geneticist-level conclusion needs validated test scope, clinical history, family history, symptoms, segregation information, phenotype fit, confirmatory testing, and qualified review. Missing context is reported as missing, not normal, abnormal, low risk, high risk, diagnostic, actionable, or all clear."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Report identity",
+      "item": "Healthcare Professional Genetic Report",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The cover and table of contents identify a Healthcare Pro sample report with sections for STAT Alerts, Increased Risk Detected, Medications (Pharmacogenomics), Rare Diseases, No Increased Risk Detected, and Analysis Alerts.",
+      "description": "This row captures sample-report structure only and does not prove a local Healthcare Pro report was generated.",
+      "genes": [],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Geneticist Summary sibling clinical-genetics output-structure evidence from the Healthcare Pro sample PDF. Extracted from pages 1-2 of the public sample PDF; keep report identity and section list separate from local findings. This is not a direct Geneticist Summary sample report and not local genetic diagnosis, variant classification, penetrance, inheritance, segregation, phenotype-fit, family-member risk, reproductive, diagnostic-testing, screening, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "STAT Alerts",
+      "item": "Nitrous Oxide ADR",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Nitrous Oxide ADR as Risk Detected and ties the alert to homozygous MTHFR Trp339Gly/W339G.",
+      "description": "This is a sample-person alert row only; local output must not infer nitrous oxide adverse-reaction risk, homocysteine status, anesthesia clearance, or medical-record action without supplied evidence and professional review.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Geneticist Summary sibling clinical-genetics output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 3 of the public sample PDF; sample clinical-action language is observed structure, not local advice. This is not a direct Geneticist Summary sample report and not local genetic diagnosis, variant classification, penetrance, inheritance, segregation, phenotype-fit, family-member risk, reproductive, diagnostic-testing, screening, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "CAD & MI",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels CAD & MI as Increased Risk Detected and shows a 55% lifetime-risk sample estimate compared with a 42% male population-risk label.",
+      "description": "This is sample output only; local output must not reuse the percentages as a personal coronary disease or heart-attack risk estimate.",
+      "genes": [
+        "cardiovascular-risk markers"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Geneticist Summary sibling clinical-genetics output-structure evidence from the Healthcare Pro sample PDF. Extracted from pages 4-5 of the public sample PDF; percentages are sample labels and need calibrated local evidence before reuse. This is not a direct Geneticist Summary sample report and not local genetic diagnosis, variant classification, penetrance, inheritance, segregation, phenotype-fit, family-member risk, reproductive, diagnostic-testing, screening, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "MTHFR Deficiency",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels MTHFR Deficiency as Increased Risk Detected due to homozygous MTHFR Trp339Gly/W339G.",
+      "description": "This is sample-person structure only; local output must not infer deficiency, homocysteine levels, supplementation need, or reproductive guidance from the sample row.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Geneticist Summary sibling clinical-genetics output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 5 of the public sample PDF; preserve the sample label without turning it into local clinical guidance. This is not a direct Geneticist Summary sample report and not local genetic diagnosis, variant classification, penetrance, inheritance, segregation, phenotype-fit, family-member risk, reproductive, diagnostic-testing, screening, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "Colorectal Cancer",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Colorectal Cancer as Increased Risk Detected and shows a sample lifetime-risk label of about 15% compared with about 7%.",
+      "description": "This is sample output only; local output must not infer personal colorectal cancer risk, screening timing, aspirin use, or prevention steps.",
+      "genes": [
+        "colorectal-cancer-risk markers"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Geneticist Summary sibling clinical-genetics output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 5 of the public sample PDF; sample prevention text is not local medical advice. This is not a direct Geneticist Summary sample report and not local genetic diagnosis, variant classification, penetrance, inheritance, segregation, phenotype-fit, family-member risk, reproductive, diagnostic-testing, screening, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "Osteoarthritis",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Osteoarthritis as Increased Risk Detected and lists knee OA moderate, hip OA slightly increased, and wrist OA normal sample labels.",
+      "description": "This row captures the sample's joint-specific output shape only; local output must not infer personal osteoarthritis risk or exercise modifications from this sample.",
+      "genes": [
+        "osteoarthritis-risk markers"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Geneticist Summary sibling clinical-genetics output-structure evidence from the Healthcare Pro sample PDF. Extracted from pages 5-6 of the public sample PDF; exercise and imaging language is observed sample structure only. This is not a direct Geneticist Summary sample report and not local genetic diagnosis, variant classification, penetrance, inheritance, segregation, phenotype-fit, family-member risk, reproductive, diagnostic-testing, screening, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "Hirschsprung Disease",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Hirschsprung Disease as Increased Risk Detected and ties the row to a RET mutation described as IVS 1 +9277 and +9349 relative to MET.",
+      "description": "This is a sample-person rare-disease risk row only; local output must not infer diagnosis, symptoms, imaging need, or referral need.",
+      "genes": [
+        "RET"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Geneticist Summary sibling clinical-genetics output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 7 of the public sample PDF; symptom and referral examples are sample report structure, not local advice. This is not a direct Geneticist Summary sample report and not local genetic diagnosis, variant classification, penetrance, inheritance, segregation, phenotype-fit, family-member risk, reproductive, diagnostic-testing, screening, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "Thrombophilia",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Thrombophilia as Carrier and states the sample has one copy of the Factor V R2 mutation in F5, distinct from Factor V Leiden.",
+      "description": "This is sample carrier-status structure only; local output must not infer personal thrombophilia carrier status or clotting risk.",
+      "genes": [
+        "F5"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Geneticist Summary sibling clinical-genetics output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 8 of the public sample PDF; the row includes sample caveats about R2 on its own. This is not a direct Geneticist Summary sample report and not local genetic diagnosis, variant classification, penetrance, inheritance, segregation, phenotype-fit, family-member risk, reproductive, diagnostic-testing, screening, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Medications (Pharmacogenomics)",
+      "item": "Warfarin dosing",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Warfarin dosing as Slight Resistance Detected and says the sample may need a slightly higher maintenance dose.",
+      "description": "This is sample pharmacogenomics structure only; local output must not infer a warfarin dose, INR target, prescription change, or medication action.",
+      "genes": [
+        "warfarin-response markers"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Geneticist Summary sibling clinical-genetics output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 9 of the public sample PDF; medication-dose language must remain sample-only unless supplied by validated local PGx evidence and professional review. This is not a direct Geneticist Summary sample report and not local genetic diagnosis, variant classification, penetrance, inheritance, segregation, phenotype-fit, family-member risk, reproductive, diagnostic-testing, screening, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Medications (Pharmacogenomics)",
+      "item": "5-fluorouracil Toxicity",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels 5-fluorouracil toxicity as increased risk due to DPYD*5/*5 and states the sample is homozygous for DPYD I543V.",
+      "description": "This is sample pharmacogenomics structure only; local output must not infer chemotherapy toxicity risk, alternative therapy, or dose adjustment.",
+      "genes": [
+        "DPYD"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Geneticist Summary sibling clinical-genetics output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 10 of the public sample PDF; oncology medication action requires qualified clinical review. This is not a direct Geneticist Summary sample report and not local genetic diagnosis, variant classification, penetrance, inheritance, segregation, phenotype-fit, family-member risk, reproductive, diagnostic-testing, screening, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Rare Diseases",
+      "item": "Hemochromatosis",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Hemochromatosis as Carrier and ties the carrier row to a single HFE2 G320V mutation.",
+      "description": "This is sample carrier-status structure only; local output must not infer iron overload, carrier status, family risk, monitoring, or treatment.",
+      "genes": [
+        "HFE2"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Geneticist Summary sibling clinical-genetics output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 11 of the public sample PDF; monitoring and phlebotomy language is sample content, not local guidance. This is not a direct Geneticist Summary sample report and not local genetic diagnosis, variant classification, penetrance, inheritance, segregation, phenotype-fit, family-member risk, reproductive, diagnostic-testing, screening, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Analysis Alerts",
+      "item": "Data completeness",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report's Analysis Alerts section states no ambiguity, complete genetic data, and all diseases, traits, and conditions analyzed.",
+      "description": "This is sample analysis-quality language only; local output must not claim complete local data or all conditions analyzed unless the local fixture supplies equivalent quality evidence.",
+      "genes": [],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Geneticist Summary sibling clinical-genetics output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 14 of the public sample PDF; data-completeness claims are sample-only. This is not a direct Geneticist Summary sample report and not local genetic diagnosis, variant classification, penetrance, inheritance, segregation, phenotype-fit, family-member risk, reproductive, diagnostic-testing, screening, treatment, or actionability evidence."
     }
   ],
   "professionalHandoffContext": {
-    "plainEnglishMeaning": "Geneticist Summary is currently a handoff-boundary package. It can document supplied evidence and missing professional context, but it cannot replace qualified review or produce medical decisions from local evidence alone.",
+    "plainEnglishMeaning": "Geneticist Summary is a handoff-boundary package. It can summarize supplied evidence and show sibling report structure, but it cannot replace qualified clinical genetics review or generate medical decisions from local evidence alone.",
     "unsupportedClaims": [
-      "Diagnosis, professional clearance, all-clear result, or personal disease-risk estimate",
-      "Medication, dosing, procedure, treatment, supplement, diet, lab, screening, reproductive, or management instruction",
-      "Variant classification, penetrance, inheritance, family-member risk, clinical actionability, or specialist-level interpretation",
-      "Replacement for a qualified clinician, pharmacist, geneticist, genetic counselor, surgeon, anesthesiologist, rheumatologist, infectious disease specialist, or other relevant professional"
+      "Genetic diagnosis or all-clear result",
+      "Variant classification, upgrade, downgrade, or pathogenicity conclusion",
+      "Penetrance, inheritance, segregation, phenotype-fit, or family-member risk estimate",
+      "Carrier-screen result, disease-risk result, PGx action, medication action, or medical-record instruction from sibling sample rows",
+      "Reproductive, diagnostic-testing, screening, treatment, prevention, or actionability guidance"
     ],
-    "professionalReview": "Use this output only as preparation for a professional conversation. Health decisions require qualified review with clinical history, medications, symptoms, labs, family history, procedure details when relevant, and validated testing scope."
+    "professionalReview": "Use this output only as preparation for a geneticist or genetic counselor conversation. Health decisions require qualified review with validated test scope, clinical history, phenotype, family history, segregation, confirmatory testing, and current professional standards."
   },
   "practicalNextSteps": {
     "professionalReview": [
-      "Do not use this local fixture to change medication, supplements, diet, screening, procedures, reproductive decisions, prevention plans, or treatment decisions.",
-      "Bring current symptoms, personal and family history, medications, allergies, labs, prior testing, procedure context when relevant, and ancestry context to a qualified professional if discussing this topic.",
-      "Treat unavailable professional-review rows as unavailable, not as normal, abnormal, low risk, high risk, reassuring, diagnostic, actionable, or all clear."
+      "Do not use this local fixture to change medication, supplements, diet, screening, reproductive decisions, prevention plans, or treatment decisions.",
+      "Bring personal and family history, symptoms, prior testing, lab reports, ancestry context, and any confirmed variants to a qualified genetics professional if discussing this topic.",
+      "Treat sibling Healthcare Pro sample rows as report-format examples only, not as local geneticist findings."
     ]
   },
   "references": [
@@ -116,37 +337,101 @@
     {
       "id": "acmg-amp-richards-2015",
       "title": "ACMG/AMP 2015 sequence variant interpretation standards"
+    },
+    {
+      "id": "healthcare-pro-sample-pdf",
+      "title": "Healthcare Pro sample report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "geneticist-summary-handoff-context-unavailable",
-        "gene": "Geneticist Summary",
-        "observedValue": "geneticist review, phenotype fit, inheritance assessment, family history, segregation, confirmatory testing, ACMG/AMP evidence codes, expert-panel classification, penetrance, clinical actionability, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "tier": "Sample-report visible genotype",
+        "gene": "MTHFR",
+        "variantId": "Trp339Gly; W339G",
+        "genotype": "homozygous",
+        "effect": "The sample report uses this MTHFR row for Nitrous Oxide ADR and MTHFR Deficiency sample labels.",
+        "phenotype": "Observed sample content only; do not infer local MTHFR deficiency, homocysteine status, nitrous oxide risk, supplementation, or reproductive guidance. This is Geneticist Summary sibling sample output-structure evidence only, not local genetic diagnosis, variant classification, penetrance, inheritance, segregation, phenotype-fit, family-member risk, reproductive, diagnostic-testing, screening, treatment, or actionability evidence.",
+        "extractionStatus": "direct"
       },
       {
-        "inputId": "geneticist-summary-clinical-review-unavailable",
-        "gene": "geneticist review context",
-        "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "tier": "Sample-report visible variant",
+        "gene": "RET",
+        "variantId": "IVS 1 +9277; +9349 relative to MET",
+        "genotype": "mutation detected in sample row",
+        "effect": "The sample report uses this RET row for a Hirschsprung Disease increased-risk sample label.",
+        "phenotype": "Observed sample content only; do not infer local Hirschsprung Disease risk, diagnosis, symptoms, imaging, or referral need. This is Geneticist Summary sibling sample output-structure evidence only, not local genetic diagnosis, variant classification, penetrance, inheritance, segregation, phenotype-fit, family-member risk, reproductive, diagnostic-testing, screening, treatment, or actionability evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible carrier marker",
+        "gene": "F5",
+        "variantId": "Factor V R2",
+        "genotype": "one copy",
+        "effect": "The sample report labels the sample as a Factor V R2 carrier and distinguishes it from Factor V Leiden.",
+        "phenotype": "Observed sample content only; do not infer local thrombophilia carrier status or clotting risk. This is Geneticist Summary sibling sample output-structure evidence only, not local genetic diagnosis, variant classification, penetrance, inheritance, segregation, phenotype-fit, family-member risk, reproductive, diagnostic-testing, screening, treatment, or actionability evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible PGx marker",
+        "gene": "ITPA",
+        "variantId": "partial ITPase deficiency mutation",
+        "genotype": "single mutation",
+        "effect": "The sample report labels possible increased Mercaptopurine and Azathioprine adverse-reaction risk due to an ITPA mutation.",
+        "phenotype": "Observed sample content only; do not infer local medication toxicity, dose change, or monitoring need. This is Geneticist Summary sibling sample output-structure evidence only, not local genetic diagnosis, variant classification, penetrance, inheritance, segregation, phenotype-fit, family-member risk, reproductive, diagnostic-testing, screening, treatment, or actionability evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible PGx marker",
+        "gene": "DPYD",
+        "variantId": "I543V; DPYD*5/*5",
+        "genotype": "homozygous",
+        "effect": "The sample report labels increased 5-fluorouracil toxicity risk due to homozygous DPYD I543V.",
+        "phenotype": "Observed sample content only; do not infer local chemotherapy toxicity risk, alternative-agent need, or dosing guidance. This is Geneticist Summary sibling sample output-structure evidence only, not local genetic diagnosis, variant classification, penetrance, inheritance, segregation, phenotype-fit, family-member risk, reproductive, diagnostic-testing, screening, treatment, or actionability evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible carrier marker",
+        "gene": "BCHE",
+        "variantId": "Gly418Val",
+        "genotype": "one copy; carrier",
+        "effect": "The sample report labels the sample as a postanesthetic-apnea carrier and likely not affected.",
+        "phenotype": "Observed sample content only; do not infer local anesthesia risk, carrier status, or newborn testing guidance. This is Geneticist Summary sibling sample output-structure evidence only, not local genetic diagnosis, variant classification, penetrance, inheritance, segregation, phenotype-fit, family-member risk, reproductive, diagnostic-testing, screening, treatment, or actionability evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible carrier marker",
+        "gene": "HFE2",
+        "variantId": "G320V",
+        "genotype": "single mutation; carrier",
+        "effect": "The sample report labels the sample as a Hemochromatosis carrier due to HFE2 G320V.",
+        "phenotype": "Observed sample content only; do not infer local hemochromatosis carrier status, iron overload, monitoring, or treatment need. This is Geneticist Summary sibling sample output-structure evidence only, not local genetic diagnosis, variant classification, penetrance, inheritance, segregation, phenotype-fit, family-member risk, reproductive, diagnostic-testing, screening, treatment, or actionability evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report analysis quality",
+        "gene": "Healthcare Pro analysis",
+        "variantId": "analysis-alerts",
+        "genotype": "no ambiguity; complete data; all listed conditions analyzed in the sample",
+        "effect": "The sample report states its own analysis completeness and lack-of-ambiguity alerts on the final page.",
+        "phenotype": "Observed sample quality context only; do not claim local completeness without equivalent local quality evidence. This is Geneticist Summary sibling sample output-structure evidence only, not local genetic diagnosis, variant classification, penetrance, inheritance, segregation, phenotype-fit, family-member risk, reproductive, diagnostic-testing, screening, treatment, or actionability evidence.",
+        "extractionStatus": "direct"
       }
     ],
     "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and exact rows",
-      "Qualified professional review and complete clinical context",
-      "Current medications, symptoms, family history, labs, procedure details, prior testing, and validated test scope when relevant",
-      "Validated model output, applicability metadata, and professional interpretation for any health decision"
+      "Direct Geneticist Summary mock-report rows and authenticated detail-page body parity",
+      "Qualified geneticist review and complete clinical context",
+      "Phenotype fit, family history, segregation, confirmatory testing, ACMG/AMP evidence codes, expert-panel classification, penetrance, and clinical actionability",
+      "Validated local disease-risk, carrier, PGx, variant-classification, and testing-actionability models"
     ],
     "probabilities": [],
     "uncertainty": [
-      "No calibrated professional-clearance, disease-risk, medication-response, procedure-risk, treatment-response, lab-status, screening-benefit, reproductive-risk, supplement-benefit, diet-response, or actionability model is supplied for this local package.",
-      "Interpretation depends on validated test scope, clinical and family history, symptoms, medications, labs, procedures, environment, ancestry applicability, and qualified professional review."
+      "No calibrated genetic diagnosis, variant-classification, penetrance, inheritance, family-risk, reproductive-risk, testing-benefit, screening-benefit, treatment-response, or actionability model is supplied for this local package.",
+      "Interpretation depends on validated test scope, clinical and family history, symptoms, segregation, phenotype fit, confirmatory testing, ancestry applicability, and qualified professional review."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
-      "The report is educational handoff context and does not provide diagnosis, professional clearance, disease-risk estimation, medication guidance, procedure guidance, treatment advice, supplement advice, diet advice, lab interpretation, screening advice, reproductive advice, or clinical actionability.",
+      "Healthcare Pro sample rows are sibling output-structure examples only and are not local Geneticist Summary findings.",
       "Unavailable professional-review rows should never be interpreted as low risk, high risk, no risk, normal, abnormal, reassuring, diagnostic, actionable, or all clear."
     ]
   }

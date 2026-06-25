@@ -1,0 +1,207 @@
+{
+  "app": {
+    "appid": "14950",
+    "backend": "ApiAppBackend",
+    "backend_settings": {
+      "api_app_id": "dataviewerapp",
+      "is_javascript_embed": 0
+    },
+    "backend_settings_serialized": "a:2:{s:10:\"api_app_id\";s:13:\"dataviewerapp\";s:19:\"is_javascript_embed\";i:0;}",
+    "label": "Genome Explorer"
+  },
+  "bodyPreview": "Logged-in marketplace detail capture confirmed exact Genome Explorer v3 reportData, app backend metadata, empty reportFile, and rendered official output-column glossary. No sample report file, generated output rows, private result URL, or genome values were exposed.",
+  "capturedAt": "2026-06-25T01:58:07.310Z",
+  "categories": [
+    "Health",
+    "Bioinformatics",
+    "Sequencing Apps"
+  ],
+  "currencyCode": "USD",
+  "evidenceNotes": [
+    "The page exposes pageProps.reportData for marketplace metadata and detail-page boundaries; reportData.reportFile is empty.",
+    "The rendered detail page defines Genome Explorer search/result columns and their meanings, but it does not expose populated official sample rows or generated output rows.",
+    "Use this artifact for exact route, app backend, product metadata, output-column dictionary, and no-promotion boundary evidence only.",
+    "No raw genome data, uploaded genome data, private Sequencing.com result URL, account identifier, or personal variant value is included in this artifact."
+  ],
+  "fieldDefinitions": [
+    {
+      "definition": "Identifier assigned by National Institutes of Health for a genetic variant and a condition associated with that genetic variant.",
+      "label": "RCV ID"
+    },
+    {
+      "definition": "Inheritable units of DNA.",
+      "label": "Chromosome"
+    },
+    {
+      "definition": "The position of that variant on the chromosome.",
+      "label": "Position"
+    },
+    {
+      "definition": "A unique identifier for the position assigned by the National Institutes of Health. Most variant IDs are known as rsids because they start with an \"rs\" followed by a number, such as rs123456.",
+      "label": "Variant ID"
+    },
+    {
+      "definition": "A segment of DNA that may be associated with a condition.",
+      "label": "Gene"
+    },
+    {
+      "definition": "The amino acid change caused by that variant.",
+      "label": "Impact"
+    },
+    {
+      "definition": "The frequency of the risk allele in studied populations.",
+      "label": "Risk Frequency"
+    },
+    {
+      "definition": "Indication of the specific type of the DNA change.",
+      "label": "Variant Type"
+    },
+    {
+      "definition": "The DNA sequence at a position in the internationally recognized human reference genome. Sequencing.com aligns all genome data to the latest reference genome, GRCh38.",
+      "label": "Ref"
+    },
+    {
+      "definition": "The alternative DNA sequence that may exist at that position. This is determined by research studies that identified a sequence at that position that is different from the reference genome.",
+      "label": "Alt"
+    },
+    {
+      "definition": "The sequence at that position within a user's DNA. Since there are two copies of chromosomes 1-22, this field can show two letters at each position. The Y chromosome and mitochondrial chromosome do not have copies so they show only a single letter. A question mark means the DNA data file did not contain data for that specific position.",
+      "label": "Your Data"
+    },
+    {
+      "definition": "The sequence at that position that is associated with the condition. While the risk version is usually the Alt sequence, it does not have to be and can sometimes be the Ref sequence.",
+      "label": "Risk Version"
+    },
+    {
+      "definition": "A disease risk, trait, or medication reaction associated with the Risk Version of that variant.",
+      "label": "Condition"
+    },
+    {
+      "definition": "A calculation that takes into account a variant's Classification and whether the supplied data contains the variant's Risk version.",
+      "label": "Your Status"
+    },
+    {
+      "definition": "The National Institute of Health's ClinVar classification of that variant. Additional research may determine that a preliminary association is inaccurate and the variant's Classification would be changed to Benign or Likely Benign.",
+      "label": "Classification"
+    },
+    {
+      "definition": "An indication of how well studied the association is between the Variant and the Condition.",
+      "label": "Confidence"
+    },
+    {
+      "definition": "Clickable link to each journal article that has been published about the association between the variant and the condition.",
+      "label": "References"
+    },
+    {
+      "definition": "Clickable links that take users directly to additional information for each variant. If the variant is found in ClinVar, then this column includes a direct link to the variant's ClinVar record.",
+      "label": "Links"
+    }
+  ],
+  "finalUrl": "https://sequencing.com/marketplace/genome-explorer-dna-data-search",
+  "headerImage": "https://sequencing.com/sites/default/files/genome-explorer-icon_0.png",
+  "headerImageAlt": "",
+  "infoTabs": [
+    "Overview",
+    "Guide & FAQs",
+    "Getting Started",
+    "Plus, Premium, and Professional Versions",
+    "Citations",
+    "Disclaimer"
+  ],
+  "outputSignals": {
+    "formalFieldsFromRenderedGlossary": 18,
+    "generatedRows": false,
+    "privateResultUrl": false,
+    "reportFile": false,
+    "resultRows": 0,
+    "sampleRows": 0
+  },
+  "pagePropKeys": [
+    "_initialProps",
+    "reportData"
+  ],
+  "price": "$0",
+  "productId": "4639",
+  "publisher": "Sequencing.com",
+  "relatedReports": [
+    {
+      "href": "https://sequencing.com/marketplace/healthcare-pro-genetic-report",
+      "title": "Healthcare Pro"
+    },
+    {
+      "href": "https://sequencing.com/marketplace/health-scan",
+      "title": "Health Scan"
+    },
+    {
+      "href": "https://sequencing.com/marketplace/next-gen-disease-screen",
+      "title": "Next-Gen Disease Screen"
+    }
+  ],
+  "reportDataKeys": [
+    "app_id",
+    "avatar",
+    "avatarAlt",
+    "body",
+    "category",
+    "currency_code",
+    "headerImg",
+    "headerImgAlt",
+    "id",
+    "included_with_membership",
+    "included_with_premium",
+    "info_tab",
+    "listEnableFiles",
+    "meta",
+    "nid",
+    "non_genetic_fields",
+    "pre_order",
+    "price",
+    "product_data",
+    "product_id",
+    "publisher",
+    "purchasedBy",
+    "relatedReports",
+    "reportFile",
+    "report_premium",
+    "search_keywords",
+    "start_button_text",
+    "sub_title",
+    "summary",
+    "title",
+    "type",
+    "uri",
+    "wgsCompatible"
+  ],
+  "reportFile": "",
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "source": "in-app browser logged-in sequencing.com marketplace detail page __NEXT_DATA__.props.pageProps.reportData and rendered DOM extraction",
+  "summaryPreview": "Discover, learn, and explore your deep DNA data. Genome Explorer is the world's first online browser and search engine for your genome.",
+  "title": "Genome Explorer v3",
+  "uri": "marketplace/genome-explorer-dna-data-search",
+  "url": "https://sequencing.com/marketplace/genome-explorer-dna-data-search",
+  "visibleParagraphs": [
+    "Genome Explorer v3",
+    "Explore the association between your genetic data and diseases, conditions, traits, and medication reactions. Works with DNA data from any genetic testing, including whole genome sequencing, exome sequencing, and array data.",
+    "Compatible with data aligned to any reference genome, including GRCh38, hg19/GRCh37 and hg18/GRCh36.",
+    "Search Your DNA with Our Free Genome Search Engine",
+    "With Genome Explorer, users can view, browse, sort, filter, and search DNA data. Search options are based on Genome Plan level.",
+    "RCV ID",
+    "Chromosome",
+    "Position",
+    "Variant ID",
+    "Gene",
+    "Variant Type",
+    "Your Status",
+    "Condition",
+    "Classification",
+    "Confidence",
+    "Compatible with All DNA Data Types and Genetic Variations",
+    "SNPs / SNVs (Single Nucleotide Polymorphisms / Variants)",
+    "INDELs (Insertion and Deletion Variants)",
+    "CNVs (Copy Number Variations)",
+    "SVs (Structural Variations)",
+    "MITO (Mitochondrial Heteroplasmy)",
+    "Understanding Your Genome Data Viewer Results",
+    "Each row in Genome Explorer provides information on a position within your genome. Each column provides additional information about that position."
+  ]
+}

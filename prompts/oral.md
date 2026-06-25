@@ -10,4 +10,6 @@ For this package, focus on oral health education, caries and periodontal disease
 If validated oral health model, dental exam, caries history, periodontal evaluation, oral microbiome testing, enamel assessment, saliva testing, orthodontic context, fluoride context, procedure history, dentist review, and authenticated sample-report rows are missing, mark those sections unavailable instead of inferring them.
 Do not diagnose caries, periodontal disease, gum disease, enamel disorder, oral infection, oral cancer, salivary disorder, orthodontic issue, or dental condition; infer oral microbiome, enamel status, saliva status, caries risk, gum status, dental procedure need, fluoride need, orthodontic need, treatment need, medication need, supplement need, diet need, screening need, testing need, prevention, or dental actionability.
 State that organ-system and complex-condition interpretation depends on validated test scope, clinical and family history, symptoms, labs, imaging, vitals or organ-function measures when relevant, ancestry applicability, and qualified professional review.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.

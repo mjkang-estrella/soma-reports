@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived nutrition-genetics evidence for gut-health validation"
   },
-  "missingInputPolicy": "Report unavailable gut-health, digestive, microbiome, symptom, diet, supplement, lab, and calibrated models explicitly; do not infer digestive diagnosis, microbiome status, symptom causes, elimination diets, supplement needs, or treatment.",
+  "missingInputPolicy": "Report unavailable gut-health, digestive-disorder, microbiome, symptom, diet-history, elimination-diet, probiotic, supplement, lab, medication, treatment, ancestry-applicability, and calibrated models explicitly; use Gut Health sample rows only as observed output structure and do not infer local IBS, peptic ulcer, indigestion, acid reflux, constipation, gallstones, pancreatitis, IBD, appendicitis, C. difficile, H. pylori, EBV, gastrointestinal infection, gluten sensitivity, lactose intolerance diagnosis, microbiome status, probiotic need, curcumin need, supplement dosing, labs, symptoms, medications, diagnosis, or treatment from genotype alone or sample-only rows.",
   "packageSlug": "gut-health",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -155,7 +155,19 @@
         "bmi_limitations",
         "no_weight_prediction_from_genotype"
       ]
+    },
+    {
+      "evidenceLevel": "direct_sample_report",
+      "id": "gut-health-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "SelfDecode Gut Health sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer Gut Health context using derived MCM6/LCT evidence plus explicit digestive, microbiome, symptom, diet, supplement, lab, and model-unavailable framing."
+  "reportPurpose": "Consumer Gut Health context using derived MCM6/LCT evidence plus observed SelfDecode Gut Health sample-report output structure."
 }

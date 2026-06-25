@@ -3,18 +3,137 @@
     "reportTitle": "Inflammation",
     "inputManifestHash": "sha256:synthetic-inflammation-condition-boundary-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "validated inflammation model, calibrated inflammation PRS, cytokine labs, CRP, ESR, immune-cell labs, symptoms, diagnosis, family history, medication context, environmental context, diet context, infection context, and authenticated sample-report rows unavailable in this fixture.",
-      "Clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and calibrated model outputs are unavailable.",
-      "This result is not a diagnosis, disease-risk estimate, HLA inference, inflammatory-status result, immune-strength result, infection-risk result, lab interpretation, treatment instruction, supplement instruction, diet instruction, prevention plan, screening instruction, diagnostic-test recommendation, reproductive action, or clinical actionability claim."
+      "Validated personal inflammation model, calibrated inflammation PRS, cytokine labs, CRP, ESR, immune-cell labs, symptoms, diagnosis, family history, medication context, environmental context, diet context, infection context, and clinical/lab interpretation are unavailable in this fixture.",
+      "The public sample PDF rows are output-structure examples only; they are not local inflammation status, disease-risk, supplement, diet, treatment, testing, or actionability guidance.",
+      "This result is not a diagnosis, disease-risk estimate, inflammatory-status result, lab interpretation, treatment instruction, supplement instruction, diet instruction, prevention plan, screening instruction, diagnostic-test recommendation, reproductive action, or clinical actionability claim."
+    ],
+    "evidenceTypesSupplied": [
+      "synthetic unavailable-model boundary evidence",
+      "public sample PDF output-structure rows",
+      "public background references"
     ]
   },
+  "sampleRows": [
+    {
+      "groupTitle": "Overview / Inflammatory And Autoimmune Conditions",
+      "item": "Inflammation",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "Less likely; reduced likelihood of inflammation",
+      "description": "The public sample overview card lists Inflammation with a less-likely label and reduced-likelihood wording.",
+      "genes": [
+        "Not shown on overview card"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from rendered page 12 of the public Immunity & Inflammation sample PDF; this is observed sample output structure, not a personal inflammation assessment."
+    },
+    {
+      "groupTitle": "Risk score / Inflammation",
+      "item": "Inflammation",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "Reduced likelihood of inflammation; 5th percentile; based on 9,023 genetic variants",
+      "description": "The public sample detail page shows an Inflammation risk card with reduced-likelihood wording, a 5th percentile graphic, and a visible top-variants table.",
+      "genes": [
+        "LEPR",
+        "OR10J5",
+        "APOE",
+        "CRP",
+        "APCS",
+        "FCER1A",
+        "FCRL6",
+        "CLPTM1",
+        "OASL"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from rendered page 13 of the public Immunity & Inflammation sample PDF; this is observed sample output structure, not a personal inflammation assessment."
+    },
+    {
+      "groupTitle": "Relaxation Techniques / Inflammation",
+      "item": "Inflammation",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "Impact 3/5; evidence 3/5",
+      "description": "The public recommendation block includes an Inflammation row under Relaxation Techniques with impact/evidence ratings.",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from rendered page 18 of the public Immunity & Inflammation sample PDF; this is observed output structure, not personal stress-management or treatment advice."
+    }
+  ],
   "resultRows": [
+    {
+      "groupTitle": "Overview / Inflammatory And Autoimmune Conditions",
+      "item": "Inflammation",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "Less likely; reduced likelihood of inflammation",
+      "description": "The public sample overview card lists Inflammation with a less-likely label and reduced-likelihood wording.",
+      "genes": [
+        "Not shown on overview card"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from rendered page 12 of the public Immunity & Inflammation sample PDF; this is observed sample output structure, not a personal inflammation assessment."
+    },
+    {
+      "groupTitle": "Risk score / Inflammation",
+      "item": "Inflammation",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "Reduced likelihood of inflammation; 5th percentile; based on 9,023 genetic variants",
+      "description": "The public sample detail page shows an Inflammation risk card with reduced-likelihood wording, a 5th percentile graphic, and a visible top-variants table.",
+      "genes": [
+        "LEPR",
+        "OR10J5",
+        "APOE",
+        "CRP",
+        "APCS",
+        "FCER1A",
+        "FCRL6",
+        "CLPTM1",
+        "OASL"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from rendered page 13 of the public Immunity & Inflammation sample PDF; this is observed sample output structure, not a personal inflammation assessment."
+    },
+    {
+      "groupTitle": "Relaxation Techniques / Inflammation",
+      "item": "Inflammation",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "Impact 3/5; evidence 3/5",
+      "description": "The public recommendation block includes an Inflammation row under Relaxation Techniques with impact/evidence ratings.",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from rendered page 18 of the public Immunity & Inflammation sample PDF; this is observed output structure, not personal stress-management or treatment advice."
+    },
     {
       "groupTitle": "Condition model availability",
       "item": "inflammation-model-unavailable",
       "brandName": "",
-      "geneticAnalysis": "Inflammation cannot emit a inflammation conclusion from this local fixture because the validated model, calibrated score, clinical context, labs, and authenticated sample rows are unavailable.",
+      "geneticAnalysis": "A personal inflammation conclusion is unavailable because this local fixture does not include a validated inflammation model, calibrated score, clinical context, labs, or personal recommendation context.",
+      "description": "The sample PDF is used only for observed report structure; it is not a personal inflammation assessment.",
       "genes": [
         "Inflammation model"
       ],
@@ -26,13 +145,14 @@
         "niams-arthritis-rheumatic-diseases"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This row is an availability statement, not a diagnosis, risk score, HLA result, immune-strength result, inflammation-level result, lab result, prevention plan, treatment instruction, or all-clear statement."
+      "plainEnglishMeaning": "This row is an availability statement, not a diagnosis, risk score, inflammation-level result, lab result, supplement instruction, prevention plan, treatment instruction, or all-clear statement."
     },
     {
       "groupTitle": "Clinical and lab context availability",
       "item": "inflammation-clinical-lab-context-unavailable",
       "brandName": "",
-      "geneticAnalysis": "Inflammation cannot interpret clinical or lab context because symptoms, diagnosis, family history, inflammatory markers, immune evaluation, medications, environmental context, clinician interpretation, and authenticated sample rows are unavailable.",
+      "geneticAnalysis": "Clinical or lab interpretation is unavailable because symptoms, diagnosis, family history, inflammatory markers, immune evaluation, medications, environmental context, and clinician interpretation are not supplied.",
+      "description": "Personal interpretation needs validated test scope and clinical/lab context outside this local fixture.",
       "genes": [
         "Inflammation clinical and lab context"
       ],
@@ -43,103 +163,200 @@
         "medlineplus-complex-disorders",
         "fda-direct-to-consumer-tests",
         "nhgri-polygenic-risk-scores",
-        "ebi-gwas-catalog",
-        "medlineplus-autoimmune-diseases",
-        "medlineplus-immune-system-disorders"
+        "ebi-gwas-catalog"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "Personal interpretation needs validated testing scope, symptoms, family history, clinical history, labs, environment, ancestry applicability, and qualified professional review."
+      "plainEnglishMeaning": "Use qualified professional review for symptoms, abnormal labs, family history, known variants, autoimmune or inflammatory concerns, medication questions, screening questions, or treatment decisions."
     }
   ],
   "conditionBoundaryContext": {
-    "plainEnglishMeaning": "Inflammation is currently a boundary report: it can document what evidence is available and what is missing, but it cannot diagnose inflammation, estimate disease risk, interpret labs, or make health decisions.",
+    "plainEnglishMeaning": "Inflammation is currently a boundary report: it can preserve observed sample-report structure and document missing evidence, but it cannot diagnose inflammation, estimate disease risk, interpret labs, or make health decisions.",
     "unsupportedClaims": [
       "Diagnosis, all-clear result, or disease-risk estimate",
-      "HLA status, inflammatory status, immune strength, infection risk, autoantibody status, complement status, cytokines, CRP, ESR, immune-cell labs, organ involvement, disease activity, or flare status",
-      "EDS subtype, connective-tissue subtype, collagen-gene panel result, variant classification, vascular-risk inference, Beighton score, or hypermobility score",
-      "Treatment, supplement, diet, prevention, screening, diagnostic testing, reproductive, medication, surgery, or management instruction",
+      "Inflammation level, cytokines, CRP, ESR, immune-cell labs, HLA status, organ involvement, disease activity, or flare status",
+      "Treatment, supplement, diet, prevention, screening, diagnostic testing, reproductive, medication, or management instruction",
       "Replacement for qualified clinician, genetic counselor, rheumatology, immunology, or genetics review"
     ],
-    "professionalReview": "Use qualified professional review for symptoms, abnormal labs, family history, known variants, autoimmune or inflammatory concerns, connective-tissue concerns, medication questions, pregnancy or reproductive questions, screening questions, or treatment decisions."
+    "professionalReview": "Use qualified professional review for symptoms, abnormal labs, family history, known variants, autoimmune or inflammatory concerns, medication questions, pregnancy or reproductive questions, screening questions, or treatment decisions."
   },
   "practicalNextSteps": {
     "professionalReview": [
       "Do not use this local fixture to change medication, supplements, diet, screening, diagnostic testing, reproductive decisions, prevention plans, or treatment decisions.",
-      "Bring symptoms, family history, clinical history, labs, medications, environment, prior genetic testing, and ancestry context to a qualified professional if reviewing immune, inflammatory, autoimmune, rheumatologic, connective-tissue, or EDS concerns.",
       "Treat missing model rows as unavailable, not as low risk, high risk, reassuring, abnormal, normal, or actionable results."
     ]
   },
   "references": [
     {
-      "id": "cdc-genetic-testing",
-      "title": "CDC Genetic Testing"
-    },
-    {
-      "id": "medlineplus-genetics",
-      "title": "MedlinePlus Genetics"
-    },
-    {
-      "id": "medlineplus-complex-disorders",
-      "title": "MedlinePlus Genetics: complex disorders"
-    },
-    {
-      "id": "fda-direct-to-consumer-tests",
-      "title": "FDA Direct-to-Consumer Tests"
-    },
-    {
-      "id": "nhgri-polygenic-risk-scores",
-      "title": "NHGRI overview of polygenic risk scores"
-    },
-    {
-      "id": "ebi-gwas-catalog",
-      "title": "GWAS Catalog"
+      "id": "inflammation-and-immunity-sample-pdf",
+      "title": "Inflammation and Immunity DNA Report sample report",
+      "url": "https://sequencing.com/sites/default/files/inflammation-and-immunity-sequencing-sample-report.pdf",
+      "sourceType": "mock_report",
+      "evidenceLevel": "high",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     },
     {
       "id": "medlineplus-autoimmune-diseases",
-      "title": "MedlinePlus: Autoimmune Diseases"
+      "title": "MedlinePlus: Autoimmune Diseases",
+      "url": "https://medlineplus.gov/autoimmunediseases.html",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background",
+      "usedFor": [
+        "autoimmune_context",
+        "inflammation_context",
+        "non_diagnostic_language"
+      ]
     },
     {
       "id": "medlineplus-immune-system-disorders",
-      "title": "MedlinePlus: Immune System and Disorders"
+      "title": "MedlinePlus: Immune System and Disorders",
+      "url": "https://medlineplus.gov/immunesystemanddisorders.html",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background",
+      "usedFor": [
+        "immune_system_context",
+        "immune_strength_limits",
+        "infection_risk_limits"
+      ]
     },
     {
       "id": "niaid-autoimmunity-factors",
-      "title": "NIAID: Factors That Influence Autoimmunity"
+      "title": "NIAID: Factors That Influence Autoimmunity",
+      "url": "https://www.niaid.nih.gov/diseases-conditions/factors-influence-autoimmunity",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background",
+      "usedFor": [
+        "autoimmune_multifactor_context",
+        "non_deterministic_language"
+      ]
     },
     {
       "id": "niams-arthritis-rheumatic-diseases",
-      "title": "NIAMS: Arthritis and Rheumatic Diseases"
+      "title": "NIAMS: Arthritis and Rheumatic Diseases",
+      "url": "https://www.niams.nih.gov/health-topics/arthritis-and-rheumatic-diseases",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background",
+      "usedFor": [
+        "arthritis_context",
+        "rheumatic_disease_context",
+        "subtype_inference_limits"
+      ]
+    },
+    {
+      "id": "cdc-genetic-testing",
+      "title": "CDC Genetic Testing",
+      "url": "https://www.cdc.gov/genomics-and-health/counseling-testing/genetic-testing.html",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background",
+      "usedFor": [
+        "genetic_testing_context",
+        "consumer_safety_language",
+        "missing_evidence_policy"
+      ]
+    },
+    {
+      "id": "medlineplus-genetics",
+      "title": "MedlinePlus Genetics",
+      "url": "https://medlineplus.gov/genetics/",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "plain_english_context",
+        "condition_background"
+      ]
+    },
+    {
+      "id": "medlineplus-complex-disorders",
+      "title": "MedlinePlus Genetics: complex disorders",
+      "url": "https://medlineplus.gov/genetics/understanding/mutationsanddisorders/complexdisorders/",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "complex_trait_context",
+        "non_deterministic_language"
+      ]
+    },
+    {
+      "id": "fda-direct-to-consumer-tests",
+      "title": "FDA Direct-to-Consumer Tests",
+      "url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/direct-consumer-tests",
+      "sourceType": "regulatory_resource",
+      "evidenceLevel": "regulatory_background",
+      "usedFor": [
+        "dtc_test_limitations",
+        "overall_risk_limitations",
+        "provider_review_language"
+      ]
+    },
+    {
+      "id": "nhgri-polygenic-risk-scores",
+      "title": "NHGRI overview of polygenic risk scores",
+      "url": "https://www.genome.gov/Health/Genomics-and-Medicine/Polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "evidenceLevel": "background",
+      "usedFor": [
+        "probability_appendix",
+        "complex_trait_context"
+      ]
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog",
+      "url": "https://www.ebi.ac.uk/gwas/",
+      "sourceType": "database",
+      "evidenceLevel": "background",
+      "usedFor": [
+        "candidate_trait_associations"
+      ]
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "inflammation-model-unavailable",
-        "gene": "Inflammation model",
-        "observedValue": "validated inflammation model, calibrated inflammation PRS, cytokine labs, CRP, ESR, immune-cell labs, symptoms, diagnosis, family history, medication context, environmental context, diet context, infection context, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "tier": "Inflammation top sample variants",
+        "gene": "LEPR",
+        "variantId": "rs4394621",
+        "genotype": "AA",
+        "effect": "Visible top-variant row in the sample Inflammation table",
+        "phenotype": "The sample Inflammation card reports reduced inflammation likelihood and includes this visible variant row.",
+        "reportSlug": "inflammation"
       },
       {
-        "inputId": "inflammation-clinical-lab-context-unavailable",
-        "gene": "Inflammation clinical and lab context",
-        "observedValue": "clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "tier": "Inflammation top sample variants",
+        "gene": "CRP",
+        "variantId": "rs10494326",
+        "genotype": "CC",
+        "effect": "Visible top-variant row in the sample Inflammation table",
+        "phenotype": "The sample Inflammation card reports reduced inflammation likelihood and includes this visible variant row.",
+        "reportSlug": "inflammation"
+      },
+      {
+        "tier": "Inflammation top sample variants",
+        "gene": "APOE",
+        "variantId": "rs7412",
+        "genotype": "CC",
+        "effect": "Visible top-variant row in the sample Inflammation table",
+        "phenotype": "The sample Inflammation card reports reduced inflammation likelihood and includes this visible variant row.",
+        "reportSlug": "inflammation"
       }
     ],
     "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and exact rows",
-      "Validated disease model or calibrated score with applicability and validation metadata",
-      "HLA inference, inflammatory markers, immune labs, symptoms, family history, clinical history, environment, medications, ancestry applicability, and professional interpretation",
-      "validated inflammation model, calibrated inflammation PRS, cytokine labs, CRP, ESR, immune-cell labs, symptoms, diagnosis, family history, medication context, environmental context, diet context, infection context, and authenticated sample-report rows unavailable in this fixture; clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and authenticated sample-report rows unavailable in this fixture"
+      "inflammation-model-unavailable: validated inflammation model, calibrated inflammation PRS, cytokine labs, CRP, ESR, immune-cell labs, symptoms, diagnosis, family history, medication context, environmental context, diet context, infection context, personal recommendation context, and clinical/lab interpretation unavailable in this fixture; public sample PDF Inflammation card, recommendation row, and visible variant table observed for output structure",
+      "inflammation-clinical-lab-context-unavailable: clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and personal recommendation context unavailable in this fixture; public sample PDF observed separately as output-structure evidence"
     ],
     "probabilities": [],
     "uncertainty": [
       "No calibrated inflammation probability, disease-risk, immune-strength, inflammation-level, lab, treatment-response, prevention-benefit, screening-benefit, reproductive, or actionability model is supplied for this local package.",
-      "Immune, inflammatory, autoimmune, rheumatologic, connective-tissue, and EDS interpretation depends on validated test scope, clinical and family history, symptoms, labs, environment, ancestry applicability, and qualified professional review."
+      "Sample PDF rows show observed example report structure only and are not evidence of the local user's inflammation status.",
+      "Immune and inflammatory interpretation depends on validated test scope, clinical and family history, symptoms, labs, environment, ancestry applicability, and qualified professional review."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
-      "The report is educational and does not provide diagnosis, disease-risk estimation, HLA inference, inflammatory-status assessment, immune-strength assessment, infection-risk assessment, lab interpretation, prevention advice, screening advice, diagnostic-testing advice, reproductive advice, supplement advice, diet advice, medication advice, surgery advice, treatment advice, or actionability.",
+      "The report is educational and does not provide diagnosis, disease-risk estimation, inflammatory-status assessment, lab interpretation, prevention advice, screening advice, diagnostic-testing advice, reproductive advice, supplement advice, diet advice, medication advice, treatment advice, or actionability.",
       "Unavailable model rows should never be interpreted as low risk, high risk, no risk, normal, abnormal, reassuring, diagnostic, or an all-clear result."
     ]
   }

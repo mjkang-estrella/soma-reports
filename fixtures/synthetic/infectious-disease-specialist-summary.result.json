@@ -1,24 +1,30 @@
 {
+  "schemaVersion": "soma-reports.synthetic-result.v1",
   "reportOverview": {
     "reportTitle": "Infectious Disease Specialist Summary",
     "inputManifestHash": "sha256:synthetic-infectious-disease-specialist-summary-professional-handoff-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "infectious disease specialist review, infection diagnosis, exposure history, travel history, immune status, immune-cell labs, immunoglobulins, pathogen testing, culture results, vaccine history, medication list, prophylaxis context, treatment plan, and authenticated sample-report rows unavailable in this fixture",
-      "Professional review, clinical context, current health information, and medical decision support are unavailable in this fixture.",
-      "This result is consumer-shareable context only and is not a diagnosis, professional clearance, disease-risk estimate, medication instruction, procedure plan, treatment guidance, supplement guidance, diet guidance, lab interpretation, screening advice, reproductive advice, or clinical actionability claim."
+      "Direct Infectious Disease Specialist Summary sample-report sections and exact rows have not been extracted.",
+      "The Immunity & Inflammation sample PDF is included only as sibling infection-adjacent output-structure evidence.",
+      "Infection diagnosis, exposure history, travel history, immune status, immune-cell labs, immunoglobulins, pathogen testing, culture results, vaccine history, medication list, prophylaxis context, treatment plan, and infectious disease specialist review are unavailable in this fixture.",
+      "This result is consumer-shareable handoff context only and is not infection diagnosis, infection-risk estimate, immune-strength claim, vaccine-response claim, pathogen status, culture result, antimicrobial guidance, prophylaxis guidance, isolation guidance, supplement guidance, testing advice, treatment guidance, prevention guidance, or actionability claim."
+    ],
+    "evidenceTypes": [
+      "Synthetic unavailable-infectious-disease-review evidence",
+      "Public immune-system, infectious-disease-adjacent, and genetic-testing background references",
+      "Sibling Immunity & Inflammation infection-adjacent sample rows used only for output structure"
     ]
   },
   "resultRows": [
     {
       "groupTitle": "Professional handoff availability",
-      "item": "infectious-disease-specialist-summary-handoff-context-unavailable",
+      "item": "Infectious disease specialist review context",
       "brandName": "",
-      "geneticAnalysis": "Infectious Disease Specialist Summary can organize supplied context for a professional discussion, but the specialist review and authenticated sample rows are unavailable.",
+      "geneticAnalysis": "The local fixture can organize supplied context for an infectious disease specialist discussion, but infection diagnosis, exposure history, travel history, immune status, immune-cell labs, immunoglobulins, pathogen testing, culture results, vaccine history, medications, prophylaxis context, treatment plan, and specialist review are unavailable.",
       "genes": [
         "Infectious Disease Specialist Summary"
       ],
-      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Counseling",
+      "sourceLabel": "Immune and public-health background references",
       "sourceIds": [
         "cdc-genetic-testing",
         "medlineplus-genetics",
@@ -30,17 +36,33 @@
         "niaid-autoimmunity-factors"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This row is an availability statement. It does not diagnose a condition, clear a person for a procedure, estimate risk, choose medication, recommend treatment, interpret labs, recommend screening, guide reproductive decisions, or provide an all-clear result."
+      "plainEnglishMeaning": "This is an availability statement. It does not diagnose infection or immunodeficiency, estimate infection risk, infer immune strength, infer vaccine response, identify a pathogen or culture result, recommend antimicrobials, recommend prophylaxis, recommend isolation, recommend supplements, recommend testing, recommend treatment, or replace specialist review."
     },
     {
-      "groupTitle": "Clinical review availability",
-      "item": "infectious-disease-specialist-summary-clinical-review-unavailable",
-      "brandName": "",
-      "geneticAnalysis": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+      "groupTitle": "Sibling sample output structure",
+      "item": "Immunity & Inflammation infection-adjacent row format",
+      "brandName": "Sibling Immunity & Inflammation sample report",
+      "geneticAnalysis": "The sibling Immunity & Inflammation sample shows Flu and Gastrointestinal Infection rows in a Zinc recommendation block with impact/evidence ratings and dose-caution wording. These rows are used only to preserve output shape for Infectious Disease Specialist Summary.",
       "genes": [
-        "infectious disease specialist review context"
+        "No condition-specific genotype table reused"
       ],
-      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Counseling",
+      "sourceLabel": "Sibling Immunity & Inflammation sample PDF",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample rows show what a report format can contain. They are not local findings and must not be read as infection diagnosis, infection-risk evidence, immune-strength evidence, vaccine-response evidence, pathogen status, antimicrobial guidance, prophylaxis guidance, isolation guidance, supplement guidance, testing guidance, treatment guidance, prevention guidance, or actionability."
+    },
+    {
+      "groupTitle": "Infectious disease boundary",
+      "item": "Unsupported infectious disease interpretation types",
+      "brandName": "",
+      "geneticAnalysis": "The local fixture intentionally omits the clinical, lab, pathogen, exposure, vaccine, medication, prophylaxis, treatment, and professional context needed for infectious disease decisions, so the output marks those areas unavailable instead of inferring them.",
+      "genes": [
+        "Infection context unavailable",
+        "Immune context unavailable"
+      ],
+      "sourceLabel": "Immune-system and public-health references",
       "sourceIds": [
         "cdc-genetic-testing",
         "medlineplus-genetics",
@@ -52,24 +74,59 @@
         "niaid-autoimmunity-factors"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "A qualified professional needs validated test scope, personal and family history, symptoms, medications, labs, procedure context, environment, ancestry applicability, and current clinical information before using genetic context for health decisions."
+      "plainEnglishMeaning": "Infectious disease decisions need symptoms, exposure and travel history, immune evaluation, labs, pathogen testing, culture results, vaccine history, medications, prophylaxis context, treatment plan, and qualified review. Missing context is reported as missing, not normal, abnormal, low risk, high risk, diagnostic, actionable, or all clear."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Zinc / Flu",
+      "item": "Flu",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "Impact 1/5; evidence 1/5",
+      "description": "The public Zinc recommendation block includes a Flu row with impact/evidence ratings and dose-caution text.",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sibling Immunity & Inflammation sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Infectious Disease Specialist Summary sibling infection-adjacent output-structure evidence from the public Immunity & Inflammation sample PDF. Extracted from rendered page 19 of the public Immunity & Inflammation sample PDF; this is observed output structure, not personal supplement guidance. This is not a direct Infectious Disease Specialist Summary sample report and not local infection diagnosis, infection-risk estimate, immune strength, immune weakness, vaccine response, pathogen status, culture result, antimicrobial need, prophylaxis need, isolation need, supplement need, treatment need, prevention guidance, testing guidance, or actionability evidence."
+    },
+    {
+      "groupTitle": "Zinc / Gastrointestinal Infection",
+      "item": "Gastrointestinal Infection",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "Impact 3/5; evidence 4/5",
+      "description": "The public Zinc recommendation block includes a Gastrointestinal Infection row with impact/evidence ratings and dose-caution text.",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sibling Immunity & Inflammation sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Infectious Disease Specialist Summary sibling infection-adjacent output-structure evidence from the public Immunity & Inflammation sample PDF. Extracted from rendered page 19 of the public Immunity & Inflammation sample PDF; this is observed output structure, not personal supplement guidance. This is not a direct Infectious Disease Specialist Summary sample report and not local infection diagnosis, infection-risk estimate, immune strength, immune weakness, vaccine response, pathogen status, culture result, antimicrobial need, prophylaxis need, isolation need, supplement need, treatment need, prevention guidance, testing guidance, or actionability evidence."
     }
   ],
   "professionalHandoffContext": {
-    "plainEnglishMeaning": "Infectious Disease Specialist Summary is currently a handoff-boundary package. It can document supplied evidence and missing professional context, but it cannot replace qualified review or produce medical decisions from local evidence alone.",
+    "plainEnglishMeaning": "Infectious Disease Specialist Summary is a handoff-boundary package. It can summarize supplied evidence and show sibling report structure, but it cannot replace qualified infectious disease review or generate medical decisions from local evidence alone.",
     "unsupportedClaims": [
-      "Diagnosis, professional clearance, all-clear result, or personal disease-risk estimate",
-      "Medication, dosing, procedure, treatment, supplement, diet, lab, screening, reproductive, or management instruction",
-      "Variant classification, penetrance, inheritance, family-member risk, clinical actionability, or specialist-level interpretation",
-      "Replacement for a qualified clinician, pharmacist, geneticist, genetic counselor, surgeon, anesthesiologist, rheumatologist, infectious disease specialist, or other relevant professional"
+      "Infection diagnosis, immunodeficiency diagnosis, pathogen status, culture result, or all-clear result",
+      "Infection-risk estimate, immune-strength claim, immune-weakness claim, vaccine-response claim, or inflammatory-status claim",
+      "Antimicrobial, prophylaxis, isolation, supplement, testing, prevention, treatment, or management instruction",
+      "Personal interpretation from sibling Flu or Gastrointestinal Infection sample rows",
+      "Replacement for an infectious disease specialist, primary care clinician, immunologist, pharmacist, geneticist, or other qualified professional"
     ],
-    "professionalReview": "Use this output only as preparation for a professional conversation. Health decisions require qualified review with clinical history, medications, symptoms, labs, family history, procedure details when relevant, and validated testing scope."
+    "professionalReview": "Use this output only as preparation for an infectious disease specialist conversation. Health decisions require qualified review with symptoms, exposure history, travel history, immune evaluation, labs, pathogen testing, cultures, vaccine history, medications, prophylaxis context, treatment plan, and validated testing scope."
   },
   "practicalNextSteps": {
     "professionalReview": [
-      "Do not use this local fixture to change medication, supplements, diet, screening, procedures, reproductive decisions, prevention plans, or treatment decisions.",
-      "Bring current symptoms, personal and family history, medications, allergies, labs, prior testing, procedure context when relevant, and ancestry context to a qualified professional if discussing this topic.",
-      "Treat unavailable professional-review rows as unavailable, not as normal, abnormal, low risk, high risk, reassuring, diagnostic, actionable, or all clear."
+      "Do not use this local fixture to change medication, supplements, diet, testing, isolation, prophylaxis, prevention plans, or treatment decisions.",
+      "Bring symptoms, exposure history, travel history, immune evaluation, pathogen testing, cultures, vaccine history, medications, prophylaxis context, and treatment context to a qualified professional if discussing this topic.",
+      "Treat sibling Immunity & Inflammation sample rows as report-format examples only, not as local infectious-disease findings."
     ]
   },
   "references": [
@@ -112,37 +169,47 @@
     {
       "id": "niams-lupus",
       "title": "NIAMS: Lupus"
+    },
+    {
+      "id": "inflammation-and-immunity-sample-pdf",
+      "title": "Inflammation and Immunity DNA Report sample report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "infectious-disease-specialist-summary-handoff-context-unavailable",
-        "gene": "Infectious Disease Specialist Summary",
-        "observedValue": "infectious disease specialist review, infection diagnosis, exposure history, travel history, immune status, immune-cell labs, immunoglobulins, pathogen testing, culture results, vaccine history, medication list, prophylaxis context, treatment plan, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "tier": "Local missing input",
+        "gene": "Infectious disease specialist review context",
+        "variantId": "infectious-disease-review-context-unavailable",
+        "genotype": "infection diagnosis, exposure history, travel history, immune status, immune-cell labs, immunoglobulins, pathogen testing, culture results, vaccine history, medication list, prophylaxis context, treatment plan, and infectious disease specialist review unavailable",
+        "effect": "The local fixture intentionally omits the clinical and professional context needed for infectious disease decisions.",
+        "phenotype": "Mark infection diagnosis, infection-risk estimation, immune-strength claims, vaccine-response claims, pathogen status, culture status, antimicrobial need, prophylaxis need, isolation need, supplement need, testing guidance, treatment guidance, prevention guidance, and actionability sections unavailable instead of inferring them.",
+        "extractionStatus": "curated"
       },
       {
-        "inputId": "infectious-disease-specialist-summary-clinical-review-unavailable",
-        "gene": "infectious disease specialist review context",
-        "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "tier": "Sibling sample structure",
+        "gene": "Immunity & Inflammation infection-adjacent sample rows",
+        "variantId": "infection-adjacent-sample-rows-no-visible-genotype-table",
+        "genotype": "Flu and Gastrointestinal Infection recommendation rows are visible in the sibling sample; no condition-specific genotype table is reused for Infectious Disease Specialist Summary",
+        "effect": "The sibling sample rows show output structure for recommendation-style condition rows only.",
+        "phenotype": "Use as sibling output-structure evidence only; do not infer local infection risk, immune strength, vaccine response, antimicrobial need, prophylaxis, isolation, supplement need, treatment need, testing guidance, prevention guidance, or actionability.",
+        "extractionStatus": "curated"
       }
     ],
     "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and exact rows",
-      "Qualified professional review and complete clinical context",
-      "Current medications, symptoms, family history, labs, procedure details, prior testing, and validated test scope when relevant",
-      "Validated model output, applicability metadata, and professional interpretation for any health decision"
+      "Direct Infectious Disease Specialist Summary mock-report rows and authenticated detail-page body parity",
+      "Qualified infectious disease specialist review and complete clinical/lab/pathogen context",
+      "Infection diagnosis, exposure history, travel history, immune status, immune-cell labs, immunoglobulins, pathogen testing, culture results, vaccine history, medication list, prophylaxis context, and treatment plan",
+      "Validated local infection-risk, immune-status, vaccine-response, pathogen, antimicrobial, prophylaxis, isolation, supplement, testing, treatment, prevention, and actionability models"
     ],
     "probabilities": [],
     "uncertainty": [
-      "No calibrated professional-clearance, disease-risk, medication-response, procedure-risk, treatment-response, lab-status, screening-benefit, reproductive-risk, supplement-benefit, diet-response, or actionability model is supplied for this local package.",
-      "Interpretation depends on validated test scope, clinical and family history, symptoms, medications, labs, procedures, environment, ancestry applicability, and qualified professional review."
+      "No calibrated infection diagnosis, infection-risk, immune-strength, vaccine-response, pathogen-status, culture-status, antimicrobial-need, prophylaxis-need, isolation-need, supplement-benefit, testing-benefit, treatment-response, prevention-benefit, or actionability model is supplied for this local package.",
+      "Interpretation depends on symptoms, exposure and travel history, immune evaluation, labs, pathogen testing, cultures, vaccine history, medications, prophylaxis context, treatment plan, environment, ancestry applicability, and qualified professional review."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
-      "The report is educational handoff context and does not provide diagnosis, professional clearance, disease-risk estimation, medication guidance, procedure guidance, treatment advice, supplement advice, diet advice, lab interpretation, screening advice, reproductive advice, or clinical actionability.",
+      "Immunity & Inflammation sample rows are sibling output-structure examples only and are not local Infectious Disease Specialist Summary findings.",
       "Unavailable professional-review rows should never be interpreted as low risk, high risk, no risk, normal, abnormal, reassuring, diagnostic, actionable, or all clear."
     ]
   }

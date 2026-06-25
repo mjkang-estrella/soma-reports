@@ -1,5 +1,5 @@
 {
-  "consumerTone": "plain English; consumer-shareable handoff context only; no diagnosis, clearance, risk estimate, medication, procedure, treatment, supplement, diet, lab, screening, reproductive, or actionability claims",
+  "consumerTone": "plain English; consumer-shareable naturopath handoff context only; sibling sample rows are not local findings; no detoxification-capacity, toxin-sensitivity, methylation, nutrient-deficiency, supplement, diet, medication, lab, pregnancy, diagnosis, treatment, prevention, or actionability claims",
   "datasetId": "synthetic-naturopath-summary-professional-handoff-context-v1",
   "expectedAssertions": {
     "consumerLanguage": true,
@@ -15,7 +15,7 @@
       "haplotype": "professional-handoff-context-unavailable",
       "inputId": "naturopath-summary-handoff-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "naturopath review, diet history, supplement list, medication list, symptoms, labs, methylation or homocysteine testing, detoxification model, nutrient status, pregnancy context, diagnosis, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "naturopath review, diet history, supplement list, medication list, symptoms, labs, methylation or homocysteine testing, detoxification model, nutrient status, pregnancy context, diagnosis, treatment plan, and authenticated sample-report rows unavailable in this fixture; public Detox Pathway sample PDF observed separately as sibling supplement and wellness output-structure evidence",
       "sourceArtifact": "synthetic-naturopath-summary-professional-handoff-context-v1",
       "sourceFile": "synthetic-naturopath-summary-professional-handoff-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "professional-review-unavailable",
       "inputId": "naturopath-summary-clinical-review-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture; public Detox Pathway sample PDF observed separately as sibling supplement and wellness output-structure evidence",
       "sourceArtifact": "synthetic-naturopath-summary-professional-handoff-context-v1",
       "sourceFile": "synthetic-naturopath-summary-professional-handoff-context-v1.json"
     }
@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-professional-review evidence for naturopath-summary validation"
   },
-  "missingInputPolicy": "Report unavailable naturopath or integrative health professional evidence explicitly; do not diagnose conditions; infer detoxification capacity, methylation status, nutrient deficiency, supplement need, diet need, medication response, lab status, treatment need, pregnancy action, or replace licensed professional review.",
+  "missingInputPolicy": "Report Detox Pathway sample rows as sibling supplement and wellness output-structure evidence only; do not convert sample detox ability, toxin-sensitivity, SNP, lab, supplement-dosage, exposure-avoidance, diet, medication, diagnosis, treatment, pregnancy, prevention, or actionability wording into local guidance.",
   "packageSlug": "naturopath-summary",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -138,7 +138,20 @@
         "non_prescriptive_language",
         "missing_review_policy"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "detox-pathway-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Detox Pathway sample report",
+      "usedFor": [
+        "sibling_sample_rows",
+        "formal_fields",
+        "genotype_summary",
+        "output_format",
+        "supplement_wellness_boundary"
+      ]
     }
   ],
-  "reportPurpose": "Consumer-shareable naturopath or integrative health professional handoff context using supplied references and explicit unavailable-review framing."
+  "reportPurpose": "Consumer-shareable Naturopath Summary handoff context using supplied local derived evidence plus sibling Detox Pathway supplement, lab-marker, and detox output-structure evidence."
 }

@@ -20,4 +20,10 @@ State that visible traits are influenced by multiple genes and non-genetic facto
 
 For this package, focus on educational skin, pigmentation, freckle, and hair-context rows. Mark skin type, UV sensitivity, cosmetic product response, acne, skin aging, dermatology outcomes, and skin-cancer risk unavailable unless explicit validated evidence is supplied.
 
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
+
+Use Skin Genes sample-report rows only as observed output-format examples unless the local run supplies equivalent validated evidence.
+
+Do not turn sample elasticity, hydration, glycation, inflammation, dark spots, eyelid, lifestyle, diet, or cosmetics recommendation text into personal skincare, dermatology, diet, supplement, cosmetic, disease-risk, or treatment advice.

@@ -13,6 +13,8 @@ Do not diagnose lactose intolerance, food allergy, food sensitivity, celiac dise
 Do not create meal plans, create child-specific nutrition guidance, prescribe diet changes, recommend supplements, diagnose symptoms, infer metabolic disease, or provide treatment guidance from genotype.
 State that symptoms, ancestry, diet history, environment, labs, medications, medical history, and clinician or dietitian guidance matter for nutrition decisions.
 For this package, focus on educational nutrition-genetics context and explicitly unavailable meal-plan, child-specific nutrition, supplement, symptom, lab, and metabolic sections.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
 Use GeneInformed Healthy Nutrition sample-report summary table rows and trait pages only as observed output-format examples unless the local run supplies equivalent validated evidence.
 Do not turn sample food-reaction, vitamin, mineral, omega-3, genetic-risk, population-share, personalized-advice, or sample genotype-like result text into personal diet, supplement, symptom, lab, metabolic, child-specific, or treatment advice.

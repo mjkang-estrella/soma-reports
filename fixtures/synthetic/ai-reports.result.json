@@ -1,159 +1,410 @@
 {
   "reportOverview": {
-    "reportTitle": "AI Reports",
     "inputManifestHash": "sha256:synthetic-ai-reports-boundary-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "Generated AI report output, model prompt, model version, service provenance, and calibrated quality evidence are not supplied.",
-      "generated AI report output, model prompt, model version, service provenance, authenticated sample-report rows, disease or trait interpretation, and calibrated quality evidence unavailable in this fixture"
+      "Generated Sequencing.com AI Reports output, service provenance, model prompt, model version, calibrated disease-screening output, disease or trait interpretation, and model quality evidence are unavailable for the local fixture.",
+      "Public AI Reports Skin Health sample rows are included only as observed output-structure evidence and are not local personal results."
     ]
   },
   "resultRows": [
     {
-      "groupTitle": "Public variant lookup context",
-      "item": "BDNF rs6265",
-      "brandName": "",
-      "geneticAnalysis": "A selected public variant identifier is available for lookup and annotation context. No Sequencing.com generated AI report, personal trait interpretation, disease interpretation, or model output is supplied.",
+      "groupTitle": "Local AI-report boundary evidence",
+      "item": "BDNF rs6265 lookup context",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A selected public BDNF rs6265 identifier is available for lookup and annotation-context validation, but no local trait, disease, medication, clinical, or AI-generated interpretation is supplied.",
       "genes": [
         "BDNF"
       ],
-      "sourceLabel": "NCBI dbSNP; Ensembl REST; Ensembl VEP",
+      "sourceLabel": "dbSNP / Ensembl / Sequence Ontology reference context",
       "sourceIds": [
         "ncbi-dbsnp",
-        "ensembl-rest-api",
-        "ensembl-vep"
+        "ensembl-vep",
+        "sequence-ontology"
       ],
-      "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "The row can explain what local evidence was supplied, but it does not imitate or recreate unavailable generated AI report content."
+      "plainEnglishMeaning": "This row demonstrates the local utility boundary: public identifiers can anchor lookup context, but the local run must not infer disease risk, traits, diagnosis, treatment, or model accuracy.",
+      "sourceBindingStatus": "curated"
     },
     {
-      "groupTitle": "Reference build context",
-      "item": "GRCh38 coordinate context",
-      "brandName": "",
-      "geneticAnalysis": "GRCh38 reference-build context is available for the selected lookup, while alternate-build conversion, remapping, and generated service output are not supplied.",
+      "groupTitle": "Local AI-report boundary evidence",
+      "item": "GRCh38 reference-build context",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "The fixture supplies derived GRCh38 coordinate context while explicitly omitting alternate-build conversion, remapping evidence, service output, and generated AI report provenance.",
       "genes": [
         "reference genome coordinate context"
       ],
-      "sourceLabel": "NCBI Variation Services / SPDI; Ensembl REST",
+      "sourceLabel": "Ensembl REST / NCBI Variation Services reference context",
       "sourceIds": [
-        "ncbi-variation-services-spdi",
-        "ensembl-rest-api"
+        "ensembl-rest-api",
+        "ncbi-variation-services-spdi"
       ],
-      "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "The report can describe the supplied build context, but it cannot claim a generated AI report was produced by Sequencing.com or any other model."
+      "plainEnglishMeaning": "Reference-build context can be reported, but it does not prove that a Sequencing.com AI report was generated or that any disease-screening conclusion is available.",
+      "sourceBindingStatus": "curated"
     },
     {
-      "groupTitle": "AI report output availability",
-      "item": "Generated AI report and service provenance unavailable",
-      "brandName": "",
-      "geneticAnalysis": "generated AI report output, model prompt, model version, service provenance, authenticated sample-report rows, disease or trait interpretation, and calibrated quality evidence unavailable in this fixture",
+      "groupTitle": "Unavailable generated-report evidence",
+      "item": "AI Reports service output and provenance",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "Generated AI report output, model prompt, model version, service provenance, local disease or trait interpretation, and calibrated quality evidence are unavailable in this fixture.",
       "genes": [
         "AI report service output"
       ],
-      "sourceLabel": "Ensembl VEP; ClinVar; GWAS Catalog; NIH Genetic Testing Registry",
+      "sourceLabel": "Genetic testing and result-interpretation references",
       "sourceIds": [
-        "ensembl-vep",
-        "ncbi-clinvar",
-        "ebi-gwas-catalog",
-        "ncbi-genetic-testing-registry"
+        "medlineplus-genetic-testing",
+        "medlineplus-genetic-test-results",
+        "medlineplus-genetic-counseling"
       ],
-      "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This local run can document the boundary for AI report generation, but it cannot report unavailable generated content, model behavior, model quality, disease findings, or trait findings."
+      "plainEnglishMeaning": "The local report can explain missing evidence and safety limits, but it must not create a new Sequencing.com-style AI diagnosis, disease-risk result, medication result, treatment plan, or all-clear statement.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Report identity",
+      "item": "AI Reports Skin Health beta sample",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The cover identifies AI Reports as a Skin Health beta sample report for Genome1 using WGS data.",
+      "description": "This row captures sample-report identity and input-label structure only; it does not show that a local AI report was generated.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "ai-reports-skin-health-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 1 of the public sample PDF; keep cover metadata separate from local generated-report provenance.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Summary",
+      "item": "Screening statistics",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The summary page reports 173 conditions screened, 212 genes screened, and 7,579 genetic variants screened.",
+      "description": "These are sample-report summary counts and must not be treated as local genome screening coverage without supplied service output.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "ai-reports-skin-health-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 3 of the public sample PDF; counts are observed sample output, not local panel coverage.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Most Important Findings (Red Category)",
+      "item": "Epidermolysis Bullosa Simplex",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report shows a red-category KRT14 finding for Epidermolysis Bullosa Simplex with variant identifiers rs58645163 and RCV000487370, sample data TT, and risk status Likely Detected.",
+      "description": "This is a public sample-person row only; local output must not reuse TT or Likely Detected as a personal disease, risk, pathogenicity, or diagnosis result.",
+      "genes": [
+        "KRT14"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "ai-reports-skin-health-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 4 of the public sample PDF; the KRT14 row is exact sample output, not a local finding.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Most Important Findings (Red Category)",
+      "item": "EBS detail page structure",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The red-category detail continues with condition description, symptom examples, diagnostic criteria, treatment options, professional care language, and next-step headings.",
+      "description": "These headings define the official output shape; local output must not convert them into medical advice or treatment recommendations.",
+      "genes": [
+        "KRT14"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "ai-reports-skin-health-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 4-5 of the public sample PDF; medical-action headings are observed structure only.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Other finding categories",
+      "item": "Orange, yellow, and teal sections",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The Additional Findings, Carrier Status for Inherited Conditions, and Medications That May Be Impacted By Your Genes sections each state that no genetic conditions were found in that section under high-confidence results.",
+      "description": "The empty-category language is sample output only and must not be used as local all-clear reassurance, carrier-status absence, or medication-response absence.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "ai-reports-skin-health-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 6-8 of the public sample PDF; do not infer local orange, yellow, teal, carrier, or medication status.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Other finding categories",
+      "item": "Green and gray count sections",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The No Increased Genetic Risk section reports 7,570 total conditions screened, and the Unknown Genetic Risk section reports 8 total conditions screened.",
+      "description": "These count-only sections are observed sample structure and must not be reused as local no-increased-risk or unknown-risk conclusions.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "ai-reports-skin-health-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 9-10 of the public sample PDF; count rows are not local screening results.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Back matter",
+      "item": "Conditions analyzed, glossary, and references",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The back matter includes a multi-page list of analyzed conditions, glossary terms including KRT14 and keratin, and references to ClinVar, Genetic Home Reference, NIH, and ClinicalTrials.gov.",
+      "description": "These pages define the sample report's appendix style and public reference labels; local output should cite supplied references without inventing condition coverage.",
+      "genes": [
+        "KRT14"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "ai-reports-skin-health-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 11-17 of the public sample PDF; condition-list coverage and reference labels are sample output only.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Disclaimer",
+      "item": "AI Reports beta limitations",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The disclaimer states the report is generated by the AI Reports beta feature powered by SequencingAI, is not FDA evaluated, may contain incorrect AI-generated information, depends on source data quality, and is not medical advice.",
+      "description": "The disclaimer language is mandatory safety context for this sample-backed package and does not validate local model accuracy.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "ai-reports-skin-health-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 18 of the public sample PDF; preserve beta, AI, FDA, data-quality, and medical-advice limitations.",
+      "sourceBindingStatus": "exact"
     }
   ],
   "utilityContext": {
-    "plainEnglishMeaning": "This result is an AI-report boundary package. It explains supplied local evidence and explicitly marks generated report output, service provenance, and authenticated sample output unavailable.",
+    "plainEnglishMeaning": "This package is a local, reproducible AI Reports boundary scaffold. It can show supplied utility context and observed sample-report structure, but cannot replace Sequencing.com service output or qualified medical review.",
     "unsupportedClaims": [
-      "Sequencing.com generated-report imitation",
-      "model prompt or model version",
-      "model accuracy",
-      "trait interpretation",
-      "disease interpretation",
-      "clinical classification",
-      "diagnosis",
-      "disease-risk estimate",
-      "medication response",
-      "screening or treatment recommendation"
+      "No claim that a Sequencing.com AI report was generated for the local fixture.",
+      "No local EBS, KRT14, TT, Likely Detected, disease-risk, carrier-status, medication-response, pathogenicity, diagnosis, treatment, screening, or actionability claim.",
+      "No model-accuracy, FDA-review, data-quality, or panel-coverage claim beyond supplied evidence."
     ]
   },
   "references": [
     {
+      "evidenceLevel": "implementation_background",
       "id": "ensembl-vep",
-      "title": "Ensembl Variant Effect Predictor"
+      "sourceType": "annotation_tool_documentation",
+      "title": "Ensembl Variant Effect Predictor",
+      "usedFor": [
+        "annotation_context",
+        "consequence_scope",
+        "tool_output_unavailable"
+      ]
     },
     {
+      "evidenceLevel": "implementation_background",
       "id": "ensembl-variant-consequences",
-      "title": "Ensembl Variation: calculated variant consequences"
+      "sourceType": "annotation_method_documentation",
+      "title": "Ensembl Variation: calculated variant consequences",
+      "usedFor": [
+        "sequence_ontology_terms",
+        "annotation_limitations"
+      ]
     },
     {
+      "evidenceLevel": "implementation_background",
       "id": "ensembl-rest-api",
-      "title": "Ensembl REST API endpoints"
+      "sourceType": "api_documentation",
+      "title": "Ensembl REST API endpoints",
+      "usedFor": [
+        "variant_lookup_context",
+        "coordinate_mapping_context",
+        "service_output_unavailable"
+      ]
     },
     {
+      "evidenceLevel": "terminology_background",
       "id": "sequence-ontology",
-      "title": "Sequence Ontology"
+      "sourceType": "controlled_vocabulary",
+      "title": "Sequence Ontology",
+      "usedFor": [
+        "variant_term_context",
+        "plain_english_glossary"
+      ]
     },
     {
+      "evidenceLevel": "database_background",
       "id": "ncbi-dbsnp",
-      "title": "NCBI dbSNP"
+      "sourceType": "database",
+      "title": "NCBI dbSNP",
+      "usedFor": [
+        "rsid_context",
+        "public_variant_identifier_context"
+      ]
     },
     {
+      "evidenceLevel": "database_background",
       "id": "ncbi-clinvar",
-      "title": "NCBI ClinVar"
+      "sourceType": "database",
+      "title": "NCBI ClinVar",
+      "usedFor": [
+        "clinical_classification_unavailable",
+        "database_cross_reference_context"
+      ]
     },
     {
+      "evidenceLevel": "implementation_background",
       "id": "ncbi-variation-services-spdi",
-      "title": "NCBI Variation Services / SPDI"
+      "sourceType": "api_documentation",
+      "title": "NCBI Variation Services / SPDI",
+      "usedFor": [
+        "spdi_context",
+        "variant_normalization_context",
+        "coordinate_conversion_unavailable"
+      ]
     },
     {
+      "evidenceLevel": "database_background",
       "id": "ncbi-genetic-testing-registry",
-      "title": "NIH Genetic Testing Registry"
+      "sourceType": "database",
+      "title": "NIH Genetic Testing Registry",
+      "usedFor": [
+        "genetic_test_metadata_context",
+        "clinical_test_unavailable"
+      ]
     },
     {
+      "evidenceLevel": "database_background",
       "id": "international-genome-sample-resource",
-      "title": "International Genome Sample Resource / 1000 Genomes"
+      "sourceType": "database",
+      "title": "International Genome Sample Resource / 1000 Genomes",
+      "usedFor": [
+        "population_variation_context",
+        "reference_panel_limitations"
+      ]
     },
     {
+      "evidenceLevel": "background",
       "id": "ebi-gwas-catalog",
-      "title": "GWAS Catalog"
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "trait_association_context",
+        "model_unavailable_context"
+      ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "ai-reports-skin-health-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "AI Reports Skin Health beta sample report",
+      "usedFor": [
+        "sample_rows",
+        "formal_fields",
+        "genotype_summary",
+        "output_format",
+        "ai_beta_disclaimer"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "consumer_genetics_context",
+        "medical_advice_limitations"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Testing",
+      "usedFor": [
+        "genetic_testing_context",
+        "testing_scope_limitations"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-test-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results",
+      "usedFor": [
+        "result_interpretation_context",
+        "qualified_review_limitations"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-counseling",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Counseling",
+      "usedFor": [
+        "genetic_counseling_context",
+        "professional_review_limitations"
+      ]
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "bioinformatics-public-variant-rs6265",
+        "effect": "The local fixture supplies a public rsID row for lookup and annotation-context validation.",
+        "extractionStatus": "curated",
         "gene": "BDNF",
-        "observedValue": "selected public variant identifier available for lookup and annotation context; no trait, disease, or clinical interpretation supplied",
-        "matchStatus": "summarized"
+        "genotype": "selected public variant identifier only",
+        "phenotype": "Report as bioinformatics utility context only; do not infer local AI report output, disease risk, traits, diagnosis, medication response, treatment, screening, or model accuracy.",
+        "sortOrder": 1,
+        "tier": "Local derived call",
+        "variantId": "rs6265"
       },
       {
-        "inputId": "bioinformatics-reference-build-context",
-        "gene": "reference genome coordinate context",
-        "observedValue": "GRCh38 coordinate context available for selected lookup; alternate build, liftover path, remapping evidence, and service output unavailable",
-        "matchStatus": "summarized"
-      },
-      {
-        "inputId": "ai-report-service-output-unavailable",
+        "effect": "The local fixture intentionally omits generated Sequencing.com AI Reports output and model provenance.",
+        "extractionStatus": "curated",
         "gene": "AI report service output",
-        "observedValue": "generated AI report output, model prompt, model version, service provenance, authenticated sample-report rows, disease or trait interpretation, and calibrated quality evidence unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "genotype": "generated AI report, model prompt, model version, service provenance, disease or trait interpretation, and calibrated quality evidence unavailable",
+        "phenotype": "Mark generated-report, disease-screening, trait, medication, treatment, actionability, and model-accuracy sections unavailable instead of inferring them.",
+        "sortOrder": 2,
+        "tier": "Local missing input",
+        "variantId": "ai-report-service-output-unavailable"
+      },
+      {
+        "effect": "The public sample report labels this KRT14 row Likely Detected for Epidermolysis Bullosa Simplex.",
+        "extractionStatus": "direct",
+        "gene": "KRT14",
+        "genotype": "TT",
+        "phenotype": "Observed sample content only; do not infer local EBS, disease risk, pathogenicity, diagnosis, treatment, or screening conclusions.",
+        "sortOrder": 3,
+        "tier": "Sample-report visible row",
+        "variantId": "rs58645163; RCV000487370"
+      },
+      {
+        "effect": "The public sample report states 173 conditions, 212 genes, and 7,579 variants were screened in the sample output.",
+        "extractionStatus": "direct",
+        "gene": "AI Reports Skin Health panel",
+        "genotype": "not a genotype row",
+        "phenotype": "Observed sample count context only; do not claim local panel coverage, no-increased-risk status, unknown-risk status, or all-clear reassurance.",
+        "sortOrder": 4,
+        "tier": "Sample-report summary counts",
+        "variantId": "173-conditions-212-genes-7579-variants"
       }
-    ],
-    "missingInputs": [
-      "Authenticated Sequencing.com sample report rows",
-      "Generated AI report output, model prompt, model version, and service provenance",
-      "Calibrated quality evidence for generated content",
-      "Disease or trait interpretation output from the service"
     ],
     "probabilities": [],
     "uncertainty": [
-      "No calibrated model-quality, generated-report, disease, trait, or clinical-actionability model is supplied for this local package.",
-      "The selected rows support boundary context only and cannot be treated as generated AI report output."
+      "No calibrated AI Reports model output, disease-screening output, model version, or service provenance is supplied.",
+      "The public sample PDF is a sample-person Skin Health beta report and is not the local user genome result."
+    ],
+    "missingInputs": [
+      "generated AI report output",
+      "model prompt and model version",
+      "service provenance",
+      "local disease-screening output",
+      "disease or trait interpretation",
+      "calibrated quality evidence",
+      "clinical review and confirmatory testing context"
     ],
     "limitations": [
-      "This validation result uses selected derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
-      "The package does not emit complete SNP tables, sequencing files, alignment files, generated report output files, or unavailable model metadata.",
-      "The package does not diagnose disease, estimate disease risk, classify pathogenicity, infer medication response, or recommend screening, testing, treatment, diet, supplements, or lifestyle changes."
+      "Educational AI-report boundary context only.",
+      "Do not emit raw genome data, raw SNP tables, sequencing files, alignment files, or full callsets.",
+      "Public sample KRT14/EBS rows are observed output structure only and must not be treated as local findings.",
+      "Do not recommend medication, screening, diagnostic testing, reproductive decisions, lifestyle changes, diet, supplements, treatment changes, or professional-care actions from this fixture.",
+      "Consult qualified healthcare professionals for medical questions; this result is not medical advice."
     ]
   }
 }

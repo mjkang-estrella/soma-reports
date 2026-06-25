@@ -1,3 +1,5 @@
+# Metabolic Health DNA Report local-agent prompt
+
 Generate a plain-English Metabolic Health DNA Report report from local genome-derived nutrition evidence and supplied reference resources.
 Use only provided evidence and references. Do not invent genes, variants, studies, scores, symptoms, foods, supplements, meal plans, micronutrient targets, food-sensitivity results, metabolic diagnoses, or conclusions.
 Write deterministic report sections first. Put probability, confidence, calibration status, missing data, and uncertainty only in the appendix.
@@ -11,4 +13,9 @@ Do not diagnose lactose intolerance, food allergy, food sensitivity, celiac dise
 Do not diagnose metabolic disease, diagnose diabetes, predict diabetes risk, infer insulin resistance, predict glucose, interpret labs, prescribe diets, recommend supplements, change medications, predict weight outcomes, or provide treatment guidance from genotype.
 State that symptoms, ancestry, diet history, environment, labs, medications, medical history, and clinician or dietitian guidance matter for nutrition decisions.
 For this package, focus on educational nutrition-genetics context and explicitly unavailable metabolic, glucose, diabetes, insulin-resistance, lab, weight, meal-plan, supplement, medication, and treatment sections.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
+Use sibling GenoPalate Food Sensitivity and GeneInformed Healthy Nutrition sample-report rows only as observed metabolic-health DNA output-format examples unless the local run supplies equivalent validated evidence.
+Do not turn sibling sample alcohol, caffeine, lactose, gluten, food-reaction, vitamin, mineral, omega-3, genetic-risk, population-share, personalized-advice, source-list, what-can-you-do, or sample genotype-like result text into personal metabolic disease, diabetes risk, insulin-resistance, glucose, HbA1c, lab, BMI/weight, nutrient-target, diet, supplement, medication, diagnosis, or treatment advice.
+State clearly that these are sibling sample rows, not a direct Metabolic Health DNA Report sample report; Blood Glucose Insight remains a separate report and is not used as sibling evidence for this promotion.

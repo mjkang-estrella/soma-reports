@@ -1,5 +1,5 @@
 {
-  "consumerTone": "plain English; consumer-shareable handoff context only; no diagnosis, clearance, risk estimate, medication, procedure, treatment, supplement, diet, lab, screening, reproductive, or actionability claims",
+  "consumerTone": "plain English; consumer-shareable genetic counseling preparation context only; sibling sample rows are not local findings; no genetic counseling replacement, diagnosis, variant classification, family-member risk estimate, reproductive decision, cascade testing, diagnostic testing, screening, treatment, family-disclosure, or actionability claims",
   "datasetId": "synthetic-genetic-counseling-professional-handoff-context-v1",
   "expectedAssertions": {
     "consumerLanguage": true,
@@ -15,7 +15,7 @@
       "haplotype": "professional-handoff-context-unavailable",
       "inputId": "genetic-counseling-handoff-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "genetic counselor review, personal and family history, pregnancy or reproductive context, phenotype fit, inheritance assessment, prior testing, confirmatory testing, variant classification rationale, family communication plan, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "genetic counselor review, personal and family history, pregnancy or reproductive context, phenotype fit, inheritance assessment, prior testing, confirmatory testing, variant classification rationale, family communication plan, and authenticated sample-report rows unavailable in this fixture; public Healthcare Pro sample PDF observed separately as sibling genetic-counseling output-structure evidence",
       "sourceArtifact": "synthetic-genetic-counseling-professional-handoff-context-v1",
       "sourceFile": "synthetic-genetic-counseling-professional-handoff-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "professional-review-unavailable",
       "inputId": "genetic-counseling-clinical-review-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture; public Healthcare Pro sample PDF observed separately as sibling genetic-counseling output-structure evidence",
       "sourceArtifact": "synthetic-genetic-counseling-professional-handoff-context-v1",
       "sourceFile": "synthetic-genetic-counseling-professional-handoff-context-v1.json"
     }
@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-professional-review evidence for genetic-counseling validation"
   },
-  "missingInputPolicy": "Report unavailable genetic counselor evidence explicitly; do not provide genetic counseling; diagnose a condition; create or change variant classifications; estimate family-member risk; recommend reproductive decisions, cascade testing, diagnostic testing, screening, treatment, or family disclosure actions; or replace a genetic counselor.",
+  "missingInputPolicy": "Report Healthcare Pro sample rows as sibling genetic-counseling output-structure evidence only; do not convert sample rare-disease, carrier, variant, data-completeness, disease-risk, medication, pregnancy, family-history, or medical-record language into local diagnosis, variant classification, family-member risk estimate, reproductive decision, cascade-testing guidance, diagnostic-testing guidance, screening guidance, treatment guidance, family-disclosure action, or actionability.",
   "packageSlug": "genetic-counseling",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -160,7 +160,20 @@
         "non_prescriptive_language",
         "missing_review_policy"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "healthcare-pro-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Healthcare Pro sample report",
+      "usedFor": [
+        "sibling_sample_rows",
+        "formal_fields",
+        "genotype_summary",
+        "output_format",
+        "genetic_counseling_boundary"
+      ]
     }
   ],
-  "reportPurpose": "Consumer-shareable genetic counselor handoff context using supplied references and explicit unavailable-review framing."
+  "reportPurpose": "Consumer-shareable Genetic Counseling preparation context using supplied local derived evidence plus sibling Healthcare Pro rare-disease, carrier, report-identity, and data-completeness output-structure evidence."
 }

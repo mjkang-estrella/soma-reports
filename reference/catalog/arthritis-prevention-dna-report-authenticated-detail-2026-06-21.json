@@ -1,0 +1,101 @@
+{
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "capturedAt": "2026-06-21T15:38:40.972Z",
+  "source": "in-app browser logged-in sequencing.com marketplace detail page __NEXT_DATA__.props.pageProps.reportData extraction",
+  "url": "https://sequencing.com/marketplace/arthritis-prevention-dna-report",
+  "finalUrl": "https://sequencing.com/marketplace/arthritis-prevention-dna-report",
+  "title": "Arthritis Prevention",
+  "nid": "129",
+  "productId": "54",
+  "app": {
+    "apiAppId": "ArthritisDsApp",
+    "appid": "20",
+    "backend": "ApiAppBackend",
+    "label": "Arthritis Prevention"
+  },
+  "publisher": "App MD",
+  "price": "$39",
+  "currencyCode": "USD",
+  "categories": [
+    "Health",
+    "Lifestyle"
+  ],
+  "uri": "marketplace/arthritis-prevention-dna-report",
+  "reportFile": "",
+  "headerImage": "https://sequencing.com/sites/default/files/arthritis-prevention-icon1.png",
+  "headerImageAlt": "",
+  "meta": {
+    "canonical": "https://sequencing.com/marketplace/arthritis-prevention-dna-report",
+    "publishedTime": null,
+    "modifiedTime": null,
+    "ogDescriptionHash": "sha256:8094a904742a44f246287c22c6b556d1af35aecb79e353e42d7abe234b2298ab",
+    "ogDescriptionPreview": "Protect the health of your joints throughout life. This DNA report analyzes your genes and provides straightforward guidance for preventing arthritis.",
+    "productPriceAmount": null,
+    "productPriceCurrency": "USD",
+    "productRetailerItemId": "54"
+  },
+  "summaryPreview": "Protect the health of your joints throughout life. This DNA report analyzes your genes and provides straightforward guidance for preventing arthritis.",
+  "bodyPreview": "Genetically Tailored Prevention of Arthritis Keep those joints working well throughout life This DNA report analyzes your genes and provides straightforward guidance for preventing arthritis. The DNA report includes: genetic risk of arthritis by joint knee hip wrist preventive measures personalized to your DNA Getting Started You've already taken a DNA test Upload your DNA data - Our Universal DNA Compatibility enables this report to work with DNA data from almost any DNA test. You need a DNA test Order a DNA test - Our clinical-grade 30x Whole Genome Sequencing test obtains data on 100% of your genome. Additional DNA Resources The Sequencing Education Center is a great resource for digging deeper into key concepts about how your genes impact your health. For example, our Education Center provides in-depth information about the emerging field of pharmacogenomics and how this new type of genetic analysis can help protect you from medication reactions.",
+  "visibleParagraphs": [
+    "Prime Day Sale | Up to 60% off + free worldwide shippingOrder Now",
+    "Order Now",
+    "Dashboard",
+    "My Apps",
+    "AI Reports",
+    "Next-Gen Disease Screen",
+    "Health Scan",
+    "Genome Explorer",
+    "Results",
+    "Files"
+  ],
+  "infoTabs": [
+    {
+      "label": "Overview",
+      "textPreview": "Genetically Tailored Prevention of Arthritis Keep those joints working well throughout life This DNA report analyzes your genes and provides straightforward guidance for preventing arthritis. The DNA report includes: genetic risk of arthritis by joint knee hip wrist preventive measures personalized to your DNA Getting Started You've already taken a DNA test Upload your DNA data - Our Universal DNA Compatibility enables this report to work with DNA data from almost any DNA test. You need a DNA test Order a DNA test - Our clinical-grade 30x Whole Genome Sequencing test obtains data on 100% of your genome. Additional DNA Resources The Sequencing Education Center is a great resource for digging deeper into key concepts about how your genes impact your health. For example, our Education Center provides in-depth information about the emerging field of pharmacogenomics and how this new type of genetic analysis can help protect you from medication reactions."
+    },
+    {
+      "label": "Disclaimer",
+      "textPreview": "The genetic analysis and statements that appear in this report have not been evaluated by the United States Food and Drug Administration. The Sequencing.com website and all software applications (Apps) and reports that use Sequencing.com's website, as well as Sequencing.com's open Application Programming Interface (API), are not intended to diagnose, treat, cure, or prevent any disease."
+    }
+  ],
+  "reportDataKeys": [
+    "app_id",
+    "avatar",
+    "avatarAlt",
+    "body",
+    "category",
+    "currency_code",
+    "headerImg",
+    "headerImgAlt",
+    "id",
+    "included_with_membership",
+    "included_with_premium",
+    "info_tab",
+    "listEnableFiles",
+    "meta",
+    "nid",
+    "non_genetic_fields",
+    "pre_order",
+    "price",
+    "product_data",
+    "product_id",
+    "publisher",
+    "purchasedBy",
+    "relatedReports",
+    "reportFile",
+    "report_premium",
+    "search_keywords",
+    "start_button_text",
+    "sub_title",
+    "summary",
+    "title",
+    "type",
+    "uri",
+    "wgsCompatible"
+  ],
+  "evidenceNotes": [
+    "Marketplace detail reportData confirms title, publisher/provider when available, price/product metadata when available, categories, sample report link when available, and overview/disclaimer tab boundaries when present.",
+    "Use overview/marketing text only for report purpose and marketplace positioning, not for local genetic, medical, diet, supplement, medication, or performance conclusions.",
+    "No raw genome data, uploaded genome data, or account navigation text is included in this artifact."
+  ]
+}

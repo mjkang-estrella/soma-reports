@@ -2,31 +2,573 @@
   "reportOverview": {
     "reportTitle": "Detox Pathway",
     "inputManifestHash": "sha256:synthetic-detox-pathway-mthfr-context-v1",
+    "evidenceTypesSupplied": [
+      "Derived MTHFR C677T and A1298C calls from the local fixture",
+      "CDC MTHFR folic-acid safety framing",
+      "Detox Pathway sample PDF rows preserved as sample-only output-format examples"
+    ],
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "No detoxification-capacity model, toxin-sensitivity model, methylation score, homocysteine result, lab result, diet model, supplement model, medication context, treatment context, or ancestry-applicability metadata is supplied with this fixture."
+      "Authenticated marketplace detail-page parity is still pending.",
+      "No validated broader Detox Pathway model, toxin-sensitivity model, methylation score, homocysteine result, exposure history, diet history, supplement history, medication context, treatment context, or professional interpretation is supplied for the local fixture.",
+      "Sample PDF detox ability labels, SNP tables, lab values, recommendations, dosages, and glossary are not local findings."
     ]
   },
-  "findings": [
+  "mthfrCalls": [
     {
-      "groupTitle": "MTHFR folate context",
-      "item": "MTHFR C677T / rs1801133",
-      "brandName": "Not applicable",
-      "geneticAnalysis": "A derived CT call is available for MTHFR C677T. This is CDC-framed folate-processing context only and is not a detoxification-capacity result, toxin-sensitivity result, diagnosis, diet recommendation, supplement recommendation, medication result, or treatment result.",
-      "genes": [
-        "MTHFR"
-      ],
-      "sourceLabel": "CDC MTHFR Gene Variant and Folic Acid Facts",
+      "rsid": "rs1801133",
+      "variantName": "MTHFR C677T",
+      "observedValue": "CT",
+      "matchStatus": "observed",
       "sourceIds": [
         "cdc-mthfr-folic-acid"
-      ],
-      "plainEnglishMeaning": "CDC framing is used here: common MTHFR variants can be discussed as folate-processing context, but they do not by themselves support detox, diet, or supplement conclusions."
+      ]
     },
     {
-      "groupTitle": "MTHFR folate context",
-      "item": "MTHFR A1298C / rs1801131",
-      "brandName": "Not applicable",
-      "geneticAnalysis": "A derived AC call is available for MTHFR A1298C. This marker is reported as local context only and does not infer detoxification capacity, toxin sensitivity, methylation capacity, homocysteine, lab status, diet needs, supplement needs, medication response, or treatment needs.",
+      "rsid": "rs1801131",
+      "variantName": "MTHFR A1298C",
+      "observedValue": "AC",
+      "matchStatus": "observed",
+      "sourceIds": [
+        "cdc-mthfr-folic-acid"
+      ]
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Table of contents",
+      "item": "Formal report section map",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample table of contents lists How this works, Detox Pathway Phase I, Detox Pathway Phase II, Results Overview, Gene - SNP Breakdown, Your recommendations, Lab markers to check, and Glossary.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on page 2 of the sample PDF with personal information and disclaimer blocks. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "How this works",
+      "item": "Phase I and Phase II detox explanation",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample explains detoxification as a liver-centered multi-step process, describes Phase I CYP enzymes, then Phase II pathways including UGT enzymes, NAT2 acetylation, glutathione, and GSTP1.",
+      "genes": [
+        "CYP1A1",
+        "CYP2E1",
+        "CYP1B1",
+        "CYP2D6",
+        "UGT1A1",
+        "NAT2",
+        "GSTP1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on page 3. The page links variants in CYP1A1, CYP2E1, CYP1B1, CYP2D6, UGT1A1, NAT2, and GSTP1 to environmental or chemical sensitivity examples with reference markers. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Pathway maps",
+      "item": "Phase I and Phase II pathway diagrams",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample includes Phase I and Phase II pathway maps with legends for typical, severe, not-determined, upregulating, downregulating, neutral, genotype-not-determined, gene interactions, enhancers, toxins, detox components, lab-result states, and missing lab results.",
+      "genes": [
+        "ADH1B",
+        "PON1",
+        "CYP2A6",
+        "ALDH",
+        "SLC01B1",
+        "UGT1A1",
+        "NAT2",
+        "GSTA1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on rendered pages 4 and 5. The maps connect toxin categories, gene nodes, detox components, and lab-result symbols. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Results overview",
+      "item": "Top-line detox ability",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample results overview states: Predisposed to typical detox ability.",
+      "genes": [
+        "detox pathway model"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on page 6. This is the sample person's label and must not be reused as a local detox ability result. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Results overview",
+      "item": "Phase I gene - SNP summary",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "Visible Phase I rows include ADH1B rs1229984 TC; PON1 rs662 TT and rs854560 TA; CYP2C19 rs4244285 GG and rs4986893 GG; CYP1A2 rs762551 AA; CYP1B1 rs1056836 GG; AHR rs2066853 GG; CYP1A1 rs4646903 AA and rs1048943 TT; CYP3A4 rs55785340 AA and rs2242480 CC; CYP2B6 rs3745274 TG; ALDH2 rs671 GG; CYP2A6 rs1801272 AA; CYP2C9 rs1799853 CC and rs1057910 AA.",
+      "genes": [
+        "ADH1B",
+        "PON1",
+        "CYP2C19",
+        "CYP1A2",
+        "CYP1B1",
+        "AHR",
+        "CYP1A1",
+        "CYP3A4",
+        "CYP2B6",
+        "ALDH2",
+        "CYP2A6",
+        "CYP2C9"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed in the page 6 Phase I Gene - SNP Summary table. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Results overview",
+      "item": "Phase I lab and health-report chips",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The Phase I overview lists lab chips for GGT, Lead Blood, Vitamin C, Cholinesterase Serum, Iron, Selenium, 16-OH-E1 (DUTCH), and Malondialdehyde, plus health-report chips for Alcohol Sensitivity, Air Pollution Sensitivity, Benzene Sensitivity, BPA Sensitivity, Pesticide Sensitivity, Phthalate Sensitivity, Sensitivity to Airborne Mold, and Sensitivity to Foodborne Mold.",
+      "genes": [
+        "detox pathway model"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on page 6 below the Phase I SNP table. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Results overview",
+      "item": "Phase II gene - SNP summary",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "Visible Phase II rows include GCLC rs17883901 GA and rs761142 AC; NFE2L2 rs35652124 TT, rs6721961 GG, and rs2364723 GG; GSTA1 rs3957357 AA; COMT rs4680 GA; SULT1A1 rs1042028 CC; GSTP1 rs1695 AA and rs1138272 CC; AHR rs2066853 GG; NAT1 rs4986782 GG; UGT1A1 rs4148323 GG; and NAT2 rs1495741 AG.",
+      "genes": [
+        "GCLC",
+        "NFE2L2",
+        "GSTA1",
+        "COMT",
+        "SULT1A1",
+        "GSTP1",
+        "AHR",
+        "NAT1",
+        "UGT1A1",
+        "NAT2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed in the page 7 Phase II Gene - SNP Summary table. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Results overview",
+      "item": "Phase II lab and health-report chips",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The Phase II overview lists lab chips for GGT, ALT, Arsenic Blood, AST, Cystine Serum/Plasma, Magnesium, Mercury Blood, Selenium, 8-Hydroxy-2-deoxyguanosine Urine, Arsenic 24-Hour Urine, Mercury 24-Hour Urine, and Total Glutathione, plus health-report chips including Air Pollution Sensitivity, Arsenic, Benzene Sensitivity, Bilirubin, BPA Sensitivity, Cadmium, Glutathione, Lead, Mercury, Pesticide Sensitivity, Sensitivity to Airborne Mold, and Sensitivity to Foodborne Mold.",
+      "genes": [
+        "detox pathway model"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on page 7 below the Phase II SNP table. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Gene - SNP Breakdown",
+      "item": "ADH1B detail page",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The ADH1B detail page shows SNP rs1229984 ADH1B*2, sample genotype TC, allele notes for C as typical ADH1B activity and T as increased ADH1B activity and altered detox ability, and a sample interpretation that the genotype is linked to increased ADH1B activity and altered detox ability.",
+      "genes": [
+        "ADH1B"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on page 8 with intro text about alcohol metabolism and acetaldehyde. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your recommendations",
+      "item": "Recommendation priority list",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample lists 22 prioritized recommendations: N-acetylcysteine (NAC) 1200 mg, Probiotics 10 billion CFU, Activated Charcoal 500 mg, Chlorella 3 g, Cruciferous Vegetables, Garlic, Selenium Supplements 50 mcg, Avoid Exposure to Molds, Glutathione supplements, Milk Thistle (Silymarin) 300 mg, Air Purifier, Avoid Arsenic Exposure, Avoid Mercury Exposure, Avoid PBDE, Avoid Pesticide Exposure, Coriander, Curcumin 500 mg, Green Tea 400 mg, Magnesium 350 mg, Spirulina 500 mg, Vitamin C 1000 mg, and Zinc 15 mg.",
+      "genes": [
+        "detox pathway model"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on page 40. Dosage values are preserved as sample report fields only, not as local recommendations. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your recommendations",
+      "item": "N-acetylcysteine (NAC) detail",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample NAC detail page shows 1200 mg, a daily supplement implementation paragraph, glutathione-production and heavy-metal binding explanatory text, and personalized-to-your-genes rows tied to glutathione and PON1 support.",
+      "genes": [
+        "GSTP1",
+        "PON1",
+        "GCLC"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on page 41. The text is sample report content and not a local supplement instruction. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your recommendations",
+      "item": "Probiotics, activated charcoal, chlorella, cruciferous vegetables, and garlic detail pages",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample detail pages include Probiotics at 10 billion CFU, Activated Charcoal at 500-1000 mg, Chlorella at 3 to 5 g, Cruciferous Vegetables as daily servings, and Garlic as 1-2 cloves, each with how-to-implement, how-it-helps, and personalized-to-your-genes blocks.",
+      "genes": [
+        "NFE2L2",
+        "GSTP1",
+        "PON1",
+        "CYP1B1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on pages 42-44. These are sample report fields only and must not be emitted as local advice. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Lab markers to check",
+      "item": "Page 55 lab marker rows",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample lab-marker page shows Creatine Kinase 355 IU/L with SLCO1B1 statin-monitoring personalization, Vitamin B12 1856 pg/mL, Vitamin B2 (Riboflavin) Plasma 29.93 ng/mL, GGT 20 IU/L with ADH1B and NFE2L2 personalization, and Lead Blood 10.95 ug/L.",
+      "genes": [
+        "SLCO1B1",
+        "ADH1B",
+        "NFE2L2",
+        "PON1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on page 55. Lab values and dates are sample data, not local labs. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Lab markers to check",
+      "item": "Page 56 lab marker rows",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample lab-marker page shows Lead personalization for PON1, Vitamin C 0.262 mg/dL with PON1 personalization, ALT 28 IU/L with SLCO1B1 and NFE2L2 personalization, Aluminum 6.73 ug/L, Arsenic Blood 2.79 ug/L with NFE2L2 personalization, and AST 28 IU/L.",
+      "genes": [
+        "PON1",
+        "SLCO1B1",
+        "NFE2L2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on page 56. Lab values and dates are sample data, not local labs. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Glossary",
+      "item": "Detox glossary terms",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample glossary defines terms including Acrolein, Aflatoxins, Aldehydes, Aromatic Amines, BPA, Cannabinoids, Catecholamines, Detox Component, Detox Phase I, Detox Phase II, Dioxins, Endotoxins, Glutathione, Glutathione Pathway, GSSG, Heterocyclic Amines, Mycotoxins, Organophosphates, Oxidative Stress, Phthalates, Statins, THC, VOCs, Xenoestrogens, and gamma-Glutamylcysteine.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on page 62. The glossary is output support content only. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    }
+  ],
+  "findings": [
+    {
+      "groupTitle": "Table of contents",
+      "item": "Formal report section map",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample table of contents lists How this works, Detox Pathway Phase I, Detox Pathway Phase II, Results Overview, Gene - SNP Breakdown, Your recommendations, Lab markers to check, and Glossary.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on page 2 of the sample PDF with personal information and disclaimer blocks. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "How this works",
+      "item": "Phase I and Phase II detox explanation",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample explains detoxification as a liver-centered multi-step process, describes Phase I CYP enzymes, then Phase II pathways including UGT enzymes, NAT2 acetylation, glutathione, and GSTP1.",
+      "genes": [
+        "CYP1A1",
+        "CYP2E1",
+        "CYP1B1",
+        "CYP2D6",
+        "UGT1A1",
+        "NAT2",
+        "GSTP1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on page 3. The page links variants in CYP1A1, CYP2E1, CYP1B1, CYP2D6, UGT1A1, NAT2, and GSTP1 to environmental or chemical sensitivity examples with reference markers. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Pathway maps",
+      "item": "Phase I and Phase II pathway diagrams",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample includes Phase I and Phase II pathway maps with legends for typical, severe, not-determined, upregulating, downregulating, neutral, genotype-not-determined, gene interactions, enhancers, toxins, detox components, lab-result states, and missing lab results.",
+      "genes": [
+        "ADH1B",
+        "PON1",
+        "CYP2A6",
+        "ALDH",
+        "SLC01B1",
+        "UGT1A1",
+        "NAT2",
+        "GSTA1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on rendered pages 4 and 5. The maps connect toxin categories, gene nodes, detox components, and lab-result symbols. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Results overview",
+      "item": "Top-line detox ability",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample results overview states: Predisposed to typical detox ability.",
+      "genes": [
+        "detox pathway model"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on page 6. This is the sample person's label and must not be reused as a local detox ability result. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Results overview",
+      "item": "Phase I gene - SNP summary",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "Visible Phase I rows include ADH1B rs1229984 TC; PON1 rs662 TT and rs854560 TA; CYP2C19 rs4244285 GG and rs4986893 GG; CYP1A2 rs762551 AA; CYP1B1 rs1056836 GG; AHR rs2066853 GG; CYP1A1 rs4646903 AA and rs1048943 TT; CYP3A4 rs55785340 AA and rs2242480 CC; CYP2B6 rs3745274 TG; ALDH2 rs671 GG; CYP2A6 rs1801272 AA; CYP2C9 rs1799853 CC and rs1057910 AA.",
+      "genes": [
+        "ADH1B",
+        "PON1",
+        "CYP2C19",
+        "CYP1A2",
+        "CYP1B1",
+        "AHR",
+        "CYP1A1",
+        "CYP3A4",
+        "CYP2B6",
+        "ALDH2",
+        "CYP2A6",
+        "CYP2C9"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed in the page 6 Phase I Gene - SNP Summary table. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Results overview",
+      "item": "Phase I lab and health-report chips",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The Phase I overview lists lab chips for GGT, Lead Blood, Vitamin C, Cholinesterase Serum, Iron, Selenium, 16-OH-E1 (DUTCH), and Malondialdehyde, plus health-report chips for Alcohol Sensitivity, Air Pollution Sensitivity, Benzene Sensitivity, BPA Sensitivity, Pesticide Sensitivity, Phthalate Sensitivity, Sensitivity to Airborne Mold, and Sensitivity to Foodborne Mold.",
+      "genes": [
+        "detox pathway model"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on page 6 below the Phase I SNP table. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Results overview",
+      "item": "Phase II gene - SNP summary",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "Visible Phase II rows include GCLC rs17883901 GA and rs761142 AC; NFE2L2 rs35652124 TT, rs6721961 GG, and rs2364723 GG; GSTA1 rs3957357 AA; COMT rs4680 GA; SULT1A1 rs1042028 CC; GSTP1 rs1695 AA and rs1138272 CC; AHR rs2066853 GG; NAT1 rs4986782 GG; UGT1A1 rs4148323 GG; and NAT2 rs1495741 AG.",
+      "genes": [
+        "GCLC",
+        "NFE2L2",
+        "GSTA1",
+        "COMT",
+        "SULT1A1",
+        "GSTP1",
+        "AHR",
+        "NAT1",
+        "UGT1A1",
+        "NAT2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed in the page 7 Phase II Gene - SNP Summary table. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Results overview",
+      "item": "Phase II lab and health-report chips",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The Phase II overview lists lab chips for GGT, ALT, Arsenic Blood, AST, Cystine Serum/Plasma, Magnesium, Mercury Blood, Selenium, 8-Hydroxy-2-deoxyguanosine Urine, Arsenic 24-Hour Urine, Mercury 24-Hour Urine, and Total Glutathione, plus health-report chips including Air Pollution Sensitivity, Arsenic, Benzene Sensitivity, Bilirubin, BPA Sensitivity, Cadmium, Glutathione, Lead, Mercury, Pesticide Sensitivity, Sensitivity to Airborne Mold, and Sensitivity to Foodborne Mold.",
+      "genes": [
+        "detox pathway model"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on page 7 below the Phase II SNP table. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Gene - SNP Breakdown",
+      "item": "ADH1B detail page",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The ADH1B detail page shows SNP rs1229984 ADH1B*2, sample genotype TC, allele notes for C as typical ADH1B activity and T as increased ADH1B activity and altered detox ability, and a sample interpretation that the genotype is linked to increased ADH1B activity and altered detox ability.",
+      "genes": [
+        "ADH1B"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on page 8 with intro text about alcohol metabolism and acetaldehyde. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your recommendations",
+      "item": "Recommendation priority list",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample lists 22 prioritized recommendations: N-acetylcysteine (NAC) 1200 mg, Probiotics 10 billion CFU, Activated Charcoal 500 mg, Chlorella 3 g, Cruciferous Vegetables, Garlic, Selenium Supplements 50 mcg, Avoid Exposure to Molds, Glutathione supplements, Milk Thistle (Silymarin) 300 mg, Air Purifier, Avoid Arsenic Exposure, Avoid Mercury Exposure, Avoid PBDE, Avoid Pesticide Exposure, Coriander, Curcumin 500 mg, Green Tea 400 mg, Magnesium 350 mg, Spirulina 500 mg, Vitamin C 1000 mg, and Zinc 15 mg.",
+      "genes": [
+        "detox pathway model"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on page 40. Dosage values are preserved as sample report fields only, not as local recommendations. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your recommendations",
+      "item": "N-acetylcysteine (NAC) detail",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample NAC detail page shows 1200 mg, a daily supplement implementation paragraph, glutathione-production and heavy-metal binding explanatory text, and personalized-to-your-genes rows tied to glutathione and PON1 support.",
+      "genes": [
+        "GSTP1",
+        "PON1",
+        "GCLC"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on page 41. The text is sample report content and not a local supplement instruction. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your recommendations",
+      "item": "Probiotics, activated charcoal, chlorella, cruciferous vegetables, and garlic detail pages",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample detail pages include Probiotics at 10 billion CFU, Activated Charcoal at 500-1000 mg, Chlorella at 3 to 5 g, Cruciferous Vegetables as daily servings, and Garlic as 1-2 cloves, each with how-to-implement, how-it-helps, and personalized-to-your-genes blocks.",
+      "genes": [
+        "NFE2L2",
+        "GSTP1",
+        "PON1",
+        "CYP1B1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on pages 42-44. These are sample report fields only and must not be emitted as local advice. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Lab markers to check",
+      "item": "Page 55 lab marker rows",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample lab-marker page shows Creatine Kinase 355 IU/L with SLCO1B1 statin-monitoring personalization, Vitamin B12 1856 pg/mL, Vitamin B2 (Riboflavin) Plasma 29.93 ng/mL, GGT 20 IU/L with ADH1B and NFE2L2 personalization, and Lead Blood 10.95 ug/L.",
+      "genes": [
+        "SLCO1B1",
+        "ADH1B",
+        "NFE2L2",
+        "PON1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on page 55. Lab values and dates are sample data, not local labs. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Lab markers to check",
+      "item": "Page 56 lab marker rows",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample lab-marker page shows Lead personalization for PON1, Vitamin C 0.262 mg/dL with PON1 personalization, ALT 28 IU/L with SLCO1B1 and NFE2L2 personalization, Aluminum 6.73 ug/L, Arsenic Blood 2.79 ug/L with NFE2L2 personalization, and AST 28 IU/L.",
+      "genes": [
+        "PON1",
+        "SLCO1B1",
+        "NFE2L2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on page 56. Lab values and dates are sample data, not local labs. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Glossary",
+      "item": "Detox glossary terms",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample glossary defines terms including Acrolein, Aflatoxins, Aldehydes, Aromatic Amines, BPA, Cannabinoids, Catecholamines, Detox Component, Detox Phase I, Detox Phase II, Dioxins, Endotoxins, Glutathione, Glutathione Pathway, GSSG, Heterocyclic Amines, Mycotoxins, Organophosphates, Oxidative Stress, Phthalates, Statins, THC, VOCs, Xenoestrogens, and gamma-Glutamylcysteine.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed on page 62. The glossary is output support content only. This is an observed Detox Pathway sample-report row for output-format parity only; it is not a local detox, lab, supplement, medication, diagnosis, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Local MTHFR calls",
+      "item": "MTHFR C677T / rs1801133",
+      "brandName": "Detox Pathway",
+      "geneticAnalysis": "A derived CT call is available for rs1801133. This is CDC-framed folate-processing context only and is not a detoxification-capacity result, toxin-sensitivity result, methylation score, diagnosis, diet recommendation, supplement recommendation, medication result, or treatment result.",
       "genes": [
         "MTHFR"
       ],
@@ -34,42 +576,166 @@
       "sourceIds": [
         "cdc-mthfr-folic-acid"
       ],
-      "plainEnglishMeaning": "This row keeps the local genotype visible while leaving detoxification, toxin sensitivity, lab, diet, supplement, and treatment interpretations unavailable without validated evidence."
+      "plainEnglishMeaning": "This local marker can be described conservatively as MTHFR folate context. It does not support detox pathway, toxin sensitivity, lab, supplement, diet, medication, or treatment conclusions."
+    },
+    {
+      "groupTitle": "Local MTHFR calls",
+      "item": "MTHFR A1298C / rs1801131",
+      "brandName": "Detox Pathway",
+      "geneticAnalysis": "A derived AC call is available for rs1801131. This marker is reported as local folate context only and does not infer detoxification capacity, toxin sensitivity, methylation capacity, homocysteine, lab status, diet needs, supplement needs, medication response, or treatment needs.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "CDC MTHFR Gene Variant and Folic Acid Facts",
+      "sourceIds": [
+        "cdc-mthfr-folic-acid"
+      ],
+      "plainEnglishMeaning": "The local output keeps this genotype visible while explicitly leaving Detox Pathway model outputs, labs, recommendations, and actionability unavailable without validated evidence."
     }
   ],
   "folateContext": {
-    "plainEnglishMeaning": "The available MTHFR calls can be described as folate-processing context, not as a detox-pathway measurement.",
+    "plainEnglishMeaning": "The available local MTHFR calls can be described as folate-processing context, not as a Detox Pathway measurement or toxin-sensitivity result.",
     "folicAcidSafetyNote": "Under the CDC framing used by this package, common MTHFR variants are not a reason to avoid folic acid.",
     "unsupportedClaims": [
       "detoxification capacity",
       "toxin sensitivity",
+      "typical detox ability for the local fixture",
       "methylation score",
       "homocysteine or lab interpretation",
       "diet or supplement changes",
+      "recommendation dosage",
       "medication or treatment guidance"
+    ],
+    "sourceIds": [
+      "cdc-mthfr-folic-acid",
+      "detox-pathway-sample-pdf"
     ]
   },
   "references": [
     {
       "id": "cdc-mthfr-folic-acid",
-      "title": "CDC MTHFR Gene Variant and Folic Acid Facts"
+      "title": "CDC MTHFR Gene Variant and Folic Acid Facts",
+      "sourceType": "public_health_resource"
+    },
+    {
+      "id": "sequencing-report-marketplace-docs",
+      "title": "Sequencing.com Report Marketplace documentation",
+      "sourceType": "sequencing_public_doc"
+    },
+    {
+      "id": "detox-pathway-sample-pdf",
+      "title": "Detox Pathway sample report",
+      "sourceType": "mock_report"
     }
   ],
   "appendix": {
+    "genotypeSummary": [
+      {
+        "tier": "Sample-report visible row",
+        "gene": "ADH1B",
+        "variantId": "rs1229984 / ADH1B*2",
+        "genotype": "TC",
+        "effect": "The sample ADH1B detail page says the genotype is linked to increased ADH1B activity and altered detox ability.",
+        "phenotype": "Use as observed sample-report structure only; do not infer local detox ability or alcohol sensitivity without local validated model evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "PON1",
+        "variantId": "rs662; rs854560",
+        "genotype": "rs662 TT; rs854560 TA",
+        "effect": "The sample Phase I summary includes PON1 SNP rows and later lab personalization links lead and vitamin C context to PON1.",
+        "phenotype": "Use as sample SNP-table structure only; do not infer local antioxidant, pesticide, lead, or vitamin C guidance.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "CYP2C19",
+        "variantId": "rs4244285; rs4986893",
+        "genotype": "rs4244285 GG; rs4986893 GG",
+        "effect": "The sample Phase I summary includes CYP2C19 SNP rows.",
+        "phenotype": "Use as observed sample structure only; medication, detox, or toxin-sensitivity claims require validated evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "CYP1B1",
+        "variantId": "rs1056836",
+        "genotype": "GG",
+        "effect": "The sample Phase I summary and recommendation pages connect CYP1B1 context to detox pathway output structure.",
+        "phenotype": "Use as sample SNP-table structure only; do not infer local estrogen, BPA, mold, or detox conclusions.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "NFE2L2",
+        "variantId": "rs35652124; rs6721961; rs2364723",
+        "genotype": "rs35652124 TT; rs6721961 GG; rs2364723 GG",
+        "effect": "The sample Phase II summary includes NFE2L2 rows and lab-marker personalization links NFE2L2 to liver and arsenic context.",
+        "phenotype": "Use as sample SNP-table and lab-link structure only; do not infer local oxidative-stress, arsenic, or liver monitoring guidance.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "GSTP1",
+        "variantId": "rs1695; rs1138272",
+        "genotype": "rs1695 AA; rs1138272 CC",
+        "effect": "The sample Phase II summary includes GSTP1 rows and recommendation detail pages include glutathione-related sample personalization blocks.",
+        "phenotype": "Use as sample output structure only; do not infer local glutathione status or supplement need.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "NAT2",
+        "variantId": "rs1495741",
+        "genotype": "AG",
+        "effect": "The sample Phase II summary includes NAT2 as a visible row.",
+        "phenotype": "Use as sample output structure only; do not infer local acetylator status or drug/chemical sensitivity.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Local derived call",
+        "gene": "MTHFR",
+        "variantId": "rs1801133",
+        "genotype": "CT",
+        "effect": "The local fixture supplies an MTHFR C677T call for CDC-framed folate context.",
+        "phenotype": "Report only as local MTHFR folate-processing context; do not convert it into detox ability, methylation score, supplement, diet, medication, or treatment guidance.",
+        "extractionStatus": "curated"
+      },
+      {
+        "tier": "Local derived call",
+        "gene": "MTHFR",
+        "variantId": "rs1801131",
+        "genotype": "AC",
+        "effect": "The local fixture supplies an MTHFR A1298C call for CDC-framed folate context.",
+        "phenotype": "Report only as local MTHFR folate-processing context; do not convert it into detox ability, methylation score, supplement, diet, medication, or treatment guidance.",
+        "extractionStatus": "curated"
+      },
+      {
+        "tier": "Local missing input",
+        "gene": "Detox Pathway model",
+        "variantId": "broader-detox-model-unavailable",
+        "genotype": "validated Detox Pathway model, broader gene panel, labs, recommendation personalization, and treatment context unavailable",
+        "effect": "The local fixture does not supply the broader Phase I/Phase II detox model, lab values, exposure history, diet/supplement context, or medical context shown in the sample.",
+        "phenotype": "Mark detox ability, toxin sensitivity, lab interpretation, recommendations, supplement dosage, and treatment guidance unavailable instead of inferring them.",
+        "extractionStatus": "curated"
+      }
+    ],
     "missingInputs": [
-      "Authenticated sample-report sections and rows have not been extracted.",
-      "No detoxification-capacity model, toxin-sensitivity model, methylation score, homocysteine result, lab result, diet model, supplement model, medication context, treatment context, or ancestry-applicability metadata is supplied.",
-      "Exposure history, symptoms, diet history, supplement history, medications, medical history, lab values, and professional assessment are not represented in this fixture."
+      "broader Detox Pathway model output, toxin-sensitivity model, methylation score, homocysteine, lab panel, exposure history, diet history, supplement history, medication context, treatment context, and professional interpretation are unavailable for the local fixture",
+      "sample PDF values are available only as output-format examples and are not local measurements or recommendations",
+      "authenticated marketplace detail-page parity remains pending"
     ],
     "probabilities": [],
     "uncertainty": [
-      "Detoxification and toxin-sensitivity claims require validated models and broader biological, exposure, medical, and environmental context.",
-      "MTHFR markers alone should not be used to guide diet, supplements, medications, testing, or treatment."
+      "The Detox Pathway sample PDF contains sample-person genotypes, lab markers, and recommendations, but those are not local evidence.",
+      "The local fixture contains only derived MTHFR calls and no calibrated Detox Pathway model.",
+      "Sample recommendation blocks and dosages are output-format examples, not personalized advice for the local user."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data is not included.",
-      "The package is educational and does not report detoxification capacity, toxin sensitivity, methylation capacity, diagnosis, diet instructions, supplement instructions, medication response, or treatment guidance.",
-      "Authenticated Sequencing.com sample report rows are still pending."
+      "The report does not emit raw SNP tables, VCF, FASTQ, BAM, CRAM, lab-order instructions, supplement instructions, medication instructions, or treatment guidance.",
+      "No detoxification capacity, toxin sensitivity, methylation capacity, diagnosis, diet instruction, supplement instruction, medication response, or treatment guidance is produced from the local fixture."
     ]
   }
 }

@@ -54,6 +54,393 @@
         "wellness-sample-pdf"
       ],
       "plainEnglishMeaning": "This marker can be included as background information, not as a stand-alone prediction."
+    },
+    {
+      "groupTitle": "Histamine H1 receptor blockers",
+      "item": "Hydroxyzine",
+      "brandName": "Atarax",
+      "geneticAnalysis": "Sample report value: No increased genetic risk detected. This is preserved from the public sample report for output-format parity only, not as a local user result.",
+      "description": "The public sample PDF provides the exact formal row and source label; no credible additional support source has been bound yet.",
+      "genes": [
+        "KCNH2"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "sourceResourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed row from the public Wellness Genetic Guide sample report. It is included to preserve report structure and source bindings; it is not a personal medication, supplement, diagnosis, treatment, or adverse-reaction result."
+    },
+    {
+      "groupTitle": "Histamine H1 receptor blockers",
+      "item": "Promethazine",
+      "brandName": "Phenergan",
+      "geneticAnalysis": "Sample report value: No increased genetic risk detected. This is preserved from the public sample report for output-format parity only, not as a local user result.",
+      "description": "The public sample PDF provides the exact formal row and source label; additional resources are curated support, not proof of Sequencing.com's hidden original article citation.",
+      "genes": [
+        "CYP2D6"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "sourceResourceIds": [
+        "wellness-sample-pdf",
+        "pubmed-cyp2d6-antihistamines",
+        "pharmgkb"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed row from the public Wellness Genetic Guide sample report. It is included to preserve report structure and source bindings; it is not a personal medication, supplement, diagnosis, treatment, or adverse-reaction result."
+    },
+    {
+      "groupTitle": "Histamine H1 receptor blockers",
+      "item": "Fexofenadine",
+      "brandName": "Allegra",
+      "geneticAnalysis": "Sample report value: No increased genetic risk detected. This is preserved from the public sample report for output-format parity only, not as a local user result.",
+      "description": "The public sample PDF provides the exact formal row and source label; additional resources are curated support, not proof of Sequencing.com's hidden original article citation.",
+      "genes": [
+        "ABCB1"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "sourceResourceIds": [
+        "wellness-sample-pdf",
+        "pharmgkb"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed row from the public Wellness Genetic Guide sample report. It is included to preserve report structure and source bindings; it is not a personal medication, supplement, diagnosis, treatment, or adverse-reaction result."
+    },
+    {
+      "groupTitle": "Glucocorticosteroids (Steroids)",
+      "item": "Beclomethasone",
+      "brandName": "Qvar",
+      "geneticAnalysis": "Sample report value: Increased genetic risk of adverse reaction. This is preserved from the public sample report for output-format parity only, not as a local user result.",
+      "description": "The public sample PDF provides the exact formal row and source label; additional resources are curated support, not proof of Sequencing.com's hidden original article citation.",
+      "genes": [
+        "CYP3A5"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "sourceResourceIds": [
+        "wellness-sample-pdf",
+        "pharmgkb"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed row from the public Wellness Genetic Guide sample report. It is included to preserve report structure and source bindings; it is not a personal medication, supplement, diagnosis, treatment, or adverse-reaction result."
+    },
+    {
+      "groupTitle": "Glucocorticosteroids (Steroids)",
+      "item": "Methylprednisolone",
+      "brandName": "Medrol",
+      "geneticAnalysis": "Sample report value: No increased genetic risk detected. This is preserved from the public sample report for output-format parity only, not as a local user result.",
+      "description": "The public sample PDF provides the exact formal row and source label; additional resources are curated support, not proof of Sequencing.com's hidden original article citation.",
+      "genes": [
+        "ABCB1"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "sourceResourceIds": [
+        "wellness-sample-pdf",
+        "pharmgkb"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed row from the public Wellness Genetic Guide sample report. It is included to preserve report structure and source bindings; it is not a personal medication, supplement, diagnosis, treatment, or adverse-reaction result."
+    },
+    {
+      "groupTitle": "Glucocorticosteroids (Steroids)",
+      "item": "Prednisolone",
+      "brandName": "Prelone",
+      "geneticAnalysis": "Sample report value: No increased genetic risk detected. This is preserved from the public sample report for output-format parity only, not as a local user result.",
+      "description": "The public sample PDF provides the exact formal row and source label; additional resources are curated support, not proof of Sequencing.com's hidden original article citation.",
+      "genes": [
+        "ABCB1"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "sourceResourceIds": [
+        "wellness-sample-pdf",
+        "pharmgkb"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed row from the public Wellness Genetic Guide sample report. It is included to preserve report structure and source bindings; it is not a personal medication, supplement, diagnosis, treatment, or adverse-reaction result."
+    },
+    {
+      "groupTitle": "Glucocorticosteroids (Steroids)",
+      "item": "Triamcinolone",
+      "brandName": "Kenalog",
+      "geneticAnalysis": "Sample report value: HCG22: Increased ocular hypertension in people with retinal diseases. This is preserved from the public sample report for output-format parity only, not as a local user result.",
+      "description": "The public sample PDF provides the exact formal row and source label; no credible additional support source has been bound yet.",
+      "genes": [
+        "HCG22"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "sourceResourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed row from the public Wellness Genetic Guide sample report. It is included to preserve report structure and source bindings; it is not a personal medication, supplement, diagnosis, treatment, or adverse-reaction result."
+    },
+    {
+      "groupTitle": "Vitamins",
+      "item": "L-Methylfolate",
+      "brandName": "Deplin",
+      "geneticAnalysis": "Sample report value: Increased genetic risk of adverse reaction. This is preserved from the public sample report for output-format parity only, not as a local user result.",
+      "description": "The public sample PDF provides the exact formal row and source label; additional resources are curated support, not proof of Sequencing.com's hidden original article citation.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "sourceResourceIds": [
+        "wellness-sample-pdf",
+        "cdc-mthfr-folic-acid",
+        "pharmgkb"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed row from the public Wellness Genetic Guide sample report. It is included to preserve report structure and source bindings; it is not a personal medication, supplement, diagnosis, treatment, or adverse-reaction result."
+    },
+    {
+      "groupTitle": "Vitamins",
+      "item": "L-Phenylalanine",
+      "brandName": "Maxan",
+      "geneticAnalysis": "Sample report value: No increased genetic risk detected. This is preserved from the public sample report for output-format parity only, not as a local user result.",
+      "description": "The public sample PDF provides the exact formal row and source label; additional resources are curated support, not proof of Sequencing.com's hidden original article citation.",
+      "genes": [
+        "PAH"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "sourceResourceIds": [
+        "wellness-sample-pdf",
+        "pharmgkb"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed row from the public Wellness Genetic Guide sample report. It is included to preserve report structure and source bindings; it is not a personal medication, supplement, diagnosis, treatment, or adverse-reaction result."
+    },
+    {
+      "groupTitle": "Vitamins",
+      "item": "Vitamin E",
+      "brandName": "E-Gems",
+      "geneticAnalysis": "Sample report value: No increased genetic risk detected. This is preserved from the public sample report for output-format parity only, not as a local user result.",
+      "description": "The public sample PDF provides the exact formal row and source label; additional resources are curated support, not proof of Sequencing.com's hidden original article citation.",
+      "genes": [
+        "CYP4F2"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "sourceResourceIds": [
+        "wellness-sample-pdf",
+        "pharmgkb"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed row from the public Wellness Genetic Guide sample report. It is included to preserve report structure and source bindings; it is not a personal medication, supplement, diagnosis, treatment, or adverse-reaction result."
+    },
+    {
+      "groupTitle": "Vitamins",
+      "item": "Vitamin K1",
+      "brandName": "AquaMephyton",
+      "geneticAnalysis": "Sample report value: No increased genetic risk detected. This is preserved from the public sample report for output-format parity only, not as a local user result.",
+      "description": "The public sample PDF provides the exact formal row and source label; additional resources are curated support, not proof of Sequencing.com's hidden original article citation.",
+      "genes": [
+        "CYP4F2"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "sourceResourceIds": [
+        "wellness-sample-pdf",
+        "pharmgkb"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed row from the public Wellness Genetic Guide sample report. It is included to preserve report structure and source bindings; it is not a personal medication, supplement, diagnosis, treatment, or adverse-reaction result."
+    },
+    {
+      "groupTitle": "Vitamins",
+      "item": "Ascorbic acid (vitamin C), combinations",
+      "brandName": "C-1000",
+      "geneticAnalysis": "Sample report value: No increased genetic risk detected. This is preserved from the public sample report for output-format parity only, not as a local user result.",
+      "description": "The public sample PDF provides the exact formal row and source label; additional resources are curated support, not proof of Sequencing.com's hidden original article citation.",
+      "genes": [
+        "G6PD"
+      ],
+      "sourceLabel": "FDA",
+      "sourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "sourceResourceIds": [
+        "wellness-sample-pdf",
+        "fda-pgx-biomarkers-labeling",
+        "cpic-g6pd-supplement",
+        "fda-pgx-associations"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed row from the public Wellness Genetic Guide sample report. It is included to preserve report structure and source bindings; it is not a personal medication, supplement, diagnosis, treatment, or adverse-reaction result."
+    },
+    {
+      "groupTitle": "Vitamins",
+      "item": "Ascorbic acid (vitamin C), plain",
+      "brandName": "C-1000",
+      "geneticAnalysis": "Sample report value: No increased genetic risk detected. This is preserved from the public sample report for output-format parity only, not as a local user result.",
+      "description": "The public sample PDF provides the exact formal row and source label; additional resources are curated support, not proof of Sequencing.com's hidden original article citation.",
+      "genes": [
+        "G6PD"
+      ],
+      "sourceLabel": "FDA",
+      "sourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "sourceResourceIds": [
+        "wellness-sample-pdf",
+        "fda-pgx-biomarkers-labeling",
+        "cpic-g6pd-supplement",
+        "fda-pgx-associations"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed row from the public Wellness Genetic Guide sample report. It is included to preserve report structure and source bindings; it is not a personal medication, supplement, diagnosis, treatment, or adverse-reaction result."
+    },
+    {
+      "groupTitle": "Vitamins",
+      "item": "Sodium Ascorbate",
+      "brandName": "Sodium Ascorbate",
+      "geneticAnalysis": "Sample report value: No increased genetic risk detected. This is preserved from the public sample report for output-format parity only, not as a local user result.",
+      "description": "The public sample PDF provides the exact formal row and source label; additional resources are curated support, not proof of Sequencing.com's hidden original article citation.",
+      "genes": [
+        "G6PD"
+      ],
+      "sourceLabel": "FDA",
+      "sourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "sourceResourceIds": [
+        "wellness-sample-pdf",
+        "fda-pgx-biomarkers-labeling",
+        "cpic-g6pd-supplement",
+        "fda-pgx-associations"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed row from the public Wellness Genetic Guide sample report. It is included to preserve report structure and source bindings; it is not a personal medication, supplement, diagnosis, treatment, or adverse-reaction result."
+    },
+    {
+      "groupTitle": "Vitamins",
+      "item": "Niacin",
+      "brandName": "Niaspan",
+      "geneticAnalysis": "Sample report value: No increased genetic risk detected. This is preserved from the public sample report for output-format parity only, not as a local user result.",
+      "description": "The public sample PDF provides the exact formal row and source label; additional resources are curated support, not proof of Sequencing.com's hidden original article citation.",
+      "genes": [
+        "NR1H3"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "sourceResourceIds": [
+        "wellness-sample-pdf",
+        "pharmgkb"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed row from the public Wellness Genetic Guide sample report. It is included to preserve report structure and source bindings; it is not a personal medication, supplement, diagnosis, treatment, or adverse-reaction result."
+    },
+    {
+      "groupTitle": "Vitamins",
+      "item": "Pyridoxal Phosphate",
+      "brandName": "P-5-P",
+      "geneticAnalysis": "Sample report value: No increased genetic risk detected. This is preserved from the public sample report for output-format parity only, not as a local user result.",
+      "description": "The public sample PDF provides the exact formal row and source label; additional resources are curated support, not proof of Sequencing.com's hidden original article citation.",
+      "genes": [
+        "NAT2"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "sourceResourceIds": [
+        "wellness-sample-pdf",
+        "pharmgkb"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed row from the public Wellness Genetic Guide sample report. It is included to preserve report structure and source bindings; it is not a personal medication, supplement, diagnosis, treatment, or adverse-reaction result."
+    },
+    {
+      "groupTitle": "Vitamins",
+      "item": "Folic Acid",
+      "brandName": "Folvite",
+      "geneticAnalysis": "Sample report value: Increased genetic risk of adverse reaction. This is preserved from the public sample report for output-format parity only, not as a local user result.",
+      "description": "The public sample PDF provides the exact formal row and source label; additional resources are curated support, not proof of Sequencing.com's hidden original article citation.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "sourceResourceIds": [
+        "wellness-sample-pdf",
+        "cdc-mthfr-folic-acid",
+        "pharmgkb"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed row from the public Wellness Genetic Guide sample report. It is included to preserve report structure and source bindings; it is not a personal medication, supplement, diagnosis, treatment, or adverse-reaction result."
+    },
+    {
+      "groupTitle": "Vitamins",
+      "item": "Cyanocobalamin",
+      "brandName": "B12-Max",
+      "geneticAnalysis": "Sample report value: Increased genetic risk of adverse reaction. This is preserved from the public sample report for output-format parity only, not as a local user result.",
+      "description": "The public sample PDF provides the exact formal row and source label; additional resources are curated support, not proof of Sequencing.com's hidden original article citation.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "sourceResourceIds": [
+        "wellness-sample-pdf",
+        "cdc-mthfr-folic-acid",
+        "pharmgkb"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed row from the public Wellness Genetic Guide sample report. It is included to preserve report structure and source bindings; it is not a personal medication, supplement, diagnosis, treatment, or adverse-reaction result."
+    },
+    {
+      "groupTitle": "Histamine H1 receptor blockers",
+      "item": "Diphenhydramine",
+      "brandName": "Benadryl",
+      "geneticAnalysis": "Sample report value: Increased genetic risk of lack of efficacy. This is preserved from the public sample report for output-format parity only, not as a local user result.",
+      "description": "The public sample PDF provides the exact formal row and source label; no credible additional support source has been bound yet.",
+      "genes": [
+        "CYP2C8"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "sourceResourceIds": [
+        "wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is an observed row from the public Wellness Genetic Guide sample report. It is included to preserve report structure and source bindings; it is not a personal medication, supplement, diagnosis, treatment, or adverse-reaction result."
     }
   ],
   "practicalNextSteps": [

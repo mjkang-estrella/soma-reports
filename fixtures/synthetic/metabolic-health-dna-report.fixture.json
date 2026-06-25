@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived nutrition-genetics evidence for metabolic-health-dna-report validation"
   },
-  "missingInputPolicy": "Report unavailable metabolic, glucose, diabetes, insulin-resistance, lab, diet, supplement, medication, weight, and calibrated models explicitly; do not infer metabolic disease, diabetes risk, insulin resistance, nutrient deficiency, supplement needs, meal plans, medication actions, weight outcomes, or treatment.",
+  "missingInputPolicy": "Report unavailable metabolic, diabetes, insulin-resistance, glucose, BMI/weight, lab, nutrient-target, diet-history, supplement, medication, ancestry-applicability, and calibrated models explicitly; use sibling Food Sensitivity and Healthy Nutrition sample rows only as observed output structure and do not infer local metabolic disease, diabetes risk, insulin resistance, glucose, lab status, BMI/weight outcome, nutrient targets, diet plans, supplements, medications, diagnosis, or treatment from genotype alone or sample-only rows.",
   "packageSlug": "metabolic-health-dna-report",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -155,7 +155,31 @@
         "bmi_limitations",
         "no_weight_prediction_from_genotype"
       ]
+    },
+    {
+      "evidenceLevel": "sibling_sample_report",
+      "id": "food-sensitivity-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "GenoPalate Food Sensitivity sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
+    },
+    {
+      "evidenceLevel": "sibling_sample_report",
+      "id": "healthy-nutrition-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Healthy Nutrition DNA Analysis sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer Metabolic Health DNA Report context using derived MCM6/LCT evidence plus explicit metabolic, glucose, diabetes, insulin-resistance, lab, diet, supplement, medication, and model-unavailable framing."
+  "reportPurpose": "Consumer Metabolic Health DNA Report context using derived MCM6/LCT evidence plus sibling Food Sensitivity and Healthy Nutrition sample-output structure."
 }

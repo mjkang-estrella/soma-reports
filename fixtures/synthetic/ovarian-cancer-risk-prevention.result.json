@@ -1,41 +1,24 @@
 {
+  "schemaVersion": "soma-reports.synthetic-result.v1",
   "reportOverview": {
     "reportTitle": "Ovarian Cancer Risk & Prevention",
     "inputManifestHash": "sha256:synthetic-ovarian-cancer-risk-prevention-cancer-boundary-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "Validated pathogenic-variant screen, calibrated cancer PRS, ancestry applicability metadata, family history, tumor testing, clinical screening history, and prevention-plan context are unavailable.",
-      "This result is not a diagnosis, personal cancer-risk estimate, carrier-status result, screening recommendation, prevention plan, medication recommendation, surgery recommendation, treatment instruction, or actionability claim."
+      "Direct Ovarian Cancer Risk & Prevention authenticated sample report rows remain unavailable.",
+      "Validated model output, calibrated personal estimates, clinical context, family history, professional review, and local actionability evidence are unavailable in this fixture.",
+      "Sibling sample rows are included only as exact-cited output-structure examples, not as personal findings."
     ]
   },
   "resultRows": [
     {
-      "groupTitle": "Condition risk model availability",
+      "groupTitle": "Validated model availability",
       "item": "ovarian-cancer-risk-prevention-model-unavailable",
-      "brandName": "",
-      "geneticAnalysis": "Ovarian Cancer Risk & Prevention cannot emit a personal risk estimate from this local fixture because the validated model inputs are unavailable.",
+      "brandName": "ovarian-cancer-risk-prevention",
+      "geneticAnalysis": "validated ovarian cancer risk and prevention model, calibrated cancer PRS, pathogenic variant interpretation, inherited-cancer panel scope, ancestry applicability, family history, tumor testing, screening context, prevention context, and clinician or genetic-counselor review unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF Cancers category table and heritable-component limitation observed as sibling output structure",
       "genes": [
         "Ovarian Cancer Risk & Prevention model"
       ],
-      "sourceLabel": "NCI / NHGRI / GWAS / FDA context",
-      "sourceIds": [
-        "nci-cancer-genetic-testing",
-        "nhgri-polygenic-risk-scores",
-        "ebi-gwas-catalog",
-        "fda-direct-to-consumer-tests"
-      ],
-      "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This row is an availability statement, not a diagnosis, carrier-status result, risk score, screening recommendation, prevention plan, or treatment instruction."
-    },
-    {
-      "groupTitle": "Clinical context availability",
-      "item": "ovarian-cancer-risk-prevention-clinical-context-unavailable",
-      "brandName": "",
-      "geneticAnalysis": "Ovarian Cancer Risk & Prevention cannot interpret clinical context because symptoms, screening, family history, tumor testing, and clinician interpretation are unavailable.",
-      "genes": [
-        "ovarian cancer risk and prevention clinical context"
-      ],
-      "sourceLabel": "CDC / MedlinePlus / FDA context",
+      "sourceLabel": "Public genetics and report-boundary references",
       "sourceIds": [
         "cdc-genetic-testing",
         "medlineplus-genetics",
@@ -43,88 +26,175 @@
         "fda-direct-to-consumer-tests"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "Personal interpretation needs validated testing scope, clinical history, family history, screening context, ancestry applicability, and qualified professional review."
+      "plainEnglishMeaning": "The local fixture does not contain the validated report model or calibrated result needed for a personal conclusion."
+    },
+    {
+      "groupTitle": "Clinical and context availability",
+      "item": "ovarian-cancer-risk-prevention-clinical-context-unavailable",
+      "brandName": "ovarian-cancer-risk-prevention",
+      "geneticAnalysis": "clinical diagnosis, symptoms, screening findings, family history, tumor testing, treatment history, prevention context, and clinician interpretation unavailable in this fixture; public Disease Risk Genetic Test Report Cancers category table observed separately as output-structure evidence for Ovarian Cancer Risk & Prevention",
+      "genes": [
+        "ovarian cancer risk and prevention clinical context"
+      ],
+      "sourceLabel": "Fixture context and public references",
+      "sourceIds": [
+        "medlineplus-genetics",
+        "medlineplus-complex-disorders",
+        "fda-direct-to-consumer-tests",
+        "nhgri-polygenic-risk-scores"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The local fixture does not contain the clinical, family-history, lab, imaging, or professional-review context needed for medical conclusions."
+    },
+    {
+      "groupTitle": "Observed sibling sample structure",
+      "item": "Disease Risk Genetic Test Report sample rows",
+      "brandName": "Sibling Disease Risk Genetic Test Report sample report",
+      "geneticAnalysis": "The public sample rows are preserved as observed output structure only. They are not local-user disease risk, diagnosis, carrier status, screening, prevention, treatment, or actionability findings.",
+      "genes": [
+        "Cancer risk model rows"
+      ],
+      "sourceLabel": "Sibling Disease Risk sample PDF",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Use these rows to match the shape and source binding of the sample report, while keeping them separate from personal genome interpretation."
     }
   ],
   "conditionRiskContext": {
-    "plainEnglishMeaning": "Ovarian Cancer Risk & Prevention is currently a boundary report: it can document what evidence is available and what is missing, but it cannot estimate personal cancer risk or make health decisions.",
+    "plainEnglishMeaning": "Condition Risk Context is reported as an evidence-availability boundary. The local fixture can preserve source-bound sample structure and limitations, but it cannot make personal medical conclusions.",
     "unsupportedClaims": [
-      "Cancer diagnosis or all-clear result",
-      "Personal cancer-risk estimate or calibrated PRS result",
-      "Carrier-status or pathogenic-variant classification",
-      "Screening, prevention, medication, surgery, treatment, or lifestyle instructions",
-      "Replacement for genetic counseling or clinician review"
+      "diagnosis",
+      "personal disease risk estimate",
+      "carrier or pathogenic-variant status",
+      "screening, prevention, medication, surgery, treatment, reproductive, or actionability guidance"
     ],
-    "professionalReview": "Use a qualified clinician or genetic counselor for cancer-risk interpretation, especially when there is personal history, family history, symptoms, abnormal screening, or a known familial variant."
+    "professionalReview": "Use validated test scope, clinical context, family history, ancestry applicability, and qualified professional review for health decisions."
   },
-  "practicalNextSteps": {
-    "professionalReview": [
-      "Do not use this local fixture to change screening, prevention, medication, surgery, or treatment decisions.",
-      "Bring family history, personal history, prior genetic testing, screening results, and ancestry context to a clinician or genetic counselor if reviewing cancer risk.",
-      "Treat missing model rows as unavailable, not as low risk or reassuring results."
-    ]
-  },
+  "sampleRows": [
+    {
+      "groupTitle": "Report limitation",
+      "item": "Heritable component only",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "The sample states that 'Your Risk' is only for the heritable component of the disease, and that environmental, lifestyle, and other non-heritable factors also affect overall susceptibility risk.",
+      "description": "The sample uses lung cancer as an example, saying lung cancer is only 10% heritable and most cases are associated with lifestyle factors such as smoking.",
+      "genes": [],
+      "sourceLabel": "Sibling Disease Risk Genetic Test Report sample report",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public Sequencing.com Disease Risk Genetic Test Report sample PDF; used here as sibling output-structure evidence for Ovarian Cancer Risk & Prevention, not as a direct Ovarian Cancer Risk & Prevention sample report or local findings for ovarian cancer risk and prevention, carrier-status, screening, prevention, diagnosis, treatment, or actionability guidance."
+    },
+    {
+      "groupTitle": "Cancers",
+      "item": "Cancer category risk table",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Visible sample rows include Bladder Very Elevated; Brain Typical; Breast Typical; Breast BRCA1 Absent; Breast BRCA2 Absent; Cervical Male; Colorectal Typical; Endometrial Male; Esophageal visible with no cleanly extracted risk label; Liver Typical; Lung Very Reduced; Oral and Larynx visible with no cleanly extracted risk label; Ovarian Male; Pancreatic Reduced; Prostate Typical; Renal Typical; Skin Melanoma Reduced; Skin Non-melanoma Reduced; Testicular Typical; Thyroid Very Reduced.",
+      "description": "The sample table uses columns for Disease, Your Risk, and Description, with lifetime-risk and heritable-percentage text below many disease names.",
+      "genes": [
+        "Cancer risk model rows"
+      ],
+      "sourceLabel": "Sibling Disease Risk Genetic Test Report sample report",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public Sequencing.com Disease Risk Genetic Test Report sample PDF; used here as sibling output-structure evidence for Ovarian Cancer Risk & Prevention, not as a direct Ovarian Cancer Risk & Prevention sample report or local findings for ovarian cancer risk and prevention, carrier-status, screening, prevention, diagnosis, treatment, or actionability guidance."
+    }
+  ],
+  "practicalNextSteps": [
+    "Keep this as a local reproducibility fixture, not a clinical report.",
+    "Review the cited source IDs before using the prompt with a local agent.",
+    "Do not use sibling sample labels as personal results."
+  ],
   "references": [
     {
       "id": "cdc-genetic-testing",
-      "title": "CDC Genetic Testing"
+      "title": "CDC Genetic Testing",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
     },
     {
       "id": "medlineplus-genetics",
-      "title": "MedlinePlus Genetics"
+      "title": "MedlinePlus Genetics",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "medlineplus-complex-disorders",
-      "title": "MedlinePlus Genetics: complex disorders"
+      "title": "MedlinePlus Genetics: complex disorders",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "fda-direct-to-consumer-tests",
-      "title": "FDA Direct-to-Consumer Tests"
+      "title": "FDA Direct-to-Consumer Tests",
+      "sourceType": "regulatory_resource",
+      "evidenceLevel": "regulatory_background"
     },
     {
       "id": "nhgri-polygenic-risk-scores",
-      "title": "NHGRI overview of polygenic risk scores"
+      "title": "NHGRI overview of polygenic risk scores",
+      "sourceType": "education_resource",
+      "evidenceLevel": "background"
     },
     {
       "id": "ebi-gwas-catalog",
-      "title": "GWAS Catalog"
+      "title": "GWAS Catalog",
+      "sourceType": "database",
+      "evidenceLevel": "background"
     },
     {
       "id": "nci-cancer-genetic-testing",
-      "title": "NCI Genetic Testing for Inherited Cancer Risk"
+      "title": "NCI Genetic Testing for Inherited Cancer Risk",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
+    },
+    {
+      "id": "genetic-testing-disease-risk-sample-pdf",
+      "title": "Genetic Testing For Disease Risk sample genetic report",
+      "sourceType": "mock_report",
+      "evidenceLevel": "high"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "ovarian-cancer-risk-prevention-model-unavailable",
+        "effect": "The local fixture intentionally omits calibrated ovarian cancer risk and prevention calculations and clinical context.",
+        "extractionStatus": "curated",
         "gene": "Ovarian Cancer Risk & Prevention model",
-        "observedValue": "validated pathogenic-variant screen, calibrated cancer PRS, ancestry applicability metadata, age, sex where relevant, personal cancer history, family history, tumor testing, clinical screening history, prevention-plan context, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "genotype": "validated ovarian cancer risk and prevention model, calibrated cancer PRS, pathogenic variant interpretation, inherited-cancer panel scope, ancestry applicability, family history, tumor testing, screening context, prevention context, and clinician or genetic-counselor review unavailable",
+        "phenotype": "Mark local findings for ovarian cancer risk and prevention, carrier status, pathogenic-variant status, screening, prevention, diagnosis, treatment, medication, surgery, and actionability sections unavailable instead of inferring them.",
+        "sortOrder": 1,
+        "tier": "Local missing input",
+        "variantId": "ovarian-cancer-risk-prevention-model-unavailable"
       },
       {
-        "inputId": "ovarian-cancer-risk-prevention-clinical-context-unavailable",
-        "gene": "ovarian cancer risk and prevention clinical context",
-        "observedValue": "clinical diagnosis, symptoms, screening findings, family history, tumor testing, treatment history, and clinician interpretation unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "effect": "The public Disease Risk Genetic Test Report sample shows Disease, Your Risk, and Description columns plus heritable-component limitation language for cancer risk rows.",
+        "extractionStatus": "direct",
+        "gene": "Cancer risk category table",
+        "genotype": "sample Cancers category table observed with Bladder, Brain, Breast, BRCA1, BRCA2, Cervical, Colorectal, Endometrial, Esophageal, Liver, Lung, Oral and Larynx, Ovarian, Pancreatic, Prostate, Renal, Skin Melanoma, Skin Non-melanoma, Testicular, and Thyroid rows",
+        "phenotype": "Observed sibling sample output structure only; do not infer local ovarian cancer risk and prevention, carrier status, pathogenic-variant status, screening need, prevention benefit, diagnosis, treatment, medication, surgery, or clinical action.",
+        "sortOrder": 2,
+        "tier": "Sibling sample-report section",
+        "variantId": "disease-risk-sample-cancers-category"
       }
-    ],
-    "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and exact rows",
-      "Validated pathogenic-variant screen or externally supplied classification",
-      "Calibrated cancer PRS with ancestry applicability and validation metadata",
-      "Age, sex where relevant, family history, personal cancer history, symptoms, tumor testing, screening history, and clinician interpretation",
-      "validated pathogenic-variant screen, calibrated cancer PRS, ancestry applicability metadata, age, sex where relevant, personal cancer history, family history, tumor testing, clinical screening history, prevention-plan context, and authenticated sample-report rows unavailable in this fixture; clinical diagnosis, symptoms, screening findings, family history, tumor testing, treatment history, and clinician interpretation unavailable in this fixture"
     ],
     "probabilities": [],
     "uncertainty": [
-      "No calibrated cancer-risk, carrier-status, screening-benefit, prevention-benefit, or treatment-response probability model is supplied for this local package.",
-      "Cancer-related interpretation depends on test scope, variant classification, family history, clinical history, ancestry applicability, screening context, and qualified review."
+      "No calibrated model, applicability distribution, clinical context, or professional review is supplied for this fixture.",
+      "Sibling sample rows show report structure only and do not quantify local probability."
+    ],
+    "missingInputs": [
+      "validated ovarian cancer risk and prevention model, calibrated cancer PRS, pathogenic variant interpretation, inherited-cancer panel scope, ancestry applicability, family history, tumor testing, screening context, prevention context, and clinician or genetic-counselor review unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF Cancers category table and heritable-component limitation observed as sibling output structure",
+      "clinical diagnosis, symptoms, screening findings, family history, tumor testing, treatment history, prevention context, and clinician interpretation unavailable in this fixture; public Disease Risk Genetic Test Report Cancers category table observed separately as output-structure evidence for Ovarian Cancer Risk & Prevention"
     ],
     "limitations": [
-      "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
-      "The report is educational and does not provide diagnosis, personal risk estimation, carrier-status classification, screening advice, prevention advice, medication advice, surgery advice, treatment advice, or actionability.",
-      "Unavailable model rows should never be interpreted as low risk, no risk, or an all-clear result."
+      "No raw genome data is included or returned.",
+      "No personal disease risk, diagnosis, screening, prevention, treatment, or actionability conclusion is produced.",
+      "Direct report detail/body parity remains pending; the sample rows are sibling output-structure evidence only."
     ]
   }
 }

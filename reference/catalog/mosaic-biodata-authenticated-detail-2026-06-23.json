@@ -1,0 +1,57 @@
+{
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "source": "in-app browser exact route DOM and meta capture",
+  "capturedAt": "2026-06-23T06:10:34.133Z",
+  "url": "https://sequencing.com/marketplace/mosaic-biodata",
+  "finalUrl": "https://sequencing.com/marketplace/mosaic-biodata",
+  "uri": "marketplace/mosaic-biodata",
+  "title": "Mosaic Biodata",
+  "publisher": "Mosaic Biodata",
+  "price": "$199",
+  "currencyCode": "USD",
+  "productId": "5134",
+  "headerImage": "https://sequencing.com/sites/default/files/mosaic-biodata-icon-dark.png",
+  "headerImageAlt": "Mosaic Biodata",
+  "summaryPreview": "Marketplace Mosaic Biodata Developed by Mosaic Biodata $199 per genome",
+  "bodyPreview": "Marketplace Mosaic Biodata Developed by Mosaic Biodata $199 per genome Start Report View Sample Report Get 100% of your DNA data with Whole Genome Sequencing. Already have data from a DNA test? Upload your data for free. The Mosaic Biodata Report is a comprehensive DNA-based wellness blueprint that analyzes hundreds of thousands of genetic variants and connects genes to practical recommendations across nutrition, metabolism, exercise, sleep, detoxification, environmental sensitivities, and hormonal health.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Mosaic Biodata"
+    },
+    {
+      "level": "h2",
+      "text": "Mosaic Biodata Report"
+    },
+    {
+      "level": "h2",
+      "text": "Key Features"
+    },
+    {
+      "level": "h2",
+      "text": "Sample Report"
+    }
+  ],
+  "meta": {
+    "article:modified_time": "2026-04-22T13:07:58-07:00",
+    "article:published_time": "2024-11-19T21:24:17-08:00",
+    "author": "Sequencing",
+    "canonical": "https://sequencing.com/marketplace/mosaic-biodata",
+    "description": "Mosaic Biodata",
+    "og:title": "Mosaic Biodata",
+    "og:type": "product",
+    "og:url": "https://sequencing.com/marketplace/mosaic-biodata",
+    "product:availability": "in stock",
+    "product:brand": "Sequencing.com",
+    "product:category": "2890",
+    "product:price:amount": "199.00",
+    "product:price:currency": "USD",
+    "product:retailer_item_id": "5134",
+    "twitter:title": "Mosaic Biodata"
+  },
+  "evidenceNotes": [
+    "Captured only because finalUrl exactly matched the requested marketplace detail route.",
+    "The page exposed DOM and meta product evidence; no rich reportData object or reportFile URL was present in this capture.",
+    "Page overview text is used only for marketplace positioning, not local nutrition, metabolism, exercise, sleep, detoxification, environmental sensitivity, hormone, supplement, diet, treatment, or actionability claims."
+  ]
+}

@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived nutrition-genetics evidence for empower validation"
   },
-  "missingInputPolicy": "Report unavailable nutrition, fitness, lifestyle, supplement, symptom, lab, metabolic, and calibrated models explicitly; do not infer diet needs, workouts, supplement needs, symptom causes, metabolic status, or treatment.",
+  "missingInputPolicy": "Report unavailable local Empower lifestyle-personalization, nutrition, fitness, meal-plan, supplement, symptom, lab, metabolic, and calibrated models explicitly; use sibling public sample rows only as observed output structure and do not infer local vitamin status, diet needs, supplement needs, workout needs, eating behavior, appetite, lab status, metabolic status, diagnosis, or treatment.",
   "packageSlug": "empower",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -155,7 +155,31 @@
         "bmi_limitations",
         "no_weight_prediction_from_genotype"
       ]
+    },
+    {
+      "evidenceLevel": "sibling_sample_report",
+      "id": "nourish-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Toolbox Genomics Nourish sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
+    },
+    {
+      "evidenceLevel": "sibling_sample_report",
+      "id": "thrive-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Toolbox Genomics Thrive sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer Empower context using derived MCM6/LCT evidence plus explicit nutrition, fitness, lifestyle, supplement, lab, symptom, and model-unavailable framing."
+  "reportPurpose": "Consumer Empower nutrition, fitness, and lifestyle context using derived MCM6/LCT evidence plus sibling Toolbox Genomics Nourish and Thrive sample-report output structure."
 }

@@ -1,0 +1,100 @@
+{
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "capturedAt": "2026-06-21T15:38:41.927Z",
+  "source": "in-app browser logged-in sequencing.com marketplace detail page __NEXT_DATA__.props.pageProps.reportData extraction",
+  "url": "https://sequencing.com/marketplace/blood-glucose-insight",
+  "finalUrl": "https://sequencing.com/marketplace/blood-glucose-insight",
+  "title": "Blood Glucose Insight",
+  "nid": "22649",
+  "productId": "5370",
+  "app": {
+    "apiAppId": "genopalate-glucose",
+    "appid": "15222",
+    "backend": "ApiAppBackend",
+    "label": "Blood Glucose Insight"
+  },
+  "publisher": "GenoPalate",
+  "price": "$49",
+  "currencyCode": "USD",
+  "categories": [
+    "Draft"
+  ],
+  "uri": "marketplace/blood-glucose-insight",
+  "reportFile": "https://sequencing.com/sites/default/files/sequencing_bloodsugar_rebrand_v3_1.pdf",
+  "headerImage": "https://sequencing.com/sites/default/files/sequencing_bloodglucose_1.png",
+  "headerImageAlt": "Blood Glucose Insight DNA Report icon",
+  "meta": {
+    "canonical": "https://sequencing.com/marketplace/blood-glucose-insight",
+    "publishedTime": null,
+    "modifiedTime": null,
+    "ogDescriptionHash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ogDescriptionPreview": "",
+    "productPriceAmount": null,
+    "productPriceCurrency": "USD",
+    "productRetailerItemId": "5370"
+  },
+  "summaryPreview": "",
+  "bodyPreview": "Blood Glucose Insights Developed by GenoPalate Inc Discover how your genes influence your blood sugar and learn how to eat for balanced, steady energy. Overview Your body is unique. Your approach to blood sugar management should be too. With the GenoPalate Blood Glucose Report, you will uncover how your genetics influence your response to key nutrients like carbohydrates, fiber, sugar, fats, protein, magnesium, and zinc. This comprehensive analysis helps you better understand how your body regulates blood glucose and how to support it through nutrition. With these personalized insights, you will receive tailored food recommendations, a grocery list, and recipes designed to help you maintain stable blood sugar levels. What You’ll Learn Nutrients and Your Blood Sugar Discover how your genes influence your response to carbohydrates, fiber, sugar, total fat, saturated fat, protein, magnesium, and zinc. You will receive personalized daily intake targets for each nutrient, along with curated",
+  "visibleParagraphs": [
+    "Prime Day Sale | Up to 60% off + free worldwide shippingOrder Now",
+    "Order Now",
+    "Dashboard",
+    "My Apps",
+    "AI Reports",
+    "Next-Gen Disease Screen",
+    "Health Scan",
+    "Genome Explorer",
+    "Results",
+    "Files"
+  ],
+  "infoTabs": [
+    {
+      "label": "Overview",
+      "textPreview": "Blood Glucose Insights Developed by GenoPalate Inc Discover how your genes influence your blood sugar and learn how to eat for balanced, steady energy. Overview Your body is unique. Your approach to blood sugar management should be too. With the GenoPalate Blood Glucose Report, you will uncover how your genetics influence your response to key nutrients like carbohydrates, fiber, sugar, fats, protein, magnesium, and zinc. This comprehensive analysis helps you better understand how your body regulates blood glucose and how to support it through nutrition. With these personalized insights, you will receive tailored food recommendations, a grocery list, and recipes designed to help you maintain stable blood sugar levels. What You’ll Learn Nutrients and Your Blood Sugar Discover how your genes influence your response to carbohydrates, fiber, sugar, total fat, saturated fat, protein, magnesium, and zinc. You will receive personalized daily intake targets for each nutrient, along with curated"
+    },
+    {
+      "label": "Disclaimer",
+      "textPreview": "The genetic analysis and statements that appear in this app and report have not been evaluated by the United States Food and Drug Administration. The Sequencing.com website and all software applications (Apps) and reports that use Sequencing.com's website, as well as Sequencing.com's open Application Programming Interface (API), are not intended to diagnose, monitor, treat, cure, prevent nor alleviate any disease. This report is based on your genetic information and provides insight into your potential sensitivities. It is not intended as medical advice or a diagnosis. Always consult with a healthcare provider before making any significant dietary or lifestyle changes."
+    }
+  ],
+  "reportDataKeys": [
+    "app_id",
+    "avatar",
+    "avatarAlt",
+    "body",
+    "category",
+    "currency_code",
+    "headerImg",
+    "headerImgAlt",
+    "id",
+    "included_with_membership",
+    "included_with_premium",
+    "info_tab",
+    "listEnableFiles",
+    "meta",
+    "nid",
+    "non_genetic_fields",
+    "pre_order",
+    "price",
+    "product_data",
+    "product_id",
+    "publisher",
+    "purchasedBy",
+    "relatedReports",
+    "reportFile",
+    "report_premium",
+    "search_keywords",
+    "start_button_text",
+    "sub_title",
+    "summary",
+    "title",
+    "type",
+    "uri",
+    "wgsCompatible"
+  ],
+  "evidenceNotes": [
+    "Marketplace detail reportData confirms title, publisher/provider when available, price/product metadata when available, categories, sample report link when available, and overview/disclaimer tab boundaries when present.",
+    "Use overview/marketing text only for report purpose and marketplace positioning, not for local genetic, medical, diet, supplement, medication, or performance conclusions.",
+    "No raw genome data, uploaded genome data, or account navigation text is included in this artifact."
+  ]
+}

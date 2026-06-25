@@ -1,0 +1,1186 @@
+{
+  "schemaVersion": "soma-reports.rsid-coordinate-map.v1",
+  "generatedAt": "2026-06-23T08:10:39.936Z",
+  "generatedBy": "scripts/update-rsid-coordinate-map.mjs",
+  "source": {
+    "name": "NCBI RefSNP API",
+    "baseUrl": "https://api.ncbi.nlm.nih.gov/variation/v0/refsnp",
+    "coordinateConvention": "NCBI SPDI positions are 0-based; VCF/gVCF POS is 1-based, so this map stores pos = spdiPosition + 1."
+  },
+  "fixtureScan": {
+    "fixturesDir": "fixtures/synthetic",
+    "rsidCount": 18,
+    "fixtureRowsWithRsids": 85
+  },
+  "missing": [],
+  "mappings": {
+    "rs699": {
+      "rsid": "rs699",
+      "refsnpId": "699",
+      "sourceUrl": "https://api.ncbi.nlm.nih.gov/variation/v0/refsnp/699",
+      "retrievedAt": "2026-06-23T08:10:23.747Z",
+      "ncbiLastUpdateDate": "2024-11-2T20:47Z",
+      "fixtureRows": 1,
+      "reports": [
+        "variant-effect-predictor"
+      ],
+      "inputIds": [
+        "VEP-rs699-AGT"
+      ],
+      "placements": {
+        "GRCh38": {
+          "assemblyName": "GRCh38.p14",
+          "assemblyAccession": "GCF_000001405.40",
+          "refSeq": "NC_000001.11",
+          "chrom": "1",
+          "spdiPosition": 230710047,
+          "pos": 230710048,
+          "deletedSequences": [
+            "A"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "G",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000001.11:g.230710048=",
+            "NC_000001.11:g.230710048A>C",
+            "NC_000001.11:g.230710048A>G",
+            "NC_000001.11:g.230710048A>T"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        },
+        "GRCh37": {
+          "assemblyName": "GRCh37.p13",
+          "assemblyAccession": "GCF_000001405.25",
+          "refSeq": "NC_000001.10",
+          "chrom": "1",
+          "spdiPosition": 230845793,
+          "pos": 230845794,
+          "deletedSequences": [
+            "A"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "G",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000001.10:g.230845794=",
+            "NC_000001.10:g.230845794A>C",
+            "NC_000001.10:g.230845794A>G",
+            "NC_000001.10:g.230845794A>T"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        }
+      }
+    },
+    "rs6265": {
+      "rsid": "rs6265",
+      "refsnpId": "6265",
+      "sourceUrl": "https://api.ncbi.nlm.nih.gov/variation/v0/refsnp/6265",
+      "retrievedAt": "2026-06-23T08:10:24.886Z",
+      "ncbiLastUpdateDate": "2024-11-3T11:51Z",
+      "fixtureRows": 10,
+      "reports": [
+        "ai-reports",
+        "complete-genome-analysis",
+        "convert-rsids-coordinates",
+        "eve-premium-dna-genome-data-bioinformatics-pipelines",
+        "genome-explorer-dna-data-search",
+        "genome-overview",
+        "genome-short-read-mapper",
+        "health-scan",
+        "next-gen-disease-screen",
+        "variant-effect-predictor"
+      ],
+      "inputIds": [
+        "bioinformatics-public-variant-rs6265",
+        "VEP-rs6265-BDNF"
+      ],
+      "placements": {
+        "GRCh38": {
+          "assemblyName": "GRCh38.p14",
+          "assemblyAccession": "GCF_000001405.40",
+          "refSeq": "NC_000011.10",
+          "chrom": "11",
+          "spdiPosition": 27658368,
+          "pos": 27658369,
+          "deletedSequences": [
+            "C"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "G",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000011.10:g.27658369=",
+            "NC_000011.10:g.27658369C>A",
+            "NC_000011.10:g.27658369C>G",
+            "NC_000011.10:g.27658369C>T"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        },
+        "GRCh37": {
+          "assemblyName": "GRCh37.p13",
+          "assemblyAccession": "GCF_000001405.25",
+          "refSeq": "NC_000011.9",
+          "chrom": "11",
+          "spdiPosition": 27679915,
+          "pos": 27679916,
+          "deletedSequences": [
+            "C"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "G",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000011.9:g.27679916=",
+            "NC_000011.9:g.27679916C>A",
+            "NC_000011.9:g.27679916C>G",
+            "NC_000011.9:g.27679916C>T"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        }
+      }
+    },
+    "rs7412": {
+      "rsid": "rs7412",
+      "refsnpId": "7412",
+      "sourceUrl": "https://api.ncbi.nlm.nih.gov/variation/v0/refsnp/7412",
+      "retrievedAt": "2026-06-23T08:10:25.721Z",
+      "ncbiLastUpdateDate": "2024-11-2T06:19Z",
+      "fixtureRows": 1,
+      "reports": [
+        "apoe4-test-brain-health-genetic-analysis"
+      ],
+      "inputIds": [
+        "APOE-rs7412"
+      ],
+      "placements": {
+        "GRCh38": {
+          "assemblyName": "GRCh38.p14",
+          "assemblyAccession": "GCF_000001405.40",
+          "refSeq": "NC_000019.10",
+          "chrom": "19",
+          "spdiPosition": 44908821,
+          "pos": 44908822,
+          "deletedSequences": [
+            "C"
+          ],
+          "insertedSequences": [
+            "C",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000019.10:g.44908822=",
+            "NC_000019.10:g.44908822C>T"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        },
+        "GRCh37": {
+          "assemblyName": "GRCh37.p13",
+          "assemblyAccession": "GCF_000001405.25",
+          "refSeq": "NC_000019.9",
+          "chrom": "19",
+          "spdiPosition": 45412078,
+          "pos": 45412079,
+          "deletedSequences": [
+            "C"
+          ],
+          "insertedSequences": [
+            "C",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000019.9:g.45412079=",
+            "NC_000019.9:g.45412079C>T"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        }
+      }
+    },
+    "rs429358": {
+      "rsid": "rs429358",
+      "refsnpId": "429358",
+      "sourceUrl": "https://api.ncbi.nlm.nih.gov/variation/v0/refsnp/429358",
+      "retrievedAt": "2026-06-23T08:10:26.664Z",
+      "ncbiLastUpdateDate": "2024-11-2T06:19Z",
+      "fixtureRows": 1,
+      "reports": [
+        "apoe4-test-brain-health-genetic-analysis"
+      ],
+      "inputIds": [
+        "APOE-rs429358"
+      ],
+      "placements": {
+        "GRCh38": {
+          "assemblyName": "GRCh38.p14",
+          "assemblyAccession": "GCF_000001405.40",
+          "refSeq": "NC_000019.10",
+          "chrom": "19",
+          "spdiPosition": 44908683,
+          "pos": 44908684,
+          "deletedSequences": [
+            "T"
+          ],
+          "insertedSequences": [
+            "C",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000019.10:g.44908684=",
+            "NC_000019.10:g.44908684T>C"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        },
+        "GRCh37": {
+          "assemblyName": "GRCh37.p13",
+          "assemblyAccession": "GCF_000001405.25",
+          "refSeq": "NC_000019.9",
+          "chrom": "19",
+          "spdiPosition": 45411940,
+          "pos": 45411941,
+          "deletedSequences": [
+            "T"
+          ],
+          "insertedSequences": [
+            "C",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000019.9:g.45411941=",
+            "NC_000019.9:g.45411941T>C"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        }
+      }
+    },
+    "rs1045642": {
+      "rsid": "rs1045642",
+      "refsnpId": "1045642",
+      "sourceUrl": "https://api.ncbi.nlm.nih.gov/variation/v0/refsnp/1045642",
+      "retrievedAt": "2026-06-23T08:10:27.640Z",
+      "ncbiLastUpdateDate": "2024-11-4T01:51Z",
+      "fixtureRows": 1,
+      "reports": [
+        "wellness-genetic-guide"
+      ],
+      "inputIds": [
+        "ABCB1-rs1045642"
+      ],
+      "placements": {
+        "GRCh38": {
+          "assemblyName": "GRCh38.p14",
+          "assemblyAccession": "GCF_000001405.40",
+          "refSeq": "NC_000007.14",
+          "chrom": "7",
+          "spdiPosition": 87509328,
+          "pos": 87509329,
+          "deletedSequences": [
+            "A"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "G",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000007.14:g.87509329=",
+            "NC_000007.14:g.87509329A>C",
+            "NC_000007.14:g.87509329A>G",
+            "NC_000007.14:g.87509329A>T"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        },
+        "GRCh37": {
+          "assemblyName": "GRCh37.p13",
+          "assemblyAccession": "GCF_000001405.25",
+          "refSeq": "NC_000007.13",
+          "chrom": "7",
+          "spdiPosition": 87138644,
+          "pos": 87138645,
+          "deletedSequences": [
+            "A"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "G",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000007.13:g.87138645=",
+            "NC_000007.13:g.87138645A>C",
+            "NC_000007.13:g.87138645A>G",
+            "NC_000007.13:g.87138645A>T"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        }
+      }
+    },
+    "rs1137617": {
+      "rsid": "rs1137617",
+      "refsnpId": "1137617",
+      "sourceUrl": "https://api.ncbi.nlm.nih.gov/variation/v0/refsnp/1137617",
+      "retrievedAt": "2026-06-23T08:10:28.550Z",
+      "ncbiLastUpdateDate": "2024-10-31T18:54Z",
+      "fixtureRows": 1,
+      "reports": [
+        "wellness-genetic-guide"
+      ],
+      "inputIds": [
+        "KCNH2-rs1137617"
+      ],
+      "placements": {
+        "GRCh38": {
+          "assemblyName": "GRCh38.p14",
+          "assemblyAccession": "GCF_000001405.40",
+          "refSeq": "NC_000007.14",
+          "chrom": "7",
+          "spdiPosition": 150951109,
+          "pos": 150951110,
+          "deletedSequences": [
+            "A"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "G",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000007.14:g.150951110=",
+            "NC_000007.14:g.150951110A>C",
+            "NC_000007.14:g.150951110A>G",
+            "NC_000007.14:g.150951110A>T"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        },
+        "GRCh37": {
+          "assemblyName": "GRCh37.p13",
+          "assemblyAccession": "GCF_000001405.25",
+          "refSeq": "NC_000007.13",
+          "chrom": "7",
+          "spdiPosition": 150648197,
+          "pos": 150648198,
+          "deletedSequences": [
+            "A"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "G",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000007.13:g.150648198=",
+            "NC_000007.13:g.150648198A>C",
+            "NC_000007.13:g.150648198A>G",
+            "NC_000007.13:g.150648198A>T"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        }
+      }
+    },
+    "rs1799971": {
+      "rsid": "rs1799971",
+      "refsnpId": "1799971",
+      "sourceUrl": "https://api.ncbi.nlm.nih.gov/variation/v0/refsnp/1799971",
+      "retrievedAt": "2026-06-23T08:10:29.521Z",
+      "ncbiLastUpdateDate": "2024-10-31T19:42Z",
+      "fixtureRows": 1,
+      "reports": [
+        "mental-health-genetic-guide"
+      ],
+      "inputIds": [
+        "OPRM1-rs1799971"
+      ],
+      "placements": {
+        "GRCh38": {
+          "assemblyName": "GRCh38.p14",
+          "assemblyAccession": "GCF_000001405.40",
+          "refSeq": "NC_000006.12",
+          "chrom": "6",
+          "spdiPosition": 154039661,
+          "pos": 154039662,
+          "deletedSequences": [
+            "A"
+          ],
+          "insertedSequences": [
+            "A",
+            "G"
+          ],
+          "hgvsExamples": [
+            "NC_000006.12:g.154039662=",
+            "NC_000006.12:g.154039662A>G"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        },
+        "GRCh37": {
+          "assemblyName": "GRCh37.p13",
+          "assemblyAccession": "GCF_000001405.25",
+          "refSeq": "NC_000006.11",
+          "chrom": "6",
+          "spdiPosition": 154360796,
+          "pos": 154360797,
+          "deletedSequences": [
+            "A"
+          ],
+          "insertedSequences": [
+            "A",
+            "G"
+          ],
+          "hgvsExamples": [
+            "NC_000006.11:g.154360797=",
+            "NC_000006.11:g.154360797A>G"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        }
+      }
+    },
+    "rs1800562": {
+      "rsid": "rs1800562",
+      "refsnpId": "1800562",
+      "sourceUrl": "https://api.ncbi.nlm.nih.gov/variation/v0/refsnp/1800562",
+      "retrievedAt": "2026-06-23T08:10:30.518Z",
+      "ncbiLastUpdateDate": "2024-10-31T17:44Z",
+      "fixtureRows": 1,
+      "reports": [
+        "clinical-annotator-variants"
+      ],
+      "inputIds": [
+        "ClinVar-rs1800562-HFE"
+      ],
+      "placements": {
+        "GRCh38": {
+          "assemblyName": "GRCh38.p14",
+          "assemblyAccession": "GCF_000001405.40",
+          "refSeq": "NC_000006.12",
+          "chrom": "6",
+          "spdiPosition": 26092912,
+          "pos": 26092913,
+          "deletedSequences": [
+            "G"
+          ],
+          "insertedSequences": [
+            "A",
+            "G",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000006.12:g.26092913=",
+            "NC_000006.12:g.26092913G>A",
+            "NC_000006.12:g.26092913G>T"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        },
+        "GRCh37": {
+          "assemblyName": "GRCh37.p13",
+          "assemblyAccession": "GCF_000001405.25",
+          "refSeq": "NC_000006.11",
+          "chrom": "6",
+          "spdiPosition": 26093140,
+          "pos": 26093141,
+          "deletedSequences": [
+            "G"
+          ],
+          "insertedSequences": [
+            "A",
+            "G",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000006.11:g.26093141=",
+            "NC_000006.11:g.26093141G>A",
+            "NC_000006.11:g.26093141G>T"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        }
+      }
+    },
+    "rs1801131": {
+      "rsid": "rs1801131",
+      "refsnpId": "1801131",
+      "sourceUrl": "https://api.ncbi.nlm.nih.gov/variation/v0/refsnp/1801131",
+      "retrievedAt": "2026-06-23T08:10:31.506Z",
+      "ncbiLastUpdateDate": "2024-11-2T16:03Z",
+      "fixtureRows": 5,
+      "reports": [
+        "detox-pathway",
+        "genetic-detoxification-genevironment",
+        "methylation-pathway",
+        "mthfr-dna-wellness-report",
+        "toxin-sensitivity"
+      ],
+      "inputIds": [
+        "MTHFR-rs1801131"
+      ],
+      "placements": {
+        "GRCh38": {
+          "assemblyName": "GRCh38.p14",
+          "assemblyAccession": "GCF_000001405.40",
+          "refSeq": "NC_000001.11",
+          "chrom": "1",
+          "spdiPosition": 11794418,
+          "pos": 11794419,
+          "deletedSequences": [
+            "T"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "G",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000001.11:g.11794419=",
+            "NC_000001.11:g.11794419T>A",
+            "NC_000001.11:g.11794419T>C",
+            "NC_000001.11:g.11794419T>G"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        },
+        "GRCh37": {
+          "assemblyName": "GRCh37.p13",
+          "assemblyAccession": "GCF_000001405.25",
+          "refSeq": "NC_000001.10",
+          "chrom": "1",
+          "spdiPosition": 11854475,
+          "pos": 11854476,
+          "deletedSequences": [
+            "T"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "G",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000001.10:g.11854476=",
+            "NC_000001.10:g.11854476T>A",
+            "NC_000001.10:g.11854476T>C",
+            "NC_000001.10:g.11854476T>G"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        }
+      }
+    },
+    "rs1801133": {
+      "rsid": "rs1801133",
+      "refsnpId": "1801133",
+      "sourceUrl": "https://api.ncbi.nlm.nih.gov/variation/v0/refsnp/1801133",
+      "retrievedAt": "2026-06-23T08:10:32.456Z",
+      "ncbiLastUpdateDate": "2024-11-2T16:03Z",
+      "fixtureRows": 6,
+      "reports": [
+        "detox-pathway",
+        "genetic-detoxification-genevironment",
+        "methylation-pathway",
+        "mthfr-dna-wellness-report",
+        "toxin-sensitivity",
+        "wellness-genetic-guide"
+      ],
+      "inputIds": [
+        "MTHFR-rs1801133"
+      ],
+      "placements": {
+        "GRCh38": {
+          "assemblyName": "GRCh38.p14",
+          "assemblyAccession": "GCF_000001405.40",
+          "refSeq": "NC_000001.11",
+          "chrom": "1",
+          "spdiPosition": 11796320,
+          "pos": 11796321,
+          "deletedSequences": [
+            "G"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "G",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000001.11:g.11796321=",
+            "NC_000001.11:g.11796321G>A",
+            "NC_000001.11:g.11796321G>C",
+            "NC_000001.11:g.11796321G>T"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        },
+        "GRCh37": {
+          "assemblyName": "GRCh37.p13",
+          "assemblyAccession": "GCF_000001405.25",
+          "refSeq": "NC_000001.10",
+          "chrom": "1",
+          "spdiPosition": 11856377,
+          "pos": 11856378,
+          "deletedSequences": [
+            "G"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "G",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000001.10:g.11856378=",
+            "NC_000001.10:g.11856378G>A",
+            "NC_000001.10:g.11856378G>C",
+            "NC_000001.10:g.11856378G>T"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        }
+      }
+    },
+    "rs1805007": {
+      "rsid": "rs1805007",
+      "refsnpId": "1805007",
+      "sourceUrl": "https://api.ncbi.nlm.nih.gov/variation/v0/refsnp/1805007",
+      "retrievedAt": "2026-06-23T08:10:33.384Z",
+      "ncbiLastUpdateDate": "2024-11-3T19:10Z",
+      "fixtureRows": 6,
+      "reports": [
+        "genetic-test-predict-physical-appearance",
+        "genetic-test-traits",
+        "radiation-uv-sensitivity",
+        "skin-and-beauty-dna-report",
+        "skin-genes-dna-analysis-app",
+        "skin-health"
+      ],
+      "inputIds": [
+        "MC1R-rs1805007"
+      ],
+      "placements": {
+        "GRCh38": {
+          "assemblyName": "GRCh38.p14",
+          "assemblyAccession": "GCF_000001405.40",
+          "refSeq": "NC_000016.10",
+          "chrom": "16",
+          "spdiPosition": 89919708,
+          "pos": 89919709,
+          "deletedSequences": [
+            "C"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "G",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000016.10:g.89919709=",
+            "NC_000016.10:g.89919709C>A",
+            "NC_000016.10:g.89919709C>G",
+            "NC_000016.10:g.89919709C>T"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        },
+        "GRCh37": {
+          "assemblyName": "GRCh37.p13",
+          "assemblyAccession": "GCF_000001405.25",
+          "refSeq": "NC_000016.9",
+          "chrom": "16",
+          "spdiPosition": 89986116,
+          "pos": 89986117,
+          "deletedSequences": [
+            "C"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "G",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000016.9:g.89986117=",
+            "NC_000016.9:g.89986117C>A",
+            "NC_000016.9:g.89986117C>G",
+            "NC_000016.9:g.89986117C>T"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        }
+      }
+    },
+    "rs1815739": {
+      "rsid": "rs1815739",
+      "refsnpId": "1815739",
+      "sourceUrl": "https://api.ncbi.nlm.nih.gov/variation/v0/refsnp/1815739",
+      "retrievedAt": "2026-06-23T08:10:34.483Z",
+      "ncbiLastUpdateDate": "2024-11-1T08:51Z",
+      "fixtureRows": 10,
+      "reports": [
+        "age-strength",
+        "athletic-performance",
+        "fitness-dna-test-report",
+        "fitness-trainer-summary",
+        "gene-form-dna-personalized-fitness-app",
+        "growth-bone-health",
+        "longevity-dna-test-wellness-report",
+        "musculoskeletal-dna-report",
+        "musculoskeletal-health",
+        "rundna"
+      ],
+      "inputIds": [
+        "ACTN3-rs1815739"
+      ],
+      "placements": {
+        "GRCh38": {
+          "assemblyName": "GRCh38.p14",
+          "assemblyAccession": "GCF_000001405.40",
+          "refSeq": "NC_000011.10",
+          "chrom": "11",
+          "spdiPosition": 66560623,
+          "pos": 66560624,
+          "deletedSequences": [
+            "C"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000011.10:g.66560624=",
+            "NC_000011.10:g.66560624C>A",
+            "NC_000011.10:g.66560624C>T"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        },
+        "GRCh37": {
+          "assemblyName": "GRCh37.p13",
+          "assemblyAccession": "GCF_000001405.25",
+          "refSeq": "NC_000011.9",
+          "chrom": "11",
+          "spdiPosition": 66328094,
+          "pos": 66328095,
+          "deletedSequences": [
+            "T"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000011.9:g.66328095=",
+            "NC_000011.9:g.66328095T>A",
+            "NC_000011.9:g.66328095T>C"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        }
+      }
+    },
+    "rs4149056": {
+      "rsid": "rs4149056",
+      "refsnpId": "4149056",
+      "sourceUrl": "https://api.ncbi.nlm.nih.gov/variation/v0/refsnp/4149056",
+      "retrievedAt": "2026-06-23T08:10:35.336Z",
+      "ncbiLastUpdateDate": "2024-11-1T10:54Z",
+      "fixtureRows": 5,
+      "reports": [
+        "heart-health-genetic-guide",
+        "medication-drug-response",
+        "medication-pharmacogenomics-dna-report",
+        "medications-pgx-complete-dna-guide",
+        "pharmacist-summary"
+      ],
+      "inputIds": [
+        "SLCO1B1-rs4149056"
+      ],
+      "placements": {
+        "GRCh38": {
+          "assemblyName": "GRCh38.p14",
+          "assemblyAccession": "GCF_000001405.40",
+          "refSeq": "NC_000012.12",
+          "chrom": "12",
+          "spdiPosition": 21178614,
+          "pos": 21178615,
+          "deletedSequences": [
+            "T"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000012.12:g.21178615=",
+            "NC_000012.12:g.21178615T>A",
+            "NC_000012.12:g.21178615T>C"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        },
+        "GRCh37": {
+          "assemblyName": "GRCh37.p13",
+          "assemblyAccession": "GCF_000001405.25",
+          "refSeq": "NC_000012.11",
+          "chrom": "12",
+          "spdiPosition": 21331548,
+          "pos": 21331549,
+          "deletedSequences": [
+            "T"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000012.11:g.21331549=",
+            "NC_000012.11:g.21331549T>A",
+            "NC_000012.11:g.21331549T>C"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        }
+      }
+    },
+    "rs4988235": {
+      "rsid": "rs4988235",
+      "refsnpId": "4988235",
+      "sourceUrl": "https://api.ncbi.nlm.nih.gov/variation/v0/refsnp/4988235",
+      "retrievedAt": "2026-06-23T08:10:36.171Z",
+      "ncbiLastUpdateDate": "2024-10-30T22:46Z",
+      "fixtureRows": 21,
+      "reports": [
+        "blood-glucose-insight",
+        "digestive-disorders-gut-health",
+        "dna-diet-personalized-weight-loss-app",
+        "empower",
+        "food-sensitivity",
+        "gut-health",
+        "healthy-nutrition-dna-analysis-app",
+        "healthy-weight",
+        "histamine",
+        "insights-food-response-and-nutrient-sensitivity",
+        "metabolic-health-dna-report",
+        "mosaic-biodata",
+        "nourish",
+        "nutrigenomics-dna-nutrition-guidance",
+        "nutritional-metabolic-health",
+        "nutritionist-summary",
+        "personalized-vitamins-and-supplements",
+        "tbg-total-wellness",
+        "thrive",
+        "vitamins-dna-analysis-genetic-report",
+        "wellness-and-longevity"
+      ],
+      "inputIds": [
+        "MCM6-rs4988235"
+      ],
+      "placements": {
+        "GRCh38": {
+          "assemblyName": "GRCh38.p14",
+          "assemblyAccession": "GCF_000001405.40",
+          "refSeq": "NC_000002.12",
+          "chrom": "2",
+          "spdiPosition": 135851075,
+          "pos": 135851076,
+          "deletedSequences": [
+            "G"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "G",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000002.12:g.135851076=",
+            "NC_000002.12:g.135851076G>A",
+            "NC_000002.12:g.135851076G>C",
+            "NC_000002.12:g.135851076G>T"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        },
+        "GRCh37": {
+          "assemblyName": "GRCh37.p13",
+          "assemblyAccession": "GCF_000001405.25",
+          "refSeq": "NC_000002.11",
+          "chrom": "2",
+          "spdiPosition": 136608645,
+          "pos": 136608646,
+          "deletedSequences": [
+            "G"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "G",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000002.11:g.136608646=",
+            "NC_000002.11:g.136608646G>A",
+            "NC_000002.11:g.136608646G>C",
+            "NC_000002.11:g.136608646G>T"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        }
+      }
+    },
+    "rs10455872": {
+      "rsid": "rs10455872",
+      "refsnpId": "10455872",
+      "sourceUrl": "https://api.ncbi.nlm.nih.gov/variation/v0/refsnp/10455872",
+      "retrievedAt": "2026-06-23T08:10:37.096Z",
+      "ncbiLastUpdateDate": "2024-10-30T22:35Z",
+      "fixtureRows": 4,
+      "reports": [
+        "cardiovascular-dna-analysis-heart-health-genetic-report",
+        "cardiovascular-health",
+        "healthy-heart-dna-analysis-genetic-report",
+        "my-heart-health"
+      ],
+      "inputIds": [
+        "LPA-rs10455872"
+      ],
+      "placements": {
+        "GRCh38": {
+          "assemblyName": "GRCh38.p14",
+          "assemblyAccession": "GCF_000001405.40",
+          "refSeq": "NC_000006.12",
+          "chrom": "6",
+          "spdiPosition": 160589085,
+          "pos": 160589086,
+          "deletedSequences": [
+            "A"
+          ],
+          "insertedSequences": [
+            "A",
+            "G"
+          ],
+          "hgvsExamples": [
+            "NC_000006.12:g.160589086=",
+            "NC_000006.12:g.160589086A>G"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        },
+        "GRCh37": {
+          "assemblyName": "GRCh37.p13",
+          "assemblyAccession": "GCF_000001405.25",
+          "refSeq": "NC_000006.11",
+          "chrom": "6",
+          "spdiPosition": 161010117,
+          "pos": 161010118,
+          "deletedSequences": [
+            "A"
+          ],
+          "insertedSequences": [
+            "A",
+            "G"
+          ],
+          "hgvsExamples": [
+            "NC_000006.11:g.161010118=",
+            "NC_000006.11:g.161010118A>G"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        }
+      }
+    },
+    "rs10757278": {
+      "rsid": "rs10757278",
+      "refsnpId": "10757278",
+      "sourceUrl": "https://api.ncbi.nlm.nih.gov/variation/v0/refsnp/10757278",
+      "retrievedAt": "2026-06-23T08:10:38.021Z",
+      "ncbiLastUpdateDate": "2024-10-31T07:54Z",
+      "fixtureRows": 4,
+      "reports": [
+        "cardiovascular-dna-analysis-heart-health-genetic-report",
+        "cardiovascular-health",
+        "healthy-heart-dna-analysis-genetic-report",
+        "my-heart-health"
+      ],
+      "inputIds": [
+        "9p21-rs10757278"
+      ],
+      "placements": {
+        "GRCh38": {
+          "assemblyName": "GRCh38.p14",
+          "assemblyAccession": "GCF_000001405.40",
+          "refSeq": "NC_000009.12",
+          "chrom": "9",
+          "spdiPosition": 22124477,
+          "pos": 22124478,
+          "deletedSequences": [
+            "A"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "G",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000009.12:g.22124478=",
+            "NC_000009.12:g.22124478A>C",
+            "NC_000009.12:g.22124478A>G",
+            "NC_000009.12:g.22124478A>T"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        },
+        "GRCh37": {
+          "assemblyName": "GRCh37.p13",
+          "assemblyAccession": "GCF_000001405.25",
+          "refSeq": "NC_000009.11",
+          "chrom": "9",
+          "spdiPosition": 22124476,
+          "pos": 22124477,
+          "deletedSequences": [
+            "A"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "G",
+            "T"
+          ],
+          "hgvsExamples": [
+            "NC_000009.11:g.22124477=",
+            "NC_000009.11:g.22124477A>C",
+            "NC_000009.11:g.22124477A>G",
+            "NC_000009.11:g.22124477A>T"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        }
+      }
+    },
+    "rs12913832": {
+      "rsid": "rs12913832",
+      "refsnpId": "12913832",
+      "sourceUrl": "https://api.ncbi.nlm.nih.gov/variation/v0/refsnp/12913832",
+      "retrievedAt": "2026-06-23T08:10:39.008Z",
+      "ncbiLastUpdateDate": "2024-11-4T08:03Z",
+      "fixtureRows": 6,
+      "reports": [
+        "genetic-test-predict-physical-appearance",
+        "genetic-test-traits",
+        "radiation-uv-sensitivity",
+        "skin-and-beauty-dna-report",
+        "skin-genes-dna-analysis-app",
+        "skin-health"
+      ],
+      "inputIds": [
+        "HERC2-OCA2-rs12913832"
+      ],
+      "placements": {
+        "GRCh38": {
+          "assemblyName": "GRCh38.p14",
+          "assemblyAccession": "GCF_000001405.40",
+          "refSeq": "NC_000015.10",
+          "chrom": "15",
+          "spdiPosition": 28120471,
+          "pos": 28120472,
+          "deletedSequences": [
+            "A"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "G"
+          ],
+          "hgvsExamples": [
+            "NC_000015.10:g.28120472=",
+            "NC_000015.10:g.28120472A>C",
+            "NC_000015.10:g.28120472A>G"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        },
+        "GRCh37": {
+          "assemblyName": "GRCh37.p13",
+          "assemblyAccession": "GCF_000001405.25",
+          "refSeq": "NC_000015.9",
+          "chrom": "15",
+          "spdiPosition": 28365617,
+          "pos": 28365618,
+          "deletedSequences": [
+            "A"
+          ],
+          "insertedSequences": [
+            "A",
+            "C",
+            "G"
+          ],
+          "hgvsExamples": [
+            "NC_000015.9:g.28365618=",
+            "NC_000015.9:g.28365618A>C",
+            "NC_000015.9:g.28365618A>G"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        }
+      }
+    },
+    "rs80357914": {
+      "rsid": "rs80357914",
+      "refsnpId": "80357914",
+      "sourceUrl": "https://api.ncbi.nlm.nih.gov/variation/v0/refsnp/80357914",
+      "retrievedAt": "2026-06-23T08:10:39.936Z",
+      "ncbiLastUpdateDate": "2024-11-3T19:28Z",
+      "fixtureRows": 1,
+      "reports": [
+        "clinical-annotator-variants"
+      ],
+      "inputIds": [
+        "ClinVar-rs80357914-BRCA1"
+      ],
+      "placements": {
+        "GRCh38": {
+          "assemblyName": "GRCh38.p14",
+          "assemblyAccession": "GCF_000001405.40",
+          "refSeq": "NC_000017.11",
+          "chrom": "17",
+          "spdiPosition": 43124027,
+          "pos": 43124028,
+          "deletedSequences": [
+            "CTCT"
+          ],
+          "insertedSequences": [
+            "CT",
+            "CTCT",
+            "CTCTCT"
+          ],
+          "hgvsExamples": [
+            "NC_000017.11:g.43124028_43124031=",
+            "NC_000017.11:g.43124028CT[1]",
+            "NC_000017.11:g.43124028CT[3]"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        },
+        "GRCh37": {
+          "assemblyName": "GRCh37.p13",
+          "assemblyAccession": "GCF_000001405.25",
+          "refSeq": "NC_000017.10",
+          "chrom": "17",
+          "spdiPosition": 41276044,
+          "pos": 41276045,
+          "deletedSequences": [
+            "CTCT"
+          ],
+          "insertedSequences": [
+            "CT",
+            "CTCT",
+            "CTCTCT"
+          ],
+          "hgvsExamples": [
+            "NC_000017.10:g.41276045_41276048=",
+            "NC_000017.10:g.41276045CT[1]",
+            "NC_000017.10:g.41276045CT[3]"
+          ],
+          "positionConvention": "VCF POS is NCBI SPDI position + 1."
+        }
+      }
+    }
+  }
+}

@@ -45,7 +45,7 @@
       "haplotype": "pharmacist-review-context-unavailable",
       "inputId": "pharmacist-review-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "current medication list, medication-specific question, pharmacy review, phenotype confidence, expanded PGx coverage, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "current medication list, medication-specific question, pharmacy review, phenotype confidence, expanded PGx coverage, and direct Pharmacist Summary sample-report rows unavailable in this fixture; Medications PGx Complete rows are sibling output structure only",
       "sourceArtifact": "synthetic-pharmacist-summary-pgx-handoff-context-v1",
       "sourceFile": "synthetic-pharmacist-summary-pgx-handoff-context-v1.json"
     }
@@ -56,7 +56,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived PGx calls for pharmacist-summary validation"
   },
-  "missingInputPolicy": "Report unavailable medication list, pharmacy review, medication-specific question, phenotype confidence, expanded pharmacogene calls, and authenticated sample rows explicitly; do not infer prescribing, dispensing, safety, efficacy, start, stop, switch, or dose guidance.",
+  "missingInputPolicy": "Report unavailable medication list, pharmacy review, medication-specific question, phenotype confidence, expanded pharmacogene calls, and direct Pharmacist Summary sample rows explicitly; treat Medications PGx Complete rows as sibling output structure only and do not infer prescribing, dispensing, safety, efficacy, start, stop, switch, or dose guidance.",
   "packageSlug": "pharmacist-summary",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -119,6 +119,18 @@
       ]
     },
     {
+      "evidenceLevel": "observed_output_structure",
+      "id": "medications-pgx-complete-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Medications PGx: Complete DNA Guide sample report",
+      "usedFor": [
+        "sibling_sample_rows",
+        "sibling_genotype_summary",
+        "formal_fields",
+        "output_format"
+      ]
+    },
+    {
       "evidenceLevel": "public_health_background",
       "id": "cdc-pharmacogenomics",
       "sourceType": "public_health_resource",
@@ -141,5 +153,5 @@
       ]
     }
   ],
-  "reportPurpose": "Consumer pharmacist-handoff summary using derived CYP2C19, CYP2D6, and SLCO1B1 calls while explicitly marking medication list, pharmacy review, phenotype confidence, and authenticated sample output unavailable."
+  "reportPurpose": "Consumer pharmacist-handoff summary using derived CYP2C19, CYP2D6, and SLCO1B1 calls plus the public Medications PGx Complete sample's output structure while explicitly marking medication list, pharmacy review, phenotype confidence, and direct Pharmacist Summary sample output unavailable."
 }

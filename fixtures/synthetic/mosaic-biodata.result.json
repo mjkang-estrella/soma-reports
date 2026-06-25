@@ -3,8 +3,9 @@
     "reportTitle": "Mosaic Biodata",
     "inputManifestHash": "sha256:synthetic-mosaic-biodata-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "No calibrated biodata, lab, wearable, meal-plan, supplement, fitness, detox, symptom, metabolic, or ancestry applicability model is supplied with this fixture."
+      "Authenticated Sequencing.com marketplace body/detail extraction is not available yet.",
+      "No calibrated biodata, lab, wearable, meal-plan, supplement, fitness, detox, symptom, metabolic, glucose, methylation, medication, or ancestry applicability model is supplied with this fixture.",
+      "Observed Mosaic sample labels are included only as report-output structure, not local findings."
     ]
   },
   "resultRows": [
@@ -12,7 +13,8 @@
       "groupTitle": "Biodata nutrition and lifestyle context",
       "item": "MCM6/LCT rs4988235",
       "brandName": "Not applicable",
-      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a diagnosis, symptom explanation, diet recommendation, supplement recommendation, or model-derived health result.",
+      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a diagnosis, symptom explanation, diet recommendation, supplement recommendation, lab interpretation, metabolic result, or model-derived health result.",
+      "description": "This local evidence row is included because the fixture supplies a derived marker call for educational lactose-related context.",
       "genes": [
         "MCM6",
         "LCT"
@@ -22,13 +24,15 @@
         "medlineplus-lactose-intolerance",
         "medlineplus-mcm6"
       ],
-      "plainEnglishMeaning": "This marker can provide lactose-related context, but symptoms, diet history, labs, environment, medications, and professional review matter for health and nutrition decisions."
+      "plainEnglishMeaning": "This marker can provide lactose-related context, but symptoms, diet history, labs, environment, medications, and professional review matter for health and nutrition decisions.",
+      "sourceBindingStatus": "curated"
     },
     {
       "groupTitle": "Nutrition model availability",
       "item": "Mosaic Biodata model",
       "brandName": "Not applicable",
-      "geneticAnalysis": "No calibrated biodata, lab, wearable, meal-plan, supplement, fitness, detox, symptom, metabolic, or ancestry applicability model is supplied with this fixture.",
+      "geneticAnalysis": "No calibrated biodata, lab, wearable, meal-plan, supplement, fitness, detox, symptom, metabolic, glucose, methylation, medication, or ancestry applicability model is supplied with this fixture.",
+      "description": "Unavailable calibrated models are reported as missing inputs rather than inferred from genotype or from sample-only rows.",
       "genes": [
         "Mosaic Biodata model"
       ],
@@ -38,32 +42,289 @@
         "nutritional-genomics-dtc-review",
         "ebi-gwas-catalog"
       ],
-      "plainEnglishMeaning": "The report can describe supplied marker context, but it should not make diet, supplement, glucose, gut, weight, wellness, child-specific, symptom, lab, metabolic, or treatment conclusions without validated evidence."
+      "plainEnglishMeaning": "The report can describe supplied marker context and observed sample structure, but it should not make diet, supplement, glucose, gut, weight, wellness, fitness, methylation, lab, metabolic, medication, or treatment conclusions without validated evidence.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Appetite regulation",
+      "item": "Hunger Perception Accuracy",
+      "brandName": "Mosaic Biodata sample",
+      "geneticAnalysis": "Hunger Perception Accuracy: sample label High Accuracy. The sample report labels hunger perception accuracy as High Accuracy and frames the trait around sensing true hunger cues.",
+      "description": "The local Mosaic Biodata sample PDF page 5 presents this as an observed report-output row.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mosaic-biodata-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed Mosaic Biodata sample-output row used to preserve report structure. It is not a local result and must not be used as personal diet, supplement, lab, glucose, fitness, methylation, medication, diagnosis, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Appetite regulation",
+      "item": "Satiety Sensing Accuracy",
+      "brandName": "Mosaic Biodata sample",
+      "geneticAnalysis": "Satiety Sensing Accuracy: sample label Typical Accuracy. The sample report labels satiety sensing accuracy as Typical Accuracy and presents it alongside hunger-perception context.",
+      "description": "The local Mosaic Biodata sample PDF page 5 presents this as an observed report-output row.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mosaic-biodata-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed Mosaic Biodata sample-output row used to preserve report structure. It is not a local result and must not be used as personal diet, supplement, lab, glucose, fitness, methylation, medication, diagnosis, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Sweet perception",
+      "item": "Sweet Perception Sensitivity",
+      "brandName": "Mosaic Biodata sample",
+      "geneticAnalysis": "Sweet Perception Sensitivity: sample label Increased Sensitivity. The sample report labels sweet perception sensitivity as Increased Sensitivity and explains the role of sweet-taste receptor genes.",
+      "description": "The local Mosaic Biodata sample PDF page 6 presents this as an observed report-output row.",
+      "genes": [
+        "TAS1R2",
+        "TAS1R3"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mosaic-biodata-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed Mosaic Biodata sample-output row used to preserve report structure. It is not a local result and must not be used as personal diet, supplement, lab, glucose, fitness, methylation, medication, diagnosis, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Sweet perception",
+      "item": "Sweet Addiction Propensity",
+      "brandName": "Mosaic Biodata sample",
+      "geneticAnalysis": "Sweet Addiction Propensity: sample label Reduced Risk. The sample report labels sweet addiction propensity as Reduced Risk and describes reward-pathway context without a local behavior conclusion.",
+      "description": "The local Mosaic Biodata sample PDF page 7 presents this as an observed report-output row.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mosaic-biodata-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed Mosaic Biodata sample-output row used to preserve report structure. It is not a local result and must not be used as personal diet, supplement, lab, glucose, fitness, methylation, medication, diagnosis, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Eating patterns",
+      "item": "Snacking Drive",
+      "brandName": "Mosaic Biodata sample",
+      "geneticAnalysis": "Snacking Drive: sample label Low Drive. The sample report labels snacking drive as Low Drive and treats the row as an eating-pattern trait.",
+      "description": "The local Mosaic Biodata sample PDF page 8 presents this as an observed report-output row.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mosaic-biodata-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed Mosaic Biodata sample-output row used to preserve report structure. It is not a local result and must not be used as personal diet, supplement, lab, glucose, fitness, methylation, medication, diagnosis, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Dairy processing",
+      "item": "Lactose Intolerance Risk",
+      "brandName": "Mosaic Biodata sample",
+      "geneticAnalysis": "Lactose Intolerance Risk: sample label Very Low Risk. The sample report labels lactose intolerance risk as Very Low Risk and explains lactase-persistence context.",
+      "description": "The local Mosaic Biodata sample PDF page 10 presents this as an observed report-output row.",
+      "genes": [
+        "LCT",
+        "MCM6"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mosaic-biodata-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed Mosaic Biodata sample-output row used to preserve report structure. It is not a local result and must not be used as personal diet, supplement, lab, glucose, fitness, methylation, medication, diagnosis, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Dairy processing",
+      "item": "Impact of Dairy Fat on Weight",
+      "brandName": "Mosaic Biodata sample",
+      "geneticAnalysis": "Impact of Dairy Fat on Weight: sample label Low Impact. The sample report labels the impact of dairy fat on weight as Low Impact and presents it as a separate dairy-related trait.",
+      "description": "The local Mosaic Biodata sample PDF page 11 presents this as an observed report-output row.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mosaic-biodata-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed Mosaic Biodata sample-output row used to preserve report structure. It is not a local result and must not be used as personal diet, supplement, lab, glucose, fitness, methylation, medication, diagnosis, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Grain and gluten",
+      "item": "Gluten-Related Immune Response Risk",
+      "brandName": "Mosaic Biodata sample",
+      "geneticAnalysis": "Gluten-Related Immune Response Risk: sample label Typical Risk. The sample report labels gluten-related immune response risk as Typical Risk and separates immune-response framing from diagnosis.",
+      "description": "The local Mosaic Biodata sample PDF page 12 presents this as an observed report-output row.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mosaic-biodata-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed Mosaic Biodata sample-output row used to preserve report structure. It is not a local result and must not be used as personal diet, supplement, lab, glucose, fitness, methylation, medication, diagnosis, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Grain and gluten",
+      "item": "Grain Sensitivity",
+      "brandName": "Mosaic Biodata sample",
+      "geneticAnalysis": "Grain Sensitivity: sample label Low Sensitivity. The sample report labels grain sensitivity as Low Sensitivity and presents it as a grain-processing output row.",
+      "description": "The local Mosaic Biodata sample PDF page 13 presents this as an observed report-output row.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mosaic-biodata-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed Mosaic Biodata sample-output row used to preserve report structure. It is not a local result and must not be used as personal diet, supplement, lab, glucose, fitness, methylation, medication, diagnosis, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Plant sterols",
+      "item": "Plant Sterol Benefit",
+      "brandName": "Mosaic Biodata sample",
+      "geneticAnalysis": "Plant Sterol Benefit: sample label Limited Benefit. The sample report labels plant sterol benefit as Limited Benefit before a separate accumulation-potential row.",
+      "description": "The local Mosaic Biodata sample PDF page 14 presents this as an observed report-output row.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mosaic-biodata-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed Mosaic Biodata sample-output row used to preserve report structure. It is not a local result and must not be used as personal diet, supplement, lab, glucose, fitness, methylation, medication, diagnosis, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Plant sterols",
+      "item": "Plant Sterol Accumulation Potential",
+      "brandName": "Mosaic Biodata sample",
+      "geneticAnalysis": "Plant Sterol Accumulation Potential: sample label High Potential. The sample report labels plant sterol accumulation potential as High Potential and names ABCG5 and ABCG8 context.",
+      "description": "The local Mosaic Biodata sample PDF page 15 presents this as an observed report-output row.",
+      "genes": [
+        "ABCG5",
+        "ABCG8"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mosaic-biodata-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed Mosaic Biodata sample-output row used to preserve report structure. It is not a local result and must not be used as personal diet, supplement, lab, glucose, fitness, methylation, medication, diagnosis, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Metabolic context",
+      "item": "Insulin Resistance",
+      "brandName": "Mosaic Biodata sample",
+      "geneticAnalysis": "Insulin Resistance: sample label Typical Risk. The sample report labels insulin resistance as Typical Risk; local output must keep this as sample structure, not glucose or diabetes inference.",
+      "description": "The local Mosaic Biodata sample PDF page 16 presents this as an observed report-output row.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mosaic-biodata-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed Mosaic Biodata sample-output row used to preserve report structure. It is not a local result and must not be used as personal diet, supplement, lab, glucose, fitness, methylation, medication, diagnosis, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Caffeine processing",
+      "item": "Caffeine Metabolism",
+      "brandName": "Mosaic Biodata sample",
+      "geneticAnalysis": "Caffeine Metabolism: sample label Slow Metabolizer. The sample report labels caffeine metabolism as Slow Metabolizer and names CYP1A2 in the explanatory section.",
+      "description": "The local Mosaic Biodata sample PDF page 19 presents this as an observed report-output row.",
+      "genes": [
+        "CYP1A2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mosaic-biodata-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed Mosaic Biodata sample-output row used to preserve report structure. It is not a local result and must not be used as personal diet, supplement, lab, glucose, fitness, methylation, medication, diagnosis, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Macronutrient context",
+      "item": "Fiber Benefit",
+      "brandName": "Mosaic Biodata sample",
+      "geneticAnalysis": "Fiber Benefit: sample label Increased Benefit. The sample report labels fiber benefit as Increased Benefit and presents it as a macronutrient-context trait.",
+      "description": "The local Mosaic Biodata sample PDF page 23 presents this as an observed report-output row.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mosaic-biodata-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed Mosaic Biodata sample-output row used to preserve report structure. It is not a local result and must not be used as personal diet, supplement, lab, glucose, fitness, methylation, medication, diagnosis, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Vitamin and methylation context",
+      "item": "Folate Need",
+      "brandName": "Mosaic Biodata sample",
+      "geneticAnalysis": "Folate Need: sample label Increased Intake. The sample report labels folate need as Increased Intake and places the row near folic-acid conversion context.",
+      "description": "The local Mosaic Biodata sample PDF page 38 presents this as an observed report-output row.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mosaic-biodata-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed Mosaic Biodata sample-output row used to preserve report structure. It is not a local result and must not be used as personal diet, supplement, lab, glucose, fitness, methylation, medication, diagnosis, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Vitamin and methylation context",
+      "item": "Vitamin B12 Intake Needs",
+      "brandName": "Mosaic Biodata sample",
+      "geneticAnalysis": "Vitamin B12 Intake Needs: sample label Increased Intake. The sample report labels vitamin B12 intake needs as Increased Intake and separately shows FUT2 secretor status.",
+      "description": "The local Mosaic Biodata sample PDF page 41 presents this as an observed report-output row.",
+      "genes": [
+        "FUT2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mosaic-biodata-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed Mosaic Biodata sample-output row used to preserve report structure. It is not a local result and must not be used as personal diet, supplement, lab, glucose, fitness, methylation, medication, diagnosis, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Vitamin and methylation context",
+      "item": "MTHFR Activity",
+      "brandName": "Mosaic Biodata sample",
+      "geneticAnalysis": "MTHFR Activity: sample label 61% Enzyme Activity. The sample report labels MTHFR activity as 61% enzyme activity in the methylation section.",
+      "description": "The local Mosaic Biodata sample PDF page 75 presents this as an observed report-output row.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "mosaic-biodata-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed Mosaic Biodata sample-output row used to preserve report structure. It is not a local result and must not be used as personal diet, supplement, lab, glucose, fitness, methylation, medication, diagnosis, or treatment advice.",
+      "sourceBindingStatus": "exact"
     }
   ],
   "practicalNextSteps": {
     "biodataContext": [
       "Use this report as educational biodata genetics context, not as lab interpretation or a health plan.",
-      "Review labs, wearable data, diet history, activity, symptoms, and goals with qualified professionals when making decisions.",
-      "Do not use genotype alone to infer detoxification, prescribe diets, create workouts, recommend supplements, or change treatment."
+      "Treat Mosaic sample rows as examples of report structure unless the local run supplies equivalent validated evidence.",
+      "Review labs, wearable data, diet history, activity, symptoms, medications, medical history, and goals with qualified professionals when making decisions.",
+      "Do not use genotype alone to infer detoxification, prescribe diets, create workouts, recommend supplements, interpret glucose or methylation status, change medication, or guide treatment."
     ]
   },
   "references": [
     {
       "id": "medlineplus-lactose-intolerance",
-      "title": "MedlinePlus Genetics: lactose intolerance"
+      "title": "MedlinePlus Genetics: lactose intolerance",
+      "usedFor": [
+        "lactose_context",
+        "non_diagnostic_language"
+      ]
     },
     {
       "id": "medlineplus-mcm6",
-      "title": "MedlinePlus Genetics: MCM6 gene"
-    },
-    {
-      "id": "nutritional-genomics-dtc-review",
-      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing"
-    },
-    {
-      "id": "ebi-gwas-catalog",
-      "title": "GWAS Catalog"
+      "title": "MedlinePlus Genetics: MCM6 gene",
+      "usedFor": [
+        "mcm6_lct_context",
+        "lactase_persistence_context"
+      ]
     },
     {
       "id": "medlineplus-dtc-genetic-testing-results",
@@ -73,33 +334,223 @@
         "non_diagnostic_language",
         "consumer_safety_language"
       ]
+    },
+    {
+      "id": "nutritional-genomics-dtc-review",
+      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing",
+      "usedFor": [
+        "nutrition_context",
+        "direct_to_consumer_limitations"
+      ]
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "candidate_trait_associations"
+      ]
+    },
+    {
+      "id": "mosaic-biodata-sample-pdf",
+      "title": "Mosaic Biodata sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
+        "tier": "Local derived call",
         "gene": "MCM6/LCT",
-        "observedValue": "rs4988235 CT"
+        "variantId": "rs4988235",
+        "observedValue": "CT",
+        "effect": "The local fixture supplies a derived MCM6/LCT rs4988235 call for lactase-persistence context.",
+        "phenotype": "Report as educational lactose-related marker context only; do not diagnose lactose intolerance, food sensitivity, diet need, symptom, lab, metabolic status, or treatment from genotype alone.",
+        "extractionStatus": "curated"
       },
       {
+        "tier": "Local missing input",
         "gene": "Mosaic Biodata model",
-        "observedValue": "calibrated model unavailable"
+        "variantId": "mosaic-biodata-model-unavailable",
+        "observedValue": "calibrated biodata, nutrition, lifestyle, lab, wearable, supplement, detox, medication, metabolic, glucose, fitness, methylation, symptom, and ancestry applicability models unavailable",
+        "effect": "The local fixture intentionally omits calibrated Mosaic Biodata models and non-genetic context.",
+        "phenotype": "Mark biodata, diet, supplement, food-sensitivity, lab, glucose, insulin-resistance, fitness, methylation, detox, medication, diagnosis, and treatment sections unavailable instead of inferring them.",
+        "extractionStatus": "curated"
+      },
+      {
+        "tier": "Sample-report output row",
+        "gene": "not specified in visible row",
+        "variantId": "not-visible-in-sample-pdf",
+        "observedValue": "Hunger Perception Accuracy: High Accuracy",
+        "effect": "The sample report labels hunger perception accuracy as High Accuracy and frames the trait around sensing true hunger cues.",
+        "phenotype": "Use as observed Mosaic sample-report structure only; do not treat the sample label as local genotype evidence or a local health, diet, lab, metabolic, fitness, methylation, supplement, medication, diagnosis, or treatment conclusion.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report output row",
+        "gene": "not specified in visible row",
+        "variantId": "not-visible-in-sample-pdf",
+        "observedValue": "Satiety Sensing Accuracy: Typical Accuracy",
+        "effect": "The sample report labels satiety sensing accuracy as Typical Accuracy and presents it alongside hunger-perception context.",
+        "phenotype": "Use as observed Mosaic sample-report structure only; do not treat the sample label as local genotype evidence or a local health, diet, lab, metabolic, fitness, methylation, supplement, medication, diagnosis, or treatment conclusion.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report output row",
+        "gene": "TAS1R2; TAS1R3",
+        "variantId": "not-visible-in-sample-pdf",
+        "observedValue": "Sweet Perception Sensitivity: Increased Sensitivity",
+        "effect": "The sample report labels sweet perception sensitivity as Increased Sensitivity and explains the role of sweet-taste receptor genes.",
+        "phenotype": "Use as observed Mosaic sample-report structure only; do not treat the sample label as local genotype evidence or a local health, diet, lab, metabolic, fitness, methylation, supplement, medication, diagnosis, or treatment conclusion.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report output row",
+        "gene": "not specified in visible row",
+        "variantId": "not-visible-in-sample-pdf",
+        "observedValue": "Sweet Addiction Propensity: Reduced Risk",
+        "effect": "The sample report labels sweet addiction propensity as Reduced Risk and describes reward-pathway context without a local behavior conclusion.",
+        "phenotype": "Use as observed Mosaic sample-report structure only; do not treat the sample label as local genotype evidence or a local health, diet, lab, metabolic, fitness, methylation, supplement, medication, diagnosis, or treatment conclusion.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report output row",
+        "gene": "not specified in visible row",
+        "variantId": "not-visible-in-sample-pdf",
+        "observedValue": "Snacking Drive: Low Drive",
+        "effect": "The sample report labels snacking drive as Low Drive and treats the row as an eating-pattern trait.",
+        "phenotype": "Use as observed Mosaic sample-report structure only; do not treat the sample label as local genotype evidence or a local health, diet, lab, metabolic, fitness, methylation, supplement, medication, diagnosis, or treatment conclusion.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report output row",
+        "gene": "LCT; MCM6",
+        "variantId": "not-visible-in-sample-pdf",
+        "observedValue": "Lactose Intolerance Risk: Very Low Risk",
+        "effect": "The sample report labels lactose intolerance risk as Very Low Risk and explains lactase-persistence context.",
+        "phenotype": "Use as observed Mosaic sample-report structure only; do not treat the sample label as local genotype evidence or a local health, diet, lab, metabolic, fitness, methylation, supplement, medication, diagnosis, or treatment conclusion.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report output row",
+        "gene": "not specified in visible row",
+        "variantId": "not-visible-in-sample-pdf",
+        "observedValue": "Impact of Dairy Fat on Weight: Low Impact",
+        "effect": "The sample report labels the impact of dairy fat on weight as Low Impact and presents it as a separate dairy-related trait.",
+        "phenotype": "Use as observed Mosaic sample-report structure only; do not treat the sample label as local genotype evidence or a local health, diet, lab, metabolic, fitness, methylation, supplement, medication, diagnosis, or treatment conclusion.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report output row",
+        "gene": "not specified in visible row",
+        "variantId": "not-visible-in-sample-pdf",
+        "observedValue": "Gluten-Related Immune Response Risk: Typical Risk",
+        "effect": "The sample report labels gluten-related immune response risk as Typical Risk and separates immune-response framing from diagnosis.",
+        "phenotype": "Use as observed Mosaic sample-report structure only; do not treat the sample label as local genotype evidence or a local health, diet, lab, metabolic, fitness, methylation, supplement, medication, diagnosis, or treatment conclusion.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report output row",
+        "gene": "not specified in visible row",
+        "variantId": "not-visible-in-sample-pdf",
+        "observedValue": "Grain Sensitivity: Low Sensitivity",
+        "effect": "The sample report labels grain sensitivity as Low Sensitivity and presents it as a grain-processing output row.",
+        "phenotype": "Use as observed Mosaic sample-report structure only; do not treat the sample label as local genotype evidence or a local health, diet, lab, metabolic, fitness, methylation, supplement, medication, diagnosis, or treatment conclusion.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report output row",
+        "gene": "not specified in visible row",
+        "variantId": "not-visible-in-sample-pdf",
+        "observedValue": "Plant Sterol Benefit: Limited Benefit",
+        "effect": "The sample report labels plant sterol benefit as Limited Benefit before a separate accumulation-potential row.",
+        "phenotype": "Use as observed Mosaic sample-report structure only; do not treat the sample label as local genotype evidence or a local health, diet, lab, metabolic, fitness, methylation, supplement, medication, diagnosis, or treatment conclusion.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report output row",
+        "gene": "ABCG5; ABCG8",
+        "variantId": "not-visible-in-sample-pdf",
+        "observedValue": "Plant Sterol Accumulation Potential: High Potential",
+        "effect": "The sample report labels plant sterol accumulation potential as High Potential and names ABCG5 and ABCG8 context.",
+        "phenotype": "Use as observed Mosaic sample-report structure only; do not treat the sample label as local genotype evidence or a local health, diet, lab, metabolic, fitness, methylation, supplement, medication, diagnosis, or treatment conclusion.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report output row",
+        "gene": "not specified in visible row",
+        "variantId": "not-visible-in-sample-pdf",
+        "observedValue": "Insulin Resistance: Typical Risk",
+        "effect": "The sample report labels insulin resistance as Typical Risk; local output must keep this as sample structure, not glucose or diabetes inference.",
+        "phenotype": "Use as observed Mosaic sample-report structure only; do not treat the sample label as local genotype evidence or a local health, diet, lab, metabolic, fitness, methylation, supplement, medication, diagnosis, or treatment conclusion.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report output row",
+        "gene": "CYP1A2",
+        "variantId": "not-visible-in-sample-pdf",
+        "observedValue": "Caffeine Metabolism: Slow Metabolizer",
+        "effect": "The sample report labels caffeine metabolism as Slow Metabolizer and names CYP1A2 in the explanatory section.",
+        "phenotype": "Use as observed Mosaic sample-report structure only; do not treat the sample label as local genotype evidence or a local health, diet, lab, metabolic, fitness, methylation, supplement, medication, diagnosis, or treatment conclusion.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report output row",
+        "gene": "not specified in visible row",
+        "variantId": "not-visible-in-sample-pdf",
+        "observedValue": "Fiber Benefit: Increased Benefit",
+        "effect": "The sample report labels fiber benefit as Increased Benefit and presents it as a macronutrient-context trait.",
+        "phenotype": "Use as observed Mosaic sample-report structure only; do not treat the sample label as local genotype evidence or a local health, diet, lab, metabolic, fitness, methylation, supplement, medication, diagnosis, or treatment conclusion.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report output row",
+        "gene": "MTHFR",
+        "variantId": "not-visible-in-sample-pdf",
+        "observedValue": "Folate Need: Increased Intake",
+        "effect": "The sample report labels folate need as Increased Intake and places the row near folic-acid conversion context.",
+        "phenotype": "Use as observed Mosaic sample-report structure only; do not treat the sample label as local genotype evidence or a local health, diet, lab, metabolic, fitness, methylation, supplement, medication, diagnosis, or treatment conclusion.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report output row",
+        "gene": "FUT2",
+        "variantId": "not-visible-in-sample-pdf",
+        "observedValue": "Vitamin B12 Intake Needs: Increased Intake",
+        "effect": "The sample report labels vitamin B12 intake needs as Increased Intake and separately shows FUT2 secretor status.",
+        "phenotype": "Use as observed Mosaic sample-report structure only; do not treat the sample label as local genotype evidence or a local health, diet, lab, metabolic, fitness, methylation, supplement, medication, diagnosis, or treatment conclusion.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report output row",
+        "gene": "MTHFR",
+        "variantId": "not-visible-in-sample-pdf",
+        "observedValue": "MTHFR Activity: 61% Enzyme Activity",
+        "effect": "The sample report labels MTHFR activity as 61% enzyme activity in the methylation section.",
+        "phenotype": "Use as observed Mosaic sample-report structure only; do not treat the sample label as local genotype evidence or a local health, diet, lab, metabolic, fitness, methylation, supplement, medication, diagnosis, or treatment conclusion.",
+        "extractionStatus": "direct"
       }
     ],
     "missingInputs": [
-      "Authenticated sample-report sections and rows have not been extracted.",
-      "No calibrated biodata, lab, wearable, meal-plan, supplement, fitness, detox, symptom, metabolic, or ancestry applicability model is supplied with this fixture.",
-      "Broader symptoms, food history, diet history, activity history, labs, medications, medical history, child-specific context, ancestry applicability, environment, and professional assessment are not represented in this fixture."
+      "Authenticated marketplace body/detail extraction has not been captured for Mosaic Biodata.",
+      "No calibrated biodata, lab, wearable, meal-plan, supplement, fitness, detox, symptom, metabolic, glucose, methylation, medication, or ancestry applicability model is supplied with this fixture.",
+      "Broader symptoms, food history, diet history, activity history, labs, medications, medical history, child-specific context, ancestry applicability, environment, and professional assessment are not represented in this fixture.",
+      "Sample-only Mosaic rows are not local genotype evidence or personal health findings."
     ],
     "probabilities": [],
     "uncertainty": [
-      "Nutrition, lifestyle, symptoms, labs, weight, glucose, gut health, supplement response, and wellness outcomes depend on genetics plus non-genetic context and professional review.",
-      "A single marker should not be used to diagnose conditions, explain symptoms, prescribe diets, recommend supplements, interpret labs, or guide treatment."
+      "Nutrition, lifestyle, symptoms, labs, weight, glucose, gut health, supplement response, methylation, fitness, and wellness outcomes depend on genetics plus non-genetic context and professional review.",
+      "A single marker should not be used to diagnose conditions, explain symptoms, prescribe diets, recommend supplements, interpret labs, guide workouts, change medication, or guide treatment.",
+      "Mosaic sample labels are source-bound examples of report structure and are not calibrated probabilities for this local fixture."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data is not included.",
-      "The report is educational and does not integrate clinical labs, prescribe diets, create workouts, recommend supplements, infer detoxification, diagnose symptoms, infer metabolic disease, or provide treatment guidance.",
-      "Authenticated Sequencing.com sample report rows are still pending."
+      "The report is educational and does not integrate clinical labs, prescribe diets, create workouts, recommend supplements, infer detoxification, diagnose symptoms, infer metabolic disease, interpret glucose or methylation status, change medication, or provide treatment guidance.",
+      "Authenticated Sequencing.com marketplace body/detail extraction remains pending, so this is sample-backed output structure, not formal-equivalent parity."
     ]
   }
 }

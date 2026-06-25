@@ -1,24 +1,30 @@
 {
+  "schemaVersion": "soma-reports.synthetic-result.v1",
   "reportOverview": {
     "reportTitle": "Surgeon Summary",
     "inputManifestHash": "sha256:synthetic-surgeon-summary-professional-handoff-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "surgeon review, planned procedure, surgical urgency, current medication list, anticoagulant or antiplatelet use, bleeding history, wound-healing history, infection history, allergies, labs, imaging, comorbidities, anesthesia plan, and authenticated sample-report rows unavailable in this fixture",
-      "Professional review, clinical context, current health information, and medical decision support are unavailable in this fixture.",
-      "This result is consumer-shareable context only and is not a diagnosis, professional clearance, disease-risk estimate, medication instruction, procedure plan, treatment guidance, supplement guidance, diet guidance, lab interpretation, screening advice, reproductive advice, or clinical actionability claim."
+      "Direct Surgeon Summary sample-report sections and exact rows have not been extracted.",
+      "The Healthcare Pro sample PDF is included only as sibling surgical-handoff output-structure evidence.",
+      "Surgeon review, planned procedure, surgical urgency, current medication list, anticoagulant or antiplatelet use, bleeding history, wound-healing history, infection history, allergies, labs, imaging, comorbidities, and anesthesia plan are unavailable in this fixture.",
+      "This result is consumer-shareable handoff context only and is not surgical clearance, a procedure recommendation, bleeding-risk estimate, wound-healing prediction, infection-risk estimate, medication-hold guidance, antibiotic guidance, lab guidance, imaging guidance, procedure-plan guidance, diagnosis, treatment, or actionability claim."
+    ],
+    "evidenceTypes": [
+      "Synthetic unavailable-surgeon-review evidence",
+      "Public professional-handoff and genetic-testing background references",
+      "Sibling Healthcare Pro sample rows used only for surgical-handoff output structure"
     ]
   },
   "resultRows": [
     {
       "groupTitle": "Professional handoff availability",
-      "item": "surgeon-summary-handoff-context-unavailable",
+      "item": "Surgeon review context",
       "brandName": "",
-      "geneticAnalysis": "Surgeon Summary can organize supplied context for a professional discussion, but the specialist review and authenticated sample rows are unavailable.",
+      "geneticAnalysis": "The local fixture can organize supplied context for a surgeon discussion, but planned procedure details, surgical urgency, medication context, bleeding history, wound-healing history, infection history, labs, imaging, comorbidities, anesthesia plan, and surgeon review are unavailable.",
       "genes": [
         "Surgeon Summary"
       ],
-      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Counseling",
+      "sourceLabel": "Professional handoff background references",
       "sourceIds": [
         "cdc-genetic-testing",
         "medlineplus-genetics",
@@ -30,17 +36,34 @@
         "nhgri-pharmacogenomics"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This row is an availability statement. It does not diagnose a condition, clear a person for a procedure, estimate risk, choose medication, recommend treatment, interpret labs, recommend screening, guide reproductive decisions, or provide an all-clear result."
+      "plainEnglishMeaning": "This is an availability statement. It does not clear a person for surgery, recommend a procedure, estimate bleeding or infection risk, predict wound healing, recommend medication holds, recommend antibiotics, recommend labs or imaging, provide a procedure plan, diagnose, treat, or replace surgeon review."
     },
     {
-      "groupTitle": "Clinical review availability",
-      "item": "surgeon-summary-clinical-review-unavailable",
-      "brandName": "",
-      "geneticAnalysis": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+      "groupTitle": "Sibling sample output structure",
+      "item": "Healthcare Pro surgical-adjacent row format",
+      "brandName": "Sibling Healthcare Pro sample report",
+      "geneticAnalysis": "The sibling Healthcare Pro sample shows report identity, thrombophilia, warfarin dosing, and analysis-alert rows. These rows are used only to preserve output shape for Surgeon Summary.",
       "genes": [
-        "surgeon review context"
+        "F5",
+        "warfarin-response markers"
       ],
-      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Counseling",
+      "sourceLabel": "Sibling Healthcare Pro sample PDF",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample rows show what a report format can contain. They are not local findings and must not be read as surgical clearance, bleeding-risk evidence, medication instructions, procedure advice, lab or imaging guidance, diagnosis, treatment, or actionability."
+    },
+    {
+      "groupTitle": "Surgical boundary",
+      "item": "Unsupported surgical interpretation types",
+      "brandName": "",
+      "geneticAnalysis": "The local fixture intentionally omits the clinical and surgical context needed for surgical decisions, so the output marks those areas unavailable instead of inferring them.",
+      "genes": [
+        "F5 sample context",
+        "Healthcare Pro analysis context"
+      ],
+      "sourceLabel": "Professional handoff references",
       "sourceIds": [
         "cdc-genetic-testing",
         "medlineplus-genetics",
@@ -52,24 +75,87 @@
         "nhgri-pharmacogenomics"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "A qualified professional needs validated test scope, personal and family history, symptoms, medications, labs, procedure context, environment, ancestry applicability, and current clinical information before using genetic context for health decisions."
+      "plainEnglishMeaning": "Surgical decisions need procedure details, medication context, clinical history, exam findings, labs, imaging, anesthesia planning, and qualified review. Missing context is reported as missing, not normal, abnormal, low risk, high risk, cleared, actionable, or all clear."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Report identity",
+      "item": "Healthcare Professional Genetic Report",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The cover and table of contents identify a Healthcare Pro sample report with sections for STAT Alerts, Increased Risk Detected, Medications (Pharmacogenomics), Rare Diseases, No Increased Risk Detected, and Analysis Alerts.",
+      "description": "This row captures sample-report structure only and does not prove a local Healthcare Pro report was generated.",
+      "genes": [],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Surgeon Summary sibling surgical-handoff output-structure evidence from the Healthcare Pro sample PDF. Extracted from pages 1-2 of the public sample PDF; keep report identity and section list separate from local findings. This is not a direct Surgeon Summary sample report and not local surgical clearance, procedure recommendation, bleeding-risk estimate, wound-healing prediction, infection-risk estimate, anesthesia advice, medication-hold guidance, antibiotic guidance, lab guidance, imaging guidance, procedure-plan, diagnosis, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "Thrombophilia",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Thrombophilia as Carrier and states the sample has one copy of the Factor V R2 mutation in F5, distinct from Factor V Leiden.",
+      "description": "This is sample carrier-status structure only; local output must not infer personal thrombophilia carrier status or clotting risk.",
+      "genes": [
+        "F5"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Surgeon Summary sibling surgical-handoff output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 8 of the public sample PDF; the row includes sample caveats about R2 on its own. This is not a direct Surgeon Summary sample report and not local surgical clearance, procedure recommendation, bleeding-risk estimate, wound-healing prediction, infection-risk estimate, anesthesia advice, medication-hold guidance, antibiotic guidance, lab guidance, imaging guidance, procedure-plan, diagnosis, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Medications (Pharmacogenomics)",
+      "item": "Warfarin dosing",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Warfarin dosing as Slight Resistance Detected and says the sample may need a slightly higher maintenance dose.",
+      "description": "This is sample pharmacogenomics structure only; local output must not infer a warfarin dose, INR target, prescription change, or medication action.",
+      "genes": [
+        "warfarin-response markers"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Surgeon Summary sibling surgical-handoff output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 9 of the public sample PDF; medication-dose language must remain sample-only unless supplied by validated local PGx evidence and professional review. This is not a direct Surgeon Summary sample report and not local surgical clearance, procedure recommendation, bleeding-risk estimate, wound-healing prediction, infection-risk estimate, anesthesia advice, medication-hold guidance, antibiotic guidance, lab guidance, imaging guidance, procedure-plan, diagnosis, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Analysis Alerts",
+      "item": "Data completeness",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report's Analysis Alerts section states no ambiguity, complete genetic data, and all diseases, traits, and conditions analyzed.",
+      "description": "This is sample analysis-quality language only; local output must not claim complete local data or all conditions analyzed unless the local fixture supplies equivalent quality evidence.",
+      "genes": [],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Surgeon Summary sibling surgical-handoff output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 14 of the public sample PDF; data-completeness claims are sample-only. This is not a direct Surgeon Summary sample report and not local surgical clearance, procedure recommendation, bleeding-risk estimate, wound-healing prediction, infection-risk estimate, anesthesia advice, medication-hold guidance, antibiotic guidance, lab guidance, imaging guidance, procedure-plan, diagnosis, treatment, or actionability evidence."
     }
   ],
   "professionalHandoffContext": {
-    "plainEnglishMeaning": "Surgeon Summary is currently a handoff-boundary package. It can document supplied evidence and missing professional context, but it cannot replace qualified review or produce medical decisions from local evidence alone.",
+    "plainEnglishMeaning": "Surgeon Summary is a handoff-boundary package. It can summarize supplied evidence and show sibling report structure, but it cannot replace qualified surgical review or generate surgical decisions from local evidence alone.",
     "unsupportedClaims": [
-      "Diagnosis, professional clearance, all-clear result, or personal disease-risk estimate",
-      "Medication, dosing, procedure, treatment, supplement, diet, lab, screening, reproductive, or management instruction",
-      "Variant classification, penetrance, inheritance, family-member risk, clinical actionability, or specialist-level interpretation",
-      "Replacement for a qualified clinician, pharmacist, geneticist, genetic counselor, surgeon, anesthesiologist, rheumatologist, infectious disease specialist, or other relevant professional"
+      "Surgical clearance, procedure recommendation, procedure plan, or all-clear result",
+      "Bleeding-risk estimate, wound-healing prediction, infection-risk estimate, or anesthesia-risk estimate",
+      "Medication hold, antibiotic, lab, imaging, procedure, diagnosis, treatment, or management instruction",
+      "Carrier-status, disease-risk, or medication-response conclusion from sibling sample rows",
+      "Replacement for a surgeon, anesthesiologist, pharmacist, geneticist, or other relevant professional"
     ],
-    "professionalReview": "Use this output only as preparation for a professional conversation. Health decisions require qualified review with clinical history, medications, symptoms, labs, family history, procedure details when relevant, and validated testing scope."
+    "professionalReview": "Use this output only as preparation for a surgeon conversation. Health decisions require qualified review with planned procedure details, medication list, clinical history, bleeding and wound-healing history, infection history, labs, imaging, comorbidities, anesthesia plan, and validated testing scope."
   },
   "practicalNextSteps": {
     "professionalReview": [
-      "Do not use this local fixture to change medication, supplements, diet, screening, procedures, reproductive decisions, prevention plans, or treatment decisions.",
-      "Bring current symptoms, personal and family history, medications, allergies, labs, prior testing, procedure context when relevant, and ancestry context to a qualified professional if discussing this topic.",
-      "Treat unavailable professional-review rows as unavailable, not as normal, abnormal, low risk, high risk, reassuring, diagnostic, actionable, or all clear."
+      "Do not use this local fixture to change medication, supplements, diet, screening, procedures, prevention plans, or treatment decisions.",
+      "Bring planned procedure details, medication list, allergies, bleeding history, wound-healing history, infection history, labs, imaging, and comorbidities to a qualified professional if discussing this topic.",
+      "Treat sibling Healthcare Pro sample rows as report-format examples only, not as local surgical findings."
     ]
   },
   "references": [
@@ -120,38 +206,57 @@
     {
       "id": "medlineplus-immune-system-disorders",
       "title": "MedlinePlus: Immune System and Disorders"
+    },
+    {
+      "id": "healthcare-pro-sample-pdf",
+      "title": "Healthcare Pro sample report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "surgeon-summary-handoff-context-unavailable",
-        "gene": "Surgeon Summary",
-        "observedValue": "surgeon review, planned procedure, surgical urgency, current medication list, anticoagulant or antiplatelet use, bleeding history, wound-healing history, infection history, allergies, labs, imaging, comorbidities, anesthesia plan, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "tier": "Sample-report visible carrier marker",
+        "gene": "F5",
+        "variantId": "Factor V R2",
+        "genotype": "one copy",
+        "effect": "The sample report labels the sample as a Factor V R2 carrier and distinguishes it from Factor V Leiden.",
+        "phenotype": "Observed sample content only; do not infer local thrombophilia carrier status or clotting risk. This is Surgeon Summary sibling sample output-structure evidence only, not local thrombophilia status, bleeding risk, surgical clearance, medication-hold guidance, procedure recommendation, lab guidance, imaging guidance, diagnosis, treatment, or actionability evidence.",
+        "extractionStatus": "direct"
       },
       {
-        "inputId": "surgeon-summary-clinical-review-unavailable",
-        "gene": "surgeon review context",
-        "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "tier": "Sample-report analysis quality",
+        "gene": "Healthcare Pro analysis",
+        "variantId": "analysis-alerts",
+        "genotype": "no ambiguity; complete data; all listed conditions analyzed in the sample",
+        "effect": "The sample report states its own analysis completeness and lack-of-ambiguity alerts on the final page.",
+        "phenotype": "Observed sample quality context only; do not claim local completeness without equivalent local quality evidence. This is Surgeon Summary sibling sample output-structure evidence only, not local thrombophilia status, bleeding risk, surgical clearance, medication-hold guidance, procedure recommendation, lab guidance, imaging guidance, diagnosis, treatment, or actionability evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Local missing input",
+        "gene": "Surgeon review context",
+        "variantId": "surgeon-review-context-unavailable",
+        "genotype": "planned procedure, surgical urgency, current medication list, anticoagulant or antiplatelet use, bleeding history, wound-healing history, infection history, allergies, labs, imaging, comorbidities, anesthesia plan, and surgeon review unavailable",
+        "effect": "The local fixture intentionally omits the clinical and professional context needed for surgical decisions.",
+        "phenotype": "Mark surgical clearance, procedure recommendation, bleeding-risk estimation, wound-healing prediction, infection-risk estimation, medication holds, antibiotics, labs, imaging, and procedure-plan sections unavailable instead of inferring them.",
+        "extractionStatus": "curated"
       }
     ],
     "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and exact rows",
-      "Qualified professional review and complete clinical context",
-      "Current medications, symptoms, family history, labs, procedure details, prior testing, and validated test scope when relevant",
-      "Validated model output, applicability metadata, and professional interpretation for any health decision"
+      "Direct Surgeon Summary mock-report rows and authenticated detail-page body parity",
+      "Qualified surgeon review and complete surgical context",
+      "Planned procedure, surgical urgency, current medications, anticoagulant or antiplatelet use, bleeding history, wound-healing history, infection history, allergies, labs, imaging, comorbidities, and anesthesia plan",
+      "Validated local surgical risk, medication, bleeding, wound-healing, infection, procedure-planning, lab, imaging, and actionability models"
     ],
     "probabilities": [],
     "uncertainty": [
-      "No calibrated professional-clearance, disease-risk, medication-response, procedure-risk, treatment-response, lab-status, screening-benefit, reproductive-risk, supplement-benefit, diet-response, or actionability model is supplied for this local package.",
-      "Interpretation depends on validated test scope, clinical and family history, symptoms, medications, labs, procedures, environment, ancestry applicability, and qualified professional review."
+      "No calibrated surgical-clearance, procedure-risk, bleeding-risk, wound-healing, infection-risk, medication-response, lab-status, imaging, treatment-response, or actionability model is supplied for this local package.",
+      "Interpretation depends on planned procedure details, clinical history, medications, labs, imaging, comorbidities, anesthesia plan, environment, ancestry applicability, and qualified professional review."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
-      "The report is educational handoff context and does not provide diagnosis, professional clearance, disease-risk estimation, medication guidance, procedure guidance, treatment advice, supplement advice, diet advice, lab interpretation, screening advice, reproductive advice, or clinical actionability.",
-      "Unavailable professional-review rows should never be interpreted as low risk, high risk, no risk, normal, abnormal, reassuring, diagnostic, actionable, or all clear."
+      "Healthcare Pro sample rows are sibling output-structure examples only and are not local Surgeon Summary findings.",
+      "Unavailable professional-review rows should never be interpreted as low risk, high risk, no risk, normal, abnormal, cleared, reassuring, diagnostic, actionable, or all clear."
     ]
   }
 }

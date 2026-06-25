@@ -3,9 +3,9 @@
     "reportTitle": "Genetic Risk of Hair Loss",
     "inputManifestHash": "sha256:synthetic-hair-loss-androgenetic-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "Exact Genetic Risk of Hair Loss detail/sample body extraction is not available yet.",
       "No calibrated hair-loss risk model is supplied with this fixture.",
-      "Symptoms, scalp exam, family history, ancestry or sex applicability metadata, treatment history, and clinical diagnosis are not supplied."
+      "Symptoms, scalp exam, family history, ancestry or sex applicability metadata, treatment history, screening context, and clinical diagnosis are not supplied."
     ]
   },
   "resultRows": [
@@ -55,19 +55,55 @@
         "medlineplus-dtc-test-types"
       ],
       "plainEnglishMeaning": "Hair loss has many possible causes, so this package does not diagnose a condition, quantify risk, or recommend treatment from derived genetic context alone."
+    },
+    {
+      "groupTitle": "Observed sibling sample format",
+      "item": "Wellness & Longevity Hair Loss & Baldness sample row",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sibling Wellness & Longevity sample labels the sample hair-loss and baldness panel as Very High, displays a 72% lifetime-risk label, and shows actionability, lifestyle, medication, screening, misconception, and Hamilton-Norwood sections.",
+      "genes": [
+        "20p11.22",
+        "AR"
+      ],
+      "sourceLabel": "Sibling Wellness & Longevity sample report",
+      "sourceIds": [
+        "wellness-and-longevity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is observed sample-report structure only. It is not a local hair-loss risk estimate, diagnosis, treatment recommendation, medication recommendation, supplement recommendation, hormone finding, transplant assessment, screening instruction, or actionability result."
     }
   ],
   "unavailableSections": [
-    "Authenticated Sequencing.com sample report rows are not available yet.",
+    "Exact Genetic Risk of Hair Loss detail/sample body extraction is not available yet.",
     "Calibrated personal hair-loss risk score and model calibration metadata are unavailable.",
     "Symptoms, scalp exam, family history, ancestry or sex applicability metadata, and treatment history are unavailable.",
-    "Diagnosis, hormone status, PCOS context, prostate context, cancer risk, medication response, supplement advice, and transplant guidance are not inferred."
+    "Diagnosis, hormone status, PCOS context, prostate context, cancer risk, medication response, supplement advice, screening guidance, actionability, and transplant guidance are not inferred."
   ],
   "plainEnglishLimits": [
     "Pattern hair loss is influenced by genetic, hormonal, age-related, and environmental factors.",
     "Direct-to-consumer trait tests can provide estimates or context, not certainty about whether, when, or how much hair loss will occur.",
     "Hair loss can have causes that are not captured by this genetic fixture, so medical symptoms or rapid/unusual hair loss require appropriate clinical evaluation.",
     "This report must not be used to diagnose hair-loss conditions or guide medications, supplements, hormones, hair transplants, or other treatment decisions."
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Hair Loss & Baldness",
+      "item": "Significant hair-loss risk panel",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels the sample risk of significant hair loss and baldness as Very High, with a displayed 72% lifetime-risk label and a preventive-measures actionability panel.",
+      "description": "The page includes clinical-significance, risk, actionability, lifestyle, medication, screening, misconception, and Hamilton-Norwood scale sections, with several sections hidden in the sample.",
+      "genes": [
+        "20p11.22",
+        "AR"
+      ],
+      "sourceLabel": "Sibling Wellness & Longevity sample report",
+      "sourceResourceIds": [
+        "wellness-and-longevity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Extracted from the Hair Loss & Baldness pages of the public Sequencing.com Wellness & Longevity sample PDF; used here as sibling output-structure evidence for Genetic Risk of Hair Loss, not as a direct Hair Loss report sample or local risk, treatment, medication, supplement, hormone, transplant, or diagnosis advice.",
+      "extractionStatus": "direct"
+    }
   ],
   "references": [
     {
@@ -97,25 +133,37 @@
     {
       "id": "ebi-gwas-catalog",
       "title": "GWAS Catalog"
+    },
+    {
+      "id": "wellness-and-longevity-sample-pdf",
+      "title": "Wellness and Longevity DNA Analysis sample report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
         "gene": "AR",
+        "variantId": "AR-androgen-receptor-context",
         "observedValue": "derived androgen receptor context available; no pathogenic variant or diagnosis emitted"
       },
       {
         "gene": "polygenic pattern hair-loss context",
+        "variantId": "pattern-hair-loss-polygenic-context",
         "observedValue": "summary-level pattern hair-loss genetic context available; no calibrated risk model supplied"
       },
       {
         "gene": "hair-loss risk model",
-        "observedValue": "calibrated hair-loss risk score, sex-specific model, ancestry applicability metadata, and symptom evidence unavailable in this fixture"
+        "variantId": "hair-loss-risk-model-unavailable",
+        "observedValue": "calibrated hair-loss risk score, sex-specific model, ancestry applicability metadata, symptom evidence, scalp exam, family history, and treatment history unavailable in this fixture"
+      },
+      {
+        "gene": "20p11.22",
+        "variantId": "68422",
+        "observedValue": "Sibling sample visible row: genotype A linked in the sample variant appendix to androgenic alopecia. This is observed sample content only, not a local finding."
       }
     ],
     "missingInputs": [
-      "Authenticated sample-report sections and rows have not been extracted.",
+      "Exact Genetic Risk of Hair Loss detail/sample body extraction has not been extracted.",
       "No calibrated hair-loss risk score, model coefficients, validation population, sex-specific model, ancestry applicability metadata, symptoms, scalp exam, family history, or treatment history is supplied.",
       "Inputs for alopecia areata, thyroid disease, medication-related hair loss, stress-related shedding, PCOS, prostate conditions, cancer treatment, or other non-pattern hair-loss causes are not supplied."
     ],
@@ -126,9 +174,10 @@
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data is not included.",
+      "The Wellness & Longevity sample row is sibling output-structure evidence only and is not a local user finding.",
       "This report is educational and does not diagnose androgenetic alopecia, male pattern baldness, female pattern hair loss, alopecia areata, thyroid disease, PCOS, prostate conditions, cancer risk, or hormone status.",
       "This report does not recommend starting, stopping, or changing minoxidil, finasteride, dutasteride, supplements, hormone therapy, hair transplant, or any treatment.",
-      "Authenticated Sequencing.com sample report rows are still pending."
+      "Exact Genetic Risk of Hair Loss detail/sample body extraction is still pending."
     ]
   }
 }

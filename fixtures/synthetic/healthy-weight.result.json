@@ -219,6 +219,202 @@
       "sourceBindingStatus": "exact"
     }
   ],
+  "sampleRows": [
+    {
+      "brandName": "GenoPalate sample",
+      "description": "The public sample PDF introduces Healthy Weight as a nutrigenetic weight-management report and summarizes nutrient categories tied to weight outcomes.",
+      "genes": [],
+      "geneticAnalysis": "The sample summary highlights healthy fats, saturated-fat swaps, omega-3 oils, complex carbohydrates, fiber-rich snacks, protein foods, and vitamin E foods.",
+      "groupTitle": "Nutrient Breakdown: Your Genetic Influence",
+      "item": "Healthy weight summary",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthy-weight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 2-6 of the public GenoPalate Healthy Weight sample PDF; this is observed sample output structure, not local diet advice."
+    },
+    {
+      "brandName": "GenoPalate sample",
+      "description": "The sample gene table shows APOA5 GP000023 AA, LEPR GP000025 AG, PPARG GP000018 CC, and FTO GP000003 AA for total fat context.",
+      "genes": [
+        "APOA5",
+        "LEPR",
+        "PPARG",
+        "FTO"
+      ],
+      "geneticAnalysis": "Sample result: more likely to decrease BMI on low-total fat intake; recommendation 23-31% of daily calories and 84-109 grams per day.",
+      "groupTitle": "Types of Fats",
+      "item": "Total Fat Intake",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthy-weight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 9 of the public Healthy Weight sample PDF; this is observed sample output, not a local fat-intake target."
+    },
+    {
+      "brandName": "GenoPalate sample",
+      "description": "The sample gene table shows ADIPOQ GP000033 GG, ADIPOQ GP000034 GG, and PPARG GP000018 CC for monounsaturated fat context.",
+      "genes": [
+        "ADIPOQ",
+        "PPARG"
+      ],
+      "geneticAnalysis": "Sample result: more likely to decrease BMI when consuming high-monounsaturated fat intake; recommendation 12-17% of daily calories and 45-63 grams per day.",
+      "groupTitle": "Types of Fats",
+      "item": "MUFA Intake",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthy-weight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 10 of the public Healthy Weight sample PDF; this is observed sample output, not a local monounsaturated-fat target."
+    },
+    {
+      "brandName": "GenoPalate sample",
+      "description": "The sample gene table shows ADIPOQ GP000031 TT and says the genotype aligns with typical dietary guidelines.",
+      "genes": [
+        "ADIPOQ"
+      ],
+      "geneticAnalysis": "Sample result: normal omega-3 needs; recommendation 1,100 milligrams per day.",
+      "groupTitle": "Types of Fats",
+      "item": "Omega-3 Intake",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthy-weight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 11 of the public Healthy Weight sample PDF; this is observed sample output, not a local omega-3 target."
+    },
+    {
+      "brandName": "GenoPalate sample",
+      "description": "The sample gene table shows TNF GP000032 AG and links it to low-omega-6 intake in the sample output.",
+      "genes": [
+        "TNF"
+      ],
+      "geneticAnalysis": "Sample result: more likely to decrease BMI when consuming low-omega-6 intake; recommendation 5-7% of daily calories and 18-26 grams per day.",
+      "groupTitle": "Types of Fats",
+      "item": "Omega-6 Intake",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthy-weight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 12 of the public Healthy Weight sample PDF; this is observed sample output, not a local omega-6 target."
+    },
+    {
+      "brandName": "GenoPalate sample",
+      "description": "The sample gene table shows APOA2 GP000027 GG and LEPR GP000025 AG for saturated-fat context.",
+      "genes": [
+        "APOA2",
+        "LEPR"
+      ],
+      "geneticAnalysis": "Sample result: more likely to decrease BMI when consuming moderately-low saturated fat intake; recommendation below 8% of daily calories and below 30 grams per day.",
+      "groupTitle": "Types of Fats",
+      "item": "Saturated Fat Intake",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthy-weight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 13 of the public Healthy Weight sample PDF; this is observed sample output, not a local saturated-fat target."
+    },
+    {
+      "brandName": "GenoPalate sample",
+      "description": "The sample gene table shows FTO GP000003 TT and says this sample genotype aligns with typical dietary guidelines.",
+      "genes": [
+        "FTO"
+      ],
+      "geneticAnalysis": "Sample result: recommend moderately high-carbohydrate intake; recommendation 50-58% of daily calories and 414-471 grams per day.",
+      "groupTitle": "Carbohydrate Intake",
+      "item": "Carb Intake",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthy-weight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 16 of the public Healthy Weight sample PDF; this is observed sample output, not a local carbohydrate target."
+    },
+    {
+      "brandName": "GenoPalate sample",
+      "description": "The sample gene table shows FTO GP000008 CC and links it to moderately high-fiber intake in the sample output.",
+      "genes": [
+        "FTO"
+      ],
+      "geneticAnalysis": "Sample result: more likely to decrease BMI when consuming moderately high-fiber intake; recommendation 14-19 grams per day.",
+      "groupTitle": "Fiber Intake",
+      "item": "Fiber Intake",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthy-weight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 17 of the public Healthy Weight sample PDF; this is observed sample output, not a local fiber target."
+    },
+    {
+      "brandName": "GenoPalate sample",
+      "description": "The sample gene table shows FTO GP000011 TT and says this sample genotype aligns with typical dietary guidelines.",
+      "genes": [
+        "FTO"
+      ],
+      "geneticAnalysis": "Sample result: normal protein needs; recommendation 15-20% of daily calories and 122-163 grams per day.",
+      "groupTitle": "Protein Intake",
+      "item": "Protein Intake",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthy-weight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 19 of the public Healthy Weight sample PDF; this is observed sample output, not a local protein target."
+    },
+    {
+      "brandName": "GenoPalate sample",
+      "description": "The sample gene table shows COMT GP000051 with an undetected genotype and the note that the genotype could not be detected from the file provided.",
+      "genes": [
+        "COMT"
+      ],
+      "geneticAnalysis": "Sample result: recommend high-vitamin E intake; recommendation above 15 milligrams per day; COMT genotype not detected from the provided sample file.",
+      "groupTitle": "Vitamin E Intake",
+      "item": "Vitamin E Intake",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthy-weight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 20 of the public Healthy Weight sample PDF; this is observed sample output, not a local vitamin E target or deficiency claim."
+    },
+    {
+      "brandName": "GenoPalate sample",
+      "description": "The sample stress insights page previews two variants from the full report and includes sleep quality and cortisol-level context.",
+      "genes": [
+        "ADA",
+        "FKBP5"
+      ],
+      "geneticAnalysis": "Sample preview rows: ADA GP000121 CC, more likely to have sleep issues under stress; FKBP5 GP000136 TT, more likely to have elevated cortisol levels.",
+      "groupTitle": "Stress Insights",
+      "item": "Stress and sleep preview",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthy-weight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 25 of the public Healthy Weight sample PDF; this is observed sample output, not local stress, sleep, cortisol, or treatment advice."
+    },
+    {
+      "brandName": "GenoPalate sample",
+      "description": "The public sample PDF includes body-measurement education pages after the gene and lifestyle sections.",
+      "genes": [],
+      "geneticAnalysis": "The sample appendix explains BMI, waist-to-hip ratio, and body fat percentage categories as general measurement context.",
+      "groupTitle": "Appendix",
+      "item": "Body measurements glossary",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthy-weight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 28-29 of the public Healthy Weight sample PDF; this is observed appendix structure, not a local body measurement or diagnosis."
+    }
+  ],
   "practicalNextSteps": {
     "healthyWeightContext": [
       "Use this report as educational healthy-weight genetics context, not as a weight-loss prediction, obesity-risk score, meal plan, supplement plan, or activity prescription.",

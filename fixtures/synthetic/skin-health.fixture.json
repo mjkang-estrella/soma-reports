@@ -46,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived visible-trait evidence for skin-health validation"
   },
-  "missingInputPolicy": "Report unavailable skin-health sections explicitly; do not infer skin type, UV sensitivity, acne, skin aging, skincare response, dermatology status, disease risk, skin-cancer risk, ancestry, identity, or exact appearance from genotype alone.",
+  "missingInputPolicy": "Report unavailable skin-health sections explicitly; use public Skin Genes sample rows only as observed output structure. Do not infer skin type, UV sensitivity, acne, skin aging, hydration, glycation, inflammation, dark spots, eyelid sagging, skincare response, dermatology status, cosmetic outcome, disease risk, skin-cancer risk, ancestry, identity, exact appearance, or sample-only recommendation actions from genotype alone.",
   "packageSlug": "skin-health",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -115,7 +115,19 @@
         "probability_appendix",
         "consumer_safety_language"
       ]
+    },
+    {
+      "evidenceLevel": "sibling_sample_report",
+      "id": "skin-genes-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Skin Genes sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer Skin Health context using derived pigmentation and visible-trait evidence plus direct-to-consumer trait-test limitation framing."
+  "reportPurpose": "Consumer Skin Health context using derived pigmentation and visible-trait evidence plus observed Skin Genes sibling sample-report output structure."
 }

@@ -1,0 +1,107 @@
+{
+  "app": {
+    "apiAppId": "traits-robb",
+    "appid": "15098",
+    "backend": "ApiAppBackend",
+    "label": "Inherited Traits"
+  },
+  "bodyPreview": "Inherited Traits DNA Report Inherited Traits, such as hair color or blood type, are characteristics that are determined by a person's genes, and in some cases by how those genes interact with the environment (including the person's lifestyle). The Inherited Traits DNA Report includes your results for many common traits, curated into the following categories: Physical Appearance Nutrition Related Blood-Related Drug Response Immune System Fitness Related including Fitness Potential Miscellaneous Traits",
+  "capturedAt": "2026-06-21T18:44:27.443Z",
+  "categories": [
+    "Health",
+    "Children"
+  ],
+  "currencyCode": "USD",
+  "evidenceNotes": [
+    "Marketplace detail reportData confirms title, publisher/provider when available, price/product metadata when available, categories, sample report link when available, and overview/disclaimer tab boundaries when present.",
+    "Use overview/marketing text only for report purpose and marketplace positioning, not for local genetic, medical, diet, supplement, medication, or performance conclusions.",
+    "No raw genome data, uploaded genome data, or account navigation text is included in this artifact."
+  ],
+  "finalUrl": "https://sequencing.com/marketplace/genetic-test-traits",
+  "headerImage": "https://sequencing.com/sites/default/files/inherited-traits-genetic-analysis-icon1.png",
+  "headerImageAlt": "",
+  "infoTabs": [
+    {
+      "label": "Overview",
+      "textPreview": "Inherited Traits DNA Report Inherited Traits, such as hair color or blood type, are characteristics that are determined by a person's genes, and in some cases by how those genes interact with the environment (including the person's lifestyle). The Inherited Traits DNA Report includes your results for many common traits, curated into the following categories: Physical Appearance Nutrition Related Blood-Related Drug Response Immune System Fitness Related including Fitness Potential Miscellaneous Traits"
+    },
+    {
+      "label": "Getting Started",
+      "textPreview": "This app analyzes your DNA and provides information on a wide range of inherited traits. Once your DNA data is stored in your Sequencing.com account, after purchasing this DNA report simply click the app's 'Start' button and you'll receive your report in about 30 minutes. You've already taken a DNA test Upload your DNA data - Our Universal DNA Compatibility enables this report to work with DNA data from almost any DNA test. You need a DNA test Order a DNA test - Our clinical-grade 30x Whole Genome Sequencing test obtains data on 100% of your genome."
+    },
+    {
+      "label": "Related DNA Apps",
+      "textPreview": "Sequencing.com is the world's largest DNA App Store. We have an app for almost everything that can be determined from your genes. Browse The DNA App Store Additional DNA Reports by Complete Genome Science The Complete Genome Analysis Medication &amp; Drug Response Disease Susceptibility Carrier Status Nutrigenomics Traits Physical Appearance Immune System Blood Traits &amp; Conditions"
+    },
+    {
+      "label": "Disclaimer",
+      "textPreview": "The genetic analysis and statements that appear in this app, assessment, and report have not been evaluated by the United States Food and Drug Administration. The Sequencing.com website and all software applications (Apps) that use Sequencing.com's website, as well as Sequencing.com's open Application Programming Interface (API), are not intended to diagnose, monitor, treat, cure, prevent nor alleviate any disease."
+    }
+  ],
+  "meta": {
+    "canonical": "https://sequencing.com/marketplace/genetic-test-traits",
+    "publishedTime": null,
+    "modifiedTime": null,
+    "ogDescriptionHash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ogDescriptionPreview": "",
+    "productPriceAmount": "12900",
+    "productPriceCurrency": "USD",
+    "productRetailerItemId": "4809"
+  },
+  "nid": "16003",
+  "price": "$129",
+  "productId": "4809",
+  "publisher": "Complete Genome Science",
+  "reportDataKeys": [
+    "app_id",
+    "avatar",
+    "avatarAlt",
+    "body",
+    "category",
+    "currency_code",
+    "headerImg",
+    "headerImgAlt",
+    "id",
+    "included_with_membership",
+    "included_with_premium",
+    "info_tab",
+    "listEnableFiles",
+    "meta",
+    "nid",
+    "non_genetic_fields",
+    "pre_order",
+    "price",
+    "product_data",
+    "product_id",
+    "publisher",
+    "purchasedBy",
+    "relatedReports",
+    "reportFile",
+    "report_premium",
+    "search_keywords",
+    "start_button_text",
+    "sub_title",
+    "summary",
+    "title",
+    "type",
+    "uri",
+    "wgsCompatible"
+  ],
+  "reportFile": "https://sequencing.com/sites/default/files/genetic-testing-for-traits-sample-genetic-report-sequencing_0.pdf",
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "source": "in-app browser logged-in sequencing.com marketplace detail page __NEXT_DATA__.props.pageProps.reportData extraction",
+  "summaryPreview": "Inherited Traits, such as hair color or blood type, are characteristics that are determined by a person's genes, and in some cases by how those genes interact with the environment (including the person's lifestyle).",
+  "title": "Inherited Traits Genetic Analysis",
+  "uri": "marketplace/genetic-test-traits",
+  "url": "https://sequencing.com/marketplace/genetic-test-traits",
+  "visibleParagraphs": [
+    "Inherited Traits Genetic Analysis",
+    "Developed by Complete Genome Science",
+    "Inherited Traits, such as hair color or blood type, are characteristics that are determined by a person's genes, and in some cases by how those genes interact with the environment (including the person's lifestyle).",
+    "$129 per genome",
+    "Overview: Inherited Traits DNA Report Inherited Traits, such as hair color or blood type, are characteristics that are determined by a person's genes, and in some cases by how those genes interact with the environment (including the person's lifestyle). The Inherited Traits DNA Report includes your ",
+    "Getting Started: This app analyzes your DNA and provides information on a wide range of inherited traits. Once your DNA data is stored in your Sequencing.com account, after purchasing this DNA report simply click the app's 'Start' button and you'll receive your report in about 30 minutes. You've alr",
+    "Related DNA Apps: Sequencing.com is the world's largest DNA App Store. We have an app for almost everything that can be determined from your genes. Browse The DNA App Store Additional DNA Reports by Complete Genome Science The Complete Genome Analysis Medication &amp; Drug Response Disease Susceptib",
+    "Disclaimer: The genetic analysis and statements that appear in this app, assessment, and report have not been evaluated by the United States Food and Drug Administration. The Sequencing.com website and all software applications (Apps) that use Sequencing.com's website, as well as Sequencing.com's op"
+  ]
+}

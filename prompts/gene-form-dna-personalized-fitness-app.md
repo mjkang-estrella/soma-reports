@@ -12,4 +12,6 @@ State that fitness and training response are influenced by genetics, training hi
 Do not predict elite ability, prescribe workouts, recommend sport selection, estimate injury risk, estimate recovery, quantify VO2 max, recommend supplements, create nutrition plans, or provide medical exercise clearance from genotype.
 Use Gene-In-Form sample-report rows only as observed output-format examples unless the local run supplies equivalent validated evidence.
 Do not turn sample training, recovery, VO2max, injury, nutrition, or sport-focus text into personal workout, supplement, diet, injury-prevention, medical clearance, or sport-selection advice.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.

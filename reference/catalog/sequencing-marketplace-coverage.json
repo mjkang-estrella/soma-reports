@@ -1,14 +1,31 @@
 {
   "source": "Sequencing.com marketplace curation coverage",
   "targetTotal": 164,
-  "lastVerified": "2026-06-21",
+  "lastVerified": "2026-06-24",
   "evidence": [
     {
       "kind": "authenticated_marketplace_ui",
-      "description": "Logged-in Sequencing.com marketplace showed 164 visible marketplace card positions across 3 pages of 75, 75, and 14 cards. The captured cards include repeated slugs, so this evidence confirms the observed marketplace slot count, not 164 unique recovered names.",
+      "description": "Logged-in Sequencing.com marketplace showed 164 visible marketplace report/card positions across 3 pages of 75, 75, and 14 cards. The captured cards include repeated slugs, so this evidence confirms the authenticated marketplace position total while unique package identity recovery remains separate.",
       "url": "https://sequencing.com/marketplace?page=2",
       "artifact": "reference/catalog/sequencing-authenticated-marketplace-cards-2026-06-21.json",
+      "normalizedArtifact": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
       "status": "direct_count_observed"
+    },
+    {
+      "kind": "authenticated_marketplace_pageprops",
+      "description": "Logged-in Sequencing.com marketplace Next.js page props exposed 164 reportsGroups item positions with title, provider, price, category, href, and sample-report metadata when available. These positions collapse to 87 unique current hrefs because reports appear in multiple category groups.",
+      "url": "https://sequencing.com/marketplace?page=2",
+      "artifact": "reference/catalog/sequencing-authenticated-marketplace-pageprops-2026-06-21.json",
+      "normalizedArtifact": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+      "status": "structured_page_props_extraction"
+    },
+    {
+      "kind": "authenticated_marketplace_live_pageprops_recheck",
+      "description": "Logged-in in-app browser recheck on 2026-06-24 confirmed 164 reportsGroups positions and 87 unique raw route slugs. The raw live route slug set had no missing or extra slugs compared with the normalized authenticated ledger.",
+      "url": "https://sequencing.com/marketplace",
+      "artifact": "reference/catalog/sequencing-authenticated-marketplace-live-count-check-2026-06-24.json",
+      "normalizedArtifact": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+      "status": "live_recheck_no_count_delta"
     },
     {
       "kind": "public_aggregate_html",
@@ -31,8 +48,11 @@
     "publicUrlDistinct": 150,
     "authenticatedOnlyNamed": 4,
     "identifiedNamedTotal": 154,
-    "unidentifiedAuthenticatedSlots": 10,
-    "seededRecordsExpected": 164
+    "authenticatedStructuredCardPositions": 164,
+    "authenticatedUniqueCurrentHrefs": 87,
+    "authenticatedDuplicateStructuredPositions": 77,
+    "unidentifiedAuthenticatedSlots": 0,
+    "seededRecordsExpected": 154
   },
   "authenticatedBrowserCapture": {
     "capturedAt": "2026-06-21",
@@ -47,24 +67,36 @@
     "uniqueCardIdentities": 87,
     "uniqueMarketplaceSlugs": 84,
     "uniqueOrderSlugs": 3,
-    "finding": "The authenticated UI confirms 164 visible marketplace card positions. This capture confirms the four named authenticated-only entries already modeled, but does not identify the ten placeholder slots."
+    "finding": "The authenticated UI confirms 164 visible marketplace report/card positions. The local seed models 154 unique named package identities; duplicate authenticated positions are category placements and are not seeded as duplicate packages."
   },
-  "unidentifiedSlots": [
-    "authenticated-marketplace-slot-01",
-    "authenticated-marketplace-slot-02",
-    "authenticated-marketplace-slot-03",
-    "authenticated-marketplace-slot-04",
-    "authenticated-marketplace-slot-05",
-    "authenticated-marketplace-slot-06",
-    "authenticated-marketplace-slot-07",
-    "authenticated-marketplace-slot-08",
-    "authenticated-marketplace-slot-09",
-    "authenticated-marketplace-slot-10"
-  ],
+  "authenticatedPagePropsCapture": {
+    "capturedAt": "2026-06-21",
+    "sourceArtifact": "reference/catalog/sequencing-authenticated-marketplace-pageprops-2026-06-21.json",
+    "method": "Logged-in in-app browser extraction of __NEXT_DATA__.props.pageProps.reportsGroups.",
+    "structuredItemTotal": 164,
+    "groupCount": 10,
+    "uniqueCardIdentities": 87,
+    "uniqueMarketplaceSlugs": 84,
+    "uniqueOrderSlugs": 3,
+    "duplicateStructuredPositions": 77,
+    "finding": "The authenticated page props identify all 164 marketplace group positions. They do not imply 164 unique report packages because many hrefs appear in multiple groups."
+  },
+  "authenticatedLiveRecheck": {
+    "capturedAt": "2026-06-24T18:14:28Z",
+    "sourceArtifact": "reference/catalog/sequencing-authenticated-marketplace-live-count-check-2026-06-24.json",
+    "method": "Logged-in in-app browser extraction of aggregate counts from __NEXT_DATA__.props.pageProps.reportsGroups.",
+    "structuredItemTotal": 164,
+    "groupCount": 10,
+    "uniqueRawRouteSlugs": 87,
+    "duplicateStructuredPositions": 77,
+    "missingRawSlugsComparedWithNormalizedLedger": [],
+    "finding": "The live logged-in marketplace count still matches the 164-position target; the local normalized authenticated ledger has no raw route slug gaps."
+  },
+  "unidentifiedSlots": [],
   "policy": {
-    "placeholderLabel": "Authenticated marketplace item NN",
+    "placeholderLabel": null,
     "doNotInferNames": true,
-    "replacementRule": "Replace a placeholder only after authenticated page, SSR JSON, screenshot, or detail-page evidence identifies the actual report name and metadata.",
+    "replacementRule": "Do not seed anonymous or duplicate report packages. Add a new named report package only after authenticated page, SSR JSON, screenshot, or detail-page evidence identifies a non-duplicate report identity and metadata.",
     "rawGenomeBoundary": "Coverage tracking contains no raw genome data."
   }
 }

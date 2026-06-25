@@ -1,0 +1,1655 @@
+{
+  "schema": "soma-reports.authenticated-blocker-detail-inspection.v1",
+  "capturedAt": "2026-06-24T18:52:32.784Z",
+  "source": "in-app browser authenticated Sequencing.com marketplace detail metadata only",
+  "privacyBoundary": "No Start Report/Get App/Get Report buttons were clicked; generated result pages and raw genome data were not captured.",
+  "targets": [
+    {
+      "apiAppId": "depth",
+      "appBackend": "ApiAppBackend",
+      "appLabel": "Sequencing Depth and Coverage",
+      "exactRoute": true,
+      "finalUrl": "https://sequencing.com/marketplace/sequencing-depth-and-coverage",
+      "headings": [
+        "Sequencing Depth and Coverage",
+        "Discover the depth and coverage of your genome sequencing data"
+      ],
+      "inspectedAt": "2026-06-24T18:52:19.104Z",
+      "pageTitle": "Sequencing Depth and Coverage",
+      "price": "$9.99",
+      "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data",
+      "productId": "4796",
+      "relatedReports": [
+        {
+          "apiAppId": "VcfGenomeOverview",
+          "reportFile": "",
+          "title": "Genome Overview",
+          "uri": "/marketplace/genome-overview"
+        },
+        {
+          "apiAppId": "EvePremium",
+          "reportFile": "",
+          "title": "EvE Premium",
+          "uri": "/marketplace/eve-premium-dna-genome-data-bioinformatics-pipelines"
+        }
+      ],
+      "reportFile": "",
+      "requestedUrl": "https://sequencing.com/marketplace/sequencing-depth-and-coverage",
+      "routeKind": "marketplace",
+      "scriptSignals": {
+        "generated": 0,
+        "mock": 0,
+        "output": 0,
+        "preview": 0,
+        "reportFile": 3,
+        "result": 0,
+        "sample": 0
+      },
+      "slug": "sequencing-depth-and-coverage",
+      "startButtonText": "Start App",
+      "title": "Sequencing Depth and Coverage",
+      "type": [],
+      "visibleSampleLinks": [
+        {
+          "href": "https://sequencing.com/marketplace?category=bioinformatics",
+          "text": "View All Related Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "My Results"
+        }
+      ]
+    },
+    {
+      "apiAppId": "dataviewerapp",
+      "appBackend": "ApiAppBackend",
+      "appLabel": "Genome Explorer",
+      "exactRoute": true,
+      "finalUrl": "https://sequencing.com/marketplace/genome-explorer-dna-data-search",
+      "headings": [
+        "Genome Explorer v3",
+        "Genome Explorer: DNA Search Engine and Genome Data Viewer",
+        "Genome Explorer is the world's first online browser and search engine for your genome.",
+        "Search Your DNA with Our Free Genome Search Engine",
+        "Compatible with All DNA Data Types and Genetic Variations",
+        "Getting Started with Genome Explorer DNA Data Search",
+        "It's easy to use Genome Explorer. To get started, upload your raw DNA data or order a DNA test.",
+        "How to Use the Gene Explorer Tool",
+        "Understanding Your Genome Data Viewer Results"
+      ],
+      "inspectedAt": "2026-06-24T18:52:19.486Z",
+      "pageTitle": "Genome Explorer v3",
+      "price": "$0",
+      "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data",
+      "productId": "4639",
+      "relatedReports": [
+        {
+          "apiAppId": "Hps",
+          "reportFile": "https://sequencing.com/sites/default/files/healthcare-pro-dna-analysis-app-sample-genetic-report2-sequencing.com-genome-app-store_0.pdf",
+          "title": "Healthcare Pro",
+          "uri": "/marketplace/healthcare-pro-genetic-report"
+        },
+        {
+          "apiAppId": "health-scan",
+          "reportFile": "",
+          "title": "Health Scan",
+          "uri": "/marketplace/health-scan"
+        },
+        {
+          "apiAppId": null,
+          "reportFile": "",
+          "title": "Next-Gen Disease Screen",
+          "uri": "/marketplace/next-gen-disease-screen"
+        }
+      ],
+      "reportFile": "",
+      "requestedUrl": "https://sequencing.com/marketplace/genome-explorer-dna-data-search",
+      "routeKind": "marketplace",
+      "scriptSignals": {
+        "generated": 1,
+        "mock": 2,
+        "output": 0,
+        "preview": 0,
+        "reportFile": 4,
+        "result": 18,
+        "sample": 1
+      },
+      "slug": "genome-explorer-dna-data-search",
+      "startButtonText": "Start App",
+      "title": "Genome Explorer DNA Data Search",
+      "type": [
+        "Free"
+      ],
+      "visibleSampleLinks": [
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/marketplace?category=health",
+          "text": "View All Related Reports"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/healthcare-pro-genetic-report",
+          "text": "HealthHealthcare ProThis report analyzes DNA data from any genetic test and provides a genetic health report designed for healthcare providers.$199"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "My Results"
+        }
+      ]
+    },
+    {
+      "apiAppId": "SnpLocator",
+      "appBackend": "ApiAppBackend",
+      "appLabel": "Convert rsids to coordinates",
+      "exactRoute": true,
+      "finalUrl": "https://sequencing.com/marketplace/convert-rsids-coordinates",
+      "headings": [
+        "Convert rsids to Coordinates",
+        "Convert a list of rsids to their chromosomal coordinates"
+      ],
+      "inspectedAt": "2026-06-24T18:52:20.675Z",
+      "pageTitle": "Convert rsids to Coordinates",
+      "price": "$0.99",
+      "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data",
+      "productId": "4522",
+      "relatedReports": [
+        {
+          "apiAppId": "VcfGenomeOverview",
+          "reportFile": "",
+          "title": "Genome Overview",
+          "uri": "/marketplace/genome-overview"
+        },
+        {
+          "apiAppId": "dataviewerapp",
+          "reportFile": "",
+          "title": "Genome Explorer v3",
+          "uri": "/marketplace/genome-explorer-dna-data-search"
+        },
+        {
+          "apiAppId": null,
+          "reportFile": "",
+          "title": "Next-Gen Disease Screen",
+          "uri": "/marketplace/next-gen-disease-screen"
+        }
+      ],
+      "reportFile": "",
+      "requestedUrl": "https://sequencing.com/marketplace/convert-rsids-coordinates",
+      "routeKind": "marketplace",
+      "scriptSignals": {
+        "generated": 0,
+        "mock": 0,
+        "output": 3,
+        "preview": 0,
+        "reportFile": 4,
+        "result": 2,
+        "sample": 0
+      },
+      "slug": "convert-rsids-coordinates",
+      "startButtonText": "Start App",
+      "title": "Convert rsids to Coordinates",
+      "type": [],
+      "visibleSampleLinks": [
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/marketplace?category=draft",
+          "text": "View All Related Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "My Results"
+        }
+      ]
+    },
+    {
+      "apiAppId": "BeagleImputeApp",
+      "appBackend": "ApiAppBackend",
+      "appLabel": "Imputation Analysis",
+      "exactRoute": true,
+      "finalUrl": "https://sequencing.com/marketplace/imputation-analysis",
+      "headings": [
+        "Imputation Analysis",
+        "Extremely Fast and Highly Accurate Genotype Imputation",
+        "The app provides a Confidence Score for each imputed genotype."
+      ],
+      "inspectedAt": "2026-06-24T18:52:21.023Z",
+      "pageTitle": "Imputation Analysis",
+      "price": "$9.99",
+      "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data",
+      "productId": "4567",
+      "relatedReports": [
+        {
+          "apiAppId": "EvePremium",
+          "reportFile": "",
+          "title": "EvE Premium",
+          "uri": "/marketplace/eve-premium-dna-genome-data-bioinformatics-pipelines"
+        }
+      ],
+      "reportFile": "",
+      "requestedUrl": "https://sequencing.com/marketplace/imputation-analysis",
+      "routeKind": "marketplace",
+      "scriptSignals": {
+        "generated": 1,
+        "mock": 0,
+        "output": 0,
+        "preview": 0,
+        "reportFile": 2,
+        "result": 8,
+        "sample": 1
+      },
+      "slug": "imputation-analysis",
+      "startButtonText": "Start App",
+      "title": "Imputation Analysis",
+      "type": [],
+      "visibleSampleLinks": [
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/marketplace?category=bioinformatics",
+          "text": "View All Related Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "My Results"
+        }
+      ]
+    },
+    {
+      "apiAppId": "VepAppMpcProvider",
+      "appBackend": "ApiAppBackend",
+      "appLabel": "Variant Effect Predictor",
+      "exactRoute": true,
+      "finalUrl": "https://sequencing.com/marketplace/variant-effect-predictor",
+      "headings": [
+        "Variant Effect Predictor"
+      ],
+      "inspectedAt": "2026-06-24T18:52:21.343Z",
+      "pageTitle": "Variant Effect Predictor",
+      "price": "$19.99",
+      "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data",
+      "productId": "81",
+      "relatedReports": [
+        {
+          "apiAppId": "VcfGenomeOverview",
+          "reportFile": "",
+          "title": "Genome Overview",
+          "uri": "/marketplace/genome-overview"
+        },
+        {
+          "apiAppId": "EvePremium",
+          "reportFile": "",
+          "title": "EvE Premium",
+          "uri": "/marketplace/eve-premium-dna-genome-data-bioinformatics-pipelines"
+        }
+      ],
+      "reportFile": "",
+      "requestedUrl": "https://sequencing.com/marketplace/variant-effect-predictor",
+      "routeKind": "marketplace",
+      "scriptSignals": {
+        "generated": 1,
+        "mock": 0,
+        "output": 0,
+        "preview": 0,
+        "reportFile": 3,
+        "result": 7,
+        "sample": 0
+      },
+      "slug": "variant-effect-predictor",
+      "startButtonText": "Start App",
+      "title": "Variant Effect Predictor",
+      "type": [],
+      "visibleSampleLinks": [
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/marketplace?category=bioinformatics",
+          "text": "View All Related Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "My Results"
+        }
+      ]
+    },
+    {
+      "apiAppId": "Bam2VcfPlatypus",
+      "appBackend": "ApiAppBackend",
+      "appLabel": "Variant Discovery",
+      "exactRoute": true,
+      "finalUrl": "https://sequencing.com/marketplace/variant-discovery-bioinformatics-secondary-analysis",
+      "headings": [
+        "Variant Discovery",
+        "Use this app to detect the following types of variants in BAM files from whole genome sequencing (WGS) and exome sequencing:",
+        "Compatibility Information"
+      ],
+      "inspectedAt": "2026-06-24T18:52:21.967Z",
+      "pageTitle": "Variant Discovery",
+      "price": "$19",
+      "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data",
+      "productId": "74",
+      "relatedReports": [
+        {
+          "apiAppId": "EvePremium",
+          "reportFile": "",
+          "title": "EvE Premium",
+          "uri": "/marketplace/eve-premium-dna-genome-data-bioinformatics-pipelines"
+        }
+      ],
+      "reportFile": "",
+      "requestedUrl": "https://sequencing.com/marketplace/variant-discovery-bioinformatics-secondary-analysis",
+      "routeKind": "marketplace",
+      "scriptSignals": {
+        "generated": 1,
+        "mock": 0,
+        "output": 0,
+        "preview": 0,
+        "reportFile": 2,
+        "result": 1,
+        "sample": 0
+      },
+      "slug": "variant-discovery-bioinformatics-secondary-analysis",
+      "startButtonText": "Start App",
+      "title": "Variant Discovery",
+      "type": [],
+      "visibleSampleLinks": [
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/marketplace?category=bioinformatics",
+          "text": "View All Related Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "My Results"
+        }
+      ]
+    },
+    {
+      "apiAppId": "Stampy",
+      "appBackend": "ApiAppBackend",
+      "appLabel": "Short Read Mapper",
+      "exactRoute": true,
+      "finalUrl": "https://sequencing.com/marketplace/genome-short-read-mapper",
+      "headings": [
+        "Short Read Mapper",
+        "Genome Mapping Made Simple"
+      ],
+      "inspectedAt": "2026-06-24T18:52:22.293Z",
+      "pageTitle": "Short Read Mapper",
+      "price": "$249",
+      "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data",
+      "productId": "78",
+      "relatedReports": [
+        {
+          "apiAppId": "VcfGenomeOverview",
+          "reportFile": "",
+          "title": "Genome Overview",
+          "uri": "/marketplace/genome-overview"
+        },
+        {
+          "apiAppId": "dataviewerapp",
+          "reportFile": "",
+          "title": "Genome Explorer v3",
+          "uri": "/marketplace/genome-explorer-dna-data-search"
+        }
+      ],
+      "reportFile": "",
+      "requestedUrl": "https://sequencing.com/marketplace/genome-short-read-mapper",
+      "routeKind": "marketplace",
+      "scriptSignals": {
+        "generated": 0,
+        "mock": 0,
+        "output": 2,
+        "preview": 0,
+        "reportFile": 3,
+        "result": 0,
+        "sample": 0
+      },
+      "slug": "genome-short-read-mapper",
+      "startButtonText": "Start App",
+      "title": "Short Read Mapper",
+      "type": [],
+      "visibleSampleLinks": [
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/marketplace",
+          "text": "DNA apps and reports marketplace"
+        },
+        {
+          "href": "https://sequencing.com/marketplace?category=bioinformatics",
+          "text": "View All Related Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "My Results"
+        }
+      ]
+    },
+    {
+      "apiAppId": "promethease",
+      "appBackend": "ApiAppBackend",
+      "appLabel": "Promethease",
+      "exactRoute": true,
+      "finalUrl": "https://sequencing.com/marketplace/promethease",
+      "headings": [
+        "Promethease",
+        "Promethease DNA Analysis Reports",
+        "Genome Explorer is a free alternative to Promethease",
+        "Getting Started With Promethease",
+        "You've already taken a DNA test",
+        "You need a DNA test"
+      ],
+      "inspectedAt": "2026-06-24T18:52:22.605Z",
+      "pageTitle": "Promethease",
+      "price": "$0",
+      "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data",
+      "productId": "4586",
+      "relatedReports": [
+        {
+          "apiAppId": "dataviewerapp",
+          "reportFile": "",
+          "title": "Genome Explorer v3",
+          "uri": "/marketplace/genome-explorer-dna-data-search"
+        }
+      ],
+      "reportFile": "",
+      "requestedUrl": "https://sequencing.com/marketplace/promethease",
+      "routeKind": "marketplace",
+      "scriptSignals": {
+        "generated": 0,
+        "mock": 0,
+        "output": 0,
+        "preview": 0,
+        "reportFile": 2,
+        "result": 0,
+        "sample": 0
+      },
+      "slug": "promethease",
+      "startButtonText": "Start Report",
+      "title": "Promethease",
+      "type": [],
+      "visibleSampleLinks": [
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/marketplace?category=health",
+          "text": "View All Related Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "My Results"
+        }
+      ]
+    },
+    {
+      "apiAppId": null,
+      "appBackend": "RedirectAppBackend",
+      "appLabel": "Whole Genome Sequencing",
+      "exactRoute": true,
+      "finalUrl": "https://sequencing.com/marketplace/whole-genome-sequencing-30x",
+      "headings": [
+        "Whole Genome Sequencing",
+        "Whole Genome Sequencing Service",
+        "DNA Sequencing | Comprehensive Analysis | DNA Reports"
+      ],
+      "inspectedAt": "2026-06-24T18:52:23.807Z",
+      "pageTitle": "Whole Genome Sequencing",
+      "price": "$549",
+      "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data",
+      "productId": "4668",
+      "relatedReports": [],
+      "reportFile": "",
+      "requestedUrl": "https://sequencing.com/marketplace/whole-genome-sequencing-30x",
+      "routeKind": "marketplace",
+      "scriptSignals": {
+        "generated": 0,
+        "mock": 0,
+        "output": 0,
+        "preview": 0,
+        "reportFile": 1,
+        "result": 1,
+        "sample": 0
+      },
+      "slug": "whole-genome-sequencing-30x",
+      "startButtonText": "Order Kit",
+      "title": "Whole Genome Sequencing",
+      "type": [],
+      "visibleSampleLinks": [
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/marketplace?category=test%20kits",
+          "text": "View All Related Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "My Results"
+        }
+      ]
+    },
+    {
+      "apiAppId": null,
+      "appBackend": null,
+      "appLabel": null,
+      "exactRoute": true,
+      "finalUrl": "https://sequencing.com/order/comprehensive-wgs-health-screen-bundle?quantity=1#auth",
+      "headings": [],
+      "inspectedAt": "2026-06-24T18:52:24.390Z",
+      "pageTitle": "Purchase Kit",
+      "price": "",
+      "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data",
+      "productId": null,
+      "relatedReports": [],
+      "reportFile": "",
+      "requestedUrl": "https://sequencing.com/order/comprehensive-wgs-health-screen-bundle",
+      "routeKind": "order",
+      "scriptSignals": {
+        "generated": 0,
+        "mock": 0,
+        "output": 0,
+        "preview": 0,
+        "reportFile": 0,
+        "result": 0,
+        "sample": 1
+      },
+      "slug": "comprehensive-health-screen-wgs-bundle",
+      "startButtonText": "",
+      "title": "Comprehensive Health Screen WGS Bundle",
+      "type": [],
+      "visibleSampleLinks": []
+    },
+    {
+      "apiAppId": null,
+      "appBackend": null,
+      "appLabel": null,
+      "exactRoute": true,
+      "finalUrl": "https://sequencing.com/order/expedited-advanced-wgs-health-screen-bundle?quantity=1#auth",
+      "headings": [],
+      "inspectedAt": "2026-06-24T18:52:25.117Z",
+      "pageTitle": "Purchase Kit",
+      "price": "",
+      "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data",
+      "productId": null,
+      "relatedReports": [],
+      "reportFile": "",
+      "requestedUrl": "https://sequencing.com/order/expedited-advanced-wgs-health-screen-bundle",
+      "routeKind": "order",
+      "scriptSignals": {
+        "generated": 0,
+        "mock": 0,
+        "output": 0,
+        "preview": 0,
+        "reportFile": 0,
+        "result": 0,
+        "sample": 2
+      },
+      "slug": "expedited-advanced-health-screen-wgs-bundle",
+      "startButtonText": "",
+      "title": "Expedited Advanced Health Screen WGS Bundle",
+      "type": [],
+      "visibleSampleLinks": []
+    },
+    {
+      "apiAppId": null,
+      "appBackend": null,
+      "appLabel": null,
+      "exactRoute": true,
+      "finalUrl": "https://sequencing.com/order/ultra-rapid-professional-wgs-health-screen-bundle?quantity=1#auth",
+      "headings": [],
+      "inspectedAt": "2026-06-24T18:52:25.886Z",
+      "pageTitle": "Purchase Kit",
+      "price": "",
+      "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data",
+      "productId": null,
+      "relatedReports": [],
+      "reportFile": "",
+      "requestedUrl": "https://sequencing.com/order/ultra-rapid-professional-wgs-health-screen-bundle",
+      "routeKind": "order",
+      "scriptSignals": {
+        "generated": 0,
+        "mock": 0,
+        "output": 0,
+        "preview": 0,
+        "reportFile": 0,
+        "result": 0,
+        "sample": 2
+      },
+      "slug": "ultra-rapid-professional-health-screen-wgs-bundle",
+      "startButtonText": "",
+      "title": "Ultra Rapid Professional Health Screen WGS Bundle",
+      "type": [],
+      "visibleSampleLinks": []
+    },
+    {
+      "apiAppId": "ai_hc_connective",
+      "appBackend": "ApiAppBackend",
+      "appLabel": "AI Connective Tissue Disorders",
+      "exactRoute": true,
+      "finalUrl": "https://sequencing.com/marketplace/connective-tissue-disorders-and-eds",
+      "headings": [
+        "Connective Tissue Disorders and EDS"
+      ],
+      "inspectedAt": "2026-06-24T18:52:26.438Z",
+      "pageTitle": "Connective Tissue Disorders and EDS",
+      "price": "$0",
+      "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data",
+      "productId": "5100",
+      "relatedReports": [
+        {
+          "apiAppId": "ai_hc_hearing",
+          "reportFile": "",
+          "title": "Hearing & Auditory Genetics",
+          "uri": "/marketplace/hearing-auditory-genetics"
+        },
+        {
+          "apiAppId": "ai_cs_coloncancer",
+          "reportFile": "",
+          "title": "Colon Cancer",
+          "uri": "/marketplace/colon-cancer"
+        },
+        {
+          "apiAppId": "ai_cs_pancreaticcancer",
+          "reportFile": "",
+          "title": "Pancreatic Cancer",
+          "uri": "/marketplace/pancreatic-cancer"
+        }
+      ],
+      "reportFile": "",
+      "requestedUrl": "https://sequencing.com/marketplace/connective-tissue-disorders-and-eds",
+      "routeKind": "marketplace",
+      "scriptSignals": {
+        "generated": 0,
+        "mock": 0,
+        "output": 0,
+        "preview": 0,
+        "reportFile": 4,
+        "result": 0,
+        "sample": 0
+      },
+      "slug": "connective-tissue-disorders-and-eds",
+      "startButtonText": "Start Report",
+      "title": "Connective Tissue Disorders and EDS",
+      "type": [],
+      "visibleSampleLinks": [
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/marketplace?category=draft",
+          "text": "View All Related Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "My Results"
+        }
+      ]
+    },
+    {
+      "apiAppId": "ai_cs_dysautonomia",
+      "appBackend": "ApiAppBackend",
+      "appLabel": "Dysautonomia",
+      "exactRoute": true,
+      "finalUrl": "https://sequencing.com/marketplace/dysautonomia",
+      "headings": [
+        "Dysautonomia"
+      ],
+      "inspectedAt": "2026-06-24T18:52:26.891Z",
+      "pageTitle": "Dysautonomia",
+      "price": "$0",
+      "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data",
+      "productId": "5327",
+      "relatedReports": [
+        {
+          "apiAppId": "ai_hc_hearing",
+          "reportFile": "",
+          "title": "Hearing & Auditory Genetics",
+          "uri": "/marketplace/hearing-auditory-genetics"
+        },
+        {
+          "apiAppId": "ai_cs_coloncancer",
+          "reportFile": "",
+          "title": "Colon Cancer",
+          "uri": "/marketplace/colon-cancer"
+        },
+        {
+          "apiAppId": "ai_cs_pancreaticcancer",
+          "reportFile": "",
+          "title": "Pancreatic Cancer",
+          "uri": "/marketplace/pancreatic-cancer"
+        }
+      ],
+      "reportFile": "",
+      "requestedUrl": "https://sequencing.com/marketplace/dysautonomia",
+      "routeKind": "marketplace",
+      "scriptSignals": {
+        "generated": 0,
+        "mock": 0,
+        "output": 0,
+        "preview": 0,
+        "reportFile": 4,
+        "result": 0,
+        "sample": 0
+      },
+      "slug": "dysautonomia",
+      "startButtonText": "Start Report",
+      "title": "Dysautonomia",
+      "type": [],
+      "visibleSampleLinks": [
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/marketplace?category=draft",
+          "text": "View All Related Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "My Results"
+        }
+      ]
+    },
+    {
+      "apiAppId": null,
+      "appBackend": null,
+      "appLabel": null,
+      "exactRoute": false,
+      "finalUrl": "https://sequencing.com/marketplace",
+      "headings": [
+        "All Apps and Reports",
+        "All Apps and Reports"
+      ],
+      "inspectedAt": "2026-06-24T18:52:28.232Z",
+      "pageTitle": "Sequencing Marketplace | DNA Reports, Apps & Test Kits",
+      "price": "",
+      "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data",
+      "productId": null,
+      "relatedReports": [],
+      "reportFile": "",
+      "requestedUrl": "https://sequencing.com/marketplace/ehlers-danlos-syndrome",
+      "routeKind": "other",
+      "scriptSignals": {
+        "generated": 0,
+        "mock": 0,
+        "output": 0,
+        "preview": 1,
+        "reportFile": 195,
+        "result": 31,
+        "sample": 102
+      },
+      "slug": "ehlers-danlos-syndrome",
+      "startButtonText": "Get App",
+      "title": "Ehlers-Danlos Syndrome",
+      "type": [],
+      "visibleSampleLinks": [
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/ai-reports",
+          "text": "AI ReportsDeveloped by Sequencing.comIncluded withPremium & ProGet Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/wellness-genetic-guide",
+          "text": "Wellness Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/heart-health-genetic-guide",
+          "text": "Heart Health Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/oncology-genetic-guide",
+          "text": "Oncology Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/mental-health-genetic-guide",
+          "text": "Mental Health Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/personalized-vitamins-and-supplements",
+          "text": "Personalized Vitamins and SupplementsDeveloped by GenoPalate$29Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/strategene",
+          "text": "StrateGeneDeveloped by Seeking Health$95Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/detox-pathway",
+          "text": "Detox PathwayDeveloped by SelfDecode$89Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/ozempic-glp-1-agonists-genetic-report",
+          "text": "Ozempic and GLP-1 AgonistsDeveloped by Golden Gate Gene$99Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/chronic-fatigue-dna-health-report",
+          "text": "Chronic Fatigue DNA Health ReportDeveloped by SelfDecode$59Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/gut-health",
+          "text": "Gut HealthDeveloped by SelfDecode$59Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/chronic-pain-dna-report",
+          "text": "Chronic Pain DNA ReportDeveloped by SelfDecode$59Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/my-heart-health",
+          "text": "My Heart HealthDeveloped by GenoPalate$49Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/medications-pgx-complete-dna-guide",
+          "text": "Medications PGx: Complete DNA GuideDeveloped by Quantum Genomics | Golden Gate Gene$129Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/mthfr-dna-wellness-report",
+          "text": "MTHFR DNA Wellness ReportDeveloped by SelfDecode$29Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/medication-pharmacogenomics-dna-report",
+          "text": "Medication & Drug ResponseDeveloped by Complete Genome Science$59Get Report"
+        }
+      ]
+    },
+    {
+      "apiAppId": "EvePremium",
+      "appBackend": "ApiAppBackend",
+      "appLabel": "EvE Premium",
+      "exactRoute": true,
+      "finalUrl": "https://sequencing.com/marketplace/eve-premium-dna-genome-data-bioinformatics-pipelines",
+      "headings": [
+        "EvE Premium",
+        "Create Your Own Bioinformatics Pipeline: Powerful and Easy-to-use.",
+        "Design your own ultra-fast, cloud-based pipeline in seconds. Use defaults or define specific parameters. It's your choice!",
+        "New in EvE Premium v4: ClinVar Interpretation"
+      ],
+      "inspectedAt": "2026-06-24T18:52:28.576Z",
+      "pageTitle": "EvE Premium",
+      "price": "$19.99",
+      "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data",
+      "productId": "4524",
+      "relatedReports": [],
+      "reportFile": "",
+      "requestedUrl": "https://sequencing.com/marketplace/eve-premium-dna-genome-data-bioinformatics-pipelines",
+      "routeKind": "marketplace",
+      "scriptSignals": {
+        "generated": 3,
+        "mock": 0,
+        "output": 23,
+        "preview": 0,
+        "reportFile": 1,
+        "result": 2,
+        "sample": 12
+      },
+      "slug": "eve-premium-dna-genome-data-bioinformatics-pipelines",
+      "startButtonText": "Start App",
+      "title": "EvE Premium DNA Genome Data Bioinformatics Pipelines",
+      "type": [],
+      "visibleSampleLinks": [
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/marketplace?category=bioinformatics",
+          "text": "View All Related Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "My Results"
+        }
+      ]
+    },
+    {
+      "apiAppId": "ai_hc_hearing",
+      "appBackend": "ApiAppBackend",
+      "appLabel": "Hearing & Auditory Genetics",
+      "exactRoute": true,
+      "finalUrl": "https://sequencing.com/marketplace/hearing-auditory-genetics",
+      "headings": [
+        "Hearing & Auditory Genetics"
+      ],
+      "inspectedAt": "2026-06-24T18:52:28.960Z",
+      "pageTitle": "Hearing & Auditory Genetics",
+      "price": "$0",
+      "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data",
+      "productId": "5231",
+      "relatedReports": [
+        {
+          "apiAppId": "ai_hc_vision",
+          "reportFile": "",
+          "title": "Vision",
+          "uri": "/marketplace/vision"
+        },
+        {
+          "apiAppId": "ai_cs_coloncancer",
+          "reportFile": "",
+          "title": "Colon Cancer",
+          "uri": "/marketplace/colon-cancer"
+        },
+        {
+          "apiAppId": "ai_cs_pancreaticcancer",
+          "reportFile": "",
+          "title": "Pancreatic Cancer",
+          "uri": "/marketplace/pancreatic-cancer"
+        }
+      ],
+      "reportFile": "",
+      "requestedUrl": "https://sequencing.com/marketplace/hearing-auditory-genetics",
+      "routeKind": "marketplace",
+      "scriptSignals": {
+        "generated": 0,
+        "mock": 0,
+        "output": 0,
+        "preview": 0,
+        "reportFile": 4,
+        "result": 0,
+        "sample": 0
+      },
+      "slug": "hearing-auditory-genetics",
+      "startButtonText": "Start Report",
+      "title": "Hearing & Auditory Genetics",
+      "type": [],
+      "visibleSampleLinks": [
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/marketplace?category=draft",
+          "text": "View All Related Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "My Results"
+        }
+      ]
+    },
+    {
+      "apiAppId": null,
+      "appBackend": null,
+      "appLabel": null,
+      "exactRoute": false,
+      "finalUrl": "https://sequencing.com/marketplace",
+      "headings": [
+        "All Apps and Reports",
+        "All Apps and Reports"
+      ],
+      "inspectedAt": "2026-06-24T18:52:30.142Z",
+      "pageTitle": "Sequencing Marketplace | DNA Reports, Apps & Test Kits",
+      "price": "",
+      "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data",
+      "productId": null,
+      "relatedReports": [],
+      "reportFile": "",
+      "requestedUrl": "https://sequencing.com/marketplace/marfan-syndrome",
+      "routeKind": "other",
+      "scriptSignals": {
+        "generated": 0,
+        "mock": 0,
+        "output": 0,
+        "preview": 1,
+        "reportFile": 195,
+        "result": 31,
+        "sample": 103
+      },
+      "slug": "marfan-syndrome",
+      "startButtonText": "Get App",
+      "title": "Marfan Syndrome",
+      "type": [],
+      "visibleSampleLinks": [
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/ai-reports",
+          "text": "AI ReportsDeveloped by Sequencing.comIncluded withPremium & ProGet Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/wellness-genetic-guide",
+          "text": "Wellness Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/heart-health-genetic-guide",
+          "text": "Heart Health Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/oncology-genetic-guide",
+          "text": "Oncology Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/mental-health-genetic-guide",
+          "text": "Mental Health Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/personalized-vitamins-and-supplements",
+          "text": "Personalized Vitamins and SupplementsDeveloped by GenoPalate$29Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/strategene",
+          "text": "StrateGeneDeveloped by Seeking Health$95Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/detox-pathway",
+          "text": "Detox PathwayDeveloped by SelfDecode$89Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/ozempic-glp-1-agonists-genetic-report",
+          "text": "Ozempic and GLP-1 AgonistsDeveloped by Golden Gate Gene$99Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/chronic-fatigue-dna-health-report",
+          "text": "Chronic Fatigue DNA Health ReportDeveloped by SelfDecode$59Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/gut-health",
+          "text": "Gut HealthDeveloped by SelfDecode$59Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/chronic-pain-dna-report",
+          "text": "Chronic Pain DNA ReportDeveloped by SelfDecode$59Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/my-heart-health",
+          "text": "My Heart HealthDeveloped by GenoPalate$49Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/medications-pgx-complete-dna-guide",
+          "text": "Medications PGx: Complete DNA GuideDeveloped by Quantum Genomics | Golden Gate Gene$129Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/mthfr-dna-wellness-report",
+          "text": "MTHFR DNA Wellness ReportDeveloped by SelfDecode$29Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/medication-pharmacogenomics-dna-report",
+          "text": "Medication & Drug ResponseDeveloped by Complete Genome Science$59Get Report"
+        }
+      ]
+    },
+    {
+      "apiAppId": null,
+      "appBackend": null,
+      "appLabel": null,
+      "exactRoute": false,
+      "finalUrl": "https://sequencing.com/marketplace",
+      "headings": [
+        "All Apps and Reports",
+        "All Apps and Reports"
+      ],
+      "inspectedAt": "2026-06-24T18:52:31.069Z",
+      "pageTitle": "Sequencing Marketplace | DNA Reports, Apps & Test Kits",
+      "price": "",
+      "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data",
+      "productId": null,
+      "relatedReports": [],
+      "reportFile": "",
+      "requestedUrl": "https://sequencing.com/marketplace/mitchell-syndrome",
+      "routeKind": "other",
+      "scriptSignals": {
+        "generated": 0,
+        "mock": 0,
+        "output": 0,
+        "preview": 1,
+        "reportFile": 195,
+        "result": 31,
+        "sample": 102
+      },
+      "slug": "mitchell-syndrome",
+      "startButtonText": "Get App",
+      "title": "Mitchell Syndrome",
+      "type": [],
+      "visibleSampleLinks": [
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/ai-reports",
+          "text": "AI ReportsDeveloped by Sequencing.comIncluded withPremium & ProGet Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/wellness-genetic-guide",
+          "text": "Wellness Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/heart-health-genetic-guide",
+          "text": "Heart Health Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/oncology-genetic-guide",
+          "text": "Oncology Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/mental-health-genetic-guide",
+          "text": "Mental Health Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/personalized-vitamins-and-supplements",
+          "text": "Personalized Vitamins and SupplementsDeveloped by GenoPalate$29Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/strategene",
+          "text": "StrateGeneDeveloped by Seeking Health$95Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/detox-pathway",
+          "text": "Detox PathwayDeveloped by SelfDecode$89Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/ozempic-glp-1-agonists-genetic-report",
+          "text": "Ozempic and GLP-1 AgonistsDeveloped by Golden Gate Gene$99Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/chronic-fatigue-dna-health-report",
+          "text": "Chronic Fatigue DNA Health ReportDeveloped by SelfDecode$59Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/gut-health",
+          "text": "Gut HealthDeveloped by SelfDecode$59Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/chronic-pain-dna-report",
+          "text": "Chronic Pain DNA ReportDeveloped by SelfDecode$59Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/my-heart-health",
+          "text": "My Heart HealthDeveloped by GenoPalate$49Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/medications-pgx-complete-dna-guide",
+          "text": "Medications PGx: Complete DNA GuideDeveloped by Quantum Genomics | Golden Gate Gene$129Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/mthfr-dna-wellness-report",
+          "text": "MTHFR DNA Wellness ReportDeveloped by SelfDecode$29Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/medication-pharmacogenomics-dna-report",
+          "text": "Medication & Drug ResponseDeveloped by Complete Genome Science$59Get Report"
+        }
+      ]
+    },
+    {
+      "apiAppId": "ai_hc_oral",
+      "appBackend": "ApiAppBackend",
+      "appLabel": "Oral",
+      "exactRoute": true,
+      "finalUrl": "https://sequencing.com/marketplace/oral",
+      "headings": [
+        "Oral"
+      ],
+      "inspectedAt": "2026-06-24T18:52:31.479Z",
+      "pageTitle": "Oral",
+      "price": "$0",
+      "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data",
+      "productId": "5233",
+      "relatedReports": [
+        {
+          "apiAppId": "ai_hc_hearing",
+          "reportFile": "",
+          "title": "Hearing & Auditory Genetics",
+          "uri": "/marketplace/hearing-auditory-genetics"
+        },
+        {
+          "apiAppId": "ai_cs_coloncancer",
+          "reportFile": "",
+          "title": "Colon Cancer",
+          "uri": "/marketplace/colon-cancer"
+        },
+        {
+          "apiAppId": "ai_cs_pancreaticcancer",
+          "reportFile": "",
+          "title": "Pancreatic Cancer",
+          "uri": "/marketplace/pancreatic-cancer"
+        }
+      ],
+      "reportFile": "",
+      "requestedUrl": "https://sequencing.com/marketplace/oral",
+      "routeKind": "marketplace",
+      "scriptSignals": {
+        "generated": 0,
+        "mock": 0,
+        "output": 0,
+        "preview": 0,
+        "reportFile": 4,
+        "result": 0,
+        "sample": 0
+      },
+      "slug": "oral",
+      "startButtonText": "Start Report",
+      "title": "Oral",
+      "type": [],
+      "visibleSampleLinks": [
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/marketplace?category=draft",
+          "text": "View All Related Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "My Results"
+        }
+      ]
+    },
+    {
+      "apiAppId": null,
+      "appBackend": null,
+      "appLabel": null,
+      "exactRoute": false,
+      "finalUrl": "https://sequencing.com/marketplace",
+      "headings": [
+        "All Apps and Reports",
+        "All Apps and Reports"
+      ],
+      "inspectedAt": "2026-06-24T18:52:32.400Z",
+      "pageTitle": "Sequencing Marketplace | DNA Reports, Apps & Test Kits",
+      "price": "",
+      "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data",
+      "productId": null,
+      "relatedReports": [],
+      "reportFile": "",
+      "requestedUrl": "https://sequencing.com/marketplace/pediatric-health",
+      "routeKind": "other",
+      "scriptSignals": {
+        "generated": 0,
+        "mock": 0,
+        "output": 0,
+        "preview": 1,
+        "reportFile": 195,
+        "result": 31,
+        "sample": 102
+      },
+      "slug": "pediatric-health",
+      "startButtonText": "Get App",
+      "title": "Pediatric Health",
+      "type": [],
+      "visibleSampleLinks": [
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/ai-reports",
+          "text": "AI ReportsDeveloped by Sequencing.comIncluded withPremium & ProGet Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/wellness-genetic-guide",
+          "text": "Wellness Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/heart-health-genetic-guide",
+          "text": "Heart Health Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/oncology-genetic-guide",
+          "text": "Oncology Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/mental-health-genetic-guide",
+          "text": "Mental Health Genetic GuideDeveloped by Quantum Genomics | Golden Gate Gene$79Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/personalized-vitamins-and-supplements",
+          "text": "Personalized Vitamins and SupplementsDeveloped by GenoPalate$29Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/strategene",
+          "text": "StrateGeneDeveloped by Seeking Health$95Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/detox-pathway",
+          "text": "Detox PathwayDeveloped by SelfDecode$89Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/ozempic-glp-1-agonists-genetic-report",
+          "text": "Ozempic and GLP-1 AgonistsDeveloped by Golden Gate Gene$99Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/chronic-fatigue-dna-health-report",
+          "text": "Chronic Fatigue DNA Health ReportDeveloped by SelfDecode$59Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/gut-health",
+          "text": "Gut HealthDeveloped by SelfDecode$59Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/chronic-pain-dna-report",
+          "text": "Chronic Pain DNA ReportDeveloped by SelfDecode$59Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/my-heart-health",
+          "text": "My Heart HealthDeveloped by GenoPalate$49Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/medications-pgx-complete-dna-guide",
+          "text": "Medications PGx: Complete DNA GuideDeveloped by Quantum Genomics | Golden Gate Gene$129Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/mthfr-dna-wellness-report",
+          "text": "MTHFR DNA Wellness ReportDeveloped by SelfDecode$29Get Report"
+        },
+        {
+          "href": "https://sequencing.com/marketplace/medication-pharmacogenomics-dna-report",
+          "text": "Medication & Drug ResponseDeveloped by Complete Genome Science$59Get Report"
+        }
+      ]
+    },
+    {
+      "apiAppId": "ai_cs_ppgl",
+      "appBackend": "ApiAppBackend",
+      "appLabel": "Pheochromocytoma and Paraganglioma",
+      "exactRoute": true,
+      "finalUrl": "https://sequencing.com/marketplace/pheochromocytoma-and-paraganglioma",
+      "headings": [
+        "Pheochromocytoma and Paraganglioma"
+      ],
+      "inspectedAt": "2026-06-24T18:52:32.783Z",
+      "pageTitle": "Pheochromocytoma and Paraganglioma",
+      "price": "$0",
+      "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data",
+      "productId": "5284",
+      "relatedReports": [
+        {
+          "apiAppId": "ai_hc_hearing",
+          "reportFile": "",
+          "title": "Hearing & Auditory Genetics",
+          "uri": "/marketplace/hearing-auditory-genetics"
+        },
+        {
+          "apiAppId": "ai_cs_coloncancer",
+          "reportFile": "",
+          "title": "Colon Cancer",
+          "uri": "/marketplace/colon-cancer"
+        },
+        {
+          "apiAppId": "ai_cs_pancreaticcancer",
+          "reportFile": "",
+          "title": "Pancreatic Cancer",
+          "uri": "/marketplace/pancreatic-cancer"
+        }
+      ],
+      "reportFile": "",
+      "requestedUrl": "https://sequencing.com/marketplace/pheochromocytoma-and-paraganglioma",
+      "routeKind": "marketplace",
+      "scriptSignals": {
+        "generated": 0,
+        "mock": 0,
+        "output": 0,
+        "preview": 0,
+        "reportFile": 4,
+        "result": 0,
+        "sample": 0
+      },
+      "slug": "pheochromocytoma-and-paraganglioma",
+      "startButtonText": "Start Report",
+      "title": "Pheochromocytoma and Paraganglioma",
+      "type": [],
+      "visibleSampleLinks": [
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/dna-apps/ai-reports/",
+          "text": "AI Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "Results"
+        },
+        {
+          "href": "https://sequencing.com/marketplace?category=draft",
+          "text": "View All Related Reports"
+        },
+        {
+          "href": "https://sequencing.com/data/all-results",
+          "text": "My Results"
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "targets": 22,
+    "exactRoutes": 18,
+    "routesWithReportFile": 0,
+    "routesWithApiAppId": 14,
+    "routesWithVisibleSampleLinks": 19,
+    "errors": 0
+  }
+}

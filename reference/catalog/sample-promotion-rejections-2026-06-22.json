@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "soma-reports.sample-promotion-rejections.v1",
+  "capturedAt": "2026-06-22",
+  "purpose": "Record strict no-promotion decisions for local-scaffold packages where nearby sibling sample rows exist but are not report-specific enough to count as Sequencing.com sample-backed formal readiness.",
+  "promotionStandard": [
+    "Do not mark sampleReport, formalFields, or citationBindings true from synthetic fixture rows.",
+    "Do not count generic disease-category rows as report-specific sample-backed evidence when the target report name, target gene, target condition, or target formal report body is absent.",
+    "A sibling sample can support output structure only when the sampled row is directly report-adjacent and the package carries explicit no-diagnosis, no-risk, no-actionability limitations.",
+    "Direct authenticated detail data without a reportFile or visible sample rows is detail evidence, not sample-backed formal evidence."
+  ],
+  "decisions": [
+    {
+      "slug": "marfan-syndrome",
+      "decision": "keep-local-scaffold",
+      "reason": "The Disease Risk sample contains generic Abdominal Aortic Aneurysm, Intracranial Aneurysm, Mitral Valve Prolapse, and Scoliosis-adjacent rows, but no Marfan Syndrome, FBN1, systemic-score, aortic-imaging, or Marfan-specific sample row.",
+      "allowedUse": "May be mentioned only as generic Disease Risk table-shape context if the output explicitly says it is not a direct Marfan/FBN1 sample report.",
+      "requiredEvidenceForPromotion": [
+        "Direct Marfan Syndrome or FBN1 sample row from a Sequencing.com report file, detail reportData payload, or public sample PDF",
+        "A verified generated-report artifact whose title/body is Marfan Syndrome or FBN1-related Marfan Syndrome",
+        "Exact row-level source bindings for the Marfan-specific rows"
+      ],
+      "mustNotClaim": [
+        "Marfan diagnosis",
+        "FBN1 variant classification",
+        "vascular or aortic risk",
+        "systemic-score inference",
+        "aortic imaging findings",
+        "screening, medication, surgery, activity, pregnancy, cascade-testing, reproductive, or other actionability guidance"
+      ]
+    },
+    {
+      "slug": "connective-tissue-disorders-and-eds",
+      "decision": "keep-local-scaffold",
+      "reason": "Broad connective-tissue scope is plausible, but current artifacts still say authenticated sample rows are unavailable and sampleRows[] remains pending. Nearby Gene-In-Form musculoskeletal rows are tendon/ACL/osteoarthritis output structure, not EDS or connective-tissue formal output.",
+      "allowedUse": "May use public references for non-diagnostic boundary context only.",
+      "requiredEvidenceForPromotion": [
+        "Direct connective-tissue or EDS sample row/body from a Sequencing.com report file, detail reportData payload, or public sample PDF",
+        "Exact row-level source bindings for the connective-tissue or EDS rows"
+      ],
+      "mustNotClaim": [
+        "EDS diagnosis",
+        "connective-tissue disorder diagnosis",
+        "vascular-risk estimate",
+        "collagen-gene panel result",
+        "variant classification",
+        "Beighton or hypermobility inference",
+        "screening, testing, pregnancy, surgery, treatment, reproductive, or actionability guidance"
+      ]
+    },
+    {
+      "slug": "ehlers-danlos-syndrome",
+      "decision": "keep-local-scaffold",
+      "reason": "The narrower EDS title increases diagnosis/subtype implication risk, and the authenticated AI Reports EDS lead points to a Skin Health AI sample report rather than EDS-specific sample rows.",
+      "allowedUse": "May use public references for non-diagnostic boundary context only; AI Reports EDS metadata is a discovery lead, not sample-backed evidence.",
+      "requiredEvidenceForPromotion": [
+        "Direct Ehlers-Danlos or hEDS sample row/body from a Sequencing.com report file, detail reportData payload, public sample PDF, or verified generated-report artifact",
+        "Exact row-level source bindings for the EDS-specific rows"
+      ],
+      "mustNotClaim": [
+        "EDS diagnosis or subtype call",
+        "vascular-risk estimate",
+        "collagen-gene panel result",
+        "variant classification",
+        "inheritance inference",
+        "Beighton or hypermobility inference",
+        "screening, testing, pregnancy, surgery, treatment, reproductive, or actionability guidance"
+      ]
+    }
+  ]
+}

@@ -10,4 +10,6 @@ If caller version, command line, callable-region mask, quality-filter thresholds
 Explain that candidate variant calls are tool- and filter-dependent observations from a sequencing workflow, not automatic medical findings and not proof of clinical meaning.
 Do not infer variant truth, pathogenicity, clinical sensitivity, diagnosis, disease risk, ancestry certainty, sample contamination, medication response, or treatment implications from discovery metrics alone.
 Do not recommend medication, screening, diagnostic testing, reproductive decisions, lifestyle changes, or treatment changes from variant-discovery metrics.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.

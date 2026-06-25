@@ -3,9 +3,9 @@
     "reportTitle": "Skin and Beauty DNA Report",
     "inputManifestHash": "sha256:synthetic-skin-and-beauty-visible-trait-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "No calibrated skin-and-beauty trait model, dermatology model, or cosmetic-response model is supplied with this fixture.",
-      "Skin type, UV sensitivity, cosmetic product response, acne, skin aging, dermatology outcomes, and skin-cancer risk are not reported."
+      "Authenticated marketplace detail-page extraction remains pending for this package.",
+      "No calibrated skin-and-beauty trait model, dermatology model, cosmetic-response model, skin-aging model, acne model, UV-sensitivity model, or skin-cancer risk model is supplied with this fixture.",
+      "Skin type, UV sensitivity, cosmetic product response, acne, skin aging, dermatology outcomes, and skin-cancer risk are not inferred."
     ]
   },
   "resultRows": [
@@ -13,7 +13,7 @@
       "groupTitle": "Skin and visible-trait context",
       "item": "Skin pigmentation and eye-color context",
       "brandName": "Not applicable",
-      "geneticAnalysis": "A derived HERC2/OCA2 rs12913832 AG call is available for pigmentation and eye-color context. This does not determine exact eye color, skin tone, skin type, or cosmetic outcome.",
+      "geneticAnalysis": "A derived HERC2/OCA2 rs12913832 AG call is available for pigmentation and eye-color context. This does not determine exact eye color, skin tone, skin type, UV sensitivity, dermatology status, or cosmetic outcome.",
       "genes": [
         "HERC2",
         "OCA2"
@@ -23,6 +23,7 @@
         "medlineplus-eye-color",
         "medlineplus-oca2"
       ],
+      "sourceBindingStatus": "curated",
       "plainEnglishMeaning": "OCA2 and HERC2 are important in pigmentation biology, but skin and eye color are influenced by multiple genes and non-genetic factors."
     },
     {
@@ -38,32 +39,163 @@
         "medlineplus-hair-color",
         "medlineplus-mc1r"
       ],
+      "sourceBindingStatus": "curated",
       "plainEnglishMeaning": "MC1R is a well-studied pigmentation gene, but many genes and non-genetic factors contribute to hair color, freckles, and related visible traits."
     },
     {
       "groupTitle": "Skin and visible-trait context",
       "item": "Hair texture and thickness context",
       "brandName": "Not applicable",
-      "geneticAnalysis": "A derived EDAR hair-texture/thickness context row is available. This is educational context only and does not predict exact hair texture or cosmetic outcome.",
+      "geneticAnalysis": "A derived EDAR hair-texture/thickness context row is available. This is educational context only and does not predict exact hair texture, cosmetic outcome, ancestry, or identity.",
       "genes": [
         "EDAR"
       ],
-      "sourceLabel": "MedlinePlus Genetics: hair texture",
+      "sourceLabel": "MedlinePlus Genetics: hair texture / DTC trait-test limits",
       "sourceIds": [
-        "medlineplus-hair-texture"
+        "medlineplus-hair-texture",
+        "medlineplus-dtc-test-types"
       ],
+      "sourceBindingStatus": "curated",
       "plainEnglishMeaning": "Hair texture and thickness have genetic contributions, but many genes and non-genetic factors can influence the trait."
+    },
+    {
+      "groupTitle": "Observed sibling sample report structure",
+      "item": "Skin Genes public sample PDF summary table",
+      "brandName": "GeneInformed sample",
+      "geneticAnalysis": "The public Skin Genes sample PDF shows Skin and Beauty-relevant report structure: a summary table with trait, gene, common result, user result, risk, and impact columns for elasticity, hydration, skin glycation, skin inflammation, dark spots, and sagging eyelids.",
+      "genes": [
+        "MMP1",
+        "MMP3",
+        "FLG",
+        "AQP3",
+        "AGER",
+        "ICAM1",
+        "IL6",
+        "IL1RN",
+        "IL1RL1",
+        "SLC45A2",
+        "DLGAP1"
+      ],
+      "sourceLabel": "Skin Genes sample report",
+      "sourceIds": [
+        "skin-genes-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "These rows document a related Sequencing.com/GeneInformed skin report format only. They must not be treated as this local fixture's skincare, dermatology, cosmetic, inflammation, skin-aging, UV-sensitivity, disease-risk, or treatment conclusions."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Summary of Results",
+      "item": "Elasticity",
+      "brandName": "Skin Genes sample",
+      "geneticAnalysis": "MMP1 common GG, sample del/del; MMP3 common del/del, sample del/del; risk REDUCED; protective effect against wrinkle formation, sagging, and skin aging",
+      "description": "The public sample PDF summary table shows Elasticity with MMP1 and MMP3 rows, reduced risk, and a protective impact statement.",
+      "genes": [
+        "MMP1",
+        "MMP3"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "skin-genes-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Skin and Beauty sibling output-structure evidence. Extracted from page 3 of the public Skin Genes sample PDF summary table; this is observed sample output structure, not a local skincare conclusion."
+    },
+    {
+      "groupTitle": "Summary of Results",
+      "item": "Hydration and Moisture",
+      "brandName": "Skin Genes sample",
+      "geneticAnalysis": "FLG common/sample rows GG, TT, AA, CC; AQP3 common AA, sample GG; risk ELEVATED; tendency for lowered skin lubrication, dryness, sun-radiation sensitivity, and skin allergies",
+      "description": "The public sample PDF summary table shows Hydration and Moisture with FLG and AQP3 rows and elevated risk language.",
+      "genes": [
+        "FLG",
+        "AQP3"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "skin-genes-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Skin and Beauty sibling output-structure evidence. Extracted from page 3 of the public Skin Genes sample PDF summary table; recommendation details are sample content, not personal hydration or skincare advice."
+    },
+    {
+      "groupTitle": "Summary of Results",
+      "item": "Skin Glycation",
+      "brandName": "Skin Genes sample",
+      "geneticAnalysis": "AGER common GG, sample GA; risk ELEVATED; increased glycation processes with added risk for wrinkles, sagging, and loss of radiance",
+      "description": "The public sample PDF summary table shows Skin Glycation with AGER and elevated risk language.",
+      "genes": [
+        "AGER"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "skin-genes-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Skin and Beauty sibling output-structure evidence. Extracted from page 3 of the public Skin Genes sample PDF summary table; this is observed sample output structure, not a local glycation or dermatology finding."
+    },
+    {
+      "groupTitle": "Summary of Results",
+      "item": "Skin Inflammation",
+      "brandName": "Skin Genes sample",
+      "geneticAnalysis": "ICAM1 AA, IL6 GG, IL1RN TT/TT, and IL1RL1 common GG, sample AA; risk ELEVATED; elevated IgE antibodies and increased inflammatory response of the skin",
+      "description": "The public sample PDF summary table shows Skin Inflammation with ICAM1, IL6, IL1RN, and IL1RL1 rows and elevated risk language.",
+      "genes": [
+        "ICAM1",
+        "IL6",
+        "IL1RN",
+        "IL1RL1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "skin-genes-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Skin and Beauty sibling output-structure evidence. Extracted from page 3 of the public Skin Genes sample PDF summary table; this is observed sample output structure, not a local inflammation diagnosis."
+    },
+    {
+      "groupTitle": "Summary of Results",
+      "item": "Dark Spots",
+      "brandName": "Skin Genes sample",
+      "geneticAnalysis": "SLC45A2 common CC, sample CC; risk NORMAL; no genetic risk addition",
+      "description": "The public sample PDF summary table shows Dark Spots with SLC45A2 and normal risk language.",
+      "genes": [
+        "SLC45A2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "skin-genes-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Skin and Beauty sibling output-structure evidence. Extracted from page 3 of the public Skin Genes sample PDF summary table; this is observed sample output structure, not a local dark-spot or dermatology conclusion."
+    },
+    {
+      "groupTitle": "Summary of Results",
+      "item": "Sagging Eyelids",
+      "brandName": "Skin Genes sample",
+      "geneticAnalysis": "DLGAP1 common GG, sample GC; risk NORMAL; average rate of loss of elasticity around the eyes",
+      "description": "The public sample PDF summary table shows Sagging Eyelids with DLGAP1 and normal risk language.",
+      "genes": [
+        "DLGAP1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "skin-genes-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Skin and Beauty sibling output-structure evidence. Extracted from page 3 of the public Skin Genes sample PDF summary table; this is observed sample output structure, not a local eyelid or dermatology conclusion."
     }
   ],
   "unavailableTraits": [
-    "Authenticated Sequencing.com sample report rows are not available yet.",
+    "Authenticated marketplace detail-page extraction is still pending.",
     "Skin type, UV sensitivity, cosmetic product response, acne, skin aging, dermatology outcomes, and skin-cancer risk are unavailable and not inferred.",
-    "Skin, pigmentation, freckles, and hair-context rows are limited to educational visible-trait context, not skincare, dermatology, medical-risk, ancestry, identity, or exact appearance interpretation."
+    "Sample elasticity, hydration, glycation, inflammation, dark spot, and eyelid rows are output-format examples only, not local findings."
   ],
   "plainEnglishLimits": [
     "Visible traits are influenced by multiple genes and non-genetic factors.",
     "Direct-to-consumer trait tests provide estimates or context, not certainty about exact appearance.",
-    "This report must not be used to identify a person, infer race or ancestry, predict a child's appearance, guide skincare, or report disease risk."
+    "This report must not be used to identify a person, infer race or ancestry, predict a child's appearance, guide skincare, diagnose skin conditions, or report disease risk."
   ],
   "references": [
     {
@@ -89,38 +221,97 @@
     {
       "id": "medlineplus-dtc-test-types",
       "title": "MedlinePlus Genetics: Direct-to-consumer genetic test types"
+    },
+    {
+      "id": "skin-genes-sample-pdf",
+      "title": "Skin Genes sample report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
+        "gene": "MMP1",
+        "observedValue": "sample MMP1 result: common GG; sample del/del",
+        "effect": "The sample summary table uses MMP1 in the Elasticity row.",
+        "phenotype": "Observed sample content only; do not infer local wrinkle, sagging, skin-aging, or skincare actionability without validated evidence. This is Skin and Beauty sibling sample output-structure evidence only, not a local dermatology, skincare, cosmetic, disease-risk, or appearance finding."
+      },
+      {
+        "gene": "MMP3",
+        "observedValue": "sample MMP3 result: common del/del; sample del/del",
+        "effect": "The sample summary table uses MMP3 in the Elasticity row.",
+        "phenotype": "Observed sample content only; keep separate from local visible-trait marker evidence. This is Skin and Beauty sibling sample output-structure evidence only, not a local dermatology, skincare, cosmetic, disease-risk, or appearance finding."
+      },
+      {
+        "gene": "FLG",
+        "observedValue": "sample FLG result set: common/sample rows GG, TT, AA, and CC",
+        "effect": "The sample summary table uses four FLG rows in Hydration and Moisture.",
+        "phenotype": "Observed sample content only; do not infer local dry skin, allergy, sun sensitivity, or treatment needs. This is Skin and Beauty sibling sample output-structure evidence only, not a local dermatology, skincare, cosmetic, disease-risk, or appearance finding."
+      },
+      {
+        "gene": "AQP3",
+        "observedValue": "sample AQP3 result: common AA; sample GG",
+        "effect": "The sample summary table uses AQP3 in Hydration and Moisture.",
+        "phenotype": "Observed sample content only; do not infer local hydration, lubrication, or skincare response. This is Skin and Beauty sibling sample output-structure evidence only, not a local dermatology, skincare, cosmetic, disease-risk, or appearance finding."
+      },
+      {
+        "gene": "AGER",
+        "observedValue": "sample AGER result: common GG; sample GA",
+        "effect": "The sample summary table uses AGER in Skin Glycation.",
+        "phenotype": "Observed sample content only; do not infer local glycation, wrinkles, radiance, or diet/skincare actionability. This is Skin and Beauty sibling sample output-structure evidence only, not a local dermatology, skincare, cosmetic, disease-risk, or appearance finding."
+      },
+      {
+        "gene": "ICAM1 / IL6 / IL1RN / IL1RL1",
+        "observedValue": "sample skin inflammation result set: ICAM1 AA, IL6 GG, IL1RN TT/TT, IL1RL1 common GG and sample AA",
+        "effect": "The sample summary table uses these genes in Skin Inflammation.",
+        "phenotype": "Observed sample content only; do not infer local inflammation, allergy, dermatology, or immune status. This is Skin and Beauty sibling sample output-structure evidence only, not a local dermatology, skincare, cosmetic, disease-risk, or appearance finding."
+      },
+      {
+        "gene": "SLC45A2",
+        "observedValue": "sample SLC45A2 result: common CC; sample CC",
+        "effect": "The sample summary table uses SLC45A2 in Dark Spots.",
+        "phenotype": "Observed sample content only; do not infer local pigmentation disorder, melasma, lentigines, or dermatology risk. This is Skin and Beauty sibling sample output-structure evidence only, not a local dermatology, skincare, cosmetic, disease-risk, or appearance finding."
+      },
+      {
+        "gene": "DLGAP1",
+        "observedValue": "sample DLGAP1 result: common GG; sample GC",
+        "effect": "The sample summary table uses DLGAP1 in Sagging Eyelids.",
+        "phenotype": "Observed sample content only; do not infer local eyelid sagging, skin aging, or cosmetic outcome. This is Skin and Beauty sibling sample output-structure evidence only, not a local dermatology, skincare, cosmetic, disease-risk, or appearance finding."
+      },
+      {
         "gene": "HERC2/OCA2 regulatory region",
-        "observedValue": "rs12913832 AG"
+        "observedValue": "rs12913832: AG",
+        "effect": "The local fixture supplies HERC2/OCA2 visible-trait context for validation.",
+        "phenotype": "Report as educational pigmentation or eye-color context only; do not turn it into exact appearance, identity, ancestry, or medical interpretation. This is Skin and Beauty sibling sample output-structure evidence only, not a local dermatology, skincare, cosmetic, disease-risk, or appearance finding."
       },
       {
         "gene": "MC1R",
-        "observedValue": "rs1805007 CT"
+        "observedValue": "rs1805007: CT",
+        "effect": "The local fixture supplies MC1R visible-trait context for validation.",
+        "phenotype": "Report as educational pigmentation, hair-color, or freckle context only; do not infer skin-cancer risk, diagnosis, or skincare action. This is Skin and Beauty sibling sample output-structure evidence only, not a local dermatology, skincare, cosmetic, disease-risk, or appearance finding."
       },
       {
         "gene": "EDAR",
-        "observedValue": "derived hair-texture/thickness context available"
+        "observedValue": "EDAR-hair-thickness-context-derived: derived hair-texture/thickness context available",
+        "effect": "The local fixture supplies EDAR hair-texture/thickness context for validation.",
+        "phenotype": "Report as educational hair-texture context only; do not infer exact appearance, cosmetic outcome, ancestry, identity, or dermatology status."
       }
     ],
     "missingInputs": [
-      "Authenticated sample-report sections and rows have not been extracted.",
-      "No calibrated skin-and-beauty trait probability model, dermatology model, or cosmetic-response model is supplied.",
-      "Skin type, UV sensitivity, cosmetic product response, acne, skin aging, dermatology outcomes, and skin-cancer risk require separate validated evidence and are not inferred.",
+      "Authenticated marketplace detail-page extraction is still pending for this package.",
+      "No calibrated skin-and-beauty trait probability model, dermatology model, cosmetic-response model, UV-sensitivity model, skin-aging model, acne model, or skin-cancer risk model is supplied.",
+      "Skin type, hydration, glycation, inflammation, dark spots, eyelid sagging, UV sensitivity, cosmetic product response, acne, skin aging, dermatology outcomes, and skin-cancer risk require separate validated evidence and are not inferred.",
       "Many known and unknown contributors to pigmentation, freckles, hair texture, and other visible traits are not represented in this fixture."
     ],
     "probabilities": [],
     "uncertainty": [
       "Visible traits can be influenced by multiple genes, development, age, environment, and other non-genetic factors.",
-      "The significance of individual visible-trait markers may vary across populations and should not be treated as a deterministic appearance, skincare, or dermatology prediction."
+      "The Skin Genes sample rows are sibling output-structure evidence only, not personal Skin and Beauty findings.",
+      "A local agent should not quantify skin, beauty, dermatology, cosmetic-response, or skin-cancer risk probabilities without a calibrated model and applicability metadata."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data is not included.",
       "The report is educational and does not identify a person, infer race or ancestry, predict a child's appearance, give skincare guidance, diagnose skin conditions, or report melanoma or other skin-cancer risk.",
-      "Authenticated Sequencing.com sample report rows are still pending."
+      "Sample rows preserve public report structure only and are not local recommendations or local risk findings."
     ]
   }
 }

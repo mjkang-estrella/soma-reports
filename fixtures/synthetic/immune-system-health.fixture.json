@@ -15,7 +15,7 @@
       "haplotype": "condition-boundary-model-unavailable",
       "inputId": "immune-system-health-model-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "validated immune-system health model, calibrated immune PRS, HLA inference, immune-cell labs, immunoglobulin labs, infection history, vaccine history, symptoms, immune deficiency evaluation, medication context, environmental context, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "validated immune-system health model, calibrated immune PRS, HLA inference, cytokine labs, CRP, ESR, immune-cell labs, immunoglobulin labs, infection history, vaccine history, immune-deficiency evaluation, symptoms, family history, environmental context, medication context, treatment context, diet context, supplement context, and clinical/lab interpretation unavailable in this fixture; public Immunity & Inflammation sample PDF immune/inflammatory result cards, recommendation rows, impact/evidence ratings, and visible variant tables observed as sibling output structure",
       "sourceArtifact": "synthetic-immune-system-health-condition-boundary-context-v1",
       "sourceFile": "synthetic-immune-system-health-condition-boundary-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "clinical-lab-context-unavailable",
       "inputId": "immune-system-health-clinical-lab-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, immunoglobulins, infection history, vaccine history, family history, medication context, environmental context, clinician interpretation, and personal treatment context unavailable in this fixture; public Immunity & Inflammation sample PDF observed separately as sibling output-structure evidence",
       "sourceArtifact": "synthetic-immune-system-health-condition-boundary-context-v1",
       "sourceFile": "synthetic-immune-system-health-condition-boundary-context-v1.json"
     }
@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for immune-system-health validation"
   },
-  "missingInputPolicy": "Report unavailable immune system health evidence explicitly; do not diagnose immune deficiency, autoimmune disease, allergy, infection, or inflammation; estimate infection risk; infer immune strength, immune weakness, HLA status, cytokines, CRP, immune-cell labs, immunoglobulin labs, vaccine response, treatment need, supplement need, diet need, immune boosting, screening need, diagnostic-test need, or actionability.",
+  "missingInputPolicy": "Report unavailable immune-system health model calibration, immune PRS, HLA inference, cytokine labs, CRP, ESR, immune-cell labs, immunoglobulin labs, infection history, vaccine history, immune-deficiency evaluation, symptoms, family history, environmental context, medication context, treatment context, diet context, supplement context, and clinical/lab interpretation explicitly; use sibling Immunity & Inflammation sample rows only as observed output structure and do not infer immune strength, immune weakness, infection risk, vaccine response, diagnosis, disease risk, HLA status, inflammatory status, lab status, treatment, supplement, diet, screening, testing, prevention, or actionability.",
   "packageSlug": "immune-system-health",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -149,7 +149,19 @@
         "non_diagnostic_language",
         "missing_model_policy"
       ]
+    },
+    {
+      "evidenceLevel": "sibling_observed_output_structure",
+      "id": "inflammation-and-immunity-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Inflammation and Immunity DNA Report sample report",
+      "usedFor": [
+        "sample_rows",
+        "genotype_summary",
+        "formal_fields",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer immune system health boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer Immune System Health boundary context using supplied references plus sibling Immunity & Inflammation sample PDF rows for broad immune/inflammatory output structure while explicitly marking personal immune model and clinical/lab context unavailable."
 }

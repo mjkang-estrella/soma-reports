@@ -14,4 +14,6 @@ Do not diagnose insomnia, narcolepsy, sleep apnea, restless legs, bruxism, bedwe
 Do not recommend CPAP, sleep studies, medications, supplements, melatonin, devices, treatment, or changes to medical care from genotype alone.
 Do not turn sample Iron or Reduce Caffeine Intake recommendation blocks, impact/evidence scores, or visible sample genotypes into local iron, ferritin, caffeine, sleep-aid, supplement, device, diagnosis, treatment, or medical-care instructions.
 State that sleep is influenced by genetics, health, age, schedule, light exposure, environment, stress, activity, medications, and habits.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.

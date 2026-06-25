@@ -1,0 +1,135 @@
+{
+  "schema": "soma-reports.official-output-capture.v1",
+  "slug": "variant-discovery-bioinformatics-secondary-analysis",
+  "title": "Variant Discovery",
+  "capturedAt": "2026-06-24T18:02:29Z",
+  "captureUrl": "https://sequencing.com/marketplace/variant-discovery-bioinformatics-secondary-analysis",
+  "sourceKind": "authenticated-marketplace-pageprops-output-scope-boundary",
+  "privacyBoundary": {
+    "rawGenomeIncluded": false,
+    "privateValuesRedacted": true,
+    "commitSafe": true,
+    "notes": "This capture records only official authenticated marketplace metadata for Variant Discovery scope. It does not include a user's genome, BAM data, variant-call table, command output, private result URL, generated report output, or per-variant rows."
+  },
+  "reportFile": "",
+  "sourceArtifacts": [
+    "https://sequencing.com/marketplace/variant-discovery-bioinformatics-secondary-analysis",
+    "reference/catalog/variant-discovery-bioinformatics-secondary-analysis-authenticated-detail-2026-06-23.json",
+    "reference/catalog/sequencing-authenticated-marketplace-pageprops-2026-06-21.json"
+  ],
+  "sourceResources": [
+    {
+      "id": "authenticated-marketplace-pageprops-output-scope",
+      "title": "Sequencing.com Variant Discovery authenticated marketplace pageProps item",
+      "sourceType": "official_output_boundary",
+      "url": "https://sequencing.com/marketplace/variant-discovery-bioinformatics-secondary-analysis",
+      "sourceArtifact": "reference/catalog/sequencing-authenticated-marketplace-pageprops-2026-06-21.json",
+      "privacy": "marketplace summary and search-keyword scope only; no private genome values",
+      "evidenceLevel": "official-output",
+      "extractionStatus": "direct",
+      "scope": "report_specific",
+      "usedFor": [
+        "formalFields",
+        "generatedOutput"
+      ],
+      "note": "Official Sequencing.com source describes output field structure only; no populated private or sample result rows were captured."
+    }
+  ],
+  "sampleRows": [],
+  "resultRows": [],
+  "formalFields": [
+    {
+      "key": "variant_caller_scope",
+      "label": "Variant caller",
+      "observedField": "Advanced variant caller",
+      "outputPath": "variantDiscovery.scope.variantCaller",
+      "status": "covered",
+      "sourceLabel": "authenticated-marketplace-pageprops-output-scope",
+      "sourceResourceIds": [
+        "authenticated-marketplace-pageprops-output-scope"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "exome_wgs_scope",
+      "label": "Exome and whole genome sequencing data",
+      "observedField": "exome and whole genome sequencing data",
+      "outputPath": "variantDiscovery.inputScope.exomeAndWholeGenome",
+      "status": "covered",
+      "sourceLabel": "authenticated-marketplace-pageprops-output-scope",
+      "sourceResourceIds": [
+        "authenticated-marketplace-pageprops-output-scope"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "ngs_scope",
+      "label": "Next-generation sequencing data",
+      "observedField": "next-generation sequencing (NGS)",
+      "outputPath": "variantDiscovery.inputScope.nextGenerationSequencing",
+      "status": "covered",
+      "sourceLabel": "authenticated-marketplace-pageprops-output-scope",
+      "sourceResourceIds": [
+        "authenticated-marketplace-pageprops-output-scope"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "bam_input_scope",
+      "label": "BAM input scope",
+      "observedField": "BAM",
+      "outputPath": "variantDiscovery.inputScope.bam",
+      "status": "covered",
+      "sourceLabel": "authenticated-marketplace-pageprops-output-scope",
+      "sourceResourceIds": [
+        "authenticated-marketplace-pageprops-output-scope"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "haplotype_scope",
+      "label": "Haplotype calling scope",
+      "observedField": "Haplotype",
+      "outputPath": "variantDiscovery.scope.haplotype",
+      "status": "covered",
+      "sourceLabel": "authenticated-marketplace-pageprops-output-scope",
+      "sourceResourceIds": [
+        "authenticated-marketplace-pageprops-output-scope"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "snp_mnp_dip_scope",
+      "label": "SNP, MNP, and DIP calling scope",
+      "observedField": "SNP, MNP, DIP",
+      "outputPath": "variantDiscovery.scope.snpMnpDip",
+      "status": "covered",
+      "sourceLabel": "authenticated-marketplace-pageprops-output-scope",
+      "sourceResourceIds": [
+        "authenticated-marketplace-pageprops-output-scope"
+      ],
+      "sourceBindingStatus": "direct"
+    }
+  ],
+  "citationBindings": [],
+  "validationCommands": [
+    "npm run scaffold:validate-captures -- --path reference/catalog/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-24.json",
+    "npm run scaffold:evidence-audit",
+    "npm run readiness:audit:summary",
+    "npm run agent:validate:formal"
+  ],
+  "promotionBoundary": {
+    "targetStartsAsScaffoldOnly": true,
+    "rowEvidenceReady": false,
+    "requiredEvidenceForPromotion": [
+      "Official Variant Discovery sample/result table",
+      "Formal variant discovery output fields",
+      "Row-level source bindings for discovered-variant rows"
+    ],
+    "nonPromotionBoundary": [
+      "This capture records official marketplace scope and keyword text only.",
+      "Do not treat described variant-calling capabilities as sampleRows, resultRows, generatedOutput, BAM content, variant calls, classifications, or citationBindings.",
+      "Do not mark the package sample-backed formal until official non-empty rows, exports, or generated variant-discovery artifacts are captured."
+    ]
+  }
+}

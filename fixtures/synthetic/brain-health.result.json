@@ -1,139 +1,857 @@
 {
+  "reportSlug": "brain-health",
+  "title": "Brain Health",
+  "generatedFrom": {
+    "promptVersion": "0.1.0",
+    "fixtureDatasetId": "synthetic-brain-health-neurobehavioral-boundary-context-v1",
+    "sampleBackedFormalArtifacts": true,
+    "directDetailEvidence": false
+  },
   "reportOverview": {
     "reportTitle": "Brain Health",
     "inputManifestHash": "sha256:synthetic-brain-health-neurobehavioral-boundary-context-v1",
+    "evidenceTypesSupplied": [
+      "Local unavailable-model fixture rows",
+      "Sibling Mood & Brain sample PDF rows preserved as output-format examples",
+      "Public genetics, PRS, DTC limitation, and condition-boundary references"
+    ],
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "Validated neurobehavioral model, calibrated PRS, ancestry applicability metadata, symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, and professional interpretation are unavailable.",
-      "This result is not a diagnosis, current mental-state assessment, IQ score, aptitude result, mood prediction, dementia prediction, neurologic disease prediction, pediatric decision, school/work decision, medication recommendation, supplement recommendation, therapy recommendation, imaging recommendation, lab recommendation, treatment instruction, or actionability claim."
+      "No direct Brain Health mock-report body or sample report has been captured; sibling Mood & Brain sample rows are used only as output-structure evidence.",
+      "validated brain-health, mental-health, mood, neurologic, cognitive, dementia, ADHD, dyslexia, addiction, treatment-response, therapy, medication, supplement, school/work, pediatric, calibrated PRS, ancestry applicability, and local risk models unavailable in this fixture; sibling Mood & Brain sample PDF result cards, recommendation rows, impact/evidence ratings, percentiles, and visible variant tables observed for output structure",
+      "symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, family history, clinician interpretation, school/work context, and personal brain-health context unavailable in this fixture; sibling Mood & Brain sample PDF observed separately as output-structure evidence",
+      "This result is not a diagnosis, current mental-state assessment, cognitive-status result, dementia-risk result, neurologic-risk result, therapy instruction, medication/supplement recommendation, school/work decision, pediatric action, treatment instruction, or clinical actionability claim."
     ]
   },
   "resultRows": [
     {
-      "groupTitle": "Neurobehavioral model availability",
+      "groupTitle": "Brain health evidence availability",
       "item": "brain-health-model-unavailable",
-      "brandName": "",
-      "geneticAnalysis": "Brain Health cannot emit a brain, mental health, mood, neurologic, cognitive, IQ, aptitude, dementia, or treatment-response conclusion from this local fixture because validated model inputs are unavailable.",
+      "brandName": "Soma Reports local fixture",
+      "geneticAnalysis": "Brain Health cannot emit a personal brain-health, mental-health, neurologic, cognitive, dementia, treatment, or actionability conclusion from this local fixture because required validated model and clinical context are unavailable.",
+      "description": "validated brain-health, mental-health, mood, neurologic, cognitive, dementia, ADHD, dyslexia, addiction, treatment-response, therapy, medication, supplement, school/work, pediatric, calibrated PRS, ancestry applicability, and local risk models unavailable in this fixture; sibling Mood & Brain sample PDF result cards, recommendation rows, impact/evidence ratings, percentiles, and visible variant tables observed for output structure",
       "genes": [
         "Brain Health model"
       ],
-      "sourceLabel": "NIMH / MedlinePlus / NHGRI / GWAS / FDA context",
+      "sourceLabel": "Public neurobehavioral genetics and DTC limitation context",
       "sourceIds": [
         "nimh-looking-at-my-genes",
         "medlineplus-intelligence-genetics",
+        "medlineplus-complex-disorders",
         "nhgri-polygenic-risk-scores",
         "ebi-gwas-catalog",
         "fda-direct-to-consumer-tests"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This row is an availability statement, not a diagnosis, current mental-state assessment, IQ score, aptitude result, neurologic prediction, treatment-response result, or all-clear statement."
+      "plainEnglishMeaning": "This row says what is missing. It is not a diagnosis, current mental-state assessment, IQ or aptitude result, dementia prediction, neurologic-risk result, medication/supplement/therapy recommendation, school/work instruction, or all-clear statement."
     },
     {
-      "groupTitle": "Clinical context availability",
+      "groupTitle": "Brain health evidence availability",
       "item": "brain-health-clinical-context-unavailable",
-      "brandName": "",
-      "geneticAnalysis": "Brain Health cannot interpret personal clinical context because symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, and clinician interpretation are unavailable.",
+      "brandName": "Soma Reports local fixture",
+      "geneticAnalysis": "Brain Health cannot emit a personal brain-health, mental-health, neurologic, cognitive, dementia, treatment, or actionability conclusion from this local fixture because required validated model and clinical context are unavailable.",
+      "description": "symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, family history, clinician interpretation, school/work context, and personal brain-health context unavailable in this fixture; sibling Mood & Brain sample PDF observed separately as output-structure evidence",
       "genes": [
         "Brain Health clinical context"
       ],
-      "sourceLabel": "CDC / MedlinePlus / NIMH / FDA context",
+      "sourceLabel": "Public neurobehavioral genetics and DTC limitation context",
       "sourceIds": [
-        "cdc-genetic-testing",
-        "medlineplus-genetics",
-        "medlineplus-complex-disorders",
         "nimh-looking-at-my-genes",
         "medlineplus-intelligence-genetics",
+        "medlineplus-complex-disorders",
+        "nhgri-polygenic-risk-scores",
+        "ebi-gwas-catalog",
         "fda-direct-to-consumer-tests"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "Personal interpretation needs symptoms, family history, clinical history, age, environment, ancestry applicability, validated testing scope, and qualified professional review."
+      "plainEnglishMeaning": "This row says what is missing. It is not a diagnosis, current mental-state assessment, IQ or aptitude result, dementia prediction, neurologic-risk result, medication/supplement/therapy recommendation, school/work instruction, or all-clear statement."
+    },
+    {
+      "groupTitle": "Sibling sample report: Report structure",
+      "item": "How this works",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "The sample explains that reports analyze how DNA influences health, summarize results as a risk score or gauge, use percentile comparisons, and rank recommendations by impact and evidence.",
+      "description": "The introductory pages also state that reports do not diagnose health conditions and that genetics is only one part of health.",
+      "genes": [
+        "Report-level output structure"
+      ],
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The introductory pages also state that reports do not diagnose health conditions and that genetics is only one part of health. This is sibling Mood & Brain sample-report structure only. It is not a local Brain Health finding, diagnosis, current mental-state assessment, cognitive-status result, dementia-risk result, neurologic-risk result, treatment instruction, medication/supplement/therapy recommendation, school/work instruction, pediatric instruction, or actionability claim."
+    },
+    {
+      "groupTitle": "Sibling sample report: Summary",
+      "item": "Comprehensive brain report scope",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "The sample summary says the report contains 23 genetic results and covers mental health, substance use and eating disorders, cognitive problems, and cognitive traits.",
+      "description": "The sample frames brain function as influenced by past experiences, current environment, diet, lifestyle, and DNA.",
+      "genes": [
+        "Brain and mood model cards"
+      ],
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample frames brain function as influenced by past experiences, current environment, diet, lifestyle, and DNA. This is sibling Mood & Brain sample-report structure only. It is not a local Brain Health finding, diagnosis, current mental-state assessment, cognitive-status result, dementia-risk result, neurologic-risk result, treatment instruction, medication/supplement/therapy recommendation, school/work instruction, pediatric instruction, or actionability claim."
+    },
+    {
+      "groupTitle": "Sibling sample report: Overview of results / Mental Health",
+      "item": "Nine mental-health result cards",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "Visible mental-health cards include Seasonal Low Mood typical likelihood; Stress typical likelihood; Anxiety typical likelihood; Caffeine-Related Anxiety less likely; Low Mood more likely; Mood Swings less likely; Obsessive-Compulsive Tendencies typical likelihood; Teeth Grinding less likely; Psychological Trauma typical likelihood.",
+      "description": "The sample overview uses lower/typical/higher likelihood labels and plain-English subtitles for each card.",
+      "genes": [
+        "Mental-health model cards"
+      ],
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample overview uses lower/typical/higher likelihood labels and plain-English subtitles for each card. This is sibling Mood & Brain sample-report structure only. It is not a local Brain Health finding, diagnosis, current mental-state assessment, cognitive-status result, dementia-risk result, neurologic-risk result, treatment instruction, medication/supplement/therapy recommendation, school/work instruction, pediatric instruction, or actionability claim."
+    },
+    {
+      "groupTitle": "Sibling sample report: Overview of results / Addictions And Eating Disorders",
+      "item": "Five addictions and eating-disorder result cards",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "Visible cards include Addictions typical likelihood; Alcohol Addiction less likely; Tobacco Addiction less likely; Cannabis Addiction less likely; Eating Disorders typical likelihood.",
+      "description": "The sample separates addiction/eating-disorder result cards from mental-health and cognitive cards.",
+      "genes": [
+        "Addiction and eating-disorder model cards"
+      ],
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample separates addiction/eating-disorder result cards from mental-health and cognitive cards. This is sibling Mood & Brain sample-report structure only. It is not a local Brain Health finding, diagnosis, current mental-state assessment, cognitive-status result, dementia-risk result, neurologic-risk result, treatment instruction, medication/supplement/therapy recommendation, school/work instruction, pediatric instruction, or actionability claim."
+    },
+    {
+      "groupTitle": "Sibling sample report: Overview of results / Cognitive Problems and Traits",
+      "item": "Nine cognitive result cards",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "Visible cognitive cards include Cognitive Decline typical likelihood; Brain Fog typical likelihood; Attention higher risk/more likely to have ADHD; Dyslexia more likely; Creativity higher; Memory Performance typical; Short-Term Memory typical; Processing Speed typical; Executive Function typical.",
+      "description": "The second overview page groups cognitive problems separately from cognitive traits.",
+      "genes": [
+        "Cognitive problem and cognitive trait model cards"
+      ],
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The second overview page groups cognitive problems separately from cognitive traits. This is sibling Mood & Brain sample-report structure only. It is not a local Brain Health finding, diagnosis, current mental-state assessment, cognitive-status result, dementia-risk result, neurologic-risk result, treatment instruction, medication/supplement/therapy recommendation, school/work instruction, pediatric instruction, or actionability claim."
+    },
+    {
+      "groupTitle": "Sibling sample report: Risk score / Seasonal Low Mood",
+      "item": "Seasonal Low Mood",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "Typical likelihood of seasonal affective disorder; 43rd percentile; based on 90 genetic variants.",
+      "description": "The sample page says genetics may account for about 30% of differences in seasonality and lists family history, higher latitude, and low vitamin D as other risk factors.",
+      "genes": [
+        "PTGER3",
+        "CAMKMT",
+        "MPHOSPH6",
+        "HLCS",
+        "TARS1",
+        "DNAJB4",
+        "PSAP",
+        "NRDE2",
+        "FGGY",
+        "GSTM3"
+      ],
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample page says genetics may account for about 30% of differences in seasonality and lists family history, higher latitude, and low vitamin D as other risk factors. This is sibling Mood & Brain sample-report structure only. It is not a local Brain Health finding, diagnosis, current mental-state assessment, cognitive-status result, dementia-risk result, neurologic-risk result, treatment instruction, medication/supplement/therapy recommendation, school/work instruction, pediatric instruction, or actionability claim."
+    },
+    {
+      "groupTitle": "Sibling sample report: Risk score / Stress",
+      "item": "Stress",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "Typical likelihood of feeling stressed; 38th percentile; based on 383,309 genetic variants.",
+      "description": "The sample page says up to 45% of differences in perceived stress may be attributed to genetics and explains HPA-axis stress-hormone context.",
+      "genes": [
+        "OXTR",
+        "PDCD6IP",
+        "LMCD1",
+        "STAC",
+        "CHRM3",
+        "KCTD12",
+        "SPG7",
+        "MPPED1",
+        "MROH2A",
+        "VLDLR"
+      ],
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample page says up to 45% of differences in perceived stress may be attributed to genetics and explains HPA-axis stress-hormone context. This is sibling Mood & Brain sample-report structure only. It is not a local Brain Health finding, diagnosis, current mental-state assessment, cognitive-status result, dementia-risk result, neurologic-risk result, treatment instruction, medication/supplement/therapy recommendation, school/work instruction, pediatric instruction, or actionability claim."
+    },
+    {
+      "groupTitle": "Sibling sample report: Recommendations",
+      "item": "Recommendation ranking",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "The sample says recommendations are prioritized by likely impact based on genetics plus the amount of scientific evidence supporting the recommendation.",
+      "description": "The recommendation pages show named recommendation blocks with condition-level impact and evidence ratings.",
+      "genes": [
+        "Recommendation ranking model"
+      ],
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The recommendation pages show named recommendation blocks with condition-level impact and evidence ratings. This is sibling Mood & Brain sample-report structure only. It is not a local Brain Health finding, diagnosis, current mental-state assessment, cognitive-status result, dementia-risk result, neurologic-risk result, treatment instruction, medication/supplement/therapy recommendation, school/work instruction, pediatric instruction, or actionability claim."
+    },
+    {
+      "groupTitle": "Sibling sample report: Recommendation / Relaxation Techniques",
+      "item": "Condition-level ratings",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "Visible rows include Attention impact 3/5 evidence 3/5; Low Mood impact 3/5 evidence 4/5; Psychological Trauma impact 3/5 evidence 3/5; Anxiety impact 4/5 evidence 4/5; Brain Fog impact 3/5 evidence 4/5; Addictions impact 3/5 evidence 3/5; Stress impact 4/5 evidence 4/5; Eating Disorders impact 3/5 evidence 3/5; Executive Function impact 3/5 evidence 3/5; Memory Performance impact 3/5 evidence 4/5; Short-Term Memory impact 3/5 evidence 3/5; Cognitive Decline impact 3/5 evidence 3/5; Teeth Grinding impact 4/5 evidence 4/5; Mood Swings impact 3/5 evidence 3/5; Tobacco Addiction impact 4/5 evidence 4/5; Alcohol Addiction impact 3/5 evidence 3/5; Creativity impact 3/5 evidence 3/5; Cannabis Addiction impact 3/5 evidence 3/5.",
+      "description": "The sample describes yoga, meditation, mindfulness, applied relaxation, massage, tai chi, biofeedback, and related practices across different rows.",
+      "genes": [
+        "ANKK1",
+        "CELF4",
+        "OXTR",
+        "COMT",
+        "FTO",
+        "GABRA2",
+        "CRHR1",
+        "PER2",
+        "MGLL"
+      ],
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample describes yoga, meditation, mindfulness, applied relaxation, massage, tai chi, biofeedback, and related practices across different rows. This is sibling Mood & Brain sample-report structure only. It is not a local Brain Health finding, diagnosis, current mental-state assessment, cognitive-status result, dementia-risk result, neurologic-risk result, treatment instruction, medication/supplement/therapy recommendation, school/work instruction, pediatric instruction, or actionability claim."
+    },
+    {
+      "groupTitle": "Sibling sample report: Recommendation / Relaxation Techniques",
+      "item": "Attention personalized row",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "The sample says mindfulness-based relaxation may improve attention more in people with your ANKK1 gene variant.",
+      "description": "The visible variant table shows ANKK1 rs1800497 GG with a two-dot evidence indicator.",
+      "genes": [
+        "ANKK1"
+      ],
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The visible variant table shows ANKK1 rs1800497 GG with a two-dot evidence indicator. This is sibling Mood & Brain sample-report structure only. It is not a local Brain Health finding, diagnosis, current mental-state assessment, cognitive-status result, dementia-risk result, neurologic-risk result, treatment instruction, medication/supplement/therapy recommendation, school/work instruction, pediatric instruction, or actionability claim."
+    },
+    {
+      "groupTitle": "Sibling sample report: Recommendation / Relaxation Techniques",
+      "item": "Psychological Trauma personalized row",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "The sample says people with your CELF4 gene variant may be more prone to stress and that relaxation techniques may help with PTSD by reducing stress.",
+      "description": "The visible variant table renders gene as '/', SNP rs11665070, genotype GA, with a two-dot evidence indicator.",
+      "genes": [
+        "CELF4"
+      ],
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The visible variant table renders gene as '/', SNP rs11665070, genotype GA, with a two-dot evidence indicator. This is sibling Mood & Brain sample-report structure only. It is not a local Brain Health finding, diagnosis, current mental-state assessment, cognitive-status result, dementia-risk result, neurologic-risk result, treatment instruction, medication/supplement/therapy recommendation, school/work instruction, pediatric instruction, or actionability claim."
+    },
+    {
+      "groupTitle": "Sibling sample report: Recommendation / Relaxation Techniques",
+      "item": "Anxiety personalized row",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "The sample says your OXTR gene variant is associated with anxiety and issues with emotional attachment and that massage may help by boosting oxytocin.",
+      "description": "The visible variant table shows OXTR rs53576 AG with a two-dot evidence indicator.",
+      "genes": [
+        "OXTR"
+      ],
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The visible variant table shows OXTR rs53576 AG with a two-dot evidence indicator. This is sibling Mood & Brain sample-report structure only. It is not a local Brain Health finding, diagnosis, current mental-state assessment, cognitive-status result, dementia-risk result, neurologic-risk result, treatment instruction, medication/supplement/therapy recommendation, school/work instruction, pediatric instruction, or actionability claim."
+    },
+    {
+      "groupTitle": "Sibling sample report: Recommendation / Relaxation Techniques",
+      "item": "Executive Function personalized row",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "The sample says stress may have a stronger impact on executive function in people with your COMT gene variant.",
+      "description": "The visible variant table shows COMT rs4680 AG with a four-dot evidence indicator.",
+      "genes": [
+        "COMT"
+      ],
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The visible variant table shows COMT rs4680 AG with a four-dot evidence indicator. This is sibling Mood & Brain sample-report structure only. It is not a local Brain Health finding, diagnosis, current mental-state assessment, cognitive-status result, dementia-risk result, neurologic-risk result, treatment instruction, medication/supplement/therapy recommendation, school/work instruction, pediatric instruction, or actionability claim."
+    },
+    {
+      "groupTitle": "Sibling sample report: Recommendation / Optimize Sleep",
+      "item": "Low Mood and Attention rows",
+      "brandName": "Mood & Brain DNA Report sample",
+      "geneticAnalysis": "Visible rows include Low Mood impact 3/5 evidence 3/5 and Attention impact 4/5 evidence 3/5.",
+      "description": "The sample says poor sleep may worsen depression and short sleep duration is linked to attention problems and ADHD; it also includes a COMT rs4680 AG sample row for attention.",
+      "genes": [
+        "COMT"
+      ],
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceIds": [
+        "mood-brain-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample says poor sleep may worsen depression and short sleep duration is linked to attention problems and ADHD; it also includes a COMT rs4680 AG sample row for attention. This is sibling Mood & Brain sample-report structure only. It is not a local Brain Health finding, diagnosis, current mental-state assessment, cognitive-status result, dementia-risk result, neurologic-risk result, treatment instruction, medication/supplement/therapy recommendation, school/work instruction, pediatric instruction, or actionability claim."
+    }
+  ],
+  "sampleRows": [
+    {
+      "brandName": "Mood & Brain DNA Report sample",
+      "description": "The introductory pages also state that reports do not diagnose health conditions and that genetics is only one part of health.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Report-level output structure"
+      ],
+      "geneticAnalysis": "The sample explains that reports analyze how DNA influences health, summarize results as a risk score or gauge, use percentile comparisons, and rank recommendations by impact and evidence.",
+      "groupTitle": "Report structure",
+      "item": "How this works",
+      "sortOrder": 1,
+      "sourceBindingNote": "Extracted from the public Mood & Brain sample PDF; used here as sibling Brain Health output-structure evidence, not as a direct Brain Health sample or local brain-health, mental-health, mood, neurologic, cognitive, ADHD, dyslexia, addiction, dementia, therapy, medication, supplement, school/work, pediatric, sleep, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceResourceIds": [
+        "mood-brain-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Mood & Brain DNA Report sample",
+      "description": "The sample frames brain function as influenced by past experiences, current environment, diet, lifestyle, and DNA.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Brain and mood model cards"
+      ],
+      "geneticAnalysis": "The sample summary says the report contains 23 genetic results and covers mental health, substance use and eating disorders, cognitive problems, and cognitive traits.",
+      "groupTitle": "Summary",
+      "item": "Comprehensive brain report scope",
+      "sortOrder": 2,
+      "sourceBindingNote": "Extracted from the public Mood & Brain sample PDF; used here as sibling Brain Health output-structure evidence, not as a direct Brain Health sample or local brain-health, mental-health, mood, neurologic, cognitive, ADHD, dyslexia, addiction, dementia, therapy, medication, supplement, school/work, pediatric, sleep, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceResourceIds": [
+        "mood-brain-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Mood & Brain DNA Report sample",
+      "description": "The sample overview uses lower/typical/higher likelihood labels and plain-English subtitles for each card.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Mental-health model cards"
+      ],
+      "geneticAnalysis": "Visible mental-health cards include Seasonal Low Mood typical likelihood; Stress typical likelihood; Anxiety typical likelihood; Caffeine-Related Anxiety less likely; Low Mood more likely; Mood Swings less likely; Obsessive-Compulsive Tendencies typical likelihood; Teeth Grinding less likely; Psychological Trauma typical likelihood.",
+      "groupTitle": "Overview of results / Mental Health",
+      "item": "Nine mental-health result cards",
+      "sortOrder": 3,
+      "sourceBindingNote": "Extracted from the public Mood & Brain sample PDF; used here as sibling Brain Health output-structure evidence, not as a direct Brain Health sample or local brain-health, mental-health, mood, neurologic, cognitive, ADHD, dyslexia, addiction, dementia, therapy, medication, supplement, school/work, pediatric, sleep, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceResourceIds": [
+        "mood-brain-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Mood & Brain DNA Report sample",
+      "description": "The sample separates addiction/eating-disorder result cards from mental-health and cognitive cards.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Addiction and eating-disorder model cards"
+      ],
+      "geneticAnalysis": "Visible cards include Addictions typical likelihood; Alcohol Addiction less likely; Tobacco Addiction less likely; Cannabis Addiction less likely; Eating Disorders typical likelihood.",
+      "groupTitle": "Overview of results / Addictions And Eating Disorders",
+      "item": "Five addictions and eating-disorder result cards",
+      "sortOrder": 4,
+      "sourceBindingNote": "Extracted from the public Mood & Brain sample PDF; used here as sibling Brain Health output-structure evidence, not as a direct Brain Health sample or local brain-health, mental-health, mood, neurologic, cognitive, ADHD, dyslexia, addiction, dementia, therapy, medication, supplement, school/work, pediatric, sleep, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceResourceIds": [
+        "mood-brain-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Mood & Brain DNA Report sample",
+      "description": "The second overview page groups cognitive problems separately from cognitive traits.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Cognitive problem and cognitive trait model cards"
+      ],
+      "geneticAnalysis": "Visible cognitive cards include Cognitive Decline typical likelihood; Brain Fog typical likelihood; Attention higher risk/more likely to have ADHD; Dyslexia more likely; Creativity higher; Memory Performance typical; Short-Term Memory typical; Processing Speed typical; Executive Function typical.",
+      "groupTitle": "Overview of results / Cognitive Problems and Traits",
+      "item": "Nine cognitive result cards",
+      "sortOrder": 5,
+      "sourceBindingNote": "Extracted from the public Mood & Brain sample PDF; used here as sibling Brain Health output-structure evidence, not as a direct Brain Health sample or local brain-health, mental-health, mood, neurologic, cognitive, ADHD, dyslexia, addiction, dementia, therapy, medication, supplement, school/work, pediatric, sleep, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceResourceIds": [
+        "mood-brain-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Mood & Brain DNA Report sample",
+      "description": "The sample page says genetics may account for about 30% of differences in seasonality and lists family history, higher latitude, and low vitamin D as other risk factors.",
+      "extractionStatus": "direct",
+      "genes": [
+        "PTGER3",
+        "CAMKMT",
+        "MPHOSPH6",
+        "HLCS",
+        "TARS1",
+        "DNAJB4",
+        "PSAP",
+        "NRDE2",
+        "FGGY",
+        "GSTM3"
+      ],
+      "geneticAnalysis": "Typical likelihood of seasonal affective disorder; 43rd percentile; based on 90 genetic variants.",
+      "groupTitle": "Risk score / Seasonal Low Mood",
+      "item": "Seasonal Low Mood",
+      "sortOrder": 6,
+      "sourceBindingNote": "Extracted from the public Mood & Brain sample PDF; used here as sibling Brain Health output-structure evidence, not as a direct Brain Health sample or local brain-health, mental-health, mood, neurologic, cognitive, ADHD, dyslexia, addiction, dementia, therapy, medication, supplement, school/work, pediatric, sleep, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceResourceIds": [
+        "mood-brain-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Mood & Brain DNA Report sample",
+      "description": "The sample page says up to 45% of differences in perceived stress may be attributed to genetics and explains HPA-axis stress-hormone context.",
+      "extractionStatus": "direct",
+      "genes": [
+        "OXTR",
+        "PDCD6IP",
+        "LMCD1",
+        "STAC",
+        "CHRM3",
+        "KCTD12",
+        "SPG7",
+        "MPPED1",
+        "MROH2A",
+        "VLDLR"
+      ],
+      "geneticAnalysis": "Typical likelihood of feeling stressed; 38th percentile; based on 383,309 genetic variants.",
+      "groupTitle": "Risk score / Stress",
+      "item": "Stress",
+      "sortOrder": 7,
+      "sourceBindingNote": "Extracted from the public Mood & Brain sample PDF; used here as sibling Brain Health output-structure evidence, not as a direct Brain Health sample or local brain-health, mental-health, mood, neurologic, cognitive, ADHD, dyslexia, addiction, dementia, therapy, medication, supplement, school/work, pediatric, sleep, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceResourceIds": [
+        "mood-brain-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Mood & Brain DNA Report sample",
+      "description": "The recommendation pages show named recommendation blocks with condition-level impact and evidence ratings.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Recommendation ranking model"
+      ],
+      "geneticAnalysis": "The sample says recommendations are prioritized by likely impact based on genetics plus the amount of scientific evidence supporting the recommendation.",
+      "groupTitle": "Recommendations",
+      "item": "Recommendation ranking",
+      "sortOrder": 8,
+      "sourceBindingNote": "Extracted from the public Mood & Brain sample PDF; used here as sibling Brain Health output-structure evidence, not as a direct Brain Health sample or local brain-health, mental-health, mood, neurologic, cognitive, ADHD, dyslexia, addiction, dementia, therapy, medication, supplement, school/work, pediatric, sleep, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceResourceIds": [
+        "mood-brain-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Mood & Brain DNA Report sample",
+      "description": "The sample describes yoga, meditation, mindfulness, applied relaxation, massage, tai chi, biofeedback, and related practices across different rows.",
+      "extractionStatus": "direct",
+      "genes": [
+        "ANKK1",
+        "CELF4",
+        "OXTR",
+        "COMT",
+        "FTO",
+        "GABRA2",
+        "CRHR1",
+        "PER2",
+        "MGLL"
+      ],
+      "geneticAnalysis": "Visible rows include Attention impact 3/5 evidence 3/5; Low Mood impact 3/5 evidence 4/5; Psychological Trauma impact 3/5 evidence 3/5; Anxiety impact 4/5 evidence 4/5; Brain Fog impact 3/5 evidence 4/5; Addictions impact 3/5 evidence 3/5; Stress impact 4/5 evidence 4/5; Eating Disorders impact 3/5 evidence 3/5; Executive Function impact 3/5 evidence 3/5; Memory Performance impact 3/5 evidence 4/5; Short-Term Memory impact 3/5 evidence 3/5; Cognitive Decline impact 3/5 evidence 3/5; Teeth Grinding impact 4/5 evidence 4/5; Mood Swings impact 3/5 evidence 3/5; Tobacco Addiction impact 4/5 evidence 4/5; Alcohol Addiction impact 3/5 evidence 3/5; Creativity impact 3/5 evidence 3/5; Cannabis Addiction impact 3/5 evidence 3/5.",
+      "groupTitle": "Recommendation / Relaxation Techniques",
+      "item": "Condition-level ratings",
+      "sortOrder": 9,
+      "sourceBindingNote": "Extracted from the public Mood & Brain sample PDF; used here as sibling Brain Health output-structure evidence, not as a direct Brain Health sample or local brain-health, mental-health, mood, neurologic, cognitive, ADHD, dyslexia, addiction, dementia, therapy, medication, supplement, school/work, pediatric, sleep, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceResourceIds": [
+        "mood-brain-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Mood & Brain DNA Report sample",
+      "description": "The visible variant table shows ANKK1 rs1800497 GG with a two-dot evidence indicator.",
+      "extractionStatus": "direct",
+      "genes": [
+        "ANKK1"
+      ],
+      "geneticAnalysis": "The sample says mindfulness-based relaxation may improve attention more in people with your ANKK1 gene variant.",
+      "groupTitle": "Recommendation / Relaxation Techniques",
+      "item": "Attention personalized row",
+      "sortOrder": 10,
+      "sourceBindingNote": "Extracted from the public Mood & Brain sample PDF; used here as sibling Brain Health output-structure evidence, not as a direct Brain Health sample or local brain-health, mental-health, mood, neurologic, cognitive, ADHD, dyslexia, addiction, dementia, therapy, medication, supplement, school/work, pediatric, sleep, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceResourceIds": [
+        "mood-brain-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Mood & Brain DNA Report sample",
+      "description": "The visible variant table renders gene as '/', SNP rs11665070, genotype GA, with a two-dot evidence indicator.",
+      "extractionStatus": "direct",
+      "genes": [
+        "CELF4"
+      ],
+      "geneticAnalysis": "The sample says people with your CELF4 gene variant may be more prone to stress and that relaxation techniques may help with PTSD by reducing stress.",
+      "groupTitle": "Recommendation / Relaxation Techniques",
+      "item": "Psychological Trauma personalized row",
+      "sortOrder": 11,
+      "sourceBindingNote": "Extracted from the public Mood & Brain sample PDF; used here as sibling Brain Health output-structure evidence, not as a direct Brain Health sample or local brain-health, mental-health, mood, neurologic, cognitive, ADHD, dyslexia, addiction, dementia, therapy, medication, supplement, school/work, pediatric, sleep, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceResourceIds": [
+        "mood-brain-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Mood & Brain DNA Report sample",
+      "description": "The visible variant table shows OXTR rs53576 AG with a two-dot evidence indicator.",
+      "extractionStatus": "direct",
+      "genes": [
+        "OXTR"
+      ],
+      "geneticAnalysis": "The sample says your OXTR gene variant is associated with anxiety and issues with emotional attachment and that massage may help by boosting oxytocin.",
+      "groupTitle": "Recommendation / Relaxation Techniques",
+      "item": "Anxiety personalized row",
+      "sortOrder": 12,
+      "sourceBindingNote": "Extracted from the public Mood & Brain sample PDF; used here as sibling Brain Health output-structure evidence, not as a direct Brain Health sample or local brain-health, mental-health, mood, neurologic, cognitive, ADHD, dyslexia, addiction, dementia, therapy, medication, supplement, school/work, pediatric, sleep, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceResourceIds": [
+        "mood-brain-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Mood & Brain DNA Report sample",
+      "description": "The visible variant table shows COMT rs4680 AG with a four-dot evidence indicator.",
+      "extractionStatus": "direct",
+      "genes": [
+        "COMT"
+      ],
+      "geneticAnalysis": "The sample says stress may have a stronger impact on executive function in people with your COMT gene variant.",
+      "groupTitle": "Recommendation / Relaxation Techniques",
+      "item": "Executive Function personalized row",
+      "sortOrder": 13,
+      "sourceBindingNote": "Extracted from the public Mood & Brain sample PDF; used here as sibling Brain Health output-structure evidence, not as a direct Brain Health sample or local brain-health, mental-health, mood, neurologic, cognitive, ADHD, dyslexia, addiction, dementia, therapy, medication, supplement, school/work, pediatric, sleep, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceResourceIds": [
+        "mood-brain-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Mood & Brain DNA Report sample",
+      "description": "The sample says poor sleep may worsen depression and short sleep duration is linked to attention problems and ADHD; it also includes a COMT rs4680 AG sample row for attention.",
+      "extractionStatus": "direct",
+      "genes": [
+        "COMT"
+      ],
+      "geneticAnalysis": "Visible rows include Low Mood impact 3/5 evidence 3/5 and Attention impact 4/5 evidence 3/5.",
+      "groupTitle": "Recommendation / Optimize Sleep",
+      "item": "Low Mood and Attention rows",
+      "sortOrder": 14,
+      "sourceBindingNote": "Extracted from the public Mood & Brain sample PDF; used here as sibling Brain Health output-structure evidence, not as a direct Brain Health sample or local brain-health, mental-health, mood, neurologic, cognitive, ADHD, dyslexia, addiction, dementia, therapy, medication, supplement, school/work, pediatric, sleep, treatment, or actionability conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Mood & Brain sample report",
+      "sourceResourceIds": [
+        "mood-brain-sample-pdf"
+      ]
     }
   ],
   "neurobehavioralContext": {
-    "plainEnglishMeaning": "Brain Health is currently a boundary report: it can document what evidence is available and what is missing, but it cannot assess mental state, cognitive ability, neurologic status, or future health outcomes.",
+    "plainEnglishMeaning": "Brain Health is sample-backed for report structure, but this local example is still a boundary report: it can preserve sibling report sections and show missing evidence, not assess your brain health, current mental state, cognition, neurologic status, dementia risk, or treatment needs.",
     "unsupportedClaims": [
       "Mental, neurologic, cognitive, developmental, or neurodegenerative diagnosis",
-      "Current mental-state, mood, cognition, IQ, aptitude, school, work, or pediatric assessment",
-      "Dementia, Parkinson's disease, seizure, migraine, ADHD, autism, depression, anxiety, or treatment-response prediction",
-      "Medication, supplement, nootropic, therapy, imaging, lab, education, workplace, or treatment instruction",
-      "Replacement for clinician, psychologist, psychiatrist, neurologist, genetic counselor, or other qualified professional review"
+      "Current mental-state, mood, cognition, IQ, aptitude, school, work, pediatric, or therapy assessment",
+      "Dementia, Parkinson disease, seizure, migraine, ADHD, autism, depression, anxiety, addiction, or treatment-response prediction",
+      "Medication, supplement, nootropic, therapy, imaging, lab, education, workplace, or treatment instruction"
     ],
     "professionalReview": "Use qualified professional review for mental health, cognition, neurologic symptoms, school/work decisions, pediatric questions, medication questions, or treatment decisions."
   },
   "practicalNextSteps": {
     "professionalReview": [
-      "Do not use this local fixture to change medication, supplements, therapy, imaging, labs, school, work, pediatric, or treatment decisions.",
-      "Bring symptoms, family history, clinical history, medications, age, environment, cognitive or neurologic evaluations, and prior testing to a qualified professional if reviewing neurobehavioral concerns.",
-      "Treat missing model rows as unavailable, not as low risk, high ability, low ability, or reassuring results."
+      "Do not use this local example to change medication, supplements, therapy, imaging, labs, school, work, pediatric, or treatment decisions.",
+      "Bring symptoms, family history, clinical history, medications, age, environment, cognitive or neurologic evaluations, and prior testing to a qualified professional if reviewing brain or neurobehavioral concerns.",
+      "Treat sibling sample rows as report-structure examples, not as personal findings."
     ]
   },
   "references": [
     {
       "id": "cdc-genetic-testing",
-      "title": "CDC Genetic Testing"
+      "title": "CDC Genetic Testing",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background",
+      "usedFor": [
+        "neurobehavioral_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
     },
     {
       "id": "medlineplus-genetics",
-      "title": "MedlinePlus Genetics"
+      "title": "MedlinePlus Genetics",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "neurobehavioral_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
     },
     {
       "id": "medlineplus-complex-disorders",
-      "title": "MedlinePlus Genetics: complex disorders"
+      "title": "MedlinePlus Genetics: complex disorders",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "neurobehavioral_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
     },
     {
       "id": "fda-direct-to-consumer-tests",
-      "title": "FDA Direct-to-Consumer Tests"
+      "title": "FDA Direct-to-Consumer Tests",
+      "sourceType": "regulatory_resource",
+      "evidenceLevel": "regulatory_background",
+      "usedFor": [
+        "neurobehavioral_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
     },
     {
       "id": "nhgri-polygenic-risk-scores",
-      "title": "NHGRI overview of polygenic risk scores"
+      "title": "NHGRI overview of polygenic risk scores",
+      "sourceType": "education_resource",
+      "evidenceLevel": "background",
+      "usedFor": [
+        "neurobehavioral_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
     },
     {
       "id": "ebi-gwas-catalog",
-      "title": "GWAS Catalog"
+      "title": "GWAS Catalog",
+      "sourceType": "database",
+      "evidenceLevel": "background",
+      "usedFor": [
+        "neurobehavioral_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
     },
     {
       "id": "nimh-looking-at-my-genes",
-      "title": "NIMH: Looking at My Genes"
+      "title": "NIMH: Looking at My Genes",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background",
+      "usedFor": [
+        "neurobehavioral_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
     },
     {
       "id": "medlineplus-intelligence-genetics",
-      "title": "MedlinePlus Genetics: Is intelligence determined by genetics?"
+      "title": "MedlinePlus Genetics: Is intelligence determined by genetics?",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "neurobehavioral_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
     },
     {
       "id": "nia-alzheimers-genetics",
-      "title": "National Institute on Aging: Alzheimer's Disease Genetics Fact Sheet"
+      "title": "National Institute on Aging: Alzheimer's Disease Genetics Fact Sheet",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background",
+      "usedFor": [
+        "neurobehavioral_boundary_context",
+        "non_diagnostic_language",
+        "missing_model_policy"
+      ]
+    },
+    {
+      "id": "mood-brain-sample-pdf",
+      "title": "Mood & Brain DNA Report sample report",
+      "sourceType": "mock_report",
+      "evidenceLevel": "sibling_sample_report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "brain-health-model-unavailable",
+        "effect": "The local fixture intentionally omits brain-health calculations and clinical context.",
+        "extractionStatus": "curated",
         "gene": "Brain Health model",
-        "observedValue": "validated neurobehavioral model, calibrated PRS, ancestry applicability metadata, age, sex, family history, symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "genotype": "validated brain-health, mental-health, mood, neurologic, cognitive, dementia, ADHD, dyslexia, addiction, treatment-response, therapy, medication, supplement, school/work, pediatric, PRS, ancestry applicability, symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, and professional review unavailable",
+        "phenotype": "Mark diagnosis, current mental state, brain-health status, cognitive status, dementia risk, neurologic risk, ADHD, dyslexia, addiction risk, treatment, therapy, medication, supplement, school/work action, pediatric action, and actionability sections unavailable instead of inferring them.",
+        "sortOrder": 1,
+        "tier": "Local missing input",
+        "variantId": "brain-health-model-unavailable"
       },
       {
-        "inputId": "brain-health-clinical-context-unavailable",
-        "gene": "Brain Health clinical context",
-        "observedValue": "symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, family history, and clinician interpretation unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "effect": "The sample Seasonal Low Mood page reports typical likelihood based on 90 genetic variants.",
+        "extractionStatus": "direct",
+        "gene": "Seasonal Low Mood model",
+        "genotype": "43rd percentile; typical likelihood",
+        "phenotype": "Observed sample content only; do not infer local seasonal mood, depression, bipolar, vitamin D, or mental-health status. Use as Brain Health sibling sample output-structure evidence only; do not infer local brain-health status, current mood, mental-health risk, cognitive status, ADHD, dyslexia, addiction risk, dementia risk, neurologic risk, therapy, medication, supplement, school/work action, pediatric action, treatment, or actionability guidance.",
+        "sortOrder": 2,
+        "tier": "Sibling Sample risk card",
+        "variantId": "90 variants"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Seasonal Low Mood table.",
+        "extractionStatus": "direct",
+        "gene": "PTGER3",
+        "genotype": "CC",
+        "phenotype": "Observed sample row only; it is not a local seasonal mood or mental-health finding. Use as Brain Health sibling sample output-structure evidence only; do not infer local brain-health status, current mood, mental-health risk, cognitive status, ADHD, dyslexia, addiction risk, dementia risk, neurologic risk, therapy, medication, supplement, school/work action, pediatric action, treatment, or actionability guidance.",
+        "sortOrder": 3,
+        "tier": "Sibling Seasonal Low Mood top sample variants",
+        "variantId": "rs113067418"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Seasonal Low Mood table.",
+        "extractionStatus": "direct",
+        "gene": "CAMKMT",
+        "genotype": "AA",
+        "phenotype": "Observed sample row only; it is not a local seasonal mood or mental-health finding. Use as Brain Health sibling sample output-structure evidence only; do not infer local brain-health status, current mood, mental-health risk, cognitive status, ADHD, dyslexia, addiction risk, dementia risk, neurologic risk, therapy, medication, supplement, school/work action, pediatric action, treatment, or actionability guidance.",
+        "sortOrder": 4,
+        "tier": "Sibling Seasonal Low Mood top sample variants",
+        "variantId": "rs17498753"
+      },
+      {
+        "effect": "The sample Stress page reports typical likelihood based on 383,309 genetic variants.",
+        "extractionStatus": "direct",
+        "gene": "Stress model",
+        "genotype": "38th percentile; typical likelihood",
+        "phenotype": "Observed sample content only; do not infer local stress level, mental-health status, or treatment need. Use as Brain Health sibling sample output-structure evidence only; do not infer local brain-health status, current mood, mental-health risk, cognitive status, ADHD, dyslexia, addiction risk, dementia risk, neurologic risk, therapy, medication, supplement, school/work action, pediatric action, treatment, or actionability guidance.",
+        "sortOrder": 5,
+        "tier": "Sibling Sample risk card",
+        "variantId": "383,309 variants"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Stress table.",
+        "extractionStatus": "direct",
+        "gene": "OXTR",
+        "genotype": "AG",
+        "phenotype": "Observed sample row only; it is not a local stress, anxiety, oxytocin, or attachment finding. Use as Brain Health sibling sample output-structure evidence only; do not infer local brain-health status, current mood, mental-health risk, cognitive status, ADHD, dyslexia, addiction risk, dementia risk, neurologic risk, therapy, medication, supplement, school/work action, pediatric action, treatment, or actionability guidance.",
+        "sortOrder": 6,
+        "tier": "Sibling Stress top sample variants",
+        "variantId": "rs2254298"
+      },
+      {
+        "effect": "Visible top-variant row in the sample Stress table.",
+        "extractionStatus": "direct",
+        "gene": "PDCD6IP",
+        "genotype": "AC",
+        "phenotype": "Observed sample row only; it is not a local stress or mental-health finding. Use as Brain Health sibling sample output-structure evidence only; do not infer local brain-health status, current mood, mental-health risk, cognitive status, ADHD, dyslexia, addiction risk, dementia risk, neurologic risk, therapy, medication, supplement, school/work action, pediatric action, treatment, or actionability guidance.",
+        "sortOrder": 7,
+        "tier": "Sibling Stress top sample variants",
+        "variantId": "rs2053425"
+      },
+      {
+        "effect": "The sample Relaxation Techniques Attention subsection shows ANKK1 rs1800497 GG.",
+        "extractionStatus": "direct",
+        "gene": "ANKK1",
+        "genotype": "GG",
+        "phenotype": "Observed sample row only; do not infer local attention, ADHD, mindfulness response, or therapy guidance. Use as Brain Health sibling sample output-structure evidence only; do not infer local brain-health status, current mood, mental-health risk, cognitive status, ADHD, dyslexia, addiction risk, dementia risk, neurologic risk, therapy, medication, supplement, school/work action, pediatric action, treatment, or actionability guidance.",
+        "sortOrder": 8,
+        "tier": "Sibling Relaxation personalized sample row",
+        "variantId": "rs1800497"
+      },
+      {
+        "effect": "The sample Relaxation Techniques Psychological Trauma subsection names CELF4 in narrative text and shows rs11665070 GA in the visible variant table.",
+        "extractionStatus": "direct",
+        "gene": "CELF4",
+        "genotype": "GA",
+        "phenotype": "Observed sample row only; do not infer local PTSD, stress sensitivity, trauma history, or therapy guidance. Use as Brain Health sibling sample output-structure evidence only; do not infer local brain-health status, current mood, mental-health risk, cognitive status, ADHD, dyslexia, addiction risk, dementia risk, neurologic risk, therapy, medication, supplement, school/work action, pediatric action, treatment, or actionability guidance.",
+        "sortOrder": 9,
+        "tier": "Sibling Relaxation personalized sample row",
+        "variantId": "rs11665070"
+      },
+      {
+        "effect": "The sample Relaxation Techniques Anxiety subsection shows OXTR rs53576 AG.",
+        "extractionStatus": "direct",
+        "gene": "OXTR",
+        "genotype": "AG",
+        "phenotype": "Observed sample row only; do not infer local anxiety, attachment, oxytocin status, or massage response. Use as Brain Health sibling sample output-structure evidence only; do not infer local brain-health status, current mood, mental-health risk, cognitive status, ADHD, dyslexia, addiction risk, dementia risk, neurologic risk, therapy, medication, supplement, school/work action, pediatric action, treatment, or actionability guidance.",
+        "sortOrder": 10,
+        "tier": "Sibling Relaxation personalized sample row",
+        "variantId": "rs53576"
+      },
+      {
+        "effect": "The sample Relaxation Techniques Executive Function subsection and Optimize Sleep Attention subsection show COMT rs4680 AG.",
+        "extractionStatus": "direct",
+        "gene": "COMT",
+        "genotype": "AG",
+        "phenotype": "Observed sample row only; do not infer local executive function, sleep vulnerability, ADHD, attention status, or treatment guidance. Use as Brain Health sibling sample output-structure evidence only; do not infer local brain-health status, current mood, mental-health risk, cognitive status, ADHD, dyslexia, addiction risk, dementia risk, neurologic risk, therapy, medication, supplement, school/work action, pediatric action, treatment, or actionability guidance.",
+        "sortOrder": 11,
+        "tier": "Sibling Relaxation personalized sample row",
+        "variantId": "rs4680"
       }
     ],
     "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and exact rows",
-      "Validated neurobehavioral model or calibrated PRS with applicability and validation metadata",
-      "Symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, family history, clinical history, age, environment, and professional interpretation",
-      "validated neurobehavioral model, calibrated PRS, ancestry applicability metadata, age, sex, family history, symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, and authenticated sample-report rows unavailable in this fixture; symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, family history, and clinician interpretation unavailable in this fixture"
+      "No direct Brain Health mock-report body or sample report has been captured; sibling Mood & Brain sample rows are used only as output-structure evidence.",
+      "validated brain-health, mental-health, mood, neurologic, cognitive, dementia, ADHD, dyslexia, addiction, treatment-response, therapy, medication, supplement, school/work, pediatric, calibrated PRS, ancestry applicability, and local risk models unavailable in this fixture; sibling Mood & Brain sample PDF result cards, recommendation rows, impact/evidence ratings, percentiles, and visible variant tables observed for output structure",
+      "symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, family history, clinician interpretation, school/work context, and personal brain-health context unavailable in this fixture; sibling Mood & Brain sample PDF observed separately as output-structure evidence"
     ],
     "probabilities": [],
     "uncertainty": [
-      "No calibrated mental health, brain health, neurologic, cognitive, IQ, aptitude, dementia, treatment-response, or actionability model is supplied for this local package.",
-      "Neurobehavioral interpretation depends on validated test scope, clinical and family history, symptoms, age, environment, ancestry applicability, and qualified professional review."
+      "No calibrated brain-health, mental-health, neurologic, cognitive, dementia, treatment-response, or actionability model is supplied for this local package.",
+      "Sibling sample rows show output structure and source bindings only; they do not estimate local brain-health status or risk."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
-      "The report is educational and does not provide diagnosis, current mental-state assessment, IQ scoring, aptitude assessment, mood prediction, neurologic prediction, pediatric guidance, school/work guidance, medication advice, supplement advice, therapy advice, imaging advice, lab advice, treatment advice, or actionability.",
+      "No direct Brain Health mock-report body or sample report has been captured; sibling Mood & Brain sample rows are used only as output-structure evidence.",
       "Unavailable model rows should never be interpreted as low risk, high ability, low ability, diagnosis, reassurance, or an all-clear result."
     ]
   }

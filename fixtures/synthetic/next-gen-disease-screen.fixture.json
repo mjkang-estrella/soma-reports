@@ -1,5 +1,5 @@
 {
-  "consumerTone": "plain English; educational disease-screen boundary context only; no diagnosis, disease risk, carrier status, pathogenicity, screening result, all-clear reassurance, medication, treatment, or actionability claims",
+  "consumerTone": "plain English; educational disease-screen boundary context only; sibling sample rows are not local findings; no diagnosis, disease risk, carrier status, pathogenicity, screening result, all-clear reassurance, medication, treatment, or actionability claims",
   "datasetId": "synthetic-next-gen-disease-screen-boundary-context-v1",
   "expectedAssertions": {
     "consumerLanguage": true,
@@ -35,7 +35,7 @@
       "haplotype": "not-supplied",
       "inputId": "next-gen-disease-screen-output-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "disease-screening output, disease-risk scoring, rare-disease panel results, carrier status, pathogenicity classification, clinical significance, clinical sensitivity, all-clear reassurance, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "disease-screening output, disease-risk scoring, rare-disease panel results, carrier status, pathogenicity classification, clinical significance, clinical sensitivity, all-clear reassurance, and direct Next-Gen Disease Screen sample-report rows unavailable in this fixture; sibling Healthcare Pro sample rows are observed separately as disease-screen output-structure evidence",
       "sourceArtifact": "synthetic-next-gen-disease-screen-boundary-context-v1",
       "sourceFile": "synthetic-next-gen-disease-screen-boundary-context-v1.json"
     }
@@ -46,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived bioinformatics utility context for next-gen-disease-screen validation"
   },
-  "missingInputPolicy": "Mark disease-screening output, disease-risk scoring, rare-disease panel results, carrier status, pathogenicity classification, clinical significance, clinical sensitivity, false-reassurance checks, and authenticated sample evidence unavailable when not explicitly supplied.",
+  "missingInputPolicy": "Report disease-screening output, disease-risk scoring, rare-disease panel results, carrier status, pathogenicity classification, clinical significance, clinical sensitivity, false-reassurance checks, and direct Next-Gen Disease Screen sample rows unavailable unless explicitly supplied; use sibling Healthcare Pro sample rows only as observed output structure.",
   "packageSlug": "next-gen-disease-screen",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -152,7 +152,20 @@
         "trait_association_context",
         "model_unavailable_context"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "healthcare-pro-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Healthcare Pro sample report",
+      "usedFor": [
+        "sibling_sample_rows",
+        "formal_fields",
+        "genotype_summary",
+        "disease_screen_output_structure",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer disease-screen boundary context using selected public variant and reference-build rows while marking disease-screening and clinical interpretation outputs unavailable."
+  "reportPurpose": "Consumer disease-screen boundary context using selected public variant and reference-build rows plus sibling Healthcare Pro disease-screen sample-output structure, while marking direct Next-Gen Disease Screen outputs unavailable."
 }

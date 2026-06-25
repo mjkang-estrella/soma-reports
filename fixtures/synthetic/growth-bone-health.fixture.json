@@ -46,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived fitness-trait evidence for growth-bone-health validation"
   },
-  "missingInputPolicy": "Report unavailable growth and bone models explicitly; do not infer height, growth pattern, pediatric growth status, bone density, osteoporosis, endocrine status, imaging findings, lab findings, supplement needs, treatment needs, exercise clearance, diagnosis, or actionability.",
+  "missingInputPolicy": "Report unavailable growth, height, pediatric growth-status, bone-density, osteoporosis-risk, fracture-risk, endocrine, imaging, lab, supplement, treatment, exercise-clearance, actionability, and calibrated models explicitly. Use sibling Gene-In-Form sample rows only as observed output-format examples; do not infer growth/height, pediatric growth status, bone density, osteoporosis risk, fracture risk, supplement need, treatment need, exercise clearance, or sample-only medical outcomes from genotype alone.",
   "packageSlug": "growth-bone-health",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -80,7 +80,20 @@
         "candidate_trait_associations",
         "model_unavailable_context"
       ]
+    },
+    {
+      "evidenceLevel": "sibling_sample_report",
+      "id": "gene-in-form-personalized-fitness-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Gene-In-Form Personalized Fitness sibling sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format",
+        "growth_bone_boundary"
+      ]
     }
   ],
-  "reportPurpose": "Consumer growth and bone health context using derived ACTN3 and ACE evidence plus explicit growth, bone-density, osteoporosis, endocrine, pediatric, imaging, lab, supplement, treatment, exercise-clearance, and model-unavailable framing."
+  "reportPurpose": "Consumer growth and bone health context using derived ACTN3 and ACE evidence plus sibling Gene-In-Form growth/bone-adjacent, connective-tissue, and musculoskeletal output-structure evidence."
 }

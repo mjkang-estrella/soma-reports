@@ -4,6 +4,7 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 
 import { basename, join } from "node:path";
 import { spawnSync } from "node:child_process";
 import { isDeepStrictEqual } from "node:util";
+import { loadArtifactSeeds } from "./lib/local-artifact-seeds.mjs";
 
 const fixturesDir = "fixtures/synthetic";
 const fixtureSuffix = ".fixture.json";
@@ -34,6 +35,22 @@ const resultRowsFrom = (value) => {
   return candidates.find(Array.isArray) ?? [];
 };
 
+const genericResultRowKeys = ["groupTitle", "item", "brandName", "geneticAnalysis", "genes", "sourceLabel", "plainEnglishMeaning"];
+const formalResultRowKeyAllowlist = new Set([...genericResultRowKeys, "description", "sourceIds", "sourceBindingStatus"]);
+const formalResultRowKeysFrom = (seedArtifact) => {
+  const keys = new Set();
+  for (const field of seedArtifact?.formalFields ?? []) {
+    if (field.status !== "covered") {
+      continue;
+    }
+    const match = /^resultRows\[\]\.([A-Za-z][A-Za-z0-9_]*)$/.exec(field.outputPath ?? "");
+    if (match && formalResultRowKeyAllowlist.has(match[1])) {
+      keys.add(match[1]);
+    }
+  }
+  return [...keys].sort();
+};
+
 const seedSampleSourceIds = (seedArtifact) =>
   [
     ...new Set(
@@ -47,13 +64,26 @@ const analyzeResultSync = ({ result, seedArtifact, localFixture }) => {
   const seedGenotypeSummaryExposed = Array.isArray(seedArtifact?.genotypeSummary);
   const allowedReferenceIds = new Set((localFixture?.referenceResources ?? []).map((resource) => resource.id));
   const sampleSourceIds = seedSampleSourceIds(seedArtifact);
+  const requiredFormalRowKeys = formalResultRowKeysFrom(seedArtifact);
   const nonCanonicalSourceRows = [];
+  const missingFormalRowFieldRows = [];
   const unknownSourceIds = new Set();
   let rowsWithCanonicalSourceIds = 0;
   let rowsWithAllowedSourceIds = 0;
   let rowsCitingSeedSampleSources = 0;
+  let rowsWithFormalRowFields = 0;
 
   rows.forEach((row, index) => {
+    const missingFormalRowFields = requiredFormalRowKeys.filter((key) => !(key in (row ?? {})));
+    if (missingFormalRowFields.length === 0) {
+      rowsWithFormalRowFields += 1;
+    } else {
+      missingFormalRowFieldRows.push({
+        index,
+        missingFormalRowFields,
+      });
+    }
+
     const sourceIds = row?.sourceIds;
     const hasCanonicalSourceIds = Array.isArray(sourceIds) && sourceIds.length > 0;
     if (!hasCanonicalSourceIds) {
@@ -90,43 +120,27 @@ const analyzeResultSync = ({ result, seedArtifact, localFixture }) => {
     seedSampleRows: seedSampleRowsExposed ? seedArtifact.sampleRows.length : 0,
     seedGenotypeSummaryRows: seedGenotypeSummaryExposed ? seedArtifact.genotypeSummary.length : 0,
     seedSampleSourceIds: sampleSourceIds,
+    requiredFormalRowKeys,
+    resultRowsWithFormalRowFields: rowsWithFormalRowFields,
     nonCanonicalSourceRows: nonCanonicalSourceRows.slice(0, 20),
+    missingFormalRowFieldRows: missingFormalRowFieldRows.slice(0, 20),
     unknownSourceIds: [...unknownSourceIds].sort(),
     resultCitationSyncOk:
       rows.length > 0 &&
       rowsWithCanonicalSourceIds === rows.length &&
       rowsWithAllowedSourceIds === rows.length &&
       unknownSourceIds.size === 0,
+    resultFormalRowFieldsSyncOk:
+      requiredFormalRowKeys.length === 0 ||
+      (rows.length > 0 && rowsWithFormalRowFields === rows.length),
   };
 };
 
-const runConvexSeedArtifacts = () => {
-  const run = spawnSync("npx", ["convex", "run", "reports:localArtifactSeeds"], {
-    encoding: "utf8",
-    maxBuffer: 1024 * 1024 * 20,
-  });
-  if (run.status !== 0) {
-    return {
-      artifacts: [],
-      error: spawnMessage(run, `convex run exited with ${run.status}`),
-    };
-  }
-
-  try {
-    const artifacts = JSON.parse(run.stdout);
-    if (!Array.isArray(artifacts)) {
-      return { artifacts: [], error: "reports:localArtifactSeeds must return a JSON array" };
-    }
-    return { artifacts, error: null };
-  } catch (error) {
-    return {
-      artifacts: [],
-      error: error instanceof Error ? error.message : String(error),
-    };
-  }
-};
-
-const { artifacts: seedArtifactList, error: seedLoadError } = runConvexSeedArtifacts();
+const {
+  artifacts: seedArtifactList,
+  error: seedLoadError,
+  source: seedArtifactSource,
+} = loadArtifactSeeds();
 const seedArtifacts = new Map();
 const seedDuplicateSlugs = new Set();
 const seedArtifactsCachePath = "tmp/agent-bundles/local-artifact-seeds.json";
@@ -226,7 +240,8 @@ for (const slug of packages) {
       resultValidates &&
       resultSync.seedSampleRowsExposed &&
       resultSync.seedGenotypeSummaryExposed &&
-      resultSync.resultCitationSyncOk,
+      resultSync.resultCitationSyncOk &&
+      resultSync.resultFormalRowFieldsSyncOk,
     seedArtifactFound: hasSeedArtifact,
     seedDuplicate: seedDuplicateSlugs.has(slug),
     promptFound: hasPrompt,
@@ -251,6 +266,7 @@ const summary = {
   passed: results.length - failed.length,
   failed: failed.length,
   seedLoadError,
+  seedArtifactSource,
   seedDuplicateSlugs: [...seedDuplicateSlugs].sort(),
   results,
 };

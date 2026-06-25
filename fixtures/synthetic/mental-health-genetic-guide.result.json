@@ -251,11 +251,13 @@
       "plainEnglishMeaning": "Observed sample-report row for Nitrazepam. Use this as Mental Health Genetic Guide output-format evidence only; it is not a local psychiatric diagnosis, current mental-state assessment, medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
     }
   ],
-  "practicalNextSteps": [
-    "Review any medication questions with a clinician or pharmacist who knows the full medication and mental-health context.",
-    "Use the appendix to see which pharmacogene and clinical-context inputs were unavailable.",
-    "Do not use sample rows or derived PGx evidence alone to start, stop, switch, rank, or dose medication."
-  ],
+  "practicalNextSteps": {
+    "clinicianReview": [
+      "Review any medication questions with a clinician or pharmacist who knows the full medication and mental-health context.",
+      "Use the appendix to see which pharmacogene and clinical-context inputs were unavailable.",
+      "Do not use sample rows or derived PGx evidence alone to start, stop, switch, rank, or dose medication."
+    ]
+  },
   "references": [
     {
       "id": "cpic",

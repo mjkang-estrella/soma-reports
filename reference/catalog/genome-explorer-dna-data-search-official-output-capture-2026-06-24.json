@@ -1,0 +1,313 @@
+{
+  "schema": "soma-reports.official-output-capture.v1",
+  "slug": "genome-explorer-dna-data-search",
+  "title": "Genome Explorer DNA Data Search",
+  "capturedAt": "2026-06-24T16:56:44Z",
+  "captureUrl": "https://sequencing.com/marketplace/genome-explorer-dna-data-search",
+  "sourceKind": "official-detail-output-field-boundary",
+  "privacyBoundary": {
+    "rawGenomeIncluded": false,
+    "privateValuesRedacted": true,
+    "commitSafe": true,
+    "notes": "This capture records only official marketplace detail-page field and column structure. It does not include a user's genome, result rows, search terms, private result URL, or personal variant values."
+  },
+  "reportFile": "",
+  "sourceArtifacts": [
+    "https://sequencing.com/marketplace/genome-explorer-dna-data-search",
+    "reference/catalog/genome-explorer-dna-data-search-authenticated-detail-2026-06-25.json"
+  ],
+  "sourceResources": [
+    {
+      "id": "official-detail-field-boundary",
+      "title": "Sequencing.com Genome Explorer v3 marketplace detail page",
+      "sourceType": "official_output_boundary",
+      "url": "https://sequencing.com/marketplace/genome-explorer-dna-data-search",
+      "sourceArtifact": "reference/catalog/genome-explorer-dna-data-search-authenticated-detail-2026-06-25.json",
+      "privacy": "field names only; no private genome values",
+      "evidenceLevel": "official-output",
+      "extractionStatus": "direct",
+      "scope": "report_specific",
+      "usedFor": [
+        "formalFields",
+        "generatedOutput"
+      ],
+      "note": "Official Sequencing.com detail page describes output field structure only; no populated private or sample result rows were captured."
+    }
+  ],
+  "sampleRows": [],
+  "resultRows": [],
+  "formalFields": [
+    {
+      "key": "rcv_id",
+      "label": "RCV ID",
+      "observedField": "RCV ID",
+      "outputPath": "genomeExplorer.results[].rcvId",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "chromosome",
+      "label": "Chromosome",
+      "observedField": "chromosome",
+      "outputPath": "genomeExplorer.results[].chromosome",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "position",
+      "label": "Position",
+      "observedField": "position",
+      "outputPath": "genomeExplorer.results[].position",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "variant_id",
+      "label": "Variant ID",
+      "observedField": "variant ID",
+      "outputPath": "genomeExplorer.results[].variantId",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "gene",
+      "label": "Gene",
+      "observedField": "gene",
+      "outputPath": "genomeExplorer.results[].gene",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "impact",
+      "label": "Impact",
+      "observedField": "impact",
+      "outputPath": "genomeExplorer.results[].impact",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "variant_type",
+      "label": "Variant type",
+      "observedField": "variant type",
+      "outputPath": "genomeExplorer.results[].variantType",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "reference",
+      "label": "Reference",
+      "observedField": "reference",
+      "outputPath": "genomeExplorer.results[].referenceAllele",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "alternate_allele",
+      "label": "Alternate allele",
+      "observedField": "alternate allele",
+      "outputPath": "genomeExplorer.results[].alternateAllele",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "user_data",
+      "label": "User data",
+      "observedField": "user data",
+      "outputPath": "genomeExplorer.results[].userData",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "condition",
+      "label": "Condition",
+      "observedField": "condition",
+      "outputPath": "genomeExplorer.results[].condition",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "status",
+      "label": "Status",
+      "observedField": "status",
+      "outputPath": "genomeExplorer.results[].status",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "classification",
+      "label": "Classification",
+      "observedField": "classification",
+      "outputPath": "genomeExplorer.results[].classification",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "confidence",
+      "label": "Confidence",
+      "observedField": "confidence",
+      "outputPath": "genomeExplorer.results[].confidence",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "references",
+      "label": "References",
+      "observedField": "references",
+      "outputPath": "genomeExplorer.results[].references",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "links",
+      "label": "Links",
+      "observedField": "links",
+      "outputPath": "genomeExplorer.results[].links",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "search_inputs",
+      "label": "Search inputs",
+      "observedField": "RCV ID, chromosome, position, variant ID, gene, variant type, status, condition, classification, confidence",
+      "outputPath": "genomeExplorer.search",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    }
+  ],
+  "citationBindings": [],
+  "generatedOutput": {
+    "valueRedaction": "no generated result values captured; official detail page describes output columns only",
+    "privateResultUrlCommitted": false,
+    "sections": [
+      {
+        "sectionId": "search-and-browse",
+        "title": "Search and browse genome data",
+        "fields": [
+          "RCV ID",
+          "chromosome",
+          "position",
+          "variant ID",
+          "gene",
+          "variant type",
+          "status",
+          "condition",
+          "classification",
+          "confidence"
+        ],
+        "values": "not captured"
+      },
+      {
+        "sectionId": "result-row",
+        "title": "Genome position result row",
+        "fields": [
+          "RCV ID",
+          "chromosome",
+          "position",
+          "variant ID",
+          "gene",
+          "impact",
+          "variant type",
+          "reference",
+          "alternate allele",
+          "user data",
+          "condition",
+          "status",
+          "classification",
+          "confidence",
+          "references",
+          "links"
+        ],
+        "values": "not captured"
+      }
+    ]
+  },
+  "validationCommands": [
+    "npm run scaffold:validate-captures -- --path reference/catalog/genome-explorer-dna-data-search-official-output-capture-2026-06-24.json",
+    "npm run scaffold:promotion-preview -- --path reference/catalog/genome-explorer-dna-data-search-official-output-capture-2026-06-24.json",
+    "npm run scaffold:evidence-audit",
+    "npm run readiness:audit:summary",
+    "npm run agent:validate:formal"
+  ],
+  "promotionBoundary": {
+    "targetStartsAsScaffoldOnly": true,
+    "rowEvidenceReady": false,
+    "requiredEvidenceForPromotion": [
+      "Official Genome Explorer sample output or export",
+      "Formal search/result table rows with non-redacted example values",
+      "Row-level source bindings for search/result fields"
+    ],
+    "nonPromotionBoundary": [
+      "This capture records official field boundaries only.",
+      "Do not treat described columns as sampleRows or citationBindings.",
+      "Do not mark the package sample-backed formal until official non-empty rows or exports are captured."
+    ]
+  }
+}

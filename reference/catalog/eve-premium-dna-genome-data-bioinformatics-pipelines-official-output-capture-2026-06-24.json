@@ -1,0 +1,147 @@
+{
+  "schema": "soma-reports.official-output-capture.v1",
+  "slug": "eve-premium-dna-genome-data-bioinformatics-pipelines",
+  "title": "EvE Premium",
+  "capturedAt": "2026-06-24T18:02:29Z",
+  "captureUrl": "https://sequencing.com/marketplace/eve-premium-dna-genome-data-bioinformatics-pipelines",
+  "sourceKind": "authenticated-marketplace-pageprops-output-scope-boundary",
+  "privacyBoundary": {
+    "rawGenomeIncluded": false,
+    "privateValuesRedacted": true,
+    "commitSafe": true,
+    "notes": "This capture records only official authenticated marketplace metadata for EvE Premium pipeline scope. It does not include a user's genome, pipeline execution artifacts, command output, private result URL, generated reports, QC rows, or variant rows."
+  },
+  "reportFile": "",
+  "sourceArtifacts": [
+    "https://sequencing.com/marketplace/eve-premium-dna-genome-data-bioinformatics-pipelines",
+    "reference/catalog/eve-premium-dna-genome-data-bioinformatics-pipelines-authenticated-detail-2026-06-23.json",
+    "reference/catalog/sequencing-authenticated-marketplace-pageprops-2026-06-21.json"
+  ],
+  "sourceResources": [
+    {
+      "id": "authenticated-marketplace-pageprops-output-scope",
+      "title": "Sequencing.com EvE Premium authenticated marketplace pageProps item",
+      "sourceType": "official_output_boundary",
+      "url": "https://sequencing.com/marketplace/eve-premium-dna-genome-data-bioinformatics-pipelines",
+      "sourceArtifact": "reference/catalog/sequencing-authenticated-marketplace-pageprops-2026-06-21.json",
+      "privacy": "marketplace summary and search-keyword scope only; no private genome values",
+      "evidenceLevel": "official-output",
+      "extractionStatus": "direct",
+      "scope": "report_specific",
+      "usedFor": [
+        "formalFields",
+        "generatedOutput"
+      ],
+      "note": "Official Sequencing.com source describes output field structure only; no populated private or sample result rows were captured."
+    }
+  ],
+  "sampleRows": [],
+  "resultRows": [],
+  "formalFields": [
+    {
+      "key": "pipeline_processing_scope",
+      "label": "Process raw DNA and genome data files",
+      "observedField": "process raw DNA data and genome data files",
+      "outputPath": "evePremium.scope.processing",
+      "status": "covered",
+      "sourceLabel": "authenticated-marketplace-pageprops-output-scope",
+      "sourceResourceIds": [
+        "authenticated-marketplace-pageprops-output-scope"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "pipeline_analysis_scope",
+      "label": "Analyze raw DNA and genome data files",
+      "observedField": "analyze raw DNA data and genome data files",
+      "outputPath": "evePremium.scope.analysis",
+      "status": "covered",
+      "sourceLabel": "authenticated-marketplace-pageprops-output-scope",
+      "sourceResourceIds": [
+        "authenticated-marketplace-pageprops-output-scope"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "file_conversion_scope",
+      "label": "Convert raw DNA and genome data files",
+      "observedField": "convert raw DNA data and genome data files",
+      "outputPath": "evePremium.scope.conversion",
+      "status": "covered",
+      "sourceLabel": "authenticated-marketplace-pageprops-output-scope",
+      "sourceResourceIds": [
+        "authenticated-marketplace-pageprops-output-scope"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "alignment_mapping_scope",
+      "label": "Alignment and mapping",
+      "observedField": "Alignment Mapping",
+      "outputPath": "evePremium.scope.alignmentMapping",
+      "status": "covered",
+      "sourceLabel": "authenticated-marketplace-pageprops-output-scope",
+      "sourceResourceIds": [
+        "authenticated-marketplace-pageprops-output-scope"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "variant_calling_discovery_scope",
+      "label": "Variant calling and discovery",
+      "observedField": "Variant Calling Discovery",
+      "outputPath": "evePremium.scope.variantCallingDiscovery",
+      "status": "covered",
+      "sourceLabel": "authenticated-marketplace-pageprops-output-scope",
+      "sourceResourceIds": [
+        "authenticated-marketplace-pageprops-output-scope"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "annotation_interpretation_scope",
+      "label": "Annotations and interpretations",
+      "observedField": "Annotations Interpretations",
+      "outputPath": "evePremium.scope.annotationsInterpretations",
+      "status": "covered",
+      "sourceLabel": "authenticated-marketplace-pageprops-output-scope",
+      "sourceResourceIds": [
+        "authenticated-marketplace-pageprops-output-scope"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "supported_file_formats_scope",
+      "label": "Supported genomics file formats",
+      "observedField": "FASTQ, FASTA, BAM, SAM, CRAM, VCF, SEQ, GVCF, GVF, genome VCF",
+      "outputPath": "evePremium.scope.supportedFileFormats",
+      "status": "covered",
+      "sourceLabel": "authenticated-marketplace-pageprops-output-scope",
+      "sourceResourceIds": [
+        "authenticated-marketplace-pageprops-output-scope"
+      ],
+      "sourceBindingStatus": "direct"
+    }
+  ],
+  "citationBindings": [],
+  "validationCommands": [
+    "npm run scaffold:validate-captures -- --path reference/catalog/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-24.json",
+    "npm run scaffold:evidence-audit",
+    "npm run readiness:audit:summary",
+    "npm run agent:validate:formal"
+  ],
+  "promotionBoundary": {
+    "targetStartsAsScaffoldOnly": true,
+    "rowEvidenceReady": false,
+    "requiredEvidenceForPromotion": [
+      "Official EvE Premium result artifact or sample output",
+      "Formal pipeline output fields from Sequencing.com",
+      "Row-level source bindings for output fields"
+    ],
+    "nonPromotionBoundary": [
+      "This capture records official marketplace scope and keyword text only.",
+      "Do not treat described pipeline capabilities as sampleRows, resultRows, generatedOutput, command output, QC metrics, variant calls, or citationBindings.",
+      "Do not mark the package sample-backed formal until official non-empty rows, exports, or generated pipeline artifacts are captured."
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "slug": "mitchell-syndrome",
+  "title": "Mitchell Syndrome",
+  "capturedAt": "2026-06-24T17:43:00Z",
+  "url": "https://sequencing.com/marketplace/mitchell-syndrome",
+  "finalUrl": "https://sequencing.com/marketplace",
+  "source": "in-app browser logged-in sequencing.com exact marketplace route retry with sanitized __NEXT_DATA__.props.pageProps extraction",
+  "bodyPreview": "The exact Mitchell Syndrome marketplace route resolved to the generic Sequencing.com marketplace index. The page did not expose pageProps.reportData, reportFile, sample rows, generated output rows, or row-level citation bindings for this slug.",
+  "summaryPreview": "Route-fallback evidence only; no Mitchell Syndrome formal report output was available.",
+  "requestedUrl": "https://sequencing.com/marketplace/mitchell-syndrome",
+  "canonical": "https://sequencing.com/marketplace",
+  "documentTitle": "Sequencing Marketplace | DNA Reports, Apps & Test Kits",
+  "finalUrlKind": "marketplace-index-fallback",
+  "pagePropsReportData": false,
+  "pagePropsKeys": [
+    "data",
+    "reportsGroups",
+    "typesGroups",
+    "preCalculatedFormState",
+    "cardsPerPageDefault",
+    "_initialProps",
+    "_sentryTraceData",
+    "_sentryBaggage"
+  ],
+  "pagePropsDataKeys": [
+    "blocks",
+    "meta"
+  ],
+  "pagePropsMetaKeys": [
+    "meta",
+    "schema"
+  ],
+  "reportFile": null,
+  "reportFileStatus": "none",
+  "sampleRows": [],
+  "resultRows": [],
+  "citationBindings": [],
+  "visibleParagraphs": [
+    "All Apps and Reports",
+    "Partner Marketplace",
+    "Filters",
+    "Search Reports",
+    "Type",
+    "Category"
+  ],
+  "evidenceNotes": [
+    "Exact requested URL was opened in the in-app browser while Sequencing.com session state was available.",
+    "The route resolved to the generic marketplace index, not a Mitchell Syndrome report detail page.",
+    "No pageProps.reportData object, sample report file, generated report rows, formal field map, or citation bindings were exposed.",
+    "No raw genome data, uploaded genome data, private result URL, account email, account name, payment data, or shipping data is included in this artifact.",
+    "Use this artifact only as route-fallback boundary evidence; it does not promote this package to sample-backed formal readiness."
+  ],
+  "promotionBoundary": {
+    "promotesDetailParity": false,
+    "promotesSampleRows": false,
+    "promotesFormalFields": false,
+    "promotesCitationBindings": false,
+    "requiredEvidenceForPromotion": [
+      "Direct Mitchell Syndrome Sequencing.com report output",
+      "Exact reportData payload with sample rows or non-empty reportFile",
+      "Row-level source bindings for Mitchell Syndrome-specific rows"
+    ]
+  }
+}

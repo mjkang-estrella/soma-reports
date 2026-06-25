@@ -3,7 +3,7 @@
     "reportTitle": "Blood Type Analysis",
     "inputManifestHash": "sha256:synthetic-blood-type-abo-rh-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "Authenticated marketplace detail-page reportData is not available yet.",
       "No calibrated blood-type caller confidence model is supplied with this fixture."
     ]
   },
@@ -13,6 +13,7 @@
       "item": "ABO blood group context",
       "brandName": "",
       "geneticAnalysis": "A derived ABO A/O context row is available. This is educational genotype-derived context, not an official laboratory blood type.",
+      "description": "The local fixture supplies derived ABO context for validation but does not establish a clinical ABO blood type.",
       "genes": [
         "ABO"
       ],
@@ -21,6 +22,7 @@
         "ncbi-abo-blood-group",
         "medlineplus-blood-typing"
       ],
+      "sourceBindingStatus": "curated",
       "plainEnglishMeaning": "The ABO system is related to inherited A, B, AB, and O blood groups, but compatibility decisions require laboratory blood typing."
     },
     {
@@ -28,6 +30,7 @@
       "item": "RhD context",
       "brandName": "",
       "geneticAnalysis": "A derived RHD-present context row is available. This is not a clinical Rh result and cannot be used for pregnancy or transfusion decisions.",
+      "description": "The local fixture supplies derived RhD context for validation but does not establish a clinical Rh result.",
       "genes": [
         "RHD"
       ],
@@ -35,7 +38,58 @@
       "sourceIds": [
         "medlineplus-blood-typing"
       ],
+      "sourceBindingStatus": "curated",
       "plainEnglishMeaning": "Rh factor is part of standard blood typing, but official Rh status should come from a laboratory blood type test."
+    },
+    {
+      "groupTitle": "Observed sample structure",
+      "item": "Public ABO sample result",
+      "brandName": "ABO Blood Type DNA Report sample",
+      "geneticAnalysis": "The public sample PDF displays a sample-only result of Likely B or AB and states exact ABO could not be determined from all required data.",
+      "description": "This row preserves the public sample report's result and data-sufficiency wording as observed output structure, not as the local user's blood type.",
+      "genes": [
+        "ABO"
+      ],
+      "sourceLabel": "Public ABO Blood Type DNA Report sample PDF",
+      "sourceIds": [
+        "blood-type-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample row shows how the original report communicates an uncertain likely ABO result; local compatibility decisions still require laboratory blood typing."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Sample ABO result",
+      "item": "Likely ABO blood type",
+      "brandName": "ABO Blood Type DNA Report sample",
+      "geneticAnalysis": "Likely B or AB",
+      "description": "The public sample PDF shows sample ID text and says the sample DNA file contained some, but not all, data required to determine the exact ABO blood type.",
+      "genes": [
+        "ABO"
+      ],
+      "sourceLabel": "Public ABO Blood Type DNA Report sample PDF",
+      "sourceIds": [
+        "blood-type-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample output only; do not infer the local user's blood type."
+    },
+    {
+      "groupTitle": "Sample data sufficiency",
+      "item": "Exact ABO unavailable in sample",
+      "brandName": "ABO Blood Type DNA Report sample",
+      "geneticAnalysis": "The sample report states there was enough DNA data to determine likely blood type, but not enough to determine exact ABO blood type.",
+      "description": "This preserves the sample report's data-sufficiency limitation and keeps exact blood typing tied to laboratory confirmation.",
+      "genes": [
+        "ABO"
+      ],
+      "sourceLabel": "Public ABO Blood Type DNA Report sample PDF",
+      "sourceIds": [
+        "blood-type-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample limitation only; do not infer local DNA coverage or exact ABO status from the sample report."
     }
   ],
   "labConfirmation": {
@@ -53,6 +107,10 @@
     {
       "id": "ncbi-abo-blood-group",
       "title": "NCBI Bookshelf: ABO Blood Group"
+    },
+    {
+      "id": "blood-type-sample-pdf",
+      "title": "ABO Blood Type DNA Report sample report"
     }
   ],
   "appendix": {
@@ -64,10 +122,14 @@
       {
         "gene": "RHD",
         "observedValue": "RHD-present-derived context"
+      },
+      {
+        "gene": "ABO",
+        "observedValue": "Public sample output says Likely B or AB; exact sample genotype is not shown"
       }
     ],
     "missingInputs": [
-      "Authenticated sample-report sections and rows have not been extracted.",
+      "Authenticated marketplace detail-page reportData has not been extracted.",
       "No calibrated blood-type caller confidence model is supplied.",
       "Laboratory serology, reverse typing, cross-matching, and rare blood-group antigen checks are not represented in this fixture."
     ],
@@ -79,7 +141,8 @@
     "limitations": [
       "This validation result uses derived evidence only; raw genome data is not included.",
       "The report is educational and is not an official blood type, compatibility table, or blood-bank result.",
-      "Authenticated Sequencing.com sample report rows are still pending."
+      "The public sample PDF's Likely B or AB result is observed sample content only and is not the local user's blood type.",
+      "Authenticated marketplace detail-page parity is still pending."
     ]
   }
 }

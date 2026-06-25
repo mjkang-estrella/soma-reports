@@ -3,8 +3,8 @@
     "reportTitle": "Alzheimer's Risk | APOE Gene Analysis",
     "inputManifestHash": "sha256:synthetic-apoe-alzheimers-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "A calibrated absolute-risk model with age, sex, ancestry, family history, and validation metadata is not supplied."
+      "A calibrated absolute-risk model with age, sex, ancestry, family history, and validation metadata is not supplied.",
+      "Symptoms, cognition, biomarkers, clinician review, and family-history context are not supplied."
     ]
   },
   "resultRows": [
@@ -69,6 +69,133 @@
       ],
       "sourceBindingStatus": "curated",
       "plainEnglishMeaning": "The report can describe APOE context, but it cannot estimate a personal lifetime risk or replace clinician or genetic-counselor review."
+    },
+    {
+      "groupTitle": "Sample report structure",
+      "item": "Public ApoE DNA Wellness sample sections",
+      "brandName": "SelfDecode ApoE DNA Wellness sample",
+      "geneticAnalysis": "The public sample PDF shows report-summary, top-suggestion, ApoE allele-background, SNP-table, risk-narrative, and recommendation-block sections. These rows are used as output-format evidence only.",
+      "genes": [
+        "APOE"
+      ],
+      "sourceLabel": "SelfDecode ApoE DNA Wellness sample report",
+      "sourceIds": [
+        "apoe-brain-mind-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample PDF helps preserve the formal report structure, but its sample genotype, suggestions, and risk wording are not local findings or personal medical advice."
+    }
+  ],
+  "sampleRows": [
+    {
+      "brandName": "SelfDecode ApoE DNA Wellness sample",
+      "description": "Rendered sample page 2 shows a Report Summary table with trait 'Your ApoE Genotype', gene ApoE, and an ApoE-e3/e3 sample genotype.",
+      "extractionStatus": "direct",
+      "genes": [
+        "APOE"
+      ],
+      "geneticAnalysis": "The sample report summary table reports an ApoE-e3/e3 genotype and explains that the table includes ApoE genotype information.",
+      "groupTitle": "Report summary",
+      "item": "Your ApoE Genotype",
+      "sortOrder": 1,
+      "sourceBindingNote": "Extracted from rendered page 2 of the public ApoE sample PDF; this is observed sample output structure, not a local APOE genotype.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "apoe-brain-mind-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "SelfDecode ApoE DNA Wellness sample",
+      "description": "Rendered sample page 2 shows ranked suggestion headings and examples, with the sample watermark partially covering the first item.",
+      "extractionStatus": "direct",
+      "genes": [
+        "APOE"
+      ],
+      "geneticAnalysis": "Visible top suggestions include maintaining healthy blood lipid levels, healthy body composition, omega-3 index, and high cognitive reserve; consuming a diverse plant-antioxidant diet; and reducing stress, toxic exposure, and oxidative stress.",
+      "groupTitle": "Top Suggestions",
+      "item": "Maintain, consume, and reduce categories",
+      "sortOrder": 2,
+      "sourceBindingNote": "Extracted from rendered page 2 of the public sample PDF as report-format evidence only; do not convert sample suggestions into local diet, supplement, or lifestyle advice.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "apoe-brain-mind-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "SelfDecode ApoE DNA Wellness sample",
+      "description": "Rendered pages 4-6 show the ApoE background section, common allele frequencies, possible genotype combinations, and the rs429358/rs7412 marker explanation.",
+      "extractionStatus": "direct",
+      "genes": [
+        "APOE",
+        "rs429358",
+        "rs7412"
+      ],
+      "geneticAnalysis": "The sample introduction describes ApoE roles in lipid transport and brain biology, names common e2/e3/e4 alleles, and explains that rs429358 and rs7412 define amino-acid differences in ApoE.",
+      "groupTitle": "Introduction",
+      "item": "ApoE alleles and roles",
+      "sortOrder": 3,
+      "sourceBindingNote": "Extracted from rendered sample pages 4-6 as observed explanatory report structure; local interpretation remains limited to supplied derived evidence.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "apoe-brain-mind-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "SelfDecode ApoE DNA Wellness sample",
+      "description": "Rendered sample page 11 shows columns for SNP, Your Genotype, Associations, and Reference, followed by the sample ApoE-e3/e3 genotype sentence.",
+      "extractionStatus": "direct",
+      "genes": [
+        "APOE"
+      ],
+      "geneticAnalysis": "The sample genotype table reports rs429358 TT and rs7412 CC, with both rows citing reference 52, and then states the sample has an ApoE-e3/e3 genotype with average ApoE protein activity and levels.",
+      "groupTitle": "Your ApoE Genotype",
+      "item": "Your ApoE SNPs",
+      "sortOrder": 4,
+      "sourceBindingNote": "Extracted from rendered page 11 of the public sample PDF; these sample genotypes are not used as local genotype evidence.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "apoe-brain-mind-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "SelfDecode ApoE DNA Wellness sample",
+      "description": "Rendered page 11 contains the risk narrative; the sample watermark obscures part of two lines, so only visible and OCR-supported wording is preserved.",
+      "extractionStatus": "direct",
+      "genes": [
+        "APOE"
+      ],
+      "geneticAnalysis": "The sample states typical Alzheimer's disease risk with an approximately 9% lifetime-risk figure, average sleep-apnea and insomnia risk, and that the ApoE-e3/e3 genotype alone does not significantly modify heart-disease risk while other lifestyle factors may matter.",
+      "groupTitle": "Your ApoE Genotype",
+      "item": "Sample risk statements",
+      "sortOrder": 5,
+      "sourceBindingNote": "Extracted from rendered page 11 of the public sample PDF as observed sample output only; do not infer local absolute risk, dementia status, sleep status, or heart-disease risk.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "apoe-brain-mind-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "SelfDecode ApoE DNA Wellness sample",
+      "description": "Rendered page 11 shows the first recommendation heading and visible example food/compound bullets before the sample PDF ends.",
+      "extractionStatus": "direct",
+      "genes": [
+        "APOE"
+      ],
+      "geneticAnalysis": "The first visible recommendation says taking steps to reduce amyloid levels in the brain may help reduce Alzheimer's risk for the sample genotype and lists plant-based compounds/foods such as olive oil, turmeric, red wine, green tea, and rosemary.",
+      "groupTitle": "Recommendation block",
+      "item": "Proactively reduce amyloid levels in the brain",
+      "sortOrder": 6,
+      "sourceBindingNote": "Extracted from rendered page 11 as report-format evidence only; do not turn this into local diet, alcohol, supplement, or treatment guidance.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "apoe-brain-mind-sample-pdf"
+      ]
     }
   ],
   "riskContext": {
@@ -110,6 +237,10 @@
     {
       "id": "nhgri-polygenic-risk-scores",
       "title": "NHGRI overview of polygenic risk scores"
+    },
+    {
+      "id": "apoe-brain-mind-sample-pdf",
+      "title": "SelfDecode ApoE DNA Wellness sample report"
     }
   ],
   "appendix": {
@@ -135,12 +266,17 @@
       {
         "inputId": "apoe-risk-model-unavailable",
         "gene": "APOE risk model",
-        "observedValue": "calibrated absolute-risk model and applicability metadata unavailable",
+        "observedValue": "calibrated absolute-risk model, applicability metadata, symptoms, cognition, and clinician review unavailable",
         "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "sample-apoe-genotype",
+        "gene": "APOE",
+        "observedValue": "The public sample report uses an ApoE-e3/e3 sample genotype with rs429358 TT and rs7412 CC as report-format evidence.",
+        "matchStatus": "sample_output_only"
       }
     ],
     "missingInputs": [
-      "Authenticated Sequencing.com sample report rows",
       "Calibrated absolute-risk model",
       "Ancestry applicability metadata",
       "Age, sex, family-history, symptom, biomarker, and clinician-confirmed context",
@@ -149,10 +285,12 @@
     "probabilities": [],
     "uncertainty": [
       "No calibrated probability model is supplied for this local package.",
-      "APOE e4 status is only one part of late-onset Alzheimer's disease risk context."
+      "APOE e4 status is only one part of late-onset Alzheimer's disease risk context.",
+      "Public sample report rows preserve output structure and citations but are not local findings."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data is not included.",
+      "The public sample PDF's genotype, risk statements, and suggestion language are output-format evidence only.",
       "The package covers APOE allele context and does not assess APP, PSEN1, PSEN2, or other early-onset familial Alzheimer's disease genes.",
       "The report does not diagnose disease, assess current cognition, or recommend medication, supplements, imaging, lab testing, or treatment changes."
     ],

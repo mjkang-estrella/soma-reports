@@ -61,6 +61,53 @@
     ],
     "professionalReview": "Use qualified professional review for symptoms, abnormal labs, family history, known variants, autoimmune or inflammatory concerns, connective-tissue concerns, medication questions, pregnancy or reproductive questions, screening questions, or treatment decisions."
   },
+  "officialReportBoundary": {
+    "fieldBoundaryStatus": "field-boundary only; official rows were not captured for this local fixture",
+    "sourceCapture": "Authenticated report outline captured from Sequencing.com, but no official sample rows, detected variants, or citation bindings are available.",
+    "header": {
+      "reportTitle": "Connective Tissue Disorders and EDS",
+      "sampleOwner": "not captured",
+      "generatedDate": "not captured",
+      "provider": "not captured"
+    },
+    "contents": [
+      "report highlights unavailable",
+      "high-evidence findings unavailable",
+      "medium-evidence findings unavailable",
+      "finding details unavailable",
+      "variants detected unavailable",
+      "typical features and health impacts unavailable",
+      "conditions analyzed unavailable",
+      "glossary unavailable",
+      "references unavailable",
+      "evidence ratings unavailable",
+      "disclaimer unavailable"
+    ],
+    "reportHighlights": {
+      "totalAnalyzed": "not captured",
+      "summary": "Official highlight counts and text are not captured."
+    },
+    "highEvidence": {
+      "summary": "not captured",
+      "findings": []
+    },
+    "mediumEvidence": {
+      "summary": "not captured",
+      "uncertainSignificance": []
+    },
+    "findingDetails": [],
+    "variantsDetected": [],
+    "conditionContext": {
+      "typicalFeatures": "not captured",
+      "healthImpacts": "not captured"
+    },
+    "conditionsAnalyzed": [],
+    "glossary": [],
+    "officialReferences": [],
+    "evidenceRatings": [],
+    "disclaimer": "not captured",
+    "pdfControl": "not captured"
+  },
   "practicalNextSteps": {
     "professionalReview": [
       "Do not use this local fixture to change medication, supplements, diet, screening, diagnostic testing, reproductive decisions, prevention plans, or treatment decisions.",

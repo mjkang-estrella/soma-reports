@@ -73,6 +73,100 @@
       "plainEnglishMeaning": "Reference databases support context and provenance, but they do not turn this local fixture into exact migration or homeland certainty."
     }
   ],
+  "sampleRows": [
+    {
+      "brandName": "",
+      "description": "The public sample PDF shows a concise report flow from explanation, to maternal ancestry result, to detail narrative.",
+      "extractionStatus": "direct",
+      "genes": [
+        "mitochondrial DNA"
+      ],
+      "geneticAnalysis": "How this works; Your Maternal Ancestry; Details",
+      "groupTitle": "Table of contents",
+      "item": "Sample report sections",
+      "sortOrder": 1,
+      "sourceBindingNote": "Extracted from the public Mitochondrial Ancestry sample PDF table of contents.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "mitochondrial-ancestry-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "",
+      "description": "The sample explains that mitochondrial DNA is used to show the journey a person's maternal ancestors took.",
+      "extractionStatus": "direct",
+      "genes": [
+        "mitochondrial DNA"
+      ],
+      "geneticAnalysis": "Each letter or letter-combination represents a haplogroup, a group of people who share common ancestral DNA.",
+      "groupTitle": "Your Maternal Ancestry",
+      "item": "Haplogroup explanation",
+      "sortOrder": 2,
+      "sourceBindingNote": "Extracted from the public sample PDF and bounded with MedlinePlus maternal-line context.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "mitochondrial-ancestry-sample-pdf",
+        "medlineplus-genetic-ancestry-testing",
+        "medlineplus-mitochondrial-dna"
+      ]
+    },
+    {
+      "brandName": "",
+      "description": "The visible sample row states 6000-9200 generations ago, 150,000-230,000 years ago, origin East Africa.",
+      "extractionStatus": "direct",
+      "genes": [
+        "mitochondrial DNA"
+      ],
+      "geneticAnalysis": "The sample timeline includes a visible root Haplogroup L detail row and origin/time bands for a maternal-line path.",
+      "groupTitle": "Your Maternal Ancestry",
+      "item": "Sample visible haplogroup path",
+      "sortOrder": 3,
+      "sourceBindingNote": "Extracted from the public sample PDF timeline and Haplogroup L detail page.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "mitochondrial-ancestry-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "",
+      "description": "The narrative says all humans alive today can trace their mitochondrial ancestry back to a woman in Eastern Africa roughly 150,000-230,000 years ago.",
+      "extractionStatus": "direct",
+      "genes": [
+        "mitochondrial DNA"
+      ],
+      "geneticAnalysis": "The sample describes Haplogroup L as the root of the human mtDNA tree and frames it as deep maternal-line ancestry.",
+      "groupTitle": "Details",
+      "item": "Haplogroup L narrative",
+      "sortOrder": 4,
+      "sourceBindingNote": "Extracted from the public sample PDF Haplogroup L detail narrative.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "mitochondrial-ancestry-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "",
+      "description": "The sample detail page includes Ice Age, Neanderthal, Homo sapiens, and early dispersal context around the visible deep-time period.",
+      "extractionStatus": "direct",
+      "genes": [
+        "mitochondrial DNA"
+      ],
+      "geneticAnalysis": "The sample pairs the haplogroup narrative with a broad ancient-history context section rather than exact modern identity or family matching.",
+      "groupTitle": "Details",
+      "item": "Context timeline",
+      "sortOrder": 5,
+      "sourceBindingNote": "Extracted from the public sample PDF historical context section.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "mitochondrial-ancestry-sample-pdf"
+      ]
+    }
+  ],
   "maternalLineageSummary": {
     "scope": "This result is limited to mtDNA maternal-line ancestry context.",
     "plainEnglishMeaning": "The maternal line is one inherited path through your family tree. It is not a summary of all ancestors, overall ethnicity, nationality, community identity, or family relationships.",

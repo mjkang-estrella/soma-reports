@@ -15,7 +15,7 @@
       "haplotype": "organ-system-model-unavailable",
       "inputId": "kidneys-and-urinary-tract-dna-health-report-model-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "validated kidney or urinary tract model, eGFR, creatinine, cystatin C, urinalysis, albuminuria, stone history, UTI history, bladder function context, imaging, blood pressure, medication context, clinical diagnosis, clinician review, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "validated kidney or urinary tract model, eGFR, creatinine, cystatin C, urinalysis, albuminuria, stone history, UTI history, bladder function context, imaging, blood pressure, medication context, clinical diagnosis, clinician review, and authenticated sample-report rows unavailable in this fixture; Public Disease Risk sample PDF Other Diseases table, Chronic Kidney Disease row, and heritable-component limitation are extracted as sibling kidney-disease output-structure evidence.",
       "sourceArtifact": "synthetic-kidneys-and-urinary-tract-dna-health-report-organ-system-boundary-context-v1",
       "sourceFile": "synthetic-kidneys-and-urinary-tract-dna-health-report-organ-system-boundary-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "clinical-professional-context-unavailable",
       "inputId": "kidneys-and-urinary-tract-dna-health-report-clinical-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and personal clinical context unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Kidneys and Urinary Tract DNA Health Report",
       "sourceArtifact": "synthetic-kidneys-and-urinary-tract-dna-health-report-organ-system-boundary-context-v1",
       "sourceFile": "synthetic-kidneys-and-urinary-tract-dna-health-report-organ-system-boundary-context-v1.json"
     },
@@ -35,7 +35,7 @@
       "haplotype": "organ-system-context-unavailable",
       "inputId": "kidneys-and-urinary-tract-dna-health-report-organ-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "labs, imaging, vitals, organ-function measures, disease-specific testing, treatment context, prevention context, and actionability context unavailable in this fixture",
+      "observedValue": "labs, imaging, vitals, organ-function measures, disease-specific testing, treatment context, prevention context, actionability context, and personal recommendation context unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Kidneys and Urinary Tract DNA Health Report",
       "sourceArtifact": "synthetic-kidneys-and-urinary-tract-dna-health-report-organ-system-boundary-context-v1",
       "sourceFile": "synthetic-kidneys-and-urinary-tract-dna-health-report-organ-system-boundary-context-v1.json"
     }
@@ -46,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for kidneys-and-urinary-tract-dna-health-report validation"
   },
-  "missingInputPolicy": "Report unavailable kidney and urinary tract health context evidence explicitly; do not diagnose CKD, kidney disease, urinary tract disease, kidney stones, UTI, bladder disorder, hypertension, diabetes, or organ dysfunction; infer eGFR, creatinine, cystatin C, urinalysis, albuminuria, stone risk, UTI risk, bladder function, imaging, blood pressure, diet need, medication need, supplement need, treatment need, screening need, testing need, prevention, or clinical actionability.",
+  "missingInputPolicy": "Report unavailable kidney and urinary tract health context evidence explicitly; use the public sibling Disease Risk sample rows only as observed output structure and do not infer CKD diagnosis, kidney risk, kidney-function inference, urinary-tract status, diet, medication, supplement, screening, testing, treatment, or actionability guidance from local unavailable evidence or sample-only rows.",
   "packageSlug": "kidneys-and-urinary-tract-dna-health-report",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -181,7 +181,19 @@
         "missing_model_policy",
         "clinical_actionability_limits"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "genetic-testing-disease-risk-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Genetic Testing For Disease Risk sample genetic report",
+      "usedFor": [
+        "sibling_formal_fields",
+        "sample_rows",
+        "risk_label_table",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer kidney and urinary tract health context boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer kidney and urinary tract health context boundary context using supplied references plus observed sibling Disease Risk Genetic Test Report kidney-disease output structure while explicitly marking personal clinical context unavailable."
 }

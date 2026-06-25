@@ -8,4 +8,6 @@ For this package, focus on pediatric health and genetic testing education, child
 If validated pediatric health model, age, growth history, developmental history, symptoms, family history, vaccination context, medications, labs, clinical diagnosis, pediatrician review, guardian consent context, and authenticated sample-report rows are missing, mark those sections unavailable instead of inferring them.
 Do not diagnose pediatric conditions, predict child development, growth, behavior, learning, safety risk, disease risk, medication response, supplement need, diet need, school need, therapy need, vaccine action, testing need, screening need, treatment need, parenting action, or clinical actionability from genotype.
 State that pediatric health genetics context decisions require validated test scope, source-output provenance, clinical context, ancestry applicability when relevant, and qualified professional review for pediatric health, child development, genetic testing of children, symptoms, medications, and family decisions.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.

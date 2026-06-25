@@ -15,7 +15,7 @@
       "haplotype": "organ-system-model-unavailable",
       "inputId": "dysautonomia-model-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "validated dysautonomia model, autonomic testing, tilt-table testing, heart rate, blood pressure, syncope history, symptom history, medication context, hydration and salt context, neurologic or cardiology review, clinical diagnosis, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "validated dysautonomia model, autonomic testing, tilt-table testing, heart rate, blood pressure, syncope history, symptom history, medication context, hydration and salt context, neurologic or cardiology review, and clinical diagnosis unavailable in this fixture; sanitized official completed-output row structure observed separately with private values redacted",
       "sourceArtifact": "synthetic-dysautonomia-organ-system-boundary-context-v1",
       "sourceFile": "synthetic-dysautonomia-organ-system-boundary-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "clinical-professional-context-unavailable",
       "inputId": "dysautonomia-clinical-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and personal clinical context unavailable in this fixture; sanitized official completed-output row structure observed separately without private finding values",
       "sourceArtifact": "synthetic-dysautonomia-organ-system-boundary-context-v1",
       "sourceFile": "synthetic-dysautonomia-organ-system-boundary-context-v1.json"
     },
@@ -35,7 +35,7 @@
       "haplotype": "organ-system-context-unavailable",
       "inputId": "dysautonomia-organ-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "labs, imaging, vitals, organ-function measures, disease-specific testing, treatment context, prevention context, and actionability context unavailable in this fixture",
+      "observedValue": "labs, imaging, vitals, organ-function measures, disease-specific testing, treatment context, prevention context, actionability context, and personal recommendation context unavailable in this fixture; sanitized official completed-output row structure observed separately without private source data",
       "sourceArtifact": "synthetic-dysautonomia-organ-system-boundary-context-v1",
       "sourceFile": "synthetic-dysautonomia-organ-system-boundary-context-v1.json"
     }
@@ -46,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for dysautonomia validation"
   },
-  "missingInputPolicy": "Report unavailable dysautonomia and autonomic nervous system context evidence explicitly; do not diagnose dysautonomia, POTS, autonomic neuropathy, syncope disorder, arrhythmia, cardiovascular disease, or neurologic disease; infer heart rate, blood pressure, tilt-table status, autonomic function, syncope risk, symptom status, hydration need, salt need, medication need, exercise guidance, testing need, treatment need, prevention, clearance, emergency action, or clinical actionability.",
+  "missingInputPolicy": "Report unavailable dysautonomia and autonomic nervous system context evidence explicitly; use the sanitized official completed-output row only as output-structure evidence and do not infer diagnosis, heart rate, blood pressure, tilt-table status, autonomic function, syncope risk, symptoms, hydration, salt, medication, exercise, testing, treatment, prevention, clearance, emergency action, or clinical actionability.",
   "packageSlug": "dysautonomia",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -157,7 +157,19 @@
         "missing_model_policy",
         "clinical_actionability_limits"
       ]
+    },
+    {
+      "evidenceLevel": "official-output",
+      "id": "dysautonomia-redacted-official-output",
+      "sourceType": "redacted_official_completed_output",
+      "title": "Dysautonomia redacted official completed output",
+      "usedFor": [
+        "official_output_structure",
+        "sample_rows",
+        "formal_fields",
+        "citation_bindings"
+      ]
     }
   ],
-  "reportPurpose": "Consumer dysautonomia and autonomic nervous system context boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer dysautonomia and autonomic nervous system context boundary context using supplied references plus sanitized official completed-output row structure while explicitly marking personal clinical/autonomic findings unavailable."
 }

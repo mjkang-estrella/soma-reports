@@ -3,16 +3,16 @@
     "reportTitle": "RunDNA",
     "inputManifestHash": "sha256:synthetic-rundna-running-fitness-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "No calibrated running performance, race-time, training-response, injury-risk, recovery, VO2 max, or sport-suitability model is supplied with this fixture."
+      "Authenticated Sequencing.com marketplace detail-page extraction and full-report pages are still pending.",
+      "No calibrated local running performance, race-time, training-response, injury-risk, recovery, VO2 max, sport-suitability, nutrition, hydration, or running-efficiency model is supplied with this fixture."
     ]
   },
   "resultRows": [
     {
       "groupTitle": "Running fitness context",
       "item": "ACTN3 R577X / rs1815739",
-      "brandName": "",
-      "geneticAnalysis": "A derived ACTN3 rs1815739 CT call is available. This is trait context only and does not predict performance, strength, endurance, recovery, injury risk, or ability.",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived ACTN3 rs1815739 CT call is available. This is trait context only and does not predict performance, strength, endurance, recovery, injury risk, VO2 max, race time, or ability.",
       "genes": [
         "ACTN3"
       ],
@@ -20,13 +20,14 @@
       "sourceIds": [
         "medlineplus-athletic-performance"
       ],
+      "sourceBindingStatus": "curated",
       "plainEnglishMeaning": "ACTN3 is one of the best-studied genes in athletic-performance research, but running outcomes are shaped by many genetic and non-genetic factors."
     },
     {
       "groupTitle": "Running fitness context",
       "item": "ACE I/D polymorphism",
-      "brandName": "",
-      "geneticAnalysis": "A derived ACE ID context row is available. This is not enough to choose sports, prescribe workouts, estimate VO2 max, predict training response, or infer health outcomes.",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived ACE ID context row is available. This is not enough to choose sports, prescribe workouts, estimate VO2 max, predict training response, infer injury risk, or infer health outcomes.",
       "genes": [
         "ACE"
       ],
@@ -34,13 +35,14 @@
       "sourceIds": [
         "medlineplus-athletic-performance"
       ],
+      "sourceBindingStatus": "curated",
       "plainEnglishMeaning": "ACE has been discussed in performance research, but training history, health, environment, opportunity, and many other factors remain important."
     },
     {
-      "groupTitle": "Fitness model availability",
+      "groupTitle": "Local model availability",
       "item": "Running fitness model",
-      "brandName": "",
-      "geneticAnalysis": "No calibrated running performance score, training-response model, injury-risk model, recovery model, VO2 max model, race-time model, and ancestry applicability metadata unavailable.",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "No calibrated running performance score, training-response model, injury-risk model, recovery model, VO2 max model, race-time model, nutrition model, hydration model, running-efficiency model, or ancestry applicability metadata is supplied with this fixture.",
       "genes": [
         "Running fitness model"
       ],
@@ -49,14 +51,154 @@
         "nhgri-polygenic-risk-scores",
         "ebi-gwas-catalog"
       ],
-      "plainEnglishMeaning": "The report can describe supplied marker context, but it should not quantify running performance, race time, injury, recovery, or training probabilities without a validated model."
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The local report can describe supplied marker context, but it should not quantify running performance, race time, injury, recovery, training, hydration, nutrition, or VO2 max probabilities without a validated model."
+    },
+    {
+      "groupTitle": "Observed sample report structure",
+      "item": "RunDNA public sample PDF",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "The public sample PDF shows RunDNA preview-boundary text, methodology pages, endurance-performance marker tables, food and carbohydrate blocks, fluid and running-efficiency blocks, response-to-endurance-training marker rows, and adaptation blocks for output-format parity.",
+      "genes": [
+        "ADRB2",
+        "COL5A1",
+        "ACE",
+        "PPARA",
+        "CKMM",
+        "NRF2",
+        "PPARGC1A",
+        "AMPD1"
+      ],
+      "sourceLabel": "RunDNA Endurance Performance Plan sample report",
+      "sourceIds": [
+        "rundna-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "These rows document the Sequencing.com/Toolbox Genomics preview format only. They must not be treated as this local fixture's running ability, training response, injury risk, recovery, VO2 max, diet, hydration, race, supplement, medical-clearance, or performance conclusions."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Preview boundary",
+      "item": "RunDNA Endurance Performance Plan preview",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "The public sample opens with a RunDNA Endurance Performance Plan cover, Sample1 identity, May 2018 date, and a repeated note that only a limited number of preview pages are displayed.",
+      "description": "The preview includes introductory methodology pages plus a limited set of endurance-performance and endurance-training pages.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "rundna-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public RunDNA sample PDF cover and preview footer; this is observed report structure, not a local running conclusion."
+    },
+    {
+      "groupTitle": "Your Results",
+      "item": "Methodology and educational boundaries",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "The sample explains that recommendations are chosen for actionability, are based on SNP evaluation and human studies, and are educational rather than intended to diagnose or treat disease.",
+      "description": "The introduction also says health depends on genetics, diet, exercise, sleep, environment, and other traits, and recommends talking to a healthcare provider before changing diet, supplement use, or exercise regimen.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "rundna-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from pages 2-3 of the public RunDNA sample PDF; use as boundary and output-format structure only, not local health, training, supplement, or exercise advice."
+    },
+    {
+      "groupTitle": "Endurance Potential",
+      "item": "Better Endurance Performance gene table",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "The sample Better Endurance Performance page says people with similar genetic markers may experience better performance in endurance exercise and shows ADRB2 rs1042713 GG non-variant, ADRB2 rs1042714 CG variant, COL5A1 rs12722 CC non-variant, ACE rs1799752 TTG non-variant, PPARA rs4253778 GG variant, CKMM rs8111989 TT variant, NRF2 rs12594956 AC variant, and PPARGC1A rs8192678 TC variant.",
+      "description": "The page includes endurance-performance condition text and gene definitions for ADRB2, COL5A1, ACE, and PPARA.",
+      "genes": [
+        "ADRB2",
+        "COL5A1",
+        "ACE",
+        "PPARA",
+        "CKMM",
+        "NRF2",
+        "PPARGC1A"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "rundna-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from page 12 of the public RunDNA sample PDF; this is observed sample output structure and not local endurance ability, performance, training, or medical advice."
+    },
+    {
+      "groupTitle": "Endurance Potential",
+      "item": "Food foundations and carbohydrate blocks",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "The sample What You Can Do page shows Food Foundations and Carbohydrate Recommendations blocks, including training-load-dependent carbohydrate language and a note that recommendations can be fine-tuned individually.",
+      "description": "The food block lists example Foundation Diet ingredients and the carbohydrate block distinguishes daily and during-run recommendations.",
+      "genes": [
+        "Endurance nutrition model"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "rundna-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from page 14 of the public RunDNA sample PDF; do not turn sample food or carbohydrate text into local diet, fueling, training, or performance advice."
+    },
+    {
+      "groupTitle": "Endurance Potential",
+      "item": "Fluid and running-efficiency blocks",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "The sample What You Can Do page shows Fluid Recommendations and Strategies to Improve Running Efficiency blocks, including during-run fluid text, running shoe, form, core-exercise, and shoe-replacement statements.",
+      "description": "The page presents running-efficiency as the energy demand used by a runner to get from point A to point B.",
+      "genes": [
+        "Running efficiency model"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "rundna-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from page 15 of the public RunDNA sample PDF; do not turn sample hydration, shoe, form, or running-efficiency text into local training, injury, medical, or performance advice."
+    },
+    {
+      "groupTitle": "Endurance Potential",
+      "item": "Response to Endurance Training gene table",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "The sample Response to Endurance Training page says people with similar genetic markers may experience lower or delayed cardiorespiratory response to endurance exercise and shows AMPD1 rs17602729 GG non-variant.",
+      "description": "The page includes condition-definition text describing endurance training and an AMPD1 gene definition.",
+      "genes": [
+        "AMPD1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "rundna-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from page 18 of the public RunDNA sample PDF; this is observed sample output structure and not local training response, capacity, or VO2 max advice."
+    },
+    {
+      "groupTitle": "Endurance Potential",
+      "item": "Endurance-training adaptation blocks",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "The sample What You Can Do pages show Adapt Your Nutrition, Exercise Strategies to Help you Adapt to Endurance Training, and Strategies to Help You Adapt to Endurance Training blocks.",
+      "description": "The pages mention nutrition monitoring, whole foods, pre-workout snacks, varying workout time, HIIT, sleep, stress, and cortisol as observed preview content.",
+      "genes": [
+        "AMPD1",
+        "Endurance training model"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "rundna-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from pages 19-20 of the public RunDNA sample PDF; do not turn sample nutrition, HIIT, sleep, stress, or cortisol text into local training, recovery, medical, supplement, or performance advice."
     }
   ],
   "practicalNextSteps": {
     "runningContext": [
-      "Use the report as educational running-fitness genetics context, not as a training plan.",
-      "Plan training, injury prevention, recovery, and performance goals with qualified coaches or health professionals.",
-      "Do not use genotype alone for race expectations, sport selection, supplement decisions, medical exercise clearance, or expectations about running ability."
+      "Use this report as educational running-fitness genetics context, not as a training, fueling, hydration, injury-prevention, race, supplement, or medical-clearance plan.",
+      "Keep the public RunDNA sample PDF rows separate from local findings; sample genotypes, recommendation blocks, and endurance labels are format examples only.",
+      "Plan training, injury prevention, recovery, nutrition, hydration, and performance goals with qualified coaches or health professionals."
     ]
   },
   "references": [
@@ -71,37 +213,102 @@
     {
       "id": "ebi-gwas-catalog",
       "title": "GWAS Catalog"
+    },
+    {
+      "id": "rundna-sample-pdf",
+      "title": "RunDNA Endurance Performance Plan sample report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
         "gene": "ACTN3",
-        "observedValue": "rs1815739 CT"
+        "observedValue": "rs1815739: CT",
+        "effect": "The local fixture supplies a derived ACTN3 R577X context row.",
+        "phenotype": "Report as educational athletic-performance context only; do not infer running ability."
       },
       {
         "gene": "ACE",
-        "observedValue": "I/D"
+        "observedValue": "ACE-I-D: ID",
+        "effect": "The local fixture supplies a derived ACE insertion/deletion context row.",
+        "phenotype": "Report as educational fitness context only; do not infer endurance capacity or training response."
       },
       {
         "gene": "Running fitness model",
-        "observedValue": "calibrated model unavailable"
+        "observedValue": "running-fitness-model-unavailable: calibrated running performance, training-response, injury-risk, recovery, VO2 max, race-time, and ancestry applicability models unavailable",
+        "effect": "The local fixture intentionally omits calibrated running models and non-genetic context.",
+        "phenotype": "Mark running-performance, training, injury, recovery, VO2 max, race-time, and sport-selection sections unavailable."
+      },
+      {
+        "gene": "ADRB2",
+        "observedValue": "rs1042713: GG",
+        "effect": "The sample Better Endurance Performance table labels this row non-variant.",
+        "phenotype": "Observed sample row only; do not infer local cardiovascular, respiratory, or endurance status."
+      },
+      {
+        "gene": "ADRB2",
+        "observedValue": "rs1042714: CG",
+        "effect": "The sample Better Endurance Performance table labels this row variant.",
+        "phenotype": "Observed sample row only; do not infer local endurance performance."
+      },
+      {
+        "gene": "COL5A1",
+        "observedValue": "rs12722: CC",
+        "effect": "The sample Better Endurance Performance table labels this row non-variant.",
+        "phenotype": "Observed sample row only; do not infer local connective-tissue, injury, or endurance status."
+      },
+      {
+        "gene": "ACE",
+        "observedValue": "rs1799752: TTG",
+        "effect": "The sample Better Endurance Performance table labels this row non-variant.",
+        "phenotype": "Observed sample row only; keep separate from local ACE I/D context."
+      },
+      {
+        "gene": "PPARA",
+        "observedValue": "rs4253778: GG",
+        "effect": "The sample Better Endurance Performance table labels this row variant.",
+        "phenotype": "Observed sample row only; do not infer local fat metabolism, glucose energy balance, or endurance status."
+      },
+      {
+        "gene": "CKMM",
+        "observedValue": "rs8111989: TT",
+        "effect": "The sample Better Endurance Performance table labels this row variant.",
+        "phenotype": "Observed sample row only; do not infer local muscle energy or performance status."
+      },
+      {
+        "gene": "NRF2",
+        "observedValue": "rs12594956: AC",
+        "effect": "The sample Better Endurance Performance table labels this row variant.",
+        "phenotype": "Observed sample row only; do not infer local training or oxidative-stress response."
+      },
+      {
+        "gene": "PPARGC1A",
+        "observedValue": "rs8192678: TC",
+        "effect": "The sample Better Endurance Performance table labels this row variant.",
+        "phenotype": "Observed sample row only; do not infer local endurance adaptation or performance."
+      },
+      {
+        "gene": "AMPD1",
+        "observedValue": "rs17602729: GG",
+        "effect": "The sample Response to Endurance Training table labels this row non-variant.",
+        "phenotype": "Observed sample row only; do not infer local cardiorespiratory response or exercise capacity."
       }
     ],
     "missingInputs": [
-      "Authenticated sample-report sections and rows have not been extracted.",
-      "No calibrated running performance, race-time, training-response, injury-risk, recovery, VO2 max, or sport-suitability model is supplied.",
-      "No training history, injury history, sleep, nutrition, medical history, fitness testing, or coach assessment is supplied."
+      "Authenticated marketplace detail-page text and full-report pages have not been extracted for this report.",
+      "calibrated running performance score, training-response model, injury-risk model, recovery model, VO2 max model, race-time model, and ancestry applicability metadata unavailable in this fixture",
+      "No training history, injury history, sleep, nutrition, hydration, medical history, fitness testing, ancestry applicability, or coach assessment is represented in this fixture."
     ],
     "probabilities": [],
     "uncertainty": [
-      "Running fitness is a complex trait influenced by genetics, training, health, sleep, nutrition, environment, opportunity, and many other factors.",
-      "A small number of markers cannot explain running ability, race performance, injury risk, recovery, or training response."
+      "Running traits, endurance performance, training response, injury risk, recovery, VO2 max, hydration, nutrition, and race outcomes depend on genetics plus non-genetic context and professional review.",
+      "A single marker should not be used to choose sports, prescribe training, set fueling or hydration targets, estimate VO2 max, predict race time, infer injury risk, or provide medical exercise clearance.",
+      "The public sample PDF is exact output-format evidence for visible preview pages, but its sample genotypes and labels are not local-user evidence."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data is not included.",
       "The report is educational and does not predict running ability, estimate race time, prescribe training, recommend sport selection, estimate injury risk, estimate recovery, quantify VO2 max, recommend supplements, or provide medical exercise clearance.",
-      "Authenticated Sequencing.com sample report rows are still pending."
+      "Public sample rows are extracted from the Toolbox Genomics RunDNA sample PDF for format parity only; authenticated marketplace detail-page extraction and full-report pages are still pending."
     ]
   }
 }

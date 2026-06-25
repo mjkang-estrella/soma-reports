@@ -46,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived fitness-trait evidence for age-strength validation"
   },
-  "missingInputPolicy": "Report unavailable strength, aging, recovery, and calibrated models explicitly; do not infer longevity, biological age, frailty, muscle loss, injury risk, recovery, training response, or medical outcomes.",
+  "missingInputPolicy": "Report unavailable strength, aging, bone-density, osteoporosis, fracture-risk, frailty, recovery, injury-risk, supplement, treatment, exercise-clearance, and calibrated models explicitly. Use sibling Gene-In-Form sample rows only as observed output-format examples; do not infer bone strength, osteoporosis risk, fracture risk, exercise plan, supplement need, treatment need, medical outcome, or sample-only training actions from genotype alone.",
   "packageSlug": "age-strength",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -80,7 +80,20 @@
         "candidate_trait_associations",
         "model_unavailable_context"
       ]
+    },
+    {
+      "evidenceLevel": "sibling_sample_report",
+      "id": "gene-in-form-personalized-fitness-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Gene-In-Form Personalized Fitness sibling sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format",
+        "bone_strength_boundary"
+      ]
     }
   ],
-  "reportPurpose": "Consumer strength and aging fitness context using derived ACTN3 and ACE evidence plus explicit complex-trait and model-unavailable framing."
+  "reportPurpose": "Consumer strength and aging fitness context using derived ACTN3 and ACE evidence plus sibling Gene-In-Form strength, recovery, connective-tissue, and musculoskeletal output-structure evidence."
 }

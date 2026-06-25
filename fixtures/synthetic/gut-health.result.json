@@ -3,16 +3,18 @@
     "reportTitle": "Gut Health",
     "inputManifestHash": "sha256:synthetic-gut-health-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "No calibrated gut-health, digestive-disorder, microbiome, symptom, diet-history, elimination-diet, supplement, lab, or ancestry applicability model is supplied with this fixture."
+      "Authenticated Sequencing.com marketplace body/detail extraction is not available yet.",
+      "No calibrated gut-health, digestive-disorder, microbiome, symptom, diet-history, elimination-diet, probiotic, supplement, lab, medication, treatment, or ancestry applicability model is supplied with this fixture.",
+      "Observed SelfDecode Gut Health sample labels and recommendation rows are included only as report-output structure, not local findings."
     ]
   },
   "resultRows": [
     {
-      "groupTitle": "Gut health nutrition context",
+      "groupTitle": "Gut health genetics context",
       "item": "MCM6/LCT rs4988235",
       "brandName": "Not applicable",
-      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a diagnosis, symptom explanation, diet recommendation, supplement recommendation, or model-derived health result.",
+      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a digestive diagnosis, symptom explanation, microbiome result, diet recommendation, supplement recommendation, lab interpretation, medication action, or treatment result.",
+      "description": "This local evidence row is included because the fixture supplies a derived marker call for educational lactose-related context.",
       "genes": [
         "MCM6",
         "LCT"
@@ -22,47 +24,237 @@
         "medlineplus-lactose-intolerance",
         "medlineplus-mcm6"
       ],
-      "plainEnglishMeaning": "This marker can provide lactose-related context, but symptoms, diet history, labs, environment, medications, and professional review matter for health and nutrition decisions."
+      "plainEnglishMeaning": "This marker can provide lactose-related context, but symptoms, food history, diet history, labs, gut testing, environment, medications, and professional review matter for digestive-health decisions.",
+      "sourceBindingStatus": "curated"
     },
     {
-      "groupTitle": "Nutrition model availability",
+      "groupTitle": "Gut health model availability",
       "item": "Gut health model",
       "brandName": "Not applicable",
-      "geneticAnalysis": "No calibrated gut-health, digestive-disorder, microbiome, symptom, diet-history, elimination-diet, supplement, lab, or ancestry applicability model is supplied with this fixture.",
+      "geneticAnalysis": "No calibrated gut-health, digestive-disorder, microbiome, symptom, diet-history, elimination-diet, probiotic, supplement, lab, medication, treatment, or ancestry applicability model is supplied with this fixture.",
+      "description": "Unavailable calibrated models are reported as missing inputs rather than inferred from genotype or from sample-only rows.",
       "genes": [
         "Gut health model"
       ],
-      "sourceLabel": "MedlinePlus DTC result limits / Nutritional genomics review",
+      "sourceLabel": "MedlinePlus DTC result limits / Nutritional genomics review / GWAS Catalog",
       "sourceIds": [
         "medlineplus-dtc-genetic-testing-results",
-        "nutritional-genomics-dtc-review"
+        "nutritional-genomics-dtc-review",
+        "ebi-gwas-catalog"
       ],
-      "plainEnglishMeaning": "The report can describe supplied marker context, but it should not make diet, supplement, glucose, gut, weight, wellness, child-specific, symptom, lab, metabolic, or treatment conclusions without validated evidence."
+      "plainEnglishMeaning": "The report can describe supplied marker context and observed sample structure, but it should not make IBS, ulcer, reflux, constipation, infection, gluten, lactose, microbiome, probiotic, curcumin, supplement, lab, medication, diagnosis, or treatment conclusions without validated evidence.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Report method",
+      "item": "Health report scoring and recommendation method",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Health report scoring and recommendation method: sample label Risk scores, percentile gauges, and impact/evidence recommendation scores. The sample explains that Health Reports use DNA analysis to display risk scores or gauges, compare the score to a sample population percentile, and rank recommendations by impact and evidence.",
+      "description": "The local SelfDecode Gut Health sample PDF page 4 presents this as an observed report-output row.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "gut-health-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed SelfDecode Gut Health sample-output row used to preserve report structure. It is not a local result and must not be used as personal digestive diagnosis, microbiome status, symptom explanation, diet, elimination-diet, probiotic, curcumin, supplement, lab, medication, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Report overview",
+      "item": "Gut Health genetic-result categories",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Gut Health genetic-result categories: sample label 16 Genetic Results. The sample overview says the Gut Health report contains 16 genetic results across digestive issues, infections and inflammation, food intolerance, and gut microbiome.",
+      "description": "The local SelfDecode Gut Health sample PDF page 8 presents this as an observed report-output row.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "gut-health-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed SelfDecode Gut Health sample-output row used to preserve report structure. It is not a local result and must not be used as personal digestive diagnosis, microbiome status, symptom explanation, diet, elimination-diet, probiotic, curcumin, supplement, lab, medication, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Digestive Issues",
+      "item": "Irritable Bowel",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Irritable Bowel: sample label Typical likelihood of IBS. The sample detail page labels Irritable Bowel as typical likelihood based on 395,382 genetic variants and shows a sample percentile bounded between 29% and 71% of the population.",
+      "description": "The local SelfDecode Gut Health sample PDF page 12 presents this as an observed report-output row.",
+      "genes": [
+        "MAPT",
+        "HTR3B",
+        "TRPM8"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "gut-health-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed SelfDecode Gut Health sample-output row used to preserve report structure. It is not a local result and must not be used as personal digestive diagnosis, microbiome status, symptom explanation, diet, elimination-diet, probiotic, curcumin, supplement, lab, medication, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Digestive Issues",
+      "item": "Peptic Ulcers",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Peptic Ulcers: sample label Typical likelihood of peptic ulcers. The sample detail page labels Peptic Ulcers as typical likelihood based on 113,543 genetic variants and lists risk factors including H. pylori, NSAID use, stress, alcohol, smoking, and genetics.",
+      "description": "The local SelfDecode Gut Health sample PDF page 13 presents this as an observed report-output row.",
+      "genes": [
+        "CD151",
+        "FUT2",
+        "GUCY2F",
+        "CCKBR",
+        "PSCA",
+        "TNF",
+        "CYP2C19"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "gut-health-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed SelfDecode Gut Health sample-output row used to preserve report structure. It is not a local result and must not be used as personal digestive diagnosis, microbiome status, symptom explanation, diet, elimination-diet, probiotic, curcumin, supplement, lab, medication, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Digestive Issues",
+      "item": "Indigestion",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Indigestion: sample label More likely to have indigestion. The sample result-card grid labels Indigestion as more likely while other digestive issue cards remain typical likelihood.",
+      "description": "The local SelfDecode Gut Health sample PDF page 9 presents this as an observed report-output row.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "gut-health-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed SelfDecode Gut Health sample-output row used to preserve report structure. It is not a local result and must not be used as personal digestive diagnosis, microbiome status, symptom explanation, diet, elimination-diet, probiotic, curcumin, supplement, lab, medication, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Digestive Issues",
+      "item": "Acid Reflux, Constipation, and Gallstones",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Acid Reflux, Constipation, and Gallstones: sample label Typical likelihood. The sample result-card grid labels Acid Reflux, Constipation, and Gallstones as typical likelihood outputs.",
+      "description": "The local SelfDecode Gut Health sample PDF page 9 presents this as an observed report-output row.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "gut-health-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed SelfDecode Gut Health sample-output row used to preserve report structure. It is not a local result and must not be used as personal digestive diagnosis, microbiome status, symptom explanation, diet, elimination-diet, probiotic, curcumin, supplement, lab, medication, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Infections and Inflammation",
+      "item": "Pancreas inflammation, IBD, and appendicitis",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Pancreas inflammation, IBD, and appendicitis: sample label Less likely pancreas inflammation; typical IBD; less likely appendicitis. The sample result-card grid shows pancreas inflammation as less likely, gut inflammation or IBD as typical likelihood, and appendicitis as less likely.",
+      "description": "The local SelfDecode Gut Health sample PDF page 9 presents this as an observed report-output row.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "gut-health-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed SelfDecode Gut Health sample-output row used to preserve report structure. It is not a local result and must not be used as personal digestive diagnosis, microbiome status, symptom explanation, diet, elimination-diet, probiotic, curcumin, supplement, lab, medication, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Infections and Inflammation",
+      "item": "C. difficile, H. pylori, EBV, and gastrointestinal infection",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "C. difficile, H. pylori, EBV, and gastrointestinal infection: sample label Typical likelihood. The sample result-card grid labels C. difficile infection, H. pylori infection, EBV infection, and gastrointestinal infection as typical likelihood outputs.",
+      "description": "The local SelfDecode Gut Health sample PDF page 9 presents this as an observed report-output row.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "gut-health-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed SelfDecode Gut Health sample-output row used to preserve report structure. It is not a local result and must not be used as personal digestive diagnosis, microbiome status, symptom explanation, diet, elimination-diet, probiotic, curcumin, supplement, lab, medication, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Food Intolerance",
+      "item": "Gluten Sensitivity and Lactose Intolerance",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Gluten Sensitivity and Lactose Intolerance: sample label Likely higher sensitivity to gluten; likely lactose tolerant. The sample food-intolerance cards show higher sensitivity to gluten or celiac-related gluten sensitivity and likely lactose tolerant.",
+      "description": "The local SelfDecode Gut Health sample PDF page 10 presents this as an observed report-output row.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "gut-health-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed SelfDecode Gut Health sample-output row used to preserve report structure. It is not a local result and must not be used as personal digestive diagnosis, microbiome status, symptom explanation, diet, elimination-diet, probiotic, curcumin, supplement, lab, medication, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Gut Microbiome",
+      "item": "Gut Microbiome Diversity",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Gut Microbiome Diversity: sample label Likely typical gut microbiome diversity. The sample gut-microbiome card labels gut microbiome diversity as likely typical.",
+      "description": "The local SelfDecode Gut Health sample PDF page 10 presents this as an observed report-output row.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "gut-health-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed SelfDecode Gut Health sample-output row used to preserve report structure. It is not a local result and must not be used as personal digestive diagnosis, microbiome status, symptom explanation, diet, elimination-diet, probiotic, curcumin, supplement, lab, medication, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Recommendations",
+      "item": "Probiotics recommendation structure",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Probiotics recommendation structure: sample label Helps with indigestion, gut inflammation, IBS, H. pylori, gastrointestinal infection, microbiome diversity, constipation, and C. difficile. The sample recommendation pages show Probiotics with impact/evidence scores, condition-specific text, CFU context, and an IL23R variant row linked to IBD in the sample.",
+      "description": "The local SelfDecode Gut Health sample PDF page 15 presents this as an observed report-output row.",
+      "genes": [
+        "IL23R"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "gut-health-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed SelfDecode Gut Health sample-output row used to preserve report structure. It is not a local result and must not be used as personal digestive diagnosis, microbiome status, symptom explanation, diet, elimination-diet, probiotic, curcumin, supplement, lab, medication, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Recommendations",
+      "item": "Curcumin recommendation structure",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Curcumin recommendation structure: sample label Helps with indigestion, gut inflammation, and peptic ulcers. The sample recommendation pages show Curcumin with impact/evidence scores, dose examples, bioavailability notes, and NFKB1 and TNF sample variant rows.",
+      "description": "The local SelfDecode Gut Health sample PDF page 18 presents this as an observed report-output row.",
+      "genes": [
+        "NFKB1",
+        "TNF"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "gut-health-sample-pdf"
+      ],
+      "plainEnglishMeaning": "This is an observed SelfDecode Gut Health sample-output row used to preserve report structure. It is not a local result and must not be used as personal digestive diagnosis, microbiome status, symptom explanation, diet, elimination-diet, probiotic, curcumin, supplement, lab, medication, or treatment advice.",
+      "sourceBindingStatus": "exact"
     }
   ],
   "practicalNextSteps": {
     "gutHealthContext": [
-      "Use this report as educational gut-health-adjacent nutrition genetics context, not as a digestive diagnosis or microbiome result.",
-      "Discuss symptoms, food history, labs, microbiome questions, and nutrition goals with qualified professionals.",
-      "Do not eliminate foods, start supplements, interpret labs, or change treatment based on genotype alone."
+      "Use this report as educational gut-health genetics context, not as diagnosis, lab interpretation, microbiome testing, or a care plan.",
+      "Treat Gut Health sample rows as examples of report structure unless the local run supplies equivalent validated evidence.",
+      "Review symptoms, diet history, gut testing, labs, medications, medical history, and goals with qualified professionals when making digestive-health decisions.",
+      "Do not use genotype alone to diagnose digestive disorders, explain symptoms, start elimination diets, take probiotics or curcumin, change supplements, interpret labs, change medication, or guide treatment."
     ]
   },
   "references": [
     {
       "id": "medlineplus-lactose-intolerance",
-      "title": "MedlinePlus Genetics: lactose intolerance"
+      "title": "MedlinePlus Genetics: lactose intolerance",
+      "usedFor": [
+        "lactose_context",
+        "non_diagnostic_language"
+      ]
     },
     {
       "id": "medlineplus-mcm6",
-      "title": "MedlinePlus Genetics: MCM6 gene"
-    },
-    {
-      "id": "nutritional-genomics-dtc-review",
-      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing"
-    },
-    {
-      "id": "ebi-gwas-catalog",
-      "title": "GWAS Catalog"
+      "title": "MedlinePlus Genetics: MCM6 gene",
+      "usedFor": [
+        "mcm6_lct_context",
+        "lactase_persistence_context"
+      ]
     },
     {
       "id": "medlineplus-dtc-genetic-testing-results",
@@ -72,33 +264,115 @@
         "non_diagnostic_language",
         "consumer_safety_language"
       ]
+    },
+    {
+      "id": "nutritional-genomics-dtc-review",
+      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing",
+      "usedFor": [
+        "nutrition_context",
+        "direct_to_consumer_limitations"
+      ]
+    },
+    {
+      "id": "ebi-gwas-catalog",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "candidate_trait_associations"
+      ]
+    },
+    {
+      "id": "gut-health-sample-pdf",
+      "title": "SelfDecode Gut Health sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
+        "tier": "Local derived call",
         "gene": "MCM6/LCT",
-        "observedValue": "rs4988235 CT"
+        "variantId": "rs4988235",
+        "observedValue": "CT",
+        "effect": "The local fixture supplies a derived MCM6/LCT rs4988235 call for lactase-persistence context.",
+        "phenotype": "Report as educational lactose-related marker context only; do not diagnose lactose intolerance, digestive disease, microbiome status, symptoms, diet needs, supplement needs, lab status, medication action, or treatment from genotype alone.",
+        "extractionStatus": "curated"
       },
       {
+        "tier": "Local missing input",
         "gene": "Gut health model",
-        "observedValue": "calibrated model unavailable"
+        "variantId": "gut-health-model-unavailable",
+        "observedValue": "calibrated gut-health, digestive-disorder, microbiome, symptom, diet-history, elimination-diet, probiotic, supplement, lab, medication, treatment, and ancestry applicability models unavailable",
+        "effect": "The local fixture intentionally omits calibrated Gut Health models and non-genetic context.",
+        "phenotype": "Mark IBS, ulcers, indigestion, acid reflux, constipation, gallstones, pancreatitis, IBD, appendicitis, infections, gluten sensitivity, lactose-intolerance diagnosis, microbiome status, probiotics, curcumin, supplements, labs, medications, diagnosis, and treatment unavailable instead of inferring them.",
+        "extractionStatus": "curated"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "MAPT; HTR3B; TRPM8",
+        "variantId": "rs18242924; rs1062613; rs10166942",
+        "observedValue": "sample IBS top-variant table visible by OCR; exact first genotype partially OCR-noisy",
+        "effect": "The sample Irritable Bowel page shows a top-variants table for the sample typical-likelihood IBS row.",
+        "phenotype": "Use as observed sample-report structure only; do not treat sample variants as local IBS, symptom, diet, lab, supplement, medication, or treatment evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "FUT2; PSCA; CCKBR; GUCY2F",
+        "variantId": "rs681343; rs2976397; rs10500661; rs1205531",
+        "observedValue": "sample peptic-ulcer top-variant table visible by OCR",
+        "effect": "The sample Peptic Ulcers page shows a top-variants table for the sample typical-likelihood peptic-ulcer row.",
+        "phenotype": "Use as observed sample-report structure only; do not treat sample variants as local ulcer, H. pylori, medication, symptom, diagnosis, lab, or treatment evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "IL23R",
+        "variantId": "rs11209026",
+        "observedValue": "GG",
+        "effect": "The sample Probiotics recommendation page links IL23R rs11209026 GG to IBD-related personalization text.",
+        "phenotype": "Use as observed sample-report structure only; do not infer local IBD, probiotic need, gut inflammation, supplement use, diagnosis, or treatment.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "NFKB1",
+        "variantId": "rs3774959",
+        "observedValue": "AA",
+        "effect": "The sample Curcumin recommendation page links an NFKB1 variant row to gut-inflammation personalization text.",
+        "phenotype": "Use as observed sample-report structure only; do not infer local gut inflammation, curcumin need, supplement dosing, medication interaction, diagnosis, or treatment.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "TNF",
+        "variantId": "rs1800630",
+        "observedValue": "CA",
+        "effect": "The sample Curcumin peptic-ulcer page links TNF rs1800630 CA to peptic-ulcer personalization text.",
+        "phenotype": "Use as observed sample-report structure only; do not infer local ulcer risk, inflammation status, curcumin need, supplement dosing, diagnosis, or treatment.",
+        "extractionStatus": "direct"
       }
     ],
     "missingInputs": [
-      "Authenticated sample-report sections and rows have not been extracted.",
-      "No calibrated gut-health, digestive-disorder, microbiome, symptom, diet-history, elimination-diet, supplement, lab, or ancestry applicability model is supplied with this fixture.",
-      "Broader symptoms, food history, diet history, activity history, labs, medications, medical history, child-specific context, ancestry applicability, environment, and professional assessment are not represented in this fixture."
+      "Authenticated marketplace body/detail extraction has not been captured for Gut Health.",
+      "No calibrated gut-health, digestive-disorder, microbiome, symptom, diet-history, elimination-diet, probiotic, supplement, lab, medication, treatment, or ancestry applicability model is supplied with this fixture.",
+      "Broader symptoms, food history, diet history, gut testing, lab results, medication history, medical history, ancestry applicability, environment, and professional assessment are not represented in this fixture.",
+      "Sample-only Gut Health rows are not local genotype evidence or personal digestive-health findings."
     ],
     "probabilities": [],
     "uncertainty": [
-      "Nutrition, lifestyle, symptoms, labs, weight, glucose, gut health, supplement response, and wellness outcomes depend on genetics plus non-genetic context and professional review.",
-      "A single marker should not be used to diagnose conditions, explain symptoms, prescribe diets, recommend supplements, interpret labs, or guide treatment."
+      "Digestive symptoms, microbiome status, infections, reflux, ulcers, food intolerance, constipation, IBD, supplement response, and treatment decisions depend on genetics plus non-genetic context and professional review.",
+      "A single marker should not be used to diagnose conditions, explain symptoms, prescribe diets, recommend probiotics or curcumin, interpret labs, change medication, or guide treatment.",
+      "Gut Health sample labels and recommendations are source-bound examples of report structure and are not calibrated probabilities for this local fixture."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data is not included.",
-      "The report is educational and does not diagnose digestive disorders, infer microbiome status, diagnose lactose intolerance, explain symptoms, prescribe elimination diets, recommend supplements, interpret labs, or provide treatment guidance.",
-      "Authenticated Sequencing.com sample report rows are still pending."
+      "The report is educational and does not integrate clinical labs, microbiome testing, symptom history, diet history, medications, or medical history; it does not diagnose digestive disease, prescribe elimination diets, recommend supplements, change medication, or provide treatment guidance.",
+      "Authenticated Sequencing.com marketplace body/detail extraction remains pending, so this is sample-backed output structure, not formal-equivalent parity."
     ]
   }
 }

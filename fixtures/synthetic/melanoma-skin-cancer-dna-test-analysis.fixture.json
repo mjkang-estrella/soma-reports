@@ -15,7 +15,7 @@
       "haplotype": "condition-risk-model-unavailable",
       "inputId": "melanoma-skin-cancer-dna-test-analysis-model-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "validated pathogenic-variant screen, calibrated cancer PRS, ancestry applicability metadata, age, sex where relevant, personal cancer history, family history, tumor testing, clinical screening history, prevention-plan context, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "validated melanoma risk model, calibrated melanoma PRS, pathogenic variant interpretation, skin-cancer phenotype, UV exposure, sunburn history, tanning-bed exposure, family history, dermatology exam, lesion history, screening context, prevention-plan context, and clinical interpretation unavailable in this fixture; public Wellness & Longevity sample PDF Melanoma page and variant appendix observed as sibling output structure",
       "sourceArtifact": "synthetic-melanoma-skin-cancer-dna-test-analysis-cancer-boundary-context-v1",
       "sourceFile": "synthetic-melanoma-skin-cancer-dna-test-analysis-cancer-boundary-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "clinical-context-unavailable",
       "inputId": "melanoma-skin-cancer-dna-test-analysis-clinical-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "clinical diagnosis, symptoms, screening findings, family history, tumor testing, treatment history, and clinician interpretation unavailable in this fixture",
+      "observedValue": "clinical diagnosis, symptoms, lesion history, dermatology findings, screening findings, family history, tumor testing, UV exposure, sunburn history, tanning-bed exposure, treatment history, prevention context, and clinician interpretation unavailable in this fixture; public Wellness & Longevity Melanoma sample section observed separately as output-structure evidence",
       "sourceArtifact": "synthetic-melanoma-skin-cancer-dna-test-analysis-cancer-boundary-context-v1",
       "sourceFile": "synthetic-melanoma-skin-cancer-dna-test-analysis-cancer-boundary-context-v1.json"
     }
@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for melanoma-skin-cancer-dna-test-analysis validation"
   },
-  "missingInputPolicy": "Report unavailable melanoma and skin cancer prevention evidence explicitly; do not diagnose cancer, estimate personal cancer risk, infer carrier status, classify variants, provide an all-clear result, recommend screening, recommend prevention steps, recommend medication, recommend surgery, recommend treatment, or replace genetic counseling.",
+  "missingInputPolicy": "Report unavailable melanoma and skin-cancer evidence explicitly; use the public sibling sample row only as observed output structure and do not diagnose melanoma or skin cancer, estimate personal cancer risk, infer carrier or pathogenic-variant status, recommend screening, recommend prevention steps, recommend sunscreen or dermatology actions, recommend medication or procedures, recommend surgery, recommend treatment, or provide actionability from local unavailable evidence or sample-only rows.",
   "packageSlug": "melanoma-skin-cancer-dna-test-analysis",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -116,7 +116,19 @@
         "non_diagnostic_language",
         "missing_model_policy"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "wellness-and-longevity-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Wellness and Longevity DNA Analysis sample report",
+      "usedFor": [
+        "sibling_formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer melanoma and skin cancer prevention boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer melanoma and skin cancer prevention boundary context using supplied references plus observed sibling Wellness & Longevity sample-report output structure."
 }

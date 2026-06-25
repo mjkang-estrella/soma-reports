@@ -1,18 +1,43 @@
 {
   "reportOverview": {
-    "reportTitle": "Methylation Pathway",
     "inputManifestHash": "sha256:synthetic-methylation-pathway-mthfr-context-v1",
+    "evidenceTypesSupplied": [
+      "Derived MTHFR C677T and A1298C calls from the local fixture",
+      "CDC MTHFR folic-acid safety framing",
+      "StrateGene public sample PDF rows preserved as sibling Folate/MTHFR output-format examples"
+    ],
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "No calibrated methylation score, homocysteine result, lab result, detox model, supplement model, pregnancy context, medication context, treatment context, or ancestry-applicability metadata is supplied with this fixture."
+      "Exact authenticated Methylation Pathway detail/body extraction is still pending.",
+      "No calibrated methylation score, homocysteine result, lab result, detox model, supplement model, pregnancy context, medication context, treatment context, ancestry-applicability metadata, or StrateGene proprietary scoring is supplied with this fixture.",
+      "Sibling StrateGene sample pathway maps, MTHFR rows, dirty/clean headings, and advanced Folate table rows are not local findings."
     ]
   },
+  "mthfrCalls": [
+    {
+      "rsid": "rs1801133",
+      "variantName": "MTHFR C677T",
+      "observedValue": "CT; public StrateGene Folate/MTHFR sample PDF observed separately as sibling output-structure evidence",
+      "matchStatus": "observed",
+      "sourceIds": [
+        "cdc-mthfr-folic-acid"
+      ]
+    },
+    {
+      "rsid": "rs1801131",
+      "variantName": "MTHFR A1298C",
+      "observedValue": "AC; public StrateGene Folate/MTHFR sample PDF observed separately as sibling output-structure evidence",
+      "matchStatus": "observed",
+      "sourceIds": [
+        "cdc-mthfr-folic-acid"
+      ]
+    }
+  ],
   "findings": [
     {
       "groupTitle": "MTHFR folate context",
       "item": "MTHFR C677T / rs1801133",
       "brandName": "Not applicable",
-      "geneticAnalysis": "A derived CT call is available for MTHFR C677T. This is CDC-framed folate-processing context only and is not a methylation score, detox result, diagnosis, supplement recommendation, pregnancy prediction, medication result, or treatment result.",
+      "geneticAnalysis": "CT; public StrateGene Folate/MTHFR sample PDF observed separately as sibling output-structure evidence. This is CDC-framed folate-processing context only and is not a methylation score, homocysteine result, lab interpretation, detox result, supplement recommendation, pregnancy prediction, medication result, treatment result, StrateGene score, or actionability result.",
       "genes": [
         "MTHFR"
       ],
@@ -20,13 +45,14 @@
       "sourceIds": [
         "cdc-mthfr-folic-acid"
       ],
+      "sourceBindingStatus": "curated",
       "plainEnglishMeaning": "CDC framing is used here: common MTHFR variants can be discussed as folate-processing context, but they do not by themselves support avoiding folic acid or changing supplements."
     },
     {
       "groupTitle": "MTHFR folate context",
       "item": "MTHFR A1298C / rs1801131",
       "brandName": "Not applicable",
-      "geneticAnalysis": "A derived AC call is available for MTHFR A1298C. This marker is reported as local context only and does not infer methylation capacity, homocysteine, lab status, detox status, pregnancy outcome, medication response, or treatment needs.",
+      "geneticAnalysis": "AC; public StrateGene Folate/MTHFR sample PDF observed separately as sibling output-structure evidence. This is CDC-framed folate-processing context only and is not a methylation score, homocysteine result, lab interpretation, detox result, supplement recommendation, pregnancy prediction, medication result, treatment result, StrateGene score, or actionability result.",
       "genes": [
         "MTHFR"
       ],
@@ -34,42 +60,335 @@
       "sourceIds": [
         "cdc-mthfr-folic-acid"
       ],
-      "plainEnglishMeaning": "This row keeps the local genotype visible while leaving methylation, lab, supplement, and medical interpretations unavailable without validated evidence."
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "CDC framing is used here: common MTHFR variants can be discussed as folate-processing context, but they do not by themselves support avoiding folic acid or changing supplements."
+    },
+    {
+      "groupTitle": "Report identity",
+      "item": "StrateGene Strategic Genetic Analysis sample",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "Public sample excerpt prepared for FemaleHet; six PDF pages expose internal report pages 1, 2, 76, 82, 83, and 150 of 161.",
+      "description": "The cover identifies StrateGene, Seeking Health, SAMPLE REPORT status, and a FemaleHet sample profile.",
+      "genes": [
+        "StrateGene sample excerpt"
+      ],
+      "sourceLabel": "Sibling StrateGene sample report",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The cover identifies StrateGene, Seeking Health, SAMPLE REPORT status, and a FemaleHet sample profile. This is sibling StrateGene sample output structure only, not a local methylation-capacity, methylation-score, homocysteine/lab, detox, supplement, diet, pregnancy, medication, treatment, proprietary StrateGene score, diagnosis, or actionability finding."
+    },
+    {
+      "groupTitle": "The Super Seven",
+      "item": "Pathway overview map",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "Visible pathway map includes Folate, Methionine, SAM, Homocysteine, Phosphatidylcholine, Histamine, Hydrogen Peroxide, Glutathione, Water, and pathway nodes including MTHFR, MTR, PEMT, COMT, DAO, MAOA, NOS3, GST, and GPX.",
+      "description": "The page also shows the testing key and symbol/color legend for checked genes and slow, intermediate, fast, complicated, or checked-but-not-found states.",
+      "genes": [
+        "MTHFR",
+        "MTR",
+        "PEMT",
+        "COMT",
+        "DAO",
+        "MAOA",
+        "NOS3",
+        "GST",
+        "GPX"
+      ],
+      "sourceLabel": "Sibling StrateGene sample report",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The page also shows the testing key and symbol/color legend for checked genes and slow, intermediate, fast, complicated, or checked-but-not-found states. This is sibling StrateGene sample output structure only, not a local methylation-capacity, methylation-score, homocysteine/lab, detox, supplement, diet, pregnancy, medication, treatment, proprietary StrateGene score, diagnosis, or actionability finding."
+    },
+    {
+      "groupTitle": "Folate",
+      "item": "Folate pathway map",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "Visible Folate pathway page includes SLC19A1, DHFR, FPGS, TYMS, FTCD, ATIC, MTHFD1, MTHFD1L, MTR, SHMT, MTHFS, and MTHFR nodes with folate-cycle intermediates.",
+      "description": "Use the page to preserve output-section structure only; do not infer proprietary pathway state, methylation status, or supplement protocol.",
+      "genes": [
+        "SLC19A1",
+        "DHFR",
+        "FPGS",
+        "TYMS",
+        "FTCD",
+        "ATIC",
+        "MTHFD1",
+        "MTHFD1L",
+        "MTR",
+        "SHMT",
+        "MTHFS",
+        "MTHFR"
+      ],
+      "sourceLabel": "Sibling StrateGene sample report",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Use the page to preserve output-section structure only; do not infer proprietary pathway state, methylation status, or supplement protocol. This is sibling StrateGene sample output structure only, not a local methylation-capacity, methylation-score, homocysteine/lab, detox, supplement, diet, pregnancy, medication, treatment, proprietary StrateGene score, diagnosis, or actionability finding."
+    },
+    {
+      "groupTitle": "Folate / MTHFR",
+      "item": "MTHFR notable variation",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "MTHFR C677T rs1801133 (+/-, GA), MTHFR A1298C rs1801131 (+/-, TG), and an MTHFR C677T / A1298C haplotype found.",
+      "description": "The visible notable-variation panel and small table expose two MTHFR rsIDs, aliases, variant alleles, calls, and a haplotype-found label for the sample person.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Sibling StrateGene sample report",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The visible notable-variation panel and small table expose two MTHFR rsIDs, aliases, variant alleles, calls, and a haplotype-found label for the sample person. This is sibling StrateGene sample output structure only, not a local methylation-capacity, methylation-score, homocysteine/lab, detox, supplement, diet, pregnancy, medication, treatment, proprietary StrateGene score, diagnosis, or actionability finding."
+    },
+    {
+      "groupTitle": "Folate / MTHFR",
+      "item": "Dirties and cleans section headings",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "Visible sections include 'Dirties your MTHFR gene' and 'Cleans your MTHFR gene' with environment, lifestyle, food, supplements, and medications headings.",
+      "description": "These headings are preserved only as observed report structure; the scaffold does not turn them into local detox, medication, supplement, diet, or treatment recommendations.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Sibling StrateGene sample report",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "These headings are preserved only as observed report structure; the scaffold does not turn them into local detox, medication, supplement, diet, or treatment recommendations. This is sibling StrateGene sample output structure only, not a local methylation-capacity, methylation-score, homocysteine/lab, detox, supplement, diet, pregnancy, medication, treatment, proprietary StrateGene score, diagnosis, or actionability finding."
+    },
+    {
+      "groupTitle": "Advanced Tables / Folate",
+      "item": "Visible Folate advanced-table rows",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "Visible +/- rows for SLC19A1 G80A TC, DHFR 19bp Del/Ins DI, MTHFD1 G1958A GA, MTHFD1 T105C TC, MTHFR C677T GA, MTHFR A1298C TG, FTCD C301T CT, SHMT1 C1420T GA, and TYMS Ins/Del ID.",
+      "description": "Use aliases, calls, variant alleles, and +/- results as public sample-table structure; non-MTHFR SNP rsID cells in this table are glyph-encoded and must remain unavailable unless independently sourced.",
+      "genes": [
+        "SLC19A1",
+        "DHFR",
+        "MTHFD1",
+        "MTHFR",
+        "FTCD",
+        "SHMT1",
+        "TYMS"
+      ],
+      "sourceLabel": "Sibling StrateGene sample report",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Use aliases, calls, variant alleles, and +/- results as public sample-table structure; non-MTHFR SNP rsID cells in this table are glyph-encoded and must remain unavailable unless independently sourced. This is sibling StrateGene sample output structure only, not a local methylation-capacity, methylation-score, homocysteine/lab, detox, supplement, diet, pregnancy, medication, treatment, proprietary StrateGene score, diagnosis, or actionability finding."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Report identity",
+      "item": "StrateGene Strategic Genetic Analysis sample",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "Public sample excerpt prepared for FemaleHet; six PDF pages expose internal report pages 1, 2, 76, 82, 83, and 150 of 161.",
+      "description": "The cover identifies StrateGene, Seeking Health, SAMPLE REPORT status, and a FemaleHet sample profile.",
+      "genes": [
+        "StrateGene sample excerpt"
+      ],
+      "sourceLabel": "Sibling StrateGene sample report",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The cover identifies StrateGene, Seeking Health, SAMPLE REPORT status, and a FemaleHet sample profile. This is sibling StrateGene sample output structure only, not a local methylation-capacity, methylation-score, homocysteine/lab, detox, supplement, diet, pregnancy, medication, treatment, proprietary StrateGene score, diagnosis, or actionability finding."
+    },
+    {
+      "groupTitle": "The Super Seven",
+      "item": "Pathway overview map",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "Visible pathway map includes Folate, Methionine, SAM, Homocysteine, Phosphatidylcholine, Histamine, Hydrogen Peroxide, Glutathione, Water, and pathway nodes including MTHFR, MTR, PEMT, COMT, DAO, MAOA, NOS3, GST, and GPX.",
+      "description": "The page also shows the testing key and symbol/color legend for checked genes and slow, intermediate, fast, complicated, or checked-but-not-found states.",
+      "genes": [
+        "MTHFR",
+        "MTR",
+        "PEMT",
+        "COMT",
+        "DAO",
+        "MAOA",
+        "NOS3",
+        "GST",
+        "GPX"
+      ],
+      "sourceLabel": "Sibling StrateGene sample report",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The page also shows the testing key and symbol/color legend for checked genes and slow, intermediate, fast, complicated, or checked-but-not-found states. This is sibling StrateGene sample output structure only, not a local methylation-capacity, methylation-score, homocysteine/lab, detox, supplement, diet, pregnancy, medication, treatment, proprietary StrateGene score, diagnosis, or actionability finding."
+    },
+    {
+      "groupTitle": "Folate",
+      "item": "Folate pathway map",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "Visible Folate pathway page includes SLC19A1, DHFR, FPGS, TYMS, FTCD, ATIC, MTHFD1, MTHFD1L, MTR, SHMT, MTHFS, and MTHFR nodes with folate-cycle intermediates.",
+      "description": "Use the page to preserve output-section structure only; do not infer proprietary pathway state, methylation status, or supplement protocol.",
+      "genes": [
+        "SLC19A1",
+        "DHFR",
+        "FPGS",
+        "TYMS",
+        "FTCD",
+        "ATIC",
+        "MTHFD1",
+        "MTHFD1L",
+        "MTR",
+        "SHMT",
+        "MTHFS",
+        "MTHFR"
+      ],
+      "sourceLabel": "Sibling StrateGene sample report",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Use the page to preserve output-section structure only; do not infer proprietary pathway state, methylation status, or supplement protocol. This is sibling StrateGene sample output structure only, not a local methylation-capacity, methylation-score, homocysteine/lab, detox, supplement, diet, pregnancy, medication, treatment, proprietary StrateGene score, diagnosis, or actionability finding."
+    },
+    {
+      "groupTitle": "Folate / MTHFR",
+      "item": "MTHFR notable variation",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "MTHFR C677T rs1801133 (+/-, GA), MTHFR A1298C rs1801131 (+/-, TG), and an MTHFR C677T / A1298C haplotype found.",
+      "description": "The visible notable-variation panel and small table expose two MTHFR rsIDs, aliases, variant alleles, calls, and a haplotype-found label for the sample person.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Sibling StrateGene sample report",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The visible notable-variation panel and small table expose two MTHFR rsIDs, aliases, variant alleles, calls, and a haplotype-found label for the sample person. This is sibling StrateGene sample output structure only, not a local methylation-capacity, methylation-score, homocysteine/lab, detox, supplement, diet, pregnancy, medication, treatment, proprietary StrateGene score, diagnosis, or actionability finding."
+    },
+    {
+      "groupTitle": "Folate / MTHFR",
+      "item": "Dirties and cleans section headings",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "Visible sections include 'Dirties your MTHFR gene' and 'Cleans your MTHFR gene' with environment, lifestyle, food, supplements, and medications headings.",
+      "description": "These headings are preserved only as observed report structure; the scaffold does not turn them into local detox, medication, supplement, diet, or treatment recommendations.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Sibling StrateGene sample report",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "These headings are preserved only as observed report structure; the scaffold does not turn them into local detox, medication, supplement, diet, or treatment recommendations. This is sibling StrateGene sample output structure only, not a local methylation-capacity, methylation-score, homocysteine/lab, detox, supplement, diet, pregnancy, medication, treatment, proprietary StrateGene score, diagnosis, or actionability finding."
+    },
+    {
+      "groupTitle": "Advanced Tables / Folate",
+      "item": "Visible Folate advanced-table rows",
+      "brandName": "StrateGene sample",
+      "geneticAnalysis": "Visible +/- rows for SLC19A1 G80A TC, DHFR 19bp Del/Ins DI, MTHFD1 G1958A GA, MTHFD1 T105C TC, MTHFR C677T GA, MTHFR A1298C TG, FTCD C301T CT, SHMT1 C1420T GA, and TYMS Ins/Del ID.",
+      "description": "Use aliases, calls, variant alleles, and +/- results as public sample-table structure; non-MTHFR SNP rsID cells in this table are glyph-encoded and must remain unavailable unless independently sourced.",
+      "genes": [
+        "SLC19A1",
+        "DHFR",
+        "MTHFD1",
+        "MTHFR",
+        "FTCD",
+        "SHMT1",
+        "TYMS"
+      ],
+      "sourceLabel": "Sibling StrateGene sample report",
+      "sourceIds": [
+        "strategene-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Use aliases, calls, variant alleles, and +/- results as public sample-table structure; non-MTHFR SNP rsID cells in this table are glyph-encoded and must remain unavailable unless independently sourced. This is sibling StrateGene sample output structure only, not a local methylation-capacity, methylation-score, homocysteine/lab, detox, supplement, diet, pregnancy, medication, treatment, proprietary StrateGene score, diagnosis, or actionability finding."
     }
   ],
   "folateContext": {
-    "plainEnglishMeaning": "The available MTHFR calls can be described as folate-processing context, not as a methylation-pathway measurement or medical conclusion.",
+    "plainEnglishMeaning": "The available MTHFR calls can be described as folate-processing context, not as a methylation-pathway measurement, StrateGene score, lab result, detox status, or medical conclusion.",
     "folicAcidSafetyNote": "Under the CDC framing used by this package, common MTHFR variants are not a reason to avoid folic acid.",
+    "sampleRows": "Sibling StrateGene sample rows show possible Folate/MTHFR report structure only. They do not validate local methylation capacity, homocysteine, labs, supplement needs, pregnancy outcomes, medication response, or treatment needs.",
     "unsupportedClaims": [
-      "methylation score",
+      "methylation score or methylation capacity",
       "detox status",
       "homocysteine or lab interpretation",
-      "vitamin or supplement changes",
+      "vitamin, supplement, diet, or dose changes",
       "pregnancy outcome prediction",
-      "medication or treatment guidance"
+      "medication or treatment guidance",
+      "StrateGene proprietary scoring or dirty/clean interpretation logic"
+    ],
+    "sourceIds": [
+      "cdc-mthfr-folic-acid",
+      "strategene-sample-pdf"
     ]
   },
   "references": [
     {
       "id": "cdc-mthfr-folic-acid",
-      "title": "CDC MTHFR Gene Variant and Folic Acid Facts"
+      "title": "CDC MTHFR Gene Variant and Folic Acid Facts",
+      "sourceType": "public_health_resource"
+    },
+    {
+      "id": "sequencing-report-marketplace-docs",
+      "title": "Sequencing.com Report Marketplace documentation",
+      "sourceType": "sequencing_public_doc"
+    },
+    {
+      "id": "strategene-sample-pdf",
+      "title": "StrateGene sample report",
+      "sourceType": "mock_report"
     }
   ],
   "appendix": {
+    "genotypeSummary": [
+      {
+        "tier": "Visible sample genotype",
+        "gene": "MTHFR",
+        "variantId": "rs1801133",
+        "genotype": "GA",
+        "effect": "Sample report marks MTHFR C677T as +/- with variant allele A.",
+        "phenotype": "Sample report states this C677T / A1298C haplotype is found; do not convert to local health, pregnancy, supplement, or treatment claims. Use as Methylation Pathway sibling sample output-structure evidence only; do not infer local methylation capacity, methylation score, homocysteine or lab status, detox status, supplement/diet/pregnancy/medication/treatment guidance, StrateGene proprietary scoring, or clinical actionability.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Visible sample genotype",
+        "gene": "MTHFR",
+        "variantId": "rs1801131",
+        "genotype": "TG",
+        "effect": "Sample report marks MTHFR A1298C as +/- with variant allele G.",
+        "phenotype": "Sample report states this C677T / A1298C haplotype is found; do not convert to local health, pregnancy, supplement, or treatment claims. Use as Methylation Pathway sibling sample output-structure evidence only; do not infer local methylation capacity, methylation score, homocysteine or lab status, detox status, supplement/diet/pregnancy/medication/treatment guidance, StrateGene proprietary scoring, or clinical actionability.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Visible sample advanced table",
+        "gene": "Folate pathway genes",
+        "variantId": "advanced-folate-table-visible-aliases",
+        "genotype": "SLC19A1 G80A TC; DHFR 19bp Del/Ins DI; MTHFD1 G1958A GA; MTHFD1 T105C TC; MTHFR C677T GA; MTHFR A1298C TG; FTCD C301T CT; SHMT1 C1420T GA; TYMS Ins/Del ID",
+        "effect": "The visible Folate advanced table marks each listed row as +/- in the sample report.",
+        "phenotype": "This preserves sample-table structure only; non-MTHFR rsID values are glyph-encoded in the sample and should remain unavailable. Use as Methylation Pathway sibling sample output-structure evidence only; do not infer local methylation capacity, methylation score, homocysteine or lab status, detox status, supplement/diet/pregnancy/medication/treatment guidance, StrateGene proprietary scoring, or clinical actionability.",
+        "extractionStatus": "direct"
+      }
+    ],
     "missingInputs": [
-      "Authenticated sample-report sections and rows have not been extracted.",
-      "No calibrated methylation score, homocysteine result, lab result, detox model, supplement model, pregnancy context, medication context, treatment context, or ancestry-applicability metadata is supplied.",
-      "Diet history, supplement history, medications, medical history, pregnancy context, lab values, and professional assessment are not represented in this fixture."
+      "Exact authenticated Methylation Pathway detail/body extraction remains pending.",
+      "No calibrated methylation score, homocysteine result, lab result, detox model, supplement model, pregnancy context, medication context, treatment context, ancestry-applicability metadata, or StrateGene proprietary scoring is supplied.",
+      "Diet history, supplement history, medications, medical history, pregnancy context, lab values, and professional assessment are not represented in this fixture.",
+      "Sibling StrateGene sample pathway maps and table rows are output-format evidence only."
     ],
     "probabilities": [],
     "uncertainty": [
-      "Methylation-pathway interpretation cannot be reduced to these two MTHFR markers.",
-      "Folate, homocysteine, supplement, pregnancy, medication, and treatment decisions require broader context and qualified professional review."
+      "Methylation-pathway interpretation cannot be reduced to two MTHFR markers.",
+      "Folate, homocysteine, supplement, pregnancy, medication, and treatment decisions require broader context and qualified professional review.",
+      "The StrateGene sample PDF demonstrates possible report layout and row structure but does not validate local methylation conclusions."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data is not included.",
-      "The package is educational and does not report methylation capacity, detox status, diagnosis, pregnancy outcome prediction, supplement instructions, medication response, or treatment guidance.",
-      "Authenticated Sequencing.com sample report rows are still pending."
+      "The package is educational and does not report methylation capacity, detox status, diagnosis, pregnancy outcome prediction, supplement instructions, medication response, treatment guidance, or StrateGene proprietary scoring.",
+      "The sibling sample PDF supports sample-backed formal output structure, not full marketplace detail-page parity or clinical actionability."
     ]
   }
 }

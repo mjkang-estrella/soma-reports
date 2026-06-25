@@ -15,7 +15,7 @@
       "haplotype": "neurobehavioral-model-unavailable",
       "inputId": "genetic-test-for-iq-cognitive-function-model-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "validated neurobehavioral model, calibrated PRS, ancestry applicability metadata, age, sex, family history, symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "validated cognitive-function and intelligence model, calibrated PRS, ancestry applicability metadata, age, sex, family history, symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, clinical calibration, IQ prediction, aptitude prediction, and local risk calculations unavailable in this fixture; sibling Mood & Brain sample PDF cognitive result cards, recommendation rows, impact/evidence ratings, and visible variant tables observed for output structure",
       "sourceArtifact": "synthetic-genetic-test-for-iq-cognitive-function-neurobehavioral-boundary-context-v1",
       "sourceFile": "synthetic-genetic-test-for-iq-cognitive-function-neurobehavioral-boundary-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "clinical-context-unavailable",
       "inputId": "genetic-test-for-iq-cognitive-function-clinical-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, family history, and clinician interpretation unavailable in this fixture",
+      "observedValue": "symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, family history, clinician interpretation, school or work context, and personal cognitive context unavailable in this fixture; sibling Mood & Brain sample PDF observed separately as output-structure evidence",
       "sourceArtifact": "synthetic-genetic-test-for-iq-cognitive-function-neurobehavioral-boundary-context-v1",
       "sourceFile": "synthetic-genetic-test-for-iq-cognitive-function-neurobehavioral-boundary-context-v1.json"
     }
@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for genetic-test-for-iq-cognitive-function validation"
   },
-  "missingInputPolicy": "Report unavailable cognitive function and intelligence evidence explicitly; do not diagnose mental, neurologic, cognitive, developmental, or neurodegenerative conditions; assess current mental state; predict IQ, aptitude, mood, dementia, Parkinson's disease, seizure, migraine, ADHD, autism, depression, anxiety, treatment response, or brain health status; provide all-clear reassurance; recommend medication, supplements, nootropics, therapy, imaging, labs, school or work decisions, pediatric actions, or treatment changes.",
+  "missingInputPolicy": "Report unavailable cognitive-function, intelligence, IQ, aptitude, ADHD, dyslexia, creativity, memory, processing-speed, executive-function, cognitive-decline, brain-fog, neurobehavioral model calibration, PRS, ancestry applicability, symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, clinical context, professional review, and complete local risk model explicitly; use sibling Mood & Brain sample rows only as observed output structure and do not infer IQ, aptitude, cognitive status, ADHD, dyslexia, creativity, memory, processing speed, executive function, brain health, treatment need, medication need, supplement need, therapy need, sleep intervention, school/work action, pediatric action, or clinical actionability from genotype alone or sample-only rows.",
   "packageSlug": "genetic-test-for-iq-cognitive-function",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -116,7 +116,19 @@
         "non_diagnostic_language",
         "missing_model_policy"
       ]
+    },
+    {
+      "evidenceLevel": "sibling_sample_report",
+      "id": "mood-brain-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Mood & Brain DNA Report sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer cognitive function and intelligence boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer Cognitive Function boundary context using unavailable-model evidence plus sibling Mood & Brain sample-report cognitive output structure."
 }

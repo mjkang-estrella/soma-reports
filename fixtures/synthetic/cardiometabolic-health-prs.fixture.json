@@ -15,7 +15,7 @@
       "haplotype": "validated-model-or-source-output-unavailable",
       "inputId": "cardiometabolic-health-prs-model-output-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "PGS Catalog score ID, score version, scoring file, genome build, liftover method, matched and missing variants, ancestry applicability metadata, calibration distribution, cardiometabolic labs, blood pressure, medication context, family history, clinician review, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "PGS Catalog score ID, score version, scoring file, genome build, liftover method, matched and missing variants, ancestry applicability metadata, calibration distribution, cardiometabolic labs, blood pressure, medication context, family history, clinician review, and authenticated sample-report rows unavailable in this fixture; Public Disease Risk sample PDF Cardiovascular Diseases table, Autoimmune Diseases category row with Type-2 Diabetes wording, CAD and Type-2 Diabetes example-gene notes, and heritable-component limitation are extracted as sibling cardiometabolic output-structure evidence.",
       "sourceArtifact": "synthetic-cardiometabolic-health-prs-specialized-boundary-context-v1",
       "sourceFile": "synthetic-cardiometabolic-health-prs-specialized-boundary-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "clinical-professional-context-unavailable",
       "inputId": "cardiometabolic-health-prs-clinical-professional-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
+      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Cardiometabolic Health PRS",
       "sourceArtifact": "synthetic-cardiometabolic-health-prs-specialized-boundary-context-v1",
       "sourceFile": "synthetic-cardiometabolic-health-prs-specialized-boundary-context-v1.json"
     },
@@ -35,7 +35,7 @@
       "haplotype": "authenticated-sample-report-unavailable",
       "inputId": "cardiometabolic-health-prs-authenticated-sample-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture",
+      "observedValue": "direct Cardiometabolic Health PRS authenticated sample rows unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence",
       "sourceArtifact": "synthetic-cardiometabolic-health-prs-specialized-boundary-context-v1",
       "sourceFile": "synthetic-cardiometabolic-health-prs-specialized-boundary-context-v1.json"
     }
@@ -46,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for cardiometabolic-health-prs validation"
   },
-  "missingInputPolicy": "Report unavailable cardiometabolic polygenic score context evidence explicitly; do not estimate ASCVD, diabetes, obesity, lipid, blood pressure, cardiometabolic, absolute, relative, or percentile risk; infer labs, blood pressure, BMI, treatment need, medication need, screening need, prevention plan, risk reclassification, ancestry-insensitive score, low-risk reassurance, or clinical actionability.",
+  "missingInputPolicy": "Report unavailable cardiometabolic polygenic score context evidence explicitly; use the public sibling Disease Risk sample rows only as observed output structure and do not infer PRS score, ASCVD risk, diabetes risk, obesity risk, lipid or blood-pressure inference, lab inference, medication need, screening need, prevention plan, risk reclassification, ancestry-insensitive score, low-risk reassurance, or actionability guidance from local unavailable evidence or sample-only rows.",
   "packageSlug": "cardiometabolic-health-prs",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -205,7 +205,19 @@
         "missing_model_policy",
         "clinical_actionability_limits"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "genetic-testing-disease-risk-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Genetic Testing For Disease Risk sample genetic report",
+      "usedFor": [
+        "sibling_formal_fields",
+        "sample_rows",
+        "risk_label_table",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer cardiometabolic polygenic score context boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer cardiometabolic polygenic score context using supplied references plus observed sibling Disease Risk Genetic Test Report cardiometabolic PRS output structure while explicitly marking personal model, source output, clinical context, and professional review unavailable."
 }

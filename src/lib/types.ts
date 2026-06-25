@@ -31,6 +31,7 @@ export type ReportSummary = {
   sampleReportStatus: string;
   curationCompleteness: CurationCompleteness;
   tags: string[];
+  searchText?: string;
 };
 
 export type ReferenceResource = {
@@ -137,12 +138,17 @@ export type LocalTestFixture = {
     rsid?: string;
     starAllele?: string;
     haplotype?: string;
+    chrom?: string;
+    contig?: string;
+    pos?: number;
+    position?: number;
     gene: string;
     observedValue: string;
     assembly: string;
     matchStatus: string;
     sourceFile?: string;
     sourceArtifact?: string;
+    derivation?: Record<string, unknown>;
   }>;
   referenceResources: Array<{
     id: string;
@@ -186,6 +192,8 @@ export type CatalogStats = {
   identifiedMarketplaceItems: number;
   namedAuthenticatedOnly: number;
   unknownMarketplaceItems: number;
+  authenticatedDuplicateStructuredPositions: number;
+  positionIdentityDelta: number;
   seededCoverageComplete: boolean;
   directCatalog: number;
   sampleExtracted: number;
@@ -199,4 +207,77 @@ export type CatalogStats = {
   formalEquivalentReady: number;
   detailPageReady: number;
   fullyReady: number;
+};
+
+export type MarketplacePosition = {
+  positionNumber: number;
+  groupLabel: string;
+  groupIndex: number;
+  itemIndex: number;
+  title: string;
+  provider: string;
+  priceLabel: string;
+  href: string;
+  kind: "marketplace" | "order" | "unknown";
+  slug: string;
+  canonicalSlug: string;
+  categories: string[];
+};
+
+export type MarketplaceDuplicateGroup = {
+  href: string;
+  canonicalSlug: string;
+  title: string;
+  provider: string;
+  priceLabel: string;
+  positionCount: number;
+  positionNumbers: number[];
+  groupLabels: string[];
+};
+
+export type MarketplacePositionLedger = {
+  capturedAt: string;
+  sourceUrl: string;
+  sourceArtifacts: {
+    normalized: string;
+    pageProps: string;
+  };
+  rawGenomeBoundary: string;
+  totals: {
+    positions: number;
+    uniqueHrefs: number;
+    duplicatePlacements: number;
+    duplicateHrefGroups: number;
+    namedIdentities: number;
+    unresolvedAuthenticatedRecords: number;
+  };
+  orderSlugAliases: Record<string, string>;
+  marketplaceSlugAliases: Record<string, string>;
+  positions: MarketplacePosition[];
+  duplicateGroups: MarketplaceDuplicateGroup[];
+};
+
+export type ReadinessAuditRow = {
+  slug: string;
+  title: string;
+  category: string;
+  status: string;
+  declaredReady: boolean;
+  formalEquivalentReady: boolean;
+  sampleBackedFormalReady: boolean;
+  declaredGaps: string[];
+  formalReportDeclaredGaps: string[];
+  derivedGaps: string[];
+  ready: boolean;
+  gaps: string[];
+  evidence: {
+    references: number;
+    prompt: boolean;
+    outputSections: number;
+    formalFields: number;
+    sampleRows: number;
+    genotypeSummaryRows: number;
+    localFixture: boolean;
+    exactCitationRows: number;
+  };
 };

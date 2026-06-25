@@ -1,5 +1,5 @@
 {
-  "consumerTone": "plain English; consumer-shareable handoff context only; no diagnosis, clearance, risk estimate, medication, procedure, treatment, supplement, diet, lab, screening, reproductive, or actionability claims",
+  "consumerTone": "plain English; consumer-shareable geneticist handoff context only; sibling sample rows are not local findings; no genetic diagnosis, variant classification, penetrance, inheritance, segregation, family-member risk, reproductive guidance, diagnostic-testing guidance, screening guidance, treatment guidance, or actionability claims",
   "datasetId": "synthetic-geneticist-summary-professional-handoff-context-v1",
   "expectedAssertions": {
     "consumerLanguage": true,
@@ -15,7 +15,7 @@
       "haplotype": "professional-handoff-context-unavailable",
       "inputId": "geneticist-summary-handoff-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "geneticist review, phenotype fit, inheritance assessment, family history, segregation, confirmatory testing, ACMG/AMP evidence codes, expert-panel classification, penetrance, clinical actionability, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "geneticist review, phenotype fit, inheritance assessment, family history, segregation, confirmatory testing, ACMG/AMP evidence codes, expert-panel classification, penetrance, clinical actionability, and authenticated sample-report rows unavailable in this fixture; public Healthcare Pro sample PDF observed separately as sibling clinical-genetics output-structure evidence",
       "sourceArtifact": "synthetic-geneticist-summary-professional-handoff-context-v1",
       "sourceFile": "synthetic-geneticist-summary-professional-handoff-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "professional-review-unavailable",
       "inputId": "geneticist-summary-clinical-review-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture; public Healthcare Pro sample PDF observed separately as sibling clinical-genetics output-structure evidence",
       "sourceArtifact": "synthetic-geneticist-summary-professional-handoff-context-v1",
       "sourceFile": "synthetic-geneticist-summary-professional-handoff-context-v1.json"
     }
@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-professional-review evidence for geneticist-summary validation"
   },
-  "missingInputPolicy": "Report unavailable geneticist evidence explicitly; do not diagnose a genetic disorder; create, upgrade, or downgrade variant classifications; infer penetrance, inheritance, segregation, phenotype fit, family-member risk, reproductive action, diagnostic testing need, screening need, treatment need, or replace geneticist review.",
+  "missingInputPolicy": "Report Healthcare Pro sample rows as sibling clinical-genetics output-structure evidence only; do not convert sample disease-risk, carrier, medication, variant, data-completeness, or medical-record language into local genetic diagnosis, variant classification, penetrance, inheritance, segregation, phenotype fit, family-member risk, reproductive guidance, diagnostic-testing guidance, screening guidance, treatment guidance, or actionability.",
   "packageSlug": "geneticist-summary",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -160,7 +160,20 @@
         "non_prescriptive_language",
         "missing_review_policy"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "healthcare-pro-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Healthcare Pro sample report",
+      "usedFor": [
+        "sibling_sample_rows",
+        "formal_fields",
+        "genotype_summary",
+        "output_format",
+        "clinical_genetics_boundary"
+      ]
     }
   ],
-  "reportPurpose": "Consumer-shareable geneticist handoff context using supplied references and explicit unavailable-review framing."
+  "reportPurpose": "Consumer-shareable Geneticist Summary handoff context using supplied local derived evidence plus sibling Healthcare Pro rare-disease, PGx, carrier, risk-row, and analysis-alert output-structure evidence."
 }

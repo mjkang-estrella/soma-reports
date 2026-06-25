@@ -3,8 +3,9 @@
     "reportTitle": "Histamine",
     "inputManifestHash": "sha256:synthetic-histamine-nutrition-boundary-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "No calibrated histamine model, DAO/HNMT interpretation, allergy evidence, mast-cell evidence, symptom history, diet history, elimination-diet model, supplement model, lab evidence, or ancestry-applicability model is supplied with this fixture."
+      "Direct Histamine sample-report sections and rows have not been captured.",
+      "No calibrated histamine model, DAO/HNMT interpretation, allergy evidence, mast-cell evidence, symptom history, diet history, elimination-diet model, supplement model, lab evidence, or ancestry-applicability model is supplied with this fixture.",
+      "Sibling Food Sensitivity sample rows are included only as observed output structure, not as personal histamine evidence."
     ]
   },
   "resultRows": [
@@ -12,7 +13,7 @@
       "groupTitle": "Histamine boundary context",
       "item": "MCM6/LCT rs4988235",
       "brandName": "Not applicable",
-      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a histamine-intolerance result, food-allergy result, mast-cell result, symptom explanation, elimination-diet recommendation, supplement recommendation, lab interpretation, or treatment result.",
+      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a histamine-intolerance result, food-allergy result, mast-cell result, DAO/HNMT interpretation, symptom explanation, elimination-diet recommendation, supplement recommendation, lab interpretation, or treatment result.",
       "genes": [
         "MCM6",
         "LCT"
@@ -22,13 +23,13 @@
         "medlineplus-lactose-intolerance",
         "medlineplus-mcm6"
       ],
-      "plainEnglishMeaning": "This marker can provide lactose-related context, but histamine questions require separate evidence, symptom history, diet history, labs, allergy evaluation, and professional review."
+      "plainEnglishMeaning": "This marker can provide lactose-related context, but histamine questions require separate validated evidence, symptom history, diet history, labs, allergy evaluation, and professional review."
     },
     {
       "groupTitle": "Nutrition model availability",
       "item": "Histamine model",
       "brandName": "Not applicable",
-      "geneticAnalysis": "No calibrated histamine model, DAO/HNMT interpretation, allergy evidence, mast-cell context, symptom context, diet-history context, elimination-diet model, supplement model, lab context, or ancestry applicability metadata is supplied with this fixture.",
+      "geneticAnalysis": "No calibrated histamine model, DAO/HNMT interpretation, allergy evidence, mast-cell context, symptom context, diet-history context, elimination-diet model, supplement model, lab context, ancestry applicability metadata, or direct Histamine sample rows are supplied with this fixture.",
       "genes": [
         "Histamine model"
       ],
@@ -37,14 +38,273 @@
         "nutritional-genomics-dtc-review",
         "ebi-gwas-catalog"
       ],
-      "plainEnglishMeaning": "The report can describe supplied marker context, but it should not make histamine-intolerance, allergy, mast-cell, symptom, diet, supplement, lab, or treatment conclusions without validated evidence."
+      "plainEnglishMeaning": "The report can describe supplied marker context and observed sibling report structure, but it should not make histamine-intolerance, allergy, mast-cell, symptom, diet, supplement, lab, diagnosis, treatment, or actionability conclusions without validated evidence."
+    },
+    {
+      "groupTitle": "Sensitivity results summary",
+      "item": "Alcohol, caffeine, lactose, and gluten summary cards",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample summary cards show Alcohol: Slow Metabolism; Caffeine: Fast Metabolism; Lactose: Likely Sensitive; Gluten: Not Likely Sensitive, with a legend separating likely-sensitive from not-likely-sensitive labels. The sample summary page presents the four result cards before detailed substance and sensitivity sections.",
+      "genes": [
+        "ADH1C",
+        "CYP1A2",
+        "LCT",
+        "MCM6-LCT",
+        "HLA-DQA1",
+        "HLA-DQ8"
+      ],
+      "sourceLabel": "Sibling GenoPalate Food Sensitivity sample report",
+      "sourceIds": [
+        "food-sensitivity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling GenoPalate Food Sensitivity sample-report structure only. Keep this separate from local genome evidence; it is not a personal histamine intolerance, food allergy, mast-cell, DAO/HNMT, symptom, safe or unsafe food, elimination-diet, supplement, lab, diagnosis, treatment, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Substances",
+      "item": "Alcohol and caffeine metabolism overview",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample introduces alcohol and caffeine as substances whose metabolism can vary with genetic markers, then notes that slower metabolism markers may mean the body takes longer to clear alcohol or caffeine. The substances section precedes the detailed Alcohol Metabolism and Caffeine Metabolism pages.",
+      "genes": [
+        "ADH1C",
+        "CYP1A2"
+      ],
+      "sourceLabel": "Sibling GenoPalate Food Sensitivity sample report",
+      "sourceIds": [
+        "food-sensitivity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling GenoPalate Food Sensitivity sample-report structure only. Keep this separate from local genome evidence; it is not a personal histamine intolerance, food allergy, mast-cell, DAO/HNMT, symptom, safe or unsafe food, elimination-diet, supplement, lab, diagnosis, treatment, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Alcohol Metabolism",
+      "item": "ADH1C gene table and slow-metabolism result",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample Alcohol Metabolism page says the sample genome is more likely to have slow alcohol metabolism. The visible gene table lists ADH1C marker GP000071 genotype TT with slow alcohol metabolism impact, plus ADH1C GP000072 genotype CC and ADH1C GP000073 genotype TT with normal alcohol metabolism impact. The page also lists common alcohol sources and a what-can-you-do block about tracking drinks, spacing them out, and drinking water.",
+      "genes": [
+        "ADH1C"
+      ],
+      "sourceLabel": "Sibling GenoPalate Food Sensitivity sample report",
+      "sourceIds": [
+        "food-sensitivity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling GenoPalate Food Sensitivity sample-report structure only. Keep this separate from local genome evidence; it is not a personal histamine intolerance, food allergy, mast-cell, DAO/HNMT, symptom, safe or unsafe food, elimination-diet, supplement, lab, diagnosis, treatment, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Caffeine Metabolism",
+      "item": "CYP1A2 gene table and fast-metabolism result",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample Caffeine Metabolism page says the sample genome is more likely to have fast caffeine metabolism. The visible gene table lists CYP1A2 marker GP000071 genotype TT with fast caffeine metabolism impact. The page lists common caffeine sources such as coffee, tea, soft drinks, energy drinks, chocolate, certain medications, and yerba mate, plus a sleep-timing action block.",
+      "genes": [
+        "CYP1A2"
+      ],
+      "sourceLabel": "Sibling GenoPalate Food Sensitivity sample report",
+      "sourceIds": [
+        "food-sensitivity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling GenoPalate Food Sensitivity sample-report structure only. Keep this separate from local genome evidence; it is not a personal histamine intolerance, food allergy, mast-cell, DAO/HNMT, symptom, safe or unsafe food, elimination-diet, supplement, lab, diagnosis, treatment, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Sensitivities",
+      "item": "Food sensitivity versus food allergy explanation",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample Sensitivities section distinguishes food sensitivity from food allergy, explains that sensitivities can involve difficulty digesting components such as lactose or gluten, and names non-genetic contributors such as gut microbiome imbalance, gastrointestinal disease, stress, age, additives, sleep, and physical inactivity. The section explicitly says genetics can play a role but do not work in isolation.",
+      "genes": [],
+      "sourceLabel": "Sibling GenoPalate Food Sensitivity sample report",
+      "sourceIds": [
+        "food-sensitivity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling GenoPalate Food Sensitivity sample-report structure only. Keep this separate from local genome evidence; it is not a personal histamine intolerance, food allergy, mast-cell, DAO/HNMT, symptom, safe or unsafe food, elimination-diet, supplement, lab, diagnosis, treatment, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Gluten Sensitivity",
+      "item": "HLA-DQA1 and HLA-DQ8 gene table with not-likely-sensitive result",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample Gluten Sensitivity page says the sample genome is not likely sensitive to gluten. The visible gene table lists HLA-DQA1 marker GP000071 genotype TT and HLA-DQ8 marker GP000072 genotype CC, both with not-likely-sensitive-to-gluten impact. The page lists common gluten sources and includes a what-can-you-do block about a temporary gluten-removal trial.",
+      "genes": [
+        "HLA-DQA1",
+        "HLA-DQ8"
+      ],
+      "sourceLabel": "Sibling GenoPalate Food Sensitivity sample report",
+      "sourceIds": [
+        "food-sensitivity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling GenoPalate Food Sensitivity sample-report structure only. Keep this separate from local genome evidence; it is not a personal histamine intolerance, food allergy, mast-cell, DAO/HNMT, symptom, safe or unsafe food, elimination-diet, supplement, lab, diagnosis, treatment, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Lactose Sensitivity",
+      "item": "LCT and MCM6-LCT gene table with likely-sensitive result",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample Lactose Sensitivity page says the sample genome is more likely to be sensitive to lactose. The visible gene table lists LCT marker GP000071 genotype TT with more-likely-sensitive-to-lactose impact and MCM6-LCT marker GP000072 genotype CC with less-likely-sensitive-to-lactose impact. The page lists common lactose sources and a what-can-you-do block about tracking dairy reactions, considering lower-lactose foods, and discussing dairy reduction or lactose enzymes with a healthcare practitioner.",
+      "genes": [
+        "LCT",
+        "MCM6-LCT"
+      ],
+      "sourceLabel": "Sibling GenoPalate Food Sensitivity sample report",
+      "sourceIds": [
+        "food-sensitivity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling GenoPalate Food Sensitivity sample-report structure only. Keep this separate from local genome evidence; it is not a personal histamine intolerance, food allergy, mast-cell, DAO/HNMT, symptom, safe or unsafe food, elimination-diet, supplement, lab, diagnosis, treatment, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Consultation",
+      "item": "Complimentary dietitian consultation page",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample includes a complimentary dietitian consultation page offering a free one-on-one registered dietitian consultation and a QR-code scheduling callout. This page is part of the observed commercial report structure and is not a local recommendation.",
+      "genes": [],
+      "sourceLabel": "Sibling GenoPalate Food Sensitivity sample report",
+      "sourceIds": [
+        "food-sensitivity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling GenoPalate Food Sensitivity sample-report structure only. Keep this separate from local genome evidence; it is not a personal histamine intolerance, food allergy, mast-cell, DAO/HNMT, symptom, safe or unsafe food, elimination-diet, supplement, lab, diagnosis, treatment, or actionability conclusion."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Sensitivity results summary",
+      "item": "Alcohol, caffeine, lactose, and gluten summary cards",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample summary cards show Alcohol: Slow Metabolism; Caffeine: Fast Metabolism; Lactose: Likely Sensitive; Gluten: Not Likely Sensitive, with a legend separating likely-sensitive from not-likely-sensitive labels.",
+      "description": "The sample summary page presents the four result cards before detailed substance and sensitivity sections.",
+      "genes": [
+        "ADH1C",
+        "CYP1A2",
+        "LCT",
+        "MCM6-LCT",
+        "HLA-DQA1",
+        "HLA-DQ8"
+      ],
+      "sourceLabel": "Sibling GenoPalate Food Sensitivity sample report",
+      "sourceIds": [
+        "food-sensitivity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Extracted from the public GenoPalate Food Sensitivity sample PDF; used here only as sibling output-structure evidence for Histamine, not as a direct Histamine sample or local histamine intolerance, allergy, mast-cell, DAO/HNMT, symptom, food-safety, elimination-diet, supplement, lab, diagnosis, treatment, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Substances",
+      "item": "Alcohol and caffeine metabolism overview",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample introduces alcohol and caffeine as substances whose metabolism can vary with genetic markers, then notes that slower metabolism markers may mean the body takes longer to clear alcohol or caffeine.",
+      "description": "The substances section precedes the detailed Alcohol Metabolism and Caffeine Metabolism pages.",
+      "genes": [
+        "ADH1C",
+        "CYP1A2"
+      ],
+      "sourceLabel": "Sibling GenoPalate Food Sensitivity sample report",
+      "sourceIds": [
+        "food-sensitivity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Extracted from the public GenoPalate Food Sensitivity sample PDF; used here only as sibling output-structure evidence for Histamine, not as a direct Histamine sample or local histamine intolerance, allergy, mast-cell, DAO/HNMT, symptom, food-safety, elimination-diet, supplement, lab, diagnosis, treatment, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Alcohol Metabolism",
+      "item": "ADH1C gene table and slow-metabolism result",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample Alcohol Metabolism page says the sample genome is more likely to have slow alcohol metabolism. The visible gene table lists ADH1C marker GP000071 genotype TT with slow alcohol metabolism impact, plus ADH1C GP000072 genotype CC and ADH1C GP000073 genotype TT with normal alcohol metabolism impact.",
+      "description": "The page also lists common alcohol sources and a what-can-you-do block about tracking drinks, spacing them out, and drinking water.",
+      "genes": [
+        "ADH1C"
+      ],
+      "sourceLabel": "Sibling GenoPalate Food Sensitivity sample report",
+      "sourceIds": [
+        "food-sensitivity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Extracted from the public GenoPalate Food Sensitivity sample PDF; used here only as sibling output-structure evidence for Histamine, not as a direct Histamine sample or local histamine intolerance, allergy, mast-cell, DAO/HNMT, symptom, food-safety, elimination-diet, supplement, lab, diagnosis, treatment, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Caffeine Metabolism",
+      "item": "CYP1A2 gene table and fast-metabolism result",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample Caffeine Metabolism page says the sample genome is more likely to have fast caffeine metabolism. The visible gene table lists CYP1A2 marker GP000071 genotype TT with fast caffeine metabolism impact.",
+      "description": "The page lists common caffeine sources such as coffee, tea, soft drinks, energy drinks, chocolate, certain medications, and yerba mate, plus a sleep-timing action block.",
+      "genes": [
+        "CYP1A2"
+      ],
+      "sourceLabel": "Sibling GenoPalate Food Sensitivity sample report",
+      "sourceIds": [
+        "food-sensitivity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Extracted from the public GenoPalate Food Sensitivity sample PDF; used here only as sibling output-structure evidence for Histamine, not as a direct Histamine sample or local histamine intolerance, allergy, mast-cell, DAO/HNMT, symptom, food-safety, elimination-diet, supplement, lab, diagnosis, treatment, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Sensitivities",
+      "item": "Food sensitivity versus food allergy explanation",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample Sensitivities section distinguishes food sensitivity from food allergy, explains that sensitivities can involve difficulty digesting components such as lactose or gluten, and names non-genetic contributors such as gut microbiome imbalance, gastrointestinal disease, stress, age, additives, sleep, and physical inactivity.",
+      "description": "The section explicitly says genetics can play a role but do not work in isolation.",
+      "genes": [],
+      "sourceLabel": "Sibling GenoPalate Food Sensitivity sample report",
+      "sourceIds": [
+        "food-sensitivity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Extracted from the public GenoPalate Food Sensitivity sample PDF; used here only as sibling output-structure evidence for Histamine, not as a direct Histamine sample or local histamine intolerance, allergy, mast-cell, DAO/HNMT, symptom, food-safety, elimination-diet, supplement, lab, diagnosis, treatment, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Gluten Sensitivity",
+      "item": "HLA-DQA1 and HLA-DQ8 gene table with not-likely-sensitive result",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample Gluten Sensitivity page says the sample genome is not likely sensitive to gluten. The visible gene table lists HLA-DQA1 marker GP000071 genotype TT and HLA-DQ8 marker GP000072 genotype CC, both with not-likely-sensitive-to-gluten impact.",
+      "description": "The page lists common gluten sources and includes a what-can-you-do block about a temporary gluten-removal trial.",
+      "genes": [
+        "HLA-DQA1",
+        "HLA-DQ8"
+      ],
+      "sourceLabel": "Sibling GenoPalate Food Sensitivity sample report",
+      "sourceIds": [
+        "food-sensitivity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Extracted from the public GenoPalate Food Sensitivity sample PDF; used here only as sibling output-structure evidence for Histamine, not as a direct Histamine sample or local histamine intolerance, allergy, mast-cell, DAO/HNMT, symptom, food-safety, elimination-diet, supplement, lab, diagnosis, treatment, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Lactose Sensitivity",
+      "item": "LCT and MCM6-LCT gene table with likely-sensitive result",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample Lactose Sensitivity page says the sample genome is more likely to be sensitive to lactose. The visible gene table lists LCT marker GP000071 genotype TT with more-likely-sensitive-to-lactose impact and MCM6-LCT marker GP000072 genotype CC with less-likely-sensitive-to-lactose impact.",
+      "description": "The page lists common lactose sources and a what-can-you-do block about tracking dairy reactions, considering lower-lactose foods, and discussing dairy reduction or lactose enzymes with a healthcare practitioner.",
+      "genes": [
+        "LCT",
+        "MCM6-LCT"
+      ],
+      "sourceLabel": "Sibling GenoPalate Food Sensitivity sample report",
+      "sourceIds": [
+        "food-sensitivity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Extracted from the public GenoPalate Food Sensitivity sample PDF; used here only as sibling output-structure evidence for Histamine, not as a direct Histamine sample or local histamine intolerance, allergy, mast-cell, DAO/HNMT, symptom, food-safety, elimination-diet, supplement, lab, diagnosis, treatment, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Consultation",
+      "item": "Complimentary dietitian consultation page",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample includes a complimentary dietitian consultation page offering a free one-on-one registered dietitian consultation and a QR-code scheduling callout.",
+      "description": "This page is part of the observed commercial report structure and is not a local recommendation.",
+      "genes": [],
+      "sourceLabel": "Sibling GenoPalate Food Sensitivity sample report",
+      "sourceIds": [
+        "food-sensitivity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Extracted from the public GenoPalate Food Sensitivity sample PDF; used here only as sibling output-structure evidence for Histamine, not as a direct Histamine sample or local histamine intolerance, allergy, mast-cell, DAO/HNMT, symptom, food-safety, elimination-diet, supplement, lab, diagnosis, treatment, or actionability conclusion."
     }
   ],
   "practicalNextSteps": {
     "histamineContext": [
-      "Use this report as educational nutrition-genetics context, not as a histamine-intolerance, allergy, or mast-cell diagnosis.",
-      "Bring symptoms, food history, allergy history, labs, supplement questions, and treatment questions to qualified professionals when relevant.",
-      "Do not change foods, supplements, medications, or treatment based on genotype alone."
+      "Use this report as educational Histamine boundary context, not as a histamine-intolerance, allergy, or mast-cell diagnosis.",
+      "Treat the Food Sensitivity rows as sibling report-format examples only; they are not direct Histamine result rows.",
+      "Bring symptoms, food history, allergy history, labs, supplement questions, medication questions, and treatment questions to qualified professionals when relevant.",
+      "Do not change foods, supplements, medications, or treatment based on genotype or sibling sample rows alone."
     ]
   },
   "references": [
@@ -63,33 +323,112 @@
     {
       "id": "ebi-gwas-catalog",
       "title": "GWAS Catalog"
+    },
+    {
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean"
+    },
+    {
+      "id": "medlineplus-blood-glucose-test",
+      "title": "MedlinePlus: Blood Glucose Test"
+    },
+    {
+      "id": "medlineplus-hba1c-test",
+      "title": "MedlinePlus: Hemoglobin A1C test"
+    },
+    {
+      "id": "cdc-diabetes-risk-factors",
+      "title": "CDC Diabetes Risk Factors"
+    },
+    {
+      "id": "fda-dietary-supplements",
+      "title": "FDA Dietary Supplements"
+    },
+    {
+      "id": "nih-ods-dietary-supplement-fact-sheets",
+      "title": "NIH Office of Dietary Supplements Fact Sheets"
+    },
+    {
+      "id": "cdc-bmi",
+      "title": "CDC About Body Mass Index"
+    },
+    {
+      "id": "food-sensitivity-sample-pdf",
+      "title": "GenoPalate Food Sensitivity sample report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
+        "tier": "Local derived call",
         "gene": "MCM6/LCT",
-        "observedValue": "rs4988235 CT"
+        "variantId": "rs4988235",
+        "genotype": "CT",
+        "effect": "The local fixture supplies a derived MCM6/LCT rs4988235 call for lactase-persistence context.",
+        "phenotype": "Report as educational lactose-related marker context only; do not diagnose histamine intolerance, food allergy, mast-cell disorder, lactose intolerance, symptoms, or prescribe diet or supplement changes from genotype alone.",
+        "extractionStatus": "curated"
       },
       {
+        "tier": "Local missing input",
         "gene": "Histamine model",
-        "observedValue": "calibrated model unavailable"
+        "variantId": "histamine-model-unavailable",
+        "genotype": "calibrated histamine model, DAO/HNMT interpretation, allergy evidence, mast-cell context, symptom history, diet history, elimination-diet model, supplement model, lab evidence, and ancestry applicability metadata unavailable",
+        "effect": "The local fixture intentionally omits calibrated histamine and non-genetic clinical context.",
+        "phenotype": "Mark histamine intolerance, allergy, mast-cell, symptom, safe/unsafe food, elimination-diet, supplement, lab, diagnosis, treatment, and actionability sections unavailable instead of inferring them.",
+        "extractionStatus": "curated"
+      },
+      {
+        "tier": "Sibling Food Sensitivity sample-report visible row",
+        "gene": "ADH1C",
+        "variantId": "GP000071; GP000072; GP000073",
+        "genotype": "TT; CC; TT",
+        "effect": "Sample alcohol metabolism page shows one slow-metabolism impact and two normal-metabolism impacts.",
+        "phenotype": "Use as observed sibling sample-report structure only; do not treat the sample marker as local histamine intolerance, food allergy, mast-cell, DAO/HNMT, symptom, safe/unsafe food, elimination-diet, supplement, lab, diagnosis, treatment, or actionability evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sibling Food Sensitivity sample-report visible row",
+        "gene": "CYP1A2",
+        "variantId": "GP000071",
+        "genotype": "TT",
+        "effect": "Sample caffeine page shows fast caffeine metabolism impact.",
+        "phenotype": "Use as observed sibling sample-report structure only; do not treat the sample marker as local histamine intolerance, food allergy, mast-cell, DAO/HNMT, symptom, safe/unsafe food, elimination-diet, supplement, lab, diagnosis, treatment, or actionability evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sibling Food Sensitivity sample-report visible row",
+        "gene": "HLA-DQA1; HLA-DQ8",
+        "variantId": "GP000071; GP000072",
+        "genotype": "TT; CC",
+        "effect": "Sample gluten page shows not-likely-sensitive-to-gluten impacts.",
+        "phenotype": "Use as observed sibling sample-report structure only; do not treat the sample marker as local histamine intolerance, food allergy, mast-cell, DAO/HNMT, symptom, safe/unsafe food, elimination-diet, supplement, lab, diagnosis, treatment, or actionability evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sibling Food Sensitivity sample-report visible row",
+        "gene": "LCT; MCM6-LCT",
+        "variantId": "GP000071; GP000072",
+        "genotype": "TT; CC",
+        "effect": "Sample lactose page shows one more-likely-sensitive and one less-likely-sensitive impact.",
+        "phenotype": "Use as observed sibling sample-report structure only; do not treat the sample marker as local histamine intolerance, food allergy, mast-cell, DAO/HNMT, symptom, safe/unsafe food, elimination-diet, supplement, lab, diagnosis, treatment, or actionability evidence.",
+        "extractionStatus": "direct"
       }
     ],
     "missingInputs": [
-      "Authenticated sample-report sections and rows have not been extracted.",
+      "Direct Histamine sample-report sections and rows have not been captured.",
       "No calibrated histamine model, DAO/HNMT interpretation, allergy evidence, mast-cell context, symptom context, diet-history context, elimination-diet model, supplement model, lab context, or ancestry applicability metadata is supplied with this fixture.",
       "Symptoms, allergy history, food history, diet history, labs, supplements, medications, medical history, ancestry applicability, and professional assessment are not represented in this fixture."
     ],
     "probabilities": [],
     "uncertainty": [
       "Histamine intolerance, allergy, mast-cell disorders, digestive symptoms, and food response require broader clinical, dietary, laboratory, and professional context.",
+      "Sibling Food Sensitivity rows show observed report structure only and should not be interpreted as local histamine evidence.",
       "A single marker should not be used to diagnose histamine intolerance, diagnose allergy, explain symptoms, prescribe elimination diets, recommend supplements, interpret labs, claim foods are safe or unsafe, or guide treatment."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data is not included.",
       "The report is educational and does not diagnose histamine intolerance, diagnose food allergy, diagnose mast-cell disorders, diagnose digestive disorders, diagnose lactose intolerance, explain symptoms, prescribe elimination diets, recommend supplements, interpret labs, claim foods are safe or unsafe, or provide treatment guidance.",
-      "Authenticated Sequencing.com sample report rows are still pending."
+      "Direct Histamine sample report rows remain unavailable; sibling Food Sensitivity rows are used only for output-structure replication."
     ]
   }
 }

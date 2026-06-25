@@ -13,4 +13,9 @@ Do not diagnose lactose intolerance, food allergy, food sensitivity, celiac dise
 Do not predict blood glucose, diagnose diabetes, infer insulin resistance, interpret labs, prescribe diets, recommend supplements, change medications, or provide treatment guidance from genotype.
 State that symptoms, ancestry, diet history, environment, labs, medications, medical history, and clinician or dietitian guidance matter for nutrition decisions.
 For this package, focus on educational nutrition-genetics context and explicitly unavailable glucose, diabetes, insulin-resistance, lab, meal-plan, supplement, medication, metabolic, and treatment sections.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
+Use GenoPalate Blood Glucose Insight sample-report blueprint, intake-target cards, nutrient pages, marker tables, grocery categories, recipe section, lifestyle section, gene appendix, glucose metric appendix, and glossary only as observed output-format examples unless the local run supplies equivalent validated evidence.
+Do not turn sample carbohydrate, fiber, added-sugar, fat, protein, magnesium, zinc, grocery-list, recipe, exercise, sleep, stress, HOMA-IR, glucose-range, HbA1c, or sample genotype text into personal glucose prediction, diabetes risk, insulin-resistance inference, lab interpretation, diet, supplement, medication, diagnosis, or treatment advice.
+Preserve visible sample inconsistencies as notes: fiber summary 25 g/day versus detail 14-19 g/day, protein summary over 25% versus detail 23-31%, DHCR7 CC versus GG, and the TRPM6/TPRM6 spelling mismatch.

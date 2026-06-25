@@ -1,0 +1,461 @@
+{
+  "schemaVersion": "soma-reports.sample-promotion-rejections.v2",
+  "capturedAt": "2026-06-23",
+  "purpose": "Record strict no-promotion decisions for the 21 local-scaffold-only Sequencing.com marketplace packages that still lack source-backed sample report rows, formal field maps, and row-level citation bindings.",
+  "catalogSnapshot": {
+    "authenticatedMarketplacePositions": 164,
+    "identifiedNamedPackages": 154,
+    "authenticatedUniqueHrefs": 87,
+    "authenticatedDuplicateCardPositions": 77,
+    "authenticatedPagePropsItems": 164,
+    "authenticatedDetailArtifacts": 75,
+    "sampleBackedFormalReady": 133,
+    "formalEquivalentReady": 62,
+    "formalPendingPackages": 21,
+    "detailGaps": 78
+  },
+  "promotionStandard": [
+    "Do not mark sampleReport, formalFields, or citationBindings ready from synthetic fixture rows.",
+    "Do not count marketing copy, product order pages, public education pages, or logged-in detail metadata as sample report rows.",
+    "Direct authenticated detail data without a non-empty reportFile or visible generated output rows is detail evidence only.",
+    "Sibling sample rows may support output-structure constraints only when explicitly marked as sibling evidence; they do not promote the target package to report-specific sample-backed formal readiness.",
+    "External product samples, including third-party Promethease examples, are reference context unless captured as official Sequencing.com marketplace output for the exact package."
+  ],
+  "generalSources": [
+    {
+      "kind": "authenticatedMarketplaceCards",
+      "path": "reference/catalog/sequencing-authenticated-marketplace-cards-2026-06-21.json",
+      "use": "Proves 164 visible authenticated marketplace card positions."
+    },
+    {
+      "kind": "authenticatedMarketplacePageProps",
+      "path": "reference/catalog/sequencing-authenticated-marketplace-pageprops-2026-06-21.json",
+      "use": "Proves 164 structured marketplace page-props items and 87 unique hrefs."
+    },
+    {
+      "kind": "officialMarketplaceBundlePage",
+      "url": "https://get.sequencing.com/shop-all-bundles/",
+      "use": "Confirms bundle/product positioning only; not sample report output."
+    },
+    {
+      "kind": "officialGeneticReportsKnowledgeCenter",
+      "url": "https://sequencing.com/knowledge-center/healthcare-professionals/genetic-reports",
+      "use": "General context that marketplace reports can generate patient or clinician reports; not package-specific evidence for these 22."
+    },
+    {
+      "kind": "officialViewingResultsKnowledgeCenter",
+      "url": "https://sequencing.com/knowledge-center/dna-analysis-apps-reports/app-results/viewing",
+      "use": "General context that generated results live in Sequencing.com accounts; not package-specific sample rows, schemas, or output fields for these 22."
+    },
+    {
+      "kind": "officialProcessingTimesKnowledgeCenter",
+      "url": "https://sequencing.com/knowledge-center/dna-analysis-apps-reports/app-processing-times",
+      "use": "General context about app/report processing behavior; not package-specific formal output evidence for these 22."
+    }
+  ],
+  "decisions": [
+    {
+      "slug": "comprehensive-health-screen-wgs-bundle",
+      "title": "Comprehensive Health Screen WGS Bundle",
+      "decision": "keep-local-scaffold",
+      "evidenceStatus": "card-and-order-evidence-only",
+      "sources": [
+        "reference/catalog/sequencing-authenticated-marketplace-cards-2026-06-21.json",
+        "reference/catalog/sequencing-authenticated-marketplace-pageprops-2026-06-21.json",
+        "https://sequencing.com/order/comprehensive-wgs-health-screen-bundle"
+      ],
+      "routeBehavior": "Exact marketplace detail route was not available in the logged-in browser.",
+      "reportFileStatus": "none",
+      "sampleRows": 0,
+      "reason": "Authenticated card and order-page metadata identify the bundle, but no marketplace detail route, reportFile, mock report, or generated output rows were captured.",
+      "requiredEvidenceForPromotion": [
+        "Official Sequencing.com sample or completed bundle report output",
+        "Package-specific formal rows or lab/report fields",
+        "Row-level source bindings for the output rows"
+      ]
+    },
+    {
+      "slug": "connective-tissue-disorders-and-eds",
+      "title": "Connective Tissue Disorders and EDS",
+      "decision": "keep-local-scaffold",
+      "evidenceStatus": "exact-detail-metadata-only",
+      "sources": [
+        "reference/catalog/connective-tissue-disorders-and-eds-authenticated-detail-2026-06-23.json",
+        "https://sequencing.com/marketplace/connective-tissue-disorders-and-eds"
+      ],
+      "routeBehavior": "Exact logged-in detail route resolved and exposed pageProps.reportData.",
+      "reportFileStatus": "empty",
+      "sampleRows": 0,
+      "reason": "The exact detail capture has marketplace metadata but no sample report file or generated output rows. Nearby musculoskeletal or disease-risk rows are not EDS/connective-tissue formal output.",
+      "requiredEvidenceForPromotion": [
+        "Direct connective-tissue or EDS sample row/body from Sequencing.com",
+        "Verified completed report artifact for the exact package",
+        "Row-level source bindings for connective-tissue or EDS rows"
+      ]
+    },
+    {
+      "slug": "convert-rsids-coordinates",
+      "title": "Convert rsids to Coordinates",
+      "decision": "keep-local-scaffold",
+      "evidenceStatus": "exact-detail-metadata-only",
+      "sources": [
+        "reference/catalog/convert-rsids-coordinates-authenticated-detail-2026-06-23.json",
+        "https://sequencing.com/marketplace/convert-rsids-coordinates"
+      ],
+      "routeBehavior": "Exact logged-in detail route resolved and exposed pageProps.reportData.",
+      "reportFileStatus": "empty",
+      "sampleRows": 0,
+      "reason": "The page describes a coordinate-conversion utility, but it does not expose a sample input/output table, mock report, or completed run artifact.",
+      "requiredEvidenceForPromotion": [
+        "Official output table or report export for the converter",
+        "Exact sample rows showing rsID-to-coordinate conversion behavior",
+        "Row-level source bindings for each formal output row"
+      ]
+    },
+    {
+      "slug": "ehlers-danlos-syndrome",
+      "title": "Ehlers-Danlos Syndrome",
+      "decision": "keep-local-scaffold",
+      "evidenceStatus": "route-fallback-and-public-education-only",
+      "sources": [
+        "https://sequencing.com/marketplace/ehlers-danlos-syndrome",
+        "https://sequencing.com/education-center/dna-101/understanding-ehlers-danlos-syndome-eds/genetic-testing-ehlers-danlos-syndrome-eds"
+      ],
+      "routeBehavior": "Exact slug route fell back to the marketplace index during logged-in checks.",
+      "reportFileStatus": "none",
+      "sampleRows": 0,
+      "reason": "Public EDS education content and AI-report discovery leads are not exact marketplace sample rows or generated EDS output.",
+      "requiredEvidenceForPromotion": [
+        "Direct Ehlers-Danlos or hEDS Sequencing.com report output",
+        "Exact EDS reportData payload with sample rows or non-empty reportFile",
+        "Row-level source bindings for EDS-specific rows"
+      ]
+    },
+    {
+      "slug": "eve-premium-dna-genome-data-bioinformatics-pipelines",
+      "title": "EvE Premium DNA Genome Data Bioinformatics Pipelines",
+      "decision": "keep-local-scaffold",
+      "evidenceStatus": "exact-detail-metadata-only",
+      "sources": [
+        "reference/catalog/eve-premium-dna-genome-data-bioinformatics-pipelines-authenticated-detail-2026-06-23.json",
+        "https://sequencing.com/marketplace/eve-premium-dna-genome-data-bioinformatics-pipelines"
+      ],
+      "routeBehavior": "Exact logged-in detail route resolved and exposed pageProps.reportData.",
+      "reportFileStatus": "empty",
+      "sampleRows": 0,
+      "reason": "Pipeline marketing and reference links describe scope but do not provide official generated pipeline results or formal output rows.",
+      "requiredEvidenceForPromotion": [
+        "Official EvE Premium result artifact or sample output",
+        "Formal pipeline output fields from Sequencing.com",
+        "Row-level source bindings for output fields"
+      ]
+    },
+    {
+      "slug": "expedited-advanced-health-screen-wgs-bundle",
+      "title": "Expedited Advanced Health Screen WGS Bundle",
+      "decision": "keep-local-scaffold",
+      "evidenceStatus": "card-and-order-evidence-only",
+      "sources": [
+        "reference/catalog/sequencing-authenticated-marketplace-cards-2026-06-21.json",
+        "reference/catalog/sequencing-authenticated-marketplace-pageprops-2026-06-21.json",
+        "https://sequencing.com/order/expedited-advanced-wgs-health-screen-bundle"
+      ],
+      "routeBehavior": "Exact marketplace detail route was not available in the logged-in browser.",
+      "reportFileStatus": "none",
+      "sampleRows": 0,
+      "reason": "Bundle purchase metadata is not a mock report or completed WGS health-screen output.",
+      "requiredEvidenceForPromotion": [
+        "Official sample or completed health-screen bundle report",
+        "Package-specific formal report rows or lab/report fields",
+        "Row-level source bindings for the output rows"
+      ]
+    },
+    {
+      "slug": "genome-explorer-dna-data-search",
+      "title": "Genome Explorer DNA Data Search",
+      "decision": "keep-local-scaffold",
+      "evidenceStatus": "exact-rendered-detail-boundary-only",
+      "sources": [
+        "reference/catalog/genome-explorer-dna-data-search-authenticated-detail-2026-06-25.json",
+        "https://sequencing.com/marketplace/genome-explorer-dna-data-search"
+      ],
+      "routeBehavior": "Exact detail route resolved; capture is rendered DOM/meta boundary evidence.",
+      "reportFileStatus": "empty-or-not-exposed",
+      "sampleRows": 0,
+      "reason": "Utility columns and supported variant classes can define scope, but the capture does not include a user genome output or sample report rows.",
+      "requiredEvidenceForPromotion": [
+        "Official Genome Explorer sample output or export",
+        "Formal search/result table rows",
+        "Row-level source bindings for search/result fields"
+      ]
+    },
+    {
+      "slug": "hearing-auditory-genetics",
+      "title": "Hearing & Auditory Genetics",
+      "decision": "keep-local-scaffold",
+      "evidenceStatus": "exact-detail-metadata-only",
+      "sources": [
+        "reference/catalog/hearing-auditory-genetics-authenticated-detail-2026-06-23.json",
+        "https://sequencing.com/marketplace/hearing-auditory-genetics"
+      ],
+      "routeBehavior": "Exact logged-in detail route resolved and exposed pageProps.reportData.",
+      "reportFileStatus": "empty",
+      "sampleRows": 0,
+      "reason": "The detail page confirms the package but exposes no hearing/auditory sample report rows or formal output file.",
+      "requiredEvidenceForPromotion": [
+        "Direct Hearing & Auditory Genetics sample output",
+        "Verified completed report artifact for the exact package",
+        "Row-level source bindings for hearing/auditory rows"
+      ]
+    },
+    {
+      "slug": "imputation-analysis",
+      "title": "Imputation Analysis",
+      "decision": "keep-local-scaffold",
+      "evidenceStatus": "exact-detail-metadata-only",
+      "sources": [
+        "reference/catalog/imputation-analysis-authenticated-detail-2026-06-23.json",
+        "https://sequencing.com/marketplace/imputation-analysis"
+      ],
+      "routeBehavior": "Exact logged-in detail route resolved and exposed pageProps.reportData.",
+      "reportFileStatus": "empty",
+      "sampleRows": 0,
+      "reason": "No official imputation result rows were found; unrelated file-like candidates are not this package's own reportFile.",
+      "requiredEvidenceForPromotion": [
+        "Direct imputation output or post-run export",
+        "Formal imputation summary/result rows",
+        "Row-level source bindings for imputation fields"
+      ]
+    },
+    {
+      "slug": "marfan-syndrome",
+      "title": "Marfan Syndrome",
+      "decision": "keep-local-scaffold",
+      "evidenceStatus": "route-fallback-and-public-education-only",
+      "sources": [
+        "https://sequencing.com/marketplace/marfan-syndrome",
+        "https://sequencing.com/education-center/medical/marfan-syndrome-incomplete"
+      ],
+      "routeBehavior": "Exact slug route fell back to the marketplace index during logged-in checks.",
+      "reportFileStatus": "none",
+      "sampleRows": 0,
+      "reason": "Disease Risk sibling rows are aneurysm or scoliosis adjacent, but they are not Marfan- or FBN1-specific formal output.",
+      "requiredEvidenceForPromotion": [
+        "Direct Marfan Syndrome or FBN1 sample report rows",
+        "Verified completed report artifact for the exact package",
+        "Row-level source bindings for Marfan-specific rows"
+      ]
+    },
+    {
+      "slug": "mitchell-syndrome",
+      "title": "Mitchell Syndrome",
+      "decision": "keep-local-scaffold",
+      "evidenceStatus": "route-fallback-and-background-only",
+      "sources": [
+        "https://sequencing.com/marketplace/mitchell-syndrome"
+      ],
+      "routeBehavior": "Exact slug route fell back to the marketplace index during logged-in checks.",
+      "reportFileStatus": "none",
+      "sampleRows": 0,
+      "reason": "Background references and AI availability context do not expose a Mitchell Syndrome formal report body or sample rows.",
+      "requiredEvidenceForPromotion": [
+        "Direct Mitchell Syndrome Sequencing.com report output",
+        "Exact reportData payload with sample rows or non-empty reportFile",
+        "Row-level source bindings for Mitchell Syndrome-specific rows"
+      ]
+    },
+    {
+      "slug": "oral",
+      "title": "Oral",
+      "decision": "keep-local-scaffold",
+      "evidenceStatus": "exact-detail-metadata-only",
+      "sources": [
+        "reference/catalog/oral-authenticated-detail-2026-06-23.json",
+        "https://sequencing.com/marketplace/oral"
+      ],
+      "routeBehavior": "Exact logged-in detail route resolved and exposed pageProps.reportData.",
+      "reportFileStatus": "empty",
+      "sampleRows": 0,
+      "reason": "Sibling cancer rows mentioning oral or larynx are not this report's exact output, and the detail page exposes no sample rows.",
+      "requiredEvidenceForPromotion": [
+        "Direct Oral report sample output",
+        "Verified completed report artifact for the exact package",
+        "Row-level source bindings for Oral-specific rows"
+      ]
+    },
+    {
+      "slug": "pediatric-health",
+      "title": "Pediatric Health",
+      "decision": "keep-local-scaffold",
+      "evidenceStatus": "route-fallback-and-public-context-only",
+      "sources": [
+        "fixtures/synthetic/pediatric-health.fixture.json",
+        "https://sequencing.com/marketplace/pediatric-health"
+      ],
+      "routeBehavior": "Exact slug route fell back to the marketplace index during logged-in checks.",
+      "reportFileStatus": "none",
+      "sampleRows": 0,
+      "reason": "The public catalog slug exists, but no exact detail reportData, artifact, or official Pediatric Health sample/mock report was captured.",
+      "requiredEvidenceForPromotion": [
+        "Official Pediatric Health sample report rows",
+        "Verified completed report artifact for the exact package",
+        "Row-level source bindings for pediatric-health output rows"
+      ]
+    },
+    {
+      "slug": "pheochromocytoma-and-paraganglioma",
+      "title": "Pheochromocytoma and Paraganglioma",
+      "decision": "keep-local-scaffold",
+      "evidenceStatus": "exact-detail-metadata-only",
+      "sources": [
+        "reference/catalog/pheochromocytoma-and-paraganglioma-authenticated-detail-2026-06-23.json",
+        "https://sequencing.com/marketplace/pheochromocytoma-and-paraganglioma"
+      ],
+      "routeBehavior": "Exact logged-in detail route resolved and exposed pageProps.reportData.",
+      "reportFileStatus": "empty",
+      "sampleRows": 0,
+      "reason": "Detail metadata and public clinical references do not constitute exact formal report rows for this package.",
+      "requiredEvidenceForPromotion": [
+        "Direct Pheochromocytoma and Paraganglioma sample output",
+        "Verified completed report artifact for the exact package",
+        "Row-level source bindings for exact package rows"
+      ]
+    },
+    {
+      "slug": "promethease",
+      "title": "Promethease",
+      "decision": "keep-local-scaffold",
+      "evidenceStatus": "exact-detail-metadata-only-with-external-samples",
+      "sources": [
+        "reference/catalog/promethease-authenticated-detail-2026-06-23.json",
+        "https://sequencing.com/marketplace/promethease",
+        "https://sequencing.com/knowledge-center/promethease",
+        "https://promethease.com/"
+      ],
+      "routeBehavior": "Exact logged-in route exposed pageProps.reportData and reportFile was empty.",
+      "reportFileStatus": "empty",
+      "sampleRows": 0,
+      "reason": "Promethease has external sample reports, but they are third-party Promethease/SNPedia artifacts rather than official Sequencing.com marketplace output for this package.",
+      "requiredEvidenceForPromotion": [
+        "Official Sequencing.com Promethease package output or non-empty reportFile",
+        "Exact generated table/export rows for the marketplace package",
+        "Row-level source bindings for report rows"
+      ]
+    },
+    {
+      "slug": "sequencing-depth-and-coverage",
+      "title": "Sequencing Depth and Coverage",
+      "decision": "keep-local-scaffold",
+      "evidenceStatus": "exact-detail-output-shape-hint-only",
+      "sources": [
+        "reference/catalog/sequencing-depth-and-coverage-authenticated-detail-2026-06-22.json",
+        "https://sequencing.com/marketplace/sequencing-depth-and-coverage"
+      ],
+      "routeBehavior": "Exact detail route resolved and exposed page metadata/output-shape hints.",
+      "reportFileStatus": "empty",
+      "sampleRows": 0,
+      "reason": "The page describes graph/table concepts for depth and coverage, but it does not expose an official generated sample table or report rows.",
+      "requiredEvidenceForPromotion": [
+        "Official generated depth/coverage sample table",
+        "Formal depth/coverage graph or table fields",
+        "Row-level source bindings for QC output rows"
+      ]
+    },
+    {
+      "slug": "genome-short-read-mapper",
+      "title": "Short Read Mapper",
+      "decision": "keep-local-scaffold",
+      "evidenceStatus": "exact-detail-metadata-only",
+      "sources": [
+        "reference/catalog/genome-short-read-mapper-authenticated-detail-2026-06-23.json",
+        "https://sequencing.com/marketplace/genome-short-read-mapper"
+      ],
+      "routeBehavior": "Exact logged-in detail route resolved and exposed pageProps.reportData.",
+      "reportFileStatus": "empty",
+      "sampleRows": 0,
+      "reason": "Input/output marketing for a mapping pipeline is not a produced mapping report or sample output table.",
+      "requiredEvidenceForPromotion": [
+        "Official Short Read Mapper result artifact or sample output",
+        "Formal mapping output fields",
+        "Row-level source bindings for mapping output rows"
+      ]
+    },
+    {
+      "slug": "ultra-rapid-professional-health-screen-wgs-bundle",
+      "title": "Ultra Rapid Professional Health Screen WGS Bundle",
+      "decision": "keep-local-scaffold",
+      "evidenceStatus": "card-and-order-evidence-only",
+      "sources": [
+        "reference/catalog/sequencing-authenticated-marketplace-cards-2026-06-21.json",
+        "reference/catalog/sequencing-authenticated-marketplace-pageprops-2026-06-21.json",
+        "https://sequencing.com/order/ultra-rapid-professional-wgs-health-screen-bundle"
+      ],
+      "routeBehavior": "Exact marketplace detail route was not available in the logged-in browser.",
+      "reportFileStatus": "none",
+      "sampleRows": 0,
+      "reason": "Bundle commerce metadata is not formal report output, and no sample or completed professional health-screen report was captured.",
+      "requiredEvidenceForPromotion": [
+        "Official sample or completed professional health-screen report",
+        "Package-specific formal report rows or lab/report fields",
+        "Row-level source bindings for output rows"
+      ]
+    },
+    {
+      "slug": "variant-discovery-bioinformatics-secondary-analysis",
+      "title": "Variant Discovery",
+      "decision": "keep-local-scaffold",
+      "evidenceStatus": "exact-detail-metadata-only",
+      "sources": [
+        "reference/catalog/variant-discovery-bioinformatics-secondary-analysis-authenticated-detail-2026-06-23.json",
+        "https://sequencing.com/marketplace/variant-discovery-bioinformatics-secondary-analysis"
+      ],
+      "routeBehavior": "Exact logged-in detail route resolved and exposed pageProps.reportData.",
+      "reportFileStatus": "empty",
+      "sampleRows": 0,
+      "reason": "App description and tool references do not expose a formal Variant Discovery result table or sample report.",
+      "requiredEvidenceForPromotion": [
+        "Official Variant Discovery sample/result table",
+        "Formal variant discovery output fields",
+        "Row-level source bindings for discovered-variant rows"
+      ]
+    },
+    {
+      "slug": "variant-effect-predictor",
+      "title": "Variant Effect Predictor",
+      "decision": "keep-local-scaffold",
+      "evidenceStatus": "exact-detail-metadata-only",
+      "sources": [
+        "reference/catalog/variant-effect-predictor-authenticated-detail-2026-06-23.json",
+        "https://sequencing.com/marketplace/variant-effect-predictor"
+      ],
+      "routeBehavior": "Exact logged-in detail route exposed pageProps.reportData; stored artifact is rendered detail/meta boundary evidence.",
+      "reportFileStatus": "empty",
+      "sampleRows": 0,
+      "reason": "VEP purpose text supports scope only; it is not an official Sequencing.com generated sample output.",
+      "requiredEvidenceForPromotion": [
+        "Official Variant Effect Predictor sample output",
+        "Formal consequence/effect output rows",
+        "Row-level source bindings for predicted-effect rows"
+      ]
+    },
+    {
+      "slug": "whole-genome-sequencing-30x",
+      "title": "Whole Genome Sequencing",
+      "decision": "keep-local-scaffold",
+      "evidenceStatus": "exact-detail-metadata-only",
+      "sources": [
+        "reference/catalog/whole-genome-sequencing-30x-authenticated-detail-2026-06-23.json",
+        "https://sequencing.com/marketplace/whole-genome-sequencing-30x"
+      ],
+      "routeBehavior": "Exact logged-in detail route resolved and exposed pageProps.reportData.",
+      "reportFileStatus": "empty",
+      "sampleRows": 0,
+      "reason": "The product detail is real, but no official lab output, sample report rows, or generated WGS result file was captured.",
+      "requiredEvidenceForPromotion": [
+        "Official 30x WGS sample/lab output or completed result artifact",
+        "Formal sequencing-result fields",
+        "Row-level source bindings for WGS output rows"
+      ]
+    }
+  ]
+}

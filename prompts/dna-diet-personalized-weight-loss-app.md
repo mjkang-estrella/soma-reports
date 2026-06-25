@@ -13,6 +13,8 @@ Do not diagnose lactose intolerance, food allergy, food sensitivity, celiac dise
 Do not predict weight loss, diagnose obesity or metabolic disease, prescribe a diet, create meal plans, recommend supplements, interpret labs, or provide treatment guidance from genotype.
 State that symptoms, ancestry, diet history, environment, labs, medications, medical history, and clinician or dietitian guidance matter for nutrition decisions.
 For this package, focus on educational nutrition-genetics context and explicitly unavailable diet, weight-loss, meal-plan, supplement, metabolic, lab, and treatment sections.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
 Use GeneInformed DNA Diet sample-report action points, results summary rows, trait pages, satiety appendix, emotional-eating appendix, exercise appendix, and disclaimer only as observed output-format examples unless the local run supplies equivalent validated evidence.
 Do not turn sample high-protein, low-fat, high-carb, trans-fat, calorie, satiety, food-addiction, fat-sensing, exercise, MET, or sample genotype-like result text into personal weight-loss, diet, supplement, activity, metabolic, lab, diagnosis, or treatment advice.

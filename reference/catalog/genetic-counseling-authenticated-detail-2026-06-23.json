@@ -1,0 +1,50 @@
+{
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "source": "in-app browser exact route DOM and meta capture",
+  "capturedAt": "2026-06-23T06:14:46.044Z",
+  "url": "https://sequencing.com/marketplace/genetic-counseling",
+  "finalUrl": "https://sequencing.com/marketplace/genetic-counseling",
+  "uri": "marketplace/genetic-counseling",
+  "title": "Genetic Counseling",
+  "publisher": "DNAVisit",
+  "price": "$179",
+  "currencyCode": "USD",
+  "productId": "4627",
+  "headerImage": "https://sequencing.com/sites/default/files/dnafeed-logo-sequencing.com-dna-gene-app-marketplace.png",
+  "headerImageAlt": "Online Genetic Counseling for DNA test results",
+  "summaryPreview": "Marketplace Genetic Counseling Developed by DNAVisit Two Months Of Online Genetic Counseling for Your DNA Test Results $179 per genome",
+  "bodyPreview": "Marketplace Genetic Counseling Developed by DNAVisit Two Months Of Online Genetic Counseling for Your DNA Test Results $179 per genome Start App Get 100% of your DNA data with Whole Genome Sequencing. Already have data from a DNA test? Upload your data for free. The page describes 60 days of online chat with a licensed genetic counselor, discussion of DNA reports, genetic testing options, health risks, medication reactions, family planning, and general curiosity.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Genetic Counseling"
+    },
+    {
+      "level": "h2",
+      "text": "Receive professional guidance from a genetic counselor"
+    }
+  ],
+  "meta": {
+    "article:modified_time": "2025-05-23T03:28:12-07:00",
+    "article:published_time": "2018-07-27T14:51:26-07:00",
+    "author": "Sequencing",
+    "canonical": "https://sequencing.com/marketplace/genetic-counseling",
+    "description": "Online genetic counseling for any DNA test results and genetic reports. Counseling all DNA tests including 23andMe, Ancestry, MyHeritage & genome sequencing.",
+    "og:title": "Genetic Counseling for Any DNA Test: Ask A Genetic Counselor",
+    "og:type": "product",
+    "og:url": "https://sequencing.com/marketplace/genetic-counseling",
+    "product:availability": "in stock",
+    "product:brand": "DNAVisit",
+    "product:category": "505293",
+    "product:price:amount": "179.00",
+    "product:price:currency": "USD",
+    "product:retailer_item_id": "4627",
+    "twitter:title": "Genetic Counseling for Any DNA Test: Ask A Genetic Counselor"
+  },
+  "evidenceNotes": [
+    "Captured only because finalUrl exactly matched the requested marketplace detail route.",
+    "The page exposed DOM and meta product evidence; no rich reportData object or reportFile URL was present in this capture.",
+    "Page overview text is used only for marketplace positioning, not local genetic counseling, diagnosis, medication, family-planning, testing, treatment, or actionability claims.",
+    "This artifact records the exact marketplace route only; it does not treat appointment/order/service flows as detail evidence."
+  ]
+}

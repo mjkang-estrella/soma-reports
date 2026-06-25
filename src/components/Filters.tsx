@@ -1,10 +1,20 @@
 type FiltersProps = {
-  categories: string[];
+  categories: Array<{ label: string; count: number }>;
   selectedCategory: string;
+  packageStates: Array<{ label: string; count: number }>;
+  selectedPackageState: string;
   onSelectCategory: (category: string) => void;
+  onSelectPackageState: (state: string) => void;
 };
 
-export function Filters({ categories, selectedCategory, onSelectCategory }: FiltersProps) {
+export function Filters({
+  categories,
+  selectedCategory,
+  packageStates,
+  selectedPackageState,
+  onSelectCategory,
+  onSelectPackageState,
+}: FiltersProps) {
   return (
     <aside className="filters-col" aria-label="Report filters">
       <div className="filter-group">
@@ -14,16 +24,20 @@ export function Filters({ categories, selectedCategory, onSelectCategory }: Filt
         </div>
         <ul className="filter-list">
           {categories.map((category) => (
-            <li key={category}>
-              <button className="filter-item" type="button" onClick={() => onSelectCategory(category)}>
-                <span className={category === selectedCategory ? "checkbox checked" : "checkbox"} aria-hidden="true">
-                  {category === selectedCategory ? (
+            <li key={category.label}>
+              <button className="filter-item" type="button" onClick={() => onSelectCategory(category.label)}>
+                <span
+                  className={category.label === selectedCategory ? "checkbox checked" : "checkbox"}
+                  aria-hidden="true"
+                >
+                  {category.label === selectedCategory ? (
                     <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
                       <path d="M1 4L3.5 6.5L9 1" stroke="#f4ece3" strokeWidth="1.5" />
                     </svg>
                   ) : null}
                 </span>
-                {category}
+                <span>{category.label}</span>
+                <span className="filter-count">{category.count}</span>
               </button>
             </li>
           ))}
@@ -47,10 +61,23 @@ export function Filters({ categories, selectedCategory, onSelectCategory }: Filt
           <span className="eyebrow">Package State</span>
           <span className="meta-text">03.</span>
         </div>
-        <ul className="filter-list muted">
-          <li>Direct fields</li>
-          <li>Curated references</li>
-          <li>Inferred prompt gaps</li>
+        <p className="filter-note">States can overlap; counts are unique named packages.</p>
+        <ul className="filter-list">
+          {packageStates.map((state) => (
+            <li key={state.label}>
+              <button className="filter-item" type="button" onClick={() => onSelectPackageState(state.label)}>
+                <span className={state.label === selectedPackageState ? "checkbox checked" : "checkbox"} aria-hidden="true">
+                  {state.label === selectedPackageState ? (
+                    <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                      <path d="M1 4L3.5 6.5L9 1" stroke="#f4ece3" strokeWidth="1.5" />
+                    </svg>
+                  ) : null}
+                </span>
+                <span>{state.label}</span>
+                <span className="filter-count">{state.count}</span>
+              </button>
+            </li>
+          ))}
         </ul>
       </div>
     </aside>

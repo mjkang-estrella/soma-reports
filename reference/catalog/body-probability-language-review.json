@@ -1,0 +1,807 @@
+{
+  "schemaVersion": "soma-reports.body-probability-language-review.v1",
+  "generatedAt": "2026-06-25T04:05:00.135Z",
+  "reviewPolicy": "Every current non-appendix probability, confidence, calibration, or clinical-sensitivity text hit is keyed by slug, JSON path, and SHA-256 of the exact string. Approved entries must be boundary/sample-structure language only; quantitative or calibrated probability results belong in appendix.probabilities/appendix.uncertainty.",
+  "entries": [
+    {
+      "slug": "ai-reports",
+      "path": "$.resultRows[7].geneticAnalysis",
+      "textHash": "sha256:3ac18b69fb31c704cb2be2450f05a36e7531c40f6f1a492702e3a165827f0075",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "The Additional Findings, Carrier Status for Inherited Conditions, and Medications That May Be Impacted By Your Genes sections each state that no genetic conditions were found in that section under high-confidence results."
+    },
+    {
+      "slug": "am-i-related-albert-einstein-dna",
+      "path": "$.reportOverview.sectionsUnavailable[1]",
+      "textHash": "sha256:c16c2dbd9c1c9299d060eece71d1d162ce9c5b2f7d07f307627bb9f2fa817c2f",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "No validated Albert Einstein relationship evidence, family-tree evidence, lineage evidence, relative-matching model, surname evidence, identity evidence, or calibrated local ancestry percentage model is supplied."
+    },
+    {
+      "slug": "ancestry-explorer",
+      "path": "$.resultRows[5].plainEnglishMeaning",
+      "textHash": "sha256:c0d64daeaa2d5e80e0a3c6f92199c1575e046ed91fa88016e4866ae7b188ac23",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Extracted visually from the public sample PDF; this is an observed sample row and must not be turned into a local regional ancestry result without calibrated evidence."
+    },
+    {
+      "slug": "apoe4-test-brain-health-genetic-analysis",
+      "path": "$.resultRows[3].item",
+      "textHash": "sha256:d3510a150a20371dcabe5c999ec3d193e473e94e42338cfcbcf21d60ab76149a",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Calibrated APOE absolute-risk model"
+    },
+    {
+      "slug": "athletic-performance",
+      "path": "$.resultRows[2].plainEnglishMeaning",
+      "textHash": "sha256:5ed1d21cc0e5f54b22c046cf0021305dcc37fffc2c50360fab1c21758e2d58f3",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "The local report can describe supplied marker context, but it should not quantify performance, training, injury, VO2 max, or sport-fit probabilities without a validated model."
+    },
+    {
+      "slug": "autoimmune-disorders",
+      "path": "$.reportOverview.sectionsUnavailable[2]",
+      "textHash": "sha256:e7d8ac56f483270b8a82f6c1de0a261592febf77b90ae35124fe539cc42f65fe",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "No validated autoimmune disease model, calibrated autoimmune PRS, HLA inference, autoantibodies, complements, inflammatory labs, organ involvement, symptoms, family history, environmental context, medication context, disease activity, fl..."
+    },
+    {
+      "slug": "brain-mental-health-mood-dna-report",
+      "path": "$.resultRows[0].geneticAnalysis",
+      "textHash": "sha256:df29f1e3c91200d471a222d6902d30c926a828cf35983e746878940eb96b17ce",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "No validated package-specific mental-health, mood, cognitive, addiction, treatment-response, or calibrated PRS output is present in the local fixture."
+    },
+    {
+      "slug": "cancer-risk",
+      "path": "$.conditionRiskContext.unsupportedClaims[1]",
+      "textHash": "sha256:2066c7a4b4ddfe44eac620f910413fd7f9d4b1acb3bc7bab9438da8ef8688e42",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Personal cancer-risk estimate or calibrated PRS result"
+    },
+    {
+      "slug": "cardiometabolic-health-prs",
+      "path": "$.prsModelContext.professionalReview",
+      "textHash": "sha256:55a0318bd49456bf0905ddcbbc525b90c11118c8cfc5a2b9775c62bc78698aea",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Use validated score provenance, calibration, ancestry applicability, cardiometabolic labs, blood pressure, family history, medication context, and qualified professional review for cardiometabolic decisions."
+    },
+    {
+      "slug": "cardiovascular-dna-analysis-heart-health-genetic-report",
+      "path": "$.resultRows[4].item",
+      "textHash": "sha256:cbb18936d774b19f376a18bd1cd9d6377c5dcc45ab508b1c6fdb5535c7cb8869",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Calibrated cardiovascular risk or recommendation model"
+    },
+    {
+      "slug": "chronic-fatigue-dna-health-report",
+      "path": "$.resultRows[0].geneticAnalysis",
+      "textHash": "sha256:96e91288d32f3d3823195c9ada760ea5c87fd14ff49baec9462e37c6837b310f",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "No validated package-specific chronic-fatigue, fatigue, anemia, iron, sleep, restless-legs, or calibrated PRS output is present in the local fixture."
+    },
+    {
+      "slug": "chronic-pain-dna-report",
+      "path": "$.resultRows[0].geneticAnalysis",
+      "textHash": "sha256:ca397d387416e2da930b65dc204dc4897933e77a29809023df9938bf86220410",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "No validated package-specific chronic-pain, pain-threshold, analgesic-response, opioid-response, or calibrated PRS output is present in the local fixture."
+    },
+    {
+      "slug": "colon-cancer",
+      "path": "$.conditionRiskContext.unsupportedClaims[1]",
+      "textHash": "sha256:2066c7a4b4ddfe44eac620f910413fd7f9d4b1acb3bc7bab9438da8ef8688e42",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Personal cancer-risk estimate or calibrated PRS result"
+    },
+    {
+      "slug": "comprehensive-health-screen-wgs-bundle",
+      "path": "$.reportOverview.sectionsUnavailable[2]",
+      "textHash": "sha256:c2338d2101bd4d3e63650cc1e37bd3a48e6abf2e38b8a9df8e99f0eabda45bb1",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "order status, sample collection, lab processing, sequencing platform, coverage metrics, variant calls, health-screen output, clinical validation, clinical sensitivity, turnaround completion, or authenticated sample evidence"
+    },
+    {
+      "slug": "comprehensive-health-screen-wgs-bundle",
+      "path": "$.resultRows[1].geneticAnalysis",
+      "textHash": "sha256:c2338d2101bd4d3e63650cc1e37bd3a48e6abf2e38b8a9df8e99f0eabda45bb1",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "order status, sample collection, lab processing, sequencing platform, coverage metrics, variant calls, health-screen output, clinical validation, clinical sensitivity, turnaround completion, or authenticated sample evidence"
+    },
+    {
+      "slug": "comprehensive-health-screen-wgs-bundle",
+      "path": "$.wgsProductContext.unsupportedClaims[5]",
+      "textHash": "sha256:47ee9c4132b3330477c1799da7633032879896f0b3b0c45d6ed56386aea61ab0",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "clinical sensitivity or negative predictive value"
+    },
+    {
+      "slug": "dna-ancestry-genetic-genealogy-report",
+      "path": "$.resultRows[5].plainEnglishMeaning",
+      "textHash": "sha256:17a4d47277dde25816fbb2f628695904673b2d829b921cc7c7b7c5bdf1287590",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Extracted from the public sample PDF Ancestry Composition page; exact percentages are sample output examples and must not be invented for a local run without calibrated ancestry evidence."
+    },
+    {
+      "slug": "expedited-advanced-health-screen-wgs-bundle",
+      "path": "$.reportOverview.sectionsUnavailable[2]",
+      "textHash": "sha256:c2338d2101bd4d3e63650cc1e37bd3a48e6abf2e38b8a9df8e99f0eabda45bb1",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "order status, sample collection, lab processing, sequencing platform, coverage metrics, variant calls, health-screen output, clinical validation, clinical sensitivity, turnaround completion, or authenticated sample evidence"
+    },
+    {
+      "slug": "expedited-advanced-health-screen-wgs-bundle",
+      "path": "$.resultRows[1].geneticAnalysis",
+      "textHash": "sha256:c2338d2101bd4d3e63650cc1e37bd3a48e6abf2e38b8a9df8e99f0eabda45bb1",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "order status, sample collection, lab processing, sequencing platform, coverage metrics, variant calls, health-screen output, clinical validation, clinical sensitivity, turnaround completion, or authenticated sample evidence"
+    },
+    {
+      "slug": "expedited-advanced-health-screen-wgs-bundle",
+      "path": "$.wgsProductContext.unsupportedClaims[5]",
+      "textHash": "sha256:47ee9c4132b3330477c1799da7633032879896f0b3b0c45d6ed56386aea61ab0",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "clinical sensitivity or negative predictive value"
+    },
+    {
+      "slug": "fitness-dna-test-report",
+      "path": "$.resultRows[2].item",
+      "textHash": "sha256:32530383de81b8a09edf838c235401864223674c70ec65699e9e29bb240f28f8",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Calibrated fitness trait model"
+    },
+    {
+      "slug": "fitness-trainer-summary",
+      "path": "$.resultRows[1].geneticAnalysis",
+      "textHash": "sha256:c1065151865323cdff538df767a37655e33487a66163171fcdd4e8c76adcc2a8",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "The local fixture supplies ACE I/D ID as educational marker context only. It is not a calibrated fitness summary, cardiovascular fitness result, workout prescription, recovery estimate, injury-risk estimate, VO2 max estimate, supplement ..."
+    },
+    {
+      "slug": "genetic-testing-disease-risk",
+      "path": "$.reportOverview.sectionsUnavailable[1]",
+      "textHash": "sha256:aae6078e1e5a1a743c576ac5e1ed0af9ac6b80bcbff341d359c80d9cfb5d1ab7",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "No validated disease-risk model, disease-specific test scope, calibrated PRS, ancestry applicability metadata, variant classifications, family history, symptoms, clinical history, labs, imaging, clinician review, genetic counselor review..."
+    },
+    {
+      "slug": "genetic-testing-disease-risk",
+      "path": "$.resultRows[0].geneticAnalysis",
+      "textHash": "sha256:aae6078e1e5a1a743c576ac5e1ed0af9ac6b80bcbff341d359c80d9cfb5d1ab7",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "No validated disease-risk model, disease-specific test scope, calibrated PRS, ancestry applicability metadata, variant classifications, family history, symptoms, clinical history, labs, imaging, clinician review, genetic counselor review..."
+    },
+    {
+      "slug": "geneticist-summary",
+      "path": "$.sampleRows[2].plainEnglishMeaning",
+      "textHash": "sha256:4a3a51d937b68762f4bf35aaeefced245f9dd28eb44e2b387b6148e9ebd12b3a",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Geneticist Summary sibling clinical-genetics output-structure evidence from the Healthcare Pro sample PDF. Extracted from pages 4-5 of the public sample PDF; percentages are sample labels and need calibrated local evidence before reuse. ..."
+    },
+    {
+      "slug": "genome-short-read-mapper",
+      "path": "$.utilityContext.unsupportedClaims[6]",
+      "textHash": "sha256:83e7a3d25a9f9ab43ef0971d3c92c468f92cae27ba529bd8b405c398ff1dfc0a",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "clinical sensitivity"
+    },
+    {
+      "slug": "hair-loss-balding-dna-test",
+      "path": "$.resultRows[2].item",
+      "textHash": "sha256:d435b052ff66069739da6c2dd8885e6780836b2365e710ff6f144d53fa117445",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Calibrated hair-loss risk model"
+    },
+    {
+      "slug": "health-scan",
+      "path": "$.resultRows[10].plainEnglishMeaning",
+      "textHash": "sha256:04e31f7a97dcae5d9629d3f2b99cef55b49e3d77096c13c56d1ca530f59c0b3d",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Health Scan evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clinical signific..."
+    },
+    {
+      "slug": "health-scan",
+      "path": "$.resultRows[11].plainEnglishMeaning",
+      "textHash": "sha256:04e31f7a97dcae5d9629d3f2b99cef55b49e3d77096c13c56d1ca530f59c0b3d",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Health Scan evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clinical signific..."
+    },
+    {
+      "slug": "health-scan",
+      "path": "$.resultRows[3].plainEnglishMeaning",
+      "textHash": "sha256:04e31f7a97dcae5d9629d3f2b99cef55b49e3d77096c13c56d1ca530f59c0b3d",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Health Scan evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clinical signific..."
+    },
+    {
+      "slug": "health-scan",
+      "path": "$.resultRows[4].plainEnglishMeaning",
+      "textHash": "sha256:04e31f7a97dcae5d9629d3f2b99cef55b49e3d77096c13c56d1ca530f59c0b3d",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Health Scan evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clinical signific..."
+    },
+    {
+      "slug": "health-scan",
+      "path": "$.resultRows[5].plainEnglishMeaning",
+      "textHash": "sha256:04e31f7a97dcae5d9629d3f2b99cef55b49e3d77096c13c56d1ca530f59c0b3d",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Health Scan evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clinical signific..."
+    },
+    {
+      "slug": "health-scan",
+      "path": "$.resultRows[6].plainEnglishMeaning",
+      "textHash": "sha256:04e31f7a97dcae5d9629d3f2b99cef55b49e3d77096c13c56d1ca530f59c0b3d",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Health Scan evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clinical signific..."
+    },
+    {
+      "slug": "health-scan",
+      "path": "$.resultRows[7].plainEnglishMeaning",
+      "textHash": "sha256:04e31f7a97dcae5d9629d3f2b99cef55b49e3d77096c13c56d1ca530f59c0b3d",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Health Scan evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clinical signific..."
+    },
+    {
+      "slug": "health-scan",
+      "path": "$.resultRows[8].plainEnglishMeaning",
+      "textHash": "sha256:04e31f7a97dcae5d9629d3f2b99cef55b49e3d77096c13c56d1ca530f59c0b3d",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Health Scan evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clinical signific..."
+    },
+    {
+      "slug": "health-scan",
+      "path": "$.resultRows[9].plainEnglishMeaning",
+      "textHash": "sha256:04e31f7a97dcae5d9629d3f2b99cef55b49e3d77096c13c56d1ca530f59c0b3d",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Health Scan evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clinical signific..."
+    },
+    {
+      "slug": "health-scan",
+      "path": "$.sampleRows[0].sourceBindingNote",
+      "textHash": "sha256:4b4652007c93459e005f90704fa027fe0ecfe378c5a11e9838f12a425a3115c0",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Health Scan sibling health-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from pages 1-2 of the public sample PDF; keep report identity and section list separate from local findings. This is not a direct H..."
+    },
+    {
+      "slug": "health-scan",
+      "path": "$.sampleRows[1].sourceBindingNote",
+      "textHash": "sha256:4d932b882fe6d47a9e23fd58758f042416141dae9133eb019c05506eeef93ef3",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Health Scan sibling health-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from pages 4-5 of the public sample PDF; percentages are sample labels and need calibrated local evidence before reuse. This is not..."
+    },
+    {
+      "slug": "health-scan",
+      "path": "$.sampleRows[2].sourceBindingNote",
+      "textHash": "sha256:fa58020ec5d34341323cfd929899501a14ba8a930761f80d82dcbb12d70e90a0",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Health Scan sibling health-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 5 of the public sample PDF; preserve the sample label without turning it into local clinical guidance. This is not a dire..."
+    },
+    {
+      "slug": "health-scan",
+      "path": "$.sampleRows[3].sourceBindingNote",
+      "textHash": "sha256:aa56646691f86c54f966459268f8a86339d00812bf82fc8069be3537a13a2d78",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Health Scan sibling health-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 5 of the public sample PDF; sample prevention text is not local medical advice. This is not a direct Health Scan sample r..."
+    },
+    {
+      "slug": "health-scan",
+      "path": "$.sampleRows[4].sourceBindingNote",
+      "textHash": "sha256:5a783cb79b8082bed693a13be1fea0b4370048fd01db7d82868e2f2b776c1721",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Health Scan sibling health-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from pages 5-6 of the public sample PDF; exercise and imaging language is observed sample structure only. This is not a direct Heal..."
+    },
+    {
+      "slug": "health-scan",
+      "path": "$.sampleRows[5].sourceBindingNote",
+      "textHash": "sha256:aa9f7a43a028744bf77af89f8e5f7ceb456f7cd32864b4c1af94febb71b19be7",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Health Scan sibling health-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 7 of the public sample PDF; symptom and referral examples are sample report structure, not local advice. This is not a di..."
+    },
+    {
+      "slug": "health-scan",
+      "path": "$.sampleRows[6].sourceBindingNote",
+      "textHash": "sha256:432cfef94502ec646ee8b118a7e1dcd1aea602af50d36f6bb52133a33c1669fe",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Health Scan sibling health-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 8 of the public sample PDF; the row includes sample caveats about R2 on its own. This is not a direct Health Scan sample ..."
+    },
+    {
+      "slug": "health-scan",
+      "path": "$.sampleRows[7].sourceBindingNote",
+      "textHash": "sha256:6cf4080042ee7bda8001421a679ca2c06222e496d98e1ee24f89533174fb247c",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Health Scan sibling health-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 11 of the public sample PDF; monitoring and phlebotomy language is sample content, not local guidance. This is not a dire..."
+    },
+    {
+      "slug": "health-scan",
+      "path": "$.sampleRows[8].sourceBindingNote",
+      "textHash": "sha256:8b7d076d6942e62144528af368dd5f4e2180621cda5fa825df19047d677fb432",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Health Scan sibling health-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 14 of the public sample PDF; data-completeness claims are sample-only. This is not a direct Health Scan sample report and..."
+    },
+    {
+      "slug": "health-scan",
+      "path": "$.utilityContext.unsupportedClaims[6]",
+      "textHash": "sha256:3feec0feb94b0e5d41ac84f3f694b28331cd1397410b8bf91d5997c4a8526ada",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "clinical sensitivity claim"
+    },
+    {
+      "slug": "healthcare-pro-genetic-report",
+      "path": "$.resultRows[4].plainEnglishMeaning",
+      "textHash": "sha256:0bc4ec761ce43e911d81fd523666c8a24b93be06790ec95a54728c4fd9407b7e",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Extracted from pages 4-5 of the public sample PDF; percentages are sample labels and need calibrated local evidence before reuse."
+    },
+    {
+      "slug": "healthcare-professional-summary",
+      "path": "$.resultRows[4].plainEnglishMeaning",
+      "textHash": "sha256:71fe18d037722637610055edb4d3a5b1d3f950b6163c3eafb7bdb0e14d017850",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Healthcare Professional Summary sibling output-structure evidence from the Healthcare Pro sample PDF. Extracted from pages 4-5 of the public sample PDF; percentages are sample labels and need calibrated local evidence before reuse."
+    },
+    {
+      "slug": "healthy-heart-dna-analysis-genetic-report",
+      "path": "$.resultRows[3].item",
+      "textHash": "sha256:dc2615e5313e3b968affaf5868952676cc51a6c8eef8aa6d2c9948a8b68dbca0",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Calibrated cardiovascular and heart-health nutrition models"
+    },
+    {
+      "slug": "imputation-analysis",
+      "path": "$.imputationQualityContext.unsupportedClaims[1]",
+      "textHash": "sha256:47ee9c4132b3330477c1799da7633032879896f0b3b0c45d6ed56386aea61ab0",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "clinical sensitivity or negative predictive value"
+    },
+    {
+      "slug": "inflammation-dna-analysis-wellness-genetic-report",
+      "path": "$.reportOverview.sectionsUnavailable[0]",
+      "textHash": "sha256:3ad57ffbd9b649e50d32cdd60fd76ab2eb3a100b235d3caa5835c24ad9b7b291",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "validated inflammation and immunity model calibration and ancestry applicability metadata"
+    },
+    {
+      "slug": "kidney-cancer",
+      "path": "$.conditionRiskContext.unsupportedClaims[1]",
+      "textHash": "sha256:2066c7a4b4ddfe44eac620f910413fd7f9d4b1acb3bc7bab9438da8ef8688e42",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Personal cancer-risk estimate or calibrated PRS result"
+    },
+    {
+      "slug": "kidneys-and-urinary-tract-dna-health-report",
+      "path": "$.organSystemConditionContext.unsupportedClaims[1]",
+      "textHash": "sha256:48b5421660eb32ecf098b27cd1de5d4a4dc5d784cfec881f3f20596418bdf808",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Personal risk estimates without a validated calibrated model"
+    },
+    {
+      "slug": "map-my-genes-archaeology-edition",
+      "path": "$.resultRows[0].geneticAnalysis",
+      "textHash": "sha256:a03124e60dfa3f5aec90ac441743eeecc614111c2599bd1888db39bc70632639",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "A broad East Asian reference-panel similarity summary is available for archaeology-themed context, but no ancient-sample matching model or calibrated percentage model is supplied."
+    },
+    {
+      "slug": "medication-drug-response",
+      "path": "$.reportOverview.sectionsUnavailable[1]",
+      "textHash": "sha256:051cf7a28d5440955c4d006eb00cebb476aa4c8a063ffabfdf32c7020fdc6476",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "No medication list, medication-specific question, or calibrated drug-response model is bundled with this synthetic fixture."
+    },
+    {
+      "slug": "medication-pharmacogenomics-dna-report",
+      "path": "$.reportOverview.sectionsUnavailable[1]",
+      "textHash": "sha256:051cf7a28d5440955c4d006eb00cebb476aa4c8a063ffabfdf32c7020fdc6476",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "No medication list, medication-specific question, or calibrated drug-response model is bundled with this synthetic fixture."
+    },
+    {
+      "slug": "medications-pgx-complete-dna-guide",
+      "path": "$.reportOverview.sectionsUnavailable[1]",
+      "textHash": "sha256:d26abba9de95727d85842e2510a57e76908c6dd2fe3790e9387aec569f6e2ba2",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "No medication list, medication-specific question, pediatric context, or calibrated drug-response model is bundled with this synthetic fixture."
+    },
+    {
+      "slug": "melanoma-skin-cancer-dna-test-analysis",
+      "path": "$.conditionRiskContext.unsupportedClaims[1]",
+      "textHash": "sha256:2066c7a4b4ddfe44eac620f910413fd7f9d4b1acb3bc7bab9438da8ef8688e42",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Personal cancer-risk estimate or calibrated PRS result"
+    },
+    {
+      "slug": "mental-health-genetic-guide",
+      "path": "$.resultRows[4].description",
+      "textHash": "sha256:bee048cff683ef394eb50cfdaa2607eb1d8e8b5cab68559b914975b2108f6a9a",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "The sample row shows a CPIC-labeled CYP2C19 antidepressant result with probability wording that must remain sample-row wording unless calibrated local evidence is supplied."
+    },
+    {
+      "slug": "mental-health-genetic-guide",
+      "path": "$.resultRows[4].geneticAnalysis",
+      "textHash": "sha256:a6fd41a9d16492d369fa9045bc945605d6ec563deb5e1a882e4b5f566840a2ed",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "CYP2C19: Reduced metabolism when compared to CYP2C19 normal metabolizers. Higher plasma concentrations may increase the probability of side effects."
+    },
+    {
+      "slug": "my-heart-health",
+      "path": "$.resultRows[3].item",
+      "textHash": "sha256:dc2615e5313e3b968affaf5868952676cc51a6c8eef8aa6d2c9948a8b68dbca0",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Calibrated cardiovascular and heart-health nutrition models"
+    },
+    {
+      "slug": "my-personality-traits",
+      "path": "$.resultRows[0].geneticAnalysis",
+      "textHash": "sha256:69ba0123aded0ccffa4a5c6d6eaea2adbb7628a32aa367ca1d71cc67a0d4c522",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "No validated package-specific personality scoring, Big Five calibration, psychometric source output, ancestry applicability metadata, or local-user model output is present in the local fixture."
+    },
+    {
+      "slug": "my-personality-traits",
+      "path": "$.resultRows[6].geneticAnalysis",
+      "textHash": "sha256:83050b9dab68f19660d2e3de30567b4047dac15a983b76e900632b04aa64f880",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "The overview shows Extravert or Introvert labeled Extravert and likely more extraverted; Neuroticism labeled Secure and likely more secure; Agreeableness labeled Agreeable and likely more agreeable; Conscientiousness labeled Carefree and..."
+    },
+    {
+      "slug": "next-gen-disease-screen",
+      "path": "$.resultRows[10].plainEnglishMeaning",
+      "textHash": "sha256:1af8c03c1a9539dfd98887eb1834aa3a989c6d9c34542f05ef19df9433617ae7",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Next-Gen Disease Screen evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clini..."
+    },
+    {
+      "slug": "next-gen-disease-screen",
+      "path": "$.resultRows[11].plainEnglishMeaning",
+      "textHash": "sha256:1af8c03c1a9539dfd98887eb1834aa3a989c6d9c34542f05ef19df9433617ae7",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Next-Gen Disease Screen evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clini..."
+    },
+    {
+      "slug": "next-gen-disease-screen",
+      "path": "$.resultRows[3].plainEnglishMeaning",
+      "textHash": "sha256:1af8c03c1a9539dfd98887eb1834aa3a989c6d9c34542f05ef19df9433617ae7",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Next-Gen Disease Screen evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clini..."
+    },
+    {
+      "slug": "next-gen-disease-screen",
+      "path": "$.resultRows[4].plainEnglishMeaning",
+      "textHash": "sha256:1af8c03c1a9539dfd98887eb1834aa3a989c6d9c34542f05ef19df9433617ae7",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Next-Gen Disease Screen evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clini..."
+    },
+    {
+      "slug": "next-gen-disease-screen",
+      "path": "$.resultRows[5].plainEnglishMeaning",
+      "textHash": "sha256:1af8c03c1a9539dfd98887eb1834aa3a989c6d9c34542f05ef19df9433617ae7",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Next-Gen Disease Screen evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clini..."
+    },
+    {
+      "slug": "next-gen-disease-screen",
+      "path": "$.resultRows[6].plainEnglishMeaning",
+      "textHash": "sha256:1af8c03c1a9539dfd98887eb1834aa3a989c6d9c34542f05ef19df9433617ae7",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Next-Gen Disease Screen evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clini..."
+    },
+    {
+      "slug": "next-gen-disease-screen",
+      "path": "$.resultRows[7].plainEnglishMeaning",
+      "textHash": "sha256:1af8c03c1a9539dfd98887eb1834aa3a989c6d9c34542f05ef19df9433617ae7",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Next-Gen Disease Screen evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clini..."
+    },
+    {
+      "slug": "next-gen-disease-screen",
+      "path": "$.resultRows[8].plainEnglishMeaning",
+      "textHash": "sha256:1af8c03c1a9539dfd98887eb1834aa3a989c6d9c34542f05ef19df9433617ae7",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Next-Gen Disease Screen evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clini..."
+    },
+    {
+      "slug": "next-gen-disease-screen",
+      "path": "$.resultRows[9].plainEnglishMeaning",
+      "textHash": "sha256:1af8c03c1a9539dfd98887eb1834aa3a989c6d9c34542f05ef19df9433617ae7",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Next-Gen Disease Screen evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clini..."
+    },
+    {
+      "slug": "next-gen-disease-screen",
+      "path": "$.sampleRows[0].sourceBindingNote",
+      "textHash": "sha256:c6691c829293290cdf373daa3494e6414ff954a76ab3a5c9f725a781fc2887ae",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Next-Gen Disease Screen sibling disease-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from pages 1-2 of the public sample PDF; keep report identity and section list separate from local findings. This is n..."
+    },
+    {
+      "slug": "next-gen-disease-screen",
+      "path": "$.sampleRows[1].sourceBindingNote",
+      "textHash": "sha256:b1d8c5ae03fccb74963e3cecf975f16e071801c2c03adbfaece34de63329b316",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Next-Gen Disease Screen sibling disease-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from pages 4-5 of the public sample PDF; percentages are sample labels and need calibrated local evidence before reuse..."
+    },
+    {
+      "slug": "next-gen-disease-screen",
+      "path": "$.sampleRows[2].sourceBindingNote",
+      "textHash": "sha256:046524facfbdffd61721beba8572a2c2c7e8e79cafdc343432bd057f086de8fe",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Next-Gen Disease Screen sibling disease-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 5 of the public sample PDF; preserve the sample label without turning it into local clinical guidance. This ..."
+    },
+    {
+      "slug": "next-gen-disease-screen",
+      "path": "$.sampleRows[3].sourceBindingNote",
+      "textHash": "sha256:011b229d6ea4d82f01595b9cbdab7dc153d2fbcc07940141da0477e801f2b476",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Next-Gen Disease Screen sibling disease-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 5 of the public sample PDF; sample prevention text is not local medical advice. This is not a direct Next-Ge..."
+    },
+    {
+      "slug": "next-gen-disease-screen",
+      "path": "$.sampleRows[4].sourceBindingNote",
+      "textHash": "sha256:e345fdc98557c43ca9923fe5a2a500e9382160ed35170102bbe26ef7da6f487a",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Next-Gen Disease Screen sibling disease-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from pages 5-6 of the public sample PDF; exercise and imaging language is observed sample structure only. This is not ..."
+    },
+    {
+      "slug": "next-gen-disease-screen",
+      "path": "$.sampleRows[5].sourceBindingNote",
+      "textHash": "sha256:6271053663f725514e86fedcffb7effafc740f870ed9278b4f31ab8547b71b27",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Next-Gen Disease Screen sibling disease-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 7 of the public sample PDF; symptom and referral examples are sample report structure, not local advice. Thi..."
+    },
+    {
+      "slug": "next-gen-disease-screen",
+      "path": "$.sampleRows[6].sourceBindingNote",
+      "textHash": "sha256:fe0b0ec06176710e8ff54f39f50d8555454c6d2b61ed5e2fe34af7c40815e24c",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Next-Gen Disease Screen sibling disease-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 8 of the public sample PDF; the row includes sample caveats about R2 on its own. This is not a direct Next-G..."
+    },
+    {
+      "slug": "next-gen-disease-screen",
+      "path": "$.sampleRows[7].sourceBindingNote",
+      "textHash": "sha256:a393a204cab1767afde7fc790155affc886dff40693709cb3f725e0a94f9f484",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Next-Gen Disease Screen sibling disease-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 11 of the public sample PDF; monitoring and phlebotomy language is sample content, not local guidance. This ..."
+    },
+    {
+      "slug": "next-gen-disease-screen",
+      "path": "$.sampleRows[8].sourceBindingNote",
+      "textHash": "sha256:5c32fe330132a2cc421f2bbd18762bc7ae2dfbb39ac0b20e6a782d4a20f5e8e4",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Next-Gen Disease Screen sibling disease-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 14 of the public sample PDF; data-completeness claims are sample-only. This is not a direct Next-Gen Disease..."
+    },
+    {
+      "slug": "next-gen-disease-screen",
+      "path": "$.utilityContext.unsupportedClaims[6]",
+      "textHash": "sha256:3feec0feb94b0e5d41ac84f3f694b28331cd1397410b8bf91d5997c4a8526ada",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "clinical sensitivity claim"
+    },
+    {
+      "slug": "ozempic-glp-1-agonists-genetic-report",
+      "path": "$.sampleRows[11].plainEnglishMeaning",
+      "textHash": "sha256:51ed0a61dabf92033454e08cde7ab0a7da87b87b0966e8217c2acb3971ebe3a7",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Observed sample reference-list structure only; individual external articles are not treated as local response calibration unless separately supplied."
+    },
+    {
+      "slug": "pancreatic-cancer",
+      "path": "$.conditionRiskContext.unsupportedClaims[1]",
+      "textHash": "sha256:2066c7a4b4ddfe44eac620f910413fd7f9d4b1acb3bc7bab9438da8ef8688e42",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Personal cancer-risk estimate or calibrated PRS result"
+    },
+    {
+      "slug": "prostate-cancer-risk-prevention",
+      "path": "$.conditionRiskContext.unsupportedClaims[1]",
+      "textHash": "sha256:2066c7a4b4ddfe44eac620f910413fd7f9d4b1acb3bc7bab9438da8ef8688e42",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Personal cancer-risk estimate or calibrated PRS result"
+    },
+    {
+      "slug": "radiation-uv-sensitivity",
+      "path": "$.unavailableTraits[2]",
+      "textHash": "sha256:24f71a007101ad9b56f2744cd8f7005cf0b5c0e076dd2d9086fb48bf0acf2829",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "A calibrated model that can convert local genotype evidence into UV-sensitivity, radiation-sensitivity, sunscreen-response, dermatology, radiation-injury, prevention, treatment, or skin-cancer-risk conclusions"
+    },
+    {
+      "slug": "respiratory-health-dna-report",
+      "path": "$.reportOverview.sectionsUnavailable[0]",
+      "textHash": "sha256:7b034f38d07501bab22928f6d3e38b56b86f402ae5ae46e412f9edd1fa989a7b",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "validated respiratory risk model calibration and ancestry applicability metadata"
+    },
+    {
+      "slug": "rundna",
+      "path": "$.resultRows[2].plainEnglishMeaning",
+      "textHash": "sha256:c00ed6247804643a750c7c995835a91bf477c76e1059312f0c7b2ef551a59cf9",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "The local report can describe supplied marker context, but it should not quantify running performance, race time, injury, recovery, training, hydration, nutrition, or VO2 max probabilities without a validated model."
+    },
+    {
+      "slug": "sequencing-depth-and-coverage",
+      "path": "$.coverageContext.unsupportedClaims[1]",
+      "textHash": "sha256:47ee9c4132b3330477c1799da7633032879896f0b3b0c45d6ed56386aea61ab0",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "clinical sensitivity or negative predictive value"
+    },
+    {
+      "slug": "skin-cancer",
+      "path": "$.conditionRiskContext.unsupportedClaims[1]",
+      "textHash": "sha256:48b5421660eb32ecf098b27cd1de5d4a4dc5d784cfec881f3f20596418bdf808",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Personal risk estimates without a validated calibrated model"
+    },
+    {
+      "slug": "skin-health",
+      "path": "$.unavailableTraits[2]",
+      "textHash": "sha256:a8236add636f0e0425631b21197daa190fbd4132d9fed7368fe5ff0db7dab12a",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "A calibrated model that can convert local genotype evidence into skin-health, dermatology, skincare, acne, skin-aging, UV-sensitivity, treatment, supplement, prevention, or skin-cancer-risk conclusions"
+    },
+    {
+      "slug": "thyroid-cancer",
+      "path": "$.conditionRiskContext.unsupportedClaims[1]",
+      "textHash": "sha256:2066c7a4b4ddfe44eac620f910413fd7f9d4b1acb3bc7bab9438da8ef8688e42",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Personal cancer-risk estimate or calibrated PRS result"
+    },
+    {
+      "slug": "ultra-rapid-professional-health-screen-wgs-bundle",
+      "path": "$.reportOverview.sectionsUnavailable[2]",
+      "textHash": "sha256:11ca27f1f330967216db9dcfb37f2dbe58c4d2d4cac9efea03b9e91c329bde9a",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "order status, sample collection, lab processing, sequencing platform, coverage metrics, variant calls, professional review, health-screen output, clinical validation, clinical sensitivity, turnaround completion, or authenticated sample e..."
+    },
+    {
+      "slug": "ultra-rapid-professional-health-screen-wgs-bundle",
+      "path": "$.resultRows[1].geneticAnalysis",
+      "textHash": "sha256:11ca27f1f330967216db9dcfb37f2dbe58c4d2d4cac9efea03b9e91c329bde9a",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "order status, sample collection, lab processing, sequencing platform, coverage metrics, variant calls, professional review, health-screen output, clinical validation, clinical sensitivity, turnaround completion, or authenticated sample e..."
+    },
+    {
+      "slug": "ultra-rapid-professional-health-screen-wgs-bundle",
+      "path": "$.wgsProductContext.unsupportedClaims[5]",
+      "textHash": "sha256:47ee9c4132b3330477c1799da7633032879896f0b3b0c45d6ed56386aea61ab0",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "clinical sensitivity or negative predictive value"
+    },
+    {
+      "slug": "variant-discovery-bioinformatics-secondary-analysis",
+      "path": "$.variantDiscoveryContext.unsupportedClaims[2]",
+      "textHash": "sha256:47ee9c4132b3330477c1799da7633032879896f0b3b0c45d6ed56386aea61ab0",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "clinical sensitivity or negative predictive value"
+    },
+    {
+      "slug": "vision",
+      "path": "$.organSystemConditionContext.unsupportedClaims[1]",
+      "textHash": "sha256:48b5421660eb32ecf098b27cd1de5d4a4dc5d784cfec881f3f20596418bdf808",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "Personal risk estimates without a validated calibrated model"
+    },
+    {
+      "slug": "whole-genome-sequencing-30x",
+      "path": "$.reportOverview.sectionsUnavailable[2]",
+      "textHash": "sha256:81214de1253a2a3c57b3f6384104ce8684354e02cb2177f30f54affbc4631c59",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "order status, sample collection, lab processing, sequencing platform, coverage metrics, variant calls, health-screen output, clinical validation, clinical sensitivity, or authenticated sample evidence"
+    },
+    {
+      "slug": "whole-genome-sequencing-30x",
+      "path": "$.resultRows[1].geneticAnalysis",
+      "textHash": "sha256:81214de1253a2a3c57b3f6384104ce8684354e02cb2177f30f54affbc4631c59",
+      "decision": "sample-structure-boundary",
+      "reason": "Reviewed as sample/report-structure or source-binding wording, not as a local probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "order status, sample collection, lab processing, sequencing platform, coverage metrics, variant calls, health-screen output, clinical validation, clinical sensitivity, or authenticated sample evidence"
+    },
+    {
+      "slug": "whole-genome-sequencing-30x",
+      "path": "$.wgsProductContext.unsupportedClaims[5]",
+      "textHash": "sha256:47ee9c4132b3330477c1799da7633032879896f0b3b0c45d6ed56386aea61ab0",
+      "decision": "boundary-language",
+      "reason": "Reviewed as non-quantified boundary or unavailable-model language, not as a deterministic probability result; calibrated probabilities remain appendix-only.",
+      "textPreview": "clinical sensitivity or negative predictive value"
+    }
+  ]
+}

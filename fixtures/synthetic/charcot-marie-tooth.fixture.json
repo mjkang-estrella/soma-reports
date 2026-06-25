@@ -15,7 +15,7 @@
       "haplotype": "rare-inherited-condition-model-unavailable",
       "inputId": "charcot-marie-tooth-condition-model-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "validated Charcot-Marie-Tooth diagnostic or risk model, CMT gene panel result, copy-number analysis, variant classifications, inheritance assessment, symptoms, neurologic exam, nerve conduction studies, family history, clinical diagnosis, genetic counselor review, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "validated Charcot-Marie-Tooth diagnostic or risk model, CMT gene panel result, copy-number analysis, variant classifications, inheritance assessment, symptoms, neurologic exam, nerve conduction studies, family history, clinical diagnosis, genetic counselor review, and authenticated sample-report rows unavailable in this fixture; Public Disease Risk sample PDF Other Diseases table, Peripheral Axonal Neuropathy visible row, lifetime-risk text, and heritable-component limitation are extracted as sibling inherited-peripheral-neuropathy output-structure evidence.",
       "sourceArtifact": "synthetic-charcot-marie-tooth-rare-inherited-condition-boundary-context-v1",
       "sourceFile": "synthetic-charcot-marie-tooth-rare-inherited-condition-boundary-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "clinical-professional-context-unavailable",
       "inputId": "charcot-marie-tooth-clinical-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "clinical diagnosis, symptoms, labs, imaging, medication or procedure context, family history, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "clinical diagnosis, symptoms, family history, medication or procedure context, condition-specific exams, labs or imaging when relevant, specialist review, genetics review, and personal clinical context unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Charcot-Marie-Tooth",
       "sourceArtifact": "synthetic-charcot-marie-tooth-rare-inherited-condition-boundary-context-v1",
       "sourceFile": "synthetic-charcot-marie-tooth-rare-inherited-condition-boundary-context-v1.json"
     },
@@ -35,7 +35,7 @@
       "haplotype": "variant-interpretation-unavailable",
       "inputId": "charcot-marie-tooth-variant-interpretation-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "gene panel scope, variant classifications, zygosity, inheritance pattern, ancestry applicability, cascade-testing context, and clinical genetics review unavailable in this fixture",
+      "observedValue": "gene panel scope, variant classifications, zygosity, inheritance pattern, ancestry applicability, cascade-testing context, and clinical genetics review unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Charcot-Marie-Tooth",
       "sourceArtifact": "synthetic-charcot-marie-tooth-rare-inherited-condition-boundary-context-v1",
       "sourceFile": "synthetic-charcot-marie-tooth-rare-inherited-condition-boundary-context-v1.json"
     }
@@ -46,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for charcot-marie-tooth validation"
   },
-  "missingInputPolicy": "Report unavailable Charcot-Marie-Tooth hereditary neuropathy evidence explicitly; do not diagnose Charcot-Marie-Tooth or inherited neuropathy; estimate disease risk, severity, progression, age of onset, family-member risk, or carrier status; classify variants; infer inheritance pattern, nerve conduction findings, symptoms, neurologic exam findings, treatment need, screening need, diagnostic-test need, cascade-testing need, reproductive action, or clinical actionability.",
+  "missingInputPolicy": "Report unavailable Charcot-Marie-Tooth hereditary neuropathy evidence explicitly; use the public sibling Disease Risk sample rows only as observed output structure and do not infer Charcot-Marie-Tooth diagnosis, inherited-neuropathy diagnosis, CMT subtype, disease risk, severity, progression, age of onset, family-member risk, carrier status, variant classification, inheritance inference, nerve-conduction inference, symptoms, neurologic exam findings, treatment need, screening need, diagnostic testing, cascade testing, reproductive action, or actionability guidance from local unavailable evidence or sample-only rows.",
   "packageSlug": "charcot-marie-tooth",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -193,7 +193,19 @@
         "non_diagnostic_language",
         "missing_model_policy"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "genetic-testing-disease-risk-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Genetic Testing For Disease Risk sample genetic report",
+      "usedFor": [
+        "sibling_formal_fields",
+        "sample_rows",
+        "risk_label_table",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer Charcot-Marie-Tooth hereditary neuropathy boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer Charcot-Marie-Tooth hereditary neuropathy boundary context using supplied references plus observed sibling Disease Risk Genetic Test Report inherited peripheral neuropathy output structure while explicitly marking direct Charcot-Marie-Tooth, validated local model, and clinical context unavailable."
 }

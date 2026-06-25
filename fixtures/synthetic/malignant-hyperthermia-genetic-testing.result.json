@@ -3,9 +3,9 @@
     "reportTitle": "Malignant Hyperthermia",
     "inputManifestHash": "sha256:synthetic-malignant-hyperthermia-genetic-testing-rare-inherited-condition-boundary-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "validated malignant hyperthermia susceptibility result, RYR1 or CACNA1S gene result, variant classifications, anesthesia reaction history, caffeine-halothane contracture test context, family history, surgical/procedural context, anesthesiologist review, clinical genetics review, and authenticated sample-report rows unavailable in this fixture",
-      "clinical diagnosis, symptoms, labs, imaging, medication or procedure context, family history, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "Exact Malignant Hyperthermia detail/sample body extraction is not available yet.",
+      "validated malignant hyperthermia susceptibility result, RYR1 or CACNA1S gene result, variant classifications, anesthesia reaction history, caffeine-halothane contracture test context, family history, surgical/procedural context, anesthesiologist review, and clinical genetics review unavailable in this fixture",
+      "clinical diagnosis, symptoms, labs, imaging, medication or procedure context, family history, and professional interpretation unavailable in this fixture",
       "gene panel scope, variant classifications, zygosity, inheritance pattern, ancestry applicability, cascade-testing context, and clinical genetics review unavailable in this fixture",
       "This result is educational boundary context only and is not a diagnosis, disease-risk estimate, variant classification, carrier-status call, inheritance inference, family-member risk estimate, testing recommendation, treatment guidance, procedure guidance, reproductive decision, or clinical actionability claim."
     ]
@@ -76,6 +76,21 @@
       ],
       "sourceBindingStatus": "curated",
       "plainEnglishMeaning": "Missing gene-panel scope, zygosity, inheritance, variant-classification, ancestry-applicability, and clinical genetics review means the report must mark variant interpretation unavailable instead of converting local context into a health action."
+    },
+    {
+      "groupTitle": "Observed sibling sample format",
+      "item": "Wellness & Longevity Malignant Hyperthermia sample row",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sibling Wellness & Longevity sample says the sample genetic assessment is likely not affected and that the genetic test did not detect mutations associated with malignant hyperthermia.",
+      "genes": [
+        "Malignant hyperthermia model"
+      ],
+      "sourceLabel": "Sibling Wellness & Longevity sample report",
+      "sourceIds": [
+        "wellness-and-longevity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is observed sample-report structure only. It is not local anesthesia clearance, trigger-drug safety guidance, anesthetic-agent selection, procedure-risk estimation, diagnosis, carrier-status reporting, variant classification, treatment guidance, testing guidance, emergency-management guidance, or actionability."
     }
   ],
   "rareInheritedConditionContext": {
@@ -95,6 +110,25 @@
       "Treat unavailable model rows as unavailable, not as normal, abnormal, low risk, high risk, reassuring, diagnostic, actionable, or all clear."
     ]
   },
+  "sampleRows": [
+    {
+      "groupTitle": "Malignant Hyperthermia",
+      "item": "Likely not affected panel",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report says the sample genetic assessment is likely not affected and that the genetic test did not detect mutations associated with malignant hyperthermia.",
+      "description": "The page frames malignant hyperthermia as an anesthesia-related risk and includes monitoring and additional-information sections.",
+      "genes": [
+        "Malignant hyperthermia model"
+      ],
+      "sourceLabel": "Sibling Wellness & Longevity sample report",
+      "sourceResourceIds": [
+        "wellness-and-longevity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Extracted from the Malignant Hyperthermia page of the public Sequencing.com Wellness & Longevity sample PDF; used here as sibling output-structure evidence for Malignant Hyperthermia, not as a direct Malignant Hyperthermia report sample or local anesthesia-safety, trigger-drug, surgical-clearance, variant-classification, diagnosis, treatment, or actionability guidance.",
+      "extractionStatus": "direct"
+    }
+  ],
   "references": [
     {
       "id": "cdc-genetic-testing",
@@ -147,31 +181,29 @@
     {
       "id": "medlineplus-malignant-hyperthermia",
       "title": "MedlinePlus Genetics: Malignant Hyperthermia"
+    },
+    {
+      "id": "wellness-and-longevity-sample-pdf",
+      "title": "Wellness and Longevity DNA Analysis sample report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "malignant-hyperthermia-genetic-testing-condition-model-unavailable",
         "gene": "Malignant Hyperthermia model",
-        "observedValue": "validated malignant hyperthermia susceptibility result, RYR1 or CACNA1S gene result, variant classifications, anesthesia reaction history, caffeine-halothane contracture test context, family history, surgical/procedural context, anesthesiologist review, clinical genetics review, and authenticated sample-report rows unavailable in this fixture",
+        "variantId": "malignant-hyperthermia-model-unavailable",
+        "observedValue": "validated malignant hyperthermia susceptibility result, RYR1 or CACNA1S gene result, variant classifications, anesthesia reaction history, caffeine-halothane contracture test context, family history, surgical/procedural context, anesthesiologist review, and clinical genetics review unavailable in this fixture",
         "matchStatus": "unavailable"
       },
       {
-        "inputId": "malignant-hyperthermia-genetic-testing-clinical-context-unavailable",
-        "gene": "Malignant Hyperthermia clinical and professional context",
-        "observedValue": "clinical diagnosis, symptoms, labs, imaging, medication or procedure context, family history, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
-      },
-      {
-        "inputId": "malignant-hyperthermia-genetic-testing-variant-interpretation-unavailable",
-        "gene": "Malignant Hyperthermia variant interpretation context",
-        "observedValue": "gene panel scope, variant classifications, zygosity, inheritance pattern, ancestry applicability, cascade-testing context, and clinical genetics review unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "gene": "Malignant hyperthermia sample section",
+        "variantId": "wellness-longevity-malignant-hyperthermia-section",
+        "observedValue": "Sibling sample section says likely not affected and that mutations associated with malignant hyperthermia were not detected. This is observed sample content only, not a local finding.",
+        "matchStatus": "sample-only"
       }
     ],
     "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and exact rows",
+      "Exact Malignant Hyperthermia detail/sample body extraction",
       "Validated condition model output with applicability and validation metadata",
       "Qualified professional review and complete clinical, family-history, symptom, medication, procedure, lab, and imaging context when relevant",
       "Gene-panel scope, zygosity, inheritance pattern, variant classifications, ancestry applicability, and clinical genetics review"
@@ -183,6 +215,7 @@
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
+      "The Wellness & Longevity sample row is sibling output-structure evidence only and is not a local user finding.",
       "The report is educational boundary context and does not provide diagnosis, disease-risk estimation, variant classification, carrier-status reporting, inheritance inference, family-member risk estimation, testing advice, screening advice, treatment advice, procedure advice, medication advice, reproductive advice, or clinical actionability.",
       "Unavailable model rows should never be interpreted as low risk, high risk, no risk, normal, abnormal, reassuring, diagnostic, actionable, or all clear."
     ]

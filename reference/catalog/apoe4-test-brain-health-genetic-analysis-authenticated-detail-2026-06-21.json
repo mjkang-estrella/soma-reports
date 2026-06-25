@@ -1,0 +1,105 @@
+{
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "capturedAt": "2026-06-21T15:38:39.989Z",
+  "source": "in-app browser logged-in sequencing.com marketplace detail page __NEXT_DATA__.props.pageProps.reportData extraction",
+  "url": "https://sequencing.com/marketplace/apoe4-test-brain-health-genetic-analysis",
+  "finalUrl": "https://sequencing.com/marketplace/apoe4-test-brain-health-genetic-analysis",
+  "title": "Alzheimer’s Risk | APOE Gene Analysis",
+  "nid": "14995",
+  "productId": "4735",
+  "app": {
+    "apiAppId": "selfhacked-apoe",
+    "appid": "15036",
+    "backend": "ApiAppBackend",
+    "label": "Alzheimer's Risk APOE Gene Analysis"
+  },
+  "publisher": "SelfDecode",
+  "price": "$39",
+  "currencyCode": "USD",
+  "categories": [
+    "Health",
+    "Children"
+  ],
+  "uri": "marketplace/apoe4-test-brain-health-genetic-analysis",
+  "reportFile": "https://sequencing.com/sites/default/files/apoe-brain-mind-health-genetic-report-selfdecode-sequencing-genome-apps-sample_0.pdf",
+  "headerImage": "https://sequencing.com/sites/default/files/apoe4-test-brain-health-icon1.png",
+  "headerImageAlt": "",
+  "meta": {
+    "canonical": "https://sequencing.com/marketplace/apoe4-test-brain-health-genetic-analysis",
+    "publishedTime": null,
+    "modifiedTime": null,
+    "ogDescriptionHash": "sha256:73b6034e427c3b4130d481300dc716e5a65ac17beff96b54af0c49670032207b",
+    "ogDescriptionPreview": "At-home APOE test that determines if you have APOE4. Includes APOE analysis and a genetic report on both Alzheimer's risk and how to protect your brain.",
+    "productPriceAmount": null,
+    "productPriceCurrency": "USD",
+    "productRetailerItemId": "4735"
+  },
+  "summaryPreview": "At-home APOE test that determines if you have APOE4. Includes APOE analysis and a genetic report on both Alzheimer's risk and how to protect your brain.",
+  "bodyPreview": "APOE4 Testing: Complete APOE Gene Test and Brain Health Analysis What's Included in Your APOE4 Genotype Testing Report The APOE Brain Health DNA Test Analysis includes: An analysis of your APOE gene Includes APOE genotype status (ε2, ε3 or ε4) An assessment of health risks and benefits based on your APOE gene analysis Includes an assessment of risk of Alzheimer's disease A comprehensive review of the latest research on the functions and biochemistry of the APOE gene Detailed diet, lifestyle, and supplement recommendations based on SelfDecode’s Proprietary Biochemical Analysis and experience with over 1,000 clients A Personalized APOE Diet Guide to help reduce the non-genetic risk of Alzheimer's based on your APOE gene version (known as your APOE 'epsilon genotype') APOE2 Gene Variant: Testing and Health Implications Contrary to popular belief, the ApoE-ε2 allele actually decreases the function of ApoE. Although this variant of ApoE-ε2 is neuroprotective (decreased risk of Alzheimer's d",
+  "visibleParagraphs": [
+    "Prime Day Sale | Up to 60% off + free worldwide shippingOrder Now",
+    "Order Now",
+    "Dashboard",
+    "My Apps",
+    "AI Reports",
+    "Next-Gen Disease Screen",
+    "Health Scan",
+    "Genome Explorer",
+    "Results",
+    "Files"
+  ],
+  "infoTabs": [
+    {
+      "label": "Overview",
+      "textPreview": "APOE4 Testing: Complete APOE Gene Test and Brain Health Analysis What's Included in Your APOE4 Genotype Testing Report The APOE Brain Health DNA Test Analysis includes: An analysis of your APOE gene Includes APOE genotype status (ε2, ε3 or ε4) An assessment of health risks and benefits based on your APOE gene analysis Includes an assessment of risk of Alzheimer's disease A comprehensive review of the latest research on the functions and biochemistry of the APOE gene Detailed diet, lifestyle, and supplement recommendations based on SelfDecode’s Proprietary Biochemical Analysis and experience with over 1,000 clients A Personalized APOE Diet Guide to help reduce the non-genetic risk of Alzheimer's based on your APOE gene version (known as your APOE 'epsilon genotype') APOE2 Gene Variant: Testing and Health Implications Contrary to popular belief, the ApoE-ε2 allele actually decreases the function of ApoE. Although this variant of ApoE-ε2 is neuroprotective (decreased risk of Alzheimer's d"
+    },
+    {
+      "label": "Getting Started",
+      "textPreview": "This app analyzes your DNA data and provides personalized insights for protecting and improving brain health. Once your DNA data is stored in your Sequencing.com account, purchase this DNA report, and then click the app's 'Start' button. You'll receive your report in about 30 minutes. You've already taken a DNA test Upload your DNA data - Our Universal DNA Compatibility enables this report to work with DNA data from almost any DNA test. You need a DNA test Order a DNA test - Our clinical-grade 30x Whole Genome Sequencing test obtains data on 100% of your genome."
+    },
+    {
+      "label": "Disclaimer",
+      "textPreview": "The genetic analysis and statements that appear in this app have not been evaluated by the United States Food and Drug Administration. The Sequencing.com website and all software applications (Apps) that use Sequencing.com's website, as well as Sequencing.com's open Application Programming Interface (API), are not intended to diagnose, treat, cure, or prevent any disease."
+    }
+  ],
+  "reportDataKeys": [
+    "app_id",
+    "avatar",
+    "avatarAlt",
+    "body",
+    "category",
+    "currency_code",
+    "headerImg",
+    "headerImgAlt",
+    "id",
+    "included_with_membership",
+    "included_with_premium",
+    "info_tab",
+    "listEnableFiles",
+    "meta",
+    "nid",
+    "non_genetic_fields",
+    "pre_order",
+    "price",
+    "product_data",
+    "product_id",
+    "publisher",
+    "purchasedBy",
+    "relatedReports",
+    "reportFile",
+    "report_premium",
+    "search_keywords",
+    "start_button_text",
+    "sub_title",
+    "summary",
+    "title",
+    "type",
+    "uri",
+    "wgsCompatible"
+  ],
+  "evidenceNotes": [
+    "Marketplace detail reportData confirms title, publisher/provider when available, price/product metadata when available, categories, sample report link when available, and overview/disclaimer tab boundaries when present.",
+    "Use overview/marketing text only for report purpose and marketplace positioning, not for local genetic, medical, diet, supplement, medication, or performance conclusions.",
+    "No raw genome data, uploaded genome data, or account navigation text is included in this artifact."
+  ]
+}

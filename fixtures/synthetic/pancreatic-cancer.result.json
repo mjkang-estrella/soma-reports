@@ -3,8 +3,8 @@
     "reportTitle": "Pancreatic Cancer",
     "inputManifestHash": "sha256:synthetic-pancreatic-cancer-cancer-boundary-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "Validated pathogenic-variant screen, calibrated cancer PRS, ancestry applicability metadata, family history, tumor testing, clinical screening history, and prevention-plan context are unavailable.",
+      "Exact Pancreatic Cancer detail/sample body extraction is not available yet; sibling Disease Risk Genetic Test Report cancer-category rows are used only as observed output structure.",
+      "Validated pathogenic-variant screen, calibrated cancer PRS, inherited-cancer panel scope, ancestry applicability metadata, family history, tumor testing, clinical screening history, prevention-plan context, clinician review, and genetic-counselor review are unavailable.",
       "This result is not a diagnosis, personal cancer-risk estimate, carrier-status result, screening recommendation, prevention plan, medication recommendation, surgery recommendation, treatment instruction, or actionability claim."
     ]
   },
@@ -44,6 +44,21 @@
       ],
       "sourceBindingStatus": "curated",
       "plainEnglishMeaning": "Personal interpretation needs validated testing scope, clinical history, family history, screening context, ancestry applicability, and qualified professional review."
+    },
+    {
+      "groupTitle": "Observed sibling sample format",
+      "item": "Disease Risk sample Cancers category table",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "The sibling Disease Risk sample shows a Cancers category table with Disease, Your Risk, and Description columns; visible sample rows include bladder, brain, breast, BRCA1, BRCA2, colorectal, ovarian, pancreatic, prostate, renal, skin melanoma, skin non-melanoma, thyroid, and other cancer entries. The sibling Disease Risk sample includes a Pancreatic row in its Cancers table; this is observed sibling sample structure only and not a local pancreatic-cancer finding.",
+      "genes": [
+        "Cancer risk model rows"
+      ],
+      "sourceLabel": "Sibling Disease Risk Genetic Test Report sample report",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is observed sibling sample structure only; it is not local findings for pancreatic cancer, carrier status, diagnosis, screening guidance, prevention advice, treatment guidance, or actionability."
     }
   ],
   "conditionRiskContext": {
@@ -92,29 +107,35 @@
     {
       "id": "nci-cancer-genetic-testing",
       "title": "NCI Genetic Testing for Inherited Cancer Risk"
+    },
+    {
+      "id": "genetic-testing-disease-risk-sample-pdf",
+      "title": "Genetic Testing For Disease Risk sample genetic report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "pancreatic-cancer-model-unavailable",
+        "tier": "Local missing input",
         "gene": "Pancreatic Cancer model",
-        "observedValue": "validated pathogenic-variant screen, calibrated cancer PRS, ancestry applicability metadata, age, sex where relevant, personal cancer history, family history, tumor testing, clinical screening history, prevention-plan context, and authenticated sample-report rows unavailable in this fixture",
+        "variantId": "pancreatic-cancer-model-unavailable",
+        "observedValue": "validated pancreatic cancer model, calibrated cancer PRS, pathogenic variant interpretation, inherited-cancer panel scope, ancestry applicability, family history, tumor testing, screening context, prevention context, and clinician or genetic-counselor review unavailable",
         "matchStatus": "unavailable"
       },
       {
-        "inputId": "pancreatic-cancer-clinical-context-unavailable",
-        "gene": "pancreatic cancer clinical context",
-        "observedValue": "clinical diagnosis, symptoms, screening findings, family history, tumor testing, treatment history, and clinician interpretation unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "tier": "Sibling sample-report section",
+        "gene": "Cancer risk category table",
+        "variantId": "disease-risk-sample-cancers-category",
+        "observedValue": "Sibling sample visible section: Disease Risk Genetic Test Report Cancers category table with Disease, Your Risk, and Description columns plus heritable-component limitation language; sample only, not a local finding.",
+        "matchStatus": "sample-only"
       }
     ],
     "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and exact rows",
+      "Exact Pancreatic Cancer detail/sample body extraction",
       "Validated pathogenic-variant screen or externally supplied classification",
       "Calibrated cancer PRS with ancestry applicability and validation metadata",
-      "Age, sex where relevant, family history, personal cancer history, symptoms, tumor testing, screening history, and clinician interpretation",
-      "validated pathogenic-variant screen, calibrated cancer PRS, ancestry applicability metadata, age, sex where relevant, personal cancer history, family history, tumor testing, clinical screening history, prevention-plan context, and authenticated sample-report rows unavailable in this fixture; clinical diagnosis, symptoms, screening findings, family history, tumor testing, treatment history, and clinician interpretation unavailable in this fixture"
+      "Inherited-cancer panel scope, age, sex where relevant, family history, personal cancer history, symptoms, tumor testing, screening history, prevention context, clinician interpretation, and genetic-counselor review",
+      "validated pancreatic cancer model, calibrated cancer PRS, pathogenic variant interpretation, inherited-cancer panel scope, ancestry applicability, family history, tumor testing, screening context, prevention context, and clinician or genetic-counselor review unavailable in this fixture"
     ],
     "probabilities": [],
     "uncertainty": [
@@ -124,7 +145,42 @@
     "limitations": [
       "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
       "The report is educational and does not provide diagnosis, personal risk estimation, carrier-status classification, screening advice, prevention advice, medication advice, surgery advice, treatment advice, or actionability.",
+      "The Disease Risk sample limitation and Cancers category table are sibling output-structure evidence only, not local findings for pancreatic cancer.",
       "Unavailable model rows should never be interpreted as low risk, no risk, or an all-clear result."
     ]
-  }
+  },
+  "sampleRows": [
+    {
+      "brandName": "Complete Genome Science sample",
+      "description": "The sample uses lung cancer as an example, saying lung cancer is only 10% heritable and most cases are associated with lifestyle factors such as smoking.",
+      "extractionStatus": "direct",
+      "genes": [],
+      "geneticAnalysis": "The sample states that 'Your Risk' is only for the heritable component of the disease, and that environmental, lifestyle, and other non-heritable factors also affect overall susceptibility risk.",
+      "groupTitle": "Report limitation",
+      "item": "Heritable component only",
+      "sourceBindingNote": "Extracted from the public Sequencing.com Disease Risk Genetic Test Report sample PDF; used here as sibling output-structure evidence for Pancreatic Cancer, not as a direct Pancreatic Cancer sample report or local findings for pancreatic cancer, carrier-status, screening, prevention, diagnosis, treatment, or actionability guidance.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Disease Risk Genetic Test Report sample report",
+      "sourceResourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Complete Genome Science sample",
+      "description": "The sample table uses columns for Disease, Your Risk, and Description, with lifetime-risk and heritable-percentage text below many disease names.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Cancer risk model rows"
+      ],
+      "geneticAnalysis": "Visible sample rows include Bladder Very Elevated; Brain Typical; Breast Typical; Breast BRCA1 Absent; Breast BRCA2 Absent; Cervical Male; Colorectal Typical; Endometrial Male; Esophageal visible with no cleanly extracted risk label; Liver Typical; Lung Very Reduced; Oral and Larynx visible with no cleanly extracted risk label; Ovarian Male; Pancreatic Reduced; Prostate Typical; Renal Typical; Skin Melanoma Reduced; Skin Non-melanoma Reduced; Testicular Typical; Thyroid Very Reduced.",
+      "groupTitle": "Cancers",
+      "item": "Cancer category risk table",
+      "sourceBindingNote": "Extracted from the public Sequencing.com Disease Risk Genetic Test Report sample PDF; used here as sibling output-structure evidence for Pancreatic Cancer, not as a direct Pancreatic Cancer sample report or local findings for pancreatic cancer, carrier-status, screening, prevention, diagnosis, treatment, or actionability guidance.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Disease Risk Genetic Test Report sample report",
+      "sourceResourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ]
+    }
+  ]
 }

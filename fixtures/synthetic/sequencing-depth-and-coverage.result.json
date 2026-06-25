@@ -90,6 +90,33 @@
     ],
     "professionalReview": "Laboratory or clinical review is needed to interpret coverage against a specific assay, target region list, validation study, and reporting threshold."
   },
+  "officialCoverageBoundary": {
+    "fieldBoundaryStatus": "field-boundary only; official graph and table rows were not captured for this local fixture",
+    "summary": {
+      "wholeGenome": "not captured",
+      "thirtyXDepthCheck": "not captured"
+    },
+    "chromosomes": [],
+    "rows": [],
+    "requiredRowColumns": [
+      "chromosome unavailable",
+      "average depth unavailable",
+      "maximum depth unavailable",
+      "minimum depth unavailable"
+    ],
+    "graph": {
+      "type": "not captured",
+      "xAxis": "not captured",
+      "yAxis": "not captured",
+      "series": []
+    },
+    "table": {
+      "status": "not captured",
+      "rowCount": "not captured",
+      "sourceRows": []
+    },
+    "officialRowsNotice": "The local QC result rows summarize supplied derived coverage metrics and are not official Sequencing.com graph or chromosome table rows."
+  },
   "references": [
     {
       "id": "samtools-depth",

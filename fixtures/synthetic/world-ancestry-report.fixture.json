@@ -1,44 +1,50 @@
 {
-  "packageSlug": "world-ancestry-report",
-  "datasetId": "synthetic-world-ancestry-reference-panel-context-v1",
-  "packageVersion": "0.1.0",
-  "reportPurpose": "Consumer world ancestry context from derived broad continental reference-panel similarity with explicit missing regional percentage evidence.",
-  "missingInputPolicy": "Mark regional ancestry percentages, exact homeland, relatives, family matching, migration path, and community affiliation unavailable when not explicitly supplied.",
   "consumerTone": "plain English; world ancestry education only; no identity, exact-origin, ethnicity-percentage, tribal/community, relative-matching, or health claims",
-  "inputManifest": {
-    "hash": "sha256:synthetic-world-ancestry-reference-panel-context-v1",
-    "genomeBuild": "GRCh37-or-GRCh38-derived",
-    "rawGenomeReturned": false,
-    "source": "synthetic derived ancestry evidence for world-ancestry-report validation"
+  "datasetId": "synthetic-world-ancestry-reference-panel-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
   },
   "genomeEvidence": [
     {
-      "inputId": "continental-reference-panel-summary",
-      "haplotype": "continental-reference-panel-summary",
-      "gene": "autosomal genome",
-      "observedValue": "broad East Asian continental reference-panel similarity; no regional percentage model supplied",
       "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "autosomal genome",
+      "haplotype": "continental-reference-panel-summary",
+      "inputId": "continental-reference-panel-summary",
       "matchStatus": "summarized",
-      "sourceFile": "synthetic-world-ancestry-reference-panel-context-v1.json",
-      "sourceArtifact": "synthetic-world-ancestry-reference-panel-context-v1"
+      "observedValue": "broad East Asian continental reference-panel similarity; no regional percentage model supplied",
+      "sourceArtifact": "synthetic-world-ancestry-reference-panel-context-v1",
+      "sourceFile": "synthetic-world-ancestry-reference-panel-context-v1.json"
     },
     {
-      "inputId": "regional-percentage-model-unavailable",
-      "haplotype": "not-supplied",
-      "gene": "autosomal ancestry model",
-      "observedValue": "calibrated regional percentage model and reference-panel metadata unavailable in this fixture",
       "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "autosomal ancestry model",
+      "haplotype": "not-supplied",
+      "inputId": "regional-percentage-model-unavailable",
       "matchStatus": "unavailable",
-      "sourceFile": "synthetic-world-ancestry-reference-panel-context-v1.json",
-      "sourceArtifact": "synthetic-world-ancestry-reference-panel-context-v1"
+      "observedValue": "calibrated regional percentage model and reference-panel metadata unavailable in this fixture",
+      "sourceArtifact": "synthetic-world-ancestry-reference-panel-context-v1",
+      "sourceFile": "synthetic-world-ancestry-reference-panel-context-v1.json"
     }
   ],
+  "inputManifest": {
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "hash": "sha256:synthetic-world-ancestry-reference-panel-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived ancestry evidence for world-ancestry-report validation"
+  },
+  "missingInputPolicy": "Mark regional percentages, exact homeland, relatives, family matching, migration path, community affiliation, calibrated chromosome-painting calls, and precise segment ancestry unavailable when not explicitly supplied. Use sample percentages, maps, ethnicity cards, chromosome painting, and G-Nomix methodology only as observed output-format examples.",
+  "packageSlug": "world-ancestry-report",
+  "packageVersion": "0.1.0",
   "referenceResources": [
     {
-      "id": "medlineplus-genetic-ancestry-testing",
-      "title": "MedlinePlus Genetics: genetic ancestry testing",
-      "sourceType": "education_resource",
       "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-ancestry-testing",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: genetic ancestry testing",
       "usedFor": [
         "ancestry_context",
         "autosomal_scope",
@@ -46,10 +52,10 @@
       ]
     },
     {
-      "id": "medlineplus-dtc-risks-benefits",
-      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing",
-      "sourceType": "education_resource",
       "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-dtc-risks-benefits",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing",
       "usedFor": [
         "dtc_limitations",
         "privacy_sensitivity",
@@ -57,22 +63,28 @@
       ]
     },
     {
-      "id": "international-genome-sample-resource",
-      "title": "International Genome Sample Resource / 1000 Genomes",
-      "sourceType": "database",
       "evidenceLevel": "database_background",
+      "id": "international-genome-sample-resource",
+      "sourceType": "database",
+      "title": "International Genome Sample Resource / 1000 Genomes",
       "usedFor": [
         "ancestry_context",
         "population_reference",
         "variant_frequency_context"
       ]
+    },
+    {
+      "evidenceLevel": "direct_sample_report",
+      "id": "world-ancestry-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "World Ancestry Report sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "expectedAssertions": {
-    "noRawGenomeInOutput": true,
-    "everyFindingHasReference": true,
-    "missingInputsAreExplicit": true,
-    "probabilitiesOnlyInAppendix": true,
-    "consumerLanguage": true
-  }
+  "reportPurpose": "Consumer world ancestry context from derived broad reference-panel similarity plus observed Galatea Bio World Ancestry sample-report output structure."
 }

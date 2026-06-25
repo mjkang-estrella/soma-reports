@@ -3,11 +3,10 @@
     "reportTitle": "Hormone Health",
     "inputManifestHash": "sha256:synthetic-hormone-health-dna-report-reproductive-endocrine-boundary-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "validated hormone-health model, hormone labs, endocrine diagnosis, symptoms, medications, menstrual or reproductive context, age/sex context, clinical history, clinician review, and authenticated sample-report rows unavailable in this fixture",
-      "clinical diagnosis, symptoms, labs, medications, family history, professional interpretation, treatment context, and authenticated sample-report rows unavailable in this fixture",
-      "partner result, carrier-screening scope, pregnancy context, embryo or fetal context, hormone-status context, fertility evaluation, and reproductive decision context unavailable in this fixture",
-      "This result is educational boundary context only and is not a diagnosis, carrier-status call, fertility or infertility estimate, hormone-status inference, lab interpretation, pregnancy outcome, fetal or embryo status, testing recommendation, treatment guidance, reproductive decision, or clinical actionability claim."
+      "Validated local hormone-health output, hormone labs, endocrine diagnosis, symptoms, medications, menstrual or reproductive context, age/sex context, clinical history, and clinician review are unavailable in this fixture.",
+      "The local sample rows are available as observed mock-report structure only and must not be treated as this user's hormone-health findings.",
+      "Clinical diagnosis, symptoms, labs, medications, family history, professional interpretation, treatment context, fertility evaluation, pregnancy context, and reproductive decision context are unavailable in this fixture.",
+      "This result is educational boundary context only and is not a diagnosis, hormone-status inference, thyroid-status inference, adrenal-status inference, glucose or insulin inference, lab interpretation, fertility or infertility estimate, pregnancy outcome, testing recommendation, treatment guidance, supplement guidance, diet guidance, lifestyle guidance, medication guidance, reproductive decision, or clinical actionability claim."
     ]
   },
   "resultRows": [
@@ -15,11 +14,12 @@
       "groupTitle": "Validated model availability",
       "item": "hormone-health-dna-report-model-unavailable",
       "brandName": "",
-      "geneticAnalysis": "Hormone Health cannot emit a conclusion from this local fixture because the validated model, professional review, clinical context, and authenticated sample rows are unavailable.",
+      "geneticAnalysis": "Hormone Health cannot emit a local hormone-health conclusion from this fixture because validated model output, hormone labs, endocrine diagnosis, symptoms, medications, reproductive context, age/sex context, clinical history, and clinician review are unavailable.",
+      "description": "The local sample PDF is used only to preserve report structure; it is not evidence of this user's hormone status.",
       "genes": [
         "Hormone Health model"
       ],
-      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing",
+      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus Hormones",
       "sourceIds": [
         "cdc-genetic-testing",
         "medlineplus-genetics",
@@ -28,20 +28,38 @@
         "medlineplus-genetic-counseling",
         "fda-direct-to-consumer-tests",
         "cdc-family-health-history",
-        "medlineplus-hormones"
+        "medlineplus-hormones",
+        "medlineplus-endocrine-diseases"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This row is an availability statement. It does not diagnose a condition, call carrier status, estimate fertility or pregnancy outcomes, infer hormone or lab status, recommend testing or treatment, guide reproductive decisions, or provide an all-clear result."
+      "plainEnglishMeaning": "This is an availability statement. It does not diagnose endocrine disease, infer hormone levels, interpret labs, estimate fertility or pregnancy outcomes, recommend hormone testing, treatment, supplements, diet, lifestyle, medication, or provide actionability."
+    },
+    {
+      "groupTitle": "Sample output structure",
+      "item": "Hormone Health sample overview, detail, and recommendation rows",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "The sample report shows 26 preserved sample rows covering report identity, hormone overview cards, thyroid detail pages, top-variant table summaries, and iodine/selenium recommendation scoring.",
+      "description": "The sampleRows entries preserve observed report structure and sample-person labels only.",
+      "genes": [
+        "Hormone Health sample report"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "These sample rows describe the mock report layout and sample-person labels only. They are not local hormone levels, endocrine diagnoses, lab interpretations, fertility or pregnancy findings, treatment advice, supplement advice, diet advice, lifestyle advice, medication advice, or actionability claims."
     },
     {
       "groupTitle": "Clinical and lab context availability",
       "item": "hormone-health-dna-report-clinical-context-unavailable",
       "brandName": "",
-      "geneticAnalysis": "clinical diagnosis, symptoms, labs, medications, family history, professional interpretation, treatment context, and authenticated sample-report rows unavailable in this fixture",
+      "geneticAnalysis": "Clinical diagnosis, symptoms, labs, medications, family history, professional interpretation, treatment context, and complete report-specific clinical context are unavailable in this fixture.",
+      "description": "Hormone-health interpretation depends on validated testing scope plus clinical, lab, medication, age/sex, family, ancestry, and professional-review context that this fixture does not contain.",
       "genes": [
         "Hormone Health clinical and lab context"
       ],
-      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing",
+      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus Hormones",
       "sourceIds": [
         "cdc-genetic-testing",
         "medlineplus-genetics",
@@ -50,20 +68,22 @@
         "medlineplus-genetic-counseling",
         "fda-direct-to-consumer-tests",
         "cdc-family-health-history",
-        "medlineplus-hormones"
+        "medlineplus-hormones",
+        "medlineplus-endocrine-diseases"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "Personal interpretation needs validated test scope, symptoms, medical and family history, medications, labs, partner or pregnancy context when relevant, ancestry applicability, and qualified professional review."
+      "plainEnglishMeaning": "Missing clinical and lab context means the report must mark those topics unavailable instead of converting sample rows or background references into a personal endocrine or treatment conclusion."
     },
     {
       "groupTitle": "Reproductive and endocrine context availability",
       "item": "hormone-health-dna-report-reproductive-endocrine-context-unavailable",
       "brandName": "",
-      "geneticAnalysis": "partner result, carrier-screening scope, pregnancy context, embryo or fetal context, hormone-status context, fertility evaluation, and reproductive decision context unavailable in this fixture",
+      "geneticAnalysis": "Menstrual or reproductive context, pregnancy context, partner context, hormone-status context, fertility evaluation, and reproductive decision context are unavailable in this fixture.",
+      "description": "The fixture supports no fertility, infertility, pregnancy, reproductive-hormone, thyroid, adrenal, insulin, glucose, treatment, supplement, diet, lifestyle, or medication conclusion.",
       "genes": [
         "Hormone Health reproductive/endocrine context"
       ],
-      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing",
+      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus Hormones",
       "sourceIds": [
         "cdc-genetic-testing",
         "medlineplus-genetics",
@@ -72,26 +92,445 @@
         "medlineplus-genetic-counseling",
         "fda-direct-to-consumer-tests",
         "cdc-family-health-history",
-        "medlineplus-hormones"
+        "medlineplus-hormones",
+        "medlineplus-endocrine-diseases"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "Missing partner, pregnancy, carrier-screening, fertility, hormone, or endocrine context means the report must mark those topics unavailable instead of converting local genetic context into health or reproductive actions."
+      "plainEnglishMeaning": "Missing reproductive and endocrine context means the report must remain unavailable for hormone interpretation and must not recommend testing, treatment, supplements, diet, lifestyle, medication, fertility, pregnancy, or reproductive actions."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Report identity",
+      "item": "Hormone Health Summary Report",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "The PDF metadata and rendered cover identify a Hormone Health DNA Report / Hormone Health Summary Report marked SAMPLE REPORT.",
+      "description": "The 20-page sample includes result overview cards, thyroid-hormone detail pages, recommendation blocks, and a sample-report ending page.",
+      "genes": [
+        "Hormone Health sample report"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report identity only; not a local hormone-health result, hormone level, diagnosis, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation."
+    },
+    {
+      "groupTitle": "Thyroid Hormones overview cards",
+      "item": "Overactive Thyroid",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "More likely; more likely to have hyperthyroidism",
+      "description": "Observed sample overview card from page 9. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Overactive Thyroid sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Thyroid Hormones overview cards",
+      "item": "Underactive Thyroid",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "More likely; more likely to have hypothyroidism",
+      "description": "Observed sample overview card from page 9. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Underactive Thyroid sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Thyroid Hormones overview cards",
+      "item": "TSH",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Higher levels; likely higher TSH levels",
+      "description": "Observed sample overview card from page 9. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed TSH sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Thyroid Hormones overview cards",
+      "item": "T3 (Triiodothyronine)",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Typical levels; likely typical T3 levels",
+      "description": "Observed sample overview card from page 9. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed T3 (Triiodothyronine) sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Thyroid Hormones overview cards",
+      "item": "T4 (Thyroxine)",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Typical levels; likely typical T4 levels",
+      "description": "Observed sample overview card from page 9. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed T4 (Thyroxine) sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Thyroid Hormones overview cards",
+      "item": "Free T4",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Lower levels; likely lower free T4 levels",
+      "description": "Observed sample overview card from page 9. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Free T4 sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Reproductive Hormones overview cards",
+      "item": "Testosterone",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Typical levels; likely typical testosterone levels",
+      "description": "Observed sample overview card from page 9. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Testosterone sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Reproductive Hormones overview cards",
+      "item": "Estradiol (M)",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Typical levels; likely typical estradiol levels",
+      "description": "Observed sample overview card from page 9. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Estradiol (M) sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Reproductive Hormones overview cards",
+      "item": "Bioavailable Testosterone",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Typical levels; likely typical bioavailable testosterone levels",
+      "description": "Observed sample overview card from page 9. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Bioavailable Testosterone sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Reproductive Hormones overview cards",
+      "item": "SHBG",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Typical levels; likely typical SHBG levels",
+      "description": "Observed sample overview card from page 9. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed SHBG sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Reproductive Hormones overview cards",
+      "item": "DHEAS",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Typical levels; likely typical DHEAS levels",
+      "description": "Observed sample overview card from page 9. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed DHEAS sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Reproductive Hormones overview cards",
+      "item": "Prolactin",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Typical levels; likely typical prolactin levels",
+      "description": "Observed sample overview card from page 9. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Prolactin sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Reproductive Hormones overview cards",
+      "item": "FSH",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Typical levels; likely typical FSH levels",
+      "description": "Observed sample overview card from page 9. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed FSH sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Metabolic and Stress Hormones overview cards",
+      "item": "Insulin",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Lower levels; likely lower insulin levels",
+      "description": "Observed sample overview card from page 9. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Insulin sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Metabolic and Stress Hormones overview cards",
+      "item": "Ghrelin",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Lower levels; likely lower ghrelin levels",
+      "description": "Observed sample overview card from page 9. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Ghrelin sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Metabolic and Stress Hormones overview cards",
+      "item": "IGF-1",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Typical levels; likely typical IGF-1 levels",
+      "description": "Observed sample overview card from page 9. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed IGF-1 sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Metabolic and Stress Hormones overview cards",
+      "item": "Cortisol",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Typical levels; likely typical cortisol levels",
+      "description": "Observed sample overview card from page 10. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Cortisol sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Thyroid detail pages",
+      "item": "Overactive Thyroid detail page",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "More likely; based on 526 genetic variants; 87th percentile",
+      "description": "Observed sample detail page with key takeaways, gauge, percentile card, and top-variant table on page 12. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Overactive Thyroid detail page sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Thyroid detail pages",
+      "item": "T3 detail page",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Typical levels; based on 20,697 genetic variants",
+      "description": "Observed sample detail page with gauge and top-variant table on page 13. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed T3 detail page sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Thyroid detail pages",
+      "item": "T4 detail page",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Typical levels; based on 2,581 genetic variants",
+      "description": "Observed sample detail page with gauge and top-variant table on page 14. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed T4 detail page sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Thyroid detail pages",
+      "item": "Free T4 detail page",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Lower levels; based on 26 genetic variants",
+      "description": "Observed sample detail page with gauge and top-variant table on page 15. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Free T4 detail page sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Recommendations",
+      "item": "Balance Iodine Intake for Underactive Thyroid",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Impact 3/5; Evidence 4/5",
+      "description": "Observed recommendation block from page 18. Preserved as sample recommendation structure only, not supplement or diet advice. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Balance Iodine Intake for Underactive Thyroid sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Recommendations",
+      "item": "Balance Iodine Intake for Overactive Thyroid",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Impact 1/5; Evidence 3/5",
+      "description": "Observed recommendation block from page 18. Preserved as sample recommendation structure only, not supplement or diet advice. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Balance Iodine Intake for Overactive Thyroid sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Recommendations",
+      "item": "Selenium for Overactive Thyroid",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Impact 2/5; Evidence 2/5",
+      "description": "Observed recommendation block from page 19. Preserved as sample recommendation structure only, not supplement or treatment advice. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Selenium for Overactive Thyroid sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
+    },
+    {
+      "groupTitle": "Recommendations",
+      "item": "Selenium for Underactive Thyroid",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Impact 2/5; Evidence 3/5",
+      "description": "Observed recommendation block from page 19. Preserved as sample recommendation structure only, not supplement or treatment advice. Observed sample row only; not a local hormone-health result, diagnosis, hormone level, lab interpretation, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Hormone Health sample PDF",
+      "sourceIds": [
+        "hormone-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Selenium for Underactive Thyroid sample row only; do not reuse as local hormone status, thyroid status, adrenal status, glucose or insulin status, reproductive-hormone status, lab interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, or medication guidance."
     }
   ],
   "reproductiveEndocrineContext": {
-    "plainEnglishMeaning": "Hormone Health is currently a reproductive/endocrine boundary package. It can document what evidence is available and what is missing, but it cannot produce carrier, fertility, hormone, pregnancy, lab, treatment, testing, or reproductive-action conclusions from local evidence alone.",
+    "plainEnglishMeaning": "Hormone Health can preserve the observed sample report structure and document which local inputs are missing, but it cannot produce personal hormone, thyroid, adrenal, insulin, glucose, fertility, pregnancy, lab, testing, treatment, supplement, diet, lifestyle, medication, or reproductive-action conclusions from this fixture.",
     "unsupportedClaims": [
-      "Diagnosis, all-clear result, carrier-status call, variant classification, or personal disease-risk estimate",
-      "Fertility, infertility, pregnancy, miscarriage, embryo, fetal, child, partner, hormone, endocrine, sexual-health, or lab-status conclusion",
-      "Testing, screening, medication, supplement, diet, surgery, treatment, IVF, PGT, prenatal-testing, pregnancy-action, or reproductive-decision guidance",
-      "Replacement for qualified clinician, endocrinologist, obstetric professional, fertility specialist, geneticist, or genetic counselor review"
+      "Diagnosis, all-clear result, hormone-status inference, thyroid-status inference, adrenal-status inference, glucose or insulin status, lab interpretation, or personal disease-risk estimate",
+      "Fertility, infertility, pregnancy, miscarriage, embryo, fetal, child, partner, reproductive, sexual-health, or endocrine conclusion",
+      "Testing, screening, medication, supplement, diet, lifestyle, surgery, treatment, IVF, PGT, prenatal-testing, pregnancy-action, or reproductive-decision guidance",
+      "Replacement for qualified clinician, endocrinologist, obstetric professional, fertility specialist, or genetic counselor review"
     ],
-    "professionalReview": "Use this output only as preparation for a professional conversation. Health or reproductive decisions require qualified review with clinical history, symptoms, medications, labs, family history, partner context, pregnancy context when relevant, and validated testing scope."
+    "professionalReview": "Use this output only as preparation for a professional conversation. Health or reproductive decisions require qualified review with validated test scope, clinical history, symptoms, medications, labs, family history, age/sex context, pregnancy context when relevant, and ancestry context."
   },
   "practicalNextSteps": {
     "professionalReview": [
-      "Do not use this local fixture to change medication, supplements, diet, testing, screening, procedures, fertility treatment, pregnancy plans, or reproductive decisions.",
-      "Bring current symptoms, medical and family history, medications, labs, prior testing, partner context, pregnancy context when relevant, and ancestry context to a qualified professional if discussing this topic.",
+      "Do not use this local fixture to change medication, supplements, diet, lifestyle, testing, screening, procedures, fertility treatment, pregnancy plans, or reproductive decisions.",
+      "Bring symptoms, medical and family history, medications, hormone or thyroid labs, prior testing, reproductive context, pregnancy context when relevant, and ancestry context to a qualified professional if discussing hormone health.",
       "Treat unavailable model rows as unavailable, not as normal, abnormal, low risk, high risk, reassuring, diagnostic, actionable, or all clear."
     ]
   },
@@ -139,43 +578,84 @@
     {
       "id": "ebi-gwas-catalog",
       "title": "GWAS Catalog"
+    },
+    {
+      "id": "hormone-health-sample-pdf",
+      "title": "Hormone Health DNA Report sample report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "hormone-health-dna-report-model-unavailable",
+        "tier": "Local missing input",
         "gene": "Hormone Health model",
-        "observedValue": "validated hormone-health model, hormone labs, endocrine diagnosis, symptoms, medications, menstrual or reproductive context, age/sex context, clinical history, clinician review, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "variantId": "hormone-health-dna-report-model-unavailable",
+        "genotype": "validated hormone-health model, hormone labs, endocrine diagnosis, symptoms, medications, menstrual or reproductive context, age/sex context, clinical history, and clinician review unavailable",
+        "effect": "The local fixture intentionally omits the evidence needed to infer hormone status or endocrine health.",
+        "phenotype": "Mark local hormone-status, thyroid-status, adrenal-status, glucose/insulin-status, reproductive-hormone, lab-interpretation, diagnosis, treatment, supplement, diet, lifestyle, fertility, pregnancy, medication, and actionability sections unavailable instead of inferring them.",
+        "extractionStatus": "curated"
       },
       {
-        "inputId": "hormone-health-dna-report-clinical-context-unavailable",
-        "gene": "Hormone Health clinical and lab context",
-        "observedValue": "clinical diagnosis, symptoms, labs, medications, family history, professional interpretation, treatment context, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "tier": "Sample Overactive Thyroid detail page",
+        "gene": "CD40; MICB; PTPN22; TNF; TRMO; LRRC6; MAF; TRIM27; FAM227B; SOX9; RNASET2; BACH2; HLA-DPA1; UHRF1BP1; MYC; TMPRSS3",
+        "variantId": "rs1883832; rs2517532; rs2476601; rs1800629; rs925488; rs118039499; rs140851213; rs6131010; rs3135293; rs17477923; rs8077245; rs4338740; rs385863; rs604912; rs9357156; rs1569723; rs9469899; rs2466028; rs34544259",
+        "genotype": "CC; GG; AG; GA; AA; AA; TT; GG; TC; TC; GT; TC; GC; AG; AC; AA; AA; TT; GG",
+        "effect": "The sample detail page labels Overactive Thyroid as more likely, based on 526 genetic variants, at the 87th percentile.",
+        "phenotype": "Observed sample top-variant table only; do not infer local hyperthyroidism, thyroid hormone level, symptom status, lab status, treatment need, iodine guidance, selenium guidance, or clinical action.",
+        "extractionStatus": "direct"
       },
       {
-        "inputId": "hormone-health-dna-report-reproductive-endocrine-context-unavailable",
-        "gene": "Hormone Health reproductive/endocrine context",
-        "observedValue": "partner result, carrier-screening scope, pregnancy context, embryo or fetal context, hormone-status context, fertility evaluation, and reproductive decision context unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "tier": "Sample T3 detail page",
+        "gene": "INSIG1; SLK; PRKCE; VPS37B; FBLL1; SERPINA7; EPHB2; RAB38; MOV10L1; AGPAT2; CCDC80; TIAM2; ZNF616; GALNT13; ERBB4; AGBL1",
+        "variantId": "rs12534332; rs2475217; rs10192064; rs76465767; rs590784; rs12687280; rs67142165; rs116951285; rs2066773; rs7020640; rs145944228; rs4482989; rs749618; rs80190198; rs13428799; rs72752186",
+        "genotype": "AA; CC; CT; TC; CA; TT; CC; TT; GG; CC; GG; CC; AA; AA; CC; GG",
+        "effect": "The sample detail page labels T3 as typical levels, based on 20,697 genetic variants.",
+        "phenotype": "Observed sample top-variant table only; do not infer local T3 level, thyroid function, lab status, diagnosis, treatment, diet, supplement, or medication guidance.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample T4 detail page",
+        "gene": "FOXE1; QSOX2; LRRC42; LPCAT2; MC4R; SEPHS1; CA8; UHRF1BP1; CPPED1; GLIS3; SLCO1B1; DIO3; DIO2; RNF144B; INSIG1; NEK6; NUCKS1",
+        "variantId": "rs7045138; rs7860634; rs12127960; rs6499766; rs56069042; rs72783371; rs67583169; rs73405691; rs8063103; rs10119187; rs4149056; rs11103377; rs7240777; rs11626434; rs225014; rs10946313; rs12534332; rs10818937; rs951366",
+        "genotype": "TT; GA; TT; AT; AA; AA; CC; AA; CC; TT; TT; AG; AG; CG; TC; TC; AA; CT; TC",
+        "effect": "The sample detail page labels T4 as typical levels, based on 2,581 genetic variants.",
+        "phenotype": "Observed sample top-variant table only; do not infer local T4 level, thyroid function, lab status, diagnosis, treatment, diet, supplement, or medication guidance.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample Free T4 detail page",
+        "gene": "ZGRF1; MC4R; SEPHS1; CA8; UHRF1BP1; JAZF1; CPPED1; GLIS3; SLCO1B1; QSOX2; DIO3; DIO2; RNF144B; NEK6; NUCKS1; CCNT2; B4GALT6; DIO1",
+        "variantId": "rs6834538; rs56069042; rs72783371; rs67583169; rs73405691; rs7785730; rs8063103; rs10119187; rs4149056; rs11103377; rs11626434; rs225014; rs10946313; rs10818937; rs951366; rs4954192; rs113107469; rs7951105; rs2235544",
+        "genotype": "TT; AA; AA; CC; AA; AG; CC; TT; TT; AG; CG; TC; TC; CT; TC; TC; CC; GG; CC",
+        "effect": "The sample detail page labels Free T4 as lower levels, based on 26 genetic variants.",
+        "phenotype": "Observed sample top-variant table only; do not infer local free T4 level, thyroid function, lab status, diagnosis, treatment, diet, supplement, or medication guidance.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample recommendation scoring",
+        "gene": "Iodine and selenium recommendation blocks",
+        "variantId": "sample-recommendation-impact-evidence-scores",
+        "genotype": "Balance Iodine Intake: Underactive Thyroid impact 3/5 evidence 4/5; Overactive Thyroid impact 1/5 evidence 3/5. Selenium: Overactive Thyroid impact 2/5 evidence 2/5; Underactive Thyroid impact 2/5 evidence 3/5.",
+        "effect": "The sample recommendation pages show condition-specific impact and evidence scores for iodine and selenium blocks.",
+        "phenotype": "Observed sample recommendation structure only; do not infer local supplement need, iodine need, selenium need, thyroid medication changes, diet changes, treatment need, or clinical action.",
+        "extractionStatus": "direct"
       }
     ],
     "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and exact rows",
-      "Validated model output with applicability and validation metadata",
-      "Qualified professional review and complete clinical, family-history, medication, symptom, and lab context",
-      "Partner, pregnancy, embryo, fetal, fertility, hormone, endocrine, carrier-screening, and reproductive decision context when relevant"
+      "Validated hormone-health model output and validated report scope",
+      "Hormone labs, thyroid labs, adrenal labs, glucose or insulin labs, symptoms, medications, age/sex context, and endocrine diagnosis context",
+      "Clinical history, family history, reproductive context, pregnancy context when relevant, ancestry applicability, and qualified professional interpretation",
+      "A calibrated model that can convert local genotype evidence into hormone-status, thyroid-status, treatment, supplement, diet, lifestyle, or medication conclusions"
     ],
     "probabilities": [],
     "uncertainty": [
-      "No calibrated carrier-status, partner-risk, fetal-risk, embryo-risk, child-risk, disease-risk, fertility, infertility, pregnancy-outcome, miscarriage, hormone-status, lab-status, testing-benefit, treatment-response, supplement-benefit, diet-response, or actionability model is supplied for this local package.",
-      "Interpretation depends on validated test scope, clinical and family history, symptoms, medications, labs, partner context, pregnancy context when relevant, ancestry applicability, and qualified professional review."
+      "No calibrated hormone-status, thyroid-status, adrenal-status, glucose-status, insulin-status, fertility, pregnancy, disease-risk, testing-benefit, treatment-response, supplement-benefit, diet-response, lifestyle-response, medication-response, or actionability model is supplied for this local package.",
+      "The sample PDF contains sample-person hormone labels, percentile text, variant counts, genotypes, and recommendation scores, but these are not this user's hormone-health findings.",
+      "Interpretation depends on validated test scope, clinical and family history, symptoms, medications, labs, reproductive context, pregnancy context when relevant, age/sex context, ancestry applicability, and qualified professional review."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
-      "The report is educational boundary context and does not provide diagnosis, carrier-status reporting, fertility or infertility estimation, hormone-status assessment, lab interpretation, pregnancy guidance, fetal or embryo assessment, testing advice, treatment advice, supplement advice, diet advice, surgery advice, reproductive advice, or clinical actionability.",
+      "The local sample rows are output-structure evidence only and do not provide this user's hormone status, thyroid status, endocrine diagnosis, lab interpretation, fertility finding, pregnancy finding, testing advice, treatment advice, supplement advice, diet advice, lifestyle advice, medication advice, or all-clear reassurance.",
       "Unavailable model rows should never be interpreted as low risk, high risk, no risk, normal, abnormal, reassuring, diagnostic, actionable, or all clear."
     ]
   }

@@ -1,105 +1,601 @@
 {
   "reportOverview": {
-    "reportTitle": "Empower",
     "inputManifestHash": "sha256:synthetic-empower-nutrition-lifestyle-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "No calibrated Empower, lifestyle-personalization, meal-plan, supplement, fitness, symptom, lab, metabolic, or ancestry applicability model is supplied with this fixture."
+      "Calibrated Empower lifestyle-personalization, nutrition, fitness, meal-plan, supplement, symptom, lab, metabolic, and treatment models are unavailable for the local fixture.",
+      "Sibling Toolbox Genomics Nourish and Thrive sample rows are included only as observed output-structure evidence and are not local personal results or a direct Empower mock report."
     ]
   },
   "resultRows": [
     {
-      "groupTitle": "Nutrition and lifestyle context",
-      "item": "MCM6/LCT rs4988235",
+      "groupTitle": "Local Empower boundary evidence",
+      "item": "MCM6/LCT rs4988235 context",
       "brandName": "Not applicable",
-      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a diagnosis, symptom explanation, diet recommendation, supplement recommendation, or model-derived health result.",
+      "geneticAnalysis": "The fixture supplies a derived MCM6/LCT rs4988235 call for lactase-persistence context, but no calibrated Empower nutrition, fitness, lifestyle, supplement, symptom, lab, or metabolic interpretation is supplied.",
       "genes": [
         "MCM6",
         "LCT"
       ],
-      "sourceLabel": "MedlinePlus Genetics: lactose intolerance / MCM6",
+      "sourceLabel": "MedlinePlus and nutrition-genomics reference context",
       "sourceIds": [
         "medlineplus-lactose-intolerance",
-        "medlineplus-mcm6"
+        "medlineplus-mcm6",
+        "nutritional-genomics-dtc-review"
       ],
-      "plainEnglishMeaning": "This marker can provide lactose-related context, but symptoms, diet history, labs, environment, medications, and professional review matter for health and nutrition decisions."
+      "plainEnglishMeaning": "This row can support a narrow lactose-related marker explanation, but it does not prescribe diet, supplements, workouts, labs, or treatment.",
+      "sourceBindingStatus": "curated"
     },
     {
-      "groupTitle": "Nutrition model availability",
-      "item": "Empower lifestyle model",
+      "groupTitle": "Unavailable Empower model evidence",
+      "item": "Empower lifestyle model unavailable",
       "brandName": "Not applicable",
-      "geneticAnalysis": "No calibrated Empower, lifestyle-personalization, meal-plan, supplement, fitness, symptom, lab, metabolic, or ancestry applicability model is supplied with this fixture.",
+      "geneticAnalysis": "Calibrated Empower score, lifestyle-personalization model, meal-plan model, supplement model, fitness model, symptom context, lab context, metabolic model, and ancestry applicability metadata are unavailable in this fixture.",
       "genes": [
         "Empower lifestyle model"
       ],
-      "sourceLabel": "MedlinePlus DTC result limits / Nutritional genomics review / GWAS Catalog",
+      "sourceLabel": "Genetic testing and nutritional genomics references",
       "sourceIds": [
         "medlineplus-dtc-genetic-testing-results",
         "nutritional-genomics-dtc-review",
         "ebi-gwas-catalog"
       ],
-      "plainEnglishMeaning": "The report can describe supplied marker context, but it should not make diet, supplement, glucose, gut, weight, wellness, child-specific, symptom, lab, metabolic, or treatment conclusions without validated evidence."
+      "plainEnglishMeaning": "The local report must mark Empower-specific personalization unavailable instead of inferring nutrition, fitness, lifestyle, supplement, lab, metabolic, symptom, diagnosis, treatment, or actionability conclusions.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Preview boundary",
+      "item": "Nourish Nutrition Optimization Plan preview",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "The public sample opens with a Nourish Nutrition Optimization Plan cover, Sample1 identity, May 2018 date, and a repeated note that only a limited number of preview pages are displayed.",
+      "description": "Use this as observed report identity and preview-boundary structure only; it does not prove full-report section coverage.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "nourish-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Nourish sample PDF cover and preview footer; this is observed report structure, not a local nutrition conclusion. Used here only as sibling Toolbox nutrition output-structure evidence for Empower; this is not a direct Empower sample report and not local vitamin, diet, supplement, lab, metabolic, diagnosis, or treatment evidence.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Essential Nutrients",
+      "item": "Vitamin B12 health information and gene table",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "The sample Vitamin B12 page says people with similar genetic markers may be predisposed to low vitamin B12 levels and shows a gene table with CUBN rs1801222 GG non-variant, TCN1 rs526934 AA non-variant, FUT2 rs602662 GG variant, FUT2 rs601338 GG non-variant, and FUT2 rs1047781 AA non-variant.",
+      "description": "The page includes condition-definition text and CUBN, TCN1, and FUT2 gene definitions.",
+      "genes": [
+        "CUBN",
+        "TCN1",
+        "FUT2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "nourish-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 13 of the public Nourish sample PDF; this is observed sample output structure and not a local vitamin B12 status, deficiency, diet, lab, or supplement conclusion. Used here only as sibling Toolbox nutrition output-structure evidence for Empower; this is not a direct Empower sample report and not local vitamin, diet, supplement, lab, metabolic, diagnosis, or treatment evidence.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Essential Nutrients",
+      "item": "Vitamin B12 action blocks",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "The sample Vitamin B12 action page shows Vitamin B12-rich food, Vitamin B12 lab-range, Methylmalonic Acid lab-range, Vitamin B12 supplement, and pro-tip blocks.",
+      "description": "The sample includes food examples, typical lab ranges, a supplement starting-dose statement, and supplement-form text as observed preview content.",
+      "genes": [
+        "CUBN",
+        "TCN1",
+        "FUT2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "nourish-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 14 of the public Nourish sample PDF; do not turn sample food, lab, dose, or supplement-form text into local advice. Used here only as sibling Toolbox nutrition output-structure evidence for Empower; this is not a direct Empower sample report and not local vitamin, diet, supplement, lab, metabolic, diagnosis, or treatment evidence.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Essential Nutrients",
+      "item": "Vitamin D3 health information and gene table",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "The sample Vitamin D3 page says people with similar genetic markers may be predisposed to low vitamin D3 levels and shows a gene table with CYP2R1 rs10741657 AA non-variant, GC rs2282679 TT non-variant, GC rs4588 GG non-variant, and DHCR7 rs12785878 TT variant.",
+      "description": "The page includes condition-definition text and CYP2R1, GC, and DHCR7 gene definitions.",
+      "genes": [
+        "CYP2R1",
+        "GC",
+        "DHCR7"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "nourish-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 17 of the public Nourish sample PDF; this is observed sample output structure and not local vitamin D status, sun exposure, lab, supplement, or treatment advice. Used here only as sibling Toolbox nutrition output-structure evidence for Empower; this is not a direct Empower sample report and not local vitamin, diet, supplement, lab, metabolic, diagnosis, or treatment evidence.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Essential Nutrients",
+      "item": "Vitamin D3 action blocks",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "The sample Vitamin D3 action page shows Sunlight, Vitamin D supplement, Vitamin D3 (25-OH) lab-range, and Probiotics blocks.",
+      "description": "The sample includes sun-exposure text, a supplement amount, lab-range text, and probiotic text as observed preview content.",
+      "genes": [
+        "CYP2R1",
+        "GC",
+        "DHCR7"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "nourish-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 18 of the public Nourish sample PDF; do not turn sample sunlight, supplement, lab, probiotic, or dose text into local advice. Used here only as sibling Toolbox nutrition output-structure evidence for Empower; this is not a direct Empower sample report and not local vitamin, diet, supplement, lab, metabolic, diagnosis, or treatment evidence.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your Results",
+      "item": "Health Action Plan preview",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "The sample preview says the Health Action Plan is customized from DNA test results plus medical history, family medical history, gender, and ethnic background, and that recommendations are selected for actionability.",
+      "description": "The visible sample pages introduce SNP-based report structure, human-study review criteria, recommendation categories, educational-use limits, and healthcare-provider consultation language.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "thrive-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 2-3 of the public Thrive sample PDF as observed report framing only; this is not local medical-history, lifestyle, diet, exercise, or treatment advice. Used here only as sibling Toolbox lifestyle and weight-management output-structure evidence for Empower; this is not a direct Empower sample report and not local diet, workout, appetite, lab, metabolic, diagnosis, or treatment evidence.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Dietary Factors / Weight Loss and Low Fat Diets",
+      "item": "UCP3",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "UCP3 rs1800849: sample result GG; effect Non-Variant.",
+      "description": "The public sample PDF shows this Your Gene Variation row on page 19.",
+      "genes": [
+        "UCP3"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "thrive-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Toolbox Genomics Thrive sample PDF; this is observed sample content, not local weight-management, diet, supplement, activity, eating-behavior, lab, metabolic, or treatment advice. Used here only as sibling Toolbox lifestyle and weight-management output-structure evidence for Empower; this is not a direct Empower sample report and not local diet, workout, appetite, lab, metabolic, diagnosis, or treatment evidence.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Dietary Factors / Weight Loss and Low Fat Diets",
+      "item": "IRS1",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "IRS1 rs2943641: sample result CC; effect Variant.",
+      "description": "The public sample PDF shows this Your Gene Variation row on page 19.",
+      "genes": [
+        "IRS1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "thrive-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Toolbox Genomics Thrive sample PDF; this is observed sample content, not local weight-management, diet, supplement, activity, eating-behavior, lab, metabolic, or treatment advice. Used here only as sibling Toolbox lifestyle and weight-management output-structure evidence for Empower; this is not a direct Empower sample report and not local diet, workout, appetite, lab, metabolic, diagnosis, or treatment evidence.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Dietary Factors / Weight Loss and Low Fat Diets",
+      "item": "TCF7L2",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "TCF7L2 rs12255372: sample result GG; effect Non-Variant.",
+      "description": "The public sample PDF shows this Your Gene Variation row on page 19.",
+      "genes": [
+        "TCF7L2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "thrive-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Toolbox Genomics Thrive sample PDF; this is observed sample content, not local weight-management, diet, supplement, activity, eating-behavior, lab, metabolic, or treatment advice. Used here only as sibling Toolbox lifestyle and weight-management output-structure evidence for Empower; this is not a direct Empower sample report and not local diet, workout, appetite, lab, metabolic, diagnosis, or treatment evidence.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Dietary Factors / Weight Loss and Low Fat Diets",
+      "item": "CLOCK",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "CLOCK rs3749474: sample result CC; effect Non-Variant.",
+      "description": "The public sample PDF shows this Your Gene Variation row on page 19.",
+      "genes": [
+        "CLOCK"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "thrive-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Toolbox Genomics Thrive sample PDF; this is observed sample content, not local weight-management, diet, supplement, activity, eating-behavior, lab, metabolic, or treatment advice. Used here only as sibling Toolbox lifestyle and weight-management output-structure evidence for Empower; this is not a direct Empower sample report and not local diet, workout, appetite, lab, metabolic, diagnosis, or treatment evidence.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Eating Behaviors / Mindful Eating",
+      "item": "MC4R",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "MC4R rs17782313: sample result TT; effect Non-Variant.",
+      "description": "The public sample PDF shows this Your Gene Variation row on page 32.",
+      "genes": [
+        "MC4R"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "thrive-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Toolbox Genomics Thrive sample PDF; this is observed sample content, not local weight-management, diet, supplement, activity, eating-behavior, lab, metabolic, or treatment advice. Used here only as sibling Toolbox lifestyle and weight-management output-structure evidence for Empower; this is not a direct Empower sample report and not local diet, workout, appetite, lab, metabolic, diagnosis, or treatment evidence.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Eating Behaviors / Mindful Eating",
+      "item": "TAS2R38",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "TAS2R38 rs1726866: sample result AG; effect Variant.",
+      "description": "The public sample PDF shows this Your Gene Variation row on page 32.",
+      "genes": [
+        "TAS2R38"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "thrive-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Toolbox Genomics Thrive sample PDF; this is observed sample content, not local weight-management, diet, supplement, activity, eating-behavior, lab, metabolic, or treatment advice. Used here only as sibling Toolbox lifestyle and weight-management output-structure evidence for Empower; this is not a direct Empower sample report and not local diet, workout, appetite, lab, metabolic, diagnosis, or treatment evidence.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Dietary Factors / Weight Loss and Low Fat Diets",
+      "item": "What this genetic marker means",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "The sample trait text says people with similar genetic markers may see greater weight-loss results when following a low-fat diet and that others may not experience weight-loss results on a low-carbohydrate, high-fat diet.",
+      "description": "The sample also describes dietary-fat response context and gene definitions for UCP3, IRS1, and TCF7L2.",
+      "genes": [
+        "UCP3",
+        "IRS1",
+        "TCF7L2",
+        "CLOCK"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "thrive-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 19 of the public Thrive sample PDF as sample trait-page structure only; do not infer local diet or weight-loss response. Used here only as sibling Toolbox lifestyle and weight-management output-structure evidence for Empower; this is not a direct Empower sample report and not local diet, workout, appetite, lab, metabolic, diagnosis, or treatment evidence.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Dietary Factors / Weight Loss and Low Fat Diets",
+      "item": "What you can do cards",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "Observed sample cards include reduce dietary fat intake, whole plant-based carbohydrates, increase high-quality protein sources, healthy fat choices, total cholesterol, LDL-C, and triglyceride context.",
+      "description": "The sample cards include examples of diet, lipid-marker, and practitioner-context output blocks in the report.",
+      "genes": [
+        "UCP3",
+        "IRS1",
+        "TCF7L2",
+        "CLOCK"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "thrive-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 21-22 of the public Thrive sample PDF as output-format examples only; do not convert sample diet cards or cholesterol ranges into local advice or lab interpretation. Used here only as sibling Toolbox lifestyle and weight-management output-structure evidence for Empower; this is not a direct Empower sample report and not local diet, workout, appetite, lab, metabolic, diagnosis, or treatment evidence.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Eating Behaviors / Mindful Eating",
+      "item": "What this genetic marker means",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "The sample trait text says people with similar genetic markers may be predisposed to difficulty regulating food consumption or stopping eating, and describes neurotransmitter and food-preference context.",
+      "description": "The sample page includes MC4R appetite and energy-regulation context and TAS2R38 bitter-taste and food-preference context.",
+      "genes": [
+        "MC4R",
+        "TAS2R38"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "thrive-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 32 of the public Thrive sample PDF as sample trait-page structure only; do not infer local appetite, taste, stress, or eating-behavior conclusions. Used here only as sibling Toolbox lifestyle and weight-management output-structure evidence for Empower; this is not a direct Empower sample report and not local diet, workout, appetite, lab, metabolic, diagnosis, or treatment evidence.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Eating Behaviors / Mindful Eating",
+      "item": "What you can do cards",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "Observed sample cards include locking up or tossing out unhealthy snack-like foods, stress-reduction techniques, increasing omega-3 fatty-acid foods, and fasting leptin context.",
+      "description": "The sample card structure includes behavioral, stress, omega-3 food, and hormone-context output blocks.",
+      "genes": [
+        "MC4R",
+        "TAS2R38"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "thrive-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 33 of the public Thrive sample PDF as output-format examples only; do not convert sample behavior, omega-3, stress, or leptin text into local advice or lab interpretation. Used here only as sibling Toolbox lifestyle and weight-management output-structure evidence for Empower; this is not a direct Empower sample report and not local diet, workout, appetite, lab, metabolic, diagnosis, or treatment evidence.",
+      "sourceBindingStatus": "exact"
     }
   ],
   "practicalNextSteps": {
     "empowerContext": [
-      "Use this report as educational nutrition and lifestyle genetics context, not as a diet, workout, or supplement plan.",
-      "Combine diet history, activity, symptoms, labs, goals, and professional support when making wellness decisions.",
-      "Do not use genotype alone to prescribe diets, workouts, supplements, lab interpretation, or treatment."
+      "Treat the sibling Nourish and Thrive rows as report-format examples only.",
+      "Use clinical history, diet history, symptoms, labs, medications, goals, and qualified professional review before making nutrition, supplement, fitness, or treatment decisions."
     ]
   },
   "references": [
     {
+      "evidenceLevel": "consumer_education_background",
       "id": "medlineplus-lactose-intolerance",
-      "title": "MedlinePlus Genetics: lactose intolerance"
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: lactose intolerance",
+      "usedFor": [
+        "lactose_context",
+        "non_diagnostic_language"
+      ]
     },
     {
+      "evidenceLevel": "consumer_education_background",
       "id": "medlineplus-mcm6",
-      "title": "MedlinePlus Genetics: MCM6 gene"
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: MCM6 gene",
+      "usedFor": [
+        "mcm6_lct_context",
+        "lactase_persistence_context"
+      ]
     },
     {
+      "evidenceLevel": "review_background",
       "id": "nutritional-genomics-dtc-review",
-      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing"
+      "sourceType": "research_review",
+      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing",
+      "usedFor": [
+        "nutrition_context",
+        "direct_to_consumer_limitations"
+      ]
     },
     {
+      "evidenceLevel": "background",
       "id": "ebi-gwas-catalog",
-      "title": "GWAS Catalog"
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "candidate_trait_associations"
+      ]
     },
     {
+      "evidenceLevel": "consumer_education_background",
       "id": "medlineplus-dtc-genetic-testing-results",
+      "sourceType": "education_resource",
       "title": "MedlinePlus Genetics: What DTC genetic test results mean",
       "usedFor": [
         "dtc_limitations",
         "non_diagnostic_language",
         "consumer_safety_language"
       ]
+    },
+    {
+      "evidenceLevel": "consumer_health_background",
+      "id": "medlineplus-blood-glucose-test",
+      "sourceType": "medical_test_resource",
+      "title": "MedlinePlus: Blood Glucose Test",
+      "usedFor": [
+        "glucose_lab_context",
+        "diabetes_diagnosis_boundary",
+        "no_genotype_glucose_prediction"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_health_background",
+      "id": "medlineplus-hba1c-test",
+      "sourceType": "medical_test_resource",
+      "title": "MedlinePlus: Hemoglobin A1C test",
+      "usedFor": [
+        "glucose_lab_context",
+        "a1c_context",
+        "no_lab_inference_from_genotype"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-diabetes-risk-factors",
+      "sourceType": "public_health_resource",
+      "title": "CDC Diabetes Risk Factors",
+      "usedFor": [
+        "diabetes_risk_context",
+        "metabolic_limitations",
+        "professional_review_language"
+      ]
+    },
+    {
+      "evidenceLevel": "regulatory_background",
+      "id": "fda-dietary-supplements",
+      "sourceType": "regulatory_resource",
+      "title": "FDA Dietary Supplements",
+      "usedFor": [
+        "supplement_context",
+        "supplement_safety_language",
+        "no_dosing_from_genotype"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "nih-ods-dietary-supplement-fact-sheets",
+      "sourceType": "public_health_resource",
+      "title": "NIH Office of Dietary Supplements Fact Sheets",
+      "usedFor": [
+        "supplement_context",
+        "nutrient_context",
+        "professional_review_language"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "cdc-bmi",
+      "sourceType": "public_health_resource",
+      "title": "CDC About Body Mass Index",
+      "usedFor": [
+        "weight_context",
+        "bmi_limitations",
+        "no_weight_prediction_from_genotype"
+      ]
+    },
+    {
+      "evidenceLevel": "sibling_sample_report",
+      "id": "nourish-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Toolbox Genomics Nourish sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
+    },
+    {
+      "evidenceLevel": "sibling_sample_report",
+      "id": "thrive-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Toolbox Genomics Thrive sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
+        "inputId": "rs4988235",
         "gene": "MCM6/LCT",
-        "observedValue": "rs4988235 CT"
+        "observedValue": "The local fixture supplies a derived MCM6/LCT rs4988235 call for lactase-persistence context.",
+        "matchStatus": "curated",
+        "phenotype": "Report as educational lactose-related marker context only; do not infer local Empower nutrition, fitness, lifestyle, diet, supplement, workout, lab, metabolic, symptom, diagnosis, or treatment conclusions."
       },
       {
+        "inputId": "empower-model-unavailable",
         "gene": "Empower lifestyle model",
-        "observedValue": "calibrated model unavailable"
+        "observedValue": "The local fixture intentionally omits calibrated Empower models and non-genetic context.",
+        "matchStatus": "curated",
+        "phenotype": "Mark lifestyle, nutrition, fitness, supplement, meal-plan, symptom, lab, metabolic, diet, workout, and treatment sections unavailable instead of inferring them."
+      },
+      {
+        "inputId": "rs1801222",
+        "gene": "CUBN",
+        "observedValue": "The sample Vitamin B12 table labels this row non-variant.",
+        "matchStatus": "direct",
+        "phenotype": "Observed sample row only; do not infer local vitamin B12 status. Sibling Nourish sample row only; do not infer local Empower vitamin, diet, supplement, lab, metabolic, diagnosis, or treatment status."
+      },
+      {
+        "inputId": "rs526934",
+        "gene": "TCN1",
+        "observedValue": "The sample Vitamin B12 table labels this row non-variant.",
+        "matchStatus": "direct",
+        "phenotype": "Observed sample row only; do not infer local B12, homocysteine, or lab status. Sibling Nourish sample row only; do not infer local Empower vitamin, diet, supplement, lab, metabolic, diagnosis, or treatment status."
+      },
+      {
+        "inputId": "rs602662",
+        "gene": "FUT2",
+        "observedValue": "The sample Vitamin B12 table labels this row variant.",
+        "matchStatus": "direct",
+        "phenotype": "Observed sample row only; do not infer local B12 absorption, microbiome, or supplement need. Sibling Nourish sample row only; do not infer local Empower vitamin, diet, supplement, lab, metabolic, diagnosis, or treatment status."
+      },
+      {
+        "inputId": "rs601338",
+        "gene": "FUT2",
+        "observedValue": "The sample Vitamin B12 table labels this row non-variant.",
+        "matchStatus": "direct",
+        "phenotype": "Observed sample row only; do not infer local B12 absorption, microbiome, or supplement need. Sibling Nourish sample row only; do not infer local Empower vitamin, diet, supplement, lab, metabolic, diagnosis, or treatment status."
+      },
+      {
+        "inputId": "rs1047781",
+        "gene": "FUT2",
+        "observedValue": "The sample Vitamin B12 table labels this row non-variant.",
+        "matchStatus": "direct",
+        "phenotype": "Observed sample row only; do not infer local B12 absorption, microbiome, or supplement need. Sibling Nourish sample row only; do not infer local Empower vitamin, diet, supplement, lab, metabolic, diagnosis, or treatment status."
+      },
+      {
+        "inputId": "rs10741657",
+        "gene": "CYP2R1",
+        "observedValue": "The sample Vitamin D3 table labels this row non-variant.",
+        "matchStatus": "direct",
+        "phenotype": "Observed sample row only; do not infer local vitamin D status. Sibling Nourish sample row only; do not infer local Empower vitamin, diet, supplement, lab, metabolic, diagnosis, or treatment status."
+      },
+      {
+        "inputId": "rs2282679",
+        "gene": "GC",
+        "observedValue": "The sample Vitamin D3 table labels this row non-variant.",
+        "matchStatus": "direct",
+        "phenotype": "Observed sample row only; do not infer local vitamin D transport, lab, or supplement status. Sibling Nourish sample row only; do not infer local Empower vitamin, diet, supplement, lab, metabolic, diagnosis, or treatment status."
+      },
+      {
+        "inputId": "rs4588",
+        "gene": "GC",
+        "observedValue": "The sample Vitamin D3 table labels this row non-variant.",
+        "matchStatus": "direct",
+        "phenotype": "Observed sample row only; do not infer local vitamin D transport, lab, or supplement status. Sibling Nourish sample row only; do not infer local Empower vitamin, diet, supplement, lab, metabolic, diagnosis, or treatment status."
+      },
+      {
+        "inputId": "rs12785878",
+        "gene": "DHCR7",
+        "observedValue": "The sample Vitamin D3 table labels this row variant.",
+        "matchStatus": "direct",
+        "phenotype": "Observed sample row only; do not infer local vitamin D production, sun exposure, or supplement need. Sibling Nourish sample row only; do not infer local Empower vitamin, diet, supplement, lab, metabolic, diagnosis, or treatment status."
+      },
+      {
+        "inputId": "rs1800849",
+        "gene": "UCP3",
+        "observedValue": "Non-Variant",
+        "matchStatus": "direct",
+        "phenotype": "Use as observed sample-report structure only; do not treat this sample genotype as local evidence or a personal weight-management, diet, appetite, lab, metabolic, or treatment conclusion. Sibling Thrive sample row only; do not infer local Empower diet, workout, appetite, lab, metabolic, diagnosis, or treatment status."
+      },
+      {
+        "inputId": "rs2943641",
+        "gene": "IRS1",
+        "observedValue": "Variant",
+        "matchStatus": "direct",
+        "phenotype": "Use as observed sample-report structure only; do not treat this sample genotype as local evidence or a personal weight-management, diet, appetite, lab, metabolic, or treatment conclusion. Sibling Thrive sample row only; do not infer local Empower diet, workout, appetite, lab, metabolic, diagnosis, or treatment status."
+      },
+      {
+        "inputId": "rs12255372",
+        "gene": "TCF7L2",
+        "observedValue": "Non-Variant",
+        "matchStatus": "direct",
+        "phenotype": "Use as observed sample-report structure only; do not treat this sample genotype as local evidence or a personal weight-management, diet, appetite, lab, metabolic, or treatment conclusion. Sibling Thrive sample row only; do not infer local Empower diet, workout, appetite, lab, metabolic, diagnosis, or treatment status."
+      },
+      {
+        "inputId": "rs3749474",
+        "gene": "CLOCK",
+        "observedValue": "Non-Variant",
+        "matchStatus": "direct",
+        "phenotype": "Use as observed sample-report structure only; do not treat this sample genotype as local evidence or a personal weight-management, diet, appetite, lab, metabolic, or treatment conclusion. Sibling Thrive sample row only; do not infer local Empower diet, workout, appetite, lab, metabolic, diagnosis, or treatment status."
+      },
+      {
+        "inputId": "rs17782313",
+        "gene": "MC4R",
+        "observedValue": "Non-Variant",
+        "matchStatus": "direct",
+        "phenotype": "Use as observed sample-report structure only; do not treat this sample genotype as local evidence or a personal weight-management, diet, appetite, lab, metabolic, or treatment conclusion. Sibling Thrive sample row only; do not infer local Empower diet, workout, appetite, lab, metabolic, diagnosis, or treatment status."
+      },
+      {
+        "inputId": "rs1726866",
+        "gene": "TAS2R38",
+        "observedValue": "Variant",
+        "matchStatus": "direct",
+        "phenotype": "Use as observed sample-report structure only; do not treat this sample genotype as local evidence or a personal weight-management, diet, appetite, lab, metabolic, or treatment conclusion. Sibling Thrive sample row only; do not infer local Empower diet, workout, appetite, lab, metabolic, diagnosis, or treatment status."
       }
     ],
     "missingInputs": [
-      "Authenticated sample-report sections and rows have not been extracted.",
-      "No calibrated Empower, lifestyle-personalization, meal-plan, supplement, fitness, symptom, lab, metabolic, or ancestry applicability model is supplied with this fixture.",
-      "Broader symptoms, food history, diet history, activity history, labs, medications, medical history, child-specific context, ancestry applicability, environment, and professional assessment are not represented in this fixture."
+      "Direct Empower sample report rows",
+      "Calibrated Empower lifestyle-personalization model",
+      "Meal-plan, supplement, fitness, symptom, lab, metabolic, ancestry-applicability, and treatment models",
+      "Diet history, symptom history, lab values, medications, health goals, and professional review context"
     ],
     "probabilities": [],
     "uncertainty": [
-      "Nutrition, lifestyle, symptoms, labs, weight, glucose, gut health, supplement response, and wellness outcomes depend on genetics plus non-genetic context and professional review.",
-      "A single marker should not be used to diagnose conditions, explain symptoms, prescribe diets, recommend supplements, interpret labs, or guide treatment."
+      "No calibrated Empower model is supplied for this local package.",
+      "Sibling Toolbox sample rows show output structure only and cannot be treated as the user's personal diet, supplement, workout, lab, metabolic, symptom, diagnosis, treatment, or actionability result."
     ],
     "limitations": [
-      "This validation result uses derived evidence only; raw genome data is not included.",
-      "The report is educational and does not prescribe diets, create workouts, recommend supplements, diagnose symptoms, infer metabolic disease, interpret labs, or provide treatment guidance.",
-      "Authenticated Sequencing.com sample report rows are still pending."
+      "This validation result uses selected derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
+      "The package does not emit complete SNP tables, sequencing files, alignment files, meal plans, supplement plans, workout plans, lab interpretations, or treatment plans.",
+      "The package does not diagnose conditions, interpret symptoms or labs, infer metabolic disease, prescribe diets, recommend supplements, create workouts, change medications, or provide treatment guidance."
     ]
   }
 }

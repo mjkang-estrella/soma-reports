@@ -1,5 +1,3 @@
-# Vitamins DNA Wellness Report local-agent prompt
-
 Generate a plain-English Vitamins DNA Wellness Report report from local genome-derived nutrition evidence and supplied reference resources.
 Use only provided evidence and references. Do not invent genes, variants, studies, scores, symptoms, foods, supplements, meal plans, micronutrient targets, food-sensitivity results, metabolic diagnoses, or conclusions.
 Write deterministic report sections first. Put probability, confidence, calibration status, missing data, and uncertainty only in the appendix.
@@ -13,4 +11,9 @@ Do not diagnose lactose intolerance, food allergy, food sensitivity, celiac dise
 Do not diagnose vitamin deficiency, diagnose nutrient deficiency, prescribe supplements, recommend dosing, create child-specific nutrition guidance, interpret labs, or provide treatment guidance from genotype.
 State that symptoms, ancestry, diet history, environment, labs, medications, medical history, and clinician or dietitian guidance matter for nutrition decisions.
 For this package, focus on educational nutrition-genetics context and explicitly unavailable vitamin, nutrient, supplement, dosage, child-specific nutrition, lab, symptom, and treatment sections.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
+Use SelfDecode Vitamins DNA Wellness sample-report risk-summary rows, top-suggestion cards, report-method pages, and Vitamin A marker preview text only as observed output-format examples unless the local run supplies equivalent validated evidence.
+Do not turn sample vitamin deficiency-risk labels, B9/D3 food-source suggestions, outdoor-exposure text, BCO1/RBP4/TTN marker context, or method illustrations into personal vitamin status, deficiency, diet, supplement, dosing, child-specific, lab, symptom, diagnosis, or treatment advice.
+Where the Vitamins sample preview names markers but does not show sample-person genotypes, write genotype as not visible in sample preview instead of inventing calls.

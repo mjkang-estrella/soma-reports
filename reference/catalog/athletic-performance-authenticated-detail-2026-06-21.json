@@ -1,0 +1,113 @@
+{
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "capturedAt": "2026-06-21T15:38:41.424Z",
+  "source": "in-app browser logged-in sequencing.com marketplace detail page __NEXT_DATA__.props.pageProps.reportData extraction",
+  "url": "https://sequencing.com/marketplace/athletic-performance",
+  "finalUrl": "https://sequencing.com/marketplace/athletic-performance",
+  "title": "Athletic Performance",
+  "nid": "126",
+  "productId": "55",
+  "app": {
+    "apiAppId": "AthleticDsApp",
+    "appid": "18",
+    "backend": "ApiAppBackend",
+    "label": "Athletic Performance"
+  },
+  "publisher": "App MD",
+  "price": "$0",
+  "currencyCode": "USD",
+  "categories": [
+    "Health",
+    "Fitness"
+  ],
+  "uri": "marketplace/athletic-performance",
+  "reportFile": "",
+  "headerImage": "https://sequencing.com/sites/default/files/athletic-performance-icon1.png",
+  "headerImageAlt": "",
+  "meta": {
+    "canonical": "https://sequencing.com/marketplace/athletic-performance",
+    "publishedTime": null,
+    "modifiedTime": null,
+    "ogDescriptionHash": "sha256:d828bb3a48570e1a264635a65af190090acc6fe9bc8a6e1bddf8eb7ada0fa7e0",
+    "ogDescriptionPreview": "Personalized guidance for optimizing fitness and athletic performance. This app analyzes your DNA and provides straightforward guidance for optimizing your workouts and physical fitness.",
+    "productPriceAmount": null,
+    "productPriceCurrency": "USD",
+    "productRetailerItemId": "55"
+  },
+  "summaryPreview": "Personalized guidance for optimizing fitness and athletic performance. This app analyzes your DNA and provides straightforward guidance for optimizing your workouts and physical fitness.",
+  "bodyPreview": "Personalized guidance for optimizing fitness and athletic performance This app analyzes your DNA and provides straightforward guidance for optimizing your workouts and physical fitness. When you use this app you'll receive a concise report that is: non-technical and easy-to-understand focused on empowering you with useful insights easy to download, print and share Genetically Tailored Fitness In The News Genetic analysis can improve your workout: A 2016 study in the journal Biology of Sport titled 'A genetic-based algorithm for personalized resistance training' found that athletes using DNA-matched training improved their performance almost three times more than those on mismatched programs. read more",
+  "visibleParagraphs": [
+    "Prime Day Sale | Up to 60% off + free worldwide shippingOrder Now",
+    "Order Now",
+    "Dashboard",
+    "My Apps",
+    "AI Reports",
+    "Next-Gen Disease Screen",
+    "Health Scan",
+    "Genome Explorer",
+    "Results",
+    "Files"
+  ],
+  "infoTabs": [
+    {
+      "label": "Overview",
+      "textPreview": "Personalized guidance for optimizing fitness and athletic performance This app analyzes your DNA and provides straightforward guidance for optimizing your workouts and physical fitness. When you use this app you'll receive a concise report that is: non-technical and easy-to-understand focused on empowering you with useful insights easy to download, print and share Genetically Tailored Fitness In The News Genetic analysis can improve your workout: A 2016 study in the journal Biology of Sport titled 'A genetic-based algorithm for personalized resistance training' found that athletes using DNA-matched training improved their performance almost three times more than those on mismatched programs. read more"
+    },
+    {
+      "label": "Getting Started",
+      "textPreview": "This app analyzes your DNA and provides insights for optimizing athletic performance. Once your DNA data is stored in your Sequencing.com account, all you need to do is click the report's 'Start' button. If your DNA data is not already stored in your account, you can either import your data from a DNA test you've already taken (such as from 23andMe or AncestryDNA) or you can order one of our DNA tests. You've already taken a DNA test Upload your DNA data - Our Universal DNA Compatibility enables this report to work with DNA data from almost any DNA test. You need a DNA test Order a DNA test - Our clinical-grade 30x Whole Genome Sequencing test obtains data on 100% of your genome."
+    },
+    {
+      "label": "FAQ",
+      "textPreview": "Do I need to do anything to the file containing my genetic data before it is analyzed by this app? Good news... the app does everything for you. All you need to do is either upload or import the file containing your genetic data into your Sequencing.com account. Start the app, select the file and the app will handle do everything else. 23andMe data can be uploaded or imported directly from 23andMe (via the Upload Center ) while Ancestry.com, Family Tree DNA and The Genographic Project data can be obtained from those services and then uploaded to your account at Sequencing.com. You don't need to do anything to the file you obtain from these services... just upload the file to your secure account at Sequencing.com and then you can use it to power most apps. Both whole and exome sequencing data can be provided unaligned (such as in FASTQ or FASTA formats), aligned but without variant calling (such as BAM or SAM formats) or in VCF, CRAM or AVRO formats. Where do I indicate sex or reference"
+    },
+    {
+      "label": "Related apps",
+      "textPreview": "Wellness & Longevity Clear solutions for better health. This app analyzes dozens of preventable diseases such as heart disease and cancer and empowers you with a straightforward, actionable report you can use to protect and optimize your health. Healthcare Pro Genetic analysis and actionable reports for the practicing healthcare professional. Includes assessment and straightforward information for common, preventable diseases and medication reactions."
+    },
+    {
+      "label": "Disclaimer",
+      "textPreview": "The genetic analysis and statements that appear in this app have not been evaluated by the United States Food and Drug Administration. The Sequencing.com website and all software applications (Apps) that use Sequencing.com's website, as well as Sequencing.com's open Application Programming Interface (API), are not intended to diagnose, treat, cure, or prevent any disease."
+    }
+  ],
+  "reportDataKeys": [
+    "app_id",
+    "avatar",
+    "avatarAlt",
+    "body",
+    "category",
+    "currency_code",
+    "headerImg",
+    "headerImgAlt",
+    "id",
+    "included_with_membership",
+    "included_with_premium",
+    "info_tab",
+    "listEnableFiles",
+    "meta",
+    "nid",
+    "non_genetic_fields",
+    "pre_order",
+    "price",
+    "product_data",
+    "product_id",
+    "publisher",
+    "purchasedBy",
+    "relatedReports",
+    "reportFile",
+    "report_premium",
+    "search_keywords",
+    "start_button_text",
+    "sub_title",
+    "summary",
+    "title",
+    "type",
+    "uri",
+    "wgsCompatible"
+  ],
+  "evidenceNotes": [
+    "Marketplace detail reportData confirms title, publisher/provider when available, price/product metadata when available, categories, sample report link when available, and overview/disclaimer tab boundaries when present.",
+    "Use overview/marketing text only for report purpose and marketplace positioning, not for local genetic, medical, diet, supplement, medication, or performance conclusions.",
+    "No raw genome data, uploaded genome data, or account navigation text is included in this artifact."
+  ]
+}

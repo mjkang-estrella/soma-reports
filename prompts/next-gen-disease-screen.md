@@ -10,4 +10,9 @@ If disease-screening output, disease-risk scoring, rare-disease panel results, c
 Do not guarantee coordinate conversion, build-independent mapping, annotation completeness, pipeline execution, browser search completeness, short-read mapping success, or variant-call accuracy unless exact service or pipeline outputs are supplied.
 Do not classify pathogenicity, make clinical significance claims, diagnose disease, estimate disease risk, infer medication response, or recommend screening, testing, treatment, reproductive, lifestyle, diet, or supplement actions.
 State that a disease screen requires supplied screening outputs and must not imply diagnosis, disease risk, carrier status, pathogenicity, or all-clear reassurance from selected lookup rows.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
+For Next-Gen Disease Screen, sibling Healthcare Pro sample rows are observed disease-screen output structure only.
+Keep sample CAD & MI, MTHFR Deficiency, Colorectal Cancer, Osteoarthritis, Hirschsprung Disease, Thrombophilia, Hemochromatosis, carrier labels, risk labels, sample genotypes, and data-completeness wording separate from local fixture evidence.
+Do not claim diagnosis, disease risk, carrier status, pathogenicity, clinical significance, clinical sensitivity, all-clear reassurance, screening, testing, medication, treatment, or actionability unless exact service output is supplied.

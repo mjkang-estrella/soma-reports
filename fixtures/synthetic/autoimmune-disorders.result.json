@@ -1,24 +1,29 @@
 {
   "reportOverview": {
-    "reportTitle": "Autoimmune Disorders",
     "inputManifestHash": "sha256:synthetic-autoimmune-disorders-condition-boundary-context-v1",
+    "evidenceTypesSupplied": [
+      "Autoimmune model and clinical/lab context explicitly unavailable in the local fixture",
+      "Sibling Immunity & Inflammation sample PDF rows preserved as autoimmune-adjacent output-format examples",
+      "Public immune, autoimmune, complex-trait, PRS, and DTC limitation references"
+    ],
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "validated autoimmune disease model, calibrated autoimmune PRS, HLA inference, autoantibodies, complements, inflammatory labs, organ involvement, symptoms, family history, environmental context, medication context, disease activity, flare context, and authenticated sample-report rows unavailable in this fixture.",
-      "Clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and calibrated model outputs are unavailable.",
-      "This result is not a diagnosis, disease-risk estimate, HLA inference, inflammatory-status result, immune-strength result, infection-risk result, lab interpretation, treatment instruction, supplement instruction, diet instruction, prevention plan, screening instruction, diagnostic-test recommendation, reproductive action, or clinical actionability claim."
+      "Marketplace detail-page parity is still pending.",
+      "No direct Autoimmune Disorders sample PDF is supplied.",
+      "No validated autoimmune disease model, calibrated autoimmune PRS, HLA inference, autoantibodies, complements, inflammatory labs, organ involvement, symptoms, family history, environmental context, medication context, disease activity, flare context, treatment context, diet context, supplement context, or clinical interpretation is supplied.",
+      "Sibling sample rheumatoid arthritis, IBD, eczema, psoriasis, likelihood, percentile, impact/evidence rating, and variant-table text are not local findings."
     ]
   },
   "resultRows": [
     {
-      "groupTitle": "Condition model availability",
-      "item": "autoimmune-disorders-model-unavailable",
-      "brandName": "",
-      "geneticAnalysis": "Autoimmune Disorders cannot emit a autoimmune disorders conclusion from this local fixture because the validated model, calibrated score, clinical context, labs, and authenticated sample rows are unavailable.",
+      "groupTitle": "Autoimmune evidence availability",
+      "item": "Autoimmune Disorders model",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "The local fixture does not include a validated autoimmune disease model, calibrated autoimmune PRS, HLA inference, autoantibody or complement results, organ-involvement evidence, disease-activity context, flare context, symptoms, family history, or medication/environmental context.",
+      "description": "This row states missing evidence explicitly instead of converting sibling sample output into a personal autoimmune result.",
       "genes": [
         "Autoimmune Disorders model"
       ],
-      "sourceLabel": "Public immune / autoimmune / genetics reference context",
+      "sourceLabel": "Public immune, autoimmune, and genetics reference context",
       "sourceIds": [
         "medlineplus-autoimmune-diseases",
         "medlineplus-immune-system-disorders",
@@ -26,13 +31,14 @@
         "niams-arthritis-rheumatic-diseases"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This row is an availability statement, not a diagnosis, risk score, HLA result, immune-strength result, inflammation-level result, lab result, prevention plan, treatment instruction, or all-clear statement."
+      "plainEnglishMeaning": "This run can describe what evidence is missing and show sibling sample report structure, but it cannot diagnose autoimmune disease, estimate risk, infer HLA status, interpret labs, or recommend treatment."
     },
     {
       "groupTitle": "Clinical and lab context availability",
-      "item": "autoimmune-disorders-clinical-lab-context-unavailable",
-      "brandName": "",
-      "geneticAnalysis": "Autoimmune Disorders cannot interpret clinical or lab context because symptoms, diagnosis, family history, inflammatory markers, immune evaluation, medications, environmental context, clinician interpretation, and authenticated sample rows are unavailable.",
+      "item": "Clinical/lab context unavailable",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "Clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, disease activity, flare context, and personal treatment context are unavailable in this fixture.",
+      "description": "Personal autoimmune interpretation requires clinical context and qualified professional review outside this local synthetic fixture.",
       "genes": [
         "Autoimmune Disorders clinical and lab context"
       ],
@@ -43,104 +49,398 @@
         "medlineplus-complex-disorders",
         "fda-direct-to-consumer-tests",
         "nhgri-polygenic-risk-scores",
-        "ebi-gwas-catalog",
-        "medlineplus-autoimmune-diseases",
-        "medlineplus-immune-system-disorders"
+        "ebi-gwas-catalog"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "Personal interpretation needs validated testing scope, symptoms, family history, clinical history, labs, environment, ancestry applicability, and qualified professional review."
+      "plainEnglishMeaning": "Missing clinical and lab context means this report must not be used as an autoimmune diagnosis, all-clear result, risk estimate, lab interpretation, screening instruction, or treatment plan."
+    },
+    {
+      "groupTitle": "Sibling sample report: Overview / Inflammatory And Autoimmune Conditions",
+      "item": "Joint Inflammation",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "More likely; more likely to have rheumatoid arthritis",
+      "description": "The public sample overview card lists Joint Inflammation with a more-likely label and rheumatoid-arthritis wording.",
+      "genes": [
+        "Not shown on overview card"
+      ],
+      "sourceLabel": "Sibling Immunity & Inflammation sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The public sample overview card lists Joint Inflammation with a more-likely label and rheumatoid-arthritis wording. This is sibling Immunity & Inflammation sample output structure only, not a local autoimmune diagnosis, disease-risk estimate, HLA status, autoantibody/complement interpretation, organ-involvement inference, treatment, supplement, diet, screening, testing, reproductive, or actionability finding."
+    },
+    {
+      "groupTitle": "Sibling sample report: Overview / Inflammatory And Autoimmune Conditions",
+      "item": "Gut Inflammation",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "Typical likelihood; typical likelihood of IBD",
+      "description": "The public sample overview card lists Gut Inflammation with a typical-likelihood label and IBD wording.",
+      "genes": [
+        "Not shown on overview card"
+      ],
+      "sourceLabel": "Sibling Immunity & Inflammation sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The public sample overview card lists Gut Inflammation with a typical-likelihood label and IBD wording. This is sibling Immunity & Inflammation sample output structure only, not a local autoimmune diagnosis, disease-risk estimate, HLA status, autoantibody/complement interpretation, organ-involvement inference, treatment, supplement, diet, screening, testing, reproductive, or actionability finding."
+    },
+    {
+      "groupTitle": "Sibling sample report: Risk score / Joint Inflammation",
+      "item": "Joint Inflammation",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "More likely to have rheumatoid arthritis; 86th percentile; based on 281 genetic variants",
+      "description": "The public sample detail page shows a Joint Inflammation risk card with more-likely wording, an 86th percentile graphic, and a visible top-variants table.",
+      "genes": [
+        "EPHA5",
+        "COL11A1",
+        "SRR",
+        "TGFA",
+        "CPNE1",
+        "LTBP1",
+        "RAB28",
+        "TSKU",
+        "TGFB2",
+        "SOCS2"
+      ],
+      "sourceLabel": "Sibling Immunity & Inflammation sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The public sample detail page shows a Joint Inflammation risk card with more-likely wording, an 86th percentile graphic, and a visible top-variants table. This is sibling Immunity & Inflammation sample output structure only, not a local autoimmune diagnosis, disease-risk estimate, HLA status, autoantibody/complement interpretation, organ-involvement inference, treatment, supplement, diet, screening, testing, reproductive, or actionability finding."
+    },
+    {
+      "groupTitle": "Sibling sample report: Risk score / Gut Inflammation",
+      "item": "Gut Inflammation",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "Typical likelihood of IBD; 63rd percentile; based on 41,199 genetic variants",
+      "description": "The public sample detail page shows a Gut Inflammation risk card with typical-likelihood wording, a 63rd percentile graphic, and a visible top-variants table.",
+      "genes": [
+        "ADO",
+        "ATG16L1",
+        "STAT3",
+        "TNFSF15",
+        "FCGR2A",
+        "NCR3",
+        "HLA-DQA2",
+        "IL23R"
+      ],
+      "sourceLabel": "Sibling Immunity & Inflammation sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The public sample detail page shows a Gut Inflammation risk card with typical-likelihood wording, a 63rd percentile graphic, and a visible top-variants table. This is sibling Immunity & Inflammation sample output structure only, not a local autoimmune diagnosis, disease-risk estimate, HLA status, autoantibody/complement interpretation, organ-involvement inference, treatment, supplement, diet, screening, testing, reproductive, or actionability finding."
+    },
+    {
+      "groupTitle": "Sibling sample report: Relaxation Techniques / Eczema",
+      "item": "Eczema",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "Impact 3/5; evidence 3/5",
+      "description": "The public recommendation block includes an Eczema row under Relaxation Techniques with impact/evidence ratings.",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sibling Immunity & Inflammation sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The public recommendation block includes an Eczema row under Relaxation Techniques with impact/evidence ratings. This is sibling Immunity & Inflammation sample output structure only, not a local autoimmune diagnosis, disease-risk estimate, HLA status, autoantibody/complement interpretation, organ-involvement inference, treatment, supplement, diet, screening, testing, reproductive, or actionability finding."
+    },
+    {
+      "groupTitle": "Sibling sample report: Relaxation Techniques / Psoriasis",
+      "item": "Psoriasis",
+      "brandName": "Inflammation And Immunity sample",
+      "geneticAnalysis": "Impact 5/5; evidence 4/5",
+      "description": "The public recommendation block includes a Psoriasis row under Relaxation Techniques with impact/evidence ratings.",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "sourceLabel": "Sibling Immunity & Inflammation sample report",
+      "sourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The public recommendation block includes a Psoriasis row under Relaxation Techniques with impact/evidence ratings. This is sibling Immunity & Inflammation sample output structure only, not a local autoimmune diagnosis, disease-risk estimate, HLA status, autoantibody/complement interpretation, organ-involvement inference, treatment, supplement, diet, screening, testing, reproductive, or actionability finding."
+    }
+  ],
+  "sampleRows": [
+    {
+      "brandName": "Inflammation And Immunity sample",
+      "description": "The public sample overview card lists Joint Inflammation with a more-likely label and rheumatoid-arthritis wording.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown on overview card"
+      ],
+      "geneticAnalysis": "More likely; more likely to have rheumatoid arthritis",
+      "groupTitle": "Overview / Inflammatory And Autoimmune Conditions",
+      "item": "Joint Inflammation",
+      "sortOrder": 1,
+      "sourceBindingNote": "Autoimmune Disorders sibling output-structure evidence from the public Immunity & Inflammation sample PDF. Extracted from rendered page 12 of the public Immunity & Inflammation sample PDF; this is observed sample output structure, not a personal arthritis assessment. This is not a direct Autoimmune Disorders report and not a personal autoimmune finding.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Immunity & Inflammation sample report",
+      "sourceResourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Inflammation And Immunity sample",
+      "description": "The public sample overview card lists Gut Inflammation with a typical-likelihood label and IBD wording.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown on overview card"
+      ],
+      "geneticAnalysis": "Typical likelihood; typical likelihood of IBD",
+      "groupTitle": "Overview / Inflammatory And Autoimmune Conditions",
+      "item": "Gut Inflammation",
+      "sortOrder": 2,
+      "sourceBindingNote": "Autoimmune Disorders sibling output-structure evidence from the public Immunity & Inflammation sample PDF. Extracted from rendered page 12 of the public Immunity & Inflammation sample PDF; this is observed sample output structure, not a personal IBD assessment. This is not a direct Autoimmune Disorders report and not a personal autoimmune finding.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Immunity & Inflammation sample report",
+      "sourceResourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Inflammation And Immunity sample",
+      "description": "The public sample detail page shows a Joint Inflammation risk card with more-likely wording, an 86th percentile graphic, and a visible top-variants table.",
+      "extractionStatus": "direct",
+      "genes": [
+        "EPHA5",
+        "COL11A1",
+        "SRR",
+        "TGFA",
+        "CPNE1",
+        "LTBP1",
+        "RAB28",
+        "TSKU",
+        "TGFB2",
+        "SOCS2"
+      ],
+      "geneticAnalysis": "More likely to have rheumatoid arthritis; 86th percentile; based on 281 genetic variants",
+      "groupTitle": "Risk score / Joint Inflammation",
+      "item": "Joint Inflammation",
+      "sortOrder": 3,
+      "sourceBindingNote": "Autoimmune Disorders sibling output-structure evidence from the public Immunity & Inflammation sample PDF. Extracted from rendered page 14 of the public Immunity & Inflammation sample PDF; this is observed sample output structure, not a personal rheumatoid-arthritis assessment. This is not a direct Autoimmune Disorders report and not a personal autoimmune finding.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Immunity & Inflammation sample report",
+      "sourceResourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Inflammation And Immunity sample",
+      "description": "The public sample detail page shows a Gut Inflammation risk card with typical-likelihood wording, a 63rd percentile graphic, and a visible top-variants table.",
+      "extractionStatus": "direct",
+      "genes": [
+        "ADO",
+        "ATG16L1",
+        "STAT3",
+        "TNFSF15",
+        "FCGR2A",
+        "NCR3",
+        "HLA-DQA2",
+        "IL23R"
+      ],
+      "geneticAnalysis": "Typical likelihood of IBD; 63rd percentile; based on 41,199 genetic variants",
+      "groupTitle": "Risk score / Gut Inflammation",
+      "item": "Gut Inflammation",
+      "sortOrder": 4,
+      "sourceBindingNote": "Autoimmune Disorders sibling output-structure evidence from the public Immunity & Inflammation sample PDF. Extracted from rendered page 15 of the public Immunity & Inflammation sample PDF; this is observed sample output structure, not a personal IBD assessment. This is not a direct Autoimmune Disorders report and not a personal autoimmune finding.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Immunity & Inflammation sample report",
+      "sourceResourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Inflammation And Immunity sample",
+      "description": "The public recommendation block includes an Eczema row under Relaxation Techniques with impact/evidence ratings.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "geneticAnalysis": "Impact 3/5; evidence 3/5",
+      "groupTitle": "Relaxation Techniques / Eczema",
+      "item": "Eczema",
+      "sortOrder": 5,
+      "sourceBindingNote": "Autoimmune Disorders sibling output-structure evidence from the public Immunity & Inflammation sample PDF. Extracted from rendered page 17 of the public Immunity & Inflammation sample PDF; this is observed output structure, not personal stress-management or treatment advice. This is not a direct Autoimmune Disorders report and not a personal autoimmune finding.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Immunity & Inflammation sample report",
+      "sourceResourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Inflammation And Immunity sample",
+      "description": "The public recommendation block includes a Psoriasis row under Relaxation Techniques with impact/evidence ratings.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown in condition block"
+      ],
+      "geneticAnalysis": "Impact 5/5; evidence 4/5",
+      "groupTitle": "Relaxation Techniques / Psoriasis",
+      "item": "Psoriasis",
+      "sortOrder": 6,
+      "sourceBindingNote": "Autoimmune Disorders sibling output-structure evidence from the public Immunity & Inflammation sample PDF. Extracted from rendered page 17 of the public Immunity & Inflammation sample PDF; this is observed output structure, not personal stress-management or treatment advice. This is not a direct Autoimmune Disorders report and not a personal autoimmune finding.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Immunity & Inflammation sample report",
+      "sourceResourceIds": [
+        "inflammation-and-immunity-sample-pdf"
+      ]
     }
   ],
   "conditionBoundaryContext": {
-    "plainEnglishMeaning": "Autoimmune Disorders is currently a boundary report: it can document what evidence is available and what is missing, but it cannot diagnose autoimmune disorders, estimate disease risk, interpret labs, or make health decisions.",
+    "plainEnglishMeaning": "Autoimmune Disorders is sample-backed for output structure only. It can state evidence availability and use sibling sample rows as format examples, but it cannot diagnose autoimmune disease, estimate risk, interpret labs, or recommend action.",
     "unsupportedClaims": [
-      "Diagnosis, all-clear result, or disease-risk estimate",
-      "HLA status, inflammatory status, immune strength, infection risk, autoantibody status, complement status, cytokines, CRP, ESR, immune-cell labs, organ involvement, disease activity, or flare status",
-      "EDS subtype, connective-tissue subtype, collagen-gene panel result, variant classification, vascular-risk inference, Beighton score, or hypermobility score",
-      "Treatment, supplement, diet, prevention, screening, diagnostic testing, reproductive, medication, surgery, or management instruction",
-      "Replacement for qualified clinician, genetic counselor, rheumatology, immunology, or genetics review"
+      "Autoimmune diagnosis, all-clear result, disease-risk estimate, or disease activity/flare inference",
+      "HLA status, autoantibody status, complement status, organ involvement, CRP, ESR, cytokines, immune-cell labs, or other lab interpretation",
+      "Treatment, supplement, diet, screening, diagnostic testing, medication, reproductive, or actionability guidance",
+      "Converting sibling sample rheumatoid arthritis, IBD, eczema, or psoriasis labels into personal findings"
     ],
-    "professionalReview": "Use qualified professional review for symptoms, abnormal labs, family history, known variants, autoimmune or inflammatory concerns, connective-tissue concerns, medication questions, pregnancy or reproductive questions, screening questions, or treatment decisions."
-  },
-  "practicalNextSteps": {
-    "professionalReview": [
-      "Do not use this local fixture to change medication, supplements, diet, screening, diagnostic testing, reproductive decisions, prevention plans, or treatment decisions.",
-      "Bring symptoms, family history, clinical history, labs, medications, environment, prior genetic testing, and ancestry context to a qualified professional if reviewing immune, inflammatory, autoimmune, rheumatologic, connective-tissue, or EDS concerns.",
-      "Treat missing model rows as unavailable, not as low risk, high risk, reassuring, abnormal, normal, or actionable results."
+    "professionalReview": "Use qualified professional review for symptoms, abnormal labs, family history, known pathogenic variants, autoimmune concerns, immune medication questions, pregnancy or reproductive questions, screening questions, or treatment decisions.",
+    "sourceIds": [
+      "cdc-genetic-testing",
+      "medlineplus-autoimmune-diseases",
+      "medlineplus-immune-system-disorders",
+      "niaid-autoimmunity-factors",
+      "niams-arthritis-rheumatic-diseases",
+      "inflammation-and-immunity-sample-pdf"
     ]
   },
   "references": [
     {
       "id": "cdc-genetic-testing",
-      "title": "CDC Genetic Testing"
+      "title": "CDC Genetic Testing",
+      "sourceType": "public_health_resource"
     },
     {
       "id": "medlineplus-genetics",
-      "title": "MedlinePlus Genetics"
+      "title": "MedlinePlus Genetics",
+      "sourceType": "education_resource"
     },
     {
       "id": "medlineplus-complex-disorders",
-      "title": "MedlinePlus Genetics: complex disorders"
+      "title": "MedlinePlus Genetics: complex disorders",
+      "sourceType": "education_resource"
     },
     {
       "id": "fda-direct-to-consumer-tests",
-      "title": "FDA Direct-to-Consumer Tests"
+      "title": "FDA Direct-to-Consumer Tests",
+      "sourceType": "regulatory_resource"
     },
     {
       "id": "nhgri-polygenic-risk-scores",
-      "title": "NHGRI overview of polygenic risk scores"
+      "title": "NHGRI overview of polygenic risk scores",
+      "sourceType": "education_resource"
     },
     {
       "id": "ebi-gwas-catalog",
-      "title": "GWAS Catalog"
+      "title": "GWAS Catalog",
+      "sourceType": "database"
     },
     {
       "id": "medlineplus-autoimmune-diseases",
-      "title": "MedlinePlus: Autoimmune Diseases"
+      "title": "MedlinePlus: Autoimmune Diseases",
+      "sourceType": "public_health_resource"
     },
     {
       "id": "medlineplus-immune-system-disorders",
-      "title": "MedlinePlus: Immune System and Disorders"
+      "title": "MedlinePlus: Immune System and Disorders",
+      "sourceType": "public_health_resource"
     },
     {
       "id": "niaid-autoimmunity-factors",
-      "title": "NIAID: Factors That Influence Autoimmunity"
+      "title": "NIAID: Factors That Influence Autoimmunity",
+      "sourceType": "public_health_resource"
     },
     {
       "id": "niams-arthritis-rheumatic-diseases",
-      "title": "NIAMS: Arthritis and Rheumatic Diseases"
+      "title": "NIAMS: Arthritis and Rheumatic Diseases",
+      "sourceType": "public_health_resource"
+    },
+    {
+      "id": "inflammation-and-immunity-sample-pdf",
+      "title": "Inflammation and Immunity DNA Report sample report",
+      "sourceType": "mock_report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "autoimmune-disorders-model-unavailable",
-        "gene": "Autoimmune Disorders model",
-        "observedValue": "validated autoimmune disease model, calibrated autoimmune PRS, HLA inference, autoantibodies, complements, inflammatory labs, organ involvement, symptoms, family history, environmental context, medication context, disease activity, flare context, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "tier": "Joint Inflammation top sample variants",
+        "gene": "EPHA5",
+        "variantId": "rs201194999",
+        "genotype": "CC",
+        "effect": "Visible top-variant row in the sample Joint Inflammation table",
+        "phenotype": "The sample Joint Inflammation card reports higher rheumatoid-arthritis likelihood and includes this visible variant row. Use as Autoimmune Disorders sibling sample output-structure evidence only; do not infer local autoimmune disease, rheumatoid arthritis, IBD, HLA status, autoantibody status, complement status, diagnosis, treatment, diet, supplement, screening, testing, reproductive, or actionability guidance.",
+        "extractionStatus": "direct"
       },
       {
-        "inputId": "autoimmune-disorders-clinical-lab-context-unavailable",
-        "gene": "Autoimmune Disorders clinical and lab context",
-        "observedValue": "clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "tier": "Joint Inflammation top sample variants",
+        "gene": "COL11A1",
+        "variantId": "rs2622873",
+        "genotype": "TT",
+        "effect": "Visible top-variant row in the sample Joint Inflammation table",
+        "phenotype": "The sample Joint Inflammation card reports higher rheumatoid-arthritis likelihood and includes this visible variant row. Use as Autoimmune Disorders sibling sample output-structure evidence only; do not infer local autoimmune disease, rheumatoid arthritis, IBD, HLA status, autoantibody status, complement status, diagnosis, treatment, diet, supplement, screening, testing, reproductive, or actionability guidance.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Joint Inflammation top sample variants",
+        "gene": "SRR",
+        "variantId": "rs216175",
+        "genotype": "AA",
+        "effect": "Visible top-variant row in the sample Joint Inflammation table",
+        "phenotype": "The sample Joint Inflammation card reports higher rheumatoid-arthritis likelihood and includes this visible variant row. Use as Autoimmune Disorders sibling sample output-structure evidence only; do not infer local autoimmune disease, rheumatoid arthritis, IBD, HLA status, autoantibody status, complement status, diagnosis, treatment, diet, supplement, screening, testing, reproductive, or actionability guidance.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Gut Inflammation top sample variants",
+        "gene": "ADO",
+        "variantId": "rs10761659",
+        "genotype": "GG",
+        "effect": "Visible top-variant row in the sample Gut Inflammation table",
+        "phenotype": "The sample Gut Inflammation card reports typical IBD likelihood and includes this visible variant row. Use as Autoimmune Disorders sibling sample output-structure evidence only; do not infer local autoimmune disease, rheumatoid arthritis, IBD, HLA status, autoantibody status, complement status, diagnosis, treatment, diet, supplement, screening, testing, reproductive, or actionability guidance.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Gut Inflammation top sample variants",
+        "gene": "ATG16L1",
+        "variantId": "rs2241880",
+        "genotype": "GG",
+        "effect": "Visible top-variant row in the sample Gut Inflammation table",
+        "phenotype": "The sample Gut Inflammation card reports typical IBD likelihood and includes this visible variant row. Use as Autoimmune Disorders sibling sample output-structure evidence only; do not infer local autoimmune disease, rheumatoid arthritis, IBD, HLA status, autoantibody status, complement status, diagnosis, treatment, diet, supplement, screening, testing, reproductive, or actionability guidance.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Gut Inflammation top sample variants",
+        "gene": "STAT3",
+        "variantId": "rs744166",
+        "genotype": "AA",
+        "effect": "Visible top-variant row in the sample Gut Inflammation table",
+        "phenotype": "The sample Gut Inflammation card reports typical IBD likelihood and includes this visible variant row. Use as Autoimmune Disorders sibling sample output-structure evidence only; do not infer local autoimmune disease, rheumatoid arthritis, IBD, HLA status, autoantibody status, complement status, diagnosis, treatment, diet, supplement, screening, testing, reproductive, or actionability guidance.",
+        "extractionStatus": "direct"
       }
     ],
     "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and exact rows",
-      "Validated disease model or calibrated score with applicability and validation metadata",
-      "HLA inference, inflammatory markers, immune labs, symptoms, family history, clinical history, environment, medications, ancestry applicability, and professional interpretation",
-      "validated autoimmune disease model, calibrated autoimmune PRS, HLA inference, autoantibodies, complements, inflammatory labs, organ involvement, symptoms, family history, environmental context, medication context, disease activity, flare context, and authenticated sample-report rows unavailable in this fixture; clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and authenticated sample-report rows unavailable in this fixture"
+      "Marketplace detail-page parity remains pending.",
+      "No direct Autoimmune Disorders sample PDF is supplied.",
+      "No validated autoimmune disease model, calibrated autoimmune PRS, HLA inference, autoantibodies, complements, inflammatory labs, organ involvement, symptoms, family history, environmental context, medication context, disease activity, flare context, or clinical interpretation is supplied.",
+      "Sibling sample likelihood labels, percentiles, impact/evidence ratings, recommendations, and variant rows are output-format evidence only."
     ],
     "probabilities": [],
     "uncertainty": [
-      "No calibrated autoimmune disorders probability, disease-risk, immune-strength, inflammation-level, lab, treatment-response, prevention-benefit, screening-benefit, reproductive, or actionability model is supplied for this local package.",
-      "Immune, inflammatory, autoimmune, rheumatologic, connective-tissue, and EDS interpretation depends on validated test scope, clinical and family history, symptoms, labs, environment, ancestry applicability, and qualified professional review."
+      "No calibrated autoimmune probability, disease-risk, HLA, lab, treatment-response, screening, reproductive, or actionability model is supplied.",
+      "Sibling sample rows demonstrate possible report layout and row structure but do not validate local autoimmune conclusions.",
+      "Autoimmune interpretation depends on validated test scope, clinical and family history, symptoms, labs, environment, ancestry applicability, and qualified professional review."
     ],
     "limitations": [
-      "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
-      "The report is educational and does not provide diagnosis, disease-risk estimation, HLA inference, inflammatory-status assessment, immune-strength assessment, infection-risk assessment, lab interpretation, prevention advice, screening advice, diagnostic-testing advice, reproductive advice, supplement advice, diet advice, medication advice, surgery advice, treatment advice, or actionability.",
-      "Unavailable model rows should never be interpreted as low risk, high risk, no risk, normal, abnormal, reassuring, diagnostic, or an all-clear result."
+      "This validation result uses derived evidence only; raw genome data is not included.",
+      "The report does not emit raw SNP tables, HLA calls, autoantibody/complement values, lab values, or clinical interpretations.",
+      "The sibling sample PDF supports sample-backed formal output structure, not full marketplace detail-page parity or personal medical actionability."
     ]
   }
 }

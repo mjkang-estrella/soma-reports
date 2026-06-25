@@ -15,7 +15,7 @@
       "haplotype": "organ-system-model-unavailable",
       "inputId": "vision-model-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "validated vision genetics model, inherited eye disease diagnosis, gene panel result, variant classifications, visual acuity, OCT, ERG, visual fields, retinal imaging, glaucoma or cataract evaluation, therapy eligibility context, ophthalmology or genetics review, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "validated vision genetics model, inherited eye disease diagnosis, gene panel result, variant classifications, visual acuity, OCT, ERG, visual fields, retinal imaging, glaucoma or cataract evaluation, therapy eligibility context, ophthalmology or genetics review, and authenticated sample-report rows unavailable in this fixture; Public Disease Risk sample PDF Eye Related Diseases table, LOXL1 explanatory note, and heritable-component limitation are extracted as sibling output-structure evidence.",
       "sourceArtifact": "synthetic-vision-organ-system-boundary-context-v1",
       "sourceFile": "synthetic-vision-organ-system-boundary-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "clinical-professional-context-unavailable",
       "inputId": "vision-clinical-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and personal clinical context unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Vision",
       "sourceArtifact": "synthetic-vision-organ-system-boundary-context-v1",
       "sourceFile": "synthetic-vision-organ-system-boundary-context-v1.json"
     },
@@ -35,7 +35,7 @@
       "haplotype": "organ-system-context-unavailable",
       "inputId": "vision-organ-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "labs, imaging, vitals, organ-function measures, disease-specific testing, treatment context, prevention context, and actionability context unavailable in this fixture",
+      "observedValue": "labs, imaging, vitals, organ-function measures, disease-specific testing, treatment context, prevention context, actionability context, and personal recommendation context unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Vision",
       "sourceArtifact": "synthetic-vision-organ-system-boundary-context-v1",
       "sourceFile": "synthetic-vision-organ-system-boundary-context-v1.json"
     }
@@ -46,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for vision validation"
   },
-  "missingInputPolicy": "Report unavailable vision and inherited eye disease context evidence explicitly; do not diagnose inherited retinal disease, retinitis pigmentosa, macular degeneration, glaucoma, cataract, optic neuropathy, eye disease, or vision disorder; infer RPE65, RPGR, ABCA4, or gene-panel pathogenicity; classify variants; estimate vision loss, progression, therapy eligibility, visual acuity, OCT, ERG, visual fields, retinal imaging, vitamin need, gene therapy need, driving action, treatment need, screening need, testing need, cascade-testing need, reproductive action, or clinical actionability.",
+  "missingInputPolicy": "Report unavailable vision and inherited eye disease context evidence explicitly; use the public sibling Disease Risk sample rows only as observed output structure and do not infer diagnosis, eye-disease risk, visual acuity, imaging findings, therapy eligibility, vitamin need, driving action, treatment, testing, or actionability guidance from local unavailable evidence or sample-only rows.",
   "packageSlug": "vision",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -205,7 +205,19 @@
         "missing_model_policy",
         "clinical_actionability_limits"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "genetic-testing-disease-risk-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Genetic Testing For Disease Risk sample genetic report",
+      "usedFor": [
+        "sibling_formal_fields",
+        "sample_rows",
+        "risk_label_table",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer vision and inherited eye disease context boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer vision and inherited eye disease context boundary context using supplied references plus observed sibling Disease Risk Genetic Test Report vision and eye-disease output structure while explicitly marking personal clinical context unavailable."
 }

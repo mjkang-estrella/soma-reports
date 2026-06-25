@@ -1,44 +1,60 @@
 {
-  "packageSlug": "map-my-genes-archaeology-edition",
-  "datasetId": "synthetic-map-my-genes-archaeology-context-v1",
-  "packageVersion": "0.1.0",
-  "reportPurpose": "Consumer archaeology-themed ancestry context from derived broad autosomal similarity while marking ancient sample matching, culture assignment, and direct descent evidence unavailable.",
-  "missingInputPolicy": "Mark ancient-sample matching, archaeological site, ancient culture, direct descent, exact homeland, migration event, relatives, and community affiliation unavailable when not explicitly supplied.",
   "consumerTone": "plain English; archaeology-themed ancestry education only; no direct ancient-sample match, identity, exact-origin, ethnicity-percentage, tribal/community, relative-matching, or health claims",
-  "inputManifest": {
-    "hash": "sha256:synthetic-map-my-genes-archaeology-context-v1",
-    "genomeBuild": "GRCh37-or-GRCh38-derived",
-    "rawGenomeReturned": false,
-    "source": "synthetic derived ancestry evidence for map-my-genes-archaeology-edition validation"
+  "datasetId": "synthetic-map-my-genes-archaeology-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
   },
   "genomeEvidence": [
     {
-      "inputId": "autosomal-archaeology-reference-panel-summary",
-      "haplotype": "autosomal-archaeology-reference-panel-summary",
-      "gene": "autosomal genome",
-      "observedValue": "broad East Asian reference-panel similarity for archaeology-themed context; no ancient-sample matching model supplied",
       "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "autosomal genome",
+      "haplotype": "autosomal-archaeology-reference-panel-summary",
+      "inputId": "autosomal-archaeology-reference-panel-summary",
       "matchStatus": "summarized",
-      "sourceFile": "synthetic-map-my-genes-archaeology-context-v1.json",
-      "sourceArtifact": "synthetic-map-my-genes-archaeology-context-v1"
+      "observedValue": "broad East Asian reference-panel similarity for archaeology-themed context; no ancient-sample matching model supplied",
+      "sourceArtifact": "synthetic-map-my-genes-archaeology-context-v1",
+      "sourceFile": "synthetic-map-my-genes-archaeology-context-v1.json"
     },
     {
-      "inputId": "ancient-sample-matching-unavailable",
-      "haplotype": "not-supplied",
-      "gene": "ancient DNA comparison model",
-      "observedValue": "ancient sample matching, archaeological-site, ancient-culture, and direct-descent evidence unavailable in this fixture",
       "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "ancient DNA comparison model",
+      "haplotype": "not-supplied",
+      "inputId": "ancient-sample-matching-unavailable",
       "matchStatus": "unavailable",
-      "sourceFile": "synthetic-map-my-genes-archaeology-context-v1.json",
-      "sourceArtifact": "synthetic-map-my-genes-archaeology-context-v1"
+      "observedValue": "ancient sample matching, archaeological-site, ancient-culture, and direct-descent evidence unavailable in this fixture",
+      "sourceArtifact": "synthetic-map-my-genes-archaeology-context-v1",
+      "sourceFile": "synthetic-map-my-genes-archaeology-context-v1.json"
+    },
+    {
+      "assembly": "not-applicable",
+      "gene": "autosomal genome",
+      "haplotype": "not-user-genotype",
+      "inputId": "sibling-world-ancestry-output-structure",
+      "matchStatus": "observed_sample_only",
+      "observedValue": "World Ancestry sample rows observed separately as sibling map-style output structure only; no ancient-sample matching, archaeological-site, culture, civilization, direct-descent, or migration-event model supplied",
+      "sourceArtifact": "world-ancestry-sample-pdf",
+      "sourceFile": "world-ancestry-report-sample.pdf"
     }
   ],
+  "inputManifest": {
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "hash": "sha256:synthetic-map-my-genes-archaeology-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived ancestry evidence for map-my-genes-archaeology-edition validation"
+  },
+  "missingInputPolicy": "Mark ancient-sample matching, archaeological site, ancient culture, civilization, tribe, direct descent, migration event, exact homeland, ethnicity percentage, community affiliation, identity, relative matching, family-tree placement, and health interpretation unavailable when not explicitly supplied. Use sibling World Ancestry sample percentages, maps, ethnicity cards, chromosome painting, and G-Nomix methodology only as observed output-format examples.",
+  "packageSlug": "map-my-genes-archaeology-edition",
+  "packageVersion": "0.1.0",
   "referenceResources": [
     {
-      "id": "medlineplus-genetic-ancestry-testing",
-      "title": "MedlinePlus Genetics: genetic ancestry testing",
-      "sourceType": "education_resource",
       "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-ancestry-testing",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: genetic ancestry testing",
       "usedFor": [
         "ancestry_context",
         "autosomal_scope",
@@ -46,10 +62,10 @@
       ]
     },
     {
-      "id": "medlineplus-dtc-risks-benefits",
-      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing",
-      "sourceType": "education_resource",
       "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-dtc-risks-benefits",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing",
       "usedFor": [
         "dtc_limitations",
         "privacy_sensitivity",
@@ -57,10 +73,10 @@
       ]
     },
     {
-      "id": "international-genome-sample-resource",
-      "title": "International Genome Sample Resource / 1000 Genomes",
-      "sourceType": "database",
       "evidenceLevel": "database_background",
+      "id": "international-genome-sample-resource",
+      "sourceType": "database",
+      "title": "International Genome Sample Resource / 1000 Genomes",
       "usedFor": [
         "ancestry_context",
         "population_reference",
@@ -68,22 +84,29 @@
       ]
     },
     {
-      "id": "allen-ancient-dna-resource",
-      "title": "Allen Ancient DNA Resource",
-      "sourceType": "research_dataset",
       "evidenceLevel": "research_dataset_background",
+      "id": "allen-ancient-dna-resource",
+      "sourceType": "research_dataset",
+      "title": "Allen Ancient DNA Resource",
       "usedFor": [
         "ancient_dna_context",
         "archaeology_reference_limitations",
         "no_direct_descent_claims"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "world-ancestry-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "World Ancestry Report sample report",
+      "usedFor": [
+        "sibling_sample_rows",
+        "formal_fields",
+        "genotype_summary",
+        "output_format",
+        "archaeology_map_boundary"
+      ]
     }
   ],
-  "expectedAssertions": {
-    "noRawGenomeInOutput": true,
-    "everyFindingHasReference": true,
-    "missingInputsAreExplicit": true,
-    "probabilitiesOnlyInAppendix": true,
-    "consumerLanguage": true
-  }
+  "reportPurpose": "Consumer archaeology-themed ancestry context from derived broad autosomal similarity plus Allen Ancient DNA Resource background and sibling World Ancestry map-style output-structure evidence."
 }

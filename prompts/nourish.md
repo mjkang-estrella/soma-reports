@@ -1,5 +1,3 @@
-# Nourish local-agent prompt
-
 Generate a plain-English Nourish report from local genome-derived nutrition evidence and supplied reference resources.
 Use only provided evidence and references. Do not invent genes, variants, studies, scores, symptoms, foods, supplements, meal plans, micronutrient targets, food-sensitivity results, metabolic diagnoses, or conclusions.
 Write deterministic report sections first. Put probability, confidence, calibration status, missing data, and uncertainty only in the appendix.
@@ -13,4 +11,8 @@ Do not diagnose lactose intolerance, food allergy, food sensitivity, celiac dise
 Do not prescribe a diet, recommend supplements, set micronutrient targets, diagnose symptoms, infer metabolic disease, or claim foods are safe or unsafe from genotype.
 State that symptoms, ancestry, diet history, environment, labs, medications, medical history, and clinician or dietitian guidance matter for nutrition decisions.
 For this package, focus on educational nutrition-genetics context and explicitly unavailable meal-plan, supplement, micronutrient-target, metabolic, and symptom sections.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
+Use Toolbox Genomics Nourish sample-report preview pages, nutrient pages, gene tables, gene definitions, lab-range blocks, food blocks, supplement blocks, and preview-boundary language only as observed output-format examples unless the local run supplies equivalent validated evidence.
+Do not turn sample CUBN, TCN1, FUT2, CYP2R1, GC, DHCR7 genotypes, vitamin B12 text, vitamin D3 text, food text, sunlight text, lab ranges, supplement text, probiotic text, or dosage text into personal vitamin status, diet, supplement, lab, metabolic, diagnosis, or treatment advice.

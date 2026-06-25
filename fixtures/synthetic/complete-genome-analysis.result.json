@@ -1,162 +1,376 @@
 {
   "reportOverview": {
-    "reportTitle": "Complete Genome Analysis",
     "inputManifestHash": "sha256:synthetic-complete-genome-analysis-boundary-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "Complete genome-wide inventory, coverage metrics, variant interpretation, pediatric context, clinical classification evidence, and complete resource versions are not supplied.",
-      "complete genome-wide inventory, coverage metrics, variant interpretation, pediatric context, disease risk, carrier status, pharmacogenomics, ancestry, pathogenicity classification, clinical significance, and authenticated sample-report rows unavailable in this fixture"
+      "Complete genome-wide inventory, coverage metrics, variant interpretation, pediatric context, disease risk, carrier status, pharmacogenomics, ancestry, pathogenicity classification, clinical significance, and clinical actionability are unavailable for the local fixture.",
+      "Public Complete Genome Analysis inherited-traits sample rows are included only as observed output-structure evidence and are not local personal results."
     ]
   },
   "resultRows": [
     {
-      "groupTitle": "Public variant lookup context",
-      "item": "BDNF rs6265",
-      "brandName": "",
-      "geneticAnalysis": "A selected public variant identifier is available for lookup and annotation context. No complete genome-wide analysis, pediatric interpretation, health finding, or clinical interpretation is supplied.",
+      "groupTitle": "Local complete-genome boundary evidence",
+      "item": "BDNF rs6265 lookup context",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A selected public BDNF rs6265 identifier is available for lookup and annotation-context validation, but no local inherited-trait, disease, medication, ancestry, pediatric, or clinical interpretation is supplied.",
       "genes": [
         "BDNF"
       ],
-      "sourceLabel": "NCBI dbSNP; Ensembl REST; Ensembl VEP",
+      "sourceLabel": "dbSNP / Ensembl / Sequence Ontology reference context",
       "sourceIds": [
         "ncbi-dbsnp",
-        "ensembl-rest-api",
-        "ensembl-vep"
+        "ensembl-vep",
+        "sequence-ontology"
       ],
-      "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "The row can be used to explain a selected public lookup, but it does not show complete genome analysis or a clinical finding."
+      "plainEnglishMeaning": "This row demonstrates the local utility boundary: a public identifier can anchor lookup context, but it does not prove a complete genome-wide analysis or personal trait result.",
+      "sourceBindingStatus": "curated"
     },
     {
-      "groupTitle": "Reference build context",
-      "item": "GRCh38 coordinate context",
-      "brandName": "",
-      "geneticAnalysis": "GRCh38 reference-build context is available for the selected lookup, while alternate-build conversion, remapping, complete coverage, and genome-wide analysis outputs are not supplied.",
+      "groupTitle": "Local complete-genome boundary evidence",
+      "item": "GRCh38 reference-build context",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "The fixture supplies derived GRCh38 coordinate context while explicitly omitting alternate-build conversion, remapping evidence, complete callset output, and complete genome analysis service output.",
       "genes": [
         "reference genome coordinate context"
       ],
-      "sourceLabel": "NCBI Variation Services / SPDI; Ensembl REST",
+      "sourceLabel": "Ensembl REST / NCBI Variation Services reference context",
       "sourceIds": [
-        "ncbi-variation-services-spdi",
-        "ensembl-rest-api"
+        "ensembl-rest-api",
+        "ncbi-variation-services-spdi"
       ],
-      "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "The report can name the supplied build context, but complete genome-wide analysis requires supplied analysis outputs and cannot be inferred from one selected lookup row."
+      "plainEnglishMeaning": "Reference-build context can be reported, but it does not establish coverage, variant interpretation, pediatric interpretation, disease risk, carrier status, pharmacogenomics, ancestry, or clinical significance.",
+      "sourceBindingStatus": "curated"
     },
     {
-      "groupTitle": "Complete genome analysis availability",
-      "item": "Complete genome analysis output unavailable",
-      "brandName": "",
-      "geneticAnalysis": "complete genome-wide inventory, coverage metrics, variant interpretation, pediatric context, disease risk, carrier status, pharmacogenomics, ancestry, pathogenicity classification, clinical significance, and authenticated sample-report rows unavailable in this fixture",
+      "groupTitle": "Unavailable complete-genome evidence",
+      "item": "Complete genome analysis service output",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "Complete genome-wide inventory, coverage metrics, variant interpretation, pediatric context, disease risk, carrier status, pharmacogenomics, ancestry, pathogenicity classification, and clinical significance are unavailable in this fixture.",
       "genes": [
         "complete genome analysis output"
       ],
-      "sourceLabel": "Ensembl VEP; ClinVar; NIH Genetic Testing Registry; 1000 Genomes; GWAS Catalog",
+      "sourceLabel": "Clinical and population genetics reference context",
       "sourceIds": [
-        "ensembl-vep",
         "ncbi-clinvar",
         "ncbi-genetic-testing-registry",
         "international-genome-sample-resource",
         "ebi-gwas-catalog"
       ],
-      "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This local run can explain what evidence is missing, but it cannot claim a complete genome-wide analysis, pediatric interpretation, disease risk, carrier status, pharmacogenomics report, ancestry report, or clinical classification."
+      "plainEnglishMeaning": "The local report can explain missing evidence and safety limits, but it must not create genome-wide, disease-risk, carrier-status, drug-response, ancestry, pediatric, pathogenicity, clinical, treatment, or all-clear claims.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Report section identity",
+      "item": "Section 1 / Inherited Traits",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "The sample page is labeled Section 1 and INHERITED TRAITS, with a Complete Genome Science footer and page number 5.",
+      "description": "This captures visible section identity only; it does not show that a local complete genome analysis was run.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "complete-genome-analysis-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the single rendered page of the public sample PDF; section title and footer are observed output structure only.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Inherited Traits categories",
+      "item": "Physical Appearance",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "The sample lists Physical Appearance as an inherited-traits category.",
+      "description": "This category label defines sample output organization and must not be treated as a local appearance finding.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "complete-genome-analysis-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the visible bullet list on the single rendered page of the public sample PDF; category only, no gene or result shown.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Inherited Traits categories",
+      "item": "Nutrition and Diet Related",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "The sample lists Nutrition and Diet Related as an inherited-traits category.",
+      "description": "This category label defines sample output organization and must not be treated as a local nutrition or diet-response finding.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "complete-genome-analysis-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the visible bullet list on the single rendered page of the public sample PDF; category only, no gene or result shown.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Inherited Traits categories",
+      "item": "Blood Related",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "The sample lists Blood Related as an inherited-traits category.",
+      "description": "This category label defines sample output organization and must not be treated as a local blood type or blood-trait finding.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "complete-genome-analysis-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the visible bullet list on the single rendered page of the public sample PDF; category only, no gene or result shown.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Inherited Traits categories",
+      "item": "Drug Response",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "The sample lists Drug Response as an inherited-traits category.",
+      "description": "This category label defines sample output organization and must not be treated as a local medication-response or actionability finding.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "complete-genome-analysis-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the visible bullet list on the single rendered page of the public sample PDF; category only, no gene or result shown.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Inherited Traits categories",
+      "item": "Immune System",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "The sample lists Immune System as an inherited-traits category.",
+      "description": "This category label defines sample output organization and must not be treated as a local immune-status finding.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "complete-genome-analysis-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the visible bullet list on the single rendered page of the public sample PDF; category only, no gene or result shown.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Inherited Traits categories",
+      "item": "Miscellaneous Traits",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "The sample lists Miscellaneous Traits as an inherited-traits category.",
+      "description": "This category label defines sample output organization and must not be treated as a local miscellaneous-trait finding.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "complete-genome-analysis-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the visible bullet list on the single rendered page of the public sample PDF; category only, no gene or result shown.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Inherited Traits explanation",
+      "item": "Genes and environment framing",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "The sample explains inherited traits using hair color and blood type examples and says genes can interact with environment and lifestyle.",
+      "description": "This is sample explanatory framing only and does not support local appearance, blood type, lifestyle, or environmental interaction conclusions.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "complete-genome-analysis-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the explanatory paragraph below the category icons on the single rendered PDF page.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Sample-result vocabulary",
+      "item": "Example result labels",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "The sample shows possible result words including color labels, blood-type labels, likelihood labels, response labels, tolerance labels, direction labels, size labels, age labels, thickness labels, quantity labels, and wet/dry labels.",
+      "description": "These are example labels from the sample report and must not be used as local appearance, blood-type, drug-response, tolerance, age, size, or other trait calls.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "complete-genome-analysis-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the visible italic result-word list on the single rendered PDF page.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Limitations framing",
+      "item": "Inherited-traits actionability statement",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "The sample states that for the most part there is little a person can do to change inherited traits, while knowledge of underlying traits may inform appropriate lifestyle changes.",
+      "description": "This is sample limitations language only; local output must not turn it into personalized lifestyle, diet, medication, prevention, or treatment advice.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "complete-genome-analysis-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the final visible paragraph on the single rendered PDF page.",
+      "sourceBindingStatus": "exact"
     }
   ],
   "utilityContext": {
-    "plainEnglishMeaning": "This result is a complete-genome-analysis boundary report. It explains supplied public lookup context and explicitly marks missing genome-wide, pediatric, clinical, and authenticated sample outputs unavailable.",
+    "plainEnglishMeaning": "This package is a local, reproducible Complete Genome Analysis boundary scaffold. It can show supplied utility context and observed inherited-traits sample-report structure, but it cannot replace complete genome-wide service output or qualified review.",
     "unsupportedClaims": [
-      "complete genome-wide inventory",
-      "coverage metrics",
-      "pediatric interpretation",
-      "diagnosis",
-      "disease-risk estimate",
-      "carrier status",
-      "pharmacogenomics interpretation",
-      "ancestry report",
-      "pathogenicity classification",
-      "clinical significance claim",
-      "all-clear reassurance",
-      "screening or treatment recommendation"
+      "No claim that complete genome-wide inventory, coverage metrics, or variant interpretation was generated for the local fixture.",
+      "No local appearance, nutrition, blood type, drug-response, immune-system, miscellaneous-trait, disease-risk, carrier-status, pharmacogenomics, ancestry, pediatric, pathogenicity, clinical-significance, treatment, lifestyle, or actionability claim.",
+      "No all-clear reassurance, diagnosis, screening recommendation, or treatment recommendation from the sample PDF or selected lookup rows."
     ]
   },
   "references": [
     {
+      "evidenceLevel": "implementation_background",
       "id": "ensembl-vep",
-      "title": "Ensembl Variant Effect Predictor"
+      "sourceType": "annotation_tool_documentation",
+      "title": "Ensembl Variant Effect Predictor",
+      "usedFor": [
+        "annotation_context",
+        "consequence_scope",
+        "tool_output_unavailable"
+      ]
     },
     {
+      "evidenceLevel": "implementation_background",
       "id": "ensembl-variant-consequences",
-      "title": "Ensembl Variation: calculated variant consequences"
+      "sourceType": "annotation_method_documentation",
+      "title": "Ensembl Variation: calculated variant consequences",
+      "usedFor": [
+        "sequence_ontology_terms",
+        "annotation_limitations"
+      ]
     },
     {
+      "evidenceLevel": "implementation_background",
       "id": "ensembl-rest-api",
-      "title": "Ensembl REST API endpoints"
+      "sourceType": "api_documentation",
+      "title": "Ensembl REST API endpoints",
+      "usedFor": [
+        "variant_lookup_context",
+        "coordinate_mapping_context",
+        "service_output_unavailable"
+      ]
     },
     {
+      "evidenceLevel": "terminology_background",
       "id": "sequence-ontology",
-      "title": "Sequence Ontology"
+      "sourceType": "controlled_vocabulary",
+      "title": "Sequence Ontology",
+      "usedFor": [
+        "variant_term_context",
+        "plain_english_glossary"
+      ]
     },
     {
+      "evidenceLevel": "database_background",
       "id": "ncbi-dbsnp",
-      "title": "NCBI dbSNP"
+      "sourceType": "database",
+      "title": "NCBI dbSNP",
+      "usedFor": [
+        "rsid_context",
+        "public_variant_identifier_context"
+      ]
     },
     {
+      "evidenceLevel": "database_background",
       "id": "ncbi-clinvar",
-      "title": "NCBI ClinVar"
+      "sourceType": "database",
+      "title": "NCBI ClinVar",
+      "usedFor": [
+        "clinical_classification_unavailable",
+        "database_cross_reference_context"
+      ]
     },
     {
+      "evidenceLevel": "implementation_background",
       "id": "ncbi-variation-services-spdi",
-      "title": "NCBI Variation Services / SPDI"
+      "sourceType": "api_documentation",
+      "title": "NCBI Variation Services / SPDI",
+      "usedFor": [
+        "spdi_context",
+        "variant_normalization_context",
+        "coordinate_conversion_unavailable"
+      ]
     },
     {
+      "evidenceLevel": "database_background",
       "id": "ncbi-genetic-testing-registry",
-      "title": "NIH Genetic Testing Registry"
+      "sourceType": "database",
+      "title": "NIH Genetic Testing Registry",
+      "usedFor": [
+        "genetic_test_metadata_context",
+        "clinical_test_unavailable"
+      ]
     },
     {
+      "evidenceLevel": "database_background",
       "id": "international-genome-sample-resource",
-      "title": "International Genome Sample Resource / 1000 Genomes"
+      "sourceType": "database",
+      "title": "International Genome Sample Resource / 1000 Genomes",
+      "usedFor": [
+        "population_variation_context",
+        "reference_panel_limitations"
+      ]
     },
     {
+      "evidenceLevel": "background",
       "id": "ebi-gwas-catalog",
-      "title": "GWAS Catalog"
+      "sourceType": "database",
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "trait_association_context",
+        "model_unavailable_context"
+      ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "complete-genome-analysis-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Complete Genome Analysis sample report",
+      "usedFor": [
+        "sample_rows",
+        "formal_fields",
+        "genotype_summary",
+        "output_format",
+        "inherited_traits_sample_structure"
+      ]
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "bioinformatics-public-variant-rs6265",
+        "inputId": "rs6265",
         "gene": "BDNF",
-        "observedValue": "selected public variant identifier available for lookup and annotation context; no trait, disease, or clinical interpretation supplied",
-        "matchStatus": "summarized"
-      },
-      {
-        "inputId": "bioinformatics-reference-build-context",
-        "gene": "reference genome coordinate context",
-        "observedValue": "GRCh38 coordinate context available for selected lookup; alternate build, liftover path, remapping evidence, and service output unavailable",
-        "matchStatus": "summarized"
+        "observedValue": "The local fixture supplies a public rsID row for lookup and annotation-context validation.",
+        "matchStatus": "curated",
+        "phenotype": "Report as bioinformatics utility context only; do not infer local complete genome analysis, inherited traits, disease risk, carrier status, pharmacogenomics, ancestry, diagnosis, treatment, or actionability."
       },
       {
         "inputId": "complete-genome-analysis-output-unavailable",
         "gene": "complete genome analysis output",
-        "observedValue": "complete genome-wide inventory, coverage metrics, variant interpretation, pediatric context, disease risk, carrier status, pharmacogenomics, ancestry, pathogenicity classification, clinical significance, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "observedValue": "The local fixture intentionally omits complete genome analysis service output and clinical interpretation evidence.",
+        "matchStatus": "curated",
+        "phenotype": "Mark complete genome-wide, pediatric, disease-risk, carrier-status, pharmacogenomics, ancestry, pathogenicity, clinical, treatment, and actionability sections unavailable instead of inferring them."
+      },
+      {
+        "inputId": "sample-section-1-inherited-traits",
+        "gene": "Complete Genome Analysis inherited-traits section",
+        "observedValue": "The public sample PDF shows inherited-traits categories for Physical Appearance, Nutrition and Diet Related, Blood Related, Drug Response, Immune System, and Miscellaneous Traits.",
+        "matchStatus": "direct",
+        "phenotype": "Observed sample structure only; do not infer local appearance, nutrition, blood type, drug response, immune, or miscellaneous trait findings."
+      },
+      {
+        "inputId": "sample-result-vocabulary",
+        "gene": "Complete Genome Analysis inherited-traits section",
+        "observedValue": "The public sample PDF shows example result labels for colors, blood types, likelihood, resistance, tolerance, direction, size, age, thickness, quantity, and wet/dry traits.",
+        "matchStatus": "direct",
+        "phenotype": "Observed sample vocabulary only; do not convert example labels into local trait results or actionability."
       }
     ],
     "missingInputs": [
-      "Authenticated Sequencing.com sample report rows",
       "Complete genome-wide inventory, coverage metrics, and variant interpretation output",
-      "Pediatric context, disease-risk model, carrier-status model, pharmacogenomics model, ancestry model, and clinical classification evidence",
-      "complete genome-wide inventory, coverage metrics, variant interpretation, pediatric context, disease risk, carrier status, pharmacogenomics, ancestry, pathogenicity classification, clinical significance, and authenticated sample-report rows unavailable in this fixture"
+      "Pediatric context, disease-risk model, carrier-status model, pharmacogenomics model, ancestry model, pathogenicity classification, and clinical-significance evidence",
+      "Local inherited-trait results for appearance, nutrition, blood type, drug response, immune status, or miscellaneous traits",
+      "Any clinical actionability, screening, treatment, lifestyle, medication, diet, or supplement guidance"
     ],
     "probabilities": [],
     "uncertainty": [
-      "No calibrated complete-genome, coverage, disease, carrier-status, pharmacogenomics, ancestry, pathogenicity, or clinical-actionability model is supplied for this local package.",
-      "The selected rows support boundary context only and cannot be treated as complete genome-wide analysis output."
+      "No calibrated complete-genome, coverage, disease, carrier-status, pharmacogenomics, ancestry, pathogenicity, inherited-trait, or clinical-actionability model is supplied for this local package.",
+      "The sample PDF provides observed output structure only and cannot be treated as the user's personal result."
     ],
     "limitations": [
       "This validation result uses selected derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
       "The package does not emit complete SNP tables, sequencing files, alignment files, complete genome-wide analysis files, or clinical screening output files.",
-      "The package does not diagnose disease, estimate disease risk, classify pathogenicity, report carrier status, infer medication response, report ancestry, provide pediatric interpretation, or recommend screening, testing, treatment, diet, supplements, or lifestyle changes."
+      "The package does not diagnose disease, estimate disease risk, classify pathogenicity, report carrier status, infer medication response, report ancestry, provide pediatric interpretation, or recommend screening, testing, treatment, diet, supplements, lifestyle, or medication changes."
     ]
   }
 }

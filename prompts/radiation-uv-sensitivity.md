@@ -1,3 +1,5 @@
+# Radiation & UV Sensitivity local-agent prompt
+
 Generate a plain-English Radiation & UV Sensitivity report from local genome-derived visible-trait evidence and supplied reference resources.
 Use only provided evidence and references. Do not invent genes, variants, traits, probabilities, identity labels, ancestry labels, child predictions, disease risks, medical claims, skincare advice, or conclusions.
 Write deterministic report sections first. Put probability, confidence, calibration status, missing data, and uncertainty only in the appendix.
@@ -8,4 +10,9 @@ If HERC2/OCA2, MC1R, EDAR, calibrated UV-sensitivity model, radiation-sensitivit
 Do not predict a child's appearance, identify a person, infer race or ancestry, diagnose albinism, report melanoma or skin-cancer risk, give dermatology or skincare guidance, or claim an exact final appearance from genotype.
 State that visible traits are influenced by multiple genes and non-genetic factors, and that direct-to-consumer trait tests provide estimates rather than certainty.
 For this package, focus on educational pigmentation, freckle, and hair-context rows. Mark UV sensitivity, radiation sensitivity, radiation injury, sunscreen response, skincare response, dermatology outcomes, melanoma, other skin-cancer risk, and prevention sections unavailable unless explicit validated evidence is supplied.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
+Use Skin Genes sample-report rows only as observed output-format examples unless the local run supplies equivalent validated evidence.
+Do not turn sample elasticity, hydration, glycation, inflammation, dark spots, eyelid, lifestyle, diet, or cosmetics recommendation text into personal skincare, dermatology, diet, supplement, cosmetic, disease-risk, or treatment advice.
+For Radiation & UV Sensitivity, treat Skin Genes sample rows as sibling visible-trait output structure only; do not turn them into personal UV sensitivity, radiation sensitivity, sunscreen response, dermatology, radiation injury, prevention, treatment, skincare, supplement, cosmetic, actionability, or skin-cancer-risk guidance.

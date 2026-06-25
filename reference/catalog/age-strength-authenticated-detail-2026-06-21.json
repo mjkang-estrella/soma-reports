@@ -1,0 +1,101 @@
+{
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "capturedAt": "2026-06-21T15:38:37.744Z",
+  "source": "in-app browser logged-in sequencing.com marketplace detail page __NEXT_DATA__.props.pageProps.reportData extraction",
+  "url": "https://sequencing.com/marketplace/age-strength",
+  "finalUrl": "https://sequencing.com/marketplace/age-strength",
+  "title": "Age with Strength",
+  "nid": "130",
+  "productId": "72",
+  "app": {
+    "apiAppId": "OsteoporosisDsApp",
+    "appid": "21",
+    "backend": "ApiAppBackend",
+    "label": "Age with Strength"
+  },
+  "publisher": "GeneX",
+  "price": "$39",
+  "currencyCode": "USD",
+  "categories": [
+    "Health",
+    "Lifestyle"
+  ],
+  "uri": "marketplace/age-strength",
+  "reportFile": "",
+  "headerImage": "https://sequencing.com/sites/default/files/age-with-strength-icon1_0.png",
+  "headerImageAlt": "",
+  "meta": {
+    "canonical": "https://sequencing.com/marketplace/age-strength",
+    "publishedTime": null,
+    "modifiedTime": null,
+    "ogDescriptionHash": "sha256:8553b21b735cb224a004fcae6c770635abb869b1737d869fd274726b52f313b2",
+    "ogDescriptionPreview": "DNA analysis for protecting the strength and vitality of your bones.",
+    "productPriceAmount": null,
+    "productPriceCurrency": "USD",
+    "productRetailerItemId": "72"
+  },
+  "summaryPreview": "DNA analysis for protecting the strength and vitality of your bones.",
+  "bodyPreview": "DNA analysis for protecting the strength and vitality of your bones. This app helps you protect your bones throughout life. You'll receive a straightforward, confidential report that includes: Your genetic risk of thinning of the bones (osteoporosis) Healthy habits you can do every day to strengthen your bones",
+  "visibleParagraphs": [
+    "Prime Day Sale | Up to 60% off + free worldwide shippingOrder Now",
+    "Order Now",
+    "Dashboard",
+    "My Apps",
+    "AI Reports",
+    "Next-Gen Disease Screen",
+    "Health Scan",
+    "Genome Explorer",
+    "Results",
+    "Files"
+  ],
+  "infoTabs": [
+    {
+      "label": "Overview",
+      "textPreview": "DNA analysis for protecting the strength and vitality of your bones. This app helps you protect your bones throughout life. You'll receive a straightforward, confidential report that includes: Your genetic risk of thinning of the bones (osteoporosis) Healthy habits you can do every day to strengthen your bones"
+    },
+    {
+      "label": "Disclaimer",
+      "textPreview": "The genetic analysis and statements that appear in this app have not been evaluated by the United States Food and Drug Administration. The Sequencing.com website and all software applications (Apps) that use Sequencing.com's website, as well as Sequencing.com's open Application Programming Interface (API), are not intended to diagnose, treat, cure or prevent any disease."
+    }
+  ],
+  "reportDataKeys": [
+    "app_id",
+    "avatar",
+    "avatarAlt",
+    "body",
+    "category",
+    "currency_code",
+    "headerImg",
+    "headerImgAlt",
+    "id",
+    "included_with_membership",
+    "included_with_premium",
+    "info_tab",
+    "listEnableFiles",
+    "meta",
+    "nid",
+    "non_genetic_fields",
+    "pre_order",
+    "price",
+    "product_data",
+    "product_id",
+    "publisher",
+    "purchasedBy",
+    "relatedReports",
+    "reportFile",
+    "report_premium",
+    "search_keywords",
+    "start_button_text",
+    "sub_title",
+    "summary",
+    "title",
+    "type",
+    "uri",
+    "wgsCompatible"
+  ],
+  "evidenceNotes": [
+    "Marketplace detail reportData confirms title, publisher/provider when available, price/product metadata when available, categories, sample report link when available, and overview/disclaimer tab boundaries when present.",
+    "Use overview/marketing text only for report purpose and marketplace positioning, not for local genetic, medical, diet, supplement, medication, or performance conclusions.",
+    "No raw genome data, uploaded genome data, or account navigation text is included in this artifact."
+  ]
+}

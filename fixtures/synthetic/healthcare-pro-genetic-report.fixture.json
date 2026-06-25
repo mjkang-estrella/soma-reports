@@ -1,5 +1,5 @@
 {
-  "consumerTone": "plain English; consumer-shareable handoff context only; no diagnosis, clearance, risk estimate, medication, procedure, treatment, supplement, diet, lab, screening, reproductive, or actionability claims",
+  "consumerTone": "plain English; consumer-shareable handoff context only; public sample rows are not local findings; no diagnosis, disease-risk estimate, medication recommendation, screening recommendation, dosing guidance, treatment advice, lifestyle instruction, reproductive guidance, or actionability claims",
   "datasetId": "synthetic-healthcare-pro-genetic-report-professional-handoff-context-v1",
   "expectedAssertions": {
     "consumerLanguage": true,
@@ -15,7 +15,7 @@
       "haplotype": "professional-handoff-context-unavailable",
       "inputId": "healthcare-pro-genetic-report-handoff-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "healthcare professional review, diagnosis, symptoms, family history, current medication list, labs, imaging, clinical history, exam findings, treatment plan, calibrated risk model, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "healthcare professional review, diagnosis, symptoms, family history, current medication list, labs, imaging, clinical history, exam findings, treatment plan, calibrated risk model, and validated local Healthcare Pro service output unavailable in this fixture",
       "sourceArtifact": "synthetic-healthcare-pro-genetic-report-professional-handoff-context-v1",
       "sourceFile": "synthetic-healthcare-pro-genetic-report-professional-handoff-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "professional-review-unavailable",
       "inputId": "healthcare-pro-genetic-report-clinical-review-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and validated local professional service output unavailable in this fixture",
       "sourceArtifact": "synthetic-healthcare-pro-genetic-report-professional-handoff-context-v1",
       "sourceFile": "synthetic-healthcare-pro-genetic-report-professional-handoff-context-v1.json"
     }
@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-professional-review evidence for healthcare-pro-genetic-report validation"
   },
-  "missingInputPolicy": "Report unavailable healthcare professional evidence explicitly; do not diagnose disease; estimate disease risk; interpret labs or imaging; recommend medication, screening, diagnostic testing, procedures, supplements, diet, reproductive actions, lifestyle changes, or treatment; provide all-clear reassurance; or replace healthcare professional review.",
+  "missingInputPolicy": "Report Healthcare Pro sample rows as observed public sample structure only; do not convert sample risk, medication, carrier, screening, dosing, prevention, or medical-record language into local advice unless validated local evidence and qualified professional review are explicitly supplied.",
   "packageSlug": "healthcare-pro-genetic-report",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -171,7 +171,20 @@
         "non_prescriptive_language",
         "missing_review_policy"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "healthcare-pro-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Healthcare Pro sample report",
+      "usedFor": [
+        "sample_rows",
+        "formal_fields",
+        "genotype_summary",
+        "output_format",
+        "clinical_handoff_boundary"
+      ]
     }
   ],
-  "reportPurpose": "Consumer-shareable healthcare professional handoff context using supplied references and explicit unavailable-review framing."
+  "reportPurpose": "Consumer-shareable Healthcare Pro handoff context using supplied local derived evidence plus observed Sequencing.com Healthcare Pro sample-output structure."
 }

@@ -3,7 +3,7 @@
     "reportTitle": "Enhanced Longevity",
     "inputManifestHash": "sha256:synthetic-enhanced-longevity-wellness-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com marketplace detail-page extraction is still pending.",
+      "Logged-in Sequencing.com route/card metadata is captured for the exact detail page; richer reportData/body extraction was not exposed by the page.",
       "No calibrated longevity, biological-age, frailty, disease-risk, supplement, lifestyle, lab, medication, treatment, or ancestry applicability model is supplied with this fixture.",
       "The public sample PDF is used only for observed report structure and example row shape, not as this user's personal recommendation."
     ]
@@ -99,6 +99,68 @@
       "plainEnglishMeaning": "This is observed sample content only. It should not be read as this user's diet or longevity recommendation."
     }
   ],
+  "sampleRows": [
+    {
+      "brandName": "SelfDecode sample",
+      "description": "The public sample PDF says percentile values compare a result to a sample population and that lower percentile numbers mean lower relative risk.",
+      "genes": [],
+      "geneticAnalysis": "The sample explains that results may be shown as a risk score, percentile, relative risk gauge, trait, or haplotype.",
+      "groupTitle": "Report scoring model",
+      "item": "Risk score and gauge explanation",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "enhanced-longevity-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Enhanced Longevity sample PDF explanation pages; this is observed output structure, not a local longevity or disease-risk score."
+    },
+    {
+      "brandName": "SelfDecode sample",
+      "description": "The public sample PDF explains recommendation categories and defines impact, recommendation evidence, and genotype-specific evidence tiers.",
+      "genes": [],
+      "geneticAnalysis": "The sample ranks recommendations by impact and evidence from 1 to 5 and separates diet, lifestyle, supplement, and drug categories.",
+      "groupTitle": "Recommendation scoring model",
+      "item": "Impact and evidence ranking",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "enhanced-longevity-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Enhanced Longevity sample PDF explanation pages; this is observed output structure, not a local recommendation."
+    },
+    {
+      "brandName": "SelfDecode sample",
+      "description": "The sample recommendation block says people with the sample GCKR variant tend to drink more alcohol and frames limiting alcohol intake as a longevity-supporting context.",
+      "genes": [
+        "GCKR"
+      ],
+      "geneticAnalysis": "Impact 4/5; evidence 5/5; personalized sample variant row: GCKR rs1260326 cc.",
+      "groupTitle": "Your Recommendations",
+      "item": "Limit Alcohol Intake",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "enhanced-longevity-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Enhanced Longevity sample PDF recommendation and variant table; this is observed sample output, not local alcohol guidance."
+    },
+    {
+      "brandName": "SelfDecode sample",
+      "description": "The sample recommendation block describes a plant-based diet as focusing mainly on foods of plant origin and lists longevity-related context.",
+      "genes": [
+        "Not shown in visible sample block"
+      ],
+      "geneticAnalysis": "Impact 3/5; evidence 4/5.",
+      "groupTitle": "Your Recommendations",
+      "item": "Plant-Based Diet",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "enhanced-longevity-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Enhanced Longevity sample PDF recommendation block; this is observed sample output, not local diet advice."
+    }
+  ],
   "practicalNextSteps": {
     "longevityWellnessContext": [
       "Use this report as educational longevity-wellness genetics context, not as a lifespan, biological-age, disease-risk, supplement, diet, exercise, lab, medication, or treatment plan.",
@@ -144,7 +206,7 @@
       }
     ],
     "missingInputs": [
-      "Authenticated marketplace detail-page extraction is still pending.",
+      "Authenticated route/card metadata is captured for exact detail-page boundary evidence; richer reportData/body extraction was not exposed.",
       "No calibrated longevity, biological-age, frailty, disease-risk, supplement, lifestyle, lab, medication, treatment, or ancestry applicability model is supplied.",
       "No activity history, nutrition history, sleep history, labs, medication history, medical history, functional testing, or clinician assessment is supplied.",
       "The GCKR row is sample-only evidence from the public PDF and is not this user's local genotype evidence."
@@ -158,7 +220,7 @@
     "limitations": [
       "This validation result uses derived evidence only; raw genome data is not included.",
       "The report is educational and does not predict longevity, estimate lifespan, estimate biological age, infer frailty, estimate disease risk, recommend supplements, prescribe diets, prescribe exercise, interpret labs, change medications, or provide treatment guidance.",
-      "The public sample PDF is source-bound as observed report structure, while authenticated marketplace detail-page extraction remains pending."
+      "The public sample PDF is source-bound as observed report structure, while authenticated route/card metadata is captured only for exact detail-page boundary evidence."
     ]
   }
 }

@@ -243,5 +243,16 @@
       "It does not diagnose familial hypercholesterolemia, coronary artery disease, heart attack, stroke, high cholesterol, high lipoprotein(a), or blood-pressure conditions.",
       "It does not include lipid labs, blood pressure, diabetes, smoking, medication list, age/sex, family history, calibrated ASCVD model, clinician interpretation, or personal recommendation evidence."
     ]
+  },
+  "riskContext": {
+    "plainEnglishMeaning": "Cardiovascular health context depends on genetics plus lipid labs, blood pressure, diabetes status, smoking, age, sex, family history, medications, lifestyle, ancestry applicability, and clinical care.",
+    "unsupportedClaims": [
+      "cardiovascular disease diagnosis",
+      "heart attack or stroke prediction",
+      "high cholesterol or blood-pressure diagnosis",
+      "personal cardiovascular risk estimate",
+      "diet, supplement, exercise, lab-test, imaging, medication, procedure, or treatment recommendation"
+    ],
+    "professionalReview": "A clinician can interpret cardiovascular genetics together with labs, blood pressure, medical history, family history, medications, age, sex, ancestry, and other health information."
   }
 }

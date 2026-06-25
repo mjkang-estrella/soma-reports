@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived ancestry evidence for am-i-related-albert-einstein-dna validation"
   },
-  "missingInputPolicy": "Mark direct Einstein relationship, relative matching, family-tree placement, surname matching, identity, regional ancestry, exact homeland, and community affiliation unavailable when not explicitly supplied.",
+  "missingInputPolicy": "Mark direct Albert Einstein relationship, shared-gene comparison, relatives, family matching, surname matching, family-tree placement, lineage, identity, exact homeland, community affiliation, and health interpretation unavailable when not explicitly supplied. Use sibling Gene2me sample admixture percentages, maps, region narratives, and country/subregion table structure only as observed output-format examples.",
   "packageSlug": "am-i-related-albert-einstein-dna",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -72,7 +72,20 @@
         "population_reference",
         "variant_frequency_context"
       ]
+    },
+    {
+      "evidenceLevel": "sibling_sample_report",
+      "id": "ancestry-genealogy-heritage-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "DNA Ancestry and Genealogy Report sibling sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format",
+        "relationship_boundary"
+      ]
     }
   ],
-  "reportPurpose": "Consumer historical-figure relationship context from derived broad autosomal similarity while marking Albert Einstein relationship, relative matching, and family-tree evidence unavailable."
+  "reportPurpose": "Consumer historical-figure relationship context from derived broad autosomal similarity plus sibling Gene2me ancestry/genealogy output-structure evidence."
 }

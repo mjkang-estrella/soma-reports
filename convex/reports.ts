@@ -2,6 +2,7 @@ import { v } from "convex/values";
 
 import { mutation, query, type MutationCtx, type QueryCtx } from "./_generated/server";
 import { type Doc } from "./_generated/dataModel";
+import { authenticatedMarketplacePositionLedger } from "./authenticatedMarketplaceLedger";
 import { seedReportPackages, type ReportPackageSeed } from "./reportPackages";
 
 const defaultCompleteness = {
@@ -15,6 +16,266 @@ const defaultCompleteness = {
   formalFields: false,
   citationBindings: false,
   notes: ["This report has not been backfilled with extraction completeness metadata yet."],
+};
+
+const maxSummarySearchTextLength = 8000;
+
+type OutputSectionSeed = ReportPackageSeed["outputSections"][number];
+type OutputFieldSeed = OutputSectionSeed["expectedFields"][number];
+
+const requiredAppendixOutputFields: OutputFieldSeed[] = [
+  {
+    key: "probabilities",
+    label: "Probabilities",
+    description:
+      "Probability or confidence disclosures kept out of deterministic findings; use an empty array when no calibrated model is supplied.",
+    type: "object[]",
+    required: true,
+    fieldPath: "appendix.probabilities",
+    citationRequired: false,
+    allowsUnavailable: true,
+  },
+  {
+    key: "uncertainty",
+    label: "Uncertainty",
+    description:
+      "Plain-English notes that explain missing evidence, calibration limits, and why probabilities or confidence are not emitted in the deterministic body.",
+    type: "string[]",
+    required: true,
+    fieldPath: "appendix.uncertainty",
+    citationRequired: false,
+    allowsUnavailable: true,
+  },
+  {
+    key: "missingInputs",
+    label: "Missing inputs",
+    description:
+      "Required or useful genome inputs that were absent, unavailable, or intentionally not inferred from local evidence.",
+    type: "string[]",
+    required: true,
+    fieldPath: "appendix.missingInputs",
+    citationRequired: false,
+    allowsUnavailable: true,
+  },
+  {
+    key: "limitations",
+    label: "Limitations",
+    description:
+      "Scope, source, calibration, and professional-review limits that keep the report educational and deterministic.",
+    type: "string[]",
+    required: true,
+    fieldPath: "appendix.limitations",
+    citationRequired: false,
+    allowsUnavailable: true,
+  },
+];
+
+const requiredAppendixFieldPaths = requiredAppendixOutputFields.map((field) => field.fieldPath!);
+
+const withRequiredAppendixOutputFields = <T extends OutputSectionSeed>(sections: T[]) => {
+  const existingFieldPaths = new Set(
+    sections.flatMap((section) => section.expectedFields.map((field) => field.fieldPath).filter(Boolean)),
+  );
+  const missingFields = requiredAppendixOutputFields.filter((field) => !existingFieldPaths.has(field.fieldPath));
+
+  if (missingFields.length === 0) {
+    return sections;
+  }
+
+  const appendixIndex = sections.findIndex(
+    (section) =>
+      section.title.toLowerCase().includes("appendix") ||
+      section.expectedFields.some((field) => field.fieldPath?.startsWith("appendix.")),
+  );
+
+  if (appendixIndex >= 0) {
+    return sections.map((section, index) =>
+      {
+        if (index !== appendixIndex) {
+          return section;
+        }
+
+        const existingKeys = new Set(section.expectedFields.map((field) => field.key));
+        const expectedFields = section.expectedFields.map((field) => {
+          const requiredField = missingFields.find((candidate) => candidate.key === field.key && !field.fieldPath);
+          if (!requiredField) {
+            return field;
+          }
+
+          return {
+            ...field,
+            required: true,
+            fieldPath: requiredField.fieldPath,
+            citationRequired: field.citationRequired ?? requiredField.citationRequired,
+            allowsUnavailable: field.allowsUnavailable ?? requiredField.allowsUnavailable,
+          };
+        });
+
+        return {
+          ...section,
+          expectedFields: [...expectedFields, ...missingFields.filter((field) => !existingKeys.has(field.key))],
+        };
+      }
+    );
+  }
+
+  return [
+    ...sections,
+    {
+      sortOrder: Math.max(0, ...sections.map((section) => section.sortOrder)) + 1,
+      title: "Appendix",
+      purpose: "Keep uncertainty, missing data, calibration limits, and probability disclosures outside deterministic findings.",
+      expectedFields: missingFields,
+    },
+  ];
+};
+
+const buildSummarySearchText = (report: ReportPackageSeed | Doc<"reports">) => {
+  const values: string[] = [];
+  const seen = new Set<string>();
+  let currentLength = 0;
+
+  const add = (value: unknown) => {
+    if (typeof value !== "string") {
+      return;
+    }
+
+    const trimmed = value.trim();
+    if (!trimmed) {
+      return;
+    }
+
+    const normalized = trimmed.toLowerCase();
+    if (seen.has(normalized)) {
+      return;
+    }
+
+    const nextLength = currentLength + trimmed.length + 1;
+    if (nextLength > maxSummarySearchTextLength) {
+      return;
+    }
+
+    seen.add(normalized);
+    values.push(trimmed);
+    currentLength = nextLength;
+  };
+
+  const addMany = (items: readonly unknown[] | undefined) => {
+    for (const item of items ?? []) {
+      add(item);
+    }
+  };
+
+  add(report.slug);
+  add(report.title);
+  add(report.subtitle);
+  add(report.category);
+  add(report.provider);
+  addMany(report.catalogCategories);
+  addMany(report.tags);
+
+  if ("genomeInputs" in report) {
+    for (const input of report.genomeInputs) {
+      add(input.id);
+      add(input.kind);
+      add(input.label);
+    }
+  }
+  if ("references" in report) {
+    for (const reference of report.references) {
+      add(reference.resourceId);
+      add(reference.title);
+      add(reference.sourceType);
+      addMany(reference.usedFor);
+    }
+  }
+  if ("sampleRows" in report) {
+    for (const row of report.sampleRows) {
+      addMany(row.genes);
+      addMany(row.sourceResourceIds);
+      add(row.groupTitle);
+      add(row.item);
+      add(row.brandName);
+      add(row.sourceLabel);
+    }
+  }
+  if ("genotypeSummary" in report) {
+    for (const row of report.genotypeSummary) {
+      add(row.gene);
+      add(row.variantId);
+      add(row.tier);
+    }
+  }
+  if ("outputSections" in report) {
+    for (const section of report.outputSections) {
+      add(section.title);
+      for (const field of section.expectedFields) {
+        add(field.key);
+        add(field.label);
+        add(field.fieldPath);
+        add(field.formalSourceField);
+      }
+    }
+  }
+  if ("prompt" in report && report.prompt) {
+    add(report.prompt.title);
+    addMany(report.prompt.inputContract);
+    addMany(report.prompt.outputContract);
+  }
+  if ("formalFields" in report) {
+    for (const field of report.formalFields) {
+      add(field.outputPath);
+      add(field.sourceLabel);
+    }
+  }
+  if ("visibleFields" in report) {
+    addMany(report.visibleFields);
+  }
+
+  add(report.summary);
+  add(report.sampleReportStatus);
+
+  if ("genomeInputs" in report) {
+    for (const input of report.genomeInputs) {
+      add(input.missingDataBehavior);
+    }
+  }
+  if ("references" in report) {
+    for (const reference of report.references) {
+      add(reference.theme);
+    }
+  }
+  if ("sampleRows" in report) {
+    for (const row of report.sampleRows) {
+      add(row.geneticAnalysis);
+      add(row.description);
+    }
+  }
+  if ("genotypeSummary" in report) {
+    for (const row of report.genotypeSummary) {
+      add(row.effect);
+      add(row.phenotype);
+    }
+  }
+  if ("outputSections" in report) {
+    for (const section of report.outputSections) {
+      add(section.purpose);
+      for (const field of section.expectedFields) {
+        add(field.description);
+      }
+    }
+  }
+  if ("prompt" in report && report.prompt) {
+    addMany(report.prompt.safetyNotes);
+  }
+  if ("formalFields" in report) {
+    for (const field of report.formalFields) {
+      add(field.observedField);
+      add(field.notes);
+    }
+  }
+
+  return values.join(" ");
 };
 
 const toSummary = (report: ReportPackageSeed | Doc<"reports">) => ({
@@ -35,13 +296,27 @@ const toSummary = (report: ReportPackageSeed | Doc<"reports">) => ({
   sampleReportStatus: report.sampleReportStatus,
   curationCompleteness: report.curationCompleteness ?? defaultCompleteness,
   tags: report.tags,
+  searchText: buildSummarySearchText(report),
 });
 
 const sortReports = <T extends { title: string }>(reports: T[]) =>
   [...reports].sort((a, b) => a.title.localeCompare(b.title));
 
-const reportsOrSeeds = (dbReports: Doc<"reports">[]) =>
-  dbReports.length === 0 ? seedReportPackages.map(toSummary) : dbReports.map(toSummary);
+const reportsOrSeeds = (dbReports: Doc<"reports">[]) => {
+  const reportsBySlug = new Map(seedReportPackages.map((report) => [report.slug, toSummary(report)]));
+
+  for (const report of dbReports) {
+    const seedSummary = reportsBySlug.get(report.slug);
+    const dbSummary = toSummary(report);
+    reportsBySlug.set(report.slug, {
+      ...seedSummary,
+      ...dbSummary,
+      searchText: (seedSummary?.searchText ?? dbSummary.searchText).slice(0, maxSummarySearchTextLength),
+    });
+  }
+
+  return [...reportsBySlug.values()];
+};
 
 const seedPackageBySlug = (slug: string) =>
   seedReportPackages.find((report) => report.slug === slug) ?? null;
@@ -94,8 +369,12 @@ const derivedReadinessGaps = (report: ReportPackageSeed) => {
   const promptText = report.prompt?.deterministicPrompt.toLowerCase() ?? "";
   const exactCitationRows = exactCitationRowCount(report);
   const pendingFormalFields = report.formalFields.filter((field) => field.status === "pending").length;
-  const requiredOutputFields = report.outputSections.flatMap((section) =>
+  const normalizedOutputSections = withRequiredAppendixOutputFields(report.outputSections);
+  const requiredOutputFields = normalizedOutputSections.flatMap((section) =>
     section.expectedFields.filter((field) => field.required),
+  );
+  const requiredOutputFieldPaths = new Set(
+    requiredOutputFields.map((field) => field.fieldPath).filter((fieldPath): fieldPath is string => Boolean(fieldPath)),
   );
 
   if (!report.curationCompleteness.catalog || report.status === "authenticated-gap") {
@@ -121,6 +400,11 @@ const derivedReadinessGaps = (report: ReportPackageSeed) => {
   }
   if (requiredOutputFields.length === 0) {
     gaps.push("required_output_fields_missing");
+  }
+  for (const fieldPath of requiredAppendixFieldPaths) {
+    if (!requiredOutputFieldPaths.has(fieldPath)) {
+      gaps.push(`required_output_field_${fieldPath.replaceAll(".", "_")}_missing`);
+    }
   }
   if (report.formalFields.length === 0) {
     gaps.push("formal_fields_missing");
@@ -229,7 +513,7 @@ const buildSeedDetail = (report: ReportPackageSeed) => ({
   ...report,
   references: report.references,
   prompt: report.prompt,
-  outputSections: report.outputSections,
+  outputSections: withRequiredAppendixOutputFields(report.outputSections),
   formalFields: report.formalFields,
   sampleRows: report.sampleRows,
   genotypeSummary: report.genotypeSummary,
@@ -278,7 +562,7 @@ const buildDbDetail = async (ctx: QueryCtx, report: Doc<"reports">) => {
     curationCompleteness: report.curationCompleteness ?? defaultCompleteness,
     references,
     prompt,
-    outputSections: outputSections.sort((a, b) => a.sortOrder - b.sortOrder),
+    outputSections: withRequiredAppendixOutputFields(outputSections.sort((a, b) => a.sortOrder - b.sortOrder)),
     formalFields: formalFields.sort((a, b) => a.sortOrder - b.sortOrder),
     sampleRows: sampleRows.sort((a, b) => a.sortOrder - b.sortOrder),
     genotypeSummary: genotypeSummary.sort((a, b) => a.sortOrder - b.sortOrder),
@@ -300,11 +584,15 @@ export const catalogStats = query({
     const dbReports = await ctx.db.query("reports").take(200);
     const reports = reportsOrSeeds(dbReports);
     const seedAuditRows = seedReadinessAuditRows();
-    const knownMarketplaceTotal = 164;
+    const knownMarketplaceTotal = authenticatedMarketplacePositionLedger.totals.positions;
+    const authenticatedDuplicateStructuredPositions =
+      authenticatedMarketplacePositionLedger.totals.duplicatePlacements;
     const seeded = reports.length;
     const directCatalog = reports.filter((report) => report.curationCompleteness?.catalog).length;
-    const unidentifiedMarketplaceItems = reports.filter((report) => report.status === "authenticated-gap").length;
-    const identifiedMarketplaceItems = Math.max(seeded - unidentifiedMarketplaceItems, 0);
+    const authenticatedGapRows = reports.filter((report) => report.status === "authenticated-gap").length;
+    const identifiedMarketplaceItems = Math.max(seeded - authenticatedGapRows, 0);
+    const positionIdentityDelta = Math.max(knownMarketplaceTotal - identifiedMarketplaceItems, 0);
+    const unidentifiedMarketplaceItems = authenticatedGapRows;
     const namedAuthenticatedOnly = Math.max(identifiedMarketplaceItems - 150, 0);
     const sampleExtracted = reports.filter((report) => report.curationCompleteness?.sampleReport).length;
     const outputFormatReady = reports.filter((report) => report.curationCompleteness?.outputFormat).length;
@@ -336,8 +624,10 @@ export const catalogStats = query({
       seeded,
       identifiedMarketplaceItems,
       namedAuthenticatedOnly,
-      unknownMarketplaceItems: Math.max(knownMarketplaceTotal - identifiedMarketplaceItems, unidentifiedMarketplaceItems),
-      seededCoverageComplete: seeded >= knownMarketplaceTotal,
+      unknownMarketplaceItems: unidentifiedMarketplaceItems,
+      authenticatedDuplicateStructuredPositions,
+      positionIdentityDelta,
+      seededCoverageComplete: unidentifiedMarketplaceItems === 0,
       directCatalog,
       sampleExtracted,
       outputFormatReady,
@@ -403,7 +693,7 @@ export const localArtifactSeeds = query({
         slug: report.slug,
         prompt: report.prompt,
         references: report.references,
-        outputSections: report.outputSections,
+        outputSections: withRequiredAppendixOutputFields(report.outputSections),
         formalFields: report.formalFields,
         sampleRows: report.sampleRows,
         genotypeSummary: report.genotypeSummary,
@@ -415,16 +705,34 @@ export const localArtifactSeeds = query({
 export const get = query({
   args: { slug: v.string() },
   handler: async (ctx, { slug }) => {
+    const seedReport = seedPackageBySlug(slug);
     const report = await ctx.db
       .query("reports")
       .withIndex("by_slug", (q) => q.eq("slug", slug))
       .unique();
 
     if (report) {
-      return await buildDbDetail(ctx, report);
+      const dbDetail = await buildDbDetail(ctx, report);
+      if (!seedReport) {
+        return dbDetail;
+      }
+
+      const seedDetail = buildSeedDetail(seedReport);
+      return {
+        ...seedDetail,
+        ...dbDetail,
+        sourceArtifacts: dbDetail.sourceArtifacts.length > 0 ? dbDetail.sourceArtifacts : seedDetail.sourceArtifacts,
+        references: dbDetail.references.length > 0 ? dbDetail.references : seedDetail.references,
+        prompt: dbDetail.prompt ?? seedDetail.prompt,
+        outputSections: dbDetail.outputSections.length > 0 ? dbDetail.outputSections : seedDetail.outputSections,
+        formalFields: dbDetail.formalFields.length > 0 ? dbDetail.formalFields : seedDetail.formalFields,
+        sampleRows: dbDetail.sampleRows.length > 0 ? dbDetail.sampleRows : seedDetail.sampleRows,
+        genotypeSummary:
+          dbDetail.genotypeSummary.length > 0 ? dbDetail.genotypeSummary : seedDetail.genotypeSummary,
+        localTestFixture: dbDetail.localTestFixture ?? seedDetail.localTestFixture,
+      };
     }
 
-    const seedReport = seedPackageBySlug(slug);
     return seedReport ? buildSeedDetail(seedReport) : null;
   },
 });
@@ -445,6 +753,7 @@ export const seedDefaults = mutation({
         .unique();
 
       const { references, prompt, outputSections, formalFields, sampleRows, genotypeSummary, localTestFixture, ...reportDoc } = report;
+      const normalizedOutputSections = withRequiredAppendixOutputFields(outputSections);
       const dbReport = { ...reportDoc, updatedAt: now };
 
       if (existing) {
@@ -472,7 +781,7 @@ export const seedDefaults = mutation({
         });
       }
 
-      for (const section of outputSections) {
+      for (const section of normalizedOutputSections) {
         await ctx.db.insert("reportOutputSections", {
           reportSlug: report.slug,
           ...section,

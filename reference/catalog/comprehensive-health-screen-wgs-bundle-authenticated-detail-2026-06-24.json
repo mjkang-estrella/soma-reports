@@ -1,0 +1,118 @@
+{
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "slug": "comprehensive-health-screen-wgs-bundle",
+  "title": "Comprehensive Health Screen WGS Bundle",
+  "capturedAt": "2026-06-24T17:42:00Z",
+  "url": "https://sequencing.com/order/comprehensive-wgs-health-screen-bundle",
+  "finalUrl": "https://sequencing.com/order/comprehensive-wgs-health-screen-bundle?quantity=1#auth",
+  "source": "in-app browser logged-in sequencing.com order route __NEXT_DATA__.props.pageProps.orderData and rendered checkout summary extraction",
+  "bodyPreview": "Logged-in order-route capture confirmed the Comprehensive Health Screen WGS Bundle product boundary, price, included products, and genetic analysis list. Account, shipping, and payment state were redacted.",
+  "summaryPreview": "Comprehensive Health Screen WGS Bundle order metadata was available, but no package-specific formal report rows or completed report file were exposed.",
+  "categories": [
+    "DNA Test Kit Bundles"
+  ],
+  "publisher": "Sequencing.com",
+  "currencyCode": "USD",
+  "price": "$399",
+  "listPrice": "$539",
+  "productId": "b299",
+  "rawOrderSlug": "comprehensive-wgs-health-screen-bundle",
+  "canonicalSlug": "comprehensive-health-screen-wgs-bundle",
+  "orderData": {
+    "id": "b299",
+    "slug": "comprehensive-wgs-health-screen-bundle",
+    "url": "comprehensive-wgs-health-screen-bundle",
+    "kitProduct": "5291",
+    "subProduct": "4955",
+    "processingSpeed": "standard",
+    "listPrice": "539",
+    "sellPrice": "399",
+    "includedProductsCount": 6
+  },
+  "bundleIncludes": [
+    "Easy-To-Use DNA Collection Kit",
+    "30x Whole Genome Sequencing",
+    "Unlimited Access To Your Genetic Data",
+    "Privacy Forever Protection Of Your Data",
+    "1 Month Premium Genome Plan",
+    "Advanced Genetic Analysis & Insights"
+  ],
+  "geneticAnalysisIncludes": [
+    "Rare Disease Screening (15,000+ Conditions)",
+    "Ehlers-Danlos Report + hEDS Emerging Research",
+    "Marfan Syndrome",
+    "Connective Tissue Disorders",
+    "Carrier Screening"
+  ],
+  "includedProducts": [
+    "Rare Disease Screening (15,000+ Conditions)",
+    "Ehlers-Danlos Report + hEDS Emerging Research",
+    "Marfan Syndrome",
+    "Connective Tissue Disorders",
+    "Carrier Screening",
+    "1 Month Premium Genome Plan"
+  ],
+  "orderDataKeys": [
+    "bundle_skip_kit_process",
+    "byobReportIds",
+    "description",
+    "id",
+    "included_products",
+    "items",
+    "kit_product",
+    "kit_provider",
+    "list_price",
+    "node_id",
+    "processing_speed",
+    "sell_price",
+    "slug",
+    "sub_product",
+    "url"
+  ],
+  "meta": {
+    "pagePropsOrderData": true,
+    "sampleSignal": false,
+    "checkoutRoute": true,
+    "privateCheckoutFieldsRedacted": true
+  },
+  "reportFile": "",
+  "sampleRows": [],
+  "resultRows": [],
+  "citationBindings": [],
+  "visibleParagraphs": [
+    "Comprehensive Health Screen WGS Bundle",
+    "Bundle Includes",
+    "Easy-To-Use DNA Collection Kit",
+    "30x Whole Genome Sequencing",
+    "Unlimited Access To Your Genetic Data",
+    "Privacy Forever Protection Of Your Data",
+    "1 Month Premium Genome Plan",
+    "Advanced Genetic Analysis & Insights",
+    "Genetic Analysis Includes",
+    "Rare Disease Screening (15,000+ Conditions)",
+    "Ehlers-Danlos Report + hEDS Emerging Research",
+    "Marfan Syndrome",
+    "Connective Tissue Disorders",
+    "Carrier Screening",
+    "Bundled Savings",
+    "Total (USD)"
+  ],
+  "evidenceNotes": [
+    "Order page was opened in the logged-in in-app browser and resolved to the authenticated purchase-kit route.",
+    "The page exposes pageProps.orderData for product and checkout metadata, but no completed report file was exposed.",
+    "The expanded Bundle Includes and Genetic Analysis Includes sections were read-only disclosure text.",
+    "No raw genome data, uploaded genome data, payment details, shipping address, account name, email address, private result URL, or account navigation text is included in this artifact.",
+    "Use order-route text only for product-boundary and bundle-composition context, not for local genetic, medical, medication, ancestry, fitness, or actionability conclusions."
+  ],
+  "promotionBoundary": {
+    "promotesDetailParity": false,
+    "promotesSampleRows": false,
+    "promotesFormalFields": false,
+    "promotesCitationBindings": false,
+    "requiredEvidenceForPromotion": [
+      "Official Sequencing.com sample or completed bundle report output",
+      "Package-specific formal rows or lab/report fields",
+      "Row-level source bindings for the output rows"
+    ]
+  }
+}

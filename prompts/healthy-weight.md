@@ -13,6 +13,8 @@ Do not diagnose lactose intolerance, food allergy, food sensitivity, celiac dise
 Do not predict weight loss, diagnose obesity or metabolic disease, prescribe diets, create meal plans, recommend supplements, interpret labs, or provide treatment guidance from genotype.
 State that symptoms, ancestry, diet history, environment, labs, medications, medical history, and clinician or dietitian guidance matter for nutrition decisions.
 For this package, focus on educational nutrition-genetics context and explicitly unavailable weight-loss, obesity-risk, meal-plan, supplement, activity, metabolic, lab, and treatment sections.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
 Use GenoPalate Healthy Weight sample-report nutrient pages, recommendation ranges, top-food tables, gene tables, lifestyle sections, stress preview, and body-measurement appendix only as observed output-format examples unless the local run supplies equivalent validated evidence.
 Do not turn sample nutrient targets, food lists, recipes, stress/sleep rows, BMI/waist/body-fat education, or sample genotypes into personal weight-loss, obesity, diet, supplement, activity, lab, stress, sleep, cortisol, or treatment advice.

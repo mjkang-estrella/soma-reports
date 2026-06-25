@@ -1,0 +1,83 @@
+{
+  "app": null,
+  "bodyPreview": "Rendered authenticated marketplace card confirms Enhanced Longevity title, SelfDecode provider, $59 price, and exact detail route. The detail page itself exposes generic marketplace pageProps.data/meta rather than rich reportData body content.",
+  "capturedAt": "2026-06-21T19:03:44.369Z",
+  "categories": [],
+  "currencyCode": "USD",
+  "evidenceNotes": [
+    "Marketplace detail page was opened from a logged-in rendered marketplace card and resolved to the exact report URL.",
+      "This detail page exposes pageProps.data/meta rather than the richer pageProps.reportData shape; use it for exact route availability, title, provider/price card metadata, and detail-page boundary evidence only.",
+    "Use overview/marketing text only for report purpose and marketplace positioning, not for local genetic, medical, diet, supplement, medication, ancestry, fitness, or performance conclusions.",
+    "No raw genome data, uploaded genome data, or account navigation text is included in this artifact."
+  ],
+  "finalUrl": "https://sequencing.com/marketplace/longevity-dna-test-wellness-report",
+  "headerImage": "https://sequencing.com/sites/default/files/wysiwyg/14/sequencing-marketplace-dna-reports.jpeg",
+  "headerImageAlt": "Sequencing Marketplace DNA Reports",
+  "infoTabs": [],
+  "meta": {
+    "canonical": "https://sequencing.com/marketplace",
+    "publishedTime": null,
+    "modifiedTime": null,
+    "ogDescriptionHash": "sha256:85f7c13e6650de3c1500c6f1f888fef18387d0ec03978ac6db4de5af051c56e2",
+    "ogDescriptionPreview": "Explore Sequencing's Marketplace: your one-stop-shop for DNA tests, personalized DNA reports, and health & wellness solutions including whole genome analysis.",
+    "productPriceAmount": "5900",
+    "productPriceCurrency": "USD",
+    "productRetailerItemId": null,
+    "pagePropsDataKeys": [
+      "blocks",
+      "meta"
+    ],
+    "pagePropsMetaKeys": [
+      "author",
+      "canonical",
+      "description",
+      "image_src",
+      "og:description",
+      "og:determiner",
+      "og:image",
+      "og:image:alt",
+      "og:image:secure_url",
+      "og:image:type",
+      "og:see_also",
+      "og:site_name",
+      "og:title",
+      "og:type",
+      "og:updated_time",
+      "og:url",
+      "rating",
+      "robots",
+      "title",
+      "twitter:card",
+      "twitter:creator",
+      "twitter:creator:id",
+      "twitter:description",
+      "twitter:image",
+      "twitter:image:alt",
+      "twitter:site",
+      "twitter:site:id",
+      "twitter:title"
+    ],
+    "pagePropsBlockCount": 0,
+    "jsonLdTypes": [
+      "WebPage"
+    ]
+  },
+  "nid": null,
+  "price": "$59",
+  "productId": null,
+  "publisher": "SelfDecode",
+  "reportDataKeys": [],
+  "reportFile": null,
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "source": "in-app browser logged-in sequencing.com marketplace detail page pageProps.data/meta extraction after rendered-card navigation",
+  "summaryPreview": "Rendered authenticated marketplace card confirms Enhanced Longevity title, SelfDecode provider, $59 price, and exact detail route; page meta description is generic marketplace text.",
+  "title": "Enhanced Longevity",
+  "uri": "marketplace/longevity-dna-test-wellness-report",
+  "url": "https://sequencing.com/marketplace/longevity-dna-test-wellness-report",
+  "visibleParagraphs": [
+    "Enhanced Longevity",
+    "Developed by SelfDecode",
+    "Detail page resolved to the exact Enhanced Longevity route; pageProps.data/meta contained generic Sequencing Marketplace metadata rather than rich reportData.",
+    "$59 per genome"
+  ]
+}

@@ -1,84 +1,92 @@
 {
-  "schemaVersion": "soma-reports.local-result.v1",
   "reportOverview": {
-    "reportTitle": "Kidneys and Urinary Tract DNA Health Report",
+    "reportTitle": "kidneys-and-urinary-tract-dna-health-report",
     "inputManifestHash": "sha256:synthetic-kidneys-and-urinary-tract-dna-health-report-organ-system-boundary-context-v1",
     "sectionsUnavailable": [
-      "Validated package model and authenticated sample rows are unavailable in this local fixture.",
-      "Clinical diagnosis, symptoms, family history, medications, and qualified professional review are unavailable.",
-      "Labs, imaging, vitals, organ-function measures, treatment context, prevention context, and actionability context are unavailable."
+      "Direct authenticated detail/sample body extraction is still unavailable where noted; source-bound sample rows are used only as observed output structure.",
+      "Validated calibrated models, clinical context, professional review, ancestry applicability, and actionability context are unavailable unless explicitly supplied in the fixture.",
+      "This deterministic example is educational and does not provide diagnosis, personal risk estimation, treatment guidance, screening guidance, prevention advice, clearance, or clinical actionability."
     ]
   },
   "resultRows": [
     {
-      "groupTitle": "Validated model availability",
-      "item": "Kidneys and Urinary Tract DNA Health Report validated model",
-      "brandName": "Kidneys and Urinary Tract DNA Health Report",
-      "geneticAnalysis": "No validated package-specific model output is present in the local fixture.",
+      "groupTitle": "Evidence availability",
+      "item": "kidneys-and-urinary-tract-dna-health-report-model-unavailable",
+      "brandName": "kidneys-and-urinary-tract-dna-health-report",
+      "geneticAnalysis": "validated kidney or urinary tract model, eGFR, creatinine, cystatin C, urinalysis, albuminuria, stone history, UTI history, bladder function context, imaging, blood pressure, medication context, clinical diagnosis, clinician review, and authenticated sample-report rows unavailable in this fixture; Public Disease Risk sample PDF Other Diseases table, Chronic Kidney Disease row, and heritable-component limitation are extracted as sibling kidney-disease output-structure evidence.",
       "genes": [
-        "model-unavailable"
+        "Kidneys and Urinary Tract DNA Health Report model"
       ],
-      "sourceLabel": "Public genetic-testing and complex-trait references",
+      "sourceLabel": "Local fixture and reference pack",
       "sourceIds": [
         "cdc-genetic-testing",
         "medlineplus-genetics",
         "medlineplus-genetic-testing",
         "medlineplus-genetic-test-results"
       ],
-      "plainEnglishMeaning": "This local run can document that the model evidence is unavailable, but it cannot turn that absence into a diagnosis, personal risk estimate, or health action.",
-      "sourceBindingStatus": "curated"
+      "sourceBindingStatus": "unavailable",
+      "plainEnglishMeaning": "This section is explicitly unavailable in the local fixture and must not be interpreted as low risk, normal status, diagnosis, treatment guidance, or actionability."
     },
     {
-      "groupTitle": "Clinical and professional context availability",
-      "item": "Clinical context and professional review",
-      "brandName": "Kidneys and Urinary Tract DNA Health Report",
-      "geneticAnalysis": "Clinical history, symptoms, family history, medications, and professional interpretation are not supplied.",
+      "groupTitle": "Evidence availability",
+      "item": "kidneys-and-urinary-tract-dna-health-report-clinical-context-unavailable",
+      "brandName": "kidneys-and-urinary-tract-dna-health-report",
+      "geneticAnalysis": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and personal clinical context unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Kidneys and Urinary Tract DNA Health Report",
       "genes": [
-        "clinical-context-unavailable"
+        "Kidneys and Urinary Tract DNA Health Report clinical and professional context"
       ],
-      "sourceLabel": "Consumer genetic-testing limitation references",
+      "sourceLabel": "Local fixture and reference pack",
       "sourceIds": [
+        "cdc-genetic-testing",
         "medlineplus-genetics",
         "medlineplus-genetic-testing",
-        "medlineplus-genetic-test-results",
-        "fda-direct-to-consumer-tests"
+        "medlineplus-genetic-test-results"
       ],
-      "plainEnglishMeaning": "Genome-derived evidence alone is not enough to decide diagnosis, screening, testing, prevention, treatment, medication, supplement, diet, exercise, clearance, emergency, or all-clear questions.",
-      "sourceBindingStatus": "curated"
+      "sourceBindingStatus": "unavailable",
+      "plainEnglishMeaning": "This section is explicitly unavailable in the local fixture and must not be interpreted as low risk, normal status, diagnosis, treatment guidance, or actionability."
     },
     {
-      "groupTitle": "Organ-system context availability",
-      "item": "Organ-system evidence context",
-      "brandName": "Kidneys and Urinary Tract DNA Health Report",
-      "geneticAnalysis": "Labs, imaging, vitals, organ-function measures, disease-specific testing, and treatment context are not supplied.",
+      "groupTitle": "Evidence availability",
+      "item": "kidneys-and-urinary-tract-dna-health-report-organ-context-unavailable",
+      "brandName": "kidneys-and-urinary-tract-dna-health-report",
+      "geneticAnalysis": "labs, imaging, vitals, organ-function measures, disease-specific testing, treatment context, prevention context, actionability context, and personal recommendation context unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Kidneys and Urinary Tract DNA Health Report",
       "genes": [
-        "organ-system-context-unavailable"
+        "Kidneys and Urinary Tract DNA Health Report organ-system context"
       ],
-      "sourceLabel": "Organ-specific and variant-interpretation references",
+      "sourceLabel": "Local fixture and reference pack",
       "sourceIds": [
-        "ebi-gwas-catalog",
-        "niddk-kidney-disease",
-        "medlineplus-kidney-diseases",
-        "medlineplus-kidneys-urinary-system"
+        "cdc-genetic-testing",
+        "medlineplus-genetics",
+        "medlineplus-genetic-testing",
+        "medlineplus-genetic-test-results"
       ],
-      "plainEnglishMeaning": "The organ-system references support education about limits and next review context, not a standalone conclusion about symptoms, organ function, severity, prognosis, or actionability.",
-      "sourceBindingStatus": "curated"
+      "sourceBindingStatus": "unavailable",
+      "plainEnglishMeaning": "This section is explicitly unavailable in the local fixture and must not be interpreted as low risk, normal status, diagnosis, treatment guidance, or actionability."
+    },
+    {
+      "groupTitle": "Observed sample format",
+      "item": "Source-bound sample rows",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Observed sample output structure includes Report limitation: Heritable component only; Other Diseases: Other disease category risk table. These rows are sample-only output evidence, not local-user findings.",
+      "genes": [
+        "Other disease model rows"
+      ],
+      "sourceLabel": "Sibling Disease Risk Genetic Test Report sample report",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample rows preserve observed report structure only. They are not personal findings, diagnosis, risk estimates, treatment guidance, screening guidance, prevention advice, clearance, or clinical actionability."
     }
   ],
   "organSystemConditionContext": {
-    "plainEnglishMeaning": "The safe output for this package is an evidence-availability report. It explains which model, clinical, professional, and organ-system inputs are missing and avoids medical conclusions from missing evidence.",
+    "plainEnglishMeaning": "kidneys-and-urinary-tract-dna-health-report reports only the supplied derived evidence and unavailable sections in this deterministic example.",
     "unsupportedClaims": [
-      "Diagnosis, personal disease risk, carrier status, variant classification, symptom status, severity, prognosis, lab status, imaging status, vital-sign status, organ-function status, treatment need, medication response, supplement need, diet need, exercise guidance, screening need, testing need, prevention action, clearance, emergency action, all-clear reassurance, and clinical actionability are not supported by this fixture.",
-      "Authenticated Sequencing.com sample rows are not present, so sample report labels and row meanings are not reconstructed."
+      "Diagnosis, all-clear, or current health-status conclusions",
+      "Personal risk estimates without a validated calibrated model",
+      "Treatment, screening, prevention, medication, supplement, diet, exercise, testing, or clinical-actionability guidance"
     ],
-    "professionalReview": "Use this as a local-agent readiness fixture only. Health decisions require validated test scope, relevant clinical context, and qualified professional review."
-  },
-  "practicalNextSteps": {
-    "professionalReview": [
-      "Keep this output educational and non-diagnostic.",
-      "Do not use this fixture to start, stop, or change testing, screening, medication, supplements, diet, exercise, or treatment.",
-      "Use qualified professional review for health decisions or symptoms."
-    ]
+    "professionalReview": "Use qualified professional review for health decisions that depend on symptoms, family history, clinical history, labs, imaging, medications, or validated clinical testing."
   },
   "references": [
     {
@@ -124,46 +132,82 @@
     {
       "id": "medlineplus-kidneys-urinary-system",
       "title": "MedlinePlus: Kidneys and Urinary System"
+    },
+    {
+      "id": "genetic-testing-disease-risk-sample-pdf",
+      "title": "Genetic Testing For Disease Risk sample genetic report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "kidneys-and-urinary-tract-dna-health-report-model-unavailable",
-        "gene": "Kidneys and Urinary Tract DNA Health Report model",
-        "observedValue": "validated kidney or urinary tract model, eGFR, creatinine, cystatin C, urinalysis, albuminuria, stone history, UTI history, bladder function context, imaging, blood pressure, medication context, clinical diagnosis, clinician review, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable",
-        "sourceArtifact": "synthetic-kidneys-and-urinary-tract-dna-health-report-organ-system-boundary-context-v1"
+        "tier": "Local missing input",
+        "gene": "Kidneys and Urinary Tract DNA Health Report validated model",
+        "variantId": "kidneys-and-urinary-tract-dna-health-report-model-unavailable",
+        "observedValue": "validated kidney or urinary tract model, eGFR, creatinine, cystatin C, urinalysis, albuminuria, stone history, UTI history, bladder function context, imaging, blood pressure, medication context, clinical diagnosis, clinician review, ancestry applicability, and genetic counselor review unavailable",
+        "matchStatus": "curated"
       },
       {
-        "inputId": "kidneys-and-urinary-tract-dna-health-report-clinical-context-unavailable",
-        "gene": "Kidneys and Urinary Tract DNA Health Report clinical and professional context",
-        "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable",
-        "sourceArtifact": "synthetic-kidneys-and-urinary-tract-dna-health-report-organ-system-boundary-context-v1"
-      },
-      {
-        "inputId": "kidneys-and-urinary-tract-dna-health-report-organ-context-unavailable",
-        "gene": "Kidneys and Urinary Tract DNA Health Report organ-system context",
-        "observedValue": "labs, imaging, vitals, organ-function measures, disease-specific testing, treatment context, prevention context, and actionability context unavailable in this fixture",
-        "matchStatus": "unavailable",
-        "sourceArtifact": "synthetic-kidneys-and-urinary-tract-dna-health-report-organ-system-boundary-context-v1"
+        "tier": "Sibling sample-report section",
+        "gene": "Other disease category table",
+        "variantId": "disease-risk-sample-other-diseases-kidney-context",
+        "observedValue": "sample Other Diseases category table observed with Chronic Kidney Disease Typical plus Achilles Tendinopathy, Acid Reflux Disease, Severe Acne, Emphysema, Gout, Hyperuracemia, Lumbar Disc Disease, Meningioma, Osteoarthritis, Osteoporosis, Otitis, Restless Legs Syndrome, Sciatica, Scoliosis, and Vitiligo rows",
+        "matchStatus": "sample-only"
       }
     ],
     "missingInputs": [
-      "Validated package model and authenticated sample rows are unavailable in this local fixture.",
-      "Clinical diagnosis, symptoms, family history, medications, and qualified professional review are unavailable.",
-      "Labs, imaging, vitals, organ-function measures, treatment context, prevention context, and actionability context are unavailable."
+      "Direct authenticated detail/sample body extraction is still unavailable where noted; source-bound sample rows are used only as observed output structure.",
+      "Validated calibrated models, clinical context, professional review, ancestry applicability, and actionability context are unavailable unless explicitly supplied in the fixture.",
+      "This deterministic example is educational and does not provide diagnosis, personal risk estimation, treatment guidance, screening guidance, prevention advice, clearance, or clinical actionability.",
+      "validated kidney or urinary tract model, eGFR, creatinine, cystatin C, urinalysis, albuminuria, stone history, UTI history, bladder function context, imaging, blood pressure, medication context, clinical diagnosis, clinician review, and authenticated sample-report rows unavailable in this fixture; Public Disease Risk sample PDF Other Diseases table, Chronic Kidney Disease row, and heritable-component limitation are extracted as sibling kidney-disease output-structure evidence.",
+      "clinical diagnosis, symptoms, family history, medications, professional interpretation, and personal clinical context unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Kidneys and Urinary Tract DNA Health Report",
+      "labs, imaging, vitals, organ-function measures, disease-specific testing, treatment context, prevention context, actionability context, and personal recommendation context unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Kidneys and Urinary Tract DNA Health Report"
     ],
     "probabilities": [],
     "uncertainty": [
-      "No calibrated model, ancestry applicability metadata, clinical context, professional review, or authenticated sample rows are supplied.",
-      "Absence of evidence in this fixture must be reported as unavailable, not converted into low risk or reassurance."
+      "No calibrated probability, confidence, or actionability model is supplied in this deterministic fixture.",
+      "Interpretation depends on validated test scope, model calibration, ancestry applicability, clinical context, and qualified review."
     ],
     "limitations": [
-      "This generated result does not include raw genome data and does not emit VCF, FASTQ, BAM, or CRAM content.",
-      "Reference resources used for boundary language: CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing; MedlinePlus Genetics: Interpreting Genetic Test Results; FDA Direct-to-Consumer Tests; MedlinePlus Genetics: complex disorders; NHGRI overview of polygenic risk scores; GWAS Catalog; NIDDK: Kidney Disease; MedlinePlus: Kidney Diseases; MedlinePlus: Kidneys and Urinary System.",
-      "The result is a deterministic synthetic validation artifact for local-agent packaging, not a medical interpretation."
+      "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
+      "Sample rows, when present, are observed output-structure evidence only and not local-user findings.",
+      "Unavailable model rows should never be interpreted as low risk, no risk, normal status, or an all-clear result."
     ]
-  }
+  },
+  "sampleRows": [
+    {
+      "brandName": "Complete Genome Science sample",
+      "description": "The sample uses lung cancer as an example, saying lung cancer is only 10% heritable and most cases are associated with lifestyle factors such as smoking.",
+      "extractionStatus": "direct",
+      "genes": [],
+      "geneticAnalysis": "The sample states that 'Your Risk' is only for the heritable component of the disease, and that environmental, lifestyle, and other non-heritable factors also affect overall susceptibility risk.",
+      "groupTitle": "Report limitation",
+      "item": "Heritable component only",
+      "sortOrder": 1,
+      "sourceBindingNote": "Extracted from the public Sequencing.com Disease Risk Genetic Test Report sample PDF; used here as sibling output-structure evidence for Kidneys and Urinary Tract DNA Health Report, not as a direct Kidneys and Urinary Tract DNA Health Report sample report or local kidney-disease output structure, CKD diagnosis, kidney risk, kidney-function inference, urinary-tract status, diet, medication, supplement, screening, testing, treatment, or actionability guidance.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Disease Risk Genetic Test Report sample report",
+      "sourceResourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Complete Genome Science sample",
+      "description": "Several rows such as Hyperparathyroidism, Inguinal Hernia, Non-alcoholic Fatty Liver Disease, Peripheral Axonal Neuropathy, and Pulmonary Fibrosis are visible with descriptions or lifetime-risk text but no clear extracted Your Risk label.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Other disease model rows"
+      ],
+      "geneticAnalysis": "Visible sample rows include Achilles Tendinopathy Typical; Acid Reflux Disease Typical; Severe Acne Typical; Chronic Kidney Disease Typical; Emphysema Typical; Gout Very Elevated; Hyperuracemia Typical; Lumbar Disc Disease Reduced; Meningioma Typical; Osteoarthritis Typical; Osteoporosis Typical; Otitis Typical; Restless Legs Syndrome Elevated; Sciatica Typical; Scoliosis Elevated; Vitiligo Typical.",
+      "groupTitle": "Other Diseases",
+      "item": "Other disease category risk table",
+      "sortOrder": 2,
+      "sourceBindingNote": "Extracted from the public Sequencing.com Disease Risk Genetic Test Report sample PDF; used here as sibling output-structure evidence for Kidneys and Urinary Tract DNA Health Report, not as a direct Kidneys and Urinary Tract DNA Health Report sample report or local kidney-disease output structure, CKD diagnosis, kidney risk, kidney-function inference, urinary-tract status, diet, medication, supplement, screening, testing, treatment, or actionability guidance.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Disease Risk Genetic Test Report sample report",
+      "sourceResourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ]
+    }
+  ]
 }

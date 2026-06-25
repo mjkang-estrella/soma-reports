@@ -25,7 +25,7 @@
       "haplotype": "histamine-model-unavailable",
       "inputId": "histamine-model-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "calibrated histamine model, DAO/HNMT interpretation, allergy evidence, mast-cell context, symptom context, diet-history context, elimination-diet model, supplement model, lab context, and ancestry applicability metadata unavailable in this fixture",
+      "observedValue": "calibrated histamine model, DAO/HNMT interpretation, allergy evidence, mast-cell context, symptom context, diet-history context, elimination-diet model, supplement model, lab context, ancestry applicability metadata, and direct Histamine sample rows unavailable in this fixture; sibling GenoPalate Food Sensitivity sample PDF observed only as output-structure evidence",
       "sourceArtifact": "synthetic-histamine-nutrition-boundary-context-v1",
       "sourceFile": "synthetic-histamine-nutrition-boundary-context-v1.json"
     }
@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived nutrition-genetics evidence for histamine validation"
   },
-  "missingInputPolicy": "Report unavailable histamine model, DAO/HNMT interpretation, allergy evidence, mast-cell context, symptom history, diet history, elimination-diet model, supplement model, lab evidence, and calibrated models explicitly; do not infer histamine intolerance, allergy, symptoms, safe or unsafe foods, supplements, labs, or treatment.",
+  "missingInputPolicy": "Report unavailable histamine model, DAO/HNMT interpretation, allergy evidence, mast-cell context, symptom history, diet history, elimination-diet model, supplement model, lab evidence, ancestry applicability, and calibrated models explicitly; use sibling Food Sensitivity sample rows only as observed output structure and do not infer histamine intolerance, food allergy, mast-cell status, DAO/HNMT interpretation, symptoms, safe or unsafe foods, elimination diets, supplements, labs, diagnosis, treatment, or actionability.",
   "packageSlug": "histamine",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -155,7 +155,20 @@
         "bmi_limitations",
         "no_weight_prediction_from_genotype"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "food-sensitivity-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "GenoPalate Food Sensitivity sample report",
+      "usedFor": [
+        "sibling_formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "food_sensitivity_structure",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer Histamine boundary context using derived MCM6/LCT evidence plus explicit histamine intolerance, DAO/HNMT, allergy, symptom, lab, diet, supplement, and model-unavailable framing."
+  "reportPurpose": "Consumer Histamine boundary context using derived MCM6/LCT evidence plus sibling GenoPalate Food Sensitivity sample-report output structure."
 }

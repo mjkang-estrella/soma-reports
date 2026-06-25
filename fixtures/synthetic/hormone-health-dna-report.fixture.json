@@ -38,6 +38,16 @@
       "observedValue": "partner result, carrier-screening scope, pregnancy context, embryo or fetal context, hormone-status context, fertility evaluation, and reproductive decision context unavailable in this fixture",
       "sourceArtifact": "synthetic-hormone-health-dna-report-reproductive-endocrine-boundary-context-v1",
       "sourceFile": "synthetic-hormone-health-dna-report-reproductive-endocrine-boundary-context-v1.json"
+    },
+    {
+      "assembly": "public-sample-pdf",
+      "gene": "Hormone Health public sample",
+      "haplotype": "public-sample-output-structure-observed",
+      "inputId": "hormone-health-public-sample-output-structure",
+      "matchStatus": "observed",
+      "observedValue": "Local SelfDecode Hormone Health sample PDF shows thyroid, reproductive-hormone, metabolic-hormone, and stress-hormone overview cards; Overactive Thyroid, T3, T4, and Free T4 detail pages with variant-count and top-variant tables; and iodine plus selenium recommendation blocks with impact/evidence scores.",
+      "sourceArtifact": "reference/sources/hormone-health-dna-report.pdf",
+      "sourceFile": "hormone-health-dna-report.pdf"
     }
   ],
   "inputManifest": {
@@ -46,7 +56,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for hormone-health-dna-report validation"
   },
-  "missingInputPolicy": "Report unavailable hormone health evidence explicitly; do not infer hormone status; diagnose endocrine, reproductive, thyroid, adrenal, fertility, or sexual-health conditions; interpret labs; recommend hormone testing, medication, supplements, diet, treatment, lifestyle, reproductive actions, or replace clinician review.",
+  "missingInputPolicy": "Use the local Hormone Health sample rows only as observed output structure; report validated hormone-health output, hormone labs, endocrine diagnosis, symptoms, medications, reproductive context, age/sex context, clinical history, clinician review, and local-user hormone conclusions unavailable.",
   "packageSlug": "hormone-health-dna-report",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -170,7 +180,19 @@
         "non_diagnostic_language",
         "missing_model_policy"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "hormone-health-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Hormone Health DNA Report sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer hormone health boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer Hormone Health boundary context using supplied references, explicit unavailable-model framing, and observed SelfDecode Hormone Health sample-report output structure."
 }

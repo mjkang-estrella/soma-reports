@@ -1,5 +1,5 @@
 {
-  "consumerTone": "plain English; educational health-scan utility context only; no diagnosis, disease risk, carrier status, pathogenicity, screening result, all-clear reassurance, medication, treatment, or actionability claims",
+  "consumerTone": "plain English; educational health-scan utility context only; sibling sample rows are not local findings; no diagnosis, disease risk, carrier status, pathogenicity, screening result, all-clear reassurance, medication, treatment, or actionability claims",
   "datasetId": "synthetic-health-scan-utility-context-v1",
   "expectedAssertions": {
     "consumerLanguage": true,
@@ -35,7 +35,7 @@
       "haplotype": "not-supplied",
       "inputId": "health-scan-screening-output-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "disease screening, risk scoring, carrier status, pathogenicity classification, clinical significance, screening recommendations, clinical sensitivity, all-clear reassurance, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "disease screening, risk scoring, carrier status, pathogenicity classification, clinical significance, screening recommendations, clinical sensitivity, all-clear reassurance, and direct Health Scan sample-report rows unavailable in this fixture; sibling Healthcare Pro sample rows are observed separately as health-scan output-structure evidence",
       "sourceArtifact": "synthetic-health-scan-utility-context-v1",
       "sourceFile": "synthetic-health-scan-utility-context-v1.json"
     }
@@ -46,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived bioinformatics utility context for health-scan validation"
   },
-  "missingInputPolicy": "Mark disease screening, risk scoring, carrier status, pathogenicity classification, clinical significance, screening recommendations, clinical sensitivity, false-reassurance checks, and authenticated sample evidence unavailable when not explicitly supplied.",
+  "missingInputPolicy": "Report disease screening, risk scoring, carrier status, pathogenicity classification, clinical significance, screening recommendations, clinical sensitivity, false-reassurance checks, and direct Health Scan sample rows unavailable unless explicitly supplied; use sibling Healthcare Pro sample rows only as observed output structure.",
   "packageSlug": "health-scan",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -152,7 +152,20 @@
         "trait_association_context",
         "model_unavailable_context"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "healthcare-pro-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Healthcare Pro sample report",
+      "usedFor": [
+        "sibling_sample_rows",
+        "formal_fields",
+        "genotype_summary",
+        "health_scan_output_structure",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer health-scan utility context using selected public variant and reference-build rows while marking disease screening and clinical interpretation outputs unavailable."
+  "reportPurpose": "Consumer health-scan boundary context using selected public variant and reference-build rows plus sibling Healthcare Pro health-screen sample-output structure, while marking direct Health Scan outputs unavailable."
 }

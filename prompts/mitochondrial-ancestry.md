@@ -20,4 +20,6 @@ Do not report autosomal ethnicity percentages, exact homeland, tribal/community 
 
 State that mitochondrial DNA ancestry reflects one maternal line only and does not represent all ancestors or overall identity.
 
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.

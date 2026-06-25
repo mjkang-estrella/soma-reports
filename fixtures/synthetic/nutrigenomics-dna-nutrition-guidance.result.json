@@ -3,8 +3,9 @@
     "reportTitle": "Nutrigenomics: Nutrition Analysis",
     "inputManifestHash": "sha256:synthetic-nutrigenomics-lactose-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "No calibrated nutrition or symptom probability model is supplied with this fixture."
+      "Authenticated detail-page parity is still pending.",
+      "No calibrated nutrition, food-allergy, vitamin-status, symptom, lab, meal-plan, or supplement model is supplied with this fixture.",
+      "Most genes and variants behind the one-page sample's nutrition table are not visible in the sample PDF and are not inferred."
     ]
   },
   "resultRows": [
@@ -23,13 +24,191 @@
         "medlineplus-mcm6"
       ],
       "plainEnglishMeaning": "This marker can provide lactose-related context, but symptoms, ancestry, diet history, and non-genetic causes also matter."
+    },
+    {
+      "groupTitle": "Observed sample format",
+      "item": "Nutrition Related trait/result table",
+      "brandName": "Nutrigenomics sample",
+      "geneticAnalysis": "The sample report uses a table of nutrition-related traits with result labels such as Lower, Typical, Much Higher, Slower, Intolerant, Very Reduced, More Able, and PAV/AVI.",
+      "genes": [
+        "TAS2R38"
+      ],
+      "sourceLabel": "Nutrigenomics: Nutrition Analysis sample report",
+      "sourceIds": [
+        "nutrigenomics-nutrition-sample-pdf"
+      ],
+      "plainEnglishMeaning": "These are observed sample rows for report structure only. They are not local-user diagnoses, diet advice, supplement advice, food-safety claims, vitamin-status claims, lab interpretations, or treatment guidance."
+    }
+  ],
+  "sampleRows": [
+    {
+      "brandName": "Nutrigenomics sample",
+      "description": "The sample table labels Food Allergy with a Lower result, 1 in 20 lifetime-risk context, and an immune-reaction description.",
+      "extractionStatus": "direct",
+      "genes": [],
+      "geneticAnalysis": "Lower",
+      "groupTitle": "Nutrition Related",
+      "item": "Allergy - Food",
+      "sortOrder": 1,
+      "sourceBindingNote": "Extracted from the Nutrition Related sample table; this is observed sample output structure, not a personal food-allergy diagnosis or food-safety conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "nutrigenomics-nutrition-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Nutrigenomics sample",
+      "description": "The sample table labels Peanut Allergy with a Much Higher result, 1 in 100 lifetime-risk context, and 80% heritable text.",
+      "extractionStatus": "direct",
+      "genes": [],
+      "geneticAnalysis": "Much Higher",
+      "groupTitle": "Nutrition Related",
+      "item": "Allergy - Peanut",
+      "sortOrder": 2,
+      "sourceBindingNote": "Extracted from the Nutrition Related sample table; this is observed sample output structure, not a personal peanut-allergy diagnosis, exposure guidance, or actionability statement.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "nutrigenomics-nutrition-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Nutrigenomics sample",
+      "description": "The sample table labels Caffeine Metabolism with a Slower result and says caffeine metabolism is mainly determined by a cytochrome enzyme.",
+      "extractionStatus": "direct",
+      "genes": [],
+      "geneticAnalysis": "Slower",
+      "groupTitle": "Nutrition Related",
+      "item": "Caffeine - Metabolism",
+      "sortOrder": 3,
+      "sourceBindingNote": "Extracted from the Nutrition Related sample table; this is observed sample output structure, not personal caffeine-consumption, sleep, medication, or disease-risk advice.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "nutrigenomics-nutrition-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Nutrigenomics sample",
+      "description": "The sample table labels Dietary Fat Weight Gain Response with a Lower result and shows Lower Gain, Typical, and Higher Gain comparison labels.",
+      "extractionStatus": "direct",
+      "genes": [],
+      "geneticAnalysis": "Lower",
+      "groupTitle": "Nutrition Related",
+      "item": "Dietary Fat - Weight Gain Response",
+      "sortOrder": 4,
+      "sourceBindingNote": "Extracted from the Nutrition Related sample table; this is observed sample output structure, not a personal weight-loss, diet-fat, meal-plan, or metabolic conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "nutrigenomics-nutrition-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Nutrigenomics sample",
+      "description": "The sample table labels Lactose Intolerance with an Intolerant result and describes lactose as sugar in dairy products.",
+      "extractionStatus": "direct",
+      "genes": [],
+      "geneticAnalysis": "Intolerant",
+      "groupTitle": "Nutrition Related",
+      "item": "Lactose Intolerance",
+      "sortOrder": 5,
+      "sourceBindingNote": "Extracted from the Nutrition Related sample table; this is observed sample output structure, not a personal lactose-intolerance diagnosis, symptom explanation, or diet prescription.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "nutrigenomics-nutrition-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Nutrigenomics sample",
+      "description": "The sample table labels Beta-ionone floral perception with a Very Reduced result and describes beta-ionone as fragrant and floral in foods and beverages.",
+      "extractionStatus": "direct",
+      "genes": [],
+      "geneticAnalysis": "Very Reduced",
+      "groupTitle": "Nutrition Related",
+      "item": "Smell - Floral (Beta-ionone) Perception",
+      "sortOrder": 6,
+      "sourceBindingNote": "Extracted from the Nutrition Related sample table; this is observed sample output structure, not a personal food preference or nutrition recommendation.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "nutrigenomics-nutrition-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Nutrigenomics sample",
+      "description": "The sample table labels Bitter Taste Perception with a More Able result and lists super-, medium-, and non-taster comparison labels.",
+      "extractionStatus": "direct",
+      "genes": [],
+      "geneticAnalysis": "More Able",
+      "groupTitle": "Nutrition Related",
+      "item": "Taste - Bitter Taste Perception",
+      "sortOrder": 7,
+      "sourceBindingNote": "Extracted from the Nutrition Related sample table; this is observed sample output structure, not a personal vegetable intake, diet, or health recommendation.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "nutrigenomics-nutrition-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Nutrigenomics sample",
+      "description": "The sample table labels Vitamin B6 Level with a Lower result and notes a normal range for the biologically active form of Vitamin B6.",
+      "extractionStatus": "direct",
+      "genes": [],
+      "geneticAnalysis": "Lower",
+      "groupTitle": "Nutrition Related",
+      "item": "Vitamin B6 Level",
+      "sortOrder": 8,
+      "sourceBindingNote": "Extracted from the Nutrition Related sample table; this is observed sample output structure, not a personal vitamin level, deficiency, supplement, lab, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "nutrigenomics-nutrition-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Nutrigenomics sample",
+      "description": "The sample table labels Vitamin B9 Processing Efficiency with a Lower result and says folate is converted by the body from folic acid.",
+      "extractionStatus": "direct",
+      "genes": [],
+      "geneticAnalysis": "Lower",
+      "groupTitle": "Nutrition Related",
+      "item": "Vitamin B9 Processing Efficiency",
+      "sortOrder": 9,
+      "sourceBindingNote": "Extracted from the Nutrition Related sample table; this is observed sample output structure, not a personal folate status, supplement, pregnancy, lab, or treatment conclusion.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "nutrigenomics-nutrition-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Nutrigenomics sample",
+      "description": "The sample footer explains PTC bitter-taste variation and states that the sample TAS2R38 genotype is PAV/AVI.",
+      "extractionStatus": "direct",
+      "genes": [
+        "TAS2R38"
+      ],
+      "geneticAnalysis": "PAV/AVI (More Able taster)",
+      "groupTitle": "Nutrition Related appendix",
+      "item": "TAS2R38 PTC tasting note",
+      "sortOrder": 10,
+      "sourceBindingNote": "Extracted from the sample footer; this is observed sample output structure, not a local user's TAS2R38 result unless supplied by local validated evidence.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "nutrigenomics-nutrition-sample-pdf"
+      ]
     }
   ],
   "practicalNextSteps": {
     "nutritionContext": [
-      "Use this report as educational nutrition-genetics context, not as a diet or supplement plan.",
-      "Track symptoms and dietary history with a clinician or registered dietitian if lactose tolerance is a concern.",
-      "Do not change foods, supplements, or medical care based on genotype alone."
+      "Use this report as educational nutrition-genetics context, not as a diet, allergy, vitamin, lab, or supplement plan.",
+      "Track symptoms and dietary history with a clinician or registered dietitian if lactose tolerance, food reactions, or nutrition status are concerns.",
+      "Do not change foods, supplements, medication, or medical care based on genotype or sample-only rows alone."
     ]
   },
   "references": [
@@ -44,29 +223,47 @@
     {
       "id": "nutritional-genomics-dtc-review",
       "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing"
+    },
+    {
+      "id": "nutrigenomics-nutrition-sample-pdf",
+      "title": "Nutrigenomics: Nutrition Analysis sample report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
         "gene": "MCM6/LCT",
-        "observedValue": "rs4988235 CT"
+        "observedValue": "rs4988235 CT",
+        "meaning": "Local derived evidence is available for lactose-related context only."
+      },
+      {
+        "gene": "TAS2R38",
+        "observedValue": "PAV/AVI in the sample report",
+        "meaning": "This genotype appears in the sample report footer and is not a local-user result."
+      },
+      {
+        "gene": "Nutrition Related table genes",
+        "observedValue": "not shown in sample PDF",
+        "meaning": "The sample table exposes result labels, but most gene and variant mappings are not visible and are not inferred."
       }
     ],
     "missingInputs": [
-      "Authenticated sample-report sections and rows have not been extracted.",
+      "Authenticated detail-page body parity is not yet captured.",
       "No calibrated nutrition probability model is supplied.",
-      "Other nutrition-related genetic and non-genetic contributors are not represented in this fixture."
+      "No food-allergy diagnosis, vitamin lab value, symptom history, medication list, diet history, supplement context, or ancestry-applicability model is supplied.",
+      "Most sample-table genes and variants are not visible in the one-page sample PDF."
     ],
     "probabilities": [],
     "uncertainty": [
-      "Nutrition traits and symptoms can be influenced by genetics, ancestry, diet history, environment, gut health, and other non-genetic factors.",
-      "A single marker should not be used to diagnose lactose intolerance or prescribe a diet."
+      "Nutrition traits, symptoms, allergy status, vitamin status, and food reactions can be influenced by genetics, ancestry, diet history, environment, labs, medical history, and other non-genetic factors.",
+      "A single marker or sample-only row should not be used to diagnose lactose intolerance, food allergy, nutrient deficiency, or prescribe a diet or supplement.",
+      "The sample rows are output-format evidence, not local-user findings."
     ],
     "limitations": [
-      "This validation result uses derived evidence only; raw genome data is not included.",
-      "The report is educational and does not diagnose lactose intolerance, prescribe a diet, or recommend supplements.",
-      "Authenticated Sequencing.com sample report rows are still pending."
+      "This validation result uses derived evidence and sample-report structure only; raw genome data is not included.",
+      "The report is educational and does not diagnose lactose intolerance, food allergy, vitamin deficiency, or nutrient deficiency.",
+      "The report does not prescribe diet changes, recommend supplements, infer lab values, or claim foods are safe or unsafe.",
+      "Authenticated detail-page parity remains pending."
     ]
   }
 }

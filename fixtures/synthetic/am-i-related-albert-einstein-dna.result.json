@@ -3,12 +3,14 @@
     "reportTitle": "Am I An Einstein?",
     "inputManifestHash": "sha256:synthetic-einstein-relation-ancestry-context-v1",
     "evidenceTypesSupplied": [
-      "Broad autosomal reference-panel similarity summary",
-      "Albert Einstein relationship, relative matching, surname matching, identity, and family-tree evidence explicitly unavailable"
+      "Broad autosomal reference-panel similarity summary from the local fixture",
+      "Albert Einstein relationship, shared-gene comparison, relative matching, surname matching, identity, and family-tree evidence explicitly unavailable",
+      "Sibling Gene2me DNA Ancestry and Genealogy sample PDF rows preserved as output-format examples only"
     ],
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "No direct Albert Einstein relationship evidence, family-tree evidence, relative-matching model, surname evidence, identity evidence, or calibrated ancestry percentage model is supplied."
+      "No direct Am I An Einstein? result rows or direct Einstein DNA comparison are available in this local fixture.",
+      "No validated Albert Einstein relationship evidence, family-tree evidence, lineage evidence, relative-matching model, surname evidence, identity evidence, or calibrated local ancestry percentage model is supplied.",
+      "Sibling sample percentages, maps, region narratives, and country/subregion tables are not local findings."
     ]
   },
   "resultRows": [
@@ -16,7 +18,8 @@
       "groupTitle": "Historical-figure relationship context",
       "item": "Broad reference-panel similarity",
       "brandName": "Not applicable",
-      "geneticAnalysis": "A broad East Asian reference-panel similarity summary is available, but no direct relationship or genealogy model is supplied.",
+      "geneticAnalysis": "A broad East Asian reference-panel similarity summary is available, but no direct Einstein relationship, shared-gene, lineage, family-tree, or genealogy model is supplied.",
+      "description": "The local fixture supplies derived broad autosomal context only; it does not supply an Einstein DNA comparison, exact percentages, family matching, surname evidence, or migration-path evidence.",
       "genes": [
         "autosomal genome"
       ],
@@ -25,13 +28,15 @@
         "medlineplus-genetic-ancestry-testing",
         "international-genome-sample-resource"
       ],
-      "plainEnglishMeaning": "This is broad ancestry context only. It is not proof of relationship to Albert Einstein, a family-tree placement, an identity claim, or a precise ethnicity percentage."
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This is broad ancestry context only. It is not proof of relationship to Albert Einstein, a shared-gene claim, a family-tree placement, an identity claim, a precise ethnicity percentage, or a health finding."
     },
     {
       "groupTitle": "Unavailable relationship evidence",
       "item": "Albert Einstein relationship evidence",
       "brandName": "Not applicable",
-      "geneticAnalysis": "Albert Einstein relationship evidence, relative matching, family-tree placement, surname matching, and identity evidence are unavailable in this fixture and are not inferred.",
+      "geneticAnalysis": "Albert Einstein relationship evidence, relative matching, family-tree placement, surname matching, lineage evidence, shared-gene comparison, and identity evidence are unavailable in this fixture and are not inferred.",
+      "description": "Missing historical-figure relationship evidence is stated explicitly instead of filling in unsupported relationship, identity, origin, or family-history claims.",
       "genes": [
         "historical-figure relationship evidence"
       ],
@@ -40,62 +45,282 @@
         "medlineplus-genetic-ancestry-testing",
         "medlineplus-dtc-risks-benefits"
       ],
-      "plainEnglishMeaning": "Answering this novelty relationship question would require validated genealogy or relative-matching evidence. This local run cannot identify relatives, surnames, family trees, or historical-figure descent."
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "Answering this novelty relationship question would require validated genealogy, family-tree, lineage, or relative-matching evidence. This local run cannot determine whether you are related to Albert Einstein."
+    },
+    {
+      "groupTitle": "Sibling sample report: Report identity",
+      "item": "Gene2me ancestry sample report",
+      "brandName": "Am I An Einstein? sibling Gene2me sample",
+      "geneticAnalysis": "The local sample PDF is a Gene2me DNA Ancestry and Genealogy report artifact with ancestry-admixture output, maps, and region narrative pages.",
+      "description": "This row documents report identity and formal output structure only; the sample person is not reused as local user data.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This row documents report identity and formal output structure only; the sample person is not reused as local user data. This Gene2me row is preserved only as sibling ancestry/genealogy output structure. It is not a direct Am I An Einstein? result and does not show an Albert Einstein relationship, shared genes with Einstein, lineage, family-tree placement, surname match, identity, or local ancestry percentage."
+    },
+    {
+      "groupTitle": "Sibling sample report: Ancestry admixture",
+      "item": "Top-level ancestry percentages",
+      "brandName": "Am I An Einstein? sibling Gene2me sample",
+      "geneticAnalysis": "The sample shows top-level ancestry-admixture rows for Middle East 60.0%, Europe 30.2%, and Central/South Asia 9.8%.",
+      "description": "The observed sample demonstrates a top-level ancestry hierarchy and map-oriented presentation. These percentages are sample-only output structure, not local ancestry estimates.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The observed sample demonstrates a top-level ancestry hierarchy and map-oriented presentation. These percentages are sample-only output structure, not local ancestry estimates. This Gene2me row is preserved only as sibling ancestry/genealogy output structure. It is not a direct Am I An Einstein? result and does not show an Albert Einstein relationship, shared genes with Einstein, lineage, family-tree placement, surname match, identity, or local ancestry percentage."
+    },
+    {
+      "groupTitle": "Sibling sample report: Maps and narratives",
+      "item": "Regional map and narrative pages",
+      "brandName": "Am I An Einstein? sibling Gene2me sample",
+      "geneticAnalysis": "The sample contains ancestry maps and regional narrative sections that accompany the visible ancestry-admixture percentages.",
+      "description": "This row captures the presentation pattern for maps and narrative ancestry context without copying those sample regions into local conclusions.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This row captures the presentation pattern for maps and narrative ancestry context without copying those sample regions into local conclusions. This Gene2me row is preserved only as sibling ancestry/genealogy output structure. It is not a direct Am I An Einstein? result and does not show an Albert Einstein relationship, shared genes with Einstein, lineage, family-tree placement, surname match, identity, or local ancestry percentage."
+    },
+    {
+      "groupTitle": "Sibling sample report: Country and subregion tables",
+      "item": "Detailed percentage table structure",
+      "brandName": "Am I An Einstein? sibling Gene2me sample",
+      "geneticAnalysis": "The sample includes country/subregion percentage-table structure beneath the top-level ancestry-admixture categories.",
+      "description": "Only the existence and role of the country/subregion table structure is used here; detailed local country or homeland assignment remains unavailable.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Only the existence and role of the country/subregion table structure is used here; detailed local country or homeland assignment remains unavailable. This Gene2me row is preserved only as sibling ancestry/genealogy output structure. It is not a direct Am I An Einstein? result and does not show an Albert Einstein relationship, shared genes with Einstein, lineage, family-tree placement, surname match, identity, or local ancestry percentage."
+    },
+    {
+      "groupTitle": "Sibling sample report: Genealogy boundary",
+      "item": "Family matching not supplied",
+      "brandName": "Am I An Einstein? sibling Gene2me sample",
+      "geneticAnalysis": "The local fixture supplies no relative matching, surname matching, family-tree, living-relative, or migration-path evidence.",
+      "description": "Genealogy conclusions require family records or relative-matching evidence outside this sample-output structure.",
+      "genes": [
+        "genealogy matching data"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Genealogy conclusions require family records or relative-matching evidence outside this sample-output structure. This Gene2me row is preserved only as sibling ancestry/genealogy output structure. It is not a direct Am I An Einstein? result and does not show an Albert Einstein relationship, shared genes with Einstein, lineage, family-tree placement, surname match, identity, or local ancestry percentage."
+    }
+  ],
+  "sampleRows": [
+    {
+      "brandName": "Am I An Einstein? sibling Gene2me sample",
+      "description": "This row documents report identity and formal output structure only; the sample person is not reused as local user data.",
+      "extractionStatus": "direct",
+      "genes": [
+        "autosomal genome"
+      ],
+      "geneticAnalysis": "The local sample PDF is a Gene2me DNA Ancestry and Genealogy report artifact with ancestry-admixture output, maps, and region narrative pages.",
+      "groupTitle": "Report identity",
+      "item": "Gene2me ancestry sample report",
+      "sortOrder": 1,
+      "sourceBindingNote": "Extracted from the locally captured Gene2me DNA Ancestry and Genealogy sample PDF; this is observed sample structure, not a local ancestry finding. Used here only as sibling ancestry/genealogy output-structure evidence for the Einstein relationship package; this is not a direct Am I An Einstein? sample report and not direct Einstein relationship, shared-gene, lineage, family-tree, surname, relative, identity, or local ancestry evidence.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Am I An Einstein? sibling Gene2me sample",
+      "description": "The observed sample demonstrates a top-level ancestry hierarchy and map-oriented presentation. These percentages are sample-only output structure, not local ancestry estimates.",
+      "extractionStatus": "direct",
+      "genes": [
+        "autosomal genome"
+      ],
+      "geneticAnalysis": "The sample shows top-level ancestry-admixture rows for Middle East 60.0%, Europe 30.2%, and Central/South Asia 9.8%.",
+      "groupTitle": "Ancestry admixture",
+      "item": "Top-level ancestry percentages",
+      "sortOrder": 2,
+      "sourceBindingNote": "Extracted from rendered review of the local sample PDF. Do not reuse the sample percentages as local ancestry, identity, homeland, community, migration, or family-history findings. Used here only as sibling ancestry/genealogy output-structure evidence for the Einstein relationship package; this is not a direct Am I An Einstein? sample report and not direct Einstein relationship, shared-gene, lineage, family-tree, surname, relative, identity, or local ancestry evidence.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Am I An Einstein? sibling Gene2me sample",
+      "description": "This row captures the presentation pattern for maps and narrative ancestry context without copying those sample regions into local conclusions.",
+      "extractionStatus": "direct",
+      "genes": [
+        "autosomal genome"
+      ],
+      "geneticAnalysis": "The sample contains ancestry maps and regional narrative sections that accompany the visible ancestry-admixture percentages.",
+      "groupTitle": "Maps and narratives",
+      "item": "Regional map and narrative pages",
+      "sortOrder": 3,
+      "sourceBindingNote": "Extracted from rendered review of the local sample PDF. Maps and region narratives are output-format evidence only. Used here only as sibling ancestry/genealogy output-structure evidence for the Einstein relationship package; this is not a direct Am I An Einstein? sample report and not direct Einstein relationship, shared-gene, lineage, family-tree, surname, relative, identity, or local ancestry evidence.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Am I An Einstein? sibling Gene2me sample",
+      "description": "Only the existence and role of the country/subregion table structure is used here; detailed local country or homeland assignment remains unavailable.",
+      "extractionStatus": "direct",
+      "genes": [
+        "autosomal genome"
+      ],
+      "geneticAnalysis": "The sample includes country/subregion percentage-table structure beneath the top-level ancestry-admixture categories.",
+      "groupTitle": "Country and subregion tables",
+      "item": "Detailed percentage table structure",
+      "sortOrder": 4,
+      "sourceBindingNote": "Extracted from rendered review of the local sample PDF. Detailed table structure is not converted into local exact-origin claims. Used here only as sibling ancestry/genealogy output-structure evidence for the Einstein relationship package; this is not a direct Am I An Einstein? sample report and not direct Einstein relationship, shared-gene, lineage, family-tree, surname, relative, identity, or local ancestry evidence.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Am I An Einstein? sibling Gene2me sample",
+      "description": "Genealogy conclusions require family records or relative-matching evidence outside this sample-output structure.",
+      "extractionStatus": "direct",
+      "genes": [
+        "genealogy matching data"
+      ],
+      "geneticAnalysis": "The local fixture supplies no relative matching, surname matching, family-tree, living-relative, or migration-path evidence.",
+      "groupTitle": "Genealogy boundary",
+      "item": "Family matching not supplied",
+      "sortOrder": 5,
+      "sourceBindingNote": "Extracted from the locally captured Gene2me DNA Ancestry and Genealogy sample PDF and used only as sample-output boundary structure; genealogy limitations are also enforced in the local fixture and prompt. Used here only as sibling ancestry/genealogy output-structure evidence for the Einstein relationship package; this is not a direct Am I An Einstein? sample report and not direct Einstein relationship, shared-gene, lineage, family-tree, surname, relative, identity, or local ancestry evidence.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ]
     }
   ],
   "ancestryScopeSummary": {
-    "autosomal": "Autosomal ancestry can provide broad reference-panel context when a model is supplied; this fixture does not supply calibrated percentages or relationship matching.",
-    "historicalFigureRelationship": "A relationship to Albert Einstein would require evidence outside this synthetic fixture, such as documented family-tree or validated relative-matching data.",
+    "autosomal": "Autosomal ancestry can provide broad reference-panel similarity when a calibrated model is supplied; this fixture does not supply calibrated percentages for the local run.",
+    "historicalFigureRelationship": "A relationship to Albert Einstein would require evidence outside this synthetic fixture, such as documented family-tree, lineage, surname, or validated relative-matching data.",
+    "siblingSampleRows": "The Gene2me sample percentages, maps, region narratives, country/subregion table structure, and genealogy-boundary rows are output-format examples only and are not local findings.",
     "sourceIds": [
       "medlineplus-genetic-ancestry-testing",
       "international-genome-sample-resource",
-      "medlineplus-dtc-risks-benefits"
+      "medlineplus-dtc-risks-benefits",
+      "ancestry-genealogy-heritage-sample-pdf"
     ]
   },
   "whatThisDoesNotMean": [
     "This does not show a relationship to Albert Einstein.",
-    "This does not identify a precise homeland, ethnicity percentage, surname match, family tree, living relative, historical relative, or identity.",
-    "This is not a health or disease-risk report."
+    "This does not show shared genes with Einstein, lineage, family-tree placement, surname matching, living relatives, historical relatives, or identity.",
+    "This does not identify a precise homeland, ethnicity percentage, nationality, community, tribe, or migration route.",
+    "This is not a health or disease-risk report.",
+    "The sample Middle East 60.0%, Europe 30.2%, and Central/South Asia 9.8% rows are sibling sample rows only, not local results."
   ],
   "references": [
     {
       "id": "medlineplus-genetic-ancestry-testing",
-      "title": "MedlinePlus Genetics: genetic ancestry testing"
+      "title": "MedlinePlus Genetics: genetic ancestry testing",
+      "sourceType": "education_resource"
     },
     {
       "id": "medlineplus-dtc-risks-benefits",
-      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing"
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing",
+      "sourceType": "education_resource"
     },
     {
       "id": "international-genome-sample-resource",
-      "title": "International Genome Sample Resource / 1000 Genomes"
+      "title": "International Genome Sample Resource / 1000 Genomes",
+      "sourceType": "database"
+    },
+    {
+      "id": "ancestry-genealogy-heritage-sample-pdf",
+      "title": "DNA Ancestry and Genealogy Report sibling sample report",
+      "sourceType": "mock_report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
+        "effect": "The sample demonstrates a top-level ancestry-admixture hierarchy with map-oriented presentation.",
+        "extractionStatus": "direct",
         "gene": "autosomal genome",
-        "observedValue": "broad East Asian reference-panel similarity; no direct relationship model supplied"
+        "genotype": "sample Middle East 60.0%; Europe 30.2%; Central/South Asia 9.8%",
+        "phenotype": "Use as observed sample output structure only; do not reuse these percentages as local ancestry, identity, homeland, community, migration, family-history, or health findings. This sibling sample evidence is not direct evidence of any relationship to Albert Einstein, shared genes with Einstein, lineage, relatives, family-tree placement, surname match, identity, or local ancestry percentage.",
+        "sortOrder": 1,
+        "tier": "Sample-report visible row",
+        "variantId": "sample ancestry admixture overview"
       },
       {
+        "effect": "The sample demonstrates detailed table structure beneath top-level ancestry-admixture categories without supplying local calibrated ancestry evidence.",
+        "extractionStatus": "direct",
+        "gene": "autosomal genome",
+        "genotype": "sample country/subregion percentage table structure present",
+        "phenotype": "Use as output-format evidence only; mark exact country, homeland, community, migration, and genealogy conclusions unavailable unless local calibrated evidence is supplied. This sibling sample evidence is not direct evidence of any relationship to Albert Einstein, shared genes with Einstein, lineage, relatives, family-tree placement, surname match, identity, or local ancestry percentage.",
+        "sortOrder": 2,
+        "tier": "Sample-report visible row",
+        "variantId": "sample country and subregion table structure"
+      },
+      {
+        "effect": "The local fixture supplies broad autosomal context without calibrated percentages or historical-figure relationship evidence.",
+        "extractionStatus": "curated",
+        "gene": "autosomal genome",
+        "genotype": "broad East Asian reference-panel similarity; no direct Albert Einstein relationship model supplied",
+        "phenotype": "Report as broad ancestry context only; do not convert it into an Einstein relationship, shared-gene conclusion, lineage, exact percentage, homeland, identity, relatives, or health interpretation.",
+        "sortOrder": 3,
+        "tier": "Local derived call",
+        "variantId": "autosomal-reference-panel-summary"
+      },
+      {
+        "effect": "The local fixture intentionally omits direct Einstein comparison data, relative matching, surname evidence, living-relative evidence, family-tree placement, lineage evidence, and identity evidence.",
+        "extractionStatus": "curated",
         "gene": "historical-figure relationship evidence",
-        "observedValue": "Albert Einstein relationship evidence unavailable in this fixture"
+        "genotype": "Albert Einstein relationship evidence, relative matching, family-tree placement, surname matching, and identity evidence unavailable",
+        "phenotype": "Mark the Einstein relationship question unavailable instead of inferring it from broad ancestry context or sibling sample-report rows.",
+        "sortOrder": 4,
+        "tier": "Local missing input",
+        "variantId": "einstein-relationship-evidence-unavailable"
       }
     ],
     "missingInputs": [
-      "Authenticated sample-report sections and rows have not been extracted.",
-      "No direct Einstein relationship evidence, validated relative matching, family-tree placement, surname matching, identity evidence, calibrated ancestry model, or reference-panel metadata is supplied.",
-      "No family records, living-relative matching, migration route, exact-homeland data, or community-affiliation data is supplied."
+      "No direct Am I An Einstein? result rows or direct Einstein DNA comparison have been captured.",
+      "No validated Albert Einstein relationship evidence, shared-gene comparison, lineage evidence, relative matching, family-tree placement, surname matching, or identity evidence is supplied.",
+      "No calibrated local ancestry percentage model, reference-panel metadata, segment-coordinate model, or local country/subregion assignment is supplied.",
+      "No family records, living-relative matching, migration route, exact-homeland data, or community-affiliation data is supplied.",
+      "Sibling sample report percentages, maps, and region narratives are output-format evidence only."
     ],
     "probabilities": [],
     "uncertainty": [
       "Broad reference-panel similarity should not be treated as a precise ancestry percentage, identity, or genealogical relationship.",
-      "Historical-figure relationship claims require evidence outside this synthetic fixture."
+      "Historical-figure relationship claims require evidence outside this synthetic fixture.",
+      "The sibling Gene2me sample PDF demonstrates possible report layout and row structure but does not validate local ancestry percentages or Einstein relationship claims."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data is not included.",
-      "The report does not emit raw SNP tables, relationship matching data, or family-tree data.",
-      "Authenticated Sequencing.com sample report rows are still pending."
+      "The report does not emit raw SNP tables, chromosome segments, relative-matching data, or family-tree data.",
+      "The sibling sample PDF supports sample-backed formal output structure, not a direct Einstein relationship conclusion."
     ]
   }
 }

@@ -38,6 +38,16 @@
       "observedValue": "partner result, carrier-screening scope, pregnancy context, embryo or fetal context, hormone-status context, fertility evaluation, and reproductive decision context unavailable in this fixture",
       "sourceArtifact": "synthetic-preconception-pregnancy-planning-reproductive-endocrine-boundary-context-v1",
       "sourceFile": "synthetic-preconception-pregnancy-planning-reproductive-endocrine-boundary-context-v1.json"
+    },
+    {
+      "assembly": "public-sample-pdf",
+      "gene": "Carrier Status public sample",
+      "haplotype": "public-sibling-sample-output-structure-observed",
+      "inputId": "preconception-pregnancy-planning-public-sibling-sample-output-structure",
+      "matchStatus": "observed",
+      "observedValue": "Public Complete Genome Science Carrier Status sample PDF shows an Inherited Carrier Status table with Condition, Your Risk, and Description columns; visible Carrier and Absent labels; risk-frequency, heritable, and chromosome subtext; and footer text listing additional tested carrier-status conditions. These rows are reused as Preconception & Pregnancy Planning sibling output structure only.",
+      "sourceArtifact": "reference/sources/sample_carrier_status_0.pdf",
+      "sourceFile": "sample_carrier_status_0.pdf"
     }
   ],
   "inputManifest": {
@@ -46,7 +56,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for preconception-pregnancy-planning validation"
   },
-  "missingInputPolicy": "Report unavailable preconception and pregnancy planning evidence explicitly; do not estimate pregnancy, fetal, embryo, child, carrier, miscarriage, infertility, or reproductive risk; recommend IVF, PGT, prenatal testing, carrier testing, diagnostic testing, screening, medication, supplements, treatment, pregnancy actions, reproductive decisions, or replace genetic counseling or obstetric review.",
+  "missingInputPolicy": "Use the public Carrier Status sample rows only as observed sibling output structure for Preconception & Pregnancy Planning; report validated carrier-screen output, partner result, pregnancy status, embryo or fetal testing context, prenatal screening or diagnostic testing context, family history, genetic counselor review, clinician review, and local-user pregnancy, fetal, embryo, child, carrier, miscarriage, infertility, testing, treatment, or reproductive-decision conclusions unavailable.",
   "packageSlug": "preconception-pregnancy-planning",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -192,7 +202,19 @@
         "non_diagnostic_language",
         "missing_model_policy"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "carrier-status-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Carrier Status sample report",
+      "usedFor": [
+        "sibling_formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer preconception and pregnancy planning boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer Preconception & Pregnancy Planning boundary context using supplied references, explicit unavailable-model framing, and observed public Carrier Status sibling sample-report output structure."
 }

@@ -1,0 +1,65 @@
+{
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "source": "in-app browser exact route DOM and meta capture",
+  "capturedAt": "2026-06-23T06:10:34.541Z",
+  "url": "https://sequencing.com/marketplace/empower",
+  "finalUrl": "https://sequencing.com/marketplace/empower",
+  "uri": "marketplace/empower",
+  "title": "Empower",
+  "publisher": "Toolbox Genomics",
+  "price": "$59",
+  "currencyCode": "USD",
+  "productId": "4618",
+  "headerImage": "https://sequencing.com/sites/default/files/empower-app-by-toolbox-genomics-sequencing.com-app-market.png",
+  "headerImageAlt": "Empower DNA Report by Toolbox Genomics",
+  "summaryPreview": "Marketplace Empower Developed by Toolbox Genomics DNA analysis and health report for personalized guidance on improving health, sleep, nutrition, and more. $59 per genome",
+  "bodyPreview": "Marketplace Empower Developed by Toolbox Genomics DNA analysis and health report for personalized guidance on improving health, sleep, nutrition, and more. $59 per genome Start Report Get 100% of your DNA data with Whole Genome Sequencing. Already have data from a DNA test? Upload your data for free. Empower was designed as a healthy appetizer to give an overall view of 20 traits, 37 genes, and 53 SNPs from related Toolbox Genomics apps, with lifestyle, nourish, supplement, exercise, and biomarker testing tips.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Empower"
+    },
+    {
+      "level": "h2",
+      "text": "DNA Health Enrichment Plan"
+    },
+    {
+      "level": "h2",
+      "text": "DNA Lifestyle Tips"
+    },
+    {
+      "level": "h2",
+      "text": "DNA Nourish Tips"
+    },
+    {
+      "level": "h2",
+      "text": "DNA Supplement Tips"
+    },
+    {
+      "level": "h2",
+      "text": "DNA Exercise Tips"
+    }
+  ],
+  "meta": {
+    "article:modified_time": "2025-05-23T03:28:12-07:00",
+    "article:published_time": "2018-05-10T20:00:54-07:00",
+    "author": "Sequencing",
+    "canonical": "https://sequencing.com/marketplace/empower",
+    "description": "DNA analysis and health report for all DNA tests including genome sequencing. Personalized guidance on improving health, sleep, nutrition and more.",
+    "og:title": "Empower | DNA Analysis App | Genetic Health Reports",
+    "og:type": "product",
+    "og:url": "https://sequencing.com/marketplace/empower",
+    "product:availability": "instock",
+    "product:brand": "Toolbox Genomics",
+    "product:category": "2890",
+    "product:price:amount": "59.00",
+    "product:price:currency": "USD",
+    "product:retailer_item_id": "4618",
+    "twitter:title": "Empower | DNA Analysis App | Genetic Health Reports"
+  },
+  "evidenceNotes": [
+    "Captured only because finalUrl exactly matched the requested marketplace detail route.",
+    "The page exposed DOM and meta product evidence; no rich reportData object or reportFile URL was present in this capture.",
+    "Page overview text is used only for marketplace positioning, not local lifestyle, nutrition, supplement, exercise, biomarker, treatment, diagnosis, or actionability claims."
+  ]
+}

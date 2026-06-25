@@ -190,7 +190,19 @@
       "treatment guidance",
       "all-clear reassurance",
       "clinical actionability"
-    ]
+    ],
+    "plainEnglishMeaning": "Disease-risk interpretation requires validated disease-specific model scope, ancestry applicability, variant classifications, family history, symptoms, clinical history, labs, imaging, and qualified review.",
+    "unsupportedClaims": [
+      "personal disease-risk estimate",
+      "diagnosis",
+      "carrier status",
+      "variant classification",
+      "screening or prevention recommendation",
+      "treatment guidance",
+      "all-clear reassurance",
+      "clinical actionability"
+    ],
+    "professionalReview": "A qualified clinician or genetic counselor can interpret disease-risk genetics with validated test scope, family history, symptoms, clinical history, labs, imaging, ancestry applicability, and other context."
   },
   "practicalNextSteps": {
     "diseaseRiskContext": [

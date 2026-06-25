@@ -1,64 +1,70 @@
 {
-  "packageSlug": "clinical-annotator-variants",
+  "consumerTone": "plain English; educational clinical-annotation context only; sibling sample rows are not local findings; no diagnosis, personal disease-risk estimate, pathogenicity classification, carrier-status call, medication, screening, diagnostic-testing, reproductive, lifestyle, treatment, or actionability guidance",
   "datasetId": "synthetic-clinical-annotator-variants-context-v1",
-  "packageVersion": "0.1.0",
-  "reportPurpose": "Consumer clinical-annotation report using selected derived ClinVar/dbSNP lookup fields while explicitly separating submitted database assertions from diagnosis, personal medical risk, and medical action.",
-  "missingInputPolicy": "Report unavailable review metadata, ACMG/AMP criteria evidence, phenotype fit, family history, confirmatory testing, penetrance, and authenticated sample rows explicitly; do not infer diagnosis, disease risk, clinical actionability, or medical next steps.",
-  "consumerTone": "plain English; educational clinical-annotation context only; no diagnosis, personal disease-risk estimate, medication, screening, diagnostic-testing, reproductive, lifestyle, or treatment guidance",
-  "inputManifest": {
-    "hash": "sha256:synthetic-clinical-annotator-variants-context-v1",
-    "genomeBuild": "GRCh38-derived",
-    "rawGenomeReturned": false,
-    "source": "synthetic derived clinical-annotation lookup evidence for clinical-annotator-variants validation"
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
   },
   "genomeEvidence": [
     {
-      "inputId": "ClinVar-rs80357914-BRCA1",
-      "rsid": "rs80357914",
+      "assembly": "GRCh38-derived",
       "gene": "BRCA1",
+      "inputId": "ClinVar-rs80357914-BRCA1",
+      "matchStatus": "observed",
       "observedValue": "selected derived lookup row; heterozygous; public variant identifier rs80357914; ClinVar-submitted germline classification supplied as pathogenic for a hereditary cancer condition; review status supplied as criteria provided, multiple submitters, no conflicts; no phenotype, family history, confirmatory test, or medical action supplied",
-      "assembly": "GRCh38-derived",
-      "matchStatus": "observed",
-      "sourceFile": "synthetic-clinical-annotator-variants-context-v1.json",
-      "sourceArtifact": "synthetic-clinical-annotator-variants-context-v1"
+      "rsid": "rs80357914",
+      "sourceArtifact": "synthetic-clinical-annotator-variants-context-v1",
+      "sourceFile": "synthetic-clinical-annotator-variants-context-v1.json"
     },
     {
-      "inputId": "ClinVar-rs1800562-HFE",
-      "rsid": "rs1800562",
+      "assembly": "GRCh38-derived",
       "gene": "HFE",
-      "observedValue": "selected derived lookup row; heterozygous; public variant identifier rs1800562; ClinVar-submitted interpretation context supplied as condition-associated but penetrance, clinical diagnosis, iron studies, family history, and medical actionability are not supplied",
-      "assembly": "GRCh38-derived",
+      "inputId": "ClinVar-rs1800562-HFE",
       "matchStatus": "observed",
-      "sourceFile": "synthetic-clinical-annotator-variants-context-v1.json",
-      "sourceArtifact": "synthetic-clinical-annotator-variants-context-v1"
+      "observedValue": "selected derived lookup row; heterozygous; public variant identifier rs1800562; ClinVar-submitted interpretation context supplied as condition-associated but penetrance, clinical diagnosis, iron studies, family history, and medical actionability are not supplied",
+      "rsid": "rs1800562",
+      "sourceArtifact": "synthetic-clinical-annotator-variants-context-v1",
+      "sourceFile": "synthetic-clinical-annotator-variants-context-v1.json"
     },
     {
-      "inputId": "Clinical-annotation-evidence-codes-unavailable",
-      "haplotype": "clinical-annotation-evidence-codes-unavailable",
+      "assembly": "derived-clinical-annotation-context",
       "gene": "ACMG/AMP evidence-code context",
-      "observedValue": "ACMG/AMP evidence codes, submitter rationale text, expert-panel review, assertion date, condition specificity, segregation, functional evidence, and population-frequency thresholds are unavailable in this fixture",
-      "assembly": "derived-clinical-annotation-context",
+      "haplotype": "clinical-annotation-evidence-codes-unavailable",
+      "inputId": "Clinical-annotation-evidence-codes-unavailable",
       "matchStatus": "unavailable",
-      "sourceFile": "synthetic-clinical-annotator-variants-context-v1.json",
-      "sourceArtifact": "synthetic-clinical-annotator-variants-context-v1"
+      "observedValue": "ACMG/AMP evidence codes, submitter rationale text, expert-panel review, assertion date, condition specificity, segregation, functional evidence, population-frequency thresholds, and direct Clinical Annotator sample rows are unavailable in this fixture; sibling Healthcare Pro sample rows are observed separately as output-structure evidence",
+      "sourceArtifact": "synthetic-clinical-annotator-variants-context-v1",
+      "sourceFile": "synthetic-clinical-annotator-variants-context-v1.json"
     },
     {
-      "inputId": "Clinical-context-unavailable",
-      "haplotype": "clinical-context-unavailable",
-      "gene": "personal clinical context",
-      "observedValue": "personal diagnosis, symptoms, ancestry calibration, age, sex, family history, laboratory confirmation, clinician interpretation, and authenticated Sequencing.com mock-report rows are unavailable in this fixture",
       "assembly": "derived-clinical-annotation-context",
+      "gene": "personal clinical context",
+      "haplotype": "clinical-context-unavailable",
+      "inputId": "Clinical-context-unavailable",
       "matchStatus": "unavailable",
-      "sourceFile": "synthetic-clinical-annotator-variants-context-v1.json",
-      "sourceArtifact": "synthetic-clinical-annotator-variants-context-v1"
+      "observedValue": "personal diagnosis, symptoms, ancestry calibration, age, sex, family history, laboratory confirmation, clinician interpretation, and direct Clinical Annotator sample rows are unavailable in this fixture; sibling Healthcare Pro sample rows are observed separately as clinical-annotation output-structure evidence",
+      "sourceArtifact": "synthetic-clinical-annotator-variants-context-v1",
+      "sourceFile": "synthetic-clinical-annotator-variants-context-v1.json"
     }
   ],
+  "inputManifest": {
+    "genomeBuild": "GRCh38-derived",
+    "hash": "sha256:synthetic-clinical-annotator-variants-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived clinical-annotation lookup evidence for clinical-annotator-variants validation"
+  },
+  "missingInputPolicy": "Report unavailable review metadata, ACMG/AMP criteria evidence, phenotype fit, family history, confirmatory testing, penetrance, and direct Clinical Annotator sample rows explicitly; use sibling Healthcare Pro sample rows only as observed output structure and do not infer diagnosis, disease risk, pathogenicity classification, carrier status, penetrance, family-member risk, clinical actionability, medication, screening, diagnostic-testing, reproductive, lifestyle, or treatment guidance.",
+  "packageSlug": "clinical-annotator-variants",
+  "packageVersion": "0.1.0",
   "referenceResources": [
     {
-      "id": "ncbi-clinvar",
-      "title": "NCBI ClinVar",
-      "sourceType": "database",
       "evidenceLevel": "database_background",
+      "id": "ncbi-clinvar",
+      "sourceType": "database",
+      "title": "NCBI ClinVar",
       "usedFor": [
         "submitted_assertion_context",
         "review_status_context",
@@ -66,10 +72,10 @@
       ]
     },
     {
-      "id": "clingen-variant-classification-guidance",
-      "title": "ClinGen Variant Classification Guidance",
-      "sourceType": "guidance_resource",
       "evidenceLevel": "guideline_background",
+      "id": "clingen-variant-classification-guidance",
+      "sourceType": "guidance_resource",
+      "title": "ClinGen Variant Classification Guidance",
       "usedFor": [
         "acmg_amp_context",
         "classification_transparency",
@@ -77,10 +83,10 @@
       ]
     },
     {
-      "id": "clingen-variant-classification-working-group",
-      "title": "ClinGen Variant Classification Working Group",
-      "sourceType": "expert_working_group",
       "evidenceLevel": "expert_background",
+      "id": "clingen-variant-classification-working-group",
+      "sourceType": "expert_working_group",
+      "title": "ClinGen Variant Classification Working Group",
       "usedFor": [
         "classification_framework_context",
         "expert_panel_context",
@@ -88,10 +94,10 @@
       ]
     },
     {
-      "id": "acmg-amp-richards-2015",
-      "title": "ACMG/AMP 2015 sequence variant interpretation standards",
-      "sourceType": "guideline_article",
       "evidenceLevel": "guideline_background",
+      "id": "acmg-amp-richards-2015",
+      "sourceType": "guideline_article",
+      "title": "ACMG/AMP 2015 sequence variant interpretation standards",
       "usedFor": [
         "classification_framework_context",
         "do_not_infer_classification",
@@ -99,10 +105,10 @@
       ]
     },
     {
-      "id": "ncbi-dbsnp",
-      "title": "NCBI dbSNP",
-      "sourceType": "database",
       "evidenceLevel": "database_background",
+      "id": "ncbi-dbsnp",
+      "sourceType": "database",
+      "title": "NCBI dbSNP",
       "usedFor": [
         "public_variant_identifier_context",
         "variant_cross_reference",
@@ -110,10 +116,10 @@
       ]
     },
     {
-      "id": "cdc-genetic-testing",
-      "title": "CDC Genetic Testing",
-      "sourceType": "public_health_resource",
       "evidenceLevel": "public_health_background",
+      "id": "cdc-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
       "usedFor": [
         "genetic_testing_context",
         "consumer_safety_language",
@@ -121,22 +127,29 @@
       ]
     },
     {
-      "id": "medlineplus-genetics",
-      "title": "MedlinePlus Genetics",
-      "sourceType": "education_resource",
       "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
       "usedFor": [
         "plain_english_context",
         "condition_background",
         "consumer_safety_language"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "healthcare-pro-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Healthcare Pro sample report",
+      "usedFor": [
+        "sibling_formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "clinical_annotation_structure",
+        "output_format"
+      ]
     }
   ],
-  "expectedAssertions": {
-    "noRawGenomeInOutput": true,
-    "everyFindingHasReference": true,
-    "missingInputsAreExplicit": true,
-    "probabilitiesOnlyInAppendix": true,
-    "consumerLanguage": true
-  }
+  "reportPurpose": "Consumer clinical-annotation report using selected derived ClinVar/dbSNP lookup fields plus sibling Healthcare Pro sample-output structure, while explicitly separating submitted database assertions from diagnosis, personal medical risk, and medical action."
 }

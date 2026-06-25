@@ -3,13 +3,14 @@
     "reportTitle": "World Ancestry Report",
     "inputManifestHash": "sha256:synthetic-world-ancestry-reference-panel-context-v1",
     "evidenceTypesSupplied": [
-      "Broad continental autosomal reference-panel similarity summary",
-      "Regional percentage model and panel metadata explicitly unavailable"
+      "Broad continental autosomal reference-panel similarity summary from the local fixture",
+      "World Ancestry sample PDF rows preserved as sample-only output-format examples",
+      "Regional percentage model and panel metadata explicitly unavailable for the local fixture"
     ],
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "No calibrated regional ancestry percentage model is supplied.",
-      "No exact homeland, community, migration path, family matching, or relative-matching data is supplied."
+      "No calibrated regional ancestry percentage model is supplied for the local fixture.",
+      "No local exact homeland, community, migration path, family matching, relative matching, or segment-coordinate data is supplied.",
+      "Sample PDF percentages, maps, and chromosome painting are not local findings."
     ]
   },
   "resultRows": [
@@ -17,7 +18,8 @@
       "groupTitle": "World ancestry context",
       "item": "Broad continental reference-panel similarity",
       "brandName": "Not applicable",
-      "geneticAnalysis": "A broad East Asian continental reference-panel similarity summary is available, but no calibrated regional percentage model is supplied.",
+      "geneticAnalysis": "A broad East Asian continental reference-panel similarity summary is available, but no calibrated regional percentage model is supplied for this local fixture.",
+      "description": "The local fixture supplies derived broad autosomal context only; it does not supply exact percentages or segment calls.",
       "genes": [
         "autosomal genome"
       ],
@@ -26,6 +28,7 @@
         "medlineplus-genetic-ancestry-testing",
         "international-genome-sample-resource"
       ],
+      "sourceBindingStatus": "curated",
       "plainEnglishMeaning": "This is broad world-ancestry context only. It is not a precise regional percentage, homeland, nationality, community label, or identity statement."
     },
     {
@@ -33,6 +36,7 @@
       "item": "Regional percentage model",
       "brandName": "Not applicable",
       "geneticAnalysis": "A calibrated regional percentage model and reference-panel metadata are unavailable in this fixture and are not inferred.",
+      "description": "Missing model evidence is stated explicitly instead of filling in unsupported ancestry, genealogy, or identity details.",
       "genes": [
         "autosomal ancestry model"
       ],
@@ -41,63 +45,600 @@
         "medlineplus-genetic-ancestry-testing",
         "medlineplus-dtc-risks-benefits"
       ],
-      "plainEnglishMeaning": "Missing regional model evidence means this run cannot provide precise percentages, homeland, community, migration, or relative-matching information."
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "Missing regional model evidence means this run cannot provide precise percentages, homeland, community, migration, segment-ancestry, or relative-matching information."
+    },
+    {
+      "groupTitle": "Sample report: Report identity",
+      "item": "Cover and welcome narrative",
+      "brandName": "World Ancestry Report sample",
+      "geneticAnalysis": "The sample cover identifies a World Ancestry Report for Jennifer Doe, Version Vdr 1.0, from Galatea Bio, followed by a welcome narrative from the Galatea team.",
+      "description": "Observed on page 1 of the local sample PDF; this row documents report identity and opening structure only.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed on page 1 of the local sample PDF; this row documents report identity and opening structure only. This is preserved as observed sample-report structure only, not as a local ancestry estimate or identity claim."
+    },
+    {
+      "groupTitle": "Sample report: Overall ethnicities",
+      "item": "Top-level ancestry hierarchy",
+      "brandName": "World Ancestry Report sample",
+      "geneticAnalysis": "The sample hierarchy shows 100% total, 95.9% European, 4.1% American, and 2.9% East Asian, accompanied by a map, donut chart, and region legend.",
+      "description": "The sample overall ethnicities section demonstrates a nested hierarchy and global map presentation. These percentages are sample-only output structure, not local ancestry findings.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample overall ethnicities section demonstrates a nested hierarchy and global map presentation. These percentages are sample-only output structure, not local ancestry findings. This is preserved as observed sample-report structure only, not as a local ancestry estimate or identity claim."
+    },
+    {
+      "groupTitle": "Sample report: Overall ethnicities",
+      "item": "European regional rows",
+      "brandName": "World Ancestry Report sample",
+      "geneticAnalysis": "The sample hierarchy lists Scandinavian 36.6%, Iberian 28.2%, Eastern Europe 16.4%, Northwest European 8.8%, and Basque 7.0% under European ancestry.",
+      "description": "Observed European subregion rows in the sample PDF. Do not normalize these values or use them as local ancestry estimates.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed European subregion rows in the sample PDF. Do not normalize these values or use them as local ancestry estimates. This is preserved as observed sample-report structure only, not as a local ancestry estimate or identity claim."
+    },
+    {
+      "groupTitle": "Sample report: Overall ethnicities",
+      "item": "Arctic / East Asian row",
+      "brandName": "World Ancestry Report sample",
+      "geneticAnalysis": "The sample hierarchy lists East Asian 2.9% and Arctic 2.9%; the Arctic ethnicity card is labeled with region EAST ASIA.",
+      "description": "Observed on page 1 and page 10. The page 10 text layer contains overlapping title text, so the extracted row uses the page 1 Arctic value plus the rendered card body and region.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed on page 1 and page 10. The page 10 text layer contains overlapping title text, so the extracted row uses the page 1 Arctic value plus the rendered card body and region. This is preserved as observed sample-report structure only, not as a local ancestry estimate or identity claim."
+    },
+    {
+      "groupTitle": "Sample report: Continental regions",
+      "item": "Background region narratives",
+      "brandName": "World Ancestry Report sample",
+      "geneticAnalysis": "The sample report includes generic narrative pages for America, Europe, Levantine and Middle East, Africa, East Asia, South Asia, Southeast Asia, and Oceania.",
+      "description": "These pages document background report sections only; they do not provide user-specific local ancestry calls.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "These pages document background report sections only; they do not provide user-specific local ancestry calls. This is preserved as observed sample-report structure only, not as a local ancestry estimate or identity claim."
+    },
+    {
+      "groupTitle": "Sample report: Chromosome painting",
+      "item": "Chromosome painting overview and legend",
+      "brandName": "World Ancestry Report sample",
+      "geneticAnalysis": "The sample chromosome painting page shows chr1-22 bars with a legend for EUR, AMR, AFR, SAS, OCE, EAS, SEA, and LME.",
+      "description": "The page explains that ancestry labels are assigned to portions of chromosomes and rendered as color-coded segments. The sample does not expose segment coordinates.",
+      "genes": [
+        "autosomal chromosomes 1-22"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The page explains that ancestry labels are assigned to portions of chromosomes and rendered as color-coded segments. The sample does not expose segment coordinates. This is preserved as observed sample-report structure only, not as a local ancestry estimate or identity claim."
+    },
+    {
+      "groupTitle": "Sample report: Chromosome painting",
+      "item": "No-call caveat",
+      "brandName": "World Ancestry Report sample",
+      "geneticAnalysis": "The sample states that Galatea was not able to ascertain ancestry calls in transparent or white chromosome-painting regions.",
+      "description": "This caveat is part of the observed output format and should be retained whenever sample chromosome painting is shown.",
+      "genes": [
+        "autosomal chromosomes 1-22"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This caveat is part of the observed output format and should be retained whenever sample chromosome painting is shown. This is preserved as observed sample-report structure only, not as a local ancestry estimate or identity claim."
+    },
+    {
+      "groupTitle": "Sample report: Ethnicity cards",
+      "item": "Applicable-card rule",
+      "brandName": "World Ancestry Report sample",
+      "geneticAnalysis": "The sample states that the report only shows ethnicity cards applicable to the customer.",
+      "description": "The card pages demonstrate a percent bar, region label, map, cultural narrative, and empty or blank Scientific details heading.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The card pages demonstrate a percent bar, region label, map, cultural narrative, and empty or blank Scientific details heading. This is preserved as observed sample-report structure only, not as a local ancestry estimate or identity claim."
+    },
+    {
+      "groupTitle": "Sample report: Ethnicity cards",
+      "item": "Scandinavian card",
+      "brandName": "World Ancestry Report sample",
+      "geneticAnalysis": "The sample includes a Scandinavian ethnicity card with 36.6% and region EUROPE.",
+      "description": "Observed as a sample card with a map and narrative text. It is not a local ancestry estimate.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed as a sample card with a map and narrative text. It is not a local ancestry estimate. This is preserved as observed sample-report structure only, not as a local ancestry estimate or identity claim."
+    },
+    {
+      "groupTitle": "Sample report: Ethnicity cards",
+      "item": "Iberian card",
+      "brandName": "World Ancestry Report sample",
+      "geneticAnalysis": "The sample includes an Iberian ethnicity card with 28.2% and region EUROPE.",
+      "description": "Observed as a sample card with a map and narrative text. It is not a local ancestry estimate.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed as a sample card with a map and narrative text. It is not a local ancestry estimate. This is preserved as observed sample-report structure only, not as a local ancestry estimate or identity claim."
+    },
+    {
+      "groupTitle": "Sample report: Ethnicity cards",
+      "item": "Eastern Europe card",
+      "brandName": "World Ancestry Report sample",
+      "geneticAnalysis": "The sample includes an Eastern Europe ethnicity card with 16.4% and region EUROPE.",
+      "description": "Observed as a sample card with a map and narrative text. It is not a local ancestry estimate.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed as a sample card with a map and narrative text. It is not a local ancestry estimate. This is preserved as observed sample-report structure only, not as a local ancestry estimate or identity claim."
+    },
+    {
+      "groupTitle": "Sample report: Ethnicity cards",
+      "item": "Northwest European and Basque cards",
+      "brandName": "World Ancestry Report sample",
+      "geneticAnalysis": "The sample includes a Northwest European card with 8.8% and a Basque card with 7.0%; both are labeled region EUROPE.",
+      "description": "Observed as sample cards with maps and narrative text. They are not local ancestry estimates.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed as sample cards with maps and narrative text. They are not local ancestry estimates. This is preserved as observed sample-report structure only, not as a local ancestry estimate or identity claim."
+    },
+    {
+      "groupTitle": "Sample report: Ethnicity cards",
+      "item": "Arctic card",
+      "brandName": "World Ancestry Report sample",
+      "geneticAnalysis": "The sample includes an Arctic ethnicity card with 2.9% and region EAST ASIA.",
+      "description": "Observed as a sample card with a map and narrative text. The text-layer title overlap is excluded from the curated row.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed as a sample card with a map and narrative text. The text-layer title overlap is excluded from the curated row. This is preserved as observed sample-report structure only, not as a local ancestry estimate or identity claim."
+    },
+    {
+      "groupTitle": "Sample report: Methodology",
+      "item": "G-Nomix high-resolution ancestry deconvolution",
+      "brandName": "World Ancestry Report sample",
+      "geneticAnalysis": "The sample methodology page describes G-Nomix as a local-ancestry algorithm that assigns ancestry labels to DNA segments from whole-genome or SNP-array data using classification and error-correction stages.",
+      "description": "This is observed method copy from the sample report. It does not mean the local fixture has a calibrated G-Nomix model, reference panel, or segment calls.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is observed method copy from the sample report. It does not mean the local fixture has a calibrated G-Nomix model, reference panel, or segment calls. This is preserved as observed sample-report structure only, not as a local ancestry estimate or identity claim."
+    }
+  ],
+  "sampleRows": [
+    {
+      "brandName": "World Ancestry Report sample",
+      "description": "Observed on page 1 of the local sample PDF; this row documents report identity and opening structure only.",
+      "extractionStatus": "direct",
+      "genes": [
+        "autosomal genome"
+      ],
+      "geneticAnalysis": "The sample cover identifies a World Ancestry Report for Jennifer Doe, Version Vdr 1.0, from Galatea Bio, followed by a welcome narrative from the Galatea team.",
+      "groupTitle": "Report identity",
+      "item": "Cover and welcome narrative",
+      "sortOrder": 1,
+      "sourceBindingNote": "Extracted from the rendered sample PDF cover and introduction; personal name and sample identity are not reused as local user data.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "world-ancestry-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "World Ancestry Report sample",
+      "description": "The sample overall ethnicities section demonstrates a nested hierarchy and global map presentation. These percentages are sample-only output structure, not local ancestry findings.",
+      "extractionStatus": "direct",
+      "genes": [
+        "autosomal genome"
+      ],
+      "geneticAnalysis": "The sample hierarchy shows 100% total, 95.9% European, 4.1% American, and 2.9% East Asian, accompanied by a map, donut chart, and region legend.",
+      "groupTitle": "Overall ethnicities",
+      "item": "Top-level ancestry hierarchy",
+      "sortOrder": 2,
+      "sourceBindingNote": "Extracted from the sample PDF page 1 Overall ethnicities section and rendered page review.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "world-ancestry-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "World Ancestry Report sample",
+      "description": "Observed European subregion rows in the sample PDF. Do not normalize these values or use them as local ancestry estimates.",
+      "extractionStatus": "direct",
+      "genes": [
+        "autosomal genome"
+      ],
+      "geneticAnalysis": "The sample hierarchy lists Scandinavian 36.6%, Iberian 28.2%, Eastern Europe 16.4%, Northwest European 8.8%, and Basque 7.0% under European ancestry.",
+      "groupTitle": "Overall ethnicities",
+      "item": "European regional rows",
+      "sortOrder": 3,
+      "sourceBindingNote": "Extracted from page 1 and cross-checked against rendered ethnicity-card pages 5-9.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "world-ancestry-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "World Ancestry Report sample",
+      "description": "Observed on page 1 and page 10. The page 10 text layer contains overlapping title text, so the extracted row uses the page 1 Arctic value plus the rendered card body and region.",
+      "extractionStatus": "direct",
+      "genes": [
+        "autosomal genome"
+      ],
+      "geneticAnalysis": "The sample hierarchy lists East Asian 2.9% and Arctic 2.9%; the Arctic ethnicity card is labeled with region EAST ASIA.",
+      "groupTitle": "Overall ethnicities",
+      "item": "Arctic / East Asian row",
+      "sortOrder": 4,
+      "sourceBindingNote": "Extracted from the rendered sample PDF and OCR with the contaminated page-title text excluded.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "world-ancestry-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "World Ancestry Report sample",
+      "description": "These pages document background report sections only; they do not provide user-specific local ancestry calls.",
+      "extractionStatus": "direct",
+      "genes": [
+        "autosomal genome"
+      ],
+      "geneticAnalysis": "The sample report includes generic narrative pages for America, Europe, Levantine and Middle East, Africa, East Asia, South Asia, Southeast Asia, and Oceania.",
+      "groupTitle": "Continental regions",
+      "item": "Background region narratives",
+      "sortOrder": 5,
+      "sourceBindingNote": "Extracted from sample PDF text pages 2-3; one Southeast Asia paragraph appears to reuse South Asia wording and is preserved only as source structure.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "world-ancestry-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "World Ancestry Report sample",
+      "description": "The page explains that ancestry labels are assigned to portions of chromosomes and rendered as color-coded segments. The sample does not expose segment coordinates.",
+      "extractionStatus": "direct",
+      "genes": [
+        "autosomal chromosomes 1-22"
+      ],
+      "geneticAnalysis": "The sample chromosome painting page shows chr1-22 bars with a legend for EUR, AMR, AFR, SAS, OCE, EAS, SEA, and LME.",
+      "groupTitle": "Chromosome painting",
+      "item": "Chromosome painting overview and legend",
+      "sortOrder": 6,
+      "sourceBindingNote": "Extracted from rendered page 4 of the sample PDF; no segment-coordinate table was present.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "world-ancestry-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "World Ancestry Report sample",
+      "description": "This caveat is part of the observed output format and should be retained whenever sample chromosome painting is shown.",
+      "extractionStatus": "direct",
+      "genes": [
+        "autosomal chromosomes 1-22"
+      ],
+      "geneticAnalysis": "The sample states that Galatea was not able to ascertain ancestry calls in transparent or white chromosome-painting regions.",
+      "groupTitle": "Chromosome painting",
+      "item": "No-call caveat",
+      "sortOrder": 7,
+      "sourceBindingNote": "Extracted from the rendered page 4 chromosome-painting caveat.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "world-ancestry-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "World Ancestry Report sample",
+      "description": "The card pages demonstrate a percent bar, region label, map, cultural narrative, and empty or blank Scientific details heading.",
+      "extractionStatus": "direct",
+      "genes": [
+        "autosomal genome"
+      ],
+      "geneticAnalysis": "The sample states that the report only shows ethnicity cards applicable to the customer.",
+      "groupTitle": "Ethnicity cards",
+      "item": "Applicable-card rule",
+      "sortOrder": 8,
+      "sourceBindingNote": "Extracted from rendered ethnicity-card pages 5-10.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "world-ancestry-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "World Ancestry Report sample",
+      "description": "Observed as a sample card with a map and narrative text. It is not a local ancestry estimate.",
+      "extractionStatus": "direct",
+      "genes": [
+        "autosomal genome"
+      ],
+      "geneticAnalysis": "The sample includes a Scandinavian ethnicity card with 36.6% and region EUROPE.",
+      "groupTitle": "Ethnicity cards",
+      "item": "Scandinavian card",
+      "sortOrder": 9,
+      "sourceBindingNote": "Extracted from rendered page 5; OCR rounded one instance differently, so the visually confirmed 36.6% value from the card and summary is used.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "world-ancestry-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "World Ancestry Report sample",
+      "description": "Observed as a sample card with a map and narrative text. It is not a local ancestry estimate.",
+      "extractionStatus": "direct",
+      "genes": [
+        "autosomal genome"
+      ],
+      "geneticAnalysis": "The sample includes an Iberian ethnicity card with 28.2% and region EUROPE.",
+      "groupTitle": "Ethnicity cards",
+      "item": "Iberian card",
+      "sortOrder": 10,
+      "sourceBindingNote": "Extracted from rendered page 6 of the sample PDF.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "world-ancestry-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "World Ancestry Report sample",
+      "description": "Observed as a sample card with a map and narrative text. It is not a local ancestry estimate.",
+      "extractionStatus": "direct",
+      "genes": [
+        "autosomal genome"
+      ],
+      "geneticAnalysis": "The sample includes an Eastern Europe ethnicity card with 16.4% and region EUROPE.",
+      "groupTitle": "Ethnicity cards",
+      "item": "Eastern Europe card",
+      "sortOrder": 11,
+      "sourceBindingNote": "Extracted from rendered page 7 of the sample PDF.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "world-ancestry-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "World Ancestry Report sample",
+      "description": "Observed as sample cards with maps and narrative text. They are not local ancestry estimates.",
+      "extractionStatus": "direct",
+      "genes": [
+        "autosomal genome"
+      ],
+      "geneticAnalysis": "The sample includes a Northwest European card with 8.8% and a Basque card with 7.0%; both are labeled region EUROPE.",
+      "groupTitle": "Ethnicity cards",
+      "item": "Northwest European and Basque cards",
+      "sortOrder": 12,
+      "sourceBindingNote": "Extracted from rendered pages 8 and 9 of the sample PDF.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "world-ancestry-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "World Ancestry Report sample",
+      "description": "Observed as a sample card with a map and narrative text. The text-layer title overlap is excluded from the curated row.",
+      "extractionStatus": "direct",
+      "genes": [
+        "autosomal genome"
+      ],
+      "geneticAnalysis": "The sample includes an Arctic ethnicity card with 2.9% and region EAST ASIA.",
+      "groupTitle": "Ethnicity cards",
+      "item": "Arctic card",
+      "sortOrder": 13,
+      "sourceBindingNote": "Extracted from rendered page 10 and cross-checked against the page 1 summary.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "world-ancestry-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "World Ancestry Report sample",
+      "description": "This is observed method copy from the sample report. It does not mean the local fixture has a calibrated G-Nomix model, reference panel, or segment calls.",
+      "extractionStatus": "direct",
+      "genes": [
+        "autosomal genome"
+      ],
+      "geneticAnalysis": "The sample methodology page describes G-Nomix as a local-ancestry algorithm that assigns ancestry labels to DNA segments from whole-genome or SNP-array data using classification and error-correction stages.",
+      "groupTitle": "Methodology",
+      "item": "G-Nomix high-resolution ancestry deconvolution",
+      "sortOrder": 14,
+      "sourceBindingNote": "Extracted from rendered page 11 of the sample PDF and kept separate from local-user inference.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "world-ancestry-sample-pdf"
+      ]
     }
   ],
   "ancestryScopeSummary": {
-    "autosomal": "Autosomal world ancestry can summarize broad reference-panel similarity when a model is supplied; this fixture does not supply calibrated percentages.",
+    "autosomal": "Autosomal world ancestry can summarize broad reference-panel similarity when a model is supplied; this fixture does not supply calibrated local percentages.",
     "referencePanel": "Reference panels provide comparison context, not a fixed identity label or exact origin.",
+    "sampleReport": "The World Ancestry sample PDF demonstrates output structure, including hierarchy rows, map legend, chromosome painting, ethnicity cards, and methodology text, but those sample values are not local findings.",
     "sourceIds": [
       "medlineplus-genetic-ancestry-testing",
       "international-genome-sample-resource",
-      "medlineplus-dtc-risks-benefits"
+      "medlineplus-dtc-risks-benefits",
+      "world-ancestry-sample-pdf"
     ]
   },
   "whatThisDoesNotMean": [
-    "This is not an exact global or regional ethnicity percentage.",
+    "This is not an exact global or regional ethnicity percentage for the local fixture.",
     "This does not identify a precise homeland, tribe, community, nationality, migration route, or living relatives.",
     "This is not a family-matching or genealogy-relative report.",
+    "This is not a segment-level local ancestry call for the local fixture.",
     "This is not a health or disease-risk report."
   ],
   "references": [
     {
       "id": "medlineplus-genetic-ancestry-testing",
-      "title": "MedlinePlus Genetics: genetic ancestry testing"
+      "title": "MedlinePlus Genetics: genetic ancestry testing",
+      "sourceType": "education_resource"
     },
     {
       "id": "medlineplus-dtc-risks-benefits",
-      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing"
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing",
+      "sourceType": "education_resource"
     },
     {
       "id": "international-genome-sample-resource",
-      "title": "International Genome Sample Resource / 1000 Genomes"
+      "title": "International Genome Sample Resource / 1000 Genomes",
+      "sourceType": "database"
+    },
+    {
+      "id": "world-ancestry-sample-pdf",
+      "title": "World Ancestry Report sample report",
+      "sourceType": "mock_report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
+        "tier": "Sample-report method row",
         "gene": "autosomal genome",
-        "observedValue": "broad East Asian continental reference-panel similarity; no regional percentage model supplied"
+        "variantId": "sample G-Nomix local ancestry method",
+        "genotype": "not shown in sample PDF",
+        "effect": "The sample methodology describes assigning ancestry labels to DNA segments from whole-genome or SNP-array data with machine-learning classification and error correction.",
+        "phenotype": "Use as observed sample methodology only; the local fixture does not include a calibrated G-Nomix model, reference panel, or segment calls.",
+        "extractionStatus": "direct"
       },
       {
+        "tier": "Sample-report visible row",
+        "gene": "autosomal genome",
+        "variantId": "sample overall ethnicity hierarchy",
+        "genotype": "sample total 100%; European 95.9%; American 4.1%; East Asian 2.9%",
+        "effect": "The sample demonstrates a top-level ancestry hierarchy with map and legend presentation.",
+        "phenotype": "Use as sample output structure only; do not reuse these percentages as local ancestry, identity, homeland, or community findings.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "autosomal genome",
+        "variantId": "sample European regional hierarchy",
+        "genotype": "Scandinavian 36.6%; Iberian 28.2%; Eastern Europe 16.4%; Northwest European 8.8%; Basque 7.0%",
+        "effect": "The sample demonstrates regional rows and ethnicity-card pages beneath a continental ancestry grouping.",
+        "phenotype": "Use as sample output structure only; do not infer local regional percentages, precise homeland, migration path, or relatives.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample-report visible row",
+        "gene": "autosomal chromosomes",
+        "variantId": "sample chromosome painting chr1-chr22 bars",
+        "genotype": "colored sample segments plus transparent or white no-call regions",
+        "effect": "The sample demonstrates chromosome-painting visualization and an explicit no-call caveat without segment-coordinate data.",
+        "phenotype": "Use as observed output structure only; do not create local segment ancestry calls without calibrated model evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Local derived call",
+        "gene": "autosomal genome",
+        "variantId": "continental-reference-panel-summary",
+        "genotype": "broad East Asian reference-panel similarity; no percentage calibration supplied",
+        "effect": "The local fixture supplies broad autosomal context without calibrated ethnicity percentages.",
+        "phenotype": "Report as broad ancestry context only; do not convert it into exact percentages, homeland, identity, relatives, or health interpretation.",
+        "extractionStatus": "curated"
+      },
+      {
+        "tier": "Local missing input",
         "gene": "autosomal ancestry model",
-        "observedValue": "calibrated regional percentage model and reference-panel metadata unavailable in this fixture"
+        "variantId": "regional-percentage-model-unavailable",
+        "genotype": "calibrated regional percentage model and reference-panel metadata unavailable",
+        "effect": "The local fixture intentionally omits calibrated regional ancestry percentages and segment-level model provenance.",
+        "phenotype": "Mark regional ancestry, exact homeland, chromosome-painting calls, relatives, family matching, migration path, and community affiliation unavailable instead of inferring them.",
+        "extractionStatus": "curated"
       }
     ],
     "missingInputs": [
-      "Authenticated sample-report sections and rows have not been extracted.",
-      "No calibrated ancestry model, reference-panel metadata, or regional-percentage output is supplied.",
-      "No family-matching, living-relative, migration-route, or exact-homeland data is supplied."
+      "No calibrated ancestry model, reference-panel metadata, or regional-percentage output is supplied for the local fixture.",
+      "No family-matching, living-relative, migration-route, exact-homeland, or community-affiliation data is supplied.",
+      "No segment-coordinate table or local chromosome-painting calls are supplied for the local fixture."
     ],
     "probabilities": [],
     "uncertainty": [
       "Broad reference-panel similarity should not be treated as a precise ancestry percentage or identity.",
+      "Sample PDF percentages are useful for output-format replication only and must remain separate from local fixture evidence.",
       "The fixture is a validation artifact, not a complete world-ancestry inference pipeline."
     ],
     "limitations": [
-      "This validation result uses derived evidence only; raw genome data is not included.",
-      "The report does not emit raw SNP tables or relative-matching data.",
-      "Authenticated Sequencing.com sample report rows are still pending."
+      "Raw genome data is not included in this validation result.",
+      "The report does not emit raw SNP tables, VCF, FASTQ, BAM, CRAM, or relative-matching data.",
+      "World Ancestry sample PDF rows are preserved as sample-only examples and do not validate local percentage estimates."
     ]
   }
 }

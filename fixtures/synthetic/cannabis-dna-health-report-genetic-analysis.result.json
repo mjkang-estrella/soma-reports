@@ -4,19 +4,17 @@
     "reportTitle": "Cannabis DNA Health Report",
     "inputManifestHash": "sha256:synthetic-cannabis-dna-health-report-genetic-analysis-specialized-boundary-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet for Cannabis DNA Health Report.",
-      "Validated cannabis-response model, product exposure, dose, route, age, mental-health context, medication context, and authenticated sample-report rows",
-      "validated cannabis response model, CYP2C9/CYP2C19/CYP3A4/endocannabinoid marker interpretation, cannabis product exposure, dose, route, frequency, pregnancy context, age context, psychiatric history, medication list, clinician review, and authenticated sample-report rows unavailable in this fixture",
-      "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
-      "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture"
+      "Validated personal cannabis-response model output and source algorithm are not supplied in this fixture.",
+      "Personal cannabis product exposure, route, dose, frequency, age context, pregnancy context, psychiatric history, medication list, legal context, and clinician review are unavailable.",
+      "Use public Cannabis sample rows only as observed output structure; report validated cannabis response model, source algorithm, product exposure, dose, route, frequency, pregnancy context, age context, psychiatric history, medication list, clinician review, and local-user cannabis conclusions unavailable."
     ]
   },
   "resultRows": [
     {
       "groupTitle": "Validated model/source output availability",
       "item": "Cannabis DNA Health Report model/source output",
-      "brandName": "",
-      "geneticAnalysis": "The local fixture supplies a boundary row for cannabis and substance-response genetics. It does not supply the validated model, source-tool output, or authenticated Sequencing.com report content needed for personal conclusions.",
+      "brandName": "Cannabis DNA Health Report",
+      "geneticAnalysis": "The local fixture supplies conservative evidence-boundary rows and a public sample-output structure. It does not supply a validated personal cannabis-response model, product exposure, dose, route, or clinical/professional context needed for personal conclusions.",
       "genes": [
         "Cannabis DNA Health Report model/source output"
       ],
@@ -27,61 +25,231 @@
         "fda-pgx-associations"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This can explain what evidence is present or missing for Cannabis DNA Health Report, but it cannot fill in unavailable model output or personal conclusions."
+      "plainEnglishMeaning": "This row explains the local evidence boundary. It cannot recommend cannabis, CBD, THC, dose, route, products, or safety decisions."
     },
     {
-      "groupTitle": "Clinical and professional context availability",
-      "item": "Cannabis DNA Health Report clinical and professional context",
-      "brandName": "",
-      "geneticAnalysis": "Clinical history, symptoms, labs, medication context, family history, and qualified professional interpretation are not supplied unless explicitly listed in the fixture.",
+      "groupTitle": "Public sample output structure",
+      "item": "Cannabis sample rows observed",
+      "brandName": "Strain Genie sample",
+      "geneticAnalysis": "The public sample PDF contributes 10 source-bound sample rows covering report identity, warning tables, metabolism, category recommendations, report-wide terpene and THC:CBD fields, activity/product sections, and dosage-calculator structure.",
       "genes": [
-        "Cannabis DNA Health Report clinical and professional context"
+        "Personal Cannabis Health Report public sample"
       ],
-      "sourceLabel": "CDC Cannabis Health Effects; HHS Surgeon General Advisory on Marijuana Use and the Developing Brain; FDA Table of Pharmacogenetic Associations",
+      "sourceLabel": "Public sample PDF",
       "sourceIds": [
-        "cdc-cannabis-health-effects",
-        "hhs-marijuana-developing-brain",
-        "fda-pgx-associations"
+        "cannabis-sample-pdf"
       ],
-      "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "The report should stay educational because medical, behavioral-health, medication, pregnancy, workplace, and legal decisions require context that this synthetic fixture does not include."
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "These are sample-output examples only. They are not local-user cannabis findings or personal cannabis guidance."
     },
     {
-      "groupTitle": "Authenticated sample availability",
-      "item": "Cannabis DNA Health Report authenticated sample rows",
-      "brandName": "",
-      "geneticAnalysis": "Authenticated Sequencing.com sample report sections, row labels, model output, and source-tool output are unavailable in this local fixture.",
+      "groupTitle": "Report identity",
+      "item": "Your Personal Cannabis Health Report",
+      "brandName": "Strain Genie sample",
+      "geneticAnalysis": "The public sample PDF is labeled Your Personal Cannabis Health Report, prepared for Sample Report, version 2.0, with a table of contents for Introduction to DNA, Introduction to Cannabis, How To Read This Report, Activity Groups, Your Health Insights, Personalized Recommendations, Dosage Calculator, and Thank you.",
+      "description": "Use the public report identity and section list only as output structure; do not treat sample text as local cannabis guidance.",
       "genes": [
-        "Cannabis DNA Health Report authenticated sample rows"
+        "Cannabis sample report"
       ],
-      "sourceLabel": "CDC Cannabis Health Effects; HHS Surgeon General Advisory on Marijuana Use and the Developing Brain; FDA Table of Pharmacogenetic Associations",
+      "sourceLabel": "Public sample PDF",
       "sourceIds": [
-        "cdc-cannabis-health-effects",
-        "hhs-marijuana-developing-brain",
-        "fda-pgx-associations"
+        "cannabis-sample-pdf"
       ],
-      "sourceBindingStatus": "unavailable",
-      "plainEnglishMeaning": "This local package marks the sample-report gap clearly instead of recreating or guessing the missing Sequencing.com output."
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed report identity and section list only; this is not local-user cannabis model output."
+    },
+    {
+      "groupTitle": "How to read this report",
+      "item": "Four major report sections",
+      "brandName": "Strain Genie sample",
+      "geneticAnalysis": "The sample describes four major cannabis-related sections: Warnings, category-specific cannabinoid and terpene recommendations, report-wide cannabinoid and terpene recommendations, and report-wide activity group and product recommendations.",
+      "description": "The sample says warnings include metabolism, smoking, cannabis-induced psychosis, and cannabis dependence; recommendations aggregate traits into category and report-wide outputs.",
+      "genes": [
+        "Report-level output structure"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "cannabis-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed from How To Read This Report pages; structure only, not local-user recommendations."
+    },
+    {
+      "groupTitle": "Warnings",
+      "item": "Edible, smoking, psychosis, and dependence warning tables",
+      "brandName": "Strain Genie sample",
+      "geneticAnalysis": "Visible warning tables show CBD metabolism slow as Normal for CYPC219/CYP2C19, THC metabolism as Normal for CYP2C9, lung cancer smoking warning as Increased for CHRNA3/HYKK, cannabis-induced psychosis as Slight for DRDR2/AKT1/ZNF804A, and cannabis dependence as Increased for CNR1/DRD2/FAAH.",
+      "description": "The sample includes caution text for smokable products, high-THC products, and tolerance breaks; SomaReports preserves this as sample-output structure only.",
+      "genes": [
+        "CYP2C19",
+        "CYPC219",
+        "CYP2C9",
+        "CHRNA3",
+        "HYKK",
+        "DRDR2",
+        "AKT1",
+        "ZNF804A",
+        "CNR1",
+        "DRD2",
+        "FAAH"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "cannabis-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed warning-table sample rows; do not copy as local-user smoking, psychosis, dependence, edible, product, or dosage advice."
+    },
+    {
+      "groupTitle": "Metabolism",
+      "item": "Metabolism and folate rows",
+      "brandName": "Strain Genie sample",
+      "geneticAnalysis": "Visible metabolism table shows CBD Metabolism (Slow) CYP2C19/CYPC219 Normal, CBD Metabolism (Ultra-fast) CYP2C19 Slight, THC Metabolism CYP2C9 Normal, and Reduced Folate Metabolism MTHFR Slight.",
+      "description": "The surrounding page discusses cytochrome P450 metabolism and MTHFR/folate context; the local package does not infer metabolism or supplement guidance without validated local evidence.",
+      "genes": [
+        "CYP2C19",
+        "CYPC219",
+        "CYP2C9",
+        "MTHFR"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "cannabis-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample metabolism rows only; this is not local CYP or MTHFR interpretation."
+    },
+    {
+      "groupTitle": "Sleep",
+      "item": "Sleep recommendation category",
+      "brandName": "Strain Genie sample",
+      "geneticAnalysis": "The Sleep category recommends cannabinoids CBD and terpenes Beta-Caryophyllene, Limonene, and Myrcene; visible trait rows include Poor Sleep Quality CACNA1C Slight, Delayed Sleep CLOCK/PER3 Slight, Restless Leg Syndrome MEIS1 Slight, Narcolepsy CPT1B-CHKB Normal, and Excessive Sleep Movement BTBD9 Slight.",
+      "description": "This preserves category row shape and recommendation fields; local output must not turn the sample into sleep-aid, dosing, product, or treatment guidance.",
+      "genes": [
+        "CACNA1C",
+        "CLOCK",
+        "PER3",
+        "MEIS1",
+        "CPT1B-CHKB",
+        "BTBD9"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "cannabis-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Sleep sample rows only; they are not local sleep or cannabis recommendations."
+    },
+    {
+      "groupTitle": "Substance Abuse",
+      "item": "Cannabis and other substance dependence rows",
+      "brandName": "Strain Genie sample",
+      "geneticAnalysis": "The Cannabis Dependence page recommends CBD and says terpene data are insufficient; visible rows include Cannabis Dependence ABCB1/CNR1/Intergenic RP11-215A21.1 Slight, Opioid Dependence OPRM1 Normal, Nicotine Dependence CHRNA3/CHRNB1 Slight, and Alcohol Dependence CHRNA3 Normal.",
+      "description": "Use only as sample output structure; do not infer local addiction, substance-use risk, CBD use, tolerance breaks, or treatment action.",
+      "genes": [
+        "ABCB1",
+        "CNR1",
+        "RP11-215A21.1",
+        "OPRM1",
+        "CHRNA3",
+        "CHRNB1"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "cannabis-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed substance-dependence sample rows only; not local behavioral-health or substance-use advice."
+    },
+    {
+      "groupTitle": "Mood / Personality",
+      "item": "Mood and personality recommendation groups",
+      "brandName": "Strain Genie sample",
+      "geneticAnalysis": "Visible Mood / Personality pages show Group I recommending THC and CBD with Limonene, Beta-Caryophyllene, and Nerolidol, and rows for Anger/Aggression DBH/FYN/HTR2A Slight, Neuroticism PDE4D/PTRD Increased, Stress Susceptibility COMT Slight, Anxiety LOC105376674/SLC6A4 Slight, and PTSD CNR1/FAAH/FKBP5 Increased. Group II recommends CBD, THC, and CBC with Limonene, Beta-Caryophyllene, and Linalool, and rows for Lower Empathy OXTR Slight, Introversion HTR2A/RGS2 Slight, and Depression COMT/HTR2A/TPH2 Slight.",
+      "description": "Observed sample structure only; local output must not infer mood state, psychiatric risk, substance suitability, product use, or treatment.",
+      "genes": [
+        "DBH",
+        "FYN",
+        "HTR2A",
+        "PDE4D",
+        "PTRD",
+        "COMT",
+        "LOC105376674",
+        "SLC6A4",
+        "CNR1",
+        "FAAH",
+        "FKBP5",
+        "OXTR",
+        "RGS2",
+        "TPH2"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "cannabis-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed mood/personality sample rows only; not local mental-health, cannabis, product, or treatment guidance."
+    },
+    {
+      "groupTitle": "Report-wide recommendations",
+      "item": "Terpenes, THC:CBD ratio, and activity groups",
+      "brandName": "Strain Genie sample",
+      "geneticAnalysis": "The sample report-wide section lists Top Primary Terpenes Beta-Caryophyllene and Limonene, Top Secondary Terpenes Alpha-Bisabolol and Alpha-Pinene, a recommended THC:CBD ratio of 2:5, and says the sample could benefit most from Medicate products followed by Chill products.",
+      "description": "SomaReports stores these as observed sample fields only; the local package does not recommend THC, CBD, terpenes, products, or activity groups.",
+      "genes": [
+        "Report-wide recommendation model"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "cannabis-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed report-wide sample fields only; not local ratio, terpene, product, or activity recommendation."
+    },
+    {
+      "groupTitle": "Personalized Recommendations",
+      "item": "Activity group and product section pages",
+      "brandName": "Strain Genie sample",
+      "geneticAnalysis": "The sample contains section pages for Energize Strains, Energize Products, Create Strains, Create Products, Elevate Strains, Elevate Products, Medicate Strains, Medicate Products, Chill Strains, Chill Products, Sleep Strains, and Sleep Products.",
+      "description": "The visible extracted text exposes section titles rather than product details in the text layer; product names and recommendations remain unavailable unless visible evidence is separately extracted.",
+      "genes": [
+        "Activity group recommendation pages"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "cannabis-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed product-section headings only; no product rows are invented."
+    },
+    {
+      "groupTitle": "Dosage Calculator",
+      "item": "CBD and THC dosage calculator links",
+      "brandName": "Strain Genie sample",
+      "geneticAnalysis": "The sample closes with a Dosage Calculator page that asks for gender, body weight, frequency of use, and preferred consumption medium, and links to Strain Genie CBD and THC dosage calculators.",
+      "description": "This page is preserved as sample output structure only; the local package does not calculate dose or recommend using cannabis.",
+      "genes": [
+        "Dosage calculator page"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "cannabis-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed dosage-calculator page only; not local dosage, CBD, THC, route, product, or use guidance."
     }
   ],
   "substanceContext": {
-    "plainEnglishMeaning": "Cannabis DNA Health Report is represented as an evidence-boundary package. It can summarize supplied local evidence and references, while marking unsupported personal conclusions unavailable.",
+    "plainEnglishMeaning": "Cannabis DNA Health Report is represented as a sample-backed evidence-boundary package. It can preserve observed report structure and summarize supplied local evidence, while marking unsupported personal cannabis conclusions unavailable.",
     "unsupportedClaims": [
       "cannabis safety claim",
       "THC or CBD dose guidance",
-      "product recommendation",
+      "strain or product recommendation",
       "substance-use risk estimate",
-      "mental-health or medication advice",
-      "legal or occupational advice"
+      "mental-health, pregnancy, medication, legal, or occupational advice",
+      "therapeutic benefit or treatment guidance"
     ],
-    "professionalReview": "Use qualified professional review for medical, behavioral-health, medication, pregnancy, workplace, and legal decisions; this synthetic local result is not enough for those decisions."
-  },
-  "practicalNextSteps": {
-    "professionalReview": [
-      "Use this local result as educational context for cannabis and substance-response genetics, not as a decision tool.",
-      "Collect validated source output, source provenance, and relevant clinical or professional context before using Cannabis DNA Health Report for personal decisions.",
-      "Discuss medical, behavioral-health, medication, pregnancy, workplace, and legal decisions with qualified professionals when those choices matter."
-    ]
+    "professionalReview": "Use qualified professional review for medical, behavioral-health, medication, pregnancy, workplace, legal, or safety decisions; this synthetic local result is not enough for those decisions."
   },
   "references": [
     {
@@ -135,43 +303,77 @@
     {
       "id": "fda-pgx-associations",
       "title": "FDA Table of Pharmacogenetic Associations"
+    },
+    {
+      "id": "cannabis-sample-pdf",
+      "title": "Personal Cannabis DNA Test Report sample"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "cannabis-dna-health-report-genetic-analysis-model-output-unavailable",
+        "tier": "Local missing input",
         "gene": "Cannabis DNA Health Report model/source output",
-        "observedValue": "validated cannabis response model, CYP2C9/CYP2C19/CYP3A4/endocannabinoid marker interpretation, cannabis product exposure, dose, route, frequency, pregnancy context, age context, psychiatric history, medication list, clinician review, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "variantId": "cannabis-dna-health-report-genetic-analysis-model-output-unavailable",
+        "genotype": "validated cannabis response model, CYP2C19/CYP2C9/endocannabinoid marker interpretation, cannabis product exposure, route, dose, frequency, clinical context, and professional review unavailable",
+        "effect": "The local fixture intentionally omits personal cannabis-response model output and source algorithm provenance.",
+        "phenotype": "Mark cannabis conclusions, dose, route, strain, product, safety, impairment, dependence, psychosis, medication-interaction, pregnancy, legal, and therapeutic claims unavailable instead of inferring them."
       },
       {
-        "inputId": "cannabis-dna-health-report-genetic-analysis-clinical-professional-context-unavailable",
-        "gene": "Cannabis DNA Health Report clinical and professional context",
-        "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "tier": "Sample warning table",
+        "gene": "CYP2C19/CYPC219/CYP2C9",
+        "variantId": "sample-edible-warning",
+        "genotype": "CBD Metabolism (Slow) Normal; THC Metabolism Normal",
+        "effect": "The public sample warning table shows normal CBD slow-metabolism and THC metabolism rows.",
+        "phenotype": "Observed sample content only; do not infer local edible metabolism, route, dose, or interaction risk."
       },
       {
-        "inputId": "cannabis-dna-health-report-genetic-analysis-authenticated-sample-unavailable",
-        "gene": "Cannabis DNA Health Report authenticated sample rows",
-        "observedValue": "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "tier": "Sample warning table",
+        "gene": "CHRNA3/HYKK",
+        "variantId": "sample-smoking-warning",
+        "genotype": "Smoking Warning Increased",
+        "effect": "The public sample warning table shows a slight increased-risk lung-cancer smoking warning.",
+        "phenotype": "Observed sample content only; do not infer local smoking, cancer, product, or use guidance."
+      },
+      {
+        "tier": "Sample warning table",
+        "gene": "DRDR2/AKT1/ZNF804A",
+        "variantId": "sample-cannabis-induced-psychosis-warning",
+        "genotype": "Cannabis-Induced Psychosis Slight",
+        "effect": "The public sample warning table shows slight increased risk for cannabis-induced psychosis.",
+        "phenotype": "Observed sample content only; do not infer local psychiatric risk, THC safety, product, dose, or use guidance."
+      },
+      {
+        "tier": "Sample warning table",
+        "gene": "CNR1/DRD2/FAAH",
+        "variantId": "sample-cannabis-dependence-warning",
+        "genotype": "Cannabis Dependence Increased",
+        "effect": "The public sample warning table shows increased risk for cannabis dependence.",
+        "phenotype": "Observed sample content only; do not infer local dependence risk, tolerance-break need, treatment, or substance-use guidance."
+      },
+      {
+        "tier": "Sample report-wide output",
+        "gene": "Report-wide recommendation model",
+        "variantId": "sample-thc-cbd-ratio-and-terpenes",
+        "genotype": "Top primary terpenes Beta-Caryophyllene and Limonene; top secondary terpenes Alpha-Bisabolol and Alpha-Pinene; THC:CBD ratio 2:5",
+        "effect": "The public sample report-wide section shows a terpene list and THC:CBD ratio.",
+        "phenotype": "Observed sample content only; do not infer local terpene, THC, CBD, dose, strain, product, route, or use guidance."
       }
     ],
     "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and rows for Cannabis DNA Health Report.",
-      "validated cannabis-response model, product exposure, dose, route, age, mental-health context, medication context, and authenticated sample-report rows",
-      "Report unavailable cannabis genetics and substance-response context evidence explicitly; do not recommend cannabis, cannabis products, CBD, THC, dose, route, strain, timing, or use pattern; predict impairment, addiction, psychosis, anxiety, cognition, pregnancy outcome, interaction risk, safety, legal status, therapeutic benefit, adverse-event risk, or clinical actionability from genotype."
+      "Validated personal cannabis-response model output and source algorithm.",
+      "Personal product exposure, dose, route, frequency, age, pregnancy, psychiatric, medication, legal, and clinician-review context.",
+      "Use public Cannabis sample rows only as observed output structure; report validated cannabis response model, source algorithm, product exposure, dose, route, frequency, pregnancy context, age context, psychiatric history, medication list, clinician review, and local-user cannabis conclusions unavailable."
     ],
     "probabilities": [],
     "uncertainty": [
-      "No validated cannabis and substance-response genetics model with source provenance and professional review is supplied for this local package.",
-      "The supplied rows support evidence-boundary education only and should not be treated as a personal prediction or clinical interpretation."
+      "No calibrated personal cannabis-response model with provenance and professional review is supplied for this local package.",
+      "Public sample rows are used for output-format parity only and should not be treated as personal cannabis advice."
     ],
     "limitations": [
       "This validation result uses selected derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
-      "The package does not recreate unavailable Sequencing.com authenticated report rows or proprietary third-party output for Cannabis DNA Health Report.",
-      "The package does not support: cannabis safety claim; THC or CBD dose guidance; product recommendation; substance-use risk estimate; mental-health or medication advice; legal or occupational advice."
+      "The package does not recreate proprietary Strain Genie algorithms or infer local product, strain, dose, route, safety, impairment, psychiatric, pregnancy, medication-interaction, legal, therapeutic, diagnosis, treatment, or actionability guidance.",
+      "Sample warning tables, THC:CBD ratio, terpene rows, product sections, and dosage-calculator text are observed sample structure, not local-user findings."
     ]
   }
 }

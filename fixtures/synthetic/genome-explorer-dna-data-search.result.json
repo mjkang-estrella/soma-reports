@@ -77,6 +77,36 @@
       "screening or treatment recommendation"
     ]
   },
+  "genomeExplorer": {
+    "fieldBoundaryStatus": "field-boundary only; official service rows were not captured for this local fixture",
+    "search": {
+      "submittedQuery": "not captured",
+      "searchScope": "not captured",
+      "selectedGenomeBuild": "not captured",
+      "serviceVersion": "not captured",
+      "exactServiceRows": "not captured"
+    },
+    "results": [],
+    "unavailableResultColumns": [
+      "RCV ID unavailable",
+      "chromosome unavailable",
+      "position unavailable",
+      "variant ID unavailable",
+      "gene unavailable",
+      "impact unavailable",
+      "variant type unavailable",
+      "reference allele unavailable",
+      "alternate allele unavailable",
+      "user data unavailable",
+      "condition unavailable",
+      "status unavailable",
+      "classification unavailable",
+      "classification confidence label unavailable",
+      "references unavailable",
+      "links unavailable"
+    ],
+    "officialRowsNotice": "The selected BDNF and GRCh38 context rows are local utility examples, not official Genome Explorer search rows."
+  },
   "references": [
     {
       "id": "ensembl-vep",

@@ -2,18 +2,24 @@
   "reportOverview": {
     "reportTitle": "Inherited Traits Genetic Analysis",
     "inputManifestHash": "sha256:synthetic-inherited-traits-visible-trait-context-v1",
+    "evidenceTypesSupplied": [
+      "Local derived visible-trait evidence for HERC2/OCA2, MC1R, and EDAR.",
+      "Preserved Sequencing.com Inherited Traits Genetic Test sample PDF rows used as observed output-format examples.",
+      "Consumer education references for visible traits, source binding, and direct-to-consumer trait-test limitations."
+    ],
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "Authenticated marketplace detail-page parity is still pending.",
       "No calibrated inherited-trait or child-prediction model is supplied with this fixture.",
-      "Child phenotype prediction, family inheritance certainty, exact appearance, rare-trait prediction, dermatology outcomes, and medical-risk interpretation are not reported."
+      "The sample report includes nutrition, blood, drug-response, immune, fitness, miscellaneous, biological-age, vitamin, infection-risk, and medication-response sections, but those sample values are not treated as local findings."
     ]
   },
   "resultRows": [
     {
-      "groupTitle": "Inherited visible-trait context",
+      "groupTitle": "Local inherited visible-trait evidence",
       "item": "Eye-color context",
       "brandName": "Not applicable",
       "geneticAnalysis": "A derived HERC2/OCA2 rs12913832 AG call is available for inherited eye-color context. This does not determine exact eye color and cannot predict a child's eye color.",
+      "description": "The sample report includes eye-color and iris rows, while MedlinePlus frames eye color as a multi-gene trait.",
       "genes": [
         "HERC2",
         "OCA2"
@@ -23,13 +29,15 @@
         "medlineplus-eye-color",
         "medlineplus-oca2"
       ],
-      "plainEnglishMeaning": "OCA2 and HERC2 are important in eye-color genetics, but eye color is influenced by multiple genes and inheritance is not a simple one-marker result."
+      "plainEnglishMeaning": "OCA2 and HERC2 are important in eye-color genetics, but eye color is influenced by multiple genes and inheritance is not a simple one-marker result.",
+      "sourceBindingStatus": "curated"
     },
     {
-      "groupTitle": "Inherited visible-trait context",
+      "groupTitle": "Local inherited visible-trait evidence",
       "item": "Hair-color and freckle context",
       "brandName": "Not applicable",
       "geneticAnalysis": "A derived MC1R rs1805007 CT call is available for inherited hair-color and freckle context. This is not a diagnosis, dermatology result, skin-cancer risk result, or exact appearance prediction.",
+      "description": "The sample report links MC1R to red-hair and freckle pigmentation context, while local interpretation stays limited to supplied evidence.",
       "genes": [
         "MC1R"
       ],
@@ -38,13 +46,15 @@
         "medlineplus-hair-color",
         "medlineplus-mc1r"
       ],
-      "plainEnglishMeaning": "MC1R is a well-studied pigmentation gene, but many genes and non-genetic factors contribute to hair color, freckles, and related visible traits."
+      "plainEnglishMeaning": "MC1R is a well-studied pigmentation gene, but many genes and non-genetic factors contribute to hair color, freckles, and related visible traits.",
+      "sourceBindingStatus": "curated"
     },
     {
-      "groupTitle": "Inherited visible-trait context",
+      "groupTitle": "Local inherited visible-trait evidence",
       "item": "Hair texture and thickness context",
       "brandName": "Not applicable",
       "geneticAnalysis": "A derived EDAR hair-texture/thickness context row is available. This is educational context only and does not predict exact hair texture or a child's trait outcome.",
+      "description": "The sample report has hair texture and thickness rows, but exact inherited-trait outcomes require more than one fixture row.",
       "genes": [
         "EDAR"
       ],
@@ -52,75 +62,481 @@
       "sourceIds": [
         "medlineplus-hair-texture"
       ],
-      "plainEnglishMeaning": "Hair texture and thickness have genetic contributions, but the final trait can reflect multiple genes, development, and non-genetic factors."
+      "plainEnglishMeaning": "Hair texture and thickness have genetic contributions, but the final trait can reflect multiple genes, development, and non-genetic factors.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Report structure",
+      "item": "Inherited Traits Genetic Test Report sections and columns",
+      "brandName": "Inherited Traits sample",
+      "geneticAnalysis": "Physical Appearance, Nutrition Related, Blood Related, Drug Response, Immune System, Fitness Related, Miscellaneous Traits, Common Traits, Nutrition Suggestions, Fitness Potential, and Drug Response Summary",
+      "description": "The sample report uses Trait, Your Result, and Description columns for section tables, then separate summary panels for common traits, nutrition suggestions, fitness potential, and drug response.",
+      "genes": [
+        "Not applicable"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inherited-traits-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the preserved Inherited Traits Genetic Test Report sample PDF; this row describes observed output structure only.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Physical Appearance",
+      "item": "Eye color and iris rows",
+      "brandName": "Inherited Traits sample",
+      "geneticAnalysis": "Eye color Blue vs. Brown: Brown; Blue vs. Green: Brown; Iris Crypts: Typical; Iris Furrows: Typical; Iris Rings: More",
+      "description": "The sample report includes an eye-color model note that OCA2 and HERC2 explain a large share of European eye-color variation, while eye appearance remains affected by many factors.",
+      "genes": [
+        "OCA2",
+        "HERC2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inherited-traits-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the Physical Appearance section and eye-color narrative; sample phenotype rows are not local eye-color predictions.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Physical Appearance",
+      "item": "Hair, skin, and body-mass rows",
+      "brandName": "Inherited Traits sample",
+      "geneticAnalysis": "Hair color Black vs. Not Black: Dark; Blond vs. Not Blond: Brown or Dark; Red vs. Not Red: Red Carrier; Curly vs. Straighter: Intermediate; Male Pattern Baldness: Typical; Hair Thinner vs. Thicker: Medium; Freckles: Typical; Skin Lighter vs. Darker: Intermediate; Skin Pigmentation: Mixed; Sun Sensitivity: Moderate; Body Mass Index: Typical",
+      "description": "The sample report groups hair, skin, and BMI-style appearance rows under Physical Appearance.",
+      "genes": [
+        "MC1R",
+        "Not shown for other sample-table rows"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inherited-traits-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 1 of the sample PDF; rows are sample-only output structure, not local dermatology, hair-loss, skin-cancer, or appearance findings.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Nutrition Related",
+      "item": "Food, caffeine, lactose, smell, sugar, and taste rows",
+      "brandName": "Inherited Traits sample",
+      "geneticAnalysis": "Food allergy: Typical; Hen's Egg allergy: Typical; Peanut allergy: Lower; Caffeine consumption: Typical; Caffeine metabolism: Slower; Dietary fat weight-gain response: Lower; Lactose intolerance: Intolerant; Asparagus metabolite detection: Typical; Floral beta-ionone perception: Very Reduced; Sugar intake: Typical; Cilantro/coriander perception: Typical; Quinine perception: Typical",
+      "description": "The sample report has a Nutrition Related table with food reaction, caffeine, lactose, smell, sugar, and taste rows.",
+      "genes": [
+        "Not shown in sample table"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inherited-traits-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the Nutrition Related section; this is sample output structure, not local nutrition advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Nutrition Related",
+      "item": "Vitamin level and processing rows",
+      "brandName": "Inherited Traits sample",
+      "geneticAnalysis": "Vitamin B6 level: Lower; Vitamin B9 processing efficiency: Lower; Vitamin B12 level: Lower; Vitamin C level: Typical; Vitamin D level: Typical; Vitamin E level: Typical",
+      "description": "The sample report lists vitamin-level and vitamin-processing rows in the Nutrition Related section.",
+      "genes": [
+        "Not shown in sample table"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inherited-traits-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the Nutrition Related section; vitamin rows are not deficiency diagnoses or supplement recommendations.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Nutrition Related",
+      "item": "Bitter taste model",
+      "brandName": "Inherited Traits sample",
+      "geneticAnalysis": "Taste - Bitter Taste Perception: More Able; TAS2R38 genotype model: PAV/AVI",
+      "description": "The sample report narrative identifies TAS2R38 and explains the PAV/AVI model for PTC bitter-taste perception.",
+      "genes": [
+        "TAS2R38"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inherited-traits-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the taste section narrative; the genotype is the sample report example, not local fixture evidence.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Blood Related",
+      "item": "Blood type and blood-group rows",
+      "brandName": "Inherited Traits sample",
+      "geneticAnalysis": "ABO Type: Type B; Diego: Di(a-/b+); Duffy: Fy(a+/b-); Kell: k-/k-; Kidd: Jk(a-/b+); MNS: s+/s+; FUT2 Secretor Status: Secretor",
+      "description": "The sample report has a Blood Related section with ABO and additional blood-group rows plus secretor status.",
+      "genes": [
+        "ABO system label",
+        "FUT2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inherited-traits-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the Blood Related section and ABO/FUT2 notes; this does not report local blood type or transfusion compatibility.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Blood Related",
+      "item": "Blood metric rows",
+      "brandName": "Inherited Traits sample",
+      "geneticAnalysis": "Bilirubin Level: Higher; Blood Glucose Level: Higher; Blood Metabolite Level: Higher; Blood Pressure: Typical; HDL Cholesterol: Typical; LDL Cholesterol: Typical; GHB Level: Higher; IGFBP3 Level: Higher; IL-6 Level: Typical; Transferrin Level: Higher; VWF Level: Lower",
+      "description": "The sample report includes blood biomarker tendency rows alongside blood-group rows.",
+      "genes": [
+        "IL-6",
+        "VWF",
+        "Not shown for other sample-table rows"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inherited-traits-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the Blood Related section; biomarker tendency rows are not local lab results or medical diagnoses.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Drug Response",
+      "item": "Selected drug-response rows",
+      "brandName": "Inherited Traits sample",
+      "geneticAnalysis": "Citalopram Response: Higher; Cyclophosphamide Reaction: Higher; Hepatitis C Treatment Response: Typical; Inhaled Glucocorticoids Response: Poor; NSAID Response: Sensitive; Salbutamol Response: Poorer; Sorafenib Response: Typical; Statin Response: Typical; Warfarin Metabolism: Slower; Warfarin Sensitivity: Elevated",
+      "description": "The sample report includes a Drug Response table; these rows are observed report-format examples and require clinical pharmacogenomics interpretation before any medication use.",
+      "genes": [
+        "CYP2C9",
+        "VKORC1",
+        "Not shown for other sample-table rows"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inherited-traits-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the Drug Response section; do not use sample rows as local medication advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Drug Response Summary",
+      "item": "CYP metabolism enzyme panel",
+      "brandName": "Inherited Traits sample",
+      "geneticAnalysis": "CYP2C9: Intermediate, *1/*2; CYP2C19: Intermediate, *1/*2; CYP2D6: Normal, *1/*2",
+      "description": "The sample report summarizes three pharmacogenomics enzymes with metabolism result and genotype rows.",
+      "genes": [
+        "CYP2C9",
+        "CYP2C19",
+        "CYP2D6"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inherited-traits-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from Your Drug Response Summary; observed sample output structure only, not local medication guidance.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Drug Response Summary",
+      "item": "Warfarin gene note",
+      "brandName": "Inherited Traits sample",
+      "geneticAnalysis": "VKORC1 rs9923231 genotype AG; Warfarin-related sample note included",
+      "description": "The sample report includes a VKORC1 rs9923231 genotype and a Warfarin context note in the drug-response summary.",
+      "genes": [
+        "VKORC1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inherited-traits-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from Your Drug Response Summary; this is sample pharmacogenomics structure and not a local dose recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Immune System",
+      "item": "Immune and infection-related rows",
+      "brandName": "Inherited Traits sample",
+      "geneticAnalysis": "Coronavirus Severity: Typical; Coronavirus Susceptibility: Lower; HIV Progression: Typical; HIV Resistance: Partial; HIV Susceptibility: Higher; Malaria Resistance: Not Resistant; Norovirus Resistance: Not Resistant",
+      "description": "The sample report includes infection-related immune rows plus ABO and FUT2 context elsewhere in the immune section.",
+      "genes": [
+        "FUT2",
+        "Not shown for other sample-table rows"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inherited-traits-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the Immune System section; infection rows are not local infection risk, immunity, prevention, or treatment claims.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Fitness Related",
+      "item": "Exercise and muscle rows",
+      "brandName": "Inherited Traits sample",
+      "geneticAnalysis": "Aerobic Capacity: Typical; Recovery Time: Longer; Weight Loss Response: Typical; Sprinter vs. Endurance: Mixed; Strength: Typical",
+      "description": "The sample report has a Fitness Related table with exercise, recovery, muscle, and strength rows.",
+      "genes": [
+        "Not shown in sample table"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inherited-traits-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the Fitness Related section; this is sample report structure, not a local training recommendation.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Miscellaneous Traits",
+      "item": "Miscellaneous trait rows",
+      "brandName": "Inherited Traits sample",
+      "geneticAnalysis": "Alcohol Flush Reaction: None; Biological Aging: 2years Younger; Earwax: Wet; Mosquito Bite Size: Larger; Warrior vs Worrier: Intermediate; Sleep Intensity: Typical; Sleep Movement: Higher",
+      "description": "The sample report includes miscellaneous traits and a telomere-based biological-aging narrative.",
+      "genes": [
+        "TERC",
+        "TERT",
+        "Not shown for other sample-table rows"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inherited-traits-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the Miscellaneous Traits section; biological-age content is a sample estimate and not a measured local biological age.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your Results for Common Traits",
+      "item": "Common traits summary grid",
+      "brandName": "Inherited Traits sample",
+      "geneticAnalysis": "Weight Gain: Lower; Eye Color: Brown; Biological Aging: 2years Younger; Lactose: Intolerant; Blood Type: Type B; Weight Loss: Typical; Hair Color: Brown or Dark; Baldness: Typical; Bitter Taste: More Able; Norovirus: Not Resistant; Body Mass Index: Typical; Skin: Mixed; Alcohol Flush: None; Earwax: Wet; Metabolizer: Intermediate",
+      "description": "The sample report presents a compact common-traits grid after the detailed section tables.",
+      "genes": [
+        "TAS2R38",
+        "FUT2",
+        "CYP2C9",
+        "Not shown for other summary cells"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inherited-traits-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from Your Results for Common Traits; summary cells are sample-only output structure.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your Nutrition Suggestions",
+      "item": "Vitamin suggestion grid",
+      "brandName": "Inherited Traits sample",
+      "geneticAnalysis": "Folate: More-Need; Vitamin B12: More-Need; Vitamin C: Normal; Vitamin D: Normal; Vitamin E: Normal",
+      "description": "The sample report presents a nutrition-suggestions grid for five vitamin categories.",
+      "genes": [
+        "Not shown in sample grid"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inherited-traits-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from Your Nutrition Suggestions; suggestion labels are not local deficiency or supplement instructions.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your Fitness Potential",
+      "item": "Fitness potential grid",
+      "brandName": "Inherited Traits sample",
+      "geneticAnalysis": "Aerobic Capacity: Average; Endurance: Average; Speed: Average; Strength: Average; Recovery Time: Below-Average",
+      "description": "The sample report presents a fitness-potential summary grid after nutrition suggestions.",
+      "genes": [
+        "Not shown in sample grid"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inherited-traits-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from Your Fitness Potential; fitness labels are sample-only output structure, not local exercise planning.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Your Drug Response Summary",
+      "item": "Metabolism legend and example drugs",
+      "brandName": "Inherited Traits sample",
+      "geneticAnalysis": "Metabolism legend: Poor, Intermediate, Normal, Rapid map to Low, Reduced, Normal, and High Activity; example drugs include Citalopram, Warfarin, Clopidogrel, Celecoxib, and Codeine",
+      "description": "The sample report includes a metabolism-result legend and example medications in the drug-response summary.",
+      "genes": [
+        "CYP2C9",
+        "CYP2C19",
+        "CYP2D6"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "inherited-traits-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from Your Drug Response Summary; example drug names are sample labels and not local medication recommendations.",
+      "sourceBindingStatus": "exact"
     }
   ],
   "unavailableTraits": [
-    "Authenticated Sequencing.com sample report rows are not available yet.",
     "Child phenotype prediction, family inheritance certainty, exact appearance, rare-trait prediction, dermatology outcomes, and medical-risk sections are unavailable and not inferred.",
+    "Sample nutrition, blood, immune, fitness, vitamin, biological-age, and medication-response rows are preserved as output structure only.",
     "Eye-color, hair-color/freckle, and hair-texture rows are limited to educational inherited-trait context, not identity, ancestry, diagnosis, or medical-risk interpretation."
   ],
   "plainEnglishLimits": [
     "Visible traits are influenced by multiple genes and non-genetic factors.",
     "Direct-to-consumer trait tests provide estimates or context, not certainty about exact appearance.",
-    "This report must not be used to identify a person, infer race or ancestry, predict a child's appearance, guide skincare, or report disease risk."
+    "Preserved sample rows show observed report format and source binding; they are not local personal findings unless the local run supplies equivalent validated evidence.",
+    "This report must not be used to identify a person, infer race or ancestry, predict a child's appearance, guide skincare, report disease risk, change medication, diagnose vitamin status, or make treatment decisions."
   ],
   "references": [
     {
       "id": "medlineplus-eye-color",
-      "title": "MedlinePlus Genetics: eye color"
+      "title": "MedlinePlus Genetics: eye color",
+      "sourceType": "education_resource"
     },
     {
       "id": "medlineplus-hair-color",
-      "title": "MedlinePlus Genetics: hair color"
+      "title": "MedlinePlus Genetics: hair color",
+      "sourceType": "education_resource"
     },
     {
       "id": "medlineplus-hair-texture",
-      "title": "MedlinePlus Genetics: hair texture"
+      "title": "MedlinePlus Genetics: hair texture",
+      "sourceType": "education_resource"
     },
     {
       "id": "medlineplus-oca2",
-      "title": "MedlinePlus Genetics: OCA2 gene"
+      "title": "MedlinePlus Genetics: OCA2 gene",
+      "sourceType": "gene_summary"
     },
     {
       "id": "medlineplus-mc1r",
-      "title": "MedlinePlus Genetics: MC1R gene"
+      "title": "MedlinePlus Genetics: MC1R gene",
+      "sourceType": "gene_summary"
     },
     {
       "id": "medlineplus-dtc-test-types",
-      "title": "MedlinePlus Genetics: Direct-to-consumer genetic test types"
+      "title": "MedlinePlus Genetics: Direct-to-consumer genetic test types",
+      "sourceType": "education_resource"
+    },
+    {
+      "id": "inherited-traits-sample-pdf",
+      "title": "Inherited Traits Genetic Test Report sample report",
+      "sourceType": "mock_report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "gene": "HERC2/OCA2 regulatory region",
-        "observedValue": "rs12913832 AG"
+        "tier": "Sample report trait model",
+        "gene": "OCA2 / HERC2",
+        "variantId": "not shown in sample table",
+        "genotype": "not shown in sample PDF",
+        "effect": "The sample report names OCA2 and HERC2 in the eye-color model narrative.",
+        "phenotype": "Observed sample content only; do not infer local exact eye color, identity, ancestry, or child phenotype from this sample row.",
+        "extractionStatus": "direct"
       },
       {
+        "tier": "Sample report trait model",
         "gene": "MC1R",
-        "observedValue": "rs1805007 CT"
+        "variantId": "not shown in sample table",
+        "genotype": "not shown in sample PDF",
+        "effect": "The sample report uses MC1R context for red-hair and freckle pigmentation.",
+        "phenotype": "Observed sample content only; keep separate from local MC1R evidence and avoid skin-cancer or dermatology interpretation.",
+        "extractionStatus": "direct"
       },
       {
-        "gene": "EDAR",
-        "observedValue": "derived hair-texture/thickness context available"
+        "tier": "Sample report trait model",
+        "gene": "TAS2R38",
+        "variantId": "PTC bitter-taste model",
+        "genotype": "PAV/AVI",
+        "effect": "The sample report links TAS2R38 PAV/AVI to More Able bitter-taste perception.",
+        "phenotype": "Observed sample content only; not a local taste result without matching local evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample blood-group note",
+        "gene": "ABO system",
+        "variantId": "sample ABO blood type",
+        "genotype": "Type B",
+        "effect": "The sample report states the sample ABO type as Type B.",
+        "phenotype": "Observed sample content only; do not infer local blood type or transfusion compatibility.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample secretor note",
+        "gene": "FUT2",
+        "variantId": "sample secretor status",
+        "genotype": "Secretor",
+        "effect": "The sample report states FUT2 Secretor status and uses FUT2 context in immune rows.",
+        "phenotype": "Observed sample content only; not a local secretor, norovirus, or immune conclusion.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample PGx enzyme panel",
+        "gene": "CYP2C9",
+        "variantId": "sample star-allele diplotype",
+        "genotype": "*1/*2",
+        "effect": "The sample report summarizes CYP2C9 as Intermediate metabolism.",
+        "phenotype": "Observed sample content only; not local medication guidance or dose advice.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample PGx enzyme panel",
+        "gene": "CYP2C19",
+        "variantId": "sample star-allele diplotype",
+        "genotype": "*1/*2",
+        "effect": "The sample report summarizes CYP2C19 as Intermediate metabolism.",
+        "phenotype": "Observed sample content only; not local medication guidance or dose advice.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample PGx enzyme panel",
+        "gene": "CYP2D6",
+        "variantId": "sample star-allele diplotype",
+        "genotype": "*1/*2",
+        "effect": "The sample report summarizes CYP2D6 as Normal metabolism.",
+        "phenotype": "Observed sample content only; not local medication guidance or dose advice.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample PGx summary",
+        "gene": "VKORC1",
+        "variantId": "rs9923231",
+        "genotype": "AG",
+        "effect": "The sample report lists VKORC1 rs9923231 AG in the Warfarin summary.",
+        "phenotype": "Observed sample content only; not local Warfarin sensitivity, dose, or treatment guidance.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Local derived call",
+        "gene": "HERC2/OCA2 regulatory region",
+        "variantId": "rs12913832",
+        "genotype": "AG",
+        "effect": "The local fixture supplies HERC2/OCA2 visible-trait context for validation.",
+        "phenotype": "Report as educational inherited-trait context only; do not turn it into exact appearance, identity, ancestry, child-prediction, or medical interpretation.",
+        "extractionStatus": "curated"
+      },
+      {
+        "tier": "Local derived call",
+        "gene": "MC1R",
+        "variantId": "rs1805007",
+        "genotype": "CT",
+        "effect": "The local fixture supplies MC1R visible-trait context for validation.",
+        "phenotype": "Report as educational inherited-trait context only; do not infer skin-cancer risk, diagnosis, skincare action, or deterministic appearance.",
+        "extractionStatus": "curated"
       }
     ],
     "missingInputs": [
-      "Authenticated sample-report sections and rows have not been extracted.",
+      "Authenticated marketplace detail-page sections beyond the preserved sample PDF have not been extracted.",
       "No calibrated inherited-trait probability model or child-prediction model is supplied.",
-      "Family phenotype information, parental genotype context, rare-trait evidence, dermatology outcomes, and medical-risk context require separate validated evidence and are not inferred.",
-      "Many known and unknown contributors to eye color, hair color, freckles, hair texture, and other inherited visible traits are not represented in this fixture."
+      "Family phenotype information, parental genotype context, rare-trait evidence, dermatology outcomes, medical-risk context, clinical pharmacogenomics context, and laboratory biomarkers require separate validated evidence and are not inferred.",
+      "Many known and unknown contributors to eye color, hair color, freckles, hair texture, nutrition traits, blood traits, immune traits, fitness traits, and medication response are not represented in this fixture."
     ],
     "probabilities": [],
     "uncertainty": [
       "Visible traits can be influenced by multiple genes, development, age, environment, and other non-genetic factors.",
-      "The significance of individual visible-trait markers may vary across populations and should not be treated as a deterministic appearance or child-phenotype prediction."
+      "The significance of individual visible-trait markers may vary across populations and should not be treated as a deterministic appearance or child-phenotype prediction.",
+      "The preserved sample report demonstrates output shape and example values; it does not provide calibrated local probabilities."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data is not included.",
-      "The report is educational and does not identify a person, infer race or ancestry, predict a child's appearance, give skincare guidance, diagnose skin conditions, or report melanoma or other skin-cancer risk.",
-      "Authenticated Sequencing.com sample report rows are still pending."
+      "The report is educational and does not identify a person, infer race or ancestry, predict a child's appearance, give skincare guidance, diagnose skin conditions, report melanoma or other skin-cancer risk, diagnose vitamin status, report infection risk, or guide medication decisions.",
+      "The preserved sample PDF demonstrates output shape and example rows, not this user's exact inherited traits, blood status, immune status, fitness potential, biological age, or drug response."
     ]
   }
 }

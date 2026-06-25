@@ -1,0 +1,122 @@
+{
+  "schema": "soma-reports.official-output-capture.v1",
+  "slug": "promethease",
+  "title": "Promethease",
+  "capturedAt": "2026-06-24T17:24:12Z",
+  "captureUrl": "https://sequencing.com/marketplace/promethease",
+  "sourceKind": "official-detail-output-scope-boundary",
+  "privacyBoundary": {
+    "rawGenomeIncluded": false,
+    "privateValuesRedacted": true,
+    "commitSafe": true,
+    "notes": "This capture records only official marketplace detail-page purpose and output-scope text. It does not include a user's genome, genotype file, SNPedia rows, private result URL, or generated Promethease output table."
+  },
+  "reportFile": "",
+  "sourceArtifacts": [
+    "https://sequencing.com/marketplace/promethease",
+    "reference/catalog/promethease-authenticated-detail-2026-06-23.json"
+  ],
+  "sourceResources": [
+    {
+      "id": "official-detail-scope-boundary",
+      "title": "Sequencing.com Promethease marketplace detail page",
+      "sourceType": "official_output_boundary",
+      "url": "https://sequencing.com/marketplace/promethease",
+      "sourceArtifact": "reference/catalog/promethease-authenticated-detail-2026-06-23.json",
+      "privacy": "purpose and field-scope text only; no private genotype file or genome values",
+      "evidenceLevel": "official-output",
+      "extractionStatus": "direct",
+      "scope": "report_specific",
+      "usedFor": [
+        "formalFields",
+        "generatedOutput"
+      ],
+      "note": "Official Sequencing.com source describes output field structure only; no populated private or sample result rows were captured."
+    }
+  ],
+  "sampleRows": [],
+  "resultRows": [],
+  "formalFields": [
+    {
+      "key": "personal_dna_report",
+      "label": "Personal DNA report",
+      "observedField": "personal DNA report",
+      "outputPath": "prometheaseReport.summary.personalDnaReport",
+      "status": "covered",
+      "sourceLabel": "official-detail-scope-boundary",
+      "sourceResourceIds": [
+        "official-detail-scope-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "genotype_file_input",
+      "label": "DNA genotype file input",
+      "observedField": "file of DNA genotypes",
+      "outputPath": "prometheaseReport.inputScope.genotypeFile",
+      "status": "covered",
+      "sourceLabel": "official-detail-scope-boundary",
+      "sourceResourceIds": [
+        "official-detail-scope-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "scientific_findings",
+      "label": "Scientific findings",
+      "observedField": "scientific findings",
+      "outputPath": "prometheaseReport.outputScope.scientificFindings",
+      "status": "covered",
+      "sourceLabel": "official-detail-scope-boundary",
+      "sourceResourceIds": [
+        "official-detail-scope-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "dna_variations",
+      "label": "DNA variations",
+      "observedField": "DNA variations",
+      "outputPath": "prometheaseReport.outputScope.dnaVariations",
+      "status": "covered",
+      "sourceLabel": "official-detail-scope-boundary",
+      "sourceResourceIds": [
+        "official-detail-scope-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "literature_retrieval",
+      "label": "Literature retrieval",
+      "observedField": "literature retrieval system",
+      "outputPath": "prometheaseReport.method.literatureRetrieval",
+      "status": "covered",
+      "sourceLabel": "official-detail-scope-boundary",
+      "sourceResourceIds": [
+        "official-detail-scope-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    }
+  ],
+  "citationBindings": [],
+  "validationCommands": [
+    "npm run scaffold:validate-captures -- --path reference/catalog/promethease-official-output-capture-2026-06-24.json",
+    "npm run scaffold:evidence-audit",
+    "npm run readiness:audit:summary",
+    "npm run agent:validate:formal"
+  ],
+  "promotionBoundary": {
+    "targetStartsAsScaffoldOnly": true,
+    "rowEvidenceReady": false,
+    "requiredEvidenceForPromotion": [
+      "Official Promethease generated sample output",
+      "Formal SNPedia/literature output rows",
+      "Row-level source bindings for Promethease output rows"
+    ],
+    "nonPromotionBoundary": [
+      "This capture records official scope text only.",
+      "Do not treat described scopes as sampleRows, resultRows, generatedOutput, or citationBindings.",
+      "Do not mark the package sample-backed formal until official non-empty rows or exports are captured."
+    ]
+  }
+}

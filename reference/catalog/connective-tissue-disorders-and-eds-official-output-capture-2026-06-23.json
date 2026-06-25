@@ -1,0 +1,356 @@
+{
+  "schema": "soma-reports.official-output-capture.v1",
+  "slug": "connective-tissue-disorders-and-eds",
+  "title": "Connective Tissue Disorders and EDS",
+  "capturedAt": "2026-06-23T10:55:00Z",
+  "captureUrl": "https://sequencing.com/marketplace/connective-tissue-disorders-and-eds",
+  "sourceKind": "authenticated-completed-report-output-structure",
+  "privacyBoundary": {
+    "rawGenomeIncluded": false,
+    "privateValuesRedacted": true,
+    "commitSafe": true,
+    "notes": "The completed report page was inspected in the logged-in browser, but the private result URL, genome label, finding values, counts, and interpretation text are intentionally withheld from this committed artifact. This file records official output structure only."
+  },
+  "reportFile": "",
+  "sourceArtifacts": [
+    "https://sequencing.com/marketplace/connective-tissue-disorders-and-eds",
+    "authenticated completed AI Reports result page; private result URL withheld from repository"
+  ],
+  "sourceResources": [
+    {
+      "id": "official-completed-output-structure",
+      "title": "Sequencing.com authenticated completed AI Reports output structure for Connective Tissue Disorders and EDS",
+      "sourceType": "redacted_official_completed_output_structure",
+      "url": "https://sequencing.com/marketplace/connective-tissue-disorders-and-eds",
+      "privacy": "private result URL and values redacted",
+      "evidenceLevel": "official-output",
+      "extractionStatus": "direct",
+      "scope": "report_specific",
+      "usedFor": [
+        "formalFields",
+        "generatedOutput"
+      ],
+      "note": "Official Sequencing.com source describes output field structure only; no populated private or sample result rows were captured."
+    },
+    {
+      "id": "official-reference-clinvar",
+      "title": "ClinVar",
+      "sourceType": "official_report_reference",
+      "url": "https://www.ncbi.nlm.nih.gov/clinvar/"
+    },
+    {
+      "id": "official-reference-medlineplus-genetics",
+      "title": "MedlinePlus Genetics",
+      "sourceType": "official_report_reference",
+      "url": "https://ghr.nlm.nih.gov/"
+    },
+    {
+      "id": "official-reference-nih",
+      "title": "National Institutes of Health",
+      "sourceType": "official_report_reference",
+      "url": "https://www.nih.gov/"
+    },
+    {
+      "id": "official-reference-clinicaltrials",
+      "title": "ClinicalTrials.gov",
+      "sourceType": "official_report_reference",
+      "url": "https://clinicaltrials.gov/"
+    }
+  ],
+  "sampleRows": [],
+  "resultRows": [],
+  "formalFields": [
+    {
+      "key": "report_header_title",
+      "label": "Report title",
+      "observedField": "Connective Tissue Disorders report heading",
+      "outputPath": "report.header.title",
+      "status": "covered",
+      "sourceLabel": "official-completed-output-structure",
+      "sourceResourceIds": [
+        "official-completed-output-structure"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "report_header_report_date",
+      "label": "Report date",
+      "observedField": "Report Date",
+      "outputPath": "report.header.reportDate",
+      "status": "covered",
+      "sourceLabel": "official-completed-output-structure",
+      "sourceResourceIds": [
+        "official-completed-output-structure"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "report_header_genome_and_data_type",
+      "label": "Genome and data type",
+      "observedField": "Genome and Data labels",
+      "outputPath": "report.header.inputSummary",
+      "status": "covered",
+      "sourceLabel": "official-completed-output-structure",
+      "sourceResourceIds": [
+        "official-completed-output-structure"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "contents_navigation",
+      "label": "Contents navigation",
+      "observedField": "Contents",
+      "outputPath": "report.contents",
+      "status": "covered",
+      "sourceLabel": "official-completed-output-structure",
+      "sourceResourceIds": [
+        "official-completed-output-structure"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "report_highlights_total_analyzed",
+      "label": "Total analyzed",
+      "observedField": "Total analyzed scope",
+      "outputPath": "report.reportHighlights.totalAnalyzed",
+      "status": "covered",
+      "sourceLabel": "official-completed-output-structure",
+      "sourceResourceIds": [
+        "official-completed-output-structure"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "high_evidence_summary",
+      "label": "High evidence summary",
+      "observedField": "High Evidence Summary",
+      "outputPath": "report.highEvidence.summary",
+      "status": "covered",
+      "sourceLabel": "official-completed-output-structure",
+      "sourceResourceIds": [
+        "official-completed-output-structure"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "high_evidence_finding_detail",
+      "label": "High evidence finding detail",
+      "observedField": "Condition or medication finding detail",
+      "outputPath": "report.highEvidence.findings[]",
+      "status": "covered",
+      "sourceLabel": "official-completed-output-structure",
+      "sourceResourceIds": [
+        "official-completed-output-structure"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "genetic_variants_detected",
+      "label": "Genetic variants detected for condition",
+      "observedField": "Genetic Variants Detected For This Condition",
+      "outputPath": "report.evidenceSections[].findings[].variants",
+      "status": "covered",
+      "sourceLabel": "official-completed-output-structure",
+      "sourceResourceIds": [
+        "official-completed-output-structure"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "typical_features_and_health_impacts",
+      "label": "Typical features and health impacts",
+      "observedField": "Typical Features and Health Impacts of This Condition",
+      "outputPath": "report.evidenceSections[].findings[].conditionContext",
+      "status": "covered",
+      "sourceLabel": "official-completed-output-structure",
+      "sourceResourceIds": [
+        "official-completed-output-structure"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "medium_evidence_summary",
+      "label": "Medium evidence summary",
+      "observedField": "Medium Evidence Summary",
+      "outputPath": "report.mediumEvidence.summary",
+      "status": "covered",
+      "sourceLabel": "official-completed-output-structure",
+      "sourceResourceIds": [
+        "official-completed-output-structure"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "medium_evidence_uncertain_significance",
+      "label": "Medium evidence uncertain significance",
+      "observedField": "Uncertain Significance",
+      "outputPath": "report.mediumEvidence.uncertainSignificance[]",
+      "status": "covered",
+      "sourceLabel": "official-completed-output-structure",
+      "sourceResourceIds": [
+        "official-completed-output-structure"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "more_information_conditions_analyzed",
+      "label": "List of conditions analyzed",
+      "observedField": "List Of Conditions Analyzed",
+      "outputPath": "report.moreInformation.conditionsAnalyzed",
+      "status": "covered",
+      "sourceLabel": "official-completed-output-structure",
+      "sourceResourceIds": [
+        "official-completed-output-structure"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "glossary",
+      "label": "Glossary",
+      "observedField": "Glossary",
+      "outputPath": "report.moreInformation.glossary",
+      "status": "covered",
+      "sourceLabel": "official-completed-output-structure",
+      "sourceResourceIds": [
+        "official-completed-output-structure"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "references",
+      "label": "References and sources",
+      "observedField": "References And Sources of Information",
+      "outputPath": "report.moreInformation.references",
+      "status": "covered",
+      "sourceLabel": "official-completed-output-structure",
+      "sourceResourceIds": [
+        "official-completed-output-structure"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "evidence_ratings",
+      "label": "Evidence ratings",
+      "observedField": "Evidence Ratings",
+      "outputPath": "report.moreInformation.evidenceRatings",
+      "status": "covered",
+      "sourceLabel": "official-completed-output-structure",
+      "sourceResourceIds": [
+        "official-completed-output-structure"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "disclaimer",
+      "label": "Disclaimer",
+      "observedField": "Disclaimer",
+      "outputPath": "report.disclaimer",
+      "status": "covered",
+      "sourceLabel": "official-completed-output-structure",
+      "sourceResourceIds": [
+        "official-completed-output-structure"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "download_pdf_report",
+      "label": "Download PDF report control",
+      "observedField": "Download PDF Report",
+      "outputPath": "report.actions.downloadPdf",
+      "status": "covered",
+      "sourceLabel": "official-completed-output-structure",
+      "sourceResourceIds": [
+        "official-completed-output-structure"
+      ],
+      "sourceBindingStatus": "direct"
+    }
+  ],
+  "citationBindings": [],
+  "generatedOutput": {
+    "valueRedaction": "all personal report values, finding labels, variant values, counts, genome labels, and interpretation text redacted",
+    "privateResultUrlCommitted": false,
+    "sections": [
+      {
+        "sectionId": "report-highlights",
+        "title": "Report Highlights",
+        "fields": [
+          "total analyzed",
+          "conditions screened",
+          "genes screened",
+          "genetic variants screened"
+        ],
+        "values": "redacted"
+      },
+      {
+        "sectionId": "high-evidence",
+        "title": "High Evidence",
+        "fields": [
+          "summary",
+          "risk",
+          "possible risk",
+          "carrier",
+          "medications",
+          "finding detail",
+          "genetic variants detected",
+          "typical features and health impacts"
+        ],
+        "values": "redacted"
+      },
+      {
+        "sectionId": "medium-evidence",
+        "title": "Medium Evidence",
+        "fields": [
+          "summary",
+          "risk",
+          "possible risk",
+          "carrier",
+          "medications",
+          "uncertain significance",
+          "finding detail",
+          "genetic variants detected",
+          "typical features and health impacts"
+        ],
+        "values": "redacted"
+      },
+      {
+        "sectionId": "more-information",
+        "title": "More Information",
+        "fields": [
+          "list of conditions analyzed",
+          "glossary",
+          "references and sources of information",
+          "evidence ratings",
+          "disclaimer"
+        ],
+        "values": "redacted"
+      }
+    ],
+    "publicReferenceDomains": [
+      "www.ncbi.nlm.nih.gov",
+      "ghr.nlm.nih.gov",
+      "www.nih.gov",
+      "clinicaltrials.gov"
+    ]
+  },
+  "validationCommands": [
+    "npm run scaffold:validate-captures -- --path reference/catalog/connective-tissue-disorders-and-eds-official-output-capture-2026-06-23.json",
+    "npm run scaffold:promotion-preview -- --path reference/catalog/connective-tissue-disorders-and-eds-official-output-capture-2026-06-23.json",
+    "npm run scaffold:evidence-audit",
+    "npm run readiness:audit:summary",
+    "npm run agent:validate:formal"
+  ],
+  "promotionBoundary": {
+    "targetStartsAsScaffoldOnly": true,
+    "rowEvidenceReady": false,
+    "requiredBeforePromotion": [
+      "Manual review of whether redacted completed-output structure is sufficient to derive package sampleRows",
+      "Row-level source bindings for any non-redacted sample rows before seed promotion",
+      "No private result values or private result URLs committed"
+    ],
+    "nonPromotionBoundary": [
+      "This artifact does not contain private result values.",
+      "This artifact does not contain non-redacted sample rows.",
+      "This artifact should not by itself promote personal diagnosis, treatment, medication, testing, prevention, or actionability claims."
+    ]
+  }
+}

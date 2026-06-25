@@ -1,5 +1,5 @@
 {
-  "consumerTone": "plain English; consumer-shareable handoff context only; no diagnosis, clearance, risk estimate, medication, procedure, treatment, supplement, diet, lab, screening, reproductive, or actionability claims",
+  "consumerTone": "plain English; consumer-shareable infectious disease handoff context only; sibling sample rows are not local findings; no infection diagnosis, infection-risk estimate, immune-strength claim, vaccine-response claim, pathogen status, antimicrobial, prophylaxis, isolation, supplement, treatment, prevention, testing, or actionability claims",
   "datasetId": "synthetic-infectious-disease-specialist-summary-professional-handoff-context-v1",
   "expectedAssertions": {
     "consumerLanguage": true,
@@ -15,7 +15,7 @@
       "haplotype": "professional-handoff-context-unavailable",
       "inputId": "infectious-disease-specialist-summary-handoff-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "infectious disease specialist review, infection diagnosis, exposure history, travel history, immune status, immune-cell labs, immunoglobulins, pathogen testing, culture results, vaccine history, medication list, prophylaxis context, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "infectious disease specialist review, infection diagnosis, exposure history, travel history, immune status, immune-cell labs, immunoglobulins, pathogen testing, culture results, vaccine history, medication list, prophylaxis context, treatment plan, and authenticated sample-report rows unavailable in this fixture; public Immunity & Inflammation sample PDF observed separately as sibling infection-adjacent output-structure evidence",
       "sourceArtifact": "synthetic-infectious-disease-specialist-summary-professional-handoff-context-v1",
       "sourceFile": "synthetic-infectious-disease-specialist-summary-professional-handoff-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "professional-review-unavailable",
       "inputId": "infectious-disease-specialist-summary-clinical-review-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture; public Immunity & Inflammation sample PDF observed separately as sibling infection-adjacent output-structure evidence",
       "sourceArtifact": "synthetic-infectious-disease-specialist-summary-professional-handoff-context-v1",
       "sourceFile": "synthetic-infectious-disease-specialist-summary-professional-handoff-context-v1.json"
     }
@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-professional-review evidence for infectious-disease-specialist-summary validation"
   },
-  "missingInputPolicy": "Report unavailable infectious disease specialist evidence explicitly; do not diagnose infection or immunodeficiency; estimate infection risk; infer immune strength, vaccine response, pathogen status, culture result, antimicrobial need, prophylaxis need, isolation need, treatment need, supplement need, or replace infectious disease specialist review.",
+  "missingInputPolicy": "Report Immunity & Inflammation sample rows as sibling infectious-disease output-structure evidence only; do not convert sample Flu, Gastrointestinal Infection, zinc, impact/evidence ratings, dose-caution wording, recommendation text, or sample wording into local infection diagnosis, infection-risk estimate, immune strength, immune weakness, vaccine response, pathogen status, culture result, antimicrobial need, prophylaxis need, isolation need, supplement need, treatment need, prevention guidance, testing guidance, or actionability.",
   "packageSlug": "infectious-disease-specialist-summary",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -149,7 +149,19 @@
         "non_prescriptive_language",
         "missing_review_policy"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "inflammation-and-immunity-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Inflammation and Immunity DNA Report sample report",
+      "usedFor": [
+        "sibling_sample_rows",
+        "formal_fields",
+        "output_format",
+        "infectious_disease_handoff_boundary"
+      ]
     }
   ],
-  "reportPurpose": "Consumer-shareable infectious disease specialist handoff context using supplied references and explicit unavailable-review framing."
+  "reportPurpose": "Consumer-shareable Infectious Disease Specialist Summary handoff context using supplied local derived evidence plus sibling Immunity & Inflammation infection-adjacent sample-output structure."
 }

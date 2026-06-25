@@ -8,7 +8,9 @@
  * @module
  */
 
+import type * as authenticatedMarketplaceLedger from "../authenticatedMarketplaceLedger.js";
 import type * as marketplaceCatalog from "../marketplaceCatalog.js";
+import type * as marketplacePositionLedger from "../marketplacePositionLedger.js";
 import type * as reportPackages from "../reportPackages.js";
 import type * as reports from "../reports.js";
 
@@ -19,7 +21,9 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  authenticatedMarketplaceLedger: typeof authenticatedMarketplaceLedger;
   marketplaceCatalog: typeof marketplaceCatalog;
+  marketplacePositionLedger: typeof marketplacePositionLedger;
   reportPackages: typeof reportPackages;
   reports: typeof reports;
 }>;

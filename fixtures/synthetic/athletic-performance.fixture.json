@@ -1,44 +1,60 @@
 {
-  "packageSlug": "athletic-performance",
+  "consumerTone": "plain English; educational athletic-performance context only; no deterministic talent prediction, sport selection, or training prescription",
   "datasetId": "synthetic-athletic-performance-context-v1",
-  "packageVersion": "0.1.0",
-  "reportPurpose": "Consumer athletic-performance context using derived ACTN3 and ACE evidence plus complex-trait safety framing.",
-  "missingInputPolicy": "Report unavailable markers explicitly; do not infer training capacity, talent, injury risk, or sport suitability.",
-  "consumerTone": "plain English; educational; no deterministic talent prediction or training prescription",
-  "inputManifest": {
-    "hash": "sha256:synthetic-athletic-performance-context-v1",
-    "genomeBuild": "GRCh37-or-GRCh38-derived",
-    "rawGenomeReturned": false,
-    "source": "synthetic derived athletic-performance evidence for package validation"
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
   },
   "genomeEvidence": [
     {
-      "inputId": "ACTN3-rs1815739",
-      "rsid": "rs1815739",
-      "gene": "ACTN3",
-      "observedValue": "CT",
       "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "ACTN3",
+      "inputId": "ACTN3-rs1815739",
       "matchStatus": "observed",
-      "sourceFile": "synthetic-athletic-performance-context-v1.json",
-      "sourceArtifact": "synthetic-athletic-performance-context-v1"
+      "observedValue": "CT",
+      "rsid": "rs1815739",
+      "sourceArtifact": "synthetic-athletic-performance-context-v1",
+      "sourceFile": "synthetic-athletic-performance-context-v1.json"
     },
     {
-      "inputId": "ACE-I-D",
-      "haplotype": "ID",
-      "gene": "ACE",
-      "observedValue": "ID",
       "assembly": "derived-athletic-performance-context",
+      "gene": "ACE",
+      "haplotype": "ID",
+      "inputId": "ACE-I-D",
       "matchStatus": "observed",
-      "sourceFile": "synthetic-athletic-performance-context-v1.json",
-      "sourceArtifact": "synthetic-athletic-performance-context-v1"
+      "observedValue": "ID",
+      "sourceArtifact": "synthetic-athletic-performance-context-v1",
+      "sourceFile": "synthetic-athletic-performance-context-v1.json"
+    },
+    {
+      "assembly": "derived-athletic-performance-context",
+      "gene": "athletic performance model",
+      "haplotype": "athletic-performance-model-unavailable",
+      "inputId": "athletic-performance-model-unavailable",
+      "matchStatus": "unavailable",
+      "observedValue": "calibrated athletic-performance score, training-response model, injury-risk model, VO2 max model, sport-suitability model, and ancestry applicability metadata unavailable in this fixture",
+      "sourceArtifact": "synthetic-athletic-performance-context-v1",
+      "sourceFile": "synthetic-athletic-performance-context-v1.json"
     }
   ],
+  "inputManifest": {
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "hash": "sha256:synthetic-athletic-performance-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived athletic-performance evidence for package validation"
+  },
+  "missingInputPolicy": "Report unavailable athletic-performance markers and calibrated models explicitly; use public RunDNA sibling sample rows only as observed output structure and do not infer local training capacity, talent, injury risk, VO2 max, sport suitability, or workout guidance.",
+  "packageSlug": "athletic-performance",
+  "packageVersion": "0.1.0",
   "referenceResources": [
     {
-      "id": "medlineplus-athletic-performance",
-      "title": "MedlinePlus Genetics: athletic performance",
-      "sourceType": "education_resource",
       "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-athletic-performance",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: athletic performance",
       "usedFor": [
         "complex_trait_context",
         "actn3_ace_context",
@@ -46,30 +62,36 @@
       ]
     },
     {
-      "id": "nhgri-polygenic-risk-scores",
-      "title": "NHGRI overview of polygenic risk scores",
-      "sourceType": "education_resource",
       "evidenceLevel": "background",
+      "id": "nhgri-polygenic-risk-scores",
+      "sourceType": "education_resource",
+      "title": "NHGRI overview of polygenic risk scores",
       "usedFor": [
         "complex_trait_limitations",
         "probability_appendix"
       ]
     },
     {
-      "id": "ebi-gwas-catalog",
-      "title": "GWAS Catalog",
-      "sourceType": "database",
       "evidenceLevel": "background",
+      "id": "ebi-gwas-catalog",
+      "sourceType": "database",
+      "title": "GWAS Catalog",
       "usedFor": [
         "candidate_trait_associations"
       ]
+    },
+    {
+      "evidenceLevel": "direct_sibling_sample_report",
+      "id": "rundna-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "RunDNA Endurance Performance Plan sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "expectedAssertions": {
-    "noRawGenomeInOutput": true,
-    "everyFindingHasReference": true,
-    "missingInputsAreExplicit": true,
-    "probabilitiesOnlyInAppendix": true,
-    "consumerLanguage": true
-  }
+  "reportPurpose": "Consumer athletic-performance context using derived ACTN3 and ACE evidence plus observed RunDNA sibling sample-report output structure for athletic/endurance performance rows."
 }

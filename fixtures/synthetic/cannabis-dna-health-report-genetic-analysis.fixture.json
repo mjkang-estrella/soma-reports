@@ -30,14 +30,14 @@
       "sourceFile": "synthetic-cannabis-dna-health-report-genetic-analysis-specialized-boundary-context-v1.json"
     },
     {
-      "assembly": "not-applicable",
-      "gene": "Cannabis DNA Health Report authenticated sample rows",
-      "haplotype": "authenticated-sample-report-unavailable",
-      "inputId": "cannabis-dna-health-report-genetic-analysis-authenticated-sample-unavailable",
-      "matchStatus": "unavailable",
-      "observedValue": "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture",
-      "sourceArtifact": "synthetic-cannabis-dna-health-report-genetic-analysis-specialized-boundary-context-v1",
-      "sourceFile": "synthetic-cannabis-dna-health-report-genetic-analysis-specialized-boundary-context-v1.json"
+      "assembly": "public-sample-pdf",
+      "gene": "Personal Cannabis Health Report public sample",
+      "haplotype": "public-sample-output-structure-observed",
+      "inputId": "cannabis-public-sample-output-structure",
+      "matchStatus": "observed",
+      "observedValue": "Public Strain Genie sample PDF shows warning tables, metabolism rows, category cannabinoid and terpene recommendations, report-wide THC:CBD ratio, activity-group recommendations, product recommendation section pages, and dosage-calculator page.",
+      "sourceArtifact": "reference/sources/personal-cannabis-dna-analysis-report-strain-genie-sequencing-app_0.pdf",
+      "sourceFile": "personal-cannabis-dna-analysis-report-strain-genie-sequencing-app_0.pdf"
     }
   ],
   "inputManifest": {
@@ -46,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for cannabis-dna-health-report-genetic-analysis validation"
   },
-  "missingInputPolicy": "Report unavailable cannabis genetics and substance-response context evidence explicitly; do not recommend cannabis, cannabis products, CBD, THC, dose, route, strain, timing, or use pattern; predict impairment, addiction, psychosis, anxiety, cognition, pregnancy outcome, interaction risk, safety, legal status, therapeutic benefit, adverse-event risk, or clinical actionability from genotype.",
+  "missingInputPolicy": "Use public Cannabis sample rows only as observed output structure; report validated cannabis response model, source algorithm, product exposure, dose, route, frequency, pregnancy context, age context, psychiatric history, medication list, clinician review, and local-user cannabis conclusions unavailable.",
   "packageSlug": "cannabis-dna-health-report-genetic-analysis",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -205,7 +205,19 @@
         "missing_model_policy",
         "clinical_actionability_limits"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "cannabis-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Personal Cannabis DNA Test Report sample",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer cannabis genetics and substance-response context boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer cannabis genetics and substance-response boundary context using supplied references, explicit unavailable-model framing, and observed public Cannabis sample-report output structure."
 }

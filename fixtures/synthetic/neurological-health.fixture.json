@@ -15,7 +15,7 @@
       "haplotype": "neurobehavioral-model-unavailable",
       "inputId": "neurological-health-model-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "validated neurobehavioral model, calibrated PRS, ancestry applicability metadata, age, sex, family history, symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "validated neurological-health, brain-health, mental-health, mood, neurologic, cognitive, dementia, Parkinson's disease, seizure, migraine, ADHD, autism, depression, anxiety, treatment-response, calibrated PRS, ancestry applicability, medication, supplement, therapy, imaging, lab, school/work, pediatric, and local risk models unavailable in this fixture; direct Neurological Health sample-report rows unavailable; sibling Mood & Brain sample PDF result cards, recommendation rows, impact/evidence ratings, percentiles, and visible variant tables observed for output structure",
       "sourceArtifact": "synthetic-neurological-health-neurobehavioral-boundary-context-v1",
       "sourceFile": "synthetic-neurological-health-neurobehavioral-boundary-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "clinical-context-unavailable",
       "inputId": "neurological-health-clinical-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, family history, and clinician interpretation unavailable in this fixture",
+      "observedValue": "symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, family history, clinician interpretation, school/work context, and personal neurological-health context unavailable in this fixture; sibling Mood & Brain sample PDF observed separately as output-structure evidence",
       "sourceArtifact": "synthetic-neurological-health-neurobehavioral-boundary-context-v1",
       "sourceFile": "synthetic-neurological-health-neurobehavioral-boundary-context-v1.json"
     }
@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for neurological-health validation"
   },
-  "missingInputPolicy": "Report unavailable neurological health evidence explicitly; do not diagnose mental, neurologic, cognitive, developmental, or neurodegenerative conditions; assess current mental state; predict IQ, aptitude, mood, dementia, Parkinson's disease, seizure, migraine, ADHD, autism, depression, anxiety, treatment response, or brain health status; provide all-clear reassurance; recommend medication, supplements, nootropics, therapy, imaging, labs, school or work decisions, pediatric actions, or treatment changes.",
+  "missingInputPolicy": "Report unavailable neurological-health, brain-health, mental-health, mood, neurologic, cognitive, dementia, Parkinson's disease, seizure, migraine, ADHD, autism, depression, anxiety, treatment-response, medication, supplement, therapy, imaging, lab, school/work, pediatric, clinical, and calibrated model sections explicitly; use sibling Mood & Brain sample rows only as observed output structure and do not infer local diagnosis, current mental state, neurological status, cognitive status, dementia risk, Parkinson's disease risk, seizure risk, migraine risk, ADHD/autism/depression/anxiety prediction, treatment need, medication need, supplement need, therapy need, imaging need, lab need, school/work action, pediatric action, or clinical actionability from genotype alone or sample-only rows.",
   "packageSlug": "neurological-health",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -138,7 +138,19 @@
         "non_diagnostic_language",
         "missing_model_policy"
       ]
+    },
+    {
+      "evidenceLevel": "sibling_sample_report",
+      "id": "mood-brain-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Mood & Brain DNA Report sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer neurological health boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer Neurological Health boundary context using unavailable-model evidence plus sibling Mood & Brain neuro/mood sample-report output structure."
 }

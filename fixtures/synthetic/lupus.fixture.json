@@ -15,7 +15,7 @@
       "haplotype": "condition-boundary-model-unavailable",
       "inputId": "lupus-model-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "validated lupus model, calibrated lupus PRS, HLA inference, ANA, anti-dsDNA, complement, kidney labs, urinalysis, organ involvement, symptoms, disease activity, flare context, medication context, family history, ancestry applicability, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "validated lupus model, calibrated lupus PRS, HLA inference, ANA, anti-dsDNA, complement, kidney labs, urinalysis, organ involvement, symptoms, disease activity, flare context, medication context, family history, ancestry applicability, and authenticated sample-report rows unavailable in this fixture; Public Disease Risk sample PDF Autoimmune Diseases table, Lupus Reduced row, and heritable-component limitation are extracted as sibling output-structure evidence.",
       "sourceArtifact": "synthetic-lupus-condition-boundary-context-v1",
       "sourceFile": "synthetic-lupus-condition-boundary-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "clinical-lab-context-unavailable",
       "inputId": "lupus-clinical-lab-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, disease activity, flare context, and personal treatment context unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Lupus",
       "sourceArtifact": "synthetic-lupus-condition-boundary-context-v1",
       "sourceFile": "synthetic-lupus-condition-boundary-context-v1.json"
     }
@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for lupus validation"
   },
-  "missingInputPolicy": "Report unavailable lupus evidence explicitly; do not diagnose lupus or SLE; estimate lupus risk; infer HLA status, ANA, anti-dsDNA, complement, kidney involvement, organ involvement, disease activity, flare status, immunosuppression need, treatment need, supplement need, diet need, screening need, diagnostic-test need, reproductive action, or actionability.",
+  "missingInputPolicy": "Report unavailable lupus evidence explicitly; use the public sibling Disease Risk sample rows only as observed output structure and do not infer lupus diagnosis, personal lupus risk, HLA status, ANA, anti-dsDNA, complement, kidney or organ involvement, disease activity, flare status, immunosuppression need, treatment, supplement, diet, screening, testing, reproductive action, or actionability guidance from local unavailable evidence or sample-only rows.",
   "packageSlug": "lupus",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -160,7 +160,19 @@
         "non_diagnostic_language",
         "missing_model_policy"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "genetic-testing-disease-risk-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Genetic Testing For Disease Risk sample genetic report",
+      "usedFor": [
+        "sibling_formal_fields",
+        "sample_rows",
+        "risk_label_table",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer lupus boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer lupus boundary context using supplied references plus observed sibling Disease Risk Genetic Test Report lupus and autoimmune output structure while explicitly marking personal model and clinical/lab context unavailable."
 }

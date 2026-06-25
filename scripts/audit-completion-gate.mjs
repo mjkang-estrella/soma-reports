@@ -1,0 +1,659 @@
+#!/usr/bin/env node
+
+import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { spawnSync } from "node:child_process";
+import { loadOfficialOutputPromotionReview } from "./lib/official-output-promotion-review.mjs";
+
+const parseArgs = () => {
+  const args = new Map();
+  for (let index = 2; index < process.argv.length; index += 1) {
+    const arg = process.argv[index];
+    if (!arg.startsWith("--")) {
+      continue;
+    }
+    const next = process.argv[index + 1];
+    if (next && !next.startsWith("--")) {
+      args.set(arg, next);
+      index += 1;
+    } else {
+      args.set(arg, "true");
+    }
+  }
+  return args;
+};
+
+const args = parseArgs();
+const format = args.get("--format") ?? "json";
+
+if (!["json", "compact"].includes(format)) {
+  throw new Error(`Unsupported --format ${format}; expected json or compact`);
+}
+
+const expected = {
+  marketplacePositions: 164,
+  namedPackages: 154,
+  unidentifiedAuthenticatedSlots: 0,
+};
+
+const runJsonCommand = (name, args) => {
+  const startedAt = Date.now();
+  const result = spawnSync(args[0], args.slice(1), {
+    cwd: process.cwd(),
+    encoding: "utf8",
+    maxBuffer: 1024 * 1024 * 80,
+  });
+  const stdout = result.stdout.trim();
+  const stderr = result.stderr.trim();
+  let parsed = null;
+  let parseError = null;
+  try {
+    parsed = stdout ? JSON.parse(stdout) : null;
+  } catch (error) {
+    parseError = error instanceof Error ? error.message : String(error);
+  }
+
+  return {
+    name,
+    command: args.join(" "),
+    exitCode: result.status,
+    durationMs: Date.now() - startedAt,
+    parsed,
+    parseError,
+    stderr: stderr ? stderr.slice(0, 1200) : null,
+  };
+};
+
+const compactFormalValidation = (validation) => {
+  if (!validation) {
+    return null;
+  }
+  return {
+    ok: validation.ok,
+    validationMode: validation.validationMode,
+    expectedSeedPackages: validation.expectedSeedPackages,
+    checked: validation.checked,
+    passed: validation.passed,
+    failed: validation.failed,
+    consumerLanguageChecked: validation.consumerLanguageChecked,
+    consumerLanguageFailures: validation.consumerLanguageFailures,
+    consumerLanguageWarnings: validation.consumerLanguageWarnings,
+    formalPending: validation.formalPending,
+    formalIncomplete: validation.formalIncomplete,
+    strictFormalFailures: validation.strictFormalFailures,
+    formalBlockerLedger: validation.formalBlockerLedger
+      ? {
+          path: validation.formalBlockerLedger.path,
+          decisions: validation.formalBlockerLedger.decisions,
+          localScaffoldPackages: validation.formalBlockerLedger.localScaffoldPackages,
+          problems: validation.formalBlockerLedger.problems ?? [],
+        }
+      : null,
+    failedSlugs: Array.isArray(validation.results)
+      ? validation.results.filter((row) => !row.ok).map((row) => row.slug)
+      : [],
+  };
+};
+
+const summarizeRun = (run) => {
+  if (run.name === "agent:validate:formal") {
+    return {
+      ...run,
+      parsed: compactFormalValidation(run.parsed),
+    };
+  }
+  if (run.name === "agent:assert-sync" && run.parsed) {
+    return {
+      ...run,
+      parsed: {
+        ok: run.parsed.ok,
+        checked: run.parsed.checked,
+        passed: run.parsed.passed,
+        failed: run.parsed.failed,
+        seedLoadError: run.parsed.seedLoadError,
+        failedSlugs: Array.isArray(run.parsed.results)
+          ? run.parsed.results.filter((row) => !row.ok).map((row) => row.slug)
+          : [],
+      },
+    };
+  }
+  if (run.name.startsWith("scaffold:promotion-verify") && run.parsed) {
+    return {
+      ...run,
+      parsed: {
+        ok: run.parsed.ok,
+        capturePath: run.parsed.capturePath,
+        reportSlug: run.parsed.reportSlug,
+        failedChecks: Array.isArray(run.parsed.failedChecks)
+          ? run.parsed.failedChecks.map((check) => check.key)
+          : [],
+      },
+    };
+  }
+  if (run.name === "agent:smoke" && run.parsed) {
+    return {
+      ...run,
+      parsed: {
+        ok: run.parsed.ok,
+        reportSlug: run.parsed.reportSlug,
+        packageExport: run.parsed.packageExport,
+        wellness: run.parsed.wellness,
+        coordinate: run.parsed.coordinate,
+        rsidCoordinate: run.parsed.rsidCoordinate,
+        guards: run.parsed.guards,
+        rawGenomeIncluded: run.parsed.rawGenomeIncluded,
+      },
+    };
+  }
+  return run;
+};
+
+const runResults = [
+  runJsonCommand("catalog:assert", ["npm", "run", "--silent", "catalog:assert"]),
+  runJsonCommand("scaffold:evidence-audit", ["npm", "run", "--silent", "scaffold:evidence-audit"]),
+  runJsonCommand("scaffold:capture-plan", ["npm", "run", "--silent", "scaffold:capture-plan", "--", "--format", "compact"]),
+  runJsonCommand("scaffold:next-actions", ["npm", "run", "--silent", "scaffold:next-actions", "--", "--format", "compact"]),
+  runJsonCommand("scaffold:validate-captures", ["npm", "run", "--silent", "scaffold:validate-captures"]),
+  runJsonCommand("scaffold:privacy-canary", ["npm", "run", "--silent", "scaffold:privacy-canary"]),
+  runJsonCommand("objective:audit", ["npm", "run", "--silent", "objective:audit", "--", "--format", "compact"]),
+  runJsonCommand("ui:audit", ["npm", "run", "--silent", "ui:audit"]),
+  runJsonCommand("readiness:audit:summary", ["npm", "run", "--silent", "readiness:audit:summary"]),
+  runJsonCommand("agent:validate:formal", ["npm", "run", "--silent", "agent:validate:formal"]),
+  runJsonCommand("agent:assert-sync", ["npm", "run", "--silent", "agent:assert-sync"]),
+  runJsonCommand("agent:workflow-check", [
+    "npm",
+    "run",
+    "--silent",
+    "agent:workflow-check",
+    "--",
+    "--report",
+    "wellness-genetic-guide",
+    "--format",
+    "compact",
+  ]),
+  runJsonCommand("agent:smoke", ["npm", "run", "--silent", "agent:smoke"]),
+];
+
+const runsByName = new Map(runResults.map((run) => [run.name, run]));
+const catalog = runsByName.get("catalog:assert")?.parsed;
+const scaffold = runsByName.get("scaffold:evidence-audit")?.parsed;
+const capturePlan = runsByName.get("scaffold:capture-plan")?.parsed;
+const nextActions = runsByName.get("scaffold:next-actions")?.parsed;
+const captureValidation = runsByName.get("scaffold:validate-captures")?.parsed;
+const privacyCanary = runsByName.get("scaffold:privacy-canary")?.parsed;
+const objectiveAudit = runsByName.get("objective:audit")?.parsed;
+const uiAudit = runsByName.get("ui:audit")?.parsed;
+const readiness = runsByName.get("readiness:audit:summary")?.parsed;
+const formal = runsByName.get("agent:validate:formal")?.parsed;
+const sync = runsByName.get("agent:assert-sync")?.parsed;
+const localAgentSmoke = runsByName.get("agent:smoke")?.parsed;
+const localAgentWorkflowCheck = runsByName.get("agent:workflow-check")?.parsed;
+const blockerLedger = existsSync("reference/catalog/sample-promotion-rejections-2026-06-23.json")
+  ? JSON.parse(readFileSync("reference/catalog/sample-promotion-rejections-2026-06-23.json", "utf8"))
+  : { decisions: [] };
+const blockerSlugs = new Set((blockerLedger.decisions ?? []).map((decision) => decision.slug));
+const promotionReview = loadOfficialOutputPromotionReview();
+const capturePromotionReviewFor = (row) =>
+  promotionReview.entriesByPath.get(row.path) ??
+  (row.slug && !blockerSlugs.has(row.slug) ? promotionReview.entriesBySlug.get(row.slug) : null);
+const rowEvidenceReadyCapturePaths = Array.isArray(captureValidation?.results)
+  ? captureValidation.results.filter((row) => row.rowEvidenceReady).map((row) => row.path)
+  : [];
+const rowEvidencePromotionReadyCaptureRows = Array.isArray(captureValidation?.results)
+  ? captureValidation.results.filter(
+      (row) =>
+        (row.rowEvidencePromotionReady ?? (row.rowEvidenceReady && row.promotionSafeProvenance)) &&
+        !capturePromotionReviewFor(row),
+    )
+  : [];
+const reviewBlockedPromotionReadyCaptureRows = Array.isArray(captureValidation?.results)
+  ? captureValidation.results.filter(
+      (row) =>
+        (row.rowEvidencePromotionReady ?? (row.rowEvidenceReady && row.promotionSafeProvenance)) &&
+        capturePromotionReviewFor(row),
+    )
+  : [];
+const rowEvidencePromotionReadyCapturePaths = rowEvidencePromotionReadyCaptureRows.map((row) => row.path);
+const reviewBlockedPromotionReadyCapturePaths = reviewBlockedPromotionReadyCaptureRows.map((row) => row.path);
+const promotionVerificationRuns = rowEvidencePromotionReadyCapturePaths.map((path) =>
+  runJsonCommand(`scaffold:promotion-verify:${path}`, [
+    "npm",
+    "run",
+    "--silent",
+    "scaffold:promotion-verify",
+    "--",
+    "--path",
+    path,
+  ]),
+);
+
+const officialOutputCaptureArtifacts = readdirSync("reference/catalog").filter(
+  (file) => file.includes("-official-output-capture-") && file.endsWith(".json"),
+);
+
+const uiSourceChecks = {
+  appGapQueue:
+    existsSync("src/App.tsx") && readFileSync("src/App.tsx", "utf8").includes("Evidence gap queue"),
+  reportCapturePanel:
+    existsSync("src/components/ReportDetail.tsx") &&
+    readFileSync("src/components/ReportDetail.tsx", "utf8").includes("official-output-capture"),
+  reportCardLocalRunSurface:
+    existsSync("src/components/ReportCard.tsx") &&
+    readFileSync("src/components/ReportCard.tsx", "utf8").includes("Run locally") &&
+    readFileSync("src/components/ReportCard.tsx", "utf8").includes("Scaffold run only"),
+  reportDetailLocalRunCoordinateMap:
+    existsSync("src/components/ReportDetail.tsx") &&
+    readFileSync("src/components/ReportDetail.tsx", "utf8").includes("agent:update-rsid-coordinate-map"),
+  reportDetailLocalRunWorkflowCheck:
+    existsSync("src/components/ReportDetail.tsx") &&
+    readFileSync("src/components/ReportDetail.tsx", "utf8").includes("agent:workflow-check"),
+  reportDetailLocalRunWrapper:
+    existsSync("src/components/ReportDetail.tsx") &&
+    readFileSync("src/components/ReportDetail.tsx", "utf8").includes("agent:prepare-local"),
+  reportDetailLocalDeterministicResult:
+    existsSync("src/components/ReportDetail.tsx") &&
+    readFileSync("src/components/ReportDetail.tsx", "utf8").includes("agent:generate-local-result") &&
+    existsSync("scripts/generate-local-agent-result.mjs"),
+  formalEvidenceBacklog:
+    existsSync("src/lib/formalEvidenceBacklog.ts") &&
+    readFileSync("src/lib/formalEvidenceBacklog.ts", "utf8").includes("formalEvidenceBacklogSummary"),
+};
+
+const checks = [
+  {
+    key: "catalog_positions",
+    ok:
+      runsByName.get("catalog:assert")?.exitCode === 0 &&
+      catalog?.ok === true &&
+      catalog?.targetTotal === expected.marketplacePositions &&
+      catalog?.authenticatedCardPositions === expected.marketplacePositions &&
+      catalog?.seededRecordsExpected === expected.namedPackages &&
+      catalog?.unidentifiedAuthenticatedSlots === expected.unidentifiedAuthenticatedSlots,
+    expected:
+      "164 authenticated marketplace positions, 154 named seeded packages, and 0 unidentified authenticated slots",
+    actual: catalog
+      ? {
+          targetTotal: catalog.targetTotal,
+          authenticatedCardPositions: catalog.authenticatedCardPositions,
+          seededRecordsExpected: catalog.seededRecordsExpected,
+          unidentifiedAuthenticatedSlots: catalog.unidentifiedAuthenticatedSlots,
+        }
+      : null,
+  },
+  {
+    key: "no_scaffold_packages",
+    ok:
+      runsByName.get("scaffold:evidence-audit")?.exitCode === 0 &&
+      scaffold?.ok === true &&
+      scaffold?.scaffoldPackages === 0 &&
+      scaffold?.candidatePromotions === 0,
+    expected: "0 scaffold-only packages remain in the formal evidence blocker ledger",
+    actual: scaffold
+      ? {
+          scaffoldPackages: scaffold.scaffoldPackages,
+          outputSignalReviewRows: scaffold.outputSignalReviewRows,
+          unreviewedOutputSignalReviews: scaffold.unreviewedOutputSignalReviews,
+          reviewedOutputSignalNoPromote: scaffold.reviewedOutputSignalNoPromote,
+          candidatePromotions: scaffold.candidatePromotions,
+          rawCandidatePromotions: scaffold.rawCandidatePromotions,
+          reviewedNoPromoteCandidates: scaffold.reviewedNoPromoteCandidates,
+          reviewedBoundaryOnlyCaptures: scaffold.reviewedBoundaryOnlyCaptures,
+          reviewedMetadataOnlyTargets: scaffold.reviewedMetadataOnlyTargets,
+          unreviewedPromotionCandidatePromotions: scaffold.unreviewedPromotionCandidatePromotions,
+          missingDetailArtifacts: scaffold.missingDetailArtifacts,
+          exactMetadataOnly: scaffold.exactMetadataOnly,
+          describedFieldBoundaryRows: scaffold.describedFieldBoundaryRows,
+          missingDetailSlugs: scaffold.missingDetailSlugs ?? [],
+          formalFieldNearMissSlugs: scaffold.formalFieldNearMissSlugs ?? [],
+        }
+      : null,
+  },
+  {
+    key: "objective_coverage",
+    ok:
+      runsByName.get("objective:audit")?.exitCode === 0 &&
+      objectiveAudit?.ok === true &&
+      objectiveAudit?.totals?.marketplacePositions === expected.marketplacePositions &&
+      objectiveAudit?.totals?.packagesChecked === expected.namedPackages &&
+      objectiveAudit?.totals?.promptArtifacts === expected.namedPackages &&
+      objectiveAudit?.totals?.fixtureArtifacts === expected.namedPackages &&
+      objectiveAudit?.totals?.resultArtifacts === expected.namedPackages &&
+      (objectiveAudit?.problems?.length ?? 0) === 0,
+    expected:
+      "164 Sequencing.com marketplace positions and 154 named packages have prompts, derived fixtures, deterministic outputs, references, source-bound rows, and appendix probability contracts",
+    actual: objectiveAudit
+      ? {
+          marketplacePositions: objectiveAudit.totals?.marketplacePositions,
+          packagesChecked: objectiveAudit.totals?.packagesChecked,
+          promptArtifacts: objectiveAudit.totals?.promptArtifacts,
+          fixtureArtifacts: objectiveAudit.totals?.fixtureArtifacts,
+          resultArtifacts: objectiveAudit.totals?.resultArtifacts,
+          resultRows: objectiveAudit.totals?.resultRows,
+          plainEnglishResultRows: objectiveAudit.totals?.plainEnglishResultRows,
+          sourceBoundResultRows: objectiveAudit.totals?.sourceBoundResultRows,
+          appendixProbabilityArrays: objectiveAudit.totals?.appendixProbabilityArrays,
+          problems: objectiveAudit.problems?.slice(0, 10) ?? [],
+        }
+      : null,
+  },
+  {
+    key: "readiness_full_coverage",
+    ok:
+      runsByName.get("readiness:audit:summary")?.exitCode === 0 &&
+      readiness?.total === expected.namedPackages &&
+      readiness?.sampleBackedFormalReady === expected.namedPackages &&
+      readiness?.formalEquivalentReady === expected.namedPackages &&
+      (readiness?.localScaffoldSlugs?.length ?? 0) === 0,
+    expected: "154 sample-backed formal and 154 formal-equivalent packages",
+    actual: readiness
+      ? {
+          total: readiness.total,
+          declaredReady: readiness.declaredReady,
+          sampleBackedFormalReady: readiness.sampleBackedFormalReady,
+          formalEquivalentReady: readiness.formalEquivalentReady,
+          localScaffoldSlugs: readiness.localScaffoldSlugs ?? [],
+          derivedGapCounts: readiness.derivedGapCounts ?? {},
+        }
+      : null,
+  },
+  {
+    key: "rendered_marketplace_ui",
+    ok:
+      runsByName.get("ui:audit")?.exitCode === 0 &&
+      uiAudit?.ok === true &&
+      uiAudit?.rendered?.positionRows === expected.marketplacePositions &&
+      uiAudit?.rendered?.reportCards === expected.namedPackages &&
+      uiAudit?.rendered?.inspectButtons === expected.marketplacePositions &&
+      uiAudit?.rendered?.officialOutputBlockerCards === 21,
+    expected:
+      "rendered app shows all 164 marketplace positions, 154 report cards, local-run controls, and 21 official-output blockers",
+    actual: uiAudit
+      ? {
+          positionRows: uiAudit.rendered?.positionRows,
+          reportCards: uiAudit.rendered?.reportCards,
+          inspectButtons: uiAudit.rendered?.inspectButtons,
+          duplicateGroupItems: uiAudit.rendered?.duplicateGroupItems,
+          aliasRows: uiAudit.rendered?.aliasRows,
+          routeAliasRows: uiAudit.rendered?.routeAliasRows,
+          officialOutputBlockerCards: uiAudit.rendered?.officialOutputBlockerCards,
+          failedChecks: uiAudit.failedChecks ?? [],
+        }
+      : null,
+  },
+  {
+    key: "formal_validator",
+    ok:
+      runsByName.get("agent:validate:formal")?.exitCode === 0 &&
+      formal?.ok === true &&
+      formal?.checked === expected.namedPackages &&
+      formal?.formalIncomplete === 0 &&
+      formal?.strictFormalFailures === 0,
+    expected: "agent:validate:formal passes all 154 packages with no formal incomplete rows",
+    actual: compactFormalValidation(formal),
+  },
+  {
+    key: "consumer_plain_english_output",
+    ok:
+      formal?.checked === expected.namedPackages &&
+      formal?.consumerLanguageChecked === expected.namedPackages &&
+      formal?.consumerLanguageFailures === 0,
+    expected:
+      "all 154 deterministic report outputs contain substantive plain-English customer explanations in resultRows[].plainEnglishMeaning",
+    actual: formal
+      ? {
+          checked: formal.checked,
+          consumerLanguageChecked: formal.consumerLanguageChecked,
+          consumerLanguageFailures: formal.consumerLanguageFailures,
+          consumerLanguageWarnings: formal.consumerLanguageWarnings,
+        }
+      : null,
+  },
+  {
+    key: "official_output_capture_validator",
+    ok: runsByName.get("scaffold:validate-captures")?.exitCode === 0 && captureValidation?.ok === true,
+    expected: "all sanitized official-output capture artifacts pass schema, privacy, origin, and row-binding checks",
+    actual: captureValidation
+      ? {
+          checked: captureValidation.checked,
+          passed: captureValidation.passed,
+          failed: captureValidation.failed,
+          rowEvidenceReady: captureValidation.rowEvidenceReady,
+          rowEvidencePromotionReady: captureValidation.rowEvidencePromotionReady,
+          promotionSafeProvenance: captureValidation.promotionSafeProvenance,
+          outputSignalReviews: captureValidation.outputSignalReviews,
+          promotionCandidates: captureValidation.promotionCandidates,
+          reviewBlockedPromotionReadyCaptures: reviewBlockedPromotionReadyCapturePaths,
+          failedArtifacts: Array.isArray(captureValidation.results)
+            ? captureValidation.results.filter((row) => !row.ok).map((row) => row.path)
+            : [],
+        }
+      : null,
+  },
+  {
+    key: "official_output_privacy_canary",
+    ok: runsByName.get("scaffold:privacy-canary")?.exitCode === 0 && privacyCanary?.ok === true,
+    expected: "official-output validator rejects private result URLs, private identifiers, genotype values, and row-ready captures without citation bindings",
+    actual: privacyCanary
+      ? {
+          ok: privacyCanary.ok,
+          failedCanaries: Array.isArray(privacyCanary.results)
+            ? privacyCanary.results.filter((row) => !row.passed).map((row) => row.name)
+            : [],
+        }
+      : null,
+  },
+  {
+    key: "official_output_promotion_applied",
+    ok:
+      runsByName.get("scaffold:validate-captures")?.exitCode === 0 &&
+      captureValidation?.ok === true &&
+      promotionVerificationRuns.every((run) => run.exitCode === 0 && run.parsed?.ok === true),
+    expected:
+      "every unblocked row-evidence promotion-ready official-output capture has landed in seed, prompt, fixture, and result artifacts",
+    actual: {
+      rowEvidenceReadyCapturePaths,
+      rowEvidencePromotionReadyCapturePaths,
+      reviewBlockedPromotionReadyCapturePaths,
+      failedVerifications: promotionVerificationRuns
+        .filter((run) => run.exitCode !== 0 || run.parsed?.ok !== true)
+        .map((run) => ({
+          command: run.command,
+          exitCode: run.exitCode,
+          parseError: run.parseError,
+          failedChecks: Array.isArray(run.parsed?.failedChecks)
+            ? run.parsed.failedChecks.map((check) => check.key)
+            : [],
+      })),
+    },
+  },
+  {
+    key: "local_agent_workflow_check",
+    ok:
+      runsByName.get("agent:workflow-check")?.exitCode === 0 &&
+      localAgentWorkflowCheck?.ok === true &&
+      localAgentWorkflowCheck?.readOnly === true &&
+      localAgentWorkflowCheck?.commandPlan?.localRunnerExample?.includes("SOMA_LOCAL_RUNNER") &&
+      localAgentWorkflowCheck?.commandPlan?.validateRun?.includes("agent:validate-run"),
+    expected:
+      "agent:workflow-check provides a read-only local-run preflight with runner handoff and validation command plan",
+    actual: localAgentWorkflowCheck
+      ? {
+          ok: localAgentWorkflowCheck.ok,
+          readOnly: localAgentWorkflowCheck.readOnly,
+          reportSlug: localAgentWorkflowCheck.reportSlug,
+          summary: localAgentWorkflowCheck.summary,
+          runnerExample: localAgentWorkflowCheck.commandPlan?.localRunnerExample,
+          validateRun: localAgentWorkflowCheck.commandPlan?.validateRun,
+        }
+      : null,
+  },
+  {
+    key: "local_agent_smoke",
+    ok:
+      runsByName.get("agent:smoke")?.exitCode === 0 &&
+      localAgentSmoke?.ok === true &&
+      localAgentSmoke?.rawGenomeIncluded === false &&
+      localAgentSmoke?.packageExport?.packages === expected.namedPackages &&
+      localAgentSmoke?.packageExport?.failed === 0 &&
+      localAgentSmoke?.wellness?.validationFailures === 0 &&
+      localAgentSmoke?.guards?.staticSampleResultFailsAgainstLocalEvidence === true &&
+      localAgentSmoke?.guards?.rawPrepareFails === true &&
+      localAgentSmoke?.guards?.nestedRawPrepareFails === true &&
+      localAgentSmoke?.guards?.sampleLeakPrepareFails === true &&
+      localAgentSmoke?.guards?.scaffoldFixtureLeakPrepareFails === true &&
+      localAgentSmoke?.guards?.scaffoldPrepareFailsByDefault === true &&
+      localAgentSmoke?.guards?.missingReadinessPrepareFails === true &&
+      localAgentSmoke?.guards?.policyOverrideIgnored === true &&
+      localAgentSmoke?.guards?.rawResultFails === true &&
+      localAgentSmoke?.guards?.scaffoldBoundaryRecorded === true,
+    expected:
+      "local genome workflow derives evidence, prepares a local agent payload, rejects static/sample leakage, and validates a local result without raw genome data",
+    actual: localAgentSmoke
+      ? {
+          ok: localAgentSmoke.ok,
+          packageExport: localAgentSmoke.packageExport,
+          wellness: localAgentSmoke.wellness,
+          rawGenomeIncluded: localAgentSmoke.rawGenomeIncluded,
+          guards: {
+            staticSampleResultFailsAgainstLocalEvidence:
+              localAgentSmoke.guards?.staticSampleResultFailsAgainstLocalEvidence,
+            rawPrepareFails: localAgentSmoke.guards?.rawPrepareFails,
+            nestedRawPrepareFails: localAgentSmoke.guards?.nestedRawPrepareFails,
+            sampleLeakPrepareFails: localAgentSmoke.guards?.sampleLeakPrepareFails,
+            scaffoldFixtureLeakPrepareFails: localAgentSmoke.guards?.scaffoldFixtureLeakPrepareFails,
+            rawResultFails: localAgentSmoke.guards?.rawResultFails,
+            scaffoldPrepareFailsByDefault: localAgentSmoke.guards?.scaffoldPrepareFailsByDefault,
+            missingReadinessPrepareFails: localAgentSmoke.guards?.missingReadinessPrepareFails,
+            policyOverrideIgnored: localAgentSmoke.guards?.policyOverrideIgnored,
+            scaffoldBoundaryRecorded: localAgentSmoke.guards?.scaffoldBoundaryRecorded,
+          },
+        }
+      : null,
+  },
+  {
+    key: "artifact_sync",
+    ok:
+      runsByName.get("agent:assert-sync")?.exitCode === 0 &&
+      sync?.ok === true &&
+      sync?.checked === expected.namedPackages &&
+      sync?.failed === 0,
+    expected: "agent:assert-sync passes all 154 named packages",
+    actual: sync
+      ? {
+          ok: sync.ok,
+          checked: sync.checked,
+          passed: sync.passed,
+          failed: sync.failed,
+        }
+      : null,
+  },
+  {
+    key: "ui_gap_and_capture_surface",
+    ok: Object.values(uiSourceChecks).every(Boolean),
+    expected:
+      "UI source exposes gap queue, local-run card actions, per-report capture panel, canonical local-run workflow, and formal-evidence backlog data",
+    actual: uiSourceChecks,
+  },
+  {
+    key: "official_output_captures_present_when_needed",
+    ok: officialOutputCaptureArtifacts.length > 0 || (scaffold?.scaffoldPackages ?? 0) === 0,
+    expected: "sanitized official-output capture artifacts exist while scaffold packages remain",
+    actual: {
+      count: officialOutputCaptureArtifacts.length,
+      artifacts: officialOutputCaptureArtifacts.map((file) => `reference/catalog/${file}`),
+    },
+  },
+  {
+    key: "official_output_capture_plan",
+    ok:
+      runsByName.get("scaffold:capture-plan")?.exitCode === 0 &&
+      capturePlan?.schemaVersion === "soma-reports.evidence-capture-plan.v1" &&
+      capturePlan?.totals?.allScaffoldPackages === (scaffold?.scaffoldPackages ?? blockerLedger.decisions?.length ?? 0) &&
+      capturePlan?.totals?.targets === (scaffold?.scaffoldPackages ?? blockerLedger.decisions?.length ?? 0) &&
+      Array.isArray(capturePlan?.targets) &&
+      capturePlan.targets.length === (scaffold?.scaffoldPackages ?? blockerLedger.decisions?.length ?? 0) &&
+      capturePlan.targets.every(
+        (target) =>
+          target.redactionTemplateCommand?.includes("scaffold:redaction-template") &&
+          target.sanitizeRedactionCommand?.includes("scaffold:sanitize-output") &&
+          target.captureWorkflow?.nextCommand,
+      ),
+    expected:
+      "scaffold:capture-plan compact output covers every remaining scaffold blocker with redaction and sanitizer commands",
+    actual: capturePlan
+      ? {
+          totals: capturePlan.totals,
+          firstTargets: capturePlan.targets?.slice(0, 5).map((target) => ({
+            slug: target.slug,
+            evidenceClass: target.evidenceClass,
+            stage: target.captureWorkflow?.stage,
+            nextCommand: target.captureWorkflow?.nextCommand,
+          })),
+        }
+      : null,
+  },
+  {
+    key: "official_output_next_actions_coverage",
+    ok:
+      runsByName.get("scaffold:next-actions")?.exitCode === 0 &&
+      nextActions?.schemaVersion === "soma-reports.official-output-next-actions.v1" &&
+      nextActions?.coverage?.ok === true &&
+      nextActions?.coverage?.ledgerTargets === (scaffold?.scaffoldPackages ?? blockerLedger.decisions?.length ?? 0) &&
+      nextActions?.coverage?.allStatusRows === (scaffold?.scaffoldPackages ?? blockerLedger.decisions?.length ?? 0) &&
+      Array.isArray(nextActions?.rows) &&
+      nextActions.rows.length === (scaffold?.scaffoldPackages ?? blockerLedger.decisions?.length ?? 0) &&
+      nextActions.rows.every(
+        (row) =>
+          row.redactionTemplateCommand?.includes("scaffold:redaction-template") &&
+          row.validateCommittedCaptureCommand?.includes("scaffold:validate-captures"),
+      ),
+    expected:
+      "scaffold:next-actions compact output proves 21/21 blocker coverage and includes redaction plus validation commands",
+    actual: nextActions
+      ? {
+          totals: nextActions.totals,
+          coverage: nextActions.coverage,
+          firstTargets: nextActions.rows?.slice(0, 5).map((row) => ({
+            slug: row.slug,
+            actionClass: row.actionClass,
+            nextCommand: row.nextCommand,
+            validateCommittedCaptureCommand: row.validateCommittedCaptureCommand,
+          })),
+        }
+      : null,
+  },
+];
+
+const summary = {
+  schemaVersion: "soma-reports.completion-audit.v1",
+  generatedAt: new Date().toISOString(),
+  ok: checks.every((check) => check.ok),
+  expected,
+  checks,
+  commandRuns: [...runResults, ...promotionVerificationRuns].map(summarizeRun),
+};
+
+const compactSummary = {
+  schemaVersion: summary.schemaVersion,
+  generatedAt: summary.generatedAt,
+  ok: summary.ok,
+  expected: summary.expected,
+  failedChecks: checks.filter((check) => !check.ok).map((check) => ({
+    key: check.key,
+    expected: check.expected,
+    actual: check.actual,
+  })),
+  passingChecks: checks.filter((check) => check.ok).map((check) => check.key),
+  commandRuns: summary.commandRuns.map((run) => ({
+    name: run.name,
+    exitCode: run.exitCode,
+    durationMs: run.durationMs,
+    parseError: run.parseError,
+    stderr: run.stderr,
+  })),
+};
+
+console.log(JSON.stringify(format === "compact" ? compactSummary : summary, null, 2));
+
+if (!summary.ok) {
+  process.exit(1);
+}

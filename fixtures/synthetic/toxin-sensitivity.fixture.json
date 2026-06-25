@@ -14,7 +14,7 @@
       "gene": "MTHFR",
       "inputId": "MTHFR-rs1801133",
       "matchStatus": "observed",
-      "observedValue": "CT",
+      "observedValue": "CT; public Detox Pathway sample PDF observed separately as sibling output-structure evidence",
       "rsid": "rs1801133",
       "sourceArtifact": "synthetic-toxin-sensitivity-mthfr-context-v1",
       "sourceFile": "synthetic-toxin-sensitivity-mthfr-context-v1.json"
@@ -24,7 +24,7 @@
       "gene": "MTHFR",
       "inputId": "MTHFR-rs1801131",
       "matchStatus": "observed",
-      "observedValue": "AC",
+      "observedValue": "AC; public Detox Pathway sample PDF observed separately as sibling output-structure evidence",
       "rsid": "rs1801131",
       "sourceArtifact": "synthetic-toxin-sensitivity-mthfr-context-v1",
       "sourceFile": "synthetic-toxin-sensitivity-mthfr-context-v1.json"
@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived MTHFR calls for toxin-sensitivity validation"
   },
-  "missingInputPolicy": "Report unavailable toxin-sensitivity model, detoxification capacity, methylation score, homocysteine, labs, diet history, supplement context, medication context, authenticated sample rows, diagnosis, treatment, and actionability explicitly; do not infer toxin sensitivity or action.",
+  "missingInputPolicy": "Report unavailable toxin-sensitivity model, detoxification capacity, methylation score, homocysteine, labs, exposure history, diet history, supplement context, medication context, broader Detox Pathway gene model, recommendation personalization model, diagnosis, treatment, prevention, and actionability explicitly; do not infer toxin sensitivity or action. Use sibling Detox Pathway sample SNP tables, lab chips, recommendations, exposure-avoidance rows, and glossary only as observed output-format examples.",
   "packageSlug": "toxin-sensitivity",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -58,7 +58,19 @@
       "usedFor": [
         "marketplace_flow"
       ]
+    },
+    {
+      "evidenceLevel": "sibling_observed_output_structure",
+      "id": "detox-pathway-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Detox Pathway sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer toxin-sensitivity boundary context using derived MTHFR calls and CDC folic-acid safety framing while marking toxin sensitivity, detoxification capacity, methylation score, labs, diet, supplements, medication, treatment, diagnosis, and actionability sections unavailable."
+  "reportPurpose": "Consumer toxin-sensitivity boundary context using derived MTHFR calls, CDC folic-acid safety framing, and sibling Detox Pathway sample-output structure."
 }

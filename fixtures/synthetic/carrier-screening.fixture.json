@@ -38,6 +38,16 @@
       "observedValue": "partner result, carrier-screening scope, pregnancy context, embryo or fetal context, hormone-status context, fertility evaluation, and reproductive decision context unavailable in this fixture",
       "sourceArtifact": "synthetic-carrier-screening-reproductive-endocrine-boundary-context-v1",
       "sourceFile": "synthetic-carrier-screening-reproductive-endocrine-boundary-context-v1.json"
+    },
+    {
+      "assembly": "public-sample-pdf",
+      "gene": "Carrier Status public sample",
+      "haplotype": "public-sibling-sample-output-structure-observed",
+      "inputId": "carrier-screening-public-sibling-sample-output-structure",
+      "matchStatus": "observed",
+      "observedValue": "Public Complete Genome Science Carrier Status sample PDF shows an Inherited Carrier Status table with Condition, Your Risk, and Description columns; visible Carrier and Absent labels; risk-frequency, heritable, and chromosome subtext; and footer text listing additional tested carrier-status conditions. These rows are reused as Carrier Screening sibling output structure only.",
+      "sourceArtifact": "reference/sources/sample_carrier_status_0.pdf",
+      "sourceFile": "sample_carrier_status_0.pdf"
     }
   ],
   "inputManifest": {
@@ -46,7 +56,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for carrier-screening validation"
   },
-  "missingInputPolicy": "Report unavailable carrier screening evidence explicitly; do not call carrier status; classify variants; estimate partner, fetal, embryo, child, or reproductive risk; recommend IVF, PGT, prenatal testing, cascade testing, screening, diagnostic testing, reproductive decisions, pregnancy actions, treatment, or replace genetic counseling.",
+  "missingInputPolicy": "Use the public Carrier Status sample rows only as observed sibling output structure for Carrier Screening; report validated carrier-screen output, tested gene/condition panel, variant classifications, residual risk, partner result, family history, pregnancy or embryo/fetal context, genetic counselor review, and local-user carrier-screen conclusions unavailable.",
   "packageSlug": "carrier-screening",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -192,7 +202,19 @@
         "non_diagnostic_language",
         "missing_model_policy"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "carrier-status-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Carrier Status sample report",
+      "usedFor": [
+        "sibling_formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer carrier screening boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer Carrier Screening boundary context using supplied references, explicit unavailable-model framing, and observed public Carrier Status sibling sample-report output structure."
 }

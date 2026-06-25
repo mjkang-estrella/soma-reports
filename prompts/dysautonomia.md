@@ -10,4 +10,8 @@ For this package, focus on dysautonomia education, POTS and autonomic diagnosis 
 If validated dysautonomia model, autonomic testing, tilt-table testing, heart rate, blood pressure, syncope history, symptom history, medication context, hydration and salt context, neurologic or cardiology review, clinical diagnosis, and authenticated sample-report rows are missing, mark those sections unavailable instead of inferring them.
 Do not diagnose dysautonomia, POTS, autonomic neuropathy, syncope disorder, arrhythmia, cardiovascular disease, or neurologic disease; infer heart rate, blood pressure, tilt-table status, autonomic function, syncope risk, symptom status, hydration need, salt need, medication need, exercise guidance, testing need, treatment need, prevention, clearance, emergency action, or clinical actionability.
 State that organ-system and complex-condition interpretation depends on validated test scope, clinical and family history, symptoms, labs, imaging, vitals or organ-function measures when relevant, ancestry applicability, and qualified professional review.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
+A sanitized official completed-output capture is supplied only as Dysautonomia output-structure evidence: Results / Autonomic nervous system summary, with private finding values redacted.
+Preserve the redacted official output row in sampleRows[] and cite dysautonomia-redacted-official-output; do not infer personal autonomic findings from the redacted value.

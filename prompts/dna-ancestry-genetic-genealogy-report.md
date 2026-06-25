@@ -13,4 +13,6 @@ Use plain English for general customers, not clinician-, forensic-, genealogist-
 If autosomal, mtDNA, Y-DNA, reference-panel, or caller evidence is missing, mark that section unavailable instead of inferring it.
 State that mtDNA and Y-DNA each represent one lineage and do not represent all ancestors or overall identity.
 Do not report exact ethnicity percentages, precise homeland, tribal/community affiliation, family matching, living relatives, health risk, or disease status.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.

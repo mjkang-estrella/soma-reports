@@ -3,7 +3,7 @@
     "reportTitle": "TBG Total Wellness",
     "inputManifestHash": "sha256:synthetic-tbg-total-wellness-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
+      "Logged-in Sequencing.com route/card metadata is captured for the exact detail page; richer reportData/body extraction and full-report pages remain unavailable.",
       "No calibrated wellness, nutrition, fitness, lifestyle, supplement, child-specific, symptom, lab, metabolic, or ancestry applicability model is supplied with this fixture."
     ]
   },
@@ -12,7 +12,7 @@
       "groupTitle": "Total wellness context",
       "item": "MCM6/LCT rs4988235",
       "brandName": "Not applicable",
-      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a diagnosis, symptom explanation, diet recommendation, supplement recommendation, or model-derived health result.",
+      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a diagnosis, symptom explanation, diet recommendation, workout recommendation, supplement recommendation, lab interpretation, metabolic result, or treatment result.",
       "genes": [
         "MCM6",
         "LCT"
@@ -22,56 +22,209 @@
         "medlineplus-lactose-intolerance",
         "medlineplus-mcm6"
       ],
-      "plainEnglishMeaning": "This marker can provide lactose-related context, but symptoms, diet history, labs, environment, medications, and professional review matter for health and nutrition decisions."
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This marker can provide lactose-related context, but symptoms, diet history, activity, labs, medications, age, child-specific context, environment, and professional review matter for wellness and nutrition decisions."
     },
     {
-      "groupTitle": "Nutrition model availability",
+      "groupTitle": "Local model availability",
       "item": "TBG Total Wellness model",
       "brandName": "Not applicable",
       "geneticAnalysis": "No calibrated wellness, nutrition, fitness, lifestyle, supplement, child-specific, symptom, lab, metabolic, or ancestry applicability model is supplied with this fixture.",
       "genes": [
         "TBG Total Wellness model"
       ],
-      "sourceLabel": "MedlinePlus DTC result limits / FDA dietary supplements / CDC BMI",
+      "sourceLabel": "Nutritional genomics review / DTC result limits / FDA dietary supplements / CDC BMI",
       "sourceIds": [
+        "nutritional-genomics-dtc-review",
         "medlineplus-dtc-genetic-testing-results",
         "fda-dietary-supplements",
         "cdc-bmi"
       ],
-      "plainEnglishMeaning": "The report can describe supplied marker context, but it should not make diet, supplement, glucose, gut, weight, wellness, child-specific, symptom, lab, metabolic, or treatment conclusions without validated evidence."
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The local report can describe supplied marker context, but it should not prescribe diets, workouts, supplements, child-specific guidance, lab actions, metabolic conclusions, diagnosis, or treatment without validated evidence."
+    },
+    {
+      "groupTitle": "Observed sample report structure",
+      "item": "TBG Total Wellness public sample PDF",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "The public sample PDF shows preview-boundary text, Vitamin B12 and Vitamin D3 nutrient pages, visible SNP/RSID/result/effect tables, gene definitions, lab-range cards, food blocks, supplement blocks, sunlight text, and probiotic text for output-format parity.",
+      "genes": [
+        "CUBN",
+        "TCN1",
+        "FUT2",
+        "CYP2R1",
+        "GC",
+        "DHCR7"
+      ],
+      "sourceLabel": "Toolbox Genomics Nourish sample report",
+      "sourceIds": [
+        "nourish-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "These rows document the Sequencing.com/Toolbox Genomics preview format only. They must not be treated as this local fixture's vitamin status, diet, workout, supplement, lab, symptom, metabolic, diagnosis, child-specific, or treatment conclusions."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Preview boundary",
+      "item": "Nourish Nutrition Optimization Plan preview",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "The public sample opens with a Nourish Nutrition Optimization Plan cover, Sample1 identity, May 2018 date, and a repeated note that only a limited number of preview pages are displayed.",
+      "description": "Use this as observed report identity and preview-boundary structure only; it does not prove full-report section coverage.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "nourish-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public Nourish sample PDF cover and preview footer; this is observed report structure, not a local nutrition conclusion."
+    },
+    {
+      "groupTitle": "Essential Nutrients",
+      "item": "Vitamin B12 health information and gene table",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "The sample Vitamin B12 page says people with similar genetic markers may be predisposed to low vitamin B12 levels and shows a gene table with CUBN rs1801222 GG non-variant, TCN1 rs526934 AA non-variant, FUT2 rs602662 GG variant, FUT2 rs601338 GG non-variant, and FUT2 rs1047781 AA non-variant.",
+      "description": "The page includes condition-definition text and CUBN, TCN1, and FUT2 gene definitions.",
+      "genes": [
+        "CUBN",
+        "TCN1",
+        "FUT2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "nourish-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from page 13 of the public Nourish sample PDF; this is observed sample output structure and not a local vitamin B12 status, deficiency, diet, lab, or supplement conclusion."
+    },
+    {
+      "groupTitle": "Essential Nutrients",
+      "item": "Vitamin B12 action blocks",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "The sample Vitamin B12 action page shows Vitamin B12-rich food, Vitamin B12 lab-range, Methylmalonic Acid lab-range, Vitamin B12 supplement, and pro-tip blocks.",
+      "description": "The sample includes food examples, typical lab ranges, a supplement starting-dose statement, and supplement-form text as observed preview content.",
+      "genes": [
+        "CUBN",
+        "TCN1",
+        "FUT2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "nourish-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from page 14 of the public Nourish sample PDF; do not turn sample food, lab, dose, or supplement-form text into local advice."
+    },
+    {
+      "groupTitle": "Essential Nutrients",
+      "item": "Vitamin D3 health information and gene table",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "The sample Vitamin D3 page says people with similar genetic markers may be predisposed to low vitamin D3 levels and shows a gene table with CYP2R1 rs10741657 AA non-variant, GC rs2282679 TT non-variant, GC rs4588 GG non-variant, and DHCR7 rs12785878 TT variant.",
+      "description": "The page includes condition-definition text and CYP2R1, GC, and DHCR7 gene definitions.",
+      "genes": [
+        "CYP2R1",
+        "GC",
+        "DHCR7"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "nourish-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from page 17 of the public Nourish sample PDF; this is observed sample output structure and not local vitamin D status, sun exposure, lab, supplement, or treatment advice."
+    },
+    {
+      "groupTitle": "Essential Nutrients",
+      "item": "Vitamin D3 action blocks",
+      "brandName": "Toolbox Genomics sample",
+      "geneticAnalysis": "The sample Vitamin D3 action page shows Sunlight, Vitamin D supplement, Vitamin D3 (25-OH) lab-range, and Probiotics blocks.",
+      "description": "The sample includes sun-exposure text, a supplement amount, lab-range text, and probiotic text as observed preview content.",
+      "genes": [
+        "CYP2R1",
+        "GC",
+        "DHCR7"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "nourish-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from page 18 of the public Nourish sample PDF; do not turn sample sunlight, supplement, lab, probiotic, or dose text into local advice."
     }
   ],
   "practicalNextSteps": {
     "totalWellnessContext": [
-      "Use this report as educational total-wellness genetics context, not as a diet, workout, supplement, or child-specific plan.",
-      "Combine diet history, activity, symptoms, labs, age, children, goals, and professional support when making wellness decisions.",
-      "Do not use genotype alone for child-specific guidance, supplements, workouts, lab interpretation, diagnosis, or treatment."
+      "Use this report as educational total-wellness genetics context, not as a diet, workout, supplement, child-specific, lab, symptom, diagnosis, or treatment plan.",
+      "Keep the public Toolbox Genomics sample PDF rows separate from local findings; sample food, lab, supplement, sunlight, probiotic, and dose text are format examples only.",
+      "Track symptoms, diet history, activity, labs, medications, children, goals, and health context with qualified professionals when wellness decisions matter."
     ]
   },
   "references": [
     {
       "id": "medlineplus-lactose-intolerance",
-      "title": "MedlinePlus Genetics: lactose intolerance"
+      "title": "MedlinePlus Genetics: lactose intolerance",
+      "usedFor": [
+        "lactose_context",
+        "non_diagnostic_language"
+      ]
     },
     {
       "id": "medlineplus-mcm6",
-      "title": "MedlinePlus Genetics: MCM6 gene"
+      "title": "MedlinePlus Genetics: MCM6 gene",
+      "usedFor": [
+        "mcm6_lct_context",
+        "lactase_persistence_context"
+      ]
     },
     {
       "id": "nutritional-genomics-dtc-review",
-      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing"
+      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing",
+      "usedFor": [
+        "nutrition_context",
+        "direct_to_consumer_limitations"
+      ]
     },
     {
       "id": "ebi-gwas-catalog",
-      "title": "GWAS Catalog"
+      "title": "GWAS Catalog",
+      "usedFor": [
+        "candidate_trait_associations"
+      ]
     },
     {
-      "id": "cdc-bmi",
-      "title": "CDC About Body Mass Index",
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean",
       "usedFor": [
-        "weight_context",
-        "bmi_limitations",
-        "no_weight_prediction_from_genotype"
+        "dtc_limitations",
+        "non_diagnostic_language",
+        "consumer_safety_language"
+      ]
+    },
+    {
+      "id": "medlineplus-blood-glucose-test",
+      "title": "MedlinePlus: Blood Glucose Test",
+      "usedFor": [
+        "glucose_lab_context",
+        "diabetes_diagnosis_boundary",
+        "no_genotype_glucose_prediction"
+      ]
+    },
+    {
+      "id": "medlineplus-hba1c-test",
+      "title": "MedlinePlus: Hemoglobin A1C test",
+      "usedFor": [
+        "glucose_lab_context",
+        "a1c_context",
+        "no_lab_inference_from_genotype"
+      ]
+    },
+    {
+      "id": "cdc-diabetes-risk-factors",
+      "title": "CDC Diabetes Risk Factors",
+      "usedFor": [
+        "diabetes_risk_context",
+        "metabolic_limitations",
+        "professional_review_language"
       ]
     },
     {
@@ -84,12 +237,31 @@
       ]
     },
     {
-      "id": "medlineplus-dtc-genetic-testing-results",
-      "title": "MedlinePlus Genetics: What DTC genetic test results mean",
+      "id": "nih-ods-dietary-supplement-fact-sheets",
+      "title": "NIH Office of Dietary Supplements Fact Sheets",
       "usedFor": [
-        "dtc_limitations",
-        "non_diagnostic_language",
-        "consumer_safety_language"
+        "supplement_context",
+        "nutrient_context",
+        "professional_review_language"
+      ]
+    },
+    {
+      "id": "cdc-bmi",
+      "title": "CDC About Body Mass Index",
+      "usedFor": [
+        "weight_context",
+        "bmi_limitations",
+        "no_weight_prediction_from_genotype"
+      ]
+    },
+    {
+      "id": "nourish-sample-pdf",
+      "title": "Toolbox Genomics Nourish sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
       ]
     }
   ],
@@ -97,27 +269,87 @@
     "genotypeSummary": [
       {
         "gene": "MCM6/LCT",
-        "observedValue": "rs4988235 CT"
+        "observedValue": "rs4988235: CT",
+        "effect": "The local fixture supplies a derived MCM6/LCT rs4988235 call for lactase-persistence context.",
+        "phenotype": "Report as educational lactose-related marker context only; do not infer local wellness, nutrition, fitness, vitamin, lab, supplement, symptom, diet, metabolic, diagnosis, or treatment conclusions."
       },
       {
         "gene": "TBG Total Wellness model",
-        "observedValue": "calibrated model unavailable"
+        "observedValue": "tbg-total-wellness-model-unavailable: calibrated wellness, nutrition, fitness, lifestyle, supplement, child-specific, symptom, lab, metabolic, and ancestry applicability models unavailable",
+        "effect": "The local fixture intentionally omits calibrated total-wellness models and non-genetic context.",
+        "phenotype": "Mark wellness, nutrition, fitness, supplement, child-specific, lab, metabolic, symptom, and treatment sections unavailable."
+      },
+      {
+        "gene": "CUBN",
+        "observedValue": "rs1801222: GG",
+        "effect": "The sample Vitamin B12 table labels this row non-variant.",
+        "phenotype": "Observed sample row only; do not infer local vitamin B12 status."
+      },
+      {
+        "gene": "TCN1",
+        "observedValue": "rs526934: AA",
+        "effect": "The sample Vitamin B12 table labels this row non-variant.",
+        "phenotype": "Observed sample row only; do not infer local B12, homocysteine, or lab status."
+      },
+      {
+        "gene": "FUT2",
+        "observedValue": "rs602662: GG",
+        "effect": "The sample Vitamin B12 table labels this row variant.",
+        "phenotype": "Observed sample row only; do not infer local B12 absorption, microbiome, or supplement need."
+      },
+      {
+        "gene": "FUT2",
+        "observedValue": "rs601338: GG",
+        "effect": "The sample Vitamin B12 table labels this row non-variant.",
+        "phenotype": "Observed sample row only; do not infer local B12 absorption, microbiome, or supplement need."
+      },
+      {
+        "gene": "FUT2",
+        "observedValue": "rs1047781: AA",
+        "effect": "The sample Vitamin B12 table labels this row non-variant.",
+        "phenotype": "Observed sample row only; do not infer local B12 absorption, microbiome, or supplement need."
+      },
+      {
+        "gene": "CYP2R1",
+        "observedValue": "rs10741657: AA",
+        "effect": "The sample Vitamin D3 table labels this row non-variant.",
+        "phenotype": "Observed sample row only; do not infer local vitamin D status."
+      },
+      {
+        "gene": "GC",
+        "observedValue": "rs2282679: TT",
+        "effect": "The sample Vitamin D3 table labels this row non-variant.",
+        "phenotype": "Observed sample row only; do not infer local vitamin D transport, lab, or supplement status."
+      },
+      {
+        "gene": "GC",
+        "observedValue": "rs4588: GG",
+        "effect": "The sample Vitamin D3 table labels this row non-variant.",
+        "phenotype": "Observed sample row only; do not infer local vitamin D transport, lab, or supplement status."
+      },
+      {
+        "gene": "DHCR7",
+        "observedValue": "rs12785878: TT",
+        "effect": "The sample Vitamin D3 table labels this row variant.",
+        "phenotype": "Observed sample row only; do not infer local vitamin D production, sun exposure, or supplement need."
       }
     ],
     "missingInputs": [
-      "Authenticated sample-report sections and rows have not been extracted.",
-      "No calibrated wellness, nutrition, fitness, lifestyle, supplement, child-specific, symptom, lab, metabolic, or ancestry applicability model is supplied with this fixture.",
-      "Broader symptoms, food history, diet history, activity history, labs, medications, medical history, child-specific context, ancestry applicability, environment, and professional assessment are not represented in this fixture."
+      "Authenticated route/card metadata is captured for exact detail-page boundary evidence; richer reportData/body extraction and full-report pages remain unavailable.",
+      "calibrated wellness model, nutrition model, fitness model, lifestyle model, supplement model, child-specific evidence, symptom context, lab context, metabolic model, and ancestry applicability metadata unavailable in this fixture",
+      "Broader symptoms, food history, diet history, activity history, labs, medications, medical history, child-specific context, ancestry applicability, environment, and professional assessment are not represented in this fixture.",
+      "The public sample rows are observed output-format examples only and are not local wellness, nutrition, fitness, supplement, lab, metabolic, symptom, diagnosis, or treatment conclusions."
     ],
     "probabilities": [],
     "uncertainty": [
-      "Nutrition, lifestyle, symptoms, labs, weight, glucose, gut health, supplement response, and wellness outcomes depend on genetics plus non-genetic context and professional review.",
-      "A single marker should not be used to diagnose conditions, explain symptoms, prescribe diets, recommend supplements, interpret labs, or guide treatment."
+      "Nutrition, lifestyle, symptoms, labs, weight, glucose, gut health, supplement response, fitness response, and wellness outcomes depend on genetics plus non-genetic context and professional review.",
+      "The sample PDF shows report structure and sample-person rows; it does not provide calibrated local probabilities or local recommendations.",
+      "A single marker should not be used to diagnose conditions, explain symptoms, prescribe diets, create workouts, recommend supplements, interpret labs, or guide treatment."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data is not included.",
       "The report is educational and does not prescribe diets, create workouts, recommend supplements, create child-specific guidance, diagnose symptoms, infer metabolic disease, interpret labs, or provide treatment guidance.",
-      "Authenticated Sequencing.com sample report rows are still pending."
+      "Sample PDF rows are source-bound to the public Toolbox Genomics preview and must remain separate from local fixture evidence."
     ]
   }
 }

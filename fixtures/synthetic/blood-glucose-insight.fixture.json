@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived nutrition-genetics evidence for blood-glucose-insight validation"
   },
-  "missingInputPolicy": "Report unavailable glucose, diabetes, insulin, lab, diet, supplement, medication, metabolic, and calibrated models explicitly; do not infer blood glucose, diabetes risk, insulin resistance, lab status, diet needs, supplement needs, or treatment.",
+  "missingInputPolicy": "Report unavailable local blood-glucose, diabetes, insulin-resistance, lab, meal-plan, supplement, medication, metabolic, and calibrated models explicitly; use the public sample rows only as observed output structure and do not infer glucose levels, HbA1c, diabetes risk, insulin resistance, nutrient needs, food lists, diet plans, supplements, medication changes, diagnosis, or treatment.",
   "packageSlug": "blood-glucose-insight",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -155,7 +155,19 @@
         "bmi_limitations",
         "no_weight_prediction_from_genotype"
       ]
+    },
+    {
+      "evidenceLevel": "direct_sample_report",
+      "id": "blood-glucose-insight-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "GenoPalate Blood Glucose Insight sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer Blood Glucose Insight context using derived MCM6/LCT evidence plus explicit glucose, diabetes, lab, diet, supplement, medication, and model-unavailable framing."
+  "reportPurpose": "Consumer Blood Glucose Insight context using derived nutrition-genetics evidence plus observed GenoPalate Blood Glucose Insight sample-report output structure."
 }

@@ -1,0 +1,102 @@
+{
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "capturedAt": "2026-06-21T15:22:15.909Z",
+  "source": "in-app browser sequencing.com marketplace detail page __NEXT_DATA__.props.pageProps.reportData extraction",
+  "url": "https://sequencing.com/marketplace/rundna",
+  "finalUrl": "https://sequencing.com/marketplace/rundna",
+  "title": "RunDNA",
+  "nid": "12931",
+  "productId": "4624",
+  "app": {
+    "appid": "14932",
+    "label": "RunDNA",
+    "backend": "ApiAppBackend",
+    "apiAppId": null
+  },
+  "publisher": "Toolbox Genomics",
+  "price": "$59",
+  "currencyCode": "USD",
+  "categories": [
+    "Fitness"
+  ],
+  "uri": "marketplace/rundna",
+  "reportFile": "https://sequencing.com/sites/default/files/rundna-app-endurance-performance-plan-sample-report-toolbox-genomix-sequencing.com-app-market.pdf_0.pdf",
+  "headerImage": "https://sequencing.com/sites/default/files/rundna-icon1.png",
+  "headerImageAlt": null,
+  "meta": {
+    "canonical": "https://sequencing.com/marketplace/rundna",
+    "publishedTime": null,
+    "modifiedTime": null,
+    "ogDescriptionHash": "sha256:44fba24d076cb1d537024f7d7e0076863e468eef63c3bcc85e0336bbd2f14e33",
+    "ogDescriptionPreview": "Designed for professional and elite athletes. Give your athletic training a boost with guidance personalized to your genes for improving your fitness and athletic performance.",
+    "productPriceAmount": null,
+    "productPriceCurrency": "USD",
+    "productRetailerItemId": "4624"
+  },
+  "summaryPreview": "Designed for professional and elite athletes. Give your athletic training a boost with guidance personalized to your genes for improving your fitness and athletic performance.",
+  "bodyPreview": "DNA Endurance Performance Plan Since the beginning of time, athletes have been looking for a competitive edge to take their bodies and performance to the next level. With RunDNA, that dream is now a reality. RunDNA gives you a complete breakdown of 24 traits, 47 genes, and 57 SNPs that are crucial for the health and performance of endurance athletes like you. Actionable recommendations. Cut down on trial and error by receiving valuable insight into the type of training your body may respond to best, so you can take action Science-backed advice. Genetic-based advice to help you minimize injuries and maximize tendon and ligament health. Customized reports. Nutrition recommendations based on the nutrients your body needs most. Research-backed insight. Weight loss and body composition response to training with easy-to-apply recommendations for optimal performance. Unique evaluations. Get insight into important endurance indicators like VO2 max, lactate threshold, and more. With the science",
+  "visibleParagraphs": [
+    "Marketplace",
+    "RunDNA",
+    "Developed by Toolbox Genomics",
+    "Designed for professional and elite athletes. Give your athletic training a boost with guidance personalized to your genes for improving your fitness and athletic performance.",
+    "$59 per genome",
+    "Get 100% of your DNA data with Whole Genome Sequencing.",
+    "Already have data from a DNA test? Upload your data for free.",
+    "Since the beginning of time, athletes have been looking for a competitive edge to take their bodies and performance to the next level. With RunDNA, that dream is now a reality."
+  ],
+  "infoTabs": [
+    {
+      "label": "Overview",
+      "textPreview": "DNA Endurance Performance Plan Since the beginning of time, athletes have been looking for a competitive edge to take their bodies and performance to the next level. With RunDNA, that dream is now a reality. RunDNA gives you a complete breakdown of 24 traits, 47 genes, and 57 SNPs that are crucial for the health and performance of endurance athletes like you. Actionable recommendations. Cut down on trial and error by receiving valuable insight into the type of training your body may respond to best, so you can take action Science-backed advice. Genetic-based advice to help you minimize injuries and maximize tendon and ligament health. Customized reports. Nutrition recommendations based on the nutrients your body needs most. Research-backed insight. Weight loss and body composition response to training with easy-to-apply recommendations for optimal performance. Unique evaluations. Get insight into important endurance indicators like VO2 max, lactate threshold, and more. With the science-backed insights and recommendations you’ll receive from RunDNA, nothing will stand in your way of crossing the finish line in record time. Sports Nutrition Discover how you can fuel your body with th"
+    },
+    {
+      "label": "Why We Are Different",
+      "textPreview": "We BELIEVE good health lies at the crossroads of your genes, your environment, and your nutrition and fitness regimen. We save you time by cutting down on trial and error, so you see results and optimize your health faster. The expansive number of traits, genes, and SNPs used in each of our products provides extensive insight into your genetic predispositions and their potential impact on your overall health. We go one step further than any other company in the industry to provide you with practical, easy-to-follow strategies, so you can take action. These strategies are proven clinically in human trials and will help you overcome your genetic predispositions. The range of our recommendations within five essential domains of health and wellness is second to none. Our products provide an unparalleled genetic experience that offers great value at a reasonable price."
+    },
+    {
+      "label": "Disclaimer",
+      "textPreview": "The information and recommendations in this report are based on your genetic profile combined with research studies that have attempted to draw associations between certain genes and how they affect individuals. The information and recommendations in your report should not be considered as a diagnosis or a substitute for expert medical advice. It is not possible, based on the information available, for us to make specific predictions about your own personal health and well-being. Genes are not the only factors in predicting any individual’s health. Environmental factors (lifestyle, medical history) and potentially other genes will affect the risk, or lack of risk, for a condition. The information in this report is best understood in the context of a full medical evaluation. The United States Food and Drug Administration has not evaluated statements in this report. The Sequencing.com website and its software applications (Apps) and reports including but not limited to Sequencing.com's Application Programming Interface (API), are not intended to diagnose, treat, cure, or prevent any disease."
+    }
+  ],
+  "reportDataKeys": [
+    "app_id",
+    "avatar",
+    "avatarAlt",
+    "body",
+    "category",
+    "currency_code",
+    "headerImg",
+    "headerImgAlt",
+    "id",
+    "included_with_membership",
+    "included_with_premium",
+    "info_tab",
+    "listEnableFiles",
+    "meta",
+    "nid",
+    "non_genetic_fields",
+    "pre_order",
+    "price",
+    "product_data",
+    "product_id",
+    "publisher",
+    "purchasedBy",
+    "relatedReports",
+    "reportFile",
+    "report_premium",
+    "search_keywords",
+    "start_button_text",
+    "sub_title",
+    "summary",
+    "title",
+    "type",
+    "uri",
+    "wgsCompatible"
+  ],
+  "evidenceNotes": [
+    "Marketplace detail reportData confirms title, publisher/provider when available, price/product metadata when available, categories, sample report link when available, and overview/disclaimer tab boundaries when present.",
+    "Use overview/marketing text only for report purpose and marketplace positioning, not for local genetic, medical, diet, supplement, medication, or performance conclusions.",
+    "No raw genome data, uploaded genome data, or account navigation text is included in this artifact."
+  ]
+}

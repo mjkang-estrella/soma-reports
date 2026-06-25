@@ -1,0 +1,54 @@
+{
+  "app": null,
+  "bodyPreview": "Rendered marketplace detail page confirms Variant Effect Predictor title, GeneX marketplace card provider/price context, exact detail route, and a concise app purpose: determining the effect of genetic variants on genes, regulatory regions, transcripts, and protein sequences. The page exposes rendered DOM/meta content rather than rich pageProps.reportData or a sample report file.",
+  "capturedAt": "2026-06-23T03:24:02Z",
+  "categories": [
+    "Bioinformatics"
+  ],
+  "currencyCode": "USD",
+  "evidenceNotes": [
+    "Marketplace detail page was opened in the in-app browser and resolved to the exact report URL.",
+    "This detail page exposes rendered DOM/meta content rather than the richer pageProps.reportData shape; use it for exact route availability, title, provider/price metadata, and detail-page boundary evidence only.",
+    "Use overview/marketing text only for report purpose and marketplace positioning, not for local genetic, medical, variant-effect, clinical-classification, or actionability conclusions.",
+    "No raw genome data, uploaded genome data, or account navigation text is included in this artifact."
+  ],
+  "finalUrl": "https://sequencing.com/marketplace/variant-effect-predictor",
+  "headerImage": "https://sequencing.com/sites/default/files/variant-effect-predictor-app-sequencing-com_0.png",
+  "headerImageAlt": "",
+  "infoTabs": [
+    "Overview",
+    "Citations"
+  ],
+  "meta": {
+    "canonical": "https://sequencing.com/marketplace/variant-effect-predictor",
+    "publishedTime": "2014-12-26T05:15:10-08:00",
+    "modifiedTime": "2025-05-23T03:28:12-07:00",
+    "ogDescriptionPreview": "Easy-to-use bioinformatics app for determining the effect of genetic variants. Provides information about the effect of DNA variants in genes, regulatory regions, transcripts and protein sequences.",
+    "productPriceAmount": "19.99",
+    "productPriceCurrency": "USD",
+    "productRetailerItemId": null,
+    "pagePropsDataKeys": [],
+    "pagePropsMetaKeys": [],
+    "pagePropsBlockCount": 0,
+    "jsonLdTypes": []
+  },
+  "nid": null,
+  "price": "$19.99",
+  "productId": null,
+  "publisher": "GeneX",
+  "reportDataKeys": [],
+  "reportFile": null,
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "source": "in-app browser sequencing.com marketplace detail page rendered DOM/meta extraction",
+  "summaryPreview": "Determine the effect of genetic variants on genes, regulatory regions, transcripts, and protein sequences for WGS and exome data.",
+  "title": "Variant Effect Predictor",
+  "uri": "marketplace/variant-effect-predictor",
+  "url": "https://sequencing.com/marketplace/variant-effect-predictor",
+  "visibleParagraphs": [
+    "Variant Effect Predictor",
+    "Determine the effect of genetic variants.",
+    "The Variant Effect Predictor app provides information about the effect of genetic variants on genes, regulatory regions, transcripts and protein sequences.",
+    "It is designed for whole genome sequencing and exome sequencing data.",
+    "No generated variant-effect table, sample report file, or user genome output was exposed during capture."
+  ]
+}

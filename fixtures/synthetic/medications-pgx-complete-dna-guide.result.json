@@ -121,6 +121,118 @@
       "plainEnglishMeaning": "The catalog title does not prove complete PGx coverage. This local guide reports only the supplied rows and explicitly marks broad coverage and pediatric context unavailable."
     }
   ],
+  "sampleRows": [
+    {
+      "brandName": "Aurorix",
+      "description": "The public sample row appears in the Antidepressants section and reports a CYP2C19-associated result.",
+      "extractionStatus": "direct",
+      "genes": [
+        "CYP2C19"
+      ],
+      "geneticAnalysis": "Increased genetic risk of adverse reaction",
+      "groupTitle": "Psychiatry: Mental Health / Antidepressants",
+      "item": "Moclobemide",
+      "sortOrder": 1,
+      "sourceBindingNote": "Extracted from the public Medications PGx Complete sample PDF Psychiatry table.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Swissmedic",
+      "sourceResourceIds": [
+        "medications-pgx-complete-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Plavix",
+      "description": "The public sample row shows the formal long-result field wrapping across multiple lines.",
+      "extractionStatus": "direct",
+      "genes": [
+        "CYP2C19"
+      ],
+      "geneticAnalysis": "CYP2C19: Reduced clopidogrel active metabolite formation; increased on-treatment platelet reactivity; increased risk for adverse cardiac and cerebrovascular events",
+      "groupTitle": "Cardiology: Heart & Blood Vessels / Antiplatelet agents",
+      "item": "Clopidogrel",
+      "sortOrder": 2,
+      "sourceBindingNote": "Extracted from the public Medications PGx Complete sample PDF Cardiology antiplatelet table.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "CPIC",
+      "sourceResourceIds": [
+        "medications-pgx-complete-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Coumadin",
+      "description": "The public sample row shows a multi-gene anticoagulant result with CPIC source labeling.",
+      "extractionStatus": "direct",
+      "genes": [
+        "CYP2C9",
+        "CYP4F2",
+        "VKORC1"
+      ],
+      "geneticAnalysis": "No increased genetic risk detected",
+      "groupTitle": "Cardiology: Heart & Blood Vessels / Anticoagulants",
+      "item": "Warfarin",
+      "sortOrder": 3,
+      "sourceBindingNote": "Extracted from the public Medications PGx Complete sample PDF Cardiology anticoagulant table.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "CPIC",
+      "sourceResourceIds": [
+        "medications-pgx-complete-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Zocor",
+      "description": "The public sample row shows a statin-response result with the gene and source columns populated.",
+      "extractionStatus": "direct",
+      "genes": [
+        "SLCO1B1"
+      ],
+      "geneticAnalysis": "SLCO1B1: Typical myopathy risk and statin exposure",
+      "groupTitle": "Cardiology: Heart & Blood Vessels / Hypolipidemic",
+      "item": "Simvastatin",
+      "sortOrder": 4,
+      "sourceBindingNote": "Extracted from the public Medications PGx Complete sample PDF Cardiology hypolipidemic table.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "CPIC",
+      "sourceResourceIds": [
+        "medications-pgx-complete-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Metformin",
+      "description": "The public sample row shows the diabetes subsection using the same drug, result, gene, and source columns.",
+      "extractionStatus": "direct",
+      "genes": [
+        "SLC22A1"
+      ],
+      "geneticAnalysis": "No increased genetic risk detected",
+      "groupTitle": "Endocrinology: Hormones / Diabetes",
+      "item": "Metformin",
+      "sortOrder": 5,
+      "sourceBindingNote": "Extracted from the public Medications PGx Complete sample PDF Endocrinology diabetes table.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Article",
+      "sourceResourceIds": [
+        "medications-pgx-complete-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Ziagen",
+      "description": "The public sample row shows an HLA-B antiretroviral result with CPIC source labeling.",
+      "extractionStatus": "direct",
+      "genes": [
+        "HLA-B"
+      ],
+      "geneticAnalysis": "HLA-B: Low or reduced risk of abacavir hypersensitivity",
+      "groupTitle": "Antiretroviral",
+      "item": "Abacavir",
+      "sortOrder": 6,
+      "sourceBindingNote": "Extracted from the public Medications PGx Complete sample PDF Antiretroviral table.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "CPIC",
+      "sourceResourceIds": [
+        "medications-pgx-complete-sample-pdf"
+      ]
+    }
+  ],
   "practicalNextSteps": {
     "clinicianReview": [
       "Share PGx findings with a clinician or pharmacist before making medication decisions.",

@@ -35,7 +35,7 @@
       "haplotype": "musculoskeletal-dna-report-model-unavailable",
       "inputId": "musculoskeletal-dna-report-model-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "calibrated musculoskeletal DNA score, diagnostic evidence, treatment evidence, injury-risk model, pain model, arthritis model, EDS model, osteoporosis model, bone-density evidence, imaging evidence, lab evidence, exercise-clearance context, and ancestry applicability metadata unavailable in this fixture",
+      "observedValue": "calibrated musculoskeletal DNA score, diagnostic evidence, treatment evidence, injury-risk model, pain model, arthritis model, EDS model, osteoporosis model, bone-density evidence, imaging evidence, lab evidence, exercise-clearance context, and ancestry applicability metadata unavailable in this fixture; public Gene-In-Form sample PDF muscle-fiber, tendon/ACL injury, and osteoarthritis rows observed separately as sibling output-structure evidence",
       "sourceArtifact": "synthetic-musculoskeletal-dna-report-context-v1",
       "sourceFile": "synthetic-musculoskeletal-dna-report-context-v1.json"
     }
@@ -46,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived fitness-trait evidence for musculoskeletal-dna-report validation"
   },
-  "missingInputPolicy": "Report unavailable musculoskeletal DNA sections explicitly; do not infer diagnosis, treatment need, injury risk, pain causes, arthritis, EDS, osteoporosis, bone density, imaging findings, lab findings, training response, or exercise clearance.",
+  "missingInputPolicy": "Report unavailable Musculoskeletal DNA Report calibrated models explicitly; use sibling Gene-In-Form sample rows only as observed output-format examples and do not diagnose musculoskeletal disease, estimate injury risk, explain pain, infer arthritis, EDS, osteoporosis, bone density, imaging findings, lab findings, treatment need, exercise prescription, exercise clearance, or actionability from genotype alone or sample-only rows.",
   "packageSlug": "musculoskeletal-dna-report",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -80,7 +80,19 @@
         "candidate_trait_associations",
         "model_unavailable_context"
       ]
+    },
+    {
+      "evidenceLevel": "sibling_observed_output_structure",
+      "id": "gene-in-form-personalized-fitness-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Gene-In-Form Personalized Fitness sibling sample report",
+      "usedFor": [
+        "sibling_formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer Musculoskeletal DNA Report context using derived ACTN3 and ACE evidence plus explicit diagnosis, treatment, injury, pain, arthritis, bone-density, imaging, lab, and model-unavailable framing."
+  "reportPurpose": "Consumer Musculoskeletal DNA Report context using derived ACTN3/ACE evidence plus sibling Gene-In-Form muscle-fiber, tendon/ACL injury, and osteoarthritis output-structure evidence."
 }

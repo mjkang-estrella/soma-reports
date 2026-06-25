@@ -4,185 +4,263 @@
     "reportTitle": "Developmental Disorders",
     "inputManifestHash": "sha256:synthetic-developmental-disorders-specialized-boundary-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet for Developmental Disorders.",
-      "Validated diagnostic genetic test output, clinical evaluation, developmental history, family history, professional interpretation, and authenticated sample-report rows",
-      "validated developmental model, gene panel result, variant classifications, age, developmental history, symptoms, cognitive testing, behavioral assessment, school context, therapy context, family history, clinician review, and authenticated sample-report rows unavailable in this fixture",
-      "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
-      "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture"
+      "Direct Developmental Disorders authenticated sample report rows remain unavailable.",
+      "Validated model output, calibrated personal estimates, developmental history, clinical context, family history, professional review, school context, therapy context, and local actionability evidence are unavailable in this fixture.",
+      "Sibling Disease Risk sample rows are included only as exact-cited output-structure examples, not as personal autism, ADHD, developmental, behavioral, school, therapy, medication, or family-risk findings."
     ]
   },
   "resultRows": [
     {
-      "groupTitle": "Validated model/source output availability",
-      "item": "Developmental Disorders model/source output",
-      "brandName": "",
-      "geneticAnalysis": "The local fixture supplies a boundary row for developmental-disorder genetics boundary context. It does not supply the validated model, source-tool output, or authenticated Sequencing.com report content needed for personal conclusions.",
+      "groupTitle": "Validated model availability",
+      "item": "developmental-disorders-model-output-unavailable",
+      "brandName": "developmental-disorders",
+      "geneticAnalysis": "validated developmental model, gene panel result, variant classifications, age, developmental history, symptoms, cognitive testing, behavioral assessment, school context, therapy context, family history, clinician review, and authenticated sample-report rows unavailable in this fixture; Public Disease Risk sample PDF Neuro-psychological Diseases table, ADHD and Autism Spectrum Disorder rows, CACNA1C/CACNB2 explanatory note, and heritable-component limitation are extracted as sibling developmental/neuro-psychological output-structure evidence.",
       "genes": [
         "Developmental Disorders model/source output"
       ],
-      "sourceLabel": "CDC Developmental Disability Basics; NICHD Autism Spectrum Disorder Fact Sheet; MedlinePlus Genetics: autism spectrum disorder; MedlinePlus Genetics: ADHD",
+      "sourceLabel": "Public genetics and developmental-disorder boundary references",
       "sourceIds": [
+        "cdc-genetic-testing",
+        "medlineplus-genetics",
+        "medlineplus-genetic-testing",
+        "medlineplus-genetic-test-results",
         "cdc-developmental-disability-basics",
-        "nichd-autism",
+        "nichd-intellectual-developmental-disabilities",
         "medlineplus-autism-spectrum-disorder",
-        "medlineplus-adhd"
+        "medlineplus-adhd",
+        "nichd-autism",
+        "cdc-autism"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This can explain what evidence is present or missing for Developmental Disorders, but it cannot fill in unavailable model output or personal conclusions."
+      "plainEnglishMeaning": "The local fixture does not contain the validated report model, calibrated score, clinical context, developmental history, or professional review needed for a personal conclusion."
     },
     {
-      "groupTitle": "Clinical and professional context availability",
-      "item": "Developmental Disorders clinical and professional context",
-      "brandName": "",
-      "geneticAnalysis": "Clinical history, symptoms, labs, medication context, family history, and qualified professional interpretation are not supplied unless explicitly listed in the fixture.",
+      "groupTitle": "Clinical and context availability",
+      "item": "developmental-disorders-clinical-professional-context-unavailable",
+      "brandName": "developmental-disorders",
+      "geneticAnalysis": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Developmental Disorders",
       "genes": [
         "Developmental Disorders clinical and professional context"
       ],
-      "sourceLabel": "CDC Developmental Disability Basics; NICHD Autism Spectrum Disorder Fact Sheet; MedlinePlus Genetics: autism spectrum disorder; MedlinePlus Genetics: ADHD",
+      "sourceLabel": "Fixture context and public developmental references",
       "sourceIds": [
         "cdc-developmental-disability-basics",
-        "nichd-autism",
+        "nichd-intellectual-developmental-disabilities",
         "medlineplus-autism-spectrum-disorder",
-        "medlineplus-adhd"
+        "medlineplus-adhd",
+        "nichd-autism",
+        "cdc-autism",
+        "cdc-genetic-testing",
+        "medlineplus-genetics",
+        "medlineplus-genetic-testing",
+        "medlineplus-genetic-test-results"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "The report should stay educational because developmental, pediatric, educational, diagnostic, and family-planning decisions require context that this synthetic fixture does not include."
+      "plainEnglishMeaning": "The report stays educational because autism, ADHD, developmental, pediatric, educational, therapy, medication, and family-risk decisions require context this synthetic fixture does not include."
     },
     {
-      "groupTitle": "Authenticated sample availability",
-      "item": "Developmental Disorders authenticated sample rows",
-      "brandName": "",
-      "geneticAnalysis": "Authenticated Sequencing.com sample report sections, row labels, model output, and source-tool output are unavailable in this local fixture.",
+      "groupTitle": "Observed sibling sample structure",
+      "item": "Disease Risk Genetic Test Report sample rows",
+      "brandName": "Sibling Disease Risk Genetic Test Report sample report",
+      "geneticAnalysis": "The public sample rows are preserved as observed output structure only: Report limitation: Heritable component only; Neuro-psychological Diseases: Neuro-psychological category risk table. They are not local-user autism, ADHD, developmental, neuropsychological, behavioral, school, therapy, medication, family-risk, testing, or actionability findings.",
       "genes": [
-        "Developmental Disorders authenticated sample rows"
+        "CACNA1C",
+        "CACNB2"
       ],
-      "sourceLabel": "CDC Developmental Disability Basics; NICHD Autism Spectrum Disorder Fact Sheet; MedlinePlus Genetics: autism spectrum disorder; MedlinePlus Genetics: ADHD",
+      "sourceLabel": "Sibling Disease Risk sample PDF",
       "sourceIds": [
-        "cdc-developmental-disability-basics",
-        "nichd-autism",
-        "medlineplus-autism-spectrum-disorder",
-        "medlineplus-adhd"
+        "genetic-testing-disease-risk-sample-pdf"
       ],
-      "sourceBindingStatus": "unavailable",
-      "plainEnglishMeaning": "This local package marks the sample-report gap clearly instead of recreating or guessing the missing Sequencing.com output."
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Use these rows to match the shape and source binding of the sample report, while keeping them separate from personal genome interpretation."
     }
   ],
   "neurodevelopmentalContext": {
-    "plainEnglishMeaning": "Developmental Disorders is represented as an evidence-boundary package. It can summarize supplied local evidence and references, while marking unsupported personal conclusions unavailable.",
+    "plainEnglishMeaning": "Developmental Disorders is reported as an evidence-availability boundary. The local fixture can preserve source-bound sibling sample structure and limitations, but it cannot make personal developmental, psychiatric, educational, therapy, medication, family-risk, or clinical conclusions.",
     "unsupportedClaims": [
       "autism diagnosis",
       "ADHD diagnosis",
-      "intellectual-disability diagnosis",
-      "developmental prognosis",
-      "school placement advice",
-      "family-member risk estimate"
+      "developmental-delay or intellectual-disability diagnosis",
+      "cognition, IQ, behavior, school, or therapy prediction",
+      "medication guidance",
+      "prognosis, severity, family-risk, testing, or actionability guidance"
     ],
-    "professionalReview": "Use qualified professional review for developmental, pediatric, educational, diagnostic, and family-planning decisions; this synthetic local result is not enough for those decisions."
+    "professionalReview": "Use validated test scope, developmental history, clinical context, family history, ancestry applicability, and qualified professional review for developmental concerns, pediatric evaluation, school supports, therapy, behavior, and family counseling."
   },
-  "practicalNextSteps": {
-    "professionalReview": [
-      "Use this local result as educational context for developmental-disorder genetics boundary context, not as a decision tool.",
-      "Collect validated source output, source provenance, and relevant clinical or professional context before using Developmental Disorders for personal decisions.",
-      "Discuss developmental, pediatric, educational, diagnostic, and family-planning decisions with qualified professionals when those choices matter."
-    ]
-  },
+  "sampleRows": [
+    {
+      "groupTitle": "Report limitation",
+      "item": "Heritable component only",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "The sample states that 'Your Risk' is only for the heritable component of the disease, and that environmental, lifestyle, and other non-heritable factors also affect overall susceptibility risk.",
+      "description": "The sample uses lung cancer as an example, saying lung cancer is only 10% heritable and most cases are associated with lifestyle factors such as smoking.",
+      "genes": [],
+      "sourceLabel": "Sibling Disease Risk Genetic Test Report sample report",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public Sequencing.com Disease Risk Genetic Test Report sample PDF; used here as sibling output-structure evidence for Developmental Disorders, not as a direct Developmental Disorders sample report or local developmental and neurodevelopmental output structure, autism, ADHD, developmental-delay, intellectual-disability, learning, language, behavior, neurologic, psychiatric, school, therapy, medication, prognosis, severity, family-risk, testing, or actionability guidance."
+    },
+    {
+      "groupTitle": "Neuro-psychological Diseases",
+      "item": "Neuro-psychological category risk table",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Visible sample rows include Anxiety Related Behaviors Elevated; ADHD Typical; Autism Spectrum Disorder Reduced; Bipolar Disorder Typical; Cluster Headaches Typical; Depression Elevated; Dyslexia Typical; Epilepsy Typical; Major Depressive Disorder Elevated; Narcolepsy Typical; OCD Reduced; Schizophrenia Elevated; Tourette's Syndrome Typical.",
+      "description": "The page explains that CACNA1C and CACNB2 help regulate calcium flow in brain cells and are among genes considered for several neuro-psychological diseases.",
+      "genes": [
+        "CACNA1C",
+        "CACNB2"
+      ],
+      "sourceLabel": "Sibling Disease Risk Genetic Test Report sample report",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public Sequencing.com Disease Risk Genetic Test Report sample PDF; used here as sibling output-structure evidence for Developmental Disorders, not as a direct Developmental Disorders sample report or local developmental and neurodevelopmental output structure, autism, ADHD, developmental-delay, intellectual-disability, learning, language, behavior, neurologic, psychiatric, school, therapy, medication, prognosis, severity, family-risk, testing, or actionability guidance."
+    }
+  ],
+  "practicalNextSteps": [
+    "Keep this as a local reproducibility fixture, not a clinical or educational-placement report.",
+    "Review the cited source IDs before using the prompt with a local agent.",
+    "Do not use sibling sample labels as personal autism, ADHD, developmental, behavior, school, therapy, medication, family-risk, testing, or actionability results."
+  ],
   "references": [
     {
       "id": "cdc-genetic-testing",
-      "title": "CDC Genetic Testing"
+      "title": "CDC Genetic Testing",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
     },
     {
       "id": "medlineplus-genetics",
-      "title": "MedlinePlus Genetics"
+      "title": "MedlinePlus Genetics",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "medlineplus-genetic-testing",
-      "title": "MedlinePlus: Genetic Testing"
+      "title": "MedlinePlus: Genetic Testing",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
     },
     {
       "id": "medlineplus-genetic-test-results",
-      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results"
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "medlineplus-dtc-genetic-testing-results",
-      "title": "MedlinePlus Genetics: What DTC genetic test results mean"
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "fda-direct-to-consumer-tests",
-      "title": "FDA Direct-to-Consumer Tests"
+      "title": "FDA Direct-to-Consumer Tests",
+      "sourceType": "regulatory_resource",
+      "evidenceLevel": "regulatory_background"
     },
     {
       "id": "medlineplus-complex-disorders",
-      "title": "MedlinePlus Genetics: complex disorders"
+      "title": "MedlinePlus Genetics: complex disorders",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "nhgri-polygenic-risk-scores",
-      "title": "NHGRI overview of polygenic risk scores"
+      "title": "NHGRI overview of polygenic risk scores",
+      "sourceType": "education_resource",
+      "evidenceLevel": "background"
     },
     {
       "id": "ebi-gwas-catalog",
-      "title": "GWAS Catalog"
+      "title": "GWAS Catalog",
+      "sourceType": "database",
+      "evidenceLevel": "background"
     },
     {
       "id": "cdc-developmental-disability-basics",
-      "title": "CDC Developmental Disability Basics"
+      "title": "CDC Developmental Disability Basics",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
     },
     {
       "id": "nichd-intellectual-developmental-disabilities",
-      "title": "NICHD Intellectual and Developmental Disabilities"
+      "title": "NICHD Intellectual and Developmental Disabilities",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
     },
     {
       "id": "medlineplus-autism-spectrum-disorder",
-      "title": "MedlinePlus Genetics: autism spectrum disorder"
+      "title": "MedlinePlus Genetics: autism spectrum disorder",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "medlineplus-adhd",
-      "title": "MedlinePlus Genetics: ADHD"
+      "title": "MedlinePlus Genetics: ADHD",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "nichd-autism",
-      "title": "NICHD Autism Spectrum Disorder Fact Sheet"
+      "title": "NICHD Autism Spectrum Disorder Fact Sheet",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
     },
     {
       "id": "cdc-autism",
-      "title": "CDC Autism Spectrum Disorder"
+      "title": "CDC Autism Spectrum Disorder",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
+    },
+    {
+      "id": "genetic-testing-disease-risk-sample-pdf",
+      "title": "Genetic Testing For Disease Risk sample genetic report",
+      "sourceType": "mock_report",
+      "evidenceLevel": "high"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "developmental-disorders-model-output-unavailable",
-        "gene": "Developmental Disorders model/source output",
-        "observedValue": "validated developmental model, gene panel result, variant classifications, age, developmental history, symptoms, cognitive testing, behavioral assessment, school context, therapy context, family history, clinician review, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "effect": "The local fixture intentionally omits calibrated Developmental Disorders calculations and clinical context.",
+        "extractionStatus": "curated",
+        "gene": "Developmental Disorders validated model",
+        "genotype": "validated developmental-disorders model, calibrated neurodevelopmental risk score, gene panel result, variant classifications, age, developmental history, symptoms, cognitive testing, behavioral assessment, school context, therapy context, family history, ancestry applicability, clinician review, and genetic counselor review unavailable",
+        "phenotype": "Mark local findings for developmental and neurodevelopmental output structure, autism, ADHD, developmental-delay, intellectual-disability, learning, language, behavior, neurologic, psychiatric, school, therapy, medication, prognosis, severity, family-risk, testing, or actionability guidance unavailable instead of inferring them.",
+        "sortOrder": 1,
+        "tier": "Local missing input",
+        "variantId": "developmental-disorders-model-output-unavailable"
       },
       {
-        "inputId": "developmental-disorders-clinical-professional-context-unavailable",
-        "gene": "Developmental Disorders clinical and professional context",
-        "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
-        "matchStatus": "unavailable"
-      },
-      {
-        "inputId": "developmental-disorders-authenticated-sample-unavailable",
-        "gene": "Developmental Disorders authenticated sample rows",
-        "observedValue": "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "effect": "The public Disease Risk Genetic Test Report sample shows Disease, Your Risk, and Description columns in the Neuro-psychological Diseases category and explains CACNA1C and CACNB2 as genes involved in calcium flow in brain cells.",
+        "extractionStatus": "direct",
+        "gene": "Neuro-psychological disease category table; CACNA1C; CACNB2",
+        "genotype": "sample Neuro-psychological Diseases category table observed with Anxiety Related Behaviors Elevated, ADHD Typical, Autism Spectrum Disorder Reduced, Bipolar Disorder Typical, Cluster Headaches Typical, Depression Elevated, Dyslexia Typical, Epilepsy Typical, Major Depressive Disorder Elevated, Narcolepsy Typical, OCD Reduced, Schizophrenia Elevated, and Tourette's Syndrome Typical rows",
+        "phenotype": "Observed sibling sample output structure only; do not infer local autism, ADHD, developmental-delay, intellectual-disability, learning, language, behavior, neurologic, psychiatric, school, therapy, medication, prognosis, family-risk, testing, or clinical action.",
+        "sortOrder": 2,
+        "tier": "Sibling sample-report section",
+        "variantId": "disease-risk-sample-neuro-psychological-developmental-context"
       }
-    ],
-    "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and rows for Developmental Disorders.",
-      "validated diagnostic genetic test output, clinical evaluation, developmental history, family history, professional interpretation, and authenticated sample-report rows",
-      "Report unavailable developmental and neurodevelopmental genetics context evidence explicitly; do not diagnose autism, ADHD, developmental delay, intellectual disability, learning disorder, language disorder, behavioral disorder, neurologic condition, or psychiatric condition; predict child development, cognition, IQ, behavior, school needs, therapy needs, medication needs, prognosis, severity, family risk, or clinical actionability."
     ],
     "probabilities": [],
     "uncertainty": [
-      "No validated developmental-disorder genetics boundary context model with source provenance and professional review is supplied for this local package.",
-      "The supplied rows support evidence-boundary education only and should not be treated as a personal prediction or clinical interpretation."
+      "No calibrated developmental-disorders model, diagnostic test result, applicability distribution, clinical context, developmental history, school or therapy context, family history, or professional review is supplied for this fixture.",
+      "Sibling Disease Risk sample rows show report structure only and do not quantify local probability, diagnosis, prognosis, severity, or actionability."
+    ],
+    "missingInputs": [
+      "validated developmental model, gene panel result, variant classifications, age, developmental history, symptoms, cognitive testing, behavioral assessment, school context, therapy context, family history, clinician review, and authenticated sample-report rows unavailable in this fixture; Public Disease Risk sample PDF Neuro-psychological Diseases table, ADHD and Autism Spectrum Disorder rows, CACNA1C/CACNB2 explanatory note, and heritable-component limitation are extracted as sibling developmental/neuro-psychological output-structure evidence.",
+      "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Developmental Disorders",
+      "direct Developmental Disorders authenticated sample rows unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence",
+      "Report unavailable developmental and neurodevelopmental genetics context evidence explicitly; use the public sibling Disease Risk sample rows only as observed output structure and do not infer autism, ADHD, developmental-delay, intellectual-disability, learning, language, behavior, neurologic, psychiatric, school, therapy, medication, prognosis, severity, family-risk, testing, or actionability guidance from local unavailable evidence or sample-only rows."
     ],
     "limitations": [
-      "This validation result uses selected derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
-      "The package does not recreate unavailable Sequencing.com authenticated report rows or proprietary third-party output for Developmental Disorders.",
-      "The package does not support: autism diagnosis; ADHD diagnosis; intellectual-disability diagnosis; developmental prognosis; school placement advice; family-member risk estimate."
+      "No raw genome data is included or returned.",
+      "No personal autism, ADHD, developmental-delay, intellectual-disability, learning, language, behavior, neurologic, psychiatric, school, therapy, medication, prognosis, severity, family-risk, testing, or actionability conclusion is produced.",
+      "Direct Developmental Disorders detail/body parity remains pending; the sample rows are sibling Disease Risk output-structure evidence only."
     ]
   }
 }

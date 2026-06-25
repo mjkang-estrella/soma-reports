@@ -46,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for malignant-hyperthermia-genetic-testing validation"
   },
-  "missingInputPolicy": "Report unavailable malignant hyperthermia susceptibility context evidence explicitly; do not diagnose malignant hyperthermia susceptibility; provide anesthesia clearance; estimate anesthesia reaction risk, procedural risk, family-member risk, or carrier status; classify variants; infer trigger-drug safety, anesthetic-agent choice, surgical plan, procedure plan, medication hold, dosing, monitoring, emergency management, treatment need, screening need, diagnostic-test need, cascade-testing need, reproductive action, or clinical actionability.",
+  "missingInputPolicy": "Report unavailable malignant hyperthermia susceptibility evidence explicitly; use the public sibling sample row only as observed output structure and do not diagnose malignant hyperthermia susceptibility, provide anesthesia clearance, estimate anesthesia reaction or procedure risk, classify variants, infer trigger-drug safety, choose anesthetic agents, plan surgery, recommend medication holds, dosing, monitoring, emergency management, treatment, screening, diagnostic testing, cascade testing, reproductive action, or clinical actionability from local unavailable evidence or sample-only rows.",
   "packageSlug": "malignant-hyperthermia-genetic-testing",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -205,7 +205,19 @@
         "non_diagnostic_language",
         "missing_model_policy"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "wellness-and-longevity-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Wellness and Longevity DNA Analysis sample report",
+      "usedFor": [
+        "sibling_formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer malignant hyperthermia susceptibility context boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer malignant hyperthermia susceptibility boundary context using supplied references plus observed sibling Wellness & Longevity sample-report output structure."
 }

@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived nutrition-genetics evidence for wellness-and-longevity validation"
   },
-  "missingInputPolicy": "Report unavailable longevity, biological-age, wellness, nutrition, fitness, lifestyle, supplement, child-specific, lab, symptom, metabolic, and calibrated models explicitly; do not infer lifespan, disease risk, diet needs, workouts, supplement needs, child guidance, symptom causes, lab status, metabolic status, or treatment.",
+  "missingInputPolicy": "Report unavailable local longevity, biological-age, disease-risk, cardiovascular, cancer, medication-response, clot-risk, athletic-performance, wellness, nutrition, fitness, lifestyle, supplement, child-specific, lab, symptom, metabolic, and calibrated models explicitly; use the public sample rows only as observed output structure and do not infer local risks, medication effects, diagnoses, treatment, screening, workouts, diets, supplements, or lifespan conclusions.",
   "packageSlug": "wellness-and-longevity",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -155,7 +155,19 @@
         "bmi_limitations",
         "no_weight_prediction_from_genotype"
       ]
+    },
+    {
+      "evidenceLevel": "direct_sample_report",
+      "id": "wellness-and-longevity-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Wellness and Longevity DNA Analysis sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer Wellness and Longevity boundary context using derived MCM6/LCT evidence plus explicit longevity, biological-age, wellness, nutrition, fitness, supplement, child-specific, lab, symptom, metabolic, and model-unavailable framing."
+  "reportPurpose": "Consumer Wellness and Longevity boundary context using derived MCM6/LCT evidence plus observed Sequencing.com Wellness & Longevity sample-report output structure."
 }

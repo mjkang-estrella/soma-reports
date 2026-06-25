@@ -1,36 +1,138 @@
 {
+  "schemaVersion": "soma-reports.synthetic-result.v1",
   "reportOverview": {
-    "reportTitle": "Pharmacist Summary",
     "inputManifestHash": "sha256:synthetic-pharmacist-summary-pgx-handoff-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "Current medication list, medication-specific question, pharmacy review, phenotype confidence, and expanded PGx coverage are not supplied.",
-      "This result is not prescribing, dispensing, medication safety, efficacy, start, stop, switch, or dosing guidance."
+      "Direct Pharmacist Summary detail-page evidence and direct same-slug sample rows are unavailable in this fixture.",
+      "The public Medications PGx Complete rows are available as observed sibling output-structure evidence only and must not be treated as this user's medication findings.",
+      "Medication list, medication-specific question, pharmacy review, phenotype confidence, expanded pharmacogene calls, and clinical context are not supplied.",
+      "This result is educational PGx handoff context only and is not prescribing, dispensing, medication safety, medication efficacy, start, stop, switch, or dose guidance."
     ]
   },
   "resultRows": [
     {
-      "groupTitle": "Pharmacogene context",
-      "item": "CYP2C19 *1/*2",
-      "brandName": "",
-      "geneticAnalysis": "A derived CYP2C19 call is available for pharmacist-discussion context. It is not a medication recommendation.",
+      "groupTitle": "Pharmacist handoff format / Psychiatry: Mental Health / Antidepressants",
+      "item": "Moclobemide",
+      "brandName": "Aurorix",
+      "geneticAnalysis": "Increased genetic risk of adverse reaction",
+      "description": "The public sample row appears in the Antidepressants section and reports a CYP2C19-associated result. For Pharmacist Summary, this is sibling Medications PGx Complete sample-output structure only, not a local pharmacist review or medication recommendation.",
       "genes": [
         "CYP2C19"
       ],
-      "sourceLabel": "CPIC; PharmCAT; PharmVar",
+      "sourceLabel": "Swissmedic",
+      "sourceIds": [
+        "medications-pgx-complete-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling Medications PGx Complete sample-output structure for Pharmacist Summary only. This is not a local pharmacist review, medication recommendation, dispensing instruction, medication safety confirmation, medication efficacy prediction, start/stop/switch guidance, dose guidance, or personal medication decision."
+    },
+    {
+      "groupTitle": "Pharmacist handoff format / Cardiology: Heart & Blood Vessels / Antiplatelet agents",
+      "item": "Clopidogrel",
+      "brandName": "Plavix",
+      "geneticAnalysis": "CYP2C19: Reduced clopidogrel active metabolite formation; increased on-treatment platelet reactivity; increased risk for adverse cardiac and cerebrovascular events",
+      "description": "The public sample row shows the formal long-result field wrapping across multiple lines. For Pharmacist Summary, this is sibling Medications PGx Complete sample-output structure only, not a local pharmacist review or medication recommendation.",
+      "genes": [
+        "CYP2C19"
+      ],
+      "sourceLabel": "CPIC",
+      "sourceIds": [
+        "medications-pgx-complete-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling Medications PGx Complete sample-output structure for Pharmacist Summary only. This is not a local pharmacist review, medication recommendation, dispensing instruction, medication safety confirmation, medication efficacy prediction, start/stop/switch guidance, dose guidance, or personal medication decision."
+    },
+    {
+      "groupTitle": "Pharmacist handoff format / Cardiology: Heart & Blood Vessels / Anticoagulants",
+      "item": "Warfarin",
+      "brandName": "Coumadin",
+      "geneticAnalysis": "No increased genetic risk detected",
+      "description": "The public sample row shows a multi-gene anticoagulant result with CPIC source labeling. For Pharmacist Summary, this is sibling Medications PGx Complete sample-output structure only, not a local pharmacist review or medication recommendation.",
+      "genes": [
+        "CYP2C9",
+        "CYP4F2",
+        "VKORC1"
+      ],
+      "sourceLabel": "CPIC",
+      "sourceIds": [
+        "medications-pgx-complete-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling Medications PGx Complete sample-output structure for Pharmacist Summary only. This is not a local pharmacist review, medication recommendation, dispensing instruction, medication safety confirmation, medication efficacy prediction, start/stop/switch guidance, dose guidance, or personal medication decision."
+    },
+    {
+      "groupTitle": "Pharmacist handoff format / Cardiology: Heart & Blood Vessels / Hypolipidemic",
+      "item": "Simvastatin",
+      "brandName": "Zocor",
+      "geneticAnalysis": "SLCO1B1: Typical myopathy risk and statin exposure",
+      "description": "The public sample row shows a statin-response result with the gene and source columns populated. For Pharmacist Summary, this is sibling Medications PGx Complete sample-output structure only, not a local pharmacist review or medication recommendation.",
+      "genes": [
+        "SLCO1B1"
+      ],
+      "sourceLabel": "CPIC",
+      "sourceIds": [
+        "medications-pgx-complete-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling Medications PGx Complete sample-output structure for Pharmacist Summary only. This is not a local pharmacist review, medication recommendation, dispensing instruction, medication safety confirmation, medication efficacy prediction, start/stop/switch guidance, dose guidance, or personal medication decision."
+    },
+    {
+      "groupTitle": "Pharmacist handoff format / Endocrinology: Hormones / Diabetes",
+      "item": "Metformin",
+      "brandName": "Metformin",
+      "geneticAnalysis": "No increased genetic risk detected",
+      "description": "The public sample row shows the diabetes subsection using the same drug, result, gene, and source columns. For Pharmacist Summary, this is sibling Medications PGx Complete sample-output structure only, not a local pharmacist review or medication recommendation.",
+      "genes": [
+        "SLC22A1"
+      ],
+      "sourceLabel": "Article",
+      "sourceIds": [
+        "medications-pgx-complete-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling Medications PGx Complete sample-output structure for Pharmacist Summary only. This is not a local pharmacist review, medication recommendation, dispensing instruction, medication safety confirmation, medication efficacy prediction, start/stop/switch guidance, dose guidance, or personal medication decision."
+    },
+    {
+      "groupTitle": "Pharmacist handoff format / Antiretroviral",
+      "item": "Abacavir",
+      "brandName": "Ziagen",
+      "geneticAnalysis": "HLA-B: Low or reduced risk of abacavir hypersensitivity",
+      "description": "The public sample row shows an HLA-B antiretroviral result with CPIC source labeling. For Pharmacist Summary, this is sibling Medications PGx Complete sample-output structure only, not a local pharmacist review or medication recommendation.",
+      "genes": [
+        "HLA-B"
+      ],
+      "sourceLabel": "CPIC",
+      "sourceIds": [
+        "medications-pgx-complete-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling Medications PGx Complete sample-output structure for Pharmacist Summary only. This is not a local pharmacist review, medication recommendation, dispensing instruction, medication safety confirmation, medication efficacy prediction, start/stop/switch guidance, dose guidance, or personal medication decision."
+    },
+    {
+      "groupTitle": "Local pharmacogene context",
+      "item": "CYP2C19 *1/*2",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived CYP2C19 call is available for pharmacist-discussion context. It is not a medication recommendation or safety decision.",
+      "description": "Use this row as shareable PGx context only; medication interpretation depends on the drug, dose, indication, health context, and professional review.",
+      "genes": [
+        "CYP2C19"
+      ],
+      "sourceLabel": "CPIC; PharmCAT; PharmVar; MedlinePlus",
       "sourceIds": [
         "cpic",
         "pharmcat",
-        "pharmvar"
+        "pharmvar",
+        "medlineplus-pharmacogenetic-tests"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This row can help organize a pharmacist conversation, but it should not be used alone to start, stop, switch, or dose medication."
+      "plainEnglishMeaning": "This can help frame a pharmacist conversation, but it should not be used alone to start, stop, switch, approve, reject, or dose medication."
     },
     {
-      "groupTitle": "Pharmacogene context",
+      "groupTitle": "Local pharmacogene context",
       "item": "CYP2D6 *1/*4",
-      "brandName": "",
-      "geneticAnalysis": "A derived CYP2D6 call is available, but CYP2D6 can require specialized calling and professional interpretation.",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A derived CYP2D6 call is available, but CYP2D6 can require specialized calling and confirmation before professional use.",
+      "description": "The fixture does not supply medication list, indication, dose, drug interactions, phenotype confidence, or pharmacist review.",
       "genes": [
         "CYP2D6"
       ],
@@ -40,13 +142,14 @@
         "pharmvar"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "Treat this as shareable context only. A pharmacist or clinician needs the medication list and clinical context before using PGx information."
+      "plainEnglishMeaning": "Treat this as limited local context for discussion. It does not confirm medication effectiveness, safety, adverse-event risk, or dose."
     },
     {
-      "groupTitle": "Pharmacogene context",
+      "groupTitle": "Local pharmacogene context",
       "item": "SLCO1B1 rs4149056",
-      "brandName": "",
+      "brandName": "Not applicable",
       "geneticAnalysis": "A derived SLCO1B1 rs4149056 TC call is available for medication-response context.",
+      "description": "The row is a local derived-evidence example, not a statin recommendation, statin safety conclusion, or dosing instruction.",
       "genes": [
         "SLCO1B1"
       ],
@@ -56,13 +159,14 @@
         "medlineplus-pharmacogenetic-tests"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "The result may be relevant to a professional medication discussion, but it does not confirm that any medication is safe, unsafe, effective, or ineffective."
+      "plainEnglishMeaning": "This may be relevant to a professional medication discussion, but it does not determine whether any medicine is safe, unsafe, effective, ineffective, or correctly dosed."
     },
     {
       "groupTitle": "Pharmacist review availability",
-      "item": "Pharmacist review context unavailable",
-      "brandName": "",
-      "geneticAnalysis": "current medication list, medication-specific question, pharmacy review, phenotype confidence, expanded PGx coverage, and authenticated sample-report rows unavailable in this fixture",
+      "item": "pharmacist-review-context-unavailable",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "Current medication list, medication-specific question, pharmacy review, phenotype confidence, expanded PGx coverage, and direct Pharmacist Summary sample-report rows are unavailable in this fixture; Medications PGx Complete rows are sibling output structure only.",
+      "description": "A pharmacist-facing handoff needs the person's medication list, doses, indication, clinical context, and licensed professional review before medication decisions.",
       "genes": [
         "pharmacist review context"
       ],
@@ -73,14 +177,15 @@
         "fda-pgx-biomarkers-labeling"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This local run can prepare a pharmacist-discussion summary, but it cannot perform a pharmacist review or make medication decisions."
+      "plainEnglishMeaning": "This local run can prepare discussion context, but it cannot perform pharmacist review or make medication decisions."
     }
   ],
   "practicalNextSteps": {
     "clinicianReview": [
-      "Share the PGx summary with a pharmacist or clinician before making medication decisions.",
+      "Share the PGx context with a pharmacist or clinician before making medication decisions.",
       "Keep current prescriptions unchanged unless a licensed professional advises otherwise.",
-      "Bring the current medication list, doses, health conditions, allergies, and other clinical context to any PGx discussion."
+      "Bring the current medication list, doses, indications, allergies, health conditions, and other clinical context to any PGx discussion.",
+      "Use the sibling sample rows only as output-format examples, not as personal medication results."
     ]
   },
   "references": [
@@ -109,6 +214,10 @@
       "title": "MedlinePlus Pharmacogenetic Tests"
     },
     {
+      "id": "medications-pgx-complete-sample-pdf",
+      "title": "Medications PGx: Complete DNA Guide sample report"
+    },
+    {
       "id": "cdc-pharmacogenomics",
       "title": "CDC Pharmacogenomics"
     },
@@ -122,43 +231,97 @@
       {
         "inputId": "CYP2C19-star-allele",
         "gene": "CYP2C19",
-        "observedValue": "intermediate metabolizer context",
+        "observedValue": "*1/*2",
         "matchStatus": "observed"
       },
       {
         "inputId": "CYP2D6-star-allele",
         "gene": "CYP2D6",
-        "observedValue": "intermediate metabolizer context",
+        "observedValue": "*1/*4",
         "matchStatus": "observed"
       },
       {
         "inputId": "SLCO1B1-rs4149056",
         "gene": "SLCO1B1",
-        "observedValue": "TC",
+        "observedValue": "rs4149056",
         "matchStatus": "observed"
       },
       {
         "inputId": "pharmacist-review-context-unavailable",
         "gene": "pharmacist review context",
-        "observedValue": "current medication list, medication-specific question, pharmacy review, phenotype confidence, expanded PGx coverage, and authenticated sample-report rows unavailable in this fixture",
+        "observedValue": "pharmacist-review-context-unavailable",
         "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "sibling-sample-abcg2-1",
+        "gene": "ABCG2",
+        "observedValue": "Reference/Reference; Normal",
+        "matchStatus": "sibling_sample_only",
+        "note": "Sibling sample-output structure only, not a local pharmacist-reviewed genotype conclusion. Two normal function alleles"
+      },
+      {
+        "inputId": "sibling-sample-cyp2c19-2",
+        "gene": "CYP2C19",
+        "observedValue": "*1/*4; Intermediate Metabolizer",
+        "matchStatus": "sibling_sample_only",
+        "note": "Sibling sample-output structure only, not a local pharmacist-reviewed genotype conclusion. One no function allele and one normal function allele"
+      },
+      {
+        "inputId": "sibling-sample-cyp2d6-3",
+        "gene": "CYP2D6",
+        "observedValue": "*1/*35; Normal Metabolizer",
+        "matchStatus": "sibling_sample_only",
+        "note": "Sibling sample-output structure only, not a local pharmacist-reviewed genotype conclusion. Two normal function alleles"
+      },
+      {
+        "inputId": "sibling-sample-hla-b-4",
+        "gene": "HLA-B",
+        "observedValue": "Other/Other; Normal risk of ADRs",
+        "matchStatus": "sibling_sample_only",
+        "note": "Sibling sample-output structure only, not a local pharmacist-reviewed genotype conclusion. *15:02, *57:01, *58:01 negative"
+      },
+      {
+        "inputId": "sibling-sample-slco1b1-5",
+        "gene": "SLCO1B1",
+        "observedValue": "*1/*37; Normal",
+        "matchStatus": "sibling_sample_only",
+        "note": "Sibling sample-output structure only, not a local pharmacist-reviewed genotype conclusion. Two normal function alleles"
+      },
+      {
+        "inputId": "sibling-sample-vkorc1-6",
+        "gene": "VKORC1",
+        "observedValue": "Reference/Reference; Normal",
+        "matchStatus": "sibling_sample_only",
+        "note": "Sibling sample-output structure only, not a local pharmacist-reviewed genotype conclusion. -1639 GG"
+      },
+      {
+        "inputId": "sibling-sample-mt-rnr1-7",
+        "gene": "MT-RNR1",
+        "observedValue": "Genetic data not available; n/a",
+        "matchStatus": "sibling_sample_only",
+        "note": "Sibling sample-output structure only, not a local pharmacist-reviewed genotype conclusion. Unassigned function"
       }
     ],
+    "sampleSourceIds": [
+      "medications-pgx-complete-sample-pdf"
+    ],
     "missingInputs": [
-      "Authenticated Sequencing.com sample report rows",
-      "Current medication list and medication-specific question",
-      "Pharmacist review, phenotype confidence, and expanded pharmacogene coverage",
-      "Clinical context such as age, other medicines, health conditions, allergies, renal or liver status, and pregnancy status when relevant"
+      "Direct Pharmacist Summary sample report rows and exact detail-page body evidence",
+      "Current medication list, medication-specific question, indication, dose, and treatment history",
+      "Pharmacist review, clinician review, phenotype confidence, specialized PGx caller output, and expanded pharmacogene coverage",
+      "Clinical context such as age, pregnancy status, renal or liver status, other medicines, allergies, and health conditions when relevant"
     ],
     "probabilities": [],
     "uncertainty": [
-      "No calibrated medication-response, efficacy, safety, adverse-event, dispensing, or dose model is supplied for this local package.",
-      "PGx context depends on medication, dose, ancestry, health status, interacting medicines, clinical history, and professional review."
+      "No calibrated medication-response, safety, efficacy, adverse-event, dispensing, or dose model is supplied for this local package.",
+      "PGx context depends on medication, dose, ancestry, health status, interacting medicines, clinical history, and professional review.",
+      "Sibling sample rows show output shape only and are not evidence about this user's medication response."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
       "The report is educational and does not provide prescribing, dispensing, safety, efficacy, start, stop, switch, or dosing instructions.",
-      "At-home or derived data should not be used alone for treatment decisions."
+      "At-home or derived data should not be used alone for treatment decisions.",
+      "The public Medications PGx Complete sample PDF demonstrates sibling output shape and example rows, not this user-specific medication efficacy, safety, or pharmacist-reviewed actionability."
     ]
   }
 }

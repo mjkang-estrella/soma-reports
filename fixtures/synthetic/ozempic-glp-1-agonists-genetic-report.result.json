@@ -1,87 +1,317 @@
 {
   "schemaVersion": "soma-reports.synthetic-result.v1",
   "reportOverview": {
-    "reportTitle": "Ozempic & GLP-1 Agonists Genetic Report",
+    "reportTitle": "Ozempic and GLP-1 Agonists",
     "inputManifestHash": "sha256:synthetic-ozempic-glp-1-agonists-genetic-report-specialized-boundary-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet for Ozempic & GLP-1 Agonists Genetic Report.",
-      "Validated GLP-1 response model, diagnosis, indication, medication history, adverse-event history, labs, clinician review, and authenticated sample-report rows",
+      "Validated local GLP-1 or weight-loss medication-response model output is not supplied.",
+      "Diabetes or obesity indication, A1c, BMI, kidney/liver context, contraindications, medication list, pregnancy context, side-effect history, and clinician review are not supplied.",
+      "The public sample rows are output-format examples only and are not local-user medication-response findings.",
       "validated GLP-1 response model, GLP1R/GIPR or related marker interpretation, diabetes diagnosis, A1c, BMI, kidney/liver context, contraindications, medication list, pregnancy context, side-effect history, clinician review, and authenticated sample-report rows unavailable in this fixture",
-      "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
-      "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture"
+      "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture"
     ]
   },
   "resultRows": [
     {
-      "groupTitle": "Validated model/source output availability",
-      "item": "Ozempic & GLP-1 Agonists Genetic Report model/source output",
+      "groupTitle": "Validated local model availability",
+      "item": "GLP-1 and weight-loss medication-response model",
       "brandName": "",
-      "geneticAnalysis": "The local fixture supplies a boundary row for GLP-1 agonist and Ozempic medication context. It does not supply the validated model, source-tool output, or authenticated Sequencing.com report content needed for personal conclusions.",
+      "geneticAnalysis": "The local fixture supplies a boundary row for GLP-1 and weight-loss medication-response context, but it does not include a validated local response model, source algorithm, or clinical decision context.",
       "genes": [
-        "Ozempic & GLP-1 Agonists Genetic Report model/source output"
+        "GLP1R",
+        "GIPR",
+        "TCF7L2",
+        "ARRB1",
+        "FASN",
+        "CYP3A4",
+        "CYP3A5",
+        "GRIK1",
+        "PLXNA4",
+        "INSR"
       ],
-      "sourceLabel": "FDA Ozempic Prescribing Information; FDA Table of Pharmacogenetic Associations; MedlinePlus Pharmacogenetic Tests",
+      "sourceLabel": "FDA Ozempic label; FDA pharmacogenetic resources; MedlinePlus pharmacogenetic tests",
       "sourceIds": [
         "fda-ozempic-label",
         "fda-pgx-associations",
-        "medlineplus-pharmacogenetic-tests"
+        "fda-pgx-biomarkers-labeling",
+        "medlineplus-pharmacogenetic-tests",
+        "cdc-diabetes-risk-factors"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This can explain what evidence is present or missing for Ozempic & GLP-1 Agonists Genetic Report, but it cannot fill in unavailable model output or personal conclusions."
+      "plainEnglishMeaning": "This local run can say what evidence is present or missing. It cannot say whether Ozempic, Wegovy, Mounjaro, Zepbound, Saxenda, Xenical, Alli, Qsymia, Contrave, Adipex-P, Lomaira, or Imcivree is right for the user."
     },
     {
       "groupTitle": "Clinical and professional context availability",
-      "item": "Ozempic & GLP-1 Agonists Genetic Report clinical and professional context",
+      "item": "Medication decision context",
       "brandName": "",
-      "geneticAnalysis": "Clinical history, symptoms, labs, medication context, family history, and qualified professional interpretation are not supplied unless explicitly listed in the fixture.",
+      "geneticAnalysis": "Medication decisions need diagnosis, indication, labs, medication history, contraindications, side-effect history, pregnancy context when relevant, and qualified clinician review. Those inputs are not supplied in this synthetic fixture.",
       "genes": [
-        "Ozempic & GLP-1 Agonists Genetic Report clinical and professional context"
+        "clinical context unavailable"
       ],
-      "sourceLabel": "FDA Ozempic Prescribing Information; FDA Table of Pharmacogenetic Associations; MedlinePlus Pharmacogenetic Tests",
+      "sourceLabel": "FDA Ozempic label; MedlinePlus pharmacogenetic tests",
       "sourceIds": [
         "fda-ozempic-label",
-        "fda-pgx-associations",
-        "medlineplus-pharmacogenetic-tests"
+        "medlineplus-pharmacogenetic-tests",
+        "cdc-diabetes-risk-factors"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "The report should stay educational because diabetes, weight-management, medication, side-effect, and clinician-guided decisions require context that this synthetic fixture does not include."
+      "plainEnglishMeaning": "The report should stay educational. It should not make start, stop, switch, dose, safety, expected weight-loss, diabetes-outcome, or side-effect claims from genotype alone."
     },
     {
-      "groupTitle": "Authenticated sample availability",
-      "item": "Ozempic & GLP-1 Agonists Genetic Report authenticated sample rows",
-      "brandName": "",
-      "geneticAnalysis": "Authenticated Sequencing.com sample report sections, row labels, model output, and source-tool output are unavailable in this local fixture.",
+      "groupTitle": "Observed public sample structure",
+      "item": "Golden Gate Gene Ozempic and Other GLP-1 Agonists sample report",
+      "brandName": "Golden Gate Gene sample",
+      "geneticAnalysis": "The public sample PDF shows report identity, table of contents, limitations, an individual response summary, gene-profile chart, drug-specific pharmacogenetic sections, and references. Those rows are preserved below as sampleRows[] only.",
       "genes": [
-        "Ozempic & GLP-1 Agonists Genetic Report authenticated sample rows"
+        "sample report structure"
       ],
-      "sourceLabel": "FDA Ozempic Prescribing Information; FDA Table of Pharmacogenetic Associations; MedlinePlus Pharmacogenetic Tests",
+      "sourceLabel": "Public Ozempic/GLP-1 sample PDF",
       "sourceIds": [
-        "fda-ozempic-label",
-        "fda-pgx-associations",
-        "medlineplus-pharmacogenetic-tests"
+        "ozempic-glp1-sample-pdf"
       ],
-      "sourceBindingStatus": "unavailable",
-      "plainEnglishMeaning": "This local package marks the sample-report gap clearly instead of recreating or guessing the missing Sequencing.com output."
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample rows show how the original report is structured. They are not the user's medication-response results and should not be used as medication advice."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Report identity",
+      "item": "Ozempic and Other GLP-1 Agonists",
+      "brandName": "Golden Gate Gene sample",
+      "geneticAnalysis": "The public sample PDF cover identifies Ozempic and Other GLP-1 Agonists by Golden Gate Gene and says the report aims to harness genetic data for personalized medical solutions.",
+      "description": "The table of contents lists Introduction, Summary, Wegovy, Ozempic, Zepbound, Mounjaro, Saxenda, Xenical, Alli, Qsymia, Contrave, Adipex-P, Lomaira, Imcivree, and References.",
+      "genes": [
+        "Sample report identity"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "ozempic-glp1-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed report identity and table-of-contents structure only; this is not local-user medication-response output."
+    },
+    {
+      "groupTitle": "About, limitations, and disclaimer",
+      "item": "Methodology and clinical-use boundary",
+      "brandName": "Golden Gate Gene sample",
+      "geneticAnalysis": "The sample says it compiles DNA analysis for variants influencing efficacy, safety, metabolism, and receptor affinity of weight-loss medications, while also stating that age, body mass, liver and kidney health, concurrent medications, lifestyle, clinical history, and professional review matter.",
+      "description": "The sample limitation and disclaimer pages state that the report does not cover every possible variant, non-detection does not rule out altered phenotypes, and the content should not replace professional medical advice, diagnosis, or treatment.",
+      "genes": [
+        "Report-level methodology"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "ozempic-glp1-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample limitations and disclaimer only; local output must keep medication decisions with qualified healthcare professionals."
+    },
+    {
+      "groupTitle": "Summary",
+      "item": "Individual response and gene profile",
+      "brandName": "Golden Gate Gene sample",
+      "geneticAnalysis": "The summary page lists anticipated response to weight-reduction substances and shows a gene-profile chart for CYP2D6, DRD2, CYP3A4, ARRB1, COMT, HTR2C, TCF7L2, GLP1R, GIPR, FASN, CYP3A5, GRIK1, PLXNA4, INSR, ANKK1, TAAR1, POMC, PCSK1, and LEPR, with visible 100% values for most genes and 50% for GRIK1.",
+      "description": "The sample summary is preserved as report-output structure only. Its response labels and percentages are not local-user medication predictions.",
+      "genes": [
+        "CYP2D6",
+        "DRD2",
+        "CYP3A4",
+        "ARRB1",
+        "COMT",
+        "HTR2C",
+        "TCF7L2",
+        "GLP1R",
+        "GIPR",
+        "FASN",
+        "CYP3A5",
+        "GRIK1",
+        "PLXNA4",
+        "INSR",
+        "ANKK1",
+        "TAAR1",
+        "POMC",
+        "PCSK1",
+        "LEPR"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "ozempic-glp1-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample summary and gene-profile chart only; not local-user gene activity, drug response, or treatment guidance."
+    },
+    {
+      "groupTitle": "Wegovy and Ozempic",
+      "item": "Semaglutide sample section",
+      "brandName": "Golden Gate Gene sample",
+      "geneticAnalysis": "The sample Wegovy/Ozempic section labels the overall semaglutide response as Standard Response, with GLP1R Normal Affinity 100%, ARRB1 Normal Activity 100%, and TCF7L2 Normal Function 100%.",
+      "description": "Use this as observed section and table shape only; do not infer local semaglutide eligibility, dose, benefit, side effects, diabetes outcome, or weight-loss response.",
+      "genes": [
+        "GLP1R",
+        "ARRB1",
+        "TCF7L2"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "ozempic-glp1-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample semaglutide section only; not a local Wegovy or Ozempic recommendation."
+    },
+    {
+      "groupTitle": "Zepbound and Mounjaro",
+      "item": "Tirzepatide sample section",
+      "brandName": "Golden Gate Gene sample",
+      "geneticAnalysis": "The sample Zepbound/Mounjaro section labels the overall tirzepatide response as Standard Response, with GLP1R Normal Affinity 100%, GIPR Normal Affinity 100%, and TCF7L2 Normal Function 100%.",
+      "description": "Use this as observed section and table shape only; do not infer local tirzepatide eligibility, dose, benefit, side effects, diabetes outcome, or weight-loss response.",
+      "genes": [
+        "GLP1R",
+        "GIPR",
+        "TCF7L2"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "ozempic-glp1-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample tirzepatide section only; not a local Zepbound or Mounjaro recommendation."
+    },
+    {
+      "groupTitle": "Saxenda",
+      "item": "Liraglutide sample section",
+      "brandName": "Golden Gate Gene sample",
+      "geneticAnalysis": "The sample Saxenda section labels the overall liraglutide response as Standard Response, with GLP1R Normal Affinity 100%, ARRB1 Normal Activity 100%, and TCF7L2 Normal Function 100%.",
+      "description": "Use this as observed section and table shape only; do not infer local liraglutide eligibility, dose, benefit, side effects, diabetes outcome, or weight-loss response.",
+      "genes": [
+        "GLP1R",
+        "ARRB1",
+        "TCF7L2"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "ozempic-glp1-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample liraglutide section only; not a local Saxenda recommendation."
+    },
+    {
+      "groupTitle": "Xenical and Alli",
+      "item": "Orlistat sample section",
+      "brandName": "Golden Gate Gene sample",
+      "geneticAnalysis": "The sample Xenical/Alli section labels the overall orlistat response as Standard Response, with FASN Normal Activity 100%, CYP3A4 Normal Metabolism 100%, and CYP3A5 Normal Activity 100%.",
+      "description": "Use this as observed section and table shape only; do not infer local orlistat eligibility, dose, benefit, side effects, or weight-loss response.",
+      "genes": [
+        "FASN",
+        "CYP3A4",
+        "CYP3A5"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "ozempic-glp1-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample orlistat section only; not a local Xenical or Alli recommendation."
+    },
+    {
+      "groupTitle": "Qsymia",
+      "item": "Phentermine/topiramate sample section",
+      "brandName": "Golden Gate Gene sample",
+      "geneticAnalysis": "The sample Qsymia section labels the overall phentermine/topiramate response as Lower Sensitivity, with GRIK1 Decreased Activity 50%, PLXNA4 Normal Activity 100%, and INSR Normal Function 100%.",
+      "description": "Use this as observed section and table shape only; do not infer local Qsymia eligibility, dose, lower response, benefit, side effects, or weight-loss response.",
+      "genes": [
+        "GRIK1",
+        "PLXNA4",
+        "INSR"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "ozempic-glp1-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample Qsymia section only; not a local phentermine/topiramate response prediction."
+    },
+    {
+      "groupTitle": "Contrave",
+      "item": "Naltrexone/bupropion sample section",
+      "brandName": "Golden Gate Gene sample",
+      "geneticAnalysis": "The sample Contrave section labels the overall naltrexone/bupropion response as Standard Response, with ANKK1 Normal Affinity 100%, DRD2 Normal Affinity 100%, and INSR Normal Function 100%.",
+      "description": "Use this as observed section and table shape only; do not infer local Contrave eligibility, dose, benefit, side effects, cravings, mood response, or weight-loss response.",
+      "genes": [
+        "ANKK1",
+        "DRD2",
+        "INSR"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "ozempic-glp1-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample Contrave section only; not a local naltrexone/bupropion recommendation."
+    },
+    {
+      "groupTitle": "Adipex-P and Lomaira",
+      "item": "Phentermine sample section",
+      "brandName": "Golden Gate Gene sample",
+      "geneticAnalysis": "The sample Adipex-P/Lomaira section labels the overall phentermine response as Standard Response, with TAAR1 Normal Function 100%, COMT Normal Activity 100%, and HTR2C Normal Affinity 100%.",
+      "description": "Use this as observed section and table shape only; do not infer local phentermine eligibility, dose, benefit, side effects, mood effect, or weight-loss response.",
+      "genes": [
+        "TAAR1",
+        "COMT",
+        "HTR2C"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "ozempic-glp1-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample phentermine section only; not a local Adipex-P or Lomaira recommendation."
+    },
+    {
+      "groupTitle": "Imcivree",
+      "item": "Setmelanotide sample section",
+      "brandName": "Golden Gate Gene sample",
+      "geneticAnalysis": "The sample Imcivree section labels the overall setmelanotide response as Standard Response, with POMC Normal Function 100%, PCSK1 Normal Function 100%, and LEPR Normal Function 100%.",
+      "description": "Use this as observed section and table shape only; do not infer local setmelanotide eligibility, dose, rare-obesity diagnosis, benefit, side effects, or weight-loss response.",
+      "genes": [
+        "POMC",
+        "PCSK1",
+        "LEPR"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "ozempic-glp1-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample setmelanotide section only; not a local Imcivree recommendation or rare-obesity diagnosis."
+    },
+    {
+      "groupTitle": "References",
+      "item": "Published pharmacogenomic and drug-background citations",
+      "brandName": "Golden Gate Gene sample",
+      "geneticAnalysis": "The sample reference pages list 18 sources, including GLP-1 receptor agonist pharmacogenomics, liraglutide pharmacogenomic trial work, GIP receptor variant signaling, orlistat/FASN context, CYP3A activity, topiramate/pharmacogenetic commentary, phentermine/topiramate case context, antiobesity medication pharmacogenomics, DRD2 naltrexone/bupropion work, TAAR1 background, and setmelanotide/LiverTox context.",
+      "description": "The local package preserves citation-list structure and still uses curated FDA, pharmacogenetic-test, and public-health references for safety boundaries.",
+      "genes": [
+        "Reference list"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "ozempic-glp1-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample reference-list structure only; individual external articles are not treated as local response calibration unless separately supplied."
     }
   ],
   "drugDecisionContext": {
-    "plainEnglishMeaning": "Ozempic & GLP-1 Agonists Genetic Report is represented as an evidence-boundary package. It can summarize supplied local evidence and references, while marking unsupported personal conclusions unavailable.",
+    "plainEnglishMeaning": "This package can reproduce the formal shape of the Ozempic/GLP-1 sample report and disclose what local evidence is unavailable. It cannot decide medication eligibility, dose, drug choice, expected response, side effects, or treatment action.",
     "unsupportedClaims": [
-      "Ozempic eligibility",
-      "GLP-1 response prediction",
-      "dose guidance",
-      "starting, stopping, or switching medication",
-      "weight-loss prediction",
-      "side-effect risk estimate"
+      "GLP-1 medication eligibility",
+      "Ozempic, Wegovy, Mounjaro, Zepbound, Saxenda, Xenical, Alli, Qsymia, Contrave, Adipex-P, Lomaira, or Imcivree drug choice",
+      "dose, start, stop, or switch guidance",
+      "weight-loss or diabetes-outcome prediction",
+      "side-effect certainty or contraindication assessment",
+      "diagnosis, treatment, or clinical actionability"
     ],
-    "professionalReview": "Use qualified professional review for diabetes, weight-management, medication, side-effect, and clinician-guided decisions; this synthetic local result is not enough for those decisions."
-  },
-  "practicalNextSteps": {
-    "professionalReview": [
-      "Use this local result as educational context for GLP-1 agonist and Ozempic medication context, not as a decision tool.",
-      "Collect validated source output, source provenance, and relevant clinical or professional context before using Ozempic & GLP-1 Agonists Genetic Report for personal decisions.",
-      "Discuss diabetes, weight-management, medication, side-effect, and clinician-guided decisions with qualified professionals when those choices matter."
-    ]
+    "professionalReview": "Personal medication decisions require validated test scope, source-output provenance, clinical context, medication history, contraindication review, and qualified healthcare professional oversight."
   },
   "references": [
     {
@@ -139,43 +369,94 @@
     {
       "id": "cdc-diabetes-risk-factors",
       "title": "CDC Diabetes Risk Factors"
+    },
+    {
+      "id": "ozempic-glp1-sample-pdf",
+      "title": "Ozempic and Other GLP-1 Agonists sample report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "ozempic-glp-1-agonists-genetic-report-model-output-unavailable",
-        "gene": "Ozempic & GLP-1 Agonists Genetic Report model/source output",
-        "observedValue": "validated GLP-1 response model, GLP1R/GIPR or related marker interpretation, diabetes diagnosis, A1c, BMI, kidney/liver context, contraindications, medication list, pregnancy context, side-effect history, clinician review, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "tier": "Sample summary chart",
+        "gene": "GLP1R / GIPR / TCF7L2",
+        "variantId": "sample-incretin-receptor-and-glucose-homeostasis-profile",
+        "genotype": "GLP1R 100%; GIPR 100%; TCF7L2 100%",
+        "effect": "The public sample summary and drug sections show these genes in semaglutide, tirzepatide, liraglutide, and glycemic-response context.",
+        "phenotype": "Observed sample chart values only; do not infer local GLP-1 or GIP receptor activity, diabetes outcome, weight-loss response, or medication choice.",
+        "extractionStatus": "direct"
       },
       {
-        "inputId": "ozempic-glp-1-agonists-genetic-report-clinical-professional-context-unavailable",
-        "gene": "Ozempic & GLP-1 Agonists Genetic Report clinical and professional context",
-        "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "tier": "Sample GLP-1 receptor signaling rows",
+        "gene": "ARRB1",
+        "variantId": "sample-arrb1-activity-profile",
+        "genotype": "ARRB1 100%",
+        "effect": "The sample Wegovy/Ozempic and Saxenda sections show ARRB1 Normal Activity 100% in GLP-1 receptor desensitization/internalization context.",
+        "phenotype": "Observed sample chart value only; do not infer local semaglutide or liraglutide response.",
+        "extractionStatus": "direct"
       },
       {
-        "inputId": "ozempic-glp-1-agonists-genetic-report-authenticated-sample-unavailable",
-        "gene": "Ozempic & GLP-1 Agonists Genetic Report authenticated sample rows",
-        "observedValue": "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "tier": "Sample orlistat rows",
+        "gene": "FASN / CYP3A4 / CYP3A5",
+        "variantId": "sample-orlistat-profile",
+        "genotype": "FASN 100%; CYP3A4 100%; CYP3A5 100%",
+        "effect": "The sample Xenical/Alli section shows these genes with normal activity or metabolism values in orlistat response context.",
+        "phenotype": "Observed sample chart values only; do not infer local orlistat response, side effects, or medication choice.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample Qsymia rows",
+        "gene": "GRIK1 / PLXNA4 / INSR",
+        "variantId": "sample-qsymia-profile",
+        "genotype": "GRIK1 50%; PLXNA4 100%; INSR 100%",
+        "effect": "The sample Qsymia section shows GRIK1 Decreased Activity 50%, PLXNA4 Normal Activity 100%, and INSR Normal Function 100%.",
+        "phenotype": "Observed sample chart values only; do not infer local phentermine/topiramate response, appetite suppression, glycemic effect, or medication choice.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample Contrave rows",
+        "gene": "ANKK1 / DRD2 / INSR",
+        "variantId": "sample-contrave-profile",
+        "genotype": "ANKK1 100%; DRD2 100%; INSR 100%",
+        "effect": "The sample Contrave section shows normal affinity/function values for reward-processing and insulin-signaling genes.",
+        "phenotype": "Observed sample chart values only; do not infer local naltrexone/bupropion response, cravings, mood, or medication choice.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample phentermine rows",
+        "gene": "TAAR1 / COMT / HTR2C",
+        "variantId": "sample-phentermine-profile",
+        "genotype": "TAAR1 100%; COMT 100%; HTR2C 100%",
+        "effect": "The sample Adipex-P/Lomaira section shows these genes with normal function, activity, or affinity values in phentermine context.",
+        "phenotype": "Observed sample chart values only; do not infer local phentermine response, mood effect, side effects, or medication choice.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample Imcivree rows",
+        "gene": "POMC / PCSK1 / LEPR",
+        "variantId": "sample-setmelanotide-profile",
+        "genotype": "POMC 100%; PCSK1 100%; LEPR 100%",
+        "effect": "The sample Imcivree section shows these genes with normal function values in setmelanotide and melanocortin-pathway context.",
+        "phenotype": "Observed sample chart values only; do not infer local rare-obesity diagnosis, setmelanotide eligibility, response, or medication choice.",
+        "extractionStatus": "direct"
       }
     ],
     "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and rows for Ozempic & GLP-1 Agonists Genetic Report.",
-      "validated GLP-1 response model, diagnosis, indication, medication history, adverse-event history, labs, clinician review, and authenticated sample-report rows",
-      "Report unavailable GLP-1 agonist medication-response context evidence explicitly; do not determine Ozempic, Wegovy, Mounjaro, Zepbound, semaglutide, tirzepatide, GLP-1 eligibility, dose, drug choice, treatment response, weight loss, diabetes outcome, side-effect certainty, contraindication, medication start/stop/switch, or clinical actionability from genotype."
+      "Use public Ozempic and Other GLP-1 Agonists sample rows only as observed output structure; report validated local medication-response model, official source algorithm, diabetes or obesity indication, A1c, BMI, kidney or liver context, contraindications, medication list, pregnancy context, side-effect history, clinician review, and local-user medication conclusions unavailable.",
+      "validated GLP-1 response model, GLP1R/GIPR or related marker interpretation, diabetes diagnosis, A1c, BMI, kidney/liver context, contraindications, medication list, pregnancy context, side-effect history, clinician review, and authenticated sample-report rows unavailable in this fixture",
+      "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
+      "Validated calibration, ancestry applicability, clinical indication, medication list, contraindications, adverse-event history, labs, and clinician review are unavailable."
     ],
     "probabilities": [],
     "uncertainty": [
-      "No validated GLP-1 agonist and Ozempic medication context model with source provenance and professional review is supplied for this local package.",
-      "The supplied rows support evidence-boundary education only and should not be treated as a personal prediction or clinical interpretation."
+      "No calibrated local GLP-1 or weight-loss medication-response model is supplied.",
+      "Public sample response labels and gene-profile percentages are observed sample-output structure only.",
+      "Clinical decisions require context that is not present in this derived fixture."
     ],
     "limitations": [
-      "This validation result uses selected derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
-      "The package does not recreate unavailable Sequencing.com authenticated report rows or proprietary third-party output for Ozempic & GLP-1 Agonists Genetic Report.",
-      "The package does not support: Ozempic eligibility; GLP-1 response prediction; dose guidance; starting, stopping, or switching medication; weight-loss prediction; side-effect risk estimate."
+      "This result uses derived fixture evidence only and does not include raw genome files.",
+      "The public sample PDF is used for output-format parity, not as local-user medication-response evidence.",
+      "No medication eligibility, dose, drug choice, start/stop/switch, side-effect, treatment-response, weight-loss, diabetes-outcome, diagnosis, or actionability claim is supported."
     ]
   }
 }

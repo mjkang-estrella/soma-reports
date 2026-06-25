@@ -79,6 +79,25 @@
     ],
     "professionalReview": "Use qualified professional review for clinical interpretation, variant follow-up, testing, screening, and treatment decisions; this synthetic local result is not enough for those decisions."
   },
+  "officialPrometheaseBoundary": {
+    "fieldBoundaryStatus": "field-boundary only; official generated Promethease rows were not captured for this local fixture",
+    "sourceCapture": "Authenticated detail-page scope text was captured from Sequencing.com, but no official generated Promethease rows, SNPedia matched rows, genotype-file import log, report version, source row metadata, or citation bindings are available.",
+    "summary": {
+      "personalDnaReport": "scope observed; official personal DNA report rows not captured",
+      "generatedOutputRows": []
+    },
+    "inputScope": {
+      "genotypeFile": "scope observed; no private genotype file captured"
+    },
+    "outputScope": {
+      "scientificFindings": "scope observed; official scientific-finding rows not captured",
+      "dnaVariations": "scope observed; official DNA-variation rows not captured"
+    },
+    "method": {
+      "literatureRetrieval": "scope observed; official literature row set not captured"
+    },
+    "officialRowsNotice": "The local result rows are boundary statements, not official Sequencing.com generated Promethease rows."
+  },
   "practicalNextSteps": {
     "professionalReview": [
       "Use this local result as educational context for Promethease and SNPedia third-party interpretation context, not as a decision tool.",

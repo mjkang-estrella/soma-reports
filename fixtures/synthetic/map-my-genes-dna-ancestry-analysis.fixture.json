@@ -1,44 +1,50 @@
 {
-  "packageSlug": "map-my-genes-dna-ancestry-analysis",
-  "datasetId": "synthetic-map-my-genes-autosomal-context-v1",
-  "packageVersion": "0.1.0",
-  "reportPurpose": "Consumer map-style ancestry context from derived broad autosomal reference-panel similarity with explicit missing map-coordinate and regional-detail evidence.",
-  "missingInputPolicy": "Mark map coordinates, regional ancestry, exact homeland, relatives, family matching, migration path, and community affiliation unavailable when not explicitly supplied.",
   "consumerTone": "plain English; map-style ancestry education only; no identity, exact-origin, ethnicity-percentage, map-coordinate, tribal/community, relative-matching, or health claims",
-  "inputManifest": {
-    "hash": "sha256:synthetic-map-my-genes-autosomal-context-v1",
-    "genomeBuild": "GRCh37-or-GRCh38-derived",
-    "rawGenomeReturned": false,
-    "source": "synthetic derived ancestry evidence for map-my-genes-dna-ancestry-analysis validation"
+  "datasetId": "synthetic-map-my-genes-autosomal-context-v1",
+  "expectedAssertions": {
+    "consumerLanguage": true,
+    "everyFindingHasReference": true,
+    "missingInputsAreExplicit": true,
+    "noRawGenomeInOutput": true,
+    "probabilitiesOnlyInAppendix": true
   },
   "genomeEvidence": [
     {
-      "inputId": "autosomal-map-reference-panel-summary",
-      "haplotype": "autosomal-map-reference-panel-summary",
-      "gene": "autosomal genome",
-      "observedValue": "broad East Asian reference-panel similarity for map-style context; no coordinate model supplied",
       "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "autosomal genome",
+      "haplotype": "autosomal-map-reference-panel-summary",
+      "inputId": "autosomal-map-reference-panel-summary",
       "matchStatus": "summarized",
-      "sourceFile": "synthetic-map-my-genes-autosomal-context-v1.json",
-      "sourceArtifact": "synthetic-map-my-genes-autosomal-context-v1"
+      "observedValue": "broad East Asian reference-panel similarity for map-style context; no coordinate model supplied",
+      "sourceArtifact": "synthetic-map-my-genes-autosomal-context-v1",
+      "sourceFile": "synthetic-map-my-genes-autosomal-context-v1.json"
     },
     {
-      "inputId": "map-coordinate-unavailable",
-      "haplotype": "not-supplied",
-      "gene": "autosomal ancestry map model",
-      "observedValue": "map coordinate, exact homeland, and migration-path evidence unavailable in this fixture",
       "assembly": "GRCh37-or-GRCh38-derived",
+      "gene": "autosomal ancestry map model",
+      "haplotype": "not-supplied",
+      "inputId": "map-coordinate-unavailable",
       "matchStatus": "unavailable",
-      "sourceFile": "synthetic-map-my-genes-autosomal-context-v1.json",
-      "sourceArtifact": "synthetic-map-my-genes-autosomal-context-v1"
+      "observedValue": "map coordinate, exact homeland, and migration-path evidence unavailable in this fixture",
+      "sourceArtifact": "synthetic-map-my-genes-autosomal-context-v1",
+      "sourceFile": "synthetic-map-my-genes-autosomal-context-v1.json"
     }
   ],
+  "inputManifest": {
+    "genomeBuild": "GRCh37-or-GRCh38-derived",
+    "hash": "sha256:synthetic-map-my-genes-autosomal-context-v1",
+    "rawGenomeReturned": false,
+    "source": "synthetic derived ancestry evidence for map-my-genes-dna-ancestry-analysis validation"
+  },
+  "missingInputPolicy": "Mark map coordinates, calibrated regional percentages, exact homeland, relatives, family matching, migration path, community affiliation, calibrated chromosome-painting calls, and precise segment ancestry unavailable when not explicitly supplied. Use sibling World Ancestry sample percentages, maps, ethnicity cards, chromosome painting, and G-Nomix methodology only as observed output-format examples.",
+  "packageSlug": "map-my-genes-dna-ancestry-analysis",
+  "packageVersion": "0.1.0",
   "referenceResources": [
     {
-      "id": "medlineplus-genetic-ancestry-testing",
-      "title": "MedlinePlus Genetics: genetic ancestry testing",
-      "sourceType": "education_resource",
       "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-ancestry-testing",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: genetic ancestry testing",
       "usedFor": [
         "ancestry_context",
         "autosomal_scope",
@@ -46,10 +52,10 @@
       ]
     },
     {
-      "id": "medlineplus-dtc-risks-benefits",
-      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing",
-      "sourceType": "education_resource",
       "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-dtc-risks-benefits",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing",
       "usedFor": [
         "dtc_limitations",
         "privacy_sensitivity",
@@ -57,22 +63,29 @@
       ]
     },
     {
-      "id": "international-genome-sample-resource",
-      "title": "International Genome Sample Resource / 1000 Genomes",
-      "sourceType": "database",
       "evidenceLevel": "database_background",
+      "id": "international-genome-sample-resource",
+      "sourceType": "database",
+      "title": "International Genome Sample Resource / 1000 Genomes",
       "usedFor": [
         "ancestry_context",
         "population_reference",
         "variant_frequency_context"
       ]
+    },
+    {
+      "evidenceLevel": "sibling_sample_report",
+      "id": "world-ancestry-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "World Ancestry Report sibling sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format",
+        "map_boundary"
+      ]
     }
   ],
-  "expectedAssertions": {
-    "noRawGenomeInOutput": true,
-    "everyFindingHasReference": true,
-    "missingInputsAreExplicit": true,
-    "probabilitiesOnlyInAppendix": true,
-    "consumerLanguage": true
-  }
+  "reportPurpose": "Consumer map-style ancestry context from derived broad autosomal similarity plus sibling World Ancestry output-structure evidence."
 }

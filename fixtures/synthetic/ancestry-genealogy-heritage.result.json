@@ -1,23 +1,25 @@
 {
   "reportOverview": {
-    "reportTitle": "DNA Ancestry and Genealogy Report",
     "inputManifestHash": "sha256:synthetic-ancestry-genealogy-heritage-context-v1",
     "evidenceTypesSupplied": [
-      "Broad autosomal reference-panel similarity summary",
-      "Relative matching, surname matching, and family-tree evidence explicitly unavailable"
+      "Broad autosomal reference-panel similarity summary from the local fixture",
+      "Relative matching, surname matching, and family-tree evidence explicitly unavailable",
+      "Gene2me DNA Ancestry and Genealogy sample PDF rows preserved as sample-only output-format examples"
     ],
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "No calibrated ancestry percentage model is supplied.",
-      "No relative matching, surname matching, family-tree placement, migration path, or exact homeland model is supplied."
+      "Marketplace detail-page parity is still pending.",
+      "No calibrated local ancestry percentage model is supplied for the local run.",
+      "No local exact homeland, community, migration path, family matching, relative matching, surname, or family-tree data is supplied.",
+      "Sample PDF percentages, maps, region narratives, and country/subregion tables are not local findings."
     ]
   },
   "resultRows": [
     {
-      "groupTitle": "Autosomal ancestry context",
+      "groupTitle": "Local autosomal ancestry context",
       "item": "Broad reference-panel similarity",
       "brandName": "Not applicable",
-      "geneticAnalysis": "A broad East Asian reference-panel similarity summary is available, but no genealogical relationship model is supplied.",
+      "geneticAnalysis": "A broad East Asian reference-panel similarity summary is available, but no calibrated ancestry percentage or genealogical relationship model is supplied for this local fixture.",
+      "description": "The local fixture supplies derived broad autosomal context only; it does not supply exact percentages, family matching, surname evidence, or migration-path evidence.",
       "genes": [
         "autosomal genome"
       ],
@@ -26,13 +28,15 @@
         "medlineplus-genetic-ancestry-testing",
         "international-genome-sample-resource"
       ],
-      "plainEnglishMeaning": "This is broad ancestry context only. It is not a precise ethnicity percentage, family-tree placement, surname match, or proof of relationship."
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This is broad ancestry context only. It is not a precise ethnicity percentage, homeland, nationality, community label, family-tree placement, relative match, or identity statement."
     },
     {
       "groupTitle": "Unavailable genealogy evidence",
       "item": "Relative matching and family-tree evidence",
       "brandName": "Not applicable",
-      "geneticAnalysis": "Relative matching, surname matching, and family-tree evidence are unavailable in this fixture and are not inferred.",
+      "geneticAnalysis": "Relative matching, surname matching, family-tree placement, migration-path, exact-homeland, and living-relative evidence are unavailable in this fixture and are not inferred.",
+      "description": "Missing genealogy evidence is stated explicitly instead of filling in unsupported relationship or origin claims.",
       "genes": [
         "genealogy matching data"
       ],
@@ -41,63 +45,277 @@
         "medlineplus-genetic-ancestry-testing",
         "medlineplus-dtc-risks-benefits"
       ],
-      "plainEnglishMeaning": "Genealogy claims require appropriate records or matching data. This run cannot identify relatives, surnames, family trees, or living people."
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "Genealogy claims require family records, relative matching, or other relationship evidence. This run cannot identify relatives, surnames, family trees, precise homelands, or living people."
+    },
+    {
+      "groupTitle": "Sample report: Report identity",
+      "item": "Gene2me ancestry sample report",
+      "brandName": "DNA Ancestry and Genealogy Report sample",
+      "geneticAnalysis": "The local sample PDF is a Gene2me DNA Ancestry and Genealogy report artifact with ancestry-admixture output, maps, and region narrative pages.",
+      "description": "This row documents report identity and formal output structure only; the sample person is not reused as local user data.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This row documents report identity and formal output structure only; the sample person is not reused as local user data. This is preserved as observed sample-report structure only, not as a local ancestry estimate, genealogy conclusion, identity claim, health finding, or actionability statement."
+    },
+    {
+      "groupTitle": "Sample report: Ancestry admixture",
+      "item": "Top-level ancestry percentages",
+      "brandName": "DNA Ancestry and Genealogy Report sample",
+      "geneticAnalysis": "The sample shows top-level ancestry-admixture rows for Middle East 60.0%, Europe 30.2%, and Central/South Asia 9.8%.",
+      "description": "The observed sample demonstrates a top-level ancestry hierarchy and map-oriented presentation. These percentages are sample-only output structure, not local ancestry estimates.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The observed sample demonstrates a top-level ancestry hierarchy and map-oriented presentation. These percentages are sample-only output structure, not local ancestry estimates. This is preserved as observed sample-report structure only, not as a local ancestry estimate, genealogy conclusion, identity claim, health finding, or actionability statement."
+    },
+    {
+      "groupTitle": "Sample report: Maps and narratives",
+      "item": "Regional map and narrative pages",
+      "brandName": "DNA Ancestry and Genealogy Report sample",
+      "geneticAnalysis": "The sample contains ancestry maps and regional narrative sections that accompany the visible ancestry-admixture percentages.",
+      "description": "This row captures the presentation pattern for maps and narrative ancestry context without copying those sample regions into local conclusions.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This row captures the presentation pattern for maps and narrative ancestry context without copying those sample regions into local conclusions. This is preserved as observed sample-report structure only, not as a local ancestry estimate, genealogy conclusion, identity claim, health finding, or actionability statement."
+    },
+    {
+      "groupTitle": "Sample report: Country and subregion tables",
+      "item": "Detailed percentage table structure",
+      "brandName": "DNA Ancestry and Genealogy Report sample",
+      "geneticAnalysis": "The sample includes country/subregion percentage-table structure beneath the top-level ancestry-admixture categories.",
+      "description": "Only the existence and role of the country/subregion table structure is used here; detailed local country or homeland assignment remains unavailable.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Only the existence and role of the country/subregion table structure is used here; detailed local country or homeland assignment remains unavailable. This is preserved as observed sample-report structure only, not as a local ancestry estimate, genealogy conclusion, identity claim, health finding, or actionability statement."
+    },
+    {
+      "groupTitle": "Sample report: Genealogy boundary",
+      "item": "Family matching not supplied",
+      "brandName": "DNA Ancestry and Genealogy Report sample",
+      "geneticAnalysis": "The local fixture supplies no relative matching, surname matching, family-tree, living-relative, or migration-path evidence.",
+      "description": "Genealogy conclusions require family records or relative-matching evidence outside this sample-output structure.",
+      "genes": [
+        "genealogy matching data"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Genealogy conclusions require family records or relative-matching evidence outside this sample-output structure. This is preserved as observed sample-report structure only, not as a local ancestry estimate, genealogy conclusion, identity claim, health finding, or actionability statement."
+    }
+  ],
+  "sampleRows": [
+    {
+      "brandName": "DNA Ancestry and Genealogy Report sample",
+      "description": "This row documents report identity and formal output structure only; the sample person is not reused as local user data.",
+      "extractionStatus": "direct",
+      "genes": [
+        "autosomal genome"
+      ],
+      "geneticAnalysis": "The local sample PDF is a Gene2me DNA Ancestry and Genealogy report artifact with ancestry-admixture output, maps, and region narrative pages.",
+      "groupTitle": "Report identity",
+      "item": "Gene2me ancestry sample report",
+      "sortOrder": 1,
+      "sourceBindingNote": "Extracted from the locally captured Gene2me DNA Ancestry and Genealogy sample PDF; this is observed sample structure, not a local ancestry finding.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "DNA Ancestry and Genealogy Report sample",
+      "description": "The observed sample demonstrates a top-level ancestry hierarchy and map-oriented presentation. These percentages are sample-only output structure, not local ancestry estimates.",
+      "extractionStatus": "direct",
+      "genes": [
+        "autosomal genome"
+      ],
+      "geneticAnalysis": "The sample shows top-level ancestry-admixture rows for Middle East 60.0%, Europe 30.2%, and Central/South Asia 9.8%.",
+      "groupTitle": "Ancestry admixture",
+      "item": "Top-level ancestry percentages",
+      "sortOrder": 2,
+      "sourceBindingNote": "Extracted from rendered review of the local sample PDF. Do not reuse the sample percentages as local ancestry, identity, homeland, community, migration, or family-history findings.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "DNA Ancestry and Genealogy Report sample",
+      "description": "This row captures the presentation pattern for maps and narrative ancestry context without copying those sample regions into local conclusions.",
+      "extractionStatus": "direct",
+      "genes": [
+        "autosomal genome"
+      ],
+      "geneticAnalysis": "The sample contains ancestry maps and regional narrative sections that accompany the visible ancestry-admixture percentages.",
+      "groupTitle": "Maps and narratives",
+      "item": "Regional map and narrative pages",
+      "sortOrder": 3,
+      "sourceBindingNote": "Extracted from rendered review of the local sample PDF. Maps and region narratives are output-format evidence only.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "DNA Ancestry and Genealogy Report sample",
+      "description": "Only the existence and role of the country/subregion table structure is used here; detailed local country or homeland assignment remains unavailable.",
+      "extractionStatus": "direct",
+      "genes": [
+        "autosomal genome"
+      ],
+      "geneticAnalysis": "The sample includes country/subregion percentage-table structure beneath the top-level ancestry-admixture categories.",
+      "groupTitle": "Country and subregion tables",
+      "item": "Detailed percentage table structure",
+      "sortOrder": 4,
+      "sourceBindingNote": "Extracted from rendered review of the local sample PDF. Detailed table structure is not converted into local exact-origin claims.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "DNA Ancestry and Genealogy Report sample",
+      "description": "Genealogy conclusions require family records or relative-matching evidence outside this sample-output structure.",
+      "extractionStatus": "direct",
+      "genes": [
+        "genealogy matching data"
+      ],
+      "geneticAnalysis": "The local fixture supplies no relative matching, surname matching, family-tree, living-relative, or migration-path evidence.",
+      "groupTitle": "Genealogy boundary",
+      "item": "Family matching not supplied",
+      "sortOrder": 5,
+      "sourceBindingNote": "Extracted from the locally captured Gene2me DNA Ancestry and Genealogy sample PDF and used only as sample-output boundary structure; genealogy limitations are also enforced in the local fixture and prompt.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ]
     }
   ],
   "ancestryScopeSummary": {
-    "autosomal": "Autosomal ancestry can provide broad reference-panel similarity when a model is supplied; this fixture does not supply calibrated percentages.",
-    "genealogy": "Genealogy requires family records, relative matching, or other relationship evidence that is not supplied here.",
+    "autosomal": "Autosomal ancestry can provide broad reference-panel similarity when a model is supplied; this fixture does not supply calibrated percentages for the local run.",
+    "genealogy": "Genealogy requires family records, relative matching, surname evidence, or other relationship evidence that is not supplied here.",
+    "sampleRows": "The Gene2me sample percentages, maps, region narratives, and country/subregion table structure are output-format examples only and are not local findings.",
     "sourceIds": [
       "medlineplus-genetic-ancestry-testing",
       "international-genome-sample-resource",
-      "medlineplus-dtc-risks-benefits"
+      "medlineplus-dtc-risks-benefits",
+      "ancestry-genealogy-heritage-sample-pdf"
     ]
   },
   "whatThisDoesNotMean": [
-    "This is not an exact ethnicity percentage.",
+    "This is not an exact local ethnicity percentage.",
     "This does not identify a precise homeland, tribe, community, nationality, migration route, surname match, family tree, or living relatives.",
     "This is not proof of descent from any person or group.",
-    "This is not a health or disease-risk report."
+    "This is not a health or disease-risk report.",
+    "The sample Middle East 60.0%, Europe 30.2%, and Central/South Asia 9.8% rows are not local results."
   ],
   "references": [
     {
       "id": "medlineplus-genetic-ancestry-testing",
-      "title": "MedlinePlus Genetics: genetic ancestry testing"
+      "title": "MedlinePlus Genetics: genetic ancestry testing",
+      "sourceType": "education_resource"
     },
     {
       "id": "medlineplus-dtc-risks-benefits",
-      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing"
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing",
+      "sourceType": "education_resource"
     },
     {
       "id": "international-genome-sample-resource",
-      "title": "International Genome Sample Resource / 1000 Genomes"
+      "title": "International Genome Sample Resource / 1000 Genomes",
+      "sourceType": "database"
+    },
+    {
+      "id": "ancestry-genealogy-heritage-sample-pdf",
+      "title": "DNA Ancestry and Genealogy Report sample report",
+      "sourceType": "mock_report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
+        "tier": "Sample-report visible row",
         "gene": "autosomal genome",
-        "observedValue": "broad East Asian reference-panel similarity; no genealogical relationship model supplied"
+        "variantId": "sample ancestry admixture overview",
+        "genotype": "sample Middle East 60.0%; Europe 30.2%; Central/South Asia 9.8%",
+        "effect": "The sample demonstrates a top-level ancestry-admixture hierarchy with map-oriented presentation.",
+        "phenotype": "Use as observed sample output structure only; do not reuse these percentages as local ancestry, identity, homeland, community, migration, family-history, or health findings.",
+        "extractionStatus": "direct"
       },
       {
+        "tier": "Sample-report visible row",
+        "gene": "autosomal genome",
+        "variantId": "sample country and subregion table structure",
+        "genotype": "sample country/subregion percentage table structure present",
+        "effect": "The sample demonstrates detailed table structure beneath top-level ancestry-admixture categories without supplying local calibrated ancestry evidence.",
+        "phenotype": "Use as output-format evidence only; mark exact country, homeland, community, migration, and genealogy conclusions unavailable unless local calibrated evidence is supplied.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Local derived call",
+        "gene": "autosomal genome",
+        "variantId": "autosomal-reference-panel-summary",
+        "genotype": "broad East Asian reference-panel similarity; no genealogical relationship model supplied",
+        "effect": "The local fixture supplies broad autosomal context without calibrated percentages or genealogy evidence.",
+        "phenotype": "Report as broad ancestry context only; do not convert it into exact percentages, homeland, identity, relatives, or health interpretation.",
+        "extractionStatus": "curated"
+      },
+      {
+        "tier": "Local missing input",
         "gene": "genealogy matching data",
-        "observedValue": "relative matching, surname matching, and family-tree evidence unavailable in this fixture"
+        "variantId": "genealogy-relative-matching-unavailable",
+        "genotype": "relative matching, surname matching, and family-tree evidence unavailable",
+        "effect": "The local fixture intentionally omits relationship, surname, living-relative, family-tree, migration-path, and exact-homeland evidence.",
+        "phenotype": "Mark genealogy and relative-matching outputs unavailable instead of inferring them from sample rows or broad ancestry context.",
+        "extractionStatus": "curated"
       }
     ],
     "missingInputs": [
-      "Authenticated sample-report sections and rows have not been extracted.",
-      "No calibrated ancestry model, reference-panel metadata, or genealogy model is supplied.",
-      "No family-matching, surname, family-tree, living-relative, migration-route, or exact-homeland data is supplied."
+      "Marketplace detail-page parity remains pending.",
+      "No calibrated local ancestry percentage model, reference-panel metadata, segment-coordinate model, or local country/subregion assignment is supplied.",
+      "No family matching, surname matching, family-tree placement, living-relative, migration-route, or exact-homeland data is supplied.",
+      "Sample report percentages, maps, and region narratives are output-format evidence only."
     ],
     "probabilities": [],
     "uncertainty": [
       "Broad reference-panel similarity should not be treated as a precise ancestry percentage or identity.",
-      "Genealogy and relationship claims require evidence outside this synthetic fixture."
+      "Genealogy and relationship claims require evidence outside this synthetic fixture.",
+      "The sample PDF demonstrates possible report layout and row structure but does not validate local ancestry percentages."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data is not included.",
-      "The report does not emit raw SNP tables or relative-matching data.",
-      "Authenticated Sequencing.com sample report rows are still pending."
+      "The report does not emit raw SNP tables, chromosome segments, or relative-matching data.",
+      "The direct sample PDF supports sample-backed formal output structure, not full marketplace detail-page parity."
     ]
   }
 }

@@ -38,6 +38,16 @@
       "observedValue": "partner result, carrier-screening scope, pregnancy context, embryo or fetal context, hormone-status context, fertility evaluation, and reproductive decision context unavailable in this fixture",
       "sourceArtifact": "synthetic-carrier-status-rare-disease-genetic-report-reproductive-endocrine-boundary-context-v1",
       "sourceFile": "synthetic-carrier-status-rare-disease-genetic-report-reproductive-endocrine-boundary-context-v1.json"
+    },
+    {
+      "assembly": "public-sample-pdf",
+      "gene": "Carrier Status public sample",
+      "haplotype": "public-sample-output-structure-observed",
+      "inputId": "carrier-status-public-sample-output-structure",
+      "matchStatus": "observed",
+      "observedValue": "Public Complete Genome Science sample PDF shows an Inherited Carrier Status table with Condition, Your Risk, and Description columns; visible Carrier labels for Alpha-1 Antitrypsin Deficiency, AMPD1 Deficiency, Nonsyndromic Deafness, and Stargardt's Disease; visible Absent labels for many other inherited conditions; and footer text listing additional tested carrier-status conditions.",
+      "sourceArtifact": "reference/sources/sample_carrier_status_0.pdf",
+      "sourceFile": "sample_carrier_status_0.pdf"
     }
   ],
   "inputManifest": {
@@ -46,7 +56,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for carrier-status-rare-disease-genetic-report validation"
   },
-  "missingInputPolicy": "Report unavailable rare-disease carrier status evidence explicitly; do not call carrier status; diagnose a rare disease; classify variants; estimate partner, fetal, embryo, child, family-member, or reproductive risk; recommend reproductive action, cascade testing, diagnostic testing, screening, treatment, or replace genetic counseling.",
+  "missingInputPolicy": "Use the public Carrier Status sample rows only as observed output structure; report validated carrier-status output, tested gene/condition panel, variant classifications, residual risk, partner result, family history, reproductive context, genetic counselor review, and local-user carrier conclusions unavailable.",
   "packageSlug": "carrier-status-rare-disease-genetic-report",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -192,7 +202,19 @@
         "non_diagnostic_language",
         "missing_model_policy"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "carrier-status-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Carrier Status sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer rare-disease carrier status boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer Carrier Status boundary context using supplied references, explicit unavailable-model framing, and observed public Carrier Status sample-report output structure."
 }

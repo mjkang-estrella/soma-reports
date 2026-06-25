@@ -1,4 +1,4 @@
-# Nutritionist Summary local-agent prompt
+# Nutritionist Summary Local-Agent Prompt
 
 Generate a plain-English Nutritionist Summary report from local genome-derived nutrition evidence and supplied reference resources.
 Use only provided evidence and references. Do not invent genes, variants, studies, scores, symptoms, foods, supplements, meal plans, micronutrient targets, food-sensitivity results, metabolic diagnoses, or conclusions.
@@ -13,4 +13,9 @@ Do not diagnose lactose intolerance, food allergy, food sensitivity, celiac dise
 Do not create a nutritionist plan, prescribe diet changes, recommend supplements, diagnose symptoms, infer metabolic disease, or provide treatment guidance from genotype.
 State that symptoms, ancestry, diet history, environment, labs, medications, medical history, and clinician or dietitian guidance matter for nutrition decisions.
 For this package, focus on a concise consumer-shareable nutrition-genetics summary and explicitly unavailable meal-plan, supplement, symptom, lab, and metabolic sections.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
+Use sibling GenoPalate Food Sensitivity and GeneInformed Healthy Nutrition sample-report rows only as observed nutrition-summary output-format examples unless the local run supplies equivalent validated evidence.
+Do not turn sibling sample alcohol, caffeine, lactose, gluten, food-reaction, vitamin, mineral, omega-3, genetic-risk, population-share, personalized-advice, source-list, what-can-you-do, or sample genotype-like result text into a personal nutritionist plan, diet prescription, supplement recommendation, symptom diagnosis, metabolic inference, lab interpretation, or treatment guidance.
+State clearly that these are sibling sample rows, not a direct Nutritionist Summary sample report.

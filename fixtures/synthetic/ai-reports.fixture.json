@@ -1,5 +1,5 @@
 {
-  "consumerTone": "plain English; educational AI-report boundary context only; no model-accuracy, disease, trait, medication, screening, treatment, or actionability claims",
+  "consumerTone": "plain English; educational AI-report boundary context only; public sample rows are not local findings; no diagnosis, disease risk, pathogenicity, medication, screening, testing, treatment, lifestyle, supplement, model-accuracy, or actionability claims",
   "datasetId": "synthetic-ai-reports-boundary-context-v1",
   "expectedAssertions": {
     "consumerLanguage": true,
@@ -46,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived bioinformatics utility context for ai-reports validation"
   },
-  "missingInputPolicy": "Mark generated AI report output, model prompt, model version, service provenance, authenticated sample rows, disease or trait interpretation, and calibrated quality evidence unavailable when not explicitly supplied.",
+  "missingInputPolicy": "Report generated AI report output, model prompt, model version, service provenance, local disease-screen output, disease or trait interpretation, and calibrated quality evidence unavailable unless explicitly supplied; use public sample rows only as observed output structure.",
   "packageSlug": "ai-reports",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -152,7 +152,60 @@
         "trait_association_context",
         "model_unavailable_context"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "ai-reports-skin-health-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "AI Reports Skin Health beta sample report",
+      "usedFor": [
+        "sample_rows",
+        "formal_fields",
+        "genotype_summary",
+        "output_format",
+        "ai_beta_disclaimer"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetics",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "consumer_genetics_context",
+        "medical_advice_limitations"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-testing",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Testing",
+      "usedFor": [
+        "genetic_testing_context",
+        "testing_scope_limitations"
+      ]
+    },
+    {
+      "evidenceLevel": "consumer_education_background",
+      "id": "medlineplus-genetic-test-results",
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results",
+      "usedFor": [
+        "result_interpretation_context",
+        "qualified_review_limitations"
+      ]
+    },
+    {
+      "evidenceLevel": "public_health_background",
+      "id": "medlineplus-genetic-counseling",
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Counseling",
+      "usedFor": [
+        "genetic_counseling_context",
+        "professional_review_limitations"
+      ]
     }
   ],
-  "reportPurpose": "Consumer AI-report boundary context using selected public variant and reference-build rows while marking generated AI report output and model provenance unavailable."
+  "reportPurpose": "Consumer AI Reports boundary context using local derived utility rows plus observed Sequencing.com AI Reports Skin Health beta sample-output structure."
 }

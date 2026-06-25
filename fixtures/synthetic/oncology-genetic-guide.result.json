@@ -252,11 +252,13 @@
       "plainEnglishMeaning": "Observed sample-report row for Sorafenib. Use this as Oncology Genetic Guide output-format evidence only; it is not a local cancer-risk estimate, diagnosis, carrier-status result, screening recommendation, prognosis statement, medication recommendation, safety conclusion, efficacy prediction, dose instruction, or treatment-change instruction."
     }
   ],
-  "practicalNextSteps": [
-    "Review any oncology medication question with an oncology clinician, pharmacist, or genetic counselor who knows the full cancer, medication, and clinical context.",
-    "Use the appendix to see which pharmacogene, cancer-context, and treatment-context inputs were unavailable.",
-    "Do not use sample rows or derived PGx evidence alone to make screening, prevention, treatment, medication, or dosing decisions."
-  ],
+  "practicalNextSteps": {
+    "clinicianReview": [
+      "Review any oncology medication question with an oncology clinician, pharmacist, or genetic counselor who knows the full cancer, medication, and clinical context.",
+      "Use the appendix to see which pharmacogene, cancer-context, and treatment-context inputs were unavailable.",
+      "Do not use sample rows or derived PGx evidence alone to make screening, prevention, treatment, medication, or dosing decisions."
+    ]
+  },
   "references": [
     {
       "id": "cpic",

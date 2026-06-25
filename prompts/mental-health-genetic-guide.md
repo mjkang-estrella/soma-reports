@@ -15,4 +15,6 @@ Do not infer depression, addiction, bipolar disorder, ADHD, anxiety, suicidality
 Do not state that a medication is appropriate, safe, unsafe, effective, ineffective, contraindicated, recommended, preferred, or correctly dosed unless that exact externally reviewed clinical conclusion and patient-specific medication context are supplied; for this package they are not supplied.
 Do not recommend starting, stopping, switching, or changing the dose of any medication.
 State that a clinician or pharmacist must review medication decisions.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.

@@ -10,4 +10,6 @@ If order status, sample collection, lab processing, sequencing platform, coverag
 State that a WGS health-screen bundle card is not evidence of purchase, completed sequencing, health-screen findings, clinical sensitivity, or all-clear results.
 Do not infer variant detection, clinical sensitivity, disease risk, carrier status, pathogenicity, sample quality, diagnosis, ancestry, medication response, or treatment implications from product catalog context.
 Do not recommend medication, screening, diagnostic testing, reproductive decisions, lifestyle changes, or treatment changes from product-boundary rows.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.

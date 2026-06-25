@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived nutrition-genetics evidence for digestive-disorders-gut-health validation"
   },
-  "missingInputPolicy": "Report unavailable digestive-disorder, gut-health, microbiome, symptom, diet, supplement, lab, and calibrated models explicitly; do not infer digestive diagnosis, microbiome status, symptom causes, elimination diets, supplement needs, labs, or treatment.",
+  "missingInputPolicy": "Report unavailable digestive-disorder, gut-health, microbiome, symptom, diet-history, elimination-diet, probiotic, supplement, lab, medication, treatment, ancestry-applicability, and calibrated models explicitly; use sibling Gut Health sample rows only as observed output structure and do not infer local IBS, peptic ulcer, indigestion, acid reflux, constipation, gallstones, pancreatitis, IBD, appendicitis, C. difficile, H. pylori, EBV, gastrointestinal infection, gluten sensitivity, lactose intolerance diagnosis, microbiome status, probiotic need, curcumin need, supplement dosing, labs, symptoms, medications, diagnosis, or treatment from genotype alone or sample-only rows.",
   "packageSlug": "digestive-disorders-gut-health",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -155,7 +155,19 @@
         "bmi_limitations",
         "no_weight_prediction_from_genotype"
       ]
+    },
+    {
+      "evidenceLevel": "sibling_sample_report",
+      "id": "gut-health-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "SelfDecode Gut Health sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer Digestive Disorders & Gut Health boundary context using derived MCM6/LCT evidence plus explicit digestive-disorder, microbiome, symptom, diet, supplement, lab, treatment, and model-unavailable framing."
+  "reportPurpose": "Consumer Digestive Disorders & Gut Health boundary context using derived MCM6/LCT evidence plus sibling SelfDecode Gut Health sample-report output structure."
 }

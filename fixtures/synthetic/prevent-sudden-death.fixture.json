@@ -15,7 +15,7 @@
       "haplotype": "rare-inherited-condition-model-unavailable",
       "inputId": "prevent-sudden-death-condition-model-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "validated inherited cardiovascular condition model, cardiomyopathy or arrhythmia gene panel result, variant classifications, ECG, echocardiogram, rhythm monitoring, symptoms, personal and family history of sudden death, exercise context, medication context, cardiology review, clinical genetics review, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "validated inherited cardiovascular condition model, cardiomyopathy or arrhythmia gene panel result, variant classifications, ECG, echocardiogram, rhythm monitoring, symptoms, personal and family history of sudden death, exercise context, medication context, cardiology review, clinical genetics review, and authenticated sample-report rows unavailable in this fixture; Public Disease Risk sample PDF Cardiovascular Diseases table, CAD explanatory gene note, and heritable-component limitation are extracted as sibling inherited-cardiovascular output-structure evidence.",
       "sourceArtifact": "synthetic-prevent-sudden-death-rare-inherited-condition-boundary-context-v1",
       "sourceFile": "synthetic-prevent-sudden-death-rare-inherited-condition-boundary-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "clinical-professional-context-unavailable",
       "inputId": "prevent-sudden-death-clinical-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "clinical diagnosis, symptoms, labs, imaging, medication or procedure context, family history, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "clinical diagnosis, symptoms, family history, medication or procedure context, condition-specific exams, labs or imaging when relevant, specialist review, genetics review, and personal clinical context unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Prevent Sudden Death",
       "sourceArtifact": "synthetic-prevent-sudden-death-rare-inherited-condition-boundary-context-v1",
       "sourceFile": "synthetic-prevent-sudden-death-rare-inherited-condition-boundary-context-v1.json"
     },
@@ -35,7 +35,7 @@
       "haplotype": "variant-interpretation-unavailable",
       "inputId": "prevent-sudden-death-variant-interpretation-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "gene panel scope, variant classifications, zygosity, inheritance pattern, ancestry applicability, cascade-testing context, and clinical genetics review unavailable in this fixture",
+      "observedValue": "gene panel scope, variant classifications, zygosity, inheritance pattern, ancestry applicability, cascade-testing context, and clinical genetics review unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Prevent Sudden Death",
       "sourceArtifact": "synthetic-prevent-sudden-death-rare-inherited-condition-boundary-context-v1",
       "sourceFile": "synthetic-prevent-sudden-death-rare-inherited-condition-boundary-context-v1.json"
     }
@@ -46,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for prevent-sudden-death validation"
   },
-  "missingInputPolicy": "Report unavailable inherited cardiovascular and sudden-death family-history context evidence explicitly; do not diagnose cardiomyopathy, arrhythmia, channelopathy, inherited cardiovascular disease, or sudden-death syndrome; estimate sudden-death risk, cardiac-event risk, exercise risk, family-member risk, or carrier status; classify variants; infer ECG, echocardiogram, rhythm-monitoring, symptoms, exercise clearance, ICD need, beta-blocker need, medication need, device need, activity restriction, screening need, diagnostic-test need, cascade-testing need, reproductive action, or clinical actionability.",
+  "missingInputPolicy": "Report unavailable inherited cardiovascular and sudden-death family-history context evidence explicitly; use the public sibling Disease Risk sample rows only as observed output structure and do not infer sudden-death risk, cardiomyopathy or arrhythmia diagnosis, inherited cardiovascular disease diagnosis, ECG/echo/rhythm-monitoring inference, symptom inference, exercise clearance, ICD/device need, beta-blocker or medication need, screening, testing, prevention, cascade testing, reproductive action, or actionability guidance from local unavailable evidence or sample-only rows.",
   "packageSlug": "prevent-sudden-death",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -229,7 +229,19 @@
         "non_diagnostic_language",
         "missing_model_policy"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "genetic-testing-disease-risk-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Genetic Testing For Disease Risk sample genetic report",
+      "usedFor": [
+        "sibling_formal_fields",
+        "sample_rows",
+        "risk_label_table",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer inherited cardiovascular and sudden-death family-history context boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer inherited cardiovascular and sudden-death family-history context boundary context using supplied references plus observed sibling Disease Risk Genetic Test Report inherited cardiovascular and sudden-death output structure while explicitly marking direct Prevent Sudden Death, validated local model, and clinical context unavailable."
 }

@@ -1,0 +1,135 @@
+{
+  "schema": "soma-reports.official-output-capture.v1",
+  "slug": "genome-short-read-mapper",
+  "title": "Short Read Mapper",
+  "capturedAt": "2026-06-24T18:02:29Z",
+  "captureUrl": "https://sequencing.com/marketplace/genome-short-read-mapper",
+  "sourceKind": "authenticated-marketplace-pageprops-output-scope-boundary",
+  "privacyBoundary": {
+    "rawGenomeIncluded": false,
+    "privateValuesRedacted": true,
+    "commitSafe": true,
+    "notes": "This capture records only official authenticated marketplace metadata for Short Read Mapper scope. It does not include a user's genome, sequencing files, alignment output, command output, mapping metrics, private result URL, or generated report rows."
+  },
+  "reportFile": "",
+  "sourceArtifacts": [
+    "https://sequencing.com/marketplace/genome-short-read-mapper",
+    "reference/catalog/genome-short-read-mapper-authenticated-detail-2026-06-23.json",
+    "reference/catalog/sequencing-authenticated-marketplace-pageprops-2026-06-21.json"
+  ],
+  "sourceResources": [
+    {
+      "id": "authenticated-marketplace-pageprops-output-scope",
+      "title": "Sequencing.com Short Read Mapper authenticated marketplace pageProps item",
+      "sourceType": "official_output_boundary",
+      "url": "https://sequencing.com/marketplace/genome-short-read-mapper",
+      "sourceArtifact": "reference/catalog/sequencing-authenticated-marketplace-pageprops-2026-06-21.json",
+      "privacy": "marketplace summary and search-keyword scope only; no private genome values",
+      "evidenceLevel": "official-output",
+      "extractionStatus": "direct",
+      "scope": "report_specific",
+      "usedFor": [
+        "formalFields",
+        "generatedOutput"
+      ],
+      "note": "Official Sequencing.com source describes output field structure only; no populated private or sample result rows were captured."
+    }
+  ],
+  "sampleRows": [],
+  "resultRows": [],
+  "formalFields": [
+    {
+      "key": "genome_mapping_scope",
+      "label": "Genome mapping",
+      "observedField": "Genome mapping made simple",
+      "outputPath": "shortReadMapper.scope.genomeMapping",
+      "status": "covered",
+      "sourceLabel": "authenticated-marketplace-pageprops-output-scope",
+      "sourceResourceIds": [
+        "authenticated-marketplace-pageprops-output-scope"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "short_read_mapper_scope",
+      "label": "Short-read mapping",
+      "observedField": "Short Read Mapper",
+      "outputPath": "shortReadMapper.scope.shortReadMapping",
+      "status": "covered",
+      "sourceLabel": "authenticated-marketplace-pageprops-output-scope",
+      "sourceResourceIds": [
+        "authenticated-marketplace-pageprops-output-scope"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "input_file_scope",
+      "label": "Sequencing input files",
+      "observedField": "BAM, SAM, FASTQ, FASTA, paired-end",
+      "outputPath": "shortReadMapper.inputScope.fileFormats",
+      "status": "covered",
+      "sourceLabel": "authenticated-marketplace-pageprops-output-scope",
+      "sourceResourceIds": [
+        "authenticated-marketplace-pageprops-output-scope"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "alignment_scope",
+      "label": "Alignment",
+      "observedField": "alignment",
+      "outputPath": "shortReadMapper.scope.alignment",
+      "status": "covered",
+      "sourceLabel": "authenticated-marketplace-pageprops-output-scope",
+      "sourceResourceIds": [
+        "authenticated-marketplace-pageprops-output-scope"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "per_base_score_scope",
+      "label": "Per-base score scope",
+      "observedField": "per-base divergent gbase scores",
+      "outputPath": "shortReadMapper.scope.perBaseScores",
+      "status": "covered",
+      "sourceLabel": "authenticated-marketplace-pageprops-output-scope",
+      "sourceResourceIds": [
+        "authenticated-marketplace-pageprops-output-scope"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "sensitivity_scope",
+      "label": "Sensitivity scope",
+      "observedField": "sensitivity",
+      "outputPath": "shortReadMapper.scope.sensitivity",
+      "status": "covered",
+      "sourceLabel": "authenticated-marketplace-pageprops-output-scope",
+      "sourceResourceIds": [
+        "authenticated-marketplace-pageprops-output-scope"
+      ],
+      "sourceBindingStatus": "direct"
+    }
+  ],
+  "citationBindings": [],
+  "validationCommands": [
+    "npm run scaffold:validate-captures -- --path reference/catalog/genome-short-read-mapper-official-output-capture-2026-06-24.json",
+    "npm run scaffold:evidence-audit",
+    "npm run readiness:audit:summary",
+    "npm run agent:validate:formal"
+  ],
+  "promotionBoundary": {
+    "targetStartsAsScaffoldOnly": true,
+    "rowEvidenceReady": false,
+    "requiredEvidenceForPromotion": [
+      "Official Short Read Mapper result artifact or sample output",
+      "Formal mapping or alignment output rows",
+      "Row-level source bindings for mapping or alignment fields"
+    ],
+    "nonPromotionBoundary": [
+      "This capture records official marketplace scope and keyword text only.",
+      "Do not treat described mapping capabilities as sampleRows, resultRows, generatedOutput, alignment metrics, coverage metrics, command output, variant calls, or citationBindings.",
+      "Do not mark the package sample-backed formal until official non-empty rows, exports, or generated mapper artifacts are captured."
+    ]
+  }
+}

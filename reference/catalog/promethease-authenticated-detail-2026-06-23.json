@@ -1,0 +1,54 @@
+{
+  "app": null,
+  "bodyPreview": "Rendered marketplace detail page confirms Promethease title, River Road Bio provider, free price, exact detail route, and literature-retrieval positioning. The page exposes rendered DOM/meta content rather than rich pageProps.reportData or a sample report file.",
+  "capturedAt": "2026-06-23T03:24:02Z",
+  "categories": [
+    "Health"
+  ],
+  "currencyCode": "USD",
+  "evidenceNotes": [
+    "Marketplace detail page was opened in the in-app browser and resolved to the exact report URL.",
+    "This detail page exposes rendered DOM/meta content rather than the richer pageProps.reportData shape; use it for exact route availability, title, provider/price metadata, and detail-page boundary evidence only.",
+    "Use overview/marketing text only for report purpose and marketplace positioning, not for local genetic, medical, variant-classification, risk, treatment, or actionability conclusions.",
+    "No raw genome data, uploaded genome data, or account navigation text is included in this artifact."
+  ],
+  "finalUrl": "https://sequencing.com/marketplace/promethease",
+  "headerImage": "https://sequencing.com/sites/default/files/promethease-dna-app-sequencing.com-app-market-icon.png",
+  "headerImageAlt": "",
+  "infoTabs": [
+    "Overview",
+    "Getting Started"
+  ],
+  "meta": {
+    "canonical": "https://sequencing.com/marketplace/promethease",
+    "publishedTime": "2017-10-10T17:17:17-07:00",
+    "modifiedTime": "2025-05-23T03:28:12-07:00",
+    "ogDescriptionPreview": "Click to use Promethease for free to analyze your DNA data. Also includes access to DNA analysis apps and reports for health, genealogy, data exploration, and more.",
+    "productPriceAmount": "0.00",
+    "productPriceCurrency": "USD",
+    "productRetailerItemId": null,
+    "pagePropsDataKeys": [],
+    "pagePropsMetaKeys": [],
+    "pagePropsBlockCount": 0,
+    "jsonLdTypes": []
+  },
+  "nid": null,
+  "price": "Free",
+  "productId": null,
+  "publisher": "River Road Bio",
+  "reportDataKeys": [],
+  "reportFile": null,
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "source": "in-app browser sequencing.com marketplace detail page rendered DOM/meta extraction",
+  "summaryPreview": "Promethease is described as a literature retrieval system that builds a personal DNA report by connecting genotype files to scientific findings.",
+  "title": "Promethease",
+  "uri": "marketplace/promethease",
+  "url": "https://sequencing.com/marketplace/promethease",
+  "visibleParagraphs": [
+    "Promethease",
+    "Developed by River Road Bio",
+    "Promethease is a literature retrieval system that builds a personal DNA report based on connecting a file of DNA genotypes to the scientific findings.",
+    "Biomedical researchers, healthcare practitioners, and customers of DNA testing services such as 23andMe and AncestryDNA use Promethease to retrieve information published about their DNA variations.",
+    "The page links to Sequencing.com knowledge-center context for Promethease DNA analysis, but no official Promethease output table, SNPedia row set, or sample report file was exposed during capture."
+  ]
+}

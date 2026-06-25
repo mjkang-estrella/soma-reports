@@ -1,0 +1,111 @@
+{
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "capturedAt": "2026-06-21T15:22:16.742Z",
+  "source": "in-app browser sequencing.com marketplace detail page __NEXT_DATA__.props.pageProps.reportData extraction",
+  "url": "https://sequencing.com/marketplace/wellness-and-longevity",
+  "finalUrl": "https://sequencing.com/marketplace/wellness-and-longevity",
+  "title": "Wellness and Longevity",
+  "nid": "5149",
+  "productId": "4534",
+  "app": {
+    "appid": "14830",
+    "label": "Wellness and Longevity",
+    "backend": "ApiAppBackend",
+    "apiAppId": null
+  },
+  "publisher": "App MD",
+  "price": "$199",
+  "currencyCode": "USD",
+  "categories": [
+    "Health",
+    "Children"
+  ],
+  "uri": "marketplace/wellness-and-longevity",
+  "reportFile": "https://sequencing.com/sites/default/files/wellness-and-longevity-dna-app-genetic-report-sequencing.com-wgs-whole-genome-sequencing-app-store-bioinformatics-health-analysis_compressed.pdf",
+  "headerImage": "https://sequencing.com/sites/default/files/wellness-and-longevity-icon1.png",
+  "headerImageAlt": null,
+  "meta": {
+    "canonical": "https://sequencing.com/marketplace/wellness-and-longevity",
+    "publishedTime": null,
+    "modifiedTime": null,
+    "ogDescriptionHash": "sha256:0385f659fbda435080a8d1637d7f7a5c095e84e83e065ce65c34256e2fc4ba36",
+    "ogDescriptionPreview": "Transform your DNA into clear solutions for better health. Created by physicians and clinical geneticists, this report analyzes your DNA and provides straightforward, actionable, personalized guidance for protecting and optimizing your health.",
+    "productPriceAmount": null,
+    "productPriceCurrency": "USD",
+    "productRetailerItemId": "4534"
+  },
+  "summaryPreview": "Transform your DNA into clear solutions for better health. Created by physicians and clinical geneticists, this report analyzes your DNA and provides straightforward, actionable, personalized guidance for protecting and optimizing your health.",
+  "bodyPreview": "Transform Your DNA Into Clear Solutions For Better Health Created by physicians and clinical geneticists, this report analyzes your DNA and provides straightforward, actionable, personalized guidance for protecting and optimizing your health. Predict The report analyzes your genetic risk of a wide range of preventable diseases. You'll learn what path your genes are putting you on for diseases such as cancer and heart disease. Prevent Knowing your risk means having the chance to lower it. The report provides you with an actionable report that provides clear solutions for optimizing your health. Prevail Be proactive and use the information obtained from your genes to protect your health. Preventable Diseases This app analyzes a wide range of preventable diseases, conditions, and medication reactions including: cancer, including skin, breast, colon, and other forms of cancer heart disease and heart attack harmful medication reactions optimal medication dosage preventable causes of sudden ",
+  "visibleParagraphs": [
+    "Marketplace",
+    "Wellness and Longevity",
+    "Developed by App MD",
+    "Transform your DNA into clear solutions for better health. Created by physicians and clinical geneticists, this report analyzes your DNA and provides straightforward, actionable, personalized guidance for protecting and optimizing your health.",
+    "$199 per genome",
+    "*Works Best With Whole Genome Sequencing",
+    "Get 100% of your DNA data with Whole Genome Sequencing.",
+    "Already have data from a DNA test? Upload your data for free."
+  ],
+  "infoTabs": [
+    {
+      "label": "Overview",
+      "textPreview": "Transform Your DNA Into Clear Solutions For Better Health Created by physicians and clinical geneticists, this report analyzes your DNA and provides straightforward, actionable, personalized guidance for protecting and optimizing your health. Predict The report analyzes your genetic risk of a wide range of preventable diseases. You'll learn what path your genes are putting you on for diseases such as cancer and heart disease. Prevent Knowing your risk means having the chance to lower it. The report provides you with an actionable report that provides clear solutions for optimizing your health. Prevail Be proactive and use the information obtained from your genes to protect your health. Preventable Diseases This app analyzes a wide range of preventable diseases, conditions, and medication reactions including: cancer, including skin, breast, colon, and other forms of cancer heart disease and heart attack harmful medication reactions optimal medication dosage preventable causes of sudden death multiple sclerosis blood clot disorders bleeding abnormalities A Straightforward, Useful DNA Report A personalized plan of disease prevention may allow you and your doctor to significantly reduc"
+    },
+    {
+      "label": "Getting Started",
+      "textPreview": "This app analyzes your genes and provides useful insights into a wide range of diseases, traits, and medication reactions. Once your DNA data is stored in your Sequencing.com account, purchase this DNA report, and then click the app's 'Start' button. You'll receive your report in about 30 minutes. You've already taken a DNA test Upload your DNA data - Our Universal DNA Compatibility enables this report to work with DNA data from almost any DNA test. <img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABkAAAAQMCAYAAADOCVWZAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAGQKADAAQAAAABAAAEDAAAAABOvwlrAABAAElEQVR4AezdCZxcVZ33/3PurareknRWsncCJKEhrIIgKBAURRhRR02cRxEIMEZFGWGcxZl5HuP/NfPM4+jo8+CgRrKQgAvBGZ0ZBUUH4iACCrImJCzZOvve3emuruXe8//eJt30UlVdvVR3Ov25vtqquvfcc85939u80udXv3OMYUMAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQA"
+    },
+    {
+      "label": "Technical",
+      "textPreview": "This app utilizes proprietary technology for genetic analysis and report generation. This app uses Sequencing.com's comprehensive database of genotypes and their related phenotypes. This includes relational data pertaining to phenotypes, algorithms to calculate risk (for multifactorial phenotypes) and carrier status (for monogenic phenotypes) and the ability to generate dynamic genetic reports focusing on straightforward, useful insights. A multifactorial algorithm is used to assess risk of melanoma, heart disease, osteoarthritis and osteoporosis. A monogenic algorithm is used to assess all other phenotypes. The results of monogenic analysis are one of the following: Custom Custom results may be provided for specific genotypes. These customized results are obtained from literature reviews that investigated of made note of a phenotype for a specific genotype. This may include information about penetrance. Not a carrier No phenotype-causing alleles detected Carrier but not affected One phenotype causing allele detected for an autosomal recessive phenotype an X-linked recessive phenotype (if the genetic data is from a female) Likely affected Two phenotype-causing alleles detected for "
+    },
+    {
+      "label": "FAQ",
+      "textPreview": "Do I need to do anything to the file containing my genetic data before it is analyzed by this app? Good news... the app does everything for you. All you need to do is either upload or import the file containing your genetic data into your Sequencing.com account. Start the app, select the file and the app will handle do everything else. 23andMe data can be uploaded or imported directly from 23andMe (via the Upload Center ) while Ancestry.com, Family Tree DNA and The Genographic Project data can be obtained from those services and then uploaded to your account at Sequencing.com. You don't need to do anything to the file you obtain from these services... just upload the file to your secure account at Sequencing.com and then you can use it to power most apps. Both whole and exome sequencing data can be provided unaligned (such as in FASTQ or FASTA formats), aligned but without variant calling (such as BAM or SAM formats) or in VCF, CRAM or AVRO formats. Where do I indicate sex and reference genome? Some more good news... the app does this as well. It utilizes an advanced automated approach to determine sex and reference genome (if the file format is downstream of alignment). What do th"
+    },
+    {
+      "label": "Disclaimer",
+      "textPreview": "The genetic analysis and statements that appear in this app and report have not been evaluated by the United States Food and Drug Administration. The Sequencing.com website and all software applications (Apps) that use Sequencing.com's website, as well as Sequencing.com's open Application Programming Interface (API), are not intended to diagnose, monitor, treat, cure, prevent nor alleviate any disease."
+    }
+  ],
+  "reportDataKeys": [
+    "app_id",
+    "avatar",
+    "avatarAlt",
+    "body",
+    "category",
+    "currency_code",
+    "headerImg",
+    "headerImgAlt",
+    "id",
+    "included_with_membership",
+    "included_with_premium",
+    "info_tab",
+    "listEnableFiles",
+    "meta",
+    "nid",
+    "non_genetic_fields",
+    "pre_order",
+    "price",
+    "product_data",
+    "product_id",
+    "publisher",
+    "purchasedBy",
+    "relatedReports",
+    "reportFile",
+    "report_premium",
+    "search_keywords",
+    "start_button_text",
+    "sub_title",
+    "summary",
+    "title",
+    "type",
+    "uri",
+    "wgsCompatible"
+  ],
+  "evidenceNotes": [
+    "Marketplace detail reportData confirms title, publisher/provider when available, price/product metadata when available, categories, sample report link when available, and overview/disclaimer tab boundaries when present.",
+    "Use overview/marketing text only for report purpose and marketplace positioning, not for local genetic, medical, diet, supplement, medication, or performance conclusions.",
+    "No raw genome data, uploaded genome data, or account navigation text is included in this artifact."
+  ]
+}

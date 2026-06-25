@@ -1,13 +1,13 @@
 {
+  "schemaVersion": "soma-reports.synthetic-result.v1",
   "reportOverview": {
     "reportTitle": "Female Sexual & Reproductive Health",
     "inputManifestHash": "sha256:synthetic-female-sexual-reproductive-health-dna-report-reproductive-endocrine-boundary-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "validated female reproductive-health model, fertility evaluation, hormone labs, menstrual history, pregnancy context, PCOS or endometriosis evaluation, medications, symptoms, partner context, clinician review, and authenticated sample-report rows unavailable in this fixture",
-      "clinical diagnosis, symptoms, labs, medications, family history, professional interpretation, treatment context, and authenticated sample-report rows unavailable in this fixture",
-      "partner result, carrier-screening scope, pregnancy context, embryo or fetal context, hormone-status context, fertility evaluation, and reproductive decision context unavailable in this fixture",
-      "This result is educational boundary context only and is not a diagnosis, carrier-status call, fertility or infertility estimate, hormone-status inference, lab interpretation, pregnancy outcome, fetal or embryo status, testing recommendation, treatment guidance, reproductive decision, or clinical actionability claim."
+      "Validated local female sexual and reproductive health output, fertility evaluation, hormone labs, menstrual history, pregnancy context, PCOS or endometriosis evaluation, medications, symptoms, partner context, and clinician review are unavailable in this fixture.",
+      "The local sample rows are available as observed mock-report structure only and must not be treated as this user's sexual-health, fertility, hormone, STI, pregnancy, treatment, supplement, lifestyle, medication, or reproductive-action findings.",
+      "Clinical diagnosis, symptoms, labs, medications, family history, professional interpretation, treatment context, fertility evaluation, pregnancy context, and reproductive decision context are unavailable in this fixture.",
+      "This result is educational boundary context only and is not a diagnosis, sexual-health finding, fertility or infertility estimate, hormone-status inference, STI-susceptibility inference, lab interpretation, pregnancy outcome, fetal or embryo status, testing recommendation, treatment guidance, supplement guidance, lifestyle guidance, medication guidance, reproductive decision, or clinical actionability claim."
     ]
   },
   "resultRows": [
@@ -15,7 +15,8 @@
       "groupTitle": "Validated model availability",
       "item": "female-sexual-reproductive-health-dna-report-model-unavailable",
       "brandName": "",
-      "geneticAnalysis": "Female Sexual & Reproductive Health cannot emit a conclusion from this local fixture because the validated model, professional review, clinical context, and authenticated sample rows are unavailable.",
+      "geneticAnalysis": "Female Sexual & Reproductive Health cannot emit a local sexual or reproductive-health conclusion from this fixture because validated model output, fertility evaluation, hormone labs, menstrual history, pregnancy context, symptoms, medications, partner context, clinical history, and clinician review are unavailable.",
+      "description": "The local sample PDF is used only to preserve report structure; it is not evidence of this user's sexual health, fertility, hormone status, STI susceptibility, pregnancy context, or reproductive actionability.",
       "genes": [
         "Female Sexual & Reproductive Health model"
       ],
@@ -28,16 +29,34 @@
         "medlineplus-genetic-counseling",
         "fda-direct-to-consumer-tests",
         "cdc-family-health-history",
-        "medlineplus-prenatal-genetic-counseling"
+        "medlineplus-prenatal-genetic-counseling",
+        "medlineplus-hormones"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This row is an availability statement. It does not diagnose a condition, call carrier status, estimate fertility or pregnancy outcomes, infer hormone or lab status, recommend testing or treatment, guide reproductive decisions, or provide an all-clear result."
+      "plainEnglishMeaning": "This is an availability statement. It does not diagnose reproductive, sexual, endocrine, PCOS, endometriosis, fertility, infertility, or pregnancy conditions; infer hormone, lab, or STI status; recommend testing, treatment, supplements, lifestyle, medication, reproductive actions, or provide actionability."
+    },
+    {
+      "groupTitle": "Sample output structure",
+      "item": "Female Sexual & Reproductive Health sample overview, detail, and recommendation rows",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "The sample report shows 37 preserved sample rows covering report identity, reproductive-health overview cards, reproductive hormone cards, STI cards, detail-page top-variant summaries, and Vitamin D/Relaxation Techniques recommendation scoring.",
+      "description": "The sampleRows entries preserve observed report structure and sample-person labels only.",
+      "genes": [
+        "Female Sexual & Reproductive Health sample report"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "These sample rows describe the mock report layout and sample-person labels only. They are not local sexual-health results, fertility or infertility findings, hormone levels, STI susceptibility, PCOS status, endometriosis status, pregnancy findings, treatment advice, supplement advice, lifestyle advice, medication advice, reproductive-action guidance, or actionability claims."
     },
     {
       "groupTitle": "Clinical and lab context availability",
       "item": "female-sexual-reproductive-health-dna-report-clinical-context-unavailable",
       "brandName": "",
-      "geneticAnalysis": "clinical diagnosis, symptoms, labs, medications, family history, professional interpretation, treatment context, and authenticated sample-report rows unavailable in this fixture",
+      "geneticAnalysis": "Clinical diagnosis, symptoms, hormone labs, medications, menstrual history, family history, professional interpretation, treatment context, and complete report-specific clinical context are unavailable in this fixture.",
+      "description": "Female sexual and reproductive-health interpretation depends on validated testing scope plus clinical, lab, medication, menstrual, pregnancy, family, ancestry, and professional-review context that this fixture does not contain.",
       "genes": [
         "Female Sexual & Reproductive Health clinical and lab context"
       ],
@@ -50,16 +69,18 @@
         "medlineplus-genetic-counseling",
         "fda-direct-to-consumer-tests",
         "cdc-family-health-history",
-        "medlineplus-prenatal-genetic-counseling"
+        "medlineplus-prenatal-genetic-counseling",
+        "medlineplus-hormones"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "Personal interpretation needs validated test scope, symptoms, medical and family history, medications, labs, partner or pregnancy context when relevant, ancestry applicability, and qualified professional review."
+      "plainEnglishMeaning": "Missing clinical and lab context means the report must mark those topics unavailable instead of converting sample rows or background references into a personal reproductive, endocrine, sexual-health, STI, treatment, or medication conclusion."
     },
     {
       "groupTitle": "Reproductive and endocrine context availability",
       "item": "female-sexual-reproductive-health-dna-report-reproductive-endocrine-context-unavailable",
       "brandName": "",
-      "geneticAnalysis": "partner result, carrier-screening scope, pregnancy context, embryo or fetal context, hormone-status context, fertility evaluation, and reproductive decision context unavailable in this fixture",
+      "geneticAnalysis": "Partner context, pregnancy context, embryo or fetal context, hormone-status context, fertility evaluation, menstrual history, and reproductive decision context are unavailable in this fixture.",
+      "description": "The fixture supports no fertility, infertility, pregnancy, PCOS, endometriosis, STI, reproductive-hormone, treatment, supplement, lifestyle, medication, or reproductive-action conclusion.",
       "genes": [
         "Female Sexual & Reproductive Health reproductive/endocrine context"
       ],
@@ -72,28 +93,619 @@
         "medlineplus-genetic-counseling",
         "fda-direct-to-consumer-tests",
         "cdc-family-health-history",
-        "medlineplus-prenatal-genetic-counseling"
+        "medlineplus-prenatal-genetic-counseling",
+        "medlineplus-hormones"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "Missing partner, pregnancy, carrier-screening, fertility, hormone, or endocrine context means the report must mark those topics unavailable instead of converting local genetic context into health or reproductive actions."
+      "plainEnglishMeaning": "Missing reproductive and endocrine context means the report must remain unavailable for sexual and reproductive-health interpretation and must not recommend contraception, IVF, PGT, prenatal testing, medication, supplements, lifestyle changes, treatment, or reproductive actions."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Report identity",
+      "item": "Female Sexual & Reproductive Health DNA Report",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "The PDF metadata and rendered cover identify a Female Sexual & Reproductive Health DNA Report sample from SelfDecode/Sequencing.com.",
+      "description": "The 23-page sample includes summary cards, reproductive-health detail pages, recommendation blocks, and sample-report explanatory pages.",
+      "genes": [
+        "Female Sexual & Reproductive Health sample report"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sample-report identity only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation."
+    },
+    {
+      "groupTitle": "Report summary",
+      "item": "19 Genetic Results",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "The sample summary states that the report contains 19 genetic results across reproductive health, reproductive hormones, and sexually transmitted infections.",
+      "description": "Observed sample summary from page 8. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed 19 Genetic Results sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Sexual and reproductive health issue cards",
+      "item": "Sexual Dysfunction",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "More likely to have sexual dysfunction",
+      "description": "Observed sample overview card from pages 9 and 11. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Sexual Dysfunction sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Sexual and reproductive health issue cards",
+      "item": "Female Infertility",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "More likely to have female infertility",
+      "description": "Observed sample overview card from pages 9 and 11. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Female Infertility sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Sexual and reproductive health issue cards",
+      "item": "PCOS",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Typical likelihood of PCOS",
+      "description": "Observed sample overview card from pages 9 and 11. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed PCOS sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Sexual and reproductive health issue cards",
+      "item": "Painful Periods",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Typical likelihood of painful periods",
+      "description": "Observed sample overview card from pages 9 and 11. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Painful Periods sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Sexual and reproductive health issue cards",
+      "item": "Irregular Periods",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Less likely to have irregular periods",
+      "description": "Observed sample overview card from pages 9 and 11. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Irregular Periods sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Sexual and reproductive health issue cards",
+      "item": "Heavy Periods",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Less likely to have heavy periods",
+      "description": "Observed sample overview card from pages 9 and 11. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Heavy Periods sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Sexual and reproductive health issue cards",
+      "item": "Menstrual Cycle Length",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Likely shorter menstrual cycle",
+      "description": "Observed sample overview card from pages 9 and 11. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Menstrual Cycle Length sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Sexual and reproductive health issue cards",
+      "item": "Uterine Fibroids",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "More likely to have uterine fibroids",
+      "description": "Observed sample overview card from pages 9 and 11. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Uterine Fibroids sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Sexual and reproductive health issue cards",
+      "item": "Endometriosis",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Typical likelihood of endometriosis",
+      "description": "Observed sample overview card from pages 9 and 11. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Endometriosis sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Reproductive hormone cards",
+      "item": "Bioavailable Testosterone (F)",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Likely typical bioavailable testosterone levels",
+      "description": "Observed sample overview card from page 9. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Bioavailable Testosterone (F) sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Reproductive hormone cards",
+      "item": "Estradiol",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Likely higher estradiol levels",
+      "description": "Observed sample overview card from page 9. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Estradiol sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Reproductive hormone cards",
+      "item": "Testosterone (F)",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Likely typical testosterone levels",
+      "description": "Observed sample overview card from page 9. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Testosterone (F) sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Reproductive hormone cards",
+      "item": "DHEAS",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Likely lower DHEAS levels",
+      "description": "Observed sample overview card from page 9. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed DHEAS sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Reproductive hormone cards",
+      "item": "Prolactin",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Likely lower prolactin levels",
+      "description": "Observed sample overview card from page 9. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Prolactin sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Reproductive hormone cards",
+      "item": "SHBG",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Likely higher SHBG levels",
+      "description": "Observed sample overview card from page 9. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed SHBG sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Reproductive hormone cards",
+      "item": "FSH",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Likely typical FSH levels",
+      "description": "Observed sample overview card from page 9. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed FSH sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Sexually transmitted infection cards",
+      "item": "HPV Infection",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Less likely to have HPV infection",
+      "description": "Observed sample overview card from page 10. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed HPV Infection sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Sexually transmitted infection cards",
+      "item": "Genital Herpes",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Typical likelihood of genital herpes",
+      "description": "Observed sample overview card from page 10. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Genital Herpes sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Sexually transmitted infection cards",
+      "item": "Chlamydia",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "More likely to have chlamydia",
+      "description": "Observed sample overview card from page 10. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Chlamydia sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Detail pages",
+      "item": "Sexual Dysfunction detail page",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "More likely; based on 16,265 genetic variants; 81st percentile",
+      "description": "Observed sample detail page with key takeaways, gauge, percentile card, and top-variant table on page 12. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Sexual Dysfunction detail page sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Detail pages",
+      "item": "Female Infertility detail page",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "More likely; based on 569 genetic variants; 82nd percentile",
+      "description": "Observed sample detail page with key takeaways, gauge, percentile card, and top-variant table on page 13. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Female Infertility detail page sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Detail pages",
+      "item": "PCOS detail page",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Typical likelihood; based on 1,124 genetic variants",
+      "description": "Observed sample detail page with key takeaways, gauge, and top-variant table on page 14. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed PCOS detail page sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Vitamin D recommendation blocks",
+      "item": "Vitamin D for Sexual Dysfunction",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Impact 2/5; Evidence 3/5",
+      "description": "Observed recommendation block from pages 16-20. Preserved as sample recommendation structure only, not supplement advice. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Vitamin D for Sexual Dysfunction sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Vitamin D recommendation blocks",
+      "item": "Vitamin D for Female Infertility",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Impact 2/5; Evidence 3/5",
+      "description": "Observed recommendation block from pages 16-20. Preserved as sample recommendation structure only, not supplement advice. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Vitamin D for Female Infertility sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Vitamin D recommendation blocks",
+      "item": "Vitamin D for Uterine Fibroids",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Impact 3/5; Evidence 2/5",
+      "description": "Observed recommendation block from pages 16-20. Preserved as sample recommendation structure only, not supplement advice. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Vitamin D for Uterine Fibroids sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Vitamin D recommendation blocks",
+      "item": "Vitamin D for PCOS",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Impact 3/5; Evidence 3/5",
+      "description": "Observed recommendation block from pages 16-20. Preserved as sample recommendation structure only, not supplement advice. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Vitamin D for PCOS sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Vitamin D recommendation blocks",
+      "item": "Vitamin D for Painful Periods",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Impact 3/5; Evidence 2/5",
+      "description": "Observed recommendation block from pages 16-20. Preserved as sample recommendation structure only, not supplement advice. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Vitamin D for Painful Periods sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Vitamin D recommendation blocks",
+      "item": "Vitamin D for Endometriosis",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Impact 1/5; Evidence 1/5",
+      "description": "Observed recommendation block from pages 16-20. Preserved as sample recommendation structure only, not supplement advice. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Vitamin D for Endometriosis sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Vitamin D recommendation blocks",
+      "item": "Vitamin D for Irregular Periods",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Impact 2/5; Evidence 2/5",
+      "description": "Observed recommendation block from pages 16-20. Preserved as sample recommendation structure only, not supplement advice. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Vitamin D for Irregular Periods sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Relaxation Techniques recommendation blocks",
+      "item": "Relaxation Techniques for Sexual Dysfunction",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Impact 3/5; Evidence 3/5",
+      "description": "Observed recommendation block from pages 21-22. Preserved as sample recommendation structure only, not lifestyle advice. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Relaxation Techniques for Sexual Dysfunction sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Relaxation Techniques recommendation blocks",
+      "item": "Relaxation Techniques for Female Infertility",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Impact 2/5; Evidence 3/5",
+      "description": "Observed recommendation block from pages 21-22. Preserved as sample recommendation structure only, not lifestyle advice. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Relaxation Techniques for Female Infertility sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Relaxation Techniques recommendation blocks",
+      "item": "Relaxation Techniques for Uterine Fibroids",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Impact 2/5; Evidence 2/5",
+      "description": "Observed recommendation block from pages 21-22. Preserved as sample recommendation structure only, not lifestyle advice. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Relaxation Techniques for Uterine Fibroids sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Relaxation Techniques recommendation blocks",
+      "item": "Relaxation Techniques for Endometriosis",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Impact 2/5; Evidence 2/5",
+      "description": "Observed recommendation block from pages 21-22. Preserved as sample recommendation structure only, not lifestyle advice. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Relaxation Techniques for Endometriosis sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Relaxation Techniques recommendation blocks",
+      "item": "Relaxation Techniques for Genital Herpes",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Impact 2/5; Evidence 2/5",
+      "description": "Observed recommendation block from pages 21-22. Preserved as sample recommendation structure only, not lifestyle advice. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Relaxation Techniques for Genital Herpes sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
+    },
+    {
+      "groupTitle": "Relaxation Techniques recommendation blocks",
+      "item": "Relaxation Techniques for Irregular Periods",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "Impact 3/5; Evidence 4/5",
+      "description": "Observed recommendation block from pages 21-22. Preserved as sample recommendation structure only, not lifestyle advice. Observed sample row only; not a local sexual-health result, fertility result, infertility result, hormone level, STI susceptibility, diagnosis, lab interpretation, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action recommendation.",
+      "genes": [
+        "Sample genes or variants shown only when visible in detail-page genotype summary"
+      ],
+      "sourceLabel": "Local Female Sexual & Reproductive Health sample PDF",
+      "sourceIds": [
+        "female-sexual-reproductive-health-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed Relaxation Techniques for Irregular Periods sample row only; do not reuse as local sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy context, diagnosis, treatment, supplement, lifestyle, medication, lab interpretation, or reproductive-action guidance."
     }
   ],
   "reproductiveEndocrineContext": {
-    "plainEnglishMeaning": "Female Sexual & Reproductive Health is currently a reproductive/endocrine boundary package. It can document what evidence is available and what is missing, but it cannot produce carrier, fertility, hormone, pregnancy, lab, treatment, testing, or reproductive-action conclusions from local evidence alone.",
+    "plainEnglishMeaning": "This package can preserve the observed Female Sexual & Reproductive Health sample-report structure, but local interpretation remains unavailable without a validated model, clinical and lab context, reproductive history, partner or pregnancy context when relevant, and qualified professional review.",
     "unsupportedClaims": [
-      "Diagnosis, all-clear result, carrier-status call, variant classification, or personal disease-risk estimate",
-      "Fertility, infertility, pregnancy, miscarriage, embryo, fetal, child, partner, hormone, endocrine, sexual-health, or lab-status conclusion",
-      "Testing, screening, medication, supplement, diet, surgery, treatment, IVF, PGT, prenatal-testing, pregnancy-action, or reproductive-decision guidance",
-      "Replacement for qualified clinician, endocrinologist, obstetric professional, fertility specialist, geneticist, or genetic counselor review"
+      "sexual-health diagnosis or status",
+      "fertility or infertility estimate",
+      "PCOS or endometriosis diagnosis",
+      "hormone or lab-status inference",
+      "STI susceptibility conclusion",
+      "pregnancy, fetal, embryo, or child-risk estimate",
+      "contraception, IVF, PGT, prenatal-testing, medication, supplement, lifestyle, treatment, surgery, or reproductive-action guidance"
     ],
-    "professionalReview": "Use this output only as preparation for a professional conversation. Health or reproductive decisions require qualified review with clinical history, symptoms, medications, labs, family history, partner context, pregnancy context when relevant, and validated testing scope."
-  },
-  "practicalNextSteps": {
-    "professionalReview": [
-      "Do not use this local fixture to change medication, supplements, diet, testing, screening, procedures, fertility treatment, pregnancy plans, or reproductive decisions.",
-      "Bring current symptoms, medical and family history, medications, labs, prior testing, partner context, pregnancy context when relevant, and ancestry context to a qualified professional if discussing this topic.",
-      "Treat unavailable model rows as unavailable, not as normal, abnormal, low risk, high risk, reassuring, diagnostic, actionable, or all clear."
-    ]
+    "professionalReview": "Use qualified clinical, reproductive-health, genetics, and laboratory review for personal decisions; this synthetic result is only a boundary-safe validation artifact."
   },
   "references": [
     {
@@ -155,43 +767,84 @@
     {
       "id": "ebi-gwas-catalog",
       "title": "GWAS Catalog"
+    },
+    {
+      "id": "female-sexual-reproductive-health-sample-pdf",
+      "title": "Female Sexual & Reproductive Health DNA Report sample report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "female-sexual-reproductive-health-dna-report-model-unavailable",
+        "tier": "Local missing input",
         "gene": "Female Sexual & Reproductive Health model",
-        "observedValue": "validated female reproductive-health model, fertility evaluation, hormone labs, menstrual history, pregnancy context, PCOS or endometriosis evaluation, medications, symptoms, partner context, clinician review, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "variantId": "female-sexual-reproductive-health-dna-report-model-unavailable",
+        "genotype": "validated female reproductive-health model, fertility evaluation, hormone labs, menstrual history, pregnancy context, PCOS or endometriosis evaluation, medications, symptoms, partner context, and clinician review unavailable",
+        "effect": "The local fixture intentionally omits the evidence needed to infer sexual health, fertility, infertility, hormone status, STI susceptibility, PCOS, endometriosis, pregnancy, or reproductive actionability.",
+        "phenotype": "Mark local sexual-health, fertility, infertility, hormone-status, STI, PCOS, endometriosis, pregnancy, treatment, supplement, lifestyle, medication, lab-interpretation, and reproductive-action sections unavailable instead of inferring them.",
+        "extractionStatus": "curated"
       },
       {
-        "inputId": "female-sexual-reproductive-health-dna-report-clinical-context-unavailable",
-        "gene": "Female Sexual & Reproductive Health clinical and lab context",
-        "observedValue": "clinical diagnosis, symptoms, labs, medications, family history, professional interpretation, treatment context, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "tier": "Sample Sexual Dysfunction detail page",
+        "gene": "ARHGEF18; TST; EPC1; HTR1E; CHSY3; PRKD1; MDGA2; BCLMB; ANTXR2; TEX51; SOX21; EBF2; S1PR1; NNMT; OARD1; DMRT2; MYO3A; FNDC3A; ABCC4",
+        "variantId": "rs6603109; rs4820255; rs2370759; rs13202860; rs13436218; rs225848; rs1160351; rs857228; rs71612990; rs148033183; rs117651201; rs113716552; rs76296920; rs145841294; rs112759925; rs141514244; rs181370779; rs78447716; rs74915652",
+        "genotype": "AA; CC; GG; TA; TT; AA; CC; AA; TT; TT; AA; CC; AA; GG; CC; GG; AA; AA; GG",
+        "effect": "The sample detail page labels Sexual Dysfunction as more likely, based on 16,265 genetic variants, with risk greater than 81% of the population.",
+        "phenotype": "Observed sample top-variant table only; do not infer local sexual dysfunction, sexual-health status, diagnosis, treatment need, therapy need, supplement need, lifestyle need, medication need, or clinical action.",
+        "extractionStatus": "direct"
       },
       {
-        "inputId": "female-sexual-reproductive-health-dna-report-reproductive-endocrine-context-unavailable",
-        "gene": "Female Sexual & Reproductive Health reproductive/endocrine context",
-        "observedValue": "partner result, carrier-screening scope, pregnancy context, embryo or fetal context, hormone-status context, fertility evaluation, and reproductive decision context unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "tier": "Sample Female Infertility detail page",
+        "gene": "RPS27AP5; SEPTIN7; PDE3A; ZNF469; USP3; TRIP4; LLCFC1; DNAJC19; DAPK2; SNAP25; SDC2; CDH19; ARHGEF7; RBPJ; DMAC1; GAP43; PARP8; PES1",
+        "variantId": "rs72736636; rs145844500; rs146328472; rs62047095; rs117261523; rs146498400; rs74746719; rs180915700; rs145589988; rs147469276; rs79262309; rs148898608; rs146642675; rs117622286; rs190883507; rs79443685; rs187126706; rs142362248; rs150906026",
+        "genotype": "CC; GG; GG; CC; TT; TT; CC; TT; GG; GG; TT; TT; GG; CC; CC; TT; CC; AA; AA",
+        "effect": "The sample detail page labels Female Infertility as more likely, based on 569 genetic variants, with risk greater than 82% of the population.",
+        "phenotype": "Observed sample top-variant table only; do not infer local fertility, infertility, pregnancy outcome, miscarriage risk, IVF or PGT need, reproductive treatment need, or clinical action.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample PCOS detail page",
+        "gene": "DENND1A; SLC22A5; HMGA2; NNMT; AOPEP; YAP1; LHCGR; CTSB; PLEKHH2; ERBB4; PLGRKT; LHX2; TOX3; FSHR",
+        "variantId": "rs10986105; rs13164856; rs2272046; rs1784692; rs10993397; rs11225154; rs13405728; rs804279; rs3802457; rs7864171; rs13429458; rs2178575; rs10739076; rs1894116; rs2271194; rs10760321; rs1351592; rs4784165; rs2268361",
+        "genotype": "TT; TT; AA; TC; CC; AG; AA; TA; GG; GG; CA; AG; AC; GA; TA; AA; GC; GT; CT",
+        "effect": "The sample detail page labels PCOS as typical likelihood, based on 1,124 genetic variants.",
+        "phenotype": "Observed sample top-variant table only; do not infer local PCOS status, hormone status, menstrual status, diagnosis, medication need, supplement need, treatment need, lifestyle need, fertility impact, pregnancy impact, or clinical action.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample Vitamin D recommendation scoring",
+        "gene": "GC; MTHFR",
+        "variantId": "rs2282679; rs1801133; rs7041; rs4588",
+        "genotype": "Sexual Dysfunction impact 2/5 evidence 3/5 with GC rs2282679 GT; Female Infertility impact 2/5 evidence 3/5 with MTHFR rs1801133 AA and GC rs7041 AC; Uterine Fibroids impact 3/5 evidence 2/5 with GC rs7041 AC; PCOS impact 3/5 evidence 3/5 with GC rs7041 AC; Painful Periods impact 3/5 evidence 2/5 with GC rs4588 TG; Endometriosis impact 1/5 evidence 1/5 with GC rs7041 AC; Irregular Periods impact 2/5 evidence 2/5 with GC rs7041 AC.",
+        "effect": "The sample recommendation pages show condition-specific impact and evidence scores for Vitamin D blocks.",
+        "phenotype": "Observed sample recommendation structure only; do not infer local vitamin D need, supplement benefit, dosing, fertility benefit, PCOS treatment, period-pain treatment, endometriosis treatment, fibroid treatment, or clinical action.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Sample Relaxation Techniques recommendation scoring",
+        "gene": "Relaxation Techniques recommendation blocks",
+        "variantId": "sample-relaxation-impact-evidence-scores",
+        "genotype": "Sexual Dysfunction impact 3/5 evidence 3/5; Female Infertility impact 2/5 evidence 3/5; Uterine Fibroids impact 2/5 evidence 2/5; Endometriosis impact 2/5 evidence 2/5; Genital Herpes impact 2/5 evidence 2/5; Irregular Periods impact 3/5 evidence 4/5.",
+        "effect": "The sample recommendation pages show condition-specific impact and evidence scores for Relaxation Techniques blocks.",
+        "phenotype": "Observed sample recommendation structure only; do not infer local stress, sexual-health, fertility, fibroid, endometriosis, genital-herpes, period, lifestyle, treatment, therapy, medication, or clinical action.",
+        "extractionStatus": "direct"
       }
     ],
     "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and exact rows",
-      "Validated model output with applicability and validation metadata",
-      "Qualified professional review and complete clinical, family-history, medication, symptom, and lab context",
-      "Partner, pregnancy, embryo, fetal, fertility, hormone, endocrine, carrier-screening, and reproductive decision context when relevant"
+      "Validated female sexual and reproductive-health model output and validated report scope",
+      "Fertility evaluation, hormone labs, menstrual history, pregnancy context, PCOS or endometriosis evaluation, symptoms, medications, partner context, and clinician review",
+      "Clinical history, family history, ancestry applicability, reproductive decision context, and qualified professional interpretation",
+      "A calibrated model that can convert local genotype evidence into sexual-health, fertility, hormone, STI, treatment, supplement, lifestyle, medication, pregnancy, or reproductive-action conclusions"
     ],
     "probabilities": [],
     "uncertainty": [
-      "No calibrated carrier-status, partner-risk, fetal-risk, embryo-risk, child-risk, disease-risk, fertility, infertility, pregnancy-outcome, miscarriage, hormone-status, lab-status, testing-benefit, treatment-response, supplement-benefit, diet-response, or actionability model is supplied for this local package.",
-      "Interpretation depends on validated test scope, clinical and family history, symptoms, medications, labs, partner context, pregnancy context when relevant, ancestry applicability, and qualified professional review."
+      "No calibrated sexual-health, fertility, infertility, PCOS, endometriosis, hormone-status, STI-susceptibility, pregnancy, disease-risk, testing-benefit, treatment-response, supplement-benefit, lifestyle-response, medication-response, or actionability model is supplied for this local package.",
+      "The sample PDF contains sample-person likelihood labels, hormone-level labels, STI labels, percentile text, variant counts, genotypes, and recommendation scores, but these are not this user's female sexual or reproductive-health findings.",
+      "Interpretation depends on validated test scope, clinical and family history, symptoms, medications, labs, menstrual and reproductive context, partner context, pregnancy context when relevant, ancestry applicability, and qualified professional review."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
-      "The report is educational boundary context and does not provide diagnosis, carrier-status reporting, fertility or infertility estimation, hormone-status assessment, lab interpretation, pregnancy guidance, fetal or embryo assessment, testing advice, treatment advice, supplement advice, diet advice, surgery advice, reproductive advice, or clinical actionability.",
+      "The local sample rows are output-structure evidence only and do not provide this user's sexual-health status, fertility status, infertility status, hormone status, STI susceptibility, PCOS status, endometriosis status, pregnancy finding, testing advice, treatment advice, supplement advice, lifestyle advice, medication advice, reproductive-action guidance, or all-clear reassurance.",
       "Unavailable model rows should never be interpreted as low risk, high risk, no risk, normal, abnormal, reassuring, diagnostic, actionable, or all clear."
     ]
   }

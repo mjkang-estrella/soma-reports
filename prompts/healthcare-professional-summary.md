@@ -10,4 +10,10 @@ For this package, focus on general healthcare discussion context, genetic-testin
 If healthcare professional review, diagnosis, symptoms, family history, current medication list, labs, imaging, clinical history, exam findings, treatment plan, risk model, and authenticated sample-report rows are missing, mark those sections unavailable instead of inferring them.
 Do not diagnose disease; estimate disease risk; interpret labs or imaging; recommend medication, screening, diagnostic testing, procedures, supplements, diet, reproductive actions, lifestyle changes, or treatment; provide all-clear reassurance; or replace healthcare professional review.
 State that professional interpretation depends on validated test scope, clinical history, family history, symptoms, medications, labs, procedures, environment, ancestry applicability, and qualified professional review.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
+Use visible Healthcare Pro sample sections and rows as sibling sampleRows[] examples only, and cite healthcare-pro-sample-pdf for every sample-derived row.
+The Healthcare Pro sample PDF is adjacent professional-handoff structure, not a direct Healthcare Professional Summary mock report; label sample-derived rows as sibling structure.
+The public sample contains historical clinical-action language; do not convert it into local advice, diagnosis, risk estimates, medication action, screening action, dosing, treatment, lifestyle, reproductive, or medical-record instructions.
+If validated local Healthcare Professional Summary output, clinical context, and professional review are missing, mark local clinical-action sections unavailable instead of inferring them from sibling sample rows.

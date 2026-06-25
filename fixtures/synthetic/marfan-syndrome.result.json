@@ -178,8 +178,9 @@
     ],
     "probabilities": [],
     "uncertainty": [
-      "No calibrated rare inherited condition, penetrance, prognosis, severity, age-of-onset, family-member, carrier-status, procedure-risk, treatment-response, screening-benefit, reproductive-risk, or actionability model is supplied for this local package.",
-      "Interpretation depends on validated test scope, variant interpretation, clinical and family history, symptoms, labs or imaging when relevant, ancestry applicability, and qualified professional review."
+      "No Marfan probability, FBN1 result, aortic-risk estimate, or systemic-score estimate is calculated from this fixture.",
+      "All unavailable model, clinical, and variant rows remain unavailable rather than imputed.",
+      "Any probability, penetrance, severity, or actionability estimate would require a validated model, direct testing scope, variant interpretation, clinical context, and professional review."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",

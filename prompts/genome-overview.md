@@ -8,4 +8,9 @@ If genome-wide inventory, disease risk, carrier status, pharmacogenomics, ancest
 Do not guarantee coordinate conversion, build-independent mapping, annotation completeness, pipeline execution, browser search completeness, short-read mapping success, or variant-call accuracy unless exact service or pipeline outputs are supplied.
 Do not classify pathogenicity, make clinical significance claims, diagnose disease, estimate disease risk, infer medication response, or recommend screening, testing, treatment, reproductive, lifestyle, diet, or supplement actions.
 State that a genome overview requires supplied summarized outputs and this fixture only supports utility-boundary context.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
+For Genome Overview, sibling Complete Genome Analysis sample rows are observed inherited-traits output structure only.
+Keep sample Section 1, Inherited Traits, category bullets, result vocabulary, and lifestyle-framing language separate from local fixture evidence.
+Do not describe sibling rows as a direct Genome Overview sample; do not claim genome-wide inventory, inherited-trait result, disease risk, carrier status, pharmacogenomics, ancestry, coverage, variant interpretation, clinical classification, lifestyle advice, treatment, or actionability unless exact service output is supplied.

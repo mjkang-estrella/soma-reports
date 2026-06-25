@@ -3,17 +3,19 @@
     "reportTitle": "Next-Gen Disease Screen",
     "inputManifestHash": "sha256:synthetic-next-gen-disease-screen-boundary-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "Exact disease-screen service outputs, rare-disease panel results, clinical classification evidence, and complete resource versions are not supplied.",
-      "disease-screening output, disease-risk scoring, rare-disease panel results, carrier status, pathogenicity classification, clinical significance, clinical sensitivity, all-clear reassurance, and authenticated sample-report rows unavailable in this fixture"
-    ]
+      "Direct Next-Gen Disease Screen sample-report rows have not been captured.",
+      "Exact disease-screen service outputs, rare-disease panel results, clinical classification evidence, clinical sensitivity evidence, all-clear validation, and complete resource versions are not supplied.",
+      "Sibling Healthcare Pro rows are included only as observed disease-screen output structure, not as personal disease-screen evidence.",
+      "disease-screening output, disease-risk scoring, rare-disease panel results, carrier status, pathogenicity classification, clinical significance, clinical sensitivity, all-clear reassurance, and direct Next-Gen Disease Screen sample-report rows unavailable in this fixture; sibling Healthcare Pro sample rows are observed separately as disease-screen output-structure evidence"
+    ],
+    "plainEnglishScope": "This report explains supplied public lookup context and sibling sample-output structure in plain English. It does not diagnose, estimate disease risk, report carrier status, classify pathogenicity, or say all screened conditions are clear."
   },
   "resultRows": [
     {
       "groupTitle": "Public variant lookup context",
       "item": "BDNF rs6265",
-      "brandName": "",
-      "geneticAnalysis": "A selected public variant identifier is available for lookup and annotation context. No personal disease-screening, disease-risk, carrier-status, or clinical interpretation is supplied.",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "A selected public variant identifier is available for lookup and annotation context. No personal disease-screening, disease-risk, carrier-status, pathogenicity, or clinical interpretation output is supplied.",
       "genes": [
         "BDNF"
       ],
@@ -29,8 +31,8 @@
     {
       "groupTitle": "Reference build context",
       "item": "GRCh38 coordinate context",
-      "brandName": "",
-      "geneticAnalysis": "GRCh38 reference-build context is available for the selected lookup, while alternate-build conversion and remapping outputs are not supplied.",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "GRCh38 reference-build context is available for the selected lookup, while alternate-build conversion, remapping outputs, and disease-screen service output are not supplied.",
       "genes": [
         "reference genome coordinate context"
       ],
@@ -45,8 +47,8 @@
     {
       "groupTitle": "Disease-screen output availability",
       "item": "Next-gen disease-screen service output unavailable",
-      "brandName": "",
-      "geneticAnalysis": "disease-screening output, disease-risk scoring, rare-disease panel results, carrier status, pathogenicity classification, clinical significance, clinical sensitivity, all-clear reassurance, and authenticated sample-report rows unavailable in this fixture",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "disease-screening output, disease-risk scoring, rare-disease panel results, carrier status, pathogenicity classification, clinical significance, clinical sensitivity, all-clear reassurance, and direct Next-Gen Disease Screen sample-report rows unavailable in this fixture; sibling Healthcare Pro sample rows are observed separately as disease-screen output-structure evidence",
       "genes": [
         "disease-screen service output"
       ],
@@ -58,11 +60,284 @@
         "ensembl-vep"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This local run can explain the boundary of a disease-screen app, but it cannot diagnose, estimate disease risk, screen for disease, report carrier status, classify pathogenicity, or say everything is clear."
+      "plainEnglishMeaning": "This local run can explain the boundary of a disease-screen app and preserve sibling sample structure, but it cannot diagnose, estimate disease risk, screen for disease, report carrier status, classify pathogenicity, or say everything is clear."
+    },
+    {
+      "groupTitle": "Report identity",
+      "item": "Healthcare Professional Genetic Report",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The cover and table of contents identify a Healthcare Pro sample report with sections for STAT Alerts, Increased Risk Detected, Medications (Pharmacogenomics), Rare Diseases, No Increased Risk Detected, and Analysis Alerts. This row captures sample-report structure only and does not prove a local Healthcare Pro report was generated.",
+      "genes": [],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Next-Gen Disease Screen evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clinical significance claim, clinical sensitivity claim, all-clear reassurance, screening guidance, testing guidance, medication guidance, treatment guidance, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "CAD & MI",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels CAD & MI as Increased Risk Detected and shows a 55% lifetime-risk sample estimate compared with a 42% male population-risk label. This is sample output only; local output must not reuse the percentages as a personal coronary disease or heart-attack risk estimate.",
+      "genes": [
+        "cardiovascular-risk markers"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Next-Gen Disease Screen evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clinical significance claim, clinical sensitivity claim, all-clear reassurance, screening guidance, testing guidance, medication guidance, treatment guidance, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "MTHFR Deficiency",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels MTHFR Deficiency as Increased Risk Detected due to homozygous MTHFR Trp339Gly/W339G. This is sample-person structure only; local output must not infer deficiency, homocysteine levels, supplementation need, or reproductive guidance from the sample row.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Next-Gen Disease Screen evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clinical significance claim, clinical sensitivity claim, all-clear reassurance, screening guidance, testing guidance, medication guidance, treatment guidance, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "Colorectal Cancer",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Colorectal Cancer as Increased Risk Detected and shows a sample lifetime-risk label of about 15% compared with about 7%. This is sample output only; local output must not infer personal colorectal cancer risk, screening timing, aspirin use, or prevention steps.",
+      "genes": [
+        "colorectal-cancer-risk markers"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Next-Gen Disease Screen evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clinical significance claim, clinical sensitivity claim, all-clear reassurance, screening guidance, testing guidance, medication guidance, treatment guidance, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "Osteoarthritis",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Osteoarthritis as Increased Risk Detected and lists knee OA moderate, hip OA slightly increased, and wrist OA normal sample labels. This row captures the sample's joint-specific output shape only; local output must not infer personal osteoarthritis risk or exercise modifications from this sample.",
+      "genes": [
+        "osteoarthritis-risk markers"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Next-Gen Disease Screen evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clinical significance claim, clinical sensitivity claim, all-clear reassurance, screening guidance, testing guidance, medication guidance, treatment guidance, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "Hirschsprung Disease",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Hirschsprung Disease as Increased Risk Detected and ties the row to a RET mutation described as IVS 1 +9277 and +9349 relative to MET. This is a sample-person rare-disease risk row only; local output must not infer diagnosis, symptoms, imaging need, or referral need.",
+      "genes": [
+        "RET"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Next-Gen Disease Screen evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clinical significance claim, clinical sensitivity claim, all-clear reassurance, screening guidance, testing guidance, medication guidance, treatment guidance, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "Thrombophilia",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Thrombophilia as Carrier and states the sample has one copy of the Factor V R2 mutation in F5, distinct from Factor V Leiden. This is sample carrier-status structure only; local output must not infer personal thrombophilia carrier status or clotting risk.",
+      "genes": [
+        "F5"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Next-Gen Disease Screen evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clinical significance claim, clinical sensitivity claim, all-clear reassurance, screening guidance, testing guidance, medication guidance, treatment guidance, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Rare Diseases",
+      "item": "Hemochromatosis",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Hemochromatosis as Carrier and ties the carrier row to a single HFE2 G320V mutation. This is sample carrier-status structure only; local output must not infer iron overload, carrier status, family risk, monitoring, or treatment.",
+      "genes": [
+        "HFE2"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Next-Gen Disease Screen evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clinical significance claim, clinical sensitivity claim, all-clear reassurance, screening guidance, testing guidance, medication guidance, treatment guidance, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Analysis Alerts",
+      "item": "Data completeness",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report's Analysis Alerts section states no ambiguity, complete genetic data, and all diseases, traits, and conditions analyzed. This is sample analysis-quality language only; local output must not claim complete local data or all conditions analyzed unless the local fixture supplies equivalent quality evidence.",
+      "genes": [],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local Next-Gen Disease Screen evidence; it is not a personal diagnosis, disease-risk estimate, carrier-status call, pathogenicity classification, clinical significance claim, clinical sensitivity claim, all-clear reassurance, screening guidance, testing guidance, medication guidance, treatment guidance, or actionability conclusion."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Report identity",
+      "item": "Healthcare Professional Genetic Report",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The cover and table of contents identify a Healthcare Pro sample report with sections for STAT Alerts, Increased Risk Detected, Medications (Pharmacogenomics), Rare Diseases, No Increased Risk Detected, and Analysis Alerts.",
+      "description": "This row captures sample-report structure only and does not prove a local Healthcare Pro report was generated.",
+      "genes": [],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Next-Gen Disease Screen sibling disease-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from pages 1-2 of the public sample PDF; keep report identity and section list separate from local findings. This is not a direct Next-Gen Disease Screen sample report and not local diagnosis, disease risk, carrier-status, pathogenicity classification, clinical significance, clinical sensitivity, all-clear reassurance, screening, testing, medication, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "CAD & MI",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels CAD & MI as Increased Risk Detected and shows a 55% lifetime-risk sample estimate compared with a 42% male population-risk label.",
+      "description": "This is sample output only; local output must not reuse the percentages as a personal coronary disease or heart-attack risk estimate.",
+      "genes": [
+        "cardiovascular-risk markers"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Next-Gen Disease Screen sibling disease-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from pages 4-5 of the public sample PDF; percentages are sample labels and need calibrated local evidence before reuse. This is not a direct Next-Gen Disease Screen sample report and not local diagnosis, disease risk, carrier-status, pathogenicity classification, clinical significance, clinical sensitivity, all-clear reassurance, screening, testing, medication, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "MTHFR Deficiency",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels MTHFR Deficiency as Increased Risk Detected due to homozygous MTHFR Trp339Gly/W339G.",
+      "description": "This is sample-person structure only; local output must not infer deficiency, homocysteine levels, supplementation need, or reproductive guidance from the sample row.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Next-Gen Disease Screen sibling disease-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 5 of the public sample PDF; preserve the sample label without turning it into local clinical guidance. This is not a direct Next-Gen Disease Screen sample report and not local diagnosis, disease risk, carrier-status, pathogenicity classification, clinical significance, clinical sensitivity, all-clear reassurance, screening, testing, medication, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "Colorectal Cancer",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Colorectal Cancer as Increased Risk Detected and shows a sample lifetime-risk label of about 15% compared with about 7%.",
+      "description": "This is sample output only; local output must not infer personal colorectal cancer risk, screening timing, aspirin use, or prevention steps.",
+      "genes": [
+        "colorectal-cancer-risk markers"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Next-Gen Disease Screen sibling disease-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 5 of the public sample PDF; sample prevention text is not local medical advice. This is not a direct Next-Gen Disease Screen sample report and not local diagnosis, disease risk, carrier-status, pathogenicity classification, clinical significance, clinical sensitivity, all-clear reassurance, screening, testing, medication, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "Osteoarthritis",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Osteoarthritis as Increased Risk Detected and lists knee OA moderate, hip OA slightly increased, and wrist OA normal sample labels.",
+      "description": "This row captures the sample's joint-specific output shape only; local output must not infer personal osteoarthritis risk or exercise modifications from this sample.",
+      "genes": [
+        "osteoarthritis-risk markers"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Next-Gen Disease Screen sibling disease-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from pages 5-6 of the public sample PDF; exercise and imaging language is observed sample structure only. This is not a direct Next-Gen Disease Screen sample report and not local diagnosis, disease risk, carrier-status, pathogenicity classification, clinical significance, clinical sensitivity, all-clear reassurance, screening, testing, medication, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "Hirschsprung Disease",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Hirschsprung Disease as Increased Risk Detected and ties the row to a RET mutation described as IVS 1 +9277 and +9349 relative to MET.",
+      "description": "This is a sample-person rare-disease risk row only; local output must not infer diagnosis, symptoms, imaging need, or referral need.",
+      "genes": [
+        "RET"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Next-Gen Disease Screen sibling disease-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 7 of the public sample PDF; symptom and referral examples are sample report structure, not local advice. This is not a direct Next-Gen Disease Screen sample report and not local diagnosis, disease risk, carrier-status, pathogenicity classification, clinical significance, clinical sensitivity, all-clear reassurance, screening, testing, medication, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "Thrombophilia",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Thrombophilia as Carrier and states the sample has one copy of the Factor V R2 mutation in F5, distinct from Factor V Leiden.",
+      "description": "This is sample carrier-status structure only; local output must not infer personal thrombophilia carrier status or clotting risk.",
+      "genes": [
+        "F5"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Next-Gen Disease Screen sibling disease-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 8 of the public sample PDF; the row includes sample caveats about R2 on its own. This is not a direct Next-Gen Disease Screen sample report and not local diagnosis, disease risk, carrier-status, pathogenicity classification, clinical significance, clinical sensitivity, all-clear reassurance, screening, testing, medication, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Rare Diseases",
+      "item": "Hemochromatosis",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Hemochromatosis as Carrier and ties the carrier row to a single HFE2 G320V mutation.",
+      "description": "This is sample carrier-status structure only; local output must not infer iron overload, carrier status, family risk, monitoring, or treatment.",
+      "genes": [
+        "HFE2"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Next-Gen Disease Screen sibling disease-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 11 of the public sample PDF; monitoring and phlebotomy language is sample content, not local guidance. This is not a direct Next-Gen Disease Screen sample report and not local diagnosis, disease risk, carrier-status, pathogenicity classification, clinical significance, clinical sensitivity, all-clear reassurance, screening, testing, medication, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Analysis Alerts",
+      "item": "Data completeness",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report's Analysis Alerts section states no ambiguity, complete genetic data, and all diseases, traits, and conditions analyzed.",
+      "description": "This is sample analysis-quality language only; local output must not claim complete local data or all conditions analyzed unless the local fixture supplies equivalent quality evidence.",
+      "genes": [],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Next-Gen Disease Screen sibling disease-screen output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 14 of the public sample PDF; data-completeness claims are sample-only. This is not a direct Next-Gen Disease Screen sample report and not local diagnosis, disease risk, carrier-status, pathogenicity classification, clinical significance, clinical sensitivity, all-clear reassurance, screening, testing, medication, treatment, or actionability evidence."
     }
   ],
   "utilityContext": {
-    "plainEnglishMeaning": "This result is a disease-screen boundary report. It explains supplied public lookup context and explicitly marks missing screening, clinical, and authenticated sample outputs unavailable.",
+    "plainEnglishMeaning": "This result is a disease-screen boundary report. It explains supplied public lookup context, preserves sibling Healthcare Pro sample structure, and explicitly marks missing screening, clinical, and direct sample outputs unavailable.",
     "unsupportedClaims": [
       "diagnosis",
       "disease-risk estimate",
@@ -70,10 +345,11 @@
       "carrier status",
       "pathogenicity classification",
       "clinical significance claim",
+      "clinical sensitivity claim",
       "all-clear reassurance",
-      "clinical sensitivity",
-      "medication response",
-      "screening or treatment recommendation"
+      "screening or testing recommendation",
+      "medication or treatment recommendation",
+      "clinical actionability"
     ]
   },
   "references": [
@@ -116,38 +392,95 @@
     {
       "id": "ebi-gwas-catalog",
       "title": "GWAS Catalog"
+    },
+    {
+      "id": "healthcare-pro-sample-pdf",
+      "title": "Healthcare Pro sample report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "bioinformatics-public-variant-rs6265",
+        "effect": "The local fixture supplies a public rsID row for lookup and annotation-context validation.",
+        "extractionStatus": "curated",
         "gene": "BDNF",
-        "observedValue": "selected public variant identifier available for lookup and annotation context; no trait, disease, or clinical interpretation supplied",
-        "matchStatus": "summarized"
+        "genotype": "selected public variant identifier only",
+        "phenotype": "Report as disease-screen boundary context only; do not infer local disease-screen output, disease risk, carrier status, pathogenicity, clinical significance, all-clear reassurance, medication, treatment, or actionability.",
+        "sortOrder": 1,
+        "tier": "Local derived lookup row",
+        "variantId": "rs6265"
       },
       {
-        "inputId": "bioinformatics-reference-build-context",
-        "gene": "reference genome coordinate context",
-        "observedValue": "GRCh38 coordinate context available for selected lookup; alternate build, liftover path, remapping evidence, and service output unavailable",
-        "matchStatus": "summarized"
+        "effect": "The sample report uses this MTHFR row for Nitrous Oxide ADR and MTHFR Deficiency sample labels.",
+        "extractionStatus": "direct",
+        "gene": "MTHFR",
+        "genotype": "homozygous",
+        "phenotype": "Observed sample content only; do not infer local MTHFR deficiency, homocysteine status, nitrous oxide risk, supplementation, or reproductive guidance. This is Next-Gen Disease Screen sibling sample output-structure evidence only, not local diagnosis, disease risk, carrier-status, pathogenicity classification, clinical significance, clinical sensitivity, all-clear reassurance, screening, testing, medication, treatment, or actionability evidence.",
+        "sortOrder": 2,
+        "tier": "Sample-report visible genotype",
+        "variantId": "Trp339Gly; W339G"
       },
       {
-        "inputId": "next-gen-disease-screen-output-unavailable",
-        "gene": "disease-screen service output",
-        "observedValue": "disease-screening output, disease-risk scoring, rare-disease panel results, carrier status, pathogenicity classification, clinical significance, clinical sensitivity, all-clear reassurance, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "effect": "The sample report uses this RET row for a Hirschsprung Disease increased-risk sample label.",
+        "extractionStatus": "direct",
+        "gene": "RET",
+        "genotype": "mutation detected in sample row",
+        "phenotype": "Observed sample content only; do not infer local Hirschsprung Disease risk, diagnosis, symptoms, imaging, or referral need. This is Next-Gen Disease Screen sibling sample output-structure evidence only, not local diagnosis, disease risk, carrier-status, pathogenicity classification, clinical significance, clinical sensitivity, all-clear reassurance, screening, testing, medication, treatment, or actionability evidence.",
+        "sortOrder": 3,
+        "tier": "Sample-report visible variant",
+        "variantId": "IVS 1 +9277; +9349 relative to MET"
+      },
+      {
+        "effect": "The sample report labels the sample as a Factor V R2 carrier and distinguishes it from Factor V Leiden.",
+        "extractionStatus": "direct",
+        "gene": "F5",
+        "genotype": "one copy",
+        "phenotype": "Observed sample content only; do not infer local thrombophilia carrier status or clotting risk. This is Next-Gen Disease Screen sibling sample output-structure evidence only, not local diagnosis, disease risk, carrier-status, pathogenicity classification, clinical significance, clinical sensitivity, all-clear reassurance, screening, testing, medication, treatment, or actionability evidence.",
+        "sortOrder": 4,
+        "tier": "Sample-report visible carrier marker",
+        "variantId": "Factor V R2"
+      },
+      {
+        "effect": "The sample report labels the sample as a Hemochromatosis carrier due to HFE2 G320V.",
+        "extractionStatus": "direct",
+        "gene": "HFE2",
+        "genotype": "single mutation; carrier",
+        "phenotype": "Observed sample content only; do not infer local hemochromatosis carrier status, iron overload, monitoring, or treatment need. This is Next-Gen Disease Screen sibling sample output-structure evidence only, not local diagnosis, disease risk, carrier-status, pathogenicity classification, clinical significance, clinical sensitivity, all-clear reassurance, screening, testing, medication, treatment, or actionability evidence.",
+        "sortOrder": 5,
+        "tier": "Sample-report visible carrier marker",
+        "variantId": "G320V"
+      },
+      {
+        "effect": "The sample report states its own analysis completeness and lack-of-ambiguity alerts on the final page.",
+        "extractionStatus": "direct",
+        "gene": "Healthcare Pro analysis",
+        "genotype": "no ambiguity; complete data; all listed conditions analyzed in the sample",
+        "phenotype": "Observed sample quality context only; do not claim local completeness without equivalent local quality evidence. This is Next-Gen Disease Screen sibling sample output-structure evidence only, not local diagnosis, disease risk, carrier-status, pathogenicity classification, clinical significance, clinical sensitivity, all-clear reassurance, screening, testing, medication, treatment, or actionability evidence.",
+        "sortOrder": 6,
+        "tier": "Sample-report analysis quality",
+        "variantId": "analysis-alerts"
+      },
+      {
+        "effect": "The local fixture intentionally omits the exact disease-screen service output needed for personal screening conclusions.",
+        "extractionStatus": "curated",
+        "gene": "Next-Gen Disease Screen service output",
+        "genotype": "direct Next-Gen Disease Screen output, disease-risk scoring, rare-disease panel output, carrier-status model, pathogenicity classification, clinical significance, clinical sensitivity, all-clear validation, and direct sample report unavailable",
+        "phenotype": "Mark diagnosis, disease risk, carrier status, pathogenicity, clinical significance, all-clear reassurance, screening, testing, medication, treatment, and actionability unavailable instead of inferring them.",
+        "sortOrder": 7,
+        "tier": "Local missing input",
+        "variantId": "next-gen-disease-screen-output-unavailable"
       }
     ],
     "missingInputs": [
-      "Authenticated Sequencing.com sample report rows",
+      "Direct Next-Gen Disease Screen sample report rows",
       "Disease-screen service output tables and resource-version metadata",
-      "Rare-disease panel results, disease-risk model, carrier-status model, clinical classification, and all-clear validation evidence",
-      "disease-screening output, disease-risk scoring, rare-disease panel results, carrier status, pathogenicity classification, clinical significance, clinical sensitivity, all-clear reassurance, and authenticated sample-report rows unavailable in this fixture"
+      "Rare-disease panel results, disease-risk model, carrier-status model, pathogenicity classification, clinical significance, clinical sensitivity, all-clear validation, and confirmatory clinical context",
+      "disease-screening output, disease-risk scoring, rare-disease panel results, carrier status, pathogenicity classification, clinical significance, clinical sensitivity, all-clear reassurance, and direct Next-Gen Disease Screen sample-report rows unavailable in this fixture; sibling Healthcare Pro sample rows are observed separately as disease-screen output-structure evidence"
     ],
     "probabilities": [],
     "uncertainty": [
       "No calibrated disease probability, screening sensitivity, pathogenicity, carrier-status, or clinical-actionability model is supplied for this local package.",
+      "Healthcare Pro rows are sibling sample-output structure only and cannot be treated as local Next-Gen Disease Screen findings.",
       "The selected rows support boundary context only and cannot be treated as disease-screen output."
     ],
     "limitations": [

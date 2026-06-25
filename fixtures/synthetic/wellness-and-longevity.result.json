@@ -3,8 +3,8 @@
     "reportTitle": "Wellness and Longevity",
     "inputManifestHash": "sha256:synthetic-wellness-and-longevity-boundary-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "No calibrated longevity, biological-age, disease-risk, wellness, nutrition, fitness, lifestyle, supplement, child-specific, symptom, lab, metabolic, or ancestry applicability model is supplied with this fixture."
+      "Authenticated Sequencing.com marketplace detail-page extraction is still pending.",
+      "No calibrated local longevity, biological-age, disease-risk, cardiovascular, cancer, medication-response, clot-risk, athletic-performance, wellness, nutrition, fitness, lifestyle, supplement, child-specific, symptom, lab, metabolic, or ancestry applicability model is supplied with this fixture."
     ]
   },
   "resultRows": [
@@ -12,7 +12,7 @@
       "groupTitle": "Wellness and longevity context",
       "item": "MCM6/LCT rs4988235",
       "brandName": "Not applicable",
-      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a longevity prediction, biological-age result, disease-risk estimate, child-specific plan, diet recommendation, supplement recommendation, lab interpretation, or treatment result.",
+      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a longevity prediction, biological-age result, disease-risk estimate, child-specific plan, diet recommendation, supplement recommendation, lab interpretation, medication result, or treatment result.",
       "genes": [
         "MCM6",
         "LCT"
@@ -22,30 +22,223 @@
         "medlineplus-lactose-intolerance",
         "medlineplus-mcm6"
       ],
+      "sourceBindingStatus": "curated",
       "plainEnglishMeaning": "This marker can provide lactose-related context, but wellness and longevity questions require broader health, lifestyle, lab, age, family-history, environment, and professional context."
     },
     {
-      "groupTitle": "Nutrition model availability",
+      "groupTitle": "Local model availability",
       "item": "Wellness and longevity model",
       "brandName": "Not applicable",
-      "geneticAnalysis": "No calibrated longevity model, biological-age model, disease-risk model, wellness model, nutrition model, fitness model, lifestyle model, supplement model, child-specific evidence, symptom context, lab context, metabolic model, or ancestry applicability metadata is supplied with this fixture.",
+      "geneticAnalysis": "No calibrated local longevity model, biological-age model, disease-risk model, wellness model, nutrition model, fitness model, lifestyle model, medication-response model, clot-risk model, cancer-risk model, supplement model, child-specific evidence, symptom context, lab context, metabolic model, or ancestry applicability metadata is supplied with this fixture.",
       "genes": [
         "Wellness and longevity model"
       ],
-      "sourceLabel": "MedlinePlus DTC result limits / FDA dietary supplements / CDC BMI",
+      "sourceLabel": "DTC result limits / dietary supplement / BMI / metabolic context references",
       "sourceIds": [
         "medlineplus-dtc-genetic-testing-results",
         "fda-dietary-supplements",
         "cdc-bmi"
       ],
-      "plainEnglishMeaning": "The report can describe supplied marker context, but it should not make longevity, biological-age, disease-risk, child-specific, diet, supplement, workout, lab, metabolic, or treatment conclusions without validated evidence."
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The local report can describe supplied marker context, but it should not make longevity, biological-age, disease-risk, child-specific, diet, supplement, workout, medication, lab, metabolic, or treatment conclusions without validated evidence."
+    },
+    {
+      "groupTitle": "Observed sample report structure",
+      "item": "Wellness & Longevity public sample PDF",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The public sample PDF shows health-trait risk panels, medication assessment rows, genetic profile tables, analysis alerts, variant appendix rows, and lifetime-risk legends for output-format parity.",
+      "genes": [
+        "ACTN3",
+        "HBB",
+        "CDKN2A",
+        "MTHFR",
+        "9p21"
+      ],
+      "sourceLabel": "Wellness and Longevity DNA Analysis sample report",
+      "sourceIds": [
+        "wellness-and-longevity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "These rows document the Sequencing.com report format only. They must not be treated as this local fixture's athletic, cancer, cardiac, clotting, medication, diagnosis, screening, emergency, treatment, diet, supplement, longevity, or biological-age conclusions."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Athletic Performance",
+      "item": "Athletic predisposition and fatigue panels",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report says the sample genome is likely to excel at power-based sports and training, is genetically predisposed to significant exercise-induced fatigue, and does not have sickle cell trait for exercise-induced muscle damage.",
+      "description": "The sample page shows athletic predisposition, exercise-induced fatigue, and exercise-induced muscle-damage panels with several detailed training sections hidden from the sample.",
+      "genes": [
+        "ACTN3",
+        "MTCYB",
+        "MTTG",
+        "AMPD1",
+        "HBB"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "wellness-and-longevity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the Athletic Performance page and variant appendix of the public Wellness & Longevity sample PDF; this is observed sample output structure, not local training, fatigue, sports, injury, or medical-clearance advice."
+    },
+    {
+      "groupTitle": "Hair Loss & Baldness",
+      "item": "Significant hair-loss risk panel",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels the sample risk of significant hair loss and baldness as Very High, with a displayed 72% lifetime-risk label and a preventive-measures actionability panel.",
+      "description": "The page includes clinical-significance, risk, actionability, lifestyle, medication, screening, misconception, and Hamilton-Norwood scale sections, with several sections hidden in the sample.",
+      "genes": [
+        "20p11.22",
+        "AR"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "wellness-and-longevity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the Hair Loss & Baldness pages of the public sample PDF; sample percentages and hair-loss labels must not be treated as local phenotype prediction or medication advice."
+    },
+    {
+      "groupTitle": "Melanoma",
+      "item": "Melanoma risk panel and prevention structure",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels the sample genetic lifetime risk of melanoma as Low (<2%) against a normal lifetime-risk value of 2%, and states that non-genetic factors such as sunburns and tanning beds are not included.",
+      "description": "The page shows clinical significance, risk, actionability, monitoring/screening, lifestyle, disease-intervention, and additional-information sections.",
+      "genes": [
+        "CDKN2A",
+        "9p21",
+        "22q13",
+        "BRCA2",
+        "MATP",
+        "MC1R",
+        "PIGU",
+        "TYRP1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "wellness-and-longevity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the Melanoma page and melanoma variant appendix of the public sample PDF; observed sample risks are not local cancer risk, screening guidance, diagnosis, or treatment advice."
+    },
+    {
+      "groupTitle": "Arthritis",
+      "item": "Osteoarthritis joint-specific risk panels",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels knee arthritis as Moderate (53%), hip arthritis as Slightly Increased (26%), and wrist arthritis as Normal (30%), with normal generic lifetime-risk comparators displayed for each joint.",
+      "description": "The page shows separate knee, hip, and wrist risk panels plus monitoring, lifestyle, medication, alternative-intervention, misconception, and resource sections.",
+      "genes": [
+        "Osteoarthritis model"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "wellness-and-longevity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the Arthritis (Osteoarthritis) page and risk legend of the public sample PDF; observed joint-risk percentages are sample content only and not local arthritis prediction or treatment advice."
+    },
+    {
+      "groupTitle": "Malignant Hyperthermia",
+      "item": "Likely not affected panel",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report says the sample genetic assessment is likely not affected and that the genetic test did not detect mutations associated with malignant hyperthermia.",
+      "description": "The page frames malignant hyperthermia as an anesthesia-related risk and includes monitoring and additional-information sections.",
+      "genes": [
+        "Malignant hyperthermia model"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "wellness-and-longevity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the Malignant Hyperthermia page of the public sample PDF; this is sample structure only, not local anesthesia-safety or surgical-clearance guidance."
+    },
+    {
+      "groupTitle": "Heart Attack",
+      "item": "Coronary artery disease lifetime-risk panel",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels the sample as High Risk of a Heart Attack due to Coronary Artery Disease, with a displayed 55% lifetime-risk label and a 42% normal lifetime-risk comparator.",
+      "description": "The page includes clinical-significance, risk, actionability, symptom, monitoring, lifestyle, complementary-prevention, and additional-information sections.",
+      "genes": [
+        "9p21",
+        "LPL",
+        "LDLR",
+        "LIPI",
+        "LIPA",
+        "APOB",
+        "APOA2",
+        "APOA5",
+        "ABCG5",
+        "ABCG8",
+        "ITGB3"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "wellness-and-longevity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the Heart Attack page and risk legend of the public sample PDF; observed cardiovascular risk labels are sample content only and not local cardiac risk, emergency, medication, screening, or treatment guidance."
+    },
+    {
+      "groupTitle": "Medication Assessment",
+      "item": "Cardiovascular medication-response rows",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report shows Warfarin slight resistance, normal clopidogrel effectiveness, likely aspirin effectiveness, very low statin adverse-reaction risk, and increased benefit of high-dose atorvastatin compared with standard-dose pravastatin.",
+      "description": "The medication page explicitly warns not to stop or modify medications based on the report unless instructed by a doctor.",
+      "genes": [
+        "Medication response model",
+        "MTHFR"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "wellness-and-longevity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the Medication Assessment and Genetic Profile pages of the public sample PDF; this is observed sample pharmacogenomic structure only, not local medication, dosing, adverse-reaction, or treatment advice."
+    },
+    {
+      "groupTitle": "Genetic Profile",
+      "item": "Blood clot, MTHFR, and broad profile tables",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample genetic profile table labels MTHFR deficiency that may lead to blood clots and cardiovascular disease as likely affected due to two A222V mutations, while Factor V Leiden, Prothrombin 20210, Protein C, Protein S, and Antithrombin III clot-risk rows show no increased risk detected.",
+      "description": "The broader genetic profile table also includes medication, cancer, cardiology, child development, fertility, digestive, blood, neurology, pulmonology, infectious-disease, hearing, and analysis-alert sections.",
+      "genes": [
+        "MTHFR",
+        "F5",
+        "F2",
+        "PROC",
+        "PROS1",
+        "SERPINC1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "wellness-and-longevity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the Genetic Profile pages of the public sample PDF; these rows are observed sample labels only and must not be used as local clot-risk, methylation, disease, medication, child-development, fertility, digestive, or treatment conclusions."
+    },
+    {
+      "groupTitle": "Analysis Alerts",
+      "item": "Completeness and ambiguity alerts",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample Analysis Alerts page shows no ambiguity, complete genetic data with 100% available for analyzed diseases, traits, and conditions, and no no-data analysis block.",
+      "description": "This page documents the formal alert structure used by the report for genetic-data ambiguity, incompleteness, and no-data conditions.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "wellness-and-longevity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the Analysis Alerts page of the public sample PDF; local runs must compute their own data-completeness alerts and must not copy the sample's 100% completeness state."
     }
   ],
   "practicalNextSteps": {
     "wellnessLongevityContext": [
-      "Use this report as educational wellness-and-longevity genetics context, not as a longevity prediction, child-specific plan, diet plan, workout plan, supplement plan, or treatment plan.",
-      "Combine goals, diet history, activity, symptoms, labs, age, children, medications, medical history, and professional support when making wellness decisions.",
-      "Do not use genotype alone for biological-age, disease-risk, child-specific guidance, supplements, workouts, lab interpretation, diagnosis, or treatment."
+      "Use this report as educational wellness-and-longevity genetics context, not as a longevity prediction, child-specific plan, disease-risk estimate, diet plan, workout plan, medication plan, supplement plan, or treatment plan.",
+      "Keep the public sample PDF rows separate from local findings; sample risk labels and medication rows are report-format examples only.",
+      "Combine goals, diet history, activity, symptoms, labs, age, medications, medical history, family history, ancestry, environment, and professional support when making wellness decisions."
     ]
   },
   "references": [
@@ -92,33 +285,84 @@
     {
       "id": "cdc-bmi",
       "title": "CDC About Body Mass Index"
+    },
+    {
+      "id": "wellness-and-longevity-sample-pdf",
+      "title": "Wellness and Longevity DNA Analysis sample report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
         "gene": "MCM6/LCT",
-        "observedValue": "rs4988235 CT"
+        "observedValue": "rs4988235: CT",
+        "effect": "The local fixture supplies a derived MCM6/LCT rs4988235 call for lactase-persistence context.",
+        "phenotype": "Report as educational lactose-related marker context only; do not diagnose lactose intolerance or infer wellness, longevity, disease-risk, diet, medication, or treatment conclusions."
       },
       {
         "gene": "Wellness and longevity model",
-        "observedValue": "calibrated model unavailable"
+        "observedValue": "wellness-and-longevity-model-unavailable: calibrated longevity, biological-age, disease-risk, wellness, nutrition, fitness, lifestyle, medication-response, clot-risk, cancer-risk, supplement, symptom, lab, metabolic, and ancestry applicability models unavailable",
+        "effect": "The local fixture intentionally omits calibrated wellness and disease-risk models and non-genetic context.",
+        "phenotype": "Mark local risk, medication, cancer, clotting, athletic-performance, diet, supplement, lab, and treatment sections unavailable instead of inferring them."
+      },
+      {
+        "gene": "ACTN3",
+        "observedValue": "44: CT",
+        "effect": "The sample variant appendix links ACTN3 variant 44 to athletic predisposition.",
+        "phenotype": "Observed sample variant row only; do not infer local sports ability, training response, fatigue, injury risk, or medical clearance."
+      },
+      {
+        "gene": "AMPD1",
+        "observedValue": "40652: GA",
+        "effect": "The sample variant appendix links AMPD1 variant 40652 to surmountable exercise-induced fatigue.",
+        "phenotype": "Observed sample variant row only; do not infer local exercise tolerance or training advice."
+      },
+      {
+        "gene": "HBB",
+        "observedValue": "19985: TT",
+        "effect": "The sample variant appendix links HBB variant 19985 to exercise-induced muscle damage / sickle cell trait.",
+        "phenotype": "Observed sample variant row only; do not infer local sickle-cell status, muscle-damage risk, or medical clearance."
+      },
+      {
+        "gene": "20p11.22",
+        "observedValue": "68422: A",
+        "effect": "The sample variant appendix links 20p11.22 variant 68422 to androgenic alopecia.",
+        "phenotype": "Observed sample variant row only; do not infer local hair-loss risk or treatment need."
+      },
+      {
+        "gene": "CDKN2A",
+        "observedValue": "51103: CC",
+        "effect": "The sample variant appendix links CDKN2A variant 51103 to cutaneous malignant melanoma.",
+        "phenotype": "Observed sample variant row only; do not infer local cancer risk, screening, diagnosis, or treatment."
+      },
+      {
+        "gene": "9p21",
+        "observedValue": "102407: AA",
+        "effect": "The sample variant appendix links 9p21 variant 102407 to melanoma.",
+        "phenotype": "Observed sample variant row only; do not infer local melanoma or cardiovascular risk."
+      },
+      {
+        "gene": "MTHFR",
+        "observedValue": "genetic-profile-table: two A222V mutations shown in sample profile",
+        "effect": "The sample genetic profile labels MTHFR deficiency that may lead to blood clots and cardiovascular disease as likely affected.",
+        "phenotype": "Observed sample profile row only; do not infer local MTHFR status, clot risk, methylation status, vitamin need, medication action, or treatment."
       }
     ],
     "missingInputs": [
-      "Authenticated sample-report sections and rows have not been extracted.",
+      "Authenticated marketplace detail-page text has not been extracted for this report.",
       "calibrated longevity model, biological-age model, disease-risk model, wellness model, nutrition model, fitness model, lifestyle model, supplement model, child-specific evidence, symptom context, lab context, metabolic model, and ancestry applicability metadata unavailable in this fixture",
-      "Broader symptoms, food history, diet history, activity history, labs, medications, medical history, child-specific context, ancestry applicability, environment, and professional assessment are not represented in this fixture."
+      "Broader symptoms, food history, diet history, activity history, labs, medications, medical history, child-specific context, family history, ancestry applicability, environment, and professional assessment are not represented in this fixture."
     ],
     "probabilities": [],
     "uncertainty": [
-      "Longevity, biological age, disease risk, wellness, nutrition, lifestyle, symptoms, labs, weight, glucose, gut health, supplement response, and metabolic outcomes depend on genetics plus non-genetic context and professional review.",
-      "A single marker should not be used to diagnose conditions, estimate longevity or biological age, explain symptoms, prescribe diets, recommend supplements, interpret labs, or guide treatment."
+      "Longevity, biological age, disease risk, wellness, athletic performance, medication response, clot risk, cancer risk, nutrition, lifestyle, symptoms, labs, weight, glucose, supplement response, and metabolic outcomes depend on genetics plus non-genetic context and professional review.",
+      "A single marker should not be used to diagnose conditions, estimate longevity or biological age, explain symptoms, prescribe diets, recommend supplements, change medications, interpret labs, guide screening, or guide treatment.",
+      "The public sample PDF is exact output-format evidence, but its sample genotypes and labels are not local-user evidence."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data is not included.",
-      "The report is educational and does not predict longevity, estimate biological age, estimate disease risk, prescribe diets, create workouts, recommend supplements, create child-specific guidance, diagnose symptoms, infer metabolic disease, interpret labs, or provide treatment guidance.",
-      "Authenticated Sequencing.com sample report rows are still pending."
+      "The report is educational and does not predict longevity, estimate biological age, estimate disease risk, prescribe diets, create workouts, recommend supplements, create child-specific guidance, diagnose symptoms, infer metabolic disease, interpret labs, change medications, or provide treatment guidance.",
+      "Public sample rows are extracted from the Sequencing.com Wellness & Longevity sample PDF for format parity only; authenticated marketplace detail-page extraction is still pending."
     ]
   }
 }

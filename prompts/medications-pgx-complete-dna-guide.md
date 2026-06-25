@@ -11,4 +11,6 @@ If user-specific HLA, CYP2D6 copy number, MT-RNR1, DPYD, TPMT/NUDT15, CYP2C9/VKO
 Do not provide pediatric dosing, medication safety, medication efficacy, comprehensive medication coverage, or drug-specific action claims.
 Do not recommend starting, stopping, switching, or changing the dose of any medication.
 State that a clinician or pharmacist must review medication decisions.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.

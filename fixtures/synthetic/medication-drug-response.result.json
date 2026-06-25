@@ -98,6 +98,372 @@
       "plainEnglishMeaning": "The report can mirror the formal summary section without inventing a user-specific warfarin or NSAID interpretation."
     }
   ],
+  "sampleRows": [
+    {
+      "brandName": "",
+      "description": "Abacavir is a medication used to prevent and treat HIV/AIDS.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "geneticAnalysis": "Absent",
+      "groupTitle": "HIV Treatment",
+      "item": "Abacavir Hypersensitivity",
+      "sortOrder": 1,
+      "sourceBindingNote": "Extracted from the public Medication and Drug Response sample PDF result table.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "medication-drug-response-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "",
+      "description": "A chronic disease characterised by uncontrolled drinking and preoccupation with alcohol.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "geneticAnalysis": "Typical",
+      "groupTitle": "Alcohol Use",
+      "item": "Alcohol Dependence",
+      "sortOrder": 2,
+      "sourceBindingNote": "Extracted from the public Medication and Drug Response sample PDF result table.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "medication-drug-response-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "",
+      "description": "Aromatase inhibitors are a class of drugs used in the treatment of breast cancer in post-menopausal women.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "geneticAnalysis": "Higher",
+      "groupTitle": "Breast Cancer Treatment",
+      "item": "Aromatase Inhibitor Side-Effects",
+      "sortOrder": 3,
+      "sourceBindingNote": "Extracted from the public Medication and Drug Response sample PDF result table.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "medication-drug-response-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "",
+      "description": "Cannabis, also known as marijuana, is a psychoactive drug.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "geneticAnalysis": "Lower",
+      "groupTitle": "Cannabis Use",
+      "item": "Cannabis Dependence",
+      "sortOrder": 4,
+      "sourceBindingNote": "Extracted from the public Medication and Drug Response sample PDF result table.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "medication-drug-response-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Tegretol",
+      "description": "Carbamazepine is an anticonvulsant used in the treatment of epilepsy and neuropathic pain.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "geneticAnalysis": "Typical",
+      "groupTitle": "Neuropathic Pain, Epilepsy Treatment",
+      "item": "Carbamazepine Reaction",
+      "sortOrder": 5,
+      "sourceBindingNote": "Extracted from the public Medication and Drug Response sample PDF result table.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "medication-drug-response-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Celexa",
+      "description": "Citalopram is an antidepressant used to treat Major Depressive Disorder and Obsessive-Compulsive Disorder.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "geneticAnalysis": "Typical",
+      "groupTitle": "Antidepressant",
+      "item": "Citalopram Response",
+      "sortOrder": 6,
+      "sourceBindingNote": "Extracted from the public Medication and Drug Response sample PDF result table.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "medication-drug-response-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "",
+      "description": "Cocaine is a highly addictive drug associated with health issues and other problems.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "geneticAnalysis": "Much Higher",
+      "groupTitle": "Cocaine Use",
+      "item": "Cocaine Dependence",
+      "sortOrder": 7,
+      "sourceBindingNote": "Extracted from the public Medication and Drug Response sample PDF result table.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "medication-drug-response-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "",
+      "description": "Cyclophosphamide is a medication used as chemotherapy and to suppress the immune system.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "geneticAnalysis": "Typical",
+      "groupTitle": "Chemotherapy",
+      "item": "Cyclophosphamide Reaction",
+      "sortOrder": 8,
+      "sourceBindingNote": "Extracted from the public Medication and Drug Response sample PDF result table.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "medication-drug-response-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "",
+      "description": "Hepatitis C is a virus that causes liver damage and is often spread through the sharing of unclean needles.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "geneticAnalysis": "Lower",
+      "groupTitle": "Hepatitis C Treatment",
+      "item": "Hepatitis C Treatment Response",
+      "sortOrder": 9,
+      "sourceBindingNote": "Extracted from the public Medication and Drug Response sample PDF result table.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "medication-drug-response-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "",
+      "description": "Physical and psychological reliance on opioids.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "geneticAnalysis": "Much Lower",
+      "groupTitle": "Heroin Use",
+      "item": "Heroin Addiction",
+      "sortOrder": 10,
+      "sourceBindingNote": "Extracted from the public Medication and Drug Response sample PDF result table.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "medication-drug-response-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "",
+      "description": "Inhaled glucocorticoids act directly in the lungs to inhibit the inflammatory process that causes asthma.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "geneticAnalysis": "Typical",
+      "groupTitle": "Asthma Treatment",
+      "item": "Inhaled Glucocorticoids Response",
+      "sortOrder": 11,
+      "sourceBindingNote": "Extracted from the public Medication and Drug Response sample PDF result table.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "medication-drug-response-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Plavix, Omeprazole, Esomeprazole",
+      "description": "Some people are poor metabolizers of common drugs such as Plavix, Omeprazole, Esomeprazole, and related medicines.",
+      "extractionStatus": "direct",
+      "genes": [
+        "CYP2C9",
+        "CYP2C19",
+        "CYP2D6"
+      ],
+      "geneticAnalysis": "Typical",
+      "groupTitle": "Anti-ulcer, Anti-platelet, Antidepressant",
+      "item": "Metabolism of some medicines",
+      "sortOrder": 12,
+      "sourceBindingNote": "Extracted from the public Medication and Drug Response sample PDF and summary table.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "medication-drug-response-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Glucophage",
+      "description": "Metformin is the first-line medication for the treatment of Type-2 Diabetes.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "geneticAnalysis": "Not shown in extracted text",
+      "groupTitle": "Type-2 Diabetes Treatment",
+      "item": "Metformin Response",
+      "sortOrder": 13,
+      "sourceBindingNote": "The public sample PDF row is visible, but the extracted text does not expose a result value.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "medication-drug-response-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "",
+      "description": "Nicotine is a highly addictive stimulant most commonly acquired through smoking cigarettes.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "geneticAnalysis": "Typical",
+      "groupTitle": "Nicotine Use",
+      "item": "Nicotine Response",
+      "sortOrder": 14,
+      "sourceBindingNote": "Extracted from the public Medication and Drug Response sample PDF result table.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "medication-drug-response-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "",
+      "description": "Non-Steroidal Anti-Inflammatory Drugs reduce pain, decrease fever, and decrease inflammation.",
+      "extractionStatus": "direct",
+      "genes": [
+        "CYP2C9"
+      ],
+      "geneticAnalysis": "Sensitive",
+      "groupTitle": "Inflammation, Fever, Pain Treatment",
+      "item": "NSAID Response",
+      "sortOrder": 15,
+      "sourceBindingNote": "Extracted from the public Medication and Drug Response sample PDF and CYP2C9 summary paragraph.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "medication-drug-response-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Ventolin",
+      "description": "Salbutamol is a medication that opens up the medium and large airways in the lungs.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "geneticAnalysis": "Poorer",
+      "groupTitle": "Asthma Treatment",
+      "item": "Salbutamol Response",
+      "sortOrder": 16,
+      "sourceBindingNote": "Extracted from the public Medication and Drug Response sample PDF result table.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "medication-drug-response-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "",
+      "description": "Sorafenib is for the treatment of primary kidney cancer and advanced primary liver cancer.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "geneticAnalysis": "Typical",
+      "groupTitle": "Liver Cancer Treatment",
+      "item": "Sorafenib Response",
+      "sortOrder": 17,
+      "sourceBindingNote": "Extracted from the public Medication and Drug Response sample PDF result table.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "medication-drug-response-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "",
+      "description": "Statins are a class of lipid-lowering medications for people at high risk of cardiovascular disease.",
+      "extractionStatus": "direct",
+      "genes": [
+        "Not shown in result table"
+      ],
+      "geneticAnalysis": "Typical",
+      "groupTitle": "Cardiovascular Disease Treatment",
+      "item": "Statin Response",
+      "sortOrder": 18,
+      "sourceBindingNote": "Extracted from the public Medication and Drug Response sample PDF result table.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "medication-drug-response-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Coumadin",
+      "description": "Warfarin is a medication used as an anticoagulant; the sample notes that slower metabolism requires lower dose.",
+      "extractionStatus": "direct",
+      "genes": [
+        "CYP2C9",
+        "VKORC1"
+      ],
+      "geneticAnalysis": "Slower",
+      "groupTitle": "Anticoagulant",
+      "item": "Warfarin Metabolism",
+      "sortOrder": 19,
+      "sourceBindingNote": "Extracted from the public Medication and Drug Response sample PDF result table and summary paragraph.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "medication-drug-response-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Coumadin",
+      "description": "Warfarin is a medication used as an anticoagulant; the sample notes that elevated sensitivity requires lower dose.",
+      "extractionStatus": "direct",
+      "genes": [
+        "CYP2C9",
+        "VKORC1"
+      ],
+      "geneticAnalysis": "Elevated",
+      "groupTitle": "Anticoagulant",
+      "item": "Warfarin Sensitivity",
+      "sortOrder": 20,
+      "sourceBindingNote": "Extracted from the public Medication and Drug Response sample PDF result table and summary paragraph.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceResourceIds": [
+        "medication-drug-response-sample-pdf"
+      ]
+    }
+  ],
   "practicalNextSteps": {
     "clinicianReview": [
       "Share PGx findings with a clinician or pharmacist before making medication decisions.",

@@ -92,6 +92,24 @@
     ],
     "professionalReview": "A qualified professional can interpret variant annotations together with validated clinical evidence, family history, phenotype, laboratory context, and current clinical guidelines."
   },
+  "officialVariantEffectBoundary": {
+    "fieldBoundaryStatus": "field-boundary only; official generated VEP rows were not captured for this local fixture",
+    "sourceCapture": "Authenticated detail-page scope text was captured from Sequencing.com, but no official generated variant-effect rows, sample report file, or citation bindings are available.",
+    "summary": {
+      "effectOfGeneticVariants": "official scope observed; generated effect rows not captured",
+      "generatedOutputRows": []
+    },
+    "scope": {
+      "genes": "scope observed; official gene-level rows not captured",
+      "regulatoryRegions": "scope observed; official regulatory-region rows not captured",
+      "transcripts": "scope observed; official transcript rows not captured",
+      "proteinSequences": "scope observed; official protein-sequence rows not captured"
+    },
+    "inputScope": {
+      "wgsAndExome": "scope observed; no private WGS or exome input data captured"
+    },
+    "officialRowsNotice": "The BDNF and AGT rows in this local result are synthetic derived annotation examples, not official Sequencing.com generated VEP rows."
+  },
   "references": [
     {
       "id": "ensembl-vep",

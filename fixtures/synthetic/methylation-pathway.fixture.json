@@ -14,7 +14,7 @@
       "gene": "MTHFR",
       "inputId": "MTHFR-rs1801133",
       "matchStatus": "observed",
-      "observedValue": "CT",
+      "observedValue": "CT; public StrateGene Folate/MTHFR sample PDF observed separately as sibling output-structure evidence",
       "rsid": "rs1801133",
       "sourceArtifact": "synthetic-methylation-pathway-mthfr-context-v1",
       "sourceFile": "synthetic-methylation-pathway-mthfr-context-v1.json"
@@ -24,7 +24,7 @@
       "gene": "MTHFR",
       "inputId": "MTHFR-rs1801131",
       "matchStatus": "observed",
-      "observedValue": "AC",
+      "observedValue": "AC; public StrateGene Folate/MTHFR sample PDF observed separately as sibling output-structure evidence",
       "rsid": "rs1801131",
       "sourceArtifact": "synthetic-methylation-pathway-mthfr-context-v1",
       "sourceFile": "synthetic-methylation-pathway-mthfr-context-v1.json"
@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived MTHFR calls for methylation-pathway validation"
   },
-  "missingInputPolicy": "Report unavailable methylation markers, methylation score, homocysteine, labs, diet history, supplement context, pregnancy context, medication context, detox claims, and authenticated sample rows explicitly; do not infer pathway status or action.",
+  "missingInputPolicy": "Report unavailable methylation markers, methylation score, homocysteine, labs, diet history, supplement context, pregnancy context, medication context, detox claims, broader pathway model, StrateGene proprietary scoring, and authenticated Methylation Pathway sample rows explicitly; do not infer pathway status or action. Use sibling StrateGene Folate/MTHFR sample maps, notable-variation rows, dirty/clean headings, and advanced table rows only as observed output-format examples.",
   "packageSlug": "methylation-pathway",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -58,7 +58,19 @@
       "usedFor": [
         "marketplace_flow"
       ]
+    },
+    {
+      "evidenceLevel": "sibling_observed_output_structure",
+      "id": "strategene-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "StrateGene sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer methylation-pathway boundary context using derived MTHFR calls and CDC folic-acid safety framing while marking methylation scores, homocysteine, labs, detox, supplements, pregnancy, and treatment sections unavailable."
+  "reportPurpose": "Consumer methylation-pathway boundary context using derived MTHFR calls, CDC folic-acid safety framing, and sibling StrateGene Folate/MTHFR sample-output structure."
 }

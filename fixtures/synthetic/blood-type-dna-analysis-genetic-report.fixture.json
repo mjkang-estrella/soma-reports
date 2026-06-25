@@ -55,6 +55,18 @@
         "blood_type_inheritance",
         "serology_vs_genotype_limits"
       ]
+    },
+    {
+      "id": "blood-type-sample-pdf",
+      "title": "ABO Blood Type DNA Report sample report",
+      "sourceType": "mock_report",
+      "evidenceLevel": "observed_output_structure",
+      "usedFor": [
+        "sample_rows",
+        "formal_fields",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
   "expectedAssertions": {

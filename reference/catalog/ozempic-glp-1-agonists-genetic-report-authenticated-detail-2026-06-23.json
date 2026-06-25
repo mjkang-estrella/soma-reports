@@ -1,0 +1,65 @@
+{
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "source": "in-app browser exact route DOM and meta capture",
+  "capturedAt": "2026-06-23T06:14:45.446Z",
+  "url": "https://sequencing.com/marketplace/ozempic-glp-1-agonists-genetic-report",
+  "finalUrl": "https://sequencing.com/marketplace/ozempic-glp-1-agonists-genetic-report",
+  "uri": "marketplace/ozempic-glp-1-agonists-genetic-report",
+  "title": "Ozempic and GLP-1 Agonists",
+  "publisher": "Golden Gate Gene",
+  "price": "$99",
+  "currencyCode": "USD",
+  "productId": "5169",
+  "headerImage": "https://sequencing.com/sites/default/files/ozempic-glp-icon5.png",
+  "headerImageAlt": "Ozempic and GLP-1 Agonists",
+  "summaryPreview": "Marketplace Ozempic and GLP-1 Agonists Developed by Golden Gate Gene This report provides personalized genetic insights on how DNA influences weight-loss medication response, metabolism, and side effects. $99 per genome",
+  "bodyPreview": "Marketplace Ozempic and GLP-1 Agonists Developed by Golden Gate Gene This report provides personalized genetic insights on how DNA influences weight-loss medication response, metabolism, and side effects, helping optimize treatment strategies for safer, more effective results. $99 per genome Start Report View Sample Report Get 100% of your DNA data with Whole Genome Sequencing. Already have data from a DNA test? Upload your data for free. The page describes GLP-1 agonists including Wegovy, Ozempic, Saxenda, Mounjaro, and Contrave, and frames genetic variants, medication response, efficacy, side effects, lifestyle factors, and clinician consultation as report context.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Ozempic and GLP-1 Agonists"
+    },
+    {
+      "level": "h2",
+      "text": "Discover Your Genetic Blueprint for Effective Weight Management"
+    },
+    {
+      "level": "h2",
+      "text": "What You'll Learn"
+    },
+    {
+      "level": "h2",
+      "text": "Comprehensive Report Coverage"
+    },
+    {
+      "level": "h2",
+      "text": "Key Features"
+    },
+    {
+      "level": "h2",
+      "text": "Sample Report"
+    }
+  ],
+  "meta": {
+    "article:modified_time": "2026-06-19T06:50:28-07:00",
+    "article:published_time": "2025-02-12T08:49:48-08:00",
+    "author": "Sequencing",
+    "canonical": "https://sequencing.com/marketplace/ozempic-glp-1-agonists-genetic-report",
+    "description": "Find the best GLP-1 medication for you with a DNA-based genetic report. Get personalized insights to save money, improve weight loss, and see faster results.",
+    "og:title": "Ozempic and GLP-1 Medications | Personalized DNA Analysis Report",
+    "og:type": "product",
+    "og:url": "https://sequencing.com/marketplace/ozempic-glp-1-agonists-genetic-report",
+    "product:availability": "instock",
+    "product:brand": "Sequencing",
+    "product:category": "505293",
+    "product:price:amount": "99.00",
+    "product:price:currency": "USD",
+    "product:retailer_item_id": "5169",
+    "twitter:title": "Ozempic and GLP-1 Medications | Personalized DNA Analysis Report"
+  },
+  "evidenceNotes": [
+    "Captured only because finalUrl exactly matched the requested marketplace detail route.",
+    "The page exposed DOM and meta product evidence; no rich reportData object or reportFile URL was present in this capture.",
+    "Page overview text is used only for marketplace positioning, not local medication selection, medication response, efficacy, side-effect probability, dose, treatment, diagnosis, or actionability claims."
+  ]
+}

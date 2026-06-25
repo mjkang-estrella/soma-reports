@@ -38,6 +38,16 @@
       "observedValue": "partner result, carrier-screening scope, pregnancy context, embryo or fetal context, hormone-status context, fertility evaluation, and reproductive decision context unavailable in this fixture",
       "sourceArtifact": "synthetic-male-sexual-and-reproductive-health-dna-report-reproductive-endocrine-boundary-context-v1",
       "sourceFile": "synthetic-male-sexual-and-reproductive-health-dna-report-reproductive-endocrine-boundary-context-v1.json"
+    },
+    {
+      "assembly": "public-sample-pdf",
+      "gene": "Female Sexual & Reproductive Health public sample",
+      "haplotype": "public-sibling-sample-output-structure-observed",
+      "inputId": "male-sexual-reproductive-health-public-sibling-sample-output-structure",
+      "matchStatus": "observed",
+      "observedValue": "Local SelfDecode Female Sexual & Reproductive Health sample PDF shows 19 genetic results; sexual and reproductive health issue cards; reproductive hormone cards; STI cards; Sexual Dysfunction, Female Infertility, and PCOS detail pages with variant-count and top-variant tables; and Vitamin D plus Relaxation Techniques recommendation blocks with impact/evidence scores. These rows are reused as Male Sexual and Reproductive Health sibling output structure only.",
+      "sourceArtifact": "reference/sources/female-sexual-reproductive-health-dna-report.pdf",
+      "sourceFile": "female-sexual-reproductive-health-dna-report.pdf"
     }
   ],
   "inputManifest": {
@@ -46,7 +56,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for male-sexual-and-reproductive-health-dna-report validation"
   },
-  "missingInputPolicy": "Report unavailable male sexual and reproductive health evidence explicitly; do not diagnose male reproductive, sexual, endocrine, fertility, infertility, testosterone, or pregnancy-related partner conditions; infer hormone, semen, or lab status; estimate fertility, embryo, fetal, child, or reproductive risk; recommend medication, supplements, testosterone therapy, fertility treatment, IVF, PGT, prenatal testing, lifestyle, or reproductive actions.",
+  "missingInputPolicy": "Use the local Female Sexual & Reproductive Health sample rows only as observed sibling output structure for Male Sexual and Reproductive Health; report validated male reproductive-health output, fertility evaluation, semen analysis, hormone labs, testosterone context, sexual-health diagnosis, medications, symptoms, partner context, clinician review, and local-user male sexual-health, fertility, hormone, STI, treatment, supplement, lifestyle, medication, and reproductive-action conclusions unavailable.",
   "packageSlug": "male-sexual-and-reproductive-health-dna-report",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -214,7 +224,19 @@
         "non_diagnostic_language",
         "missing_model_policy"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "female-sexual-reproductive-health-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Female Sexual & Reproductive Health DNA Report sample report",
+      "usedFor": [
+        "sibling_formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer male sexual and reproductive health boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer Male Sexual and Reproductive Health boundary context using supplied references, explicit unavailable-model framing, and observed SelfDecode Female Sexual & Reproductive Health sibling sample-report output structure."
 }

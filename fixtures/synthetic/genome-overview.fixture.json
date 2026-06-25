@@ -1,5 +1,5 @@
 {
-  "consumerTone": "plain English; educational bioinformatics utility context only; no diagnosis, disease risk, carrier status, pharmacogenomics, ancestry, coverage, clinical classification, medication, screening, treatment, or actionability claims",
+  "consumerTone": "plain English; educational genome-overview boundary context only; sibling sample rows are not local findings; no genome-wide inventory, inherited-trait result, disease risk, carrier status, pharmacogenomics, ancestry, coverage, clinical classification, lifestyle, treatment, or actionability claims",
   "datasetId": "synthetic-genome-overview-utility-context-v1",
   "expectedAssertions": {
     "consumerLanguage": true,
@@ -35,7 +35,7 @@
       "haplotype": "not-supplied",
       "inputId": "genome-overview-summary-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "genome-wide inventory, disease risk, carrier status, pharmacogenomics, ancestry, coverage metrics, variant interpretation, clinical classifications, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "direct Genome Overview service output, genome-wide inventory, inherited-trait result, disease risk, carrier status, pharmacogenomics, ancestry, coverage metrics, variant interpretation, clinical classifications, and direct Genome Overview sample-report rows unavailable in this fixture; sibling Complete Genome Analysis sample rows are observed separately as output-structure evidence",
       "sourceArtifact": "synthetic-genome-overview-utility-context-v1",
       "sourceFile": "synthetic-genome-overview-utility-context-v1.json"
     }
@@ -46,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived bioinformatics utility context for genome-overview validation"
   },
-  "missingInputPolicy": "Mark genome-wide inventory, disease risk, carrier status, pharmacogenomics, ancestry, coverage, variant interpretation, clinical classifications, and authenticated sample evidence unavailable when not explicitly supplied.",
+  "missingInputPolicy": "Report direct Genome Overview service output, genome-wide inventory, inherited-trait result, disease risk, carrier status, pharmacogenomics, ancestry, coverage metrics, variant interpretation, clinical classification, and actionability unavailable unless explicitly supplied; use sibling Complete Genome Analysis sample rows only as observed output structure.",
   "packageSlug": "genome-overview",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -152,7 +152,20 @@
         "trait_association_context",
         "model_unavailable_context"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "complete-genome-analysis-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Complete Genome Analysis sample report",
+      "usedFor": [
+        "sibling_sample_rows",
+        "formal_fields",
+        "genotype_summary",
+        "output_format",
+        "inherited_traits_sample_structure"
+      ]
     }
   ],
-  "reportPurpose": "Consumer genome overview utility context using a selected public variant lookup row and explicit unavailable genome-wide inventory, interpretation, coverage, and authenticated sample evidence."
+  "reportPurpose": "Consumer Genome Overview utility-boundary context using selected lookup rows plus sibling Complete Genome Analysis inherited-traits sample-output structure while marking direct Genome Overview service output unavailable."
 }

@@ -13,6 +13,8 @@ Do not diagnose lactose intolerance, food allergy, food sensitivity, celiac dise
 Do not diagnose vitamin deficiency, diagnose nutrient deficiency, recommend supplements, prescribe dosing, create diet plans, interpret labs, or provide treatment guidance from genotype.
 State that symptoms, ancestry, diet history, environment, labs, medications, medical history, and clinician or dietitian guidance matter for nutrition decisions.
 For this package, focus on educational nutrition-genetics context and explicitly unavailable personalized vitamin, supplement, dosing, micronutrient, diet, lab, symptom, and treatment sections.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
 Use GenoPalate sample-report nutrient targets, formula tables, and gene appendix rows only as observed output-format examples unless the local run supplies equivalent validated evidence.
 Do not turn sample nutrient targets, GenoVit, GenoBlend, formula, food-source, or supplement-facts text into personal diet, supplement, dosing, blood-level, lab, ordering, or treatment advice.

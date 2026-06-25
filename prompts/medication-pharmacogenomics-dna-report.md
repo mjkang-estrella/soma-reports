@@ -9,4 +9,6 @@ Use the public Medication and Drug Response sample PDF only for observed output 
 Do not recommend a drug, rank drugs, state a drug is safe or unsafe, predict efficacy, predict adverse effects, or provide dose guidance.
 Do not recommend starting, stopping, switching, or changing the dose of any medication.
 State that a clinician or pharmacist must review medication decisions.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.

@@ -3,7 +3,8 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { dirname } from "node:path";
-import { spawnSync } from "node:child_process";
+import { evaluateConsumerLanguageRows } from "./lib/consumer-language.mjs";
+import { loadArtifactSeeds } from "./lib/local-artifact-seeds.mjs";
 
 const parseArgs = () => {
   const parsed = new Map();
@@ -27,17 +28,26 @@ const fixturePath = args.get("--fixture");
 const outPath = args.get("--out");
 const resultPath = args.get("--result");
 const seedArtifactsPath = args.get("--seed-artifacts");
+const validationMode = args.get("--validation-mode") ?? "local";
+const validationModes = new Set(["local", "sample-parity", "formal-ready"]);
+const formalEvidenceLedgerPath = "reference/catalog/sample-promotion-rejections-2026-06-23.json";
+
+if (!validationModes.has(validationMode)) {
+  throw new Error(`Unsupported --validation-mode ${validationMode}; expected local, sample-parity, or formal-ready`);
+}
 
 if (!reportSlug || !fixturePath) {
   throw new Error(
-    "Usage: npm run agent:bundle -- --report <slug> --fixture <derived-fixture.json> [--out tmp/agent-bundles/<slug>.json] [--result generated-report.json]",
+    "Usage: npm run agent:bundle -- --report <slug> --fixture <derived-fixture.json> [--out tmp/agent-bundles/<slug>.validated.json] [--result generated-report.json] [--validation-mode local|sample-parity|formal-ready]",
   );
 }
 
 const promptPath = `prompts/${reportSlug}.md`;
 const prompt = readFileSync(promptPath, "utf8");
-const fixture = JSON.parse(readFileSync(fixturePath, "utf8"));
-const result = resultPath ? JSON.parse(readFileSync(resultPath, "utf8")) : null;
+const fixtureText = readFileSync(fixturePath, "utf8");
+const fixture = JSON.parse(fixtureText);
+const resultText = resultPath ? readFileSync(resultPath, "utf8") : null;
+const result = resultText ? JSON.parse(resultText) : null;
 const errors = [];
 const warnings = [];
 const checks = [];
@@ -69,6 +79,10 @@ const warn = (id, path, message) => {
   recordCheck({ id, status: "warn", severity: "warning", path, message });
 };
 
+const notRun = (id, path, message) => {
+  recordCheck({ id, status: "not_run", severity: "info", path, message });
+};
+
 const check = (condition, id, path, message) => {
   if (condition) {
     pass(id, path, message);
@@ -93,53 +107,33 @@ const requireString = (value, path, id) => {
   check(typeof value === "string" && value.trim().length > 0, id, path, `${path} must be a non-empty string`);
 };
 
-const sha256 = (value) =>
-  `sha256:${createHash("sha256").update(JSON.stringify(value)).digest("hex")}`;
+const sha256Digest = (value) => `sha256:${createHash("sha256").update(value).digest("hex")}`;
+const sha256 = (value) => sha256Digest(JSON.stringify(value));
+const sha256Text = (value) => sha256Digest(value);
 
-const readSeedArtifacts = () => {
-  const readArtifactFile = (path) => {
-    const parsed = JSON.parse(readFileSync(path, "utf8"));
-    return Array.isArray(parsed) ? parsed : [];
+const readFormalEvidenceDecision = () => {
+  if (!existsSync(formalEvidenceLedgerPath)) {
+    return null;
+  }
+
+  const ledger = JSON.parse(readFileSync(formalEvidenceLedgerPath, "utf8"));
+  const decision = (ledger.decisions ?? []).find((entry) => entry?.slug === reportSlug);
+  if (!decision) {
+    return null;
+  }
+
+  return {
+    decision: decision.decision,
+    evidenceStatus: decision.evidenceStatus,
+    routeBehavior: decision.routeBehavior,
+    reportFileStatus: decision.reportFileStatus,
+    reason: decision.reason,
+    requiredEvidenceForPromotion: decision.requiredEvidenceForPromotion ?? [],
+    sources: decision.sources ?? [],
   };
-
-  if (seedArtifactsPath) {
-    return { artifacts: readArtifactFile(seedArtifactsPath), error: null, source: seedArtifactsPath };
-  }
-
-  const defaultCachePath = "tmp/local-artifact-seeds.agent-cache.json";
-  if (existsSync(defaultCachePath)) {
-    return { artifacts: readArtifactFile(defaultCachePath), error: null, source: defaultCachePath };
-  }
-
-  const run = spawnSync("npx", ["convex", "run", "reports:localArtifactSeeds"], {
-    encoding: "utf8",
-    maxBuffer: 1024 * 1024 * 20,
-  });
-  if (run.status !== 0) {
-    return {
-      artifacts: [],
-      error: run.error?.message || run.stderr.trim() || run.stdout.trim() || `convex run exited with ${run.status}`,
-      source: "convex:reports:localArtifactSeeds",
-    };
-  }
-
-  try {
-    const parsed = JSON.parse(run.stdout);
-    return {
-      artifacts: Array.isArray(parsed) ? parsed : [],
-      error: Array.isArray(parsed) ? null : "reports:localArtifactSeeds did not return an array",
-      source: "convex:reports:localArtifactSeeds",
-    };
-  } catch (error) {
-    return {
-      artifacts: [],
-      error: error instanceof Error ? error.message : String(error),
-      source: "convex:reports:localArtifactSeeds",
-    };
-  }
 };
 
-const seedArtifactRead = readSeedArtifacts();
+const seedArtifactRead = loadArtifactSeeds({ seedArtifactsPath });
 const seedArtifact = seedArtifactRead.artifacts.find((artifact) => artifact?.slug === reportSlug) ?? null;
 const formalArtifacts = seedArtifact
   ? {
@@ -151,6 +145,82 @@ const formalArtifacts = seedArtifact
       sourceArtifacts: seedArtifact.sourceArtifacts ?? [],
     }
   : null;
+
+const formalSampleRows = formalArtifacts?.sampleRows ?? [];
+const formalFields = formalArtifacts?.formalFields ?? [];
+const coveredFormalFields = formalFields.filter((field) => field.status !== "pending");
+const pendingFormalFields = formalFields.filter((field) => field.status === "pending");
+const formalSampleRowsAvailable = formalSampleRows.length > 0;
+const formalFieldsCovered = formalFields.length > 0 && pendingFormalFields.length === 0;
+const rowCitationBindingsReady =
+  formalSampleRowsAvailable &&
+  formalSampleRows.every((row) => {
+    const sourceIds = row.sourceResourceIds ?? row.sourceIds ?? [];
+    return (
+      Array.isArray(sourceIds) &&
+      sourceIds.length > 0 &&
+      sourceIds.every((sourceId) => typeof sourceId === "string" && sourceId.trim().length > 0) &&
+      row.sourceBindingStatus !== "unavailable"
+    );
+  });
+const formalReadinessGaps = [
+  !formalSampleRowsAvailable ? "sampleReport" : null,
+  !formalFieldsCovered ? "formalFields" : null,
+  !rowCitationBindingsReady ? "citationBindings" : null,
+].filter(Boolean);
+const formalEvidenceBlocker = readFormalEvidenceDecision();
+const agentReadiness = {
+  schemaVersion: "soma-reports.agent-readiness.v1",
+  evidenceStatus:
+    formalSampleRowsAvailable && formalFieldsCovered && rowCitationBindingsReady
+      ? "sample-backed-formal"
+      : "local-scaffold",
+  sampleBackedFormalReady: formalSampleRowsAvailable && formalFieldsCovered && rowCitationBindingsReady,
+  localScaffoldOnly: !(formalSampleRowsAvailable && formalFieldsCovered && rowCitationBindingsReady),
+  evidenceCounts: {
+    references: formalArtifacts?.references.length ?? fixture.referenceResources?.length ?? 0,
+    outputSections: formalArtifacts?.outputSections.length ?? 0,
+    formalFields: formalFields.length,
+    coveredFormalFields: coveredFormalFields.length,
+    pendingFormalFields: pendingFormalFields.length,
+    sampleRows: formalSampleRows.length,
+    sourceBackedSampleRows: formalSampleRows.length,
+    citedSampleRows: formalSampleRows.filter((row) => {
+      const sourceIds = row.sourceResourceIds ?? row.sourceIds ?? [];
+      return (
+        Array.isArray(sourceIds) &&
+        sourceIds.length > 0 &&
+        row.sourceBindingStatus !== "unavailable"
+      );
+    }).length,
+    genotypeSummaryRows: formalArtifacts?.genotypeSummary.length ?? 0,
+    exactCitationRows: formalSampleRows.filter((row) => row.sourceBindingStatus === "exact").length,
+  },
+  gaps: formalReadinessGaps,
+  usageBoundary:
+    formalReadinessGaps.length > 0
+      ? "Use as local prompt, fixture, references, and deterministic output schema only; do not treat as source-backed Sequencing.com formal sample evidence."
+      : "Use as sample-backed local-agent report structure while preserving source bindings and appendix-only probability disclosure.",
+  ...(formalEvidenceBlocker ? { formalEvidenceBlocker } : {}),
+};
+
+if (agentReadiness.localScaffoldOnly) {
+  check(
+    Boolean(formalEvidenceBlocker),
+    "BUNDLE.FORMAL_BLOCKER_DECISION_PRESENT",
+    "readiness.formalEvidenceBlocker",
+    "local-scaffold bundles must carry a formal evidence blocker decision",
+  );
+}
+
+if (formalEvidenceBlocker) {
+  check(
+    agentReadiness.localScaffoldOnly,
+    "BUNDLE.FORMAL_BLOCKER_STALE",
+    "readiness.formalEvidenceBlocker",
+    "formal evidence blocker decisions must be removed when a package becomes sample-backed formal",
+  );
+}
 
 const includesAll = (source, words, path) => {
   const normalized = source.toLowerCase();
@@ -183,6 +253,143 @@ const resultRowsFrom = (value) => {
   return candidates.find(Array.isArray) ?? [];
 };
 
+const resultSampleRowsFrom = (value) => {
+  if (!value || typeof value !== "object") return [];
+  const candidates = [value.sampleRows, value.report?.sampleRows];
+  return candidates.find(Array.isArray) ?? [];
+};
+
+const sourceIdsFromRow = (row) => {
+  if (!row || typeof row !== "object") return [];
+  const candidate = row.sourceResourceIds ?? row.sourceIds ?? [];
+  return Array.isArray(candidate)
+    ? candidate.filter((sourceId) => typeof sourceId === "string" && sourceId.trim().length > 0)
+    : [];
+};
+
+const normalizedFingerprintText = (value) =>
+  typeof value === "string" ? value.trim().replace(/\s+/g, " ") : "";
+
+const canonicalSampleFingerprint = (row) =>
+  JSON.stringify({
+    groupTitle: normalizedFingerprintText(row?.groupTitle),
+    item: normalizedFingerprintText(row?.item),
+    sourceIds: sourceIdsFromRow(row).sort(),
+    sourceBindingStatus: normalizedFingerprintText(row?.sourceBindingStatus),
+  });
+
+const uniqueFingerprints = (rows) => [...new Set(rows.map(canonicalSampleFingerprint))];
+
+const genericResultRowKeys = ["groupTitle", "item", "brandName", "geneticAnalysis", "genes", "sourceLabel", "plainEnglishMeaning"];
+const formalResultRowKeyAllowlist = new Set([...genericResultRowKeys, "description", "sourceIds", "sourceBindingStatus"]);
+const formalResultRowKeysFrom = (artifacts) => {
+  const keys = new Set();
+  for (const field of artifacts?.formalFields ?? []) {
+    if (field.status !== "covered") {
+      continue;
+    }
+    const match = /^resultRows\[\]\.([A-Za-z][A-Za-z0-9_]*)$/.exec(field.outputPath ?? "");
+    if (match && formalResultRowKeyAllowlist.has(match[1])) {
+      keys.add(match[1]);
+    }
+  }
+  return [...keys].sort();
+};
+
+const parseFieldPath = (fieldPath) => fieldPath.replaceAll("[]", ".[]").split(".").filter(Boolean);
+
+const valuesAtFieldPath = (value, fieldPath) => {
+  const walkPath = (node, parts) => {
+    if (parts.length === 0) {
+      return [node];
+    }
+    const [head, ...rest] = parts;
+    if (head === "[]") {
+      return Array.isArray(node) ? node.flatMap((item) => walkPath(item, rest)) : [];
+    }
+    if (node && typeof node === "object" && !Array.isArray(node) && head in node) {
+      return walkPath(node[head], rest);
+    }
+    return [];
+  };
+  return walkPath(value, parseFieldPath(fieldPath));
+};
+
+const stableAppendixFieldPaths = new Set([
+  "appendix.genotypeSummary",
+  "appendix.probabilities",
+  "appendix.uncertainty",
+  "appendix.limitations",
+  "appendix.missingInputs",
+]);
+
+const isPlainObject = (value) => Boolean(value && typeof value === "object" && !Array.isArray(value));
+const isNonEmptyString = (value) => typeof value === "string" && value.trim().length > 0;
+const isStringArray = (value) => Array.isArray(value) && value.every(isNonEmptyString);
+const isNonEmptyStringArray = (value) => isStringArray(value) && value.length > 0;
+const isObjectArray = (value) => Array.isArray(value) && value.every(isPlainObject);
+
+const valueMatchesExpectedType = (value, type, fieldPath) => {
+  if (fieldPath === "resultRows[].brandName") {
+    return value === null || typeof value === "string";
+  }
+  if (type.endsWith("[]")) {
+    if (!Array.isArray(value)) {
+      return false;
+    }
+    const itemType = type.slice(0, -2);
+    if (itemType === "string") {
+      return value.every(isNonEmptyString);
+    }
+    if (itemType === "number") {
+      return value.every((entry) => typeof entry === "number" && Number.isFinite(entry));
+    }
+    if (itemType === "boolean") {
+      return value.every((entry) => typeof entry === "boolean");
+    }
+    if (itemType === "object") {
+      return value.every(isPlainObject);
+    }
+    return value.every((entry) => entry !== null && entry !== undefined);
+  }
+  if (type === "string") {
+    return isNonEmptyString(value);
+  }
+  if (type === "number") {
+    return typeof value === "number" && Number.isFinite(value);
+  }
+  if (type === "boolean") {
+    return typeof value === "boolean";
+  }
+  if (type === "object") {
+    return isPlainObject(value);
+  }
+  return value !== null && value !== undefined;
+};
+
+const stableEmittedFieldPathsFrom = (artifacts) => {
+  const fields = [];
+  for (const section of artifacts?.outputSections ?? []) {
+    for (const field of section.expectedFields ?? []) {
+      if (!field.required || !field.fieldPath) {
+        continue;
+      }
+      if (field.fieldPath.startsWith("sampleRows[]")) {
+        continue;
+      }
+      fields.push(field);
+    }
+  }
+  return fields;
+};
+
+const seedSampleSourceIdsFrom = (artifacts) =>
+  [
+    ...new Set(
+      (artifacts?.sampleRows ?? []).flatMap((row) => row.sourceResourceIds ?? row.sourceIds ?? []),
+    ),
+  ].filter(Boolean);
+
 const appendixFrom = (value) => {
   if (!value || typeof value !== "object") return null;
   return value.appendix ?? value.report?.appendix ?? null;
@@ -194,21 +401,147 @@ const resultReferencesFrom = (value) => {
   return candidates.find(Array.isArray) ?? [];
 };
 
+const validateSampleRowPreservation = (value, rows) => {
+  const seedRows = formalArtifacts?.sampleRows ?? [];
+  const sampleRows = resultSampleRowsFrom(value);
+  const candidateRows = [...sampleRows, ...rows];
+
+  if (seedRows.length === 0) {
+    notRun(
+      "RESULT.SAMPLE_ROWS_PRESERVED",
+      "$.sampleRows|$.resultRows",
+      "formal artifacts do not expose sampleRows[] for this package",
+    );
+    return;
+  }
+
+  const expected = uniqueFingerprints(seedRows);
+  const topLevel = new Set(uniqueFingerprints(sampleRows));
+  const candidates = new Set(uniqueFingerprints(candidateRows));
+  const missingFromTopLevel = expected.filter((fingerprint) => !topLevel.has(fingerprint));
+  const missingFromCandidates = expected.filter((fingerprint) => !candidates.has(fingerprint));
+
+  if (missingFromCandidates.length === 0) {
+    pass(
+      "RESULT.SAMPLE_ROWS_PRESERVED",
+      "$.sampleRows|$.resultRows",
+      `result preserves ${expected.length} formal sample row fingerprints`,
+    );
+    if (missingFromTopLevel.length === 0) {
+      pass(
+        "RESULT.SAMPLE_ROWS_TOP_LEVEL_PRESENT",
+        "$.sampleRows",
+        "result.sampleRows[] preserves formal sample-row structure directly",
+      );
+    } else {
+      warn(
+        "RESULT.SAMPLE_ROWS_TOP_LEVEL_MISSING",
+        "$.sampleRows",
+        `formal sample rows are preserved through resultRows[] but ${missingFromTopLevel.length} are absent from top-level sampleRows[]`,
+      );
+    }
+    return;
+  }
+
+  const message = `${missingFromCandidates.length} of ${expected.length} formal sample row fingerprints are absent from result.sampleRows[] and resultRows[]`;
+  if (validationMode === "sample-parity" || validationMode === "formal-ready") {
+    fail("RESULT.SAMPLE_ROWS_PRESERVED", "$.sampleRows|$.resultRows", message);
+    return;
+  }
+  warn("RESULT.SAMPLE_ROWS_PRESERVED", "$.sampleRows|$.resultRows", message);
+};
+
+const probabilityTextPattern = /\b(probability|probabilities|confidence|uncertainty|calibration|calibrated|clinical sensitivity)\b/i;
+const probabilityBoundaryTextPattern =
+  /\b(unavailable|missing|not supplied|does not|do not|cannot|no calibrated|no probability|not quantified|not calculated|not supported|without a calibrated|not infer|not a local|pending|appendix only|belongs in the appendix)\b/i;
+
+const shouldWarnProbabilityBodyText = (node, path) => {
+  if (typeof node !== "string" || !probabilityTextPattern.test(node)) {
+    return false;
+  }
+  const lowerPath = path.toLowerCase();
+  if (
+    path.startsWith("$.appendix") ||
+    path.startsWith("$.report.appendix") ||
+    lowerPath.includes("unsupportedclaims") ||
+    lowerPath.includes("limitations") ||
+    probabilityBoundaryTextPattern.test(node)
+  ) {
+    return false;
+  }
+  return true;
+};
+
+const validateConsumerLanguage = (rows) => {
+  if (rows.length === 0) {
+    return;
+  }
+
+  const evaluations = evaluateConsumerLanguageRows(rows);
+  const failures = evaluations.flatMap((evaluation) =>
+    evaluation.failures.map((message) => ({ evaluation, message })),
+  );
+  const reviewWarnings = evaluations.flatMap((evaluation) =>
+    evaluation.warnings.map((message) => ({ evaluation, message })),
+  );
+
+  if (failures.length === 0) {
+    pass(
+      "RESULT.CONSUMER_LANGUAGE_EXPLANATIONS_PRESENT",
+      "$.resultRows[].plainEnglishMeaning",
+      `${evaluations.length} result rows include substantive plain-English customer explanations`,
+    );
+  }
+
+  for (const { evaluation, message } of failures) {
+    fail("RESULT.CONSUMER_LANGUAGE_EXPLANATION_REQUIRED", evaluation.path, message);
+  }
+  for (const { evaluation, message } of reviewWarnings) {
+    warn("RESULT.CONSUMER_LANGUAGE_REVIEW", evaluation.path, message);
+  }
+};
+
 const validateResult = (value) => {
   const appendix = appendixFrom(value);
   const rows = resultRowsFrom(value);
+  const requiredRowKeys = [...new Set([...genericResultRowKeys, ...formalResultRowKeysFrom(formalArtifacts)])];
   const allowedReferenceIds = new Set((fixture.referenceResources ?? []).map((resource) => resource.id));
   const resultReferenceIds = new Set(
     resultReferencesFrom(value)
       .map((resource) => resource.id ?? resource.resourceId)
       .filter(Boolean),
   );
+  const resultSourceIds = new Set();
 
   check(
     Boolean(appendix && typeof appendix === "object"),
     "RESULT.APPENDIX_PRESENT",
     "$.appendix",
     "result.appendix must exist and contain probability, uncertainty, and missing-input details",
+  );
+  check(
+    isObjectArray(appendix?.probabilities),
+    "RESULT.APPENDIX_PROBABILITIES_ARRAY",
+    "$.appendix.probabilities",
+    "result.appendix.probabilities[] must be an array of probability objects; use an empty array when calibrated probabilities are unavailable",
+  );
+  check(
+    isNonEmptyStringArray(appendix?.uncertainty),
+    "RESULT.APPENDIX_UNCERTAINTY_ARRAY",
+    "$.appendix.uncertainty",
+    "result.appendix.uncertainty[] must be a non-empty string array explaining confidence, calibration, or missing-evidence limits",
+  );
+  check(
+    isStringArray(appendix?.missingInputs),
+    "RESULT.APPENDIX_MISSING_INPUTS_ARRAY",
+    "$.appendix.missingInputs",
+    "result.appendix.missingInputs[] must be a string array, even when no inputs are missing",
+  );
+  check(
+    isNonEmptyStringArray(appendix?.limitations),
+    "RESULT.APPENDIX_LIMITATIONS_ARRAY",
+    "$.appendix.limitations",
+    "result.appendix.limitations[] must be a non-empty string array explaining source, scope, calibration, or professional-review limits",
   );
 
   check(
@@ -219,12 +552,59 @@ const validateResult = (value) => {
   );
 
   rows.forEach((row, index) => {
-    for (const key of ["groupTitle", "item", "brandName", "geneticAnalysis", "genes", "sourceLabel", "plainEnglishMeaning"]) {
+    for (const key of requiredRowKeys) {
       check(
         key in row,
         "RESULT.ROW_FIELD_PRESENT",
         `$.resultRows[${index}].${key}`,
         `result row ${index} must include ${key}`,
+      );
+      if (!(key in row)) {
+        continue;
+      }
+      if (key === "genes") {
+        check(
+          Array.isArray(row.genes) && row.genes.every((gene) => typeof gene === "string" && gene.trim().length > 0),
+          "RESULT.ROW_GENES_NONEMPTY_STRINGS",
+          `$.resultRows[${index}].genes`,
+          `result row ${index} genes must be an array of non-empty strings`,
+        );
+        continue;
+      }
+      if (key === "brandName") {
+        check(
+          row.brandName === null || typeof row.brandName === "string",
+          "RESULT.ROW_BRAND_NAME_VALID",
+          `$.resultRows[${index}].brandName`,
+          `result row ${index} brandName must be null or a string`,
+        );
+        continue;
+      }
+      if (key === "sourceIds") {
+        check(
+          Array.isArray(row.sourceIds) &&
+            row.sourceIds.length > 0 &&
+            row.sourceIds.every((sourceId) => typeof sourceId === "string" && sourceId.trim().length > 0),
+          "RESULT.ROW_SOURCE_IDS_ARRAY",
+          `$.resultRows[${index}].sourceIds`,
+          `result row ${index} sourceIds must be an array of non-empty strings`,
+        );
+        continue;
+      }
+      if (key === "sourceBindingStatus") {
+        check(
+          ["exact", "curated", "sample_label_only", "unavailable"].includes(row.sourceBindingStatus),
+          "RESULT.ROW_SOURCE_BINDING_STATUS_ALLOWED",
+          `$.resultRows[${index}].sourceBindingStatus`,
+          `result row ${index} sourceBindingStatus must be allowed`,
+        );
+        continue;
+      }
+      check(
+        typeof row[key] === "string" && row[key].trim().length > 0,
+        "RESULT.ROW_TEXT_FIELD_NONEMPTY",
+        `$.resultRows[${index}].${key}`,
+        `result row ${index} ${key} must be a non-empty string`,
       );
     }
     const sourceIds = row.sourceIds;
@@ -247,6 +627,7 @@ const validateResult = (value) => {
         if (!sourceIdIsString) {
           continue;
         }
+        resultSourceIds.add(sourceId);
         check(
           sourceId === "source-unavailable" || allowedReferenceIds.has(sourceId),
           "RESULT.ROW_SOURCE_ID_ALLOWED",
@@ -279,13 +660,48 @@ const validateResult = (value) => {
     }
   });
 
-  const missingInputs = appendix?.missingInputs ?? value.reportOverview?.sectionsUnavailable ?? value.sectionsUnavailable;
-  check(
-    Array.isArray(missingInputs),
-    "RESULT.MISSING_INPUTS_PRESENT",
-    "$.appendix.missingInputs",
-    "result must include appendix.missingInputs[] or reportOverview.sectionsUnavailable[]",
-  );
+  for (const [index, sampleRow] of resultSampleRowsFrom(value).entries()) {
+    for (const [sourceIndex, sourceId] of sourceIdsFromRow(sampleRow).entries()) {
+      resultSourceIds.add(sourceId);
+      check(
+        sourceId === "source-unavailable" || allowedReferenceIds.has(sourceId),
+        "RESULT.SAMPLE_ROW_SOURCE_ID_ALLOWED",
+        `$.sampleRows[${index}].sourceIds[${sourceIndex}]`,
+        `sample row ${index} sourceId must be known or source-unavailable`,
+      );
+    }
+  }
+
+  for (const field of stableEmittedFieldPathsFrom(formalArtifacts)) {
+    const values = valuesAtFieldPath(value, field.fieldPath);
+    check(
+      values.length > 0,
+      "RESULT.EXPECTED_FIELD_PATH_PRESENT",
+      `$.${field.fieldPath}`,
+      `required output field path ${field.fieldPath} must be present for ${field.label}`,
+    );
+    if (values.length === 0) {
+      continue;
+    }
+    check(
+      values.every((entry) => valueMatchesExpectedType(entry, field.type, field.fieldPath)),
+      "RESULT.EXPECTED_FIELD_PATH_TYPE",
+      `$.${field.fieldPath}`,
+      `required output field path ${field.fieldPath} must match type ${field.type}`,
+      );
+  }
+
+  validateConsumerLanguage(rows);
+  validateSampleRowPreservation(value, rows);
+
+  const seedSampleSourceIds = seedSampleSourceIdsFrom(formalArtifacts);
+  if (seedSampleSourceIds.length > 0 && !seedSampleSourceIds.some((sourceId) => resultSourceIds.has(sourceId))) {
+    warn(
+      "RESULT.SEED_SAMPLE_SOURCE_NOT_CITED",
+      "$.resultRows[].sourceIds|$.sampleRows[].sourceIds",
+      "sample-backed formal artifacts expose source IDs, but no result or sample row cites a seed sample source ID",
+    );
+  }
 
   const forbiddenRawKeys = ["rawGenome", "rawGenomeData", "vcf", "fastq", "bam", "cram"];
   const probabilityKeys = ["probability", "probabilities", "confidence", "uncertainty", "calibration"];
@@ -308,6 +724,13 @@ const validateResult = (value) => {
         "PRIVACY.RAW_FILE_TERMINOLOGY_LIMITATION_ONLY",
         path,
         `${path} mentions raw genome/file terminology; confirm it is only a limitation, not emitted data`,
+      );
+    }
+    if (shouldWarnProbabilityBodyText(node, path)) {
+      warn(
+        "RESULT.PROBABILITY_TEXT_REVIEW",
+        path,
+        `${path} mentions probability, confidence, calibration, or uncertainty outside appendix; confirm it is boundary language, not a quantified result`,
       );
     }
   });
@@ -365,11 +788,14 @@ if (hasGenomeEvidence) {
       `fixture.genomeEvidence[${index}].sourceArtifact`,
       "FIXTURE.EVIDENCE_SOURCE_ARTIFACT_PRESENT",
     );
+    const hasCoordinate =
+      (isNonEmptyString(evidence.chrom) || isNonEmptyString(evidence.contig)) &&
+      (Number.isFinite(evidence.pos) || Number.isFinite(evidence.position));
     check(
-      Boolean(evidence.rsid || evidence.starAllele || evidence.haplotype),
+      Boolean(evidence.rsid || evidence.starAllele || evidence.haplotype || hasCoordinate),
       "FIXTURE.EVIDENCE_VARIANT_ID_PRESENT",
       `fixture.genomeEvidence[${index}]`,
-      `fixture.genomeEvidence[${index}] must include rsid, starAllele, or haplotype`,
+      `fixture.genomeEvidence[${index}] must include rsid, starAllele, haplotype, or chrom/pos`,
     );
   }
 }
@@ -411,6 +837,20 @@ if (seedArtifactRead.error) {
 if (formalArtifacts) {
   for (const [key, value] of Object.entries(formalArtifacts)) {
     check(Array.isArray(value), "BUNDLE.FORMAL_ARTIFACT_ARRAY", `formalArtifacts.${key}`, `${key} must be an array`);
+  }
+  if (validationMode === "formal-ready") {
+    check(
+      formalArtifacts.sampleRows.length > 0,
+      "BUNDLE.FORMAL_READY_SAMPLE_ROWS_PRESENT",
+      "formalArtifacts.sampleRows",
+      "formal-ready validation requires source-backed formal sampleRows[]",
+    );
+    check(
+      formalArtifacts.formalFields.length > 0 && formalArtifacts.formalFields.every((field) => field.status !== "pending"),
+      "BUNDLE.FORMAL_READY_FIELDS_COVERED",
+      "formalArtifacts.formalFields",
+      "formal-ready validation requires covered formal field mappings",
+    );
   }
   if (formalArtifacts.sampleRows.length > 0) {
     check(
@@ -455,17 +895,18 @@ if (result) {
 }
 
 if (errors.length > 0) {
-  console.error(JSON.stringify({ ok: false, errors, warnings, validationLedger: validationLedger() }, null, 2));
+  writeFileSync(2, `${JSON.stringify({ ok: false, errors, warnings, validationLedger: validationLedger() }, null, 2)}\n`);
   process.exit(1);
 }
 
-const bundleCore = {
-  schemaVersion: "soma-reports.agent-bundle.v1",
-  reportSlug,
-  promptPath,
-  fixturePath,
-  privacyBoundary: {
-    rawGenomeIncluded: false,
+  const bundleCore = {
+    schemaVersion: "soma-reports.agent-bundle.v1",
+    reportSlug,
+    promptPath,
+    fixturePath,
+    readiness: agentReadiness,
+    privacyBoundary: {
+      rawGenomeIncluded: false,
     derivedEvidenceOnly: true,
     uploadRequired: false,
   },
@@ -474,38 +915,80 @@ const bundleCore = {
     "Use fixture.genomeEvidence, fixture.referenceResources, and formalArtifacts as evidence.",
     "When formalArtifacts.sampleRows are present, preserve their report structure and source bindings.",
     "Return deterministic report JSON first.",
-    "Put probability, confidence, and uncertainty in the appendix only.",
+    "Put probability, confidence, uncertainty, missing-input, and limitation disclosures in the appendix only.",
     "Do not include raw genome data in output.",
   ],
   outputValidation: {
+    validationMode,
     resultPath: resultPath ?? null,
     checks: [
       "raw genome data is absent",
       "resultRows[] or findings[] exist",
       "each result row includes groupTitle, item, brandName, geneticAnalysis, genes, sourceLabel, and plainEnglishMeaning",
+      "each result row preserves covered formal resultRows[] fields from formalArtifacts.formalFields",
       "each finding cites canonical sourceIds[]",
       "each cited sourceIds[] entry appears in result.references[] when the result emits references",
+      "appendix.probabilities[], appendix.uncertainty[], appendix.missingInputs[], and appendix.limitations[] are present",
       "probability, confidence, calibration, and uncertainty keys only appear under appendix",
       "prompt requires deterministic sections before appendix probabilities",
     ],
   },
-  agentRunInput: {
-    reportPurpose: fixture.reportPurpose,
-    referenceResources: fixture.referenceResources,
-    formalArtifacts,
-    genomeEvidence: fixture.genomeEvidence,
-    missingInputPolicy: fixture.missingInputPolicy,
-    consumerTone: fixture.consumerTone,
+	  agentRunInput: {
+	    readiness: agentReadiness,
+	    reportPurpose: fixture.reportPurpose,
+	    referenceResources: fixture.referenceResources,
+	    formalArtifacts,
+	    genomeEvidence: fixture.genomeEvidence,
+	    missingInputPolicy: fixture.missingInputPolicy,
+	    consumerTone: fixture.consumerTone,
+	  },
+	  exampleOutput: result,
+	  prompt,
+	  fixture,
+	  formalArtifacts,
+	};
+
+const validation = validationLedger();
+const bundleHash = sha256(bundleCore);
+const auditManifest = {
+  schemaVersion: "soma-reports.agent-audit.v1",
+  fileHashes: {
+    prompt: {
+      path: promptPath,
+      hash: sha256Text(prompt),
+    },
+    fixture: {
+      path: fixturePath,
+      hash: sha256Text(fixtureText),
+    },
+    result: resultPath && resultText
+      ? {
+          path: resultPath,
+          hash: sha256Text(resultText),
+        }
+      : null,
   },
-  prompt,
-  fixture,
-  formalArtifacts,
+  objectHashes: {
+    bundleCore: bundleHash,
+	    agentRunInput: sha256(bundleCore.agentRunInput),
+	    outputValidation: sha256(bundleCore.outputValidation),
+	    exampleOutput: result ? sha256(result) : null,
+	    formalArtifacts: formalArtifacts ? sha256(formalArtifacts) : null,
+	    validationLedger: sha256(validation),
+	  },
+  seedArtifacts: {
+    source: seedArtifactRead.source,
+    slugFound: Boolean(seedArtifact),
+  },
+  validationSummary: validation.summary,
+  validationLedger: validation,
 };
 
 const bundle = {
   ...bundleCore,
   generatedAt: new Date().toISOString(),
-  bundleHash: sha256(bundleCore),
+  bundleHash,
+  auditManifest,
 };
 
 const text = `${JSON.stringify(bundle, null, 2)}\n`;
@@ -521,9 +1004,19 @@ if (outPath) {
         reportSlug,
         evidenceRows: fixture.genomeEvidence.length,
         formalArtifactsLoaded: Boolean(formalArtifacts),
+        readiness: agentReadiness,
         resultValidated: Boolean(result),
+        validationMode,
+        bundleHash,
+        auditManifest: {
+          schemaVersion: auditManifest.schemaVersion,
+          fileHashes: auditManifest.fileHashes,
+          objectHashes: auditManifest.objectHashes,
+          seedArtifacts: auditManifest.seedArtifacts,
+          validationSummary: auditManifest.validationSummary,
+        },
         warnings,
-        validationLedger: validationLedger(),
+        validationLedger: validation,
       },
       null,
       2,

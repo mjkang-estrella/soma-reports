@@ -15,7 +15,7 @@
       "haplotype": "organ-system-model-unavailable",
       "inputId": "blood-dna-analysis-report-model-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "validated blood trait model, CBC, hemoglobin, platelet count, white blood cell count, clotting tests, bleeding history, transfusion context, donation context, pregnancy compatibility context, clinical diagnosis, treatment context, clinician review, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "validated blood trait model, CBC, hemoglobin, platelet count, white blood cell count, clotting tests, bleeding history, transfusion context, donation context, pregnancy compatibility context, clinical diagnosis, treatment context, clinician review, and calibrated blood-trait interpretation unavailable in this fixture; public Blood Related sample table observed for output structure",
       "sourceArtifact": "synthetic-blood-dna-analysis-report-organ-system-boundary-context-v1",
       "sourceFile": "synthetic-blood-dna-analysis-report-organ-system-boundary-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "clinical-professional-context-unavailable",
       "inputId": "blood-dna-analysis-report-clinical-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and personal blood-trait clinical context unavailable in this fixture; public sample PDF observed separately as output-structure evidence",
       "sourceArtifact": "synthetic-blood-dna-analysis-report-organ-system-boundary-context-v1",
       "sourceFile": "synthetic-blood-dna-analysis-report-organ-system-boundary-context-v1.json"
     },
@@ -35,7 +35,7 @@
       "haplotype": "organ-system-context-unavailable",
       "inputId": "blood-dna-analysis-report-organ-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "labs, imaging, vitals, organ-function measures, disease-specific testing, treatment context, prevention context, and actionability context unavailable in this fixture",
+      "observedValue": "labs, imaging, vitals, organ-function measures, disease-specific testing, treatment context, prevention context, actionability context, blood group confirmation, and compatibility context unavailable in this fixture; public sample PDF observed separately as output-structure evidence",
       "sourceArtifact": "synthetic-blood-dna-analysis-report-organ-system-boundary-context-v1",
       "sourceFile": "synthetic-blood-dna-analysis-report-organ-system-boundary-context-v1.json"
     }
@@ -46,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for blood-dna-analysis-report validation"
   },
-  "missingInputPolicy": "Report unavailable blood traits and conditions evidence explicitly; do not diagnose anemia, clotting disorder, bleeding disorder, platelet disorder, hemoglobinopathy, infection, immune condition, pregnancy incompatibility, or blood disease; infer CBC, hemoglobin, platelet, WBC, clotting, bleeding, transfusion, donation, pregnancy compatibility, organ-function, treatment, medication, supplement, diet, screening, testing, prevention, or clinical actionability.",
+  "missingInputPolicy": "Report unavailable blood trait model calibration, CBC and lab values, blood group confirmation, bleeding or clotting history, transfusion context, donation context, pregnancy compatibility context, clinical diagnosis, treatment context, and clinician review explicitly; do not infer diagnosis, lab values, blood type, compatibility, personal risk, treatment, testing, diet, supplement, or actionability from sample table labels.",
   "packageSlug": "blood-dna-analysis-report",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -169,7 +169,19 @@
         "missing_model_policy",
         "clinical_actionability_limits"
       ]
+    },
+    {
+      "id": "blood-traits-sample-pdf",
+      "title": "Blood Related sample report",
+      "sourceType": "mock_report",
+      "evidenceLevel": "observed_output_structure",
+      "usedFor": [
+        "sample_rows",
+        "genotype_summary",
+        "formal_fields",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer blood traits and conditions boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer blood traits and conditions boundary context using supplied references plus the public Blood Related sample PDF's observed trait/result/description table while explicitly marking personal clinical and lab context unavailable."
 }

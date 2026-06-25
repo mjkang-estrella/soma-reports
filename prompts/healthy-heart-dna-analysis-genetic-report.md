@@ -8,6 +8,8 @@ If LPA, 9p21, familial-hypercholesterolemia pathogenic-variant screening, lipid 
 State that cardiovascular health depends on genetics plus LDL cholesterol, lipoprotein(a) levels, blood pressure, diabetes, smoking, age, sex, family history, ancestry, medications, lifestyle, environment, and clinical care.
 Do not diagnose familial hypercholesterolemia, coronary artery disease, heart attack, stroke, aortic valve disease, high cholesterol, or high lipoprotein(a) from genotype alone.
 Do not recommend medication, supplements, procedures, lab tests, imaging, genetic testing decisions, diet changes, exercise plans, or treatment changes from genotype.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
 Use the public GenoPalate My Heart Health sample PDF only for observed output structure, nutrient-range labels, food-score table shape, gene-table shape, grocery/recipe/lifestyle sections, and heart-health metric appendix shape; use local genomeEvidence for user-specific cardiovascular context.
 Do not turn sample nutrient ranges, top foods, recipes, dietitian support text, lifestyle factors, heart-health metrics, or sample genotypes into personal recommendations unless separate clinical and calibrated recommendation evidence is supplied; for this package it is not supplied.

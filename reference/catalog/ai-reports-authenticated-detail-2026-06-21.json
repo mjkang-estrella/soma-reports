@@ -1,0 +1,101 @@
+{
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "capturedAt": "2026-06-21T15:38:38.804Z",
+  "source": "in-app browser logged-in sequencing.com marketplace detail page __NEXT_DATA__.props.pageProps.reportData extraction",
+  "url": "https://sequencing.com/marketplace/ai-reports",
+  "finalUrl": "https://sequencing.com/marketplace/ai-reports",
+  "title": "AI Reports",
+  "nid": "19061",
+  "productId": null,
+  "app": {
+    "apiAppId": null,
+    "appid": null,
+    "backend": null,
+    "label": null
+  },
+  "publisher": "Sequencing.com",
+  "price": "$0",
+  "currencyCode": null,
+  "categories": [
+    "Sequencing Apps",
+    "Health"
+  ],
+  "uri": "marketplace/ai-reports",
+  "reportFile": "https://sequencing.com/sites/default/files/skin_health_ai_report_sample_report_working_file.pdf",
+  "headerImage": "https://sequencing.com/sites/default/files/ai-report-icon_0.png",
+  "headerImageAlt": "",
+  "meta": {
+    "canonical": "https://sequencing.com/marketplace/ai-reports",
+    "publishedTime": null,
+    "modifiedTime": null,
+    "ogDescriptionHash": "sha256:05dbdf125f48f3db4059ab7d46a17068e5cea75cb26f9d9ca74fe9fd97864d87",
+    "ogDescriptionPreview": "Ehlers-Danlos Syndrome + hEDS Emerging Research",
+    "productPriceAmount": null,
+    "productPriceCurrency": null,
+    "productRetailerItemId": null
+  },
+  "summaryPreview": "Ehlers-Danlos Syndrome + hEDS Emerging Research",
+  "bodyPreview": "Unlock Personalized Health Insights with AI-Powered Genetic Reports Sequencing's AI Reports transform complex genetic information into clear, actionable insights, empowering you to make informed decisions about your lifestyle and healthcare. These reports provide a comprehensive analysis of your DNA, identifying specific genetic traits and revealing potential health risks. Each report offers detailed information on inherited conditions, medication responses, and disease predispositions, helping you understand how your genes influence your overall health. Tailored Health Insights By focusing on key health areas, AI Reports deliver personalized insights, allowing both you and your healthcare provider to review and discuss targeted strategies for your well-being. Whether it’s assessing your risk for cardiovascular disease, understanding your response to certain medications, or exploring potential genetic markers related to cancer, these reports turn scientific data into easily digestible ",
+  "visibleParagraphs": [
+    "Prime Day Sale | Up to 60% off + free worldwide shippingOrder Now",
+    "Order Now",
+    "Dashboard",
+    "My Apps",
+    "AI Reports",
+    "Next-Gen Disease Screen",
+    "Health Scan",
+    "Genome Explorer",
+    "Results",
+    "Files"
+  ],
+  "infoTabs": [
+    {
+      "label": "Overview",
+      "textPreview": "Unlock Personalized Health Insights with AI-Powered Genetic Reports Sequencing's AI Reports transform complex genetic information into clear, actionable insights, empowering you to make informed decisions about your lifestyle and healthcare. These reports provide a comprehensive analysis of your DNA, identifying specific genetic traits and revealing potential health risks. Each report offers detailed information on inherited conditions, medication responses, and disease predispositions, helping you understand how your genes influence your overall health. Tailored Health Insights By focusing on key health areas, AI Reports deliver personalized insights, allowing both you and your healthcare provider to review and discuss targeted strategies for your well-being. Whether it’s assessing your risk for cardiovascular disease, understanding your response to certain medications, or exploring potential genetic markers related to cancer, these reports turn scientific data into easily digestible "
+    },
+    {
+      "label": "Disclaimer",
+      "textPreview": "The genetic analysis and statements that appear in this app and associated reports have not been evaluated by the United States Food and Drug Administration. The Sequencing.com website and all software applications (Apps) that use Sequencing.com's website, as well as Sequencing.com's open Application Programming Interface (API), are not intended to diagnose, monitor, treat, cure, prevent nor alleviate any disease. This app, its results, and the information it provides neither determine the appropriateness of a medication nor provide medical diagnoses or advice. Do not use these results to make health decisions. Always consult with your physician or a qualified health provider about any medical concerns or medications. Do not ignore professional medical advice or delay seeking it based on this app's results or information. Discuss these results with your health care provider before making any medical decisions. They might recommend further genetic testing or analysis."
+    }
+  ],
+  "reportDataKeys": [
+    "app_id",
+    "avatar",
+    "avatarAlt",
+    "body",
+    "category",
+    "currency_code",
+    "headerImg",
+    "headerImgAlt",
+    "id",
+    "included_with_membership",
+    "included_with_premium",
+    "info_tab",
+    "listEnableFiles",
+    "meta",
+    "nid",
+    "non_genetic_fields",
+    "pre_order",
+    "price",
+    "product_data",
+    "product_id",
+    "publisher",
+    "purchasedBy",
+    "relatedReports",
+    "reportFile",
+    "report_premium",
+    "search_keywords",
+    "start_button_text",
+    "sub_title",
+    "summary",
+    "title",
+    "type",
+    "uri",
+    "wgsCompatible"
+  ],
+  "evidenceNotes": [
+    "Marketplace detail reportData confirms title, publisher/provider when available, price/product metadata when available, categories, sample report link when available, and overview/disclaimer tab boundaries when present.",
+    "Use overview/marketing text only for report purpose and marketplace positioning, not for local genetic, medical, diet, supplement, medication, or performance conclusions.",
+    "No raw genome data, uploaded genome data, or account navigation text is included in this artifact."
+  ]
+}

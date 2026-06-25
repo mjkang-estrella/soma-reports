@@ -13,4 +13,9 @@ Do not diagnose lactose intolerance, food allergy, food sensitivity, celiac dise
 Do not prescribe diets, create workouts, recommend supplements, diagnose symptoms, infer metabolic disease, interpret labs, or provide treatment guidance from genotype.
 State that symptoms, ancestry, diet history, environment, labs, medications, medical history, and clinician or dietitian guidance matter for nutrition decisions.
 For this package, focus on educational nutrition-genetics context and explicitly unavailable lifestyle-personalization, fitness, meal-plan, supplement, symptom, lab, metabolic, and treatment sections.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
+Use sibling Toolbox Genomics Nourish and Thrive sample-report rows only as observed Empower-adjacent nutrition, fitness, and lifestyle output-format examples unless the local run supplies equivalent validated evidence.
+Do not turn sibling sample vitamin B12, vitamin D3, gene-table, food, lab-range, sunlight, supplement, probiotic, dosage, SNP, low-fat diet, mindful-eating, recommendation-card, biomarker, lipid, leptin, appetite, stress, omega-3, or sample genotype text into personal diet, supplement, workout, lab, metabolic, symptom, diagnosis, treatment, or actionability advice.
+State clearly that these are sibling Toolbox sample rows, not a direct Empower sample report.

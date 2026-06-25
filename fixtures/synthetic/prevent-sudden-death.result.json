@@ -1,198 +1,283 @@
 {
+  "schemaVersion": "soma-reports.synthetic-result.v1",
   "reportOverview": {
     "reportTitle": "Prevent Sudden Death",
     "inputManifestHash": "sha256:synthetic-prevent-sudden-death-rare-inherited-condition-boundary-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "validated inherited cardiovascular condition model, cardiomyopathy or arrhythmia gene panel result, variant classifications, ECG, echocardiogram, rhythm monitoring, symptoms, personal and family history of sudden death, exercise context, medication context, cardiology review, clinical genetics review, and authenticated sample-report rows unavailable in this fixture",
-      "clinical diagnosis, symptoms, labs, imaging, medication or procedure context, family history, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
-      "gene panel scope, variant classifications, zygosity, inheritance pattern, ancestry applicability, cascade-testing context, and clinical genetics review unavailable in this fixture",
-      "This result is educational boundary context only and is not a diagnosis, disease-risk estimate, variant classification, carrier-status call, inheritance inference, family-member risk estimate, testing recommendation, treatment guidance, procedure guidance, reproductive decision, or clinical actionability claim."
+      "Direct Prevent Sudden Death authenticated sample report rows remain unavailable.",
+      "Validated inherited cardiovascular condition model output, cardiomyopathy or arrhythmia gene panel result, variant classifications, ECG, echocardiogram, rhythm monitoring, symptoms, family history, exercise context, medication context, cardiology review, clinical genetics review, and local actionability evidence are unavailable in this fixture.",
+      "Sibling Disease Risk cardiovascular sample rows are included only as exact-cited output-structure examples, not as personal sudden-death risk, inherited cardiovascular disease, cardiomyopathy, arrhythmia, ECG/echo/rhythm, screening, prevention, device, medication, cascade-testing, reproductive, or actionability findings."
     ]
   },
   "resultRows": [
     {
       "groupTitle": "Validated condition model availability",
       "item": "prevent-sudden-death-condition-model-unavailable",
-      "brandName": "",
-      "geneticAnalysis": "Prevent Sudden Death cannot emit a conclusion from this local fixture because the validated model, variant interpretation, clinical context, professional review, and authenticated sample rows are unavailable.",
+      "brandName": "prevent-sudden-death",
+      "geneticAnalysis": "validated inherited cardiovascular condition model, cardiomyopathy or arrhythmia gene panel result, variant classifications, ECG, echocardiogram, rhythm monitoring, symptoms, personal and family history of sudden death, exercise context, medication context, cardiology review, clinical genetics review, and authenticated sample-report rows unavailable in this fixture; Public Disease Risk sample PDF Cardiovascular Diseases table, CAD explanatory gene note, and heritable-component limitation are extracted as sibling inherited-cardiovascular output-structure evidence.",
       "genes": [
-        "Prevent Sudden Death model"
+        "Prevent Sudden Death validated condition model"
       ],
-      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing",
+      "sourceLabel": "Public genetic-testing and inherited-cardiovascular boundary references",
       "sourceIds": [
         "cdc-genetic-testing",
         "medlineplus-genetics",
         "medlineplus-genetic-testing",
-        "medlineplus-genetic-testing-uses",
-        "medlineplus-genetic-test-results",
-        "medlineplus-genetic-counseling",
-        "fda-direct-to-consumer-tests",
-        "ncbi-clinvar"
+        "cdc-heart-disease-family-history",
+        "cdc-hcm-sudden-death-family-history",
+        "clingen-hereditary-cardiovascular-disease"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This row is an availability statement. It does not diagnose a rare inherited condition, classify a variant, estimate personal or family risk, recommend testing or treatment, or provide an all-clear result."
+      "plainEnglishMeaning": "The local fixture does not contain the validated model, gene-panel result, clinical context, family-history context, cardiology/genetics review, or direct sample report needed for a personal inherited-cardiovascular or sudden-death conclusion."
     },
     {
-      "groupTitle": "Clinical and professional context availability",
+      "groupTitle": "Clinical and cardiology context availability",
       "item": "prevent-sudden-death-clinical-context-unavailable",
-      "brandName": "",
-      "geneticAnalysis": "clinical diagnosis, symptoms, labs, imaging, medication or procedure context, family history, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "brandName": "prevent-sudden-death",
+      "geneticAnalysis": "clinical diagnosis, symptoms, family history, medications, ECG, echocardiogram, rhythm monitoring, exercise context, cardiology review, genetics review, and personal clinical context unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Prevent Sudden Death",
       "genes": [
-        "Prevent Sudden Death clinical and professional context"
+        "ECG",
+        "echocardiogram",
+        "rhythm monitoring",
+        "family history",
+        "cardiology review"
       ],
-      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing",
+      "sourceLabel": "Public family-history and genetic-counseling boundary references",
       "sourceIds": [
-        "cdc-genetic-testing",
-        "medlineplus-genetics",
-        "medlineplus-genetic-testing",
-        "medlineplus-genetic-testing-uses",
-        "medlineplus-genetic-test-results",
         "medlineplus-genetic-counseling",
-        "fda-direct-to-consumer-tests",
-        "ncbi-clinvar"
+        "cdc-heart-disease-family-history",
+        "cdc-hcm-sudden-death-family-history",
+        "fda-direct-to-consumer-tests"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "Personal interpretation needs validated testing scope, symptoms, medical and family history, labs or imaging when relevant, medication or procedure context when relevant, ancestry applicability, and qualified professional review."
+      "plainEnglishMeaning": "The report must stay educational because personal sudden-death, cardiomyopathy, arrhythmia, exercise, device, medication, testing, screening, or prevention decisions require clinical and professional context this fixture does not include."
     },
     {
       "groupTitle": "Variant interpretation availability",
       "item": "prevent-sudden-death-variant-interpretation-unavailable",
-      "brandName": "",
-      "geneticAnalysis": "gene panel scope, variant classifications, zygosity, inheritance pattern, ancestry applicability, cascade-testing context, and clinical genetics review unavailable in this fixture",
+      "brandName": "prevent-sudden-death",
+      "geneticAnalysis": "gene panel scope, variant classifications, zygosity, inheritance pattern, ancestry applicability, cascade-testing context, and clinical genetics review unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Prevent Sudden Death",
       "genes": [
-        "Prevent Sudden Death variant interpretation context"
+        "cardiomyopathy or arrhythmia gene panel scope",
+        "variant classification",
+        "inheritance context"
       ],
-      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing",
+      "sourceLabel": "ClinVar, GTR, ClinGen, and ACMG/AMP boundary references",
       "sourceIds": [
-        "cdc-genetic-testing",
-        "medlineplus-genetics",
-        "medlineplus-genetic-testing",
-        "medlineplus-genetic-testing-uses",
-        "medlineplus-genetic-test-results",
-        "medlineplus-genetic-counseling",
-        "fda-direct-to-consumer-tests",
-        "ncbi-clinvar"
+        "ncbi-clinvar",
+        "ncbi-genetic-testing-registry",
+        "clingen-variant-classification-guidance",
+        "acmg-amp-richards-2015",
+        "clingen-hereditary-cardiovascular-disease",
+        "clingen"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "Missing gene-panel scope, zygosity, inheritance, variant-classification, ancestry-applicability, and clinical genetics review means the report must mark variant interpretation unavailable instead of converting local context into a health action."
+      "plainEnglishMeaning": "Without test scope, zygosity, inheritance, variant classifications, ancestry applicability, and clinical genetics review, the output cannot classify variants or infer family-member risk, testing need, cascade testing, or actionability."
+    },
+    {
+      "groupTitle": "Observed sibling sample structure",
+      "item": "Disease Risk Genetic Test Report cardiovascular sample rows",
+      "brandName": "Sibling Disease Risk Genetic Test Report sample report",
+      "geneticAnalysis": "The public sample rows are preserved as observed output structure only: Report limitation: Heritable component only; Cardiovascular Diseases: Cardiovascular category risk table. They are not local-user sudden-death risk, cardiomyopathy or arrhythmia diagnosis, inherited cardiovascular disease diagnosis, ECG/echo/rhythm-monitoring inference, exercise clearance, ICD/device need, beta-blocker or medication need, screening, testing, prevention, cascade-testing, reproductive, or actionability findings.",
+      "genes": [
+        "KL",
+        "NOS3",
+        "HSPD1",
+        "CHD13"
+      ],
+      "sourceLabel": "Sibling Disease Risk sample PDF",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Use these rows to match the shape and source binding of the sample report while keeping them separate from personal genome interpretation."
     }
   ],
   "rareInheritedConditionContext": {
-    "plainEnglishMeaning": "Prevent Sudden Death is currently a rare inherited condition boundary package. It can document what evidence is available and what is missing, but it cannot produce diagnosis, disease-risk, variant-classification, carrier-status, inheritance, family-member, treatment, testing, procedure, reproductive, or actionability conclusions from local evidence alone.",
+    "plainEnglishMeaning": "Prevent Sudden Death is reported as an evidence-availability boundary. The local fixture can preserve source-bound sibling cardiovascular sample structure and limitations, but it cannot calculate or interpret a personal sudden-death, cardiomyopathy, arrhythmia, inherited cardiovascular, exercise, device, medication, screening, prevention, cascade-testing, reproductive, or actionability conclusion.",
     "unsupportedClaims": [
-      "Diagnosis, all-clear result, variant classification, carrier-status call, inheritance inference, or personal disease-risk estimate",
-      "Penetrance, prognosis, severity, age-of-onset, symptom, lab, imaging, procedure, medication, treatment, or family-member conclusion",
-      "Testing, screening, cascade-testing, medication, procedure, surgery, device, treatment, supplement, diet, activity, reproductive, or management guidance",
-      "Replacement for qualified clinician, specialist, geneticist, genetic counselor, anesthesiologist, cardiologist, neurologist, or other professional review"
+      "sudden-death risk estimate or all-clear result",
+      "cardiomyopathy, arrhythmia, channelopathy, or inherited cardiovascular disease diagnosis",
+      "ECG, echocardiogram, rhythm-monitoring, symptom, exercise-clearance, device, medication, screening, testing, prevention, cascade-testing, reproductive, or actionability guidance",
+      "variant classification, carrier-status call, inheritance inference, family-member risk estimate, penetrance, prognosis, severity, or age-of-onset conclusion"
     ],
-    "professionalReview": "Use this output only as preparation for a professional conversation. Health or reproductive decisions require qualified review with validated test scope, variant interpretation, symptoms, medical and family history, labs or imaging when relevant, medication or procedure context when relevant, ancestry applicability, and professional interpretation."
+    "professionalReview": "Use validated test scope, variant interpretation, symptoms, personal and family history, ECG/echo/rhythm data when relevant, medication and exercise context, ancestry applicability, and qualified cardiology/genetics review for inherited cardiovascular decisions."
   },
-  "practicalNextSteps": {
-    "professionalReview": [
-      "Do not use this local fixture to change medication, supplements, diet, testing, screening, procedures, activity, reproductive decisions, or treatment plans.",
-      "Bring symptoms, medical and family history, prior testing, labs or imaging when relevant, medication or procedure context when relevant, and ancestry context to a qualified professional if discussing this topic.",
-      "Treat unavailable model rows as unavailable, not as normal, abnormal, low risk, high risk, reassuring, diagnostic, actionable, or all clear."
-    ]
-  },
+  "sampleRows": [
+    {
+      "groupTitle": "Report limitation",
+      "item": "Heritable component only",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "The sample states that 'Your Risk' is only for the heritable component of the disease, and that environmental, lifestyle, and other non-heritable factors also affect overall susceptibility risk.",
+      "description": "The sample uses lung cancer as an example, saying lung cancer is only 10% heritable and most cases are associated with lifestyle factors such as smoking.",
+      "genes": [],
+      "sourceLabel": "Sibling Disease Risk Genetic Test Report sample report",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public Sequencing.com Disease Risk Genetic Test Report sample PDF; used here as sibling output-structure evidence for Prevent Sudden Death, not as a direct Prevent Sudden Death sample report or local inherited cardiovascular and sudden-death output structure, sudden-death risk, cardiomyopathy or arrhythmia diagnosis, inherited cardiovascular disease diagnosis, ECG/echo/rhythm-monitoring inference, symptom inference, exercise clearance, ICD/device need, beta-blocker or medication need, screening, testing, prevention, cascade testing, reproductive action, or actionability guidance."
+    },
+    {
+      "groupTitle": "Cardiovascular Diseases",
+      "item": "Cardiovascular category risk table",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Visible sample rows include Abdominal Aortic Aneurysm Reduced; Atherosclerosis Typical; Atrial Fibrillation Typical; Cardiovascular Disease Early Onset Very Reduced; COPD Typical; Coronary Artery Disease Typical; Intracranial Aneurysm Elevated; Mitral Valve Prolapse Typical; Myocardial Infarction Reduced; Stroke Elevated; Venous Thromboembolism Typical.",
+      "description": "The page explains that CAD has a genetic susceptibility component and names KL, NOS3, HSPD1, and CHD13 as example genes used across hundreds of variants.",
+      "genes": [
+        "KL",
+        "NOS3",
+        "HSPD1",
+        "CHD13"
+      ],
+      "sourceLabel": "Sibling Disease Risk Genetic Test Report sample report",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public Sequencing.com Disease Risk Genetic Test Report sample PDF; used here as sibling output-structure evidence for Prevent Sudden Death, not as a direct Prevent Sudden Death sample report or local inherited cardiovascular and sudden-death output structure, sudden-death risk, cardiomyopathy or arrhythmia diagnosis, inherited cardiovascular disease diagnosis, ECG/echo/rhythm-monitoring inference, symptom inference, exercise clearance, ICD/device need, beta-blocker or medication need, screening, testing, prevention, cascade testing, reproductive action, or actionability guidance."
+    }
+  ],
+  "practicalNextSteps": [
+    "Keep this as a local reproducibility fixture, not an inherited-cardiovascular decision tool.",
+    "Review the cited source IDs before using the prompt with a local agent.",
+    "Do not use sibling sample labels as personal sudden-death, cardiomyopathy, arrhythmia, cardiovascular, ECG/echo/rhythm, device, medication, screening, prevention, cascade-testing, reproductive, or actionability results."
+  ],
   "references": [
     {
       "id": "cdc-genetic-testing",
-      "title": "CDC Genetic Testing"
+      "title": "CDC Genetic Testing",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
     },
     {
       "id": "medlineplus-genetics",
-      "title": "MedlinePlus Genetics"
+      "title": "MedlinePlus Genetics",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "medlineplus-genetic-testing",
-      "title": "MedlinePlus: Genetic Testing"
+      "title": "MedlinePlus: Genetic Testing",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
     },
     {
       "id": "medlineplus-genetic-testing-uses",
-      "title": "MedlinePlus Genetics: Uses of Genetic Testing"
+      "title": "MedlinePlus Genetics: Uses of Genetic Testing",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "medlineplus-genetic-test-results",
-      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results"
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "medlineplus-genetic-counseling",
-      "title": "MedlinePlus: Genetic Counseling"
+      "title": "MedlinePlus: Genetic Counseling",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
     },
     {
       "id": "fda-direct-to-consumer-tests",
-      "title": "FDA Direct-to-Consumer Tests"
+      "title": "FDA Direct-to-Consumer Tests",
+      "sourceType": "regulatory_resource",
+      "evidenceLevel": "regulatory_background"
     },
     {
       "id": "ncbi-clinvar",
-      "title": "NCBI ClinVar"
+      "title": "NCBI ClinVar",
+      "sourceType": "database",
+      "evidenceLevel": "database_background"
     },
     {
       "id": "ncbi-genetic-testing-registry",
-      "title": "NIH Genetic Testing Registry"
+      "title": "NIH Genetic Testing Registry",
+      "sourceType": "database",
+      "evidenceLevel": "database_background"
     },
     {
       "id": "clingen-variant-classification-guidance",
-      "title": "ClinGen Variant Classification Guidance"
+      "title": "ClinGen Variant Classification Guidance",
+      "sourceType": "guidance_resource",
+      "evidenceLevel": "guideline_background"
     },
     {
       "id": "acmg-amp-richards-2015",
-      "title": "ACMG/AMP 2015 sequence variant interpretation standards"
+      "title": "ACMG/AMP 2015 sequence variant interpretation standards",
+      "sourceType": "guideline_article",
+      "evidenceLevel": "guideline_background"
     },
     {
       "id": "cdc-heart-disease-family-history",
-      "title": "CDC: About Heart Disease Family Health History"
+      "title": "CDC: About Heart Disease Family Health History",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
     },
     {
       "id": "cdc-hcm-sudden-death-family-history",
-      "title": "CDC: Hypertrophic Cardiomyopathy and Family Health History of Sudden Death"
+      "title": "CDC: Hypertrophic Cardiomyopathy and Family Health History of Sudden Death",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
     },
     {
       "id": "clingen-hereditary-cardiovascular-disease",
-      "title": "ClinGen Hereditary Cardiovascular Disease Expert Panel"
+      "title": "ClinGen Hereditary Cardiovascular Disease Expert Panel",
+      "sourceType": "expert_panel",
+      "evidenceLevel": "expert_background"
     },
     {
       "id": "clingen",
-      "title": "ClinGen"
+      "title": "ClinGen",
+      "sourceType": "database",
+      "evidenceLevel": "background"
+    },
+    {
+      "id": "genetic-testing-disease-risk-sample-pdf",
+      "title": "Genetic Testing For Disease Risk sample genetic report",
+      "sourceType": "mock_report",
+      "evidenceLevel": "high"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "prevent-sudden-death-condition-model-unavailable",
-        "gene": "Prevent Sudden Death model",
-        "observedValue": "validated inherited cardiovascular condition model, cardiomyopathy or arrhythmia gene panel result, variant classifications, ECG, echocardiogram, rhythm monitoring, symptoms, personal and family history of sudden death, exercise context, medication context, cardiology review, clinical genetics review, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "effect": "The local fixture intentionally omits calibrated Prevent Sudden Death calculations and clinical context.",
+        "extractionStatus": "curated",
+        "gene": "Prevent Sudden Death validated condition model",
+        "genotype": "validated inherited cardiovascular condition model, cardiomyopathy or arrhythmia gene panel result, variant classifications, ECG, echocardiogram, rhythm monitoring, symptoms, personal and family history of sudden death, exercise context, medication context, cardiology review, clinical genetics review, and direct Prevent Sudden Death sample-report rows unavailable",
+        "phenotype": "Mark local findings for inherited cardiovascular and sudden-death output structure, sudden-death risk, cardiomyopathy or arrhythmia diagnosis, inherited cardiovascular disease diagnosis, ECG/echo/rhythm-monitoring inference, symptom inference, exercise clearance, ICD/device need, beta-blocker or medication need, screening, testing, prevention, cascade testing, reproductive action, or actionability guidance unavailable instead of inferring them.",
+        "sortOrder": 1,
+        "tier": "Local missing input",
+        "variantId": "prevent-sudden-death-condition-model-unavailable"
       },
       {
-        "inputId": "prevent-sudden-death-clinical-context-unavailable",
-        "gene": "Prevent Sudden Death clinical and professional context",
-        "observedValue": "clinical diagnosis, symptoms, labs, imaging, medication or procedure context, family history, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
-      },
-      {
-        "inputId": "prevent-sudden-death-variant-interpretation-unavailable",
-        "gene": "Prevent Sudden Death variant interpretation context",
-        "observedValue": "gene panel scope, variant classifications, zygosity, inheritance pattern, ancestry applicability, cascade-testing context, and clinical genetics review unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "effect": "The public Disease Risk Genetic Test Report sample shows Disease, Your Risk, and Description columns in the Cardiovascular Diseases category and names KL, NOS3, HSPD1, and CHD13 as example genes for CAD susceptibility.",
+        "extractionStatus": "direct",
+        "gene": "Cardiovascular disease category table; KL; NOS3; HSPD1; CHD13",
+        "genotype": "sample Cardiovascular Diseases category table observed with Abdominal Aortic Aneurysm Reduced, Atherosclerosis Typical, Atrial Fibrillation Typical, Cardiovascular Disease Early Onset Very Reduced, Coronary Artery Disease Typical, Intracranial Aneurysm Elevated, Mitral Valve Prolapse Typical, Myocardial Infarction Reduced, Stroke Elevated, and Venous Thromboembolism Typical rows",
+        "phenotype": "Observed sibling sample output structure only; do not infer local sudden-death risk, inherited cardiovascular disease, cardiomyopathy, arrhythmia, ECG/echo/rhythm findings, exercise clearance, device need, medication need, screening, prevention, cascade testing, reproductive action, or clinical action.",
+        "sortOrder": 2,
+        "tier": "Sibling sample-report section",
+        "variantId": "disease-risk-sample-cardiovascular-prevent-sudden-death-context"
       }
-    ],
-    "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and exact rows",
-      "Validated condition model output with applicability and validation metadata",
-      "Qualified professional review and complete clinical, family-history, symptom, medication, procedure, lab, and imaging context when relevant",
-      "Gene-panel scope, zygosity, inheritance pattern, variant classifications, ancestry applicability, and clinical genetics review"
     ],
     "probabilities": [],
     "uncertainty": [
-      "No calibrated rare inherited condition, penetrance, prognosis, severity, age-of-onset, family-member, carrier-status, procedure-risk, treatment-response, screening-benefit, reproductive-risk, or actionability model is supplied for this local package.",
-      "Interpretation depends on validated test scope, variant interpretation, clinical and family history, symptoms, labs or imaging when relevant, ancestry applicability, and qualified professional review."
+      "No calibrated inherited cardiovascular condition model, penetrance model, prognosis model, variant interpretation, ECG/echo/rhythm context, family-history context, ancestry-applicability assessment, or qualified professional review is supplied for this fixture.",
+      "Sibling Disease Risk sample rows show report structure only and do not quantify local probability or clinical actionability."
+    ],
+    "missingInputs": [
+      "validated inherited cardiovascular condition model, cardiomyopathy or arrhythmia gene panel result, variant classifications, ECG, echocardiogram, rhythm monitoring, symptoms, personal and family history of sudden death, exercise context, medication context, cardiology review, clinical genetics review, and authenticated sample-report rows unavailable in this fixture; Public Disease Risk sample PDF Cardiovascular Diseases table, CAD explanatory gene note, and heritable-component limitation are extracted as sibling inherited-cardiovascular output-structure evidence.",
+      "clinical diagnosis, symptoms, family history, medications, ECG, echocardiogram, rhythm monitoring, exercise context, cardiology review, genetics review, and personal clinical context unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Prevent Sudden Death",
+      "gene panel scope, variant classifications, zygosity, inheritance pattern, ancestry applicability, cascade-testing context, and clinical genetics review unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Prevent Sudden Death"
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
-      "The report is educational boundary context and does not provide diagnosis, disease-risk estimation, variant classification, carrier-status reporting, inheritance inference, family-member risk estimation, testing advice, screening advice, treatment advice, procedure advice, medication advice, reproductive advice, or clinical actionability.",
-      "Unavailable model rows should never be interpreted as low risk, high risk, no risk, normal, abnormal, reassuring, diagnostic, actionable, or all clear."
+      "The report is educational boundary context and does not provide sudden-death risk estimation, inherited cardiovascular diagnosis, cardiomyopathy or arrhythmia diagnosis, ECG/echo/rhythm interpretation, variant classification, carrier-status reporting, inheritance inference, family-member risk estimation, testing advice, screening advice, prevention advice, device advice, medication advice, exercise advice, cascade-testing advice, reproductive advice, or clinical actionability.",
+      "Unavailable model rows and sibling sample rows should never be interpreted as low risk, high risk, no risk, normal, abnormal, reassuring, diagnostic, actionable, or all clear."
     ]
   }
 }

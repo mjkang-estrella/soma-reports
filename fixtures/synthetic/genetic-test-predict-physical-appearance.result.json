@@ -82,6 +82,264 @@
       "plainEnglishMeaning": "Hair texture and thickness have genetic contributions, but many genes and non-genetic factors can influence the trait."
     }
   ],
+  "sampleRows": [
+    {
+      "brandName": "",
+      "description": "Eye color can range from gray, blue, green, hazel, brown, to dark-brown.",
+      "genes": [
+        "Not shown in sample table"
+      ],
+      "geneticAnalysis": "Blue",
+      "groupTitle": "Eyes",
+      "item": "Color Blue vs. Brown",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "physical-appearance-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Physical Appearance DNA Report sample PDF result table."
+    },
+    {
+      "brandName": "",
+      "description": "Eye color can range from gray, blue, green, hazel, brown, to dark-brown.",
+      "genes": [
+        "Not shown in sample table"
+      ],
+      "geneticAnalysis": "Blue",
+      "groupTitle": "Eyes",
+      "item": "Color Blue vs. Green",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "physical-appearance-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Physical Appearance DNA Report sample PDF result table."
+    },
+    {
+      "brandName": "",
+      "description": "Crypts are the oval-shaped areas inside of the iris.",
+      "genes": [
+        "Not shown in sample table"
+      ],
+      "geneticAnalysis": "Typical",
+      "groupTitle": "Eyes",
+      "item": "Iris Crypts",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "physical-appearance-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Physical Appearance DNA Report sample PDF result table."
+    },
+    {
+      "brandName": "",
+      "description": "Furrow contractions are the radial and concentric bands around the pupil.",
+      "genes": [
+        "Not shown in sample table"
+      ],
+      "geneticAnalysis": "Not enough DNA data",
+      "groupTitle": "Eyes",
+      "item": "Iris Furrows",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "physical-appearance-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Physical Appearance DNA Report sample PDF result table."
+    },
+    {
+      "brandName": "",
+      "description": "Pigmented rings are rings which surround the iris.",
+      "genes": [
+        "Not shown in sample table"
+      ],
+      "geneticAnalysis": "Less",
+      "groupTitle": "Eyes",
+      "item": "Iris Rings",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "physical-appearance-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Physical Appearance DNA Report sample PDF result table."
+    },
+    {
+      "brandName": "",
+      "description": "Africans and Asians almost always have black hair due to high levels of the dark pigment eumelanin.",
+      "genes": [
+        "Not shown in sample table"
+      ],
+      "geneticAnalysis": "Not Black",
+      "groupTitle": "Hair",
+      "item": "Color Black vs. Not Black",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "physical-appearance-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Physical Appearance DNA Report sample PDF result table."
+    },
+    {
+      "brandName": "",
+      "description": "Blond or fair hair is a hair color characterized by low levels of the dark pigment eumelanin.",
+      "genes": [
+        "Not shown in sample table"
+      ],
+      "geneticAnalysis": "Brown or Dark",
+      "groupTitle": "Hair",
+      "item": "Color Blond vs. Not Blond",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "physical-appearance-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Physical Appearance DNA Report sample PDF result table."
+    },
+    {
+      "brandName": "",
+      "description": "Mutations in the MC1R gene can give hair and skin more pheomelanin causing both red hair and freckles.",
+      "genes": [
+        "MC1R"
+      ],
+      "geneticAnalysis": "Not Red",
+      "groupTitle": "Hair",
+      "item": "Color Red vs. Not Red",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "physical-appearance-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Physical Appearance DNA Report sample PDF result table."
+    },
+    {
+      "brandName": "",
+      "description": "Hair's curliness comes from the shape of the bulb at the base of the hair follicle.",
+      "genes": [
+        "Not shown in sample table"
+      ],
+      "geneticAnalysis": "Straighter",
+      "groupTitle": "Hair",
+      "item": "Curly vs. Straighter",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "physical-appearance-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Physical Appearance DNA Report sample PDF result table."
+    },
+    {
+      "brandName": "",
+      "description": "Permanent hair loss from the scalp, causing baldness.",
+      "genes": [
+        "Not shown in sample table"
+      ],
+      "geneticAnalysis": "Typical",
+      "groupTitle": "Hair",
+      "item": "Male Pattern Baldness",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "physical-appearance-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Physical Appearance DNA Report sample PDF result table."
+    },
+    {
+      "brandName": "",
+      "description": "East Asians have hair that is about 40% thicker than Europeans or Africans.",
+      "genes": [
+        "Not shown in sample table"
+      ],
+      "geneticAnalysis": "Thinner",
+      "groupTitle": "Hair",
+      "item": "Thinner vs. Thicker",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "physical-appearance-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Physical Appearance DNA Report sample PDF result table."
+    },
+    {
+      "brandName": "",
+      "description": "Freckles are areas of skin that have an increased amount of a pigment called melanin.",
+      "genes": [
+        "Not shown in sample table"
+      ],
+      "geneticAnalysis": "Typical",
+      "groupTitle": "Skin",
+      "item": "Freckles",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "physical-appearance-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Physical Appearance DNA Report sample PDF result table."
+    },
+    {
+      "brandName": "",
+      "description": "Skin pigmentation is one of the most variable and noticeable phenotypes in humans.",
+      "genes": [
+        "Not shown in sample table"
+      ],
+      "geneticAnalysis": "Lighter",
+      "groupTitle": "Skin",
+      "item": "Lighter vs. Darker",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "physical-appearance-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Physical Appearance DNA Report sample PDF result table."
+    },
+    {
+      "brandName": "",
+      "description": "Melanin determines skin pigmentation: pheomelanin (yellow or red) and eumelanin (brown or black).",
+      "genes": [
+        "Not shown in sample table"
+      ],
+      "geneticAnalysis": "European",
+      "groupTitle": "Skin",
+      "item": "Pigmentation",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "physical-appearance-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Physical Appearance DNA Report sample PDF result table."
+    },
+    {
+      "brandName": "",
+      "description": "The skin's tendency to sunburn rather than tan is a major risk factor for skin cancer.",
+      "genes": [
+        "Not shown in sample table"
+      ],
+      "geneticAnalysis": "Moderate",
+      "groupTitle": "Skin",
+      "item": "Sensitivity to Sun",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "physical-appearance-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Physical Appearance DNA Report sample PDF result table."
+    },
+    {
+      "brandName": "",
+      "description": "BMI is about 50% heritable, with the remainder due to lifestyle factors.",
+      "genes": [
+        "Not shown in sample table"
+      ],
+      "geneticAnalysis": "Typical",
+      "groupTitle": "Weight",
+      "item": "Body Mass Index",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "physical-appearance-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from the public Physical Appearance DNA Report sample PDF result table."
+    }
+  ],
   "unavailableTraits": [
     "Iris crypts, iris furrows, and iris rings are present in the public sample structure, but no local trait model is supplied for this fixture.",
     "Male pattern baldness and body-mass-index rows are present in the public sample structure, but they are not inferred from this visible-trait fixture.",

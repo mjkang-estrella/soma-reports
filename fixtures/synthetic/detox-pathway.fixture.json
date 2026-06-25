@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived MTHFR calls for detox-pathway validation"
   },
-  "missingInputPolicy": "Report unavailable detox pathway, toxin sensitivity, methylation score, homocysteine, labs, diet history, supplement context, medication context, and authenticated sample rows explicitly; do not infer detox status or action.",
+  "missingInputPolicy": "Report unavailable detox pathway, toxin sensitivity, methylation score, homocysteine, labs, diet history, supplement context, medication context, broader Detox Pathway gene model, recommendation personalization model, and treatment context explicitly; do not infer detox status or action. Use sample SNP tables, lab chips, recommendations, and glossary only as observed output-format examples.",
   "packageSlug": "detox-pathway",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -58,7 +58,19 @@
       "usedFor": [
         "marketplace_flow"
       ]
+    },
+    {
+      "evidenceLevel": "direct_sample_report",
+      "id": "detox-pathway-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Detox Pathway sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer detox-pathway boundary context using derived MTHFR calls and CDC folic-acid safety framing while marking detoxification capacity, toxin sensitivity, supplement, diet, lab, and treatment sections unavailable."
+  "reportPurpose": "Consumer detox-pathway boundary context using derived MTHFR calls, CDC folic-acid safety framing, and observed Detox Pathway sample-report output structure."
 }

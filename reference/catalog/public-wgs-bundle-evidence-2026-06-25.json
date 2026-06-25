@@ -1,0 +1,127 @@
+{
+  "schema": "soma-reports.public-wgs-bundle-evidence.v1",
+  "capturedAt": "2026-06-25T05:05:00Z",
+  "source": "official public Sequencing.com and get.sequencing.com bundle pages",
+  "privacyBoundary": "Public marketing and FAQ text only. No account page, order submission, Start App action, generated result page, raw genome data, private result URL, or personal variant value was captured.",
+  "purpose": "Record official public bundle-inclusion evidence for current formal-pending packages while preserving the no-promotion boundary for formal report output.",
+  "promotionBoundary": {
+    "promotesDetailParity": false,
+    "promotesSampleRows": false,
+    "promotesResultRows": false,
+    "promotesFormalFields": false,
+    "promotesCitationBindings": false,
+    "reason": "These public pages identify bundle contents, report availability, and broad screen scope, but they do not expose package-specific sample rows, completed report rows, output tables, or row-level source bindings."
+  },
+  "sources": [
+    {
+      "id": "rare-disease-awareness-complete-health-screen",
+      "url": "https://get.sequencing.com/rare-disease-awareness/",
+      "title": "The Most Complete DNA Health Screen - Whole Genome Sequencing",
+      "evidenceLevel": "official-public-bundle-metadata",
+      "observedFacts": [
+        "Complete Health Screen WGS Bundle is offered at $399 in the public page copy.",
+        "The bundle page lists raw/analyzed data access including FASTQ, BAM, and VCF files covering SNPs, INDELs, SVs, CNVs, and mitochondrial heteroplasmy.",
+        "The page lists health areas included: Rare Disease Screening, Carrier Screening, Connective Tissue Disorders and EDS, Autoimmune Disorders, Developmental Disorders, Cardiovascular Health, Brain Health, Medication & Drug Response, Reproductive & Hormonal Health, Cancer Risk, Skin Health, and Neurological Health.",
+        "The page describes Next-Gen Disease Screen as analyzing whole genome sequencing data for more than 15,000 diseases, conditions, traits, and medication reactions."
+      ]
+    },
+    {
+      "id": "ftdna-health-and-data-wgs-bundle",
+      "url": "https://get.sequencing.com/familytreedna-whole-genome-sequencing-bundle/",
+      "title": "FTDNA Exclusive Whole Genome Sequencing Bundle",
+      "evidenceLevel": "official-public-bundle-metadata",
+      "observedFacts": [
+        "The page lists Health and Data Whole Genome Sequencing Bundle health reports and advanced analyses including Genome Explorer, Next-Gen Disease Screen, Ehlers-Danlos Syndrome, Carrier Screening, Autoimmune Disorders, Cardiovascular Health, Medication & Drug Response, Connective Tissue Disorders, Brain Health, Reproductive & Hormonal Health, and Cancer Risk.",
+        "The FAQ states every Sequencing kit bundle includes 30x whole genome sequencing of all approximately 30,000 genes and all chromosomes end-to-end.",
+        "The FAQ states the bundle includes comprehensive analysis of more than 15,000 conditions and medication reactions.",
+        "The FAQ states a Summary Report of results is downloadable as PDF and additional AI Reports are downloadable as PDF, but the page does not expose those PDF report rows publicly.",
+        "The FAQ says Sequencing.com provides screening for all types of Ehlers-Danlos Syndrome known to be associated with genetic variants and notes hypermobile EDS is limited/preliminary."
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "slug": "comprehensive-health-screen-wgs-bundle",
+      "evidenceUse": "official public bundle identity and included-report scope",
+      "sourceIds": [
+        "rare-disease-awareness-complete-health-screen"
+      ],
+      "evidencePresent": [
+        "Complete Health Screen WGS Bundle public offer",
+        "12 listed health areas plus Ancestry Explorer bonus",
+        "raw/analyzed genome data file types and 30x WGS claim"
+      ],
+      "evidenceMissingForPromotion": [
+        "Official completed bundle Summary Report PDF or non-private sample rows",
+        "Formal health-screen report fields",
+        "Row-level source bindings"
+      ]
+    },
+    {
+      "slug": "expedited-advanced-health-screen-wgs-bundle",
+      "evidenceUse": "adjacent official public kit-bundle scope only",
+      "sourceIds": [
+        "ftdna-health-and-data-wgs-bundle"
+      ],
+      "evidencePresent": [
+        "Public Sequencing kit-bundle FAQ says Sequencing kit bundles include downloadable Summary Report and additional AI Reports",
+        "30x WGS of all approximately 30,000 genes and all chromosomes end-to-end"
+      ],
+      "evidenceMissingForPromotion": [
+        "Exact Expedited Advanced Health Screen WGS Bundle completed output",
+        "Package-specific report fields",
+        "Row-level source bindings"
+      ]
+    },
+    {
+      "slug": "ultra-rapid-professional-health-screen-wgs-bundle",
+      "evidenceUse": "adjacent official public kit-bundle scope only",
+      "sourceIds": [
+        "ftdna-health-and-data-wgs-bundle"
+      ],
+      "evidencePresent": [
+        "Public Sequencing kit-bundle FAQ says Sequencing kit bundles include downloadable Summary Report and additional AI Reports",
+        "30x WGS of all approximately 30,000 genes and all chromosomes end-to-end"
+      ],
+      "evidenceMissingForPromotion": [
+        "Exact Ultra Rapid Professional Health Screen WGS Bundle completed output",
+        "Package-specific report fields",
+        "Row-level source bindings"
+      ]
+    },
+    {
+      "slug": "connective-tissue-disorders-and-eds",
+      "evidenceUse": "official public bundle inclusion and scope",
+      "sourceIds": [
+        "rare-disease-awareness-complete-health-screen",
+        "ftdna-health-and-data-wgs-bundle"
+      ],
+      "evidencePresent": [
+        "Connective Tissue Disorders and EDS appears in the Complete Health Screen WGS Bundle health-area list",
+        "Connective Tissue Disorders appears in the Health and Data Whole Genome Sequencing Bundle health reports and advanced analyses list"
+      ],
+      "evidenceMissingForPromotion": [
+        "Official Connective Tissue Disorders and EDS report rows",
+        "Variant/finding interpretation rows",
+        "Citation bindings for report rows"
+      ]
+    },
+    {
+      "slug": "ehlers-danlos-syndrome",
+      "evidenceUse": "official public bundle inclusion and EDS screening boundary",
+      "sourceIds": [
+        "ftdna-health-and-data-wgs-bundle"
+      ],
+      "evidencePresent": [
+        "Ehlers-Danlos Syndrome appears in the Health and Data Whole Genome Sequencing Bundle health reports and advanced analyses list",
+        "The public FAQ says Sequencing provides screening for EDS types known to be associated with genetic variants",
+        "The public FAQ flags hypermobile EDS information as limited/preliminary"
+      ],
+      "evidenceMissingForPromotion": [
+        "Exact Ehlers-Danlos Syndrome reportData or sample report rows",
+        "Package-specific formal output fields",
+        "Row-level source bindings"
+      ]
+    }
+  ]
+}

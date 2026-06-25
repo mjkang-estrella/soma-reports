@@ -1,0 +1,120 @@
+{
+  "schemaVersion": "soma-reports.wgs-order-route-boundary-ledger.v1",
+  "capturedAt": "2026-06-23",
+  "purpose": "Record authenticated order-route evidence for WGS bundle packages without promoting those order pages to marketplace detail, sample rows, formal fields, or citation bindings.",
+  "sourceArtifacts": [
+    {
+      "kind": "authenticatedMarketplacePageProps",
+      "path": "reference/catalog/sequencing-authenticated-marketplace-pageprops-2026-06-21.json",
+      "use": "Provides the structured DNA Test Kit Bundles group rows, order URLs, product IDs, prices, provider, category, and empty reportFile fields."
+    },
+    {
+      "kind": "authenticatedMarketplaceCards",
+      "path": "reference/catalog/sequencing-authenticated-marketplace-cards-2026-06-21.json",
+      "use": "Confirms the visible authenticated card/order-route hrefs."
+    },
+    {
+      "kind": "normalizedAuthenticatedMarketplace",
+      "path": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+      "use": "Provides raw order slug to canonical local package slug aliases."
+    },
+    {
+      "kind": "samplePromotionRejectionLedger",
+      "path": "reference/catalog/sample-promotion-rejections-2026-06-23.json",
+      "use": "Records the strict no-promotion decision for each WGS bundle."
+    }
+  ],
+  "promotionBoundary": {
+    "promotesDetailParity": false,
+    "promotesSampleRows": false,
+    "promotesFormalFields": false,
+    "promotesCitationBindings": false,
+    "reason": "Authenticated order-route/card metadata identifies purchasable bundles, but it is not a marketplace detail route and exposes no mock report, non-empty reportFile, completed result rows, formal output schema, or row-level citation bindings."
+  },
+  "entries": [
+    {
+      "slug": "comprehensive-health-screen-wgs-bundle",
+      "title": "Comprehensive Health Screen WGS Bundle",
+      "rawOrderSlug": "comprehensive-wgs-health-screen-bundle",
+      "canonicalSlug": "comprehensive-health-screen-wgs-bundle",
+      "orderUrl": "https://sequencing.com/order/comprehensive-wgs-health-screen-bundle",
+      "finalUrlKind": "order",
+      "category": "DNA Test Kit Bundles",
+      "provider": "Sequencing.com",
+      "currencyCode": "usd",
+      "price": "$399",
+      "productId": "b299",
+      "authenticatedPagePropsGroup": "DNA Test Kit Bundles",
+      "authenticatedPagePropsGroupIndex": 9,
+      "authenticatedPagePropsItemIndex": 0,
+      "startButtonText": "View Bundle",
+      "reportFile": "",
+      "reportFileStatus": "empty",
+      "promotesDetailParity": false,
+      "promotesSampleRows": false,
+      "promotesFormalFields": false,
+      "promotesCitationBindings": false,
+      "requiredEvidenceForPromotion": [
+        "Official Sequencing.com sample or completed bundle report output",
+        "Package-specific formal rows or lab/report fields",
+        "Row-level source bindings for the output rows"
+      ]
+    },
+    {
+      "slug": "expedited-advanced-health-screen-wgs-bundle",
+      "title": "Expedited Advanced Health Screen WGS Bundle",
+      "rawOrderSlug": "expedited-advanced-wgs-health-screen-bundle",
+      "canonicalSlug": "expedited-advanced-health-screen-wgs-bundle",
+      "orderUrl": "https://sequencing.com/order/expedited-advanced-wgs-health-screen-bundle/",
+      "finalUrlKind": "order",
+      "category": "DNA Test Kit Bundles",
+      "provider": "Sequencing.com",
+      "currencyCode": "usd",
+      "price": "$499",
+      "productId": "b300",
+      "authenticatedPagePropsGroup": "DNA Test Kit Bundles",
+      "authenticatedPagePropsGroupIndex": 9,
+      "authenticatedPagePropsItemIndex": 1,
+      "startButtonText": "View Bundle",
+      "reportFile": "",
+      "reportFileStatus": "empty",
+      "promotesDetailParity": false,
+      "promotesSampleRows": false,
+      "promotesFormalFields": false,
+      "promotesCitationBindings": false,
+      "requiredEvidenceForPromotion": [
+        "Official sample or completed health-screen bundle report",
+        "Package-specific formal report rows or lab/report fields",
+        "Row-level source bindings for the output rows"
+      ]
+    },
+    {
+      "slug": "ultra-rapid-professional-health-screen-wgs-bundle",
+      "title": "Ultra Rapid Professional Health Screen WGS Bundle",
+      "rawOrderSlug": "ultra-rapid-professional-wgs-health-screen-bundle",
+      "canonicalSlug": "ultra-rapid-professional-health-screen-wgs-bundle",
+      "orderUrl": "https://sequencing.com/order/ultra-rapid-professional-wgs-health-screen-bundle/",
+      "finalUrlKind": "order",
+      "category": "DNA Test Kit Bundles",
+      "provider": "Sequencing.com",
+      "currencyCode": "usd",
+      "price": "$799",
+      "productId": "b301",
+      "authenticatedPagePropsGroup": "DNA Test Kit Bundles",
+      "authenticatedPagePropsGroupIndex": 9,
+      "authenticatedPagePropsItemIndex": 2,
+      "startButtonText": "View Bundle",
+      "reportFile": "",
+      "reportFileStatus": "empty",
+      "promotesDetailParity": false,
+      "promotesSampleRows": false,
+      "promotesFormalFields": false,
+      "promotesCitationBindings": false,
+      "requiredEvidenceForPromotion": [
+        "Official sample or completed professional health-screen report",
+        "Package-specific formal report rows or lab/report fields",
+        "Row-level source bindings for output rows"
+      ]
+    }
+  ]
+}

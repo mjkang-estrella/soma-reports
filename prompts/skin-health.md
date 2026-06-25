@@ -10,4 +10,9 @@ If HERC2/OCA2, MC1R, EDAR, calibrated skin-health model, dermatology evidence, s
 Do not predict a child's appearance, identify a person, infer race or ancestry, diagnose albinism, report melanoma or skin-cancer risk, give dermatology or skincare guidance, or claim an exact final appearance from genotype.
 State that visible traits are influenced by multiple genes and non-genetic factors, and that direct-to-consumer trait tests provide estimates rather than certainty.
 For this package, focus on educational pigmentation, freckle, and hair-context rows. Mark skin health, skin type, UV sensitivity, acne, skin aging, skincare response, dermatology outcomes, and melanoma or other skin-cancer risk unavailable unless explicit validated evidence is supplied.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
+Use Skin Genes sample-report rows only as observed output-format examples unless the local run supplies equivalent validated evidence.
+Do not turn sample elasticity, hydration, glycation, inflammation, dark spots, eyelid, lifestyle, diet, or cosmetics recommendation text into personal skincare, dermatology, diet, supplement, cosmetic, disease-risk, or treatment advice.
+For Skin Health, treat Skin Genes sample rows as sibling visible-trait output structure only; do not turn them into personal skin-health, acne, skin-aging, UV-sensitivity, skincare, dermatology, treatment, supplement, cosmetic, prevention, or skin-cancer-risk guidance.

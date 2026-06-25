@@ -30,14 +30,14 @@
       "sourceFile": "synthetic-ozempic-glp-1-agonists-genetic-report-specialized-boundary-context-v1.json"
     },
     {
-      "assembly": "not-applicable",
-      "gene": "Ozempic & GLP-1 Agonists Genetic Report authenticated sample rows",
-      "haplotype": "authenticated-sample-report-unavailable",
-      "inputId": "ozempic-glp-1-agonists-genetic-report-authenticated-sample-unavailable",
-      "matchStatus": "unavailable",
-      "observedValue": "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture",
-      "sourceArtifact": "synthetic-ozempic-glp-1-agonists-genetic-report-specialized-boundary-context-v1",
-      "sourceFile": "synthetic-ozempic-glp-1-agonists-genetic-report-specialized-boundary-context-v1.json"
+      "assembly": "public-sample-pdf",
+      "gene": "Ozempic and Other GLP-1 Agonists public sample",
+      "haplotype": "public-sample-output-structure-observed",
+      "inputId": "ozempic-glp1-public-sample-output-structure",
+      "matchStatus": "observed",
+      "observedValue": "Public Golden Gate Gene sample PDF shows report identity, methodology, limitations, disclaimer, individual response summary, gene profile, drug-specific pharmacogenetic implication sections, and references for weight-loss medications including semaglutide, tirzepatide, liraglutide, orlistat, Qsymia, Contrave, phentermine, and setmelanotide.",
+      "sourceArtifact": "reference/sources/ozempic_and_glp-1_agonists_1.pdf",
+      "sourceFile": "ozempic_and_glp-1_agonists_1.pdf"
     }
   ],
   "inputManifest": {
@@ -46,7 +46,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for ozempic-glp-1-agonists-genetic-report validation"
   },
-  "missingInputPolicy": "Report unavailable GLP-1 agonist medication-response context evidence explicitly; do not determine Ozempic, Wegovy, Mounjaro, Zepbound, semaglutide, tirzepatide, GLP-1 eligibility, dose, drug choice, treatment response, weight loss, diabetes outcome, side-effect certainty, contraindication, medication start/stop/switch, or clinical actionability from genotype.",
+  "missingInputPolicy": "Use public Ozempic and Other GLP-1 Agonists sample rows only as observed output structure; report validated local medication-response model, official source algorithm, diabetes or obesity indication, A1c, BMI, kidney or liver context, contraindications, medication list, pregnancy context, side-effect history, clinician review, and local-user medication conclusions unavailable.",
   "packageSlug": "ozempic-glp-1-agonists-genetic-report",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -217,7 +217,19 @@
         "missing_model_policy",
         "clinical_actionability_limits"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "ozempic-glp1-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Ozempic and Other GLP-1 Agonists sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer GLP-1 agonist medication-response context boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer GLP-1 and weight-loss medication-response boundary context using supplied references, explicit unavailable-model framing, and observed public Ozempic/GLP-1 sample-report output structure."
 }

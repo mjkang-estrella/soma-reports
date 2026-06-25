@@ -1,14 +1,11 @@
 {
+  "schemaVersion": "soma-reports.example-output.v1",
   "reportOverview": {
-    "reportTitle": "Santa and Me",
     "inputManifestHash": "sha256:synthetic-santa-comparison-ancestry-context-v1",
-    "evidenceTypesSupplied": [
-      "Broad autosomal reference-panel similarity summary",
-      "Santa/St. Nick comparison sample, relationship, identity, family-tree, relative-matching, and child-specific evidence explicitly unavailable"
-    ],
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "No Santa/St. Nick comparison sample, validated relationship model, family-tree evidence, relative matching, identity evidence, child-specific interpretation, or calibrated ancestry percentage model is supplied."
+      "Santa/St. Nick comparison sample and model unavailable",
+      "Relationship, similarity-score, family-tree, relative-matching, child-specific, and identity evidence unavailable",
+      "Exact ancestry percentages, precise homeland, community labels, migration paths, and health interpretation unavailable"
     ]
   },
   "resultRows": [
@@ -16,7 +13,8 @@
       "groupTitle": "Novelty DNA comparison context",
       "item": "Broad reference-panel similarity",
       "brandName": "Not applicable",
-      "geneticAnalysis": "A broad East Asian reference-panel similarity summary is available, but no Santa/St. Nick comparison model is supplied.",
+      "geneticAnalysis": "A broad East Asian reference-panel similarity summary is available, but no Santa/St. Nick comparison sample, comparison model, or similarity score is supplied.",
+      "description": "The local fixture supplies derived broad autosomal context only; it does not supply exact ancestry percentages, relative matching, child-specific data, or identity evidence.",
       "genes": [
         "autosomal genome"
       ],
@@ -25,81 +23,268 @@
         "medlineplus-genetic-ancestry-testing",
         "international-genome-sample-resource"
       ],
-      "plainEnglishMeaning": "This is broad ancestry context only. It is not a DNA comparison to Santa or St. Nick, a relationship claim, an identity claim, a child-specific inference, or a precise ethnicity percentage."
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This is broad ancestry context only. It is not a DNA comparison to Santa or St. Nick, a relationship claim, a similarity score, a child-specific inference, an identity claim, or a health finding."
     },
     {
       "groupTitle": "Novelty DNA comparison context",
-      "item": "Santa/St. Nick comparison evidence unavailable",
-      "brandName": "Not applicable",
-      "geneticAnalysis": "A Santa/St. Nick DNA comparison sample or validated comparison model is unavailable and is not inferred.",
+      "item": "Santa/St. Nick comparison unavailable",
+      "brandName": "Santa and Me",
+      "geneticAnalysis": "The fixture explicitly marks Santa/St. Nick comparison evidence, relationship evidence, relative matching, family-tree placement, identity evidence, and child-specific interpretation unavailable.",
+      "description": "A Santa/St. Nick comparison would require a validated comparison sample and model; neither is present in this local run.",
       "genes": [
         "novelty DNA comparison evidence"
       ],
-      "sourceLabel": "MedlinePlus direct-to-consumer ancestry testing caveats",
+      "sourceLabel": "Fixture missing-input policy / MedlinePlus DTC limitations",
       "sourceIds": [
-        "medlineplus-genetic-ancestry-testing",
         "medlineplus-dtc-risks-benefits"
       ],
-      "plainEnglishMeaning": "This novelty report can explain why the comparison is unavailable, but it cannot compare DNA to Santa/St. Nick or identify a relationship."
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The report should say plainly that the Santa comparison question cannot be answered from the supplied evidence instead of guessing."
+    },
+    {
+      "groupTitle": "Sibling sample structure",
+      "item": "Gene2me ancestry/genealogy output format",
+      "brandName": "Santa and Me sibling Gene2me sample",
+      "geneticAnalysis": "The sibling Gene2me sample demonstrates ancestry-admixture rows, maps, region narratives, country/subregion table structure, and genealogy-boundary rows as output format only.",
+      "description": "The sample PDF is not a Santa/St. Nick comparison sample and does not provide a relationship, similarity score, identity, child-specific, or local ancestry finding.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sibling Gene2me DNA Ancestry and Genealogy sample report",
+      "sourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Use the sibling sample to shape report sections and citations, not to make any Santa-related or user-specific conclusion."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Report identity",
+      "item": "Gene2me ancestry sample report",
+      "brandName": "Santa and Me sibling Gene2me sample",
+      "geneticAnalysis": "The local sample PDF is a Gene2me DNA Ancestry and Genealogy report artifact with ancestry-admixture output, maps, and region narrative pages.",
+      "description": "This row documents report identity and formal output structure only; the sample person is not reused as local user data.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sibling Gene2me DNA Ancestry and Genealogy sample report",
+      "sourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Extracted from the locally captured Gene2me DNA Ancestry and Genealogy sample PDF; this is observed sample structure, not a local ancestry finding. Used here only as sibling ancestry/genealogy output-structure evidence for the Santa and Me package; this is not a direct Santa/St. Nick comparison sample, relationship model, similarity score, child-identity evidence, family-tree evidence, relative-matching evidence, exact ethnicity evidence, exact homeland evidence, migration evidence, identity evidence, or health evidence.",
+      "plainEnglishMeaning": "This row documents report identity and formal output structure only; the sample person is not reused as local user data."
+    },
+    {
+      "groupTitle": "Ancestry admixture",
+      "item": "Top-level ancestry percentages",
+      "brandName": "Santa and Me sibling Gene2me sample",
+      "geneticAnalysis": "The sample shows top-level ancestry-admixture rows for Middle East 60.0%, Europe 30.2%, and Central/South Asia 9.8%.",
+      "description": "The observed sample demonstrates a top-level ancestry hierarchy and map-oriented presentation. These percentages are sample-only output structure, not local ancestry estimates.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sibling Gene2me DNA Ancestry and Genealogy sample report",
+      "sourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Extracted from rendered review of the local sample PDF. Do not reuse the sample percentages as local ancestry, identity, homeland, community, migration, or family-history findings. Used here only as sibling ancestry/genealogy output-structure evidence for the Santa and Me package; this is not a direct Santa/St. Nick comparison sample, relationship model, similarity score, child-identity evidence, family-tree evidence, relative-matching evidence, exact ethnicity evidence, exact homeland evidence, migration evidence, identity evidence, or health evidence.",
+      "plainEnglishMeaning": "The observed sample demonstrates a top-level ancestry hierarchy and map-oriented presentation. These percentages are sample-only output structure, not local ancestry estimates."
+    },
+    {
+      "groupTitle": "Maps and narratives",
+      "item": "Regional map and narrative pages",
+      "brandName": "Santa and Me sibling Gene2me sample",
+      "geneticAnalysis": "The sample contains ancestry maps and regional narrative sections that accompany the visible ancestry-admixture percentages.",
+      "description": "This row captures the presentation pattern for maps and narrative ancestry context without copying those sample regions into local conclusions.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sibling Gene2me DNA Ancestry and Genealogy sample report",
+      "sourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Extracted from rendered review of the local sample PDF. Maps and region narratives are output-format evidence only. Used here only as sibling ancestry/genealogy output-structure evidence for the Santa and Me package; this is not a direct Santa/St. Nick comparison sample, relationship model, similarity score, child-identity evidence, family-tree evidence, relative-matching evidence, exact ethnicity evidence, exact homeland evidence, migration evidence, identity evidence, or health evidence.",
+      "plainEnglishMeaning": "This row captures the presentation pattern for maps and narrative ancestry context without copying those sample regions into local conclusions."
+    },
+    {
+      "groupTitle": "Country and subregion tables",
+      "item": "Detailed percentage table structure",
+      "brandName": "Santa and Me sibling Gene2me sample",
+      "geneticAnalysis": "The sample includes country/subregion percentage-table structure beneath the top-level ancestry-admixture categories.",
+      "description": "Only the existence and role of the country/subregion table structure is used here; detailed local country or homeland assignment remains unavailable.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sibling Gene2me DNA Ancestry and Genealogy sample report",
+      "sourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Extracted from rendered review of the local sample PDF. Detailed table structure is not converted into local exact-origin claims. Used here only as sibling ancestry/genealogy output-structure evidence for the Santa and Me package; this is not a direct Santa/St. Nick comparison sample, relationship model, similarity score, child-identity evidence, family-tree evidence, relative-matching evidence, exact ethnicity evidence, exact homeland evidence, migration evidence, identity evidence, or health evidence.",
+      "plainEnglishMeaning": "Only the existence and role of the country/subregion table structure is used here; detailed local country or homeland assignment remains unavailable."
+    },
+    {
+      "groupTitle": "Genealogy boundary",
+      "item": "Family matching not supplied",
+      "brandName": "Santa and Me sibling Gene2me sample",
+      "geneticAnalysis": "The local fixture supplies no relative matching, surname matching, family-tree, living-relative, or migration-path evidence.",
+      "description": "Genealogy conclusions require family records or relative-matching evidence outside this sample-output structure.",
+      "genes": [
+        "genealogy matching data"
+      ],
+      "sourceLabel": "Sibling Gene2me DNA Ancestry and Genealogy sample report",
+      "sourceIds": [
+        "ancestry-genealogy-heritage-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Extracted from the locally captured Gene2me DNA Ancestry and Genealogy sample PDF and used only as sample-output boundary structure; genealogy limitations are also enforced in the local fixture and prompt. Used here only as sibling ancestry/genealogy output-structure evidence for the Santa and Me package; this is not a direct Santa/St. Nick comparison sample, relationship model, similarity score, child-identity evidence, family-tree evidence, relative-matching evidence, exact ethnicity evidence, exact homeland evidence, migration evidence, identity evidence, or health evidence.",
+      "plainEnglishMeaning": "Genealogy conclusions require family records or relative-matching evidence outside this sample-output structure."
     }
   ],
   "ancestryScopeSummary": {
-    "autosomal": "Autosomal ancestry can provide broad reference-panel context when a model is supplied; this fixture does not supply calibrated percentages or comparison matching.",
-    "noveltyComparison": "A Santa/St. Nick comparison would require a validated comparison sample and model, and neither is supplied here.",
+    "plainEnglishMeaning": "This local run can provide broad ancestry education and explicit missing-evidence statements.",
+    "unavailableClaims": [
+      "Santa or St. Nick comparison",
+      "relationship or similarity score",
+      "relative matching",
+      "identity inference",
+      "exact origin inference",
+      "child-specific meaning or health outcome"
+    ],
     "sourceIds": [
       "medlineplus-genetic-ancestry-testing",
+      "medlineplus-dtc-risks-benefits",
       "international-genome-sample-resource",
-      "medlineplus-dtc-risks-benefits"
+      "ancestry-genealogy-heritage-sample-pdf"
     ]
   },
   "whatThisDoesNotMean": [
-    "This does not show a relationship to Santa or St. Nick.",
-    "This does not identify a precise homeland, ethnicity percentage, surname match, family tree, living relative, historical relative, child identity, or personal identity.",
-    "This is not a health or disease-risk report."
+    "It does not mean the user is related to Santa or St. Nick.",
+    "It does not provide a similarity score or identity comparison.",
+    "It does not provide exact ethnicity percentages, precise homeland, relative matching, family-tree placement, child-specific conclusions, or health interpretation."
   ],
   "references": [
     {
       "id": "medlineplus-genetic-ancestry-testing",
-      "title": "MedlinePlus Genetics: genetic ancestry testing"
+      "title": "MedlinePlus Genetics: genetic ancestry testing",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "ancestry_context",
+        "autosomal_scope",
+        "consumer_safety_language"
+      ],
+      "sortOrder": 1
     },
     {
       "id": "medlineplus-dtc-risks-benefits",
-      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing"
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "dtc_limitations",
+        "privacy_sensitivity",
+        "probability_appendix"
+      ],
+      "sortOrder": 2
     },
     {
       "id": "international-genome-sample-resource",
-      "title": "International Genome Sample Resource / 1000 Genomes"
+      "title": "International Genome Sample Resource / 1000 Genomes",
+      "sourceType": "database",
+      "evidenceLevel": "database_background",
+      "usedFor": [
+        "ancestry_context",
+        "population_reference",
+        "variant_frequency_context"
+      ],
+      "sortOrder": 3
+    },
+    {
+      "id": "ancestry-genealogy-heritage-sample-pdf",
+      "title": "DNA Ancestry and Genealogy Report sample report",
+      "sourceType": "mock_report",
+      "evidenceLevel": "high",
+      "usedFor": [
+        "sibling_sample_rows",
+        "formal_fields",
+        "genotype_summary",
+        "output_format",
+        "novelty_relationship_boundary"
+      ],
+      "sortOrder": 4
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "autosomal-reference-panel-summary",
+        "effect": "The sample demonstrates a top-level ancestry-admixture hierarchy with map-oriented presentation.",
+        "extractionStatus": "direct",
         "gene": "autosomal genome",
-        "observedValue": "broad East Asian reference-panel similarity; no Santa/St. Nick comparison model supplied",
-        "matchStatus": "summarized"
+        "genotype": "sample Middle East 60.0%; Europe 30.2%; Central/South Asia 9.8%",
+        "phenotype": "Use as observed sample output structure only; do not reuse these percentages as local ancestry, identity, homeland, community, migration, family-history, or health findings. This sibling sample evidence is not direct evidence of any Santa/St. Nick comparison, relationship, similarity score, child identity, family-tree placement, relative match, exact ancestry percentage, identity, or health finding.",
+        "sortOrder": 1,
+        "tier": "Sample-report visible row",
+        "variantId": "sample ancestry admixture overview"
       },
       {
-        "inputId": "santa-comparison-evidence-unavailable",
+        "effect": "The sample demonstrates detailed table structure beneath top-level ancestry-admixture categories without supplying local calibrated ancestry evidence.",
+        "extractionStatus": "direct",
+        "gene": "autosomal genome",
+        "genotype": "sample country/subregion percentage table structure present",
+        "phenotype": "Use as output-format evidence only; mark exact country, homeland, community, migration, and genealogy conclusions unavailable unless local calibrated evidence is supplied. This sibling sample evidence is not direct evidence of any Santa/St. Nick comparison, relationship, similarity score, child identity, family-tree placement, relative match, exact ancestry percentage, identity, or health finding.",
+        "sortOrder": 2,
+        "tier": "Sample-report visible row",
+        "variantId": "sample country and subregion table structure"
+      },
+      {
+        "effect": "The local fixture supplies broad autosomal context without calibrated percentages or novelty Santa/St. Nick comparison evidence.",
+        "extractionStatus": "curated",
+        "gene": "autosomal genome",
+        "genotype": "broad East Asian reference-panel similarity; no Santa/St. Nick comparison model supplied",
+        "phenotype": "Report as broad ancestry context only; do not convert it into a Santa/St. Nick relationship, similarity score, identity, child-specific conclusion, exact percentage, homeland, relatives, or health interpretation.",
+        "sortOrder": 3,
+        "tier": "Local derived call",
+        "variantId": "autosomal-reference-panel-summary"
+      },
+      {
+        "effect": "The local fixture intentionally omits a validated Santa/St. Nick comparison sample, model, relationship evidence, similarity score, relative matching, family-tree placement, child-specific evidence, and identity evidence.",
+        "extractionStatus": "curated",
         "gene": "novelty DNA comparison evidence",
-        "observedValue": "Santa/St. Nick comparison sample, relationship evidence, relative matching, family-tree placement, identity evidence, and child-specific interpretation unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "genotype": "Santa/St. Nick comparison sample, relationship evidence, relative matching, family-tree placement, identity evidence, and child-specific interpretation unavailable",
+        "phenotype": "Mark the Santa/St. Nick comparison question unavailable instead of inferring it from broad ancestry context or sibling sample-report rows.",
+        "sortOrder": 4,
+        "tier": "Local missing input",
+        "variantId": "santa-comparison-evidence-unavailable"
       }
     ],
     "missingInputs": [
-      "Authenticated sample-report sections and rows have not been extracted.",
-      "No Santa/St. Nick comparison sample, validated relationship model, relative matching, family-tree placement, identity evidence, child-specific interpretation, calibrated ancestry model, or reference-panel metadata is supplied.",
-      "No family records, living-relative matching, migration route, exact-homeland data, or community-affiliation data is supplied."
+      "Santa/St. Nick comparison sample unavailable",
+      "Validated Santa/St. Nick comparison model unavailable",
+      "Relationship, similarity-score, relative-matching, family-tree, identity, and child-specific evidence unavailable",
+      "Calibrated regional percentage model unavailable"
     ],
-    "probabilities": [],
+    "probabilities": [
+      {
+        "label": "Calibrated probability unavailable",
+        "value": null,
+        "explanation": "No calibrated model or validation data was supplied for this report package; deterministic rows describe available evidence and unavailable sections only."
+      }
+    ],
     "uncertainty": [
-      "Broad reference-panel similarity should not be treated as a precise ancestry percentage, identity, child inference, or genealogical relationship.",
-      "Novelty comparison claims require evidence outside this synthetic fixture."
+      "Broad reference-panel summaries are context only and are not calibrated ancestry percentages.",
+      "Sibling sample rows describe observed report structure only and are not user-specific findings.",
+      "The Gene2me sample rows are sibling output-format evidence only.",
+      "No probability of relationship or similarity is calculated."
     ],
     "limitations": [
-      "This validation result uses derived evidence only; raw genome data is not included.",
-      "The report does not emit raw SNP tables, relationship matching data, child-specific interpretation, or family-tree data.",
-      "Authenticated Sequencing.com sample report rows are still pending."
+      "The Gene2me sample rows are sibling output-format evidence only.",
+      "No probability of relationship or similarity is calculated."
     ]
   }
 }

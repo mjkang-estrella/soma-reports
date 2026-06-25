@@ -11,4 +11,9 @@ If ACTN3, ACE, calibrated fitness summary model, workout-plan model, training-re
 State that fitness and strength traits are influenced by genetics, training history, health, sleep, nutrition, environment, opportunity, age, and many other factors.
 Do not create workouts, prescribe training, recommend sport selection, estimate injury risk, estimate recovery, quantify VO2 max, recommend supplements, or provide medical exercise clearance from genotype.
 For this package, focus on a concise trainer-shareable fitness genetics summary and explicitly unavailable workout-plan, training-response, injury-risk, recovery, VO2 max, supplement, sport-selection, and medical-clearance sections.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
+Use the public Gene-In-Form sample PDF only as sibling output-format evidence for a trainer-shareable fitness summary. It is not a direct Fitness Trainer Summary sample report.
+Do not turn sample SOD2, NRF2, PPARGC1A, SLC2A4, MCT1/SLC16A1, HIF1A, ACTN3, ACE, COL5A1, GDF5, oxidative-stress, respiratory-capacity, glucose-transport, lactate, glycolysis, muscle-fiber, circulation, running-economy, tendon, ACL, or osteoarthritis rows into workouts, trainer instructions, sport selection, injury-risk, recovery, VO2 max, supplement, medical-clearance, or training-action claims.
+State plainly that this local run cannot create a workout plan, prescribe training, choose sports, estimate injury risk, estimate recovery, quantify VO2 max, recommend supplements, or provide exercise clearance because no calibrated model, trainer plan, clinical context, or professional review was supplied.

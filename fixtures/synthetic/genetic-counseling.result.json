@@ -1,24 +1,30 @@
 {
+  "schemaVersion": "soma-reports.synthetic-result.v1",
   "reportOverview": {
     "reportTitle": "Genetic Counseling",
     "inputManifestHash": "sha256:synthetic-genetic-counseling-professional-handoff-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "genetic counselor review, personal and family history, pregnancy or reproductive context, phenotype fit, inheritance assessment, prior testing, confirmatory testing, variant classification rationale, family communication plan, and authenticated sample-report rows unavailable in this fixture",
-      "Professional review, clinical context, current health information, and medical decision support are unavailable in this fixture.",
-      "This result is consumer-shareable context only and is not a diagnosis, professional clearance, disease-risk estimate, medication instruction, procedure plan, treatment guidance, supplement guidance, diet guidance, lab interpretation, screening advice, reproductive advice, or clinical actionability claim."
+      "Direct Genetic Counseling sample-report sections and exact rows have not been extracted.",
+      "The Healthcare Pro sample PDF is included only as sibling rare-disease and carrier output-structure evidence.",
+      "Genetic counselor review, personal and family history, pregnancy or reproductive context, phenotype fit, inheritance assessment, prior testing, confirmatory testing, variant classification rationale, family communication plan, and counseling plan are unavailable in this fixture.",
+      "This result is consumer-shareable preparation context only and is not genetic counseling, diagnosis, variant classification, family-member risk estimation, reproductive decision guidance, cascade-testing guidance, diagnostic-testing guidance, screening guidance, treatment guidance, family-disclosure action, or actionability claim."
+    ],
+    "evidenceTypes": [
+      "Synthetic unavailable-genetic-counselor-review evidence",
+      "Public genetic-testing, genetic-counseling, ClinGen, ClinVar, and ACMG/AMP background references",
+      "Sibling Healthcare Pro sample rows used only for rare-disease/carrier output structure"
     ]
   },
   "resultRows": [
     {
-      "groupTitle": "Professional handoff availability",
-      "item": "genetic-counseling-handoff-context-unavailable",
+      "groupTitle": "Genetic counseling availability",
+      "item": "Genetic counselor review context",
       "brandName": "",
-      "geneticAnalysis": "Genetic Counseling can organize supplied context for a professional discussion, but the specialist review and authenticated sample rows are unavailable.",
+      "geneticAnalysis": "The local fixture can organize supplied context for a genetic counseling discussion, but personal and family history, pregnancy or reproductive context, phenotype fit, inheritance assessment, prior testing, confirmatory testing, variant classification rationale, family communication plan, and genetic counselor review are unavailable.",
       "genes": [
         "Genetic Counseling"
       ],
-      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Counseling",
+      "sourceLabel": "Genetic testing and counseling references",
       "sourceIds": [
         "cdc-genetic-testing",
         "medlineplus-genetics",
@@ -27,20 +33,42 @@
         "cdc-family-health-history",
         "clingen",
         "ncbi-clinvar",
-        "ncbi-genetic-testing-registry"
+        "ncbi-genetic-testing-registry",
+        "clingen-variant-classification-guidance",
+        "clingen-variant-classification-working-group",
+        "acmg-amp-richards-2015"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This row is an availability statement. It does not diagnose a condition, clear a person for a procedure, estimate risk, choose medication, recommend treatment, interpret labs, recommend screening, guide reproductive decisions, or provide an all-clear result."
+      "plainEnglishMeaning": "This is an availability statement. It does not provide genetic counseling, diagnose a condition, classify variants, estimate family-member risk, recommend reproductive decisions, recommend cascade testing, recommend diagnostic testing, recommend screening, recommend treatment, direct family disclosure, or replace a genetic counselor."
     },
     {
-      "groupTitle": "Clinical review availability",
-      "item": "genetic-counseling-clinical-review-unavailable",
-      "brandName": "",
-      "geneticAnalysis": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+      "groupTitle": "Sibling sample output structure",
+      "item": "Healthcare Pro rare-disease and carrier row format",
+      "brandName": "Sibling Healthcare Pro sample report",
+      "geneticAnalysis": "The sibling Healthcare Pro sample shows report identity, rare-disease/carrier rows, Hirschsprung Disease, Thrombophilia, Hemochromatosis, and data-completeness structure. These rows are used only to preserve output shape for Genetic Counseling preparation.",
       "genes": [
-        "genetic counselor review context"
+        "RET",
+        "F5",
+        "HFE2"
       ],
-      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Counseling",
+      "sourceLabel": "Sibling Healthcare Pro sample PDF",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample rows show what a related clinical-genetics report format can contain. They are not local findings and must not be read as personal genetic counseling, diagnosis, variant classification, penetrance, inheritance, segregation, family-member risk, reproductive guidance, cascade testing, diagnostic testing, screening, treatment, family-disclosure action, or actionability."
+    },
+    {
+      "groupTitle": "Genetic counseling boundary",
+      "item": "Unsupported counseling interpretation types",
+      "brandName": "",
+      "geneticAnalysis": "The local fixture intentionally omits the personal, family-history, reproductive, phenotype, inheritance, confirmatory-testing, variant-classification, and professional context needed for genetic counseling decisions, so the output marks those areas unavailable instead of inferring them.",
+      "genes": [
+        "Family history context",
+        "Variant classification context",
+        "Reproductive context"
+      ],
+      "sourceLabel": "Genetic counseling and variant-classification references",
       "sourceIds": [
         "cdc-genetic-testing",
         "medlineplus-genetics",
@@ -49,27 +77,108 @@
         "cdc-family-health-history",
         "clingen",
         "ncbi-clinvar",
-        "ncbi-genetic-testing-registry"
+        "ncbi-genetic-testing-registry",
+        "clingen-variant-classification-guidance",
+        "clingen-variant-classification-working-group",
+        "acmg-amp-richards-2015"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "A qualified professional needs validated test scope, personal and family history, symptoms, medications, labs, procedure context, environment, ancestry applicability, and current clinical information before using genetic context for health decisions."
+      "plainEnglishMeaning": "Genetic counseling decisions need personal and family history, testing scope, phenotype context, inheritance assessment, reproductive context when relevant, confirmatory testing, variant-classification rationale, and qualified review. Missing context is reported as missing, not normal, abnormal, low risk, high risk, diagnostic, actionable, or all clear."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Report identity",
+      "item": "Healthcare Professional Genetic Report",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The cover and table of contents identify a Healthcare Pro sample report with sections for STAT Alerts, Increased Risk Detected, Medications (Pharmacogenomics), Rare Diseases, No Increased Risk Detected, and Analysis Alerts.",
+      "description": "This row captures sample-report structure only and does not prove a local Healthcare Pro report was generated.",
+      "genes": [],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Genetic Counseling sibling rare-disease/carrier output-structure evidence from the Healthcare Pro sample PDF. Extracted from pages 1-2 of the public sample PDF; keep report identity and section list separate from local findings. This is not a direct Genetic Counseling sample report and not local genetic counseling, diagnosis, variant classification, family-member risk estimate, reproductive decision, cascade-testing guidance, diagnostic-testing guidance, screening guidance, treatment guidance, family-disclosure action, or actionability evidence."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "Hirschsprung Disease",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Hirschsprung Disease as Increased Risk Detected and ties the row to a RET mutation described as IVS 1 +9277 and +9349 relative to MET.",
+      "description": "This is a sample-person rare-disease risk row only; local output must not infer diagnosis, symptoms, imaging need, or referral need.",
+      "genes": [
+        "RET"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Genetic Counseling sibling rare-disease/carrier output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 7 of the public sample PDF; symptom and referral examples are sample report structure, not local advice. This is not a direct Genetic Counseling sample report and not local genetic counseling, diagnosis, variant classification, family-member risk estimate, reproductive decision, cascade-testing guidance, diagnostic-testing guidance, screening guidance, treatment guidance, family-disclosure action, or actionability evidence."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "Thrombophilia",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Thrombophilia as Carrier and states the sample has one copy of the Factor V R2 mutation in F5, distinct from Factor V Leiden.",
+      "description": "This is sample carrier-status structure only; local output must not infer personal thrombophilia carrier status or clotting risk.",
+      "genes": [
+        "F5"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Genetic Counseling sibling rare-disease/carrier output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 8 of the public sample PDF; the row includes sample caveats about R2 on its own. This is not a direct Genetic Counseling sample report and not local genetic counseling, diagnosis, variant classification, family-member risk estimate, reproductive decision, cascade-testing guidance, diagnostic-testing guidance, screening guidance, treatment guidance, family-disclosure action, or actionability evidence."
+    },
+    {
+      "groupTitle": "Rare Diseases",
+      "item": "Hemochromatosis",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Hemochromatosis as Carrier and ties the carrier row to a single HFE2 G320V mutation.",
+      "description": "This is sample carrier-status structure only; local output must not infer iron overload, carrier status, family risk, monitoring, or treatment.",
+      "genes": [
+        "HFE2"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Genetic Counseling sibling rare-disease/carrier output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 11 of the public sample PDF; monitoring and phlebotomy language is sample content, not local guidance. This is not a direct Genetic Counseling sample report and not local genetic counseling, diagnosis, variant classification, family-member risk estimate, reproductive decision, cascade-testing guidance, diagnostic-testing guidance, screening guidance, treatment guidance, family-disclosure action, or actionability evidence."
+    },
+    {
+      "groupTitle": "Analysis Alerts",
+      "item": "Data completeness",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report's Analysis Alerts section states no ambiguity, complete genetic data, and all diseases, traits, and conditions analyzed.",
+      "description": "This is sample analysis-quality language only; local output must not claim complete local data or all conditions analyzed unless the local fixture supplies equivalent quality evidence.",
+      "genes": [],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Genetic Counseling sibling rare-disease/carrier output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 14 of the public sample PDF; data-completeness claims are sample-only. This is not a direct Genetic Counseling sample report and not local genetic counseling, diagnosis, variant classification, family-member risk estimate, reproductive decision, cascade-testing guidance, diagnostic-testing guidance, screening guidance, treatment guidance, family-disclosure action, or actionability evidence."
     }
   ],
   "professionalHandoffContext": {
-    "plainEnglishMeaning": "Genetic Counseling is currently a handoff-boundary package. It can document supplied evidence and missing professional context, but it cannot replace qualified review or produce medical decisions from local evidence alone.",
+    "plainEnglishMeaning": "Genetic Counseling is a preparation-boundary package. It can summarize supplied evidence and show sibling report structure, but it cannot replace a qualified genetic counselor or generate medical, reproductive, family-disclosure, cascade-testing, diagnostic-testing, screening, treatment, or actionability decisions from local evidence alone.",
     "unsupportedClaims": [
-      "Diagnosis, professional clearance, all-clear result, or personal disease-risk estimate",
-      "Medication, dosing, procedure, treatment, supplement, diet, lab, screening, reproductive, or management instruction",
-      "Variant classification, penetrance, inheritance, family-member risk, clinical actionability, or specialist-level interpretation",
-      "Replacement for a qualified clinician, pharmacist, geneticist, genetic counselor, surgeon, anesthesiologist, rheumatologist, infectious disease specialist, or other relevant professional"
+      "Genetic counseling replacement, diagnosis, all-clear result, or personal disease-risk estimate",
+      "Variant classification, penetrance, inheritance, segregation, phenotype-fit conclusion, or family-member risk estimate",
+      "Reproductive decision, cascade-testing instruction, diagnostic-testing instruction, screening instruction, treatment instruction, family-disclosure action, or clinical actionability",
+      "Replacement for a qualified genetic counselor, clinical geneticist, clinician, pharmacist, or other relevant professional"
     ],
-    "professionalReview": "Use this output only as preparation for a professional conversation. Health decisions require qualified review with clinical history, medications, symptoms, labs, family history, procedure details when relevant, and validated testing scope."
+    "professionalReview": "Use this output only as preparation for a genetic counseling conversation. Health and family decisions require qualified review with personal and family history, symptoms or phenotype context, pregnancy or reproductive context when relevant, prior testing, confirmatory testing, validated testing scope, and variant-classification rationale."
   },
   "practicalNextSteps": {
     "professionalReview": [
-      "Do not use this local fixture to change medication, supplements, diet, screening, procedures, reproductive decisions, prevention plans, or treatment decisions.",
-      "Bring current symptoms, personal and family history, medications, allergies, labs, prior testing, procedure context when relevant, and ancestry context to a qualified professional if discussing this topic.",
-      "Treat unavailable professional-review rows as unavailable, not as normal, abnormal, low risk, high risk, reassuring, diagnostic, actionable, or all clear."
+      "Do not use this local fixture to make reproductive decisions, contact relatives, order cascade testing, order diagnostic testing, change screening, change medications, or start treatment.",
+      "Bring personal and family history, prior genetic testing, relevant symptoms or phenotype notes, pregnancy or reproductive context when relevant, and any clinical variant reports to a qualified genetic counselor if discussing this topic.",
+      "Treat unavailable counselor-review rows as unavailable, not as normal, abnormal, low risk, high risk, reassuring, diagnostic, actionable, or all clear."
     ]
   },
   "references": [
@@ -116,37 +225,80 @@
     {
       "id": "acmg-amp-richards-2015",
       "title": "ACMG/AMP 2015 sequence variant interpretation standards"
+    },
+    {
+      "id": "healthcare-pro-sample-pdf",
+      "title": "Healthcare Pro sample report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "genetic-counseling-handoff-context-unavailable",
-        "gene": "Genetic Counseling",
-        "observedValue": "genetic counselor review, personal and family history, pregnancy or reproductive context, phenotype fit, inheritance assessment, prior testing, confirmatory testing, variant classification rationale, family communication plan, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "sortOrder": 1,
+        "tier": "Sample-report visible variant",
+        "gene": "RET",
+        "variantId": "IVS 1 +9277; +9349 relative to MET",
+        "genotype": "mutation detected in sample row",
+        "effect": "The sample report uses this RET row for a Hirschsprung Disease increased-risk sample label.",
+        "phenotype": "Observed sample content only; do not infer local Hirschsprung Disease risk, diagnosis, symptoms, imaging, or referral need. This is Genetic Counseling sibling sample output-structure evidence only, not local diagnosis, variant classification, penetrance, inheritance, segregation, phenotype fit, family-member risk, reproductive decision, cascade-testing guidance, diagnostic-testing guidance, screening guidance, treatment guidance, family-disclosure action, or actionability evidence.",
+        "extractionStatus": "direct"
       },
       {
-        "inputId": "genetic-counseling-clinical-review-unavailable",
-        "gene": "genetic counselor review context",
-        "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "sortOrder": 2,
+        "tier": "Sample-report visible carrier marker",
+        "gene": "F5",
+        "variantId": "Factor V R2",
+        "genotype": "one copy",
+        "effect": "The sample report labels the sample as a Factor V R2 carrier and distinguishes it from Factor V Leiden.",
+        "phenotype": "Observed sample content only; do not infer local thrombophilia carrier status or clotting risk. This is Genetic Counseling sibling sample output-structure evidence only, not local diagnosis, variant classification, penetrance, inheritance, segregation, phenotype fit, family-member risk, reproductive decision, cascade-testing guidance, diagnostic-testing guidance, screening guidance, treatment guidance, family-disclosure action, or actionability evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "sortOrder": 3,
+        "tier": "Sample-report visible carrier marker",
+        "gene": "HFE2",
+        "variantId": "G320V",
+        "genotype": "single mutation; carrier",
+        "effect": "The sample report labels the sample as a Hemochromatosis carrier due to HFE2 G320V.",
+        "phenotype": "Observed sample content only; do not infer local hemochromatosis carrier status, iron overload, monitoring, or treatment need. This is Genetic Counseling sibling sample output-structure evidence only, not local diagnosis, variant classification, penetrance, inheritance, segregation, phenotype fit, family-member risk, reproductive decision, cascade-testing guidance, diagnostic-testing guidance, screening guidance, treatment guidance, family-disclosure action, or actionability evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "sortOrder": 4,
+        "tier": "Sample-report analysis quality",
+        "gene": "Healthcare Pro analysis",
+        "variantId": "analysis-alerts",
+        "genotype": "no ambiguity; complete data; all listed conditions analyzed in the sample",
+        "effect": "The sample report states its own analysis completeness and lack-of-ambiguity alerts on the final page.",
+        "phenotype": "Observed sample quality context only; do not claim local completeness without equivalent local quality evidence. This is Genetic Counseling sibling sample output-structure evidence only, not local diagnosis, variant classification, penetrance, inheritance, segregation, phenotype fit, family-member risk, reproductive decision, cascade-testing guidance, diagnostic-testing guidance, screening guidance, treatment guidance, family-disclosure action, or actionability evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "sortOrder": 5,
+        "tier": "Local missing input",
+        "gene": "Genetic counselor review context",
+        "variantId": "genetic-counselor-review-context-unavailable",
+        "genotype": "genetic counselor review, personal and family history, pregnancy or reproductive context, phenotype fit, inheritance assessment, prior testing, confirmatory testing, variant classification rationale, family communication plan, and counseling plan unavailable",
+        "effect": "The local fixture intentionally omits the clinical, family-history, reproductive, confirmatory-testing, and professional context needed for genetic counseling.",
+        "phenotype": "Mark diagnosis, variant classification, penetrance, inheritance, segregation, family-member risk, reproductive decisions, cascade testing, diagnostic testing, screening, treatment, family-disclosure action, and actionability unavailable instead of inferring them.",
+        "extractionStatus": "curated"
       }
     ],
     "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and exact rows",
-      "Qualified professional review and complete clinical context",
-      "Current medications, symptoms, family history, labs, procedure details, prior testing, and validated test scope when relevant",
-      "Validated model output, applicability metadata, and professional interpretation for any health decision"
+      "Direct Genetic Counseling sample-report sections and exact rows",
+      "Qualified genetic counselor review and complete personal, family-history, phenotype, reproductive, and clinical context",
+      "Prior testing, confirmatory testing, inheritance assessment, segregation data, ACMG/AMP evidence codes, expert-panel classification, and family communication plan",
+      "Validated model output, ancestry applicability metadata, and professional interpretation for any health, reproductive, family, testing, screening, treatment, or actionability decision"
     ],
     "probabilities": [],
     "uncertainty": [
-      "No calibrated professional-clearance, disease-risk, medication-response, procedure-risk, treatment-response, lab-status, screening-benefit, reproductive-risk, supplement-benefit, diet-response, or actionability model is supplied for this local package.",
-      "Interpretation depends on validated test scope, clinical and family history, symptoms, medications, labs, procedures, environment, ancestry applicability, and qualified professional review."
+      "No calibrated family-member risk, disease-risk, penetrance, inheritance, reproductive-risk, variant-classification, cascade-testing, screening-benefit, treatment, or actionability model is supplied for this local package.",
+      "Interpretation depends on validated test scope, personal and family history, symptoms or phenotype context, prior testing, confirmatory testing, reproductive context when relevant, ancestry applicability, and qualified genetic counselor review."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
-      "The report is educational handoff context and does not provide diagnosis, professional clearance, disease-risk estimation, medication guidance, procedure guidance, treatment advice, supplement advice, diet advice, lab interpretation, screening advice, reproductive advice, or clinical actionability.",
+      "The report is educational preparation context and does not provide genetic counseling, diagnosis, variant classification, disease-risk estimation, family-member risk estimation, reproductive advice, cascade-testing advice, diagnostic-testing advice, screening advice, treatment advice, family-disclosure action, or clinical actionability.",
+      "Sibling Healthcare Pro rows preserve sample output structure only. The sample rare-disease, carrier, risk, and data-completeness wording must not be reused as local counseling guidance.",
       "Unavailable professional-review rows should never be interpreted as low risk, high risk, no risk, normal, abnormal, reassuring, diagnostic, actionable, or all clear."
     ]
   }

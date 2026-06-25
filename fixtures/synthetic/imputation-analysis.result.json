@@ -76,6 +76,17 @@
       "plainEnglishMeaning": "Without benchmark and applicability evidence, the report can explain quality-control context but cannot validate analytical performance, clinical sensitivity, or population-specific reliability."
     }
   ],
+  "imputationAnalysis": {
+    "fieldBoundaryStatus": "official-purpose-only; generated imputation output rows not captured",
+    "sourceCapture": "reference/catalog/imputation-analysis-official-output-capture-2026-06-24.json",
+    "summary": {
+      "genotypeImputationPurpose": "Extremely fast and highly accurate genotype imputation.",
+      "officialGeneratedRows": "not captured",
+      "officialJobSettings": "not captured",
+      "officialImputedGenotypeValues": "not captured"
+    },
+    "scopeNotice": "This boundary preserves only the official detail-page purpose text. The synthetic result rows above are local imputation QC examples, not official Sequencing.com generated Imputation Analysis rows."
+  },
   "imputationQualityContext": {
     "plainEnglishMeaning": "Imputation fills in likely genotypes statistically by comparing typed markers with reference-panel haplotypes. The supplied metrics describe the quality-control context for that statistical process, not direct observation of every retained record.",
     "unsupportedClaims": [

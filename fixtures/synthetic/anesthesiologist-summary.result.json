@@ -1,153 +1,420 @@
 {
   "reportOverview": {
-    "reportTitle": "Anesthesiologist Summary",
+    "title": "Anesthesiologist Summary",
     "inputManifestHash": "sha256:synthetic-anesthesiologist-summary-professional-handoff-context-v1",
+    "scope": "Consumer-shareable anesthesiologist handoff context using unavailable local clinical-review evidence plus sibling Healthcare Pro perioperative and PGx output-format evidence.",
+    "sampleEvidence": "Healthcare Pro sample rows are sibling output-structure examples only; they are not direct Anesthesiologist Summary results.",
+    "localConclusion": "No anesthesia clearance, anesthetic-agent selection, malignant-hyperthermia diagnosis, perioperative-risk estimate, medication-hold guidance, dosing, monitoring, procedure plan, or actionability can be inferred from this fixture.",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "anesthesiologist review, planned procedure, planned anesthetic agents, current medication list, allergies, prior anesthesia history, malignant hyperthermia diagnostic status, RYR1/CACNA1S/STAC3 variant classification, anesthesia record, airway assessment, comorbidities, labs, and authenticated sample-report rows unavailable in this fixture",
-      "Professional review, clinical context, current health information, and medical decision support are unavailable in this fixture.",
-      "This result is consumer-shareable context only and is not a diagnosis, professional clearance, disease-risk estimate, medication instruction, procedure plan, treatment guidance, supplement guidance, diet guidance, lab interpretation, screening advice, reproductive advice, or clinical actionability claim."
+      "Planned procedure",
+      "Planned anesthetic agents",
+      "Current medication list",
+      "Allergies",
+      "Prior anesthesia history",
+      "Malignant-hyperthermia diagnostic status",
+      "RYR1/CACNA1S/STAC3 variant classification",
+      "Anesthesia record",
+      "Airway assessment",
+      "Comorbidities",
+      "Labs",
+      "Anesthesiologist review"
     ]
   },
   "resultRows": [
     {
-      "groupTitle": "Professional handoff availability",
-      "item": "anesthesiologist-summary-handoff-context-unavailable",
-      "brandName": "",
-      "geneticAnalysis": "Anesthesiologist Summary can organize supplied context for a professional discussion, but the specialist review and authenticated sample rows are unavailable.",
-      "genes": [
-        "Anesthesiologist Summary"
-      ],
-      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Counseling",
-      "sourceIds": [
-        "cdc-genetic-testing",
-        "medlineplus-genetics",
-        "medlineplus-genetic-counseling",
-        "fda-direct-to-consumer-tests",
-        "cdc-family-health-history",
-        "cdc-pharmacogenomics",
-        "medlineplus-pharmacogenetic-tests",
-        "nhgri-pharmacogenomics"
-      ],
-      "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This row is an availability statement. It does not diagnose a condition, clear a person for a procedure, estimate risk, choose medication, recommend treatment, interpret labs, recommend screening, guide reproductive decisions, or provide an all-clear result."
-    },
-    {
-      "groupTitle": "Clinical review availability",
-      "item": "anesthesiologist-summary-clinical-review-unavailable",
-      "brandName": "",
-      "geneticAnalysis": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+      "groupTitle": "Local evidence boundary",
+      "item": "Anesthesiologist review unavailable",
+      "brandName": "Soma Reports local fixture",
+      "geneticAnalysis": "The local fixture does not include a planned procedure, planned anesthetic agents, medication list, allergies, anesthesia history, malignant-hyperthermia diagnostic status, RYR1/CACNA1S/STAC3 classification, anesthesia record, airway assessment, comorbidities, labs, or anesthesiologist review.",
       "genes": [
         "anesthesiologist review context"
       ],
-      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Counseling",
+      "sourceLabel": "Local synthetic fixture",
       "sourceIds": [
         "cdc-genetic-testing",
-        "medlineplus-genetics",
-        "medlineplus-genetic-counseling",
-        "fda-direct-to-consumer-tests",
-        "cdc-family-health-history",
-        "cdc-pharmacogenomics",
         "medlineplus-pharmacogenetic-tests",
-        "nhgri-pharmacogenomics"
+        "genereviews-malignant-hyperthermia",
+        "healthcare-pro-sample-pdf"
       ],
-      "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "A qualified professional needs validated test scope, personal and family history, symptoms, medications, labs, procedure context, environment, ancestry applicability, and current clinical information before using genetic context for health decisions."
+      "plainEnglishMeaning": "This report can only organize discussion context. It cannot clear someone for anesthesia, choose anesthetic agents, estimate perioperative risk, recommend medication holds, dosing, monitoring, or a procedure plan."
+    },
+    {
+      "groupTitle": "Report identity",
+      "item": "Healthcare Professional Genetic Report",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The cover and table of contents identify a Healthcare Pro sample report with sections for STAT Alerts, Increased Risk Detected, Medications (Pharmacogenomics), Rare Diseases, No Increased Risk Detected, and Analysis Alerts.",
+      "genes": [],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed sibling Healthcare Pro sample output structure only. Do not treat this sample row as the user's nitrous oxide risk, MTHFR deficiency, homocysteine status, postanesthetic-apnea risk, malignant-hyperthermia status, anesthesia clearance, anesthetic-agent selection, perioperative-risk estimate, medication-hold guidance, dosing, monitoring, procedure plan, or actionability evidence."
+    },
+    {
+      "groupTitle": "STAT Alerts",
+      "item": "Nitrous Oxide ADR",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Nitrous Oxide ADR as Risk Detected and ties the alert to homozygous MTHFR Trp339Gly/W339G.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed sibling Healthcare Pro sample output structure only. Do not treat this sample row as the user's nitrous oxide risk, MTHFR deficiency, homocysteine status, postanesthetic-apnea risk, malignant-hyperthermia status, anesthesia clearance, anesthetic-agent selection, perioperative-risk estimate, medication-hold guidance, dosing, monitoring, procedure plan, or actionability evidence."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "MTHFR Deficiency",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels MTHFR Deficiency as Increased Risk Detected due to homozygous MTHFR Trp339Gly/W339G.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed sibling Healthcare Pro sample output structure only. Do not treat this sample row as the user's nitrous oxide risk, MTHFR deficiency, homocysteine status, postanesthetic-apnea risk, malignant-hyperthermia status, anesthesia clearance, anesthetic-agent selection, perioperative-risk estimate, medication-hold guidance, dosing, monitoring, procedure plan, or actionability evidence."
+    },
+    {
+      "groupTitle": "Medications (Pharmacogenomics)",
+      "item": "Warfarin dosing",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Warfarin dosing as Slight Resistance Detected and says the sample may need a slightly higher maintenance dose.",
+      "genes": [
+        "warfarin-response markers"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed sibling Healthcare Pro sample output structure only. Do not treat this sample row as the user's nitrous oxide risk, MTHFR deficiency, homocysteine status, postanesthetic-apnea risk, malignant-hyperthermia status, anesthesia clearance, anesthetic-agent selection, perioperative-risk estimate, medication-hold guidance, dosing, monitoring, procedure plan, or actionability evidence."
+    },
+    {
+      "groupTitle": "Analysis Alerts",
+      "item": "Data completeness",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report's Analysis Alerts section states no ambiguity, complete genetic data, and all diseases, traits, and conditions analyzed.",
+      "genes": [],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Observed sibling Healthcare Pro sample output structure only. Do not treat this sample row as the user's nitrous oxide risk, MTHFR deficiency, homocysteine status, postanesthetic-apnea risk, malignant-hyperthermia status, anesthesia clearance, anesthetic-agent selection, perioperative-risk estimate, medication-hold guidance, dosing, monitoring, procedure plan, or actionability evidence."
+    }
+  ],
+  "sampleRows": [
+    {
+      "brandName": "Sequencing.com sample",
+      "description": "This row captures sample-report structure only and does not prove a local Healthcare Pro report was generated.",
+      "extractionStatus": "direct",
+      "genes": [],
+      "geneticAnalysis": "The cover and table of contents identify a Healthcare Pro sample report with sections for STAT Alerts, Increased Risk Detected, Medications (Pharmacogenomics), Rare Diseases, No Increased Risk Detected, and Analysis Alerts.",
+      "groupTitle": "Report identity",
+      "item": "Healthcare Professional Genetic Report",
+      "sortOrder": 1,
+      "sourceBindingNote": "Anesthesiologist Summary sibling perioperative and PGx output-structure evidence from the Healthcare Pro sample PDF. Extracted from pages 1-2 of the public sample PDF; keep report identity and section list separate from local findings. This is not a direct Anesthesiologist Summary sample report and not local anesthesia clearance, anesthetic-agent selection, malignant-hyperthermia diagnosis, perioperative-risk estimate, medication-hold, dosing, monitoring, procedure-plan, or actionability evidence.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceResourceIds": [
+        "healthcare-pro-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Sequencing.com sample",
+      "description": "This is a sample-person alert row only; local output must not infer nitrous oxide adverse-reaction risk, homocysteine status, anesthesia clearance, or medical-record action without supplied evidence and professional review.",
+      "extractionStatus": "direct",
+      "genes": [
+        "MTHFR"
+      ],
+      "geneticAnalysis": "The sample report labels Nitrous Oxide ADR as Risk Detected and ties the alert to homozygous MTHFR Trp339Gly/W339G.",
+      "groupTitle": "STAT Alerts",
+      "item": "Nitrous Oxide ADR",
+      "sortOrder": 2,
+      "sourceBindingNote": "Anesthesiologist Summary sibling perioperative and PGx output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 3 of the public sample PDF; sample clinical-action language is observed structure, not local advice. This is not a direct Anesthesiologist Summary sample report and not local anesthesia clearance, anesthetic-agent selection, malignant-hyperthermia diagnosis, perioperative-risk estimate, medication-hold, dosing, monitoring, procedure-plan, or actionability evidence.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceResourceIds": [
+        "healthcare-pro-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Sequencing.com sample",
+      "description": "This is sample-person structure only; local output must not infer deficiency, homocysteine levels, supplementation need, or reproductive guidance from the sample row.",
+      "extractionStatus": "direct",
+      "genes": [
+        "MTHFR"
+      ],
+      "geneticAnalysis": "The sample report labels MTHFR Deficiency as Increased Risk Detected due to homozygous MTHFR Trp339Gly/W339G.",
+      "groupTitle": "Increased Risk Detected",
+      "item": "MTHFR Deficiency",
+      "sortOrder": 3,
+      "sourceBindingNote": "Anesthesiologist Summary sibling perioperative and PGx output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 5 of the public sample PDF; preserve the sample label without turning it into local clinical guidance. This is not a direct Anesthesiologist Summary sample report and not local anesthesia clearance, anesthetic-agent selection, malignant-hyperthermia diagnosis, perioperative-risk estimate, medication-hold, dosing, monitoring, procedure-plan, or actionability evidence.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceResourceIds": [
+        "healthcare-pro-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Sequencing.com sample",
+      "description": "This is sample pharmacogenomics structure only; local output must not infer a warfarin dose, INR target, prescription change, or medication action.",
+      "extractionStatus": "direct",
+      "genes": [
+        "warfarin-response markers"
+      ],
+      "geneticAnalysis": "The sample report labels Warfarin dosing as Slight Resistance Detected and says the sample may need a slightly higher maintenance dose.",
+      "groupTitle": "Medications (Pharmacogenomics)",
+      "item": "Warfarin dosing",
+      "sortOrder": 4,
+      "sourceBindingNote": "Anesthesiologist Summary sibling perioperative and PGx output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 9 of the public sample PDF; medication-dose language must remain sample-only unless supplied by validated local PGx evidence and professional review. This is not a direct Anesthesiologist Summary sample report and not local anesthesia clearance, anesthetic-agent selection, malignant-hyperthermia diagnosis, perioperative-risk estimate, medication-hold, dosing, monitoring, procedure-plan, or actionability evidence.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceResourceIds": [
+        "healthcare-pro-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Sequencing.com sample",
+      "description": "This is sample analysis-quality language only; local output must not claim complete local data or all conditions analyzed unless the local fixture supplies equivalent quality evidence.",
+      "extractionStatus": "direct",
+      "genes": [],
+      "geneticAnalysis": "The sample report's Analysis Alerts section states no ambiguity, complete genetic data, and all diseases, traits, and conditions analyzed.",
+      "groupTitle": "Analysis Alerts",
+      "item": "Data completeness",
+      "sortOrder": 5,
+      "sourceBindingNote": "Anesthesiologist Summary sibling perioperative and PGx output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 14 of the public sample PDF; data-completeness claims are sample-only. This is not a direct Anesthesiologist Summary sample report and not local anesthesia clearance, anesthetic-agent selection, malignant-hyperthermia diagnosis, perioperative-risk estimate, medication-hold, dosing, monitoring, procedure-plan, or actionability evidence.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceResourceIds": [
+        "healthcare-pro-sample-pdf"
+      ]
     }
   ],
   "professionalHandoffContext": {
-    "plainEnglishMeaning": "Anesthesiologist Summary is currently a handoff-boundary package. It can document supplied evidence and missing professional context, but it cannot replace qualified review or produce medical decisions from local evidence alone.",
+    "plainEnglishMeaning": "The output is a conservative discussion aid. It keeps sample-report structure visible while separating it from local findings and medical decisions.",
     "unsupportedClaims": [
-      "Diagnosis, professional clearance, all-clear result, or personal disease-risk estimate",
-      "Medication, dosing, procedure, treatment, supplement, diet, lab, screening, reproductive, or management instruction",
-      "Variant classification, penetrance, inheritance, family-member risk, clinical actionability, or specialist-level interpretation",
-      "Replacement for a qualified clinician, pharmacist, geneticist, genetic counselor, surgeon, anesthesiologist, rheumatologist, infectious disease specialist, or other relevant professional"
+      "Anesthesia clearance",
+      "Anesthetic-agent selection",
+      "Malignant-hyperthermia diagnosis or pathogenicity inference",
+      "Nitrous oxide adverse-reaction prediction",
+      "Postanesthetic-apnea risk estimate",
+      "Perioperative-risk estimate",
+      "Medication hold or medication-change guidance",
+      "Dosing or monitoring instructions",
+      "Procedure-plan guidance",
+      "Medical-record actionability"
     ],
-    "professionalReview": "Use this output only as preparation for a professional conversation. Health decisions require qualified review with clinical history, medications, symptoms, labs, family history, procedure details when relevant, and validated testing scope."
+    "professionalReview": "Any anesthesia decision requires a qualified anesthesiologist or perioperative clinician using the full clinical record, planned procedure, medication list, allergies, prior anesthesia history, relevant diagnostic testing, and current labs when needed."
   },
-  "practicalNextSteps": {
-    "professionalReview": [
-      "Do not use this local fixture to change medication, supplements, diet, screening, procedures, reproductive decisions, prevention plans, or treatment decisions.",
-      "Bring current symptoms, personal and family history, medications, allergies, labs, prior testing, procedure context when relevant, and ancestry context to a qualified professional if discussing this topic.",
-      "Treat unavailable professional-review rows as unavailable, not as normal, abnormal, low risk, high risk, reassuring, diagnostic, actionable, or all clear."
-    ]
-  },
+  "practicalNextSteps": [
+    "Use this only as a list of topics to discuss with a qualified anesthesiology or perioperative team.",
+    "Bring the actual medication list, allergy history, anesthesia history, family history, prior test reports, and procedure plan to clinical review.",
+    "Do not use this report as anesthesia clearance or as a basis for medication holds, dose changes, monitoring, or anesthetic selection."
+  ],
   "references": [
     {
+      "evidenceLevel": "public_health_background",
       "id": "cdc-genetic-testing",
-      "title": "CDC Genetic Testing"
+      "sourceType": "public_health_resource",
+      "title": "CDC Genetic Testing",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
     },
     {
+      "evidenceLevel": "consumer_education_background",
       "id": "medlineplus-genetics",
-      "title": "MedlinePlus Genetics"
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Genetics",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
     },
     {
+      "evidenceLevel": "public_health_background",
       "id": "medlineplus-genetic-counseling",
-      "title": "MedlinePlus: Genetic Counseling"
+      "sourceType": "public_health_resource",
+      "title": "MedlinePlus: Genetic Counseling",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
     },
     {
+      "evidenceLevel": "regulatory_background",
       "id": "fda-direct-to-consumer-tests",
-      "title": "FDA Direct-to-Consumer Tests"
+      "sourceType": "regulatory_resource",
+      "title": "FDA Direct-to-Consumer Tests",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
     },
     {
+      "evidenceLevel": "public_health_background",
       "id": "cdc-family-health-history",
-      "title": "CDC About Family Health History"
+      "sourceType": "public_health_resource",
+      "title": "CDC About Family Health History",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
     },
     {
+      "evidenceLevel": "public_health_background",
       "id": "cdc-pharmacogenomics",
-      "title": "CDC Pharmacogenomics"
+      "sourceType": "public_health_resource",
+      "title": "CDC Pharmacogenomics",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
     },
     {
+      "evidenceLevel": "consumer_education_background",
       "id": "medlineplus-pharmacogenetic-tests",
-      "title": "MedlinePlus Pharmacogenetic Tests"
+      "sourceType": "education_resource",
+      "title": "MedlinePlus Pharmacogenetic Tests",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
     },
     {
+      "evidenceLevel": "consumer_education_background",
       "id": "nhgri-pharmacogenomics",
-      "title": "NHGRI Pharmacogenomics Fact Sheet"
+      "sourceType": "education_resource",
+      "title": "NHGRI Pharmacogenomics Fact Sheet",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
     },
     {
+      "evidenceLevel": "implementation_background",
       "id": "pharmcat",
-      "title": "PharmCAT"
+      "sourceType": "implementation_resource",
+      "title": "PharmCAT",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
     },
     {
+      "evidenceLevel": "database_background",
       "id": "pharmvar",
-      "title": "PharmVar"
+      "sourceType": "database",
+      "title": "PharmVar",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
     },
     {
+      "evidenceLevel": "expert_background",
       "id": "genereviews-malignant-hyperthermia",
-      "title": "GeneReviews: Nonsyndromic Malignant Hyperthermia Susceptibility"
+      "sourceType": "expert_reference",
+      "title": "GeneReviews: Nonsyndromic Malignant Hyperthermia Susceptibility",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "healthcare-pro-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Healthcare Pro sample report",
+      "usedFor": [
+        "sibling_sample_rows",
+        "formal_fields",
+        "genotype_summary",
+        "output_format",
+        "perioperative_pgx_boundary"
+      ]
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "anesthesiologist-summary-handoff-context-unavailable",
-        "gene": "Anesthesiologist Summary",
-        "observedValue": "anesthesiologist review, planned procedure, planned anesthetic agents, current medication list, allergies, prior anesthesia history, malignant hyperthermia diagnostic status, RYR1/CACNA1S/STAC3 variant classification, anesthesia record, airway assessment, comorbidities, labs, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "effect": "The sample report uses this MTHFR row for Nitrous Oxide ADR and MTHFR Deficiency sample labels.",
+        "extractionStatus": "direct",
+        "gene": "MTHFR",
+        "genotype": "homozygous",
+        "phenotype": "Observed sample content only; do not infer local MTHFR deficiency, homocysteine status, nitrous oxide risk, supplementation, or reproductive guidance. This is Anesthesiologist Summary sibling sample output-structure evidence only, not local nitrous oxide risk, MTHFR deficiency, homocysteine status, postanesthetic-apnea risk, malignant-hyperthermia status, anesthesia clearance, anesthetic-agent selection, medication-hold, dosing, monitoring, procedure-plan, or actionability evidence.",
+        "sortOrder": 1,
+        "tier": "Sample-report visible genotype",
+        "variantId": "Trp339Gly; W339G"
       },
       {
-        "inputId": "anesthesiologist-summary-clinical-review-unavailable",
-        "gene": "anesthesiologist review context",
-        "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "effect": "The sample report labels the sample as a postanesthetic-apnea carrier and likely not affected.",
+        "extractionStatus": "direct",
+        "gene": "BCHE",
+        "genotype": "one copy; carrier",
+        "phenotype": "Observed sample content only; do not infer local anesthesia risk, carrier status, or newborn testing guidance. This is Anesthesiologist Summary sibling sample output-structure evidence only, not local nitrous oxide risk, MTHFR deficiency, homocysteine status, postanesthetic-apnea risk, malignant-hyperthermia status, anesthesia clearance, anesthetic-agent selection, medication-hold, dosing, monitoring, procedure-plan, or actionability evidence.",
+        "sortOrder": 2,
+        "tier": "Sample-report visible carrier marker",
+        "variantId": "Gly418Val"
+      },
+      {
+        "effect": "The sample report states its own analysis completeness and lack-of-ambiguity alerts on the final page.",
+        "extractionStatus": "direct",
+        "gene": "Healthcare Pro analysis",
+        "genotype": "no ambiguity; complete data; all listed conditions analyzed in the sample",
+        "phenotype": "Observed sample quality context only; do not claim local completeness without equivalent local quality evidence. This is Anesthesiologist Summary sibling sample output-structure evidence only, not local nitrous oxide risk, MTHFR deficiency, homocysteine status, postanesthetic-apnea risk, malignant-hyperthermia status, anesthesia clearance, anesthetic-agent selection, medication-hold, dosing, monitoring, procedure-plan, or actionability evidence.",
+        "sortOrder": 3,
+        "tier": "Sample-report analysis quality",
+        "variantId": "analysis-alerts"
+      },
+      {
+        "effect": "The local fixture intentionally omits the clinical and professional context needed for anesthesia decisions.",
+        "extractionStatus": "curated",
+        "gene": "Anesthesiologist review context",
+        "genotype": "planned procedure, planned anesthetic agents, current medication list, allergies, prior anesthesia history, malignant-hyperthermia diagnostic status, RYR1/CACNA1S/STAC3 classification, anesthesia record, airway assessment, comorbidities, labs, and anesthesiologist review unavailable",
+        "phenotype": "Mark anesthesia clearance, anesthetic-agent selection, malignant-hyperthermia diagnosis, perioperative-risk estimation, medication holds, dosing, monitoring, and procedure-plan sections unavailable instead of inferring them.",
+        "sortOrder": 4,
+        "tier": "Local missing input",
+        "variantId": "anesthesiologist-review-context-unavailable"
       }
     ],
     "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and exact rows",
-      "Qualified professional review and complete clinical context",
-      "Current medications, symptoms, family history, labs, procedure details, prior testing, and validated test scope when relevant",
-      "Validated model output, applicability metadata, and professional interpretation for any health decision"
+      "Direct Anesthesiologist Summary detail-page body and result rows",
+      "Planned procedure",
+      "Planned anesthetic agents",
+      "Current medication list and dose context",
+      "Allergies and prior anesthesia history",
+      "Malignant-hyperthermia diagnostic status",
+      "RYR1/CACNA1S/STAC3 variant classification",
+      "Anesthesia record and airway assessment",
+      "Comorbidities and labs",
+      "Anesthesiologist review"
     ],
     "probabilities": [],
     "uncertainty": [
-      "No calibrated professional-clearance, disease-risk, medication-response, procedure-risk, treatment-response, lab-status, screening-benefit, reproductive-risk, supplement-benefit, diet-response, or actionability model is supplied for this local package.",
-      "Interpretation depends on validated test scope, clinical and family history, symptoms, medications, labs, procedures, environment, ancestry applicability, and qualified professional review."
+      "The sibling Healthcare Pro sample demonstrates perioperative and PGx output structure, not calibrated local anesthesia risk.",
+      "Anesthesia decisions depend on procedure details, medication context, clinical history, diagnostic classifications, and qualified professional review not supplied here.",
+      "No probability is emitted because no validated anesthesia-clearance, malignant-hyperthermia, nitrous-oxide, postanesthetic-apnea, perioperative-risk, dosing, or monitoring model was supplied."
     ],
     "limitations": [
-      "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
-      "The report is educational handoff context and does not provide diagnosis, professional clearance, disease-risk estimation, medication guidance, procedure guidance, treatment advice, supplement advice, diet advice, lab interpretation, screening advice, reproductive advice, or clinical actionability.",
-      "Unavailable professional-review rows should never be interpreted as low risk, high risk, no risk, normal, abnormal, reassuring, diagnostic, actionable, or all clear."
+      "Sibling sample rows must stay separate from the user's local evidence.",
+      "MTHFR, BCHE, warfarin, nitrous oxide, and data-completeness sample labels cannot be treated as local findings.",
+      "The package is not full Sequencing.com detail-page parity because exact Anesthesiologist Summary detail/body evidence remains unavailable."
     ]
   }
 }

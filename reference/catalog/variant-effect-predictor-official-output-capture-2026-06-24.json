@@ -1,0 +1,134 @@
+{
+  "schema": "soma-reports.official-output-capture.v1",
+  "slug": "variant-effect-predictor",
+  "title": "Variant Effect Predictor",
+  "capturedAt": "2026-06-24T17:24:12Z",
+  "captureUrl": "https://sequencing.com/marketplace/variant-effect-predictor",
+  "sourceKind": "official-detail-output-scope-boundary",
+  "privacyBoundary": {
+    "rawGenomeIncluded": false,
+    "privateValuesRedacted": true,
+    "commitSafe": true,
+    "notes": "This capture records only official marketplace detail-page purpose and output-scope text. It does not include a user's genome, variant-effect rows, private result URL, or generated VEP output table."
+  },
+  "reportFile": "",
+  "sourceArtifacts": [
+    "https://sequencing.com/marketplace/variant-effect-predictor",
+    "reference/catalog/variant-effect-predictor-authenticated-detail-2026-06-23.json"
+  ],
+  "sourceResources": [
+    {
+      "id": "official-detail-scope-boundary",
+      "title": "Sequencing.com Variant Effect Predictor marketplace detail page",
+      "sourceType": "official_output_boundary",
+      "url": "https://sequencing.com/marketplace/variant-effect-predictor",
+      "sourceArtifact": "reference/catalog/variant-effect-predictor-authenticated-detail-2026-06-23.json",
+      "privacy": "purpose and field-scope text only; no private genome values",
+      "evidenceLevel": "official-output",
+      "extractionStatus": "direct",
+      "scope": "report_specific",
+      "usedFor": [
+        "formalFields",
+        "generatedOutput"
+      ],
+      "note": "Official Sequencing.com source describes output field structure only; no populated private or sample result rows were captured."
+    }
+  ],
+  "sampleRows": [],
+  "resultRows": [],
+  "formalFields": [
+    {
+      "key": "variant_effect_scope",
+      "label": "Effect of genetic variants",
+      "observedField": "effect of genetic variants",
+      "outputPath": "variantEffect.summary.effectOfGeneticVariants",
+      "status": "covered",
+      "sourceLabel": "official-detail-scope-boundary",
+      "sourceResourceIds": [
+        "official-detail-scope-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "gene_scope",
+      "label": "Genes",
+      "observedField": "genes",
+      "outputPath": "variantEffect.scope.genes",
+      "status": "covered",
+      "sourceLabel": "official-detail-scope-boundary",
+      "sourceResourceIds": [
+        "official-detail-scope-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "regulatory_region_scope",
+      "label": "Regulatory regions",
+      "observedField": "regulatory regions",
+      "outputPath": "variantEffect.scope.regulatoryRegions",
+      "status": "covered",
+      "sourceLabel": "official-detail-scope-boundary",
+      "sourceResourceIds": [
+        "official-detail-scope-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "transcript_scope",
+      "label": "Transcripts",
+      "observedField": "transcripts",
+      "outputPath": "variantEffect.scope.transcripts",
+      "status": "covered",
+      "sourceLabel": "official-detail-scope-boundary",
+      "sourceResourceIds": [
+        "official-detail-scope-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "protein_sequence_scope",
+      "label": "Protein sequences",
+      "observedField": "protein sequences",
+      "outputPath": "variantEffect.scope.proteinSequences",
+      "status": "covered",
+      "sourceLabel": "official-detail-scope-boundary",
+      "sourceResourceIds": [
+        "official-detail-scope-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "wgs_exome_scope",
+      "label": "WGS and exome data",
+      "observedField": "whole genome sequencing and exome sequencing data",
+      "outputPath": "variantEffect.inputScope.wgsAndExome",
+      "status": "covered",
+      "sourceLabel": "official-detail-scope-boundary",
+      "sourceResourceIds": [
+        "official-detail-scope-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    }
+  ],
+  "citationBindings": [],
+  "validationCommands": [
+    "npm run scaffold:validate-captures -- --path reference/catalog/variant-effect-predictor-official-output-capture-2026-06-24.json",
+    "npm run scaffold:evidence-audit",
+    "npm run readiness:audit:summary",
+    "npm run agent:validate:formal"
+  ],
+  "promotionBoundary": {
+    "targetStartsAsScaffoldOnly": true,
+    "rowEvidenceReady": false,
+    "requiredEvidenceForPromotion": [
+      "Official Variant Effect Predictor generated sample output",
+      "Formal consequence/effect output rows",
+      "Row-level source bindings for predicted-effect rows"
+    ],
+    "nonPromotionBoundary": [
+      "This capture records official scope text only.",
+      "Do not treat described scopes as sampleRows, resultRows, generatedOutput, or citationBindings.",
+      "Do not mark the package sample-backed formal until official non-empty rows or exports are captured."
+    ]
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "schema": "soma-reports.official-output-capture.v1",
+  "slug": "sequencing-depth-and-coverage",
+  "title": "Sequencing Depth and Coverage",
+  "capturedAt": "2026-06-24T16:56:44Z",
+  "captureUrl": "https://sequencing.com/marketplace/sequencing-depth-and-coverage",
+  "sourceKind": "official-detail-output-field-boundary",
+  "privacyBoundary": {
+    "rawGenomeIncluded": false,
+    "privateValuesRedacted": true,
+    "commitSafe": true,
+    "notes": "This capture records only official marketplace detail-page graph and table structure. It does not include a user's genome, depth values, private result URL, or generated coverage table rows."
+  },
+  "reportFile": "",
+  "sourceArtifacts": [
+    "https://sequencing.com/marketplace/sequencing-depth-and-coverage",
+    "reference/catalog/sequencing-depth-and-coverage-authenticated-detail-2026-06-22.json"
+  ],
+  "sourceResources": [
+    {
+      "id": "official-detail-field-boundary",
+      "title": "Sequencing.com Sequencing Depth and Coverage marketplace detail page",
+      "sourceType": "official_output_boundary",
+      "url": "https://sequencing.com/marketplace/sequencing-depth-and-coverage",
+      "sourceArtifact": "reference/catalog/sequencing-depth-and-coverage-authenticated-detail-2026-06-22.json",
+      "privacy": "field names only; no private genome values",
+      "evidenceLevel": "official-output",
+      "extractionStatus": "direct",
+      "scope": "report_specific",
+      "usedFor": [
+        "formalFields",
+        "generatedOutput"
+      ],
+      "note": "Official Sequencing.com detail page describes output field structure only; no populated private or sample result rows were captured."
+    }
+  ],
+  "sampleRows": [],
+  "resultRows": [],
+  "formalFields": [
+    {
+      "key": "whole_genome_depth_scope",
+      "label": "Whole-genome depth scope",
+      "observedField": "entire genome",
+      "outputPath": "coverage.summary.wholeGenome",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "chromosome_depth_scope",
+      "label": "Chromosome depth scope",
+      "observedField": "chromosome (1-22, X, Y and M)",
+      "outputPath": "coverage.chromosomes[].chromosome",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "average_depth",
+      "label": "Average depth",
+      "observedField": "average depth",
+      "outputPath": "coverage.rows[].averageDepth",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "maximum_depth",
+      "label": "Maximum depth",
+      "observedField": "maximum depth",
+      "outputPath": "coverage.rows[].maximumDepth",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "minimum_depth",
+      "label": "Minimum depth",
+      "observedField": "minimum depth",
+      "outputPath": "coverage.rows[].minimumDepth",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "graph",
+      "label": "Depth and coverage graph",
+      "observedField": "graph",
+      "outputPath": "coverage.graph",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "table",
+      "label": "Depth and coverage table",
+      "observedField": "table",
+      "outputPath": "coverage.table",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    },
+    {
+      "key": "thirty_x_depth_check",
+      "label": "30x depth check",
+      "observedField": "Determine if your genome was truly sequenced at 30x",
+      "outputPath": "coverage.summary.thirtyXDepthCheck",
+      "status": "covered",
+      "sourceLabel": "official-detail-field-boundary",
+      "sourceResourceIds": [
+        "official-detail-field-boundary"
+      ],
+      "sourceBindingStatus": "direct"
+    }
+  ],
+  "citationBindings": [],
+  "generatedOutput": {
+    "valueRedaction": "no generated depth values captured; official detail page describes graph and table structure only",
+    "privateResultUrlCommitted": false,
+    "sections": [
+      {
+        "sectionId": "whole-genome-depth",
+        "title": "Whole-genome depth and coverage",
+        "fields": [
+          "average depth",
+          "maximum depth",
+          "minimum depth",
+          "30x depth check"
+        ],
+        "values": "not captured"
+      },
+      {
+        "sectionId": "chromosome-depth-table",
+        "title": "Chromosome depth and coverage table",
+        "fields": [
+          "chromosome 1-22",
+          "chromosome X",
+          "chromosome Y",
+          "chromosome M",
+          "average depth",
+          "maximum depth",
+          "minimum depth"
+        ],
+        "values": "not captured"
+      }
+    ]
+  },
+  "validationCommands": [
+    "npm run scaffold:validate-captures -- --path reference/catalog/sequencing-depth-and-coverage-official-output-capture-2026-06-24.json",
+    "npm run scaffold:promotion-preview -- --path reference/catalog/sequencing-depth-and-coverage-official-output-capture-2026-06-24.json",
+    "npm run scaffold:evidence-audit",
+    "npm run readiness:audit:summary",
+    "npm run agent:validate:formal"
+  ],
+  "promotionBoundary": {
+    "targetStartsAsScaffoldOnly": true,
+    "rowEvidenceReady": false,
+    "requiredEvidenceForPromotion": [
+      "Official generated depth/coverage sample table",
+      "Formal graph or table rows with non-redacted depth values",
+      "Row-level source bindings for QC output rows"
+    ],
+    "nonPromotionBoundary": [
+      "This capture records official graph/table boundaries only.",
+      "Do not treat described fields as sampleRows or citationBindings.",
+      "Do not mark the package sample-backed formal until official non-empty rows or exports are captured."
+    ]
+  }
+}

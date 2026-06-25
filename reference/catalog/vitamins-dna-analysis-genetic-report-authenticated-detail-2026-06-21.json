@@ -1,0 +1,100 @@
+{
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "capturedAt": "2026-06-21T15:22:16.338Z",
+  "source": "in-app browser sequencing.com marketplace detail page __NEXT_DATA__.props.pageProps.reportData extraction",
+  "url": "https://sequencing.com/marketplace/vitamins-dna-analysis-genetic-report",
+  "finalUrl": "https://sequencing.com/marketplace/vitamins-dna-analysis-genetic-report",
+  "title": "Vitamins DNA Wellness Report",
+  "nid": "15055",
+  "productId": "4744",
+  "app": {
+    "appid": "15041",
+    "label": "Vitamins DNA Wellness Report",
+    "backend": "ApiAppBackend",
+    "apiAppId": null
+  },
+  "publisher": "SelfDecode",
+  "price": "$59",
+  "currencyCode": "USD",
+  "categories": [
+    "Health",
+    "Nutrition",
+    "Children"
+  ],
+  "uri": "marketplace/vitamins-dna-analysis-genetic-report",
+  "reportFile": "https://sequencing.com/sites/default/files/vitamins-dna-analysis-genetic-report-selfdecode-sequencing-genome-apps-sample_0.pdf",
+  "headerImage": "https://sequencing.com/sites/default/files/vitamins-dna-wellness-report-icon1.png",
+  "headerImageAlt": null,
+  "meta": {
+    "canonical": "https://sequencing.com/marketplace/vitamins-dna-analysis-genetic-report",
+    "publishedTime": null,
+    "modifiedTime": null,
+    "ogDescriptionHash": "sha256:9bc2ebff7a154057e87b39e59ec9083475602d43c1537d33240a5ca5ef5f1898",
+    "ogDescriptionPreview": "The Optimal Vitamins For Your Health, Personalized To Your DNA",
+    "productPriceAmount": null,
+    "productPriceCurrency": "USD",
+    "productRetailerItemId": "4744"
+  },
+  "summaryPreview": "The Optimal Vitamins For Your Health, Personalized To Your DNA",
+  "bodyPreview": "The Optimal Vitamins For Your Health, Personalized To Your DNA This innovative app analyzes a wide-range of genes associated with vitamin levels, including vitamin absorption and metabolism. You'll receive a genetic report that provides personalized guidance for improving your health by optimizing your vitamin intake. Includes a genetic analysis of the following vitamins: Vitamin A Vitamin B9 Vitamin B12 Vitamin C Vitamin D Vitamin E Vitamin K Can you rely on plant-based carotenoids for vitamin A? The biologically active form of vitamin A, retinoic acid, is responsible for maintaining a healthy immune system, gut, and skin barrier. BCO1 is a gene that helps activate beta-carotene into retinoic acid and is crucial for the health of your immune system, gut, and skin. While the generic answer is to ensure you get enough vitamin A is to eat more plant-based food, this may not be true for you! Eating more plant-based carotenoids will not do the trick if you carry genetic variants that reduc",
+  "visibleParagraphs": [
+    "Marketplace",
+    "Vitamins DNA Wellness Report",
+    "Developed by SelfDecode",
+    "The Optimal Vitamins For Your Health, Personalized To Your DNA",
+    "$59 per genome",
+    "Get 100% of your DNA data with Whole Genome Sequencing.",
+    "Already have data from a DNA test? Upload your data for free.",
+    "This innovative app analyzes a wide-range of genes associated with vitamin levels, including vitamin absorption and metabolism."
+  ],
+  "infoTabs": [
+    {
+      "label": "Overview",
+      "textPreview": "The Optimal Vitamins For Your Health, Personalized To Your DNA This innovative app analyzes a wide-range of genes associated with vitamin levels, including vitamin absorption and metabolism. You'll receive a genetic report that provides personalized guidance for improving your health by optimizing your vitamin intake. Includes a genetic analysis of the following vitamins: Vitamin A Vitamin B9 Vitamin B12 Vitamin C Vitamin D Vitamin E Vitamin K Can you rely on plant-based carotenoids for vitamin A? The biologically active form of vitamin A, retinoic acid, is responsible for maintaining a healthy immune system, gut, and skin barrier. BCO1 is a gene that helps activate beta-carotene into retinoic acid and is crucial for the health of your immune system, gut, and skin. While the generic answer is to ensure you get enough vitamin A is to eat more plant-based food, this may not be true for you! Eating more plant-based carotenoids will not do the trick if you carry genetic variants that reduce BCO1 function. Instead, you may need to consume more active vitamin A (retinol) from animal sources. This app provides you with the information you need to make informed decisions for optimizing vit"
+    },
+    {
+      "label": "Disclaimer",
+      "textPreview": "The genetic analysis and statements that appear in this app have not been evaluated by the United States Food and Drug Administration. The Sequencing.com website and all software applications (Apps) that use Sequencing.com's website, as well as Sequencing.com's open Application Programming Interface (API), are not intended to diagnose, treat, cure, or prevent any disease."
+    }
+  ],
+  "reportDataKeys": [
+    "app_id",
+    "avatar",
+    "avatarAlt",
+    "body",
+    "category",
+    "currency_code",
+    "headerImg",
+    "headerImgAlt",
+    "id",
+    "included_with_membership",
+    "included_with_premium",
+    "info_tab",
+    "listEnableFiles",
+    "meta",
+    "nid",
+    "non_genetic_fields",
+    "pre_order",
+    "price",
+    "product_data",
+    "product_id",
+    "publisher",
+    "purchasedBy",
+    "relatedReports",
+    "reportFile",
+    "report_premium",
+    "search_keywords",
+    "start_button_text",
+    "sub_title",
+    "summary",
+    "title",
+    "type",
+    "uri",
+    "wgsCompatible"
+  ],
+  "evidenceNotes": [
+    "Marketplace detail reportData confirms title, publisher/provider when available, price/product metadata when available, categories, sample report link when available, and overview/disclaimer tab boundaries when present.",
+    "Use overview/marketing text only for report purpose and marketplace positioning, not for local genetic, medical, diet, supplement, medication, or performance conclusions.",
+    "No raw genome data, uploaded genome data, or account navigation text is included in this artifact."
+  ]
+}

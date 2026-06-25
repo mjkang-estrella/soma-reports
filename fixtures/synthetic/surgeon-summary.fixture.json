@@ -1,5 +1,5 @@
 {
-  "consumerTone": "plain English; consumer-shareable handoff context only; no diagnosis, clearance, risk estimate, medication, procedure, treatment, supplement, diet, lab, screening, reproductive, or actionability claims",
+  "consumerTone": "plain English; consumer-shareable surgeon handoff context only; sibling sample rows are not local findings; no surgical clearance, procedure recommendation, bleeding-risk estimate, wound-healing prediction, infection-risk estimate, medication-hold, antibiotic, lab, imaging, procedure-plan, diagnosis, treatment, or actionability claims",
   "datasetId": "synthetic-surgeon-summary-professional-handoff-context-v1",
   "expectedAssertions": {
     "consumerLanguage": true,
@@ -15,7 +15,7 @@
       "haplotype": "professional-handoff-context-unavailable",
       "inputId": "surgeon-summary-handoff-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "surgeon review, planned procedure, surgical urgency, current medication list, anticoagulant or antiplatelet use, bleeding history, wound-healing history, infection history, allergies, labs, imaging, comorbidities, anesthesia plan, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "surgeon review, planned procedure, surgical urgency, current medication list, anticoagulant or antiplatelet use, bleeding history, wound-healing history, infection history, allergies, labs, imaging, comorbidities, anesthesia plan, and authenticated sample-report rows unavailable in this fixture; public Healthcare Pro sample PDF observed separately as sibling surgical-handoff output-structure evidence",
       "sourceArtifact": "synthetic-surgeon-summary-professional-handoff-context-v1",
       "sourceFile": "synthetic-surgeon-summary-professional-handoff-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "professional-review-unavailable",
       "inputId": "surgeon-summary-clinical-review-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture; public Healthcare Pro sample PDF observed separately as sibling surgical-handoff output-structure evidence",
       "sourceArtifact": "synthetic-surgeon-summary-professional-handoff-context-v1",
       "sourceFile": "synthetic-surgeon-summary-professional-handoff-context-v1.json"
     }
@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-professional-review evidence for surgeon-summary validation"
   },
-  "missingInputPolicy": "Report unavailable surgeon evidence explicitly; do not clear a person for surgery; estimate surgical, bleeding, wound-healing, anesthesia, infection, or complication risk; recommend procedures; recommend medication holds; recommend antibiotics; recommend screening; recommend labs or imaging; or replace surgeon review.",
+  "missingInputPolicy": "Report Healthcare Pro sample rows as sibling surgical-handoff output-structure evidence only; do not convert sample thrombophilia, warfarin, carrier, medication, risk, data-completeness, or medical-record language into local surgical clearance, procedure recommendation, bleeding-risk estimate, wound-healing prediction, infection-risk estimate, anesthesia advice, medication-hold guidance, antibiotic guidance, lab guidance, imaging guidance, procedure-plan guidance, diagnosis, treatment, or actionability.",
   "packageSlug": "surgeon-summary",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -171,7 +171,20 @@
         "non_prescriptive_language",
         "missing_review_policy"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "healthcare-pro-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Healthcare Pro sample report",
+      "usedFor": [
+        "sibling_sample_rows",
+        "formal_fields",
+        "genotype_summary",
+        "output_format",
+        "surgical_handoff_boundary"
+      ]
     }
   ],
-  "reportPurpose": "Consumer-shareable surgeon handoff context using supplied references and explicit unavailable-review framing."
+  "reportPurpose": "Consumer-shareable Surgeon Summary handoff context using supplied local derived evidence plus sibling Healthcare Pro thrombophilia, warfarin, report-identity, and analysis-alert output-structure evidence."
 }

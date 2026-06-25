@@ -1,13 +1,12 @@
 {
+  "schemaVersion": "soma-reports.synthetic-result.v1",
   "reportOverview": {
-    "reportTitle": "Preconception & Pregnancy Planning",
     "inputManifestHash": "sha256:synthetic-preconception-pregnancy-planning-reproductive-endocrine-boundary-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "validated carrier-screen output, partner result, pregnancy status, embryo or fetal testing context, prenatal screening or diagnostic testing context, family history, genetic counselor review, clinician review, and authenticated sample-report rows unavailable in this fixture",
-      "clinical diagnosis, symptoms, labs, medications, family history, professional interpretation, treatment context, and authenticated sample-report rows unavailable in this fixture",
-      "partner result, carrier-screening scope, pregnancy context, embryo or fetal context, hormone-status context, fertility evaluation, and reproductive decision context unavailable in this fixture",
-      "This result is educational boundary context only and is not a diagnosis, carrier-status call, fertility or infertility estimate, hormone-status inference, lab interpretation, pregnancy outcome, fetal or embryo status, testing recommendation, treatment guidance, reproductive decision, or clinical actionability claim."
+      "Validated local Preconception & Pregnancy Planning output and direct same-slug mock-report rows are unavailable in this fixture.",
+      "The public Carrier Status sample PDF rows are available as observed sibling mock-report structure only and must not be treated as this user's findings.",
+      "Partner result, pregnancy status, embryo or fetal testing context, prenatal screening or diagnostic testing context, family history, genetic counselor review, and clinician review are unavailable.",
+      "This result is educational boundary context only and is not diagnosis, medical advice, pregnancy advice, fertility advice, carrier-status reporting, reproductive counseling, treatment guidance, supplement guidance, or clinical actionability."
     ]
   },
   "resultRows": [
@@ -15,11 +14,12 @@
       "groupTitle": "Validated model availability",
       "item": "preconception-pregnancy-planning-model-unavailable",
       "brandName": "",
-      "geneticAnalysis": "Preconception & Pregnancy Planning cannot emit a conclusion from this local fixture because the validated model, professional review, clinical context, and authenticated sample rows are unavailable.",
+      "geneticAnalysis": "Preconception & Pregnancy Planning cannot emit local pregnancy, fetal, embryo, child, carrier, miscarriage, infertility, testing, treatment, supplement, or reproductive-decision conclusions from this fixture because validated carrier-screen output, partner result, pregnancy context, embryo or fetal testing context, family history, and professional review are unavailable.",
+      "description": "The public Carrier Status sample PDF is used only to preserve sibling report structure; it is not evidence of this user's preconception or pregnancy-planning result.",
       "genes": [
         "Preconception & Pregnancy Planning model"
       ],
-      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing",
+      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing; ACOG Carrier Screening",
       "sourceIds": [
         "cdc-genetic-testing",
         "medlineplus-genetics",
@@ -28,71 +28,443 @@
         "medlineplus-genetic-counseling",
         "fda-direct-to-consumer-tests",
         "cdc-family-health-history",
-        "acog-carrier-screening"
+        "acog-carrier-screening",
+        "medlineplus-prenatal-genetic-counseling",
+        "ncbi-clinvar",
+        "ncbi-genetic-testing-registry",
+        "clingen",
+        "acmg-amp-richards-2015"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This row is an availability statement. It does not diagnose a condition, call carrier status, estimate fertility or pregnancy outcomes, infer hormone or lab status, recommend testing or treatment, guide reproductive decisions, or provide an all-clear result."
+      "plainEnglishMeaning": "This is an availability statement. It does not estimate pregnancy, fetal, embryo, child, carrier, miscarriage, infertility, or partner risk; it does not recommend prenatal testing, PGT, IVF, treatment, supplements, pregnancy actions, reproductive decisions, or all-clear reassurance."
     },
     {
-      "groupTitle": "Clinical and lab context availability",
-      "item": "preconception-pregnancy-planning-clinical-context-unavailable",
-      "brandName": "",
-      "geneticAnalysis": "clinical diagnosis, symptoms, labs, medications, family history, professional interpretation, treatment context, and authenticated sample-report rows unavailable in this fixture",
+      "groupTitle": "Sibling sample output structure",
+      "item": "Carrier Status sibling condition table rows",
+      "brandName": "Sibling sample",
+      "geneticAnalysis": "The sibling Carrier Status sample report shows 23 preserved sample rows with exact source binding to carrier-status-sample-pdf.",
+      "description": "The sampleRows entries preserve observed Carrier Status table structure and sample-person Carrier/Absent labels only.",
       "genes": [
-        "Preconception & Pregnancy Planning clinical and lab context"
+        "Sibling sample report"
       ],
-      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing",
+      "sourceLabel": "Public Carrier Status sample PDF",
       "sourceIds": [
-        "cdc-genetic-testing",
-        "medlineplus-genetics",
-        "medlineplus-genetic-testing",
-        "medlineplus-genetic-testing-uses",
-        "medlineplus-genetic-counseling",
-        "fda-direct-to-consumer-tests",
-        "cdc-family-health-history",
-        "acog-carrier-screening"
+        "carrier-status-sample-pdf"
       ],
-      "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "Personal interpretation needs validated test scope, symptoms, medical and family history, medications, labs, partner or pregnancy context when relevant, ancestry applicability, and qualified professional review."
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "These sibling sample rows describe the Carrier Status mock report layout and sample-person labels only. They are not local preconception findings, pregnancy-risk estimates, fetal-risk estimates, embryo-risk estimates, child-risk estimates, carrier-status calls, miscarriage-risk estimates, infertility-risk estimates, partner-risk estimates, prenatal-testing guidance, PGT guidance, IVF guidance, treatment guidance, supplement guidance, reproductive decisions, or all-clear reassurance."
     },
     {
-      "groupTitle": "Reproductive and endocrine context availability",
-      "item": "preconception-pregnancy-planning-reproductive-endocrine-context-unavailable",
+      "groupTitle": "Preconception and pregnancy context availability",
+      "item": "preconception-pregnancy-planning-context-unavailable",
       "brandName": "",
-      "geneticAnalysis": "partner result, carrier-screening scope, pregnancy context, embryo or fetal context, hormone-status context, fertility evaluation, and reproductive decision context unavailable in this fixture",
+      "geneticAnalysis": "Partner result, pregnancy status, embryo or fetal testing context, prenatal screening or diagnostic testing context, family history, genetic counselor review, clinician review, and obstetric context are unavailable in this fixture.",
+      "description": "Personal interpretation needs validated report scope, partner and pregnancy context where relevant, family history, ancestry applicability, and qualified professional review.",
       "genes": [
-        "Preconception & Pregnancy Planning reproductive/endocrine context"
+        "Clinical, reproductive, and partner context"
       ],
-      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing",
+      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetic Counseling; ACOG Carrier Screening",
       "sourceIds": [
         "cdc-genetic-testing",
-        "medlineplus-genetics",
         "medlineplus-genetic-testing",
         "medlineplus-genetic-testing-uses",
         "medlineplus-genetic-counseling",
         "fda-direct-to-consumer-tests",
         "cdc-family-health-history",
-        "acog-carrier-screening"
+        "acog-carrier-screening",
+        "medlineplus-prenatal-genetic-counseling"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "Missing partner, pregnancy, carrier-screening, fertility, hormone, or endocrine context means the report must mark those topics unavailable instead of converting local genetic context into health or reproductive actions."
+      "plainEnglishMeaning": "Missing partner, pregnancy, fetal, embryo, carrier-screening, family-history, and professional-review context means the report must mark those topics unavailable instead of turning sample rows into personal pregnancy-planning, reproductive-risk, or testing guidance."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Report identity",
+      "item": "Inherited Carrier Status table",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "The sample page is titled Inherited Carrier Status and uses Condition, Your Risk, and Description columns.",
+      "description": "Each visible condition row includes risk-frequency, 100% heritable, and chromosome subtext under the condition name.",
+      "genes": [
+        "Carrier-status condition table"
+      ],
+      "sourceLabel": "Public Carrier Status sample PDF",
+      "sourceIds": [
+        "carrier-status-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Preconception & Pregnancy Planning sibling output-structure evidence. Observed one-page sample table structure only; not a local carrier-status result, diagnosis, variant classification, or reproductive-risk estimate. Do not reuse as local carrier status, local no-carrier status, pregnancy risk, fetal risk, embryo risk, child risk, miscarriage risk, infertility risk, partner risk, residual risk, carrier-screen result, variant classification, prenatal-testing guidance, PGT guidance, IVF guidance, reproductive action, treatment guidance, supplement guidance, or all-clear reassurance. This row is an observed sibling sample-row example only, not a local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, prenatal-testing, PGT, IVF, pregnancy-action, reproductive-decision, treatment, supplement, or all-clear finding."
+    },
+    {
+      "groupTitle": "Visible carrier labels",
+      "item": "Alpha-1 Antitrypsin Deficiency",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Carrier; 1 in 1,000 risk, 100% Heritable, Chromosome 14",
+      "description": "May result in lung disease or liver disease. Observed sample row only; not a local carrier-status result, diagnosis, variant classification, reproductive-risk estimate, all-clear result, screening, testing, or treatment guidance.",
+      "genes": [
+        "Condition genes not shown in sample table"
+      ],
+      "sourceLabel": "Public Carrier Status sample PDF",
+      "sourceIds": [
+        "carrier-status-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Preconception & Pregnancy Planning sibling output-structure evidence. Observed Alpha-1 Antitrypsin Deficiency sample row only; do not reuse as local carrier status, local no-carrier status, variant classification, family risk, partner risk, fetal risk, screening, testing, or treatment guidance. Do not reuse as local carrier status, local no-carrier status, pregnancy risk, fetal risk, embryo risk, child risk, miscarriage risk, infertility risk, partner risk, residual risk, carrier-screen result, variant classification, prenatal-testing guidance, PGT guidance, IVF guidance, reproductive action, treatment guidance, supplement guidance, or all-clear reassurance. This row is an observed sibling sample-row example only, not a local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, prenatal-testing, PGT, IVF, pregnancy-action, reproductive-decision, treatment, supplement, or all-clear finding."
+    },
+    {
+      "groupTitle": "Visible carrier labels",
+      "item": "AMPD1 Deficiency",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Carrier; 1 in 50 risk, 100% Heritable, Chromosome 1",
+      "description": "Can affect the muscles used for movement. Observed sample row only; not a local carrier-status result, diagnosis, variant classification, reproductive-risk estimate, all-clear result, screening, testing, or treatment guidance.",
+      "genes": [
+        "Condition genes not shown in sample table"
+      ],
+      "sourceLabel": "Public Carrier Status sample PDF",
+      "sourceIds": [
+        "carrier-status-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Preconception & Pregnancy Planning sibling output-structure evidence. Observed AMPD1 Deficiency sample row only; do not reuse as local carrier status, local no-carrier status, variant classification, family risk, partner risk, fetal risk, screening, testing, or treatment guidance. Do not reuse as local carrier status, local no-carrier status, pregnancy risk, fetal risk, embryo risk, child risk, miscarriage risk, infertility risk, partner risk, residual risk, carrier-screen result, variant classification, prenatal-testing guidance, PGT guidance, IVF guidance, reproductive action, treatment guidance, supplement guidance, or all-clear reassurance. This row is an observed sibling sample-row example only, not a local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, prenatal-testing, PGT, IVF, pregnancy-action, reproductive-decision, treatment, supplement, or all-clear finding."
+    },
+    {
+      "groupTitle": "Visible absent labels",
+      "item": "Beta Thalassemia and Related",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Absent; 1 in 10,000 risk, 100% Heritable, Chromosome 11",
+      "description": "Blood disorder that reduces the production of hemoglobin. Observed sample row only; not a local carrier-status result, diagnosis, variant classification, reproductive-risk estimate, all-clear result, screening, testing, or treatment guidance.",
+      "genes": [
+        "Condition genes not shown in sample table"
+      ],
+      "sourceLabel": "Public Carrier Status sample PDF",
+      "sourceIds": [
+        "carrier-status-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Preconception & Pregnancy Planning sibling output-structure evidence. Observed Beta Thalassemia and Related sample row only; do not reuse as local carrier status, local no-carrier status, variant classification, family risk, partner risk, fetal risk, screening, testing, or treatment guidance. Do not reuse as local carrier status, local no-carrier status, pregnancy risk, fetal risk, embryo risk, child risk, miscarriage risk, infertility risk, partner risk, residual risk, carrier-screen result, variant classification, prenatal-testing guidance, PGT guidance, IVF guidance, reproductive action, treatment guidance, supplement guidance, or all-clear reassurance. This row is an observed sibling sample-row example only, not a local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, prenatal-testing, PGT, IVF, pregnancy-action, reproductive-decision, treatment, supplement, or all-clear finding."
+    },
+    {
+      "groupTitle": "Visible absent labels",
+      "item": "Cystic Fibrosis",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Absent; 1 in 3,000 risk, 100% Heritable, Chromosome 7",
+      "description": "Mucus in lungs, interfering with breathing. Observed sample row only; not a local carrier-status result, diagnosis, variant classification, reproductive-risk estimate, all-clear result, screening, testing, or treatment guidance.",
+      "genes": [
+        "Condition genes not shown in sample table"
+      ],
+      "sourceLabel": "Public Carrier Status sample PDF",
+      "sourceIds": [
+        "carrier-status-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Preconception & Pregnancy Planning sibling output-structure evidence. Observed Cystic Fibrosis sample row only; do not reuse as local carrier status, local no-carrier status, variant classification, family risk, partner risk, fetal risk, screening, testing, or treatment guidance. Do not reuse as local carrier status, local no-carrier status, pregnancy risk, fetal risk, embryo risk, child risk, miscarriage risk, infertility risk, partner risk, residual risk, carrier-screen result, variant classification, prenatal-testing guidance, PGT guidance, IVF guidance, reproductive action, treatment guidance, supplement guidance, or all-clear reassurance. This row is an observed sibling sample-row example only, not a local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, prenatal-testing, PGT, IVF, pregnancy-action, reproductive-decision, treatment, supplement, or all-clear finding."
+    },
+    {
+      "groupTitle": "Visible absent labels",
+      "item": "Gaucher's Disease",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Absent; 1 in 10,000 risk, 100% Heritable, Chromosome 1",
+      "description": "A chronic enzyme deficiency in which a fatty substance accumulates in the spleen, liver, and other organs. Observed sample row only; not a local carrier-status result, diagnosis, variant classification, reproductive-risk estimate, all-clear result, screening, testing, or treatment guidance.",
+      "genes": [
+        "Condition genes not shown in sample table"
+      ],
+      "sourceLabel": "Public Carrier Status sample PDF",
+      "sourceIds": [
+        "carrier-status-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Preconception & Pregnancy Planning sibling output-structure evidence. Observed Gaucher's Disease sample row only; do not reuse as local carrier status, local no-carrier status, variant classification, family risk, partner risk, fetal risk, screening, testing, or treatment guidance. Do not reuse as local carrier status, local no-carrier status, pregnancy risk, fetal risk, embryo risk, child risk, miscarriage risk, infertility risk, partner risk, residual risk, carrier-screen result, variant classification, prenatal-testing guidance, PGT guidance, IVF guidance, reproductive action, treatment guidance, supplement guidance, or all-clear reassurance. This row is an observed sibling sample-row example only, not a local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, prenatal-testing, PGT, IVF, pregnancy-action, reproductive-decision, treatment, supplement, or all-clear finding."
+    },
+    {
+      "groupTitle": "Visible absent labels",
+      "item": "Hemophilia - Factor XI Deficiency",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Absent; 1 in 5,000 risk, 100% Heritable, Chromosome 4",
+      "description": "A disorder in which blood doesn't clot normally. Observed sample row only; not a local carrier-status result, diagnosis, variant classification, reproductive-risk estimate, all-clear result, screening, testing, or treatment guidance.",
+      "genes": [
+        "Condition genes not shown in sample table"
+      ],
+      "sourceLabel": "Public Carrier Status sample PDF",
+      "sourceIds": [
+        "carrier-status-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Preconception & Pregnancy Planning sibling output-structure evidence. Observed Hemophilia - Factor XI Deficiency sample row only; do not reuse as local carrier status, local no-carrier status, variant classification, family risk, partner risk, fetal risk, screening, testing, or treatment guidance. Do not reuse as local carrier status, local no-carrier status, pregnancy risk, fetal risk, embryo risk, child risk, miscarriage risk, infertility risk, partner risk, residual risk, carrier-screen result, variant classification, prenatal-testing guidance, PGT guidance, IVF guidance, reproductive action, treatment guidance, supplement guidance, or all-clear reassurance. This row is an observed sibling sample-row example only, not a local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, prenatal-testing, PGT, IVF, pregnancy-action, reproductive-decision, treatment, supplement, or all-clear finding."
+    },
+    {
+      "groupTitle": "Visible absent labels",
+      "item": "Hereditary Fructose Intolerance",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Absent; 1 in 3,000 risk, 100% Heritable, Chromosome 9",
+      "description": "Individuals affected are asymptomatic until they ingest fructose, sucrose, or sorbitol. Observed sample row only; not a local carrier-status result, diagnosis, variant classification, reproductive-risk estimate, all-clear result, screening, testing, or treatment guidance.",
+      "genes": [
+        "Condition genes not shown in sample table"
+      ],
+      "sourceLabel": "Public Carrier Status sample PDF",
+      "sourceIds": [
+        "carrier-status-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Preconception & Pregnancy Planning sibling output-structure evidence. Observed Hereditary Fructose Intolerance sample row only; do not reuse as local carrier status, local no-carrier status, variant classification, family risk, partner risk, fetal risk, screening, testing, or treatment guidance. Do not reuse as local carrier status, local no-carrier status, pregnancy risk, fetal risk, embryo risk, child risk, miscarriage risk, infertility risk, partner risk, residual risk, carrier-screen result, variant classification, prenatal-testing guidance, PGT guidance, IVF guidance, reproductive action, treatment guidance, supplement guidance, or all-clear reassurance. This row is an observed sibling sample-row example only, not a local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, prenatal-testing, PGT, IVF, pregnancy-action, reproductive-decision, treatment, supplement, or all-clear finding."
+    },
+    {
+      "groupTitle": "Visible absent labels",
+      "item": "Hereditary Hemochromatosis",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Absent; 1 in 400 risk, 100% Heritable, Chromosome 6",
+      "description": "Abnormally high absorption of iron from the diet. Observed sample row only; not a local carrier-status result, diagnosis, variant classification, reproductive-risk estimate, all-clear result, screening, testing, or treatment guidance.",
+      "genes": [
+        "Condition genes not shown in sample table"
+      ],
+      "sourceLabel": "Public Carrier Status sample PDF",
+      "sourceIds": [
+        "carrier-status-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Preconception & Pregnancy Planning sibling output-structure evidence. Observed Hereditary Hemochromatosis sample row only; do not reuse as local carrier status, local no-carrier status, variant classification, family risk, partner risk, fetal risk, screening, testing, or treatment guidance. Do not reuse as local carrier status, local no-carrier status, pregnancy risk, fetal risk, embryo risk, child risk, miscarriage risk, infertility risk, partner risk, residual risk, carrier-screen result, variant classification, prenatal-testing guidance, PGT guidance, IVF guidance, reproductive action, treatment guidance, supplement guidance, or all-clear reassurance. This row is an observed sibling sample-row example only, not a local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, prenatal-testing, PGT, IVF, pregnancy-action, reproductive-decision, treatment, supplement, or all-clear finding."
+    },
+    {
+      "groupTitle": "Visible absent labels",
+      "item": "Hirschsprung's Disease",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Absent; 1 in 5,000 risk, 100% Heritable, Chromosome 13",
+      "description": "A condition of the colon that causes difficulty passing stool. Observed sample row only; not a local carrier-status result, diagnosis, variant classification, reproductive-risk estimate, all-clear result, screening, testing, or treatment guidance.",
+      "genes": [
+        "Condition genes not shown in sample table"
+      ],
+      "sourceLabel": "Public Carrier Status sample PDF",
+      "sourceIds": [
+        "carrier-status-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Preconception & Pregnancy Planning sibling output-structure evidence. Observed Hirschsprung's Disease sample row only; do not reuse as local carrier status, local no-carrier status, variant classification, family risk, partner risk, fetal risk, screening, testing, or treatment guidance. Do not reuse as local carrier status, local no-carrier status, pregnancy risk, fetal risk, embryo risk, child risk, miscarriage risk, infertility risk, partner risk, residual risk, carrier-screen result, variant classification, prenatal-testing guidance, PGT guidance, IVF guidance, reproductive action, treatment guidance, supplement guidance, or all-clear reassurance. This row is an observed sibling sample-row example only, not a local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, prenatal-testing, PGT, IVF, pregnancy-action, reproductive-decision, treatment, supplement, or all-clear finding."
+    },
+    {
+      "groupTitle": "Visible absent labels",
+      "item": "Macular Corneal Dystrophy",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Absent; 1 in 1,000 risk, 100% Heritable, Chromosome 16",
+      "description": "Characterized by multiple irregular gray-white opacities in the corneal. Observed sample row only; not a local carrier-status result, diagnosis, variant classification, reproductive-risk estimate, all-clear result, screening, testing, or treatment guidance.",
+      "genes": [
+        "Condition genes not shown in sample table"
+      ],
+      "sourceLabel": "Public Carrier Status sample PDF",
+      "sourceIds": [
+        "carrier-status-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Preconception & Pregnancy Planning sibling output-structure evidence. Observed Macular Corneal Dystrophy sample row only; do not reuse as local carrier status, local no-carrier status, variant classification, family risk, partner risk, fetal risk, screening, testing, or treatment guidance. Do not reuse as local carrier status, local no-carrier status, pregnancy risk, fetal risk, embryo risk, child risk, miscarriage risk, infertility risk, partner risk, residual risk, carrier-screen result, variant classification, prenatal-testing guidance, PGT guidance, IVF guidance, reproductive action, treatment guidance, supplement guidance, or all-clear reassurance. This row is an observed sibling sample-row example only, not a local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, prenatal-testing, PGT, IVF, pregnancy-action, reproductive-decision, treatment, supplement, or all-clear finding."
+    },
+    {
+      "groupTitle": "Visible absent labels",
+      "item": "MCAD Deficiency",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Absent; 1 in 5,000 risk, 100% Heritable, Chromosome 1",
+      "description": "A disorder that prevents your body from breaking down certain fats and converting them into energy. Observed sample row only; not a local carrier-status result, diagnosis, variant classification, reproductive-risk estimate, all-clear result, screening, testing, or treatment guidance.",
+      "genes": [
+        "Condition genes not shown in sample table"
+      ],
+      "sourceLabel": "Public Carrier Status sample PDF",
+      "sourceIds": [
+        "carrier-status-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Preconception & Pregnancy Planning sibling output-structure evidence. Observed MCAD Deficiency sample row only; do not reuse as local carrier status, local no-carrier status, variant classification, family risk, partner risk, fetal risk, screening, testing, or treatment guidance. Do not reuse as local carrier status, local no-carrier status, pregnancy risk, fetal risk, embryo risk, child risk, miscarriage risk, infertility risk, partner risk, residual risk, carrier-screen result, variant classification, prenatal-testing guidance, PGT guidance, IVF guidance, reproductive action, treatment guidance, supplement guidance, or all-clear reassurance. This row is an observed sibling sample-row example only, not a local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, prenatal-testing, PGT, IVF, pregnancy-action, reproductive-decision, treatment, supplement, or all-clear finding."
+    },
+    {
+      "groupTitle": "Visible carrier labels",
+      "item": "Nonsyndromic Deafness",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Carrier; 1 in 7,000 risk, 100% Heritable, Chromosome 13",
+      "description": "Hearing loss that is not associated with other signs and symptoms. Observed sample row only; not a local carrier-status result, diagnosis, variant classification, reproductive-risk estimate, all-clear result, screening, testing, or treatment guidance.",
+      "genes": [
+        "Condition genes not shown in sample table"
+      ],
+      "sourceLabel": "Public Carrier Status sample PDF",
+      "sourceIds": [
+        "carrier-status-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Preconception & Pregnancy Planning sibling output-structure evidence. Observed Nonsyndromic Deafness sample row only; do not reuse as local carrier status, local no-carrier status, variant classification, family risk, partner risk, fetal risk, screening, testing, or treatment guidance. Do not reuse as local carrier status, local no-carrier status, pregnancy risk, fetal risk, embryo risk, child risk, miscarriage risk, infertility risk, partner risk, residual risk, carrier-screen result, variant classification, prenatal-testing guidance, PGT guidance, IVF guidance, reproductive action, treatment guidance, supplement guidance, or all-clear reassurance. This row is an observed sibling sample-row example only, not a local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, prenatal-testing, PGT, IVF, pregnancy-action, reproductive-decision, treatment, supplement, or all-clear finding."
+    },
+    {
+      "groupTitle": "Visible absent labels",
+      "item": "Phenylketonuria",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Absent; 1 in 10,000 risk, 100% Heritable, Chromosome 12",
+      "description": "A birth defect that causes an amino acid called phenylalanine to build up in the body. Observed sample row only; not a local carrier-status result, diagnosis, variant classification, reproductive-risk estimate, all-clear result, screening, testing, or treatment guidance.",
+      "genes": [
+        "Condition genes not shown in sample table"
+      ],
+      "sourceLabel": "Public Carrier Status sample PDF",
+      "sourceIds": [
+        "carrier-status-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Preconception & Pregnancy Planning sibling output-structure evidence. Observed Phenylketonuria sample row only; do not reuse as local carrier status, local no-carrier status, variant classification, family risk, partner risk, fetal risk, screening, testing, or treatment guidance. Do not reuse as local carrier status, local no-carrier status, pregnancy risk, fetal risk, embryo risk, child risk, miscarriage risk, infertility risk, partner risk, residual risk, carrier-screen result, variant classification, prenatal-testing guidance, PGT guidance, IVF guidance, reproductive action, treatment guidance, supplement guidance, or all-clear reassurance. This row is an observed sibling sample-row example only, not a local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, prenatal-testing, PGT, IVF, pregnancy-action, reproductive-decision, treatment, supplement, or all-clear finding."
+    },
+    {
+      "groupTitle": "Visible absent labels",
+      "item": "Polycystic Kidney Disease",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Absent; 1 in 1,200 risk, 100% Heritable, Chromosome 16",
+      "description": "Cysts resulting in enlarged kidneys and renal failure. Observed sample row only; not a local carrier-status result, diagnosis, variant classification, reproductive-risk estimate, all-clear result, screening, testing, or treatment guidance.",
+      "genes": [
+        "Condition genes not shown in sample table"
+      ],
+      "sourceLabel": "Public Carrier Status sample PDF",
+      "sourceIds": [
+        "carrier-status-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Preconception & Pregnancy Planning sibling output-structure evidence. Observed Polycystic Kidney Disease sample row only; do not reuse as local carrier status, local no-carrier status, variant classification, family risk, partner risk, fetal risk, screening, testing, or treatment guidance. Do not reuse as local carrier status, local no-carrier status, pregnancy risk, fetal risk, embryo risk, child risk, miscarriage risk, infertility risk, partner risk, residual risk, carrier-screen result, variant classification, prenatal-testing guidance, PGT guidance, IVF guidance, reproductive action, treatment guidance, supplement guidance, or all-clear reassurance. This row is an observed sibling sample-row example only, not a local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, prenatal-testing, PGT, IVF, pregnancy-action, reproductive-decision, treatment, supplement, or all-clear finding."
+    },
+    {
+      "groupTitle": "Visible absent labels",
+      "item": "Pseudocholinesterase Deficiency",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Absent; 1 in 4,000 risk, 100% Heritable, Chromosome 3",
+      "description": "Increased sensitivity to certain muscle relaxant drugs used during general anesthesia. Observed sample row only; not a local carrier-status result, diagnosis, variant classification, reproductive-risk estimate, all-clear result, screening, testing, or treatment guidance.",
+      "genes": [
+        "Condition genes not shown in sample table"
+      ],
+      "sourceLabel": "Public Carrier Status sample PDF",
+      "sourceIds": [
+        "carrier-status-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Preconception & Pregnancy Planning sibling output-structure evidence. Observed Pseudocholinesterase Deficiency sample row only; do not reuse as local carrier status, local no-carrier status, variant classification, family risk, partner risk, fetal risk, screening, testing, or treatment guidance. Do not reuse as local carrier status, local no-carrier status, pregnancy risk, fetal risk, embryo risk, child risk, miscarriage risk, infertility risk, partner risk, residual risk, carrier-screen result, variant classification, prenatal-testing guidance, PGT guidance, IVF guidance, reproductive action, treatment guidance, supplement guidance, or all-clear reassurance. This row is an observed sibling sample-row example only, not a local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, prenatal-testing, PGT, IVF, pregnancy-action, reproductive-decision, treatment, supplement, or all-clear finding."
+    },
+    {
+      "groupTitle": "Visible absent labels",
+      "item": "Retinitis Pigmentosa",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Absent; 1 in 4,000 risk, 100% Heritable, Chromosomes 1,2",
+      "description": "Progressive degeneration of the retina. Observed sample row only; not a local carrier-status result, diagnosis, variant classification, reproductive-risk estimate, all-clear result, screening, testing, or treatment guidance.",
+      "genes": [
+        "Condition genes not shown in sample table"
+      ],
+      "sourceLabel": "Public Carrier Status sample PDF",
+      "sourceIds": [
+        "carrier-status-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Preconception & Pregnancy Planning sibling output-structure evidence. Observed Retinitis Pigmentosa sample row only; do not reuse as local carrier status, local no-carrier status, variant classification, family risk, partner risk, fetal risk, screening, testing, or treatment guidance. Do not reuse as local carrier status, local no-carrier status, pregnancy risk, fetal risk, embryo risk, child risk, miscarriage risk, infertility risk, partner risk, residual risk, carrier-screen result, variant classification, prenatal-testing guidance, PGT guidance, IVF guidance, reproductive action, treatment guidance, supplement guidance, or all-clear reassurance. This row is an observed sibling sample-row example only, not a local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, prenatal-testing, PGT, IVF, pregnancy-action, reproductive-decision, treatment, supplement, or all-clear finding."
+    },
+    {
+      "groupTitle": "Visible absent labels",
+      "item": "Sickle-Cell Anemia",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Absent; 1 in 20 risk for Africans, 100% Heritable, Chr 11",
+      "description": "Chronic anemia, with red blood cells clogging arterioles. Observed sample row only; not a local carrier-status result, diagnosis, variant classification, reproductive-risk estimate, all-clear result, screening, testing, or treatment guidance.",
+      "genes": [
+        "Condition genes not shown in sample table"
+      ],
+      "sourceLabel": "Public Carrier Status sample PDF",
+      "sourceIds": [
+        "carrier-status-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Preconception & Pregnancy Planning sibling output-structure evidence. Observed Sickle-Cell Anemia sample row only; do not reuse as local carrier status, local no-carrier status, variant classification, family risk, partner risk, fetal risk, screening, testing, or treatment guidance. Do not reuse as local carrier status, local no-carrier status, pregnancy risk, fetal risk, embryo risk, child risk, miscarriage risk, infertility risk, partner risk, residual risk, carrier-screen result, variant classification, prenatal-testing guidance, PGT guidance, IVF guidance, reproductive action, treatment guidance, supplement guidance, or all-clear reassurance. This row is an observed sibling sample-row example only, not a local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, prenatal-testing, PGT, IVF, pregnancy-action, reproductive-decision, treatment, supplement, or all-clear finding."
+    },
+    {
+      "groupTitle": "Visible carrier labels",
+      "item": "Stargardt's Disease",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Carrier; 1 in 10,000 risk, 100% Heritable, Chromosome 1",
+      "description": "Progressive degeneration of the macula. Observed sample row only; not a local carrier-status result, diagnosis, variant classification, reproductive-risk estimate, all-clear result, screening, testing, or treatment guidance.",
+      "genes": [
+        "Condition genes not shown in sample table"
+      ],
+      "sourceLabel": "Public Carrier Status sample PDF",
+      "sourceIds": [
+        "carrier-status-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Preconception & Pregnancy Planning sibling output-structure evidence. Observed Stargardt's Disease sample row only; do not reuse as local carrier status, local no-carrier status, variant classification, family risk, partner risk, fetal risk, screening, testing, or treatment guidance. Do not reuse as local carrier status, local no-carrier status, pregnancy risk, fetal risk, embryo risk, child risk, miscarriage risk, infertility risk, partner risk, residual risk, carrier-screen result, variant classification, prenatal-testing guidance, PGT guidance, IVF guidance, reproductive action, treatment guidance, supplement guidance, or all-clear reassurance. This row is an observed sibling sample-row example only, not a local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, prenatal-testing, PGT, IVF, pregnancy-action, reproductive-decision, treatment, supplement, or all-clear finding."
+    },
+    {
+      "groupTitle": "Visible absent labels",
+      "item": "Tay-Sachs Disease",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Absent; 1 in 3,000 risk, 100% Heritable, Chromosome 15",
+      "description": "Fatal hereditary disorder that results in destruction of nerve cells in the brain and spinal cord. Observed sample row only; not a local carrier-status result, diagnosis, variant classification, reproductive-risk estimate, all-clear result, screening, testing, or treatment guidance.",
+      "genes": [
+        "Condition genes not shown in sample table"
+      ],
+      "sourceLabel": "Public Carrier Status sample PDF",
+      "sourceIds": [
+        "carrier-status-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Preconception & Pregnancy Planning sibling output-structure evidence. Observed Tay-Sachs Disease sample row only; do not reuse as local carrier status, local no-carrier status, variant classification, family risk, partner risk, fetal risk, screening, testing, or treatment guidance. Do not reuse as local carrier status, local no-carrier status, pregnancy risk, fetal risk, embryo risk, child risk, miscarriage risk, infertility risk, partner risk, residual risk, carrier-screen result, variant classification, prenatal-testing guidance, PGT guidance, IVF guidance, reproductive action, treatment guidance, supplement guidance, or all-clear reassurance. This row is an observed sibling sample-row example only, not a local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, prenatal-testing, PGT, IVF, pregnancy-action, reproductive-decision, treatment, supplement, or all-clear finding."
+    },
+    {
+      "groupTitle": "Visible absent labels",
+      "item": "Variegate Porphyria",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Absent; 1 in 10,000 risk, 100% Heritable, Chromosome 1",
+      "description": "Can have acute symptoms along with symptoms that affect the skin. Observed sample row only; not a local carrier-status result, diagnosis, variant classification, reproductive-risk estimate, all-clear result, screening, testing, or treatment guidance.",
+      "genes": [
+        "Condition genes not shown in sample table"
+      ],
+      "sourceLabel": "Public Carrier Status sample PDF",
+      "sourceIds": [
+        "carrier-status-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Preconception & Pregnancy Planning sibling output-structure evidence. Observed Variegate Porphyria sample row only; do not reuse as local carrier status, local no-carrier status, variant classification, family risk, partner risk, fetal risk, screening, testing, or treatment guidance. Do not reuse as local carrier status, local no-carrier status, pregnancy risk, fetal risk, embryo risk, child risk, miscarriage risk, infertility risk, partner risk, residual risk, carrier-screen result, variant classification, prenatal-testing guidance, PGT guidance, IVF guidance, reproductive action, treatment guidance, supplement guidance, or all-clear reassurance. This row is an observed sibling sample-row example only, not a local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, prenatal-testing, PGT, IVF, pregnancy-action, reproductive-decision, treatment, supplement, or all-clear finding."
+    },
+    {
+      "groupTitle": "Visible absent labels",
+      "item": "Von Willebrand Disease",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Absent; 1 in 1,000 risk, 100% Heritable, Chromosome 12",
+      "description": "A defective von Willebrand factor, a clotting protein. Observed sample row only; not a local carrier-status result, diagnosis, variant classification, reproductive-risk estimate, all-clear result, screening, testing, or treatment guidance.",
+      "genes": [
+        "Condition genes not shown in sample table"
+      ],
+      "sourceLabel": "Public Carrier Status sample PDF",
+      "sourceIds": [
+        "carrier-status-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Preconception & Pregnancy Planning sibling output-structure evidence. Observed Von Willebrand Disease sample row only; do not reuse as local carrier status, local no-carrier status, variant classification, family risk, partner risk, fetal risk, screening, testing, or treatment guidance. Do not reuse as local carrier status, local no-carrier status, pregnancy risk, fetal risk, embryo risk, child risk, miscarriage risk, infertility risk, partner risk, residual risk, carrier-screen result, variant classification, prenatal-testing guidance, PGT guidance, IVF guidance, reproductive action, treatment guidance, supplement guidance, or all-clear reassurance. This row is an observed sibling sample-row example only, not a local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, prenatal-testing, PGT, IVF, pregnancy-action, reproductive-decision, treatment, supplement, or all-clear finding."
+    },
+    {
+      "groupTitle": "Additional tested conditions footer",
+      "item": "Additional inherited carrier-status conditions",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "The footer says many other inherited carrier-status conditions were tested, including Canavan Disease, Familial Dysautonomia, Fanconi Anemia, GRACILE Syndrome, Mucolipidosis, Niemann-Pick Disease, Rhizomelic Chondrodysplasia Punctata, Usher Syndrome, and many other conditions.",
+      "description": "The footer points readers to Your Inherited Conditions on the final page of the section to see if they are a Carrier.",
+      "genes": [
+        "Additional tested-condition list"
+      ],
+      "sourceLabel": "Public Carrier Status sample PDF",
+      "sourceIds": [
+        "carrier-status-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Preconception & Pregnancy Planning sibling output-structure evidence. Observed footer text only; do not infer local tested-condition coverage, final-page availability, carrier status, or absence of findings. Do not reuse as local carrier status, local no-carrier status, pregnancy risk, fetal risk, embryo risk, child risk, miscarriage risk, infertility risk, partner risk, residual risk, carrier-screen result, variant classification, prenatal-testing guidance, PGT guidance, IVF guidance, reproductive action, treatment guidance, supplement guidance, or all-clear reassurance. This row is an observed sibling sample-row example only, not a local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, prenatal-testing, PGT, IVF, pregnancy-action, reproductive-decision, treatment, supplement, or all-clear finding."
     }
   ],
   "reproductiveEndocrineContext": {
-    "plainEnglishMeaning": "Preconception & Pregnancy Planning is currently a reproductive/endocrine boundary package. It can document what evidence is available and what is missing, but it cannot produce carrier, fertility, hormone, pregnancy, lab, treatment, testing, or reproductive-action conclusions from local evidence alone.",
+    "plainEnglishMeaning": "This package can preserve sibling Carrier Status report structure and explain which preconception inputs are missing. It cannot answer pregnancy-planning, fetal, embryo, child, carrier, miscarriage, infertility, partner-risk, testing, treatment, supplement, or reproductive-decision questions from this fixture.",
     "unsupportedClaims": [
-      "Diagnosis, all-clear result, carrier-status call, variant classification, or personal disease-risk estimate",
-      "Fertility, infertility, pregnancy, miscarriage, embryo, fetal, child, partner, hormone, endocrine, sexual-health, or lab-status conclusion",
-      "Testing, screening, medication, supplement, diet, surgery, treatment, IVF, PGT, prenatal-testing, pregnancy-action, or reproductive-decision guidance",
-      "Replacement for qualified clinician, endocrinologist, obstetric professional, fertility specialist, geneticist, or genetic counselor review"
+      "Pregnancy-risk estimate",
+      "Fetal-risk, embryo-risk, or child-risk estimate",
+      "Carrier-status call or variant classification",
+      "Miscarriage-risk or infertility-risk estimate",
+      "Partner-risk or residual-risk estimate",
+      "Prenatal testing, PGT, IVF, treatment, supplement, pregnancy-action, reproductive-decision, or all-clear guidance"
     ],
-    "professionalReview": "Use this output only as preparation for a professional conversation. Health or reproductive decisions require qualified review with clinical history, symptoms, medications, labs, family history, partner context, pregnancy context when relevant, and validated testing scope."
+    "professionalReview": "Use a genetic counselor, clinician, or obstetric professional for personal preconception or pregnancy-planning decisions with the full testing scope, partner/family history, pregnancy context, and clinical history."
   },
   "practicalNextSteps": {
-    "professionalReview": [
-      "Do not use this local fixture to change medication, supplements, diet, testing, screening, procedures, fertility treatment, pregnancy plans, or reproductive decisions.",
-      "Bring current symptoms, medical and family history, medications, labs, prior testing, partner context, pregnancy context when relevant, and ancestry context to a qualified professional if discussing this topic.",
-      "Treat unavailable model rows as unavailable, not as normal, abnormal, low risk, high risk, reassuring, diagnostic, actionable, or all clear."
+    "clinicianReview": [
+      "Use the sibling sample rows only as output-format examples, not personal findings.",
+      "Discuss actual preconception or pregnancy-planning questions with a genetic counselor or clinician using validated testing and partner/family context.",
+      "Do not start, stop, or choose prenatal testing, PGT, IVF, supplements, treatment, or pregnancy actions based on this sample-only fixture."
     ]
   },
   "references": [
@@ -147,6 +519,10 @@
     {
       "id": "acmg-amp-richards-2015",
       "title": "ACMG/AMP 2015 sequence variant interpretation standards"
+    },
+    {
+      "id": "carrier-status-sample-pdf",
+      "title": "Carrier Status sample report"
     }
   ],
   "appendix": {
@@ -154,37 +530,72 @@
       {
         "inputId": "preconception-pregnancy-planning-model-unavailable",
         "gene": "Preconception & Pregnancy Planning model",
-        "observedValue": "validated carrier-screen output, partner result, pregnancy status, embryo or fetal testing context, prenatal screening or diagnostic testing context, family history, genetic counselor review, clinician review, and authenticated sample-report rows unavailable in this fixture",
+        "observedValue": "reproductive-endocrine-model-unavailable",
         "matchStatus": "unavailable"
       },
       {
         "inputId": "preconception-pregnancy-planning-clinical-context-unavailable",
         "gene": "Preconception & Pregnancy Planning clinical and lab context",
-        "observedValue": "clinical diagnosis, symptoms, labs, medications, family history, professional interpretation, treatment context, and authenticated sample-report rows unavailable in this fixture",
+        "observedValue": "clinical-lab-professional-context-unavailable",
         "matchStatus": "unavailable"
       },
       {
         "inputId": "preconception-pregnancy-planning-reproductive-endocrine-context-unavailable",
         "gene": "Preconception & Pregnancy Planning reproductive/endocrine context",
-        "observedValue": "partner result, carrier-screening scope, pregnancy context, embryo or fetal context, hormone-status context, fertility evaluation, and reproductive decision context unavailable in this fixture",
+        "observedValue": "reproductive-endocrine-context-unavailable",
         "matchStatus": "unavailable"
+      },
+      {
+        "inputId": "preconception-pregnancy-planning-public-sibling-sample-output-structure",
+        "gene": "Carrier Status public sample",
+        "observedValue": "public-sibling-sample-output-structure-observed",
+        "matchStatus": "observed"
+      },
+      {
+        "inputId": "sample-preconception-pregnancy-planning-model-unavailable",
+        "gene": "Preconception & Pregnancy Planning model",
+        "observedValue": "validated carrier-screen output, partner result, pregnancy status, embryo or fetal testing context, prenatal screening or diagnostic testing context, family history, genetic counselor review, and clinician review unavailable",
+        "matchStatus": "unavailable",
+        "note": "Mark local pregnancy-risk, fetal-risk, embryo-risk, child-risk, carrier-status, miscarriage-risk, infertility-risk, partner-risk, carrier-screening, prenatal-testing, diagnostic-testing, treatment, supplement, pregnancy-action, and reproductive-decision sections unavailable instead of inferring them."
+      },
+      {
+        "inputId": "sample-sample-visible-carrier-labels",
+        "gene": "Carrier-status sample table",
+        "observedValue": "Alpha-1 Antitrypsin Deficiency Carrier; AMPD1 Deficiency Carrier; Nonsyndromic Deafness Carrier; Stargardt's Disease Carrier",
+        "matchStatus": "sibling_sample_only",
+        "note": "Observed sample labels only; do not infer local carrier status, disease risk, family risk, partner risk, reproductive risk, screening need, or treatment action. This is Preconception & Pregnancy Planning sibling sample output-structure evidence only, not a local pregnancy, fetal, embryo, child, carrier, miscarriage, infertility, partner-risk, prenatal-testing, PGT, IVF, reproductive-action, treatment, supplement, or all-clear finding."
+      },
+      {
+        "inputId": "sample-sample-visible-absent-labels",
+        "gene": "Carrier-status sample table",
+        "observedValue": "Visible Absent labels include Cystic Fibrosis, Gaucher's Disease, Hereditary Hemochromatosis, Phenylketonuria, Tay-Sachs Disease, Von Willebrand Disease, and other listed rows",
+        "matchStatus": "sibling_sample_only",
+        "note": "Observed sample labels only; do not infer local all-clear status, variant absence, panel sensitivity, residual risk, or no-carrier reassurance. This is Preconception & Pregnancy Planning sibling sample output-structure evidence only, not a local pregnancy, fetal, embryo, child, carrier, miscarriage, infertility, partner-risk, prenatal-testing, PGT, IVF, reproductive-action, treatment, supplement, or all-clear finding."
+      },
+      {
+        "inputId": "sample-sample-additional-tested-conditions-footer",
+        "gene": "Additional inherited conditions",
+        "observedValue": "Canavan Disease, Familial Dysautonomia, Fanconi Anemia, GRACILE Syndrome, Mucolipidosis, Niemann-Pick Disease, Rhizomelic Chondrodysplasia Punctata, Usher Syndrome, and many other conditions listed in footer",
+        "matchStatus": "sibling_sample_only",
+        "note": "Observed sample coverage language only; do not claim local panel coverage, local final-page content, carrier status, or absence of findings. This is Preconception & Pregnancy Planning sibling sample output-structure evidence only, not a local pregnancy, fetal, embryo, child, carrier, miscarriage, infertility, partner-risk, prenatal-testing, PGT, IVF, reproductive-action, treatment, supplement, or all-clear finding."
       }
     ],
     "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and exact rows",
-      "Validated model output with applicability and validation metadata",
-      "Qualified professional review and complete clinical, family-history, medication, symptom, and lab context",
-      "Partner, pregnancy, embryo, fetal, fertility, hormone, endocrine, carrier-screening, and reproductive decision context when relevant"
+      "Direct Preconception & Pregnancy Planning sample report rows and exact detail-page body evidence",
+      "Validated carrier-screen output, tested gene and condition panel, variant classifications, and residual risk",
+      "Partner result, family history, pregnancy status, embryo or fetal testing context, prenatal screening or diagnostic testing context",
+      "Genetic counselor review, clinician review, obstetric context, and professional interpretation"
     ],
     "probabilities": [],
     "uncertainty": [
-      "No calibrated carrier-status, partner-risk, fetal-risk, embryo-risk, child-risk, disease-risk, fertility, infertility, pregnancy-outcome, miscarriage, hormone-status, lab-status, testing-benefit, treatment-response, supplement-benefit, diet-response, or actionability model is supplied for this local package.",
-      "Interpretation depends on validated test scope, clinical and family history, symptoms, medications, labs, partner context, pregnancy context when relevant, ancestry applicability, and qualified professional review."
+      "No calibrated preconception, pregnancy, fetal, embryo, child, carrier, miscarriage, infertility, partner-risk, prenatal-testing, PGT, IVF, treatment, supplement, or reproductive-decision model is supplied.",
+      "Carrier Status sample rows show sibling output shape only and are not evidence about this user, a partner, pregnancy, embryo, fetus, or child.",
+      "Preconception and pregnancy-planning decisions depend on validated testing scope, partner/family history, clinical context, pregnancy context when relevant, ancestry applicability, and professional review."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
-      "The report is educational boundary context and does not provide diagnosis, carrier-status reporting, fertility or infertility estimation, hormone-status assessment, lab interpretation, pregnancy guidance, fetal or embryo assessment, testing advice, treatment advice, supplement advice, diet advice, surgery advice, reproductive advice, or clinical actionability.",
-      "Unavailable model rows should never be interpreted as low risk, high risk, no risk, normal, abnormal, reassuring, diagnostic, actionable, or all clear."
+      "The report is educational and does not provide diagnosis, medical advice, pregnancy advice, fertility advice, carrier-status reporting, reproductive counseling, treatment guidance, supplement guidance, or clinical actionability.",
+      "At-home, sample-only, or derived data should not be used alone for preconception or pregnancy-planning decisions."
     ]
   }
 }

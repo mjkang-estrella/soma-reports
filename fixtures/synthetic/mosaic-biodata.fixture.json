@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived nutrition-genetics evidence for mosaic-biodata validation"
   },
-  "missingInputPolicy": "Report unavailable biodata, lab, nutrition, fitness, lifestyle, supplement, detox, symptom, metabolic, and calibrated models explicitly; do not infer clinical status, diet needs, supplement needs, workouts, detoxification, symptom causes, or treatment.",
+  "missingInputPolicy": "Report unavailable biodata, nutrition, lifestyle, lab, wearable, diet-history, supplement, detox, medication, metabolic, glucose, fitness, symptom, ancestry-applicability, and calibrated models explicitly; use Mosaic sample rows only as observed output structure and do not infer local diet plans, supplement needs, food sensitivity, lactose-intolerance diagnosis, insulin resistance, glucose status, fitness programming, methylation status, labs, symptoms, medications, diagnosis, or treatment from genotype alone or sample-only rows.",
   "packageSlug": "mosaic-biodata",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -155,7 +155,19 @@
         "bmi_limitations",
         "no_weight_prediction_from_genotype"
       ]
+    },
+    {
+      "evidenceLevel": "direct_sample_report",
+      "id": "mosaic-biodata-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Mosaic Biodata sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer Mosaic Biodata context using derived MCM6/LCT evidence plus explicit biodata, nutrition, fitness, lifestyle, lab, supplement, detox, and model-unavailable framing."
+  "reportPurpose": "Consumer Mosaic Biodata context using derived MCM6/LCT evidence plus observed Mosaic Biodata sample-report output structure."
 }

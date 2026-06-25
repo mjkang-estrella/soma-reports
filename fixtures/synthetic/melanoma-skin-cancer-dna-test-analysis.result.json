@@ -3,8 +3,8 @@
     "reportTitle": "Melanoma Skin Cancer Prevention",
     "inputManifestHash": "sha256:synthetic-melanoma-skin-cancer-dna-test-analysis-cancer-boundary-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "Validated pathogenic-variant screen, calibrated cancer PRS, ancestry applicability metadata, family history, tumor testing, clinical screening history, and prevention-plan context are unavailable.",
+      "Exact Melanoma Skin Cancer Prevention detail/sample body extraction is not available yet; sibling Wellness & Longevity Melanoma sample rows are used only as observed output structure.",
+      "Validated pathogenic-variant screen, calibrated melanoma PRS, ancestry applicability metadata, family history, tumor testing, dermatology exam, lesion history, UV exposure, sunburn history, tanning-bed exposure, clinical screening history, and prevention-plan context are unavailable.",
       "This result is not a diagnosis, personal cancer-risk estimate, carrier-status result, screening recommendation, prevention plan, medication recommendation, surgery recommendation, treatment instruction, or actionability claim."
     ]
   },
@@ -44,6 +44,54 @@
       ],
       "sourceBindingStatus": "curated",
       "plainEnglishMeaning": "Personal interpretation needs validated testing scope, clinical history, family history, screening context, ancestry applicability, and qualified professional review."
+    },
+    {
+      "groupTitle": "Observed sibling sample format",
+      "item": "Wellness & Longevity Melanoma sample row",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sibling Wellness & Longevity sample labels the sample genetic lifetime risk of melanoma as Low (<2%) against a normal lifetime-risk value of 2%, and states that non-genetic factors such as sunburns and tanning beds are not included.",
+      "genes": [
+        "CDKN2A",
+        "9p21",
+        "22q13",
+        "BRCA2",
+        "MATP",
+        "MC1R",
+        "PIGU",
+        "TYRP1"
+      ],
+      "sourceLabel": "Sibling Wellness & Longevity sample report",
+      "sourceIds": [
+        "wellness-and-longevity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This is observed sibling sample structure only; it is not local melanoma risk, skin-cancer risk, diagnosis, screening guidance, prevention advice, treatment guidance, or dermatology advice."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Melanoma",
+      "item": "Melanoma risk panel and prevention structure",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels the sample genetic lifetime risk of melanoma as Low (<2%) against a normal lifetime-risk value of 2%, and states that non-genetic factors such as sunburns and tanning beds are not included.",
+      "description": "The page shows clinical significance, risk, actionability, monitoring/screening, lifestyle, disease-intervention, and additional-information sections.",
+      "genes": [
+        "CDKN2A",
+        "9p21",
+        "22q13",
+        "BRCA2",
+        "MATP",
+        "MC1R",
+        "PIGU",
+        "TYRP1"
+      ],
+      "sourceLabel": "Sibling Wellness & Longevity sample report",
+      "sourceResourceIds": [
+        "wellness-and-longevity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Extracted from the Melanoma page and melanoma variant appendix of the public Sequencing.com Wellness & Longevity sample PDF; used here as sibling output-structure evidence for Melanoma Skin Cancer Prevention, not as a direct Melanoma Skin Cancer Prevention report sample or local cancer risk, screening, prevention, diagnosis, treatment, or actionability guidance.",
+      "extractionStatus": "direct"
     }
   ],
   "conditionRiskContext": {
@@ -92,29 +140,42 @@
     {
       "id": "nci-cancer-genetic-testing",
       "title": "NCI Genetic Testing for Inherited Cancer Risk"
+    },
+    {
+      "id": "wellness-and-longevity-sample-pdf",
+      "title": "Wellness and Longevity DNA Analysis sample report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "melanoma-skin-cancer-dna-test-analysis-model-unavailable",
-        "gene": "Melanoma Skin Cancer Prevention model",
-        "observedValue": "validated pathogenic-variant screen, calibrated cancer PRS, ancestry applicability metadata, age, sex where relevant, personal cancer history, family history, tumor testing, clinical screening history, prevention-plan context, and authenticated sample-report rows unavailable in this fixture",
+        "tier": "Local missing input",
+        "gene": "Melanoma prevention model",
+        "variantId": "melanoma-prevention-model-unavailable",
+        "observedValue": "validated melanoma risk model, calibrated melanoma PRS, pathogenic variant interpretation, skin-cancer phenotype, UV exposure, sunburn history, tanning-bed exposure, family history, dermatology exam, lesion history, screening context, and prevention-plan context unavailable",
         "matchStatus": "unavailable"
       },
       {
-        "inputId": "melanoma-skin-cancer-dna-test-analysis-clinical-context-unavailable",
-        "gene": "melanoma and skin cancer prevention clinical context",
-        "observedValue": "clinical diagnosis, symptoms, screening findings, family history, tumor testing, treatment history, and clinician interpretation unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "tier": "Sibling Wellness & Longevity sample visible row",
+        "gene": "CDKN2A",
+        "variantId": "51103",
+        "observedValue": "Sibling sample visible row: genotype CC linked to cutaneous malignant melanoma in the public Wellness & Longevity sample appendix; sample only, not a local finding.",
+        "matchStatus": "sample-only"
+      },
+      {
+        "tier": "Sibling Wellness & Longevity sample visible row",
+        "gene": "9p21",
+        "variantId": "102407",
+        "observedValue": "Sibling sample visible row: genotype AA linked to melanoma in the public Wellness & Longevity sample appendix; sample only, not a local finding.",
+        "matchStatus": "sample-only"
       }
     ],
     "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and exact rows",
+      "Exact Melanoma Skin Cancer Prevention detail/sample body extraction",
       "Validated pathogenic-variant screen or externally supplied classification",
-      "Calibrated cancer PRS with ancestry applicability and validation metadata",
-      "Age, sex where relevant, family history, personal cancer history, symptoms, tumor testing, screening history, and clinician interpretation",
-      "validated pathogenic-variant screen, calibrated cancer PRS, ancestry applicability metadata, age, sex where relevant, personal cancer history, family history, tumor testing, clinical screening history, prevention-plan context, and authenticated sample-report rows unavailable in this fixture; clinical diagnosis, symptoms, screening findings, family history, tumor testing, treatment history, and clinician interpretation unavailable in this fixture"
+      "Calibrated melanoma PRS with ancestry applicability and validation metadata",
+      "Skin-cancer phenotype, UV exposure, sunburn history, tanning-bed exposure, dermatology exam, lesion history, age, sex where relevant, family history, personal cancer history, symptoms, tumor testing, screening history, prevention-plan context, and clinician interpretation",
+      "Validated melanoma risk model, calibrated melanoma PRS, pathogenic variant interpretation, skin-cancer phenotype, UV exposure, sunburn history, tanning-bed exposure, family history, dermatology exam, lesion history, screening context, prevention-plan context, and clinical interpretation unavailable in this fixture"
     ],
     "probabilities": [],
     "uncertainty": [
@@ -124,6 +185,7 @@
     "limitations": [
       "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
       "The report is educational and does not provide diagnosis, personal risk estimation, carrier-status classification, screening advice, prevention advice, medication advice, surgery advice, treatment advice, or actionability.",
+      "The Wellness & Longevity Melanoma sample row and CDKN2A/9p21 appendix rows are sibling output-structure evidence only, not local melanoma findings.",
       "Unavailable model rows should never be interpreted as low risk, no risk, or an all-clear result."
     ]
   }

@@ -3,18 +3,19 @@
     "reportTitle": "Clinical Annotator of Variants",
     "inputManifestHash": "sha256:synthetic-clinical-annotator-variants-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com mock-report rows were not available.",
+      "Direct Clinical Annotator sample-report rows have not been captured.",
       "Full ACMG/AMP evidence-code worksheet and submitter rationale text were not supplied.",
-      "Personal phenotype, family history, confirmatory laboratory testing, penetrance, and clinician interpretation were not supplied."
+      "Personal phenotype, family history, confirmatory laboratory testing, penetrance, and clinician interpretation were not supplied.",
+      "Sibling Healthcare Pro rows are included only as observed output structure, not as personal clinical-annotation evidence."
     ],
-    "plainEnglishScope": "This report explains supplied clinical-annotation lookup rows in plain English. It reports database assertions as supplied evidence, not as a personal diagnosis or medical instruction."
+    "plainEnglishScope": "This report explains supplied clinical-annotation lookup rows and sibling sample-output structure in plain English. It reports database assertions as supplied evidence, not as a personal diagnosis or medical instruction."
   },
   "resultRows": [
     {
       "groupTitle": "Submitted clinical-significance lookup",
       "item": "BRCA1 rs80357914",
-      "brandName": "",
-      "geneticAnalysis": "The supplied local lookup says this BRCA1 variant has a ClinVar-submitted germline classification of pathogenic for a hereditary cancer condition, with review status reported as criteria provided by multiple submitters with no conflicts.",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "The supplied local lookup says this BRCA1 variant has a ClinVar-submitted germline classification of pathogenic for a hereditary cancer condition, with review status reported as criteria provided by multiple submitters with no conflicts. The fixture does not include phenotype, family history, confirmatory testing, penetrance, or medical actionability context.",
       "genes": [
         "BRCA1"
       ],
@@ -24,12 +25,12 @@
         "clingen-variant-classification-guidance",
         "acmg-amp-richards-2015"
       ],
-      "plainEnglishMeaning": "This is an externally supplied database assertion about a variant-condition relationship. It does not diagnose the person, measure their overall cancer risk, or say what medical action to take without qualified review and clinical context."
+      "plainEnglishMeaning": "This is an externally supplied database assertion about a variant-condition relationship. It does not diagnose the person, measure overall cancer risk, or say what medical action to take without qualified review and clinical context."
     },
     {
       "groupTitle": "Submitted interpretation context",
       "item": "HFE rs1800562",
-      "brandName": "",
+      "brandName": "Not applicable",
       "geneticAnalysis": "The supplied lookup row identifies HFE rs1800562 and provides condition-associated interpretation context, but it does not include penetrance, iron studies, family history, diagnosis, or medical actionability.",
       "genes": [
         "HFE"
@@ -45,7 +46,7 @@
     {
       "groupTitle": "Evidence-code context",
       "item": "ACMG/AMP evidence details unavailable",
-      "brandName": "",
+      "brandName": "Not applicable",
       "geneticAnalysis": "The fixture does not include ACMG/AMP evidence codes, submitter rationale, expert-panel review, assertion date, condition specificity, segregation evidence, functional evidence, or population-frequency thresholds.",
       "genes": [
         "ACMG/AMP evidence-code context"
@@ -61,8 +62,8 @@
     {
       "groupTitle": "Personal clinical context",
       "item": "Diagnosis and actionability not supplied",
-      "brandName": "",
-      "geneticAnalysis": "The fixture does not include symptoms, family history, ancestry calibration, age, sex, laboratory confirmation, clinician interpretation, or authenticated Sequencing.com sample rows.",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "The fixture does not include symptoms, family history, ancestry calibration, age, sex, laboratory confirmation, clinician interpretation, or direct Clinical Annotator sample rows. Sibling Healthcare Pro rows are available only as output-structure examples.",
       "genes": [
         "personal clinical context"
       ],
@@ -72,101 +73,251 @@
         "ncbi-clinvar"
       ],
       "plainEnglishMeaning": "Clinical annotations need personal and laboratory context before they can be used for healthcare decisions. This package therefore reports the missing context instead of filling it in."
+    },
+    {
+      "groupTitle": "Report identity",
+      "item": "Healthcare Professional Genetic Report",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The cover and table of contents identify a Healthcare Pro sample report with sections for STAT Alerts, Increased Risk Detected, Medications (Pharmacogenomics), Rare Diseases, No Increased Risk Detected, and Analysis Alerts. This row captures sample-report structure only and does not prove a local Healthcare Pro report was generated.",
+      "genes": [],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local clinical-annotation evidence; it is not a personal diagnosis, disease-risk estimate, pathogenicity classification, carrier-status call, penetrance estimate, family-member risk estimate, medication guidance, screening guidance, diagnostic-testing guidance, reproductive guidance, treatment, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "Hirschsprung Disease",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Hirschsprung Disease as Increased Risk Detected and ties the row to a RET mutation described as IVS 1 +9277 and +9349 relative to MET. This is a sample-person rare-disease risk row only; local output must not infer diagnosis, symptoms, imaging need, or referral need.",
+      "genes": [
+        "RET"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local clinical-annotation evidence; it is not a personal diagnosis, disease-risk estimate, pathogenicity classification, carrier-status call, penetrance estimate, family-member risk estimate, medication guidance, screening guidance, diagnostic-testing guidance, reproductive guidance, treatment, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "Thrombophilia",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Thrombophilia as Carrier and states the sample has one copy of the Factor V R2 mutation in F5, distinct from Factor V Leiden. This is sample carrier-status structure only; local output must not infer personal thrombophilia carrier status or clotting risk.",
+      "genes": [
+        "F5"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local clinical-annotation evidence; it is not a personal diagnosis, disease-risk estimate, pathogenicity classification, carrier-status call, penetrance estimate, family-member risk estimate, medication guidance, screening guidance, diagnostic-testing guidance, reproductive guidance, treatment, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Rare Diseases",
+      "item": "Hemochromatosis",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Hemochromatosis as Carrier and ties the carrier row to a single HFE2 G320V mutation. This is sample carrier-status structure only; local output must not infer iron overload, carrier status, family risk, monitoring, or treatment.",
+      "genes": [
+        "HFE2"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local clinical-annotation evidence; it is not a personal diagnosis, disease-risk estimate, pathogenicity classification, carrier-status call, penetrance estimate, family-member risk estimate, medication guidance, screening guidance, diagnostic-testing guidance, reproductive guidance, treatment, or actionability conclusion."
+    },
+    {
+      "groupTitle": "Analysis Alerts",
+      "item": "Data completeness",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report's Analysis Alerts section states no ambiguity, complete genetic data, and all diseases, traits, and conditions analyzed. This is sample analysis-quality language only; local output must not claim complete local data or all conditions analyzed unless the local fixture supplies equivalent quality evidence.",
+      "genes": [],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Observed sibling Healthcare Pro sample-report structure only. Keep this separate from local clinical-annotation evidence; it is not a personal diagnosis, disease-risk estimate, pathogenicity classification, carrier-status call, penetrance estimate, family-member risk estimate, medication guidance, screening guidance, diagnostic-testing guidance, reproductive guidance, treatment, or actionability conclusion."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Report identity",
+      "item": "Healthcare Professional Genetic Report",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The cover and table of contents identify a Healthcare Pro sample report with sections for STAT Alerts, Increased Risk Detected, Medications (Pharmacogenomics), Rare Diseases, No Increased Risk Detected, and Analysis Alerts.",
+      "description": "This row captures sample-report structure only and does not prove a local Healthcare Pro report was generated.",
+      "genes": [],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Clinical Annotator of Variants sibling clinical-annotation output-structure evidence from the Healthcare Pro sample PDF. Genetic Counseling sibling rare-disease/carrier output-structure evidence from the Healthcare Pro sample PDF. Extracted from pages 1-2 of the public sample PDF; keep report identity and section list separate from local findings. This is not a direct Genetic Counseling sample report and not local genetic counseling, diagnosis, variant classification, family-member risk estimate, reproductive decision, cascade-testing guidance, diagnostic-testing guidance, screening guidance, treatment guidance, family-disclosure action, or actionability evidence. This is not a direct Clinical Annotator sample report and not local diagnosis, disease risk, pathogenicity classification, carrier-status call, penetrance, family-member risk, screening, diagnostic testing, medication guidance, reproductive guidance, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "Hirschsprung Disease",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Hirschsprung Disease as Increased Risk Detected and ties the row to a RET mutation described as IVS 1 +9277 and +9349 relative to MET.",
+      "description": "This is a sample-person rare-disease risk row only; local output must not infer diagnosis, symptoms, imaging need, or referral need.",
+      "genes": [
+        "RET"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Clinical Annotator of Variants sibling clinical-annotation output-structure evidence from the Healthcare Pro sample PDF. Genetic Counseling sibling rare-disease/carrier output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 7 of the public sample PDF; symptom and referral examples are sample report structure, not local advice. This is not a direct Genetic Counseling sample report and not local genetic counseling, diagnosis, variant classification, family-member risk estimate, reproductive decision, cascade-testing guidance, diagnostic-testing guidance, screening guidance, treatment guidance, family-disclosure action, or actionability evidence. This is not a direct Clinical Annotator sample report and not local diagnosis, disease risk, pathogenicity classification, carrier-status call, penetrance, family-member risk, screening, diagnostic testing, medication guidance, reproductive guidance, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "Thrombophilia",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Thrombophilia as Carrier and states the sample has one copy of the Factor V R2 mutation in F5, distinct from Factor V Leiden.",
+      "description": "This is sample carrier-status structure only; local output must not infer personal thrombophilia carrier status or clotting risk.",
+      "genes": [
+        "F5"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Clinical Annotator of Variants sibling clinical-annotation output-structure evidence from the Healthcare Pro sample PDF. Genetic Counseling sibling rare-disease/carrier output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 8 of the public sample PDF; the row includes sample caveats about R2 on its own. This is not a direct Genetic Counseling sample report and not local genetic counseling, diagnosis, variant classification, family-member risk estimate, reproductive decision, cascade-testing guidance, diagnostic-testing guidance, screening guidance, treatment guidance, family-disclosure action, or actionability evidence. This is not a direct Clinical Annotator sample report and not local diagnosis, disease risk, pathogenicity classification, carrier-status call, penetrance, family-member risk, screening, diagnostic testing, medication guidance, reproductive guidance, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Rare Diseases",
+      "item": "Hemochromatosis",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Hemochromatosis as Carrier and ties the carrier row to a single HFE2 G320V mutation.",
+      "description": "This is sample carrier-status structure only; local output must not infer iron overload, carrier status, family risk, monitoring, or treatment.",
+      "genes": [
+        "HFE2"
+      ],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Clinical Annotator of Variants sibling clinical-annotation output-structure evidence from the Healthcare Pro sample PDF. Genetic Counseling sibling rare-disease/carrier output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 11 of the public sample PDF; monitoring and phlebotomy language is sample content, not local guidance. This is not a direct Genetic Counseling sample report and not local genetic counseling, diagnosis, variant classification, family-member risk estimate, reproductive decision, cascade-testing guidance, diagnostic-testing guidance, screening guidance, treatment guidance, family-disclosure action, or actionability evidence. This is not a direct Clinical Annotator sample report and not local diagnosis, disease risk, pathogenicity classification, carrier-status call, penetrance, family-member risk, screening, diagnostic testing, medication guidance, reproductive guidance, treatment, or actionability evidence."
+    },
+    {
+      "groupTitle": "Analysis Alerts",
+      "item": "Data completeness",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report's Analysis Alerts section states no ambiguity, complete genetic data, and all diseases, traits, and conditions analyzed.",
+      "description": "This is sample analysis-quality language only; local output must not claim complete local data or all conditions analyzed unless the local fixture supplies equivalent quality evidence.",
+      "genes": [],
+      "sourceLabel": "Sibling Healthcare Pro sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Clinical Annotator of Variants sibling clinical-annotation output-structure evidence from the Healthcare Pro sample PDF. Genetic Counseling sibling rare-disease/carrier output-structure evidence from the Healthcare Pro sample PDF. Extracted from page 14 of the public sample PDF; data-completeness claims are sample-only. This is not a direct Genetic Counseling sample report and not local genetic counseling, diagnosis, variant classification, family-member risk estimate, reproductive decision, cascade-testing guidance, diagnostic-testing guidance, screening guidance, treatment guidance, family-disclosure action, or actionability evidence. This is not a direct Clinical Annotator sample report and not local diagnosis, disease risk, pathogenicity classification, carrier-status call, penetrance, family-member risk, screening, diagnostic testing, medication guidance, reproductive guidance, treatment, or actionability evidence."
     }
   ],
   "clinicalAnnotationSummary": {
-    "plainEnglishMeaning": "Supplied ClinVar and dbSNP lookup rows can help explain what public databases say about selected variants, review status, and identifiers. They do not by themselves prove a diagnosis, personal risk level, penetrance, or medical action.",
+    "plainEnglishMeaning": "Supplied ClinVar and dbSNP lookup rows can help explain what public databases say about selected variants, review status, and identifiers. Sibling Healthcare Pro rows show adjacent clinical-report structure only. Neither source by itself proves a diagnosis, personal risk level, penetrance, carrier status, or medical action.",
     "unsupportedClaims": [
       "personal diagnosis",
       "overall disease risk",
+      "new or upgraded pathogenicity classification",
+      "carrier-status call from sibling sample rows",
       "variant penetrance for this person",
+      "family-member risk estimate",
       "clinical actionability",
-      "medication, screening, diagnostic-testing, reproductive, lifestyle, or treatment recommendations",
-      "new or upgraded ACMG/AMP classification"
+      "medication, screening, diagnostic-testing, reproductive, lifestyle, or treatment recommendations"
     ],
     "professionalReview": "A qualified genetics professional or clinician should review any clinical use together with confirmatory testing, personal and family history, phenotype, ancestry, and current guideline context."
   },
   "references": [
     {
       "id": "ncbi-clinvar",
-      "title": "NCBI ClinVar",
-      "usedFor": [
-        "submitted assertions",
-        "review status",
-        "variant-condition context"
-      ]
+      "title": "NCBI ClinVar"
     },
     {
       "id": "clingen-variant-classification-guidance",
-      "title": "ClinGen Variant Classification Guidance",
-      "usedFor": [
-        "ACMG/AMP criteria context",
-        "classification transparency"
-      ]
+      "title": "ClinGen Variant Classification Guidance"
     },
     {
       "id": "clingen-variant-classification-working-group",
-      "title": "ClinGen Variant Classification Working Group",
-      "usedFor": [
-        "expert framework context",
-        "professional review language"
-      ]
+      "title": "ClinGen Variant Classification Working Group"
     },
     {
       "id": "acmg-amp-richards-2015",
-      "title": "ACMG/AMP 2015 sequence variant interpretation standards",
-      "usedFor": [
-        "variant interpretation framework",
-        "do-not-infer limitation"
-      ]
+      "title": "ACMG/AMP 2015 sequence variant interpretation standards"
     },
     {
       "id": "ncbi-dbsnp",
-      "title": "NCBI dbSNP",
-      "usedFor": [
-        "public variant identifiers"
-      ]
+      "title": "NCBI dbSNP"
     },
     {
       "id": "cdc-genetic-testing",
-      "title": "CDC Genetic Testing",
-      "usedFor": [
-        "consumer genetic-testing safety context"
-      ]
+      "title": "CDC Genetic Testing"
     },
     {
       "id": "medlineplus-genetics",
-      "title": "MedlinePlus Genetics",
-      "usedFor": [
-        "plain-English genetics context"
-      ]
+      "title": "MedlinePlus Genetics"
+    },
+    {
+      "id": "healthcare-pro-sample-pdf",
+      "title": "Healthcare Pro sample report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "ClinVar-rs80357914-BRCA1",
-        "gene": "BRCA1",
-        "observedValue": "selected derived lookup row with supplied ClinVar classification and review status",
-        "reportedAs": "database assertion only"
+        "tier": "Sample-report visible variant",
+        "gene": "RET",
+        "variantId": "IVS 1 +9277; +9349 relative to MET",
+        "genotype": "mutation detected in sample row",
+        "effect": "The sample report uses this RET row for a Hirschsprung Disease increased-risk sample label.",
+        "phenotype": "Observed sample content only; do not infer local Hirschsprung Disease risk, diagnosis, symptoms, imaging, or referral need. This is Clinical Annotator sibling sample output-structure evidence only, not local diagnosis, disease risk, pathogenicity classification, carrier-status call, penetrance, family-member risk, screening, diagnostic testing, medication guidance, reproductive guidance, treatment, or actionability evidence.",
+        "extractionStatus": "direct"
       },
       {
-        "inputId": "ClinVar-rs1800562-HFE",
-        "gene": "HFE",
-        "observedValue": "selected derived lookup row with condition-associated interpretation context but no personal clinical interpretation",
-        "reportedAs": "database context only"
+        "tier": "Sample-report visible carrier marker",
+        "gene": "F5",
+        "variantId": "Factor V R2",
+        "genotype": "one copy",
+        "effect": "The sample report labels the sample as a Factor V R2 carrier and distinguishes it from Factor V Leiden.",
+        "phenotype": "Observed sample content only; do not infer local thrombophilia carrier status or clotting risk. This is Clinical Annotator sibling sample output-structure evidence only, not local diagnosis, disease risk, pathogenicity classification, carrier-status call, penetrance, family-member risk, screening, diagnostic testing, medication guidance, reproductive guidance, treatment, or actionability evidence.",
+        "extractionStatus": "direct"
       },
       {
-        "inputId": "Clinical-annotation-evidence-codes-unavailable",
-        "gene": "ACMG/AMP evidence-code context",
-        "observedValue": "classification evidence details unavailable",
-        "reportedAs": "missing input"
+        "tier": "Sample-report visible carrier marker",
+        "gene": "HFE2",
+        "variantId": "G320V",
+        "genotype": "single mutation; carrier",
+        "effect": "The sample report labels the sample as a Hemochromatosis carrier due to HFE2 G320V.",
+        "phenotype": "Observed sample content only; do not infer local hemochromatosis carrier status, iron overload, monitoring, or treatment need. This is Clinical Annotator sibling sample output-structure evidence only, not local diagnosis, disease risk, pathogenicity classification, carrier-status call, penetrance, family-member risk, screening, diagnostic testing, medication guidance, reproductive guidance, treatment, or actionability evidence.",
+        "extractionStatus": "direct"
       },
       {
-        "inputId": "Clinical-context-unavailable",
-        "gene": "personal clinical context",
-        "observedValue": "personal and confirmatory context unavailable",
-        "reportedAs": "missing input"
+        "tier": "Sample-report analysis quality",
+        "gene": "Healthcare Pro analysis",
+        "variantId": "analysis-alerts",
+        "genotype": "no ambiguity; complete data; all listed conditions analyzed in the sample",
+        "effect": "The sample report states its own analysis completeness and lack-of-ambiguity alerts on the final page.",
+        "phenotype": "Observed sample quality context only; do not claim local completeness without equivalent local quality evidence. This is Clinical Annotator sibling sample output-structure evidence only, not local diagnosis, disease risk, pathogenicity classification, carrier-status call, penetrance, family-member risk, screening, diagnostic testing, medication guidance, reproductive guidance, treatment, or actionability evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "tier": "Local missing input",
+        "gene": "Clinical annotation review context",
+        "variantId": "clinical-annotator-review-context-unavailable",
+        "genotype": "direct Clinical Annotator sample report, ACMG/AMP evidence-code worksheet, submitter rationale, expert-panel review, assertion date, condition specificity, phenotype fit, family history, segregation, functional evidence, confirmatory testing, penetrance, clinician review, and genetic counselor review unavailable",
+        "effect": "The local fixture intentionally omits the professional interpretation and evidence worksheet needed for clinical actionability.",
+        "phenotype": "Mark diagnosis, disease risk, pathogenicity classification, carrier-status calls, penetrance, family-member risk, screening, diagnostic testing, medication guidance, reproductive guidance, treatment, and actionability unavailable instead of inferring them.",
+        "extractionStatus": "curated"
       }
     ],
     "resourceVersions": [
@@ -181,20 +332,21 @@
       {
         "resourceId": "acmg-amp-richards-2015",
         "version": "2015 standards article"
+      },
+      {
+        "resourceId": "healthcare-pro-sample-pdf",
+        "version": "public sibling sample PDF observed 2026-06-21"
       }
     ],
     "probabilities": [],
     "uncertainty": [
-      "No calibrated personal disease probability, penetrance estimate, or actionability model was supplied.",
+      "No calibrated personal disease probability, penetrance estimate, pathogenicity probability, carrier-status model, or actionability model was supplied.",
       "A database classification is not the same thing as a personal diagnosis.",
+      "Sibling Healthcare Pro sample rows are observed report-structure examples only and should not be interpreted as local clinical findings.",
       "Review status and submitter information can change as databases receive updated submissions."
     ],
-    "calibration": {
-      "status": "not_supplied",
-      "notes": "No calibrated model was supplied for personal disease risk, penetrance, or medical actionability."
-    },
     "missingInputs": [
-      "Authenticated Sequencing.com mock-report rows",
+      "Direct Clinical Annotator sample-report rows",
       "Full ClinVar accession/version and assertion date fields",
       "ACMG/AMP criteria worksheet and submitter rationale",
       "Expert-panel review status beyond the supplied row",
@@ -202,9 +354,9 @@
       "Clinician or genetic-counselor interpretation"
     ],
     "limitations": [
-      "This fixture uses selected derived annotation rows only and does not include raw genome data.",
+      "This fixture uses selected derived annotation rows and sibling sample-output rows only; raw genome data is not included.",
       "The report does not create a new ACMG/AMP classification and does not upgrade any supplied database assertion.",
-      "The report does not diagnose disease, estimate personal risk, or recommend medication, screening, diagnostic testing, reproductive decisions, lifestyle changes, or treatment.",
+      "The report does not diagnose disease, estimate personal risk, call carrier status, or recommend medication, screening, diagnostic testing, reproductive decisions, lifestyle changes, treatment, or actionability.",
       "Clinical use requires qualified professional review and confirmatory evidence outside this local test fixture."
     ]
   }

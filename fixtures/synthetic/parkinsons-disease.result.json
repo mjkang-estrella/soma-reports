@@ -4,181 +4,240 @@
     "reportTitle": "Parkinson's Disease",
     "inputManifestHash": "sha256:synthetic-parkinsons-disease-specialized-boundary-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet for Parkinson's Disease.",
-      "Validated Parkinson disease genetic test interpretation, diagnostic evaluation, family history, symptoms, neurologist review, and authenticated sample-report rows",
-      "validated Parkinson's model, gene panel result, variant classifications, family history, neurologic symptoms, exam findings, age of onset context, imaging, medication response, clinician review, and authenticated sample-report rows unavailable in this fixture",
-      "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
-      "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture"
+      "Direct Parkinson's Disease authenticated sample report rows remain unavailable.",
+      "Validated model output, calibrated personal estimates, clinical context, family history, professional review, and local actionability evidence are unavailable in this fixture.",
+      "Sibling sample rows are included only as exact-cited output-structure examples, not as personal findings."
     ]
   },
   "resultRows": [
     {
-      "groupTitle": "Validated model/source output availability",
-      "item": "Parkinson's Disease model/source output",
-      "brandName": "",
-      "geneticAnalysis": "The local fixture supplies a boundary row for Parkinson disease genetics boundary context. It does not supply the validated model, source-tool output, or authenticated Sequencing.com report content needed for personal conclusions.",
+      "groupTitle": "Validated model availability",
+      "item": "parkinsons-disease-model-output-unavailable",
+      "brandName": "parkinsons-disease",
+      "geneticAnalysis": "validated Parkinson's model, gene panel result, variant classifications, family history, neurologic symptoms, exam findings, age of onset context, imaging, medication response, clinician review, and authenticated sample-report rows unavailable in this fixture; Public Disease Risk sample PDF Neuro-degenerative Diseases table, Parkinson's Disease row, and heritable-component limitation are extracted as sibling output-structure evidence.",
       "genes": [
         "Parkinson's Disease model/source output"
       ],
-      "sourceLabel": "MedlinePlus Parkinson's Disease; MedlinePlus Genetics: Parkinson's disease; MedlinePlus Genetics PDF: Parkinson disease; NCBI ClinVar",
+      "sourceLabel": "Public genetics and report-boundary references",
       "sourceIds": [
-        "medlineplus-parkinsons-disease",
-        "medlineplus-parkinsons-disease-genetics",
-        "medlineplus-parkinson-disease-genetics-pdf",
-        "ncbi-clinvar"
+        "cdc-genetic-testing",
+        "medlineplus-genetics",
+        "medlineplus-genetic-testing",
+        "medlineplus-genetic-test-results"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This can explain what evidence is present or missing for Parkinson's Disease, but it cannot fill in unavailable model output or personal conclusions."
+      "plainEnglishMeaning": "The local fixture does not contain the validated report model or calibrated result needed for a personal conclusion."
     },
     {
-      "groupTitle": "Clinical and professional context availability",
-      "item": "Parkinson's Disease clinical and professional context",
-      "brandName": "",
-      "geneticAnalysis": "Clinical history, symptoms, labs, medication context, family history, and qualified professional interpretation are not supplied unless explicitly listed in the fixture.",
+      "groupTitle": "Clinical and context availability",
+      "item": "parkinsons-disease-clinical-professional-context-unavailable",
+      "brandName": "parkinsons-disease",
+      "geneticAnalysis": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Parkinson's Disease",
       "genes": [
         "Parkinson's Disease clinical and professional context"
       ],
-      "sourceLabel": "MedlinePlus Parkinson's Disease; MedlinePlus Genetics: Parkinson's disease; MedlinePlus Genetics PDF: Parkinson disease; NCBI ClinVar",
+      "sourceLabel": "Fixture context and public references",
       "sourceIds": [
-        "medlineplus-parkinsons-disease",
-        "medlineplus-parkinsons-disease-genetics",
-        "medlineplus-parkinson-disease-genetics-pdf",
-        "ncbi-clinvar"
+        "medlineplus-genetics",
+        "medlineplus-genetic-testing",
+        "medlineplus-genetic-test-results",
+        "medlineplus-dtc-genetic-testing-results"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "The report should stay educational because neurology, genetic counseling, diagnostic, screening, and family-risk decisions require context that this synthetic fixture does not include."
+      "plainEnglishMeaning": "The local fixture does not contain the clinical, family-history, lab, imaging, or professional-review context needed for medical conclusions."
     },
     {
-      "groupTitle": "Authenticated sample availability",
-      "item": "Parkinson's Disease authenticated sample rows",
-      "brandName": "",
-      "geneticAnalysis": "Authenticated Sequencing.com sample report sections, row labels, model output, and source-tool output are unavailable in this local fixture.",
+      "groupTitle": "Observed sibling sample structure",
+      "item": "Disease Risk Genetic Test Report sample rows",
+      "brandName": "Sibling Disease Risk Genetic Test Report sample report",
+      "geneticAnalysis": "The public sample rows are preserved as observed output structure only. They are not local-user disease risk, diagnosis, carrier status, screening, prevention, treatment, or actionability findings.",
       "genes": [
-        "Parkinson's Disease authenticated sample rows"
+        "APOE"
       ],
-      "sourceLabel": "MedlinePlus Parkinson's Disease; MedlinePlus Genetics: Parkinson's disease; MedlinePlus Genetics PDF: Parkinson disease; NCBI ClinVar",
+      "sourceLabel": "Sibling Disease Risk sample PDF",
       "sourceIds": [
-        "medlineplus-parkinsons-disease",
-        "medlineplus-parkinsons-disease-genetics",
-        "medlineplus-parkinson-disease-genetics-pdf",
-        "ncbi-clinvar"
+        "genetic-testing-disease-risk-sample-pdf"
       ],
-      "sourceBindingStatus": "unavailable",
-      "plainEnglishMeaning": "This local package marks the sample-report gap clearly instead of recreating or guessing the missing Sequencing.com output."
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Use these rows to match the shape and source binding of the sample report, while keeping them separate from personal genome interpretation."
     }
   ],
   "neurodegenerativeConditionContext": {
-    "plainEnglishMeaning": "Parkinson's Disease is represented as an evidence-boundary package. It can summarize supplied local evidence and references, while marking unsupported personal conclusions unavailable.",
+    "plainEnglishMeaning": "Neurodegenerative Condition Context is reported as an evidence-availability boundary. The local fixture can preserve source-bound sample structure and limitations, but it cannot make personal medical conclusions.",
     "unsupportedClaims": [
-      "Parkinson disease diagnosis",
-      "personal risk estimate",
-      "age-of-onset estimate",
-      "disease progression prediction",
-      "treatment recommendation",
-      "family-member risk conclusion"
+      "diagnosis",
+      "personal disease risk estimate",
+      "carrier or pathogenic-variant status",
+      "screening, prevention, medication, surgery, treatment, reproductive, or actionability guidance"
     ],
-    "professionalReview": "Use qualified professional review for neurology, genetic counseling, diagnostic, screening, and family-risk decisions; this synthetic local result is not enough for those decisions."
+    "professionalReview": "Use validated test scope, clinical context, family history, ancestry applicability, and qualified professional review for health decisions."
   },
-  "practicalNextSteps": {
-    "professionalReview": [
-      "Use this local result as educational context for Parkinson disease genetics boundary context, not as a decision tool.",
-      "Collect validated source output, source provenance, and relevant clinical or professional context before using Parkinson's Disease for personal decisions.",
-      "Discuss neurology, genetic counseling, diagnostic, screening, and family-risk decisions with qualified professionals when those choices matter."
-    ]
-  },
+  "sampleRows": [
+    {
+      "groupTitle": "Report limitation",
+      "item": "Heritable component only",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "The sample states that 'Your Risk' is only for the heritable component of the disease, and that environmental, lifestyle, and other non-heritable factors also affect overall susceptibility risk.",
+      "description": "The sample uses lung cancer as an example, saying lung cancer is only 10% heritable and most cases are associated with lifestyle factors such as smoking.",
+      "genes": [],
+      "sourceLabel": "Sibling Disease Risk Genetic Test Report sample report",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public Sequencing.com Disease Risk Genetic Test Report sample PDF; used here as sibling output-structure evidence for Parkinson's Disease, not as a direct Parkinson's Disease sample report or local Parkinson's disease output structure, Parkinson's diagnosis, personal risk, penetrance, prognosis, age of onset, progression, symptoms, medication response, treatment, testing, family-member risk, reproductive action, variant pathogenicity, or actionability guidance."
+    },
+    {
+      "groupTitle": "Neuro-degenerative Diseases",
+      "item": "Neurodegenerative category risk table",
+      "brandName": "Complete Genome Science sample",
+      "geneticAnalysis": "Visible sample rows include Alzheimer's Disease Reduced; Alzheimer's Disease Early Onset Unlikely; Amyotrophic Lateral Sclerosis Elevated; Dystonia Absent; Neuronal Ceroid Lipofuscinosis Absent; Parkinson's Disease Typical.",
+      "description": "The page includes an Alzheimer's explanation and explicitly reports sample APOE status as epsilon3/epsilon3.",
+      "genes": [
+        "APOE"
+      ],
+      "sourceLabel": "Sibling Disease Risk Genetic Test Report sample report",
+      "sourceIds": [
+        "genetic-testing-disease-risk-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the public Sequencing.com Disease Risk Genetic Test Report sample PDF; used here as sibling output-structure evidence for Parkinson's Disease, not as a direct Parkinson's Disease sample report or local Parkinson's disease output structure, Parkinson's diagnosis, personal risk, penetrance, prognosis, age of onset, progression, symptoms, medication response, treatment, testing, family-member risk, reproductive action, variant pathogenicity, or actionability guidance."
+    }
+  ],
+  "practicalNextSteps": [
+    "Keep this as a local reproducibility fixture, not a clinical report.",
+    "Review the cited source IDs before using the prompt with a local agent.",
+    "Do not use sibling sample labels as personal results."
+  ],
   "references": [
     {
       "id": "cdc-genetic-testing",
-      "title": "CDC Genetic Testing"
+      "title": "CDC Genetic Testing",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
     },
     {
       "id": "medlineplus-genetics",
-      "title": "MedlinePlus Genetics"
+      "title": "MedlinePlus Genetics",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "medlineplus-genetic-testing",
-      "title": "MedlinePlus: Genetic Testing"
+      "title": "MedlinePlus: Genetic Testing",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
     },
     {
       "id": "medlineplus-genetic-test-results",
-      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results"
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "medlineplus-dtc-genetic-testing-results",
-      "title": "MedlinePlus Genetics: What DTC genetic test results mean"
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "fda-direct-to-consumer-tests",
-      "title": "FDA Direct-to-Consumer Tests"
+      "title": "FDA Direct-to-Consumer Tests",
+      "sourceType": "regulatory_resource",
+      "evidenceLevel": "regulatory_background"
     },
     {
       "id": "medlineplus-complex-disorders",
-      "title": "MedlinePlus Genetics: complex disorders"
+      "title": "MedlinePlus Genetics: complex disorders",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "nhgri-polygenic-risk-scores",
-      "title": "NHGRI overview of polygenic risk scores"
+      "title": "NHGRI overview of polygenic risk scores",
+      "sourceType": "education_resource",
+      "evidenceLevel": "background"
     },
     {
       "id": "ebi-gwas-catalog",
-      "title": "GWAS Catalog"
+      "title": "GWAS Catalog",
+      "sourceType": "database",
+      "evidenceLevel": "background"
     },
     {
       "id": "medlineplus-parkinsons-disease",
-      "title": "MedlinePlus Parkinson's Disease"
+      "title": "MedlinePlus Parkinson's Disease",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "medlineplus-parkinsons-disease-genetics",
-      "title": "MedlinePlus Genetics: Parkinson's disease"
+      "title": "MedlinePlus Genetics: Parkinson's disease",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "medlineplus-parkinson-disease-genetics-pdf",
-      "title": "MedlinePlus Genetics PDF: Parkinson disease"
+      "title": "MedlinePlus Genetics PDF: Parkinson disease",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "ncbi-clinvar",
-      "title": "NCBI ClinVar"
+      "title": "NCBI ClinVar",
+      "sourceType": "database",
+      "evidenceLevel": "database_background"
     },
     {
       "id": "clingen-variant-classification-guidance",
-      "title": "ClinGen Variant Classification Guidance"
+      "title": "ClinGen Variant Classification Guidance",
+      "sourceType": "guidance_resource",
+      "evidenceLevel": "guideline_background"
+    },
+    {
+      "id": "genetic-testing-disease-risk-sample-pdf",
+      "title": "Genetic Testing For Disease Risk sample genetic report",
+      "sourceType": "mock_report",
+      "evidenceLevel": "high"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "parkinsons-disease-model-output-unavailable",
-        "gene": "Parkinson's Disease model/source output",
-        "observedValue": "validated Parkinson's model, gene panel result, variant classifications, family history, neurologic symptoms, exam findings, age of onset context, imaging, medication response, clinician review, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "effect": "The local fixture intentionally omits calibrated Parkinson's Disease calculations and clinical context.",
+        "extractionStatus": "curated",
+        "gene": "Parkinson's Disease validated model",
+        "genotype": "validated Parkinson's model, gene panel result, variant classifications, family history, neurologic symptoms, exam findings, age-of-onset context, imaging, medication response, clinician review, ancestry applicability, and genetic counselor review unavailable",
+        "phenotype": "Mark local findings for Parkinson's disease output structure, Parkinson's diagnosis, personal risk, penetrance, prognosis, age of onset, progression, symptoms, medication response, treatment, testing, family-member risk, reproductive action, variant pathogenicity, or actionability guidance unavailable instead of inferring them.",
+        "sortOrder": 1,
+        "tier": "Local missing input",
+        "variantId": "parkinsons-disease-model-output-unavailable"
       },
       {
-        "inputId": "parkinsons-disease-clinical-professional-context-unavailable",
-        "gene": "Parkinson's Disease clinical and professional context",
-        "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
-        "matchStatus": "unavailable"
-      },
-      {
-        "inputId": "parkinsons-disease-authenticated-sample-unavailable",
-        "gene": "Parkinson's Disease authenticated sample rows",
-        "observedValue": "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "effect": "The public Disease Risk Genetic Test Report sample shows Disease, Your Risk, and Description columns in the Neuro-degenerative Diseases category, including a Parkinson's Disease Typical sample row.",
+        "extractionStatus": "direct",
+        "gene": "Neurodegenerative disease category table",
+        "genotype": "sample Neuro-degenerative Diseases category table observed with Alzheimer's Disease Reduced, Alzheimer's Disease Early Onset Unlikely, Amyotrophic Lateral Sclerosis Elevated, Dystonia Absent, Neuronal Ceroid Lipofuscinosis Absent, and Parkinson's Disease Typical rows",
+        "phenotype": "Observed sibling sample output structure only; do not infer local Parkinson's disease risk, diagnosis, symptoms, progression, treatment, testing, family-member risk, variant pathogenicity, reproductive action, or clinical action.",
+        "sortOrder": 2,
+        "tier": "Sibling sample-report section",
+        "variantId": "disease-risk-sample-neurodegenerative-parkinsons"
       }
-    ],
-    "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and rows for Parkinson's Disease.",
-      "validated Parkinson disease genetic test interpretation, diagnostic evaluation, family history, symptoms, neurologist review, and authenticated sample-report rows",
-      "Report unavailable Parkinson's disease genetics context evidence explicitly; do not diagnose Parkinson's disease or neurologic disease; estimate Parkinson's risk, penetrance, prognosis, age of onset, severity, progression, family-member risk, carrier status, symptoms, treatment response, medication need, testing need, screening need, cascade-testing need, reproductive action, variant pathogenicity, or clinical actionability."
     ],
     "probabilities": [],
     "uncertainty": [
-      "No validated Parkinson disease genetics boundary context model with source provenance and professional review is supplied for this local package.",
-      "The supplied rows support evidence-boundary education only and should not be treated as a personal prediction or clinical interpretation."
+      "No calibrated model, applicability distribution, clinical context, or professional review is supplied for this fixture.",
+      "Sibling sample rows show report structure only and do not quantify local probability."
+    ],
+    "missingInputs": [
+      "validated Parkinson's model, gene panel result, variant classifications, family history, neurologic symptoms, exam findings, age of onset context, imaging, medication response, clinician review, and authenticated sample-report rows unavailable in this fixture; Public Disease Risk sample PDF Neuro-degenerative Diseases table, Parkinson's Disease row, and heritable-component limitation are extracted as sibling output-structure evidence.",
+      "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence for Parkinson's Disease",
+      "direct Parkinson's Disease authenticated sample rows unavailable in this fixture; public Disease Risk Genetic Test Report sample PDF observed separately as sibling output-structure evidence"
     ],
     "limitations": [
-      "This validation result uses selected derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
-      "The package does not recreate unavailable Sequencing.com authenticated report rows or proprietary third-party output for Parkinson's Disease.",
-      "The package does not support: Parkinson disease diagnosis; personal risk estimate; age-of-onset estimate; disease progression prediction; treatment recommendation; family-member risk conclusion."
+      "No raw genome data is included or returned.",
+      "No personal disease risk, diagnosis, screening, prevention, treatment, or actionability conclusion is produced.",
+      "Direct report detail/body parity remains pending; the sample rows are sibling output-structure evidence only."
     ]
   }
 }

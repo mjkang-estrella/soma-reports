@@ -3,16 +3,16 @@
     "reportTitle": "Blood Glucose Insight",
     "inputManifestHash": "sha256:synthetic-blood-glucose-insight-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "No calibrated glucose, diabetes, insulin-resistance, lab, diet-history, supplement, medication, metabolic, or ancestry applicability model is supplied with this fixture."
+      "Calibrated glucose, diabetes, insulin-resistance, lab, diet-history, supplement, medication, metabolic, and ancestry-applicability models are unavailable.",
+      "Public sample PDF rows are included only as output-format evidence and are not local personal results."
     ]
   },
   "resultRows": [
     {
-      "groupTitle": "Blood glucose nutrition context",
+      "groupTitle": "Local nutrition-genetics evidence",
       "item": "MCM6/LCT rs4988235",
       "brandName": "Not applicable",
-      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a diagnosis, symptom explanation, diet recommendation, supplement recommendation, or model-derived health result.",
+      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a glucose prediction, diabetes diagnosis, insulin-resistance result, lab interpretation, diet recommendation, supplement recommendation, medication recommendation, or treatment claim.",
       "genes": [
         "MCM6",
         "LCT"
@@ -22,61 +22,282 @@
         "medlineplus-lactose-intolerance",
         "medlineplus-mcm6"
       ],
-      "plainEnglishMeaning": "This marker can provide lactose-related context, but symptoms, diet history, labs, environment, medications, and professional review matter for health and nutrition decisions."
+      "plainEnglishMeaning": "This marker can provide lactose-related context, but symptoms, ancestry, diet history, labs, medications, medical history, environment, and professional review matter for nutrition and glucose decisions.",
+      "sourceBindingStatus": "curated"
     },
     {
-      "groupTitle": "Nutrition model availability",
+      "groupTitle": "Unavailable calibrated models",
       "item": "Blood glucose insight model",
       "brandName": "Not applicable",
-      "geneticAnalysis": "No calibrated glucose, diabetes, insulin-resistance, lab, diet-history, supplement, medication, metabolic, or ancestry applicability model is supplied with this fixture.",
+      "geneticAnalysis": "The fixture intentionally marks calibrated glucose, diabetes, insulin-resistance, lab, diet-history, supplement, medication, metabolic, and ancestry-applicability models unavailable.",
       "genes": [
-        "Blood glucose insight model"
+        "model-unavailable"
       ],
-      "sourceLabel": "MedlinePlus blood glucose and A1C tests / CDC diabetes risk factors",
+      "sourceLabel": "Blood glucose, HbA1c, diabetes-risk, supplement, and BMI references",
       "sourceIds": [
         "medlineplus-blood-glucose-test",
         "medlineplus-hba1c-test",
-        "cdc-diabetes-risk-factors"
+        "cdc-diabetes-risk-factors",
+        "fda-dietary-supplements",
+        "nih-ods-dietary-supplement-fact-sheets",
+        "cdc-bmi"
       ],
-      "plainEnglishMeaning": "The report can describe supplied marker context, but it should not make diet, supplement, glucose, gut, weight, wellness, child-specific, symptom, lab, metabolic, or treatment conclusions without validated evidence."
+      "plainEnglishMeaning": "This local run can explain why evidence is missing, but it must not infer glucose levels, HbA1c, diabetes risk, insulin resistance, nutrient needs, food lists, diet plans, supplements, medication changes, diagnoses, or treatment from genotype alone.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Report identity",
+      "item": "Blood Glucose Insight sample",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The public sample opens as a Blood Glucose Insight report and shows blood glucose report ID number 90000022222.",
+      "description": "Use this as observed report identity and public sample boundary only; it is not local blood glucose, HbA1c, diabetes, or nutrition evidence.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "blood-glucose-insight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 1 of the public GenoPalate Blood Glucose Insight sample PDF; this is observed sample report identity.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Summary",
+      "item": "Blood glucose control blueprint",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Top priorities are limiting total fat, limiting saturated fat, including complex carbohydrates, limiting added sugar, and including plenty of zinc.",
+      "description": "The summary says the sample person may respond better to a lower-fat, higher-quality carbohydrate approach, reducing added sugars, and getting enough zinc from food or supplements.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "blood-glucose-insight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 2 of the public sample PDF; do not convert sample priorities into local diet or supplement advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Summary",
+      "item": "All personalized intake recommendations",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Summary targets shown: carbohydrates 50-58% of daily calories, fiber 25 g/day, added sugar under 10%, total fat 23-31%, saturated fat under 8%, protein over 25%, magnesium 310 mg/day, and zinc 9-17 mg/day.",
+      "description": "The page states recommendations are tailored to genetics, age, and sex; local output must not reuse these sample targets as personal recommendations without validated local evidence.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "blood-glucose-insight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 3 of the public sample PDF; this summary contains sample output-format targets only.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Nutrient detail",
+      "item": "Carbohydrates",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Carbohydrate recommendation: 50-58% of daily calories or 414-471 g/day; the sample links IRS1 GP000002 CC to being more likely to decrease insulin resistance on a high-carbohydrate intake.",
+      "description": "The sample includes complex carbohydrate guidance, a food-score table, and a marker table for the IRS1 gene.",
+      "genes": [
+        "IRS1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "blood-glucose-insight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 4-5 of the public sample PDF; this is observed sample content, not local carbohydrate, insulin, or diet advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Nutrient detail",
+      "item": "Fiber",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Fiber detail page target is 14-19 g/day, while the summary page lists 25 g/day; NOTCH2 GP000007 is not detected, TCF7L2 GP000005 CT and ZBED3 GP000006 AG align with typical dietary guidelines.",
+      "description": "The sample includes snack and fiber supplement wording plus a gene table; preserve the page-level discrepancy as sample evidence rather than resolving it.",
+      "genes": [
+        "NOTCH2",
+        "TCF7L2",
+        "ZBED3"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "blood-glucose-insight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 3 and 6 of the public sample PDF; do not infer local fiber needs, supplement needs, glucose response, or diet changes.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Nutrient detail",
+      "item": "Added sugar",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Added sugar recommendation: less than 10% of daily calories; TCF7L2 GP000005 CT is linked in the sample to being more likely to decrease fasting glucose levels on a low-added sugar intake.",
+      "description": "The sample includes sugar-sweetened beverage swaps, common added-sugar sources, and a TCF7L2 marker row.",
+      "genes": [
+        "TCF7L2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "blood-glucose-insight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 7 of the public sample PDF; this is observed sample structure, not local fasting glucose or diet advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Nutrient detail",
+      "item": "Total fat",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Total fat recommendation: 23-31% of daily calories or 84-109 g/day; the visible detail page repeats IRS1 GP000002 CC rows linked to lower insulin resistance on a low-fat intake.",
+      "description": "The gene appendix additionally shows IRS1, GIPR, PPM1K, and TCF7L2 rows for total fat; the detail-page repeated IRS1 rows are preserved as sample output evidence.",
+      "genes": [
+        "IRS1",
+        "GIPR",
+        "PPM1K",
+        "TCF7L2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "blood-glucose-insight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 8, 15, and 16 of the public sample PDF; this is observed sample content, not local fat-response, insulin, lab, or diet advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Nutrient detail",
+      "item": "Saturated fat",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Saturated fat recommendation: under 8% of daily calories or under 30 g/day; TCF7L2 GP000005 CT is linked in the sample to lower insulin resistance on a low-saturated-fat intake.",
+      "description": "The sample includes common saturated-fat sources, swap examples, and a TCF7L2 marker row.",
+      "genes": [
+        "TCF7L2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "blood-glucose-insight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 9 and 16 of the public sample PDF; this is observed sample content, not local saturated-fat or insulin-resistance advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Nutrient detail",
+      "item": "Protein",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Protein summary page target is over 25% of daily calories, while the detail page target is 23-31% or 84-109 g/day; DHCR7 GP000010 shows CC on the detail page but GG in the appendix.",
+      "description": "The sample includes protein food examples and GenoBlend text. Preserve the target and DHCR7 genotype mismatch as extraction notes.",
+      "genes": [
+        "DHCR7"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "blood-glucose-insight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 3, 10, and 16 of the public sample PDF; do not infer local protein needs, supplement needs, cholesterol, glucose, or treatment conclusions.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Nutrient detail",
+      "item": "Magnesium",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Magnesium recommendation: 310 mg/day; the detail page spells TRPM6 as TPRM6 and shows GP000060 not detected and GP000061 CC aligning with typical dietary guidelines.",
+      "description": "The appendix uses TRPM6 and describes magnesium and calcium ion-channel context; the typo is preserved as observed sample output.",
+      "genes": [
+        "TRPM6"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "blood-glucose-insight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 11 and 16 of the public sample PDF; this is sample output structure, not local magnesium, supplement, lab, or glucose advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Nutrient detail",
+      "item": "Zinc",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "Zinc recommendation: 9-17 mg/day; SLC30A8 GP000059 AA is linked in the sample to being more likely to decrease fasting glucose levels on a high-zinc intake.",
+      "description": "The sample includes oyster and food-score wording plus a SLC30A8 marker row.",
+      "genes": [
+        "SLC30A8"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "blood-glucose-insight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 12 and 16 of the public sample PDF; this is observed sample content, not local zinc, supplement, fasting-glucose, diet, or treatment advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Grocery, recipes, lifestyle, and appendix",
+      "item": "Food, lifestyle, and metric sections",
+      "brandName": "GenoPalate sample",
+      "geneticAnalysis": "The sample includes grocery categories, blood glucose-friendly recipe CTA, exercise, sleep, stress, gene appendix, insulin resistance, HOMA-IR, blood glucose ranges, HbA1c ranges, and glossary sections.",
+      "description": "These sections define the output structure and educational appendix style; they do not supply local labs, diagnoses, treatment plans, or personal lifestyle prescriptions.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "blood-glucose-insight-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 13-19 of the public sample PDF; keep food lists and lifestyle text separate from local recommendations.",
+      "sourceBindingStatus": "exact"
     }
   ],
   "practicalNextSteps": {
     "glucoseContext": [
-      "Use this report as educational glucose-adjacent nutrition genetics context, not as a blood glucose or diabetes result.",
-      "Discuss symptoms, diet history, glucose measurements, labs, medications, and health goals with qualified professionals.",
-      "Do not change foods, supplements, medications, testing, or treatment based on genotype alone."
+      "Use this validation result to verify local-agent packaging and citation behavior, not to make personal blood glucose, HbA1c, diabetes, insulin-resistance, diet, supplement, medication, or treatment decisions.",
+      "Discuss glucose labs, symptoms, medications, diet history, supplement use, and metabolic-health questions with a qualified clinician or dietitian.",
+      "Keep the GenoPalate sample nutrient targets, food lists, recipes, lifestyle text, and marker rows separate from local evidence unless an equivalent validated local model is supplied."
     ]
   },
   "references": [
     {
       "id": "medlineplus-lactose-intolerance",
-      "title": "MedlinePlus Genetics: lactose intolerance"
+      "title": "MedlinePlus Genetics: lactose intolerance",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "lactose_context",
+        "non_diagnostic_language"
+      ]
     },
     {
       "id": "medlineplus-mcm6",
-      "title": "MedlinePlus Genetics: MCM6 gene"
+      "title": "MedlinePlus Genetics: MCM6 gene",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "mcm6_lct_context",
+        "lactase_persistence_context"
+      ]
     },
     {
       "id": "nutritional-genomics-dtc-review",
-      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing"
+      "title": "Nutritional Genomics and Direct-to-Consumer Genetic Testing",
+      "sourceType": "research_review",
+      "evidenceLevel": "review_background",
+      "usedFor": [
+        "nutrition_context",
+        "direct_to_consumer_limitations"
+      ]
     },
     {
       "id": "ebi-gwas-catalog",
-      "title": "GWAS Catalog"
+      "title": "GWAS Catalog",
+      "sourceType": "database",
+      "evidenceLevel": "background",
+      "usedFor": [
+        "candidate_trait_associations"
+      ]
     },
     {
-      "id": "cdc-diabetes-risk-factors",
-      "title": "CDC Diabetes Risk Factors",
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
       "usedFor": [
-        "diabetes_risk_context",
-        "metabolic_limitations",
-        "professional_review_language"
+        "dtc_limitations",
+        "non_diagnostic_language",
+        "consumer_safety_language"
       ]
     },
     {
       "id": "medlineplus-blood-glucose-test",
       "title": "MedlinePlus: Blood Glucose Test",
+      "sourceType": "medical_test_resource",
+      "evidenceLevel": "consumer_health_background",
       "usedFor": [
         "glucose_lab_context",
         "diabetes_diagnosis_boundary",
@@ -86,38 +307,242 @@
     {
       "id": "medlineplus-hba1c-test",
       "title": "MedlinePlus: Hemoglobin A1C test",
+      "sourceType": "medical_test_resource",
+      "evidenceLevel": "consumer_health_background",
       "usedFor": [
         "glucose_lab_context",
         "a1c_context",
         "no_lab_inference_from_genotype"
+      ]
+    },
+    {
+      "id": "cdc-diabetes-risk-factors",
+      "title": "CDC Diabetes Risk Factors",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background",
+      "usedFor": [
+        "diabetes_risk_context",
+        "metabolic_limitations",
+        "professional_review_language"
+      ]
+    },
+    {
+      "id": "fda-dietary-supplements",
+      "title": "FDA Dietary Supplements",
+      "sourceType": "regulatory_resource",
+      "evidenceLevel": "regulatory_background",
+      "usedFor": [
+        "supplement_context",
+        "supplement_safety_language",
+        "no_dosing_from_genotype"
+      ]
+    },
+    {
+      "id": "nih-ods-dietary-supplement-fact-sheets",
+      "title": "NIH Office of Dietary Supplements Fact Sheets",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background",
+      "usedFor": [
+        "supplement_context",
+        "nutrient_context",
+        "professional_review_language"
+      ]
+    },
+    {
+      "id": "cdc-bmi",
+      "title": "CDC About Body Mass Index",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background",
+      "usedFor": [
+        "weight_context",
+        "bmi_limitations",
+        "no_weight_prediction_from_genotype"
+      ]
+    },
+    {
+      "id": "blood-glucose-insight-sample-pdf",
+      "title": "GenoPalate Blood Glucose Insight sample report",
+      "sourceType": "mock_report",
+      "evidenceLevel": "direct_sample_report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
       ]
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
+        "effect": "The local fixture supplies a derived MCM6/LCT rs4988235 call for lactase-persistence context.",
+        "extractionStatus": "curated",
         "gene": "MCM6/LCT",
-        "observedValue": "rs4988235 CT"
+        "genotype": "CT",
+        "phenotype": "Report as educational lactose-related marker context only; do not infer local blood glucose, HbA1c, diabetes, insulin resistance, diet, supplement, lab, medication, diagnosis, or treatment conclusions.",
+        "sortOrder": 1,
+        "tier": "Local derived call",
+        "variantId": "rs4988235"
       },
       {
+        "effect": "The local fixture intentionally omits calibrated glucose models and non-genetic context.",
+        "extractionStatus": "curated",
         "gene": "Blood glucose insight model",
-        "observedValue": "calibrated model unavailable"
+        "genotype": "calibrated glucose model, diabetes model, insulin-resistance model, lab context, diet-history context, supplement model, medication context, metabolic model, and ancestry applicability metadata unavailable",
+        "phenotype": "Mark glucose, diabetes, insulin-resistance, lab, diet, supplement, medication, metabolic, and treatment sections unavailable instead of inferring them.",
+        "sortOrder": 2,
+        "tier": "Local missing input",
+        "variantId": "blood-glucose-insight-model-unavailable"
+      },
+      {
+        "effect": "Sample carbohydrate row links this genotype to lower insulin resistance on a high-carbohydrate intake.",
+        "extractionStatus": "direct",
+        "gene": "IRS1",
+        "genotype": "CC",
+        "phenotype": "Observed sample content only; do not infer local carbohydrate target, insulin resistance, glucose status, or diet advice.",
+        "sortOrder": 3,
+        "tier": "Sample-report visible row",
+        "variantId": "GP000002"
+      },
+      {
+        "effect": "Sample fiber row says the genotype could not be detected from the file provided.",
+        "extractionStatus": "direct",
+        "gene": "NOTCH2",
+        "genotype": "--",
+        "phenotype": "Observed sample content only; do not infer local fiber response, digestive status, or glucose control.",
+        "sortOrder": 4,
+        "tier": "Sample-report visible row",
+        "variantId": "GP000007"
+      },
+      {
+        "effect": "Sample fiber row says this genotype aligns with typical dietary guidelines.",
+        "extractionStatus": "direct",
+        "gene": "TCF7L2",
+        "genotype": "CT",
+        "phenotype": "Observed sample content only; do not infer local fiber target or glucose response.",
+        "sortOrder": 5,
+        "tier": "Sample-report visible row",
+        "variantId": "GP000005"
+      },
+      {
+        "effect": "Sample fiber row says this genotype aligns with typical dietary guidelines.",
+        "extractionStatus": "direct",
+        "gene": "ZBED3",
+        "genotype": "AG",
+        "phenotype": "Observed sample content only; do not infer local fiber target or insulin-resistance response.",
+        "sortOrder": 6,
+        "tier": "Sample-report visible row",
+        "variantId": "GP000006"
+      },
+      {
+        "effect": "Sample added-sugar row links this genotype to lower fasting glucose on a low-added-sugar intake.",
+        "extractionStatus": "direct",
+        "gene": "TCF7L2",
+        "genotype": "CT",
+        "phenotype": "Observed sample content only; do not infer local fasting glucose, sugar response, or diet advice.",
+        "sortOrder": 7,
+        "tier": "Sample-report visible row",
+        "variantId": "GP000005"
+      },
+      {
+        "effect": "Sample total-fat appendix row says this genotype aligns with typical dietary guidelines.",
+        "extractionStatus": "direct",
+        "gene": "GIPR",
+        "genotype": "CC",
+        "phenotype": "Observed sample content only; do not infer local insulin secretion, fat response, or glucose control.",
+        "sortOrder": 8,
+        "tier": "Sample-report visible row",
+        "variantId": "GP000014"
+      },
+      {
+        "effect": "Sample total-fat appendix row says this genotype aligns with typical dietary guidelines.",
+        "extractionStatus": "direct",
+        "gene": "PPM1K",
+        "genotype": "CC",
+        "phenotype": "Observed sample content only; do not infer local fat response, amino-acid metabolism, or insulin resistance.",
+        "sortOrder": 9,
+        "tier": "Sample-report visible row",
+        "variantId": "GP000022"
+      },
+      {
+        "effect": "Sample saturated-fat row links this genotype to lower insulin resistance on a low-saturated-fat intake.",
+        "extractionStatus": "direct",
+        "gene": "TCF7L2",
+        "genotype": "CT",
+        "phenotype": "Observed sample content only; do not infer local saturated-fat target, insulin resistance, or diet advice.",
+        "sortOrder": 10,
+        "tier": "Sample-report visible row",
+        "variantId": "GP000005"
+      },
+      {
+        "effect": "Sample appendix says this genotype aligns with typical dietary guidelines; the protein detail page shows a conflicting genotype.",
+        "extractionStatus": "direct",
+        "gene": "DHCR7",
+        "genotype": "GG in appendix; CC on protein detail page",
+        "phenotype": "Observed sample inconsistency only; do not resolve the genotype or infer local protein, cholesterol, insulin, glucose, supplement, or diet needs.",
+        "sortOrder": 11,
+        "tier": "Sample-report visible row",
+        "variantId": "GP000010"
+      },
+      {
+        "effect": "Sample magnesium row says the genotype could not be detected from the file provided.",
+        "extractionStatus": "direct",
+        "gene": "TRPM6",
+        "genotype": "--",
+        "phenotype": "Observed sample content only; do not infer local magnesium status, lab values, or supplement needs.",
+        "sortOrder": 12,
+        "tier": "Sample-report visible row",
+        "variantId": "GP000060"
+      },
+      {
+        "effect": "Sample magnesium row says this genotype aligns with typical dietary guidelines.",
+        "extractionStatus": "direct",
+        "gene": "TRPM6",
+        "genotype": "CC",
+        "phenotype": "Observed sample content only; do not infer local magnesium target, glucose status, or supplement need.",
+        "sortOrder": 13,
+        "tier": "Sample-report visible row",
+        "variantId": "GP000061"
+      },
+      {
+        "effect": "Sample zinc row links this genotype to lower fasting glucose on a high-zinc intake.",
+        "extractionStatus": "direct",
+        "gene": "SLC30A8",
+        "genotype": "AA",
+        "phenotype": "Observed sample content only; do not infer local fasting glucose, zinc need, supplement need, or diet advice.",
+        "sortOrder": 14,
+        "tier": "Sample-report visible row",
+        "variantId": "GP000059"
+      },
+      {
+        "effect": "Sample appendix explains insulin resistance, HOMA-IR, blood glucose test ranges, and HbA1c ranges.",
+        "extractionStatus": "direct",
+        "gene": "Blood glucose metrics",
+        "genotype": "not applicable",
+        "phenotype": "Educational appendix structure only; do not diagnose, interpret labs, or estimate glucose, HbA1c, insulin resistance, diabetes, or treatment need from genotype.",
+        "sortOrder": 15,
+        "tier": "Sample-report visible appendix",
+        "variantId": "non-genetic appendix"
       }
-    ],
-    "missingInputs": [
-      "Authenticated sample-report sections and rows have not been extracted.",
-      "No calibrated glucose, diabetes, insulin-resistance, lab, diet-history, supplement, medication, metabolic, or ancestry applicability model is supplied with this fixture.",
-      "Broader symptoms, food history, diet history, activity history, labs, medications, medical history, child-specific context, ancestry applicability, environment, and professional assessment are not represented in this fixture."
     ],
     "probabilities": [],
     "uncertainty": [
-      "Nutrition, lifestyle, symptoms, labs, weight, glucose, gut health, supplement response, and wellness outcomes depend on genetics plus non-genetic context and professional review.",
-      "A single marker should not be used to diagnose conditions, explain symptoms, prescribe diets, recommend supplements, interpret labs, or guide treatment."
+      "No calibrated glucose model: the fixture does not provide a validated model for blood glucose, HbA1c, diabetes risk, insulin resistance, nutrient targets, diet response, supplement needs, medication context, or ancestry applicability.",
+      "Sample report boundary: the Blood Glucose Insight sample rows are public sample output structure only; they are not local genotypes, lab values, diagnoses, or personal recommendations.",
+      "Preserved sample inconsistencies: the sample contains fiber summary versus detail targets, protein summary versus detail targets, a DHCR7 detail-versus-appendix genotype mismatch, and a TRPM6/TPRM6 spelling mismatch."
+    ],
+    "missingInputs": [
+      "Validated blood glucose, HbA1c, diabetes-risk, and insulin-resistance model calibration",
+      "Fasting glucose, HbA1c, fasting insulin, HOMA-IR, glucose tolerance, random glucose, and other personal lab values",
+      "Diet history, age/sex context, ancestry applicability metadata, medications, supplement use, symptoms, medical history, and clinician or dietitian review",
+      "Validated mapping from GenoPalate internal GP marker IDs to public variant identifiers"
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data is not included.",
       "The report is educational and does not predict blood glucose, diagnose diabetes, infer insulin resistance, interpret labs, prescribe diets, recommend supplements, change medications, or provide treatment guidance.",
-      "Authenticated Sequencing.com sample report rows are still pending."
+      "The public GenoPalate Blood Glucose Insight sample PDF is source-bound for format parity; sample nutrient targets, food lists, recipes, lifestyle text, glucose metric ranges, and genotypes are not local results.",
+      "Internal marker IDs such as GP000002 are preserved as observed sample report identifiers and are not treated as validated rsID mappings.",
+      "Reference resources used for boundary language include MedlinePlus lactose intolerance, MedlinePlus MCM6, nutritional genomics review, GWAS Catalog, MedlinePlus DTC result limits, blood glucose and HbA1c test resources, CDC diabetes risk factors, FDA dietary supplement context, NIH ODS supplement fact sheets, CDC BMI, and the Blood Glucose Insight sample PDF."
     ]
   }
 }

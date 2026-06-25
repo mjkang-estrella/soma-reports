@@ -15,7 +15,7 @@
       "haplotype": "condition-boundary-model-unavailable",
       "inputId": "autoimmune-disorders-model-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "validated autoimmune disease model, calibrated autoimmune PRS, HLA inference, autoantibodies, complements, inflammatory labs, organ involvement, symptoms, family history, environmental context, medication context, disease activity, flare context, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "validated autoimmune disease model, calibrated autoimmune PRS, HLA inference, autoantibodies, complements, inflammatory labs, organ involvement, symptoms, family history, environmental context, medication context, disease activity, flare context, treatment context, diet context, supplement context, and clinical/lab interpretation unavailable in this fixture; public Immunity & Inflammation sample PDF joint inflammation, gut inflammation, eczema, and psoriasis rows observed as sibling autoimmune-adjacent output structure",
       "sourceArtifact": "synthetic-autoimmune-disorders-condition-boundary-context-v1",
       "sourceFile": "synthetic-autoimmune-disorders-condition-boundary-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "clinical-lab-context-unavailable",
       "inputId": "autoimmune-disorders-clinical-lab-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, disease activity, flare context, and personal treatment context unavailable in this fixture; public Immunity & Inflammation sample PDF observed separately as sibling output-structure evidence",
       "sourceArtifact": "synthetic-autoimmune-disorders-condition-boundary-context-v1",
       "sourceFile": "synthetic-autoimmune-disorders-condition-boundary-context-v1.json"
     }
@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for autoimmune-disorders validation"
   },
-  "missingInputPolicy": "Report unavailable autoimmune disorders evidence explicitly; do not diagnose autoimmune disease; estimate autoimmune disease risk; infer HLA status, autoantibody status, complement status, organ involvement, disease activity, flare status, immune suppression need, treatment need, supplement need, diet need, screening need, diagnostic-test need, reproductive action, or actionability.",
+  "missingInputPolicy": "Report unavailable autoimmune disease model calibration, autoimmune PRS, HLA inference, autoantibodies, complements, inflammatory labs, organ involvement, symptoms, family history, environmental context, medication context, disease activity, flare context, treatment context, diet context, supplement context, and clinical/lab interpretation explicitly; do not infer diagnosis, disease risk, HLA status, autoantibody status, complement status, organ involvement, disease activity, flare status, treatment, supplement, diet, screening, testing, reproductive, or actionability.",
   "packageSlug": "autoimmune-disorders",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -149,7 +149,19 @@
         "non_diagnostic_language",
         "missing_model_policy"
       ]
+    },
+    {
+      "evidenceLevel": "sibling_observed_output_structure",
+      "id": "inflammation-and-immunity-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Inflammation and Immunity DNA Report sample report",
+      "usedFor": [
+        "sample_rows",
+        "genotype_summary",
+        "formal_fields",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer autoimmune disorders boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer autoimmune-disorders boundary context using supplied references plus sibling Immunity & Inflammation sample PDF rows for autoimmune-adjacent output structure while explicitly marking personal autoimmune model and clinical/lab context unavailable."
 }

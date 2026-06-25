@@ -1,0 +1,103 @@
+{
+  "schema": "soma-reports.official-output-capture.v1",
+  "slug": "dysautonomia",
+  "title": "Dysautonomia",
+  "capturedAt": "2026-06-24T18:30:00.000Z",
+  "captureUrl": "https://sequencing.com/marketplace/dysautonomia",
+  "sourceKind": "private-completed-output-redacted",
+  "privacyBoundary": {
+    "rawGenomeIncluded": false,
+    "privateValuesRedacted": true,
+    "commitSafe": true,
+    "notes": "Generated from a private local completed-output redaction input. Full private output stayed outside the repository."
+  },
+  "reportFile": "",
+  "sourceArtifacts": [
+    "https://sequencing.com/marketplace/dysautonomia"
+  ],
+  "sourceResources": [
+    {
+      "id": "dysautonomia-redacted-official-output",
+      "title": "Dysautonomia redacted official completed output",
+      "sourceType": "redacted_official_completed_output",
+      "url": "https://sequencing.com/marketplace/dysautonomia",
+      "privacy": "Full completed output stayed local; sanitized artifact contains only redacted structure and source bindings.",
+      "evidenceLevel": "official-output",
+      "extractionStatus": "direct",
+      "scope": "report_specific",
+      "usedFor": [
+        "sampleRows",
+        "formalFields",
+        "citationBindings"
+      ]
+    }
+  ],
+  "sampleRows": [
+    {
+      "rowId": "dysautonomia-official-row-1",
+      "section": "Results",
+      "item": "Autonomic nervous system summary",
+      "observedField": "summary",
+      "geneticAnalysis": "Redacted official completed-output row structure; no personal genotype or finding values committed.",
+      "sourceResourceIds": [
+        "dysautonomia-redacted-official-output"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Bound to the local completed-output structure after manual redaction."
+    }
+  ],
+  "resultRows": [],
+  "formalFields": [
+    {
+      "key": "dysautonomia_summary",
+      "label": "Autonomic nervous system summary",
+      "observedField": "summary",
+      "outputPath": "sections.results.summary",
+      "status": "covered",
+      "sourceResourceIds": [
+        "dysautonomia-redacted-official-output"
+      ],
+      "sourceBindingStatus": "exact",
+      "sourceBindingNote": "Bound to the local completed-output structure after manual redaction.",
+      "sourceLabel": "dysautonomia-redacted-official-output"
+    }
+  ],
+  "citationBindings": [
+    {
+      "rowId": "dysautonomia-official-row-1",
+      "sourceResourceIds": [
+        "dysautonomia-redacted-official-output"
+      ],
+      "sourceBindingStatus": "exact"
+    }
+  ],
+  "generatedOutput": {
+    "valueRedaction": "All account-specific result values removed before repository export.",
+    "privateResultUrlCommitted": false,
+    "sections": [
+      "Results"
+    ]
+  },
+  "validationCommands": [
+    "npm run scaffold:validate-captures -- --path reference/catalog/dysautonomia-official-output-capture-2026-06-24.json",
+    "npm run scaffold:promotion-preview -- --path reference/catalog/dysautonomia-official-output-capture-2026-06-24.json",
+    "npm run scaffold:evidence-audit",
+    "npm run readiness:audit:summary",
+    "npm run agent:validate:formal"
+  ],
+  "promotionBoundary": {
+    "targetStartsAsScaffoldOnly": true,
+    "requiredEvidenceForPromotion": [
+      "Direct Dysautonomia sample report rows from Sequencing.com",
+      "Verified completed report artifact for the exact package",
+      "Row-level source bindings for Dysautonomia-specific rows"
+    ],
+    "nonPromotionBoundary": [
+      "Do not mark sampleReport, formalFields, or citationBindings ready from synthetic fixture rows.",
+      "Do not count marketing copy, product order pages, public education pages, or logged-in detail metadata as sample report rows.",
+      "Direct authenticated detail data without a non-empty reportFile or visible generated output rows is detail evidence only.",
+      "Sibling sample rows may support output-structure constraints only when explicitly marked as sibling evidence; they do not promote the target package to report-specific sample-backed formal readiness.",
+      "External product samples, including third-party Promethease examples, are reference context unless captured as official Sequencing.com marketplace output for the exact package."
+    ]
+  }
+}

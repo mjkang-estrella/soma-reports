@@ -12,7 +12,7 @@ Use plain English for general customers. Do not write for clinicians, pharma tea
 
 If a marker or allele is missing, mark that row or section as unavailable or limited instead of guessing.
 
-Every result row must cite one of the provided reference IDs or mark the source as unavailable.
+Every result row must cite one of the provided reference IDs using `sourceIds` or `sourceResourceIds`, or mark the source as unavailable.
 
 Do not diagnose disease and do not recommend starting, stopping, or changing medications or supplements.
 

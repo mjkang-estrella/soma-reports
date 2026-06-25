@@ -4,7 +4,7 @@
     "reportTitle": "Dysautonomia",
     "inputManifestHash": "sha256:synthetic-dysautonomia-organ-system-boundary-context-v1",
     "sectionsUnavailable": [
-      "Validated package model and authenticated sample rows are unavailable in this local fixture.",
+      "Validated package model and personal clinical/autonomic findings are unavailable in this local fixture.",
       "Clinical diagnosis, symptoms, family history, medications, and qualified professional review are unavailable.",
       "Labs, imaging, vitals, organ-function measures, treatment context, prevention context, and actionability context are unavailable."
     ]
@@ -65,11 +65,27 @@
       "sourceBindingStatus": "curated"
     }
   ],
+  "sampleRows": [
+    {
+      "groupTitle": "Results",
+      "item": "Autonomic nervous system summary",
+      "brandName": "",
+      "geneticAnalysis": "Redacted official completed-output row structure; no personal genotype or finding values committed.",
+      "description": "Sanitized completed-output structure from the exact Dysautonomia package; personal values stayed private.",
+      "genes": [],
+      "sourceLabel": "Dysautonomia redacted official completed output",
+      "sourceResourceIds": [
+        "dysautonomia-redacted-official-output"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This row preserves the official Dysautonomia completed-output structure only; personal values stayed local."
+    }
+  ],
   "organSystemConditionContext": {
     "plainEnglishMeaning": "The safe output for this package is an evidence-availability report. It explains which model, clinical, professional, and organ-system inputs are missing and avoids medical conclusions from missing evidence.",
     "unsupportedClaims": [
       "Diagnosis, personal disease risk, carrier status, variant classification, symptom status, severity, prognosis, lab status, imaging status, vital-sign status, organ-function status, treatment need, medication response, supplement need, diet need, exercise guidance, screening need, testing need, prevention action, clearance, emergency action, all-clear reassurance, and clinical actionability are not supported by this fixture.",
-      "Authenticated Sequencing.com sample rows are not present, so sample report labels and row meanings are not reconstructed."
+      "The official Dysautonomia completed-output row is preserved as structure-only evidence with private finding values redacted, so personal autonomic findings are not reconstructed."
     ],
     "professionalReview": "Use this as a local-agent readiness fixture only. Health decisions require validated test scope, relevant clinical context, and qualified professional review."
   },
@@ -116,6 +132,10 @@
     {
       "id": "brainfacts-dysautonomia",
       "title": "BrainFacts/NINDS: Dysautonomia"
+    },
+    {
+      "id": "dysautonomia-redacted-official-output",
+      "title": "Dysautonomia redacted official completed output"
     }
   ],
   "appendix": {
@@ -123,38 +143,39 @@
       {
         "inputId": "dysautonomia-model-unavailable",
         "gene": "Dysautonomia model",
-        "observedValue": "validated dysautonomia model, autonomic testing, tilt-table testing, heart rate, blood pressure, syncope history, symptom history, medication context, hydration and salt context, neurologic or cardiology review, clinical diagnosis, and authenticated sample-report rows unavailable in this fixture",
+        "observedValue": "validated dysautonomia model, autonomic testing, tilt-table testing, heart rate, blood pressure, syncope history, symptom history, medication context, hydration and salt context, neurologic or cardiology review, and clinical diagnosis unavailable in this fixture; sanitized official completed-output row structure observed separately with private values redacted",
         "matchStatus": "unavailable",
         "sourceArtifact": "synthetic-dysautonomia-organ-system-boundary-context-v1"
       },
       {
         "inputId": "dysautonomia-clinical-context-unavailable",
         "gene": "Dysautonomia clinical and professional context",
-        "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and authenticated sample-report rows unavailable in this fixture",
+        "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and personal clinical context unavailable in this fixture; sanitized official completed-output row structure observed separately without private finding values",
         "matchStatus": "unavailable",
         "sourceArtifact": "synthetic-dysautonomia-organ-system-boundary-context-v1"
       },
       {
         "inputId": "dysautonomia-organ-context-unavailable",
         "gene": "Dysautonomia organ-system context",
-        "observedValue": "labs, imaging, vitals, organ-function measures, disease-specific testing, treatment context, prevention context, and actionability context unavailable in this fixture",
+        "observedValue": "labs, imaging, vitals, organ-function measures, disease-specific testing, treatment context, prevention context, actionability context, and personal recommendation context unavailable in this fixture; sanitized official completed-output row structure observed separately without private source data",
         "matchStatus": "unavailable",
         "sourceArtifact": "synthetic-dysautonomia-organ-system-boundary-context-v1"
       }
     ],
     "missingInputs": [
-      "Validated package model and authenticated sample rows are unavailable in this local fixture.",
+      "Validated package model and personal clinical/autonomic findings are unavailable in this local fixture.",
       "Clinical diagnosis, symptoms, family history, medications, and qualified professional review are unavailable.",
       "Labs, imaging, vitals, organ-function measures, treatment context, prevention context, and actionability context are unavailable."
     ],
     "probabilities": [],
     "uncertainty": [
-      "No calibrated model, ancestry applicability metadata, clinical context, professional review, or authenticated sample rows are supplied.",
+      "No calibrated model, ancestry applicability metadata, clinical context, professional review, or private finding values are supplied.",
       "Absence of evidence in this fixture must be reported as unavailable, not converted into low risk or reassurance."
     ],
     "limitations": [
       "This generated result does not include raw genome data and does not emit VCF, FASTQ, BAM, or CRAM content.",
-      "Reference resources used for boundary language: CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing; MedlinePlus Genetics: Interpreting Genetic Test Results; FDA Direct-to-Consumer Tests; MedlinePlus Genetics: complex disorders; NHGRI overview of polygenic risk scores; GWAS Catalog; BrainFacts/NINDS: Dysautonomia.",
+      "Reference resources used for boundary language: CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Testing; MedlinePlus Genetics: Interpreting Genetic Test Results; FDA Direct-to-Consumer Tests; MedlinePlus Genetics: complex disorders; NHGRI overview of polygenic risk scores; GWAS Catalog; BrainFacts/NINDS: Dysautonomia; Dysautonomia redacted official completed output.",
+      "The Dysautonomia official-output row is a sanitized structure-only capture; private finding values and raw genome data stayed local.",
       "The result is a deterministic synthetic validation artifact for local-agent packaging, not a medical interpretation."
     ]
   }

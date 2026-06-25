@@ -1,0 +1,185 @@
+{
+  "schemaVersion": "soma-reports.public-draft-route-fallback-ledger.v1",
+  "capturedAt": "2026-06-23T09:06:35Z",
+  "purpose": "Record exact authenticated route retries for public/draft scaffold packages whose marketplace detail slugs fall back to the marketplace index without exposing reportData.",
+  "sourceArtifacts": [
+    {
+      "kind": "inAppBrowserRouteRetry",
+      "use": "Opened each exact Sequencing.com marketplace slug in a temporary in-app browser tab and extracted final URL, Next.js page-props keys, and reportData availability."
+    },
+    {
+      "kind": "samplePromotionRejectionLedger",
+      "path": "reference/catalog/sample-promotion-rejections-2026-06-23.json",
+      "use": "Records the strict no-promotion decision and required promotion evidence for each public/draft scaffold package."
+    }
+  ],
+  "promotionBoundary": {
+    "promotesDetailParity": false,
+    "promotesSampleRows": false,
+    "promotesFormalFields": false,
+    "promotesCitationBindings": false,
+    "reason": "These exact slug retries resolved to the generic Sequencing.com marketplace index, not a report detail page. They exposed no pageProps.reportData, sample report file, generated output rows, formal output schema, or row-level citation bindings."
+  },
+  "entries": [
+    {
+      "slug": "ehlers-danlos-syndrome",
+      "title": "Ehlers-Danlos Syndrome",
+      "requestedUrl": "https://sequencing.com/marketplace/ehlers-danlos-syndrome",
+      "finalUrl": "https://sequencing.com/marketplace",
+      "finalUrlKind": "marketplace-index-fallback",
+      "documentTitle": "Sequencing Marketplace | DNA Reports, Apps & Test Kits",
+      "canonical": "https://sequencing.com/marketplace",
+      "pagePropsReportData": false,
+      "pagePropsKeys": [
+        "_initialProps",
+        "_sentryBaggage",
+        "_sentryTraceData",
+        "cardsPerPageDefault",
+        "data",
+        "preCalculatedFormState",
+        "reportsGroups",
+        "typesGroups"
+      ],
+      "pagePropsDataKeys": [
+        "blocks",
+        "meta"
+      ],
+      "pagePropsMetaKeys": [
+        "meta",
+        "schema"
+      ],
+      "reportFile": null,
+      "reportFileStatus": "none",
+      "sampleRows": 0,
+      "promotesDetailParity": false,
+      "promotesSampleRows": false,
+      "promotesFormalFields": false,
+      "promotesCitationBindings": false,
+      "requiredEvidenceForPromotion": [
+        "Direct Ehlers-Danlos or hEDS Sequencing.com report output",
+        "Exact EDS reportData payload with sample rows or non-empty reportFile",
+        "Row-level source bindings for EDS-specific rows"
+      ]
+    },
+    {
+      "slug": "marfan-syndrome",
+      "title": "Marfan Syndrome",
+      "requestedUrl": "https://sequencing.com/marketplace/marfan-syndrome",
+      "finalUrl": "https://sequencing.com/marketplace",
+      "finalUrlKind": "marketplace-index-fallback",
+      "documentTitle": "Sequencing Marketplace | DNA Reports, Apps & Test Kits",
+      "canonical": "https://sequencing.com/marketplace",
+      "pagePropsReportData": false,
+      "pagePropsKeys": [
+        "_initialProps",
+        "_sentryBaggage",
+        "_sentryTraceData",
+        "cardsPerPageDefault",
+        "data",
+        "preCalculatedFormState",
+        "reportsGroups",
+        "typesGroups"
+      ],
+      "pagePropsDataKeys": [
+        "blocks",
+        "meta"
+      ],
+      "pagePropsMetaKeys": [
+        "meta",
+        "schema"
+      ],
+      "reportFile": null,
+      "reportFileStatus": "none",
+      "sampleRows": 0,
+      "promotesDetailParity": false,
+      "promotesSampleRows": false,
+      "promotesFormalFields": false,
+      "promotesCitationBindings": false,
+      "requiredEvidenceForPromotion": [
+        "Direct Marfan Syndrome or FBN1 sample report rows",
+        "Verified completed report artifact for the exact package",
+        "Row-level source bindings for Marfan-specific rows"
+      ]
+    },
+    {
+      "slug": "mitchell-syndrome",
+      "title": "Mitchell Syndrome",
+      "requestedUrl": "https://sequencing.com/marketplace/mitchell-syndrome",
+      "finalUrl": "https://sequencing.com/marketplace",
+      "finalUrlKind": "marketplace-index-fallback",
+      "documentTitle": "Sequencing Marketplace | DNA Reports, Apps & Test Kits",
+      "canonical": "https://sequencing.com/marketplace",
+      "pagePropsReportData": false,
+      "pagePropsKeys": [
+        "_initialProps",
+        "_sentryBaggage",
+        "_sentryTraceData",
+        "cardsPerPageDefault",
+        "data",
+        "preCalculatedFormState",
+        "reportsGroups",
+        "typesGroups"
+      ],
+      "pagePropsDataKeys": [
+        "blocks",
+        "meta"
+      ],
+      "pagePropsMetaKeys": [
+        "meta",
+        "schema"
+      ],
+      "reportFile": null,
+      "reportFileStatus": "none",
+      "sampleRows": 0,
+      "promotesDetailParity": false,
+      "promotesSampleRows": false,
+      "promotesFormalFields": false,
+      "promotesCitationBindings": false,
+      "requiredEvidenceForPromotion": [
+        "Direct Mitchell Syndrome Sequencing.com report output",
+        "Exact reportData payload with sample rows or non-empty reportFile",
+        "Row-level source bindings for Mitchell Syndrome-specific rows"
+      ]
+    },
+    {
+      "slug": "pediatric-health",
+      "title": "Pediatric Health",
+      "requestedUrl": "https://sequencing.com/marketplace/pediatric-health",
+      "finalUrl": "https://sequencing.com/marketplace",
+      "finalUrlKind": "marketplace-index-fallback",
+      "documentTitle": "Sequencing Marketplace | DNA Reports, Apps & Test Kits",
+      "canonical": "https://sequencing.com/marketplace",
+      "pagePropsReportData": false,
+      "pagePropsKeys": [
+        "_initialProps",
+        "_sentryBaggage",
+        "_sentryTraceData",
+        "cardsPerPageDefault",
+        "data",
+        "preCalculatedFormState",
+        "reportsGroups",
+        "typesGroups"
+      ],
+      "pagePropsDataKeys": [
+        "blocks",
+        "meta"
+      ],
+      "pagePropsMetaKeys": [
+        "meta",
+        "schema"
+      ],
+      "reportFile": null,
+      "reportFileStatus": "none",
+      "sampleRows": 0,
+      "promotesDetailParity": false,
+      "promotesSampleRows": false,
+      "promotesFormalFields": false,
+      "promotesCitationBindings": false,
+      "requiredEvidenceForPromotion": [
+        "Official Pediatric Health sample report rows",
+        "Verified completed report artifact for the exact package",
+        "Row-level source bindings for pediatric-health output rows"
+      ]
+    }
+  ]
+}

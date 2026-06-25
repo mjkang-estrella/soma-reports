@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "soma-reports.authenticated-marketplace-live-count-check.v1",
+  "capturedAt": "2026-06-24T18:14:28Z",
+  "sourceUrl": "https://sequencing.com/marketplace",
+  "browserContext": "Logged-in in-app browser session",
+  "sourceStatePath": "__NEXT_DATA__.props.pageProps.reportsGroups",
+  "privacyBoundary": {
+    "rawGenomeIncluded": false,
+    "privateGenomeValuesIncluded": false,
+    "accountIdentifiersIncluded": false,
+    "commitSafe": true,
+    "note": "This artifact stores marketplace group counts, titles, route slugs, and local coverage comparison only."
+  },
+  "reportsGroupPositionTotal": 164,
+  "reportsGroups": [
+    {
+      "label": "Sequencing Apps",
+      "count": 4
+    },
+    {
+      "label": "Health",
+      "count": 54
+    },
+    {
+      "label": "Ancestry",
+      "count": 9
+    },
+    {
+      "label": "Nutrition",
+      "count": 18
+    },
+    {
+      "label": "Fitness",
+      "count": 10
+    },
+    {
+      "label": "Beauty",
+      "count": 7
+    },
+    {
+      "label": "Lifestyle",
+      "count": 27
+    },
+    {
+      "label": "Children",
+      "count": 22
+    },
+    {
+      "label": "Bioinformatics",
+      "count": 10
+    },
+    {
+      "label": "DNA Test Kit Bundles",
+      "count": 3
+    }
+  ],
+  "typeGroupPositionTotal": 31,
+  "uniqueNidCount": 85,
+  "uniqueRawRouteSlugCount": 87,
+  "duplicatePositionCount": 77,
+  "localNormalizedLedgerComparison": {
+    "artifact": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+    "localPositionCount": 164,
+    "localRawUniqueSlugCount": 87,
+    "localCanonicalUniqueSlugCount": 87,
+    "missingRawSlugs": [],
+    "extraRawSlugs": [],
+    "expectedCanonicalOnlyDifferences": [
+      "comprehensive-wgs-health-screen-bundle",
+      "expedited-advanced-wgs-health-screen-bundle",
+      "ultra-rapid-professional-wgs-health-screen-bundle"
+    ],
+    "note": "The expected canonical-only differences are order-route slugs that the local ledger aliases to stable bundle package slugs."
+  },
+  "orderSlugAliases": {
+    "comprehensive-wgs-health-screen-bundle": "comprehensive-health-screen-wgs-bundle",
+    "expedited-advanced-wgs-health-screen-bundle": "expedited-advanced-health-screen-wgs-bundle",
+    "ultra-rapid-professional-wgs-health-screen-bundle": "ultra-rapid-professional-health-screen-wgs-bundle"
+  },
+  "finding": "The live logged-in marketplace page still exposes 164 reportsGroups positions. The raw route slug set matches the local normalized authenticated ledger exactly; duplicate category placements are not missing report identities."
+}

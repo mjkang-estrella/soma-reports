@@ -462,10 +462,10 @@
       }
     ],
     "probabilities": [],
-    "uncertainty": {
-      "calibrationStatus": "No calibrated medication-response, adverse-event, bleeding, clotting, myopathy, cardiovascular-event, diagnosis, or dosing probability model is supplied.",
-      "probabilityPolicy": "Probability, confidence, calibration status, and missing-data limits stay in the appendix only."
-    },
+    "uncertainty": [
+      "No calibrated medication-response, adverse-event, bleeding, clotting, myopathy, cardiovascular-event, diagnosis, or dosing probability model is supplied.",
+      "Probability, confidence, calibration status, and missing-data limits stay in the appendix only."
+    ],
     "missingInputs": [
       "Current medication list, indication, dose, treatment history, renal or liver function, drug interactions, cardiovascular diagnosis, clinician review, phenotype confidence, and medication-decision context unavailable in this fixture",
       "User-specific ABCG2, CYP2C9, CYP3A4, CYP3A5, G6PD, HLA-B, NAT2, VKORC1, ABCB1, ACE, ADRB1/2, AGTR1, APOB, APOE, CES1, ITGB3, KCNH2, and additional sample-table genes are unavailable unless supplied by a validated local PGx caller"

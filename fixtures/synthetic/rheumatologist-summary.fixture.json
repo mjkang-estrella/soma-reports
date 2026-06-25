@@ -1,5 +1,5 @@
 {
-  "consumerTone": "plain English; consumer-shareable handoff context only; no diagnosis, clearance, risk estimate, medication, procedure, treatment, supplement, diet, lab, screening, reproductive, or actionability claims",
+  "consumerTone": "plain English; consumer-shareable rheumatologist handoff context only; sibling sample rows are not local findings; no rheumatology diagnosis, autoimmune diagnosis, disease-risk estimate, disease-activity inference, flare inference, lab interpretation, immunosuppression, medication, supplement, diet, screening, testing, treatment, or actionability claims",
   "datasetId": "synthetic-rheumatologist-summary-professional-handoff-context-v1",
   "expectedAssertions": {
     "consumerLanguage": true,
@@ -15,7 +15,7 @@
       "haplotype": "professional-handoff-context-unavailable",
       "inputId": "rheumatologist-summary-handoff-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "rheumatologist review, diagnosis, symptoms, joint exam, imaging, RF, anti-CCP, ANA, anti-dsDNA, complements, CRP, ESR, organ involvement, disease activity, flare context, medications, family history, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "rheumatologist review, diagnosis, symptoms, joint exam, imaging, RF, anti-CCP, ANA, anti-dsDNA, complements, CRP, ESR, organ involvement, disease activity, flare context, medications, family history, and authenticated sample-report rows unavailable in this fixture; public Immunity & Inflammation sample PDF observed separately as sibling rheumatology output-structure evidence",
       "sourceArtifact": "synthetic-rheumatologist-summary-professional-handoff-context-v1",
       "sourceFile": "synthetic-rheumatologist-summary-professional-handoff-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "professional-review-unavailable",
       "inputId": "rheumatologist-summary-clinical-review-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture; public Immunity & Inflammation sample PDF observed separately as sibling rheumatology output-structure evidence",
       "sourceArtifact": "synthetic-rheumatologist-summary-professional-handoff-context-v1",
       "sourceFile": "synthetic-rheumatologist-summary-professional-handoff-context-v1.json"
     }
@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-professional-review evidence for rheumatologist-summary validation"
   },
-  "missingInputPolicy": "Report unavailable rheumatologist evidence explicitly; do not diagnose rheumatologic, autoimmune, arthritis, lupus, or inflammatory disease; estimate disease risk or disease activity; infer RF, anti-CCP, ANA, anti-dsDNA, complement, CRP, ESR, organ involvement, flare status, immunosuppression need, medication need, supplement need, diet need, or replace rheumatologist review.",
+  "missingInputPolicy": "Report Immunity & Inflammation sample rows as sibling rheumatology output-structure evidence only; do not convert sample rheumatoid arthritis, IBD, eczema, psoriasis, likelihood labels, percentiles, recommendation ratings, variant tables, or sample wording into local rheumatologic diagnosis, autoimmune diagnosis, arthritis diagnosis, lupus diagnosis, inflammatory disease diagnosis, disease-risk estimate, disease-activity inference, flare inference, RF/anti-CCP/ANA/anti-dsDNA/complement/CRP/ESR/lab interpretation, organ-involvement inference, immunosuppression need, medication need, supplement need, diet need, treatment guidance, screening guidance, testing guidance, or actionability.",
   "packageSlug": "rheumatologist-summary",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -149,7 +149,20 @@
         "non_prescriptive_language",
         "missing_review_policy"
       ]
+    },
+    {
+      "evidenceLevel": "high",
+      "id": "inflammation-and-immunity-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Inflammation and Immunity DNA Report sample report",
+      "usedFor": [
+        "sibling_sample_rows",
+        "formal_fields",
+        "genotype_summary",
+        "output_format",
+        "rheumatology_handoff_boundary"
+      ]
     }
   ],
-  "reportPurpose": "Consumer-shareable rheumatologist handoff context using supplied references and explicit unavailable-review framing."
+  "reportPurpose": "Consumer-shareable Rheumatologist Summary handoff context using supplied local derived evidence plus sibling Immunity & Inflammation autoimmune-adjacent sample-output structure."
 }

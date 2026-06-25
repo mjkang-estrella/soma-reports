@@ -1,0 +1,685 @@
+{
+  "schemaVersion": "soma-reports.official-output-promotion-review.v1",
+  "capturedAt": "2026-06-24T18:02:29Z",
+  "purpose": "Record manual no-promotion review decisions for official-output captures that expose Sequencing.com output boundaries but still lack source-bound sample/result rows and citation bindings.",
+  "catalogSnapshot": {
+    "authenticatedMarketplacePositions": 164,
+    "identifiedNamedPackages": 154,
+    "sampleBackedFormalReady": 132,
+    "formalEquivalentReady": 61,
+    "formalPendingPackages": 22,
+    "officialOutputCaptureArtifacts": 9,
+    "rowEvidenceReadyCaptures": 0,
+    "promotionCandidateCaptures": 3
+  },
+  "currentLedgerContext": {
+    "authenticatedMarketplacePositions": 164,
+    "identifiedNamedPackages": 154,
+    "currentFormalPendingPackages": 21,
+    "currentSampleBackedFormalReady": 133,
+    "currentFormalEquivalentReady": 62,
+    "currentBlockerOfficialOutputCaptures": 9,
+    "committedOfficialOutputCaptures": 10,
+    "committedRowEvidenceReadyCaptures": 1,
+    "capturesOutsideCurrentBlockerLedger": 1,
+    "reviewEntries": 22,
+    "explanation": "This review artifact has 22 historical review entries because Dysautonomia was later captured as row-evidence-ready and moved outside the current 21-target formal blocker ledger."
+  },
+  "reviewBasis": {
+    "validator": "scripts/lib/official-output-capture-validator.mjs",
+    "promotionPreview": "scripts/preview-official-output-promotion.mjs",
+    "blockerLedger": "reference/catalog/sample-promotion-rejections-2026-06-23.json",
+    "standard": [
+      "A capture can support sample-backed formal promotion only when non-empty sampleRows are source-bound, formalFields are covered, and row citation bindings are ready or not required by the capture.",
+      "Redacted official output is usable only when redaction preserves concrete non-private row or field structure and source bindings.",
+      "Detail metadata, described fields, generated-output presence, route fallbacks, and empty reportFile values do not create sampleRows, resultRows, or citationBindings."
+    ]
+  },
+  "promotionBoundary": {
+    "promotesSampleBackedFormalReadiness": false,
+    "promotesSampleRows": false,
+    "promotesResultRows": false,
+    "promotesCitationBindings": false,
+    "allowsPromptBoundaryUse": true,
+    "allowsFormalFieldBoundaryUse": true
+  },
+  "reviewedPromotionCandidates": [
+    {
+      "slug": "connective-tissue-disorders-and-eds",
+      "title": "Connective Tissue Disorders and EDS",
+      "decision": "no-promote",
+      "officialCapturePath": "reference/catalog/connective-tissue-disorders-and-eds-official-output-capture-2026-06-23.json",
+      "promotionPreviewExit": 1,
+      "outputSignals": {
+        "reportFile": false,
+        "sampleRows": 0,
+        "resultRows": 0,
+        "formalFields": 17,
+        "citationBindings": 0,
+        "generatedOutput": true
+      },
+      "evidencePresent": [
+        "Authenticated completed-output section structure",
+        "Formal field boundaries",
+        "Public reference domains",
+        "Sanitized generated-output layout"
+      ],
+      "evidenceMissing": [
+        "Non-private row-level finding examples",
+        "Variant or result rows",
+        "Finding labels and interpretation text",
+        "Source-bound row citation bindings"
+      ],
+      "nextEvidenceNeeded": [
+        "Official non-private sample report or export for this exact package",
+        "Sanitized completed-output artifact preserving non-private rows and source IDs"
+      ]
+    },
+    {
+      "slug": "genome-explorer-dna-data-search",
+      "title": "Genome Explorer DNA Data Search",
+      "decision": "no-promote",
+      "officialCapturePath": "reference/catalog/genome-explorer-dna-data-search-official-output-capture-2026-06-24.json",
+      "promotionPreviewExit": 1,
+      "outputSignals": {
+        "reportFile": false,
+        "sampleRows": 0,
+        "resultRows": 0,
+        "formalFields": 17,
+        "citationBindings": 0,
+        "generatedOutput": true
+      },
+      "evidencePresent": [
+        "Authenticated field boundaries for search/result columns",
+        "Rendered detail-page output descriptions",
+        "Formal output paths for expected search-result fields"
+      ],
+      "evidenceMissing": [
+        "Actual non-private Genome Explorer result rows",
+        "Example search inputs with outputs",
+        "Per-row source bindings",
+        "Official sample/export with populated rows"
+      ],
+      "nextEvidenceNeeded": [
+        "Official sample or demo result set",
+        "Sanitized export containing populated non-private rows and source IDs"
+      ]
+    },
+    {
+      "slug": "sequencing-depth-and-coverage",
+      "title": "Sequencing Depth and Coverage",
+      "decision": "no-promote",
+      "officialCapturePath": "reference/catalog/sequencing-depth-and-coverage-official-output-capture-2026-06-24.json",
+      "promotionPreviewExit": 1,
+      "outputSignals": {
+        "reportFile": false,
+        "sampleRows": 0,
+        "resultRows": 0,
+        "formalFields": 8,
+        "citationBindings": 0,
+        "generatedOutput": true
+      },
+      "evidencePresent": [
+        "Authenticated detail-page boundaries for graph/table structure",
+        "Formal boundaries for genome, chromosome, depth, graph, table, and 30x check fields"
+      ],
+      "evidenceMissing": [
+        "Non-private depth/coverage table rows",
+        "Chromosome-level numeric depth values",
+        "Graph datapoints",
+        "Generated QC result rows",
+        "Source bindings for rows"
+      ],
+      "nextEvidenceNeeded": [
+        "Official generated sample output or export",
+        "Sanitized coverage table or graph data with non-private rows and source IDs"
+      ]
+    }
+  ],
+  "reviewedBoundaryOnlyCaptures": [
+    {
+      "slug": "variant-effect-predictor",
+      "title": "Variant Effect Predictor",
+      "decision": "keep-boundary-only",
+      "officialCapturePath": "reference/catalog/variant-effect-predictor-official-output-capture-2026-06-24.json",
+      "outputSignals": {
+        "reportFile": false,
+        "sampleRows": 0,
+        "resultRows": 0,
+        "formalFields": 6,
+        "citationBindings": 0,
+        "generatedOutput": false
+      },
+      "boundaryUse": "Prompt and field-boundary guidance only; do not infer variant rows, impact classifications, or citation bindings."
+    },
+    {
+      "slug": "promethease",
+      "title": "Promethease",
+      "decision": "keep-boundary-only",
+      "officialCapturePath": "reference/catalog/promethease-official-output-capture-2026-06-24.json",
+      "outputSignals": {
+        "reportFile": false,
+        "sampleRows": 0,
+        "resultRows": 0,
+        "formalFields": 5,
+        "citationBindings": 0,
+        "generatedOutput": false
+      },
+      "boundaryUse": "Prompt and scope guidance only; third-party Promethease examples are not Sequencing.com package-specific sample rows."
+    },
+    {
+      "slug": "imputation-analysis",
+      "title": "Imputation Analysis",
+      "decision": "keep-boundary-only",
+      "officialCapturePath": "reference/catalog/imputation-analysis-official-output-capture-2026-06-24.json",
+      "outputSignals": {
+        "reportFile": false,
+        "sampleRows": 0,
+        "resultRows": 0,
+        "formalFields": 1,
+        "citationBindings": 0,
+        "generatedOutput": false
+      },
+      "boundaryUse": "Purpose and scope guidance only; do not treat the purpose sentence as sampleRows, resultRows, generatedOutput, or citationBindings."
+    },
+    {
+      "slug": "eve-premium-dna-genome-data-bioinformatics-pipelines",
+      "title": "EvE Premium",
+      "decision": "keep-boundary-only",
+      "officialCapturePath": "reference/catalog/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-24.json",
+      "outputSignals": {
+        "reportFile": false,
+        "sampleRows": 0,
+        "resultRows": 0,
+        "formalFields": 7,
+        "citationBindings": 0,
+        "generatedOutput": false
+      },
+      "boundaryUse": "Marketplace summary and keyword scope guidance only; do not infer pipeline execution, command output, QC metrics, variant calls, reports, or citation bindings."
+    },
+    {
+      "slug": "genome-short-read-mapper",
+      "title": "Short Read Mapper",
+      "decision": "keep-boundary-only",
+      "officialCapturePath": "reference/catalog/genome-short-read-mapper-official-output-capture-2026-06-24.json",
+      "outputSignals": {
+        "reportFile": false,
+        "sampleRows": 0,
+        "resultRows": 0,
+        "formalFields": 6,
+        "citationBindings": 0,
+        "generatedOutput": false
+      },
+      "boundaryUse": "Marketplace summary and keyword scope guidance only; do not infer mapped reads, alignment metrics, coverage, command output, variant calls, or citation bindings."
+    },
+    {
+      "slug": "variant-discovery-bioinformatics-secondary-analysis",
+      "title": "Variant Discovery",
+      "decision": "keep-boundary-only",
+      "officialCapturePath": "reference/catalog/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-24.json",
+      "outputSignals": {
+        "reportFile": false,
+        "sampleRows": 0,
+        "resultRows": 0,
+        "formalFields": 6,
+        "citationBindings": 0,
+        "generatedOutput": false
+      },
+      "boundaryUse": "Marketplace summary and keyword scope guidance only; do not infer variant rows, haplotypes, SNP/MNP/DIP calls, classifications, command output, or citation bindings."
+    }
+  ],
+  "reviewedMetadataOnlyTargets": [
+    {
+      "slug": "comprehensive-health-screen-wgs-bundle",
+      "title": "Comprehensive Health Screen WGS Bundle",
+      "decision": "no-promote",
+      "sourcePaths": [
+        "reference/catalog/sequencing-authenticated-marketplace-cards-2026-06-21.json",
+        "reference/catalog/sequencing-authenticated-marketplace-pageprops-2026-06-21.json",
+        "reference/catalog/comprehensive-health-screen-wgs-bundle-authenticated-detail-2026-06-24.json"
+      ],
+      "sourceUrls": [
+        "https://sequencing.com/order/comprehensive-wgs-health-screen-bundle"
+      ],
+      "outputSignals": {
+        "reportFile": false,
+        "sampleRows": 0,
+        "resultRows": 0,
+        "formalFields": 0,
+        "citationBindings": 0,
+        "generatedOutput": false
+      },
+      "evidencePresent": [
+        "Authenticated marketplace bundle position",
+        "Order-route product and bundle metadata",
+        "Canonical bundle slug mapping"
+      ],
+      "evidenceMissing": [
+        "Official sample or completed bundle report output",
+        "Formal health-screen result rows",
+        "Row-level source bindings"
+      ],
+      "nextEvidenceNeeded": [
+        "Official non-private bundle sample report or export",
+        "Sanitized completed bundle output preserving formal rows and source IDs"
+      ],
+      "boundaryUse": "Product/order metadata only; do not infer WGS health-screen report rows, lab output, findings, or citation bindings."
+    },
+    {
+      "slug": "convert-rsids-coordinates",
+      "title": "Convert rsids to Coordinates",
+      "decision": "no-promote",
+      "sourcePaths": [
+        "reference/catalog/convert-rsids-coordinates-authenticated-detail-2026-06-23.json"
+      ],
+      "sourceUrls": [
+        "https://sequencing.com/marketplace/convert-rsids-coordinates"
+      ],
+      "outputSignals": {
+        "reportFile": false,
+        "sampleRows": 0,
+        "resultRows": 0,
+        "formalFields": 0,
+        "citationBindings": 0,
+        "generatedOutput": false
+      },
+      "evidencePresent": [
+        "Exact authenticated detail route",
+        "Package identity metadata"
+      ],
+      "evidenceMissing": [
+        "Sample rsID input/output table",
+        "Coordinate conversion rows",
+        "Row-level source bindings"
+      ],
+      "nextEvidenceNeeded": [
+        "Official converter sample export with populated rows",
+        "Sanitized rsID-to-coordinate output rows with source IDs"
+      ],
+      "boundaryUse": "Exact detail metadata only; do not infer converter columns or conversion behavior without official output rows."
+    },
+    {
+      "slug": "dysautonomia",
+      "title": "Dysautonomia",
+      "decision": "no-promote",
+      "sourcePaths": [
+        "reference/catalog/dysautonomia-authenticated-detail-2026-06-23.json"
+      ],
+      "sourceUrls": [
+        "https://sequencing.com/marketplace/dysautonomia"
+      ],
+      "outputSignals": {
+        "reportFile": false,
+        "sampleRows": 0,
+        "resultRows": 0,
+        "formalFields": 0,
+        "citationBindings": 0,
+        "generatedOutput": false
+      },
+      "evidencePresent": [
+        "Exact authenticated detail route",
+        "Package identity metadata"
+      ],
+      "evidenceMissing": [
+        "Dysautonomia sample report rows",
+        "Completed package report artifact",
+        "Row-level source bindings"
+      ],
+      "nextEvidenceNeeded": [
+        "Official Dysautonomia sample report or export",
+        "Sanitized completed output preserving non-private rows and source IDs"
+      ],
+      "boundaryUse": "Exact detail metadata only; do not infer disease findings, gene rows, or interpretation text."
+    },
+    {
+      "slug": "ehlers-danlos-syndrome",
+      "title": "Ehlers-Danlos Syndrome",
+      "decision": "no-promote",
+      "sourcePaths": [
+        "reference/catalog/ehlers-danlos-syndrome-authenticated-detail-2026-06-24.json",
+        "reference/catalog/public-draft-route-fallback-ledger-2026-06-23.json"
+      ],
+      "sourceUrls": [
+        "https://sequencing.com/marketplace/ehlers-danlos-syndrome",
+        "https://sequencing.com/education-center/dna-101/understanding-ehlers-danlos-syndome-eds/genetic-testing-ehlers-danlos-syndrome-eds"
+      ],
+      "outputSignals": {
+        "reportFile": false,
+        "sampleRows": 0,
+        "resultRows": 0,
+        "formalFields": 0,
+        "citationBindings": 0,
+        "generatedOutput": false
+      },
+      "evidencePresent": [
+        "Marketplace route fallback evidence",
+        "Public education context"
+      ],
+      "evidenceMissing": [
+        "Exact marketplace reportData",
+        "EDS or hEDS sample report rows",
+        "Row-level source bindings"
+      ],
+      "nextEvidenceNeeded": [
+        "Official Ehlers-Danlos or hEDS sample report output",
+        "Exact reportData payload or sanitized completed output with rows"
+      ],
+      "boundaryUse": "Route fallback and education context only; do not infer EDS formal findings from education pages or sibling reports."
+    },
+    {
+      "slug": "expedited-advanced-health-screen-wgs-bundle",
+      "title": "Expedited Advanced Health Screen WGS Bundle",
+      "decision": "no-promote",
+      "sourcePaths": [
+        "reference/catalog/sequencing-authenticated-marketplace-cards-2026-06-21.json",
+        "reference/catalog/sequencing-authenticated-marketplace-pageprops-2026-06-21.json",
+        "reference/catalog/expedited-advanced-health-screen-wgs-bundle-authenticated-detail-2026-06-24.json"
+      ],
+      "sourceUrls": [
+        "https://sequencing.com/order/expedited-advanced-wgs-health-screen-bundle"
+      ],
+      "outputSignals": {
+        "reportFile": false,
+        "sampleRows": 0,
+        "resultRows": 0,
+        "formalFields": 0,
+        "citationBindings": 0,
+        "generatedOutput": false
+      },
+      "evidencePresent": [
+        "Authenticated marketplace bundle position",
+        "Order-route product and processing-speed metadata",
+        "Canonical bundle slug mapping"
+      ],
+      "evidenceMissing": [
+        "Official sample or completed health-screen bundle report",
+        "Formal genetic analysis rows",
+        "Row-level source bindings"
+      ],
+      "nextEvidenceNeeded": [
+        "Official non-private expedited bundle sample report or export",
+        "Sanitized completed output preserving rows and source IDs"
+      ],
+      "boundaryUse": "Order metadata only; expedited processing and included-product text are not report output fields."
+    },
+    {
+      "slug": "hearing-auditory-genetics",
+      "title": "Hearing & Auditory Genetics",
+      "decision": "no-promote",
+      "sourcePaths": [
+        "reference/catalog/hearing-auditory-genetics-authenticated-detail-2026-06-23.json"
+      ],
+      "sourceUrls": [
+        "https://sequencing.com/marketplace/hearing-auditory-genetics"
+      ],
+      "outputSignals": {
+        "reportFile": false,
+        "sampleRows": 0,
+        "resultRows": 0,
+        "formalFields": 0,
+        "citationBindings": 0,
+        "generatedOutput": false
+      },
+      "evidencePresent": [
+        "Exact authenticated detail route",
+        "Package identity metadata"
+      ],
+      "evidenceMissing": [
+        "Hearing/auditory sample report rows",
+        "Completed package report artifact",
+        "Row-level source bindings"
+      ],
+      "nextEvidenceNeeded": [
+        "Official Hearing & Auditory Genetics sample output",
+        "Sanitized completed output preserving non-private rows and source IDs"
+      ],
+      "boundaryUse": "Exact detail metadata only; do not infer hearing gene findings or interpretation rows."
+    },
+    {
+      "slug": "marfan-syndrome",
+      "title": "Marfan Syndrome",
+      "decision": "no-promote",
+      "sourcePaths": [
+        "reference/catalog/marfan-syndrome-authenticated-detail-2026-06-24.json",
+        "reference/catalog/public-draft-route-fallback-ledger-2026-06-23.json"
+      ],
+      "sourceUrls": [
+        "https://sequencing.com/marketplace/marfan-syndrome",
+        "https://sequencing.com/education-center/medical/marfan-syndrome-incomplete"
+      ],
+      "outputSignals": {
+        "reportFile": false,
+        "sampleRows": 0,
+        "resultRows": 0,
+        "formalFields": 0,
+        "citationBindings": 0,
+        "generatedOutput": false
+      },
+      "evidencePresent": [
+        "Marketplace route fallback evidence",
+        "Public education context"
+      ],
+      "evidenceMissing": [
+        "Exact Marfan reportData",
+        "FBN1 or Marfan sample report rows",
+        "Row-level source bindings"
+      ],
+      "nextEvidenceNeeded": [
+        "Official Marfan Syndrome sample report or export",
+        "Sanitized completed Marfan output preserving rows and source IDs"
+      ],
+      "boundaryUse": "Route fallback and public education context only; do not infer Marfan-specific formal output."
+    },
+    {
+      "slug": "mitchell-syndrome",
+      "title": "Mitchell Syndrome",
+      "decision": "no-promote",
+      "sourcePaths": [
+        "reference/catalog/mitchell-syndrome-authenticated-detail-2026-06-24.json",
+        "reference/catalog/public-draft-route-fallback-ledger-2026-06-23.json"
+      ],
+      "sourceUrls": [
+        "https://sequencing.com/marketplace/mitchell-syndrome"
+      ],
+      "outputSignals": {
+        "reportFile": false,
+        "sampleRows": 0,
+        "resultRows": 0,
+        "formalFields": 0,
+        "citationBindings": 0,
+        "generatedOutput": false
+      },
+      "evidencePresent": [
+        "Marketplace route fallback evidence",
+        "Package identity context"
+      ],
+      "evidenceMissing": [
+        "Exact Mitchell Syndrome reportData",
+        "Sample report rows",
+        "Row-level source bindings"
+      ],
+      "nextEvidenceNeeded": [
+        "Official Mitchell Syndrome sample report output",
+        "Exact reportData payload or sanitized completed output with rows"
+      ],
+      "boundaryUse": "Route fallback evidence only; do not infer Mitchell Syndrome findings from background context."
+    },
+    {
+      "slug": "oral",
+      "title": "Oral",
+      "decision": "no-promote",
+      "sourcePaths": [
+        "reference/catalog/oral-authenticated-detail-2026-06-23.json"
+      ],
+      "sourceUrls": [
+        "https://sequencing.com/marketplace/oral"
+      ],
+      "outputSignals": {
+        "reportFile": false,
+        "sampleRows": 0,
+        "resultRows": 0,
+        "formalFields": 0,
+        "citationBindings": 0,
+        "generatedOutput": false
+      },
+      "evidencePresent": [
+        "Exact authenticated detail route",
+        "Package identity metadata"
+      ],
+      "evidenceMissing": [
+        "Oral report sample rows",
+        "Completed package report artifact",
+        "Row-level source bindings"
+      ],
+      "nextEvidenceNeeded": [
+        "Official Oral sample report or export",
+        "Sanitized completed output preserving non-private rows and source IDs"
+      ],
+      "boundaryUse": "Exact detail metadata only; do not infer oral health or cancer rows from sibling report content."
+    },
+    {
+      "slug": "pediatric-health",
+      "title": "Pediatric Health",
+      "decision": "no-promote",
+      "sourcePaths": [
+        "fixtures/synthetic/pediatric-health.fixture.json",
+        "reference/catalog/pediatric-health-authenticated-detail-2026-06-24.json",
+        "reference/catalog/public-draft-route-fallback-ledger-2026-06-23.json"
+      ],
+      "sourceUrls": [
+        "https://sequencing.com/marketplace/pediatric-health"
+      ],
+      "outputSignals": {
+        "reportFile": false,
+        "sampleRows": 0,
+        "resultRows": 0,
+        "formalFields": 0,
+        "citationBindings": 0,
+        "generatedOutput": false
+      },
+      "evidencePresent": [
+        "Marketplace route fallback evidence",
+        "Local synthetic fixture for placeholder testing"
+      ],
+      "evidenceMissing": [
+        "Official Pediatric Health sample report rows",
+        "Exact reportData payload",
+        "Row-level source bindings"
+      ],
+      "nextEvidenceNeeded": [
+        "Official Pediatric Health sample report or export",
+        "Sanitized completed output preserving non-private rows and source IDs"
+      ],
+      "boundaryUse": "Route fallback and synthetic fixture context only; do not promote synthetic Pediatric Health rows as official output."
+    },
+    {
+      "slug": "pheochromocytoma-and-paraganglioma",
+      "title": "Pheochromocytoma and Paraganglioma",
+      "decision": "no-promote",
+      "sourcePaths": [
+        "reference/catalog/pheochromocytoma-and-paraganglioma-authenticated-detail-2026-06-23.json"
+      ],
+      "sourceUrls": [
+        "https://sequencing.com/marketplace/pheochromocytoma-and-paraganglioma"
+      ],
+      "outputSignals": {
+        "reportFile": false,
+        "sampleRows": 0,
+        "resultRows": 0,
+        "formalFields": 0,
+        "citationBindings": 0,
+        "generatedOutput": false
+      },
+      "evidencePresent": [
+        "Exact authenticated detail route",
+        "Package identity metadata"
+      ],
+      "evidenceMissing": [
+        "Exact package sample report rows",
+        "Completed package report artifact",
+        "Row-level source bindings"
+      ],
+      "nextEvidenceNeeded": [
+        "Official Pheochromocytoma and Paraganglioma sample output",
+        "Sanitized completed output preserving non-private rows and source IDs"
+      ],
+      "boundaryUse": "Exact detail metadata only; do not infer PPGL risk rows or clinical interpretations without official output."
+    },
+    {
+      "slug": "ultra-rapid-professional-health-screen-wgs-bundle",
+      "title": "Ultra Rapid Professional Health Screen WGS Bundle",
+      "decision": "no-promote",
+      "sourcePaths": [
+        "reference/catalog/sequencing-authenticated-marketplace-cards-2026-06-21.json",
+        "reference/catalog/sequencing-authenticated-marketplace-pageprops-2026-06-21.json",
+        "reference/catalog/ultra-rapid-professional-health-screen-wgs-bundle-authenticated-detail-2026-06-24.json"
+      ],
+      "sourceUrls": [
+        "https://sequencing.com/order/ultra-rapid-professional-wgs-health-screen-bundle"
+      ],
+      "outputSignals": {
+        "reportFile": false,
+        "sampleRows": 0,
+        "resultRows": 0,
+        "formalFields": 0,
+        "citationBindings": 0,
+        "generatedOutput": false
+      },
+      "evidencePresent": [
+        "Authenticated marketplace bundle position",
+        "Order-route product and processing-speed metadata",
+        "Canonical bundle slug mapping"
+      ],
+      "evidenceMissing": [
+        "Official sample or completed professional health-screen report",
+        "Formal genetic analysis rows",
+        "Row-level source bindings"
+      ],
+      "nextEvidenceNeeded": [
+        "Official non-private professional bundle sample report or export",
+        "Sanitized completed output preserving rows and source IDs"
+      ],
+      "boundaryUse": "Order metadata only; professional plan, ultra-rapid processing, and included-product text are not report output fields."
+    },
+    {
+      "slug": "whole-genome-sequencing-30x",
+      "title": "Whole Genome Sequencing",
+      "decision": "no-promote",
+      "sourcePaths": [
+        "reference/catalog/whole-genome-sequencing-30x-authenticated-detail-2026-06-23.json"
+      ],
+      "sourceUrls": [
+        "https://sequencing.com/marketplace/whole-genome-sequencing-30x"
+      ],
+      "outputSignals": {
+        "reportFile": false,
+        "sampleRows": 0,
+        "resultRows": 0,
+        "formalFields": 0,
+        "citationBindings": 0,
+        "generatedOutput": false
+      },
+      "evidencePresent": [
+        "Exact authenticated product detail route",
+        "Package identity metadata"
+      ],
+      "evidenceMissing": [
+        "Official 30x WGS lab/sample output",
+        "Formal sequencing-result fields",
+        "Row-level source bindings"
+      ],
+      "nextEvidenceNeeded": [
+        "Official 30x WGS sample lab output or completed result artifact",
+        "Sanitized WGS output preserving non-private fields and source IDs"
+      ],
+      "boundaryUse": "Product metadata only; do not infer lab output, coverage metrics, variant-call rows, or report fields."
+    }
+  ],
+  "verificationCommands": [
+    "npm run scaffold:validate-captures",
+    "npm run scaffold:evidence-audit",
+    "npm run readiness:audit:summary",
+    "npm run agent:assert-sync",
+    "npm run completion:audit -- --format compact"
+  ]
+}

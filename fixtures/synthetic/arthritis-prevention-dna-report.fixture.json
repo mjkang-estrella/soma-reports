@@ -15,7 +15,7 @@
       "haplotype": "condition-boundary-model-unavailable",
       "inputId": "arthritis-prevention-dna-report-model-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "validated arthritis disease model, calibrated arthritis PRS, HLA inference, rheumatoid-factor, anti-CCP, CRP, ESR, imaging, joint exam, age, sex, family history, smoking and environmental history, symptoms, medication context, prevention-plan context, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "validated arthritis disease model, calibrated arthritis PRS, HLA inference, rheumatoid-factor, anti-CCP, CRP, ESR, imaging, joint exam, age, sex, family history, smoking and environmental history, symptoms, medication context, prevention-plan context, and clinical/lab interpretation unavailable in this fixture; public Wellness & Longevity sample PDF Arthritis/Osteoarthritis page, joint-specific risk cards, and lifetime-risk legend observed as sibling output structure",
       "sourceArtifact": "synthetic-arthritis-prevention-dna-report-condition-boundary-context-v1",
       "sourceFile": "synthetic-arthritis-prevention-dna-report-condition-boundary-context-v1.json"
     },
@@ -25,7 +25,7 @@
       "haplotype": "clinical-lab-context-unavailable",
       "inputId": "arthritis-prevention-dna-report-clinical-lab-context-unavailable",
       "matchStatus": "unavailable",
-      "observedValue": "clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and personal prevention-plan context unavailable in this fixture; public Wellness & Longevity Arthritis/Osteoarthritis sample section observed separately as output-structure evidence",
       "sourceArtifact": "synthetic-arthritis-prevention-dna-report-condition-boundary-context-v1",
       "sourceFile": "synthetic-arthritis-prevention-dna-report-condition-boundary-context-v1.json"
     }
@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic unavailable-model evidence for arthritis-prevention-dna-report validation"
   },
-  "missingInputPolicy": "Report unavailable arthritis prevention evidence explicitly; do not diagnose arthritis, rheumatoid arthritis, osteoarthritis, or juvenile arthritis; estimate arthritis risk; infer RA/OA subtype, joint status, HLA status, RF, anti-CCP, CRP, ESR, imaging, symptoms, prevention plan, screening need, treatment need, supplement need, diet need, medication need, or actionability.",
+  "missingInputPolicy": "Report unavailable arthritis model calibration, arthritis PRS, HLA inference, RF, anti-CCP, CRP, ESR, imaging, joint exam, age, sex, family history, smoking and environmental history, symptoms, medication context, prevention-plan context, and clinical/lab interpretation explicitly; do not infer arthritis diagnosis, osteoarthritis or rheumatoid arthritis risk, joint status, prevention plan, treatment, supplement, diet, medication, screening, testing, or actionability.",
   "packageSlug": "arthritis-prevention-dna-report",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -171,7 +171,19 @@
         "non_diagnostic_language",
         "missing_model_policy"
       ]
+    },
+    {
+      "evidenceLevel": "sibling_observed_output_structure",
+      "id": "wellness-and-longevity-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Wellness and Longevity DNA Analysis sample report",
+      "usedFor": [
+        "sample_rows",
+        "genotype_summary",
+        "formal_fields",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer arthritis prevention boundary context using supplied references and explicit unavailable-model framing."
+  "reportPurpose": "Consumer arthritis prevention boundary context using supplied references plus the public Wellness & Longevity sample PDF's observed Arthritis/Osteoarthritis page, joint-specific risk cards, actionability gauge, hidden prevention blocks, and lifetime-risk legend while explicitly marking personal arthritis model and clinical/lab context unavailable."
 }

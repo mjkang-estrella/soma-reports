@@ -1,62 +1,89 @@
 {
   "reportOverview": {
-    "reportTitle": "Musculoskeletal DNA Report",
+    "reportTitle": "musculoskeletal-dna-report",
     "inputManifestHash": "sha256:synthetic-musculoskeletal-dna-report-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "No calibrated musculoskeletal DNA, diagnostic, treatment, injury-risk, pain, arthritis, EDS, osteoporosis, bone-density, imaging, lab, exercise-clearance, or ancestry-applicability model is supplied with this fixture."
+      "Direct authenticated detail/sample body extraction is still unavailable where noted; source-bound sample rows are used only as observed output structure.",
+      "Validated calibrated models, clinical context, professional review, ancestry applicability, and actionability context are unavailable unless explicitly supplied in the fixture.",
+      "This deterministic example is educational and does not provide diagnosis, personal risk estimation, treatment guidance, screening guidance, prevention advice, clearance, or clinical actionability."
     ]
   },
   "resultRows": [
     {
-      "groupTitle": "Musculoskeletal DNA context",
-      "item": "ACTN3 R577X / rs1815739",
-      "brandName": "Not applicable",
-      "geneticAnalysis": "A derived ACTN3 rs1815739 CT call is available. This is educational DNA marker context only and does not diagnose musculoskeletal disease, estimate injury risk, explain pain, infer bone density, recommend treatment, or provide exercise clearance.",
+      "groupTitle": "Derived local evidence",
+      "item": "ACTN3-rs1815739",
+      "brandName": "musculoskeletal-dna-report",
+      "geneticAnalysis": "CT",
       "genes": [
         "ACTN3"
       ],
-      "sourceLabel": "MedlinePlus Genetics: athletic performance",
+      "sourceLabel": "Local fixture and reference pack",
       "sourceIds": [
-        "medlineplus-athletic-performance"
-      ],
-      "plainEnglishMeaning": "ACTN3 is discussed in athletic-performance research, but musculoskeletal DNA interpretation requires validated models and non-genetic context before making any health conclusion."
-    },
-    {
-      "groupTitle": "Musculoskeletal DNA context",
-      "item": "ACE I/D polymorphism",
-      "brandName": "Not applicable",
-      "geneticAnalysis": "A derived ACE ID context row is available. This is not enough to diagnose arthritis, EDS, osteoporosis, pain causes, injury risk, imaging findings, lab findings, or treatment needs.",
-      "genes": [
-        "ACE"
-      ],
-      "sourceLabel": "MedlinePlus Genetics: athletic performance",
-      "sourceIds": [
-        "medlineplus-athletic-performance"
-      ],
-      "plainEnglishMeaning": "ACE can provide limited trait context, but genotype alone does not determine musculoskeletal diagnosis, treatment, pain, injury, imaging, lab, or exercise-clearance outcomes."
-    },
-    {
-      "groupTitle": "Musculoskeletal DNA model availability",
-      "item": "Musculoskeletal DNA model",
-      "brandName": "Not applicable",
-      "geneticAnalysis": "No calibrated musculoskeletal DNA score, diagnostic evidence, treatment evidence, injury-risk model, pain model, arthritis model, EDS model, osteoporosis model, bone-density evidence, imaging evidence, lab evidence, exercise-clearance context, or ancestry applicability metadata is supplied with this fixture.",
-      "genes": [
-        "Musculoskeletal DNA model"
-      ],
-      "sourceLabel": "NHGRI polygenic risk scores / GWAS Catalog",
-      "sourceIds": [
+        "medlineplus-athletic-performance",
         "nhgri-polygenic-risk-scores",
         "ebi-gwas-catalog"
       ],
-      "plainEnglishMeaning": "The report can describe supplied marker context, but it should not make diagnosis, treatment, injury, pain, bone-density, imaging, lab, or exercise-clearance conclusions without validated evidence."
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This is derived educational context only; it does not determine diagnosis, risk, treatment, clearance, or actionability."
+    },
+    {
+      "groupTitle": "Derived local evidence",
+      "item": "ACE-I-D",
+      "brandName": "musculoskeletal-dna-report",
+      "geneticAnalysis": "ID",
+      "genes": [
+        "ACE"
+      ],
+      "sourceLabel": "Local fixture and reference pack",
+      "sourceIds": [
+        "medlineplus-athletic-performance",
+        "nhgri-polygenic-risk-scores",
+        "ebi-gwas-catalog"
+      ],
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This is derived educational context only; it does not determine diagnosis, risk, treatment, clearance, or actionability."
+    },
+    {
+      "groupTitle": "Evidence availability",
+      "item": "musculoskeletal-dna-report-model-unavailable",
+      "brandName": "musculoskeletal-dna-report",
+      "geneticAnalysis": "calibrated musculoskeletal DNA score, diagnostic evidence, treatment evidence, injury-risk model, pain model, arthritis model, EDS model, osteoporosis model, bone-density evidence, imaging evidence, lab evidence, exercise-clearance context, and ancestry applicability metadata unavailable in this fixture; public Gene-In-Form sample PDF muscle-fiber, tendon/ACL injury, and osteoarthritis rows observed separately as sibling output-structure evidence",
+      "genes": [
+        "Musculoskeletal DNA model"
+      ],
+      "sourceLabel": "Local fixture and reference pack",
+      "sourceIds": [
+        "medlineplus-athletic-performance",
+        "nhgri-polygenic-risk-scores",
+        "ebi-gwas-catalog"
+      ],
+      "sourceBindingStatus": "unavailable",
+      "plainEnglishMeaning": "This section is explicitly unavailable in the local fixture and must not be interpreted as low risk, normal status, diagnosis, treatment guidance, or actionability."
+    },
+    {
+      "groupTitle": "Observed sample format",
+      "item": "Source-bound sample rows",
+      "brandName": "Musculoskeletal sibling Gene-In-Form sample",
+      "geneticAnalysis": "Observed sample output structure includes Summary - Table of results: Muscle Fiber Type; Summary - Table of results: ATP Knee Injury; Summary - Table of results: ACL Knee Injury; Summary - Table of results: Osteoarthritis. These rows are sample-only output evidence, not local-user findings.",
+      "genes": [
+        "ACTN3",
+        "HIF1A",
+        "GDF5",
+        "COL5A1"
+      ],
+      "sourceLabel": "Public sample PDF",
+      "sourceIds": [
+        "gene-in-form-personalized-fitness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample rows preserve observed report structure only. They are not personal findings, diagnosis, risk estimates, treatment guidance, screening guidance, prevention advice, clearance, or clinical actionability."
     }
   ],
   "practicalNextSteps": {
     "musculoskeletalContext": [
-      "Use this DNA report as educational marker context, not as clinical interpretation.",
-      "Discuss symptoms, injuries, imaging, labs, training history, family history, and treatment questions with qualified professionals when relevant.",
-      "Do not use genotype alone for diagnosis, treatment, exercise clearance, injury-risk estimates, pain explanations, arthritis interpretation, EDS interpretation, or osteoporosis interpretation."
+      "Treat this as educational context, not a plan or clearance.",
+      "Keep sibling sample rows separate from local findings.",
+      "Review symptoms, history, labs, imaging, medications, and goals with a qualified professional before acting."
     ]
   },
   "references": [
@@ -71,37 +98,148 @@
     {
       "id": "ebi-gwas-catalog",
       "title": "GWAS Catalog"
+    },
+    {
+      "id": "gene-in-form-personalized-fitness-sample-pdf",
+      "title": "Gene-In-Form Personalized Fitness sibling sample report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
+        "tier": "Sample summary table",
+        "gene": "ACTN3 / HIF1A",
+        "variantId": "not shown in sample PDF",
+        "observedValue": "ACTN3 common TC and sample TT; HIF1A common CC and sample CC",
+        "matchStatus": "sample-only"
+      },
+      {
+        "tier": "Sample summary table",
+        "gene": "GDF5 / COL5A1",
+        "variantId": "not shown in sample PDF",
+        "observedValue": "GDF5 common AA and sample GG; COL5A1 common CT and sample CT",
+        "matchStatus": "sample-only"
+      },
+      {
+        "tier": "Sample summary table",
+        "gene": "GDF5",
+        "variantId": "not shown in sample PDF",
+        "observedValue": "common TT; sample CC",
+        "matchStatus": "sample-only"
+      },
+      {
+        "tier": "Local derived call",
         "gene": "ACTN3",
-        "observedValue": "rs1815739 CT"
+        "variantId": "rs1815739",
+        "observedValue": "CT",
+        "matchStatus": "curated"
       },
       {
+        "tier": "Local derived call",
         "gene": "ACE",
-        "observedValue": "I/D"
+        "variantId": "ACE I/D",
+        "observedValue": "ID",
+        "matchStatus": "curated"
       },
       {
+        "tier": "Local missing input",
         "gene": "Musculoskeletal DNA model",
-        "observedValue": "calibrated model unavailable"
+        "variantId": "musculoskeletal-dna-report-model-unavailable",
+        "observedValue": "calibrated musculoskeletal DNA score, diagnostic evidence, treatment evidence, injury-risk model, pain model, arthritis model, EDS model, osteoporosis model, bone-density evidence, imaging evidence, lab evidence, exercise-clearance context, and ancestry applicability metadata unavailable in this fixture",
+        "matchStatus": "curated"
       }
     ],
     "missingInputs": [
-      "Authenticated sample-report sections and rows have not been extracted.",
-      "No calibrated musculoskeletal DNA, diagnostic, treatment, injury-risk, pain, arthritis, EDS, osteoporosis, bone-density, imaging, lab, exercise-clearance, or ancestry-applicability model is supplied.",
-      "No symptoms, injury history, training history, physical exam, imaging, laboratory testing, family history, clinician assessment, treatment history, or authenticated report rows are supplied."
+      "Direct authenticated detail/sample body extraction is still unavailable where noted; source-bound sample rows are used only as observed output structure.",
+      "Validated calibrated models, clinical context, professional review, ancestry applicability, and actionability context are unavailable unless explicitly supplied in the fixture.",
+      "This deterministic example is educational and does not provide diagnosis, personal risk estimation, treatment guidance, screening guidance, prevention advice, clearance, or clinical actionability.",
+      "calibrated musculoskeletal DNA score, diagnostic evidence, treatment evidence, injury-risk model, pain model, arthritis model, EDS model, osteoporosis model, bone-density evidence, imaging evidence, lab evidence, exercise-clearance context, and ancestry applicability metadata unavailable in this fixture; public Gene-In-Form sample PDF muscle-fiber, tendon/ACL injury, and osteoarthritis rows observed separately as sibling output-structure evidence"
     ],
     "probabilities": [],
     "uncertainty": [
-      "Musculoskeletal DNA interpretation is limited without validated models, clinical context, symptoms, injury history, imaging, labs, and professional assessment.",
-      "A small number of markers cannot diagnose or rule out arthritis, EDS, osteoporosis, pain causes, injury risk, imaging findings, lab findings, or treatment needs."
+      "No calibrated probability, confidence, or actionability model is supplied in this deterministic fixture.",
+      "Interpretation depends on validated test scope, model calibration, ancestry applicability, clinical context, and qualified review."
     ],
     "limitations": [
-      "This validation result uses derived evidence only; raw genome data is not included.",
-      "The report is educational and does not diagnose musculoskeletal disease, recommend treatment, estimate injury risk, explain pain, infer arthritis, infer EDS, infer osteoporosis, infer bone density, interpret imaging, interpret labs, prescribe exercise, or provide exercise clearance.",
-      "Authenticated Sequencing.com sample report rows are still pending."
+      "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
+      "Sample rows, when present, are observed output-structure evidence only and not local-user findings.",
+      "Unavailable model rows should never be interpreted as low risk, no risk, normal status, or an all-clear result."
     ]
-  }
+  },
+  "sampleRows": [
+    {
+      "brandName": "Musculoskeletal sibling Gene-In-Form sample",
+      "description": "The public sample PDF summary table shows Muscle Fiber Type with ACTN3 and HIF1A rows and slow-twitch impact language.",
+      "extractionStatus": "direct",
+      "genes": [
+        "ACTN3",
+        "HIF1A"
+      ],
+      "geneticAnalysis": "ACTN3 common TC, sample TT; HIF1A common CC, sample CC; impact: high proportion of slow-twitching muscle fibers.",
+      "groupTitle": "Summary - Table of results",
+      "item": "Muscle Fiber Type",
+      "sortOrder": 1,
+      "sourceBindingNote": "Extracted from page 6 of the public Gene-In-Form sample PDF; this is observed sample output, not a local sport-selection or training conclusion. Used here only as sibling muscle-fiber, tendon/ACL injury, and osteoarthritis output-structure evidence for musculoskeletal reports; this is not a direct musculoskeletal sample report and not local diagnosis, injury-risk, pain-cause, arthritis, EDS, osteoporosis, bone-density, imaging, lab, treatment, exercise-clearance, or actionability evidence.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Public sample PDF",
+      "sourceResourceIds": [
+        "gene-in-form-personalized-fitness-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Musculoskeletal sibling Gene-In-Form sample",
+      "description": "The public sample PDF summary table shows ATP Knee Injury with GDF5 and COL5A1 rows and reduced Achilles tendon pathology impact.",
+      "extractionStatus": "direct",
+      "genes": [
+        "GDF5",
+        "COL5A1"
+      ],
+      "geneticAnalysis": "GDF5 common AA, sample GG; COL5A1 common CT, sample CT; impact: reduced risk for Achilles' Tendon Pathologies.",
+      "groupTitle": "Summary - Table of results",
+      "item": "ATP Knee Injury",
+      "sortOrder": 2,
+      "sourceBindingNote": "Extracted from page 6 of the public Gene-In-Form sample PDF; this is observed sample output, not a local injury-risk or prevention conclusion. Used here only as sibling muscle-fiber, tendon/ACL injury, and osteoarthritis output-structure evidence for musculoskeletal reports; this is not a direct musculoskeletal sample report and not local diagnosis, injury-risk, pain-cause, arthritis, EDS, osteoporosis, bone-density, imaging, lab, treatment, exercise-clearance, or actionability evidence.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Public sample PDF",
+      "sourceResourceIds": [
+        "gene-in-form-personalized-fitness-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Musculoskeletal sibling Gene-In-Form sample",
+      "description": "The public sample PDF summary table shows ACL Knee Injury with COL5A1 and a missing raw-data note; the injury summary page labels ACL average risk.",
+      "extractionStatus": "direct",
+      "genes": [
+        "COL5A1"
+      ],
+      "geneticAnalysis": "COL5A1 common CT, sample CT; impact: raw genetic data file missing results for this gene; injury summary labels ACL average risk.",
+      "groupTitle": "Summary - Table of results",
+      "item": "ACL Knee Injury",
+      "sortOrder": 3,
+      "sourceBindingNote": "Extracted from pages 5-6 of the public Gene-In-Form sample PDF; this is observed sample output, not a local ACL injury-risk or prevention conclusion. Used here only as sibling muscle-fiber, tendon/ACL injury, and osteoarthritis output-structure evidence for musculoskeletal reports; this is not a direct musculoskeletal sample report and not local diagnosis, injury-risk, pain-cause, arthritis, EDS, osteoporosis, bone-density, imaging, lab, treatment, exercise-clearance, or actionability evidence.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Public sample PDF",
+      "sourceResourceIds": [
+        "gene-in-form-personalized-fitness-sample-pdf"
+      ]
+    },
+    {
+      "brandName": "Musculoskeletal sibling Gene-In-Form sample",
+      "description": "The public sample PDF summary table shows Osteoarthritis with GDF5 and reduced osteoarthritis impact.",
+      "extractionStatus": "direct",
+      "genes": [
+        "GDF5"
+      ],
+      "geneticAnalysis": "GDF5 common TT, sample CC; impact: reduced risk for osteoarthritis.",
+      "groupTitle": "Summary - Table of results",
+      "item": "Osteoarthritis",
+      "sortOrder": 4,
+      "sourceBindingNote": "Extracted from page 6 of the public Gene-In-Form sample PDF; this is observed sample output, not a local osteoarthritis, injury-risk, or medical conclusion. Used here only as sibling muscle-fiber, tendon/ACL injury, and osteoarthritis output-structure evidence for musculoskeletal reports; this is not a direct musculoskeletal sample report and not local diagnosis, injury-risk, pain-cause, arthritis, EDS, osteoporosis, bone-density, imaging, lab, treatment, exercise-clearance, or actionability evidence.",
+      "sourceBindingStatus": "exact",
+      "sourceLabel": "Public sample PDF",
+      "sourceResourceIds": [
+        "gene-in-form-personalized-fitness-sample-pdf"
+      ]
+    }
+  ]
 }

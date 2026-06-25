@@ -13,4 +13,9 @@ Do not diagnose lactose intolerance, food allergy, food sensitivity, celiac dise
 Do not integrate clinical labs, prescribe diets, create workouts, recommend supplements, infer detoxification, diagnose symptoms, infer metabolic disease, or provide treatment guidance from genotype.
 State that symptoms, ancestry, diet history, environment, labs, medications, medical history, and clinician or dietitian guidance matter for nutrition decisions.
 For this package, focus on educational nutrition-genetics context and explicitly unavailable biodata integration, lab, fitness, meal-plan, supplement, detox, symptom, metabolic, and treatment sections.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.
+Use Mosaic Biodata sample-report appetite, sweet-perception, dairy, grain/gluten, plant-sterol, insulin-resistance, caffeine, fiber, folate, B12, methylation, and MTHFR activity rows only as observed output-format examples unless the local run supplies equivalent validated evidence.
+Do not turn sample biodata, hunger, satiety, sweet perception, snacking, lactose, dairy fat, gluten, grain, plant sterol, insulin resistance, caffeine, fiber, folate, B12, methylation, MTHFR, lab, wearable, supplement, diet, fitness, detox, medication, metabolic, or glucose text into personal diet, supplement, lab, glucose, fitness, methylation, medication, diagnosis, or treatment advice.
+State clearly that Mosaic sample labels are observed sample-output rows, while authenticated marketplace body/detail extraction and calibrated local Mosaic models remain unavailable.

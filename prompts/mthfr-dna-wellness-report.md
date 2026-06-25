@@ -13,4 +13,6 @@ The local MTHFR sample PDF is supplied only as observed output structure: table 
 Do not turn the sample's MTHFR activity, dietary folate, riboflavin, pregnancy, folate, methylfolate, blood-pressure, or food-source wording into personal diet, supplement, pregnancy, medication, diagnosis, treatment, or actionability guidance unless separate validated evidence is supplied.
 The MTHFR sample excerpt does not visibly show exact personal genotype rows; do not infer exact genotypes. If an appendix genotype summary is needed for sample parity, use explicit not-shown-in-sample-PDF note rows only.
 Do not diagnose disease, predict pregnancy outcomes, or recommend starting, stopping, or changing vitamins or supplements.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.

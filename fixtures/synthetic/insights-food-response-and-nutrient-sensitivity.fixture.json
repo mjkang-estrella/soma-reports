@@ -36,7 +36,7 @@
     "rawGenomeReturned": false,
     "source": "synthetic derived nutrition-genetics evidence for insights-food-response-and-nutrient-sensitivity validation"
   },
-  "missingInputPolicy": "Report unavailable food-response, nutrient-sensitivity, micronutrient, supplement, symptom, lab, and calibrated models explicitly; do not infer food allergy, food sensitivity, celiac disease, nutrient deficiency, metabolic disease, diet needs, or supplement needs.",
+  "missingInputPolicy": "Report unavailable food-response, nutrient-sensitivity, micronutrient, supplement, symptom, diet-history, lab, metabolic, ancestry-applicability, and calibrated models explicitly; use sibling Food Sensitivity and Healthy Nutrition sample rows only as observed output structure and do not infer local allergy, sensitivity, celiac disease, lactose-intolerance diagnosis, nutrient deficiency, diet changes, supplement needs, symptoms, labs, metabolic status, diagnosis, or treatment from genotype alone or sample-only rows.",
   "packageSlug": "insights-food-response-and-nutrient-sensitivity",
   "packageVersion": "0.1.0",
   "referenceResources": [
@@ -155,7 +155,31 @@
         "bmi_limitations",
         "no_weight_prediction_from_genotype"
       ]
+    },
+    {
+      "evidenceLevel": "sibling_sample_report",
+      "id": "food-sensitivity-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "GenoPalate Food Sensitivity sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
+    },
+    {
+      "evidenceLevel": "sibling_sample_report",
+      "id": "healthy-nutrition-sample-pdf",
+      "sourceType": "mock_report",
+      "title": "Healthy Nutrition DNA Analysis sample report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
+      ]
     }
   ],
-  "reportPurpose": "Consumer food-response and nutrient-sensitivity context using derived MCM6/LCT evidence plus explicit food-response, nutrient, supplement, symptom, lab, and model-unavailable framing."
+  "reportPurpose": "Consumer food-response and nutrient-sensitivity context using derived MCM6/LCT evidence plus sibling Food Sensitivity and Healthy Nutrition sample-output structure."
 }

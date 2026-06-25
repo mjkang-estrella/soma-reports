@@ -1,0 +1,62 @@
+{
+  "app": null,
+  "bodyPreview": "Rendered marketplace detail page confirms Genome Explorer v3 title, Sequencing.com provider, free price, exact detail route, and utility columns/context for genome search and browsing. The page exposes rendered DOM/meta content rather than rich pageProps.reportData or a sample report file.",
+  "capturedAt": "2026-06-23T03:24:02Z",
+  "categories": [
+    "Sequencing Apps",
+    "Health",
+    "Bioinformatics"
+  ],
+  "currencyCode": "USD",
+  "evidenceNotes": [
+    "Marketplace detail page was opened in the in-app browser and resolved to the exact report URL.",
+    "This detail page exposes rendered DOM/meta content rather than the richer pageProps.reportData shape; use it for exact route availability, title, provider/price metadata, and detail-page boundary evidence only.",
+    "Use overview/marketing text only for report purpose and marketplace positioning, not for local genetic, medical, trait, medication, ancestry, fitness, or performance conclusions.",
+    "No raw genome data, uploaded genome data, or account navigation text is included in this artifact."
+  ],
+  "finalUrl": "https://sequencing.com/marketplace/genome-explorer-dna-data-search",
+  "headerImage": "https://sequencing.com/sites/default/files/genome-explorer-dna-data-viewer-sequencing.png",
+  "headerImageAlt": "",
+  "infoTabs": [
+    "Overview",
+    "Guide & FAQs",
+    "Getting Started",
+    "Plus, Premium, and Professional Versions",
+    "Citations",
+    "Disclaimer"
+  ],
+  "meta": {
+    "canonical": "https://sequencing.com/marketplace/genome-explorer-dna-data-search",
+    "publishedTime": "2018-07-27T21:34:22-07:00",
+    "modifiedTime": "2025-11-12T06:57:36-08:00",
+    "ogDescriptionPreview": "Free genome search engine and DNA data viewer. Genome Explorer lets you search, browse, and explore your genetic data. Works with any DNA test file.",
+    "productPriceAmount": "0.00",
+    "productPriceCurrency": "USD",
+    "productRetailerItemId": null,
+    "pagePropsDataKeys": [],
+    "pagePropsMetaKeys": [],
+    "pagePropsBlockCount": 0,
+    "jsonLdTypes": []
+  },
+  "nid": null,
+  "price": "Free",
+  "productId": null,
+  "publisher": "Sequencing.com",
+  "reportDataKeys": [],
+  "reportFile": null,
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "source": "in-app browser sequencing.com marketplace detail page rendered DOM/meta extraction",
+  "summaryPreview": "Discover, learn, and explore your deep DNA data. Genome Explorer is presented as an online browser and search engine for genome data.",
+  "title": "Genome Explorer v3",
+  "uri": "marketplace/genome-explorer-dna-data-search",
+  "url": "https://sequencing.com/marketplace/genome-explorer-dna-data-search",
+  "visibleParagraphs": [
+    "Genome Explorer v3",
+    "Developed by Sequencing.com",
+    "Discover, learn, and explore your deep DNA data. Genome Explorer is the world's first online browser and search engine for your genome.",
+    "Compatible with data aligned to any reference genome, including GRCh38, hg19/GRCh37 and hg18/GRCh36.",
+    "Genome Explorer can search by RCV ID, chromosome, position, variant ID, gene, variant type, status, condition, classification, and confidence when those search results are supplied.",
+    "The page describes SNP/SNV, INDEL, CNV, SV, and mitochondrial heteroplasmy compatibility, but no user genome output or sample report rows were exposed during capture.",
+    "Each row in Genome Explorer provides information on a position within your genome, with columns such as RCV ID, chromosome, position, variant ID, gene, impact, variant type, reference, alternate allele, user data, condition, status, classification, confidence, references, and links."
+  ]
+}

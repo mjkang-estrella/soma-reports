@@ -3,22 +3,21 @@
     "reportTitle": "Healthcare Pro",
     "inputManifestHash": "sha256:synthetic-healthcare-pro-genetic-report-professional-handoff-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "healthcare professional review, diagnosis, symptoms, family history, current medication list, labs, imaging, clinical history, exam findings, treatment plan, calibrated risk model, and authenticated sample-report rows unavailable in this fixture",
-      "Professional review, clinical context, current health information, and medical decision support are unavailable in this fixture.",
-      "This result is consumer-shareable context only and is not a diagnosis, professional clearance, disease-risk estimate, medication instruction, procedure plan, treatment guidance, supplement guidance, diet guidance, lab interpretation, screening advice, reproductive advice, or clinical actionability claim."
+      "Validated local Healthcare Pro service output, qualified professional review, diagnosis, symptoms, family history, medications, labs, imaging, clinical history, treatment plan, and calibrated risk model are unavailable in this fixture.",
+      "Public Healthcare Pro sample rows are included only as observed output-structure evidence and are not local personal results.",
+      "This result is consumer-shareable context only and is not a diagnosis, professional clearance, disease-risk estimate, medication instruction, screening advice, dosing guidance, procedure plan, treatment guidance, lifestyle instruction, reproductive advice, or clinical actionability claim."
     ]
   },
   "resultRows": [
     {
-      "groupTitle": "Professional handoff availability",
+      "groupTitle": "Clinical review availability",
       "item": "healthcare-pro-genetic-report-handoff-context-unavailable",
-      "brandName": "",
-      "geneticAnalysis": "Healthcare Pro can organize supplied context for a professional discussion, but the specialist review and authenticated sample rows are unavailable.",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "healthcare professional review, diagnosis, symptoms, family history, current medication list, labs, imaging, clinical history, exam findings, treatment plan, calibrated risk model, and validated local Healthcare Pro service output unavailable in this fixture",
       "genes": [
         "Healthcare Pro"
       ],
-      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Counseling",
+      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus Genetic Counseling",
       "sourceIds": [
         "cdc-genetic-testing",
         "medlineplus-genetics",
@@ -29,18 +28,18 @@
         "medlineplus-pharmacogenetic-tests",
         "nhgri-pharmacogenomics"
       ],
-      "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This row is an availability statement. It does not diagnose a condition, clear a person for a procedure, estimate risk, choose medication, recommend treatment, interpret labs, recommend screening, guide reproductive decisions, or provide an all-clear result."
+      "plainEnglishMeaning": "A qualified professional needs validated test scope, personal and family history, symptoms, medications, labs, procedure context, environment, ancestry applicability, and current clinical information before using genetic context for health decisions.",
+      "sourceBindingStatus": "curated"
     },
     {
       "groupTitle": "Clinical review availability",
       "item": "healthcare-pro-genetic-report-clinical-review-unavailable",
-      "brandName": "",
-      "geneticAnalysis": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+      "brandName": "Not applicable",
+      "geneticAnalysis": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and validated local professional service output unavailable in this fixture",
       "genes": [
         "healthcare professional review context"
       ],
-      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Counseling",
+      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus Genetic Counseling",
       "sourceIds": [
         "cdc-genetic-testing",
         "medlineplus-genetics",
@@ -51,17 +50,205 @@
         "medlineplus-pharmacogenetic-tests",
         "nhgri-pharmacogenomics"
       ],
-      "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "A qualified professional needs validated test scope, personal and family history, symptoms, medications, labs, procedure context, environment, ancestry applicability, and current clinical information before using genetic context for health decisions."
+      "plainEnglishMeaning": "A qualified professional needs validated test scope, personal and family history, symptoms, medications, labs, procedure context, environment, ancestry applicability, and current clinical information before using genetic context for health decisions.",
+      "sourceBindingStatus": "curated"
+    },
+    {
+      "groupTitle": "Report identity",
+      "item": "Healthcare Professional Genetic Report",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The cover and table of contents identify a Healthcare Pro sample report with sections for STAT Alerts, Increased Risk Detected, Medications (Pharmacogenomics), Rare Diseases, No Increased Risk Detected, and Analysis Alerts.",
+      "description": "This row captures sample-report structure only and does not prove a local Healthcare Pro report was generated.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 1-2 of the public sample PDF; keep report identity and section list separate from local findings.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "STAT Alerts",
+      "item": "Nitrous Oxide ADR",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Nitrous Oxide ADR as Risk Detected and ties the alert to homozygous MTHFR Trp339Gly/W339G.",
+      "description": "This is a sample-person alert row only; local output must not infer nitrous oxide adverse-reaction risk, homocysteine status, anesthesia clearance, or medical-record action without supplied evidence and professional review.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 3 of the public sample PDF; sample clinical-action language is observed structure, not local advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "CAD & MI",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels CAD & MI as Increased Risk Detected and shows a 55% lifetime-risk sample estimate compared with a 42% male population-risk label.",
+      "description": "This is sample output only; local output must not reuse the percentages as a personal coronary disease or heart-attack risk estimate.",
+      "genes": [
+        "cardiovascular-risk markers"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 4-5 of the public sample PDF; percentages are sample labels and need calibrated local evidence before reuse.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "MTHFR Deficiency",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels MTHFR Deficiency as Increased Risk Detected due to homozygous MTHFR Trp339Gly/W339G.",
+      "description": "This is sample-person structure only; local output must not infer deficiency, homocysteine levels, supplementation need, or reproductive guidance from the sample row.",
+      "genes": [
+        "MTHFR"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 5 of the public sample PDF; preserve the sample label without turning it into local clinical guidance.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "Colorectal Cancer",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Colorectal Cancer as Increased Risk Detected and shows a sample lifetime-risk label of about 15% compared with about 7%.",
+      "description": "This is sample output only; local output must not infer personal colorectal cancer risk, screening timing, aspirin use, or prevention steps.",
+      "genes": [
+        "colorectal-cancer-risk markers"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 5 of the public sample PDF; sample prevention text is not local medical advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "Osteoarthritis",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Osteoarthritis as Increased Risk Detected and lists knee OA moderate, hip OA slightly increased, and wrist OA normal sample labels.",
+      "description": "This row captures the sample's joint-specific output shape only; local output must not infer personal osteoarthritis risk or exercise modifications from this sample.",
+      "genes": [
+        "osteoarthritis-risk markers"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from pages 5-6 of the public sample PDF; exercise and imaging language is observed sample structure only.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "Hirschsprung Disease",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Hirschsprung Disease as Increased Risk Detected and ties the row to a RET mutation described as IVS 1 +9277 and +9349 relative to MET.",
+      "description": "This is a sample-person rare-disease risk row only; local output must not infer diagnosis, symptoms, imaging need, or referral need.",
+      "genes": [
+        "RET"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 7 of the public sample PDF; symptom and referral examples are sample report structure, not local advice.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Increased Risk Detected",
+      "item": "Thrombophilia",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Thrombophilia as Carrier and states the sample has one copy of the Factor V R2 mutation in F5, distinct from Factor V Leiden.",
+      "description": "This is sample carrier-status structure only; local output must not infer personal thrombophilia carrier status or clotting risk.",
+      "genes": [
+        "F5"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 8 of the public sample PDF; the row includes sample caveats about R2 on its own.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Medications (Pharmacogenomics)",
+      "item": "Warfarin dosing",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Warfarin dosing as Slight Resistance Detected and says the sample may need a slightly higher maintenance dose.",
+      "description": "This is sample pharmacogenomics structure only; local output must not infer a warfarin dose, INR target, prescription change, or medication action.",
+      "genes": [
+        "warfarin-response markers"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 9 of the public sample PDF; medication-dose language must remain sample-only unless supplied by validated local PGx evidence and professional review.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Medications (Pharmacogenomics)",
+      "item": "5-fluorouracil Toxicity",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels 5-fluorouracil toxicity as increased risk due to DPYD*5/*5 and states the sample is homozygous for DPYD I543V.",
+      "description": "This is sample pharmacogenomics structure only; local output must not infer chemotherapy toxicity risk, alternative therapy, or dose adjustment.",
+      "genes": [
+        "DPYD"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 10 of the public sample PDF; oncology medication action requires qualified clinical review.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Rare Diseases",
+      "item": "Hemochromatosis",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels Hemochromatosis as Carrier and ties the carrier row to a single HFE2 G320V mutation.",
+      "description": "This is sample carrier-status structure only; local output must not infer iron overload, carrier status, family risk, monitoring, or treatment.",
+      "genes": [
+        "HFE2"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 11 of the public sample PDF; monitoring and phlebotomy language is sample content, not local guidance.",
+      "sourceBindingStatus": "exact"
+    },
+    {
+      "groupTitle": "Analysis Alerts",
+      "item": "Data completeness",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report's Analysis Alerts section states no ambiguity, complete genetic data, and all diseases, traits, and conditions analyzed.",
+      "description": "This is sample analysis-quality language only; local output must not claim complete local data or all conditions analyzed unless the local fixture supplies equivalent quality evidence.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "healthcare-pro-sample-pdf"
+      ],
+      "plainEnglishMeaning": "Extracted from page 14 of the public sample PDF; data-completeness claims are sample-only.",
+      "sourceBindingStatus": "exact"
     }
   ],
   "professionalHandoffContext": {
-    "plainEnglishMeaning": "Healthcare Pro is currently a handoff-boundary package. It can document supplied evidence and missing professional context, but it cannot replace qualified review or produce medical decisions from local evidence alone.",
+    "plainEnglishMeaning": "Healthcare Pro is modeled as a local handoff-boundary package with observed public sample-report structure. It can document supplied evidence, sample-only rows, and missing professional context, but it cannot replace qualified review or produce medical decisions from local evidence alone.",
     "unsupportedClaims": [
       "Diagnosis, professional clearance, all-clear result, or personal disease-risk estimate",
-      "Medication, dosing, procedure, treatment, supplement, diet, lab, screening, reproductive, or management instruction",
+      "Medication choice, dosing, procedure, treatment, supplement, diet, lab, screening, reproductive, lifestyle, prevention, or management instruction",
       "Variant classification, penetrance, inheritance, family-member risk, clinical actionability, or specialist-level interpretation",
-      "Replacement for a qualified clinician, pharmacist, geneticist, genetic counselor, surgeon, anesthesiologist, rheumatologist, infectious disease specialist, or other relevant professional"
+      "Reuse of sample genotypes, carrier labels, medication labels, percentages, or analysis-completeness statements as local findings"
     ],
     "professionalReview": "Use this output only as preparation for a professional conversation. Health decisions require qualified review with clinical history, medications, symptoms, labs, family history, procedure details when relevant, and validated testing scope."
   },
@@ -69,57 +256,154 @@
     "professionalReview": [
       "Do not use this local fixture to change medication, supplements, diet, screening, procedures, reproductive decisions, prevention plans, or treatment decisions.",
       "Bring current symptoms, personal and family history, medications, allergies, labs, prior testing, procedure context when relevant, and ancestry context to a qualified professional if discussing this topic.",
-      "Treat unavailable professional-review rows as unavailable, not as normal, abnormal, low risk, high risk, reassuring, diagnostic, actionable, or all clear."
+      "Treat sample rows as examples of report format, not as normal, abnormal, low risk, high risk, reassuring, diagnostic, actionable, or all-clear local results."
     ]
   },
   "references": [
     {
       "id": "cdc-genetic-testing",
-      "title": "CDC Genetic Testing"
+      "title": "CDC Genetic Testing",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
     },
     {
       "id": "medlineplus-genetics",
-      "title": "MedlinePlus Genetics"
+      "title": "MedlinePlus Genetics",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
     },
     {
       "id": "medlineplus-genetic-counseling",
-      "title": "MedlinePlus: Genetic Counseling"
+      "title": "MedlinePlus: Genetic Counseling",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
     },
     {
       "id": "fda-direct-to-consumer-tests",
-      "title": "FDA Direct-to-Consumer Tests"
+      "title": "FDA Direct-to-Consumer Tests",
+      "sourceType": "regulatory_resource",
+      "evidenceLevel": "regulatory_background",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
     },
     {
       "id": "cdc-family-health-history",
-      "title": "CDC About Family Health History"
+      "title": "CDC About Family Health History",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
     },
     {
       "id": "cdc-pharmacogenomics",
-      "title": "CDC Pharmacogenomics"
+      "title": "CDC Pharmacogenomics",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
     },
     {
       "id": "medlineplus-pharmacogenetic-tests",
-      "title": "MedlinePlus Pharmacogenetic Tests"
+      "title": "MedlinePlus Pharmacogenetic Tests",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
     },
     {
       "id": "nhgri-pharmacogenomics",
-      "title": "NHGRI Pharmacogenomics Fact Sheet"
+      "title": "NHGRI Pharmacogenomics Fact Sheet",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
     },
     {
       "id": "ncbi-clinvar",
-      "title": "NCBI ClinVar"
+      "title": "NCBI ClinVar",
+      "sourceType": "database",
+      "evidenceLevel": "database_background",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
     },
     {
       "id": "ncbi-genetic-testing-registry",
-      "title": "NIH Genetic Testing Registry"
+      "title": "NIH Genetic Testing Registry",
+      "sourceType": "database",
+      "evidenceLevel": "database_background",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
     },
     {
       "id": "medlineplus-autoimmune-diseases",
-      "title": "MedlinePlus: Autoimmune Diseases"
+      "title": "MedlinePlus: Autoimmune Diseases",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
     },
     {
       "id": "medlineplus-immune-system-disorders",
-      "title": "MedlinePlus: Immune System and Disorders"
+      "title": "MedlinePlus: Immune System and Disorders",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background",
+      "usedFor": [
+        "professional_handoff_context",
+        "non_prescriptive_language",
+        "missing_review_policy"
+      ]
+    },
+    {
+      "id": "healthcare-pro-sample-pdf",
+      "title": "Healthcare Pro sample report",
+      "sourceType": "mock_report",
+      "evidenceLevel": "high",
+      "usedFor": [
+        "sample_rows",
+        "formal_fields",
+        "genotype_summary",
+        "output_format",
+        "clinical_handoff_boundary"
+      ]
     }
   ],
   "appendix": {
@@ -127,31 +411,112 @@
       {
         "inputId": "healthcare-pro-genetic-report-handoff-context-unavailable",
         "gene": "Healthcare Pro",
-        "observedValue": "healthcare professional review, diagnosis, symptoms, family history, current medication list, labs, imaging, clinical history, exam findings, treatment plan, calibrated risk model, and authenticated sample-report rows unavailable in this fixture",
+        "observedValue": "healthcare professional review, diagnosis, symptoms, family history, current medication list, labs, imaging, clinical history, exam findings, treatment plan, calibrated risk model, and validated local Healthcare Pro service output unavailable in this fixture",
         "matchStatus": "unavailable"
       },
       {
         "inputId": "healthcare-pro-genetic-report-clinical-review-unavailable",
         "gene": "healthcare professional review context",
-        "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+        "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and validated local professional service output unavailable in this fixture",
         "matchStatus": "unavailable"
+      },
+      {
+        "effect": "The sample report uses this MTHFR row for Nitrous Oxide ADR and MTHFR Deficiency sample labels.",
+        "extractionStatus": "direct",
+        "gene": "MTHFR",
+        "genotype": "homozygous",
+        "phenotype": "Observed sample content only; do not infer local MTHFR deficiency, homocysteine status, nitrous oxide risk, supplementation, or reproductive guidance.",
+        "sortOrder": 1,
+        "tier": "Sample-report visible genotype",
+        "variantId": "Trp339Gly; W339G"
+      },
+      {
+        "effect": "The sample report uses this RET row for a Hirschsprung Disease increased-risk sample label.",
+        "extractionStatus": "direct",
+        "gene": "RET",
+        "genotype": "mutation detected in sample row",
+        "phenotype": "Observed sample content only; do not infer local Hirschsprung Disease risk, diagnosis, symptoms, imaging, or referral need.",
+        "sortOrder": 2,
+        "tier": "Sample-report visible variant",
+        "variantId": "IVS 1 +9277; +9349 relative to MET"
+      },
+      {
+        "effect": "The sample report labels the sample as a Factor V R2 carrier and distinguishes it from Factor V Leiden.",
+        "extractionStatus": "direct",
+        "gene": "F5",
+        "genotype": "one copy",
+        "phenotype": "Observed sample content only; do not infer local thrombophilia carrier status or clotting risk.",
+        "sortOrder": 3,
+        "tier": "Sample-report visible carrier marker",
+        "variantId": "Factor V R2"
+      },
+      {
+        "effect": "The sample report labels possible increased Mercaptopurine and Azathioprine adverse-reaction risk due to an ITPA mutation.",
+        "extractionStatus": "direct",
+        "gene": "ITPA",
+        "genotype": "single mutation",
+        "phenotype": "Observed sample content only; do not infer local medication toxicity, dose change, or monitoring need.",
+        "sortOrder": 4,
+        "tier": "Sample-report visible PGx marker",
+        "variantId": "partial ITPase deficiency mutation"
+      },
+      {
+        "effect": "The sample report labels increased 5-fluorouracil toxicity risk due to homozygous DPYD I543V.",
+        "extractionStatus": "direct",
+        "gene": "DPYD",
+        "genotype": "homozygous",
+        "phenotype": "Observed sample content only; do not infer local chemotherapy toxicity risk, alternative-agent need, or dosing guidance.",
+        "sortOrder": 5,
+        "tier": "Sample-report visible PGx marker",
+        "variantId": "I543V; DPYD*5/*5"
+      },
+      {
+        "effect": "The sample report labels the sample as a postanesthetic-apnea carrier and likely not affected.",
+        "extractionStatus": "direct",
+        "gene": "BCHE",
+        "genotype": "one copy; carrier",
+        "phenotype": "Observed sample content only; do not infer local anesthesia risk, carrier status, or newborn testing guidance.",
+        "sortOrder": 6,
+        "tier": "Sample-report visible carrier marker",
+        "variantId": "Gly418Val"
+      },
+      {
+        "effect": "The sample report labels the sample as a Hemochromatosis carrier due to HFE2 G320V.",
+        "extractionStatus": "direct",
+        "gene": "HFE2",
+        "genotype": "single mutation; carrier",
+        "phenotype": "Observed sample content only; do not infer local hemochromatosis carrier status, iron overload, monitoring, or treatment need.",
+        "sortOrder": 7,
+        "tier": "Sample-report visible carrier marker",
+        "variantId": "G320V"
+      },
+      {
+        "effect": "The sample report states its own analysis completeness and lack-of-ambiguity alerts on the final page.",
+        "extractionStatus": "direct",
+        "gene": "Healthcare Pro analysis",
+        "genotype": "no ambiguity; complete data; all listed conditions analyzed in the sample",
+        "phenotype": "Observed sample quality context only; do not claim local completeness without equivalent local quality evidence.",
+        "sortOrder": 8,
+        "tier": "Sample-report analysis quality",
+        "variantId": "analysis-alerts"
       }
     ],
     "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and exact rows",
+      "Validated local Healthcare Pro service output and professional interpretation",
       "Qualified professional review and complete clinical context",
-      "Current medications, symptoms, family history, labs, procedure details, prior testing, and validated test scope when relevant",
-      "Validated model output, applicability metadata, and professional interpretation for any health decision"
+      "Current medications, symptoms, family history, labs, procedure details, prior testing, environment, ancestry applicability, and validated test scope when relevant",
+      "Calibrated local model output for any personal health, medication, screening, treatment, reproductive, or actionability claim"
     ],
     "probabilities": [],
     "uncertainty": [
       "No calibrated professional-clearance, disease-risk, medication-response, procedure-risk, treatment-response, lab-status, screening-benefit, reproductive-risk, supplement-benefit, diet-response, or actionability model is supplied for this local package.",
+      "Public sample rows are exact source-bound examples of report structure, but they are not local personal findings.",
       "Interpretation depends on validated test scope, clinical and family history, symptoms, medications, labs, procedures, environment, ancestry applicability, and qualified professional review."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
       "The report is educational handoff context and does not provide diagnosis, professional clearance, disease-risk estimation, medication guidance, procedure guidance, treatment advice, supplement advice, diet advice, lab interpretation, screening advice, reproductive advice, or clinical actionability.",
-      "Unavailable professional-review rows should never be interpreted as low risk, high risk, no risk, normal, abnormal, reassuring, diagnostic, actionable, or all clear."
+      "Sample rows should never be interpreted as personal low risk, high risk, no risk, normal, abnormal, reassuring, diagnostic, actionable, or all clear results."
     ]
   }
 }

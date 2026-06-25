@@ -8,4 +8,6 @@ If pipeline execution, secondary calls, QC metrics, clinical classifications, ge
 Do not guarantee coordinate conversion, build-independent mapping, annotation completeness, pipeline execution, browser search completeness, short-read mapping success, or variant-call accuracy unless exact service or pipeline outputs are supplied.
 Do not classify pathogenicity, make clinical significance claims, diagnose disease, estimate disease risk, infer medication response, or recommend screening, testing, treatment, reproductive, lifestyle, diet, or supplement actions.
 State that pipeline-style outputs require supplied execution artifacts and this fixture does not supply a run.
+Every result row must cite provided reference IDs using `sourceIds` or `sourceResourceIds`, or use `source-unavailable` when no supplied source applies.
+
 Return valid JSON matching the output contract. Do not include markdown outside JSON.

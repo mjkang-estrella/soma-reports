@@ -3,8 +3,8 @@
     "reportTitle": "Arthritis Prevention",
     "inputManifestHash": "sha256:synthetic-arthritis-prevention-dna-report-condition-boundary-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "validated arthritis disease model, calibrated arthritis PRS, HLA inference, rheumatoid-factor, anti-CCP, CRP, ESR, imaging, joint exam, age, sex, family history, smoking and environmental history, symptoms, medication context, prevention-plan context, and authenticated sample-report rows unavailable in this fixture.",
+      "Direct Arthritis Prevention sample report rows were not exposed by authenticated detail extraction; a public Sequencing.com Wellness & Longevity Arthritis/Osteoarthritis section is supplied only as sibling output-structure evidence.",
+      "Validated arthritis disease model, calibrated arthritis PRS, HLA inference, rheumatoid-factor, anti-CCP, CRP, ESR, imaging, joint exam, age, sex, family history, smoking and environmental history, symptoms, medication context, prevention-plan context, and clinical/lab interpretation are unavailable in this fixture.",
       "Clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and calibrated model outputs are unavailable.",
       "This result is not a diagnosis, disease-risk estimate, HLA inference, inflammatory-status result, immune-strength result, infection-risk result, lab interpretation, treatment instruction, supplement instruction, diet instruction, prevention plan, screening instruction, diagnostic-test recommendation, reproductive action, or clinical actionability claim."
     ]
@@ -14,7 +14,7 @@
       "groupTitle": "Condition model availability",
       "item": "arthritis-prevention-dna-report-model-unavailable",
       "brandName": "",
-      "geneticAnalysis": "Arthritis Prevention cannot emit a arthritis prevention conclusion from this local fixture because the validated model, calibrated score, clinical context, labs, and authenticated sample rows are unavailable.",
+      "geneticAnalysis": "Arthritis Prevention cannot emit an arthritis prevention conclusion from this local fixture because the validated model, calibrated score, clinical context, labs, and direct Arthritis Prevention sample rows are unavailable.",
       "genes": [
         "Arthritis Prevention model"
       ],
@@ -28,13 +28,13 @@
         "medlineplus-rheumatoid-arthritis-genetics"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This row is an availability statement, not a diagnosis, risk score, HLA result, immune-strength result, inflammation-level result, lab result, prevention plan, treatment instruction, or all-clear statement."
+      "plainEnglishMeaning": "This row is an availability statement, not a diagnosis, arthritis risk score, HLA result, joint-status result, inflammation-level result, lab result, prevention plan, treatment instruction, or all-clear statement."
     },
     {
       "groupTitle": "Clinical and lab context availability",
       "item": "arthritis-prevention-dna-report-clinical-lab-context-unavailable",
       "brandName": "",
-      "geneticAnalysis": "Arthritis Prevention cannot interpret clinical or lab context because symptoms, diagnosis, family history, inflammatory markers, immune evaluation, medications, environmental context, clinician interpretation, and authenticated sample rows are unavailable.",
+      "geneticAnalysis": "Arthritis Prevention cannot interpret clinical or lab context because symptoms, diagnosis, family history, inflammatory markers, immune evaluation, medications, environmental context, clinician interpretation, and prevention-plan context are unavailable.",
       "genes": [
         "Arthritis Prevention clinical and lab context"
       ],
@@ -51,23 +51,38 @@
       ],
       "sourceBindingStatus": "curated",
       "plainEnglishMeaning": "Personal interpretation needs validated testing scope, symptoms, family history, clinical history, labs, environment, ancestry applicability, and qualified professional review."
+    },
+    {
+      "groupTitle": "Arthritis",
+      "item": "Osteoarthritis joint-specific risk panels",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report labels knee arthritis as Moderate (53%), hip arthritis as Slightly Increased (26%), and wrist arthritis as Normal (30%), with normal generic lifetime-risk comparators displayed for each joint.",
+      "description": "The page shows separate knee, hip, and wrist risk panels plus monitoring, lifestyle, medication, alternative-intervention, misconception, and resource sections.",
+      "genes": [
+        "Osteoarthritis model"
+      ],
+      "sourceLabel": "Sibling Wellness & Longevity sample report",
+      "sourceIds": [
+        "wellness-and-longevity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "This row preserves the sibling Wellness & Longevity Arthritis/Osteoarthritis sample-page structure only. It must not be interpreted as local osteoarthritis risk, rheumatoid arthritis risk, joint status, diagnosis, prevention advice, treatment guidance, supplement advice, diet advice, medication guidance, screening guidance, testing guidance, or actionability."
     }
   ],
   "conditionBoundaryContext": {
-    "plainEnglishMeaning": "Arthritis Prevention is currently a boundary report: it can document what evidence is available and what is missing, but it cannot diagnose arthritis prevention, estimate disease risk, interpret labs, or make health decisions.",
+    "plainEnglishMeaning": "Arthritis Prevention is currently a boundary report: it can document what evidence is available, what is missing, and what a related Sequencing.com arthritis sample section looks like, but it cannot diagnose arthritis, estimate disease risk, infer joint status, interpret labs, or make health decisions.",
     "unsupportedClaims": [
       "Diagnosis, all-clear result, or disease-risk estimate",
-      "HLA status, inflammatory status, immune strength, infection risk, autoantibody status, complement status, cytokines, CRP, ESR, immune-cell labs, organ involvement, disease activity, or flare status",
-      "EDS subtype, connective-tissue subtype, collagen-gene panel result, variant classification, vascular-risk inference, Beighton score, or hypermobility score",
+      "Arthritis subtype, osteoarthritis risk, rheumatoid arthritis risk, joint status, HLA status, RF, anti-CCP, CRP, ESR, imaging, symptoms, inflammatory status, immune strength, infection risk, autoantibody status, complement status, cytokines, immune-cell labs, organ involvement, disease activity, or flare status",
       "Treatment, supplement, diet, prevention, screening, diagnostic testing, reproductive, medication, surgery, or management instruction",
       "Replacement for qualified clinician, genetic counselor, rheumatology, immunology, or genetics review"
     ],
-    "professionalReview": "Use qualified professional review for symptoms, abnormal labs, family history, known variants, autoimmune or inflammatory concerns, connective-tissue concerns, medication questions, pregnancy or reproductive questions, screening questions, or treatment decisions."
+    "professionalReview": "Use qualified professional review for symptoms, abnormal labs, family history, known variants, arthritis concerns, autoimmune or inflammatory concerns, medication questions, pregnancy or reproductive questions, screening questions, or treatment decisions."
   },
   "practicalNextSteps": {
     "professionalReview": [
       "Do not use this local fixture to change medication, supplements, diet, screening, diagnostic testing, reproductive decisions, prevention plans, or treatment decisions.",
-      "Bring symptoms, family history, clinical history, labs, medications, environment, prior genetic testing, and ancestry context to a qualified professional if reviewing immune, inflammatory, autoimmune, rheumatologic, connective-tissue, or EDS concerns.",
+      "Bring symptoms, family history, clinical history, labs, medications, environment, prior genetic testing, and ancestry context to a qualified professional if reviewing arthritis, immune, inflammatory, autoimmune, rheumatologic, or connective-tissue concerns.",
       "Treat missing model rows as unavailable, not as low risk, high risk, reassuring, abnormal, normal, or actionable results."
     ]
   },
@@ -119,6 +134,10 @@
     {
       "id": "medlineplus-rheumatoid-arthritis-genetics",
       "title": "MedlinePlus Genetics: Rheumatoid Arthritis"
+    },
+    {
+      "id": "wellness-and-longevity-sample-pdf",
+      "title": "Wellness and Longevity DNA Analysis sample report"
     }
   ],
   "appendix": {
@@ -126,31 +145,51 @@
       {
         "inputId": "arthritis-prevention-dna-report-model-unavailable",
         "gene": "Arthritis Prevention model",
-        "observedValue": "validated arthritis disease model, calibrated arthritis PRS, HLA inference, rheumatoid-factor, anti-CCP, CRP, ESR, imaging, joint exam, age, sex, family history, smoking and environmental history, symptoms, medication context, prevention-plan context, and authenticated sample-report rows unavailable in this fixture",
+        "observedValue": "validated arthritis disease model, calibrated arthritis PRS, HLA inference, rheumatoid-factor, anti-CCP, CRP, ESR, imaging, joint exam, age, sex, family history, smoking and environmental history, symptoms, medication context, prevention-plan context, and clinical/lab interpretation unavailable in this fixture; public Wellness & Longevity sample PDF Arthritis/Osteoarthritis page, joint-specific risk cards, and lifetime-risk legend observed as sibling output structure",
         "matchStatus": "unavailable"
       },
       {
         "inputId": "arthritis-prevention-dna-report-clinical-lab-context-unavailable",
         "gene": "Arthritis Prevention clinical and lab context",
-        "observedValue": "clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and authenticated sample-report rows unavailable in this fixture",
+        "observedValue": "clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and personal prevention-plan context unavailable in this fixture; public Wellness & Longevity Arthritis/Osteoarthritis sample section observed separately as output-structure evidence",
         "matchStatus": "unavailable"
+      },
+      {
+        "tier": "Local missing input",
+        "gene": "Arthritis Prevention model",
+        "variantId": "arthritis-prevention-model-unavailable",
+        "genotype": "validated arthritis disease model, calibrated arthritis PRS, HLA inference, rheumatoid-factor, anti-CCP, CRP, ESR, imaging, joint exam, age, sex, family history, smoking and environmental history, symptoms, medication context, and prevention-plan context unavailable",
+        "effect": "The local fixture intentionally omits calibrated arthritis and clinical/lab context.",
+        "phenotype": "Mark local arthritis risk, subtype, joint status, prevention, screening, treatment, supplement, diet, medication, and actionability sections unavailable instead of inferring them.",
+        "extractionStatus": "curated"
+      },
+      {
+        "tier": "Sibling sample-report section",
+        "gene": "Osteoarthritis model",
+        "variantId": "wellness-longevity-arthritis-section",
+        "genotype": "sample knee arthritis Moderate (53%), hip arthritis Slightly Increased (26%), and wrist arthritis Normal (30%) cards observed",
+        "effect": "The public Wellness & Longevity sample shows a formal Arthritis (Osteoarthritis) page, joint-specific risk cards, actionability gauge, hidden monitoring/lifestyle/medication blocks, resource blocks, and a lifetime-risk legend.",
+        "phenotype": "Observed sample output structure only; do not infer local osteoarthritis risk, diagnosis, joint status, prevention plan, treatment need, supplement need, diet need, medication need, or clinical action.",
+        "extractionStatus": "direct"
       }
     ],
     "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and exact rows",
+      "Direct Arthritis Prevention report sample sections and exact rows",
       "Validated disease model or calibrated score with applicability and validation metadata",
-      "HLA inference, inflammatory markers, immune labs, symptoms, family history, clinical history, environment, medications, ancestry applicability, and professional interpretation",
-      "validated arthritis disease model, calibrated arthritis PRS, HLA inference, rheumatoid-factor, anti-CCP, CRP, ESR, imaging, joint exam, age, sex, family history, smoking and environmental history, symptoms, medication context, prevention-plan context, and authenticated sample-report rows unavailable in this fixture; clinical diagnosis, symptoms, labs, inflammatory markers, immune evaluation, family history, medication context, environmental context, clinician interpretation, and authenticated sample-report rows unavailable in this fixture"
+      "HLA inference, rheumatoid-factor, anti-CCP, CRP, ESR, imaging, joint exam, inflammatory markers, immune labs, symptoms, family history, clinical history, environment, medications, prevention-plan context, ancestry applicability, and professional interpretation",
+      "Validated arthritis disease model, calibrated arthritis PRS, HLA inference, rheumatoid-factor, anti-CCP, CRP, ESR, imaging, joint exam, age, sex, family history, smoking and environmental history, symptoms, medication context, prevention-plan context, and clinical/lab interpretation are unavailable in this fixture; the Wellness & Longevity Arthritis/Osteoarthritis row is sample-only sibling structure."
     ],
     "probabilities": [],
     "uncertainty": [
-      "No calibrated arthritis prevention probability, disease-risk, immune-strength, inflammation-level, lab, treatment-response, prevention-benefit, screening-benefit, reproductive, or actionability model is supplied for this local package.",
-      "Immune, inflammatory, autoimmune, rheumatologic, connective-tissue, and EDS interpretation depends on validated test scope, clinical and family history, symptoms, labs, environment, ancestry applicability, and qualified professional review."
+      "No calibrated arthritis prevention probability, disease-risk, joint-status, immune-strength, inflammation-level, lab, treatment-response, prevention-benefit, screening-benefit, reproductive, or actionability model is supplied for this local package.",
+      "The Wellness & Longevity Arthritis/Osteoarthritis sample row demonstrates observed report structure only and is not direct Arthritis Prevention report parity or local medical interpretation.",
+      "Immune, inflammatory, autoimmune, rheumatologic, connective-tissue, and arthritis interpretation depends on validated test scope, clinical and family history, symptoms, labs, environment, ancestry applicability, and qualified professional review."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
       "The report is educational and does not provide diagnosis, disease-risk estimation, HLA inference, inflammatory-status assessment, immune-strength assessment, infection-risk assessment, lab interpretation, prevention advice, screening advice, diagnostic-testing advice, reproductive advice, supplement advice, diet advice, medication advice, surgery advice, treatment advice, or actionability.",
-      "Unavailable model rows should never be interpreted as low risk, high risk, no risk, normal, abnormal, reassuring, diagnostic, or an all-clear result."
+      "Unavailable model rows should never be interpreted as low risk, high risk, no risk, normal, abnormal, reassuring, diagnostic, or an all-clear result.",
+      "Sibling sample percentages and labels must remain sample content only and must not be copied into a local run as personal arthritis risk or joint status."
     ]
   }
 }

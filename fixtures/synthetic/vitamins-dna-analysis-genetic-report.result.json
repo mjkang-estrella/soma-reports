@@ -1,10 +1,10 @@
 {
   "reportOverview": {
-    "reportTitle": "Vitamins DNA Wellness Report",
     "inputManifestHash": "sha256:synthetic-vitamins-dna-wellness-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "No calibrated vitamin, micronutrient, supplement, dosing, child-specific nutrition, symptom, diet-history, lab, or ancestry applicability model is supplied with this fixture."
+      "Authenticated Sequencing.com marketplace detail-page extraction is still pending.",
+      "The public sample PDF is image-based; OCR and visual review expose report structure but not exact sample-person vitamin genotypes.",
+      "No calibrated local vitamin, micronutrient, supplement, dosing, child-specific nutrition, symptom, diet-history, lab, or ancestry applicability model is supplied with this fixture."
     ]
   },
   "resultRows": [
@@ -12,7 +12,7 @@
       "groupTitle": "Vitamin and nutrient context",
       "item": "MCM6/LCT rs4988235",
       "brandName": "Not applicable",
-      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a diagnosis, symptom explanation, food-sensitivity result, diet recommendation, or supplement recommendation.",
+      "geneticAnalysis": "A derived MCM6/LCT rs4988235 CT call is available for lactase-persistence context. This is not a diagnosis, symptom explanation, food-sensitivity result, vitamin deficiency result, diet recommendation, or supplement recommendation.",
       "genes": [
         "MCM6",
         "LCT"
@@ -22,27 +22,227 @@
         "medlineplus-lactose-intolerance",
         "medlineplus-mcm6"
       ],
-      "plainEnglishMeaning": "This marker can provide lactose-related context, but symptoms, diet history, labs, environment, and professional review matter for nutrition decisions."
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "This marker can provide lactose-related context, but symptoms, diet history, labs, environment, medications, and professional review matter for nutrition decisions."
     },
     {
       "groupTitle": "Nutrition model availability",
       "item": "Vitamin and nutrient model",
       "brandName": "Not applicable",
-      "geneticAnalysis": "No calibrated vitamin, micronutrient, supplement, dosing, child-specific nutrition, symptom, diet-history, lab, or ancestry applicability model is supplied with this fixture.",
+      "geneticAnalysis": "No calibrated vitamin score, micronutrient model, supplement model, dosing model, child-specific nutrition evidence, symptom context, diet-history context, lab context, or ancestry applicability metadata is supplied with this fixture.",
       "genes": [
         "Vitamin and nutrient model"
       ],
-      "sourceLabel": "Nutritional genomics review / GWAS Catalog",
+      "sourceLabel": "Nutritional genomics review / GWAS Catalog / DTC result limits",
       "sourceIds": [
         "nutritional-genomics-dtc-review",
-        "ebi-gwas-catalog"
+        "ebi-gwas-catalog",
+        "medlineplus-dtc-genetic-testing-results"
       ],
-      "plainEnglishMeaning": "The report can describe supplied marker context, but it should not make diet, supplement, food-response, nutrient, metabolic, symptom, lab, or diagnosis conclusions without validated evidence."
+      "sourceBindingStatus": "curated",
+      "plainEnglishMeaning": "The local report can describe supplied marker context, but it should not make vitamin status, deficiency, supplement, dosing, child-specific, lab, symptom, diet, metabolic, or treatment conclusions without validated evidence."
+    },
+    {
+      "groupTitle": "Observed sample report structure",
+      "item": "Vitamins DNA Wellness public sample PDF",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "The public sample PDF shows vitamin deficiency-risk summary rows, top-suggestion cards, report-method pages, and Vitamin A marker preview context for output-format parity. Exact sample-person vitamin genotypes are not visible in the preview.",
+      "genes": [
+        "BCO1",
+        "RBP4",
+        "TTN"
+      ],
+      "sourceLabel": "SelfDecode Vitamins DNA Wellness sample report",
+      "sourceIds": [
+        "vitamins-dna-wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "These rows document Sequencing.com/SelfDecode sample format only. They must not be treated as this local fixture's vitamin status, deficiency risk, diet advice, supplement guidance, lab interpretation, diagnosis, or treatment conclusion."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Report Summary",
+      "item": "Vitamin A - Retinoids and Carotenoids",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "The public sample summary table shows a typical vitamin A deficiency-risk category.",
+      "description": "The summary page shows the vitamin A row, and the later Vitamin A preview page links the topic to beta-carotene conversion and retinol transport marker context.",
+      "genes": [
+        "BCO1",
+        "RBP4",
+        "TTN"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "vitamins-dna-wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted by OCR and visual review from pages 2 and 11 of the public SelfDecode Vitamins sample PDF; this is observed sample structure, not a local vitamin A result or advice. This is sample-report structure only, not a personal vitamin, diet, supplement, lab, diagnosis, or treatment conclusion."
+    },
+    {
+      "groupTitle": "Report Summary",
+      "item": "Vitamin B9 - Folate and Folic Acid",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "The public sample summary table shows a moderately increased vitamin B9 deficiency-risk category.",
+      "description": "The preview exposes the B9 risk-label row in the summary table, but does not show B9 genes or sample genotypes.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "vitamins-dna-wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted by OCR and visual review from page 2 of the public sample PDF; do not infer local folate status. This is sample-report structure only, not a personal vitamin, diet, supplement, lab, diagnosis, or treatment conclusion."
+    },
+    {
+      "groupTitle": "Report Summary",
+      "item": "Vitamin B12 - Cobalamins",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "The public sample summary table shows a typical vitamin B12 deficiency-risk category.",
+      "description": "The preview exposes the B12 risk-label row in the summary table, but does not show B12 marker rows or sample genotypes.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "vitamins-dna-wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted by OCR and visual review from page 2 of the public sample PDF; do not infer local vitamin B12 status. This is sample-report structure only, not a personal vitamin, diet, supplement, lab, diagnosis, or treatment conclusion."
+    },
+    {
+      "groupTitle": "Report Summary",
+      "item": "Vitamin C - Ascorbic Acid",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "The public sample summary table shows a typical vitamin C deficiency-risk category.",
+      "description": "The preview exposes the vitamin C risk-label row in the summary table; a later method page uses only an illustrative SNP example rather than a sample-person genotype.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "vitamins-dna-wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted by OCR and visual review from pages 2 and 7 of the public sample PDF; illustrative examples are not local or sample-person calls. This is sample-report structure only, not a personal vitamin, diet, supplement, lab, diagnosis, or treatment conclusion."
+    },
+    {
+      "groupTitle": "Report Summary",
+      "item": "Vitamin D - Vitamin D2 and D3",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "The public sample summary table shows a moderately increased vitamin D deficiency-risk category.",
+      "description": "The preview exposes the vitamin D risk-label row in the summary table, but does not show exact vitamin D markers or sample genotypes.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "vitamins-dna-wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted by OCR and visual review from page 2 of the public sample PDF; do not infer local vitamin D status. This is sample-report structure only, not a personal vitamin, diet, supplement, lab, diagnosis, or treatment conclusion."
+    },
+    {
+      "groupTitle": "Report Summary",
+      "item": "Vitamin E - Tocopherols and Tocotrienols",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "The public sample summary table shows a slightly decreased vitamin E deficiency-risk category.",
+      "description": "The preview exposes the vitamin E risk-label row in the summary table, but does not show exact vitamin E markers or sample genotypes.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "vitamins-dna-wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted by OCR and visual review from page 2 of the public sample PDF; do not infer local vitamin E status. This is sample-report structure only, not a personal vitamin, diet, supplement, lab, diagnosis, or treatment conclusion."
+    },
+    {
+      "groupTitle": "Report Summary",
+      "item": "Vitamin K - Vitamin K1",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "The public sample summary table shows a typical vitamin K1 deficiency-risk category.",
+      "description": "The preview exposes the vitamin K1 risk-label row in the summary table, but does not show exact vitamin K markers or sample genotypes.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "vitamins-dna-wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted by OCR and visual review from page 2 of the public sample PDF; do not infer local vitamin K status. This is sample-report structure only, not a personal vitamin, diet, supplement, lab, diagnosis, or treatment conclusion."
+    },
+    {
+      "groupTitle": "Top Suggestions",
+      "item": "Vitamin B9 food-source suggestion",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "The public sample output includes a folate-focused food-source suggestion.",
+      "description": "The summary page includes a top-suggestion card structure tied to vitamin B9 or folate food-source wording.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "vitamins-dna-wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted by OCR and visual review from page 2 of the public sample PDF; do not convert sample wording into local diet advice. This is sample-report structure only, not a personal vitamin, diet, supplement, lab, diagnosis, or treatment conclusion."
+    },
+    {
+      "groupTitle": "Top Suggestions",
+      "item": "Vitamin D3 food-source suggestion",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "The public sample output includes a vitamin D3 food-source suggestion.",
+      "description": "The summary page includes a top-suggestion card structure tied to vitamin D3 food-source wording.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "vitamins-dna-wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted by OCR and visual review from page 2 of the public sample PDF; do not convert sample wording into local diet or supplement advice. This is sample-report structure only, not a personal vitamin, diet, supplement, lab, diagnosis, or treatment conclusion."
+    },
+    {
+      "groupTitle": "Top Suggestions",
+      "item": "Vitamin D sun and outdoor-exposure suggestion",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "The public sample output includes an outdoor-exposure suggestion tied to vitamin D.",
+      "description": "The summary page includes a top-suggestion card structure about outdoor exposure as observed sample content.",
+      "genes": [],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "vitamins-dna-wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted by OCR and visual review from page 2 of the public sample PDF; do not convert sample wording into local lifestyle or medical advice. This is sample-report structure only, not a personal vitamin, diet, supplement, lab, diagnosis, or treatment conclusion."
+    },
+    {
+      "groupTitle": "Vitamin A Detail",
+      "item": "BCO1 beta-carotene conversion markers",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "The public sample preview discusses BCO1 markers in beta-carotene conversion context.",
+      "description": "Visible marker IDs include rs6420424, rs6564851, rs12934922, rs7501331, and rs11645428; sample-person genotypes are not visible.",
+      "genes": [
+        "BCO1"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "vitamins-dna-wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted by OCR and visual review from page 11 of the public sample PDF; marker context is not a local vitamin A result. This is sample-report structure only, not a personal vitamin, diet, supplement, lab, diagnosis, or treatment conclusion."
+    },
+    {
+      "groupTitle": "Vitamin A Detail",
+      "item": "RBP4 and TTN retinol transport markers",
+      "brandName": "SelfDecode sample",
+      "geneticAnalysis": "The public sample preview discusses RBP4 and TTN markers in retinol transport context.",
+      "description": "Visible marker IDs include RBP4 rs10882272 and TTN rs1667255; sample-person genotypes are not visible.",
+      "genes": [
+        "RBP4",
+        "TTN"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "vitamins-dna-wellness-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted by OCR and visual review from page 11 of the public sample PDF; marker context is not a local retinol or vitamin A result. This is sample-report structure only, not a personal vitamin, diet, supplement, lab, diagnosis, or treatment conclusion."
     }
   ],
   "practicalNextSteps": {
     "vitaminContext": [
-      "Use this report as educational vitamin and nutrient genetics context, not as a supplement plan.",
+      "Use this report as educational vitamin and nutrient genetics context, not as a supplement or diet plan.",
+      "Keep the public Vitamins DNA Wellness sample rows separate from local findings; sample risk labels, suggestions, and marker descriptions are format examples only.",
       "Discuss symptoms, diet history, lab testing, medications, pregnancy status, children, and supplement questions with qualified professionals.",
       "Do not start, stop, or dose supplements based on genotype alone."
     ]
@@ -63,33 +263,125 @@
     {
       "id": "ebi-gwas-catalog",
       "title": "GWAS Catalog"
+    },
+    {
+      "id": "medlineplus-dtc-genetic-testing-results",
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean"
+    },
+    {
+      "id": "medlineplus-blood-glucose-test",
+      "title": "MedlinePlus: Blood Glucose Test"
+    },
+    {
+      "id": "medlineplus-hba1c-test",
+      "title": "MedlinePlus: Hemoglobin A1C test"
+    },
+    {
+      "id": "cdc-diabetes-risk-factors",
+      "title": "CDC Diabetes Risk Factors"
+    },
+    {
+      "id": "fda-dietary-supplements",
+      "title": "FDA Dietary Supplements"
+    },
+    {
+      "id": "nih-ods-dietary-supplement-fact-sheets",
+      "title": "NIH Office of Dietary Supplements Fact Sheets"
+    },
+    {
+      "id": "cdc-bmi",
+      "title": "CDC About Body Mass Index"
+    },
+    {
+      "id": "vitamins-dna-wellness-sample-pdf",
+      "title": "SelfDecode Vitamins DNA Wellness sample report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
         "gene": "MCM6/LCT",
-        "observedValue": "rs4988235 CT"
+        "observedValue": "rs4988235: CT",
+        "effect": "The local fixture supplies a derived MCM6/LCT rs4988235 call for lactase-persistence context.",
+        "phenotype": "Report as educational lactose-related marker context only; do not infer local vitamin status, deficiencies, supplement needs, lab values, symptoms, diet plans, or treatment conclusions."
       },
       {
         "gene": "Vitamin and nutrient model",
-        "observedValue": "calibrated model unavailable"
+        "observedValue": "vitamins-wellness-model-unavailable: calibrated vitamin score, micronutrient model, supplement model, dosing model, child-specific nutrition evidence, symptom context, diet-history context, lab context, and ancestry applicability metadata unavailable",
+        "effect": "The local fixture intentionally omits calibrated vitamin and supplement models and non-genetic context.",
+        "phenotype": "Mark vitamin-status, nutrient-target, supplement, dosing, child-specific, lab, symptom, diet, and treatment sections unavailable."
+      },
+      {
+        "gene": "Vitamin panel summary",
+        "observedValue": "panel-snps-not-listed: not visible in sample preview",
+        "effect": "The public sample preview shows vitamin deficiency-risk labels, but exact sample-person SNP calls are not visible.",
+        "phenotype": "Observed sample output structure only; do not infer local vitamin status."
+      },
+      {
+        "gene": "BCO1",
+        "observedValue": "rs6420424: not visible in sample preview",
+        "effect": "Visible Vitamin A beta-carotene conversion marker context only.",
+        "phenotype": "No local beta-carotene conversion, vitamin A, diet, supplement, or lab conclusion."
+      },
+      {
+        "gene": "BCO1",
+        "observedValue": "rs6564851: not visible in sample preview",
+        "effect": "Visible Vitamin A beta-carotene conversion marker context only.",
+        "phenotype": "No local beta-carotene conversion, vitamin A, diet, supplement, or lab conclusion."
+      },
+      {
+        "gene": "BCO1",
+        "observedValue": "rs12934922: not visible in sample preview",
+        "effect": "Visible Vitamin A beta-carotene conversion marker context only.",
+        "phenotype": "No local beta-carotene conversion, vitamin A, diet, supplement, or lab conclusion."
+      },
+      {
+        "gene": "BCO1",
+        "observedValue": "rs7501331: not visible in sample preview",
+        "effect": "Visible Vitamin A beta-carotene conversion marker context only.",
+        "phenotype": "No local beta-carotene conversion, vitamin A, diet, supplement, or lab conclusion."
+      },
+      {
+        "gene": "BCO1",
+        "observedValue": "rs11645428: not visible in sample preview",
+        "effect": "Visible Vitamin A beta-carotene conversion marker context only.",
+        "phenotype": "No local beta-carotene conversion, vitamin A, diet, supplement, or lab conclusion."
+      },
+      {
+        "gene": "RBP4",
+        "observedValue": "rs10882272: not visible in sample preview",
+        "effect": "Visible retinol transport marker context only.",
+        "phenotype": "No local retinol-level, vitamin A, diet, supplement, or lab conclusion."
+      },
+      {
+        "gene": "TTN",
+        "observedValue": "rs1667255: not visible in sample preview",
+        "effect": "Visible retinol transport marker context only.",
+        "phenotype": "No local retinol-level, vitamin A, diet, supplement, or lab conclusion."
+      },
+      {
+        "gene": "Illustrative vitamin C example",
+        "observedValue": "no-rsid-visible: not visible in sample preview",
+        "effect": "The sample method page uses generic G/A and AG/GG/AA examples for explanation only.",
+        "phenotype": "Do not treat the method illustration as a sample-person genotype or local vitamin C evidence."
       }
     ],
     "missingInputs": [
-      "Authenticated sample-report sections and rows have not been extracted.",
+      "Authenticated marketplace detail-page text and full-report pages have not been extracted for this report.",
+      "Exact sample-person vitamin genotypes are not visible in the public sample preview.",
       "No calibrated vitamin, micronutrient, supplement, dosing, child-specific nutrition, symptom, diet-history, lab, or ancestry applicability model is supplied with this fixture.",
-      "Broader symptoms, food history, diet history, labs, medications, medical history, ancestry applicability, and professional assessment are not represented in this fixture."
+      "Broader symptoms, food history, diet history, labs, medications, medical history, ancestry applicability, child-specific needs, and professional assessment are not represented in this fixture."
     ],
     "probabilities": [],
     "uncertainty": [
-      "Nutrition, food response, nutrient status, symptoms, and metabolic outcomes depend on genetics plus symptoms, diet history, labs, medical history, medications, environment, and professional review.",
-      "A single marker should not be used to diagnose food reactions, nutrient deficiency, metabolic disease, or to prescribe diet or supplement changes."
+      "Nutrition, vitamin status, food response, nutrient status, symptoms, and metabolic outcomes depend on genetics plus symptoms, diet history, labs, medical history, medications, environment, ancestry applicability, and professional review.",
+      "A single marker should not be used to diagnose food reactions, nutrient deficiency, vitamin deficiency, metabolic disease, or to prescribe diet or supplement changes.",
+      "The public sample PDF is exact output-format evidence for visible preview pages, but its risk labels, top suggestions, and marker context are not local-user evidence."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data is not included.",
       "The report is educational and does not diagnose vitamin or nutrient deficiency, prescribe supplements, recommend dosing, create child-specific nutrition guidance, interpret labs, or provide treatment guidance.",
-      "Authenticated Sequencing.com sample report rows are still pending."
+      "The Vitamins sample PDF is image-based; OCR rows were visually checked and obvious OCR errors were corrected, but full authenticated detail-page parity remains pending."
     ]
   }
 }

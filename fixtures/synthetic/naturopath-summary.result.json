@@ -1,24 +1,30 @@
 {
+  "schemaVersion": "soma-reports.synthetic-result.v1",
   "reportOverview": {
     "reportTitle": "Naturopath Summary",
     "inputManifestHash": "sha256:synthetic-naturopath-summary-professional-handoff-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "naturopath review, diet history, supplement list, medication list, symptoms, labs, methylation or homocysteine testing, detoxification model, nutrient status, pregnancy context, diagnosis, treatment plan, and authenticated sample-report rows unavailable in this fixture",
-      "Professional review, clinical context, current health information, and medical decision support are unavailable in this fixture.",
-      "This result is consumer-shareable context only and is not a diagnosis, professional clearance, disease-risk estimate, medication instruction, procedure plan, treatment guidance, supplement guidance, diet guidance, lab interpretation, screening advice, reproductive advice, or clinical actionability claim."
+      "Direct Naturopath Summary sample-report sections and exact rows have not been extracted.",
+      "The Detox Pathway sample PDF is included only as sibling supplement and wellness output-structure evidence.",
+      "Naturopath review, diet history, supplement list, medication list, symptoms, labs, methylation or homocysteine testing, detoxification model, nutrient status, pregnancy context, diagnosis, and treatment plan are unavailable in this fixture.",
+      "This result is consumer-shareable handoff context only and is not detoxification-capacity interpretation, toxin-sensitivity interpretation, methylation interpretation, nutrient-deficiency interpretation, lab interpretation, supplement guidance, diet guidance, medication guidance, pregnancy guidance, diagnosis, treatment, prevention, or actionability claim."
+    ],
+    "evidenceTypes": [
+      "Synthetic unavailable-naturopath-review evidence",
+      "Public dietary-supplement, pharmacogenomics, genetic-testing, and professional-review background references",
+      "Sibling Detox Pathway sample rows used only for supplement and wellness output structure"
     ]
   },
   "resultRows": [
     {
       "groupTitle": "Professional handoff availability",
-      "item": "naturopath-summary-handoff-context-unavailable",
+      "item": "Naturopath review context",
       "brandName": "",
-      "geneticAnalysis": "Naturopath Summary can organize supplied context for a professional discussion, but the specialist review and authenticated sample rows are unavailable.",
+      "geneticAnalysis": "The local fixture can organize supplied context for a naturopath or integrative-health discussion, but diet history, supplement list, medication list, symptoms, labs, methylation or homocysteine testing, detoxification model, nutrient status, pregnancy context, diagnosis, treatment plan, and naturopath review are unavailable.",
       "genes": [
         "Naturopath Summary"
       ],
-      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Counseling",
+      "sourceLabel": "Genetic testing and professional-review references",
       "sourceIds": [
         "cdc-genetic-testing",
         "medlineplus-genetics",
@@ -27,20 +33,60 @@
         "cdc-family-health-history",
         "fda-dietary-supplements",
         "nih-ods-dietary-supplement-fact-sheets",
-        "cdc-pharmacogenomics"
+        "cdc-pharmacogenomics",
+        "medlineplus-pharmacogenetic-tests"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This row is an availability statement. It does not diagnose a condition, clear a person for a procedure, estimate risk, choose medication, recommend treatment, interpret labs, recommend screening, guide reproductive decisions, or provide an all-clear result."
+      "plainEnglishMeaning": "This is an availability statement. It does not infer detoxification capacity, toxin sensitivity, methylation status, nutrient deficiency, supplement need, diet need, medication response, lab status, treatment need, pregnancy action, prevention need, or replacement for licensed professional review."
     },
     {
-      "groupTitle": "Clinical review availability",
-      "item": "naturopath-summary-clinical-review-unavailable",
-      "brandName": "",
-      "geneticAnalysis": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
+      "groupTitle": "Sibling sample output structure",
+      "item": "Detox Pathway supplement and wellness row format",
+      "brandName": "Sibling Detox Pathway sample report",
+      "geneticAnalysis": "The sibling Detox Pathway sample shows Phase I/II pathway maps, SNP summaries, detox ability labels, recommendation rows, supplement dosage examples, exposure-avoidance rows, health-report chips, lab-marker rows, and glossary sections. These rows are used only to preserve output shape for Naturopath Summary.",
       "genes": [
-        "naturopath or integrative health professional review context"
+        "CYP1A1",
+        "CYP2E1",
+        "CYP1B1",
+        "CYP2D6",
+        "UGT1A1",
+        "NAT2",
+        "GSTP1",
+        "ADH1B",
+        "PON1",
+        "CYP2A6",
+        "ALDH",
+        "SLC01B1",
+        "GSTA1",
+        "detox pathway model",
+        "CYP2C19",
+        "CYP1A2",
+        "AHR",
+        "CYP3A4",
+        "CYP2B6",
+        "ALDH2",
+        "CYP2C9",
+        "GCLC"
       ],
-      "sourceLabel": "CDC Genetic Testing; MedlinePlus Genetics; MedlinePlus: Genetic Counseling",
+      "sourceLabel": "Sibling Detox Pathway sample PDF",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample rows show what a related report format can contain. They are not local findings and must not be read as personal detoxification capacity, toxin sensitivity, methylation status, nutrient deficiency, supplement need, diet need, medication response, lab status, pregnancy guidance, treatment guidance, prevention guidance, or actionability."
+    },
+    {
+      "groupTitle": "Naturopath boundary",
+      "item": "Unsupported supplement, diet, lab, and detox interpretation types",
+      "brandName": "",
+      "geneticAnalysis": "The local fixture intentionally omits the clinical, lab, supplement, diet, medication, exposure, pregnancy, diagnosis, treatment-plan, and professional context needed for naturopathic or integrative-care decisions, so the output marks those areas unavailable instead of inferring them.",
+      "genes": [
+        "Supplement context",
+        "Diet context",
+        "Detox Pathway context",
+        "Lab context"
+      ],
+      "sourceLabel": "Supplement and professional-review references",
       "sourceIds": [
         "cdc-genetic-testing",
         "medlineplus-genetics",
@@ -49,26 +95,308 @@
         "cdc-family-health-history",
         "fda-dietary-supplements",
         "nih-ods-dietary-supplement-fact-sheets",
-        "cdc-pharmacogenomics"
+        "cdc-pharmacogenomics",
+        "medlineplus-pharmacogenetic-tests"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "A qualified professional needs validated test scope, personal and family history, symptoms, medications, labs, procedure context, environment, ancestry applicability, and current clinical information before using genetic context for health decisions."
+      "plainEnglishMeaning": "Supplement, diet, medication, pregnancy, lab, detox, prevention, and treatment decisions need current clinical context, medication review, validated testing scope, lab results when relevant, and qualified professional review. Missing context is reported as missing, not normal, abnormal, low risk, high risk, diagnostic, actionable, or all clear."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Table of contents",
+      "item": "Formal report section map",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample table of contents lists How this works, Detox Pathway Phase I, Detox Pathway Phase II, Results Overview, Gene - SNP Breakdown, Your recommendations, Lab markers to check, and Glossary.",
+      "description": "Observed on page 2 of the sample PDF with personal information and disclaimer blocks.",
+      "genes": [],
+      "sourceLabel": "Sibling Detox Pathway sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Naturopath Summary sibling supplement/wellness output-structure evidence from the Detox Pathway sample PDF. Extracted from the page 2 table of contents; personal name, sex, height, and weight are not reused as local user data. This is not a direct Naturopath Summary sample report and not local detoxification capacity, toxin sensitivity, methylation status, nutrient status, lab interpretation, supplement guidance, diet guidance, medication guidance, pregnancy guidance, diagnosis, treatment, prevention, or actionability evidence."
+    },
+    {
+      "groupTitle": "How this works",
+      "item": "Phase I and Phase II detox explanation",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample explains detoxification as a liver-centered multi-step process, describes Phase I CYP enzymes, then Phase II pathways including UGT enzymes, NAT2 acetylation, glutathione, and GSTP1.",
+      "description": "Observed on page 3. The page links variants in CYP1A1, CYP2E1, CYP1B1, CYP2D6, UGT1A1, NAT2, and GSTP1 to environmental or chemical sensitivity examples with reference markers.",
+      "genes": [
+        "CYP1A1",
+        "CYP2E1",
+        "CYP1B1",
+        "CYP2D6",
+        "UGT1A1",
+        "NAT2",
+        "GSTP1"
+      ],
+      "sourceLabel": "Sibling Detox Pathway sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Naturopath Summary sibling supplement/wellness output-structure evidence from the Detox Pathway sample PDF. Extracted from the sample PDF text layer for page 3; this is observed explanatory copy, not local detoxification-capacity validation. This is not a direct Naturopath Summary sample report and not local detoxification capacity, toxin sensitivity, methylation status, nutrient status, lab interpretation, supplement guidance, diet guidance, medication guidance, pregnancy guidance, diagnosis, treatment, prevention, or actionability evidence."
+    },
+    {
+      "groupTitle": "Pathway maps",
+      "item": "Phase I and Phase II pathway diagrams",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample includes Phase I and Phase II pathway maps with legends for typical, severe, not-determined, upregulating, downregulating, neutral, genotype-not-determined, gene interactions, enhancers, toxins, detox components, lab-result states, and missing lab results.",
+      "description": "Observed on rendered pages 4 and 5. The maps connect toxin categories, gene nodes, detox components, and lab-result symbols.",
+      "genes": [
+        "ADH1B",
+        "PON1",
+        "CYP2A6",
+        "ALDH",
+        "SLC01B1",
+        "UGT1A1",
+        "NAT2",
+        "GSTA1"
+      ],
+      "sourceLabel": "Sibling Detox Pathway sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Naturopath Summary sibling supplement/wellness output-structure evidence from the Detox Pathway sample PDF. Extracted from rendered pages 4 and 5; diagram labels are used as output-format structure only. This is not a direct Naturopath Summary sample report and not local detoxification capacity, toxin sensitivity, methylation status, nutrient status, lab interpretation, supplement guidance, diet guidance, medication guidance, pregnancy guidance, diagnosis, treatment, prevention, or actionability evidence."
+    },
+    {
+      "groupTitle": "Results overview",
+      "item": "Top-line detox ability",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample results overview states: Predisposed to typical detox ability.",
+      "description": "Observed on page 6. This is the sample person's label and must not be reused as a local detox ability result.",
+      "genes": [
+        "detox pathway model"
+      ],
+      "sourceLabel": "Sibling Detox Pathway sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Naturopath Summary sibling supplement/wellness output-structure evidence from the Detox Pathway sample PDF. Extracted from the page 6 results overview banner; sample-only and not a local model conclusion. This is not a direct Naturopath Summary sample report and not local detoxification capacity, toxin sensitivity, methylation status, nutrient status, lab interpretation, supplement guidance, diet guidance, medication guidance, pregnancy guidance, diagnosis, treatment, prevention, or actionability evidence."
+    },
+    {
+      "groupTitle": "Results overview",
+      "item": "Phase I gene - SNP summary",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "Visible Phase I rows include ADH1B rs1229984 TC; PON1 rs662 TT and rs854560 TA; CYP2C19 rs4244285 GG and rs4986893 GG; CYP1A2 rs762551 AA; CYP1B1 rs1056836 GG; AHR rs2066853 GG; CYP1A1 rs4646903 AA and rs1048943 TT; CYP3A4 rs55785340 AA and rs2242480 CC; CYP2B6 rs3745274 TG; ALDH2 rs671 GG; CYP2A6 rs1801272 AA; CYP2C9 rs1799853 CC and rs1057910 AA.",
+      "description": "Observed in the page 6 Phase I Gene - SNP Summary table.",
+      "genes": [
+        "ADH1B",
+        "PON1",
+        "CYP2C19",
+        "CYP1A2",
+        "CYP1B1",
+        "AHR",
+        "CYP1A1",
+        "CYP3A4",
+        "CYP2B6",
+        "ALDH2",
+        "CYP2A6",
+        "CYP2C9"
+      ],
+      "sourceLabel": "Sibling Detox Pathway sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Naturopath Summary sibling supplement/wellness output-structure evidence from the Detox Pathway sample PDF. Extracted with pdftotext and visual check from page 6; values are sample-person rows only. This is not a direct Naturopath Summary sample report and not local detoxification capacity, toxin sensitivity, methylation status, nutrient status, lab interpretation, supplement guidance, diet guidance, medication guidance, pregnancy guidance, diagnosis, treatment, prevention, or actionability evidence."
+    },
+    {
+      "groupTitle": "Results overview",
+      "item": "Phase I lab and health-report chips",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The Phase I overview lists lab chips for GGT, Lead Blood, Vitamin C, Cholinesterase Serum, Iron, Selenium, 16-OH-E1 (DUTCH), and Malondialdehyde, plus health-report chips for Alcohol Sensitivity, Air Pollution Sensitivity, Benzene Sensitivity, BPA Sensitivity, Pesticide Sensitivity, Phthalate Sensitivity, Sensitivity to Airborne Mold, and Sensitivity to Foodborne Mold.",
+      "description": "Observed on page 6 below the Phase I SNP table.",
+      "genes": [
+        "detox pathway model"
+      ],
+      "sourceLabel": "Sibling Detox Pathway sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Naturopath Summary sibling supplement/wellness output-structure evidence from the Detox Pathway sample PDF. Extracted from page 6 lab and health-report chip rows; chips are output-format examples only. This is not a direct Naturopath Summary sample report and not local detoxification capacity, toxin sensitivity, methylation status, nutrient status, lab interpretation, supplement guidance, diet guidance, medication guidance, pregnancy guidance, diagnosis, treatment, prevention, or actionability evidence."
+    },
+    {
+      "groupTitle": "Results overview",
+      "item": "Phase II gene - SNP summary",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "Visible Phase II rows include GCLC rs17883901 GA and rs761142 AC; NFE2L2 rs35652124 TT, rs6721961 GG, and rs2364723 GG; GSTA1 rs3957357 AA; COMT rs4680 GA; SULT1A1 rs1042028 CC; GSTP1 rs1695 AA and rs1138272 CC; AHR rs2066853 GG; NAT1 rs4986782 GG; UGT1A1 rs4148323 GG; and NAT2 rs1495741 AG.",
+      "description": "Observed in the page 7 Phase II Gene - SNP Summary table.",
+      "genes": [
+        "GCLC",
+        "NFE2L2",
+        "GSTA1",
+        "COMT",
+        "SULT1A1",
+        "GSTP1",
+        "AHR",
+        "NAT1",
+        "UGT1A1",
+        "NAT2"
+      ],
+      "sourceLabel": "Sibling Detox Pathway sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Naturopath Summary sibling supplement/wellness output-structure evidence from the Detox Pathway sample PDF. Extracted with pdftotext and visual check from page 7; values are sample-person rows only. This is not a direct Naturopath Summary sample report and not local detoxification capacity, toxin sensitivity, methylation status, nutrient status, lab interpretation, supplement guidance, diet guidance, medication guidance, pregnancy guidance, diagnosis, treatment, prevention, or actionability evidence."
+    },
+    {
+      "groupTitle": "Results overview",
+      "item": "Phase II lab and health-report chips",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The Phase II overview lists lab chips for GGT, ALT, Arsenic Blood, AST, Cystine Serum/Plasma, Magnesium, Mercury Blood, Selenium, 8-Hydroxy-2-deoxyguanosine Urine, Arsenic 24-Hour Urine, Mercury 24-Hour Urine, and Total Glutathione, plus health-report chips including Air Pollution Sensitivity, Arsenic, Benzene Sensitivity, Bilirubin, BPA Sensitivity, Cadmium, Glutathione, Lead, Mercury, Pesticide Sensitivity, Sensitivity to Airborne Mold, and Sensitivity to Foodborne Mold.",
+      "description": "Observed on page 7 below the Phase II SNP table.",
+      "genes": [
+        "detox pathway model"
+      ],
+      "sourceLabel": "Sibling Detox Pathway sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Naturopath Summary sibling supplement/wellness output-structure evidence from the Detox Pathway sample PDF. Extracted from page 7 lab and health-report chip rows; chips are output-format examples only. This is not a direct Naturopath Summary sample report and not local detoxification capacity, toxin sensitivity, methylation status, nutrient status, lab interpretation, supplement guidance, diet guidance, medication guidance, pregnancy guidance, diagnosis, treatment, prevention, or actionability evidence."
+    },
+    {
+      "groupTitle": "Gene - SNP Breakdown",
+      "item": "ADH1B detail page",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The ADH1B detail page shows SNP rs1229984 ADH1B*2, sample genotype TC, allele notes for C as typical ADH1B activity and T as increased ADH1B activity and altered detox ability, and a sample interpretation that the genotype is linked to increased ADH1B activity and altered detox ability.",
+      "description": "Observed on page 8 with intro text about alcohol metabolism and acetaldehyde.",
+      "genes": [
+        "ADH1B"
+      ],
+      "sourceLabel": "Sibling Detox Pathway sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Naturopath Summary sibling supplement/wellness output-structure evidence from the Detox Pathway sample PDF. Extracted from the page 8 ADH1B - SNP Breakdown page; this sample interpretation is not applied to local user evidence. This is not a direct Naturopath Summary sample report and not local detoxification capacity, toxin sensitivity, methylation status, nutrient status, lab interpretation, supplement guidance, diet guidance, medication guidance, pregnancy guidance, diagnosis, treatment, prevention, or actionability evidence."
+    },
+    {
+      "groupTitle": "Your recommendations",
+      "item": "Recommendation priority list",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample lists 22 prioritized recommendations: N-acetylcysteine (NAC) 1200 mg, Probiotics 10 billion CFU, Activated Charcoal 500 mg, Chlorella 3 g, Cruciferous Vegetables, Garlic, Selenium Supplements 50 mcg, Avoid Exposure to Molds, Glutathione supplements, Milk Thistle (Silymarin) 300 mg, Air Purifier, Avoid Arsenic Exposure, Avoid Mercury Exposure, Avoid PBDE, Avoid Pesticide Exposure, Coriander, Curcumin 500 mg, Green Tea 400 mg, Magnesium 350 mg, Spirulina 500 mg, Vitamin C 1000 mg, and Zinc 15 mg.",
+      "description": "Observed on page 40. Dosage values are preserved as sample report fields only, not as local recommendations.",
+      "genes": [
+        "detox pathway model"
+      ],
+      "sourceLabel": "Sibling Detox Pathway sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Naturopath Summary sibling supplement/wellness output-structure evidence from the Detox Pathway sample PDF. Extracted from page 40 recommendation table; local outputs must not recommend supplements, avoidance actions, or dosages from this sample row. This is not a direct Naturopath Summary sample report and not local detoxification capacity, toxin sensitivity, methylation status, nutrient status, lab interpretation, supplement guidance, diet guidance, medication guidance, pregnancy guidance, diagnosis, treatment, prevention, or actionability evidence."
+    },
+    {
+      "groupTitle": "Your recommendations",
+      "item": "N-acetylcysteine (NAC) detail",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample NAC detail page shows 1200 mg, a daily supplement implementation paragraph, glutathione-production and heavy-metal binding explanatory text, and personalized-to-your-genes rows tied to glutathione and PON1 support.",
+      "description": "Observed on page 41. The text is sample report content and not a local supplement instruction.",
+      "genes": [
+        "GSTP1",
+        "PON1",
+        "GCLC"
+      ],
+      "sourceLabel": "Sibling Detox Pathway sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Naturopath Summary sibling supplement/wellness output-structure evidence from the Detox Pathway sample PDF. Extracted from page 41 OCR and rendered review; sample recommendation content must remain separate from local guidance. This is not a direct Naturopath Summary sample report and not local detoxification capacity, toxin sensitivity, methylation status, nutrient status, lab interpretation, supplement guidance, diet guidance, medication guidance, pregnancy guidance, diagnosis, treatment, prevention, or actionability evidence."
+    },
+    {
+      "groupTitle": "Your recommendations",
+      "item": "Probiotics, activated charcoal, chlorella, cruciferous vegetables, and garlic detail pages",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample detail pages include Probiotics at 10 billion CFU, Activated Charcoal at 500-1000 mg, Chlorella at 3 to 5 g, Cruciferous Vegetables as daily servings, and Garlic as 1-2 cloves, each with how-to-implement, how-it-helps, and personalized-to-your-genes blocks.",
+      "description": "Observed on pages 42-44. These are sample report fields only and must not be emitted as local advice.",
+      "genes": [
+        "NFE2L2",
+        "GSTP1",
+        "PON1",
+        "CYP1B1"
+      ],
+      "sourceLabel": "Sibling Detox Pathway sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Naturopath Summary sibling supplement/wellness output-structure evidence from the Detox Pathway sample PDF. Extracted from pages 42-44 OCR and rendered review; preserve only as sample-output structure. This is not a direct Naturopath Summary sample report and not local detoxification capacity, toxin sensitivity, methylation status, nutrient status, lab interpretation, supplement guidance, diet guidance, medication guidance, pregnancy guidance, diagnosis, treatment, prevention, or actionability evidence."
+    },
+    {
+      "groupTitle": "Lab markers to check",
+      "item": "Page 55 lab marker rows",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample lab-marker page shows Creatine Kinase 355 IU/L with SLCO1B1 statin-monitoring personalization, Vitamin B12 1856 pg/mL, Vitamin B2 (Riboflavin) Plasma 29.93 ng/mL, GGT 20 IU/L with ADH1B and NFE2L2 personalization, and Lead Blood 10.95 ug/L.",
+      "description": "Observed on page 55. Lab values and dates are sample data, not local labs.",
+      "genes": [
+        "SLCO1B1",
+        "ADH1B",
+        "NFE2L2",
+        "PON1"
+      ],
+      "sourceLabel": "Sibling Detox Pathway sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Naturopath Summary sibling supplement/wellness output-structure evidence from the Detox Pathway sample PDF. Extracted from page 55 text layer and rendered review; sample labs are not local biomarker results. This is not a direct Naturopath Summary sample report and not local detoxification capacity, toxin sensitivity, methylation status, nutrient status, lab interpretation, supplement guidance, diet guidance, medication guidance, pregnancy guidance, diagnosis, treatment, prevention, or actionability evidence."
+    },
+    {
+      "groupTitle": "Lab markers to check",
+      "item": "Page 56 lab marker rows",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample lab-marker page shows Lead personalization for PON1, Vitamin C 0.262 mg/dL with PON1 personalization, ALT 28 IU/L with SLCO1B1 and NFE2L2 personalization, Aluminum 6.73 ug/L, Arsenic Blood 2.79 ug/L with NFE2L2 personalization, and AST 28 IU/L.",
+      "description": "Observed on page 56. Lab values and dates are sample data, not local labs.",
+      "genes": [
+        "PON1",
+        "SLCO1B1",
+        "NFE2L2"
+      ],
+      "sourceLabel": "Sibling Detox Pathway sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Naturopath Summary sibling supplement/wellness output-structure evidence from the Detox Pathway sample PDF. Extracted from page 56 text layer and rendered review; sample labs are not local biomarker results. This is not a direct Naturopath Summary sample report and not local detoxification capacity, toxin sensitivity, methylation status, nutrient status, lab interpretation, supplement guidance, diet guidance, medication guidance, pregnancy guidance, diagnosis, treatment, prevention, or actionability evidence."
+    },
+    {
+      "groupTitle": "Glossary",
+      "item": "Detox glossary terms",
+      "brandName": "Detox Pathway sample",
+      "geneticAnalysis": "The sample glossary defines terms including Acrolein, Aflatoxins, Aldehydes, Aromatic Amines, BPA, Cannabinoids, Catecholamines, Detox Component, Detox Phase I, Detox Phase II, Dioxins, Endotoxins, Glutathione, Glutathione Pathway, GSSG, Heterocyclic Amines, Mycotoxins, Organophosphates, Oxidative Stress, Phthalates, Statins, THC, VOCs, Xenoestrogens, and gamma-Glutamylcysteine.",
+      "description": "Observed on page 62. The glossary is output support content only.",
+      "genes": [],
+      "sourceLabel": "Sibling Detox Pathway sample report",
+      "sourceIds": [
+        "detox-pathway-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Naturopath Summary sibling supplement/wellness output-structure evidence from the Detox Pathway sample PDF. Extracted from page 62 OCR and rendered review. This is not a direct Naturopath Summary sample report and not local detoxification capacity, toxin sensitivity, methylation status, nutrient status, lab interpretation, supplement guidance, diet guidance, medication guidance, pregnancy guidance, diagnosis, treatment, prevention, or actionability evidence."
     }
   ],
   "professionalHandoffContext": {
-    "plainEnglishMeaning": "Naturopath Summary is currently a handoff-boundary package. It can document supplied evidence and missing professional context, but it cannot replace qualified review or produce medical decisions from local evidence alone.",
+    "plainEnglishMeaning": "Naturopath Summary is a handoff-boundary package. It can summarize supplied evidence and show sibling report structure, but it cannot replace qualified naturopath, integrative-health, clinician, pharmacist, geneticist, or genetic-counseling review or generate health decisions from local evidence alone.",
     "unsupportedClaims": [
-      "Diagnosis, professional clearance, all-clear result, or personal disease-risk estimate",
-      "Medication, dosing, procedure, treatment, supplement, diet, lab, screening, reproductive, or management instruction",
-      "Variant classification, penetrance, inheritance, family-member risk, clinical actionability, or specialist-level interpretation",
-      "Replacement for a qualified clinician, pharmacist, geneticist, genetic counselor, surgeon, anesthesiologist, rheumatologist, infectious disease specialist, or other relevant professional"
+      "Detoxification-capacity, toxin-sensitivity, methylation-status, nutrient-deficiency, lab-status, or all-clear interpretation",
+      "Supplement, dose, diet, medication, exposure-avoidance, pregnancy, prevention, treatment, screening, or management instruction",
+      "Diagnosis, disease-risk estimate, pharmacogenomics action, clinical actionability, or specialist-level interpretation",
+      "Replacement for a qualified naturopath, integrative-health professional, clinician, pharmacist, geneticist, genetic counselor, or other relevant professional"
     ],
-    "professionalReview": "Use this output only as preparation for a professional conversation. Health decisions require qualified review with clinical history, medications, symptoms, labs, family history, procedure details when relevant, and validated testing scope."
+    "professionalReview": "Use this output only as preparation for a professional conversation. Health decisions require qualified review with symptoms, medication and supplement lists, diet history, family history, labs, exposure context, pregnancy context when relevant, ancestry applicability, and validated testing scope."
   },
   "practicalNextSteps": {
     "professionalReview": [
-      "Do not use this local fixture to change medication, supplements, diet, screening, procedures, reproductive decisions, prevention plans, or treatment decisions.",
-      "Bring current symptoms, personal and family history, medications, allergies, labs, prior testing, procedure context when relevant, and ancestry context to a qualified professional if discussing this topic.",
+      "Do not use this local fixture to change medications, supplements, diet, lab testing, exposure-avoidance plans, pregnancy decisions, prevention plans, or treatment decisions.",
+      "Bring current symptoms, diet history, supplement list, medication list, allergies, labs, prior testing, family history, exposure context, pregnancy context when relevant, and ancestry context to a qualified professional if discussing this topic.",
       "Treat unavailable professional-review rows as unavailable, not as normal, abnormal, low risk, high risk, reassuring, diagnostic, actionable, or all clear."
     ]
   },
@@ -108,37 +436,120 @@
     {
       "id": "medlineplus-pharmacogenetic-tests",
       "title": "MedlinePlus Pharmacogenetic Tests"
+    },
+    {
+      "id": "detox-pathway-sample-pdf",
+      "title": "Detox Pathway sample report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "naturopath-summary-handoff-context-unavailable",
-        "gene": "Naturopath Summary",
-        "observedValue": "naturopath review, diet history, supplement list, medication list, symptoms, labs, methylation or homocysteine testing, detoxification model, nutrient status, pregnancy context, diagnosis, treatment plan, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "sortOrder": 1,
+        "tier": "Sample-report visible row",
+        "gene": "ADH1B",
+        "variantId": "rs1229984 / ADH1B*2",
+        "genotype": "TC",
+        "effect": "The sample ADH1B detail page says the genotype is linked to increased ADH1B activity and altered detox ability.",
+        "phenotype": "Use as observed sample-report structure only; do not infer local detox ability or alcohol sensitivity without local validated model evidence. This is Naturopath Summary sibling sample output-structure evidence only, not local detoxification-capacity, toxin-sensitivity, methylation, nutrient-deficiency, lab, supplement, diet, medication, diagnosis, treatment, prevention, pregnancy, or actionability evidence.",
+        "extractionStatus": "direct"
       },
       {
-        "inputId": "naturopath-summary-clinical-review-unavailable",
-        "gene": "naturopath or integrative health professional review context",
-        "observedValue": "professional review, diagnosis, symptoms, family history, current medications, labs, imaging, clinical history, treatment plan, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "sortOrder": 2,
+        "tier": "Sample-report visible row",
+        "gene": "PON1",
+        "variantId": "rs662; rs854560",
+        "genotype": "rs662 TT; rs854560 TA",
+        "effect": "The sample Phase I summary includes PON1 SNP rows and later lab personalization links lead and vitamin C context to PON1.",
+        "phenotype": "Use as sample SNP-table structure only; do not infer local antioxidant, pesticide, lead, or vitamin C guidance. This is Naturopath Summary sibling sample output-structure evidence only, not local detoxification-capacity, toxin-sensitivity, methylation, nutrient-deficiency, lab, supplement, diet, medication, diagnosis, treatment, prevention, pregnancy, or actionability evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "sortOrder": 3,
+        "tier": "Sample-report visible row",
+        "gene": "CYP2C19",
+        "variantId": "rs4244285; rs4986893",
+        "genotype": "rs4244285 GG; rs4986893 GG",
+        "effect": "The sample Phase I summary includes CYP2C19 SNP rows.",
+        "phenotype": "Use as observed sample structure only; medication, detox, or toxin-sensitivity claims require validated evidence. This is Naturopath Summary sibling sample output-structure evidence only, not local detoxification-capacity, toxin-sensitivity, methylation, nutrient-deficiency, lab, supplement, diet, medication, diagnosis, treatment, prevention, pregnancy, or actionability evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "sortOrder": 4,
+        "tier": "Sample-report visible row",
+        "gene": "CYP1B1",
+        "variantId": "rs1056836",
+        "genotype": "GG",
+        "effect": "The sample Phase I summary and recommendation pages connect CYP1B1 context to detox pathway output structure.",
+        "phenotype": "Use as sample SNP-table structure only; do not infer local estrogen, BPA, mold, or detox conclusions. This is Naturopath Summary sibling sample output-structure evidence only, not local detoxification-capacity, toxin-sensitivity, methylation, nutrient-deficiency, lab, supplement, diet, medication, diagnosis, treatment, prevention, pregnancy, or actionability evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "sortOrder": 5,
+        "tier": "Sample-report visible row",
+        "gene": "NFE2L2",
+        "variantId": "rs35652124; rs6721961; rs2364723",
+        "genotype": "rs35652124 TT; rs6721961 GG; rs2364723 GG",
+        "effect": "The sample Phase II summary includes NFE2L2 rows and lab-marker personalization links NFE2L2 to liver and arsenic context.",
+        "phenotype": "Use as sample SNP-table and lab-link structure only; do not infer local oxidative-stress, arsenic, or liver monitoring guidance. This is Naturopath Summary sibling sample output-structure evidence only, not local detoxification-capacity, toxin-sensitivity, methylation, nutrient-deficiency, lab, supplement, diet, medication, diagnosis, treatment, prevention, pregnancy, or actionability evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "sortOrder": 6,
+        "tier": "Sample-report visible row",
+        "gene": "GSTP1",
+        "variantId": "rs1695; rs1138272",
+        "genotype": "rs1695 AA; rs1138272 CC",
+        "effect": "The sample Phase II summary includes GSTP1 rows and recommendation detail pages include glutathione-related sample personalization blocks.",
+        "phenotype": "Use as sample output structure only; do not infer local glutathione status or supplement need. This is Naturopath Summary sibling sample output-structure evidence only, not local detoxification-capacity, toxin-sensitivity, methylation, nutrient-deficiency, lab, supplement, diet, medication, diagnosis, treatment, prevention, pregnancy, or actionability evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "sortOrder": 7,
+        "tier": "Sample-report visible row",
+        "gene": "NAT2",
+        "variantId": "rs1495741",
+        "genotype": "AG",
+        "effect": "The sample Phase II summary includes NAT2 as a visible row.",
+        "phenotype": "Use as sample output structure only; do not infer local acetylator status or drug/chemical sensitivity. This is Naturopath Summary sibling sample output-structure evidence only, not local detoxification-capacity, toxin-sensitivity, methylation, nutrient-deficiency, lab, supplement, diet, medication, diagnosis, treatment, prevention, pregnancy, or actionability evidence.",
+        "extractionStatus": "direct"
+      },
+      {
+        "sortOrder": 8,
+        "tier": "Local missing input",
+        "gene": "Naturopath review context",
+        "variantId": "naturopath-review-context-unavailable",
+        "genotype": "naturopath review, diet history, supplement list, medication list, symptoms, labs, methylation or homocysteine testing, detoxification model, nutrient status, pregnancy context, diagnosis, treatment plan, and professional review unavailable",
+        "effect": "The local fixture intentionally omits the clinical, lab, supplement, diet, exposure, and professional context needed for naturopath or integrative care decisions.",
+        "phenotype": "Mark detoxification capacity, toxin sensitivity, methylation status, nutrient deficiency, supplement need, diet need, medication response, lab status, treatment need, pregnancy action, prevention, and actionability sections unavailable instead of inferring them.",
+        "extractionStatus": "curated"
+      },
+      {
+        "sortOrder": 9,
+        "tier": "Sibling sample structure",
+        "gene": "Detox Pathway model",
+        "variantId": "broader-detox-model-unavailable",
+        "genotype": "Detox Pathway sample rows are visible as sibling output structure; validated local Detox Pathway model, broader gene panel, labs, exposure history, diet/supplement context, and medical context unavailable",
+        "effect": "The sibling sample rows show detox, recommendation, and lab-marker output structure only.",
+        "phenotype": "Use as sibling output-structure evidence only; do not infer local detox ability, toxin sensitivity, lab interpretation, recommendation priority, supplement dosage, exposure avoidance, treatment, prevention, or actionability.",
+        "extractionStatus": "curated"
       }
     ],
     "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and exact rows",
-      "Qualified professional review and complete clinical context",
-      "Current medications, symptoms, family history, labs, procedure details, prior testing, and validated test scope when relevant",
-      "Validated model output, applicability metadata, and professional interpretation for any health decision"
+      "Direct Naturopath Summary sample-report sections and exact rows",
+      "Qualified naturopath or integrative-health professional review and complete clinical context",
+      "Current medication list, supplement list, diet history, symptoms, family history, labs, exposure history, pregnancy context when relevant, prior testing, and validated test scope",
+      "Validated Detox Pathway model output, broader gene-panel evidence, lab values, exposure data, applicability metadata, and professional interpretation for any health decision"
     ],
     "probabilities": [],
     "uncertainty": [
-      "No calibrated professional-clearance, disease-risk, medication-response, procedure-risk, treatment-response, lab-status, screening-benefit, reproductive-risk, supplement-benefit, diet-response, or actionability model is supplied for this local package.",
-      "Interpretation depends on validated test scope, clinical and family history, symptoms, medications, labs, procedures, environment, ancestry applicability, and qualified professional review."
+      "No calibrated detoxification-capacity, toxin-sensitivity, methylation, nutrient-deficiency, medication-response, supplement-benefit, diet-response, lab-status, pregnancy, prevention, treatment, or actionability model is supplied for this local package.",
+      "Interpretation depends on validated test scope, clinical and family history, symptoms, medications, supplements, diet, labs, procedures, environment, ancestry applicability, and qualified professional review."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
-      "The report is educational handoff context and does not provide diagnosis, professional clearance, disease-risk estimation, medication guidance, procedure guidance, treatment advice, supplement advice, diet advice, lab interpretation, screening advice, reproductive advice, or clinical actionability.",
+      "The report is educational handoff context and does not provide diagnosis, professional clearance, disease-risk estimation, medication guidance, procedure guidance, treatment advice, supplement advice, diet advice, lab interpretation, screening advice, reproductive advice, prevention advice, or clinical actionability.",
+      "Sibling Detox Pathway rows preserve sample output structure only. The sample detox ability label, supplement dosages, exposure-avoidance rows, health-report chips, lab values, and personalized-to-your-genes wording must not be reused as local guidance.",
       "Unavailable professional-review rows should never be interpreted as low risk, high risk, no risk, normal, abnormal, reassuring, diagnostic, actionable, or all clear."
     ]
   }

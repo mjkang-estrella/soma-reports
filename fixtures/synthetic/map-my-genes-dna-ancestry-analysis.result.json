@@ -1,15 +1,18 @@
 {
+  "schemaVersion": "soma-reports.synthetic-result.v1",
   "reportOverview": {
     "reportTitle": "Map My Genes",
     "inputManifestHash": "sha256:synthetic-map-my-genes-autosomal-context-v1",
     "evidenceTypesSupplied": [
       "Broad autosomal reference-panel similarity summary for map-style context",
-      "Map coordinate, exact homeland, and migration-path evidence explicitly unavailable"
+      "Map coordinate, exact homeland, regional percentage, chromosome-painting segment, and migration-path evidence explicitly unavailable",
+      "Sibling World Ancestry sample PDF rows preserved as map-style output-format examples only"
     ],
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet.",
-      "No calibrated map-coordinate or regional ancestry percentage model is supplied.",
-      "No exact homeland, community, migration path, family matching, or relative-matching data is supplied."
+      "No direct Map My Genes sample report rows are available in this local fixture.",
+      "No calibrated map-coordinate model, regional ancestry percentage model, reference-panel metadata, or segment-level ancestry model is supplied.",
+      "No exact homeland, community, migration path, family matching, family-tree, identity, or relative-matching data is supplied.",
+      "Sibling sample percentages, maps, ethnicity cards, chromosome painting, and methodology text are not local findings."
     ]
   },
   "resultRows": [
@@ -17,7 +20,7 @@
       "groupTitle": "Map-style ancestry context",
       "item": "Broad reference-panel similarity",
       "brandName": "Not applicable",
-      "geneticAnalysis": "A broad East Asian reference-panel similarity summary is available for map-style context, but no coordinate or exact-origin model is supplied.",
+      "geneticAnalysis": "A broad East Asian reference-panel similarity summary is available for map-style context, but no coordinate, percentage, segment, migration, or exact-origin model is supplied.",
       "genes": [
         "autosomal genome"
       ],
@@ -26,13 +29,29 @@
         "medlineplus-genetic-ancestry-testing",
         "international-genome-sample-resource"
       ],
-      "plainEnglishMeaning": "This is broad reference-panel context only. It is not a precise map coordinate, homeland, nationality, community label, migration path, or identity statement."
+      "plainEnglishMeaning": "This is broad reference-panel context only. It is not a precise map coordinate, homeland, nationality, community label, migration path, relative match, family-tree placement, or identity statement."
+    },
+    {
+      "groupTitle": "Sibling sample output structure",
+      "item": "World Ancestry map-style sections",
+      "brandName": "Map My Genes sibling World Ancestry sample",
+      "geneticAnalysis": "The sibling sample shows output sections for overall ethnicity hierarchy, maps, chromosome painting, ethnicity cards, and G-Nomix methodology. These rows are used only as output-format examples for Map My Genes.",
+      "genes": [
+        "autosomal genome",
+        "autosomal chromosomes 1-22"
+      ],
+      "sourceLabel": "World Ancestry Report sibling sample PDF",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "The sample demonstrates formal report structure, not local ancestry placement. Do not reuse the sample percentages, maps, or chromosome painting as local map coordinates, ethnicity percentages, segment calls, homeland, migration path, relatives, identity, or health findings."
     },
     {
       "groupTitle": "Unavailable map detail",
       "item": "Map coordinate or precise origin",
       "brandName": "Not applicable",
-      "geneticAnalysis": "Map coordinate, exact homeland, and migration-path evidence are unavailable in this fixture and are not inferred.",
+      "geneticAnalysis": "Map coordinate, regional percentage, exact homeland, segment-ancestry, and migration-path evidence are unavailable in this fixture and are not inferred.",
       "genes": [
         "autosomal ancestry map model"
       ],
@@ -41,63 +60,358 @@
         "medlineplus-genetic-ancestry-testing",
         "medlineplus-dtc-risks-benefits"
       ],
-      "plainEnglishMeaning": "Missing map-model evidence means this run cannot place ancestry on a precise coordinate, homeland, community, migration route, or family-match map."
+      "plainEnglishMeaning": "Missing map-model evidence means this run cannot place ancestry on a precise coordinate, homeland, community, migration route, family-tree, relative-match, or identity map."
+    }
+  ],
+  "sampleRows": [
+    {
+      "groupTitle": "Report identity",
+      "item": "Cover and welcome narrative",
+      "brandName": "Map My Genes sibling World Ancestry sample",
+      "geneticAnalysis": "The sample cover identifies a World Ancestry Report for Jennifer Doe, Version Vdr 1.0, from Galatea Bio, followed by a welcome narrative from the Galatea team.",
+      "description": "Observed on page 1 of the local sample PDF; this row documents report identity and opening structure only.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the rendered sample PDF cover and introduction; personal name and sample identity are not reused as local user data. Used here only as sibling map-style ancestry output-structure evidence for Map My Genes; this is not a direct Map My Genes sample report and not local map-coordinate, exact homeland, ethnicity-percentage, chromosome-painting segment, migration-path, relative, family-tree, community, identity, or health evidence."
+    },
+    {
+      "groupTitle": "Overall ethnicities",
+      "item": "Top-level ancestry hierarchy",
+      "brandName": "Map My Genes sibling World Ancestry sample",
+      "geneticAnalysis": "The sample hierarchy shows 100% total, 95.9% European, 4.1% American, and 2.9% East Asian, accompanied by a map, donut chart, and region legend.",
+      "description": "The sample overall ethnicities section demonstrates a nested hierarchy and global map presentation. These percentages are sample-only output structure, not local ancestry findings.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the sample PDF page 1 Overall ethnicities section and rendered page review. Used here only as sibling map-style ancestry output-structure evidence for Map My Genes; this is not a direct Map My Genes sample report and not local map-coordinate, exact homeland, ethnicity-percentage, chromosome-painting segment, migration-path, relative, family-tree, community, identity, or health evidence."
+    },
+    {
+      "groupTitle": "Overall ethnicities",
+      "item": "European regional rows",
+      "brandName": "Map My Genes sibling World Ancestry sample",
+      "geneticAnalysis": "The sample hierarchy lists Scandinavian 36.6%, Iberian 28.2%, Eastern Europe 16.4%, Northwest European 8.8%, and Basque 7.0% under European ancestry.",
+      "description": "Observed European subregion rows in the sample PDF. Do not normalize these values or use them as local ancestry estimates.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from page 1 and cross-checked against rendered ethnicity-card pages 5-9. Used here only as sibling map-style ancestry output-structure evidence for Map My Genes; this is not a direct Map My Genes sample report and not local map-coordinate, exact homeland, ethnicity-percentage, chromosome-painting segment, migration-path, relative, family-tree, community, identity, or health evidence."
+    },
+    {
+      "groupTitle": "Overall ethnicities",
+      "item": "Arctic / East Asian row",
+      "brandName": "Map My Genes sibling World Ancestry sample",
+      "geneticAnalysis": "The sample hierarchy lists East Asian 2.9% and Arctic 2.9%; the Arctic ethnicity card is labeled with region EAST ASIA.",
+      "description": "Observed on page 1 and page 10. The page 10 text layer contains overlapping title text, so the extracted row uses the page 1 Arctic value plus the rendered card body and region.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the rendered sample PDF and OCR with the contaminated page-title text excluded. Used here only as sibling map-style ancestry output-structure evidence for Map My Genes; this is not a direct Map My Genes sample report and not local map-coordinate, exact homeland, ethnicity-percentage, chromosome-painting segment, migration-path, relative, family-tree, community, identity, or health evidence."
+    },
+    {
+      "groupTitle": "Continental regions",
+      "item": "Background region narratives",
+      "brandName": "Map My Genes sibling World Ancestry sample",
+      "geneticAnalysis": "The sample report includes generic narrative pages for America, Europe, Levantine and Middle East, Africa, East Asia, South Asia, Southeast Asia, and Oceania.",
+      "description": "These pages document background report sections only; they do not provide user-specific local ancestry calls.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from sample PDF text pages 2-3; one Southeast Asia paragraph appears to reuse South Asia wording and is preserved only as source structure. Used here only as sibling map-style ancestry output-structure evidence for Map My Genes; this is not a direct Map My Genes sample report and not local map-coordinate, exact homeland, ethnicity-percentage, chromosome-painting segment, migration-path, relative, family-tree, community, identity, or health evidence."
+    },
+    {
+      "groupTitle": "Chromosome painting",
+      "item": "Chromosome painting overview and legend",
+      "brandName": "Map My Genes sibling World Ancestry sample",
+      "geneticAnalysis": "The sample chromosome painting page shows chr1-22 bars with a legend for EUR, AMR, AFR, SAS, OCE, EAS, SEA, and LME.",
+      "description": "The page explains that ancestry labels are assigned to portions of chromosomes and rendered as color-coded segments. The sample does not expose segment coordinates.",
+      "genes": [
+        "autosomal chromosomes 1-22"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from rendered page 4 of the sample PDF; no segment-coordinate table was present. Used here only as sibling map-style ancestry output-structure evidence for Map My Genes; this is not a direct Map My Genes sample report and not local map-coordinate, exact homeland, ethnicity-percentage, chromosome-painting segment, migration-path, relative, family-tree, community, identity, or health evidence."
+    },
+    {
+      "groupTitle": "Chromosome painting",
+      "item": "No-call caveat",
+      "brandName": "Map My Genes sibling World Ancestry sample",
+      "geneticAnalysis": "The sample states that Galatea was not able to ascertain ancestry calls in transparent or white chromosome-painting regions.",
+      "description": "This caveat is part of the observed output format and should be retained whenever sample chromosome painting is shown.",
+      "genes": [
+        "autosomal chromosomes 1-22"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the rendered page 4 chromosome-painting caveat. Used here only as sibling map-style ancestry output-structure evidence for Map My Genes; this is not a direct Map My Genes sample report and not local map-coordinate, exact homeland, ethnicity-percentage, chromosome-painting segment, migration-path, relative, family-tree, community, identity, or health evidence."
+    },
+    {
+      "groupTitle": "Ethnicity cards",
+      "item": "Applicable-card rule",
+      "brandName": "Map My Genes sibling World Ancestry sample",
+      "geneticAnalysis": "The sample states that the report only shows ethnicity cards applicable to the customer.",
+      "description": "The card pages demonstrate a percent bar, region label, map, cultural narrative, and empty or blank Scientific details heading.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from rendered ethnicity-card pages 5-10. Used here only as sibling map-style ancestry output-structure evidence for Map My Genes; this is not a direct Map My Genes sample report and not local map-coordinate, exact homeland, ethnicity-percentage, chromosome-painting segment, migration-path, relative, family-tree, community, identity, or health evidence."
+    },
+    {
+      "groupTitle": "Ethnicity cards",
+      "item": "Scandinavian card",
+      "brandName": "Map My Genes sibling World Ancestry sample",
+      "geneticAnalysis": "The sample includes a Scandinavian ethnicity card with 36.6% and region EUROPE.",
+      "description": "Observed as a sample card with a map and narrative text. It is not a local ancestry estimate.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from rendered page 5; OCR rounded one instance differently, so the visually confirmed 36.6% value from the card and summary is used. Used here only as sibling map-style ancestry output-structure evidence for Map My Genes; this is not a direct Map My Genes sample report and not local map-coordinate, exact homeland, ethnicity-percentage, chromosome-painting segment, migration-path, relative, family-tree, community, identity, or health evidence."
+    },
+    {
+      "groupTitle": "Ethnicity cards",
+      "item": "Iberian card",
+      "brandName": "Map My Genes sibling World Ancestry sample",
+      "geneticAnalysis": "The sample includes an Iberian ethnicity card with 28.2% and region EUROPE.",
+      "description": "Observed as a sample card with a map and narrative text. It is not a local ancestry estimate.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from rendered page 6 of the sample PDF. Used here only as sibling map-style ancestry output-structure evidence for Map My Genes; this is not a direct Map My Genes sample report and not local map-coordinate, exact homeland, ethnicity-percentage, chromosome-painting segment, migration-path, relative, family-tree, community, identity, or health evidence."
+    },
+    {
+      "groupTitle": "Ethnicity cards",
+      "item": "Eastern Europe card",
+      "brandName": "Map My Genes sibling World Ancestry sample",
+      "geneticAnalysis": "The sample includes an Eastern Europe ethnicity card with 16.4% and region EUROPE.",
+      "description": "Observed as a sample card with a map and narrative text. It is not a local ancestry estimate.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from rendered page 7 of the sample PDF. Used here only as sibling map-style ancestry output-structure evidence for Map My Genes; this is not a direct Map My Genes sample report and not local map-coordinate, exact homeland, ethnicity-percentage, chromosome-painting segment, migration-path, relative, family-tree, community, identity, or health evidence."
+    },
+    {
+      "groupTitle": "Ethnicity cards",
+      "item": "Northwest European and Basque cards",
+      "brandName": "Map My Genes sibling World Ancestry sample",
+      "geneticAnalysis": "The sample includes a Northwest European card with 8.8% and a Basque card with 7.0%; both are labeled region EUROPE.",
+      "description": "Observed as sample cards with maps and narrative text. They are not local ancestry estimates.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from rendered pages 8 and 9 of the sample PDF. Used here only as sibling map-style ancestry output-structure evidence for Map My Genes; this is not a direct Map My Genes sample report and not local map-coordinate, exact homeland, ethnicity-percentage, chromosome-painting segment, migration-path, relative, family-tree, community, identity, or health evidence."
+    },
+    {
+      "groupTitle": "Ethnicity cards",
+      "item": "Arctic card",
+      "brandName": "Map My Genes sibling World Ancestry sample",
+      "geneticAnalysis": "The sample includes an Arctic ethnicity card with 2.9% and region EAST ASIA.",
+      "description": "Observed as a sample card with a map and narrative text. The text-layer title overlap is excluded from the curated row.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from rendered page 10 and cross-checked against the page 1 summary. Used here only as sibling map-style ancestry output-structure evidence for Map My Genes; this is not a direct Map My Genes sample report and not local map-coordinate, exact homeland, ethnicity-percentage, chromosome-painting segment, migration-path, relative, family-tree, community, identity, or health evidence."
+    },
+    {
+      "groupTitle": "Methodology",
+      "item": "G-Nomix high-resolution ancestry deconvolution",
+      "brandName": "Map My Genes sibling World Ancestry sample",
+      "geneticAnalysis": "The sample methodology page describes G-Nomix as a local-ancestry algorithm that assigns ancestry labels to DNA segments from whole-genome or SNP-array data using classification and error-correction stages.",
+      "description": "This is observed method copy from the sample report. It does not mean the local fixture has a calibrated G-Nomix model, reference panel, or segment calls.",
+      "genes": [
+        "autosomal genome"
+      ],
+      "sourceLabel": "Sample report",
+      "sourceIds": [
+        "world-ancestry-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from rendered page 11 of the sample PDF and kept separate from local-user inference. Used here only as sibling map-style ancestry output-structure evidence for Map My Genes; this is not a direct Map My Genes sample report and not local map-coordinate, exact homeland, ethnicity-percentage, chromosome-painting segment, migration-path, relative, family-tree, community, identity, or health evidence."
     }
   ],
   "ancestryScopeSummary": {
-    "autosomal": "Autosomal ancestry can provide broad reference-panel similarity when a model is supplied; this fixture does not supply calibrated percentages.",
-    "mapContext": "A map-style label can visualize broad context, but it should not be treated as a literal coordinate or fixed identity label.",
+    "autosomal": "Autosomal ancestry can provide broad reference-panel similarity when a model is supplied; this fixture does not supply calibrated local percentages.",
+    "mapContext": "A map-style report can visualize broad context, but it should not be treated as a literal coordinate, fixed homeland, migration route, or identity label.",
+    "siblingSampleRows": "The World Ancestry sample percentages, maps, chromosome painting, ethnicity cards, and methodology rows are output-format examples only and are not local findings.",
     "sourceIds": [
       "medlineplus-genetic-ancestry-testing",
       "international-genome-sample-resource",
-      "medlineplus-dtc-risks-benefits"
+      "medlineplus-dtc-risks-benefits",
+      "world-ancestry-sample-pdf"
     ]
   },
   "whatThisDoesNotMean": [
-    "This is not an exact ethnicity percentage.",
-    "This does not identify a precise map coordinate, homeland, tribe, community, nationality, migration route, or living relatives.",
+    "This is not an exact local ethnicity percentage.",
+    "This does not identify a precise map coordinate, homeland, tribe, community, nationality, migration route, family tree, or living relatives.",
     "This is not a family-matching or genealogy-relative report.",
-    "This is not a health or disease-risk report."
+    "This is not a health or disease-risk report.",
+    "The sibling World Ancestry sample rows are not direct Map My Genes results."
   ],
   "references": [
     {
       "id": "medlineplus-genetic-ancestry-testing",
-      "title": "MedlinePlus Genetics: genetic ancestry testing"
+      "title": "MedlinePlus Genetics: genetic ancestry testing",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "medlineplus-dtc-risks-benefits",
-      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing"
+      "title": "MedlinePlus Genetics: pros and cons of direct-to-consumer genetic testing",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "international-genome-sample-resource",
-      "title": "International Genome Sample Resource / 1000 Genomes"
+      "title": "International Genome Sample Resource / 1000 Genomes",
+      "sourceType": "database",
+      "evidenceLevel": "database_background"
+    },
+    {
+      "id": "world-ancestry-sample-pdf",
+      "title": "World Ancestry Report sibling sample report",
+      "sourceType": "mock_report",
+      "evidenceLevel": "sibling_sample_report"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
+        "effect": "The sample methodology describes assigning ancestry labels to DNA segments from whole-genome or SNP-array data with machine-learning classification and error correction.",
+        "extractionStatus": "direct",
         "gene": "autosomal genome",
-        "observedValue": "broad East Asian reference-panel similarity for map-style context; no coordinate model supplied"
+        "genotype": "not shown in sample PDF",
+        "phenotype": "Use as observed sample methodology only; the local fixture does not include a calibrated G-Nomix model, reference panel, or segment calls. This sibling sample evidence is not local Map My Genes evidence and does not support map coordinates, exact homeland, ethnicity percentages, chromosome-painting segments, migration paths, relatives, family trees, community labels, identity, or health findings.",
+        "sortOrder": 1,
+        "tier": "Sample-report method row",
+        "variantId": "sample G-Nomix local ancestry method"
       },
       {
+        "effect": "The sample demonstrates a top-level ancestry hierarchy with map and legend presentation.",
+        "extractionStatus": "direct",
+        "gene": "autosomal genome",
+        "genotype": "sample total 100%; European 95.9%; American 4.1%; East Asian 2.9%",
+        "phenotype": "Use as sample output structure only; do not reuse these percentages as local ancestry, identity, homeland, or community findings. This sibling sample evidence is not local Map My Genes evidence and does not support map coordinates, exact homeland, ethnicity percentages, chromosome-painting segments, migration paths, relatives, family trees, community labels, identity, or health findings.",
+        "sortOrder": 2,
+        "tier": "Sample-report visible row",
+        "variantId": "sample overall ethnicity hierarchy"
+      },
+      {
+        "effect": "The sample demonstrates regional rows and ethnicity-card pages beneath a continental ancestry grouping.",
+        "extractionStatus": "direct",
+        "gene": "autosomal genome",
+        "genotype": "Scandinavian 36.6%; Iberian 28.2%; Eastern Europe 16.4%; Northwest European 8.8%; Basque 7.0%",
+        "phenotype": "Use as sample output structure only; do not infer local regional percentages, precise homeland, migration path, or relatives. This sibling sample evidence is not local Map My Genes evidence and does not support map coordinates, exact homeland, ethnicity percentages, chromosome-painting segments, migration paths, relatives, family trees, community labels, identity, or health findings.",
+        "sortOrder": 3,
+        "tier": "Sample-report visible row",
+        "variantId": "sample European regional hierarchy"
+      },
+      {
+        "effect": "The sample demonstrates chromosome-painting visualization and an explicit no-call caveat without segment-coordinate data.",
+        "extractionStatus": "direct",
+        "gene": "autosomal chromosomes",
+        "genotype": "colored sample segments plus transparent or white no-call regions",
+        "phenotype": "Use as observed output structure only; do not create local segment ancestry calls without calibrated model evidence. This sibling sample evidence is not local Map My Genes evidence and does not support map coordinates, exact homeland, ethnicity percentages, chromosome-painting segments, migration paths, relatives, family trees, community labels, identity, or health findings.",
+        "sortOrder": 4,
+        "tier": "Sample-report visible row",
+        "variantId": "sample chromosome painting chr1-chr22 bars"
+      },
+      {
+        "effect": "The local fixture supplies broad autosomal context without calibrated map coordinates or ethnicity percentages.",
+        "extractionStatus": "curated",
+        "gene": "autosomal genome",
+        "genotype": "broad East Asian reference-panel similarity; no map-coordinate or percentage calibration supplied",
+        "phenotype": "Report as broad ancestry context only; do not convert it into map coordinates, exact percentages, homeland, identity, relatives, or health interpretation.",
+        "sortOrder": 5,
+        "tier": "Local derived call",
+        "variantId": "autosomal-map-reference-panel-summary"
+      },
+      {
+        "effect": "The local fixture intentionally omits calibrated map-coordinate evidence, regional ancestry percentages, segment-level model provenance, and migration-path evidence.",
+        "extractionStatus": "curated",
         "gene": "autosomal ancestry map model",
-        "observedValue": "map coordinate, exact homeland, and migration-path evidence unavailable in this fixture"
+        "genotype": "map coordinate, exact homeland, and migration-path evidence unavailable",
+        "phenotype": "Mark map coordinates, exact homeland, regional ancestry, chromosome-painting calls, relatives, family matching, migration path, and community affiliation unavailable instead of inferring them.",
+        "sortOrder": 6,
+        "tier": "Local missing input",
+        "variantId": "map-coordinate-unavailable"
       }
     ],
     "missingInputs": [
-      "Authenticated sample-report sections and rows have not been extracted.",
-      "No calibrated ancestry model, reference-panel metadata, map coordinate, or regional-detail output is supplied.",
-      "No family-matching, living-relative, migration-route, or exact-homeland data is supplied."
+      "Direct Map My Genes sample-report sections and rows have not been extracted.",
+      "No calibrated map-coordinate model, regional ancestry percentage model, reference-panel metadata, chromosome-painting segment calls, or migration-path model is supplied.",
+      "No family-matching, living-relative, family-tree, community, migration-route, or exact-homeland data is supplied."
     ],
     "probabilities": [],
     "uncertainty": [
-      "Broad reference-panel similarity should not be treated as a precise ancestry percentage, map coordinate, or identity.",
+      "Broad reference-panel similarity should not be treated as a precise ancestry percentage, map coordinate, homeland, or identity.",
+      "Sibling sample output structure does not validate local ancestry placement or segment ancestry.",
       "The fixture is a validation artifact, not a complete ancestry mapping pipeline."
     ],
     "limitations": [
       "This validation result uses derived evidence only; raw genome data is not included.",
       "The report does not emit raw SNP tables or relative-matching data.",
-      "Authenticated Sequencing.com sample report rows are still pending."
+      "Direct Map My Genes sample report rows and authenticated detail-page parity remain pending.",
+      "Sibling World Ancestry sample values are sample-only report-structure evidence."
     ]
   }
 }

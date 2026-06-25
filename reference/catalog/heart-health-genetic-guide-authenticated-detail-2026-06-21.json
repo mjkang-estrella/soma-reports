@@ -1,0 +1,51 @@
+{
+  "schema": "soma-reports.authenticated-detail-evidence.v1",
+  "capturedAt": "2026-06-21T13:10:02.208Z",
+  "source": "in-app browser logged-in sequencing.com marketplace detail page __NEXT_DATA__.props.pageProps.reportData extraction",
+  "url": "https://sequencing.com/marketplace/heart-health-genetic-guide",
+  "finalUrl": "https://sequencing.com/marketplace/heart-health-genetic-guide",
+  "title": "Heart Health Genetic Guide",
+  "nid": "20611",
+  "productId": "5205",
+  "app": {
+    "appid": "15185",
+    "label": "Heart Health Genetic Guide",
+    "backend": "ApiAppBackend",
+    "apiAppId": "pgxcare-heart"
+  },
+  "publisher": "Quantum Genomics | Golden Gate Gene",
+  "price": "$79",
+  "currencyCode": "USD",
+  "categories": [
+    "Health",
+    "Lifestyle"
+  ],
+  "uri": "marketplace/heart-health-genetic-guide",
+  "reportFile": "https://sequencing.com/sites/default/files/heart_health_sample_report.pdf",
+  "headerImage": "https://sequencing.com/sites/default/files/image4_0.png",
+  "headerImageAlt": "Heart Health Genetic Guide DNA Report Icon",
+  "meta": {
+    "canonical": "https://sequencing.com/marketplace/heart-health-genetic-guide",
+    "publishedTime": "2025-07-16T15:54:15-07:00",
+    "modifiedTime": "2026-06-18T12:02:16-07:00",
+    "ogDescription": "Discover How Your DNA Shapes Heart Health Your genes carry powerful insights into how your body responds to heart medications. The Heart Health Genetic Guide is designed to help you and your healthcare team better understand your unique genetic profile in relation to cardiovascular care. From blood pressure control to cholesterol management, this report highlights how genetic differences can affect drug safety, effectiveness, and dosing. The goal: to make treatments more precise, more effective, and better suited to you.",
+    "productPriceAmount": "79.00",
+    "productPriceCurrency": "USD",
+    "productRetailerItemId": "5205"
+  },
+  "infoTabs": [
+    {
+      "label": "Overview",
+      "textPreview": "Discover How Your DNA Shapes Heart Health Your genes carry powerful insights into how your body responds to heart medications. The Heart Health Genetic Guide is designed to help you and your healthcare team better understand your unique genetic profile in relation to cardiovascular care. From blood pressure control to cholesterol management, this report highlights how genetic differences can affect drug safety, effectiveness, and dosing. The goal: to make treatments more precise, more effective, and better suited to you. What You’ll Learn Medication Response and Safety Genes such as CYP2C19, CYP2C9, SLCO1B1, and VKORC1 play a key role in how your body processes common heart medications. Variants in these genes can influence whether you are more likely to benefit from a drug, or at greater risk of side effects, such as bleeding with anticoagulants or muscle pain with statins. Blood Pressure and Rhythm Control Learn how your genetic profile affects your response to antihypertensive and a"
+    },
+    {
+      "label": "Disclaimer",
+      "textPreview": "The genetic analysis and statements that appear in this report have not been evaluated by the United States Food and Drug Administration. The Sequencing.com website and the software applications (apps) and reports that use and are available through Sequencing.com's website, as well as Sequencing.com's Application Programming Interface (API), are not intended to diagnose, treat, cure, alleviate, or prevent any disease. This DNA analysis app, and the report produced by this app, do not determine whether a medication is appropriate and they also do not provide medical advice or diagnose any medical conditions. You should not use this report to make treatment decisions. Always seek the advice of your physician or other qualified health providers with any questions you may have regarding a medication or medical condition. Do not disregard professional medical advice or delay in seeking it because of this report. Any medical decisions should be made only after discussing the results with you"
+    }
+  ],
+  "evidenceNotes": [
+    "Authenticated detail reportData confirms title, publisher, price, category, app backend id, product id, reportFile, overview content, and disclaimer content.",
+    "The detail page reportFile points to the Heart Health sample report PDF used by the formal sample rows.",
+    "No raw genome data or account navigation text is included in this artifact."
+  ]
+}

@@ -4,177 +4,232 @@
     "reportTitle": "Will Aspirin Help?",
     "inputManifestHash": "sha256:synthetic-will-aspirin-help-specialized-boundary-context-v1",
     "sectionsUnavailable": [
-      "Authenticated Sequencing.com sample report rows are not available yet for Will Aspirin Help?.",
-      "Validated aspirin benefit model, aspirin response marker interpretation, cardiovascular history, bleeding history, age, ASCVD risk inputs, medication list, clinician review, and authenticated sample-report rows",
-      "validated aspirin benefit model, aspirin response marker interpretation, cardiovascular history, bleeding history, age, ASCVD risk inputs, medication list, clinician review, and authenticated sample-report rows unavailable in this fixture",
-      "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
-      "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture"
+      "Direct Will Aspirin Help authenticated sample report rows remain unavailable.",
+      "Validated aspirin benefit model output, aspirin response marker interpretation, cardiovascular history, bleeding history, age, ASCVD risk inputs, medication list, medication interactions, clinician review, and local actionability evidence are unavailable in this fixture.",
+      "Sibling Wellness and Longevity medication-response sample row is included only as exact-cited output-structure evidence, not as a personal aspirin-benefit, bleeding-risk, cardiovascular-risk, dose, medication-change, safety, treatment, or actionability finding."
     ]
   },
   "resultRows": [
     {
-      "groupTitle": "Validated model/source output availability",
-      "item": "Will Aspirin Help? model/source output",
-      "brandName": "",
-      "geneticAnalysis": "The local fixture supplies a boundary row for aspirin decision and pharmacogenetic context. It does not supply the validated model, source-tool output, or authenticated Sequencing.com report content needed for personal conclusions.",
+      "groupTitle": "Validated model availability",
+      "item": "will-aspirin-help-model-output-unavailable",
+      "brandName": "will-aspirin-help",
+      "geneticAnalysis": "validated aspirin benefit model, aspirin response marker interpretation, cardiovascular history, bleeding history, age, ASCVD risk inputs, medication list, clinician review, and authenticated sample-report rows unavailable in this fixture; public Wellness and Longevity Medication Assessment sample row observed separately as sibling aspirin medication-response output-structure evidence",
       "genes": [
         "Will Aspirin Help? model/source output"
       ],
-      "sourceLabel": "USPSTF: Aspirin Use to Prevent Cardiovascular Disease; FDA: Aspirin for Reducing Your Risk of Heart Attack and Stroke; FDA Table of Pharmacogenetic Associations; MedlinePlus Pharmacogenetic Tests",
+      "sourceLabel": "Public medication, genetic-testing, and aspirin decision references",
       "sourceIds": [
-        "uspstf-aspirin-preventive",
+        "cdc-genetic-testing",
+        "medlineplus-genetics",
+        "medlineplus-genetic-testing",
+        "medlineplus-genetic-test-results",
+        "fda-direct-to-consumer-tests",
         "fda-aspirin-facts",
-        "fda-pgx-associations",
-        "medlineplus-pharmacogenetic-tests"
+        "uspstf-aspirin-preventive"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "This can explain what evidence is present or missing for Will Aspirin Help?, but it cannot fill in unavailable model output or personal conclusions."
+      "plainEnglishMeaning": "The local fixture does not contain the validated report model, aspirin-response interpretation, cardiovascular and bleeding context, medication list, or clinician review needed for a personal aspirin conclusion."
     },
     {
-      "groupTitle": "Clinical and professional context availability",
-      "item": "Will Aspirin Help? clinical and professional context",
-      "brandName": "",
-      "geneticAnalysis": "Clinical history, symptoms, labs, medication context, family history, and qualified professional interpretation are not supplied unless explicitly listed in the fixture.",
+      "groupTitle": "Clinical and medication context availability",
+      "item": "will-aspirin-help-clinical-professional-context-unavailable",
+      "brandName": "will-aspirin-help",
+      "geneticAnalysis": "clinical diagnosis, cardiovascular history, bleeding history, age, ASCVD risk inputs, medication list, medication interactions, and clinician decision context unavailable in this fixture; public Wellness and Longevity sample medication-response row observed separately as sibling output-structure evidence",
       "genes": [
         "Will Aspirin Help? clinical and professional context"
       ],
-      "sourceLabel": "USPSTF: Aspirin Use to Prevent Cardiovascular Disease; FDA: Aspirin for Reducing Your Risk of Heart Attack and Stroke; FDA Table of Pharmacogenetic Associations; MedlinePlus Pharmacogenetic Tests",
+      "sourceLabel": "Fixture context and public aspirin decision references",
       "sourceIds": [
-        "uspstf-aspirin-preventive",
+        "cdc-genetic-testing",
+        "medlineplus-genetics",
+        "medlineplus-genetic-testing",
+        "medlineplus-genetic-test-results",
+        "fda-direct-to-consumer-tests",
         "fda-aspirin-facts",
-        "fda-pgx-associations",
-        "medlineplus-pharmacogenetic-tests"
+        "uspstf-aspirin-preventive"
       ],
       "sourceBindingStatus": "curated",
-      "plainEnglishMeaning": "The report should stay educational because aspirin use, cardiovascular prevention, bleeding risk, medication interactions, and clinician-guided decisions require context that this synthetic fixture does not include."
+      "plainEnglishMeaning": "Aspirin decisions depend on age, cardiovascular history, bleeding history, medication interactions, and clinician-guided context that this synthetic fixture does not include."
     },
     {
-      "groupTitle": "Authenticated sample availability",
-      "item": "Will Aspirin Help? authenticated sample rows",
-      "brandName": "",
-      "geneticAnalysis": "Authenticated Sequencing.com sample report sections, row labels, model output, and source-tool output are unavailable in this local fixture.",
+      "groupTitle": "Observed sibling sample structure",
+      "item": "Wellness and Longevity Medication Assessment row",
+      "brandName": "Sibling Wellness and Longevity sample report",
+      "geneticAnalysis": "The public sibling sample row is preserved as observed output structure only: Medication Assessment: Cardiovascular medication-response rows. It is not local-user aspirin benefit, aspirin recommendation, bleeding-risk estimate, cardiovascular-risk estimate, platelet-resistance diagnosis, medication safety, treatment, dose, start/stop/switch, or actionability evidence.",
       "genes": [
-        "Will Aspirin Help? authenticated sample rows"
+        "Medication response model",
+        "MTHFR"
       ],
-      "sourceLabel": "USPSTF: Aspirin Use to Prevent Cardiovascular Disease; FDA: Aspirin for Reducing Your Risk of Heart Attack and Stroke; FDA Table of Pharmacogenetic Associations; MedlinePlus Pharmacogenetic Tests",
+      "sourceLabel": "Sibling Wellness and Longevity sample PDF",
       "sourceIds": [
-        "uspstf-aspirin-preventive",
-        "fda-aspirin-facts",
-        "fda-pgx-associations",
-        "medlineplus-pharmacogenetic-tests"
+        "wellness-and-longevity-sample-pdf"
       ],
-      "sourceBindingStatus": "unavailable",
-      "plainEnglishMeaning": "This local package marks the sample-report gap clearly instead of recreating or guessing the missing Sequencing.com output."
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Use this row to match the shape and source binding of a medication-response sample row, while keeping it separate from personal genome interpretation or medication decisions."
     }
   ],
   "drugDecisionContext": {
-    "plainEnglishMeaning": "Will Aspirin Help? is represented as an evidence-boundary package. It can summarize supplied local evidence and references, while marking unsupported personal conclusions unavailable.",
+    "plainEnglishMeaning": "Will Aspirin Help? is reported as an evidence-availability boundary. The local fixture can preserve source-bound sibling sample structure and aspirin decision limitations, but it cannot answer whether aspirin will help or guide aspirin use.",
     "unsupportedClaims": [
-      "yes/no aspirin benefit answer",
-      "starting, stopping, switching, or dosing aspirin",
+      "aspirin yes/no answer",
+      "aspirin recommendation or dose",
+      "aspirin start, stop, or switch guidance",
       "bleeding-risk estimate",
       "cardiovascular event-risk estimate",
-      "platelet-resistance conclusion",
-      "clinical actionability from genotype"
+      "platelet-resistance diagnosis",
+      "medication safety confirmation or clinical actionability"
     ],
-    "professionalReview": "Use qualified professional review for aspirin use, cardiovascular prevention, bleeding risk, medication interactions, and clinician-guided decisions; this synthetic local result is not enough for those decisions."
+    "professionalReview": "Aspirin decisions require cardiovascular history, bleeding history, age, ASCVD risk inputs, medication interactions, indication context, and qualified clinician review."
   },
-  "practicalNextSteps": {
-    "professionalReview": [
-      "Use this local result as educational context for aspirin decision and pharmacogenetic context, not as a decision tool.",
-      "Collect validated source output, source provenance, and relevant clinical or professional context before using Will Aspirin Help? for personal decisions.",
-      "Discuss aspirin use, cardiovascular prevention, bleeding risk, medication interactions, and clinician-guided decisions with qualified professionals when those choices matter."
-    ]
-  },
+  "sampleRows": [
+    {
+      "groupTitle": "Medication Assessment",
+      "item": "Cardiovascular medication-response rows",
+      "brandName": "Sequencing.com sample",
+      "geneticAnalysis": "The sample report shows Warfarin slight resistance, normal clopidogrel effectiveness, likely aspirin effectiveness, very low statin adverse-reaction risk, and increased benefit of high-dose atorvastatin compared with standard-dose pravastatin.",
+      "description": "The medication page explicitly warns not to stop or modify medications based on the report unless instructed by a doctor.",
+      "genes": [
+        "Medication response model",
+        "MTHFR"
+      ],
+      "sourceLabel": "Sibling Wellness and Longevity sample report",
+      "sourceIds": [
+        "wellness-and-longevity-sample-pdf"
+      ],
+      "sourceBindingStatus": "exact",
+      "plainEnglishMeaning": "Extracted from the Medication Assessment and Genetic Profile pages of the public sample PDF; this is observed sample pharmacogenomic structure only, not local medication, dosing, adverse-reaction, or treatment advice. Used here only as sibling Wellness & Longevity aspirin medication-response output-structure evidence for Will Aspirin Help; not as a direct Will Aspirin Help sample report, local aspirin benefit, bleeding-risk estimate, cardiovascular-risk estimate, platelet-resistance diagnosis, dose, start/stop/switch guidance, medication safety confirmation, or clinical actionability evidence."
+    }
+  ],
+  "practicalNextSteps": [
+    "Keep this as a local reproducibility fixture, not medication advice.",
+    "Review the cited source IDs before using the prompt with a local agent.",
+    "Do not use sibling sample labels as personal aspirin benefit, bleeding-risk, cardiovascular-risk, dose, start/stop/switch, safety, treatment, or actionability results."
+  ],
   "references": [
     {
       "id": "cdc-genetic-testing",
-      "title": "CDC Genetic Testing"
+      "title": "CDC Genetic Testing",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
     },
     {
       "id": "medlineplus-genetics",
-      "title": "MedlinePlus Genetics"
+      "title": "MedlinePlus Genetics",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "medlineplus-genetic-testing",
-      "title": "MedlinePlus: Genetic Testing"
+      "title": "MedlinePlus: Genetic Testing",
+      "sourceType": "public_health_resource",
+      "evidenceLevel": "public_health_background"
     },
     {
       "id": "medlineplus-genetic-test-results",
-      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results"
+      "title": "MedlinePlus Genetics: Interpreting Genetic Test Results",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "medlineplus-dtc-genetic-testing-results",
-      "title": "MedlinePlus Genetics: What DTC genetic test results mean"
+      "title": "MedlinePlus Genetics: What DTC genetic test results mean",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "fda-direct-to-consumer-tests",
-      "title": "FDA Direct-to-Consumer Tests"
+      "title": "FDA Direct-to-Consumer Tests",
+      "sourceType": "regulatory_resource",
+      "evidenceLevel": "regulatory_background"
     },
     {
       "id": "medlineplus-complex-disorders",
-      "title": "MedlinePlus Genetics: complex disorders"
+      "title": "MedlinePlus Genetics: complex disorders",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
     },
     {
       "id": "nhgri-polygenic-risk-scores",
-      "title": "NHGRI overview of polygenic risk scores"
+      "title": "NHGRI overview of polygenic risk scores",
+      "sourceType": "education_resource",
+      "evidenceLevel": "background"
     },
     {
       "id": "ebi-gwas-catalog",
-      "title": "GWAS Catalog"
+      "title": "GWAS Catalog",
+      "sourceType": "database",
+      "evidenceLevel": "background"
     },
     {
       "id": "uspstf-aspirin-preventive",
-      "title": "USPSTF: Aspirin Use to Prevent Cardiovascular Disease"
+      "title": "USPSTF: Aspirin Use to Prevent Cardiovascular Disease",
+      "sourceType": "guideline",
+      "evidenceLevel": "guideline_background"
     },
     {
       "id": "fda-aspirin-facts",
-      "title": "FDA: Aspirin for Reducing Your Risk of Heart Attack and Stroke"
+      "title": "FDA: Aspirin for Reducing Your Risk of Heart Attack and Stroke",
+      "sourceType": "regulatory_resource",
+      "evidenceLevel": "regulatory_background"
     },
     {
       "id": "fda-pgx-associations",
-      "title": "FDA Table of Pharmacogenetic Associations"
+      "title": "FDA Table of Pharmacogenetic Associations",
+      "sourceType": "regulatory_resource",
+      "evidenceLevel": "regulatory_background"
     },
     {
       "id": "medlineplus-pharmacogenetic-tests",
-      "title": "MedlinePlus Pharmacogenetic Tests"
+      "title": "MedlinePlus Pharmacogenetic Tests",
+      "sourceType": "education_resource",
+      "evidenceLevel": "consumer_education_background"
+    },
+    {
+      "id": "wellness-and-longevity-sample-pdf",
+      "title": "Wellness and Longevity DNA Analysis sample report",
+      "sourceType": "mock_report",
+      "evidenceLevel": "high"
     }
   ],
   "appendix": {
     "genotypeSummary": [
       {
-        "inputId": "will-aspirin-help-model-output-unavailable",
-        "gene": "Will Aspirin Help? model/source output",
-        "observedValue": "validated aspirin benefit model, aspirin response marker interpretation, cardiovascular history, bleeding history, age, ASCVD risk inputs, medication list, clinician review, and authenticated sample-report rows unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "effect": "The local fixture intentionally omits calibrated aspirin benefit, bleeding-risk, cardiovascular-risk, platelet-function, medication-safety, and clinical decision context.",
+        "extractionStatus": "curated",
+        "gene": "Will Aspirin Help? validated model",
+        "genotype": "validated aspirin benefit model, aspirin response marker interpretation, cardiovascular history, bleeding history, age, ASCVD risk inputs, medication list, medication-interaction context, clinician review, ancestry applicability, and direct Will Aspirin Help sample rows unavailable",
+        "phenotype": "Mark local aspirin benefit, aspirin recommendation, dose, start/stop/switch guidance, bleeding risk, cardiovascular event risk, platelet resistance, medication safety, treatment, and clinical actionability unavailable instead of inferring them.",
+        "sortOrder": 1,
+        "tier": "Local missing input",
+        "variantId": "will-aspirin-help-model-output-unavailable"
       },
       {
-        "inputId": "will-aspirin-help-clinical-professional-context-unavailable",
-        "gene": "Will Aspirin Help? clinical and professional context",
-        "observedValue": "clinical diagnosis, symptoms, family history, medications, professional interpretation, and decision context unavailable in this fixture",
-        "matchStatus": "unavailable"
-      },
-      {
-        "inputId": "will-aspirin-help-authenticated-sample-unavailable",
-        "gene": "Will Aspirin Help? authenticated sample rows",
-        "observedValue": "Sequencing.com authenticated sample report sections, row labels, model output, and source-tool output unavailable in this fixture",
-        "matchStatus": "unavailable"
+        "effect": "The public Wellness and Longevity sample shows cardiovascular medication-response row structure and warns not to stop or modify medications based on the report unless instructed by a doctor.",
+        "extractionStatus": "direct",
+        "gene": "Medication response model; MTHFR",
+        "genotype": "sample Medication Assessment row observed with warfarin slight resistance, normal clopidogrel effectiveness, likely aspirin effectiveness, very low statin adverse-reaction risk, and increased benefit of high-dose atorvastatin compared with standard-dose pravastatin",
+        "phenotype": "Observed sibling sample output structure only; do not infer local aspirin benefit, bleeding risk, cardiovascular risk, platelet resistance, dose, medication change, treatment, medication safety, or clinical action.",
+        "sortOrder": 2,
+        "tier": "Sibling sample-report section",
+        "variantId": "wellness-longevity-sample-aspirin-medication-response"
       }
-    ],
-    "missingInputs": [
-      "Authenticated Sequencing.com sample report sections and rows for Will Aspirin Help?.",
-      "validated aspirin benefit model, aspirin response marker interpretation, cardiovascular history, bleeding history, age, ASCVD risk inputs, medication list, clinician review, and authenticated sample-report rows",
-      "Report unavailable aspirin decision and pharmacogenetic context evidence explicitly; do not answer whether aspirin will help; recommend starting, stopping, switching, or dosing aspirin; estimate bleeding risk, cardiovascular event risk, platelet resistance, aspirin benefit, primary-prevention value, secondary-prevention value, or clinical actionability from genotype."
     ],
     "probabilities": [],
     "uncertainty": [
-      "No validated aspirin decision and pharmacogenetic context model with source provenance and professional review is supplied for this local package.",
-      "The supplied rows support evidence-boundary education only and should not be treated as a personal prediction or clinical interpretation."
+      "No calibrated aspirin benefit model, aspirin response marker interpretation, cardiovascular history, bleeding history, age, ASCVD risk inputs, medication list, medication interactions, or clinician review is supplied for this fixture.",
+      "The sibling Wellness and Longevity sample row shows report structure only and does not quantify local aspirin benefit, bleeding risk, cardiovascular risk, medication safety, treatment value, or actionability."
+    ],
+    "missingInputs": [
+      "validated aspirin benefit model, aspirin response marker interpretation, cardiovascular history, bleeding history, age, ASCVD risk inputs, medication list, clinician review, and authenticated sample-report rows unavailable in this fixture; public Wellness and Longevity Medication Assessment sample row observed separately as sibling aspirin medication-response output-structure evidence",
+      "clinical diagnosis, cardiovascular history, bleeding history, age, ASCVD risk inputs, medication list, medication interactions, and clinician decision context unavailable in this fixture; public Wellness and Longevity sample medication-response row observed separately as sibling output-structure evidence",
+      "direct Will Aspirin Help authenticated sample rows unavailable in this fixture; public Wellness and Longevity sample medication-response row observed separately as sibling output-structure evidence",
+      "Report unavailable aspirin benefit, aspirin response, bleeding-risk, cardiovascular-risk, platelet-resistance, medication-list, clinical-history, clinician-review, and direct Will Aspirin Help sample evidence explicitly; use the sibling Wellness and Longevity medication-response sample row only as observed output structure and do not infer local aspirin benefit, aspirin recommendation, aspirin dose, start/stop/switch guidance, bleeding risk, cardiovascular event risk, medication safety, treatment, or clinical actionability."
     ],
     "limitations": [
-      "This validation result uses selected derived evidence only; raw genome data, VCF, FASTQ, BAM, CRAM, and complete callset files are not included.",
-      "The package does not recreate unavailable Sequencing.com authenticated report rows or proprietary third-party output for Will Aspirin Help?.",
-      "The package does not support: yes/no aspirin benefit answer; starting, stopping, switching, or dosing aspirin; bleeding-risk estimate; cardiovascular event-risk estimate; platelet-resistance conclusion; clinical actionability from genotype."
+      "No raw genome data is included or returned.",
+      "No personal aspirin benefit, aspirin recommendation, dose, start/stop/switch guidance, bleeding-risk estimate, cardiovascular-risk estimate, platelet-resistance diagnosis, medication-safety confirmation, treatment, or clinical actionability conclusion is produced.",
+      "Direct Will Aspirin Help detail/body parity remains pending; the sample row is sibling Wellness and Longevity output-structure evidence only."
     ]
   }
 }

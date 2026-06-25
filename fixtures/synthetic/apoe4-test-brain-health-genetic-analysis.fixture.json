@@ -2,8 +2,8 @@
   "packageSlug": "apoe4-test-brain-health-genetic-analysis",
   "datasetId": "synthetic-apoe-alzheimers-context-v1",
   "packageVersion": "0.1.0",
-  "reportPurpose": "Consumer APOE late-onset Alzheimer's risk-factor context using derived APOE allele evidence and public-health safety framing.",
-  "missingInputPolicy": "Report unavailable APOE markers and non-genetic context explicitly; do not infer diagnosis, symptoms, family history, ancestry applicability, or calibrated disease probability.",
+  "reportPurpose": "Consumer APOE late-onset Alzheimer's risk-factor context using derived APOE allele evidence, public-health safety framing, and observed sample-report output structure.",
+  "missingInputPolicy": "Report unavailable APOE markers and non-genetic context explicitly; do not infer diagnosis, symptoms, family history, ancestry applicability, unobserved sample rows, or calibrated disease probability.",
   "consumerTone": "plain English; educational risk-factor context only; no diagnosis, treatment, supplement, imaging, or genetic-testing recommendation",
   "inputManifest": {
     "hash": "sha256:synthetic-apoe-alzheimers-context-v1",
@@ -46,7 +46,7 @@
       "inputId": "apoe-risk-model-unavailable",
       "haplotype": "apoe-risk-model-unavailable",
       "gene": "APOE risk model",
-      "observedValue": "calibrated absolute-risk model, ancestry applicability metadata, age/sex/family-history context, biomarker context, and authenticated sample-report rows unavailable in this fixture",
+      "observedValue": "calibrated absolute-risk model, ancestry applicability metadata, age/sex/family-history context, biomarker context, symptoms, cognition, and clinician review unavailable in this fixture",
       "assembly": "derived-apoe-allele-context",
       "matchStatus": "unavailable",
       "sourceFile": "synthetic-apoe-alzheimers-context-v1.json",
@@ -116,6 +116,18 @@
       "usedFor": [
         "risk_model_limitations",
         "probability_appendix"
+      ]
+    },
+    {
+      "id": "apoe-brain-mind-sample-pdf",
+      "title": "SelfDecode ApoE DNA Wellness sample report",
+      "sourceType": "mock_report",
+      "evidenceLevel": "direct_sample_report",
+      "usedFor": [
+        "formal_fields",
+        "sample_rows",
+        "genotype_summary",
+        "output_format"
       ]
     }
   ],
