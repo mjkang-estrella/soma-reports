@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 
 const defaultStatusPath = "reference/catalog/official-output-capture-status.json";
+const catalogDirectory = "reference/catalog";
+const publicReportEndpointProbePrefix = "public-report-endpoint-probe-";
 const todayStamp = (date = new Date()) =>
   `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
 
@@ -72,8 +74,23 @@ if (limit !== null && (!Number.isInteger(limit) || limit < 1)) {
 
 const readJson = (path) => JSON.parse(readFileSync(path, "utf8"));
 const asArray = (value) => (Array.isArray(value) ? value : []);
+const latestCatalogPathFor = (prefix) => {
+  if (!existsSync(catalogDirectory)) {
+    return null;
+  }
+  const latestFile = readdirSync(catalogDirectory)
+    .filter((file) => file.startsWith(prefix) && file.endsWith(".json"))
+    .sort()
+    .at(-1);
+  return latestFile ? `${catalogDirectory}/${latestFile}` : null;
+};
 const status = readJson(statusPath);
 const rows = asArray(status.rows);
+const publicEndpointProbePath = latestCatalogPathFor(publicReportEndpointProbePrefix);
+const publicEndpointProbe = publicEndpointProbePath ? readJson(publicEndpointProbePath) : null;
+const publicEndpointProbeBySlug = new Map(
+  asArray(publicEndpointProbe?.rows).map((row) => [row.slug, row]),
+);
 const knownSlugs = new Set(rows.map((row) => row.slug).filter(Boolean));
 if (reportFilter && !knownSlugs.has(reportFilter)) {
   throw new Error(`No official-output capture status row found for --report ${reportFilter}`);
@@ -177,14 +194,45 @@ const commandChainFor = (row) =>
   ]);
 
 const outputSignalCount = (signals, key) => Number(signals?.[key] ?? 0);
+const compactPublicEndpointProbeFor = (row) => {
+  if (!row) {
+    return null;
+  }
+  const exactOutputKeySignals = row.exactPackageOutputSignals?.nonEmptyOutputKeySignals ?? [];
+  return {
+    artifactPath: publicEndpointProbePath,
+    generatedAt: publicEndpointProbe?.generatedAt ?? null,
+    endpointUrl: row.endpointUrl ?? null,
+    httpStatus: row.httpStatus ?? null,
+    ok: Boolean(row.ok),
+    parsed: Boolean(row.parsed),
+    endpointTitle: row.endpointTitle ?? null,
+    endpointUri: row.endpointUri ?? null,
+    appId: row.appId ?? null,
+    productId: row.productData?.productId ?? null,
+    reportFilePresent: Boolean(row.reportFile),
+    reportFile: row.reportFile || null,
+    exactOutputKeySignals: exactOutputKeySignals.length,
+    exactOutputKeySignalDetails: exactOutputKeySignals.slice(0, 5),
+    formalFieldTerms: asArray(row.formalFieldTerms),
+    relatedReportFiles: asArray(row.relatedReportFiles).map((related) => ({
+      title: related.title ?? null,
+      uri: related.uri ?? null,
+      reportFile: related.reportFile ?? null,
+      boundary: related.boundary ?? null,
+    })),
+    promotionBoundary: row.promotionBoundary ?? null,
+  };
+};
 
-const publicCaptureOpportunityFor = (row, tier, signals) => {
+const publicCaptureOpportunityFor = (row, tier, signals, endpointProbeRow) => {
   const formalFields = outputSignalCount(signals, "formalFields");
   const hasRows =
     Boolean(signals?.reportFile) ||
     outputSignalCount(signals, "sampleRows") > 0 ||
     outputSignalCount(signals, "resultRows") > 0;
   const liveRoute = row.liveDetailInspection ?? null;
+  const endpointProbe = compactPublicEndpointProbeFor(endpointProbeRow);
   const reasons = [];
   let score = 0;
 
@@ -216,6 +264,32 @@ const publicCaptureOpportunityFor = (row, tier, signals) => {
     score += 4;
     reasons.push("public bundle evidence exists but still lacks row-level output evidence");
   }
+  if (endpointProbe) {
+    if (endpointProbe.parsed) {
+      score += 2;
+      reasons.push(`public report endpoint parsed ${endpointProbe.endpointTitle ?? row.title}`);
+    } else if (endpointProbe.httpStatus) {
+      reasons.push(`public report endpoint returned HTTP ${endpointProbe.httpStatus} and no parsed report metadata`);
+    }
+    if (endpointProbe.reportFilePresent) {
+      score += 30;
+      reasons.push("public endpoint exposes an exact-package reportFile; validate rows and source bindings before promotion");
+    }
+    if (endpointProbe.exactOutputKeySignals > 0) {
+      score += Math.min(endpointProbe.exactOutputKeySignals * 8, 24);
+      reasons.push(`${endpointProbe.exactOutputKeySignals} exact-package public output-key signal(s) need validation`);
+    }
+    if (endpointProbe.formalFieldTerms.length > 0) {
+      score += Math.min(endpointProbe.formalFieldTerms.length, 6);
+      reasons.push(`public endpoint exposes ${endpointProbe.formalFieldTerms.length} formal field term(s) as planning hints`);
+    }
+    if (endpointProbe.relatedReportFiles.length > 0) {
+      score += 1;
+      reasons.push(
+        `${endpointProbe.relatedReportFiles.length} related reportFile signal(s) are sibling context only, not target evidence`,
+      );
+    }
+  }
   if (row.stage === "reviewed-no-promote") {
     score += 8;
     reasons.push("manual review found output-shape signals but blocked promotion until official rows are captured");
@@ -241,6 +315,7 @@ const publicCaptureOpportunityFor = (row, tier, signals) => {
     reasons,
     missingEvidence: missing,
     nextPublicEvidenceToSeek: nextEvidenceNeeded,
+    publicEndpointProbe: endpointProbe,
     safePublicSourceTypes: [
       "exact-package public sample report",
       "exact-package public reportFile",
@@ -249,6 +324,9 @@ const publicCaptureOpportunityFor = (row, tier, signals) => {
     ],
     boundary:
       "Planning guidance only. This does not promote readiness; promotion still requires rowEvidenceReady validation on a commit-safe official-output capture.",
+    publicEndpointBoundary:
+      endpointProbe?.promotionBoundary ??
+      "Public endpoint metadata is planning evidence only until exact-package rows, fields, and source bindings pass validation.",
   };
 };
 
@@ -265,8 +343,8 @@ const selectedRows = rows
       const aSignals = a.formalReadinessGate?.currentOutputSignals ?? {};
       const bSignals = b.formalReadinessGate?.currentOutputSignals ?? {};
       const scoreDelta =
-        publicCaptureOpportunityFor(b, bTier, bSignals).score -
-        publicCaptureOpportunityFor(a, aTier, aSignals).score;
+        publicCaptureOpportunityFor(b, bTier, bSignals, publicEndpointProbeBySlug.get(b.slug)).score -
+        publicCaptureOpportunityFor(a, aTier, aSignals, publicEndpointProbeBySlug.get(a.slug)).score;
       if (scoreDelta !== 0) {
         return scoreDelta;
       }
@@ -287,7 +365,9 @@ const selectedRows = rows
     const currentSignals = row.formalReadinessGate?.currentOutputSignals ?? {};
     const publicCommands = publicCommandChainFor(row);
     const privateCommands = privateCommandChainFor(row);
-    const publicCaptureOpportunity = publicCaptureOpportunityFor(row, tier, currentSignals);
+    const publicEndpointProbeRow = publicEndpointProbeBySlug.get(row.slug) ?? null;
+    const publicEndpointProbeSummary = compactPublicEndpointProbeFor(publicEndpointProbeRow);
+    const publicCaptureOpportunity = publicCaptureOpportunityFor(row, tier, currentSignals, publicEndpointProbeRow);
     return {
       slug: row.slug,
       title: row.title,
@@ -299,6 +379,7 @@ const selectedRows = rows
       officialBoundaryModeled: Boolean(row.officialBoundaryModeled),
       officialBoundaryModeledFields: row.officialBoundaryModeledFields ?? 0,
       captureUrl: row.captureUrl,
+      publicEndpointProbe: publicEndpointProbeSummary,
       liveRoute: row.liveDetailInspection
         ? {
             exactRoute: Boolean(row.liveDetailInspection.exactRoute),
@@ -375,6 +456,18 @@ const summary = {
       (total, row) => total + (row.officialBoundaryModeledFields ?? 0),
       0,
     ),
+    publicEndpointProbeRows: selectedRows.filter((row) => row.publicEndpointProbe).length,
+    publicEndpointParsedRows: selectedRows.filter((row) => row.publicEndpointProbe?.parsed).length,
+    publicEndpointExactReportFileRows: selectedRows.filter((row) => row.publicEndpointProbe?.reportFilePresent).length,
+    publicEndpointExactOutputKeySignalRows: selectedRows.filter(
+      (row) => (row.publicEndpointProbe?.exactOutputKeySignals ?? 0) > 0,
+    ).length,
+    publicEndpointRelatedReportFileRows: selectedRows.filter(
+      (row) => (row.publicEndpointProbe?.relatedReportFiles?.length ?? 0) > 0,
+    ).length,
+    publicEndpointFormalFieldSignalRows: selectedRows.filter(
+      (row) => (row.publicEndpointProbe?.formalFieldTerms?.length ?? 0) > 0,
+    ).length,
   },
   officialEvidenceTierCounts: countBy(selectedRows, "officialEvidenceTier"),
   stageCounts: countBy(selectedRows, "stage"),
@@ -428,6 +521,15 @@ const renderMarkdown = () => {
       `- Tier: \`${row.officialEvidenceTier}\``,
       `- Stage: \`${row.stage}\``,
       `- Capture URL: ${row.captureUrl ?? "not available"}`,
+      `- Public endpoint probe: ${
+        row.publicEndpointProbe
+          ? `HTTP ${row.publicEndpointProbe.httpStatus ?? "n/a"}; parsed ${
+              row.publicEndpointProbe.parsed ? "yes" : "no"
+            }; exact reportFile ${row.publicEndpointProbe.reportFilePresent ? "yes" : "no"}; output keys ${
+              row.publicEndpointProbe.exactOutputKeySignals
+            }; artifact ${row.publicEndpointProbe.artifactPath}`
+          : "not probed"
+      }`,
       `- Source mode: \`${row.sourceMode}\``,
       `- Live route: ${
         row.liveRoute
@@ -441,6 +543,7 @@ const renderMarkdown = () => {
       ...(row.publicCaptureOpportunity.reasons.length > 0
         ? row.publicCaptureOpportunity.reasons.map((reason) => `  - ${reason}`)
         : ["  - no current public-capture opportunity signal"]),
+      `- Public endpoint boundary: ${row.publicCaptureOpportunity.publicEndpointBoundary}`,
       `- Public capture template: \`${row.publicCaptureTemplatePath}\``,
       `- Redaction input: \`${row.redactionInputPath}\``,
       `- Sanitized draft: \`${row.sanitizedDraftPath}\``,
@@ -474,6 +577,7 @@ const renderCompact = () =>
         officialEvidenceTier: row.officialEvidenceTier,
         stage: row.stage,
         publicCaptureTemplatePath: row.publicCaptureTemplatePath,
+        publicEndpointProbe: row.publicEndpointProbe,
         redactionInputPath: row.redactionInputPath,
         sanitizedDraftPath: row.sanitizedDraftPath,
         committedCapturePath: row.committedCapturePath,

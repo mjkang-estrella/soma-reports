@@ -796,10 +796,27 @@ const checks = [
       publicCaptureSession?.totals?.availableBlockers === (scaffold?.scaffoldPackages ?? blockerLedger.decisions?.length ?? 0) &&
       Array.isArray(publicCaptureSession?.rows) &&
       publicCaptureSession.rows.length === Math.min(5, scaffold?.scaffoldPackages ?? blockerLedger.decisions?.length ?? 0) &&
+      publicCaptureSession?.totals?.publicEndpointProbeRows === publicCaptureSession.rows.length &&
+      publicCaptureSession?.totals?.publicEndpointParsedRows > 0 &&
+      publicCaptureSession?.totals?.publicEndpointExactReportFileRows === 0 &&
+      publicCaptureSession?.totals?.publicEndpointExactOutputKeySignalRows === 0 &&
+      publicCaptureSession?.totals?.publicEndpointRelatedReportFileRows >= 1 &&
+      publicCaptureSession?.totals?.publicEndpointFormalFieldSignalRows >= 1 &&
       publicCaptureSession.rows.every(
         (row) =>
           row.publicTemplateCommand?.includes("scaffold:capture-template") &&
           row.publicCaptureOpportunity?.boundary?.includes("rowEvidenceReady") &&
+          row.publicCaptureOpportunity?.publicEndpointBoundary?.includes("rowEvidenceReady validation") &&
+          row.publicCaptureOpportunity?.publicEndpointProbe?.artifactPath?.includes("public-report-endpoint-probe-") &&
+          row.publicEndpointProbe?.artifactPath?.includes("public-report-endpoint-probe-") &&
+          row.publicEndpointProbe?.endpointUrl?.startsWith(publicEndpointBase) &&
+          typeof row.publicEndpointProbe?.ok === "boolean" &&
+          row.publicEndpointProbe?.reportFilePresent === false &&
+          row.publicEndpointProbe?.reportFile === null &&
+          row.publicEndpointProbe?.exactOutputKeySignals === 0 &&
+          Array.isArray(row.publicEndpointProbe?.exactOutputKeySignalDetails) &&
+          row.publicEndpointProbe?.promotionBoundary?.includes("rowEvidenceReady validation") &&
+          row.formalGateMissing?.includes("a rowEvidenceReady official-output capture validator pass") &&
           Array.isArray(row.publicCaptureOpportunity?.safePublicSourceTypes) &&
           row.publicCaptureOpportunity.safePublicSourceTypes.length > 0,
       ) &&
@@ -825,6 +842,21 @@ const checks = [
               ? {
                   level: row.publicCaptureOpportunity.level,
                   score: row.publicCaptureOpportunity.score,
+                  endpointBoundary: row.publicCaptureOpportunity.publicEndpointBoundary,
+                }
+              : null,
+            publicEndpointProbe: row.publicEndpointProbe
+              ? {
+                  artifactPath: row.publicEndpointProbe.artifactPath,
+                  endpointUrl: row.publicEndpointProbe.endpointUrl,
+                  ok: row.publicEndpointProbe.ok,
+                  parsed: row.publicEndpointProbe.parsed,
+                  reportFilePresent: row.publicEndpointProbe.reportFilePresent,
+                  reportFile: row.publicEndpointProbe.reportFile,
+                  exactOutputKeySignals: row.publicEndpointProbe.exactOutputKeySignals,
+                  exactOutputKeySignalDetails: row.publicEndpointProbe.exactOutputKeySignalDetails,
+                  formalFieldTerms: row.publicEndpointProbe.formalFieldTerms,
+                  relatedReportFiles: row.publicEndpointProbe.relatedReportFiles?.length ?? 0,
                 }
               : null,
             publicTemplateCommand: row.publicTemplateCommand,
