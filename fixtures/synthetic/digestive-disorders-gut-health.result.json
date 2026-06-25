@@ -9,7 +9,8 @@
   "reportOverview": {
     "reportTitle": "Digestive Disorders & Gut Health Local Agent Result",
     "inputManifestHash": "sha256:synthetic-digestive-disorders-gut-health-boundary-context-v1",
-    "summary": "This deterministic local-agent example gives conservative Digestive Disorders & Gut Health context. It uses one local MCM6/LCT lactose-related marker row and sibling SelfDecode Gut Health sample-report rows as output-structure examples only. It does not claim a direct Digestive Disorders & Gut Health sample report or make digestive diagnosis, microbiome, diet, supplement, lab, medication, or treatment conclusions."
+    "summary": "This deterministic local-agent example gives conservative Digestive Disorders & Gut Health context. It uses one local MCM6/LCT lactose-related marker row and sibling SelfDecode Gut Health sample-report rows as output-structure examples only. It does not claim a direct Digestive Disorders & Gut Health sample report or make digestive diagnosis, microbiome, diet, supplement, lab, medication, or treatment conclusions.",
+    "sectionsUnavailable": []
   },
   "resultRows": [
     {

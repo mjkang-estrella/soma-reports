@@ -9,7 +9,8 @@
   "reportOverview": {
     "reportTitle": "Cognitive Function Local Agent Result",
     "inputManifestHash": "sha256:synthetic-genetic-test-for-iq-cognitive-function-neurobehavioral-boundary-context-v1",
-    "summary": "This deterministic local-agent example gives conservative Cognitive Function context. It marks cognitive-function, intelligence, IQ, aptitude, ADHD, dyslexia, memory, processing-speed, executive-function, and clinical models unavailable, and uses sibling Mood & Brain sample-report rows only as output-structure examples."
+    "summary": "This deterministic local-agent example gives conservative Cognitive Function context. It marks cognitive-function, intelligence, IQ, aptitude, ADHD, dyslexia, memory, processing-speed, executive-function, and clinical models unavailable, and uses sibling Mood & Brain sample-report rows only as output-structure examples.",
+    "sectionsUnavailable": []
   },
   "resultRows": [
     {

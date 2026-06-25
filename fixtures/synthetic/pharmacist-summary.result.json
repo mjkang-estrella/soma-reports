@@ -7,7 +7,8 @@
       "The public Medications PGx Complete rows are available as observed sibling output-structure evidence only and must not be treated as this user's medication findings.",
       "Medication list, medication-specific question, pharmacy review, phenotype confidence, expanded pharmacogene calls, and clinical context are not supplied.",
       "This result is educational PGx handoff context only and is not prescribing, dispensing, medication safety, medication efficacy, start, stop, switch, or dose guidance."
-    ]
+    ],
+    "reportTitle": "Pharmacist Summary"
   },
   "resultRows": [
     {

@@ -223,9 +223,88 @@ const scaffoldReferenceResources = [
   },
 ];
 
+const scaffoldOutputSections = [
+  {
+    sortOrder: 1,
+    title: "Report overview",
+    purpose: "Identify the local scaffold report and unavailable official evidence.",
+    expectedFields: [
+      {
+        key: "reportTitle",
+        label: "Report title",
+        description: "Human-readable report title.",
+        type: "string",
+        required: true,
+        fieldPath: "reportOverview.reportTitle",
+      },
+      {
+        key: "inputManifestHash",
+        label: "Input manifest hash",
+        description: "Hash for the prepared derived-evidence input.",
+        type: "string",
+        required: true,
+        fieldPath: "reportOverview.inputManifestHash",
+      },
+      {
+        key: "sectionsUnavailable",
+        label: "Unavailable sections",
+        description: "Official report sections that remain unavailable in the scaffold.",
+        type: "string[]",
+        required: true,
+        fieldPath: "reportOverview.sectionsUnavailable",
+      },
+    ],
+  },
+  {
+    sortOrder: 2,
+    title: "Result table",
+    purpose: "Mirror derived local QC rows in plain English.",
+    expectedFields: [
+      { key: "groupTitle", label: "Result group", description: "Report row group.", type: "string", required: true, fieldPath: "resultRows[].groupTitle" },
+      { key: "item", label: "Item", description: "Local QC metric.", type: "string", required: true, fieldPath: "resultRows[].item" },
+      { key: "brandName", label: "Brand name", description: "Unavailable for local QC rows.", type: "string", required: true, fieldPath: "resultRows[].brandName", allowsUnavailable: true },
+      { key: "geneticAnalysis", label: "Genetic analysis", description: "Observed or unavailable local QC statement.", type: "string", required: true, fieldPath: "resultRows[].geneticAnalysis" },
+      { key: "genes", label: "Genes", description: "Local QC evidence label.", type: "string[]", required: true, fieldPath: "resultRows[].genes" },
+      { key: "sourceLabel", label: "Source label", description: "Derived local source label.", type: "string", required: true, fieldPath: "resultRows[].sourceLabel" },
+      { key: "sourceIds", label: "Source IDs", description: "Source IDs or unavailable marker.", type: "string[]", required: true, fieldPath: "resultRows[].sourceIds" },
+      { key: "plainEnglishMeaning", label: "Plain-English meaning", description: "Consumer-safe local QC interpretation.", type: "string", required: true, fieldPath: "resultRows[].plainEnglishMeaning" },
+    ],
+  },
+  {
+    sortOrder: 3,
+    title: "Appendix",
+    purpose: "Keep uncertainty and probabilities outside deterministic rows.",
+    expectedFields: [
+      { key: "genotypeSummary", label: "Genotype summary", description: "Derived local evidence summary.", type: "object[]", required: true, fieldPath: "appendix.genotypeSummary" },
+      { key: "probabilities", label: "Probabilities", description: "Empty when no calibrated model exists.", type: "object[]", required: true, fieldPath: "appendix.probabilities" },
+      { key: "uncertainty", label: "Uncertainty", description: "Plain-English uncertainty notes.", type: "string[]", required: true, fieldPath: "appendix.uncertainty" },
+      { key: "missingInputs", label: "Missing inputs", description: "Unavailable official evidence.", type: "string[]", required: true, fieldPath: "appendix.missingInputs" },
+      { key: "limitations", label: "Limitations", description: "Scope and scaffold limitations.", type: "string[]", required: true, fieldPath: "appendix.limitations" },
+    ],
+  },
+];
+const scaffoldFormalOutputFieldPathContract = {
+  schemaVersion: "soma-reports.formal-output-field-path-contract.v1",
+  source: "formalArtifacts.outputSections[].expectedFields[]",
+  excludedPathPrefixes: ["sampleRows[]"],
+  requiredPaths: scaffoldOutputSections.flatMap((section) =>
+    section.expectedFields
+      .filter((field) => field.required && !field.fieldPath.startsWith("sampleRows[]"))
+      .map((field, index) => ({
+        sortOrder: index + 1,
+        fieldPath: field.fieldPath,
+        label: field.label,
+        type: field.type,
+        required: true,
+        citationRequired: field.citationRequired === true,
+        allowsUnavailable: field.allowsUnavailable === true,
+        sourceBinding: field.sourceBinding ?? null,
+      })),
+  ).map((field, index) => ({ ...field, sortOrder: index + 1 })),
+};
 const scaffoldFormalArtifacts = {
   schemaVersion: "soma-reports.formal-artifacts.v1",
-  outputSections: [],
+  outputSections: scaffoldOutputSections,
   formalFields: [],
   sampleRows: [],
   references: scaffoldReferenceResources,
@@ -253,6 +332,8 @@ const syntheticScaffoldBundle = {
   outputValidation: {
     validationMode: "local-scaffold-smoke",
     resultPath: null,
+    formalOutputFieldPathContract: scaffoldFormalOutputFieldPathContract,
+    formalFieldPaths: scaffoldFormalOutputFieldPathContract.requiredPaths,
     checks: [
       "raw genome data is absent",
       "resultRows[] or findings[] exist",
@@ -264,6 +345,7 @@ const syntheticScaffoldBundle = {
     reportPurpose:
       "Smoke-test local scaffold behavior for a derived coverage quality report without tying the test to a real marketplace package.",
     referenceResources: scaffoldReferenceResources,
+    formalOutputFieldPathContract: scaffoldFormalOutputFieldPathContract,
     formalArtifacts: scaffoldFormalArtifacts,
     genomeEvidence: scaffoldGenomeEvidence,
     missingInputPolicy:
@@ -726,6 +808,7 @@ const scaffoldLocalResult = {
   schemaVersion: "soma-reports.local-agent-result.v1",
   reportSlug: scaffoldReportSlug,
   reportOverview: {
+    reportTitle: "Local Coverage Quality Smoke Report",
     title: "Local Coverage Quality Smoke Report",
     sectionsUnavailable: [
       "This local scaffold output is provisional and not source-backed; official sample report rows are not available.",

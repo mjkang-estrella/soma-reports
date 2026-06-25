@@ -11,7 +11,8 @@
       "No direct Autoimmune Disorders sample PDF is supplied.",
       "No validated autoimmune disease model, calibrated autoimmune PRS, HLA inference, autoantibodies, complements, inflammatory labs, organ involvement, symptoms, family history, environmental context, medication context, disease activity, flare context, treatment context, diet context, supplement context, or clinical interpretation is supplied.",
       "Sibling sample rheumatoid arthritis, IBD, eczema, psoriasis, likelihood, percentile, impact/evidence rating, and variant-table text are not local findings."
-    ]
+    ],
+    "reportTitle": "Autoimmune Disorders"
   },
   "resultRows": [
     {

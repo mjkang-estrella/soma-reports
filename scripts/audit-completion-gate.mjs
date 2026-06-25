@@ -608,16 +608,21 @@ const checks = [
       runsByName.get("agent:workflow-check")?.exitCode === 0 &&
       localAgentWorkflowCheck?.ok === true &&
       localAgentWorkflowCheck?.readOnly === true &&
+      localAgentWorkflowCheck?.formalFieldPathContract?.bundleRequiredPaths > 0 &&
+      localAgentWorkflowCheck?.formalFieldPathContract?.preparedRequiredPaths > 0 &&
+      localAgentWorkflowCheck?.formalFieldPathContract?.preparedMatchesBundle === true &&
+      localAgentWorkflowCheck?.formalFieldPathContract?.preparedAgentInputMatchesValidation === true &&
       localAgentWorkflowCheck?.commandPlan?.localRunnerExample?.includes("SOMA_LOCAL_RUNNER") &&
       localAgentWorkflowCheck?.commandPlan?.validateRun?.includes("agent:validate-run"),
     expected:
-      "agent:workflow-check provides a read-only local-run preflight with runner handoff and validation command plan",
+      "agent:workflow-check provides a read-only local-run preflight with formal field-path contract proof, runner handoff, and validation command plan",
     actual: localAgentWorkflowCheck
       ? {
           ok: localAgentWorkflowCheck.ok,
           readOnly: localAgentWorkflowCheck.readOnly,
           reportSlug: localAgentWorkflowCheck.reportSlug,
           summary: localAgentWorkflowCheck.summary,
+          formalFieldPathContract: localAgentWorkflowCheck.formalFieldPathContract,
           runnerExample: localAgentWorkflowCheck.commandPlan?.localRunnerExample,
           validateRun: localAgentWorkflowCheck.commandPlan?.validateRun,
         }
@@ -769,6 +774,8 @@ const checks = [
       blueprintAudit?.totals?.artifacts === 21 &&
       blueprintAudit?.totals?.sectionBlueprints === blueprintAudit?.totals?.sections &&
       blueprintAudit?.totals?.fieldBlueprints === blueprintAudit?.totals?.fields &&
+      blueprintAudit?.totals?.requiredFieldPaths === blueprintAudit?.totals?.requiredFields &&
+      blueprintAudit?.totals?.missingRequiredFieldPaths === 0 &&
       blueprintAudit?.totals?.missingBlueprints === 0 &&
       blueprintAudit?.totals?.invalidBlueprints === 0 &&
       blueprintAudit?.totals?.promotingBlueprints === 0 &&
@@ -785,6 +792,9 @@ const checks = [
           row.fields > 0 &&
           row.fieldBlueprints === row.fields &&
           row.requiredFields === row.fields &&
+          row.requiredFieldPaths === row.requiredFields &&
+          Array.isArray(row.missingRequiredFieldPaths) &&
+          row.missingRequiredFieldPaths.length === 0 &&
           row.rowEvidenceReadyCaptures === 0 &&
           row.rowEvidencePromotionReadyCaptures === 0 &&
           Array.isArray(row.requiredEvidenceForPromotion) &&
@@ -796,7 +806,7 @@ const checks = [
       ) &&
       blueprintAudit?.catalogSnapshot?.authenticatedMarketplacePositions === expected.marketplacePositions,
     expected:
-      "all 21 formal blockers have complete non-promoting formalOutputBlueprint metadata, field-gap rows, package-specific evidence gaps, and public-safe capture commands inside the 164-position marketplace snapshot",
+      "all 21 formal blockers have complete non-promoting formalOutputBlueprint metadata, canonical required field paths, field-gap rows, package-specific evidence gaps, and public-safe capture commands inside the 164-position marketplace snapshot",
     actual: blueprintAudit
       ? {
           catalogSnapshot: blueprintAudit.catalogSnapshot,
@@ -807,6 +817,9 @@ const checks = [
             sectionBlueprints: row.sectionBlueprints,
             fields: row.fields,
             fieldBlueprints: row.fieldBlueprints,
+            requiredFields: row.requiredFields,
+            requiredFieldPaths: row.requiredFieldPaths,
+            missingRequiredFieldPaths: row.missingRequiredFieldPaths,
             officialEvidenceTier: row.officialEvidenceTier,
             sourceCoverageClass: row.sourceCoverageClass,
             nextPublicCommand: row.nextPublicCommand,

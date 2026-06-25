@@ -4,7 +4,9 @@
     "inputManifestHash": "sha256:synthetic-fitness-trainer-summary-context-v1",
     "scope": "Trainer-shareable educational fitness genetics summary using local ACTN3/ACE context plus sibling Gene-In-Form output-format evidence.",
     "sampleEvidence": "Gene-In-Form sample rows are sibling output-structure examples only; they are not direct Fitness Trainer Summary results.",
-    "localConclusion": "No workout plan, trainer instruction, sport selection, injury-risk estimate, recovery estimate, VO2 max estimate, supplement recommendation, medical clearance, or training action can be inferred from this fixture."
+    "localConclusion": "No workout plan, trainer instruction, sport selection, injury-risk estimate, recovery estimate, VO2 max estimate, supplement recommendation, medical clearance, or training action can be inferred from this fixture.",
+    "reportTitle": "Fitness Trainer Summary",
+    "sectionsUnavailable": []
   },
   "resultRows": [
     {

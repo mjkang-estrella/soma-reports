@@ -10,7 +10,8 @@
       "Exact authenticated Methylation Pathway detail/body extraction is still pending.",
       "No calibrated methylation score, homocysteine result, lab result, detox model, supplement model, pregnancy context, medication context, treatment context, ancestry-applicability metadata, or StrateGene proprietary scoring is supplied with this fixture.",
       "Sibling StrateGene sample pathway maps, MTHFR rows, dirty/clean headings, and advanced Folate table rows are not local findings."
-    ]
+    ],
+    "reportTitle": "Methylation Pathway"
   },
   "mthfrCalls": [
     {

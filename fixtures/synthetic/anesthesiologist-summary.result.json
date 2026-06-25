@@ -18,7 +18,8 @@
       "Comorbidities",
       "Labs",
       "Anesthesiologist review"
-    ]
+    ],
+    "reportTitle": "Anesthesiologist Summary"
   },
   "resultRows": [
     {

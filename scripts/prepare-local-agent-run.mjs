@@ -65,6 +65,8 @@ const localRunCustomerFacingEvidenceInstructions = [
 const evidenceText = readFileSync(evidencePath, "utf8");
 const evidenceInput = JSON.parse(evidenceText);
 const bundle = readJson(bundlePath);
+const formalOutputFieldPathContract = bundle.outputValidation?.formalOutputFieldPathContract ?? null;
+const agentRunInputFieldPathContract = bundle.agentRunInput?.formalOutputFieldPathContract ?? null;
 
 if (bundle.reportSlug !== reportSlug) {
   throw new Error(`Bundle slug mismatch: expected ${reportSlug}, found ${bundle.reportSlug ?? "unknown"}`);
@@ -72,6 +74,18 @@ if (bundle.reportSlug !== reportSlug) {
 
 if (!bundle.readiness || typeof bundle.readiness.sampleBackedFormalReady !== "boolean") {
   throw new Error("Bundle is missing readiness metadata. Re-run npm run agent:export and retry agent:prepare.");
+}
+
+if (
+  !isPlainObject(formalOutputFieldPathContract) ||
+  !Array.isArray(formalOutputFieldPathContract.requiredPaths) ||
+  formalOutputFieldPathContract.requiredPaths.length === 0
+) {
+  throw new Error("Bundle is missing outputValidation.formalOutputFieldPathContract.requiredPaths.");
+}
+
+if (sha256(formalOutputFieldPathContract) !== sha256(agentRunInputFieldPathContract)) {
+  throw new Error("Bundle outputValidation and agentRunInput formal output field-path contracts do not match.");
 }
 
 if (bundle.readiness.localScaffoldOnly === true && !allowScaffoldOnly) {
@@ -277,6 +291,7 @@ if (!allowEmptyEvidence && expectedInputIds.size + expectedRsids.size > 0 && usa
 
 const agentRunInput = {
   ...bundle.agentRunInput,
+  formalOutputFieldPathContract,
   inputManifest,
   genomeEvidence: normalizedRows,
   evidenceReview,
@@ -324,12 +339,14 @@ const payload = {
   },
   prompt: bundle.prompt,
   outputValidation: bundle.outputValidation,
+  formalOutputFieldPathContract,
   formalArtifacts: bundle.formalArtifacts,
   agentRunInput,
   agentInstructions: [
     ...localRunAgentInstructions(bundle.agentInstructions),
     "Use agentRunInput.genomeEvidence as the user's local derived evidence; do not use fixture.genomeEvidence as user evidence.",
     "Return JSON with outputValidation.requiredOutputShape; deterministic report rows come first, and probability, confidence, calibration, uncertainty, missing inputs, and limitations stay in the appendix.",
+    "Emit every non-sample path listed in outputValidation.formalOutputFieldPathContract.requiredPaths; these paths are the ordered report-specific output contract.",
     ...localRunCustomerFacingEvidenceInstructions,
     "If a required variant, model output, clinical context, or formal sample row is absent from agentRunInput.genomeEvidence, mark that result unavailable.",
     ...(bundle.readiness.localScaffoldOnly

@@ -4,7 +4,8 @@
     "sectionsUnavailable": [
       "Complete genome-wide inventory, coverage metrics, variant interpretation, pediatric context, disease risk, carrier status, pharmacogenomics, ancestry, pathogenicity classification, clinical significance, and clinical actionability are unavailable for the local fixture.",
       "Public Complete Genome Analysis inherited-traits sample rows are included only as observed output-structure evidence and are not local personal results."
-    ]
+    ],
+    "reportTitle": "Complete Genome Analysis"
   },
   "resultRows": [
     {

@@ -47,9 +47,61 @@ const deterministicResultPath = `fixtures/synthetic/${reportSlug}.result.json`;
 const formalBlockerLedgerPath = "reference/catalog/sample-promotion-rejections-2026-06-23.json";
 
 const sha256Text = (value) => `sha256:${createHash("sha256").update(value).digest("hex")}`;
+const sha256 = (value) => sha256Text(JSON.stringify(value));
 const readJson = (path) => JSON.parse(readFileSync(path, "utf8"));
 const maybeReadJson = (path) => (existsSync(path) ? readJson(path) : null);
 const isPlainObject = (value) => Boolean(value && typeof value === "object" && !Array.isArray(value));
+const isNonEmptyString = (value) => typeof value === "string" && value.trim().length > 0;
+const parseFieldPath = (fieldPath) => fieldPath.replaceAll("[]", ".[]").split(".").filter(Boolean);
+const valuesAtFieldPath = (value, fieldPath) => {
+  const walkPath = (node, parts) => {
+    if (parts.length === 0) return [node];
+    const [head, ...rest] = parts;
+    if (head === "[]") {
+      return Array.isArray(node) ? node.flatMap((item) => walkPath(item, rest)) : [];
+    }
+    if (isPlainObject(node) && head in node) {
+      return walkPath(node[head], rest);
+    }
+    return [];
+  };
+  return walkPath(value, parseFieldPath(fieldPath));
+};
+const valueMatchesExpectedType = (value, type, fieldPath) => {
+  if (fieldPath === "resultRows[].brandName") {
+    return value === null || typeof value === "string";
+  }
+  if (type?.endsWith("[]")) {
+    if (!Array.isArray(value)) return false;
+    const itemType = type.slice(0, -2);
+    if (itemType === "string") return value.every(isNonEmptyString);
+    if (itemType === "number") return value.every((entry) => typeof entry === "number" && Number.isFinite(entry));
+    if (itemType === "boolean") return value.every((entry) => typeof entry === "boolean");
+    if (itemType === "object") return value.every(isPlainObject);
+    return value.every((entry) => entry !== null && entry !== undefined);
+  }
+  if (type === "string") return isNonEmptyString(value);
+  if (type === "number") return typeof value === "number" && Number.isFinite(value);
+  if (type === "boolean") return typeof value === "boolean";
+  if (type === "object") return isPlainObject(value);
+  return value !== null && value !== undefined;
+};
+const formalOutputFieldPathContractFrom = (value) => value?.outputValidation?.formalOutputFieldPathContract ?? null;
+const formalContractRequiredPaths = (contract) =>
+  Array.isArray(contract?.requiredPaths) ? contract.requiredPaths : [];
+const formalContractSignature = (contract) =>
+  formalContractRequiredPaths(contract).map((field) =>
+    JSON.stringify({
+      sortOrder: field.sortOrder,
+      fieldPath: field.fieldPath,
+      label: field.label,
+      type: field.type,
+      required: field.required === true,
+      citationRequired: field.citationRequired === true,
+      allowsUnavailable: field.allowsUnavailable === true,
+      sourceBinding: field.sourceBinding ?? null,
+    }),
+  );
 const isUsableEvidenceStatus = (value) =>
   !new Set([
     "filtered",
@@ -253,6 +305,126 @@ if (hasAgentResult) {
   }
 }
 
+const bundleFieldPathContract = formalOutputFieldPathContractFrom(bundle);
+const preparedFieldPathContract = formalOutputFieldPathContractFrom(preparedInput);
+const preparedAgentInputFieldPathContract = preparedInput?.agentRunInput?.formalOutputFieldPathContract ?? null;
+const bundleContractPaths = formalContractRequiredPaths(bundleFieldPathContract);
+const preparedContractPaths = formalContractRequiredPaths(preparedFieldPathContract);
+const bundleContractSignature = JSON.stringify(formalContractSignature(bundleFieldPathContract));
+const preparedContractSignature = JSON.stringify(formalContractSignature(preparedFieldPathContract));
+const preparedAgentContractSignature = JSON.stringify(formalContractSignature(preparedAgentInputFieldPathContract));
+const formalFieldPathContract = {
+  bundleRequiredPaths: bundleContractPaths.length,
+  preparedRequiredPaths: preparedContractPaths.length,
+  preparedAgentInputRequiredPaths: formalContractRequiredPaths(preparedAgentInputFieldPathContract).length,
+  preparedMatchesBundle: Boolean(bundleFieldPathContract && preparedFieldPathContract) &&
+    bundleContractSignature === preparedContractSignature,
+  preparedAgentInputMatchesValidation: Boolean(preparedFieldPathContract && preparedAgentInputFieldPathContract) &&
+    preparedContractSignature === preparedAgentContractSignature &&
+    sha256(preparedFieldPathContract) === sha256(preparedAgentInputFieldPathContract),
+  resultRequiredPathsPresent: null,
+  resultRequiredPathsTyped: null,
+};
+
+if (bundle) {
+  if (bundleContractPaths.length > 0) {
+    pass(
+      "BUNDLE.FORMAL_FIELD_PATH_CONTRACT",
+      `${bundlePath}#outputValidation.formalOutputFieldPathContract.requiredPaths`,
+      `bundle exposes ${bundleContractPaths.length} ordered formal output field paths`,
+    );
+  } else {
+    fail(
+      "BUNDLE.FORMAL_FIELD_PATH_CONTRACT",
+      `${bundlePath}#outputValidation.formalOutputFieldPathContract.requiredPaths`,
+      "bundle must expose an ordered formal output field-path contract",
+    );
+  }
+}
+
+if (preparedInput) {
+  if (preparedContractPaths.length > 0) {
+    pass(
+      "INPUT.FORMAL_FIELD_PATH_CONTRACT",
+      `${inputPath}#outputValidation.formalOutputFieldPathContract.requiredPaths`,
+      `prepared input exposes ${preparedContractPaths.length} ordered formal output field paths`,
+    );
+  } else {
+    fail(
+      "INPUT.FORMAL_FIELD_PATH_CONTRACT",
+      `${inputPath}#outputValidation.formalOutputFieldPathContract.requiredPaths`,
+      "prepared input must expose an ordered formal output field-path contract",
+    );
+  }
+  if (bundle) {
+    if (formalFieldPathContract.preparedMatchesBundle) {
+      pass(
+        "INPUT.FORMAL_FIELD_PATH_CONTRACT_MATCHES_BUNDLE",
+        `${inputPath}#outputValidation.formalOutputFieldPathContract`,
+        "prepared input formal output field-path contract matches the bundle",
+      );
+    } else {
+      fail(
+        "INPUT.FORMAL_FIELD_PATH_CONTRACT_MATCHES_BUNDLE",
+        `${inputPath}#outputValidation.formalOutputFieldPathContract`,
+        "prepared input formal output field-path contract must match the bundle",
+      );
+    }
+  }
+  if (formalFieldPathContract.preparedAgentInputMatchesValidation) {
+    pass(
+      "INPUT.FORMAL_FIELD_PATH_CONTRACT_BINDS_AGENT_INPUT",
+      `${inputPath}#agentRunInput.formalOutputFieldPathContract`,
+      "agentRunInput carries the same formal output field-path contract as outputValidation",
+    );
+  } else {
+    fail(
+      "INPUT.FORMAL_FIELD_PATH_CONTRACT_BINDS_AGENT_INPUT",
+      `${inputPath}#agentRunInput.formalOutputFieldPathContract`,
+      "agentRunInput must carry the same formal output field-path contract as outputValidation",
+    );
+  }
+}
+
+if (parsedAgentResult && preparedContractPaths.length > 0) {
+  const presentCount = preparedContractPaths.filter(
+    (field) => isNonEmptyString(field.fieldPath) && valuesAtFieldPath(parsedAgentResult, field.fieldPath).length > 0,
+  ).length;
+  const typedCount = preparedContractPaths.filter((field) => {
+    if (!isNonEmptyString(field.fieldPath)) return false;
+    const values = valuesAtFieldPath(parsedAgentResult, field.fieldPath);
+    return values.length > 0 && values.every((entry) => valueMatchesExpectedType(entry, field.type, field.fieldPath));
+  }).length;
+  formalFieldPathContract.resultRequiredPathsPresent = presentCount;
+  formalFieldPathContract.resultRequiredPathsTyped = typedCount;
+  if (presentCount === preparedContractPaths.length) {
+    pass(
+      "RESULT.FORMAL_FIELD_PATH_CONTRACT_PRESENT",
+      resultPath,
+      `local-agent result includes all ${preparedContractPaths.length} formal output field paths`,
+    );
+  } else {
+    fail(
+      "RESULT.FORMAL_FIELD_PATH_CONTRACT_PRESENT",
+      resultPath,
+      `local-agent result includes ${presentCount}/${preparedContractPaths.length} formal output field paths`,
+    );
+  }
+  if (typedCount === preparedContractPaths.length) {
+    pass(
+      "RESULT.FORMAL_FIELD_PATH_CONTRACT_TYPED",
+      resultPath,
+      `local-agent result types all ${preparedContractPaths.length} formal output field paths`,
+    );
+  } else {
+    fail(
+      "RESULT.FORMAL_FIELD_PATH_CONTRACT_TYPED",
+      resultPath,
+      `local-agent result types ${typedCount}/${preparedContractPaths.length} formal output field paths`,
+    );
+  }
+}
+
 const scaffoldFlag = bundleLocalScaffoldOnly ? " --allow-local-scaffold true" : "";
 const commandPlan = {
   seedCache: "npm run agent:seed-cache",
@@ -343,6 +515,7 @@ const workflow = {
       : null,
   },
   evidenceCounts,
+  formalFieldPathContract,
   resultCounts: {
     resultRows: resultRows.length,
     sampleRows: sampleRows.length,
@@ -370,6 +543,7 @@ const compact = {
   readOnly: workflow.readOnly,
   readiness: workflow.readiness,
   evidenceCounts,
+  formalFieldPathContract,
   resultCounts: workflow.resultCounts,
   summary,
   commandPlan,

@@ -495,6 +495,14 @@ const validateFormalOutputBlueprints = (artifacts) => {
       if (validateFormalOutputBlueprint(field.formalOutputBlueprint, `${fieldPath}.formalOutputBlueprint`)) {
         blueprintCount += 1;
       }
+      if (field.required) {
+        check(
+          isNonEmptyString(field.fieldPath),
+          "BUNDLE.FORMAL_OUTPUT_FIELD_REQUIRED_PATH",
+          `${fieldPath}.fieldPath`,
+          "required formal output field must expose a local JSON fieldPath",
+        );
+      }
       if ("availability" in field) {
         check(
           outputAvailabilities.has(field.availability),
@@ -1062,14 +1070,56 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-  const bundleCore = {
+const formalOutputFieldPaths = stableEmittedFieldPathsFrom(formalArtifacts).map((field, index) => ({
+  sortOrder: index + 1,
+  fieldPath: field.fieldPath,
+  label: field.label,
+  type: field.type,
+  required: field.required === true,
+  citationRequired: field.citationRequired === true,
+  allowsUnavailable: field.allowsUnavailable === true,
+  sourceBinding: field.sourceBinding ?? null,
+}));
+const formalOutputFieldPathContractCore = {
+  schemaVersion: "soma-reports.formal-output-field-path-contract.v1",
+  source: "formalArtifacts.outputSections[].expectedFields[]",
+  excludedPathPrefixes: ["sampleRows[]"],
+  requiredPaths: formalOutputFieldPaths,
+};
+const formalOutputFieldPathContract = {
+  ...formalOutputFieldPathContractCore,
+  contractHash: sha256(formalOutputFieldPathContractCore),
+};
+
+check(
+  formalOutputFieldPathContract.requiredPaths.every(
+    (entry) => isNonEmptyString(entry.fieldPath) && isNonEmptyString(entry.label) && isNonEmptyString(entry.type),
+  ),
+  "BUNDLE.FORMAL_FIELD_PATH_CONTRACT_REQUIRED_PATHS",
+  "outputValidation.formalOutputFieldPathContract.requiredPaths",
+  "formal output field-path contract must expose ordered path, label, and type records",
+);
+if (validationMode === "formal-ready") {
+  check(
+    formalOutputFieldPathContract.requiredPaths.length > 0,
+    "BUNDLE.FORMAL_FIELD_PATH_CONTRACT_FORMAL_READY_NONEMPTY",
+    "outputValidation.formalOutputFieldPathContract.requiredPaths",
+    "formal-ready validation requires at least one non-sample required formal output field path",
+  );
+}
+if (errors.length > 0) {
+  writeFileSync(2, `${JSON.stringify({ ok: false, errors, warnings, validationLedger: validationLedger() }, null, 2)}\n`);
+  process.exit(1);
+}
+
+const bundleCore = {
     schemaVersion: "soma-reports.agent-bundle.v1",
     reportSlug,
     promptPath,
     fixturePath,
-    readiness: agentReadiness,
-    privacyBoundary: {
-      rawGenomeIncluded: false,
+  readiness: agentReadiness,
+  privacyBoundary: {
+    rawGenomeIncluded: false,
     derivedEvidenceOnly: true,
     uploadRequired: false,
   },
@@ -1078,6 +1128,7 @@ if (errors.length > 0) {
     "Use fixture.genomeEvidence, fixture.referenceResources, and formalArtifacts as evidence.",
     "When formalArtifacts.sampleRows are present, preserve their report structure and source bindings.",
     "Return JSON with outputValidation.requiredOutputShape: reportOverview, resultRows or findings, references when sources are cited, and appendix.",
+    "Emit every non-sample path listed in outputValidation.formalOutputFieldPathContract.requiredPaths; these paths are the ordered report-specific output contract.",
     "Return deterministic report JSON first.",
     "Put probability, confidence, uncertainty, missing-input, and limitation disclosures in the appendix only.",
     "Do not include raw genome data in output.",
@@ -1086,11 +1137,14 @@ if (errors.length > 0) {
     validationMode,
     resultPath: resultPath ?? null,
     requiredOutputShape,
+    formalOutputFieldPathContract,
+    formalFieldPaths: formalOutputFieldPaths,
     checks: [
       "raw genome data is absent",
       "resultRows[] or findings[] exist",
       "each result row includes groupTitle, item, brandName, geneticAnalysis, genes, sourceLabel, and plainEnglishMeaning",
       "each result row preserves covered formal resultRows[] fields from formalArtifacts.formalFields",
+      "every non-sample required path in outputValidation.formalOutputFieldPathContract.requiredPaths is present and typed",
       "each finding cites canonical sourceIds[]",
       "each cited sourceIds[] entry appears in result.references[] when the result emits references",
       "appendix.probabilities[], appendix.uncertainty[], appendix.missingInputs[], and appendix.limitations[] are present",
@@ -1098,20 +1152,21 @@ if (errors.length > 0) {
       "prompt requires deterministic sections before appendix probabilities",
     ],
   },
-	  agentRunInput: {
-	    readiness: agentReadiness,
-	    reportPurpose: fixture.reportPurpose,
-	    referenceResources: fixture.referenceResources,
-	    formalArtifacts,
-	    genomeEvidence: fixture.genomeEvidence,
-	    missingInputPolicy: fixture.missingInputPolicy,
-	    consumerTone: fixture.consumerTone,
-	  },
-	  exampleOutput: result,
-	  prompt,
-	  fixture,
-	  formalArtifacts,
-	};
+  agentRunInput: {
+    readiness: agentReadiness,
+    reportPurpose: fixture.reportPurpose,
+    referenceResources: fixture.referenceResources,
+    formalOutputFieldPathContract,
+    formalArtifacts,
+    genomeEvidence: fixture.genomeEvidence,
+    missingInputPolicy: fixture.missingInputPolicy,
+    consumerTone: fixture.consumerTone,
+  },
+  exampleOutput: result,
+  prompt,
+  fixture,
+  formalArtifacts,
+};
 
 const validation = validationLedger();
 const bundleHash = sha256(bundleCore);
@@ -1135,12 +1190,13 @@ const auditManifest = {
   },
   objectHashes: {
     bundleCore: bundleHash,
-	    agentRunInput: sha256(bundleCore.agentRunInput),
-	    outputValidation: sha256(bundleCore.outputValidation),
-	    exampleOutput: result ? sha256(result) : null,
-	    formalArtifacts: formalArtifacts ? sha256(formalArtifacts) : null,
-	    validationLedger: sha256(validation),
-	  },
+    agentRunInput: sha256(bundleCore.agentRunInput),
+    outputValidation: sha256(bundleCore.outputValidation),
+    exampleOutput: result ? sha256(result) : null,
+    formalArtifacts: formalArtifacts ? sha256(formalArtifacts) : null,
+    formalOutputFieldPathContract: sha256(formalOutputFieldPathContract),
+    validationLedger: sha256(validation),
+  },
   seedArtifacts: {
     source: seedArtifactRead.source,
     slugFound: Boolean(seedArtifact),

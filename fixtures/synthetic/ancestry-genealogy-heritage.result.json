@@ -11,7 +11,8 @@
       "No calibrated local ancestry percentage model is supplied for the local run.",
       "No local exact homeland, community, migration path, family matching, relative matching, surname, or family-tree data is supplied.",
       "Sample PDF percentages, maps, region narratives, and country/subregion tables are not local findings."
-    ]
+    ],
+    "reportTitle": "DNA Ancestry and Genealogy Report"
   },
   "resultRows": [
     {

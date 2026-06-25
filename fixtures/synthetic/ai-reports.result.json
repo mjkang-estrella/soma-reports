@@ -4,7 +4,8 @@
     "sectionsUnavailable": [
       "Generated Sequencing.com AI Reports output, service provenance, model prompt, model version, calibrated disease-screening output, disease or trait interpretation, and model quality evidence are unavailable for the local fixture.",
       "Public AI Reports Skin Health sample rows are included only as observed output-structure evidence and are not local personal results."
-    ]
+    ],
+    "reportTitle": "AI Reports"
   },
   "resultRows": [
     {

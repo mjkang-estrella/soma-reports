@@ -5,7 +5,8 @@
       "Authenticated Sequencing.com marketplace detail-page extraction is still pending.",
       "The public sample PDF is image-based; OCR and visual review expose report structure but not exact sample-person vitamin genotypes.",
       "No calibrated local vitamin, micronutrient, supplement, dosing, child-specific nutrition, symptom, diet-history, lab, or ancestry applicability model is supplied with this fixture."
-    ]
+    ],
+    "reportTitle": "Vitamins DNA Wellness Report"
   },
   "resultRows": [
     {

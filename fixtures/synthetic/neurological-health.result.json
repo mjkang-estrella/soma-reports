@@ -18,7 +18,8 @@
       "validated neurological-health, brain-health, mental-health, mood, neurologic, cognitive, dementia, Parkinson's disease, seizure, migraine, ADHD, autism, depression, anxiety, treatment-response, calibrated PRS, ancestry applicability, medication, supplement, therapy, imaging, lab, school/work, pediatric, and local risk models unavailable in this fixture; direct Neurological Health sample-report rows unavailable; sibling Mood & Brain sample PDF result cards, recommendation rows, impact/evidence ratings, percentiles, and visible variant tables observed for output structure",
       "symptoms, current mental state, cognitive testing, neurologic exam, biomarkers, imaging, labs, medication context, pediatric context, family history, clinician interpretation, school/work context, and personal neurological-health context unavailable in this fixture; sibling Mood & Brain sample PDF observed separately as output-structure evidence",
       "This result is not a diagnosis, current mental-state assessment, cognitive-status result, neurological-status result, dementia-risk result, Parkinson's disease-risk result, seizure-risk result, migraine-risk result, therapy instruction, medication/supplement/imaging/lab recommendation, school/work decision, pediatric action, treatment instruction, or clinical actionability claim."
-    ]
+    ],
+    "reportTitle": "Neurological Health"
   },
   "resultRows": [
     {

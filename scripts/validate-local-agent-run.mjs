@@ -257,6 +257,30 @@ const stableEmittedFieldPathsFrom = (artifacts) => {
   }
   return fields;
 };
+const formalOutputFieldPathRecordsFrom = (artifacts) =>
+  stableEmittedFieldPathsFrom(artifacts).map((field, index) => ({
+    sortOrder: index + 1,
+    fieldPath: field.fieldPath,
+    label: field.label,
+    type: field.type,
+    required: field.required === true,
+    citationRequired: field.citationRequired === true,
+    allowsUnavailable: field.allowsUnavailable === true,
+    sourceBinding: field.sourceBinding ?? null,
+  }));
+const formalFieldPathSignature = (fields) =>
+  fields.map((field) =>
+    JSON.stringify({
+      sortOrder: field.sortOrder,
+      fieldPath: field.fieldPath,
+      label: field.label,
+      type: field.type,
+      required: field.required === true,
+      citationRequired: field.citationRequired === true,
+      allowsUnavailable: field.allowsUnavailable === true,
+      sourceBinding: field.sourceBinding ?? null,
+    }),
+  );
 
 const validateFormalOutputBlueprint = (blueprint, path) => {
   if (!blueprint) {
@@ -327,6 +351,14 @@ const validateFormalOutputBlueprints = (artifacts) => {
       const fieldPath = `${sectionPath}.expectedFields[${fieldIndex}]`;
       if (validateFormalOutputBlueprint(field.formalOutputBlueprint, `${fieldPath}.formalOutputBlueprint`)) {
         blueprintCount += 1;
+      }
+      if (field.required) {
+        check(
+          isNonEmptyString(field.fieldPath),
+          "INPUT.FORMAL_OUTPUT_FIELD_REQUIRED_PATH",
+          `${fieldPath}.fieldPath`,
+          "required formal output field must expose a local JSON fieldPath",
+        );
       }
       if ("availability" in field) {
         check(
@@ -544,6 +576,31 @@ if (isLocalScaffoldOnlyRun) {
   );
 }
 validateFormalOutputBlueprints(prepared.formalArtifacts);
+const expectedFormalOutputFieldPaths = formalOutputFieldPathRecordsFrom(prepared.formalArtifacts);
+const preparedFormalOutputFieldPathContract = prepared.outputValidation?.formalOutputFieldPathContract ?? null;
+const preparedContractPaths = Array.isArray(preparedFormalOutputFieldPathContract?.requiredPaths)
+  ? preparedFormalOutputFieldPathContract.requiredPaths
+  : [];
+const formalOutputFieldsForResult = preparedContractPaths.length > 0 ? preparedContractPaths : expectedFormalOutputFieldPaths;
+check(
+  isPlainObject(preparedFormalOutputFieldPathContract) && preparedContractPaths.length > 0,
+  "INPUT.FORMAL_FIELD_PATH_CONTRACT_PRESENT",
+  "$.outputValidation.formalOutputFieldPathContract.requiredPaths",
+  "prepared input must expose the ordered formal output field-path contract",
+);
+check(
+  JSON.stringify(formalFieldPathSignature(preparedContractPaths)) ===
+    JSON.stringify(formalFieldPathSignature(expectedFormalOutputFieldPaths)),
+  "INPUT.FORMAL_FIELD_PATH_CONTRACT_MATCHES_ARTIFACTS",
+  "$.outputValidation.formalOutputFieldPathContract.requiredPaths",
+  "prepared formal output field-path contract must match formalArtifacts.outputSections required paths",
+);
+check(
+  sha256(preparedFormalOutputFieldPathContract) === sha256(prepared.agentRunInput?.formalOutputFieldPathContract ?? null),
+  "INPUT.FORMAL_FIELD_PATH_CONTRACT_BINDS_AGENT_INPUT",
+  "$.agentRunInput.formalOutputFieldPathContract",
+  "agentRunInput must carry the same formal output field-path contract as outputValidation",
+);
 
 const genomeEvidence = prepared.agentRunInput?.genomeEvidence ?? [];
 check(
@@ -870,7 +927,7 @@ for (const [index, row] of rows.entries()) {
   }
 }
 
-for (const field of stableEmittedFieldPathsFrom(prepared.formalArtifacts)) {
+for (const field of formalOutputFieldsForResult) {
   const values = valuesAtFieldPath(result, field.fieldPath);
   check(
     values.length > 0,
@@ -928,6 +985,7 @@ const ledger = {
     citedSourceIds: resultSourceIds.size,
     knownReferences: knownReferenceIds.size,
     emittedReferences: resultReferenceIds.size,
+    formalFieldPaths: formalOutputFieldsForResult.length,
   },
   checks,
 };

@@ -7,7 +7,8 @@
       "The public Carrier Status sample PDF rows are available as observed sibling mock-report structure only and must not be treated as this user's findings.",
       "Partner result, pregnancy status, embryo or fetal testing context, prenatal screening or diagnostic testing context, family history, genetic counselor review, and clinician review are unavailable.",
       "This result is educational boundary context only and is not diagnosis, medical advice, pregnancy advice, fertility advice, carrier-status reporting, reproductive counseling, treatment guidance, supplement guidance, or clinical actionability."
-    ]
+    ],
+    "reportTitle": "Preconception & Pregnancy Planning"
   },
   "resultRows": [
     {

@@ -141,7 +141,9 @@ const rows = blockerSlugs.map((slug) => {
     fields: 0,
     fieldBlueprints: 0,
     requiredFields: 0,
+    requiredFieldPaths: 0,
     optionalFields: 0,
+    missingRequiredFieldPaths: [],
     blueprints: 0,
     nonPromotingBlueprints: 0,
     missingBlueprints: [],
@@ -195,7 +197,9 @@ const rows = blockerSlugs.map((slug) => {
       fields: expectedFields.length,
       blueprintFields: 0,
       requiredFields: 0,
+      requiredFieldPaths: 0,
       officialFieldPathSamples: [],
+      fieldPathSamples: [],
       availabilityCounts: {},
     };
     for (const [fieldIndex, field] of expectedFields.entries()) {
@@ -203,6 +207,14 @@ const rows = blockerSlugs.map((slug) => {
       if (field?.required) {
         row.requiredFields += 1;
         sectionSummary.requiredFields += 1;
+        if (typeof field.fieldPath === "string" && field.fieldPath.trim().length > 0) {
+          row.requiredFieldPaths += 1;
+          sectionSummary.requiredFieldPaths += 1;
+        } else {
+          const missingPath = `${fieldPath}.fieldPath:${field?.key ?? fieldIndex}`;
+          row.missingRequiredFieldPaths.push(missingPath);
+          problems.push(`${slug}: ${fieldPath} required field is missing fieldPath`);
+        }
       } else {
         row.optionalFields += 1;
       }
@@ -216,6 +228,9 @@ const rows = blockerSlugs.map((slug) => {
       increment(sectionSummary.availabilityCounts, field?.availability);
       if (typeof field?.officialFieldPath === "string" && sectionSummary.officialFieldPathSamples.length < 6) {
         sectionSummary.officialFieldPathSamples.push(field.officialFieldPath);
+      }
+      if (typeof field?.fieldPath === "string" && sectionSummary.fieldPathSamples.length < 6) {
+        sectionSummary.fieldPathSamples.push(field.fieldPath);
       }
       validateBlueprint(field?.formalOutputBlueprint, `${fieldPath}.formalOutputBlueprint`, row);
 
@@ -284,6 +299,8 @@ const totals = {
   fields: rows.reduce((sum, row) => sum + row.fields, 0),
   fieldBlueprints: rows.reduce((sum, row) => sum + row.fieldBlueprints, 0),
   requiredFields: rows.reduce((sum, row) => sum + row.requiredFields, 0),
+  requiredFieldPaths: rows.reduce((sum, row) => sum + row.requiredFieldPaths, 0),
+  missingRequiredFieldPaths: rows.reduce((sum, row) => sum + row.missingRequiredFieldPaths.length, 0),
   optionalFields: rows.reduce((sum, row) => sum + row.optionalFields, 0),
   missingBlueprints: rows.reduce((sum, row) => sum + row.missingBlueprints.length, 0),
   invalidBlueprints: rows.reduce((sum, row) => sum + row.invalidBlueprints.length, 0),
@@ -345,6 +362,8 @@ const compactOutput =
           fields: row.fields,
           fieldBlueprints: row.fieldBlueprints,
           requiredFields: row.requiredFields,
+          requiredFieldPaths: row.requiredFieldPaths,
+          missingRequiredFieldPaths: row.missingRequiredFieldPaths,
           optionalFields: row.optionalFields,
           officialEvidenceTier: row.officialEvidenceTier,
           sourceCoverageClass: row.sourceCoverageClass,

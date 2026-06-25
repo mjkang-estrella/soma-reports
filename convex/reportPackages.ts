@@ -227,6 +227,36 @@ const formalDisplayRoleFor = (field: { fieldPath?: string; citationRequired?: bo
   return "required_output_field";
 };
 
+const canonicalOutputFieldPathFor = (
+  section: ReportPackageSeed["outputSections"][number],
+  field: ReportPackageSeed["outputSections"][number]["expectedFields"][number],
+) => {
+  if (field.fieldPath) return field.fieldPath;
+
+  if (field.key === "reportTitle") return "reportOverview.reportTitle";
+  if (field.key === "inputManifestHash") return "reportOverview.inputManifestHash";
+  if (field.key === "sectionsUnavailable") return "reportOverview.sectionsUnavailable";
+  if (field.key === "probabilities") return "appendix.probabilities";
+  if (field.key === "uncertainty") return "appendix.uncertainty";
+  if (field.key === "missingInputs") return "appendix.missingInputs";
+  if (field.key === "limitations") return "appendix.limitations";
+  if (field.key === "genotypeSummary") return "appendix.genotypeSummary";
+  if (field.key === "guidance" && section.title.toLowerCase().includes("practical next steps")) {
+    return "practicalNextSteps";
+  }
+
+  return undefined;
+};
+
+const withCanonicalOutputFieldPaths = <T extends ReportPackageSeed["outputSections"]>(sections: T): T =>
+  sections.map((section) => ({
+    ...section,
+    expectedFields: section.expectedFields.map((field) => {
+      const fieldPath = canonicalOutputFieldPathFor(section, field);
+      return fieldPath ? { ...field, fieldPath } : field;
+    }),
+  })) as T;
+
 const withFormalOutputBlueprint = <T extends ReportPackageSeed["outputSections"]>(
   sections: T,
   options: {
@@ -254,17 +284,22 @@ const withFormalOutputBlueprint = <T extends ReportPackageSeed["outputSections"]
     return {
       ...section,
       formalOutputBlueprint: section.formalOutputBlueprint ?? blueprint,
-      expectedFields: section.expectedFields.map((field) => ({
-        ...field,
-        formalOutputBlueprint: field.formalOutputBlueprint ?? blueprint,
-        officialFieldPath: field.officialFieldPath ?? field.fieldPath ?? `${blueprint.sectionKey}.${slugKey(field.key)}`,
-        formalDisplayRole: field.formalDisplayRole ?? formalDisplayRoleFor(field),
-        availability: field.availability ?? (field.allowsUnavailable ? "unavailable" : blueprint.availability),
-        unavailableReason:
-          field.unavailableReason ??
-          options.unavailableReason ??
-          "Official Sequencing.com values are not captured for this field; emit unavailable or missing-evidence language instead of inventing rows.",
-      })),
+      expectedFields: section.expectedFields.map((field) => {
+        const fieldPath = canonicalOutputFieldPathFor(section, field);
+        const normalizedField = fieldPath ? { ...field, fieldPath } : field;
+        return {
+          ...normalizedField,
+          formalOutputBlueprint: field.formalOutputBlueprint ?? blueprint,
+          officialFieldPath:
+            field.officialFieldPath ?? normalizedField.fieldPath ?? `${blueprint.sectionKey}.${slugKey(field.key)}`,
+          formalDisplayRole: field.formalDisplayRole ?? formalDisplayRoleFor(normalizedField),
+          availability: field.availability ?? (field.allowsUnavailable ? "unavailable" : blueprint.availability),
+          unavailableReason:
+            field.unavailableReason ??
+            options.unavailableReason ??
+            "Official Sequencing.com values are not captured for this field; emit unavailable or missing-evidence language instead of inventing rows.",
+        };
+      }),
     };
   }) as T;
 
@@ -50481,4 +50516,7 @@ export const seedReportPackages: ReportPackageSeed[] = [
     .map(enhanceCatalogReport)
     .map(applyAuthenticatedDetailEvidence)
     .map(withCurrentFormalOutputBlueprintBlockerCoverage),
-];
+].map((report) => ({
+  ...report,
+  outputSections: withCanonicalOutputFieldPaths(report.outputSections),
+}));

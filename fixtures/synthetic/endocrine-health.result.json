@@ -6,7 +6,8 @@
       "Validated endocrine model unavailable",
       "Hormone, thyroid, adrenal, glucose, insulin, and other lab context unavailable",
       "Symptoms, medications, clinical history, family history, clinician review, treatment, supplement, diet, lifestyle, medication, and actionability context unavailable"
-    ]
+    ],
+    "reportTitle": "Endocrine Health"
   },
   "resultRows": [
     {
