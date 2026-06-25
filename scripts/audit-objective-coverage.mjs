@@ -84,54 +84,23 @@ const sourceIdsFromRow = (row) => {
 
 const sha256Text = (value) => `sha256:${createHash("sha256").update(value).digest("hex")}`;
 const representativeBundleContractSlug = "wellness-genetic-guide";
+const requiredBundleTopLevelOutputShape = ["reportOverview", "resultRows", "references", "appendix"];
+const requiredBundleAppendixFields = [
+  "probabilities",
+  "uncertainty",
+  "missingInputs",
+  "limitations",
+  "genotypeSummary",
+];
+const requiredBundleRowFields = ["plainEnglishMeaning", "sourceIds"];
 
-const runBundleContractProbe = () => {
-  const fixturePath = join("fixtures/synthetic", `${representativeBundleContractSlug}.fixture.json`);
-  const resultPath = join("fixtures/synthetic", `${representativeBundleContractSlug}.result.json`);
-  const run = spawnSync(
-    process.execPath,
-    [
-      "scripts/agent-bundle.mjs",
-      "--report",
-      representativeBundleContractSlug,
-      "--fixture",
-      fixturePath,
-      "--result",
-      resultPath,
-    ],
-    {
-      encoding: "utf8",
-      maxBuffer: 1024 * 1024 * 20,
-    },
-  );
-  if (run.status !== 0) {
-    return {
-      ok: false,
-      slug: representativeBundleContractSlug,
-      error: run.stderr.trim() || run.stdout.trim() || `agent-bundle exited with ${run.status}`,
-    };
-  }
-
-  let bundle;
-  try {
-    bundle = JSON.parse(run.stdout);
-  } catch (error) {
-    return {
-      ok: false,
-      slug: representativeBundleContractSlug,
-      error: `agent-bundle stdout was not JSON: ${error instanceof Error ? error.message : String(error)}`,
-    };
-  }
-
+const validateBundleContract = (bundle, slug) => {
   const requiredOutputShape = bundle.outputValidation?.requiredOutputShape;
   const appendixFields = requiredOutputShape?.appendix?.fields ?? [];
   const resultRowFields = requiredOutputShape?.resultRows?.rowFields ?? [];
-  const requiredTopLevel = ["reportOverview", "resultRows", "references", "appendix"];
-  const missingTopLevel = requiredTopLevel.filter((key) => !isPlainObject(requiredOutputShape?.[key]));
-  const missingAppendixFields = ["probabilities", "uncertainty", "missingInputs", "limitations", "genotypeSummary"].filter(
-    (field) => !appendixFields.includes(field),
-  );
-  const missingRowFields = ["plainEnglishMeaning", "sourceIds"].filter((field) => !resultRowFields.includes(field));
+  const missingTopLevel = requiredBundleTopLevelOutputShape.filter((key) => !isPlainObject(requiredOutputShape?.[key]));
+  const missingAppendixFields = requiredBundleAppendixFields.filter((field) => !appendixFields.includes(field));
+  const missingRowFields = requiredBundleRowFields.filter((field) => !resultRowFields.includes(field));
   const instructionMentionsContract = (bundle.agentInstructions ?? []).some(
     (instruction) => typeof instruction === "string" && instruction.includes("outputValidation.requiredOutputShape"),
   );
@@ -142,11 +111,77 @@ const runBundleContractProbe = () => {
       missingAppendixFields.length === 0 &&
       missingRowFields.length === 0 &&
       instructionMentionsContract,
-    slug: representativeBundleContractSlug,
+    slug,
     missingTopLevel,
     missingAppendixFields,
     missingRowFields,
     instructionMentionsContract,
+  };
+};
+
+const runBundleContractProbe = (slugs) => {
+  const results = [];
+  const failures = [];
+
+  for (const slug of slugs) {
+    const fixturePath = join("fixtures/synthetic", `${slug}.fixture.json`);
+    const resultPath = join("fixtures/synthetic", `${slug}.result.json`);
+    const run = spawnSync(
+      process.execPath,
+      [
+        "scripts/agent-bundle.mjs",
+        "--report",
+        slug,
+        "--fixture",
+        fixturePath,
+        "--result",
+        resultPath,
+      ],
+      {
+        encoding: "utf8",
+        maxBuffer: 1024 * 1024 * 20,
+      },
+    );
+    if (run.status !== 0) {
+      const failure = {
+        ok: false,
+        slug,
+        error: run.stderr.trim() || run.stdout.trim() || `agent-bundle exited with ${run.status}`,
+      };
+      results.push(failure);
+      failures.push(failure);
+      continue;
+    }
+
+    let bundle;
+    try {
+      bundle = JSON.parse(run.stdout);
+    } catch (error) {
+      const failure = {
+        ok: false,
+        slug,
+        error: `agent-bundle stdout was not JSON: ${error instanceof Error ? error.message : String(error)}`,
+      };
+      results.push(failure);
+      failures.push(failure);
+      continue;
+    }
+
+    const result = validateBundleContract(bundle, slug);
+    results.push(result);
+    if (!result.ok) {
+      failures.push(result);
+    }
+  }
+
+  return {
+    ok: slugs.length > 0 && results.length === slugs.length && failures.length === 0,
+    representativeSlug: representativeBundleContractSlug,
+    checked: results.length,
+    passed: results.filter((result) => result.ok).length,
+    failed: failures.length,
+    failedSlugs: failures.map((failure) => failure.slug),
+    failureSample: failures.slice(0, 10),
   };
 };
 
@@ -554,7 +589,7 @@ totals.bodyProbabilityLanguageReviewed = bodyProbabilityLanguageReviewed;
 totals.bodyProbabilityLanguageRewriteNeeded = bodyProbabilityLanguageRewriteNeeded;
 totals.bodyProbabilityLanguageReviewProblems = bodyProbabilityLanguageReviewProblems.length;
 
-const bundleContractProbe = runBundleContractProbe();
+const bundleContractProbe = runBundleContractProbe(allSlugs);
 
 const checks = [
   {
@@ -615,9 +650,9 @@ const checks = [
   },
   {
     key: "agent_bundle_required_output_shape",
-    ok: bundleContractProbe.ok,
+    ok: bundleContractProbe.ok && bundleContractProbe.checked === expected.namedPackages,
     expected:
-      "representative local-agent bundle exposes outputValidation.requiredOutputShape and an instruction to use it",
+      "all 154 local-agent bundles expose outputValidation.requiredOutputShape and an instruction to use it",
     actual: bundleContractProbe,
   },
   {

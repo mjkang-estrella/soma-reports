@@ -57,6 +57,86 @@ const publicCaptureTemplateCommandFor = (slug, path = publicCaptureTemplatePathF
 const publicTemplateAuditCommandFor = (slug) => `npm run scaffold:template-audit -- --report ${slug}`;
 const publicCaptureSessionCommandFor = (slug) =>
   `npm run scaffold:capture-session -- --source public --report ${slug} --format md --out tmp/official-output-capture-session-${slug}.md`;
+const uniqueStrings = (values) => [
+  ...new Set(values.filter((value) => typeof value === "string" && value.trim().length > 0)),
+];
+const readinessBoundary =
+  "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation.";
+const publicCapturePriorityOpportunitySummaryFor = (row) => {
+  const priority = row.priority ?? null;
+  const rowEvidenceReadyCaptures = Math.max(
+    row.rowEvidencePromotionReadyCaptures ?? 0,
+    row.rowEvidenceReadyCaptures ?? 0,
+    asArray(row.rowEvidenceReadyCapturePaths).length,
+  );
+  const outputSignalReviews = row.outputSignalReviews ?? row.promotionCandidates ?? 0;
+  const blockers = uniqueStrings([
+    ...asArray(row.formalReadinessGate?.missing),
+    ...asArray(row.missingFormalGateEvidence),
+    ...asArray(row.officialOutputReviewEvidenceMissing),
+    ...asArray(row.reviewedEvidenceMissing),
+    ...asArray(row.officialOutputReviewNextEvidenceNeeded),
+    ...asArray(row.nextEvidenceNeeded),
+  ]);
+  let opportunityClass = "inspect-status-before-capture";
+  let summary = "Inspect the status row before choosing a public capture action.";
+  let publicNextCommand = row.publicTemplateAuditCommand ?? row.publicCaptureTemplateCommand ?? null;
+  let publicNextStep = "Inspect public template state.";
+
+  if (
+    rowEvidenceReadyCaptures > 0 ||
+    row.stage === "row-evidence-ready" ||
+    row.officialEvidenceTier === "official-row-evidence-ready"
+  ) {
+    opportunityClass = "promotion-review-ready";
+    summary = "Official row-evidence-ready capture exists; review validation and promotion separately.";
+    publicNextCommand = row.validateCommittedCaptureCommand ?? null;
+    publicNextStep = "Revalidate the committed capture before any promotion review.";
+  } else if (row.stage === "capture-needs-rework" || row.officialEvidenceTier === "official-capture-needs-rework") {
+    opportunityClass = "repair-public-capture";
+    summary = "A capture exists but needs rework before it can support the queue.";
+    publicNextCommand = row.publicCaptureSessionCommand ?? row.publicTemplateAuditCommand ?? row.publicCaptureTemplateCommand ?? null;
+    publicNextStep = "Use a public capture session to repair commit-safe evidence shape.";
+  } else if (row.officialBoundaryModeled || row.officialEvidenceTier === "official-boundary-modeled") {
+    opportunityClass = "capture-row-evidence-for-boundary-model";
+    summary = "Boundary evidence is modeled, but official rows and source bindings are still missing.";
+    publicNextCommand = row.publicCaptureSessionCommand ?? row.publicTemplateAuditCommand ?? row.publicCaptureTemplateCommand ?? null;
+    publicNextStep = "Capture exact non-private rows and citation bindings from completed official output.";
+  } else if (row.stage === "reviewed-metadata-only" || row.officialEvidenceTier === "official-metadata-only") {
+    opportunityClass = "capture-completed-output-for-metadata-only";
+    summary = "Only metadata has been reviewed; completed output rows are the next public opportunity.";
+    publicNextCommand = row.publicCaptureSessionCommand ?? row.publicTemplateAuditCommand ?? row.publicCaptureTemplateCommand ?? null;
+    publicNextStep = "Use the public capture session once official completed output is available.";
+  } else if (outputSignalReviews > 0 || row.officialEvidenceTier === "official-output-signal-unreviewed") {
+    opportunityClass = "review-output-signal-capture";
+    summary = "Output-shape signals exist and need review before they can be treated as boundary evidence.";
+    publicNextCommand = row.publicTemplateAuditCommand ?? row.publicCaptureSessionCommand ?? row.publicCaptureTemplateCommand ?? null;
+    publicNextStep = "Review the public output-signal capture and keep it non-promotional unless row evidence is added.";
+  } else if (row.templateExists || row.stage === "template-ready") {
+    opportunityClass = "fill-public-capture-template";
+    summary = "A public capture template is available for the next official completed-output pass.";
+    publicNextCommand = row.publicCaptureSessionCommand ?? row.publicTemplateAuditCommand ?? row.publicCaptureTemplateCommand ?? null;
+    publicNextStep = "Open a public capture session and collect only commit-safe official output evidence.";
+  } else if (row.stage === "template-needed" || row.officialEvidenceTier === "official-template-only") {
+    opportunityClass = "generate-public-capture-template";
+    summary = "Generate the public capture template before collecting official completed-output evidence.";
+    publicNextCommand = row.publicCaptureTemplateCommand ?? null;
+    publicNextStep = "Generate the public capture template.";
+  }
+
+  return {
+    priority,
+    priorityLabel: priority === null ? "not set" : `P${priority}`,
+    stage: row.stage ?? null,
+    officialEvidenceTier: row.officialEvidenceTier ?? null,
+    opportunityClass,
+    summary,
+    publicNextStep,
+    publicNextCommand,
+    blockers,
+    readinessBoundary,
+  };
+};
 
 const stageRank = new Map(
   [
@@ -165,7 +245,7 @@ const rowsForExport = rows
     const publicCaptureSessionCommand =
       row.publicCaptureSessionCommand ?? publicCaptureSessionCommandFor(row.slug);
 
-    return {
+    const exportRow = {
       slug: row.slug,
       title: row.title,
       priority: row.priority ?? null,
@@ -208,6 +288,8 @@ const rowsForExport = rows
       validateCommittedCaptureCommand: row.validateCommittedCaptureCommand ?? null,
       promotionPreviewCommittedCommand: row.promotionPreviewCommittedCommand ?? null,
     };
+    exportRow.publicCapturePriorityOpportunitySummary = publicCapturePriorityOpportunitySummaryFor(exportRow);
+    return exportRow;
   });
 
 const actionCounts = rowsForExport.reduce((counts, row) => {
@@ -299,6 +381,7 @@ const renderMarkdown = () => {
   ];
 
   for (const row of summary.rows) {
+    const publicOpportunitySummary = row.publicCapturePriorityOpportunitySummary;
     lines.push(
       `### ${row.title}`,
       "",
@@ -307,6 +390,8 @@ const renderMarkdown = () => {
       `- Stage: \`${row.stage}\``,
       `- Official evidence tier: \`${row.officialEvidenceTier}\``,
       `- Action class: \`${row.actionClass}\``,
+      `- Public priority/opportunity: ${publicOpportunitySummary.priorityLabel} / \`${publicOpportunitySummary.opportunityClass}\` - ${publicOpportunitySummary.summary}`,
+      `- Public opportunity command: \`${publicOpportunitySummary.publicNextCommand ?? "not available"}\``,
       `- Next action: ${row.nextAction ?? "not available"}`,
       `- Source: ${row.captureUrl ?? "not available"}`,
       `- Live route: ${
@@ -371,6 +456,7 @@ const renderCompact = () =>
         nextAction: row.nextAction,
         nextCommand: row.nextCommand,
         actionClass: row.actionClass,
+        publicCapturePriorityOpportunitySummary: row.publicCapturePriorityOpportunitySummary,
         missingFormalGateEvidence: row.missingFormalGateEvidence,
         nextEvidenceNeeded: row.nextEvidenceNeeded,
         publicCaptureTemplatePath: row.publicCaptureTemplatePath,

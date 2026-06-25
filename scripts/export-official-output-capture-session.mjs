@@ -35,10 +35,12 @@ const classFilter = args.get("--class") ?? "all";
 const limit = args.has("--limit") ? Number(args.get("--limit")) : null;
 const dateStamp = args.get("--date") ?? todayStamp();
 const sourceMode = args.get("--source") ?? "both";
+const sortMode = args.get("--sort") ?? "priority";
 const reportFilter = args.get("--report") ?? args.get("--slug") ?? null;
 
 const allowedFormats = new Set(["json", "md", "compact"]);
 const allowedSourceModes = new Set(["public", "private", "both"]);
+const allowedSortModes = new Set(["priority", "public-opportunity"]);
 const allowedTierFilters = new Set([
   "all",
   "official-boundary-modeled",
@@ -54,6 +56,9 @@ if (!allowedFormats.has(format)) {
 }
 if (!allowedSourceModes.has(sourceMode)) {
   throw new Error(`Unsupported --source ${sourceMode}; expected public, private, or both`);
+}
+if (!allowedSortModes.has(sortMode)) {
+  throw new Error(`Unsupported --sort ${sortMode}; expected ${[...allowedSortModes].join(", ")}`);
 }
 if (!allowedTierFilters.has(tierFilter)) {
   throw new Error(`Unsupported --tier ${tierFilter}; expected ${[...allowedTierFilters].join(", ")}`);
@@ -171,18 +176,107 @@ const commandChainFor = (row) =>
     ...(sourceMode === "private" || sourceMode === "both" ? privateCommandChainFor(row) : []),
   ]);
 
+const outputSignalCount = (signals, key) => Number(signals?.[key] ?? 0);
+
+const publicCaptureOpportunityFor = (row, tier, signals) => {
+  const formalFields = outputSignalCount(signals, "formalFields");
+  const hasRows =
+    Boolean(signals?.reportFile) ||
+    outputSignalCount(signals, "sampleRows") > 0 ||
+    outputSignalCount(signals, "resultRows") > 0;
+  const liveRoute = row.liveDetailInspection ?? null;
+  const reasons = [];
+  let score = 0;
+
+  if (tier === "official-boundary-modeled") {
+    score += 35;
+    reasons.push("reviewed official boundary already preserves output shape without promoting rows");
+  } else if (tier === "official-metadata-only") {
+    score += 10;
+    reasons.push("exact package identity exists but output rows are still missing");
+  }
+
+  if (formalFields > 0) {
+    score += Math.min(formalFields, 20);
+    reasons.push(`${formalFields} formal/output field signal${formalFields === 1 ? "" : "s"} already mapped`);
+  }
+  if (signals?.generatedOutput) {
+    score += 10;
+    reasons.push("generated-output or output-shape signal was reviewed as non-promotional boundary evidence");
+  }
+  if (liveRoute?.exactRoute) {
+    score += 8;
+    reasons.push("authenticated live detail inspection resolved the exact package route");
+  }
+  if (liveRoute?.apiAppId) {
+    score += 4;
+    reasons.push(`live detail inspection exposed app id ${liveRoute.apiAppId}`);
+  }
+  if (row.publicBundleEvidence) {
+    score += 4;
+    reasons.push("public bundle evidence exists but still lacks row-level output evidence");
+  }
+  if (row.stage === "reviewed-no-promote") {
+    score += 8;
+    reasons.push("manual review found output-shape signals but blocked promotion until official rows are captured");
+  } else if (row.stage === "reviewed-boundary-only") {
+    score += 4;
+    reasons.push("manual review classifies the capture as boundary-only");
+  }
+  if (hasRows) {
+    score += 20;
+    reasons.push("current signals already include rows or a reportFile, so validate row bindings before promotion");
+  }
+
+  const missing = row.officialOutputReviewEvidenceMissing?.length
+    ? row.officialOutputReviewEvidenceMissing
+    : row.formalReadinessGate?.missing ?? [];
+  const nextEvidenceNeeded = row.officialOutputReviewNextEvidenceNeeded?.length
+    ? row.officialOutputReviewNextEvidenceNeeded
+    : row.formalReadinessGate?.requiredEvidenceForPromotion ?? [];
+
+  return {
+    score,
+    level: score >= 60 ? "high" : score >= 30 ? "medium" : "low",
+    reasons,
+    missingEvidence: missing,
+    nextPublicEvidenceToSeek: nextEvidenceNeeded,
+    safePublicSourceTypes: [
+      "exact-package public sample report",
+      "exact-package public reportFile",
+      "exact-package public export rows",
+      "already sanitized completed-output row structure with source IDs",
+    ],
+    boundary:
+      "Planning guidance only. This does not promote readiness; promotion still requires rowEvidenceReady validation on a commit-safe official-output capture.",
+  };
+};
+
 const selectedRows = rows
   .filter((row) => !rowEvidenceReady(row))
   .filter((row) => !reportFilter || row.slug === reportFilter)
   .filter((row) => tierFilter === "all" || officialEvidenceTierFor(row) === tierFilter)
   .filter((row) => stageFilter === "all" || row.stage === stageFilter)
   .filter((row) => classFilter === "all" || row.evidenceClass === classFilter)
-  .sort(
-    (a, b) =>
+  .sort((a, b) => {
+    if (sortMode === "public-opportunity") {
+      const aTier = officialEvidenceTierFor(a);
+      const bTier = officialEvidenceTierFor(b);
+      const aSignals = a.formalReadinessGate?.currentOutputSignals ?? {};
+      const bSignals = b.formalReadinessGate?.currentOutputSignals ?? {};
+      const scoreDelta =
+        publicCaptureOpportunityFor(b, bTier, bSignals).score -
+        publicCaptureOpportunityFor(a, aTier, aSignals).score;
+      if (scoreDelta !== 0) {
+        return scoreDelta;
+      }
+    }
+    return (
       (a.priority ?? 999) - (b.priority ?? 999) ||
       (stageRank.get(a.stage) ?? 100) - (stageRank.get(b.stage) ?? 100) ||
-      String(a.title).localeCompare(String(b.title)),
-  )
+      String(a.title).localeCompare(String(b.title))
+    );
+  })
   .slice(0, limit ?? rows.length)
   .map((row) => {
     const tier = officialEvidenceTierFor(row);
@@ -193,6 +287,7 @@ const selectedRows = rows
     const currentSignals = row.formalReadinessGate?.currentOutputSignals ?? {};
     const publicCommands = publicCommandChainFor(row);
     const privateCommands = privateCommandChainFor(row);
+    const publicCaptureOpportunity = publicCaptureOpportunityFor(row, tier, currentSignals);
     return {
       slug: row.slug,
       title: row.title,
@@ -225,6 +320,7 @@ const selectedRows = rows
       nextEvidenceNeeded: row.officialOutputReviewNextEvidenceNeeded?.length
         ? row.officialOutputReviewNextEvidenceNeeded
         : row.formalReadinessGate?.requiredEvidenceForPromotion ?? [],
+      publicCaptureOpportunity,
       formalGateMissing: row.formalReadinessGate?.missing ?? [],
       publicCaptureTemplatePath,
       redactionInputPath,
@@ -264,6 +360,7 @@ const summary = {
     limit,
     date: dateStamp,
     source: sourceMode,
+    sort: sortMode,
   },
   totals: {
     selected: selectedRows.length,
@@ -272,6 +369,8 @@ const summary = {
     rowEvidenceReadyRows: rows.filter(rowEvidenceReady).length,
     officialBoundaryModeled: selectedRows.filter((row) => row.officialEvidenceTier === "official-boundary-modeled").length,
     officialMetadataOnly: selectedRows.filter((row) => row.officialEvidenceTier === "official-metadata-only").length,
+    highPublicCaptureOpportunities: selectedRows.filter((row) => row.publicCaptureOpportunity.level === "high").length,
+    mediumPublicCaptureOpportunities: selectedRows.filter((row) => row.publicCaptureOpportunity.level === "medium").length,
     selectedBoundaryModeledFields: selectedRows.reduce(
       (total, row) => total + (row.officialBoundaryModeledFields ?? 0),
       0,
@@ -301,8 +400,11 @@ const renderMarkdown = () => {
     "",
     `- Selected blockers: ${summary.totals.selected}/${summary.totals.availableBlockers}`,
     `- Source mode: \`${sourceMode}\``,
+    `- Sort: \`${sortMode}\``,
     `- Official-boundary modeled: ${summary.totals.officialBoundaryModeled}`,
     `- Metadata-only: ${summary.totals.officialMetadataOnly}`,
+    `- High public-capture opportunities: ${summary.totals.highPublicCaptureOpportunities}`,
+    `- Medium public-capture opportunities: ${summary.totals.mediumPublicCaptureOpportunities}`,
     `- Boundary-modeled fields: ${summary.totals.selectedBoundaryModeledFields}`,
     `- Row-evidence-ready rows in source status: ${summary.totals.rowEvidenceReadyRows}`,
     "",
@@ -335,6 +437,10 @@ const renderMarkdown = () => {
           : "not inspected"
       }`,
       `- Current output signals: formalFields ${row.outputSignals.formalFields}, sampleRows ${row.outputSignals.sampleRows}, resultRows ${row.outputSignals.resultRows}, citationBindings ${row.outputSignals.citationBindings}`,
+      `- Public capture opportunity: ${row.publicCaptureOpportunity.level} (${row.publicCaptureOpportunity.score})`,
+      ...(row.publicCaptureOpportunity.reasons.length > 0
+        ? row.publicCaptureOpportunity.reasons.map((reason) => `  - ${reason}`)
+        : ["  - no current public-capture opportunity signal"]),
       `- Public capture template: \`${row.publicCaptureTemplatePath}\``,
       `- Redaction input: \`${row.redactionInputPath}\``,
       `- Sanitized draft: \`${row.sanitizedDraftPath}\``,
@@ -371,6 +477,7 @@ const renderCompact = () =>
         redactionInputPath: row.redactionInputPath,
         sanitizedDraftPath: row.sanitizedDraftPath,
         committedCapturePath: row.committedCapturePath,
+        publicCaptureOpportunity: row.publicCaptureOpportunity,
         publicTemplateCommand: row.publicCommands[0] ?? null,
         templateAuditCommand: row.publicCommands.find((command) => command.includes("scaffold:template-audit")) ?? null,
         privateRedactionCommand: row.privateCommands[0] ?? null,

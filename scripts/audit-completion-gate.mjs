@@ -152,6 +152,21 @@ const runResults = [
   runJsonCommand("scaffold:evidence-audit", ["npm", "run", "--silent", "scaffold:evidence-audit"]),
   runJsonCommand("scaffold:capture-plan", ["npm", "run", "--silent", "scaffold:capture-plan", "--", "--format", "compact"]),
   runJsonCommand("scaffold:next-actions", ["npm", "run", "--silent", "scaffold:next-actions", "--", "--format", "compact"]),
+  runJsonCommand("scaffold:capture-session:public", [
+    "npm",
+    "run",
+    "--silent",
+    "scaffold:capture-session",
+    "--",
+    "--source",
+    "public",
+    "--limit",
+    "5",
+    "--format",
+    "compact",
+    "--sort",
+    "public-opportunity",
+  ]),
   runJsonCommand("scaffold:validate-captures", ["npm", "run", "--silent", "scaffold:validate-captures"]),
   runJsonCommand("scaffold:privacy-canary", ["npm", "run", "--silent", "scaffold:privacy-canary"]),
   runJsonCommand("objective:audit", ["npm", "run", "--silent", "objective:audit", "--", "--format", "compact"]),
@@ -178,6 +193,7 @@ const catalog = runsByName.get("catalog:assert")?.parsed;
 const scaffold = runsByName.get("scaffold:evidence-audit")?.parsed;
 const capturePlan = runsByName.get("scaffold:capture-plan")?.parsed;
 const nextActions = runsByName.get("scaffold:next-actions")?.parsed;
+const publicCaptureSession = runsByName.get("scaffold:capture-session:public")?.parsed;
 const captureValidation = runsByName.get("scaffold:validate-captures")?.parsed;
 const privacyCanary = runsByName.get("scaffold:privacy-canary")?.parsed;
 const objectiveAudit = runsByName.get("objective:audit")?.parsed;
@@ -622,6 +638,52 @@ const checks = [
             publicCaptureSessionCommand: row.publicCaptureSessionCommand,
             nextCommand: row.nextCommand,
             validateCommittedCaptureCommand: row.validateCommittedCaptureCommand,
+          })),
+        }
+      : null,
+  },
+  {
+    key: "official_output_public_capture_session",
+    ok:
+      runsByName.get("scaffold:capture-session:public")?.exitCode === 0 &&
+      publicCaptureSession?.schemaVersion === "soma-reports.official-output-capture-session.v1" &&
+      publicCaptureSession?.filters?.source === "public" &&
+      publicCaptureSession?.filters?.sort === "public-opportunity" &&
+      publicCaptureSession?.totals?.availableBlockers === (scaffold?.scaffoldPackages ?? blockerLedger.decisions?.length ?? 0) &&
+      Array.isArray(publicCaptureSession?.rows) &&
+      publicCaptureSession.rows.length === Math.min(5, scaffold?.scaffoldPackages ?? blockerLedger.decisions?.length ?? 0) &&
+      publicCaptureSession.rows.every(
+        (row) =>
+          row.publicTemplateCommand?.includes("scaffold:capture-template") &&
+          row.publicCaptureOpportunity?.boundary?.includes("rowEvidenceReady") &&
+          Array.isArray(row.publicCaptureOpportunity?.safePublicSourceTypes) &&
+          row.publicCaptureOpportunity.safePublicSourceTypes.length > 0,
+      ) &&
+      publicCaptureSession.rows.every((row, index, rows) => {
+        if (index === 0) {
+          return true;
+        }
+        return (
+          (rows[index - 1].publicCaptureOpportunity?.score ?? -1) >=
+          (row.publicCaptureOpportunity?.score ?? -1)
+        );
+      }),
+    expected:
+      "public capture-session compact output ranks the first blocker batch with safe public source guidance and no readiness promotion",
+    actual: publicCaptureSession
+      ? {
+          totals: publicCaptureSession.totals,
+          filters: publicCaptureSession.filters,
+          firstTargets: publicCaptureSession.rows?.slice(0, 5).map((row) => ({
+            slug: row.slug,
+            priority: row.priority,
+            opportunity: row.publicCaptureOpportunity
+              ? {
+                  level: row.publicCaptureOpportunity.level,
+                  score: row.publicCaptureOpportunity.score,
+                }
+              : null,
+            publicTemplateCommand: row.publicTemplateCommand,
           })),
         }
       : null,
