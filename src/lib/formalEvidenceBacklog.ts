@@ -1,4 +1,5 @@
 import officialOutputCaptureStatus from "../../reference/catalog/official-output-capture-status.json";
+import publicReportEndpointProbe from "../../reference/catalog/public-report-endpoint-probe-2026-06-25.json";
 import samplePromotionRejections from "../../reference/catalog/sample-promotion-rejections-2026-06-23.json";
 
 export type FormalEvidenceDecision = {
@@ -41,6 +42,7 @@ export type FormalEvidenceTarget = FormalEvidenceDecision & {
   describedOutputFieldBoundary: string | null;
   captureStatus: OfficialOutputCaptureStatusRow | null;
   liveDetailInspection: LiveDetailInspection | null;
+  publicEndpointProbe: PublicReportEndpointProbeRow | null;
   actionClass: OfficialOutputActionClass;
   completedOutputRequired: boolean;
 };
@@ -62,6 +64,7 @@ export type FormalEvidenceBacklogSummary = {
   capturedAt: string;
   scaffoldPackages: number;
   officialOutputCaptureStatus: OfficialOutputCaptureStatusSummary;
+  officialOutputPublicEndpointProbe: PublicReportEndpointProbeSummary;
   promotionStandard: string[];
   catalogSnapshot: {
     authenticatedMarketplacePositions: number;
@@ -191,6 +194,106 @@ export type PublicBundleEvidence = {
   evidencePresent: string[];
   evidenceMissingForPromotion: string[];
   promotionBoundary: Record<string, unknown> | null;
+};
+
+export type PublicReportEndpointTextSummary = {
+  hash: string;
+  length: number;
+  outputLanguageSignals: string[];
+  formalFieldTerms: string[];
+};
+
+export type PublicReportEndpointProbeRow = {
+  slug: string;
+  title: string;
+  priority: number | null;
+  stage?: OfficialOutputCaptureStage | null;
+  officialEvidenceTier?: OfficialEvidenceTier | null;
+  endpointUrl: string;
+  httpStatus?: number;
+  ok: boolean;
+  contentType?: string | null;
+  bytes?: number;
+  parsed?: boolean;
+  endpointTitle?: string;
+  endpointUri?: string;
+  endpointIdentity?: {
+    id: string | number | boolean | null;
+    nid: string | number | boolean | null;
+    type: string | number | boolean | null;
+    category: string | number | boolean | null;
+    publisher: string | number | boolean | null;
+    productId: string | number | boolean | null;
+  } | null;
+  appId?: string | null;
+  appMetadata?: {
+    appid: string | number | boolean | null;
+    label: string | number | boolean | null;
+    backend: string | number | boolean | null;
+    backendApiAppId: string | number | boolean | null;
+  } | null;
+  productData?: {
+    productId: string | number | boolean | null;
+    sku: string | number | boolean | null;
+    type: string | number | boolean | null;
+    fieldAppTargets: Array<{
+      targetId: string | number | boolean | null;
+      targetRevisionId: string | number | boolean | null;
+    }>;
+  } | null;
+  price?: string;
+  reportFile?: string;
+  exactPackageOutputSignals?: {
+    reportFile: boolean;
+    nonEmptyOutputKeySignals: Array<Record<string, unknown>>;
+    bodyOutputLanguageSignals: string[];
+    summaryOutputLanguageSignals: string[];
+    infoTabOutputLanguageSignals: string[];
+  };
+  body?: PublicReportEndpointTextSummary | null;
+  summary?: PublicReportEndpointTextSummary | null;
+  infoTabs?: Array<{
+    label: string;
+    content: PublicReportEndpointTextSummary | null;
+  }>;
+  formalFieldTerms?: string[];
+  relatedReportFiles?: Array<{
+    title: string;
+    uri: string;
+    reportFile: string;
+    boundary: string;
+  }>;
+  promotionBoundary?: string;
+};
+
+export type PublicReportEndpointProbeSummary = {
+  schemaVersion: string;
+  generatedAt: string;
+  statusPath: string;
+  endpointBase: string;
+  filters: {
+    report: string | null;
+    timeoutMs: number;
+  };
+  totals: {
+    targets: number;
+    fetched: number;
+    ok: number;
+    failed: number;
+    unavailable: number;
+    parsed: number;
+    exactReportFiles: number;
+    exactOutputKeySignalTargets: number;
+    relatedReportFileTargets: number;
+    formalFieldSignalTargets: number;
+    infoTabTargets: number;
+  };
+  exactReportFileRows: Array<Record<string, unknown>>;
+  exactOutputKeySignalRows: Array<Record<string, unknown>>;
+  relatedReportFileRows: Array<Record<string, unknown>>;
+  formalFieldSignalRows: Array<Record<string, unknown>>;
+  rows: PublicReportEndpointProbeRow[];
+  privacyBoundary: string;
 };
 
 export type OfficialOutputCaptureStatusRow = {
@@ -391,6 +494,10 @@ const officialOutputCaptureRows = officialOutputCaptureStatus.rows as OfficialOu
 const officialOutputCaptureStatusBySlug = new Map(
   officialOutputCaptureRows.map((row) => [row.slug, row] as const),
 );
+const publicEndpointProbe = publicReportEndpointProbe as PublicReportEndpointProbeSummary;
+const publicEndpointProbeRowsBySlug = new Map(
+  publicEndpointProbe.rows.map((row) => [row.slug, row] as const),
+);
 
 export const officialOutputCaptureCaveats = [
   "Synthetic fixture result rows are local validation scaffolds, not official Sequencing.com sample, result, report-file, or export evidence.",
@@ -560,6 +667,25 @@ export const officialEvidencePacketFor = (target: FormalEvidenceTarget | null | 
           evidenceUse: row.publicBundleEvidence.evidenceUse,
           evidencePresent: row.publicBundleEvidence.evidencePresent,
           evidenceMissingForPromotion: row.publicBundleEvidence.evidenceMissingForPromotion,
+        }
+      : null,
+    publicEndpointProbe: target.publicEndpointProbe
+      ? {
+          endpointUrl: target.publicEndpointProbe.endpointUrl,
+          httpStatus: target.publicEndpointProbe.httpStatus ?? null,
+          parsed: target.publicEndpointProbe.parsed ?? false,
+          endpointTitle: target.publicEndpointProbe.endpointTitle ?? null,
+          endpointUri: target.publicEndpointProbe.endpointUri ?? null,
+          appId: target.publicEndpointProbe.appId ?? null,
+          appMetadata: target.publicEndpointProbe.appMetadata ?? null,
+          productData: target.publicEndpointProbe.productData ?? null,
+          reportFilePresent: Boolean(target.publicEndpointProbe.reportFile),
+          exactOutputKeySignals:
+            target.publicEndpointProbe.exactPackageOutputSignals?.nonEmptyOutputKeySignals.length ?? 0,
+          infoTabs: target.publicEndpointProbe.infoTabs?.map((tab) => tab.label) ?? [],
+          formalFieldTerms: target.publicEndpointProbe.formalFieldTerms ?? [],
+          relatedReportFiles: target.publicEndpointProbe.relatedReportFiles ?? [],
+          promotionBoundary: target.publicEndpointProbe.promotionBoundary ?? null,
         }
       : null,
     liveDetailInspection: target.liveDetailInspection ?? row?.liveDetailInspection ?? null,
@@ -787,6 +913,7 @@ const toFormalEvidenceTarget = (
     describedOutputFieldBoundary: describedOutputFieldHint?.boundary ?? null,
     captureStatus,
     liveDetailInspection: captureStatus?.liveDetailInspection ?? null,
+    publicEndpointProbe: publicEndpointProbeRowsBySlug.get(decision.slug) ?? null,
     actionClass,
     completedOutputRequired: actionClass.startsWith("completed-output-required"),
   };
@@ -836,6 +963,20 @@ export const formalEvidenceBacklogSummary: FormalEvidenceBacklogSummary = {
     nonTargetOfficialOutputCaptures: officialOutputCaptureStatus.nonTargetOfficialOutputCaptures ?? [],
     commands: officialOutputCaptureStatus.commands,
     privacyBoundary: officialOutputCaptureStatus.privacyBoundary,
+  },
+  officialOutputPublicEndpointProbe: {
+    schemaVersion: publicEndpointProbe.schemaVersion,
+    generatedAt: publicEndpointProbe.generatedAt,
+    statusPath: publicEndpointProbe.statusPath,
+    endpointBase: publicEndpointProbe.endpointBase,
+    filters: publicEndpointProbe.filters,
+    totals: publicEndpointProbe.totals,
+    exactReportFileRows: publicEndpointProbe.exactReportFileRows,
+    exactOutputKeySignalRows: publicEndpointProbe.exactOutputKeySignalRows,
+    relatedReportFileRows: publicEndpointProbe.relatedReportFileRows,
+    formalFieldSignalRows: publicEndpointProbe.formalFieldSignalRows,
+    rows: publicEndpointProbe.rows,
+    privacyBoundary: publicEndpointProbe.privacyBoundary,
   },
   promotionStandard: samplePromotionRejections.promotionStandard,
   catalogSnapshot: samplePromotionRejections.catalogSnapshot,

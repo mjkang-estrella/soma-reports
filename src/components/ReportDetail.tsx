@@ -507,6 +507,7 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
     formalEvidenceTarget?.liveDetailInspection ?? officialOutputCaptureStatus?.liveDetailInspection ?? null;
   const officialOutputLatestRouteProbe = officialOutputCaptureStatus?.latestRouteProbe ?? null;
   const officialOutputPublicBundleEvidence = officialOutputCaptureStatus?.publicBundleEvidence ?? null;
+  const officialOutputPublicEndpointProbe = formalEvidenceTarget?.publicEndpointProbe ?? null;
   const officialOutputPublicCaptureOpportunity =
     officialOutputCaptureStatus?.publicCapturePriorityOpportunitySummary ?? null;
   const officialOutputRedactionInputPath =
@@ -1523,6 +1524,26 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                   <strong>{officialOutputPublicBundleEvidence?.artifactPath ?? "none"}</strong>
                 </div>
                 <div>
+                  <span>Public endpoint probe</span>
+                  <strong>
+                    {officialOutputPublicEndpointProbe
+                      ? `HTTP ${officialOutputPublicEndpointProbe.httpStatus ?? "n/a"} / ${
+                          officialOutputPublicEndpointProbe.parsed ? "parsed" : "not parsed"
+                        }`
+                      : "none"}
+                  </strong>
+                </div>
+                <div>
+                  <span>Public endpoint output</span>
+                  <strong>
+                    {officialOutputPublicEndpointProbe
+                      ? `${officialOutputPublicEndpointProbe.reportFile ? 1 : 0} files / ${
+                          officialOutputPublicEndpointProbe.exactPackageOutputSignals?.nonEmptyOutputKeySignals.length ?? 0
+                        } output keys`
+                      : "none"}
+                  </strong>
+                </div>
+                <div>
                   <span>Sample rows</span>
                   <strong>{formalEvidenceTarget.sampleRows}</strong>
                 </div>
@@ -1649,6 +1670,48 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                     <p>
                       {formatBoundaryReason(officialOutputPublicBundleEvidence.promotionBoundary) ??
                         "Public bundle evidence cannot replace official sample rows, output rows, or citation bindings."}
+                    </p>
+                  </div>
+                ) : null}
+                {officialOutputPublicEndpointProbe ? (
+                  <div>
+                    <strong>Public report endpoint probe</strong>
+                    <p>
+                      {officialOutputPublicEndpointProbe.endpointTitle || formalEvidenceTarget.title}: HTTP{" "}
+                      {officialOutputPublicEndpointProbe.httpStatus ?? "n/a"}; parsed{" "}
+                      {officialOutputPublicEndpointProbe.parsed ? "yes" : "no"}; app{" "}
+                      {officialOutputPublicEndpointProbe.appId ?? "none"}; product{" "}
+                      {officialOutputPublicEndpointProbe.productData?.productId ?? "none"}.
+                    </p>
+                    <p className="capture-path">{officialOutputPublicEndpointProbe.endpointUrl}</p>
+                    <ul>
+                      <li>
+                        Exact-package reportFile:{" "}
+                        {officialOutputPublicEndpointProbe.reportFile ? "present" : "empty"}
+                      </li>
+                      <li>
+                        Exact output key signals:{" "}
+                        {officialOutputPublicEndpointProbe.exactPackageOutputSignals?.nonEmptyOutputKeySignals.length ?? 0}
+                      </li>
+                      <li>
+                        Info tabs:{" "}
+                        {officialOutputPublicEndpointProbe.infoTabs?.map((tab) => tab.label).join(", ") || "none"}
+                      </li>
+                      <li>
+                        Formal field terms:{" "}
+                        {officialOutputPublicEndpointProbe.formalFieldTerms?.join(", ") || "none"}
+                      </li>
+                      <li>
+                        Product field_app targets:{" "}
+                        {officialOutputPublicEndpointProbe.productData?.fieldAppTargets
+                          .map((target) => target.targetId)
+                          .filter(Boolean)
+                          .join(", ") || "none"}
+                      </li>
+                    </ul>
+                    <p>
+                      {officialOutputPublicEndpointProbe.promotionBoundary ??
+                        "Public endpoint metadata is planning evidence only and does not promote row readiness."}
                     </p>
                   </div>
                 ) : null}

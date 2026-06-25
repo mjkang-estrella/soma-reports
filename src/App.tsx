@@ -372,6 +372,7 @@ export default function App() {
   };
 
   const officialCaptureStatus = formalEvidenceBacklogSummary.officialOutputCaptureStatus;
+  const officialPublicEndpointProbe = formalEvidenceBacklogSummary.officialOutputPublicEndpointProbe;
   const officialCaptureCatalogSnapshot =
     officialCaptureStatus.catalogSnapshot ?? formalEvidenceBacklogSummary.catalogSnapshot;
   const auditedMarketplacePositionTotal =
@@ -1085,6 +1086,11 @@ export default function App() {
                   {officialCaptureCatalogSnapshot.authenticatedMarketplacePositions} authenticated marketplace positions.
                   Evidence tiers: {officialBoundaryModeledTargetCount} official-boundary modeled,{" "}
                   {officialMetadataOnlyTargetCount} metadata-only, {officialCaptureTotals.rowEvidenceReadyTargets} row-ready.
+                  Public endpoint probe: {officialPublicEndpointProbe.totals.fetched}/
+                  {officialPublicEndpointProbe.totals.targets} fetched, {officialPublicEndpointProbe.totals.parsed} parsed,{" "}
+                  {officialPublicEndpointProbe.totals.unavailable} expected unavailable,{" "}
+                  {officialPublicEndpointProbe.totals.exactReportFiles} exact report files,{" "}
+                  {officialPublicEndpointProbe.totals.exactOutputKeySignalTargets} exact output-row signal targets.
                   Export source-specific packets with `npm run scaffold:capture-session -- --source public --format md --out tmp/official-output-capture-session-public.md`,
                   `npm run scaffold:capture-session -- --source private --format md --out tmp/official-output-capture-session-private.md`,
                   or `npm run scaffold:capture-session -- --source both --format md --out tmp/official-output-capture-session.md`.
@@ -1128,6 +1134,7 @@ export default function App() {
 	                  const liveDetailInspection = target.liveDetailInspection ?? captureStatus?.liveDetailInspection ?? null;
 	                  const latestRouteProbe = captureStatus?.latestRouteProbe ?? null;
 	                  const publicBundleEvidence = captureStatus?.publicBundleEvidence ?? null;
+	                  const publicEndpointProbe = target.publicEndpointProbe;
 	                  const publicCaptureOpportunity = captureStatus?.publicCapturePriorityOpportunitySummary ?? null;
 	                  const publicCaptureSessionCommand =
 	                    publicCaptureOpportunity?.publicNextCommand ??
@@ -1216,6 +1223,28 @@ export default function App() {
 	                          </small>
 	                        ) : null}
 	                        {latestRouteProbe?.finalUrl ? <small>probe URL: {latestRouteProbe.finalUrl}</small> : null}
+	                        {publicEndpointProbe ? (
+	                          <small>
+	                            public endpoint: HTTP {publicEndpointProbe.httpStatus ?? "n/a"} /{" "}
+	                            {publicEndpointProbe.parsed ? "parsed" : "not parsed"} / app{" "}
+	                            {publicEndpointProbe.appId ?? "none"}
+	                          </small>
+	                        ) : null}
+	                        {publicEndpointProbe?.productData ? (
+	                          <small>
+	                            product {publicEndpointProbe.productData.productId ?? "none"} / field_app{" "}
+	                            {publicEndpointProbe.productData.fieldAppTargets
+	                              .map((target) => target.targetId)
+	                              .filter(Boolean)
+	                              .join(", ") || "none"}
+	                          </small>
+	                        ) : null}
+	                        {publicEndpointProbe ? (
+	                          <small>
+	                            exact files {publicEndpointProbe.reportFile ? "1" : "0"} / output keys{" "}
+	                            {publicEndpointProbe.exactPackageOutputSignals?.nonEmptyOutputKeySignals.length ?? 0}
+	                          </small>
+	                        ) : null}
 	                      </span>
                       <span>
                         {(captureStatus?.officialCaptures ?? 0).toString()} captured

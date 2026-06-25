@@ -255,7 +255,7 @@ const rows = (plan?.targets ?? []).map((target) => {
   const commitSanitizedCaptureCommand =
     `npm run scaffold:sanitize-output -- --input ${redactionInputPath} --out ${committedCapturePath} --confirm-commit-safe true`;
   const validateDraftCaptureCommand = `npm run scaffold:validate-captures -- --path ${sanitizedDraftArtifactPath}`;
-  const validateCommittedCaptureCommand = `npm run scaffold:validate-captures -- --path ${committedCapturePath}`;
+  const validateExpectedCaptureCommand = `npm run scaffold:validate-captures -- --path ${committedCapturePath}`;
   const captureValidations = target.officialOutputCaptureValidations ?? [];
   const artifactSummaries = captureValidations.map((validation) => ({
     path: validation.path,
@@ -271,6 +271,16 @@ const rows = (plan?.targets ?? []).map((target) => {
     promotionCandidate: Boolean(validation.promotionCandidate),
     outputSignals: validation.outputSignals ?? {},
   }));
+  const validOfficialCapturePaths = captureValidations
+    .filter((validation) => validation.ok)
+    .map((validation) => validation.path);
+  const gitTrackedValidOfficialCapturePaths = captureValidations
+    .filter((validation) => validation.ok && gitTrackedOfficialCapturePaths.has(validation.path))
+    .map((validation) => validation.path);
+  const latestValidCommittedCapturePath =
+    gitTrackedValidOfficialCapturePaths.at(-1) ?? validOfficialCapturePaths.at(-1) ?? null;
+  const validateCommittedCapturePath = latestValidCommittedCapturePath ?? committedCapturePath;
+  const validateCommittedCaptureCommand = `npm run scaffold:validate-captures -- --path ${validateCommittedCapturePath}`;
   const outputSignalTotals = artifactSummaries.reduce(
     (totals, artifact) => {
       const signals = artifact.outputSignals ?? {};
@@ -398,12 +408,10 @@ const rows = (plan?.targets ?? []).map((target) => {
     gitUntrackedOfficialCapturePaths: (target.currentOfficialOutputCaptureArtifacts ?? []).filter(
       (path) => !gitTrackedOfficialCapturePaths.has(path),
     ),
-    validOfficialCapturePaths: captureValidations
-      .filter((validation) => validation.ok)
-      .map((validation) => validation.path),
-    gitTrackedValidOfficialCapturePaths: captureValidations
-      .filter((validation) => validation.ok && gitTrackedOfficialCapturePaths.has(validation.path))
-      .map((validation) => validation.path),
+    validOfficialCapturePaths,
+    gitTrackedValidOfficialCapturePaths,
+    latestValidCommittedCapturePath,
+    validateCommittedCapturePath,
     rowEvidenceReadyCapturePaths: captureValidations
       .filter((validation) => validation.rowEvidenceReady)
       .map((validation) => validation.path),
@@ -459,11 +467,12 @@ const rows = (plan?.targets ?? []).map((target) => {
     sanitizedDraftArtifactPath,
     committedCapturePath,
     validateDraftCaptureCommand,
+    validateExpectedCaptureCommand,
     validateCommittedCaptureCommand,
     promotionPreviewCommittedCommand,
     captureUrl: target.captureUrl,
     expectedSanitizedArtifactPath: committedCapturePath,
-    validationCommandForExpectedCapture: validateCommittedCaptureCommand,
+    validationCommandForExpectedCapture: validateExpectedCaptureCommand,
     captureTemplatePath: target.captureTemplatePath,
     publicCaptureTemplatePath,
     publicCaptureTemplateCommand,
@@ -473,6 +482,21 @@ const rows = (plan?.targets ?? []).map((target) => {
   row.publicCapturePriorityOpportunitySummary = publicCapturePriorityOpportunitySummaryFor(row);
   return row;
 });
+const validateCommittedCaptureCommandPathFailures = rows
+  .map((row) => {
+    const latestTrackedValidPath = asArray(row.gitTrackedValidOfficialCapturePaths).at(-1);
+    if (!latestTrackedValidPath) {
+      return null;
+    }
+    const command = row.validateCommittedCaptureCommand ?? "";
+    return command.includes(latestTrackedValidPath)
+      ? null
+      : `${row.slug}: validateCommittedCaptureCommand must target latest tracked valid capture ${latestTrackedValidPath}`;
+  })
+  .filter(Boolean);
+if (validateCommittedCaptureCommandPathFailures.length > 0) {
+  problems.push(...validateCommittedCaptureCommandPathFailures);
+}
 const targetSlugs = new Set(rows.map((row) => row.slug));
 const capturePromotionReviewFor = (result) =>
   manualPromotionReview.entriesByPath.get(result.path) ??

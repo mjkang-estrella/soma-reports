@@ -237,6 +237,7 @@ const evaluateRenderedPage = `async () => {
       selectedEvidencePacketText.includes(\`"captureUrl": "https://sequencing.com/marketplace/\${selectedCaptureReport}"\`) &&
       selectedEvidencePacketText.includes('"routeProbe"') &&
       selectedEvidencePacketText.includes('"publicBundleEvidence"') &&
+      selectedEvidencePacketText.includes('"publicEndpointProbe"') &&
       selectedEvidencePacketText.includes('"publicCaptureTemplatePath"') &&
       selectedEvidencePacketText.includes('"sanitizedDraftPath"') &&
       selectedEvidencePacketText.includes('"committedCapturePath"'),
@@ -267,6 +268,13 @@ const evaluateRenderedPage = `async () => {
     selectedDetailHasSelectedTemplateAuditCommand: selectedDetailText.includes(
       \`npm run scaffold:template-audit -- --report \${selectedCaptureReport}\`,
     ),
+    selectedDetailShowsPublicEndpointProbe:
+      /Public report endpoint probe/i.test(selectedDetailText) &&
+      selectedDetailText.includes(\`https://sequencing.com/api/sequencing/public/reports/\${selectedCaptureReport}\`),
+    selectedDetailShowsPublicEndpointOutputBoundary:
+      /Exact-package reportFile:\\s+empty/i.test(selectedDetailText) &&
+      /Exact output key signals:\\s+0/i.test(selectedDetailText) &&
+      /rowEvidenceReady validation/i.test(selectedDetailText),
     selectedCaptureTemplateHasPlaceholderStatus:
       selectedCaptureTemplateText.includes('"sourceBindingStatus": "replace-with-exact-direct-or-official"'),
     selectedCaptureTemplateHasConfirmationFields:
@@ -291,6 +299,10 @@ const evaluateRenderedPage = `async () => {
       ),
     containsCombinedCaptureSessionCommand:
       /npm run scaffold:capture-session -- --source both --format md --out tmp\\/official-output-capture-session\\.md/i.test(
+        bodyText,
+      ),
+    containsPublicEndpointProbeSummary:
+      /Public endpoint probe:\\s+21\\/21 fetched,\\s+18 parsed,\\s+3 expected unavailable,\\s+0 exact report files,\\s+0 exact output-row signal targets/i.test(
         bodyText,
       ),
     bodySample: bodyText.slice(0, 1000)
@@ -472,8 +484,10 @@ try {
       /9 official-boundary modeled/i.test(rendered.officialCaptureBoardText) &&
       /12 metadata-only/i.test(rendered.officialCaptureBoardText) &&
       /0 row-ready/i.test(rendered.officialCaptureBoardText) &&
+      /0 exact report files/i.test(rendered.officialCaptureBoardText) &&
+      /0 exact output-row signal targets/i.test(rendered.officialCaptureBoardText) &&
       !/unblocked promotion candidates/i.test(rendered.officialCaptureBoardText),
-    "board uses row-evidence promotable wording, exposes 9/12/0 tier counts, and avoids ambiguous promotion-candidate copy",
+    "board uses row-evidence promotable wording, exposes 9/12/0 tier counts, public endpoint zero-output counts, and avoids ambiguous promotion-candidate copy",
     rendered.officialCaptureBoardText,
   );
   addCheck(
@@ -505,6 +519,20 @@ try {
       selectedReportTitle: rendered.selectedReportTitle,
       selectedDetailHasLiteralReportSlugPlaceholder: rendered.selectedDetailHasLiteralReportSlugPlaceholder,
       selectedDetailHasSelectedTemplateAuditCommand: rendered.selectedDetailHasSelectedTemplateAuditCommand,
+    },
+  );
+  addCheck(
+    checks,
+    "selected_public_endpoint_probe_rendered",
+    rendered.containsPublicEndpointProbeSummary &&
+      rendered.selectedDetailShowsPublicEndpointProbe &&
+      rendered.selectedDetailShowsPublicEndpointOutputBoundary,
+    "official capture board and selected detail render public endpoint probe metadata without promoting report files or output rows",
+    {
+      selectedReport: selectedCaptureReport,
+      containsPublicEndpointProbeSummary: rendered.containsPublicEndpointProbeSummary,
+      selectedDetailShowsPublicEndpointProbe: rendered.selectedDetailShowsPublicEndpointProbe,
+      selectedDetailShowsPublicEndpointOutputBoundary: rendered.selectedDetailShowsPublicEndpointOutputBoundary,
     },
   );
   addCheck(
@@ -627,6 +655,8 @@ try {
       selectedDetailShowsMissingOfficialRows: rendered.selectedDetailShowsMissingOfficialRows,
       selectedDetailHasLiteralReportSlugPlaceholder: rendered.selectedDetailHasLiteralReportSlugPlaceholder,
       selectedDetailHasSelectedTemplateAuditCommand: rendered.selectedDetailHasSelectedTemplateAuditCommand,
+      selectedDetailShowsPublicEndpointProbe: rendered.selectedDetailShowsPublicEndpointProbe,
+      selectedDetailShowsPublicEndpointOutputBoundary: rendered.selectedDetailShowsPublicEndpointOutputBoundary,
       selectedEvidencePacketRendered: rendered.selectedEvidencePacketRendered,
       selectedEvidencePacketHasProvenance: rendered.selectedEvidencePacketHasProvenance,
       selectedEvidencePacketHasPrivacyBoundary: rendered.selectedEvidencePacketHasPrivacyBoundary,
@@ -637,6 +667,7 @@ try {
       containsPublicCaptureSessionCommand: rendered.containsPublicCaptureSessionCommand,
       containsPrivateCaptureSessionCommand: rendered.containsPrivateCaptureSessionCommand,
       containsCombinedCaptureSessionCommand: rendered.containsCombinedCaptureSessionCommand,
+      containsPublicEndpointProbeSummary: rendered.containsPublicEndpointProbeSummary,
       localRunReadyCards: rendered.localRunReadyCards,
       localRunScaffoldCards: rendered.localRunScaffoldCards,
       firstPositionText: rendered.firstPositionText,
