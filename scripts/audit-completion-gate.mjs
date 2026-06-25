@@ -195,6 +195,15 @@ const runResults = [
     "--allow-empty-captures",
     "true",
   ]),
+  runJsonCommand("scaffold:blueprint-audit", [
+    "npm",
+    "run",
+    "--silent",
+    "scaffold:blueprint-audit",
+    "--",
+    "--format",
+    "compact",
+  ]),
   runJsonCommand("scaffold:next-actions", ["npm", "run", "--silent", "scaffold:next-actions", "--", "--format", "compact"]),
   runJsonCommand("scaffold:capture-session:public", [
     "npm",
@@ -237,6 +246,7 @@ const catalog = runsByName.get("catalog:assert")?.parsed;
 const scaffold = runsByName.get("scaffold:evidence-audit")?.parsed;
 const capturePlan = runsByName.get("scaffold:capture-plan")?.parsed;
 const captureStatus = runsByName.get("scaffold:capture-status")?.parsed;
+const blueprintAudit = runsByName.get("scaffold:blueprint-audit")?.parsed;
 const nextActions = runsByName.get("scaffold:next-actions")?.parsed;
 const publicCaptureSession = runsByName.get("scaffold:capture-session:public")?.parsed;
 const captureValidation = runsByName.get("scaffold:validate-captures")?.parsed;
@@ -747,6 +757,29 @@ const checks = [
           officialEvidenceTierCounts: captureStatus.officialEvidenceTierCounts,
           officialBoundaryNonPromotionAudit: captureStatus.officialBoundaryNonPromotionAudit,
           problems: captureStatus.problems?.slice(0, 10) ?? [],
+        }
+      : null,
+  },
+  {
+    key: "formal_output_blueprint_blocker_coverage",
+    ok:
+      runsByName.get("scaffold:blueprint-audit")?.exitCode === 0 &&
+      blueprintAudit?.ok === true &&
+      blueprintAudit?.totals?.blockers === 21 &&
+      blueprintAudit?.totals?.artifacts === 21 &&
+      blueprintAudit?.totals?.missingBlueprints === 0 &&
+      blueprintAudit?.totals?.invalidBlueprints === 0 &&
+      blueprintAudit?.totals?.promotingBlueprints === 0 &&
+      blueprintAudit?.totals?.missingNonPromotionBoundaries === 0 &&
+      blueprintAudit?.totals?.rowEvidenceReadyBlockers === 0 &&
+      blueprintAudit?.catalogSnapshot?.authenticatedMarketplacePositions === expected.marketplacePositions,
+    expected:
+      "all 21 formal blockers have complete non-promoting formalOutputBlueprint metadata across sections and fields inside the 164-position marketplace snapshot",
+    actual: blueprintAudit
+      ? {
+          catalogSnapshot: blueprintAudit.catalogSnapshot,
+          totals: blueprintAudit.totals,
+          problemSamples: blueprintAudit.problemSamples ?? blueprintAudit.problems?.slice(0, 10) ?? [],
         }
       : null,
   },

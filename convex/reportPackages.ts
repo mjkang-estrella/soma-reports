@@ -257,7 +257,7 @@ const withFormalOutputBlueprint = <T extends ReportPackageSeed["outputSections"]
       expectedFields: section.expectedFields.map((field) => ({
         ...field,
         formalOutputBlueprint: field.formalOutputBlueprint ?? blueprint,
-        officialFieldPath: field.officialFieldPath ?? field.fieldPath,
+        officialFieldPath: field.officialFieldPath ?? field.fieldPath ?? `${blueprint.sectionKey}.${slugKey(field.key)}`,
         formalDisplayRole: field.formalDisplayRole ?? formalDisplayRoleFor(field),
         availability: field.availability ?? (field.allowsUnavailable ? "unavailable" : blueprint.availability),
         unavailableReason:
@@ -267,6 +267,47 @@ const withFormalOutputBlueprint = <T extends ReportPackageSeed["outputSections"]
       })),
     };
   }) as T;
+
+const currentFormalOutputBlueprintBlockerSlugs = new Set([
+  "comprehensive-health-screen-wgs-bundle",
+  "connective-tissue-disorders-and-eds",
+  "convert-rsids-coordinates",
+  "ehlers-danlos-syndrome",
+  "eve-premium-dna-genome-data-bioinformatics-pipelines",
+  "expedited-advanced-health-screen-wgs-bundle",
+  "genome-explorer-dna-data-search",
+  "genome-short-read-mapper",
+  "hearing-auditory-genetics",
+  "imputation-analysis",
+  "marfan-syndrome",
+  "mitchell-syndrome",
+  "oral",
+  "pediatric-health",
+  "pheochromocytoma-and-paraganglioma",
+  "promethease",
+  "sequencing-depth-and-coverage",
+  "ultra-rapid-professional-health-screen-wgs-bundle",
+  "variant-discovery-bioinformatics-secondary-analysis",
+  "variant-effect-predictor",
+  "whole-genome-sequencing-30x",
+]);
+
+const withCurrentFormalOutputBlueprintBlockerCoverage = (report: ReportPackageSeed): ReportPackageSeed => {
+  if (!currentFormalOutputBlueprintBlockerSlugs.has(report.slug)) {
+    return report;
+  }
+
+  return {
+    ...report,
+    outputSections: withFormalOutputBlueprint(report.outputSections, {
+      sectionKeyPrefix: report.slug,
+      evidenceKind: "local_scaffold",
+      availability: "not_captured",
+      nonPromotionBoundary:
+        "Current formal-blocker blueprint preserves expected output layout only; it does not promote readiness without official non-private rows and source-backed citation bindings.",
+    }),
+  };
+};
 
 const sourceUrls = {
   marketplace: "https://sequencing.com/marketplace",
@@ -50438,5 +50479,6 @@ export const seedReportPackages: ReportPackageSeed[] = [
     .filter((entry) => entry.slug !== wellnessGeneticGuide.slug)
     .map(makeBacklogReport)
     .map(enhanceCatalogReport)
-    .map(applyAuthenticatedDetailEvidence),
+    .map(applyAuthenticatedDetailEvidence)
+    .map(withCurrentFormalOutputBlueprintBlockerCoverage),
 ];

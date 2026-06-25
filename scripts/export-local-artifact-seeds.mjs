@@ -103,12 +103,39 @@ const withRequiredAppendixOutputFields = (sections) => {
           fieldPath: requiredField.fieldPath,
           citationRequired: field.citationRequired ?? requiredField.citationRequired,
           allowsUnavailable: field.allowsUnavailable ?? requiredField.allowsUnavailable,
+          formalOutputBlueprint: field.formalOutputBlueprint ?? section.formalOutputBlueprint,
+          officialFieldPath: field.officialFieldPath ?? requiredField.fieldPath,
+          formalDisplayRole: field.formalDisplayRole ?? "appendix_disclosure",
+          availability: field.availability ?? "unavailable",
+          unavailableReason:
+            field.unavailableReason ??
+            "Official Sequencing.com values are not captured for this appendix field; emit unavailable or missing-evidence language instead of inventing rows.",
         };
       });
 
+      const withSectionBlueprint = (field) => {
+        if (!section.formalOutputBlueprint) {
+          return field;
+        }
+
+        return {
+          ...field,
+          formalOutputBlueprint: field.formalOutputBlueprint ?? section.formalOutputBlueprint,
+          officialFieldPath: field.officialFieldPath ?? field.fieldPath,
+          formalDisplayRole: field.formalDisplayRole ?? "appendix_disclosure",
+          availability: field.availability ?? "unavailable",
+          unavailableReason:
+            field.unavailableReason ??
+            "Official Sequencing.com values are not captured for this appendix field; emit unavailable or missing-evidence language instead of inventing rows.",
+        };
+      };
+
       return {
         ...section,
-        expectedFields: [...expectedFields, ...missingFields.filter((field) => !existingKeys.has(field.key))],
+        expectedFields: [
+          ...expectedFields,
+          ...missingFields.filter((field) => !existingKeys.has(field.key)).map(withSectionBlueprint),
+        ],
       };
     });
   }

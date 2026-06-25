@@ -22,6 +22,7 @@
     "scaffold:template-audit": "node scripts/audit-official-output-capture-templates.mjs",
     "scaffold:capture-status": "node scripts/summarize-official-output-capture-status.mjs",
     "scaffold:capture-status:snapshot": "node scripts/summarize-official-output-capture-status.mjs --allow-empty-captures true --out reference/catalog/official-output-capture-status.json",
+    "scaffold:blueprint-audit": "node scripts/audit-formal-output-blueprint-coverage.mjs",
     "scaffold:next-actions": "node scripts/export-official-output-next-actions.mjs",
     "scaffold:capture-session": "node scripts/export-official-output-capture-session.mjs",
     "scaffold:public-endpoint-probe": "node scripts/probe-public-report-endpoints.mjs",
