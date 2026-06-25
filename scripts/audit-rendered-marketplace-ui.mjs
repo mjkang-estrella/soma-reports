@@ -267,6 +267,11 @@ const evaluateRenderedPage = `async () => {
       /Source coverage/i.test(selectedOfficialBlockerSummaryText) &&
       /positions|no authenticated position|source coverage not classified/i.test(selectedOfficialBlockerSummaryText),
     selectedOfficialBlockerSummaryShowsRowReadyZero: /Row-ready count\\s+0/i.test(selectedOfficialBlockerSummaryText),
+    selectedOfficialBlockerSummaryShowsPackageSpecificEvidence:
+      /Package-specific evidence/i.test(selectedOfficialBlockerSummaryText) &&
+      /Official generated depth\\/coverage sample table|Formal depth\\/coverage graph or table fields/i.test(
+        selectedOfficialBlockerSummaryText,
+      ),
     selectedOfficialBlockerSummaryShowsNonPromotionBoundary:
       /Does not promote sample-backed formal readiness, formal parity, sample rows, result rows, citation bindings, or formal blocker removal/i.test(
         selectedOfficialBlockerSummaryText,
@@ -641,8 +646,9 @@ try {
       rendered.selectedOfficialBlockerSummaryShowsCaptureStatus &&
       rendered.selectedOfficialBlockerSummaryShowsSourceCoverage &&
       rendered.selectedOfficialBlockerSummaryShowsRowReadyZero &&
+      rendered.selectedOfficialBlockerSummaryShowsPackageSpecificEvidence &&
       rendered.selectedOfficialBlockerSummaryShowsNonPromotionBoundary,
-    "selected report essentials show compact official-output blocker summary with blueprint coverage, status, source coverage, row-ready 0, and non-promotion boundary",
+    "selected report essentials show compact official-output blocker summary with blueprint coverage, status, source coverage, row-ready 0, package-specific evidence, and non-promotion boundary",
     {
       selectedReportTitle: rendered.selectedReportTitle,
       selectedOfficialBlockerSummaryRendered: rendered.selectedOfficialBlockerSummaryRendered,
@@ -651,6 +657,8 @@ try {
       selectedOfficialBlockerSummaryShowsCaptureStatus: rendered.selectedOfficialBlockerSummaryShowsCaptureStatus,
       selectedOfficialBlockerSummaryShowsSourceCoverage: rendered.selectedOfficialBlockerSummaryShowsSourceCoverage,
       selectedOfficialBlockerSummaryShowsRowReadyZero: rendered.selectedOfficialBlockerSummaryShowsRowReadyZero,
+      selectedOfficialBlockerSummaryShowsPackageSpecificEvidence:
+        rendered.selectedOfficialBlockerSummaryShowsPackageSpecificEvidence,
       selectedOfficialBlockerSummaryShowsNonPromotionBoundary:
         rendered.selectedOfficialBlockerSummaryShowsNonPromotionBoundary,
       selectedOfficialBlockerSummaryText: rendered.selectedOfficialBlockerSummaryText,
@@ -846,6 +854,8 @@ try {
       selectedOfficialBlockerSummaryShowsCaptureStatus: rendered.selectedOfficialBlockerSummaryShowsCaptureStatus,
       selectedOfficialBlockerSummaryShowsSourceCoverage: rendered.selectedOfficialBlockerSummaryShowsSourceCoverage,
       selectedOfficialBlockerSummaryShowsRowReadyZero: rendered.selectedOfficialBlockerSummaryShowsRowReadyZero,
+      selectedOfficialBlockerSummaryShowsPackageSpecificEvidence:
+        rendered.selectedOfficialBlockerSummaryShowsPackageSpecificEvidence,
       selectedOfficialBlockerSummaryShowsNonPromotionBoundary:
         rendered.selectedOfficialBlockerSummaryShowsNonPromotionBoundary,
       selectedDetailShowsFormalBlueprint: rendered.selectedDetailShowsFormalBlueprint,

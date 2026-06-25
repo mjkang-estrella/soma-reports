@@ -535,6 +535,8 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
     formalEvidenceTarget?.sourceCoverage ?? officialOutputCaptureStatus?.sourceCoverage ?? null;
   const officialOutputPublicCaptureOpportunity =
     officialOutputCaptureStatus?.publicCapturePriorityOpportunitySummary ?? null;
+  const officialOutputPackageSpecificMissingEvidence =
+    officialOutputCaptureStatus?.packageSpecificMissingEvidence ?? [];
   const formalBlueprintSectionCount = report.outputSections.filter((section) => section.formalOutputBlueprint).length;
   const expectedOutputFieldCount = report.outputSections.reduce(
     (total, section) => total + section.expectedFields.length,
@@ -1247,6 +1249,18 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                 <div>
                   <strong>Row-ready count</strong>
                   <p>{officialOutputCaptureStatus?.rowEvidenceReadyCaptures ?? 0}</p>
+                </div>
+                <div>
+                  <strong>Package-specific evidence</strong>
+                  <p>
+                    {officialOutputPackageSpecificMissingEvidence.length > 0
+                      ? `${officialOutputPackageSpecificMissingEvidence.slice(0, 2).join("; ")}${
+                          officialOutputPackageSpecificMissingEvidence.length > 2
+                            ? `; +${officialOutputPackageSpecificMissingEvidence.length - 2} more`
+                            : ""
+                        }`
+                      : "Official row-level evidence still needs classification."}
+                  </p>
                 </div>
                 <div>
                   <strong>Non-promotion boundary</strong>

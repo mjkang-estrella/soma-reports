@@ -767,18 +767,51 @@ const checks = [
       blueprintAudit?.ok === true &&
       blueprintAudit?.totals?.blockers === 21 &&
       blueprintAudit?.totals?.artifacts === 21 &&
+      blueprintAudit?.totals?.sectionBlueprints === blueprintAudit?.totals?.sections &&
+      blueprintAudit?.totals?.fieldBlueprints === blueprintAudit?.totals?.fields &&
       blueprintAudit?.totals?.missingBlueprints === 0 &&
       blueprintAudit?.totals?.invalidBlueprints === 0 &&
       blueprintAudit?.totals?.promotingBlueprints === 0 &&
       blueprintAudit?.totals?.missingNonPromotionBoundaries === 0 &&
+      blueprintAudit?.totals?.rowsWithPackageSpecificEvidence === 21 &&
+      blueprintAudit?.totals?.rowsWithPublicNextCommand === 21 &&
       blueprintAudit?.totals?.rowEvidenceReadyBlockers === 0 &&
+      Array.isArray(blueprintAudit?.fieldGapRows) &&
+      blueprintAudit.fieldGapRows.length === 21 &&
+      blueprintAudit.fieldGapRows.every(
+        (row) =>
+          row.sections > 0 &&
+          row.sectionBlueprints === row.sections &&
+          row.fields > 0 &&
+          row.fieldBlueprints === row.fields &&
+          row.requiredFields === row.fields &&
+          row.rowEvidenceReadyCaptures === 0 &&
+          row.rowEvidencePromotionReadyCaptures === 0 &&
+          Array.isArray(row.requiredEvidenceForPromotion) &&
+          row.requiredEvidenceForPromotion.length > 0 &&
+          Array.isArray(row.packageSpecificMissingEvidence) &&
+          row.packageSpecificMissingEvidence.length >= row.requiredEvidenceForPromotion.length &&
+          String(row.nextPublicCommand ?? "").includes("scaffold:capture-session -- --source public") &&
+          String(row.outputFieldGapBoundary ?? "").includes("non-promoting output-format guidance"),
+      ) &&
       blueprintAudit?.catalogSnapshot?.authenticatedMarketplacePositions === expected.marketplacePositions,
     expected:
-      "all 21 formal blockers have complete non-promoting formalOutputBlueprint metadata across sections and fields inside the 164-position marketplace snapshot",
+      "all 21 formal blockers have complete non-promoting formalOutputBlueprint metadata, field-gap rows, package-specific evidence gaps, and public-safe capture commands inside the 164-position marketplace snapshot",
     actual: blueprintAudit
       ? {
           catalogSnapshot: blueprintAudit.catalogSnapshot,
           totals: blueprintAudit.totals,
+          fieldGapRows: blueprintAudit.fieldGapRows?.slice(0, 5).map((row) => ({
+            slug: row.slug,
+            sections: row.sections,
+            sectionBlueprints: row.sectionBlueprints,
+            fields: row.fields,
+            fieldBlueprints: row.fieldBlueprints,
+            officialEvidenceTier: row.officialEvidenceTier,
+            sourceCoverageClass: row.sourceCoverageClass,
+            nextPublicCommand: row.nextPublicCommand,
+            packageSpecificMissingEvidence: row.packageSpecificMissingEvidence?.slice(0, 5) ?? [],
+          })),
           problemSamples: blueprintAudit.problemSamples ?? blueprintAudit.problems?.slice(0, 10) ?? [],
         }
       : null,

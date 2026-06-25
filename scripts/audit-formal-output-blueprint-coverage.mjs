@@ -24,6 +24,12 @@ const parseArgs = () => {
 const readJson = (path) => JSON.parse(readFileSync(path, "utf8"));
 const unique = (values) => [...new Set(values.filter((value) => typeof value === "string" && value.length > 0))];
 const sameSet = (left, right) => left.length === right.length && left.every((value) => right.includes(value));
+const increment = (counts, key) => {
+  if (typeof key !== "string" || key.trim().length === 0) {
+    return;
+  }
+  counts[key] = (counts[key] ?? 0) + 1;
+};
 
 const args = parseArgs();
 const format = args.get("--format") ?? "json";
@@ -76,6 +82,11 @@ if (duplicateSeedSlugs.length > 0) {
   problems.push(`Seed artifacts have duplicate slugs: ${unique(duplicateSeedSlugs).sort().join(", ")}`);
 }
 
+const captureStatus = existsSync(captureStatusPath) ? readJson(captureStatusPath) : null;
+const captureRows = Array.isArray(captureStatus?.rows) ? captureStatus.rows : [];
+const captureRowsBySlug = new Map(captureRows.map((row) => [row.slug, row]));
+const captureStatusSlugs = unique(captureRows.map((row) => row.slug)).sort();
+
 const validateBlueprint = (blueprint, path, row) => {
   if (!blueprint || typeof blueprint !== "object") {
     row.missingBlueprints.push(path);
@@ -109,23 +120,54 @@ const validateBlueprint = (blueprint, path, row) => {
 
 const rows = blockerSlugs.map((slug) => {
   const artifact = artifactsBySlug.get(slug);
+  const captureRow = captureRowsBySlug.get(slug) ?? null;
   const row = {
     slug,
     title: decisions.find((decision) => decision.slug === slug)?.title ?? slug,
     artifactPresent: Boolean(artifact),
+    captureStatusPresent: Boolean(captureRow),
+    officialEvidenceTier: captureRow?.officialEvidenceTier ?? null,
+    sourceCoverageClass: captureRow?.sourceCoverage?.class ?? null,
+    authenticatedPositionNumbers: captureRow?.sourceCoverage?.authenticatedPositionNumbers ?? [],
+    rowEvidenceReadyCaptures: captureRow?.rowEvidenceReadyCaptures ?? 0,
+    rowEvidencePromotionReadyCaptures: captureRow?.rowEvidencePromotionReadyCaptures ?? 0,
+    requiredEvidenceForPromotion: captureRow?.requiredEvidenceForPromotion ?? [],
+    packageSpecificMissingEvidence: captureRow?.packageSpecificMissingEvidence ?? [],
+    nextPublicCommand: captureRow?.nextPublicCommand ?? null,
+    outputFieldGapBoundary:
+      "Expected fields are non-promoting output-format guidance until official non-private rows, citation bindings, and rowEvidenceReady validation exist.",
     sections: 0,
+    sectionBlueprints: 0,
     fields: 0,
+    fieldBlueprints: 0,
+    requiredFields: 0,
+    optionalFields: 0,
     blueprints: 0,
     nonPromotingBlueprints: 0,
     missingBlueprints: [],
     missingNonPromotionBoundaries: [],
     invalidBlueprints: [],
     promotingBlueprints: [],
+    evidenceKindCounts: {},
+    availabilityCounts: {},
+    sectionSummaries: [],
   };
 
   if (!artifact) {
     problems.push(`${slug}: missing seed artifact`);
     return row;
+  }
+  if (!captureRow) {
+    problems.push(`${slug}: missing capture-status row`);
+  }
+  if (captureRow && !String(captureRow.nextPublicCommand ?? "").includes("scaffold:capture-session -- --source public")) {
+    problems.push(`${slug}: capture-status row must expose a public capture-session nextPublicCommand`);
+  }
+  if (captureRow && (!Array.isArray(captureRow.requiredEvidenceForPromotion) || captureRow.requiredEvidenceForPromotion.length === 0)) {
+    problems.push(`${slug}: capture-status row must expose requiredEvidenceForPromotion`);
+  }
+  if (captureRow && (!Array.isArray(captureRow.packageSpecificMissingEvidence) || captureRow.packageSpecificMissingEvidence.length === 0)) {
+    problems.push(`${slug}: capture-status row must expose packageSpecificMissingEvidence`);
   }
 
   const outputSections = Array.isArray(artifact.outputSections) ? artifact.outputSections : [];
@@ -136,12 +178,45 @@ const rows = blockerSlugs.map((slug) => {
   for (const [sectionIndex, section] of outputSections.entries()) {
     row.sections += 1;
     const sectionPath = `outputSections[${sectionIndex}]`;
+    const sectionBlueprint = section?.formalOutputBlueprint;
+    if (sectionBlueprint) {
+      row.sectionBlueprints += 1;
+      increment(row.evidenceKindCounts, sectionBlueprint.evidenceKind);
+      increment(row.availabilityCounts, sectionBlueprint.availability);
+    }
     validateBlueprint(section?.formalOutputBlueprint, `${sectionPath}.formalOutputBlueprint`, row);
 
     const expectedFields = Array.isArray(section?.expectedFields) ? section.expectedFields : [];
+    const sectionSummary = {
+      title: typeof section?.title === "string" ? section.title : sectionPath,
+      sectionKey: sectionBlueprint?.sectionKey ?? null,
+      evidenceKind: sectionBlueprint?.evidenceKind ?? null,
+      availability: sectionBlueprint?.availability ?? null,
+      fields: expectedFields.length,
+      blueprintFields: 0,
+      requiredFields: 0,
+      officialFieldPathSamples: [],
+      availabilityCounts: {},
+    };
     for (const [fieldIndex, field] of expectedFields.entries()) {
       row.fields += 1;
+      if (field?.required) {
+        row.requiredFields += 1;
+        sectionSummary.requiredFields += 1;
+      } else {
+        row.optionalFields += 1;
+      }
       const fieldPath = `${sectionPath}.expectedFields[${fieldIndex}]`;
+      if (field?.formalOutputBlueprint) {
+        row.fieldBlueprints += 1;
+        sectionSummary.blueprintFields += 1;
+        increment(row.evidenceKindCounts, field.formalOutputBlueprint.evidenceKind);
+        increment(row.availabilityCounts, field.formalOutputBlueprint.availability);
+      }
+      increment(sectionSummary.availabilityCounts, field?.availability);
+      if (typeof field?.officialFieldPath === "string" && sectionSummary.officialFieldPathSamples.length < 6) {
+        sectionSummary.officialFieldPathSamples.push(field.officialFieldPath);
+      }
       validateBlueprint(field?.formalOutputBlueprint, `${fieldPath}.formalOutputBlueprint`, row);
 
       if (field?.formalOutputBlueprint && typeof field.officialFieldPath !== "string") {
@@ -159,14 +234,19 @@ const rows = blockerSlugs.map((slug) => {
         problems.push(`${slug}: ${fieldPath} is missing availability`);
       }
     }
+    row.sectionSummaries.push(sectionSummary);
+  }
+
+  if (row.sectionBlueprints !== row.sections) {
+    problems.push(`${slug}: every output section must have a non-promoting blueprint`);
+  }
+  if (row.fieldBlueprints !== row.fields) {
+    problems.push(`${slug}: every expected output field must have a non-promoting blueprint`);
   }
 
   return row;
 });
 
-const captureStatus = existsSync(captureStatusPath) ? readJson(captureStatusPath) : null;
-const captureRows = Array.isArray(captureStatus?.rows) ? captureStatus.rows : [];
-const captureStatusSlugs = unique(captureRows.map((row) => row.slug)).sort();
 const rowEvidenceReadyBlockers = captureRows.filter((row) => {
   if (!blockerSlugs.includes(row.slug)) {
     return false;
@@ -200,11 +280,19 @@ const totals = {
   blockers: blockerSlugs.length,
   artifacts: rows.filter((row) => row.artifactPresent).length,
   sections: rows.reduce((sum, row) => sum + row.sections, 0),
+  sectionBlueprints: rows.reduce((sum, row) => sum + row.sectionBlueprints, 0),
   fields: rows.reduce((sum, row) => sum + row.fields, 0),
+  fieldBlueprints: rows.reduce((sum, row) => sum + row.fieldBlueprints, 0),
+  requiredFields: rows.reduce((sum, row) => sum + row.requiredFields, 0),
+  optionalFields: rows.reduce((sum, row) => sum + row.optionalFields, 0),
   missingBlueprints: rows.reduce((sum, row) => sum + row.missingBlueprints.length, 0),
   invalidBlueprints: rows.reduce((sum, row) => sum + row.invalidBlueprints.length, 0),
   promotingBlueprints: rows.reduce((sum, row) => sum + row.promotingBlueprints.length, 0),
   missingNonPromotionBoundaries: rows.reduce((sum, row) => sum + row.missingNonPromotionBoundaries.length, 0),
+  rowsWithPackageSpecificEvidence: rows.filter((row) => row.packageSpecificMissingEvidence.length > 0).length,
+  rowsWithPublicNextCommand: rows.filter((row) =>
+    String(row.nextPublicCommand ?? "").includes("scaffold:capture-session -- --source public"),
+  ).length,
   rowEvidenceReadyBlockers: rowEvidenceReadyBlockers.length,
 };
 
@@ -249,6 +337,28 @@ const compactOutput =
         totals,
         problemSamples: problems.slice(0, 20),
         blockerSlugs,
+        fieldGapRows: rows.map((row) => ({
+          slug: row.slug,
+          title: row.title,
+          sections: row.sections,
+          sectionBlueprints: row.sectionBlueprints,
+          fields: row.fields,
+          fieldBlueprints: row.fieldBlueprints,
+          requiredFields: row.requiredFields,
+          optionalFields: row.optionalFields,
+          officialEvidenceTier: row.officialEvidenceTier,
+          sourceCoverageClass: row.sourceCoverageClass,
+          authenticatedPositionNumbers: row.authenticatedPositionNumbers,
+          rowEvidenceReadyCaptures: row.rowEvidenceReadyCaptures,
+          rowEvidencePromotionReadyCaptures: row.rowEvidencePromotionReadyCaptures,
+          requiredEvidenceForPromotion: row.requiredEvidenceForPromotion,
+          packageSpecificMissingEvidence: row.packageSpecificMissingEvidence,
+          nextPublicCommand: row.nextPublicCommand,
+          evidenceKindCounts: row.evidenceKindCounts,
+          availabilityCounts: row.availabilityCounts,
+          sectionSummaries: row.sectionSummaries,
+          outputFieldGapBoundary: row.outputFieldGapBoundary,
+        })),
       }
     : output;
 
