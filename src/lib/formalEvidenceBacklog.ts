@@ -18,6 +18,7 @@ export type FormalEvidenceDecision = {
 export type FormalEvidenceTarget = FormalEvidenceDecision & {
   actionLabel: string;
   captureUrl: string | null;
+  sourceCoverage: OfficialOutputSourceCoverage | null;
   evidenceClass: "missing-exact-detail" | "metadata-only";
   firstRequiredEvidence: string;
   priority: number;
@@ -196,6 +197,23 @@ export type PublicBundleEvidence = {
   promotionBoundary: Record<string, unknown> | null;
 };
 
+export type OfficialOutputSourceCoverage = {
+  class: "authenticated-position" | "authenticated-order-alias" | "public-only" | "unknown";
+  label: string;
+  sourceCatalogPath: string | null;
+  sourceUrl: string | null;
+  authenticatedMarketplacePositionTotal: number | null;
+  namedIdentityTotal: number | null;
+  publicCatalogOnly: boolean;
+  authenticatedPositionCount: number;
+  authenticatedPositionNumbers: number[];
+  authenticatedGroupLabels: string[];
+  authenticatedKinds: string[];
+  authenticatedHrefs: string[];
+  orderAliasSlugs: string[];
+  boundary: string;
+};
+
 export type PublicReportEndpointTextSummary = {
   hash: string;
   length: number;
@@ -300,6 +318,7 @@ export type OfficialOutputCaptureStatusRow = {
   slug: string;
   title: string;
   evidenceClass: "missing-exact-detail" | "metadata-only";
+  sourceCoverage?: OfficialOutputSourceCoverage | null;
   stage: OfficialOutputCaptureStage;
   templateExists: boolean;
   officialCaptures: number;
@@ -433,6 +452,11 @@ export type OfficialOutputCaptureStatusSummary = {
     targets: number;
     missingExactDetailTargets: number;
     metadataOnlyTargets: number;
+    sourceCoverageCounts?: Partial<Record<OfficialOutputSourceCoverage["class"], number>>;
+    authenticatedPositionTargets?: number;
+    authenticatedOrderAliasTargets?: number;
+    publicOnlyTargets?: number;
+    unknownSourceCoverageTargets?: number;
     captureTemplatesPresent: number;
     placeholderTemplates: number;
     invalidTemplates: number;
@@ -641,6 +665,7 @@ export const officialEvidencePacketFor = (target: FormalEvidenceTarget | null | 
     slug: target.slug,
     title: target.title,
     captureUrl: target.captureUrl,
+    sourceCoverage: target.sourceCoverage,
     evidenceClass: target.evidenceClass,
     officialEvidenceTier: tier,
     officialEvidenceTierLabel: officialEvidenceTierLabelFor(row),
@@ -888,6 +913,7 @@ const toFormalEvidenceTarget = (
         ? "Capture exact marketplace detail route"
         : "Find official Sequencing.com sample or completed output",
     captureUrl: externalEvidenceSource(decision),
+    sourceCoverage: captureStatus?.sourceCoverage ?? null,
     evidenceClass,
     firstRequiredEvidence: decision.requiredEvidenceForPromotion[0] ?? "Package-specific source-backed report output",
     priority: priorityFor(decision),

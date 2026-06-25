@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import { api } from "../../convex/_generated/api";
 import {
+  type OfficialOutputSourceCoverage,
   formalEvidenceDecisionFor,
   formalEvidenceTargetFor,
   officialEvidencePacketFor,
@@ -79,6 +80,17 @@ const getPreviewArrayLength = (preview: ExampleOutputPreview | null, keys: strin
     }
   }
   return 0;
+};
+
+const formatSourceCoverage = (coverage: OfficialOutputSourceCoverage | null | undefined) => {
+  if (!coverage) {
+    return "source coverage not classified";
+  }
+  const positions =
+    coverage.authenticatedPositionNumbers.length > 0
+      ? `positions ${coverage.authenticatedPositionNumbers.join(", ")}`
+      : "no authenticated position";
+  return `${coverage.label}; ${positions}`;
 };
 
 const asRecord = (value: unknown): Record<string, unknown> | null =>
@@ -508,6 +520,8 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
   const officialOutputLatestRouteProbe = officialOutputCaptureStatus?.latestRouteProbe ?? null;
   const officialOutputPublicBundleEvidence = officialOutputCaptureStatus?.publicBundleEvidence ?? null;
   const officialOutputPublicEndpointProbe = formalEvidenceTarget?.publicEndpointProbe ?? null;
+  const officialOutputSourceCoverage =
+    formalEvidenceTarget?.sourceCoverage ?? officialOutputCaptureStatus?.sourceCoverage ?? null;
   const officialOutputPublicCaptureOpportunity =
     officialOutputCaptureStatus?.publicCapturePriorityOpportunitySummary ?? null;
   const officialOutputRedactionInputPath =
@@ -1411,6 +1425,20 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                   <strong>{formalEvidenceTarget.evidenceStatus}</strong>
                 </div>
                 <div>
+                  <span>Source coverage</span>
+                  <strong>{formatSourceCoverage(officialOutputSourceCoverage)}</strong>
+                </div>
+                <div>
+                  <span>Marketplace source</span>
+                  <strong>
+                    {officialOutputSourceCoverage?.authenticatedMarketplacePositionTotal
+                      ? `${officialOutputSourceCoverage.authenticatedMarketplacePositionTotal} positions / ${
+                          officialOutputSourceCoverage.namedIdentityTotal ?? "unknown"
+                        } named`
+                      : "not classified"}
+                  </strong>
+                </div>
+                <div>
                   <span>Expected schema</span>
                   <strong>{formalEvidenceTarget.expectedCaptureSchema}</strong>
                 </div>
@@ -1578,6 +1606,20 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                   <strong>Completed-output gate</strong>
                   <p>{officialOutputActionBoundary}</p>
                 </div>
+                {officialOutputSourceCoverage ? (
+                  <div>
+                    <strong>Source coverage boundary</strong>
+                    <p>{officialOutputSourceCoverage.boundary}</p>
+                    <p className="capture-path">
+                      {officialOutputSourceCoverage.sourceCatalogPath ?? "no source coverage artifact"}
+                    </p>
+                    {officialOutputSourceCoverage.authenticatedGroupLabels.length > 0 ? (
+                      <p>
+                        Authenticated groups: {officialOutputSourceCoverage.authenticatedGroupLabels.join(", ")}
+                      </p>
+                    ) : null}
+                  </div>
+                ) : null}
                 <div>
                   <strong>{officialEvidenceTierLabel}</strong>
                   <p>{officialEvidenceTierBoundary}</p>

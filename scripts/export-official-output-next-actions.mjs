@@ -250,6 +250,7 @@ const rowsForExport = rows
       title: row.title,
       priority: row.priority ?? null,
       stage: row.stage,
+      sourceCoverage: row.sourceCoverage ?? null,
       officialEvidenceTier: officialEvidenceTierFor(row),
       officialBoundaryModeled: Boolean(row.officialBoundaryModeled),
       officialBoundaryModeledFields: row.officialBoundaryModeledFields ?? 0,
@@ -300,6 +301,11 @@ const officialEvidenceTierCounts = rowsForExport.reduce((counts, row) => {
   counts[row.officialEvidenceTier] = (counts[row.officialEvidenceTier] ?? 0) + 1;
   return counts;
 }, {});
+const sourceCoverageCounts = rowsForExport.reduce((counts, row) => {
+  const sourceClass = row.sourceCoverage?.class ?? "unknown";
+  counts[sourceClass] = (counts[sourceClass] ?? 0) + 1;
+  return counts;
+}, {});
 
 const summary = {
   schemaVersion: "soma-reports.official-output-next-actions.v1",
@@ -323,6 +329,11 @@ const summary = {
     completedOutputRequired: rowsForExport.filter((row) => row.actionClass.startsWith("completed-output-required")).length,
     metadataOnly: rowsForExport.filter((row) => row.actionClass === "completed-output-required-metadata-only").length,
     boundaryCapture: rowsForExport.filter((row) => row.actionClass === "completed-output-required-boundary-capture").length,
+    sourceCoverageCounts,
+    authenticatedPositionRows: sourceCoverageCounts["authenticated-position"] ?? 0,
+    authenticatedOrderAliasRows: sourceCoverageCounts["authenticated-order-alias"] ?? 0,
+    publicOnlyRows: sourceCoverageCounts["public-only"] ?? 0,
+    unknownSourceCoverageRows: sourceCoverageCounts.unknown ?? 0,
     officialBoundaryModeled: rowsForExport.filter((row) => row.officialEvidenceTier === "official-boundary-modeled").length,
     officialMetadataOnly: rowsForExport.filter((row) => row.officialEvidenceTier === "official-metadata-only").length,
     officialBoundaryModeledFormalFields: rowsForExport.reduce(
@@ -362,6 +373,7 @@ const renderMarkdown = () => {
     `- Missing status rows: ${missingStatusRows.length > 0 ? missingStatusRows.join(", ") : "none"}`,
     `- Extra status rows: ${extraStatusRows.length > 0 ? extraStatusRows.join(", ") : "none"}`,
     `- Completed-output required: ${summary.totals.completedOutputRequired}`,
+    `- Source coverage: ${summary.totals.authenticatedPositionRows} authenticated positions; ${summary.totals.authenticatedOrderAliasRows} authenticated order aliases; ${summary.totals.publicOnlyRows} public-only; ${summary.totals.unknownSourceCoverageRows} unknown`,
     `- Metadata-only blockers: ${summary.totals.metadataOnly}`,
     `- Boundary-capture blockers: ${summary.totals.boundaryCapture}`,
     `- Official-boundary modeled: ${summary.totals.officialBoundaryModeled}`,
@@ -390,6 +402,11 @@ const renderMarkdown = () => {
       `- Stage: \`${row.stage}\``,
       `- Official evidence tier: \`${row.officialEvidenceTier}\``,
       `- Action class: \`${row.actionClass}\``,
+      `- Source coverage: ${row.sourceCoverage?.label ?? "not classified"}; positions: ${
+        row.sourceCoverage?.authenticatedPositionNumbers?.length > 0
+          ? row.sourceCoverage.authenticatedPositionNumbers.join(", ")
+          : "none"
+      }`,
       `- Public priority/opportunity: ${publicOpportunitySummary.priorityLabel} / \`${publicOpportunitySummary.opportunityClass}\` - ${publicOpportunitySummary.summary}`,
       `- Public opportunity command: \`${publicOpportunitySummary.publicNextCommand ?? "not available"}\``,
       `- Next action: ${row.nextAction ?? "not available"}`,
@@ -453,6 +470,7 @@ const renderCompact = () =>
         officialBoundaryModeled: row.officialBoundaryModeled,
         officialBoundaryModeledFields: row.officialBoundaryModeledFields,
         captureUrl: row.captureUrl,
+        sourceCoverage: row.sourceCoverage,
         nextAction: row.nextAction,
         nextCommand: row.nextCommand,
         actionClass: row.actionClass,

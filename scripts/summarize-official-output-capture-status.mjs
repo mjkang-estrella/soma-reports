@@ -389,6 +389,7 @@ const rows = (plan?.targets ?? []).map((target) => {
     title: target.title,
     priority: target.priority,
     evidenceClass: target.evidenceClass,
+    sourceCoverage: target.sourceCoverage ?? null,
     stage,
     templateExists: Boolean(target.captureTemplateExists),
     officialCaptures: target.officialOutputCaptureStatus?.captures ?? 0,
@@ -633,6 +634,11 @@ const summary = {
     targets,
     missingExactDetailTargets: planTotals.missingExactDetailTargets ?? 0,
     metadataOnlyTargets: planTotals.metadataOnlyTargets ?? 0,
+    sourceCoverageCounts: planTotals.sourceCoverageCounts ?? {},
+    authenticatedPositionTargets: planTotals.authenticatedPositionTargets ?? 0,
+    authenticatedOrderAliasTargets: planTotals.authenticatedOrderAliasTargets ?? 0,
+    publicOnlyTargets: planTotals.publicOnlyTargets ?? 0,
+    unknownSourceCoverageTargets: planTotals.unknownSourceCoverageTargets ?? 0,
     captureTemplatesPresent: planTotals.captureTemplatesPresent ?? templateTotals.existingTemplates ?? 0,
     placeholderTemplates: templateTotals.placeholderTemplates ?? 0,
     invalidTemplates: templateTotals.invalidTemplates ?? 0,
@@ -749,6 +755,7 @@ const renderMarkdown = () => {
         ]
       : []),
     `- Targets: ${summary.totals.targets}`,
+    `- Source coverage: ${summary.totals.authenticatedPositionTargets} authenticated positions; ${summary.totals.authenticatedOrderAliasTargets} authenticated order aliases; ${summary.totals.publicOnlyTargets} public-only; ${summary.totals.unknownSourceCoverageTargets} unknown`,
     `- Templates present: ${summary.totals.captureTemplatesPresent}`,
     `- Placeholder templates: ${summary.totals.placeholderTemplates}`,
     `- Official captures: ${summary.totals.officialOutputCaptureArtifacts}`,
@@ -801,6 +808,11 @@ const renderMarkdown = () => {
       "",
       `- Slug: \`${row.slug}\``,
       `- Stage: \`${row.stage}\``,
+      `- Source coverage: ${row.sourceCoverage?.label ?? "not classified"}; positions: ${
+        row.sourceCoverage?.authenticatedPositionNumbers?.length > 0
+          ? row.sourceCoverage.authenticatedPositionNumbers.join(", ")
+          : "none"
+      }`,
       `- Public priority/opportunity: ${publicOpportunitySummary.priorityLabel} / \`${publicOpportunitySummary.opportunityClass}\` - ${publicOpportunitySummary.summary}`,
       `- Public opportunity command: \`${publicOpportunitySummary.publicNextCommand ?? "not available"}\``,
       `- Public capture template: \`${row.publicCaptureTemplatePath ?? row.captureTemplatePath ?? "not available"}\``,
@@ -876,6 +888,7 @@ const renderCompact = () =>
         officialBoundaryModeled: row.officialBoundaryModeled,
         officialBoundaryModeledFields: row.officialBoundaryModeledFields,
         evidenceClass: row.evidenceClass,
+        sourceCoverage: row.sourceCoverage,
         publicCapturePriorityOpportunitySummary: row.publicCapturePriorityOpportunitySummary,
         missing: row.formalReadinessGate.missing,
         officialOutputReview: row.officialOutputPromotionReview

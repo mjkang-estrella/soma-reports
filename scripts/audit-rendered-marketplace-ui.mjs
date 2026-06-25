@@ -232,6 +232,9 @@ const evaluateRenderedPage = `async () => {
     officialCaptureCardsWithPublicArtifact: officialCaptureCardTexts.filter((text) =>
       /Public evidence artifact/i.test(text),
     ).length,
+    officialCaptureCardsWithSourceCoverage: officialCaptureCardTexts.filter((text) =>
+      /Source coverage/i.test(text) && /Marketplace positions/i.test(text),
+    ).length,
     officialCaptureCardsWithFormalGate: officialCaptureCardTexts.filter((text) =>
       /Formal gate missing|Formal gate ready/i.test(text),
     ).length,
@@ -254,6 +257,7 @@ const evaluateRenderedPage = `async () => {
       selectedEvidencePacketText.includes('"routeProbe"') &&
       selectedEvidencePacketText.includes('"publicBundleEvidence"') &&
       selectedEvidencePacketText.includes('"publicEndpointProbe"') &&
+      selectedEvidencePacketText.includes('"sourceCoverage"') &&
       selectedEvidencePacketText.includes('"publicCaptureTemplatePath"') &&
       selectedEvidencePacketText.includes('"sanitizedDraftPath"') &&
       selectedEvidencePacketText.includes('"committedCapturePath"'),
@@ -287,6 +291,10 @@ const evaluateRenderedPage = `async () => {
     selectedDetailShowsPublicEndpointProbe:
       /Public report endpoint probe/i.test(selectedDetailText) &&
       selectedDetailText.includes(\`https://sequencing.com/api/sequencing/public/reports/\${selectedCaptureReport}\`),
+    selectedDetailShowsSourceCoverage:
+      /Source coverage/i.test(selectedDetailText) &&
+      /Source coverage boundary/i.test(selectedDetailText) &&
+      /164 positions/i.test(selectedDetailText),
     selectedDetailShowsPublicEndpointOutputBoundary:
       /Exact-package reportFile:\\s+empty/i.test(selectedDetailText) &&
       /Exact output key signals:\\s+0/i.test(selectedDetailText) &&
@@ -344,6 +352,10 @@ const evaluateRenderedPage = `async () => {
       ),
     containsPublicEndpointProbeSummary:
       /Public endpoint probe:\\s+21\\/21 fetched,\\s+18 parsed,\\s+3 expected unavailable,\\s+0 exact report files,\\s+0 exact output-row signal targets/i.test(
+        bodyText,
+      ),
+    containsSourceCoverageSummary:
+      /Source coverage for open blockers:\\s+\\d+ authenticated card targets,\\s+\\d+ authenticated order aliases,\\s+\\d+ public-catalog-only targets/i.test(
         bodyText,
       ),
     bodySample: bodyText.slice(0, 1000)
@@ -527,6 +539,19 @@ try {
     {
       routeArtifactCards: rendered.officialCaptureCardsWithRouteArtifact,
       publicArtifactCards: rendered.officialCaptureCardsWithPublicArtifact,
+    },
+  );
+  addCheck(
+    checks,
+    "official_capture_source_coverage",
+    rendered.containsSourceCoverageSummary &&
+      rendered.officialCaptureCardsWithSourceCoverage === 21 &&
+      rendered.selectedDetailShowsSourceCoverage,
+    "source coverage summary, per-card source coverage, and selected-detail source coverage boundary are rendered",
+    {
+      containsSourceCoverageSummary: rendered.containsSourceCoverageSummary,
+      officialCaptureCardsWithSourceCoverage: rendered.officialCaptureCardsWithSourceCoverage,
+      selectedDetailShowsSourceCoverage: rendered.selectedDetailShowsSourceCoverage,
     },
   );
   addCheck(
@@ -743,6 +768,7 @@ try {
       metadataOnlyCaptureCards: rendered.metadataOnlyCaptureCards,
       officialCaptureCardsWithRouteArtifact: rendered.officialCaptureCardsWithRouteArtifact,
       officialCaptureCardsWithPublicArtifact: rendered.officialCaptureCardsWithPublicArtifact,
+      officialCaptureCardsWithSourceCoverage: rendered.officialCaptureCardsWithSourceCoverage,
       officialCaptureCardsWithFormalGate: rendered.officialCaptureCardsWithFormalGate,
       officialCaptureCardsWithCaptureStatusSnapshotCommand:
         rendered.officialCaptureCardsWithCaptureStatusSnapshotCommand,
@@ -760,6 +786,7 @@ try {
       selectedDetailHasLiteralReportSlugPlaceholder: rendered.selectedDetailHasLiteralReportSlugPlaceholder,
       selectedDetailHasSelectedTemplateAuditCommand: rendered.selectedDetailHasSelectedTemplateAuditCommand,
       selectedDetailShowsPublicEndpointProbe: rendered.selectedDetailShowsPublicEndpointProbe,
+      selectedDetailShowsSourceCoverage: rendered.selectedDetailShowsSourceCoverage,
       selectedDetailShowsPublicEndpointOutputBoundary: rendered.selectedDetailShowsPublicEndpointOutputBoundary,
       selectedEvidencePacketRendered: rendered.selectedEvidencePacketRendered,
       selectedEvidencePacketHasProvenance: rendered.selectedEvidencePacketHasProvenance,
@@ -781,6 +808,7 @@ try {
       containsPrivateCaptureSessionCommand: rendered.containsPrivateCaptureSessionCommand,
       containsCombinedCaptureSessionCommand: rendered.containsCombinedCaptureSessionCommand,
       containsPublicEndpointProbeSummary: rendered.containsPublicEndpointProbeSummary,
+      containsSourceCoverageSummary: rendered.containsSourceCoverageSummary,
       localRunReadyCards: rendered.localRunReadyCards,
       localRunScaffoldCards: rendered.localRunScaffoldCards,
       localAgentPromptArtifactCards: rendered.localAgentPromptArtifactCards,

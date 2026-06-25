@@ -17,6 +17,8 @@ const publicDraftRouteFallbackLedgerPath = "reference/catalog/public-draft-route
 const officialOutputPromotionReviewPath = defaultOfficialOutputPromotionReviewPath;
 const authenticatedBlockerDetailInspectionPath =
   "reference/catalog/authenticated-blocker-detail-inspection-2026-06-24.json";
+const authenticatedMarketplaceNormalizedPath =
+  "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json";
 const authenticatedMissingDetailRouteProbePrefix = "authenticated-missing-detail-route-probe-";
 const publicWgsBundleEvidencePrefix = "public-wgs-bundle-evidence-";
 const scaffoldAuditScriptPath = "scripts/audit-scaffold-evidence.mjs";
@@ -90,6 +92,30 @@ const publicWgsBundleEvidence = publicWgsBundleEvidencePath
 const publicWgsBundleEvidenceBySlug = new Map(
   (publicWgsBundleEvidence?.entries ?? []).map((entry) => [entry.slug, entry]),
 );
+const authenticatedMarketplaceNormalized = existsSync(authenticatedMarketplaceNormalizedPath)
+  ? JSON.parse(readFileSync(authenticatedMarketplaceNormalizedPath, "utf8"))
+  : null;
+const authenticatedMarketplacePositionsByCanonicalSlug = new Map();
+for (const position of authenticatedMarketplaceNormalized?.positionLedger?.positions ?? []) {
+  const canonicalSlug = position.canonicalSlug ?? position.slug ?? null;
+  if (!canonicalSlug) {
+    continue;
+  }
+  if (!authenticatedMarketplacePositionsByCanonicalSlug.has(canonicalSlug)) {
+    authenticatedMarketplacePositionsByCanonicalSlug.set(canonicalSlug, []);
+  }
+  authenticatedMarketplacePositionsByCanonicalSlug.get(canonicalSlug).push(position);
+}
+const publicSlugsNotSeenInAuthenticatedCapture = new Set(
+  authenticatedMarketplaceNormalized?.publicSlugsNotSeenInAuthenticatedCapture ?? [],
+);
+const orderAliasSlugsByCanonicalSlug = new Map();
+for (const [orderSlug, canonicalSlug] of Object.entries(authenticatedMarketplaceNormalized?.orderSlugAliases ?? {})) {
+  if (!orderAliasSlugsByCanonicalSlug.has(canonicalSlug)) {
+    orderAliasSlugsByCanonicalSlug.set(canonicalSlug, []);
+  }
+  orderAliasSlugsByCanonicalSlug.get(canonicalSlug).push(orderSlug);
+}
 
 const highValueOrder = [
   "sequencing-depth-and-coverage",
@@ -109,6 +135,9 @@ const highValueRank = new Map(highValueOrder.map((slug, index) => [slug, index +
 
 const externalSource = (decision) => decision.sources?.find((source) => /^https?:\/\//i.test(source)) ?? null;
 const compactText = (value) => (typeof value === "string" ? value.replace(/\s+/g, " ").trim() : "");
+const uniqueStrings = (values) => [
+  ...new Set(values.filter((value) => typeof value === "string" && value.trim().length > 0)),
+];
 
 const evidenceClassFor = (decision) =>
   String(decision.evidenceStatus ?? "").startsWith("route-fallback") ||
@@ -120,6 +149,51 @@ const actionFor = (evidenceClass) =>
   evidenceClass === "missing-exact-detail"
     ? "Capture the exact authenticated detail route, then look for an official sample/completed output artifact."
     : "Capture an official Sequencing.com sample, mock report, completed result, non-empty reportFile, or export for this exact package.";
+
+const sourceCoverageFor = (decision) => {
+  const authenticatedPositions = authenticatedMarketplacePositionsByCanonicalSlug.get(decision.slug) ?? [];
+  const publicCatalogOnly = publicSlugsNotSeenInAuthenticatedCapture.has(decision.slug);
+  const sourceUrl = externalSource(decision);
+  const sourceClass = authenticatedPositions.some((position) => position.kind === "order")
+    ? "authenticated-order-alias"
+    : authenticatedPositions.length > 0
+      ? "authenticated-position"
+      : publicCatalogOnly
+        ? "public-only"
+        : "unknown";
+  const labels = {
+    "authenticated-order-alias": "Authenticated order alias inside 164-position marketplace",
+    "authenticated-position": "Authenticated marketplace position inside 164-position capture",
+    "public-only": "Public catalog only; not seen in authenticated 164-position capture",
+    unknown: "Not classified in current authenticated/public catalog snapshot",
+  };
+  const boundary =
+    sourceClass === "authenticated-order-alias"
+      ? "The package is represented by an authenticated order-card alias, but formal promotion still requires official completed-output rows and source bindings."
+      : sourceClass === "authenticated-position"
+        ? "The package appears in the authenticated marketplace card capture, but formal promotion still requires official completed-output rows and source bindings."
+        : sourceClass === "public-only"
+          ? "The package exists in the public catalog ledger but was not present in the authenticated 164-position marketplace capture; do not keep probing authenticated exact routes unless new source evidence appears."
+          : "The package source is not classified by the current catalog snapshots; inspect source evidence before capture.";
+
+  return {
+    class: sourceClass,
+    label: labels[sourceClass],
+    sourceCatalogPath: authenticatedMarketplaceNormalized ? authenticatedMarketplaceNormalizedPath : null,
+    sourceUrl,
+    authenticatedMarketplacePositionTotal:
+      authenticatedMarketplaceNormalized?.totals?.authenticatedCardPositions ?? null,
+    namedIdentityTotal: authenticatedMarketplaceNormalized?.totals?.namedIdentityTotal ?? null,
+    publicCatalogOnly,
+    authenticatedPositionCount: authenticatedPositions.length,
+    authenticatedPositionNumbers: authenticatedPositions.map((position) => position.positionNumber).filter(Boolean),
+    authenticatedGroupLabels: uniqueStrings(authenticatedPositions.map((position) => position.groupLabel)),
+    authenticatedKinds: uniqueStrings(authenticatedPositions.map((position) => position.kind)),
+    authenticatedHrefs: uniqueStrings(authenticatedPositions.map((position) => position.href)),
+    orderAliasSlugs: orderAliasSlugsByCanonicalSlug.get(decision.slug) ?? [],
+    boundary,
+  };
+};
 
 const artifactPathFor = (slug) => `reference/catalog/${slug}-official-output-capture-YYYY-MM-DD.json`;
 const captureTemplatePathFor = (slug) =>
@@ -491,6 +565,7 @@ const targets = decisions
       evidenceClass,
       action: actionFor(evidenceClass),
       captureUrl: externalSource(decision),
+      sourceCoverage: sourceCoverageFor(decision),
       currentEvidenceStatus: decision.evidenceStatus,
       routeBehavior: decision.routeBehavior,
       reportFileStatus: decision.reportFileStatus,
@@ -560,6 +635,12 @@ const targets = decisions
   .filter((target) => targetClass === "all" || target.evidenceClass === targetClass)
   .sort((a, b) => a.priority - b.priority || a.title.localeCompare(b.title));
 
+const sourceCoverageCounts = targets.reduce((counts, target) => {
+  const sourceClass = target.sourceCoverage?.class ?? "unknown";
+  counts[sourceClass] = (counts[sourceClass] ?? 0) + 1;
+  return counts;
+}, {});
+
 const plan = {
   schemaVersion: "soma-reports.evidence-capture-plan.v1",
   generatedAt: new Date().toISOString(),
@@ -571,6 +652,7 @@ const plan = {
     wgsOrderBoundaryLedger: wgsOrderBoundaryLedgerPath,
     publicDraftRouteFallbackLedger: publicDraftRouteFallbackLedgerPath,
     officialOutputPromotionReview: officialOutputPromotionReviewPath,
+    authenticatedMarketplaceNormalized: authenticatedMarketplaceNormalizedPath,
     authenticatedBlockerDetailInspection: authenticatedBlockerDetailInspectionPath,
     authenticatedMissingDetailRouteProbe: authenticatedMissingDetailRouteProbePath,
     publicWgsBundleEvidence: publicWgsBundleEvidencePath,
@@ -593,6 +675,11 @@ const plan = {
     allScaffoldPackages: decisions.length,
     missingExactDetailTargets: targets.filter((target) => target.evidenceClass === "missing-exact-detail").length,
     metadataOnlyTargets: targets.filter((target) => target.evidenceClass === "metadata-only").length,
+    sourceCoverageCounts,
+    authenticatedPositionTargets: sourceCoverageCounts["authenticated-position"] ?? 0,
+    authenticatedOrderAliasTargets: sourceCoverageCounts["authenticated-order-alias"] ?? 0,
+    publicOnlyTargets: sourceCoverageCounts["public-only"] ?? 0,
+    unknownSourceCoverageTargets: sourceCoverageCounts.unknown ?? 0,
     captureTemplatesPresent: targets.filter((target) => target.captureTemplateExists).length,
     officialOutputCaptureArtifacts: targets.reduce(
       (count, target) => count + target.currentOfficialOutputCaptureArtifacts.length,
@@ -658,6 +745,7 @@ const renderMarkdown = () => {
     `Source ledger: \`${plan.sourceLedger}\``,
     "",
     `Targets: ${plan.totals.targets} (${plan.totals.missingExactDetailTargets} exact-route, ${plan.totals.metadataOnlyTargets} output-artifact)`,
+    `Source coverage: ${plan.totals.authenticatedPositionTargets} authenticated positions; ${plan.totals.authenticatedOrderAliasTargets} authenticated order aliases; ${plan.totals.publicOnlyTargets} public-only; ${plan.totals.unknownSourceCoverageTargets} unknown`,
     `Templates present: ${plan.totals.captureTemplatesPresent}; official captures: ${plan.totals.officialOutputCaptureArtifacts}; row-evidence ready: ${plan.totals.rowEvidenceReadyTargets}`,
     `Reviewed no-promote: ${plan.totals.reviewedNoPromoteTargets}; reviewed boundary-only: ${plan.totals.reviewedBoundaryOnlyTargets}; reviewed metadata-only: ${plan.totals.reviewedMetadataOnlyTargets}; unreviewed output-signal reviews: ${plan.totals.unreviewedOutputSignalReviewTargets}`,
     "",
@@ -676,6 +764,11 @@ const renderMarkdown = () => {
       `- Slug: \`${target.slug}\``,
       `- Class: \`${target.evidenceClass}\``,
       `- Current status: \`${target.currentEvidenceStatus}\`; report file: \`${target.reportFileStatus}\`; sample rows: ${target.currentSampleRows}`,
+      `- Source coverage: ${target.sourceCoverage.label}; positions: ${
+        target.sourceCoverage.authenticatedPositionNumbers.length > 0
+          ? target.sourceCoverage.authenticatedPositionNumbers.join(", ")
+          : "none"
+      }`,
       `- Capture URL: ${target.captureUrl ?? "not available"}`,
       `- Live route: ${
         target.liveDetailInspection
@@ -754,6 +847,7 @@ const renderCompact = () =>
         reportFileStatus: target.reportFileStatus,
         currentSampleRows: target.currentSampleRows,
         captureUrl: target.captureUrl,
+        sourceCoverage: target.sourceCoverage,
         captureTemplatePath: target.captureTemplatePath,
         captureTemplateExists: target.captureTemplateExists,
         redactionInputPath: target.redactionInputPath,

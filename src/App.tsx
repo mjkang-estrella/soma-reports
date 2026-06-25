@@ -86,6 +86,16 @@ const formatOutputSignals = (signals: Record<string, boolean | number> | undefin
     ? entries.map(([key, value]) => `${formatGapLabel(key)} ${typeof value === "boolean" ? "yes" : value}`).join(", ")
     : "no output signals";
 };
+const formatSourceCoverage = (coverage: FormalEvidenceTarget["sourceCoverage"] | undefined | null) => {
+  if (!coverage) {
+    return "source coverage not classified";
+  }
+  const positions =
+    coverage.authenticatedPositionNumbers.length > 0
+      ? `positions ${coverage.authenticatedPositionNumbers.join(", ")}`
+      : "no authenticated position";
+  return `${coverage.label}; ${positions}`;
+};
 
 const formatReadinessStat = (value: number | undefined, total: number) => {
   if (value === undefined) {
@@ -1098,6 +1108,9 @@ export default function App() {
                   Current ledger: {officialCaptureCatalogSnapshot.formalPendingPackages} formal blockers across{" "}
                   {officialCaptureCatalogSnapshot.identifiedNamedPackages} named packages /{" "}
                   {officialCaptureCatalogSnapshot.authenticatedMarketplacePositions} authenticated marketplace positions.
+                  Source coverage for open blockers: {officialCaptureTotals.authenticatedPositionTargets ?? 0} authenticated card targets,{" "}
+                  {officialCaptureTotals.authenticatedOrderAliasTargets ?? 0} authenticated order aliases,{" "}
+                  {officialCaptureTotals.publicOnlyTargets ?? 0} public-catalog-only targets.
                   Evidence tiers: {officialBoundaryModeledTargetCount} official-boundary modeled,{" "}
                   {officialMetadataOnlyTargetCount} metadata-only, {officialCaptureTotals.rowEvidenceReadyTargets} row-ready.
                   Public endpoint probe: {officialPublicEndpointProbe.totals.fetched}/
@@ -1149,6 +1162,7 @@ export default function App() {
 	                  const latestRouteProbe = captureStatus?.latestRouteProbe ?? null;
 	                  const publicBundleEvidence = captureStatus?.publicBundleEvidence ?? null;
 	                  const publicEndpointProbe = target.publicEndpointProbe;
+                    const sourceCoverage = target.sourceCoverage ?? captureStatus?.sourceCoverage ?? null;
 	                  const publicCaptureOpportunity = captureStatus?.publicCapturePriorityOpportunitySummary ?? null;
 	                  const publicCaptureSessionCommand =
 	                    publicCaptureOpportunity?.publicNextCommand ??
@@ -1237,6 +1251,8 @@ export default function App() {
 	                          </small>
 	                        ) : null}
 	                        {latestRouteProbe?.finalUrl ? <small>probe URL: {latestRouteProbe.finalUrl}</small> : null}
+                          <small>{formatSourceCoverage(sourceCoverage)}</small>
+                          {sourceCoverage?.boundary ? <small>{sourceCoverage.boundary}</small> : null}
 	                        {publicEndpointProbe ? (
 	                          <small>
 	                            public endpoint: HTTP {publicEndpointProbe.httpStatus ?? "n/a"} /{" "}
@@ -1376,6 +1392,7 @@ export default function App() {
 	                const liveDetailInspection = target.liveDetailInspection ?? captureStatus?.liveDetailInspection ?? null;
 	                const latestRouteProbe = captureStatus?.latestRouteProbe ?? null;
 	                const publicBundleEvidence = captureStatus?.publicBundleEvidence ?? null;
+                  const sourceCoverage = target.sourceCoverage ?? captureStatus?.sourceCoverage ?? null;
 	                const formalGate = captureStatus?.formalReadinessGate ?? null;
 
                 return (
@@ -1434,6 +1451,18 @@ export default function App() {
                         <dd>
                           {captureStatus?.templateExists ? "placeholder present" : "missing"} /{" "}
                           {officialCaptureTotals.placeholderTemplates} placeholders
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>Source coverage</dt>
+                        <dd>{sourceCoverage ? sourceCoverage.label : "not classified"}</dd>
+                      </div>
+                      <div>
+                        <dt>Marketplace positions</dt>
+                        <dd>
+                          {sourceCoverage?.authenticatedPositionNumbers.length
+                            ? sourceCoverage.authenticatedPositionNumbers.join(", ")
+                            : "none"}
                         </dd>
                       </div>
 	                      <div>
@@ -1496,6 +1525,9 @@ export default function App() {
                       <p className="official-capture-boundary">{target.describedOutputFieldBoundary}</p>
                     ) : null}
                     <p className="official-capture-boundary">{actionBoundary}</p>
+                    {sourceCoverage?.boundary ? (
+                      <p className="official-capture-boundary">{sourceCoverage.boundary}</p>
+                    ) : null}
 	                    {nextEvidence.length > 0 ? (
 	                      <div className="official-capture-review">
                         <strong>Next official evidence</strong>
@@ -1634,6 +1666,7 @@ export default function App() {
                       <strong>{target.title}</strong>
                       <span>{target.actionLabel}</span>
                       <small>{target.firstRequiredEvidence}</small>
+                      <small>{formatSourceCoverage(target.sourceCoverage ?? target.captureStatus?.sourceCoverage)}</small>
                       <small>
                         <span className={captureStageClass(target.captureStatus?.stage)}>
                           {target.captureStatus ? formatGapLabel(target.captureStatus.stage) : "status missing"}
@@ -1669,6 +1702,7 @@ export default function App() {
                         {formatGapLabel(target.reportFileStatus)} report file; {target.sampleRows} sample rows
                       </span>
                       <small>{target.firstRequiredEvidence}</small>
+                      <small>{formatSourceCoverage(target.sourceCoverage ?? target.captureStatus?.sourceCoverage)}</small>
                       <small>
                         <span className={captureStageClass(target.captureStatus?.stage)}>
                           {target.captureStatus ? formatGapLabel(target.captureStatus.stage) : "status missing"}

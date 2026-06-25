@@ -374,6 +374,10 @@ const uiSourceChecks = {
     existsSync("scripts/generate-local-agent-result.mjs"),
   formalEvidenceBacklog:
     formalEvidenceBacklogSource.includes("formalEvidenceBacklogSummary"),
+  sourceCoverage:
+    appSource.includes("Source coverage for open blockers") &&
+    reportDetailSource.includes("Source coverage boundary") &&
+    formalEvidenceBacklogSource.includes("OfficialOutputSourceCoverage"),
 };
 
 const checks = [
@@ -481,9 +485,11 @@ const checks = [
       uiAudit?.rendered?.positionRows === expected.marketplacePositions &&
       uiAudit?.rendered?.reportCards === expected.namedPackages &&
       uiAudit?.rendered?.inspectButtons === expected.marketplacePositions &&
-      uiAudit?.rendered?.officialOutputBlockerCards === 21,
+      uiAudit?.rendered?.officialOutputBlockerCards === 21 &&
+      uiAudit?.rendered?.officialCaptureCardsWithSourceCoverage === 21 &&
+      uiAudit?.rendered?.containsSourceCoverageSummary === true,
     expected:
-      "rendered app shows all 164 marketplace positions, 154 report cards, local-run controls, and 21 official-output blockers",
+      "rendered app shows all 164 marketplace positions, 154 report cards, local-run controls, 21 official-output blockers, and source coverage for each blocker",
     actual: uiAudit
       ? {
           positionRows: uiAudit.rendered?.positionRows,
@@ -493,6 +499,8 @@ const checks = [
           aliasRows: uiAudit.rendered?.aliasRows,
           routeAliasRows: uiAudit.rendered?.routeAliasRows,
           officialOutputBlockerCards: uiAudit.rendered?.officialOutputBlockerCards,
+          officialCaptureCardsWithSourceCoverage: uiAudit.rendered?.officialCaptureCardsWithSourceCoverage,
+          containsSourceCoverageSummary: uiAudit.rendered?.containsSourceCoverageSummary,
           failedChecks: uiAudit.failedChecks ?? [],
         }
       : null,
@@ -694,6 +702,8 @@ const checks = [
         (target) =>
           target.redactionTemplateCommand?.includes("scaffold:redaction-template") &&
           target.sanitizeRedactionCommand?.includes("scaffold:sanitize-output") &&
+          target.sourceCoverage?.label &&
+          target.sourceCoverage?.authenticatedMarketplacePositionTotal === expected.marketplacePositions &&
           target.captureWorkflow?.nextCommand,
       ),
     expected:
@@ -704,6 +714,7 @@ const checks = [
           firstTargets: capturePlan.targets?.slice(0, 5).map((target) => ({
             slug: target.slug,
             evidenceClass: target.evidenceClass,
+            sourceCoverage: target.sourceCoverage,
             stage: target.captureWorkflow?.stage,
             nextCommand: target.captureWorkflow?.nextCommand,
           })),
@@ -755,6 +766,7 @@ const checks = [
           row.publicTemplateAuditCommand?.includes("scaffold:template-audit") &&
           row.publicCaptureSessionCommand?.includes("scaffold:capture-session -- --source public") &&
           row.redactionTemplateCommand?.includes("scaffold:redaction-template") &&
+          row.sourceCoverage?.label &&
           row.validateCommittedCaptureCommand?.includes("scaffold:validate-captures"),
       ),
     expected:
@@ -766,6 +778,7 @@ const checks = [
           firstTargets: nextActions.rows?.slice(0, 5).map((row) => ({
             slug: row.slug,
             actionClass: row.actionClass,
+            sourceCoverage: row.sourceCoverage,
             publicCaptureSessionCommand: row.publicCaptureSessionCommand,
             nextCommand: row.nextCommand,
             validateCommittedCaptureCommand: row.validateCommittedCaptureCommand,

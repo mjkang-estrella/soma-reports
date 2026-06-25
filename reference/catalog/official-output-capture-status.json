@@ -1,6 +1,6 @@
 {
   "schemaVersion": "soma-reports.official-output-capture-status.v1",
-  "generatedAt": "2026-06-25T09:01:27.107Z",
+  "generatedAt": "2026-06-25T09:35:32.112Z",
   "ok": true,
   "targetClass": "all",
   "allowEmptyCaptures": true,
@@ -20,6 +20,15 @@
     "targets": 21,
     "missingExactDetailTargets": 7,
     "metadataOnlyTargets": 14,
+    "sourceCoverageCounts": {
+      "authenticated-position": 8,
+      "public-only": 10,
+      "authenticated-order-alias": 3
+    },
+    "authenticatedPositionTargets": 8,
+    "authenticatedOrderAliasTargets": 3,
+    "publicOnlyTargets": 10,
+    "unknownSourceCoverageTargets": 0,
     "captureTemplatesPresent": 21,
     "placeholderTemplates": 21,
     "invalidTemplates": 0,
@@ -104,6 +113,30 @@
       "title": "Sequencing Depth and Coverage",
       "priority": 1,
       "evidenceClass": "metadata-only",
+      "sourceCoverage": {
+        "class": "authenticated-position",
+        "label": "Authenticated marketplace position inside 164-position capture",
+        "sourceCatalogPath": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+        "sourceUrl": "https://sequencing.com/marketplace/sequencing-depth-and-coverage",
+        "authenticatedMarketplacePositionTotal": 164,
+        "namedIdentityTotal": 154,
+        "publicCatalogOnly": false,
+        "authenticatedPositionCount": 1,
+        "authenticatedPositionNumbers": [
+          161
+        ],
+        "authenticatedGroupLabels": [
+          "Bioinformatics"
+        ],
+        "authenticatedKinds": [
+          "marketplace"
+        ],
+        "authenticatedHrefs": [
+          "https://sequencing.com/marketplace/sequencing-depth-and-coverage"
+        ],
+        "orderAliasSlugs": [],
+        "boundary": "The package appears in the authenticated marketplace card capture, but formal promotion still requires official completed-output rows and source bindings."
+      },
       "stage": "reviewed-no-promote",
       "templateExists": true,
       "officialCaptures": 1,
@@ -368,6 +401,34 @@
       "title": "Genome Explorer DNA Data Search",
       "priority": 2,
       "evidenceClass": "metadata-only",
+      "sourceCoverage": {
+        "class": "authenticated-position",
+        "label": "Authenticated marketplace position inside 164-position capture",
+        "sourceCatalogPath": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+        "sourceUrl": "https://sequencing.com/marketplace/genome-explorer-dna-data-search",
+        "authenticatedMarketplacePositionTotal": 164,
+        "namedIdentityTotal": 154,
+        "publicCatalogOnly": false,
+        "authenticatedPositionCount": 3,
+        "authenticatedPositionNumbers": [
+          2,
+          55,
+          152
+        ],
+        "authenticatedGroupLabels": [
+          "Sequencing Apps",
+          "Health",
+          "Bioinformatics"
+        ],
+        "authenticatedKinds": [
+          "marketplace"
+        ],
+        "authenticatedHrefs": [
+          "https://sequencing.com/marketplace/genome-explorer-dna-data-search"
+        ],
+        "orderAliasSlugs": [],
+        "boundary": "The package appears in the authenticated marketplace card capture, but formal promotion still requires official completed-output rows and source bindings."
+      },
       "stage": "reviewed-no-promote",
       "templateExists": true,
       "officialCaptures": 1,
@@ -631,6 +692,22 @@
       "title": "Convert rsids to Coordinates",
       "priority": 3,
       "evidenceClass": "metadata-only",
+      "sourceCoverage": {
+        "class": "public-only",
+        "label": "Public catalog only; not seen in authenticated 164-position capture",
+        "sourceCatalogPath": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+        "sourceUrl": "https://sequencing.com/marketplace/convert-rsids-coordinates",
+        "authenticatedMarketplacePositionTotal": 164,
+        "namedIdentityTotal": 154,
+        "publicCatalogOnly": true,
+        "authenticatedPositionCount": 0,
+        "authenticatedPositionNumbers": [],
+        "authenticatedGroupLabels": [],
+        "authenticatedKinds": [],
+        "authenticatedHrefs": [],
+        "orderAliasSlugs": [],
+        "boundary": "The package exists in the public catalog ledger but was not present in the authenticated 164-position marketplace capture; do not keep probing authenticated exact routes unless new source evidence appears."
+      },
       "stage": "reviewed-metadata-only",
       "templateExists": true,
       "officialCaptures": 0,
@@ -826,6 +903,30 @@
       "title": "Imputation Analysis",
       "priority": 4,
       "evidenceClass": "metadata-only",
+      "sourceCoverage": {
+        "class": "authenticated-position",
+        "label": "Authenticated marketplace position inside 164-position capture",
+        "sourceCatalogPath": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+        "sourceUrl": "https://sequencing.com/marketplace/imputation-analysis",
+        "authenticatedMarketplacePositionTotal": 164,
+        "namedIdentityTotal": 154,
+        "publicCatalogOnly": false,
+        "authenticatedPositionCount": 1,
+        "authenticatedPositionNumbers": [
+          157
+        ],
+        "authenticatedGroupLabels": [
+          "Bioinformatics"
+        ],
+        "authenticatedKinds": [
+          "marketplace"
+        ],
+        "authenticatedHrefs": [
+          "https://sequencing.com/marketplace/imputation-analysis"
+        ],
+        "orderAliasSlugs": [],
+        "boundary": "The package appears in the authenticated marketplace card capture, but formal promotion still requires official completed-output rows and source bindings."
+      },
       "stage": "reviewed-boundary-only",
       "templateExists": true,
       "officialCaptures": 1,
@@ -1043,6 +1144,30 @@
       "title": "Variant Effect Predictor",
       "priority": 5,
       "evidenceClass": "metadata-only",
+      "sourceCoverage": {
+        "class": "authenticated-position",
+        "label": "Authenticated marketplace position inside 164-position capture",
+        "sourceCatalogPath": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+        "sourceUrl": "https://sequencing.com/marketplace/variant-effect-predictor",
+        "authenticatedMarketplacePositionTotal": 164,
+        "namedIdentityTotal": 154,
+        "publicCatalogOnly": false,
+        "authenticatedPositionCount": 1,
+        "authenticatedPositionNumbers": [
+          159
+        ],
+        "authenticatedGroupLabels": [
+          "Bioinformatics"
+        ],
+        "authenticatedKinds": [
+          "marketplace"
+        ],
+        "authenticatedHrefs": [
+          "https://sequencing.com/marketplace/variant-effect-predictor"
+        ],
+        "orderAliasSlugs": [],
+        "boundary": "The package appears in the authenticated marketplace card capture, but formal promotion still requires official completed-output rows and source bindings."
+      },
       "stage": "reviewed-boundary-only",
       "templateExists": true,
       "officialCaptures": 1,
@@ -1260,6 +1385,30 @@
       "title": "Variant Discovery",
       "priority": 6,
       "evidenceClass": "metadata-only",
+      "sourceCoverage": {
+        "class": "authenticated-position",
+        "label": "Authenticated marketplace position inside 164-position capture",
+        "sourceCatalogPath": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+        "sourceUrl": "https://sequencing.com/marketplace/variant-discovery-bioinformatics-secondary-analysis",
+        "authenticatedMarketplacePositionTotal": 164,
+        "namedIdentityTotal": 154,
+        "publicCatalogOnly": false,
+        "authenticatedPositionCount": 1,
+        "authenticatedPositionNumbers": [
+          158
+        ],
+        "authenticatedGroupLabels": [
+          "Bioinformatics"
+        ],
+        "authenticatedKinds": [
+          "marketplace"
+        ],
+        "authenticatedHrefs": [
+          "https://sequencing.com/marketplace/variant-discovery-bioinformatics-secondary-analysis"
+        ],
+        "orderAliasSlugs": [],
+        "boundary": "The package appears in the authenticated marketplace card capture, but formal promotion still requires official completed-output rows and source bindings."
+      },
       "stage": "reviewed-boundary-only",
       "templateExists": true,
       "officialCaptures": 1,
@@ -1477,6 +1626,30 @@
       "title": "Short Read Mapper",
       "priority": 7,
       "evidenceClass": "metadata-only",
+      "sourceCoverage": {
+        "class": "authenticated-position",
+        "label": "Authenticated marketplace position inside 164-position capture",
+        "sourceCatalogPath": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+        "sourceUrl": "https://sequencing.com/marketplace/genome-short-read-mapper",
+        "authenticatedMarketplacePositionTotal": 164,
+        "namedIdentityTotal": 154,
+        "publicCatalogOnly": false,
+        "authenticatedPositionCount": 1,
+        "authenticatedPositionNumbers": [
+          155
+        ],
+        "authenticatedGroupLabels": [
+          "Bioinformatics"
+        ],
+        "authenticatedKinds": [
+          "marketplace"
+        ],
+        "authenticatedHrefs": [
+          "https://sequencing.com/marketplace/genome-short-read-mapper"
+        ],
+        "orderAliasSlugs": [],
+        "boundary": "The package appears in the authenticated marketplace card capture, but formal promotion still requires official completed-output rows and source bindings."
+      },
       "stage": "reviewed-boundary-only",
       "templateExists": true,
       "officialCaptures": 1,
@@ -1694,6 +1867,30 @@
       "title": "Promethease",
       "priority": 8,
       "evidenceClass": "metadata-only",
+      "sourceCoverage": {
+        "class": "authenticated-position",
+        "label": "Authenticated marketplace position inside 164-position capture",
+        "sourceCatalogPath": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+        "sourceUrl": "https://sequencing.com/marketplace/promethease",
+        "authenticatedMarketplacePositionTotal": 164,
+        "namedIdentityTotal": 154,
+        "publicCatalogOnly": false,
+        "authenticatedPositionCount": 1,
+        "authenticatedPositionNumbers": [
+          54
+        ],
+        "authenticatedGroupLabels": [
+          "Health"
+        ],
+        "authenticatedKinds": [
+          "marketplace"
+        ],
+        "authenticatedHrefs": [
+          "https://sequencing.com/marketplace/promethease"
+        ],
+        "orderAliasSlugs": [],
+        "boundary": "The package appears in the authenticated marketplace card capture, but formal promotion still requires official completed-output rows and source bindings."
+      },
       "stage": "reviewed-boundary-only",
       "templateExists": true,
       "officialCaptures": 1,
@@ -1911,6 +2108,22 @@
       "title": "Whole Genome Sequencing",
       "priority": 9,
       "evidenceClass": "metadata-only",
+      "sourceCoverage": {
+        "class": "public-only",
+        "label": "Public catalog only; not seen in authenticated 164-position capture",
+        "sourceCatalogPath": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+        "sourceUrl": "https://sequencing.com/marketplace/whole-genome-sequencing-30x",
+        "authenticatedMarketplacePositionTotal": 164,
+        "namedIdentityTotal": 154,
+        "publicCatalogOnly": true,
+        "authenticatedPositionCount": 0,
+        "authenticatedPositionNumbers": [],
+        "authenticatedGroupLabels": [],
+        "authenticatedKinds": [],
+        "authenticatedHrefs": [],
+        "orderAliasSlugs": [],
+        "boundary": "The package exists in the public catalog ledger but was not present in the authenticated 164-position marketplace capture; do not keep probing authenticated exact routes unless new source evidence appears."
+      },
       "stage": "reviewed-metadata-only",
       "templateExists": true,
       "officialCaptures": 0,
@@ -2106,6 +2319,32 @@
       "title": "Comprehensive Health Screen WGS Bundle",
       "priority": 10,
       "evidenceClass": "missing-exact-detail",
+      "sourceCoverage": {
+        "class": "authenticated-order-alias",
+        "label": "Authenticated order alias inside 164-position marketplace",
+        "sourceCatalogPath": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+        "sourceUrl": "https://sequencing.com/order/comprehensive-wgs-health-screen-bundle",
+        "authenticatedMarketplacePositionTotal": 164,
+        "namedIdentityTotal": 154,
+        "publicCatalogOnly": false,
+        "authenticatedPositionCount": 1,
+        "authenticatedPositionNumbers": [
+          162
+        ],
+        "authenticatedGroupLabels": [
+          "DNA Test Kit Bundles"
+        ],
+        "authenticatedKinds": [
+          "order"
+        ],
+        "authenticatedHrefs": [
+          "https://sequencing.com/order/comprehensive-wgs-health-screen-bundle"
+        ],
+        "orderAliasSlugs": [
+          "comprehensive-wgs-health-screen-bundle"
+        ],
+        "boundary": "The package is represented by an authenticated order-card alias, but formal promotion still requires official completed-output rows and source bindings."
+      },
       "stage": "reviewed-metadata-only",
       "templateExists": true,
       "officialCaptures": 0,
@@ -2360,6 +2599,32 @@
       "title": "Expedited Advanced Health Screen WGS Bundle",
       "priority": 11,
       "evidenceClass": "missing-exact-detail",
+      "sourceCoverage": {
+        "class": "authenticated-order-alias",
+        "label": "Authenticated order alias inside 164-position marketplace",
+        "sourceCatalogPath": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+        "sourceUrl": "https://sequencing.com/order/expedited-advanced-wgs-health-screen-bundle",
+        "authenticatedMarketplacePositionTotal": 164,
+        "namedIdentityTotal": 154,
+        "publicCatalogOnly": false,
+        "authenticatedPositionCount": 1,
+        "authenticatedPositionNumbers": [
+          163
+        ],
+        "authenticatedGroupLabels": [
+          "DNA Test Kit Bundles"
+        ],
+        "authenticatedKinds": [
+          "order"
+        ],
+        "authenticatedHrefs": [
+          "https://sequencing.com/order/expedited-advanced-wgs-health-screen-bundle/"
+        ],
+        "orderAliasSlugs": [
+          "expedited-advanced-wgs-health-screen-bundle"
+        ],
+        "boundary": "The package is represented by an authenticated order-card alias, but formal promotion still requires official completed-output rows and source bindings."
+      },
       "stage": "reviewed-metadata-only",
       "templateExists": true,
       "officialCaptures": 0,
@@ -2613,6 +2878,32 @@
       "title": "Ultra Rapid Professional Health Screen WGS Bundle",
       "priority": 12,
       "evidenceClass": "missing-exact-detail",
+      "sourceCoverage": {
+        "class": "authenticated-order-alias",
+        "label": "Authenticated order alias inside 164-position marketplace",
+        "sourceCatalogPath": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+        "sourceUrl": "https://sequencing.com/order/ultra-rapid-professional-wgs-health-screen-bundle",
+        "authenticatedMarketplacePositionTotal": 164,
+        "namedIdentityTotal": 154,
+        "publicCatalogOnly": false,
+        "authenticatedPositionCount": 1,
+        "authenticatedPositionNumbers": [
+          164
+        ],
+        "authenticatedGroupLabels": [
+          "DNA Test Kit Bundles"
+        ],
+        "authenticatedKinds": [
+          "order"
+        ],
+        "authenticatedHrefs": [
+          "https://sequencing.com/order/ultra-rapid-professional-wgs-health-screen-bundle/"
+        ],
+        "orderAliasSlugs": [
+          "ultra-rapid-professional-wgs-health-screen-bundle"
+        ],
+        "boundary": "The package is represented by an authenticated order-card alias, but formal promotion still requires official completed-output rows and source bindings."
+      },
       "stage": "reviewed-metadata-only",
       "templateExists": true,
       "officialCaptures": 0,
@@ -2866,6 +3157,22 @@
       "title": "Connective Tissue Disorders and EDS",
       "priority": 101,
       "evidenceClass": "metadata-only",
+      "sourceCoverage": {
+        "class": "public-only",
+        "label": "Public catalog only; not seen in authenticated 164-position capture",
+        "sourceCatalogPath": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+        "sourceUrl": "https://sequencing.com/marketplace/connective-tissue-disorders-and-eds",
+        "authenticatedMarketplacePositionTotal": 164,
+        "namedIdentityTotal": 154,
+        "publicCatalogOnly": true,
+        "authenticatedPositionCount": 0,
+        "authenticatedPositionNumbers": [],
+        "authenticatedGroupLabels": [],
+        "authenticatedKinds": [],
+        "authenticatedHrefs": [],
+        "orderAliasSlugs": [],
+        "boundary": "The package exists in the public catalog ledger but was not present in the authenticated 164-position marketplace capture; do not keep probing authenticated exact routes unless new source evidence appears."
+      },
       "stage": "reviewed-no-promote",
       "templateExists": true,
       "officialCaptures": 1,
@@ -3158,6 +3465,22 @@
       "title": "Ehlers-Danlos Syndrome",
       "priority": 103,
       "evidenceClass": "missing-exact-detail",
+      "sourceCoverage": {
+        "class": "public-only",
+        "label": "Public catalog only; not seen in authenticated 164-position capture",
+        "sourceCatalogPath": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+        "sourceUrl": "https://sequencing.com/marketplace/ehlers-danlos-syndrome",
+        "authenticatedMarketplacePositionTotal": 164,
+        "namedIdentityTotal": 154,
+        "publicCatalogOnly": true,
+        "authenticatedPositionCount": 0,
+        "authenticatedPositionNumbers": [],
+        "authenticatedGroupLabels": [],
+        "authenticatedKinds": [],
+        "authenticatedHrefs": [],
+        "orderAliasSlugs": [],
+        "boundary": "The package exists in the public catalog ledger but was not present in the authenticated 164-position marketplace capture; do not keep probing authenticated exact routes unless new source evidence appears."
+      },
       "stage": "reviewed-metadata-only",
       "templateExists": true,
       "officialCaptures": 0,
@@ -3410,6 +3733,30 @@
       "title": "EvE Premium DNA Genome Data Bioinformatics Pipelines",
       "priority": 104,
       "evidenceClass": "metadata-only",
+      "sourceCoverage": {
+        "class": "authenticated-position",
+        "label": "Authenticated marketplace position inside 164-position capture",
+        "sourceCatalogPath": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+        "sourceUrl": "https://sequencing.com/marketplace/eve-premium-dna-genome-data-bioinformatics-pipelines",
+        "authenticatedMarketplacePositionTotal": 164,
+        "namedIdentityTotal": 154,
+        "publicCatalogOnly": false,
+        "authenticatedPositionCount": 1,
+        "authenticatedPositionNumbers": [
+          156
+        ],
+        "authenticatedGroupLabels": [
+          "Bioinformatics"
+        ],
+        "authenticatedKinds": [
+          "marketplace"
+        ],
+        "authenticatedHrefs": [
+          "https://sequencing.com/marketplace/eve-premium-dna-genome-data-bioinformatics-pipelines"
+        ],
+        "orderAliasSlugs": [],
+        "boundary": "The package appears in the authenticated marketplace card capture, but formal promotion still requires official completed-output rows and source bindings."
+      },
       "stage": "reviewed-boundary-only",
       "templateExists": true,
       "officialCaptures": 1,
@@ -3627,6 +3974,22 @@
       "title": "Hearing & Auditory Genetics",
       "priority": 107,
       "evidenceClass": "metadata-only",
+      "sourceCoverage": {
+        "class": "public-only",
+        "label": "Public catalog only; not seen in authenticated 164-position capture",
+        "sourceCatalogPath": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+        "sourceUrl": "https://sequencing.com/marketplace/hearing-auditory-genetics",
+        "authenticatedMarketplacePositionTotal": 164,
+        "namedIdentityTotal": 154,
+        "publicCatalogOnly": true,
+        "authenticatedPositionCount": 0,
+        "authenticatedPositionNumbers": [],
+        "authenticatedGroupLabels": [],
+        "authenticatedKinds": [],
+        "authenticatedHrefs": [],
+        "orderAliasSlugs": [],
+        "boundary": "The package exists in the public catalog ledger but was not present in the authenticated 164-position marketplace capture; do not keep probing authenticated exact routes unless new source evidence appears."
+      },
       "stage": "reviewed-metadata-only",
       "templateExists": true,
       "officialCaptures": 0,
@@ -3822,6 +4185,22 @@
       "title": "Marfan Syndrome",
       "priority": 109,
       "evidenceClass": "missing-exact-detail",
+      "sourceCoverage": {
+        "class": "public-only",
+        "label": "Public catalog only; not seen in authenticated 164-position capture",
+        "sourceCatalogPath": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+        "sourceUrl": "https://sequencing.com/marketplace/marfan-syndrome",
+        "authenticatedMarketplacePositionTotal": 164,
+        "namedIdentityTotal": 154,
+        "publicCatalogOnly": true,
+        "authenticatedPositionCount": 0,
+        "authenticatedPositionNumbers": [],
+        "authenticatedGroupLabels": [],
+        "authenticatedKinds": [],
+        "authenticatedHrefs": [],
+        "orderAliasSlugs": [],
+        "boundary": "The package exists in the public catalog ledger but was not present in the authenticated 164-position marketplace capture; do not keep probing authenticated exact routes unless new source evidence appears."
+      },
       "stage": "reviewed-metadata-only",
       "templateExists": true,
       "officialCaptures": 0,
@@ -4048,6 +4427,22 @@
       "title": "Mitchell Syndrome",
       "priority": 110,
       "evidenceClass": "missing-exact-detail",
+      "sourceCoverage": {
+        "class": "public-only",
+        "label": "Public catalog only; not seen in authenticated 164-position capture",
+        "sourceCatalogPath": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+        "sourceUrl": "https://sequencing.com/marketplace/mitchell-syndrome",
+        "authenticatedMarketplacePositionTotal": 164,
+        "namedIdentityTotal": 154,
+        "publicCatalogOnly": true,
+        "authenticatedPositionCount": 0,
+        "authenticatedPositionNumbers": [],
+        "authenticatedGroupLabels": [],
+        "authenticatedKinds": [],
+        "authenticatedHrefs": [],
+        "orderAliasSlugs": [],
+        "boundary": "The package exists in the public catalog ledger but was not present in the authenticated 164-position marketplace capture; do not keep probing authenticated exact routes unless new source evidence appears."
+      },
       "stage": "reviewed-metadata-only",
       "templateExists": true,
       "officialCaptures": 0,
@@ -4273,6 +4668,22 @@
       "title": "Oral",
       "priority": 111,
       "evidenceClass": "metadata-only",
+      "sourceCoverage": {
+        "class": "public-only",
+        "label": "Public catalog only; not seen in authenticated 164-position capture",
+        "sourceCatalogPath": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+        "sourceUrl": "https://sequencing.com/marketplace/oral",
+        "authenticatedMarketplacePositionTotal": 164,
+        "namedIdentityTotal": 154,
+        "publicCatalogOnly": true,
+        "authenticatedPositionCount": 0,
+        "authenticatedPositionNumbers": [],
+        "authenticatedGroupLabels": [],
+        "authenticatedKinds": [],
+        "authenticatedHrefs": [],
+        "orderAliasSlugs": [],
+        "boundary": "The package exists in the public catalog ledger but was not present in the authenticated 164-position marketplace capture; do not keep probing authenticated exact routes unless new source evidence appears."
+      },
       "stage": "reviewed-metadata-only",
       "templateExists": true,
       "officialCaptures": 0,
@@ -4468,6 +4879,22 @@
       "title": "Pediatric Health",
       "priority": 112,
       "evidenceClass": "missing-exact-detail",
+      "sourceCoverage": {
+        "class": "public-only",
+        "label": "Public catalog only; not seen in authenticated 164-position capture",
+        "sourceCatalogPath": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+        "sourceUrl": "https://sequencing.com/marketplace/pediatric-health",
+        "authenticatedMarketplacePositionTotal": 164,
+        "namedIdentityTotal": 154,
+        "publicCatalogOnly": true,
+        "authenticatedPositionCount": 0,
+        "authenticatedPositionNumbers": [],
+        "authenticatedGroupLabels": [],
+        "authenticatedKinds": [],
+        "authenticatedHrefs": [],
+        "orderAliasSlugs": [],
+        "boundary": "The package exists in the public catalog ledger but was not present in the authenticated 164-position marketplace capture; do not keep probing authenticated exact routes unless new source evidence appears."
+      },
       "stage": "reviewed-metadata-only",
       "templateExists": true,
       "officialCaptures": 0,
@@ -4694,6 +5121,22 @@
       "title": "Pheochromocytoma and Paraganglioma",
       "priority": 113,
       "evidenceClass": "metadata-only",
+      "sourceCoverage": {
+        "class": "public-only",
+        "label": "Public catalog only; not seen in authenticated 164-position capture",
+        "sourceCatalogPath": "reference/catalog/sequencing-authenticated-marketplace-normalized-2026-06-21.json",
+        "sourceUrl": "https://sequencing.com/marketplace/pheochromocytoma-and-paraganglioma",
+        "authenticatedMarketplacePositionTotal": 164,
+        "namedIdentityTotal": 154,
+        "publicCatalogOnly": true,
+        "authenticatedPositionCount": 0,
+        "authenticatedPositionNumbers": [],
+        "authenticatedGroupLabels": [],
+        "authenticatedKinds": [],
+        "authenticatedHrefs": [],
+        "orderAliasSlugs": [],
+        "boundary": "The package exists in the public catalog ledger but was not present in the authenticated 164-position marketplace capture; do not keep probing authenticated exact routes unless new source evidence appears."
+      },
       "stage": "reviewed-metadata-only",
       "templateExists": true,
       "officialCaptures": 0,
@@ -4948,7 +5391,7 @@
   ],
   "privacyCanary": {
     "schemaVersion": "soma-reports.official-output-capture-privacy-canary.v1",
-    "generatedAt": "2026-06-25T09:01:27.100Z",
+    "generatedAt": "2026-06-25T09:35:32.106Z",
     "ok": true,
     "results": [
       {
