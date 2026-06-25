@@ -248,6 +248,13 @@ sanitized `reference/catalog/*-official-output-capture-YYYY-MM-DD.json` files
 have been added, even when all local placeholder templates are ready. Use
 `-- --format md` for a short operator report or `-- --allow-empty-captures true`
 when a read-only status command should not fail automation.
+The compact and markdown outputs also include a `captureArtifactGaps` section
+with the blocker slugs that still have no git-tracked committed
+`reference/catalog/*-official-output-capture-YYYY-MM-DD.json` artifact. Treat
+that list as an evidence-state queue only: metadata-only gaps should not be
+filled with placeholders, synthetic local outputs, or detail-page text unless an
+official completed output, public sample/export, or sanitized private output is
+available.
 `scaffold:capture-status:snapshot` writes the same sanitized status shape to
 `reference/catalog/official-output-capture-status.json` with empty captures
 allowed, so the React marketplace and report detail panels can show the current

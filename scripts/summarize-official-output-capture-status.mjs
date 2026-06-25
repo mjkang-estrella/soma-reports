@@ -600,6 +600,36 @@ const nonTargetOfficialOutputCaptureSummaries = (captureValidation?.results ?? [
     status: "outside-current-blocker-ledger",
   }));
 const officialBoundaryModeledRows = rows.filter((row) => row.officialBoundaryModeled);
+const rowsMissingCommittedOfficialCapture = rows.filter(
+  (row) => asArray(row.gitTrackedOfficialCapturePaths).length === 0,
+);
+const metadataOnlyRowsMissingCommittedOfficialCapture = rowsMissingCommittedOfficialCapture.filter(
+  (row) => row.officialEvidenceTier === "official-metadata-only",
+);
+const boundaryModeledRowsMissingCommittedOfficialCapture = rowsMissingCommittedOfficialCapture.filter(
+  (row) => row.officialEvidenceTier === "official-boundary-modeled",
+);
+const compactCaptureGapRow = (row) => ({
+  slug: row.slug,
+  title: row.title,
+  stage: row.stage,
+  officialEvidenceTier: row.officialEvidenceTier,
+  evidenceClass: row.evidenceClass,
+  sourceCoverage: row.sourceCoverage,
+  officialCaptures: row.officialCaptures,
+  expectedSanitizedArtifactPath: row.expectedSanitizedArtifactPath,
+  publicCaptureSessionCommand: row.publicCaptureSessionCommand,
+  redactionTemplateCommand: row.redactionTemplateCommand,
+  dryRunSanitizeCommand: row.dryRunSanitizeCommand,
+  commitSanitizedCaptureCommand: row.commitSanitizedCaptureCommand,
+  validationCommandForExpectedCapture: row.validationCommandForExpectedCapture,
+  requiredEvidenceForPromotion: row.requiredEvidenceForPromotion,
+  missingOfficialRowEvidence: row.operatorEvidenceChecklist?.missingOfficialRowEvidence ?? [],
+  boundary:
+    row.officialEvidenceTier === "official-metadata-only"
+      ? "Metadata-only source state. Do not create a committed capture until official completed output, a public sample/export, or a sanitized private output exists."
+      : "Committed official-output capture is still missing from the current blocker row.",
+});
 const nonPromotionalBoundaryDecisions = new Set(["no-promote", "keep-boundary-only"]);
 const officialBoundaryPromotionFlagKeys = [
   "promotesSampleBackedFormalReady",
@@ -832,6 +862,9 @@ const summary = {
       (total, row) => total + (row.officialBoundaryModeledFields ?? 0),
       0,
     ),
+    missingCommittedOfficialCaptureTargets: rowsMissingCommittedOfficialCapture.length,
+    metadataOnlyMissingCommittedCaptureTargets: metadataOnlyRowsMissingCommittedOfficialCapture.length,
+    boundaryModeledMissingCommittedCaptureTargets: boundaryModeledRowsMissingCommittedOfficialCapture.length,
     unreviewedOutputSignalReviewTargets:
       planTotals.unreviewedOutputSignalReviewTargets ?? planTotals.unreviewedPromotionCandidateTargets ?? 0,
     unreviewedPromotionCandidateTargets: planTotals.unreviewedPromotionCandidateTargets ?? 0,
@@ -890,6 +923,19 @@ const summary = {
   ),
   officialBoundaryNonPromotionAudit,
   operatorEvidenceChecklistAudit,
+  captureArtifactGaps: {
+    missingCommittedOfficialCaptureTargets: rowsMissingCommittedOfficialCapture.length,
+    metadataOnlyMissingCommittedCaptureTargets: metadataOnlyRowsMissingCommittedOfficialCapture.length,
+    boundaryModeledMissingCommittedCaptureTargets: boundaryModeledRowsMissingCommittedOfficialCapture.length,
+    missingCommittedOfficialCaptureSlugs: rowsMissingCommittedOfficialCapture.map((row) => row.slug),
+    metadataOnlyMissingCommittedCaptureSlugs: metadataOnlyRowsMissingCommittedOfficialCapture.map((row) => row.slug),
+    boundaryModeledMissingCommittedCaptureSlugs: boundaryModeledRowsMissingCommittedOfficialCapture.map(
+      (row) => row.slug,
+    ),
+    rows: rowsMissingCommittedOfficialCapture.map(compactCaptureGapRow),
+    boundary:
+      "This gap list is evidence-state reporting only. Missing committed captures must not be filled with metadata-only placeholders or synthetic local outputs.",
+  },
   rows,
   nonTargetOfficialOutputCaptures: nonTargetOfficialOutputCaptureSummaries,
   privacyCanary: privacyCanaryRun.data ?? null,
@@ -941,6 +987,9 @@ const renderMarkdown = () => {
     `- Reviewed metadata-only: ${summary.totals.reviewedMetadataOnlyTargets}`,
     `- Official-boundary modeled: ${summary.totals.officialBoundaryModeledTargets}`,
     `- Official-boundary modeled formal fields: ${summary.totals.officialBoundaryModeledFormalFields}`,
+    `- Missing committed capture artifacts: ${summary.totals.missingCommittedOfficialCaptureTargets}`,
+    `- Metadata-only missing committed captures: ${summary.totals.metadataOnlyMissingCommittedCaptureTargets}`,
+    `- Boundary-modeled missing committed captures: ${summary.totals.boundaryModeledMissingCommittedCaptureTargets}`,
     `- Official-boundary non-promotion audit: ${
       summary.officialBoundaryNonPromotionAudit.ok ? "pass" : "fail"
     } (${summary.officialBoundaryNonPromotionAudit.checked} checked)`,
@@ -952,6 +1001,17 @@ const renderMarkdown = () => {
     "## Problems",
     "",
     ...(summary.problems.length > 0 ? summary.problems.map((problem) => `- ${problem}`) : ["- none"]),
+    "",
+    "## Missing Committed Capture Artifacts",
+    "",
+    ...(summary.captureArtifactGaps.rows.length > 0
+      ? summary.captureArtifactGaps.rows.map(
+          (row) =>
+            `- \`${row.slug}\`: \`${row.officialEvidenceTier}\`, expected \`${
+              row.expectedSanitizedArtifactPath
+            }\`, next public command \`${row.publicCaptureSessionCommand ?? "not available"}\``,
+        )
+      : ["- none"]),
     "",
     "## Captures Outside Current Blocker Ledger",
     "",
@@ -1060,6 +1120,7 @@ const renderCompact = () =>
       officialEvidenceTierCounts: summary.officialEvidenceTierCounts,
       officialBoundaryNonPromotionAudit: summary.officialBoundaryNonPromotionAudit,
       operatorEvidenceChecklistAudit: summary.operatorEvidenceChecklistAudit,
+      captureArtifactGaps: summary.captureArtifactGaps,
       problems: summary.problems,
       nextQueue: summary.rows.map((row) => ({
         slug: row.slug,
