@@ -114,6 +114,14 @@ export const loadOfficialOutputPromotionReview = (path = defaultOfficialOutputPr
     if (isMetadataOnlyReview && sourcePaths.length === 0 && sourceUrls.length === 0) {
       problems.push(`${label} metadata-only review needs sourcePaths or sourceUrls`);
     }
+    if (entry.reviewClass === "reviewed-boundary-only") {
+      if (asArray(entry.evidenceMissing).length === 0) {
+        problems.push(`${label} boundary-only review needs evidenceMissing entries`);
+      }
+      if (asArray(entry.nextEvidenceNeeded).length === 0) {
+        problems.push(`${label} boundary-only review needs nextEvidenceNeeded entries`);
+      }
+    }
     for (const sourcePath of sourcePaths) {
       if (!isNonEmptyString(sourcePath)) {
         problems.push(`${label} sourcePaths entries must be non-empty strings`);

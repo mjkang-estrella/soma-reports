@@ -170,6 +170,9 @@ const evaluateRenderedPage = `async () => {
   );
   const selectedReportTitle = normalize(document.querySelector(".detail-sidebar h2")?.innerText);
   const selectedDetailText = normalize(document.querySelector("#report-detail")?.innerText);
+  const selectedOfficialBlockerSummaryText = normalize(
+    document.querySelector('[aria-label="Official output blocker summary"]')?.innerText,
+  );
   const readOnlyLocalRunText = normalize(document.querySelector('[aria-label="Read-only local-run checks"]')?.innerText);
   const writePrivateLocalRunText = normalize(document.querySelector('[aria-label="Local run commands that write tmp"]')?.innerText);
   const selectedEvidencePacketPanel = [...document.querySelectorAll("#official-output-capture .capture-template-panel")].find((panel) =>
@@ -250,6 +253,24 @@ const evaluateRenderedPage = `async () => {
     officialCaptureBoardText: normalize(document.querySelector(".official-capture-board")?.innerText).slice(0, 3000),
     selectedReportTitle,
     selectedDetailText: selectedDetailText.slice(0, 4000),
+    selectedOfficialBlockerSummaryText: selectedOfficialBlockerSummaryText.slice(0, 2000),
+    selectedOfficialBlockerSummaryRendered: selectedOfficialBlockerSummaryText.length > 0,
+    selectedOfficialBlockerSummaryShowsBlueprintCoverage:
+      /Blueprint coverage\\s+\\d+\\/\\d+ sections,\\s+\\d+\\/\\d+ fields/i.test(selectedOfficialBlockerSummaryText),
+    selectedOfficialBlockerSummaryShowsCaptureStatus:
+      /Official capture status/i.test(selectedOfficialBlockerSummaryText) &&
+      /Official boundary modeled|Metadata only|Official metadata only|Official template only|Official output signal unreviewed/i.test(
+        selectedOfficialBlockerSummaryText,
+      ) &&
+      /\\d+ captures/i.test(selectedOfficialBlockerSummaryText),
+    selectedOfficialBlockerSummaryShowsSourceCoverage:
+      /Source coverage/i.test(selectedOfficialBlockerSummaryText) &&
+      /positions|no authenticated position|source coverage not classified/i.test(selectedOfficialBlockerSummaryText),
+    selectedOfficialBlockerSummaryShowsRowReadyZero: /Row-ready count\\s+0/i.test(selectedOfficialBlockerSummaryText),
+    selectedOfficialBlockerSummaryShowsNonPromotionBoundary:
+      /Does not promote sample-backed formal readiness, formal parity, sample rows, result rows, citation bindings, or formal blocker removal/i.test(
+        selectedOfficialBlockerSummaryText,
+      ),
     selectedEvidencePacketText: selectedEvidencePacketText.slice(0, 5000),
     selectedEvidencePacketRendered: /Official evidence packet/i.test(selectedEvidencePacketPanel?.innerText || ""),
     selectedEvidencePacketHasProvenance:
@@ -614,6 +635,29 @@ try {
   );
   addCheck(
     checks,
+    "selected_official_blocker_essentials_summary",
+    rendered.selectedOfficialBlockerSummaryRendered &&
+      rendered.selectedOfficialBlockerSummaryShowsBlueprintCoverage &&
+      rendered.selectedOfficialBlockerSummaryShowsCaptureStatus &&
+      rendered.selectedOfficialBlockerSummaryShowsSourceCoverage &&
+      rendered.selectedOfficialBlockerSummaryShowsRowReadyZero &&
+      rendered.selectedOfficialBlockerSummaryShowsNonPromotionBoundary,
+    "selected report essentials show compact official-output blocker summary with blueprint coverage, status, source coverage, row-ready 0, and non-promotion boundary",
+    {
+      selectedReportTitle: rendered.selectedReportTitle,
+      selectedOfficialBlockerSummaryRendered: rendered.selectedOfficialBlockerSummaryRendered,
+      selectedOfficialBlockerSummaryShowsBlueprintCoverage:
+        rendered.selectedOfficialBlockerSummaryShowsBlueprintCoverage,
+      selectedOfficialBlockerSummaryShowsCaptureStatus: rendered.selectedOfficialBlockerSummaryShowsCaptureStatus,
+      selectedOfficialBlockerSummaryShowsSourceCoverage: rendered.selectedOfficialBlockerSummaryShowsSourceCoverage,
+      selectedOfficialBlockerSummaryShowsRowReadyZero: rendered.selectedOfficialBlockerSummaryShowsRowReadyZero,
+      selectedOfficialBlockerSummaryShowsNonPromotionBoundary:
+        rendered.selectedOfficialBlockerSummaryShowsNonPromotionBoundary,
+      selectedOfficialBlockerSummaryText: rendered.selectedOfficialBlockerSummaryText,
+    },
+  );
+  addCheck(
+    checks,
     "selected_output_schema_blueprint",
     rendered.selectedDetailShowsFormalBlueprint && rendered.selectedDetailShowsBlueprintNonPromotion,
     "selected report output schema shows non-promoting formal blueprint metadata",
@@ -796,6 +840,14 @@ try {
       selectedDetailShowsSampleBackedPending: rendered.selectedDetailShowsSampleBackedPending,
       selectedDetailShowsRowReadyZero: rendered.selectedDetailShowsRowReadyZero,
       selectedDetailShowsMissingOfficialRows: rendered.selectedDetailShowsMissingOfficialRows,
+      selectedOfficialBlockerSummaryRendered: rendered.selectedOfficialBlockerSummaryRendered,
+      selectedOfficialBlockerSummaryShowsBlueprintCoverage:
+        rendered.selectedOfficialBlockerSummaryShowsBlueprintCoverage,
+      selectedOfficialBlockerSummaryShowsCaptureStatus: rendered.selectedOfficialBlockerSummaryShowsCaptureStatus,
+      selectedOfficialBlockerSummaryShowsSourceCoverage: rendered.selectedOfficialBlockerSummaryShowsSourceCoverage,
+      selectedOfficialBlockerSummaryShowsRowReadyZero: rendered.selectedOfficialBlockerSummaryShowsRowReadyZero,
+      selectedOfficialBlockerSummaryShowsNonPromotionBoundary:
+        rendered.selectedOfficialBlockerSummaryShowsNonPromotionBoundary,
       selectedDetailShowsFormalBlueprint: rendered.selectedDetailShowsFormalBlueprint,
       selectedDetailShowsBlueprintNonPromotion: rendered.selectedDetailShowsBlueprintNonPromotion,
       selectedDetailHasLiteralReportSlugPlaceholder: rendered.selectedDetailHasLiteralReportSlugPlaceholder,

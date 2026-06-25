@@ -36,7 +36,7 @@ const stageFilter = args.get("--stage") ?? "all";
 const classFilter = args.get("--class") ?? "all";
 const limit = args.has("--limit") ? Number(args.get("--limit")) : null;
 const dateStamp = args.get("--date") ?? todayStamp();
-const sourceMode = args.get("--source") ?? "both";
+const sourceMode = args.get("--source") ?? "public";
 const sortMode = args.get("--sort") ?? "priority";
 const reportFilter = args.get("--report") ?? args.get("--slug") ?? null;
 
@@ -186,12 +186,6 @@ const privateCommandChainFor = (row) => {
       `# Stop before promotion preview until validate-captures reports rowEvidenceReady: true for ${slug}.`,
   ]);
 };
-
-const commandChainFor = (row) =>
-  uniqueCommands([
-    ...(sourceMode === "public" || sourceMode === "both" ? publicCommandChainFor(row) : []),
-    ...(sourceMode === "private" || sourceMode === "both" ? privateCommandChainFor(row) : []),
-  ]);
 
 const outputSignalCount = (signals, key) => Number(signals?.[key] ?? 0);
 const compactPublicEndpointProbeFor = (row) => {
@@ -363,8 +357,8 @@ const selectedRows = rows
     const sanitizedDraftPath = row.sanitizedDraftArtifactPath ?? sanitizedDraftPathFor(row.slug);
     const committedCapturePath = row.committedCapturePath ?? committedCapturePathFor(row.slug);
     const currentSignals = row.formalReadinessGate?.currentOutputSignals ?? {};
-    const publicCommands = publicCommandChainFor(row);
-    const privateCommands = privateCommandChainFor(row);
+    const publicCommands = sourceMode === "public" || sourceMode === "both" ? publicCommandChainFor(row) : [];
+    const privateCommands = sourceMode === "private" || sourceMode === "both" ? privateCommandChainFor(row) : [];
     const publicEndpointProbeRow = publicEndpointProbeBySlug.get(row.slug) ?? null;
     const publicEndpointProbeSummary = compactPublicEndpointProbeFor(publicEndpointProbeRow);
     const publicCaptureOpportunity = publicCaptureOpportunityFor(row, tier, currentSignals, publicEndpointProbeRow);
@@ -409,7 +403,7 @@ const selectedRows = rows
       committedCapturePath,
       publicCommands,
       privateCommands,
-      commands: commandChainFor(row),
+      commands: uniqueCommands([...publicCommands, ...privateCommands]),
       stopConditions: [
         "Do not click Start Report, Get Report, Get App, or Order actions from this manifest.",
         "Use --source public only for public/non-private official samples, reportFiles, exports, or already sanitized completed-output structure.",

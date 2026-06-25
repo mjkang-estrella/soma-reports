@@ -535,6 +535,15 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
     formalEvidenceTarget?.sourceCoverage ?? officialOutputCaptureStatus?.sourceCoverage ?? null;
   const officialOutputPublicCaptureOpportunity =
     officialOutputCaptureStatus?.publicCapturePriorityOpportunitySummary ?? null;
+  const formalBlueprintSectionCount = report.outputSections.filter((section) => section.formalOutputBlueprint).length;
+  const expectedOutputFieldCount = report.outputSections.reduce(
+    (total, section) => total + section.expectedFields.length,
+    0,
+  );
+  const formalBlueprintFieldCount = report.outputSections.reduce(
+    (total, section) => total + section.expectedFields.filter((field) => field.formalOutputBlueprint).length,
+    0,
+  );
   const officialOutputRedactionInputPath =
     officialOutputCaptureStatus?.redactionInputPath ?? formalEvidenceTarget?.redactionInputPath ?? null;
   const officialOutputCaptureTemplateCommand =
@@ -1212,6 +1221,42 @@ export function ReportDetail({ report, readiness }: ReportDetailProps) {
                 <strong>{localAgentInputReady ? "Ready" : "Pending"}</strong>
               </div>
             </div>
+            {formalEvidenceTarget ? (
+              <div className="readiness-gap-list" aria-label="Official output blocker summary">
+                <div>
+                  <strong>Blueprint coverage</strong>
+                  <p>
+                    {formalBlueprintSectionCount}/{report.outputSections.length} sections, {formalBlueprintFieldCount}/
+                    {expectedOutputFieldCount} fields
+                  </p>
+                </div>
+                <div>
+                  <strong>Official capture status</strong>
+                  <p>
+                    <span className={`evidence-status evidence-status-${officialEvidenceTier}`}>
+                      {officialEvidenceTierLabel}
+                    </span>{" "}
+                    {formatGapLabel(officialOutputCaptureStatus?.stage ?? "status missing")};{" "}
+                    {officialOutputCaptureStatus?.officialCaptures ?? 0} captures
+                  </p>
+                </div>
+                <div>
+                  <strong>Source coverage</strong>
+                  <p>{formatSourceCoverage(officialOutputSourceCoverage)}</p>
+                </div>
+                <div>
+                  <strong>Row-ready count</strong>
+                  <p>{officialOutputCaptureStatus?.rowEvidenceReadyCaptures ?? 0}</p>
+                </div>
+                <div>
+                  <strong>Non-promotion boundary</strong>
+                  <p>
+                    Does not promote sample-backed formal readiness, formal parity, sample rows, result rows, citation
+                    bindings, or formal blocker removal.
+                  </p>
+                </div>
+              </div>
+            ) : null}
             <div className="readiness-gap-list">
               <div>
                 <strong>

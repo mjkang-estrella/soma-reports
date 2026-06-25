@@ -1,6 +1,6 @@
 {
   "schemaVersion": "soma-reports.official-output-capture-status.v1",
-  "generatedAt": "2026-06-25T10:00:15.995Z",
+  "generatedAt": "2026-06-25T21:14:24.967Z",
   "ok": true,
   "targetClass": "all",
   "allowEmptyCaptures": true,
@@ -335,16 +335,51 @@
         ],
         "readyForPromotion": false
       },
+      "requiredEvidenceForPromotion": [
+        "Official generated depth/coverage sample table",
+        "Formal depth/coverage graph or table fields",
+        "Row-level source bindings for QC output rows"
+      ],
+      "publicBundleEvidenceMissingForPromotion": [],
+      "packageSpecificMissingEvidence": [
+        "Official generated depth/coverage sample table",
+        "Formal depth/coverage graph or table fields",
+        "Row-level source bindings for QC output rows",
+        "Non-private depth/coverage table rows",
+        "Chromosome-level numeric depth values",
+        "Graph datapoints",
+        "Generated QC result rows",
+        "Source bindings for rows",
+        "Official generated sample output or export",
+        "Sanitized coverage table or graph data with non-private rows and source IDs"
+      ],
       "operatorEvidenceChecklist": {
         "promotionalOfficialRowsPresent": false,
         "coveredFormalFieldsPresent": true,
         "citationBindingsPresent": false,
         "rowEvidenceReadyCapturePresent": false,
+        "requiredEvidenceForPromotion": [
+          "Official generated depth/coverage sample table",
+          "Formal depth/coverage graph or table fields",
+          "Row-level source bindings for QC output rows"
+        ],
         "missingOfficialRowEvidence": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Official generated depth/coverage sample table",
+          "Formal depth/coverage graph or table fields",
+          "Row-level source bindings for QC output rows",
+          "Non-private depth/coverage table rows",
+          "Chromosome-level numeric depth values",
+          "Graph datapoints",
+          "Generated QC result rows",
+          "Source bindings for rows",
+          "Official generated sample output or export",
+          "Sanitized coverage table or graph data with non-private rows and source IDs"
         ],
+        "publicFirstNextAction": "Capture exact non-private rows and citation bindings from completed official output.",
+        "publicFirstNextCommand": "npm run scaffold:capture-session -- --source public --report sequencing-depth-and-coverage --format md --out tmp/official-output-capture-session-sequencing-depth-and-coverage.md",
         "nonPromotionalEvidenceClasses": [
           "synthetic fixtures",
           "local deterministic results",
@@ -386,8 +421,8 @@
         },
         "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data"
       },
-      "nextAction": "Reviewed capture remains boundary-only. Start a private-output redaction input only when you can preserve official non-private rows and source bindings.",
-      "nextCommand": "npm run scaffold:redaction-template -- --report sequencing-depth-and-coverage",
+      "nextAction": "Reviewed capture remains boundary-only. Use a public capture session for non-private official rows and source bindings; use private redaction only for completed private output.",
+      "nextCommand": "npm run scaffold:capture-session -- --source public --report sequencing-depth-and-coverage --format md --out tmp/official-output-capture-session-sequencing-depth-and-coverage.md",
       "redactionInputPath": ".soma/private/official-output-redactions/sequencing-depth-and-coverage-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report sequencing-depth-and-coverage",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/sequencing-depth-and-coverage-redaction-input.json",
@@ -421,6 +456,9 @@
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "citationBindings[] and source IDs for row-level evidence",
           "a rowEvidenceReady official-output capture validator pass",
+          "Official generated depth/coverage sample table",
+          "Formal depth/coverage graph or table fields",
+          "Row-level source bindings for QC output rows",
           "Non-private depth/coverage table rows",
           "Chromosome-level numeric depth values",
           "Graph datapoints",
@@ -430,7 +468,9 @@
           "Sanitized coverage table or graph data with non-private rows and source IDs"
         ],
         "readinessBoundary": "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
-      }
+      },
+      "nextPublicQueueAction": "Capture exact non-private rows and citation bindings from completed official output.",
+      "nextPublicCommand": "npm run scaffold:capture-session -- --source public --report sequencing-depth-and-coverage --format md --out tmp/official-output-capture-session-sequencing-depth-and-coverage.md"
     },
     {
       "slug": "genome-explorer-dna-data-search",
@@ -656,16 +696,49 @@
         ],
         "readyForPromotion": false
       },
+      "requiredEvidenceForPromotion": [
+        "Official Genome Explorer sample output or export",
+        "Formal search/result table rows",
+        "Row-level source bindings for search/result fields"
+      ],
+      "publicBundleEvidenceMissingForPromotion": [],
+      "packageSpecificMissingEvidence": [
+        "Official Genome Explorer sample output or export",
+        "Formal search/result table rows",
+        "Row-level source bindings for search/result fields",
+        "Actual non-private Genome Explorer result rows",
+        "Example search inputs with outputs",
+        "Per-row source bindings",
+        "Official sample/export with populated rows",
+        "Official sample or demo result set",
+        "Sanitized export containing populated non-private rows and source IDs"
+      ],
       "operatorEvidenceChecklist": {
         "promotionalOfficialRowsPresent": false,
         "coveredFormalFieldsPresent": true,
         "citationBindingsPresent": false,
         "rowEvidenceReadyCapturePresent": false,
+        "requiredEvidenceForPromotion": [
+          "Official Genome Explorer sample output or export",
+          "Formal search/result table rows",
+          "Row-level source bindings for search/result fields"
+        ],
         "missingOfficialRowEvidence": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Official Genome Explorer sample output or export",
+          "Formal search/result table rows",
+          "Row-level source bindings for search/result fields",
+          "Actual non-private Genome Explorer result rows",
+          "Example search inputs with outputs",
+          "Per-row source bindings",
+          "Official sample/export with populated rows",
+          "Official sample or demo result set",
+          "Sanitized export containing populated non-private rows and source IDs"
         ],
+        "publicFirstNextAction": "Capture exact non-private rows and citation bindings from completed official output.",
+        "publicFirstNextCommand": "npm run scaffold:capture-session -- --source public --report genome-explorer-dna-data-search --format md --out tmp/official-output-capture-session-genome-explorer-dna-data-search.md",
         "nonPromotionalEvidenceClasses": [
           "synthetic fixtures",
           "local deterministic results",
@@ -707,8 +780,8 @@
         },
         "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data"
       },
-      "nextAction": "Reviewed capture remains boundary-only. Start a private-output redaction input only when you can preserve official non-private rows and source bindings.",
-      "nextCommand": "npm run scaffold:redaction-template -- --report genome-explorer-dna-data-search",
+      "nextAction": "Reviewed capture remains boundary-only. Use a public capture session for non-private official rows and source bindings; use private redaction only for completed private output.",
+      "nextCommand": "npm run scaffold:capture-session -- --source public --report genome-explorer-dna-data-search --format md --out tmp/official-output-capture-session-genome-explorer-dna-data-search.md",
       "redactionInputPath": ".soma/private/official-output-redactions/genome-explorer-dna-data-search-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report genome-explorer-dna-data-search",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/genome-explorer-dna-data-search-redaction-input.json",
@@ -742,6 +815,9 @@
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "citationBindings[] and source IDs for row-level evidence",
           "a rowEvidenceReady official-output capture validator pass",
+          "Official Genome Explorer sample output or export",
+          "Formal search/result table rows",
+          "Row-level source bindings for search/result fields",
           "Actual non-private Genome Explorer result rows",
           "Example search inputs with outputs",
           "Per-row source bindings",
@@ -750,7 +826,9 @@
           "Sanitized export containing populated non-private rows and source IDs"
         ],
         "readinessBoundary": "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
-      }
+      },
+      "nextPublicQueueAction": "Capture exact non-private rows and citation bindings from completed official output.",
+      "nextPublicCommand": "npm run scaffold:capture-session -- --source public --report genome-explorer-dna-data-search --format md --out tmp/official-output-capture-session-genome-explorer-dna-data-search.md"
     },
     {
       "slug": "convert-rsids-coordinates",
@@ -892,17 +970,48 @@
         ],
         "readyForPromotion": false
       },
+      "requiredEvidenceForPromotion": [
+        "Official output table or report export for the converter",
+        "Exact sample rows showing rsID-to-coordinate conversion behavior",
+        "Row-level source bindings for each formal output row"
+      ],
+      "publicBundleEvidenceMissingForPromotion": [],
+      "packageSpecificMissingEvidence": [
+        "Official output table or report export for the converter",
+        "Exact sample rows showing rsID-to-coordinate conversion behavior",
+        "Row-level source bindings for each formal output row",
+        "Sample rsID input/output table",
+        "Coordinate conversion rows",
+        "Row-level source bindings",
+        "Official converter sample export with populated rows",
+        "Sanitized rsID-to-coordinate output rows with source IDs"
+      ],
       "operatorEvidenceChecklist": {
         "promotionalOfficialRowsPresent": false,
         "coveredFormalFieldsPresent": false,
         "citationBindingsPresent": false,
         "rowEvidenceReadyCapturePresent": false,
+        "requiredEvidenceForPromotion": [
+          "Official output table or report export for the converter",
+          "Exact sample rows showing rsID-to-coordinate conversion behavior",
+          "Row-level source bindings for each formal output row"
+        ],
         "missingOfficialRowEvidence": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "covered formalFields[] mapped from official output",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Official output table or report export for the converter",
+          "Exact sample rows showing rsID-to-coordinate conversion behavior",
+          "Row-level source bindings for each formal output row",
+          "Sample rsID input/output table",
+          "Coordinate conversion rows",
+          "Row-level source bindings",
+          "Official converter sample export with populated rows",
+          "Sanitized rsID-to-coordinate output rows with source IDs"
         ],
+        "publicFirstNextAction": "Use the public capture session once official completed output is available.",
+        "publicFirstNextCommand": "npm run scaffold:capture-session -- --source public --report convert-rsids-coordinates --format md --out tmp/official-output-capture-session-convert-rsids-coordinates.md",
         "nonPromotionalEvidenceClasses": [
           "synthetic fixtures",
           "local deterministic results",
@@ -944,8 +1053,8 @@
         },
         "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data"
       },
-      "nextAction": "Reviewed current sources remain metadata-only. Start a private-output redaction input only after an official completed output or non-private sample/export is available.",
-      "nextCommand": "npm run scaffold:redaction-template -- --report convert-rsids-coordinates",
+      "nextAction": "Reviewed current sources remain metadata-only. Use a public capture session for non-private official output; use private redaction only after private completed output is available.",
+      "nextCommand": "npm run scaffold:capture-session -- --source public --report convert-rsids-coordinates --format md --out tmp/official-output-capture-session-convert-rsids-coordinates.md",
       "redactionInputPath": ".soma/private/official-output-redactions/convert-rsids-coordinates-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report convert-rsids-coordinates",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/convert-rsids-coordinates-redaction-input.json",
@@ -980,6 +1089,9 @@
           "covered formalFields[] mapped from official output",
           "citationBindings[] and source IDs for row-level evidence",
           "a rowEvidenceReady official-output capture validator pass",
+          "Official output table or report export for the converter",
+          "Exact sample rows showing rsID-to-coordinate conversion behavior",
+          "Row-level source bindings for each formal output row",
           "Sample rsID input/output table",
           "Coordinate conversion rows",
           "Row-level source bindings",
@@ -987,7 +1099,9 @@
           "Sanitized rsID-to-coordinate output rows with source IDs"
         ],
         "readinessBoundary": "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
-      }
+      },
+      "nextPublicQueueAction": "Use the public capture session once official completed output is available.",
+      "nextPublicCommand": "npm run scaffold:capture-session -- --source public --report convert-rsids-coordinates --format md --out tmp/official-output-capture-session-convert-rsids-coordinates.md"
     },
     {
       "slug": "imputation-analysis",
@@ -1064,14 +1178,28 @@
           "generatedOutput": false
         },
         "evidencePresent": [],
-        "evidenceMissing": [],
-        "nextEvidenceNeeded": [],
+        "evidenceMissing": [
+          "Direct imputation output or post-run export",
+          "Formal imputation summary/result rows",
+          "Row-level source bindings for imputation fields"
+        ],
+        "nextEvidenceNeeded": [
+          "Official non-private Imputation Analysis sample output or export",
+          "Sanitized completed output preserving imputation summary/result rows and source IDs"
+        ],
         "boundaryUse": "Purpose and scope guidance only; do not treat the purpose sentence as sampleRows, resultRows, generatedOutput, or citationBindings."
       },
       "officialOutputReviewBoundaryUse": "Purpose and scope guidance only; do not treat the purpose sentence as sampleRows, resultRows, generatedOutput, or citationBindings.",
       "officialOutputReviewEvidencePresent": [],
-      "officialOutputReviewEvidenceMissing": [],
-      "officialOutputReviewNextEvidenceNeeded": [],
+      "officialOutputReviewEvidenceMissing": [
+        "Direct imputation output or post-run export",
+        "Formal imputation summary/result rows",
+        "Row-level source bindings for imputation fields"
+      ],
+      "officialOutputReviewNextEvidenceNeeded": [
+        "Official non-private Imputation Analysis sample output or export",
+        "Sanitized completed output preserving imputation summary/result rows and source IDs"
+      ],
       "officialOutputReviewOutputSignals": {
         "reportFile": false,
         "sampleRows": 0,
@@ -1101,8 +1229,15 @@
           "generatedOutput": false
         },
         "evidencePresent": [],
-        "evidenceMissing": [],
-        "nextEvidenceNeeded": [],
+        "evidenceMissing": [
+          "Direct imputation output or post-run export",
+          "Formal imputation summary/result rows",
+          "Row-level source bindings for imputation fields"
+        ],
+        "nextEvidenceNeeded": [
+          "Official non-private Imputation Analysis sample output or export",
+          "Sanitized completed output preserving imputation summary/result rows and source IDs"
+        ],
         "boundaryUse": "Purpose and scope guidance only; do not treat the purpose sentence as sampleRows, resultRows, generatedOutput, or citationBindings.",
         "promotionBoundary": {
           "promotesSampleBackedFormalReady": false,
@@ -1169,16 +1304,41 @@
         ],
         "readyForPromotion": false
       },
+      "requiredEvidenceForPromotion": [
+        "Direct imputation output or post-run export",
+        "Formal imputation summary/result rows",
+        "Row-level source bindings for imputation fields"
+      ],
+      "publicBundleEvidenceMissingForPromotion": [],
+      "packageSpecificMissingEvidence": [
+        "Direct imputation output or post-run export",
+        "Formal imputation summary/result rows",
+        "Row-level source bindings for imputation fields",
+        "Official non-private Imputation Analysis sample output or export",
+        "Sanitized completed output preserving imputation summary/result rows and source IDs"
+      ],
       "operatorEvidenceChecklist": {
         "promotionalOfficialRowsPresent": false,
         "coveredFormalFieldsPresent": true,
         "citationBindingsPresent": false,
         "rowEvidenceReadyCapturePresent": false,
+        "requiredEvidenceForPromotion": [
+          "Direct imputation output or post-run export",
+          "Formal imputation summary/result rows",
+          "Row-level source bindings for imputation fields"
+        ],
         "missingOfficialRowEvidence": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Direct imputation output or post-run export",
+          "Formal imputation summary/result rows",
+          "Row-level source bindings for imputation fields",
+          "Official non-private Imputation Analysis sample output or export",
+          "Sanitized completed output preserving imputation summary/result rows and source IDs"
         ],
+        "publicFirstNextAction": "Capture exact non-private rows and citation bindings from completed official output.",
+        "publicFirstNextCommand": "npm run scaffold:capture-session -- --source public --report imputation-analysis --format md --out tmp/official-output-capture-session-imputation-analysis.md",
         "nonPromotionalEvidenceClasses": [
           "synthetic fixtures",
           "local deterministic results",
@@ -1220,8 +1380,8 @@
         },
         "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data"
       },
-      "nextAction": "Reviewed capture remains boundary-only. Start a private-output redaction input only when you can preserve official non-private rows and source bindings.",
-      "nextCommand": "npm run scaffold:redaction-template -- --report imputation-analysis",
+      "nextAction": "Reviewed capture remains boundary-only. Use a public capture session for non-private official rows and source bindings; use private redaction only for completed private output.",
+      "nextCommand": "npm run scaffold:capture-session -- --source public --report imputation-analysis --format md --out tmp/official-output-capture-session-imputation-analysis.md",
       "redactionInputPath": ".soma/private/official-output-redactions/imputation-analysis-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report imputation-analysis",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/imputation-analysis-redaction-input.json",
@@ -1254,10 +1414,17 @@
         "blockers": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Direct imputation output or post-run export",
+          "Formal imputation summary/result rows",
+          "Row-level source bindings for imputation fields",
+          "Official non-private Imputation Analysis sample output or export",
+          "Sanitized completed output preserving imputation summary/result rows and source IDs"
         ],
         "readinessBoundary": "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
-      }
+      },
+      "nextPublicQueueAction": "Capture exact non-private rows and citation bindings from completed official output.",
+      "nextPublicCommand": "npm run scaffold:capture-session -- --source public --report imputation-analysis --format md --out tmp/official-output-capture-session-imputation-analysis.md"
     },
     {
       "slug": "variant-effect-predictor",
@@ -1334,14 +1501,28 @@
           "generatedOutput": false
         },
         "evidencePresent": [],
-        "evidenceMissing": [],
-        "nextEvidenceNeeded": [],
+        "evidenceMissing": [
+          "Official Variant Effect Predictor sample output",
+          "Formal consequence/effect output rows",
+          "Row-level source bindings for predicted-effect rows"
+        ],
+        "nextEvidenceNeeded": [
+          "Official non-private Variant Effect Predictor sample output or export",
+          "Sanitized completed output preserving consequence/effect rows and source IDs"
+        ],
         "boundaryUse": "Prompt and field-boundary guidance only; do not infer variant rows, impact classifications, or citation bindings."
       },
       "officialOutputReviewBoundaryUse": "Prompt and field-boundary guidance only; do not infer variant rows, impact classifications, or citation bindings.",
       "officialOutputReviewEvidencePresent": [],
-      "officialOutputReviewEvidenceMissing": [],
-      "officialOutputReviewNextEvidenceNeeded": [],
+      "officialOutputReviewEvidenceMissing": [
+        "Official Variant Effect Predictor sample output",
+        "Formal consequence/effect output rows",
+        "Row-level source bindings for predicted-effect rows"
+      ],
+      "officialOutputReviewNextEvidenceNeeded": [
+        "Official non-private Variant Effect Predictor sample output or export",
+        "Sanitized completed output preserving consequence/effect rows and source IDs"
+      ],
       "officialOutputReviewOutputSignals": {
         "reportFile": false,
         "sampleRows": 0,
@@ -1371,8 +1552,15 @@
           "generatedOutput": false
         },
         "evidencePresent": [],
-        "evidenceMissing": [],
-        "nextEvidenceNeeded": [],
+        "evidenceMissing": [
+          "Official Variant Effect Predictor sample output",
+          "Formal consequence/effect output rows",
+          "Row-level source bindings for predicted-effect rows"
+        ],
+        "nextEvidenceNeeded": [
+          "Official non-private Variant Effect Predictor sample output or export",
+          "Sanitized completed output preserving consequence/effect rows and source IDs"
+        ],
         "boundaryUse": "Prompt and field-boundary guidance only; do not infer variant rows, impact classifications, or citation bindings.",
         "promotionBoundary": {
           "promotesSampleBackedFormalReady": false,
@@ -1439,16 +1627,41 @@
         ],
         "readyForPromotion": false
       },
+      "requiredEvidenceForPromotion": [
+        "Official Variant Effect Predictor sample output",
+        "Formal consequence/effect output rows",
+        "Row-level source bindings for predicted-effect rows"
+      ],
+      "publicBundleEvidenceMissingForPromotion": [],
+      "packageSpecificMissingEvidence": [
+        "Official Variant Effect Predictor sample output",
+        "Formal consequence/effect output rows",
+        "Row-level source bindings for predicted-effect rows",
+        "Official non-private Variant Effect Predictor sample output or export",
+        "Sanitized completed output preserving consequence/effect rows and source IDs"
+      ],
       "operatorEvidenceChecklist": {
         "promotionalOfficialRowsPresent": false,
         "coveredFormalFieldsPresent": true,
         "citationBindingsPresent": false,
         "rowEvidenceReadyCapturePresent": false,
+        "requiredEvidenceForPromotion": [
+          "Official Variant Effect Predictor sample output",
+          "Formal consequence/effect output rows",
+          "Row-level source bindings for predicted-effect rows"
+        ],
         "missingOfficialRowEvidence": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Official Variant Effect Predictor sample output",
+          "Formal consequence/effect output rows",
+          "Row-level source bindings for predicted-effect rows",
+          "Official non-private Variant Effect Predictor sample output or export",
+          "Sanitized completed output preserving consequence/effect rows and source IDs"
         ],
+        "publicFirstNextAction": "Capture exact non-private rows and citation bindings from completed official output.",
+        "publicFirstNextCommand": "npm run scaffold:capture-session -- --source public --report variant-effect-predictor --format md --out tmp/official-output-capture-session-variant-effect-predictor.md",
         "nonPromotionalEvidenceClasses": [
           "synthetic fixtures",
           "local deterministic results",
@@ -1490,8 +1703,8 @@
         },
         "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data"
       },
-      "nextAction": "Reviewed capture remains boundary-only. Start a private-output redaction input only when you can preserve official non-private rows and source bindings.",
-      "nextCommand": "npm run scaffold:redaction-template -- --report variant-effect-predictor",
+      "nextAction": "Reviewed capture remains boundary-only. Use a public capture session for non-private official rows and source bindings; use private redaction only for completed private output.",
+      "nextCommand": "npm run scaffold:capture-session -- --source public --report variant-effect-predictor --format md --out tmp/official-output-capture-session-variant-effect-predictor.md",
       "redactionInputPath": ".soma/private/official-output-redactions/variant-effect-predictor-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report variant-effect-predictor",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/variant-effect-predictor-redaction-input.json",
@@ -1524,10 +1737,17 @@
         "blockers": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Official Variant Effect Predictor sample output",
+          "Formal consequence/effect output rows",
+          "Row-level source bindings for predicted-effect rows",
+          "Official non-private Variant Effect Predictor sample output or export",
+          "Sanitized completed output preserving consequence/effect rows and source IDs"
         ],
         "readinessBoundary": "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
-      }
+      },
+      "nextPublicQueueAction": "Capture exact non-private rows and citation bindings from completed official output.",
+      "nextPublicCommand": "npm run scaffold:capture-session -- --source public --report variant-effect-predictor --format md --out tmp/official-output-capture-session-variant-effect-predictor.md"
     },
     {
       "slug": "variant-discovery-bioinformatics-secondary-analysis",
@@ -1604,14 +1824,28 @@
           "generatedOutput": false
         },
         "evidencePresent": [],
-        "evidenceMissing": [],
-        "nextEvidenceNeeded": [],
+        "evidenceMissing": [
+          "Official Variant Discovery sample/result table",
+          "Formal variant discovery output fields",
+          "Row-level source bindings for discovered-variant rows"
+        ],
+        "nextEvidenceNeeded": [
+          "Official non-private Variant Discovery sample/result table or export",
+          "Sanitized completed output preserving discovered-variant rows and source IDs"
+        ],
         "boundaryUse": "Marketplace summary and keyword scope guidance only; do not infer variant rows, haplotypes, SNP/MNP/DIP calls, classifications, command output, or citation bindings."
       },
       "officialOutputReviewBoundaryUse": "Marketplace summary and keyword scope guidance only; do not infer variant rows, haplotypes, SNP/MNP/DIP calls, classifications, command output, or citation bindings.",
       "officialOutputReviewEvidencePresent": [],
-      "officialOutputReviewEvidenceMissing": [],
-      "officialOutputReviewNextEvidenceNeeded": [],
+      "officialOutputReviewEvidenceMissing": [
+        "Official Variant Discovery sample/result table",
+        "Formal variant discovery output fields",
+        "Row-level source bindings for discovered-variant rows"
+      ],
+      "officialOutputReviewNextEvidenceNeeded": [
+        "Official non-private Variant Discovery sample/result table or export",
+        "Sanitized completed output preserving discovered-variant rows and source IDs"
+      ],
       "officialOutputReviewOutputSignals": {
         "reportFile": false,
         "sampleRows": 0,
@@ -1641,8 +1875,15 @@
           "generatedOutput": false
         },
         "evidencePresent": [],
-        "evidenceMissing": [],
-        "nextEvidenceNeeded": [],
+        "evidenceMissing": [
+          "Official Variant Discovery sample/result table",
+          "Formal variant discovery output fields",
+          "Row-level source bindings for discovered-variant rows"
+        ],
+        "nextEvidenceNeeded": [
+          "Official non-private Variant Discovery sample/result table or export",
+          "Sanitized completed output preserving discovered-variant rows and source IDs"
+        ],
         "boundaryUse": "Marketplace summary and keyword scope guidance only; do not infer variant rows, haplotypes, SNP/MNP/DIP calls, classifications, command output, or citation bindings.",
         "promotionBoundary": {
           "promotesSampleBackedFormalReady": false,
@@ -1709,16 +1950,41 @@
         ],
         "readyForPromotion": false
       },
+      "requiredEvidenceForPromotion": [
+        "Official Variant Discovery sample/result table",
+        "Formal variant discovery output fields",
+        "Row-level source bindings for discovered-variant rows"
+      ],
+      "publicBundleEvidenceMissingForPromotion": [],
+      "packageSpecificMissingEvidence": [
+        "Official Variant Discovery sample/result table",
+        "Formal variant discovery output fields",
+        "Row-level source bindings for discovered-variant rows",
+        "Official non-private Variant Discovery sample/result table or export",
+        "Sanitized completed output preserving discovered-variant rows and source IDs"
+      ],
       "operatorEvidenceChecklist": {
         "promotionalOfficialRowsPresent": false,
         "coveredFormalFieldsPresent": true,
         "citationBindingsPresent": false,
         "rowEvidenceReadyCapturePresent": false,
+        "requiredEvidenceForPromotion": [
+          "Official Variant Discovery sample/result table",
+          "Formal variant discovery output fields",
+          "Row-level source bindings for discovered-variant rows"
+        ],
         "missingOfficialRowEvidence": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Official Variant Discovery sample/result table",
+          "Formal variant discovery output fields",
+          "Row-level source bindings for discovered-variant rows",
+          "Official non-private Variant Discovery sample/result table or export",
+          "Sanitized completed output preserving discovered-variant rows and source IDs"
         ],
+        "publicFirstNextAction": "Capture exact non-private rows and citation bindings from completed official output.",
+        "publicFirstNextCommand": "npm run scaffold:capture-session -- --source public --report variant-discovery-bioinformatics-secondary-analysis --format md --out tmp/official-output-capture-session-variant-discovery-bioinformatics-secondary-analysis.md",
         "nonPromotionalEvidenceClasses": [
           "synthetic fixtures",
           "local deterministic results",
@@ -1760,8 +2026,8 @@
         },
         "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data"
       },
-      "nextAction": "Reviewed capture remains boundary-only. Start a private-output redaction input only when you can preserve official non-private rows and source bindings.",
-      "nextCommand": "npm run scaffold:redaction-template -- --report variant-discovery-bioinformatics-secondary-analysis",
+      "nextAction": "Reviewed capture remains boundary-only. Use a public capture session for non-private official rows and source bindings; use private redaction only for completed private output.",
+      "nextCommand": "npm run scaffold:capture-session -- --source public --report variant-discovery-bioinformatics-secondary-analysis --format md --out tmp/official-output-capture-session-variant-discovery-bioinformatics-secondary-analysis.md",
       "redactionInputPath": ".soma/private/official-output-redactions/variant-discovery-bioinformatics-secondary-analysis-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report variant-discovery-bioinformatics-secondary-analysis",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/variant-discovery-bioinformatics-secondary-analysis-redaction-input.json",
@@ -1794,10 +2060,17 @@
         "blockers": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Official Variant Discovery sample/result table",
+          "Formal variant discovery output fields",
+          "Row-level source bindings for discovered-variant rows",
+          "Official non-private Variant Discovery sample/result table or export",
+          "Sanitized completed output preserving discovered-variant rows and source IDs"
         ],
         "readinessBoundary": "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
-      }
+      },
+      "nextPublicQueueAction": "Capture exact non-private rows and citation bindings from completed official output.",
+      "nextPublicCommand": "npm run scaffold:capture-session -- --source public --report variant-discovery-bioinformatics-secondary-analysis --format md --out tmp/official-output-capture-session-variant-discovery-bioinformatics-secondary-analysis.md"
     },
     {
       "slug": "genome-short-read-mapper",
@@ -1874,14 +2147,28 @@
           "generatedOutput": false
         },
         "evidencePresent": [],
-        "evidenceMissing": [],
-        "nextEvidenceNeeded": [],
+        "evidenceMissing": [
+          "Official Short Read Mapper result artifact or sample output",
+          "Formal mapping output fields",
+          "Row-level source bindings for mapping output rows"
+        ],
+        "nextEvidenceNeeded": [
+          "Official non-private Short Read Mapper result artifact or sample output",
+          "Sanitized completed output preserving mapping output rows and source IDs"
+        ],
         "boundaryUse": "Marketplace summary and keyword scope guidance only; do not infer mapped reads, alignment metrics, coverage, command output, variant calls, or citation bindings."
       },
       "officialOutputReviewBoundaryUse": "Marketplace summary and keyword scope guidance only; do not infer mapped reads, alignment metrics, coverage, command output, variant calls, or citation bindings.",
       "officialOutputReviewEvidencePresent": [],
-      "officialOutputReviewEvidenceMissing": [],
-      "officialOutputReviewNextEvidenceNeeded": [],
+      "officialOutputReviewEvidenceMissing": [
+        "Official Short Read Mapper result artifact or sample output",
+        "Formal mapping output fields",
+        "Row-level source bindings for mapping output rows"
+      ],
+      "officialOutputReviewNextEvidenceNeeded": [
+        "Official non-private Short Read Mapper result artifact or sample output",
+        "Sanitized completed output preserving mapping output rows and source IDs"
+      ],
       "officialOutputReviewOutputSignals": {
         "reportFile": false,
         "sampleRows": 0,
@@ -1911,8 +2198,15 @@
           "generatedOutput": false
         },
         "evidencePresent": [],
-        "evidenceMissing": [],
-        "nextEvidenceNeeded": [],
+        "evidenceMissing": [
+          "Official Short Read Mapper result artifact or sample output",
+          "Formal mapping output fields",
+          "Row-level source bindings for mapping output rows"
+        ],
+        "nextEvidenceNeeded": [
+          "Official non-private Short Read Mapper result artifact or sample output",
+          "Sanitized completed output preserving mapping output rows and source IDs"
+        ],
         "boundaryUse": "Marketplace summary and keyword scope guidance only; do not infer mapped reads, alignment metrics, coverage, command output, variant calls, or citation bindings.",
         "promotionBoundary": {
           "promotesSampleBackedFormalReady": false,
@@ -1979,16 +2273,41 @@
         ],
         "readyForPromotion": false
       },
+      "requiredEvidenceForPromotion": [
+        "Official Short Read Mapper result artifact or sample output",
+        "Formal mapping output fields",
+        "Row-level source bindings for mapping output rows"
+      ],
+      "publicBundleEvidenceMissingForPromotion": [],
+      "packageSpecificMissingEvidence": [
+        "Official Short Read Mapper result artifact or sample output",
+        "Formal mapping output fields",
+        "Row-level source bindings for mapping output rows",
+        "Official non-private Short Read Mapper result artifact or sample output",
+        "Sanitized completed output preserving mapping output rows and source IDs"
+      ],
       "operatorEvidenceChecklist": {
         "promotionalOfficialRowsPresent": false,
         "coveredFormalFieldsPresent": true,
         "citationBindingsPresent": false,
         "rowEvidenceReadyCapturePresent": false,
+        "requiredEvidenceForPromotion": [
+          "Official Short Read Mapper result artifact or sample output",
+          "Formal mapping output fields",
+          "Row-level source bindings for mapping output rows"
+        ],
         "missingOfficialRowEvidence": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Official Short Read Mapper result artifact or sample output",
+          "Formal mapping output fields",
+          "Row-level source bindings for mapping output rows",
+          "Official non-private Short Read Mapper result artifact or sample output",
+          "Sanitized completed output preserving mapping output rows and source IDs"
         ],
+        "publicFirstNextAction": "Capture exact non-private rows and citation bindings from completed official output.",
+        "publicFirstNextCommand": "npm run scaffold:capture-session -- --source public --report genome-short-read-mapper --format md --out tmp/official-output-capture-session-genome-short-read-mapper.md",
         "nonPromotionalEvidenceClasses": [
           "synthetic fixtures",
           "local deterministic results",
@@ -2030,8 +2349,8 @@
         },
         "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data"
       },
-      "nextAction": "Reviewed capture remains boundary-only. Start a private-output redaction input only when you can preserve official non-private rows and source bindings.",
-      "nextCommand": "npm run scaffold:redaction-template -- --report genome-short-read-mapper",
+      "nextAction": "Reviewed capture remains boundary-only. Use a public capture session for non-private official rows and source bindings; use private redaction only for completed private output.",
+      "nextCommand": "npm run scaffold:capture-session -- --source public --report genome-short-read-mapper --format md --out tmp/official-output-capture-session-genome-short-read-mapper.md",
       "redactionInputPath": ".soma/private/official-output-redactions/genome-short-read-mapper-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report genome-short-read-mapper",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/genome-short-read-mapper-redaction-input.json",
@@ -2064,10 +2383,17 @@
         "blockers": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Official Short Read Mapper result artifact or sample output",
+          "Formal mapping output fields",
+          "Row-level source bindings for mapping output rows",
+          "Official non-private Short Read Mapper result artifact or sample output",
+          "Sanitized completed output preserving mapping output rows and source IDs"
         ],
         "readinessBoundary": "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
-      }
+      },
+      "nextPublicQueueAction": "Capture exact non-private rows and citation bindings from completed official output.",
+      "nextPublicCommand": "npm run scaffold:capture-session -- --source public --report genome-short-read-mapper --format md --out tmp/official-output-capture-session-genome-short-read-mapper.md"
     },
     {
       "slug": "promethease",
@@ -2144,14 +2470,28 @@
           "generatedOutput": false
         },
         "evidencePresent": [],
-        "evidenceMissing": [],
-        "nextEvidenceNeeded": [],
+        "evidenceMissing": [
+          "Official Sequencing.com Promethease package output or non-empty reportFile",
+          "Exact generated table/export rows for the marketplace package",
+          "Row-level source bindings for report rows"
+        ],
+        "nextEvidenceNeeded": [
+          "Official Sequencing.com Promethease package output or export",
+          "Sanitized completed output preserving exact package rows and source IDs"
+        ],
         "boundaryUse": "Prompt and scope guidance only; third-party Promethease examples are not Sequencing.com package-specific sample rows."
       },
       "officialOutputReviewBoundaryUse": "Prompt and scope guidance only; third-party Promethease examples are not Sequencing.com package-specific sample rows.",
       "officialOutputReviewEvidencePresent": [],
-      "officialOutputReviewEvidenceMissing": [],
-      "officialOutputReviewNextEvidenceNeeded": [],
+      "officialOutputReviewEvidenceMissing": [
+        "Official Sequencing.com Promethease package output or non-empty reportFile",
+        "Exact generated table/export rows for the marketplace package",
+        "Row-level source bindings for report rows"
+      ],
+      "officialOutputReviewNextEvidenceNeeded": [
+        "Official Sequencing.com Promethease package output or export",
+        "Sanitized completed output preserving exact package rows and source IDs"
+      ],
       "officialOutputReviewOutputSignals": {
         "reportFile": false,
         "sampleRows": 0,
@@ -2181,8 +2521,15 @@
           "generatedOutput": false
         },
         "evidencePresent": [],
-        "evidenceMissing": [],
-        "nextEvidenceNeeded": [],
+        "evidenceMissing": [
+          "Official Sequencing.com Promethease package output or non-empty reportFile",
+          "Exact generated table/export rows for the marketplace package",
+          "Row-level source bindings for report rows"
+        ],
+        "nextEvidenceNeeded": [
+          "Official Sequencing.com Promethease package output or export",
+          "Sanitized completed output preserving exact package rows and source IDs"
+        ],
         "boundaryUse": "Prompt and scope guidance only; third-party Promethease examples are not Sequencing.com package-specific sample rows.",
         "promotionBoundary": {
           "promotesSampleBackedFormalReady": false,
@@ -2249,16 +2596,41 @@
         ],
         "readyForPromotion": false
       },
+      "requiredEvidenceForPromotion": [
+        "Official Sequencing.com Promethease package output or non-empty reportFile",
+        "Exact generated table/export rows for the marketplace package",
+        "Row-level source bindings for report rows"
+      ],
+      "publicBundleEvidenceMissingForPromotion": [],
+      "packageSpecificMissingEvidence": [
+        "Official Sequencing.com Promethease package output or non-empty reportFile",
+        "Exact generated table/export rows for the marketplace package",
+        "Row-level source bindings for report rows",
+        "Official Sequencing.com Promethease package output or export",
+        "Sanitized completed output preserving exact package rows and source IDs"
+      ],
       "operatorEvidenceChecklist": {
         "promotionalOfficialRowsPresent": false,
         "coveredFormalFieldsPresent": true,
         "citationBindingsPresent": false,
         "rowEvidenceReadyCapturePresent": false,
+        "requiredEvidenceForPromotion": [
+          "Official Sequencing.com Promethease package output or non-empty reportFile",
+          "Exact generated table/export rows for the marketplace package",
+          "Row-level source bindings for report rows"
+        ],
         "missingOfficialRowEvidence": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Official Sequencing.com Promethease package output or non-empty reportFile",
+          "Exact generated table/export rows for the marketplace package",
+          "Row-level source bindings for report rows",
+          "Official Sequencing.com Promethease package output or export",
+          "Sanitized completed output preserving exact package rows and source IDs"
         ],
+        "publicFirstNextAction": "Capture exact non-private rows and citation bindings from completed official output.",
+        "publicFirstNextCommand": "npm run scaffold:capture-session -- --source public --report promethease --format md --out tmp/official-output-capture-session-promethease.md",
         "nonPromotionalEvidenceClasses": [
           "synthetic fixtures",
           "local deterministic results",
@@ -2300,8 +2672,8 @@
         },
         "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data"
       },
-      "nextAction": "Reviewed capture remains boundary-only. Start a private-output redaction input only when you can preserve official non-private rows and source bindings.",
-      "nextCommand": "npm run scaffold:redaction-template -- --report promethease",
+      "nextAction": "Reviewed capture remains boundary-only. Use a public capture session for non-private official rows and source bindings; use private redaction only for completed private output.",
+      "nextCommand": "npm run scaffold:capture-session -- --source public --report promethease --format md --out tmp/official-output-capture-session-promethease.md",
       "redactionInputPath": ".soma/private/official-output-redactions/promethease-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report promethease",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/promethease-redaction-input.json",
@@ -2334,10 +2706,17 @@
         "blockers": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Official Sequencing.com Promethease package output or non-empty reportFile",
+          "Exact generated table/export rows for the marketplace package",
+          "Row-level source bindings for report rows",
+          "Official Sequencing.com Promethease package output or export",
+          "Sanitized completed output preserving exact package rows and source IDs"
         ],
         "readinessBoundary": "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
-      }
+      },
+      "nextPublicQueueAction": "Capture exact non-private rows and citation bindings from completed official output.",
+      "nextPublicCommand": "npm run scaffold:capture-session -- --source public --report promethease --format md --out tmp/official-output-capture-session-promethease.md"
     },
     {
       "slug": "whole-genome-sequencing-30x",
@@ -2479,17 +2858,46 @@
         ],
         "readyForPromotion": false
       },
+      "requiredEvidenceForPromotion": [
+        "Official 30x WGS sample/lab output or completed result artifact",
+        "Formal sequencing-result fields",
+        "Row-level source bindings for WGS output rows"
+      ],
+      "publicBundleEvidenceMissingForPromotion": [],
+      "packageSpecificMissingEvidence": [
+        "Official 30x WGS sample/lab output or completed result artifact",
+        "Formal sequencing-result fields",
+        "Row-level source bindings for WGS output rows",
+        "Official 30x WGS lab/sample output",
+        "Row-level source bindings",
+        "Official 30x WGS sample lab output or completed result artifact",
+        "Sanitized WGS output preserving non-private fields and source IDs"
+      ],
       "operatorEvidenceChecklist": {
         "promotionalOfficialRowsPresent": false,
         "coveredFormalFieldsPresent": false,
         "citationBindingsPresent": false,
         "rowEvidenceReadyCapturePresent": false,
+        "requiredEvidenceForPromotion": [
+          "Official 30x WGS sample/lab output or completed result artifact",
+          "Formal sequencing-result fields",
+          "Row-level source bindings for WGS output rows"
+        ],
         "missingOfficialRowEvidence": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "covered formalFields[] mapped from official output",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Official 30x WGS sample/lab output or completed result artifact",
+          "Formal sequencing-result fields",
+          "Row-level source bindings for WGS output rows",
+          "Official 30x WGS lab/sample output",
+          "Row-level source bindings",
+          "Official 30x WGS sample lab output or completed result artifact",
+          "Sanitized WGS output preserving non-private fields and source IDs"
         ],
+        "publicFirstNextAction": "Use the public capture session once official completed output is available.",
+        "publicFirstNextCommand": "npm run scaffold:capture-session -- --source public --report whole-genome-sequencing-30x --format md --out tmp/official-output-capture-session-whole-genome-sequencing-30x.md",
         "nonPromotionalEvidenceClasses": [
           "synthetic fixtures",
           "local deterministic results",
@@ -2531,8 +2939,8 @@
         },
         "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data"
       },
-      "nextAction": "Reviewed current sources remain metadata-only. Start a private-output redaction input only after an official completed output or non-private sample/export is available.",
-      "nextCommand": "npm run scaffold:redaction-template -- --report whole-genome-sequencing-30x",
+      "nextAction": "Reviewed current sources remain metadata-only. Use a public capture session for non-private official output; use private redaction only after private completed output is available.",
+      "nextCommand": "npm run scaffold:capture-session -- --source public --report whole-genome-sequencing-30x --format md --out tmp/official-output-capture-session-whole-genome-sequencing-30x.md",
       "redactionInputPath": ".soma/private/official-output-redactions/whole-genome-sequencing-30x-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report whole-genome-sequencing-30x",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/whole-genome-sequencing-30x-redaction-input.json",
@@ -2567,14 +2975,18 @@
           "covered formalFields[] mapped from official output",
           "citationBindings[] and source IDs for row-level evidence",
           "a rowEvidenceReady official-output capture validator pass",
-          "Official 30x WGS lab/sample output",
+          "Official 30x WGS sample/lab output or completed result artifact",
           "Formal sequencing-result fields",
+          "Row-level source bindings for WGS output rows",
+          "Official 30x WGS lab/sample output",
           "Row-level source bindings",
           "Official 30x WGS sample lab output or completed result artifact",
           "Sanitized WGS output preserving non-private fields and source IDs"
         ],
         "readinessBoundary": "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
-      }
+      },
+      "nextPublicQueueAction": "Use the public capture session once official completed output is available.",
+      "nextPublicCommand": "npm run scaffold:capture-session -- --source public --report whole-genome-sequencing-30x --format md --out tmp/official-output-capture-session-whole-genome-sequencing-30x.md"
     },
     {
       "slug": "comprehensive-health-screen-wgs-bundle",
@@ -2785,17 +3197,56 @@
         ],
         "readyForPromotion": false
       },
+      "requiredEvidenceForPromotion": [
+        "Official Sequencing.com sample or completed bundle report output",
+        "Package-specific formal rows or lab/report fields",
+        "Row-level source bindings for the output rows"
+      ],
+      "publicBundleEvidenceMissingForPromotion": [
+        "Official completed bundle Summary Report PDF or non-private sample rows",
+        "Formal health-screen report fields",
+        "Row-level source bindings"
+      ],
+      "packageSpecificMissingEvidence": [
+        "Official Sequencing.com sample or completed bundle report output",
+        "Package-specific formal rows or lab/report fields",
+        "Row-level source bindings for the output rows",
+        "Official completed bundle Summary Report PDF or non-private sample rows",
+        "Formal health-screen report fields",
+        "Row-level source bindings",
+        "Official sample or completed bundle report output",
+        "Formal health-screen result rows",
+        "Official non-private bundle sample report or export",
+        "Sanitized completed bundle output preserving formal rows and source IDs"
+      ],
       "operatorEvidenceChecklist": {
         "promotionalOfficialRowsPresent": false,
         "coveredFormalFieldsPresent": false,
         "citationBindingsPresent": false,
         "rowEvidenceReadyCapturePresent": false,
+        "requiredEvidenceForPromotion": [
+          "Official Sequencing.com sample or completed bundle report output",
+          "Package-specific formal rows or lab/report fields",
+          "Row-level source bindings for the output rows"
+        ],
         "missingOfficialRowEvidence": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "covered formalFields[] mapped from official output",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Official Sequencing.com sample or completed bundle report output",
+          "Package-specific formal rows or lab/report fields",
+          "Row-level source bindings for the output rows",
+          "Official completed bundle Summary Report PDF or non-private sample rows",
+          "Formal health-screen report fields",
+          "Row-level source bindings",
+          "Official sample or completed bundle report output",
+          "Formal health-screen result rows",
+          "Official non-private bundle sample report or export",
+          "Sanitized completed bundle output preserving formal rows and source IDs"
         ],
+        "publicFirstNextAction": "Use the public capture session once official completed output is available.",
+        "publicFirstNextCommand": "npm run scaffold:capture-session -- --source public --report comprehensive-health-screen-wgs-bundle --format md --out tmp/official-output-capture-session-comprehensive-health-screen-wgs-bundle.md",
         "nonPromotionalEvidenceClasses": [
           "synthetic fixtures",
           "local deterministic results",
@@ -2837,8 +3288,8 @@
         },
         "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data"
       },
-      "nextAction": "Reviewed current sources remain metadata-only. Start a private-output redaction input only after an official completed output or non-private sample/export is available.",
-      "nextCommand": "npm run scaffold:redaction-template -- --report comprehensive-health-screen-wgs-bundle",
+      "nextAction": "Reviewed current sources remain metadata-only. Use a public capture session for non-private official output; use private redaction only after private completed output is available.",
+      "nextCommand": "npm run scaffold:capture-session -- --source public --report comprehensive-health-screen-wgs-bundle --format md --out tmp/official-output-capture-session-comprehensive-health-screen-wgs-bundle.md",
       "redactionInputPath": ".soma/private/official-output-redactions/comprehensive-health-screen-wgs-bundle-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report comprehensive-health-screen-wgs-bundle",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/comprehensive-health-screen-wgs-bundle-redaction-input.json",
@@ -2873,14 +3324,21 @@
           "covered formalFields[] mapped from official output",
           "citationBindings[] and source IDs for row-level evidence",
           "a rowEvidenceReady official-output capture validator pass",
+          "Official Sequencing.com sample or completed bundle report output",
+          "Package-specific formal rows or lab/report fields",
+          "Row-level source bindings for the output rows",
+          "Official completed bundle Summary Report PDF or non-private sample rows",
+          "Formal health-screen report fields",
+          "Row-level source bindings",
           "Official sample or completed bundle report output",
           "Formal health-screen result rows",
-          "Row-level source bindings",
           "Official non-private bundle sample report or export",
           "Sanitized completed bundle output preserving formal rows and source IDs"
         ],
         "readinessBoundary": "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
-      }
+      },
+      "nextPublicQueueAction": "Use the public capture session once official completed output is available.",
+      "nextPublicCommand": "npm run scaffold:capture-session -- --source public --report comprehensive-health-screen-wgs-bundle --format md --out tmp/official-output-capture-session-comprehensive-health-screen-wgs-bundle.md"
     },
     {
       "slug": "expedited-advanced-health-screen-wgs-bundle",
@@ -3090,17 +3548,54 @@
         ],
         "readyForPromotion": false
       },
+      "requiredEvidenceForPromotion": [
+        "Official sample or completed health-screen bundle report",
+        "Package-specific formal report rows or lab/report fields",
+        "Row-level source bindings for the output rows"
+      ],
+      "publicBundleEvidenceMissingForPromotion": [
+        "Exact Expedited Advanced Health Screen WGS Bundle completed output",
+        "Package-specific report fields",
+        "Row-level source bindings"
+      ],
+      "packageSpecificMissingEvidence": [
+        "Official sample or completed health-screen bundle report",
+        "Package-specific formal report rows or lab/report fields",
+        "Row-level source bindings for the output rows",
+        "Exact Expedited Advanced Health Screen WGS Bundle completed output",
+        "Package-specific report fields",
+        "Row-level source bindings",
+        "Formal genetic analysis rows",
+        "Official non-private expedited bundle sample report or export",
+        "Sanitized completed output preserving rows and source IDs"
+      ],
       "operatorEvidenceChecklist": {
         "promotionalOfficialRowsPresent": false,
         "coveredFormalFieldsPresent": false,
         "citationBindingsPresent": false,
         "rowEvidenceReadyCapturePresent": false,
+        "requiredEvidenceForPromotion": [
+          "Official sample or completed health-screen bundle report",
+          "Package-specific formal report rows or lab/report fields",
+          "Row-level source bindings for the output rows"
+        ],
         "missingOfficialRowEvidence": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "covered formalFields[] mapped from official output",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Official sample or completed health-screen bundle report",
+          "Package-specific formal report rows or lab/report fields",
+          "Row-level source bindings for the output rows",
+          "Exact Expedited Advanced Health Screen WGS Bundle completed output",
+          "Package-specific report fields",
+          "Row-level source bindings",
+          "Formal genetic analysis rows",
+          "Official non-private expedited bundle sample report or export",
+          "Sanitized completed output preserving rows and source IDs"
         ],
+        "publicFirstNextAction": "Use the public capture session once official completed output is available.",
+        "publicFirstNextCommand": "npm run scaffold:capture-session -- --source public --report expedited-advanced-health-screen-wgs-bundle --format md --out tmp/official-output-capture-session-expedited-advanced-health-screen-wgs-bundle.md",
         "nonPromotionalEvidenceClasses": [
           "synthetic fixtures",
           "local deterministic results",
@@ -3142,8 +3637,8 @@
         },
         "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data"
       },
-      "nextAction": "Reviewed current sources remain metadata-only. Start a private-output redaction input only after an official completed output or non-private sample/export is available.",
-      "nextCommand": "npm run scaffold:redaction-template -- --report expedited-advanced-health-screen-wgs-bundle",
+      "nextAction": "Reviewed current sources remain metadata-only. Use a public capture session for non-private official output; use private redaction only after private completed output is available.",
+      "nextCommand": "npm run scaffold:capture-session -- --source public --report expedited-advanced-health-screen-wgs-bundle --format md --out tmp/official-output-capture-session-expedited-advanced-health-screen-wgs-bundle.md",
       "redactionInputPath": ".soma/private/official-output-redactions/expedited-advanced-health-screen-wgs-bundle-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report expedited-advanced-health-screen-wgs-bundle",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/expedited-advanced-health-screen-wgs-bundle-redaction-input.json",
@@ -3179,13 +3674,19 @@
           "citationBindings[] and source IDs for row-level evidence",
           "a rowEvidenceReady official-output capture validator pass",
           "Official sample or completed health-screen bundle report",
-          "Formal genetic analysis rows",
+          "Package-specific formal report rows or lab/report fields",
+          "Row-level source bindings for the output rows",
+          "Exact Expedited Advanced Health Screen WGS Bundle completed output",
+          "Package-specific report fields",
           "Row-level source bindings",
+          "Formal genetic analysis rows",
           "Official non-private expedited bundle sample report or export",
           "Sanitized completed output preserving rows and source IDs"
         ],
         "readinessBoundary": "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
-      }
+      },
+      "nextPublicQueueAction": "Use the public capture session once official completed output is available.",
+      "nextPublicCommand": "npm run scaffold:capture-session -- --source public --report expedited-advanced-health-screen-wgs-bundle --format md --out tmp/official-output-capture-session-expedited-advanced-health-screen-wgs-bundle.md"
     },
     {
       "slug": "ultra-rapid-professional-health-screen-wgs-bundle",
@@ -3395,17 +3896,54 @@
         ],
         "readyForPromotion": false
       },
+      "requiredEvidenceForPromotion": [
+        "Official sample or completed professional health-screen report",
+        "Package-specific formal report rows or lab/report fields",
+        "Row-level source bindings for output rows"
+      ],
+      "publicBundleEvidenceMissingForPromotion": [
+        "Exact Ultra Rapid Professional Health Screen WGS Bundle completed output",
+        "Package-specific report fields",
+        "Row-level source bindings"
+      ],
+      "packageSpecificMissingEvidence": [
+        "Official sample or completed professional health-screen report",
+        "Package-specific formal report rows or lab/report fields",
+        "Row-level source bindings for output rows",
+        "Exact Ultra Rapid Professional Health Screen WGS Bundle completed output",
+        "Package-specific report fields",
+        "Row-level source bindings",
+        "Formal genetic analysis rows",
+        "Official non-private professional bundle sample report or export",
+        "Sanitized completed output preserving rows and source IDs"
+      ],
       "operatorEvidenceChecklist": {
         "promotionalOfficialRowsPresent": false,
         "coveredFormalFieldsPresent": false,
         "citationBindingsPresent": false,
         "rowEvidenceReadyCapturePresent": false,
+        "requiredEvidenceForPromotion": [
+          "Official sample or completed professional health-screen report",
+          "Package-specific formal report rows or lab/report fields",
+          "Row-level source bindings for output rows"
+        ],
         "missingOfficialRowEvidence": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "covered formalFields[] mapped from official output",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Official sample or completed professional health-screen report",
+          "Package-specific formal report rows or lab/report fields",
+          "Row-level source bindings for output rows",
+          "Exact Ultra Rapid Professional Health Screen WGS Bundle completed output",
+          "Package-specific report fields",
+          "Row-level source bindings",
+          "Formal genetic analysis rows",
+          "Official non-private professional bundle sample report or export",
+          "Sanitized completed output preserving rows and source IDs"
         ],
+        "publicFirstNextAction": "Use the public capture session once official completed output is available.",
+        "publicFirstNextCommand": "npm run scaffold:capture-session -- --source public --report ultra-rapid-professional-health-screen-wgs-bundle --format md --out tmp/official-output-capture-session-ultra-rapid-professional-health-screen-wgs-bundle.md",
         "nonPromotionalEvidenceClasses": [
           "synthetic fixtures",
           "local deterministic results",
@@ -3447,8 +3985,8 @@
         },
         "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data"
       },
-      "nextAction": "Reviewed current sources remain metadata-only. Start a private-output redaction input only after an official completed output or non-private sample/export is available.",
-      "nextCommand": "npm run scaffold:redaction-template -- --report ultra-rapid-professional-health-screen-wgs-bundle",
+      "nextAction": "Reviewed current sources remain metadata-only. Use a public capture session for non-private official output; use private redaction only after private completed output is available.",
+      "nextCommand": "npm run scaffold:capture-session -- --source public --report ultra-rapid-professional-health-screen-wgs-bundle --format md --out tmp/official-output-capture-session-ultra-rapid-professional-health-screen-wgs-bundle.md",
       "redactionInputPath": ".soma/private/official-output-redactions/ultra-rapid-professional-health-screen-wgs-bundle-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report ultra-rapid-professional-health-screen-wgs-bundle",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/ultra-rapid-professional-health-screen-wgs-bundle-redaction-input.json",
@@ -3484,13 +4022,19 @@
           "citationBindings[] and source IDs for row-level evidence",
           "a rowEvidenceReady official-output capture validator pass",
           "Official sample or completed professional health-screen report",
-          "Formal genetic analysis rows",
+          "Package-specific formal report rows or lab/report fields",
+          "Row-level source bindings for output rows",
+          "Exact Ultra Rapid Professional Health Screen WGS Bundle completed output",
+          "Package-specific report fields",
           "Row-level source bindings",
+          "Formal genetic analysis rows",
           "Official non-private professional bundle sample report or export",
           "Sanitized completed output preserving rows and source IDs"
         ],
         "readinessBoundary": "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
-      }
+      },
+      "nextPublicQueueAction": "Use the public capture session once official completed output is available.",
+      "nextPublicCommand": "npm run scaffold:capture-session -- --source public --report ultra-rapid-professional-health-screen-wgs-bundle --format md --out tmp/official-output-capture-session-ultra-rapid-professional-health-screen-wgs-bundle.md"
     },
     {
       "slug": "connective-tissue-disorders-and-eds",
@@ -3733,16 +4277,59 @@
         ],
         "readyForPromotion": false
       },
+      "requiredEvidenceForPromotion": [
+        "Direct connective-tissue or EDS sample row/body from Sequencing.com",
+        "Verified completed report artifact for the exact package",
+        "Row-level source bindings for connective-tissue or EDS rows"
+      ],
+      "publicBundleEvidenceMissingForPromotion": [
+        "Official Connective Tissue Disorders and EDS report rows",
+        "Variant/finding interpretation rows",
+        "Citation bindings for report rows"
+      ],
+      "packageSpecificMissingEvidence": [
+        "Direct connective-tissue or EDS sample row/body from Sequencing.com",
+        "Verified completed report artifact for the exact package",
+        "Row-level source bindings for connective-tissue or EDS rows",
+        "Official Connective Tissue Disorders and EDS report rows",
+        "Variant/finding interpretation rows",
+        "Citation bindings for report rows",
+        "Non-private row-level finding examples",
+        "Variant or result rows",
+        "Finding labels and interpretation text",
+        "Source-bound row citation bindings",
+        "Official non-private sample report or export for this exact package",
+        "Sanitized completed-output artifact preserving non-private rows and source IDs"
+      ],
       "operatorEvidenceChecklist": {
         "promotionalOfficialRowsPresent": false,
         "coveredFormalFieldsPresent": true,
         "citationBindingsPresent": false,
         "rowEvidenceReadyCapturePresent": false,
+        "requiredEvidenceForPromotion": [
+          "Direct connective-tissue or EDS sample row/body from Sequencing.com",
+          "Verified completed report artifact for the exact package",
+          "Row-level source bindings for connective-tissue or EDS rows"
+        ],
         "missingOfficialRowEvidence": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Direct connective-tissue or EDS sample row/body from Sequencing.com",
+          "Verified completed report artifact for the exact package",
+          "Row-level source bindings for connective-tissue or EDS rows",
+          "Official Connective Tissue Disorders and EDS report rows",
+          "Variant/finding interpretation rows",
+          "Citation bindings for report rows",
+          "Non-private row-level finding examples",
+          "Variant or result rows",
+          "Finding labels and interpretation text",
+          "Source-bound row citation bindings",
+          "Official non-private sample report or export for this exact package",
+          "Sanitized completed-output artifact preserving non-private rows and source IDs"
         ],
+        "publicFirstNextAction": "Capture exact non-private rows and citation bindings from completed official output.",
+        "publicFirstNextCommand": "npm run scaffold:capture-session -- --source public --report connective-tissue-disorders-and-eds --format md --out tmp/official-output-capture-session-connective-tissue-disorders-and-eds.md",
         "nonPromotionalEvidenceClasses": [
           "synthetic fixtures",
           "local deterministic results",
@@ -3784,8 +4371,8 @@
         },
         "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data"
       },
-      "nextAction": "Reviewed capture remains boundary-only. Start a private-output redaction input only when you can preserve official non-private rows and source bindings.",
-      "nextCommand": "npm run scaffold:redaction-template -- --report connective-tissue-disorders-and-eds",
+      "nextAction": "Reviewed capture remains boundary-only. Use a public capture session for non-private official rows and source bindings; use private redaction only for completed private output.",
+      "nextCommand": "npm run scaffold:capture-session -- --source public --report connective-tissue-disorders-and-eds --format md --out tmp/official-output-capture-session-connective-tissue-disorders-and-eds.md",
       "redactionInputPath": ".soma/private/official-output-redactions/connective-tissue-disorders-and-eds-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report connective-tissue-disorders-and-eds",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/connective-tissue-disorders-and-eds-redaction-input.json",
@@ -3819,6 +4406,12 @@
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "citationBindings[] and source IDs for row-level evidence",
           "a rowEvidenceReady official-output capture validator pass",
+          "Direct connective-tissue or EDS sample row/body from Sequencing.com",
+          "Verified completed report artifact for the exact package",
+          "Row-level source bindings for connective-tissue or EDS rows",
+          "Official Connective Tissue Disorders and EDS report rows",
+          "Variant/finding interpretation rows",
+          "Citation bindings for report rows",
           "Non-private row-level finding examples",
           "Variant or result rows",
           "Finding labels and interpretation text",
@@ -3827,7 +4420,9 @@
           "Sanitized completed-output artifact preserving non-private rows and source IDs"
         ],
         "readinessBoundary": "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
-      }
+      },
+      "nextPublicQueueAction": "Capture exact non-private rows and citation bindings from completed official output.",
+      "nextPublicCommand": "npm run scaffold:capture-session -- --source public --report connective-tissue-disorders-and-eds --format md --out tmp/official-output-capture-session-connective-tissue-disorders-and-eds.md"
     },
     {
       "slug": "ehlers-danlos-syndrome",
@@ -4026,17 +4621,56 @@
         ],
         "readyForPromotion": false
       },
+      "requiredEvidenceForPromotion": [
+        "Direct Ehlers-Danlos or hEDS Sequencing.com report output",
+        "Exact EDS reportData payload with sample rows or non-empty reportFile",
+        "Row-level source bindings for EDS-specific rows"
+      ],
+      "publicBundleEvidenceMissingForPromotion": [
+        "Exact Ehlers-Danlos Syndrome reportData or sample report rows",
+        "Package-specific formal output fields",
+        "Row-level source bindings"
+      ],
+      "packageSpecificMissingEvidence": [
+        "Direct Ehlers-Danlos or hEDS Sequencing.com report output",
+        "Exact EDS reportData payload with sample rows or non-empty reportFile",
+        "Row-level source bindings for EDS-specific rows",
+        "Exact Ehlers-Danlos Syndrome reportData or sample report rows",
+        "Package-specific formal output fields",
+        "Row-level source bindings",
+        "Exact marketplace reportData",
+        "EDS or hEDS sample report rows",
+        "Official Ehlers-Danlos or hEDS sample report output",
+        "Exact reportData payload or sanitized completed output with rows"
+      ],
       "operatorEvidenceChecklist": {
         "promotionalOfficialRowsPresent": false,
         "coveredFormalFieldsPresent": false,
         "citationBindingsPresent": false,
         "rowEvidenceReadyCapturePresent": false,
+        "requiredEvidenceForPromotion": [
+          "Direct Ehlers-Danlos or hEDS Sequencing.com report output",
+          "Exact EDS reportData payload with sample rows or non-empty reportFile",
+          "Row-level source bindings for EDS-specific rows"
+        ],
         "missingOfficialRowEvidence": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "covered formalFields[] mapped from official output",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Direct Ehlers-Danlos or hEDS Sequencing.com report output",
+          "Exact EDS reportData payload with sample rows or non-empty reportFile",
+          "Row-level source bindings for EDS-specific rows",
+          "Exact Ehlers-Danlos Syndrome reportData or sample report rows",
+          "Package-specific formal output fields",
+          "Row-level source bindings",
+          "Exact marketplace reportData",
+          "EDS or hEDS sample report rows",
+          "Official Ehlers-Danlos or hEDS sample report output",
+          "Exact reportData payload or sanitized completed output with rows"
         ],
+        "publicFirstNextAction": "Use the public capture session once official completed output is available.",
+        "publicFirstNextCommand": "npm run scaffold:capture-session -- --source public --report ehlers-danlos-syndrome --format md --out tmp/official-output-capture-session-ehlers-danlos-syndrome.md",
         "nonPromotionalEvidenceClasses": [
           "synthetic fixtures",
           "local deterministic results",
@@ -4078,8 +4712,8 @@
         },
         "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data"
       },
-      "nextAction": "Reviewed current sources remain metadata-only. Start a private-output redaction input only after an official completed output or non-private sample/export is available.",
-      "nextCommand": "npm run scaffold:redaction-template -- --report ehlers-danlos-syndrome",
+      "nextAction": "Reviewed current sources remain metadata-only. Use a public capture session for non-private official output; use private redaction only after private completed output is available.",
+      "nextCommand": "npm run scaffold:capture-session -- --source public --report ehlers-danlos-syndrome --format md --out tmp/official-output-capture-session-ehlers-danlos-syndrome.md",
       "redactionInputPath": ".soma/private/official-output-redactions/ehlers-danlos-syndrome-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report ehlers-danlos-syndrome",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/ehlers-danlos-syndrome-redaction-input.json",
@@ -4114,14 +4748,21 @@
           "covered formalFields[] mapped from official output",
           "citationBindings[] and source IDs for row-level evidence",
           "a rowEvidenceReady official-output capture validator pass",
+          "Direct Ehlers-Danlos or hEDS Sequencing.com report output",
+          "Exact EDS reportData payload with sample rows or non-empty reportFile",
+          "Row-level source bindings for EDS-specific rows",
+          "Exact Ehlers-Danlos Syndrome reportData or sample report rows",
+          "Package-specific formal output fields",
+          "Row-level source bindings",
           "Exact marketplace reportData",
           "EDS or hEDS sample report rows",
-          "Row-level source bindings",
           "Official Ehlers-Danlos or hEDS sample report output",
           "Exact reportData payload or sanitized completed output with rows"
         ],
         "readinessBoundary": "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
-      }
+      },
+      "nextPublicQueueAction": "Use the public capture session once official completed output is available.",
+      "nextPublicCommand": "npm run scaffold:capture-session -- --source public --report ehlers-danlos-syndrome --format md --out tmp/official-output-capture-session-ehlers-danlos-syndrome.md"
     },
     {
       "slug": "eve-premium-dna-genome-data-bioinformatics-pipelines",
@@ -4198,14 +4839,28 @@
           "generatedOutput": false
         },
         "evidencePresent": [],
-        "evidenceMissing": [],
-        "nextEvidenceNeeded": [],
+        "evidenceMissing": [
+          "Official EvE Premium result artifact or sample output",
+          "Formal pipeline output fields from Sequencing.com",
+          "Row-level source bindings for output fields"
+        ],
+        "nextEvidenceNeeded": [
+          "Official non-private EvE Premium result artifact or sample output",
+          "Sanitized completed output preserving pipeline output fields and source IDs"
+        ],
         "boundaryUse": "Marketplace summary and keyword scope guidance only; do not infer pipeline execution, command output, QC metrics, variant calls, reports, or citation bindings."
       },
       "officialOutputReviewBoundaryUse": "Marketplace summary and keyword scope guidance only; do not infer pipeline execution, command output, QC metrics, variant calls, reports, or citation bindings.",
       "officialOutputReviewEvidencePresent": [],
-      "officialOutputReviewEvidenceMissing": [],
-      "officialOutputReviewNextEvidenceNeeded": [],
+      "officialOutputReviewEvidenceMissing": [
+        "Official EvE Premium result artifact or sample output",
+        "Formal pipeline output fields from Sequencing.com",
+        "Row-level source bindings for output fields"
+      ],
+      "officialOutputReviewNextEvidenceNeeded": [
+        "Official non-private EvE Premium result artifact or sample output",
+        "Sanitized completed output preserving pipeline output fields and source IDs"
+      ],
       "officialOutputReviewOutputSignals": {
         "reportFile": false,
         "sampleRows": 0,
@@ -4235,8 +4890,15 @@
           "generatedOutput": false
         },
         "evidencePresent": [],
-        "evidenceMissing": [],
-        "nextEvidenceNeeded": [],
+        "evidenceMissing": [
+          "Official EvE Premium result artifact or sample output",
+          "Formal pipeline output fields from Sequencing.com",
+          "Row-level source bindings for output fields"
+        ],
+        "nextEvidenceNeeded": [
+          "Official non-private EvE Premium result artifact or sample output",
+          "Sanitized completed output preserving pipeline output fields and source IDs"
+        ],
         "boundaryUse": "Marketplace summary and keyword scope guidance only; do not infer pipeline execution, command output, QC metrics, variant calls, reports, or citation bindings.",
         "promotionBoundary": {
           "promotesSampleBackedFormalReady": false,
@@ -4303,16 +4965,41 @@
         ],
         "readyForPromotion": false
       },
+      "requiredEvidenceForPromotion": [
+        "Official EvE Premium result artifact or sample output",
+        "Formal pipeline output fields from Sequencing.com",
+        "Row-level source bindings for output fields"
+      ],
+      "publicBundleEvidenceMissingForPromotion": [],
+      "packageSpecificMissingEvidence": [
+        "Official EvE Premium result artifact or sample output",
+        "Formal pipeline output fields from Sequencing.com",
+        "Row-level source bindings for output fields",
+        "Official non-private EvE Premium result artifact or sample output",
+        "Sanitized completed output preserving pipeline output fields and source IDs"
+      ],
       "operatorEvidenceChecklist": {
         "promotionalOfficialRowsPresent": false,
         "coveredFormalFieldsPresent": true,
         "citationBindingsPresent": false,
         "rowEvidenceReadyCapturePresent": false,
+        "requiredEvidenceForPromotion": [
+          "Official EvE Premium result artifact or sample output",
+          "Formal pipeline output fields from Sequencing.com",
+          "Row-level source bindings for output fields"
+        ],
         "missingOfficialRowEvidence": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Official EvE Premium result artifact or sample output",
+          "Formal pipeline output fields from Sequencing.com",
+          "Row-level source bindings for output fields",
+          "Official non-private EvE Premium result artifact or sample output",
+          "Sanitized completed output preserving pipeline output fields and source IDs"
         ],
+        "publicFirstNextAction": "Capture exact non-private rows and citation bindings from completed official output.",
+        "publicFirstNextCommand": "npm run scaffold:capture-session -- --source public --report eve-premium-dna-genome-data-bioinformatics-pipelines --format md --out tmp/official-output-capture-session-eve-premium-dna-genome-data-bioinformatics-pipelines.md",
         "nonPromotionalEvidenceClasses": [
           "synthetic fixtures",
           "local deterministic results",
@@ -4354,8 +5041,8 @@
         },
         "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data"
       },
-      "nextAction": "Reviewed capture remains boundary-only. Start a private-output redaction input only when you can preserve official non-private rows and source bindings.",
-      "nextCommand": "npm run scaffold:redaction-template -- --report eve-premium-dna-genome-data-bioinformatics-pipelines",
+      "nextAction": "Reviewed capture remains boundary-only. Use a public capture session for non-private official rows and source bindings; use private redaction only for completed private output.",
+      "nextCommand": "npm run scaffold:capture-session -- --source public --report eve-premium-dna-genome-data-bioinformatics-pipelines --format md --out tmp/official-output-capture-session-eve-premium-dna-genome-data-bioinformatics-pipelines.md",
       "redactionInputPath": ".soma/private/official-output-redactions/eve-premium-dna-genome-data-bioinformatics-pipelines-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report eve-premium-dna-genome-data-bioinformatics-pipelines",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/eve-premium-dna-genome-data-bioinformatics-pipelines-redaction-input.json",
@@ -4388,10 +5075,17 @@
         "blockers": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Official EvE Premium result artifact or sample output",
+          "Formal pipeline output fields from Sequencing.com",
+          "Row-level source bindings for output fields",
+          "Official non-private EvE Premium result artifact or sample output",
+          "Sanitized completed output preserving pipeline output fields and source IDs"
         ],
         "readinessBoundary": "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
-      }
+      },
+      "nextPublicQueueAction": "Capture exact non-private rows and citation bindings from completed official output.",
+      "nextPublicCommand": "npm run scaffold:capture-session -- --source public --report eve-premium-dna-genome-data-bioinformatics-pipelines --format md --out tmp/official-output-capture-session-eve-premium-dna-genome-data-bioinformatics-pipelines.md"
     },
     {
       "slug": "hearing-auditory-genetics",
@@ -4533,17 +5227,48 @@
         ],
         "readyForPromotion": false
       },
+      "requiredEvidenceForPromotion": [
+        "Direct Hearing & Auditory Genetics sample output",
+        "Verified completed report artifact for the exact package",
+        "Row-level source bindings for hearing/auditory rows"
+      ],
+      "publicBundleEvidenceMissingForPromotion": [],
+      "packageSpecificMissingEvidence": [
+        "Direct Hearing & Auditory Genetics sample output",
+        "Verified completed report artifact for the exact package",
+        "Row-level source bindings for hearing/auditory rows",
+        "Hearing/auditory sample report rows",
+        "Completed package report artifact",
+        "Row-level source bindings",
+        "Official Hearing & Auditory Genetics sample output",
+        "Sanitized completed output preserving non-private rows and source IDs"
+      ],
       "operatorEvidenceChecklist": {
         "promotionalOfficialRowsPresent": false,
         "coveredFormalFieldsPresent": false,
         "citationBindingsPresent": false,
         "rowEvidenceReadyCapturePresent": false,
+        "requiredEvidenceForPromotion": [
+          "Direct Hearing & Auditory Genetics sample output",
+          "Verified completed report artifact for the exact package",
+          "Row-level source bindings for hearing/auditory rows"
+        ],
         "missingOfficialRowEvidence": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "covered formalFields[] mapped from official output",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Direct Hearing & Auditory Genetics sample output",
+          "Verified completed report artifact for the exact package",
+          "Row-level source bindings for hearing/auditory rows",
+          "Hearing/auditory sample report rows",
+          "Completed package report artifact",
+          "Row-level source bindings",
+          "Official Hearing & Auditory Genetics sample output",
+          "Sanitized completed output preserving non-private rows and source IDs"
         ],
+        "publicFirstNextAction": "Use the public capture session once official completed output is available.",
+        "publicFirstNextCommand": "npm run scaffold:capture-session -- --source public --report hearing-auditory-genetics --format md --out tmp/official-output-capture-session-hearing-auditory-genetics.md",
         "nonPromotionalEvidenceClasses": [
           "synthetic fixtures",
           "local deterministic results",
@@ -4585,8 +5310,8 @@
         },
         "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data"
       },
-      "nextAction": "Reviewed current sources remain metadata-only. Start a private-output redaction input only after an official completed output or non-private sample/export is available.",
-      "nextCommand": "npm run scaffold:redaction-template -- --report hearing-auditory-genetics",
+      "nextAction": "Reviewed current sources remain metadata-only. Use a public capture session for non-private official output; use private redaction only after private completed output is available.",
+      "nextCommand": "npm run scaffold:capture-session -- --source public --report hearing-auditory-genetics --format md --out tmp/official-output-capture-session-hearing-auditory-genetics.md",
       "redactionInputPath": ".soma/private/official-output-redactions/hearing-auditory-genetics-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report hearing-auditory-genetics",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/hearing-auditory-genetics-redaction-input.json",
@@ -4621,6 +5346,9 @@
           "covered formalFields[] mapped from official output",
           "citationBindings[] and source IDs for row-level evidence",
           "a rowEvidenceReady official-output capture validator pass",
+          "Direct Hearing & Auditory Genetics sample output",
+          "Verified completed report artifact for the exact package",
+          "Row-level source bindings for hearing/auditory rows",
           "Hearing/auditory sample report rows",
           "Completed package report artifact",
           "Row-level source bindings",
@@ -4628,7 +5356,9 @@
           "Sanitized completed output preserving non-private rows and source IDs"
         ],
         "readinessBoundary": "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
-      }
+      },
+      "nextPublicQueueAction": "Use the public capture session once official completed output is available.",
+      "nextPublicCommand": "npm run scaffold:capture-session -- --source public --report hearing-auditory-genetics --format md --out tmp/official-output-capture-session-hearing-auditory-genetics.md"
     },
     {
       "slug": "marfan-syndrome",
@@ -4801,17 +5531,48 @@
         ],
         "readyForPromotion": false
       },
+      "requiredEvidenceForPromotion": [
+        "Direct Marfan Syndrome or FBN1 sample report rows",
+        "Verified completed report artifact for the exact package",
+        "Row-level source bindings for Marfan-specific rows"
+      ],
+      "publicBundleEvidenceMissingForPromotion": [],
+      "packageSpecificMissingEvidence": [
+        "Direct Marfan Syndrome or FBN1 sample report rows",
+        "Verified completed report artifact for the exact package",
+        "Row-level source bindings for Marfan-specific rows",
+        "Exact Marfan reportData",
+        "FBN1 or Marfan sample report rows",
+        "Row-level source bindings",
+        "Official Marfan Syndrome sample report or export",
+        "Sanitized completed Marfan output preserving rows and source IDs"
+      ],
       "operatorEvidenceChecklist": {
         "promotionalOfficialRowsPresent": false,
         "coveredFormalFieldsPresent": false,
         "citationBindingsPresent": false,
         "rowEvidenceReadyCapturePresent": false,
+        "requiredEvidenceForPromotion": [
+          "Direct Marfan Syndrome or FBN1 sample report rows",
+          "Verified completed report artifact for the exact package",
+          "Row-level source bindings for Marfan-specific rows"
+        ],
         "missingOfficialRowEvidence": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "covered formalFields[] mapped from official output",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Direct Marfan Syndrome or FBN1 sample report rows",
+          "Verified completed report artifact for the exact package",
+          "Row-level source bindings for Marfan-specific rows",
+          "Exact Marfan reportData",
+          "FBN1 or Marfan sample report rows",
+          "Row-level source bindings",
+          "Official Marfan Syndrome sample report or export",
+          "Sanitized completed Marfan output preserving rows and source IDs"
         ],
+        "publicFirstNextAction": "Use the public capture session once official completed output is available.",
+        "publicFirstNextCommand": "npm run scaffold:capture-session -- --source public --report marfan-syndrome --format md --out tmp/official-output-capture-session-marfan-syndrome.md",
         "nonPromotionalEvidenceClasses": [
           "synthetic fixtures",
           "local deterministic results",
@@ -4853,8 +5614,8 @@
         },
         "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data"
       },
-      "nextAction": "Reviewed current sources remain metadata-only. Start a private-output redaction input only after an official completed output or non-private sample/export is available.",
-      "nextCommand": "npm run scaffold:redaction-template -- --report marfan-syndrome",
+      "nextAction": "Reviewed current sources remain metadata-only. Use a public capture session for non-private official output; use private redaction only after private completed output is available.",
+      "nextCommand": "npm run scaffold:capture-session -- --source public --report marfan-syndrome --format md --out tmp/official-output-capture-session-marfan-syndrome.md",
       "redactionInputPath": ".soma/private/official-output-redactions/marfan-syndrome-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report marfan-syndrome",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/marfan-syndrome-redaction-input.json",
@@ -4889,6 +5650,9 @@
           "covered formalFields[] mapped from official output",
           "citationBindings[] and source IDs for row-level evidence",
           "a rowEvidenceReady official-output capture validator pass",
+          "Direct Marfan Syndrome or FBN1 sample report rows",
+          "Verified completed report artifact for the exact package",
+          "Row-level source bindings for Marfan-specific rows",
           "Exact Marfan reportData",
           "FBN1 or Marfan sample report rows",
           "Row-level source bindings",
@@ -4896,7 +5660,9 @@
           "Sanitized completed Marfan output preserving rows and source IDs"
         ],
         "readinessBoundary": "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
-      }
+      },
+      "nextPublicQueueAction": "Use the public capture session once official completed output is available.",
+      "nextPublicCommand": "npm run scaffold:capture-session -- --source public --report marfan-syndrome --format md --out tmp/official-output-capture-session-marfan-syndrome.md"
     },
     {
       "slug": "mitchell-syndrome",
@@ -5068,17 +5834,48 @@
         ],
         "readyForPromotion": false
       },
+      "requiredEvidenceForPromotion": [
+        "Direct Mitchell Syndrome Sequencing.com report output",
+        "Exact reportData payload with sample rows or non-empty reportFile",
+        "Row-level source bindings for Mitchell Syndrome-specific rows"
+      ],
+      "publicBundleEvidenceMissingForPromotion": [],
+      "packageSpecificMissingEvidence": [
+        "Direct Mitchell Syndrome Sequencing.com report output",
+        "Exact reportData payload with sample rows or non-empty reportFile",
+        "Row-level source bindings for Mitchell Syndrome-specific rows",
+        "Exact Mitchell Syndrome reportData",
+        "Sample report rows",
+        "Row-level source bindings",
+        "Official Mitchell Syndrome sample report output",
+        "Exact reportData payload or sanitized completed output with rows"
+      ],
       "operatorEvidenceChecklist": {
         "promotionalOfficialRowsPresent": false,
         "coveredFormalFieldsPresent": false,
         "citationBindingsPresent": false,
         "rowEvidenceReadyCapturePresent": false,
+        "requiredEvidenceForPromotion": [
+          "Direct Mitchell Syndrome Sequencing.com report output",
+          "Exact reportData payload with sample rows or non-empty reportFile",
+          "Row-level source bindings for Mitchell Syndrome-specific rows"
+        ],
         "missingOfficialRowEvidence": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "covered formalFields[] mapped from official output",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Direct Mitchell Syndrome Sequencing.com report output",
+          "Exact reportData payload with sample rows or non-empty reportFile",
+          "Row-level source bindings for Mitchell Syndrome-specific rows",
+          "Exact Mitchell Syndrome reportData",
+          "Sample report rows",
+          "Row-level source bindings",
+          "Official Mitchell Syndrome sample report output",
+          "Exact reportData payload or sanitized completed output with rows"
         ],
+        "publicFirstNextAction": "Use the public capture session once official completed output is available.",
+        "publicFirstNextCommand": "npm run scaffold:capture-session -- --source public --report mitchell-syndrome --format md --out tmp/official-output-capture-session-mitchell-syndrome.md",
         "nonPromotionalEvidenceClasses": [
           "synthetic fixtures",
           "local deterministic results",
@@ -5120,8 +5917,8 @@
         },
         "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data"
       },
-      "nextAction": "Reviewed current sources remain metadata-only. Start a private-output redaction input only after an official completed output or non-private sample/export is available.",
-      "nextCommand": "npm run scaffold:redaction-template -- --report mitchell-syndrome",
+      "nextAction": "Reviewed current sources remain metadata-only. Use a public capture session for non-private official output; use private redaction only after private completed output is available.",
+      "nextCommand": "npm run scaffold:capture-session -- --source public --report mitchell-syndrome --format md --out tmp/official-output-capture-session-mitchell-syndrome.md",
       "redactionInputPath": ".soma/private/official-output-redactions/mitchell-syndrome-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report mitchell-syndrome",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/mitchell-syndrome-redaction-input.json",
@@ -5156,6 +5953,9 @@
           "covered formalFields[] mapped from official output",
           "citationBindings[] and source IDs for row-level evidence",
           "a rowEvidenceReady official-output capture validator pass",
+          "Direct Mitchell Syndrome Sequencing.com report output",
+          "Exact reportData payload with sample rows or non-empty reportFile",
+          "Row-level source bindings for Mitchell Syndrome-specific rows",
           "Exact Mitchell Syndrome reportData",
           "Sample report rows",
           "Row-level source bindings",
@@ -5163,7 +5963,9 @@
           "Exact reportData payload or sanitized completed output with rows"
         ],
         "readinessBoundary": "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
-      }
+      },
+      "nextPublicQueueAction": "Use the public capture session once official completed output is available.",
+      "nextPublicCommand": "npm run scaffold:capture-session -- --source public --report mitchell-syndrome --format md --out tmp/official-output-capture-session-mitchell-syndrome.md"
     },
     {
       "slug": "oral",
@@ -5305,17 +6107,48 @@
         ],
         "readyForPromotion": false
       },
+      "requiredEvidenceForPromotion": [
+        "Direct Oral report sample output",
+        "Verified completed report artifact for the exact package",
+        "Row-level source bindings for Oral-specific rows"
+      ],
+      "publicBundleEvidenceMissingForPromotion": [],
+      "packageSpecificMissingEvidence": [
+        "Direct Oral report sample output",
+        "Verified completed report artifact for the exact package",
+        "Row-level source bindings for Oral-specific rows",
+        "Oral report sample rows",
+        "Completed package report artifact",
+        "Row-level source bindings",
+        "Official Oral sample report or export",
+        "Sanitized completed output preserving non-private rows and source IDs"
+      ],
       "operatorEvidenceChecklist": {
         "promotionalOfficialRowsPresent": false,
         "coveredFormalFieldsPresent": false,
         "citationBindingsPresent": false,
         "rowEvidenceReadyCapturePresent": false,
+        "requiredEvidenceForPromotion": [
+          "Direct Oral report sample output",
+          "Verified completed report artifact for the exact package",
+          "Row-level source bindings for Oral-specific rows"
+        ],
         "missingOfficialRowEvidence": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "covered formalFields[] mapped from official output",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Direct Oral report sample output",
+          "Verified completed report artifact for the exact package",
+          "Row-level source bindings for Oral-specific rows",
+          "Oral report sample rows",
+          "Completed package report artifact",
+          "Row-level source bindings",
+          "Official Oral sample report or export",
+          "Sanitized completed output preserving non-private rows and source IDs"
         ],
+        "publicFirstNextAction": "Use the public capture session once official completed output is available.",
+        "publicFirstNextCommand": "npm run scaffold:capture-session -- --source public --report oral --format md --out tmp/official-output-capture-session-oral.md",
         "nonPromotionalEvidenceClasses": [
           "synthetic fixtures",
           "local deterministic results",
@@ -5357,8 +6190,8 @@
         },
         "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data"
       },
-      "nextAction": "Reviewed current sources remain metadata-only. Start a private-output redaction input only after an official completed output or non-private sample/export is available.",
-      "nextCommand": "npm run scaffold:redaction-template -- --report oral",
+      "nextAction": "Reviewed current sources remain metadata-only. Use a public capture session for non-private official output; use private redaction only after private completed output is available.",
+      "nextCommand": "npm run scaffold:capture-session -- --source public --report oral --format md --out tmp/official-output-capture-session-oral.md",
       "redactionInputPath": ".soma/private/official-output-redactions/oral-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report oral",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/oral-redaction-input.json",
@@ -5393,6 +6226,9 @@
           "covered formalFields[] mapped from official output",
           "citationBindings[] and source IDs for row-level evidence",
           "a rowEvidenceReady official-output capture validator pass",
+          "Direct Oral report sample output",
+          "Verified completed report artifact for the exact package",
+          "Row-level source bindings for Oral-specific rows",
           "Oral report sample rows",
           "Completed package report artifact",
           "Row-level source bindings",
@@ -5400,7 +6236,9 @@
           "Sanitized completed output preserving non-private rows and source IDs"
         ],
         "readinessBoundary": "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
-      }
+      },
+      "nextPublicQueueAction": "Use the public capture session once official completed output is available.",
+      "nextPublicCommand": "npm run scaffold:capture-session -- --source public --report oral --format md --out tmp/official-output-capture-session-oral.md"
     },
     {
       "slug": "pediatric-health",
@@ -5573,17 +6411,46 @@
         ],
         "readyForPromotion": false
       },
+      "requiredEvidenceForPromotion": [
+        "Official Pediatric Health sample report rows",
+        "Verified completed report artifact for the exact package",
+        "Row-level source bindings for pediatric-health output rows"
+      ],
+      "publicBundleEvidenceMissingForPromotion": [],
+      "packageSpecificMissingEvidence": [
+        "Official Pediatric Health sample report rows",
+        "Verified completed report artifact for the exact package",
+        "Row-level source bindings for pediatric-health output rows",
+        "Exact reportData payload",
+        "Row-level source bindings",
+        "Official Pediatric Health sample report or export",
+        "Sanitized completed output preserving non-private rows and source IDs"
+      ],
       "operatorEvidenceChecklist": {
         "promotionalOfficialRowsPresent": false,
         "coveredFormalFieldsPresent": false,
         "citationBindingsPresent": false,
         "rowEvidenceReadyCapturePresent": false,
+        "requiredEvidenceForPromotion": [
+          "Official Pediatric Health sample report rows",
+          "Verified completed report artifact for the exact package",
+          "Row-level source bindings for pediatric-health output rows"
+        ],
         "missingOfficialRowEvidence": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "covered formalFields[] mapped from official output",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Official Pediatric Health sample report rows",
+          "Verified completed report artifact for the exact package",
+          "Row-level source bindings for pediatric-health output rows",
+          "Exact reportData payload",
+          "Row-level source bindings",
+          "Official Pediatric Health sample report or export",
+          "Sanitized completed output preserving non-private rows and source IDs"
         ],
+        "publicFirstNextAction": "Use the public capture session once official completed output is available.",
+        "publicFirstNextCommand": "npm run scaffold:capture-session -- --source public --report pediatric-health --format md --out tmp/official-output-capture-session-pediatric-health.md",
         "nonPromotionalEvidenceClasses": [
           "synthetic fixtures",
           "local deterministic results",
@@ -5625,8 +6492,8 @@
         },
         "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data"
       },
-      "nextAction": "Reviewed current sources remain metadata-only. Start a private-output redaction input only after an official completed output or non-private sample/export is available.",
-      "nextCommand": "npm run scaffold:redaction-template -- --report pediatric-health",
+      "nextAction": "Reviewed current sources remain metadata-only. Use a public capture session for non-private official output; use private redaction only after private completed output is available.",
+      "nextCommand": "npm run scaffold:capture-session -- --source public --report pediatric-health --format md --out tmp/official-output-capture-session-pediatric-health.md",
       "redactionInputPath": ".soma/private/official-output-redactions/pediatric-health-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report pediatric-health",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/pediatric-health-redaction-input.json",
@@ -5662,13 +6529,17 @@
           "citationBindings[] and source IDs for row-level evidence",
           "a rowEvidenceReady official-output capture validator pass",
           "Official Pediatric Health sample report rows",
+          "Verified completed report artifact for the exact package",
+          "Row-level source bindings for pediatric-health output rows",
           "Exact reportData payload",
           "Row-level source bindings",
           "Official Pediatric Health sample report or export",
           "Sanitized completed output preserving non-private rows and source IDs"
         ],
         "readinessBoundary": "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
-      }
+      },
+      "nextPublicQueueAction": "Use the public capture session once official completed output is available.",
+      "nextPublicCommand": "npm run scaffold:capture-session -- --source public --report pediatric-health --format md --out tmp/official-output-capture-session-pediatric-health.md"
     },
     {
       "slug": "pheochromocytoma-and-paraganglioma",
@@ -5810,17 +6681,48 @@
         ],
         "readyForPromotion": false
       },
+      "requiredEvidenceForPromotion": [
+        "Direct Pheochromocytoma and Paraganglioma sample output",
+        "Verified completed report artifact for the exact package",
+        "Row-level source bindings for exact package rows"
+      ],
+      "publicBundleEvidenceMissingForPromotion": [],
+      "packageSpecificMissingEvidence": [
+        "Direct Pheochromocytoma and Paraganglioma sample output",
+        "Verified completed report artifact for the exact package",
+        "Row-level source bindings for exact package rows",
+        "Exact package sample report rows",
+        "Completed package report artifact",
+        "Row-level source bindings",
+        "Official Pheochromocytoma and Paraganglioma sample output",
+        "Sanitized completed output preserving non-private rows and source IDs"
+      ],
       "operatorEvidenceChecklist": {
         "promotionalOfficialRowsPresent": false,
         "coveredFormalFieldsPresent": false,
         "citationBindingsPresent": false,
         "rowEvidenceReadyCapturePresent": false,
+        "requiredEvidenceForPromotion": [
+          "Direct Pheochromocytoma and Paraganglioma sample output",
+          "Verified completed report artifact for the exact package",
+          "Row-level source bindings for exact package rows"
+        ],
         "missingOfficialRowEvidence": [
           "official non-private sampleRows[], resultRows[], reportFile, or export rows",
           "covered formalFields[] mapped from official output",
           "citationBindings[] and source IDs for row-level evidence",
-          "a rowEvidenceReady official-output capture validator pass"
+          "a rowEvidenceReady official-output capture validator pass",
+          "Direct Pheochromocytoma and Paraganglioma sample output",
+          "Verified completed report artifact for the exact package",
+          "Row-level source bindings for exact package rows",
+          "Exact package sample report rows",
+          "Completed package report artifact",
+          "Row-level source bindings",
+          "Official Pheochromocytoma and Paraganglioma sample output",
+          "Sanitized completed output preserving non-private rows and source IDs"
         ],
+        "publicFirstNextAction": "Use the public capture session once official completed output is available.",
+        "publicFirstNextCommand": "npm run scaffold:capture-session -- --source public --report pheochromocytoma-and-paraganglioma --format md --out tmp/official-output-capture-session-pheochromocytoma-and-paraganglioma.md",
         "nonPromotionalEvidenceClasses": [
           "synthetic fixtures",
           "local deterministic results",
@@ -5862,8 +6764,8 @@
         },
         "privacyBoundary": "metadata only; did not click Start Report/Get App/Get Report; did not collect generated results or raw genome data"
       },
-      "nextAction": "Reviewed current sources remain metadata-only. Start a private-output redaction input only after an official completed output or non-private sample/export is available.",
-      "nextCommand": "npm run scaffold:redaction-template -- --report pheochromocytoma-and-paraganglioma",
+      "nextAction": "Reviewed current sources remain metadata-only. Use a public capture session for non-private official output; use private redaction only after private completed output is available.",
+      "nextCommand": "npm run scaffold:capture-session -- --source public --report pheochromocytoma-and-paraganglioma --format md --out tmp/official-output-capture-session-pheochromocytoma-and-paraganglioma.md",
       "redactionInputPath": ".soma/private/official-output-redactions/pheochromocytoma-and-paraganglioma-redaction-input.json",
       "redactionTemplateCommand": "npm run scaffold:redaction-template -- --report pheochromocytoma-and-paraganglioma",
       "sanitizeRedactionCommand": "npm run scaffold:sanitize-output -- --input .soma/private/official-output-redactions/pheochromocytoma-and-paraganglioma-redaction-input.json",
@@ -5898,6 +6800,9 @@
           "covered formalFields[] mapped from official output",
           "citationBindings[] and source IDs for row-level evidence",
           "a rowEvidenceReady official-output capture validator pass",
+          "Direct Pheochromocytoma and Paraganglioma sample output",
+          "Verified completed report artifact for the exact package",
+          "Row-level source bindings for exact package rows",
           "Exact package sample report rows",
           "Completed package report artifact",
           "Row-level source bindings",
@@ -5905,7 +6810,9 @@
           "Sanitized completed output preserving non-private rows and source IDs"
         ],
         "readinessBoundary": "Planning-only summary; promotion readiness still requires official non-private rows, covered formalFields, source-backed citationBindings, and rowEvidenceReady validation."
-      }
+      },
+      "nextPublicQueueAction": "Use the public capture session once official completed output is available.",
+      "nextPublicCommand": "npm run scaffold:capture-session -- --source public --report pheochromocytoma-and-paraganglioma --format md --out tmp/official-output-capture-session-pheochromocytoma-and-paraganglioma.md"
     }
   ],
   "nonTargetOfficialOutputCaptures": [
@@ -5971,7 +6878,7 @@
   ],
   "privacyCanary": {
     "schemaVersion": "soma-reports.official-output-capture-privacy-canary.v1",
-    "generatedAt": "2026-06-25T10:00:15.988Z",
+    "generatedAt": "2026-06-25T21:14:24.960Z",
     "ok": true,
     "results": [
       {

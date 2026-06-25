@@ -200,6 +200,8 @@ const captureTemplatePathFor = (slug) =>
   `${captureTemplateDirectory}/${slug}-official-output-capture-template.json`;
 const templateCommandFor = (slug) =>
   `npm run scaffold:capture-template -- --report ${slug} --out ${captureTemplatePathFor(slug)}`;
+const publicCaptureSessionCommandFor = (slug) =>
+  `npm run scaffold:capture-session -- --source public --report ${slug} --format md --out tmp/official-output-capture-session-${slug}.md`;
 const redactionInputPathFor = (slug) =>
   `.soma/private/official-output-redactions/${slug}-redaction-input.json`;
 const redactionTemplateCommandFor = (slug) => `npm run scaffold:redaction-template -- --report ${slug}`;
@@ -355,9 +357,9 @@ const captureWorkflowFor = ({
       stage,
       nextAction:
         stage === "reviewed-metadata-only"
-          ? "Reviewed current sources remain metadata-only. Start a private-output redaction input only after an official completed output or non-private sample/export is available."
-          : "Reviewed capture remains boundary-only. Start a private-output redaction input only when you can preserve official non-private rows and source bindings.",
-      nextCommand: redactionTemplateCommandFor(slug),
+          ? "Reviewed current sources remain metadata-only. Use a public capture session for non-private official output; use private redaction only after private completed output is available."
+          : "Reviewed capture remains boundary-only. Use a public capture session for non-private official rows and source bindings; use private redaction only for completed private output.",
+      nextCommand: publicCaptureSessionCommandFor(slug),
     };
   }
 
@@ -378,8 +380,8 @@ const captureWorkflowFor = ({
     return {
       stage: "template-ready",
       nextAction:
-        "Fill the public capture template from a non-private official source, or fill an ignored private redaction input from completed output and commit only the reviewed commit-safe capture.",
-      nextCommand: redactionTemplateCommandFor(slug),
+        "Use a public capture session to fill the template from a non-private official source, or explicitly switch to private redaction only after completed private output exists.",
+      nextCommand: publicCaptureSessionCommandFor(slug),
     };
   }
 

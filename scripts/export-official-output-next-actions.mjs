@@ -69,24 +69,68 @@ const nonPromotionalEvidenceClasses = [
   "order-route boundary evidence",
   "public education/background pages",
 ];
-const operatorEvidenceChecklistFor = (row, currentOutputSignals, missingFormalGateEvidence) => {
-  if (row.operatorEvidenceChecklist) {
-    return row.operatorEvidenceChecklist;
-  }
+const requiredEvidenceForPromotionFor = (row) =>
+  uniqueStrings([
+    ...asArray(row.requiredEvidenceForPromotion),
+    ...asArray(row.formalReadinessGate?.requiredEvidenceForPromotion),
+  ]);
+const publicBundleEvidenceMissingForPromotionFor = (row) =>
+  uniqueStrings([
+    ...asArray(row.publicBundleEvidenceMissingForPromotion),
+    ...asArray(row.publicBundleEvidence?.evidenceMissingForPromotion),
+  ]);
+const nextEvidenceNeededFor = (row) =>
+  uniqueStrings(
+    row.officialOutputReviewNextEvidenceNeeded?.length
+      ? row.officialOutputReviewNextEvidenceNeeded
+      : (row.formalReadinessGate?.requiredEvidenceForPromotion ?? []),
+  );
+const packageSpecificMissingEvidenceFor = (row, nextEvidenceNeeded = nextEvidenceNeededFor(row)) =>
+  uniqueStrings([
+    ...asArray(row.packageSpecificMissingEvidence),
+    ...requiredEvidenceForPromotionFor(row),
+    ...publicBundleEvidenceMissingForPromotionFor(row),
+    ...asArray(row.officialOutputReviewEvidenceMissing),
+    ...asArray(row.reviewedEvidenceMissing),
+    ...nextEvidenceNeeded,
+  ]);
+const operatorEvidenceChecklistFor = (
+  row,
+  currentOutputSignals,
+  missingFormalGateEvidence,
+  packageSpecificMissingEvidence,
+) => {
   const signals = currentOutputSignals ?? {};
   const rowEvidenceReadyCapturePresent = Boolean(
     (row.rowEvidencePromotionReadyCaptures ?? 0) > 0 ||
       (row.rowEvidenceReadyCaptures ?? 0) > 0 ||
       asArray(row.rowEvidenceReadyCapturePaths).length > 0,
   );
+  const checklist = row.operatorEvidenceChecklist ?? {};
+  const requiredEvidenceForPromotion = uniqueStrings([
+    ...asArray(checklist.requiredEvidenceForPromotion),
+    ...requiredEvidenceForPromotionFor(row),
+  ]);
+  const missingOfficialRowEvidence = uniqueStrings([
+    ...asArray(checklist.missingOfficialRowEvidence),
+    ...asArray(missingFormalGateEvidence),
+    ...asArray(packageSpecificMissingEvidence),
+  ]);
   return {
-    promotionalOfficialRowsPresent: Boolean(signals.reportFile || signals.sampleRows > 0 || signals.resultRows > 0),
-    coveredFormalFieldsPresent: Boolean(signals.formalFields > 0),
-    citationBindingsPresent: Boolean(signals.citationBindings > 0),
+    promotionalOfficialRowsPresent:
+      checklist.promotionalOfficialRowsPresent ?? Boolean(signals.reportFile || signals.sampleRows > 0 || signals.resultRows > 0),
+    coveredFormalFieldsPresent: checklist.coveredFormalFieldsPresent ?? Boolean(signals.formalFields > 0),
+    citationBindingsPresent: checklist.citationBindingsPresent ?? Boolean(signals.citationBindings > 0),
     rowEvidenceReadyCapturePresent,
-    missingOfficialRowEvidence: missingFormalGateEvidence,
-    nonPromotionalEvidenceClasses,
-    promotionBoundary: {
+    requiredEvidenceForPromotion,
+    missingOfficialRowEvidence,
+    publicFirstNextAction: checklist.publicFirstNextAction ?? row.nextPublicQueueAction ?? null,
+    publicFirstNextCommand: checklist.publicFirstNextCommand ?? row.nextPublicCommand ?? row.publicCaptureSessionCommand ?? null,
+    nonPromotionalEvidenceClasses: uniqueStrings([
+      ...asArray(checklist.nonPromotionalEvidenceClasses),
+      ...nonPromotionalEvidenceClasses,
+    ]),
+    promotionBoundary: checklist.promotionBoundary ?? {
       syntheticFixturesPromote: false,
       localDeterministicResultsPromote: false,
       metadataOnlyDetailCapturesPromote: false,
@@ -105,7 +149,11 @@ const publicCapturePriorityOpportunitySummaryFor = (row) => {
   const outputSignalReviews = row.outputSignalReviews ?? row.promotionCandidates ?? 0;
   const blockers = uniqueStrings([
     ...asArray(row.formalReadinessGate?.missing),
+    ...asArray(row.formalReadinessGate?.requiredEvidenceForPromotion),
     ...asArray(row.missingFormalGateEvidence),
+    ...asArray(row.requiredEvidenceForPromotion),
+    ...asArray(row.publicBundleEvidence?.evidenceMissingForPromotion),
+    ...asArray(row.operatorEvidenceChecklist?.missingOfficialRowEvidence),
     ...asArray(row.officialOutputReviewEvidenceMissing),
     ...asArray(row.reviewedEvidenceMissing),
     ...asArray(row.officialOutputReviewNextEvidenceNeeded),
@@ -279,7 +327,16 @@ const rowsForExport = rows
       row.publicCaptureSessionCommand ?? publicCaptureSessionCommandFor(row.slug);
     const currentOutputSignals = row.formalReadinessGate?.currentOutputSignals ?? null;
     const missingFormalGateEvidence = row.formalReadinessGate?.missing ?? [];
-    const operatorEvidenceChecklist = operatorEvidenceChecklistFor(row, currentOutputSignals, missingFormalGateEvidence);
+    const requiredEvidenceForPromotion = requiredEvidenceForPromotionFor(row);
+    const publicBundleEvidenceMissingForPromotion = publicBundleEvidenceMissingForPromotionFor(row);
+    const nextEvidenceNeeded = nextEvidenceNeededFor(row);
+    const packageSpecificMissingEvidence = packageSpecificMissingEvidenceFor(row, nextEvidenceNeeded);
+    const operatorEvidenceChecklist = operatorEvidenceChecklistFor(
+      row,
+      currentOutputSignals,
+      missingFormalGateEvidence,
+      packageSpecificMissingEvidence,
+    );
 
     const exportRow = {
       slug: row.slug,
@@ -293,6 +350,9 @@ const rowsForExport = rows
       officialBoundaryModeledBoundary: row.officialBoundaryModeledBoundary ?? null,
       nextAction: row.nextAction ?? null,
       nextCommand: row.nextCommand ?? null,
+      requiredEvidenceForPromotion,
+      packageSpecificMissingEvidence,
+      publicBundleEvidenceMissingForPromotion,
       actionClass: actionClassFor(row),
       captureUrl: row.captureUrl,
       liveRoute: row.liveDetailInspection
@@ -310,9 +370,7 @@ const rowsForExport = rows
       missingFormalGateEvidence,
       reviewedEvidencePresent: row.officialOutputReviewEvidencePresent ?? [],
       reviewedEvidenceMissing: row.officialOutputReviewEvidenceMissing ?? [],
-      nextEvidenceNeeded: row.officialOutputReviewNextEvidenceNeeded?.length
-        ? row.officialOutputReviewNextEvidenceNeeded
-        : row.formalReadinessGate?.requiredEvidenceForPromotion ?? [],
+      nextEvidenceNeeded,
       boundaryUse: boundaryUseFor(row),
       officialCapturePaths: row.officialCapturePaths ?? [],
       rowEvidenceReadyCapturePaths: row.rowEvidenceReadyCapturePaths ?? [],
@@ -327,6 +385,10 @@ const rowsForExport = rows
       promotionPreviewCommittedCommand: row.promotionPreviewCommittedCommand ?? null,
     };
     exportRow.publicCapturePriorityOpportunitySummary = publicCapturePriorityOpportunitySummaryFor(exportRow);
+    exportRow.nextPublicQueueAction = exportRow.publicCapturePriorityOpportunitySummary.publicNextStep;
+    exportRow.nextPublicCommand = exportRow.publicCapturePriorityOpportunitySummary.publicNextCommand;
+    exportRow.operatorEvidenceChecklist.publicFirstNextAction = exportRow.nextPublicQueueAction;
+    exportRow.operatorEvidenceChecklist.publicFirstNextCommand = exportRow.nextPublicCommand;
     return exportRow;
   });
 
@@ -446,6 +508,8 @@ const renderMarkdown = () => {
       }`,
       `- Public priority/opportunity: ${publicOpportunitySummary.priorityLabel} / \`${publicOpportunitySummary.opportunityClass}\` - ${publicOpportunitySummary.summary}`,
       `- Public opportunity command: \`${publicOpportunitySummary.publicNextCommand ?? "not available"}\``,
+      `- Next public queue action: ${row.nextPublicQueueAction ?? "not available"}`,
+      `- Next public command: \`${row.nextPublicCommand ?? "not available"}\``,
       `- Next action: ${row.nextAction ?? "not available"}`,
       `- Source: ${row.captureUrl ?? "not available"}`,
       `- Live route: ${
@@ -476,6 +540,10 @@ const renderMarkdown = () => {
       }`,
       "- Next evidence needed:",
       ...(row.nextEvidenceNeeded.length > 0 ? row.nextEvidenceNeeded.map((item) => `  - ${item}`) : ["  - none"]),
+      "- Package-specific missing evidence:",
+      ...(row.packageSpecificMissingEvidence.length > 0
+        ? row.packageSpecificMissingEvidence.map((item) => `  - ${item}`)
+        : ["  - none"]),
       `- Next command: \`${row.nextCommand ?? "not available"}\``,
       `- Public capture template: \`${row.publicCaptureTemplatePath ?? "not available"}\``,
       `- Public capture template command: \`${row.publicCaptureTemplateCommand ?? "not available"}\``,
@@ -519,10 +587,15 @@ const renderCompact = () =>
         sourceCoverage: row.sourceCoverage,
         nextAction: row.nextAction,
         nextCommand: row.nextCommand,
+        nextPublicQueueAction: row.nextPublicQueueAction,
+        nextPublicCommand: row.nextPublicCommand,
         actionClass: row.actionClass,
         publicCapturePriorityOpportunitySummary: row.publicCapturePriorityOpportunitySummary,
         operatorEvidenceChecklist: row.operatorEvidenceChecklist,
         missingFormalGateEvidence: row.missingFormalGateEvidence,
+        requiredEvidenceForPromotion: row.requiredEvidenceForPromotion,
+        packageSpecificMissingEvidence: row.packageSpecificMissingEvidence,
+        publicBundleEvidenceMissingForPromotion: row.publicBundleEvidenceMissingForPromotion,
         nextEvidenceNeeded: row.nextEvidenceNeeded,
         publicCaptureTemplatePath: row.publicCaptureTemplatePath,
         publicCaptureTemplateCommand: row.publicCaptureTemplateCommand,

@@ -150,6 +150,15 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "evidenceMissing": [
+        "Official Variant Effect Predictor sample output",
+        "Formal consequence/effect output rows",
+        "Row-level source bindings for predicted-effect rows"
+      ],
+      "nextEvidenceNeeded": [
+        "Official non-private Variant Effect Predictor sample output or export",
+        "Sanitized completed output preserving consequence/effect rows and source IDs"
+      ],
       "boundaryUse": "Prompt and field-boundary guidance only; do not infer variant rows, impact classifications, or citation bindings."
     },
     {
@@ -165,6 +174,15 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "evidenceMissing": [
+        "Official Sequencing.com Promethease package output or non-empty reportFile",
+        "Exact generated table/export rows for the marketplace package",
+        "Row-level source bindings for report rows"
+      ],
+      "nextEvidenceNeeded": [
+        "Official Sequencing.com Promethease package output or export",
+        "Sanitized completed output preserving exact package rows and source IDs"
+      ],
       "boundaryUse": "Prompt and scope guidance only; third-party Promethease examples are not Sequencing.com package-specific sample rows."
     },
     {
@@ -180,6 +198,15 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "evidenceMissing": [
+        "Direct imputation output or post-run export",
+        "Formal imputation summary/result rows",
+        "Row-level source bindings for imputation fields"
+      ],
+      "nextEvidenceNeeded": [
+        "Official non-private Imputation Analysis sample output or export",
+        "Sanitized completed output preserving imputation summary/result rows and source IDs"
+      ],
       "boundaryUse": "Purpose and scope guidance only; do not treat the purpose sentence as sampleRows, resultRows, generatedOutput, or citationBindings."
     },
     {
@@ -195,6 +222,15 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "evidenceMissing": [
+        "Official EvE Premium result artifact or sample output",
+        "Formal pipeline output fields from Sequencing.com",
+        "Row-level source bindings for output fields"
+      ],
+      "nextEvidenceNeeded": [
+        "Official non-private EvE Premium result artifact or sample output",
+        "Sanitized completed output preserving pipeline output fields and source IDs"
+      ],
       "boundaryUse": "Marketplace summary and keyword scope guidance only; do not infer pipeline execution, command output, QC metrics, variant calls, reports, or citation bindings."
     },
     {
@@ -210,6 +246,15 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "evidenceMissing": [
+        "Official Short Read Mapper result artifact or sample output",
+        "Formal mapping output fields",
+        "Row-level source bindings for mapping output rows"
+      ],
+      "nextEvidenceNeeded": [
+        "Official non-private Short Read Mapper result artifact or sample output",
+        "Sanitized completed output preserving mapping output rows and source IDs"
+      ],
       "boundaryUse": "Marketplace summary and keyword scope guidance only; do not infer mapped reads, alignment metrics, coverage, command output, variant calls, or citation bindings."
     },
     {
@@ -225,6 +270,15 @@
         "citationBindings": 0,
         "generatedOutput": false
       },
+      "evidenceMissing": [
+        "Official Variant Discovery sample/result table",
+        "Formal variant discovery output fields",
+        "Row-level source bindings for discovered-variant rows"
+      ],
+      "nextEvidenceNeeded": [
+        "Official non-private Variant Discovery sample/result table or export",
+        "Sanitized completed output preserving discovered-variant rows and source IDs"
+      ],
       "boundaryUse": "Marketplace summary and keyword scope guidance only; do not infer variant rows, haplotypes, SNP/MNP/DIP calls, classifications, command output, or citation bindings."
     }
   ],

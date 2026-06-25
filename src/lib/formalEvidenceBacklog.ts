@@ -365,11 +365,18 @@ export type OfficialOutputCaptureStatusRow = {
     outputSignals: Record<string, boolean | number>;
   }>;
   formalReadinessGate?: FormalReadinessGate;
+  requiredEvidenceForPromotion?: string[];
+  publicBundleEvidenceMissingForPromotion?: string[];
+  packageSpecificMissingEvidence?: string[];
+  operatorEvidenceChecklist?: OperatorEvidenceChecklist;
   liveDetailInspection?: LiveDetailInspection | null;
   nextAction: string | null;
   nextCommand: string | null;
+  nextPublicQueueAction?: string | null;
+  nextPublicCommand?: string | null;
   publicCaptureTemplatePath?: string | null;
   publicCaptureTemplateCommand?: string | null;
+  publicTemplateAuditCommand?: string | null;
   publicCaptureSessionCommand?: string | null;
   publicCapturePriorityOpportunitySummary?: PublicCapturePriorityOpportunitySummary | null;
   redactionInputPath?: string | null;
@@ -420,6 +427,19 @@ export type FormalReadinessGate = {
   };
   missing: string[];
   readyForPromotion: boolean;
+};
+
+export type OperatorEvidenceChecklist = {
+  promotionalOfficialRowsPresent: boolean;
+  coveredFormalFieldsPresent: boolean;
+  citationBindingsPresent: boolean;
+  rowEvidenceReadyCapturePresent: boolean;
+  requiredEvidenceForPromotion?: string[];
+  missingOfficialRowEvidence: string[];
+  publicFirstNextAction?: string | null;
+  publicFirstNextCommand?: string | null;
+  nonPromotionalEvidenceClasses: string[];
+  promotionBoundary: Record<string, false>;
 };
 
 export type LiveDetailInspection = {
