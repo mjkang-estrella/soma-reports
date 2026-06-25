@@ -146,15 +146,28 @@ const templateTotals = templateAudit?.totals ?? {};
 const officialCaptureArtifacts = planTotals.officialOutputCaptureArtifacts ?? captureValidation?.checked ?? 0;
 const rowEvidenceReadyTargets = planTotals.rowEvidenceReadyTargets ?? captureValidation?.rowEvidenceReady ?? 0;
 const targets = planTotals.targets ?? 0;
+const publicCaptureTemplatePathFor = (slug) => `tmp/capture-templates/${slug}-official-output-capture-template.json`;
+const publicCaptureTemplateCommandFor = (slug, path = publicCaptureTemplatePathFor(slug)) =>
+  `npm run scaffold:capture-template -- --report ${slug} --out ${path}`;
+const publicTemplateAuditCommandFor = (slug) => `npm run scaffold:template-audit -- --report ${slug}`;
+const publicCaptureSessionCommandFor = (slug) =>
+  `npm run scaffold:capture-session -- --source public --report ${slug} --format md --out tmp/official-output-capture-session-${slug}.md`;
 
 if (!allowEmptyCaptures && targets > 0 && officialCaptureArtifacts === 0) {
   problems.push(
-    "no sanitized official-output captures are present in reference/catalog; fill a local template from official output before promotion",
+    "no commit-safe official-output captures are present in reference/catalog; fill a local template from official output before promotion",
   );
 }
 
 const rows = (plan?.targets ?? []).map((target) => {
   const officialOutputPromotionReview = target.officialOutputPromotionReview ?? null;
+  const publicCaptureTemplatePath = target.captureTemplatePath ?? publicCaptureTemplatePathFor(target.slug);
+  const publicCaptureTemplateCommand =
+    target.publicCaptureTemplateCommand ??
+    target.templateCommand ??
+    publicCaptureTemplateCommandFor(target.slug, publicCaptureTemplatePath);
+  const publicTemplateAuditCommand = target.publicTemplateAuditCommand ?? publicTemplateAuditCommandFor(target.slug);
+  const publicCaptureSessionCommand = target.publicCaptureSessionCommand ?? publicCaptureSessionCommandFor(target.slug);
   const redactionInputPath = target.redactionInputPath ?? `.soma/private/official-output-redactions/${target.slug}-redaction-input.json`;
   const sanitizedDraftArtifactPath = `tmp/sanitized-captures/${target.slug}-official-output-capture-${today}.json`;
   const committedCapturePath = `reference/catalog/${target.slug}-official-output-capture-${today}.json`;
@@ -374,6 +387,10 @@ const rows = (plan?.targets ?? []).map((target) => {
     expectedSanitizedArtifactPath: committedCapturePath,
     validationCommandForExpectedCapture: validateCommittedCaptureCommand,
     captureTemplatePath: target.captureTemplatePath,
+    publicCaptureTemplatePath,
+    publicCaptureTemplateCommand,
+    publicTemplateAuditCommand,
+    publicCaptureSessionCommand,
   };
 });
 const targetSlugs = new Set(rows.map((row) => row.slug));
@@ -516,7 +533,7 @@ const summary = {
     exportCapturePlan: "npm run scaffold:capture-plan -- --format md --out tmp/evidence-capture-plan.md",
   },
   privacyBoundary:
-    "Status is derived from sanitized metadata, local placeholder templates, and reference/catalog capture artifacts only. Keep raw genome files and private completed-report payloads outside the repo.",
+    "Status is derived from commit-safe metadata, local placeholder templates, and reference/catalog capture artifacts only. Keep raw genome files and private completed-report payloads outside the repo.",
 };
 
 const renderMarkdown = () => {
@@ -584,7 +601,10 @@ const renderMarkdown = () => {
       "",
       `- Slug: \`${row.slug}\``,
       `- Stage: \`${row.stage}\``,
-      `- Template: \`${row.captureTemplatePath}\``,
+      `- Public capture template: \`${row.publicCaptureTemplatePath ?? row.captureTemplatePath ?? "not available"}\``,
+      `- Public capture template command: \`${row.publicCaptureTemplateCommand ?? "not available"}\``,
+      `- Public template audit: \`${row.publicTemplateAuditCommand ?? "not available"}\``,
+      `- Public capture session: \`${row.publicCaptureSessionCommand ?? "not available"}\``,
       `- Redaction input: \`${row.redactionInputPath ?? "not available"}\``,
       `- Redaction template: \`${row.redactionTemplateCommand ?? "not available"}\``,
       `- Dry-run sanitizer: \`${row.dryRunSanitizeCommand ?? "not available"}\``,
@@ -666,6 +686,10 @@ const renderCompact = () =>
             }
           : null,
         redactionTemplateCommand: row.redactionTemplateCommand,
+        publicCaptureTemplatePath: row.publicCaptureTemplatePath,
+        publicCaptureTemplateCommand: row.publicCaptureTemplateCommand,
+        publicTemplateAuditCommand: row.publicTemplateAuditCommand,
+        publicCaptureSessionCommand: row.publicCaptureSessionCommand,
         gitTrackedOfficialCapturePaths: row.gitTrackedOfficialCapturePaths,
         gitUntrackedOfficialCapturePaths: row.gitUntrackedOfficialCapturePaths,
         dryRunSanitizeCommand: row.dryRunSanitizeCommand,
@@ -673,6 +697,21 @@ const renderCompact = () =>
         commitSanitizedCaptureCommand: row.commitSanitizedCaptureCommand,
         validateCommittedCaptureCommand: row.validateCommittedCaptureCommand,
         promotionPreviewCommittedCommand: row.promotionPreviewCommittedCommand,
+        publicCaptureCommands: {
+          publicCaptureTemplatePath: row.publicCaptureTemplatePath,
+          publicCaptureTemplateCommand: row.publicCaptureTemplateCommand,
+          publicTemplateAuditCommand: row.publicTemplateAuditCommand,
+          publicCaptureSessionCommand: row.publicCaptureSessionCommand,
+        },
+        privateRedactionCommands: {
+          redactionInputPath: row.redactionInputPath,
+          redactionTemplateCommand: row.redactionTemplateCommand,
+          dryRunSanitizeCommand: row.dryRunSanitizeCommand,
+          sanitizeDraftCommand: row.sanitizeDraftCommand,
+          commitSanitizedCaptureCommand: row.commitSanitizedCaptureCommand,
+          validateCommittedCaptureCommand: row.validateCommittedCaptureCommand,
+          promotionPreviewCommittedCommand: row.promotionPreviewCommittedCommand,
+        },
       })),
       nonTargetOfficialOutputCaptures: summary.nonTargetOfficialOutputCaptures,
       privacyBoundary: summary.privacyBoundary,

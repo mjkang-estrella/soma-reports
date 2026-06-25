@@ -87,6 +87,8 @@ const parseJson = (path) => {
 };
 
 const sourceBindingStatusPlaceholder = "replace-with-exact-direct-or-official";
+const commitSafePrivacyMode = (privacyBoundary) =>
+  privacyBoundary?.privateValuesRedacted === true || privacyBoundary?.publicSourceOnly === true;
 
 const rowAtValidationPath = (artifact, path) => {
   const match = /^\$\.(sampleRows|resultRows|formalFields|citationBindings)\[(\d+)\](?:\.sourceBindingStatus)?$/.exec(path);
@@ -140,8 +142,8 @@ const templateShapeProblems = (artifact, target) => {
     if (artifact.privacyBoundary.rawGenomeIncluded !== false) {
       problems.push("privacyBoundary.rawGenomeIncluded must be false");
     }
-    if (artifact.privacyBoundary.privateValuesRedacted !== true) {
-      problems.push("privacyBoundary.privateValuesRedacted must be true");
+    if (!commitSafePrivacyMode(artifact.privacyBoundary)) {
+      problems.push("privacyBoundary must mark either privateValuesRedacted or publicSourceOnly true");
     }
     if (artifact.privacyBoundary.commitSafe !== true) {
       problems.push("privacyBoundary.commitSafe must be true");

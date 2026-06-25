@@ -243,10 +243,11 @@ const template = {
   sourceKind: "replace-with-official-sample-report-or-completed-output",
   privacyBoundary: {
     rawGenomeIncluded: false,
-    privateValuesRedacted: true,
+    publicSourceOnly: true,
+    privateValuesRedacted: false,
     commitSafe: true,
     notes:
-      "Commit only sanitized field names, row structure, source ids, and row-level bindings. Keep full private completed reports outside this repository.",
+      "Use this template for public/non-private official samples, report files, exports, or already sanitized completed-output structure. For personal completed runs, keep the full output outside this repository and use scaffold:sanitize-output so privateValuesRedacted is true.",
   },
   reportFile: "",
   sourceArtifacts: [captureUrl],

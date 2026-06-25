@@ -205,7 +205,7 @@ const sampleRowsPreview = (artifact.sampleRows ?? []).map((row, index) => {
     sourceBindingNote: firstString(
       row,
       ["sourceBindingNote"],
-      "Bound to sanitized official/sample/completed-output capture.",
+      "Bound to commit-safe official sample, export, or completed-output capture.",
     ),
     extractionStatus: "direct",
   };
@@ -217,7 +217,7 @@ const formalFieldsPreview = (artifact.formalFields ?? []).map((field, index) => 
   observedField: firstString(field, ["observedField", "label", "key"], `officialField${index + 1}`),
   outputPath: firstString(field, ["outputPath", "fieldPath"], `resultRows[].${field.key ?? `field${index + 1}`}`),
   status: field.status === "not_applicable" ? "not_applicable" : "covered",
-  notes: firstString(field, ["notes"], "Mapped from sanitized official-output capture."),
+  notes: firstString(field, ["notes"], "Mapped from commit-safe official-output capture."),
 }));
 
 const reportSlug = artifact.slug ?? slugFromOfficialOutputCapturePath(capturePath) ?? "<slug>";
@@ -237,7 +237,7 @@ const blockerLedgerUpdate = blockerDecision
 const requiredFileUpdates = [
   {
     path: capturePath,
-    action: "Keep the sanitized official-output capture in reference/catalog after privacy and row-binding validation.",
+    action: "Keep the commit-safe official-output capture in reference/catalog after privacy and row-binding validation.",
   },
   {
     path: "convex/reportPackages.ts",

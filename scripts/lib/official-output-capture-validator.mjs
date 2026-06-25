@@ -135,6 +135,9 @@ const validateListedSourceIds = (sourceIds, jsonPath, listedSourceIds, addProble
   }
 };
 
+const commitSafePrivacyMode = (privacyBoundary) =>
+  privacyBoundary.privateValuesRedacted === true || privacyBoundary.publicSourceOnly === true;
+
 const fieldIsCovered = (field) => {
   const hasFieldIdentity =
     isNonEmptyString(field?.key) ||
@@ -234,13 +237,16 @@ export const validateOfficialOutputCaptureArtifact = (artifact, options = {}) =>
 
   const privacyBoundary = artifact.privacyBoundary;
   if (!isPlainObject(privacyBoundary)) {
-    addProblem("$.privacyBoundary", "must describe the privacy boundary for the sanitized capture");
+    addProblem("$.privacyBoundary", "must describe the privacy boundary for the commit-safe capture");
   } else {
     if (privacyBoundary.rawGenomeIncluded !== false) {
       addProblem("$.privacyBoundary.rawGenomeIncluded", "must be false");
     }
-    if (privacyBoundary.privateValuesRedacted !== true) {
-      addProblem("$.privacyBoundary.privateValuesRedacted", "must be true");
+    if (!commitSafePrivacyMode(privacyBoundary)) {
+      addProblem(
+        "$.privacyBoundary",
+        "must set privateValuesRedacted true for sanitized private captures or publicSourceOnly true for public/non-private captures",
+      );
     }
     if (privacyBoundary.commitSafe !== true) {
       addProblem("$.privacyBoundary.commitSafe", "must be true");

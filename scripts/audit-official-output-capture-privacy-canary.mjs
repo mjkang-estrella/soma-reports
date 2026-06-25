@@ -70,6 +70,47 @@ const baseCapture = {
 
 const canaries = [
   {
+    name: "public-official-sample-source",
+    capture: {
+      ...baseCapture,
+      sourceKind: "public-official-sample-report",
+      privacyBoundary: {
+        rawGenomeIncluded: false,
+        publicSourceOnly: true,
+        privateValuesRedacted: false,
+        commitSafe: true,
+      },
+      sourceResources: [
+        {
+          ...baseCapture.sourceResources[0],
+          title: "Dysautonomia public official sample output",
+          sourceType: "official_output",
+          extractionStatus: "direct-public",
+        },
+      ],
+      generatedOutput: {
+        publicSourceOnly: true,
+        privateResultUrlCommitted: false,
+      },
+    },
+    expectOk: true,
+    expectRowEvidenceReady: true,
+  },
+  {
+    name: "neither-public-nor-redacted",
+    capture: {
+      ...baseCapture,
+      privacyBoundary: {
+        rawGenomeIncluded: false,
+        publicSourceOnly: false,
+        privateValuesRedacted: false,
+        commitSafe: true,
+      },
+    },
+    expectOk: false,
+    expectRowEvidenceReady: false,
+  },
+  {
     name: "private-result-url-email-genotype",
     capture: {
       ...baseCapture,

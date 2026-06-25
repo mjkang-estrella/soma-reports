@@ -1,6 +1,6 @@
 {
   "schemaVersion": "soma-reports.official-output-capture-status.v1",
-  "generatedAt": "2026-06-25T07:34:19.361Z",
+  "generatedAt": "2026-06-25T08:09:23.736Z",
   "ok": true,
   "targetClass": "all",
   "allowEmptyCaptures": true,
@@ -307,7 +307,11 @@
       "captureUrl": "https://sequencing.com/marketplace/sequencing-depth-and-coverage",
       "expectedSanitizedArtifactPath": "reference/catalog/sequencing-depth-and-coverage-official-output-capture-2026-06-25.json",
       "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/sequencing-depth-and-coverage-official-output-capture-2026-06-25.json",
-      "captureTemplatePath": "tmp/capture-templates/sequencing-depth-and-coverage-official-output-capture-template.json"
+      "captureTemplatePath": "tmp/capture-templates/sequencing-depth-and-coverage-official-output-capture-template.json",
+      "publicCaptureTemplatePath": "tmp/capture-templates/sequencing-depth-and-coverage-official-output-capture-template.json",
+      "publicCaptureTemplateCommand": "npm run scaffold:capture-template -- --report sequencing-depth-and-coverage --out tmp/capture-templates/sequencing-depth-and-coverage-official-output-capture-template.json",
+      "publicTemplateAuditCommand": "npm run scaffold:template-audit -- --report sequencing-depth-and-coverage",
+      "publicCaptureSessionCommand": "npm run scaffold:capture-session -- --source public --report sequencing-depth-and-coverage --format md --out tmp/official-output-capture-session-sequencing-depth-and-coverage.md"
     },
     {
       "slug": "genome-explorer-dna-data-search",
@@ -541,7 +545,11 @@
       "captureUrl": "https://sequencing.com/marketplace/genome-explorer-dna-data-search",
       "expectedSanitizedArtifactPath": "reference/catalog/genome-explorer-dna-data-search-official-output-capture-2026-06-25.json",
       "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/genome-explorer-dna-data-search-official-output-capture-2026-06-25.json",
-      "captureTemplatePath": "tmp/capture-templates/genome-explorer-dna-data-search-official-output-capture-template.json"
+      "captureTemplatePath": "tmp/capture-templates/genome-explorer-dna-data-search-official-output-capture-template.json",
+      "publicCaptureTemplatePath": "tmp/capture-templates/genome-explorer-dna-data-search-official-output-capture-template.json",
+      "publicCaptureTemplateCommand": "npm run scaffold:capture-template -- --report genome-explorer-dna-data-search --out tmp/capture-templates/genome-explorer-dna-data-search-official-output-capture-template.json",
+      "publicTemplateAuditCommand": "npm run scaffold:template-audit -- --report genome-explorer-dna-data-search",
+      "publicCaptureSessionCommand": "npm run scaffold:capture-session -- --source public --report genome-explorer-dna-data-search --format md --out tmp/official-output-capture-session-genome-explorer-dna-data-search.md"
     },
     {
       "slug": "convert-rsids-coordinates",
@@ -707,7 +715,11 @@
       "captureUrl": "https://sequencing.com/marketplace/convert-rsids-coordinates",
       "expectedSanitizedArtifactPath": "reference/catalog/convert-rsids-coordinates-official-output-capture-2026-06-25.json",
       "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/convert-rsids-coordinates-official-output-capture-2026-06-25.json",
-      "captureTemplatePath": "tmp/capture-templates/convert-rsids-coordinates-official-output-capture-template.json"
+      "captureTemplatePath": "tmp/capture-templates/convert-rsids-coordinates-official-output-capture-template.json",
+      "publicCaptureTemplatePath": "tmp/capture-templates/convert-rsids-coordinates-official-output-capture-template.json",
+      "publicCaptureTemplateCommand": "npm run scaffold:capture-template -- --report convert-rsids-coordinates --out tmp/capture-templates/convert-rsids-coordinates-official-output-capture-template.json",
+      "publicTemplateAuditCommand": "npm run scaffold:template-audit -- --report convert-rsids-coordinates",
+      "publicCaptureSessionCommand": "npm run scaffold:capture-session -- --source public --report convert-rsids-coordinates --format md --out tmp/official-output-capture-session-convert-rsids-coordinates.md"
     },
     {
       "slug": "imputation-analysis",
@@ -901,7 +913,11 @@
       "captureUrl": "https://sequencing.com/marketplace/imputation-analysis",
       "expectedSanitizedArtifactPath": "reference/catalog/imputation-analysis-official-output-capture-2026-06-25.json",
       "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/imputation-analysis-official-output-capture-2026-06-25.json",
-      "captureTemplatePath": "tmp/capture-templates/imputation-analysis-official-output-capture-template.json"
+      "captureTemplatePath": "tmp/capture-templates/imputation-analysis-official-output-capture-template.json",
+      "publicCaptureTemplatePath": "tmp/capture-templates/imputation-analysis-official-output-capture-template.json",
+      "publicCaptureTemplateCommand": "npm run scaffold:capture-template -- --report imputation-analysis --out tmp/capture-templates/imputation-analysis-official-output-capture-template.json",
+      "publicTemplateAuditCommand": "npm run scaffold:template-audit -- --report imputation-analysis",
+      "publicCaptureSessionCommand": "npm run scaffold:capture-session -- --source public --report imputation-analysis --format md --out tmp/official-output-capture-session-imputation-analysis.md"
     },
     {
       "slug": "variant-effect-predictor",
@@ -1095,7 +1111,11 @@
       "captureUrl": "https://sequencing.com/marketplace/variant-effect-predictor",
       "expectedSanitizedArtifactPath": "reference/catalog/variant-effect-predictor-official-output-capture-2026-06-25.json",
       "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/variant-effect-predictor-official-output-capture-2026-06-25.json",
-      "captureTemplatePath": "tmp/capture-templates/variant-effect-predictor-official-output-capture-template.json"
+      "captureTemplatePath": "tmp/capture-templates/variant-effect-predictor-official-output-capture-template.json",
+      "publicCaptureTemplatePath": "tmp/capture-templates/variant-effect-predictor-official-output-capture-template.json",
+      "publicCaptureTemplateCommand": "npm run scaffold:capture-template -- --report variant-effect-predictor --out tmp/capture-templates/variant-effect-predictor-official-output-capture-template.json",
+      "publicTemplateAuditCommand": "npm run scaffold:template-audit -- --report variant-effect-predictor",
+      "publicCaptureSessionCommand": "npm run scaffold:capture-session -- --source public --report variant-effect-predictor --format md --out tmp/official-output-capture-session-variant-effect-predictor.md"
     },
     {
       "slug": "variant-discovery-bioinformatics-secondary-analysis",
@@ -1289,7 +1309,11 @@
       "captureUrl": "https://sequencing.com/marketplace/variant-discovery-bioinformatics-secondary-analysis",
       "expectedSanitizedArtifactPath": "reference/catalog/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-25.json",
       "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-2026-06-25.json",
-      "captureTemplatePath": "tmp/capture-templates/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-template.json"
+      "captureTemplatePath": "tmp/capture-templates/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-template.json",
+      "publicCaptureTemplatePath": "tmp/capture-templates/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-template.json",
+      "publicCaptureTemplateCommand": "npm run scaffold:capture-template -- --report variant-discovery-bioinformatics-secondary-analysis --out tmp/capture-templates/variant-discovery-bioinformatics-secondary-analysis-official-output-capture-template.json",
+      "publicTemplateAuditCommand": "npm run scaffold:template-audit -- --report variant-discovery-bioinformatics-secondary-analysis",
+      "publicCaptureSessionCommand": "npm run scaffold:capture-session -- --source public --report variant-discovery-bioinformatics-secondary-analysis --format md --out tmp/official-output-capture-session-variant-discovery-bioinformatics-secondary-analysis.md"
     },
     {
       "slug": "genome-short-read-mapper",
@@ -1483,7 +1507,11 @@
       "captureUrl": "https://sequencing.com/marketplace/genome-short-read-mapper",
       "expectedSanitizedArtifactPath": "reference/catalog/genome-short-read-mapper-official-output-capture-2026-06-25.json",
       "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/genome-short-read-mapper-official-output-capture-2026-06-25.json",
-      "captureTemplatePath": "tmp/capture-templates/genome-short-read-mapper-official-output-capture-template.json"
+      "captureTemplatePath": "tmp/capture-templates/genome-short-read-mapper-official-output-capture-template.json",
+      "publicCaptureTemplatePath": "tmp/capture-templates/genome-short-read-mapper-official-output-capture-template.json",
+      "publicCaptureTemplateCommand": "npm run scaffold:capture-template -- --report genome-short-read-mapper --out tmp/capture-templates/genome-short-read-mapper-official-output-capture-template.json",
+      "publicTemplateAuditCommand": "npm run scaffold:template-audit -- --report genome-short-read-mapper",
+      "publicCaptureSessionCommand": "npm run scaffold:capture-session -- --source public --report genome-short-read-mapper --format md --out tmp/official-output-capture-session-genome-short-read-mapper.md"
     },
     {
       "slug": "promethease",
@@ -1677,7 +1705,11 @@
       "captureUrl": "https://sequencing.com/marketplace/promethease",
       "expectedSanitizedArtifactPath": "reference/catalog/promethease-official-output-capture-2026-06-25.json",
       "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/promethease-official-output-capture-2026-06-25.json",
-      "captureTemplatePath": "tmp/capture-templates/promethease-official-output-capture-template.json"
+      "captureTemplatePath": "tmp/capture-templates/promethease-official-output-capture-template.json",
+      "publicCaptureTemplatePath": "tmp/capture-templates/promethease-official-output-capture-template.json",
+      "publicCaptureTemplateCommand": "npm run scaffold:capture-template -- --report promethease --out tmp/capture-templates/promethease-official-output-capture-template.json",
+      "publicTemplateAuditCommand": "npm run scaffold:template-audit -- --report promethease",
+      "publicCaptureSessionCommand": "npm run scaffold:capture-session -- --source public --report promethease --format md --out tmp/official-output-capture-session-promethease.md"
     },
     {
       "slug": "whole-genome-sequencing-30x",
@@ -1843,7 +1875,11 @@
       "captureUrl": "https://sequencing.com/marketplace/whole-genome-sequencing-30x",
       "expectedSanitizedArtifactPath": "reference/catalog/whole-genome-sequencing-30x-official-output-capture-2026-06-25.json",
       "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/whole-genome-sequencing-30x-official-output-capture-2026-06-25.json",
-      "captureTemplatePath": "tmp/capture-templates/whole-genome-sequencing-30x-official-output-capture-template.json"
+      "captureTemplatePath": "tmp/capture-templates/whole-genome-sequencing-30x-official-output-capture-template.json",
+      "publicCaptureTemplatePath": "tmp/capture-templates/whole-genome-sequencing-30x-official-output-capture-template.json",
+      "publicCaptureTemplateCommand": "npm run scaffold:capture-template -- --report whole-genome-sequencing-30x --out tmp/capture-templates/whole-genome-sequencing-30x-official-output-capture-template.json",
+      "publicTemplateAuditCommand": "npm run scaffold:template-audit -- --report whole-genome-sequencing-30x",
+      "publicCaptureSessionCommand": "npm run scaffold:capture-session -- --source public --report whole-genome-sequencing-30x --format md --out tmp/official-output-capture-session-whole-genome-sequencing-30x.md"
     },
     {
       "slug": "comprehensive-health-screen-wgs-bundle",
@@ -2068,7 +2104,11 @@
       "captureUrl": "https://sequencing.com/order/comprehensive-wgs-health-screen-bundle",
       "expectedSanitizedArtifactPath": "reference/catalog/comprehensive-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
       "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/comprehensive-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
-      "captureTemplatePath": "tmp/capture-templates/comprehensive-health-screen-wgs-bundle-official-output-capture-template.json"
+      "captureTemplatePath": "tmp/capture-templates/comprehensive-health-screen-wgs-bundle-official-output-capture-template.json",
+      "publicCaptureTemplatePath": "tmp/capture-templates/comprehensive-health-screen-wgs-bundle-official-output-capture-template.json",
+      "publicCaptureTemplateCommand": "npm run scaffold:capture-template -- --report comprehensive-health-screen-wgs-bundle --out tmp/capture-templates/comprehensive-health-screen-wgs-bundle-official-output-capture-template.json",
+      "publicTemplateAuditCommand": "npm run scaffold:template-audit -- --report comprehensive-health-screen-wgs-bundle",
+      "publicCaptureSessionCommand": "npm run scaffold:capture-session -- --source public --report comprehensive-health-screen-wgs-bundle --format md --out tmp/official-output-capture-session-comprehensive-health-screen-wgs-bundle.md"
     },
     {
       "slug": "expedited-advanced-health-screen-wgs-bundle",
@@ -2292,7 +2332,11 @@
       "captureUrl": "https://sequencing.com/order/expedited-advanced-wgs-health-screen-bundle",
       "expectedSanitizedArtifactPath": "reference/catalog/expedited-advanced-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
       "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/expedited-advanced-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
-      "captureTemplatePath": "tmp/capture-templates/expedited-advanced-health-screen-wgs-bundle-official-output-capture-template.json"
+      "captureTemplatePath": "tmp/capture-templates/expedited-advanced-health-screen-wgs-bundle-official-output-capture-template.json",
+      "publicCaptureTemplatePath": "tmp/capture-templates/expedited-advanced-health-screen-wgs-bundle-official-output-capture-template.json",
+      "publicCaptureTemplateCommand": "npm run scaffold:capture-template -- --report expedited-advanced-health-screen-wgs-bundle --out tmp/capture-templates/expedited-advanced-health-screen-wgs-bundle-official-output-capture-template.json",
+      "publicTemplateAuditCommand": "npm run scaffold:template-audit -- --report expedited-advanced-health-screen-wgs-bundle",
+      "publicCaptureSessionCommand": "npm run scaffold:capture-session -- --source public --report expedited-advanced-health-screen-wgs-bundle --format md --out tmp/official-output-capture-session-expedited-advanced-health-screen-wgs-bundle.md"
     },
     {
       "slug": "ultra-rapid-professional-health-screen-wgs-bundle",
@@ -2516,7 +2560,11 @@
       "captureUrl": "https://sequencing.com/order/ultra-rapid-professional-wgs-health-screen-bundle",
       "expectedSanitizedArtifactPath": "reference/catalog/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
       "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-2026-06-25.json",
-      "captureTemplatePath": "tmp/capture-templates/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-template.json"
+      "captureTemplatePath": "tmp/capture-templates/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-template.json",
+      "publicCaptureTemplatePath": "tmp/capture-templates/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-template.json",
+      "publicCaptureTemplateCommand": "npm run scaffold:capture-template -- --report ultra-rapid-professional-health-screen-wgs-bundle --out tmp/capture-templates/ultra-rapid-professional-health-screen-wgs-bundle-official-output-capture-template.json",
+      "publicTemplateAuditCommand": "npm run scaffold:template-audit -- --report ultra-rapid-professional-health-screen-wgs-bundle",
+      "publicCaptureSessionCommand": "npm run scaffold:capture-session -- --source public --report ultra-rapid-professional-health-screen-wgs-bundle --format md --out tmp/official-output-capture-session-ultra-rapid-professional-health-screen-wgs-bundle.md"
     },
     {
       "slug": "connective-tissue-disorders-and-eds",
@@ -2779,7 +2827,11 @@
       "captureUrl": "https://sequencing.com/marketplace/connective-tissue-disorders-and-eds",
       "expectedSanitizedArtifactPath": "reference/catalog/connective-tissue-disorders-and-eds-official-output-capture-2026-06-25.json",
       "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/connective-tissue-disorders-and-eds-official-output-capture-2026-06-25.json",
-      "captureTemplatePath": "tmp/capture-templates/connective-tissue-disorders-and-eds-official-output-capture-template.json"
+      "captureTemplatePath": "tmp/capture-templates/connective-tissue-disorders-and-eds-official-output-capture-template.json",
+      "publicCaptureTemplatePath": "tmp/capture-templates/connective-tissue-disorders-and-eds-official-output-capture-template.json",
+      "publicCaptureTemplateCommand": "npm run scaffold:capture-template -- --report connective-tissue-disorders-and-eds --out tmp/capture-templates/connective-tissue-disorders-and-eds-official-output-capture-template.json",
+      "publicTemplateAuditCommand": "npm run scaffold:template-audit -- --report connective-tissue-disorders-and-eds",
+      "publicCaptureSessionCommand": "npm run scaffold:capture-session -- --source public --report connective-tissue-disorders-and-eds --format md --out tmp/official-output-capture-session-connective-tissue-disorders-and-eds.md"
     },
     {
       "slug": "ehlers-danlos-syndrome",
@@ -3002,7 +3054,11 @@
       "captureUrl": "https://sequencing.com/marketplace/ehlers-danlos-syndrome",
       "expectedSanitizedArtifactPath": "reference/catalog/ehlers-danlos-syndrome-official-output-capture-2026-06-25.json",
       "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/ehlers-danlos-syndrome-official-output-capture-2026-06-25.json",
-      "captureTemplatePath": "tmp/capture-templates/ehlers-danlos-syndrome-official-output-capture-template.json"
+      "captureTemplatePath": "tmp/capture-templates/ehlers-danlos-syndrome-official-output-capture-template.json",
+      "publicCaptureTemplatePath": "tmp/capture-templates/ehlers-danlos-syndrome-official-output-capture-template.json",
+      "publicCaptureTemplateCommand": "npm run scaffold:capture-template -- --report ehlers-danlos-syndrome --out tmp/capture-templates/ehlers-danlos-syndrome-official-output-capture-template.json",
+      "publicTemplateAuditCommand": "npm run scaffold:template-audit -- --report ehlers-danlos-syndrome",
+      "publicCaptureSessionCommand": "npm run scaffold:capture-session -- --source public --report ehlers-danlos-syndrome --format md --out tmp/official-output-capture-session-ehlers-danlos-syndrome.md"
     },
     {
       "slug": "eve-premium-dna-genome-data-bioinformatics-pipelines",
@@ -3196,7 +3252,11 @@
       "captureUrl": "https://sequencing.com/marketplace/eve-premium-dna-genome-data-bioinformatics-pipelines",
       "expectedSanitizedArtifactPath": "reference/catalog/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-25.json",
       "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-2026-06-25.json",
-      "captureTemplatePath": "tmp/capture-templates/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-template.json"
+      "captureTemplatePath": "tmp/capture-templates/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-template.json",
+      "publicCaptureTemplatePath": "tmp/capture-templates/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-template.json",
+      "publicCaptureTemplateCommand": "npm run scaffold:capture-template -- --report eve-premium-dna-genome-data-bioinformatics-pipelines --out tmp/capture-templates/eve-premium-dna-genome-data-bioinformatics-pipelines-official-output-capture-template.json",
+      "publicTemplateAuditCommand": "npm run scaffold:template-audit -- --report eve-premium-dna-genome-data-bioinformatics-pipelines",
+      "publicCaptureSessionCommand": "npm run scaffold:capture-session -- --source public --report eve-premium-dna-genome-data-bioinformatics-pipelines --format md --out tmp/official-output-capture-session-eve-premium-dna-genome-data-bioinformatics-pipelines.md"
     },
     {
       "slug": "hearing-auditory-genetics",
@@ -3362,7 +3422,11 @@
       "captureUrl": "https://sequencing.com/marketplace/hearing-auditory-genetics",
       "expectedSanitizedArtifactPath": "reference/catalog/hearing-auditory-genetics-official-output-capture-2026-06-25.json",
       "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/hearing-auditory-genetics-official-output-capture-2026-06-25.json",
-      "captureTemplatePath": "tmp/capture-templates/hearing-auditory-genetics-official-output-capture-template.json"
+      "captureTemplatePath": "tmp/capture-templates/hearing-auditory-genetics-official-output-capture-template.json",
+      "publicCaptureTemplatePath": "tmp/capture-templates/hearing-auditory-genetics-official-output-capture-template.json",
+      "publicCaptureTemplateCommand": "npm run scaffold:capture-template -- --report hearing-auditory-genetics --out tmp/capture-templates/hearing-auditory-genetics-official-output-capture-template.json",
+      "publicTemplateAuditCommand": "npm run scaffold:template-audit -- --report hearing-auditory-genetics",
+      "publicCaptureSessionCommand": "npm run scaffold:capture-session -- --source public --report hearing-auditory-genetics --format md --out tmp/official-output-capture-session-hearing-auditory-genetics.md"
     },
     {
       "slug": "marfan-syndrome",
@@ -3559,7 +3623,11 @@
       "captureUrl": "https://sequencing.com/marketplace/marfan-syndrome",
       "expectedSanitizedArtifactPath": "reference/catalog/marfan-syndrome-official-output-capture-2026-06-25.json",
       "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/marfan-syndrome-official-output-capture-2026-06-25.json",
-      "captureTemplatePath": "tmp/capture-templates/marfan-syndrome-official-output-capture-template.json"
+      "captureTemplatePath": "tmp/capture-templates/marfan-syndrome-official-output-capture-template.json",
+      "publicCaptureTemplatePath": "tmp/capture-templates/marfan-syndrome-official-output-capture-template.json",
+      "publicCaptureTemplateCommand": "npm run scaffold:capture-template -- --report marfan-syndrome --out tmp/capture-templates/marfan-syndrome-official-output-capture-template.json",
+      "publicTemplateAuditCommand": "npm run scaffold:template-audit -- --report marfan-syndrome",
+      "publicCaptureSessionCommand": "npm run scaffold:capture-session -- --source public --report marfan-syndrome --format md --out tmp/official-output-capture-session-marfan-syndrome.md"
     },
     {
       "slug": "mitchell-syndrome",
@@ -3755,7 +3823,11 @@
       "captureUrl": "https://sequencing.com/marketplace/mitchell-syndrome",
       "expectedSanitizedArtifactPath": "reference/catalog/mitchell-syndrome-official-output-capture-2026-06-25.json",
       "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/mitchell-syndrome-official-output-capture-2026-06-25.json",
-      "captureTemplatePath": "tmp/capture-templates/mitchell-syndrome-official-output-capture-template.json"
+      "captureTemplatePath": "tmp/capture-templates/mitchell-syndrome-official-output-capture-template.json",
+      "publicCaptureTemplatePath": "tmp/capture-templates/mitchell-syndrome-official-output-capture-template.json",
+      "publicCaptureTemplateCommand": "npm run scaffold:capture-template -- --report mitchell-syndrome --out tmp/capture-templates/mitchell-syndrome-official-output-capture-template.json",
+      "publicTemplateAuditCommand": "npm run scaffold:template-audit -- --report mitchell-syndrome",
+      "publicCaptureSessionCommand": "npm run scaffold:capture-session -- --source public --report mitchell-syndrome --format md --out tmp/official-output-capture-session-mitchell-syndrome.md"
     },
     {
       "slug": "oral",
@@ -3921,7 +3993,11 @@
       "captureUrl": "https://sequencing.com/marketplace/oral",
       "expectedSanitizedArtifactPath": "reference/catalog/oral-official-output-capture-2026-06-25.json",
       "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/oral-official-output-capture-2026-06-25.json",
-      "captureTemplatePath": "tmp/capture-templates/oral-official-output-capture-template.json"
+      "captureTemplatePath": "tmp/capture-templates/oral-official-output-capture-template.json",
+      "publicCaptureTemplatePath": "tmp/capture-templates/oral-official-output-capture-template.json",
+      "publicCaptureTemplateCommand": "npm run scaffold:capture-template -- --report oral --out tmp/capture-templates/oral-official-output-capture-template.json",
+      "publicTemplateAuditCommand": "npm run scaffold:template-audit -- --report oral",
+      "publicCaptureSessionCommand": "npm run scaffold:capture-session -- --source public --report oral --format md --out tmp/official-output-capture-session-oral.md"
     },
     {
       "slug": "pediatric-health",
@@ -4118,7 +4194,11 @@
       "captureUrl": "https://sequencing.com/marketplace/pediatric-health",
       "expectedSanitizedArtifactPath": "reference/catalog/pediatric-health-official-output-capture-2026-06-25.json",
       "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/pediatric-health-official-output-capture-2026-06-25.json",
-      "captureTemplatePath": "tmp/capture-templates/pediatric-health-official-output-capture-template.json"
+      "captureTemplatePath": "tmp/capture-templates/pediatric-health-official-output-capture-template.json",
+      "publicCaptureTemplatePath": "tmp/capture-templates/pediatric-health-official-output-capture-template.json",
+      "publicCaptureTemplateCommand": "npm run scaffold:capture-template -- --report pediatric-health --out tmp/capture-templates/pediatric-health-official-output-capture-template.json",
+      "publicTemplateAuditCommand": "npm run scaffold:template-audit -- --report pediatric-health",
+      "publicCaptureSessionCommand": "npm run scaffold:capture-session -- --source public --report pediatric-health --format md --out tmp/official-output-capture-session-pediatric-health.md"
     },
     {
       "slug": "pheochromocytoma-and-paraganglioma",
@@ -4284,7 +4364,11 @@
       "captureUrl": "https://sequencing.com/marketplace/pheochromocytoma-and-paraganglioma",
       "expectedSanitizedArtifactPath": "reference/catalog/pheochromocytoma-and-paraganglioma-official-output-capture-2026-06-25.json",
       "validationCommandForExpectedCapture": "npm run scaffold:validate-captures -- --path reference/catalog/pheochromocytoma-and-paraganglioma-official-output-capture-2026-06-25.json",
-      "captureTemplatePath": "tmp/capture-templates/pheochromocytoma-and-paraganglioma-official-output-capture-template.json"
+      "captureTemplatePath": "tmp/capture-templates/pheochromocytoma-and-paraganglioma-official-output-capture-template.json",
+      "publicCaptureTemplatePath": "tmp/capture-templates/pheochromocytoma-and-paraganglioma-official-output-capture-template.json",
+      "publicCaptureTemplateCommand": "npm run scaffold:capture-template -- --report pheochromocytoma-and-paraganglioma --out tmp/capture-templates/pheochromocytoma-and-paraganglioma-official-output-capture-template.json",
+      "publicTemplateAuditCommand": "npm run scaffold:template-audit -- --report pheochromocytoma-and-paraganglioma",
+      "publicCaptureSessionCommand": "npm run scaffold:capture-session -- --source public --report pheochromocytoma-and-paraganglioma --format md --out tmp/official-output-capture-session-pheochromocytoma-and-paraganglioma.md"
     }
   ],
   "nonTargetOfficialOutputCaptures": [
@@ -4350,9 +4434,46 @@
   ],
   "privacyCanary": {
     "schemaVersion": "soma-reports.official-output-capture-privacy-canary.v1",
-    "generatedAt": "2026-06-25T07:34:19.355Z",
+    "generatedAt": "2026-06-25T08:09:23.730Z",
     "ok": true,
     "results": [
+      {
+        "name": "public-official-sample-source",
+        "passed": true,
+        "expected": {
+          "ok": true,
+          "rowEvidenceReady": true
+        },
+        "actual": {
+          "ok": true,
+          "rowEvidenceReady": true,
+          "promotionSafeProvenance": false,
+          "outputSignalReview": true,
+          "promotionCandidate": false,
+          "problems": []
+        }
+      },
+      {
+        "name": "neither-public-nor-redacted",
+        "passed": true,
+        "expected": {
+          "ok": false,
+          "rowEvidenceReady": false
+        },
+        "actual": {
+          "ok": false,
+          "rowEvidenceReady": false,
+          "promotionSafeProvenance": false,
+          "outputSignalReview": false,
+          "promotionCandidate": false,
+          "problems": [
+            {
+              "path": "$.privacyBoundary",
+              "message": "must set privateValuesRedacted true for sanitized private captures or publicSourceOnly true for public/non-private captures"
+            }
+          ]
+        }
+      },
       {
         "name": "private-result-url-email-genotype",
         "passed": true,
@@ -4546,5 +4667,5 @@
     "auditPrivacyCanary": "npm run scaffold:privacy-canary",
     "exportCapturePlan": "npm run scaffold:capture-plan -- --format md --out tmp/evidence-capture-plan.md"
   },
-  "privacyBoundary": "Status is derived from sanitized metadata, local placeholder templates, and reference/catalog capture artifacts only. Keep raw genome files and private completed-report payloads outside the repo."
+  "privacyBoundary": "Status is derived from commit-safe metadata, local placeholder templates, and reference/catalog capture artifacts only. Keep raw genome files and private completed-report payloads outside the repo."
 }

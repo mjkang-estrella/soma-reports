@@ -410,7 +410,8 @@ const checks = [
   {
     key: "official_output_capture_validator",
     ok: runsByName.get("scaffold:validate-captures")?.exitCode === 0 && captureValidation?.ok === true,
-    expected: "all sanitized official-output capture artifacts pass schema, privacy, origin, and row-binding checks",
+    expected:
+      "all commit-safe official-output capture artifacts pass schema, privacy, origin, and row-binding checks",
     actual: captureValidation
       ? {
           checked: captureValidation.checked,
@@ -556,7 +557,7 @@ const checks = [
   {
     key: "official_output_captures_present_when_needed",
     ok: officialOutputCaptureArtifacts.length > 0 || (scaffold?.scaffoldPackages ?? 0) === 0,
-    expected: "sanitized official-output capture artifacts exist while scaffold packages remain",
+    expected: "commit-safe official-output capture artifacts exist while scaffold packages remain",
     actual: {
       count: officialOutputCaptureArtifacts.length,
       artifacts: officialOutputCaptureArtifacts.map((file) => `reference/catalog/${file}`),
@@ -603,11 +604,14 @@ const checks = [
       nextActions.rows.length === (scaffold?.scaffoldPackages ?? blockerLedger.decisions?.length ?? 0) &&
       nextActions.rows.every(
         (row) =>
+          row.publicCaptureTemplateCommand?.includes("scaffold:capture-template") &&
+          row.publicTemplateAuditCommand?.includes("scaffold:template-audit") &&
+          row.publicCaptureSessionCommand?.includes("scaffold:capture-session -- --source public") &&
           row.redactionTemplateCommand?.includes("scaffold:redaction-template") &&
           row.validateCommittedCaptureCommand?.includes("scaffold:validate-captures"),
       ),
     expected:
-      "scaffold:next-actions compact output proves 21/21 blocker coverage and includes redaction plus validation commands",
+      "scaffold:next-actions compact output proves 21/21 blocker coverage and includes public capture, redaction, and validation commands",
     actual: nextActions
       ? {
           totals: nextActions.totals,
@@ -615,6 +619,7 @@ const checks = [
           firstTargets: nextActions.rows?.slice(0, 5).map((row) => ({
             slug: row.slug,
             actionClass: row.actionClass,
+            publicCaptureSessionCommand: row.publicCaptureSessionCommand,
             nextCommand: row.nextCommand,
             validateCommittedCaptureCommand: row.validateCommittedCaptureCommand,
           })),

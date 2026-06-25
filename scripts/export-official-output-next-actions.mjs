@@ -51,6 +51,12 @@ const statusSlugs = new Set(rows.map((row) => row.slug).filter(Boolean));
 const missingStatusRows = [...ledgerSlugs].filter((slug) => !statusSlugs.has(slug)).sort();
 const extraStatusRows = [...statusSlugs].filter((slug) => !ledgerSlugs.has(slug)).sort();
 const statusCoverageOk = missingStatusRows.length === 0 && extraStatusRows.length === 0;
+const publicCaptureTemplatePathFor = (slug) => `tmp/capture-templates/${slug}-official-output-capture-template.json`;
+const publicCaptureTemplateCommandFor = (slug, path = publicCaptureTemplatePathFor(slug)) =>
+  `npm run scaffold:capture-template -- --report ${slug} --out ${path}`;
+const publicTemplateAuditCommandFor = (slug) => `npm run scaffold:template-audit -- --report ${slug}`;
+const publicCaptureSessionCommandFor = (slug) =>
+  `npm run scaffold:capture-session -- --source public --report ${slug} --format md --out tmp/official-output-capture-session-${slug}.md`;
 
 const stageRank = new Map(
   [
@@ -148,45 +154,61 @@ const rowsForExport = rows
     );
   })
   .slice(0, limit ?? rows.length)
-  .map((row) => ({
-    slug: row.slug,
-    title: row.title,
-    priority: row.priority ?? null,
-    stage: row.stage,
-    officialEvidenceTier: officialEvidenceTierFor(row),
-    officialBoundaryModeled: Boolean(row.officialBoundaryModeled),
-    officialBoundaryModeledFields: row.officialBoundaryModeledFields ?? 0,
-    officialBoundaryModeledBoundary: row.officialBoundaryModeledBoundary ?? null,
-    nextAction: row.nextAction ?? null,
-    nextCommand: row.nextCommand ?? null,
-    actionClass: actionClassFor(row),
-    captureUrl: row.captureUrl,
-    liveRoute: row.liveDetailInspection
-      ? {
-          exactRoute: Boolean(row.liveDetailInspection.exactRoute),
-          routeKind: row.liveDetailInspection.routeKind ?? null,
-          apiAppId: row.liveDetailInspection.apiAppId ?? null,
-          startButtonText: row.liveDetailInspection.startButtonText ?? "",
-          finalUrl: row.liveDetailInspection.finalUrl ?? row.liveDetailInspection.requestedUrl ?? null,
-        }
-      : null,
-    currentOutputSignals: row.formalReadinessGate?.currentOutputSignals ?? null,
-    officialBoundaryModel: row.officialBoundaryModel ?? null,
-    missingFormalGateEvidence: row.formalReadinessGate?.missing ?? [],
-    reviewedEvidencePresent: row.officialOutputReviewEvidencePresent ?? [],
-    reviewedEvidenceMissing: row.officialOutputReviewEvidenceMissing ?? [],
-    nextEvidenceNeeded: row.officialOutputReviewNextEvidenceNeeded?.length
-      ? row.officialOutputReviewNextEvidenceNeeded
-      : row.formalReadinessGate?.requiredEvidenceForPromotion ?? [],
-    boundaryUse: boundaryUseFor(row),
-    officialCapturePaths: row.officialCapturePaths ?? [],
-    rowEvidenceReadyCapturePaths: row.rowEvidenceReadyCapturePaths ?? [],
-    dryRunSanitizeCommand: row.dryRunSanitizeCommand ?? null,
-    redactionTemplateCommand: row.redactionTemplateCommand ?? null,
-    commitSanitizedCaptureCommand: row.commitSanitizedCaptureCommand ?? null,
-    validateCommittedCaptureCommand: row.validateCommittedCaptureCommand ?? null,
-    promotionPreviewCommittedCommand: row.promotionPreviewCommittedCommand ?? null,
-  }));
+  .map((row) => {
+    const publicCaptureTemplatePath =
+      row.publicCaptureTemplatePath ?? row.captureTemplatePath ?? publicCaptureTemplatePathFor(row.slug);
+    const publicCaptureTemplateCommand =
+      row.publicCaptureTemplateCommand ??
+      row.templateCommand ??
+      publicCaptureTemplateCommandFor(row.slug, publicCaptureTemplatePath);
+    const publicTemplateAuditCommand = row.publicTemplateAuditCommand ?? publicTemplateAuditCommandFor(row.slug);
+    const publicCaptureSessionCommand =
+      row.publicCaptureSessionCommand ?? publicCaptureSessionCommandFor(row.slug);
+
+    return {
+      slug: row.slug,
+      title: row.title,
+      priority: row.priority ?? null,
+      stage: row.stage,
+      officialEvidenceTier: officialEvidenceTierFor(row),
+      officialBoundaryModeled: Boolean(row.officialBoundaryModeled),
+      officialBoundaryModeledFields: row.officialBoundaryModeledFields ?? 0,
+      officialBoundaryModeledBoundary: row.officialBoundaryModeledBoundary ?? null,
+      nextAction: row.nextAction ?? null,
+      nextCommand: row.nextCommand ?? null,
+      actionClass: actionClassFor(row),
+      captureUrl: row.captureUrl,
+      liveRoute: row.liveDetailInspection
+        ? {
+            exactRoute: Boolean(row.liveDetailInspection.exactRoute),
+            routeKind: row.liveDetailInspection.routeKind ?? null,
+            apiAppId: row.liveDetailInspection.apiAppId ?? null,
+            startButtonText: row.liveDetailInspection.startButtonText ?? "",
+            finalUrl: row.liveDetailInspection.finalUrl ?? row.liveDetailInspection.requestedUrl ?? null,
+          }
+        : null,
+      currentOutputSignals: row.formalReadinessGate?.currentOutputSignals ?? null,
+      officialBoundaryModel: row.officialBoundaryModel ?? null,
+      missingFormalGateEvidence: row.formalReadinessGate?.missing ?? [],
+      reviewedEvidencePresent: row.officialOutputReviewEvidencePresent ?? [],
+      reviewedEvidenceMissing: row.officialOutputReviewEvidenceMissing ?? [],
+      nextEvidenceNeeded: row.officialOutputReviewNextEvidenceNeeded?.length
+        ? row.officialOutputReviewNextEvidenceNeeded
+        : row.formalReadinessGate?.requiredEvidenceForPromotion ?? [],
+      boundaryUse: boundaryUseFor(row),
+      officialCapturePaths: row.officialCapturePaths ?? [],
+      rowEvidenceReadyCapturePaths: row.rowEvidenceReadyCapturePaths ?? [],
+      publicCaptureTemplatePath,
+      publicCaptureTemplateCommand,
+      publicTemplateAuditCommand,
+      publicCaptureSessionCommand,
+      dryRunSanitizeCommand: row.dryRunSanitizeCommand ?? null,
+      redactionTemplateCommand: row.redactionTemplateCommand ?? null,
+      commitSanitizedCaptureCommand: row.commitSanitizedCaptureCommand ?? null,
+      validateCommittedCaptureCommand: row.validateCommittedCaptureCommand ?? null,
+      promotionPreviewCommittedCommand: row.promotionPreviewCommittedCommand ?? null,
+    };
+  });
 
 const actionCounts = rowsForExport.reduce((counts, row) => {
   counts[row.actionClass] = (counts[row.actionClass] ?? 0) + 1;
@@ -307,6 +329,10 @@ const renderMarkdown = () => {
       "- Next evidence needed:",
       ...(row.nextEvidenceNeeded.length > 0 ? row.nextEvidenceNeeded.map((item) => `  - ${item}`) : ["  - none"]),
       `- Next command: \`${row.nextCommand ?? "not available"}\``,
+      `- Public capture template: \`${row.publicCaptureTemplatePath ?? "not available"}\``,
+      `- Public capture template command: \`${row.publicCaptureTemplateCommand ?? "not available"}\``,
+      `- Public template audit: \`${row.publicTemplateAuditCommand ?? "not available"}\``,
+      `- Public capture session: \`${row.publicCaptureSessionCommand ?? "not available"}\``,
       `- Dry-run sanitizer: \`${row.dryRunSanitizeCommand ?? "not available"}\``,
       `- Commit-safe export: \`${row.commitSanitizedCaptureCommand ?? "not available"}\``,
       "",
@@ -347,10 +373,27 @@ const renderCompact = () =>
         actionClass: row.actionClass,
         missingFormalGateEvidence: row.missingFormalGateEvidence,
         nextEvidenceNeeded: row.nextEvidenceNeeded,
+        publicCaptureTemplatePath: row.publicCaptureTemplatePath,
+        publicCaptureTemplateCommand: row.publicCaptureTemplateCommand,
+        publicTemplateAuditCommand: row.publicTemplateAuditCommand,
+        publicCaptureSessionCommand: row.publicCaptureSessionCommand,
         dryRunSanitizeCommand: row.dryRunSanitizeCommand,
         redactionTemplateCommand: row.redactionTemplateCommand,
         commitSanitizedCaptureCommand: row.commitSanitizedCaptureCommand,
         validateCommittedCaptureCommand: row.validateCommittedCaptureCommand,
+        publicCaptureCommands: {
+          publicCaptureTemplatePath: row.publicCaptureTemplatePath,
+          publicCaptureTemplateCommand: row.publicCaptureTemplateCommand,
+          publicTemplateAuditCommand: row.publicTemplateAuditCommand,
+          publicCaptureSessionCommand: row.publicCaptureSessionCommand,
+        },
+        privateRedactionCommands: {
+          redactionTemplateCommand: row.redactionTemplateCommand,
+          dryRunSanitizeCommand: row.dryRunSanitizeCommand,
+          commitSanitizedCaptureCommand: row.commitSanitizedCaptureCommand,
+          validateCommittedCaptureCommand: row.validateCommittedCaptureCommand,
+          promotionPreviewCommittedCommand: row.promotionPreviewCommittedCommand,
+        },
       })),
       privacyBoundary: summary.privacyBoundary,
     },

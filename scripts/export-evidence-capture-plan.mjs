@@ -265,7 +265,7 @@ const captureWorkflowFor = ({
     return {
       stage: "capture-needs-rework",
       nextAction:
-        "Fix the sanitized official-output capture until validation passes with source-bound rows and fields.",
+        "Fix the commit-safe official-output capture until validation passes with source-bound rows and fields.",
       nextCommand: validateCaptureCommandForPath(invalidValidation.path),
     };
   }
@@ -304,7 +304,7 @@ const captureWorkflowFor = ({
     return {
       stage: "template-ready",
       nextAction:
-        "Fill an ignored private redaction input from an official sample/completed output, sanitize it to tmp, then commit only the reviewed sanitized capture.",
+        "Fill the public capture template from a non-private official source, or fill an ignored private redaction input from completed output and commit only the reviewed commit-safe capture.",
       nextCommand: redactionTemplateCommandFor(slug),
     };
   }
